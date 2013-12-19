@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.22.1-SNAPSHOT</version>
+    <version>1.22.1</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,7 +29,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>1.22.1-SNAPSHOT</version>
+  <version>1.22.1</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library</name>
