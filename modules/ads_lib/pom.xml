@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.google.api-ads</groupId>
+    <artifactId>client-libs-parent</artifactId>
+    <version>1.22.2-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.google.api-ads</groupId>
+  <artifactId>ads-lib</artifactId>
+  <version>1.22.2-SNAPSHOT</version>
+
+  <packaging>jar</packaging>
+  <name>Ads API Client Library</name>
+  <description>
+    Java client library for accessing ads APIs including AdWords, DFA, and DFP.
+    If you want to use this library, you must also include another Maven
+    artifact to specify which framework you would like to use it with. For
+    example, to use AdWords with Axis, you should include the "adwords-axis"
+    artifact.
+  </description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+               <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <targetPath>com/google/api/ads/adwords/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/adwords/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <targetPath>com/google/api/ads/dfa/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/dfa/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <targetPath>com/google/api/ads/dfp/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/dfp/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <targetPath>com/google/api/ads/common/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/common/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/main/resources</directory>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/common/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/common/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/dfa/lib/soap/testing</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/dfa/lib/soap/testing</directory>
+        <includes>
+          <include>*.xml</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/dfp/lib/soap/testing</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/dfp/lib/soap/testing</directory>
+        <includes>
+          <include>*.xml</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/common/lib/auth/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/common/lib/auth/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </testResource>
+    </testResources>
+  </build>
+
+  <dependencies>
+    <!-- Third party dependencies -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-jdk5</artifactId>
+      <version>14.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>2.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-assistedinject</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>1.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.17.0-rc</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-jackson2</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
+    <!-- Testing dependencies -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>5.1.10</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

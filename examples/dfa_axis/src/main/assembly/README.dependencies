@@ -1,0 +1,6 @@
+This directory contains all of the dependencies that Maven will pull down when
+using the DFA API with Apache Axis example project.
+
+Note that using these JARs is *not* the recommended approach - we recommend
+using Maven. Using these JARs will force you to manually update your project
+should the library switch to newer versions of or add new dependencies.
