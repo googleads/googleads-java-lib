@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/#API_VERSION#">
+            <requestId>20380d73592120e53b7d55adbfae11a1</requestId>
+            <responseTime>250</responseTime>
+        </ResponseHeader>
+    </soap:Header>
+    <soap:Body>
+        <createCompaniesResponse xmlns="https://www.google.com/apis/ads/publisher/#API_VERSION#">
+            <rval>
+                <id>1234</id>
+                <name>Advertiser #7353152618101463857</name>
+                <type>ADVERTISER</type>
+                <creditStatus>ACTIVE</creditStatus>
+                <enableSameAdvertiserCompetitiveExclusion>false</enableSameAdvertiserCompetitiveExclusion>
+                <lastModifiedDateTime>
+                    <date>
+                        <year>2012</year>
+                        <month>11</month>
+                        <day>27</day>
+                    </date>
+                    <hour>12</hour>
+                    <minute>27</minute>
+                    <second>9</second>
+                    <timeZoneID>PST8PDT</timeZoneID>
+                </lastModifiedDateTime>
+            </rval>
+        </createCompaniesResponse>
+    </soap:Body>
+</soap:Envelope>

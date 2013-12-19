@@ -1,0 +1,284 @@
+/**
+ * TemplateElementField.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ */
+
+package com.google.api.ads.adwords.axis.v201306.cm;
+
+
+/**
+ * Represents a field in a template element.
+ */
+public class TemplateElementField  implements java.io.Serializable {
+    /* The name of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldName".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
+    private java.lang.String name;
+
+    /* The type of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldType".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
+    private com.google.api.ads.adwords.axis.v201306.cm.TemplateElementFieldType type;
+
+    /* Text value for text field types. Null if not text field.
+     *                 The field is a text field if type is ADDRESS, ENUM,
+     * TEXT, URL,
+     *                 or VISIBLE_URL.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldText".</span> */
+    private java.lang.String fieldText;
+
+    /* Media value for non-text field types. Null if a text field.
+     * This
+     *                 fields must be specified if fieldText is null. */
+    private com.google.api.ads.adwords.axis.v201306.cm.Media fieldMedia;
+
+    public TemplateElementField() {
+    }
+
+    public TemplateElementField(
+           java.lang.String name,
+           com.google.api.ads.adwords.axis.v201306.cm.TemplateElementFieldType type,
+           java.lang.String fieldText,
+           com.google.api.ads.adwords.axis.v201306.cm.Media fieldMedia) {
+           this.name = name;
+           this.type = type;
+           this.fieldText = fieldText;
+           this.fieldMedia = fieldMedia;
+    }
+
+
+    /**
+     * Gets the name value for this TemplateElementField.
+     * 
+     * @return name   * The name of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldName".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
+     */
+    public java.lang.String getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this TemplateElementField.
+     * 
+     * @param name   * The name of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldName".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
+     */
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the type value for this TemplateElementField.
+     * 
+     * @return type   * The type of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldType".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
+     */
+    public com.google.api.ads.adwords.axis.v201306.cm.TemplateElementFieldType getType() {
+        return type;
+    }
+
+
+    /**
+     * Sets the type value for this TemplateElementField.
+     * 
+     * @param type   * The type of this field.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldType".</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
+     */
+    public void setType(com.google.api.ads.adwords.axis.v201306.cm.TemplateElementFieldType type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the fieldText value for this TemplateElementField.
+     * 
+     * @return fieldText   * Text value for text field types. Null if not text field.
+     *                 The field is a text field if type is ADDRESS, ENUM,
+     * TEXT, URL,
+     *                 or VISIBLE_URL.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldText".</span>
+     */
+    public java.lang.String getFieldText() {
+        return fieldText;
+    }
+
+
+    /**
+     * Sets the fieldText value for this TemplateElementField.
+     * 
+     * @param fieldText   * Text value for text field types. Null if not text field.
+     *                 The field is a text field if type is ADDRESS, ENUM,
+     * TEXT, URL,
+     *                 or VISIBLE_URL.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "TemplateElementFieldText".</span>
+     */
+    public void setFieldText(java.lang.String fieldText) {
+        this.fieldText = fieldText;
+    }
+
+
+    /**
+     * Gets the fieldMedia value for this TemplateElementField.
+     * 
+     * @return fieldMedia   * Media value for non-text field types. Null if a text field.
+     * This
+     *                 fields must be specified if fieldText is null.
+     */
+    public com.google.api.ads.adwords.axis.v201306.cm.Media getFieldMedia() {
+        return fieldMedia;
+    }
+
+
+    /**
+     * Sets the fieldMedia value for this TemplateElementField.
+     * 
+     * @param fieldMedia   * Media value for non-text field types. Null if a text field.
+     * This
+     *                 fields must be specified if fieldText is null.
+     */
+    public void setFieldMedia(com.google.api.ads.adwords.axis.v201306.cm.Media fieldMedia) {
+        this.fieldMedia = fieldMedia;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TemplateElementField)) return false;
+        TemplateElementField other = (TemplateElementField) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              this.type.equals(other.getType()))) &&
+            ((this.fieldText==null && other.getFieldText()==null) || 
+             (this.fieldText!=null &&
+              this.fieldText.equals(other.getFieldText()))) &&
+            ((this.fieldMedia==null && other.getFieldMedia()==null) || 
+             (this.fieldMedia!=null &&
+              this.fieldMedia.equals(other.getFieldMedia())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getType() != null) {
+            _hashCode += getType().hashCode();
+        }
+        if (getFieldText() != null) {
+            _hashCode += getFieldText().hashCode();
+        }
+        if (getFieldMedia() != null) {
+            _hashCode += getFieldMedia().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TemplateElementField.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "TemplateElementField"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "TemplateElementField.Type"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fieldText");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "fieldText"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fieldMedia");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "fieldMedia"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201306", "Media"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}
