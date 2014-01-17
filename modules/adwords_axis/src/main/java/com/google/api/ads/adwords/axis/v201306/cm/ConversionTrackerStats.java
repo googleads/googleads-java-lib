@@ -16,24 +16,21 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "NumConversionEvents".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer numConversionEvents;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "ConversionValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Money conversionValue;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "MostRecentConversionDate".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String mostRecentConversionDate;
 
     /* The number of converted clicks, a.k.a. 1-per-click conversions.
@@ -41,8 +38,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * the value "NumConvertedClicks".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer numConvertedClicks;
 
     public ConversionTrackerStats() {
@@ -67,8 +63,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "NumConversionEvents".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getNumConversionEvents() {
         return numConversionEvents;
@@ -82,8 +77,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "NumConversionEvents".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setNumConversionEvents(java.lang.Integer numConversionEvents) {
         this.numConversionEvents = numConversionEvents;
@@ -97,8 +91,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "ConversionValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Money getConversionValue() {
         return conversionValue;
@@ -112,8 +105,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "ConversionValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setConversionValue(com.google.api.ads.adwords.axis.v201306.cm.Money conversionValue) {
         this.conversionValue = conversionValue;
@@ -127,8 +119,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "MostRecentConversionDate".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getMostRecentConversionDate() {
         return mostRecentConversionDate;
@@ -142,8 +133,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * using the value "MostRecentConversionDate".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setMostRecentConversionDate(java.lang.String mostRecentConversionDate) {
         this.mostRecentConversionDate = mostRecentConversionDate;
@@ -158,8 +148,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * the value "NumConvertedClicks".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getNumConvertedClicks() {
         return numConvertedClicks;
@@ -174,8 +163,7 @@ public class ConversionTrackerStats  implements java.io.Serializable {
      * the value "NumConvertedClicks".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setNumConvertedClicks(java.lang.Integer numConvertedClicks) {
         this.numConvertedClicks = numConvertedClicks;

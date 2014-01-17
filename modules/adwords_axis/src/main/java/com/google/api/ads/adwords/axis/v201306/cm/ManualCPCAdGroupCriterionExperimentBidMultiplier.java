@@ -25,8 +25,7 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
     /* <span class="constraint Selectable">This field can be selected
      * using the value "MultiplierSource".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.MultiplierSource multiplierSource;
 
     public ManualCPCAdGroupCriterionExperimentBidMultiplier() {
@@ -77,8 +76,7 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
      * @return multiplierSource   * <span class="constraint Selectable">This field can be selected
      * using the value "MultiplierSource".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.MultiplierSource getMultiplierSource() {
         return multiplierSource;
@@ -91,8 +89,7 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
      * @param multiplierSource   * <span class="constraint Selectable">This field can be selected
      * using the value "MultiplierSource".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setMultiplierSource(com.google.api.ads.adwords.axis.v201306.cm.MultiplierSource multiplierSource) {
         this.multiplierSource = multiplierSource;

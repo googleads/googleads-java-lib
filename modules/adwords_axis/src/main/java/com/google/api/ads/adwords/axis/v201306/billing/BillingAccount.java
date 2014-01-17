@@ -13,30 +13,29 @@ package com.google.api.ads.adwords.axis.v201306.billing;
  */
 public class BillingAccount  implements java.io.Serializable {
     /* <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * will be ignored when sent to the API.</span> */
     private java.lang.String id;
 
     /* <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
     /* <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * will be ignored when sent to the API.</span> */
     private java.lang.String currencyCode;
 
     /* A 12 digit billing id assigned to the user by Google.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private java.lang.String primaryBillingId;
 
     /* An optional secondary billing id assigned to the user by Google.
      * <span class="constraint Billing">This element only applies if manager
      * account is whitelisted for new billing backend.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String secondaryBillingId;
 
     public BillingAccount() {
@@ -60,7 +59,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Gets the id value for this BillingAccount.
      * 
      * @return id   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getId() {
         return id;
@@ -71,7 +70,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Sets the id value for this BillingAccount.
      * 
      * @param id   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public void setId(java.lang.String id) {
         this.id = id;
@@ -82,7 +81,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Gets the name value for this BillingAccount.
      * 
      * @return name   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -93,7 +92,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Sets the name value for this BillingAccount.
      * 
      * @param name   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -104,7 +103,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Gets the currencyCode value for this BillingAccount.
      * 
      * @return currencyCode   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -115,7 +114,7 @@ public class BillingAccount  implements java.io.Serializable {
      * Sets the currencyCode value for this BillingAccount.
      * 
      * @param currencyCode   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;
@@ -128,8 +127,8 @@ public class BillingAccount  implements java.io.Serializable {
      * @return primaryBillingId   * A 12 digit billing id assigned to the user by Google.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public java.lang.String getPrimaryBillingId() {
         return primaryBillingId;
@@ -142,8 +141,8 @@ public class BillingAccount  implements java.io.Serializable {
      * @param primaryBillingId   * A 12 digit billing id assigned to the user by Google.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setPrimaryBillingId(java.lang.String primaryBillingId) {
         this.primaryBillingId = primaryBillingId;
@@ -157,8 +156,7 @@ public class BillingAccount  implements java.io.Serializable {
      * <span class="constraint Billing">This element only applies if manager
      * account is whitelisted for new billing backend.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getSecondaryBillingId() {
         return secondaryBillingId;
@@ -172,8 +170,7 @@ public class BillingAccount  implements java.io.Serializable {
      * <span class="constraint Billing">This element only applies if manager
      * account is whitelisted for new billing backend.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSecondaryBillingId(java.lang.String secondaryBillingId) {
         this.secondaryBillingId = secondaryBillingId;

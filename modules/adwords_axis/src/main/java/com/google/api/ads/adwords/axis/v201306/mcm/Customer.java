@@ -14,8 +14,7 @@ package com.google.api.ads.adwords.axis.v201306.mcm;
 public class Customer  implements java.io.Serializable {
     /* The 10-digit AdWords Customer ID.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long customerId;
 
     /* The currency in which this account operates.
@@ -24,8 +23,7 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/currencycodes"
      * >Currency Codes</a> for the currently supported currencies.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 3 and 3, inclusive.</span> */
     private java.lang.String currencyCode;
@@ -34,28 +32,24 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/timezones"
      * >Time Zone Codes</a> for the currently supported list.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String dateTimeZone;
 
     /* An optional, non-unique descriptive for this customer.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String descriptiveName;
 
     /* Whether this customer can manage other AdWords customers
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean canManageClients;
 
     /* Whether this customer's account is a test account.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean testAccount;
 
     public Customer() {
@@ -82,8 +76,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @return customerId   * The 10-digit AdWords Customer ID.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getCustomerId() {
         return customerId;
@@ -95,8 +88,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @param customerId   * The 10-digit AdWords Customer ID.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCustomerId(java.lang.Long customerId) {
         this.customerId = customerId;
@@ -112,8 +104,7 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/currencycodes"
      * >Currency Codes</a> for the currently supported currencies.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 3 and 3, inclusive.</span>
      */
@@ -131,8 +122,7 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/currencycodes"
      * >Currency Codes</a> for the currently supported currencies.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 3 and 3, inclusive.</span>
      */
@@ -148,8 +138,7 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/timezones"
      * >Time Zone Codes</a> for the currently supported list.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -165,8 +154,7 @@ public class Customer  implements java.io.Serializable {
      *                 See <a href="https://developers.google.com/adwords/api/docs/appendix/timezones"
      * >Time Zone Codes</a> for the currently supported list.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -180,8 +168,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @return descriptiveName   * An optional, non-unique descriptive for this customer.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDescriptiveName() {
         return descriptiveName;
@@ -193,8 +180,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @param descriptiveName   * An optional, non-unique descriptive for this customer.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setDescriptiveName(java.lang.String descriptiveName) {
         this.descriptiveName = descriptiveName;
@@ -206,8 +192,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @return canManageClients   * Whether this customer can manage other AdWords customers
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getCanManageClients() {
         return canManageClients;
@@ -219,8 +204,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @param canManageClients   * Whether this customer can manage other AdWords customers
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCanManageClients(java.lang.Boolean canManageClients) {
         this.canManageClients = canManageClients;
@@ -232,8 +216,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @return testAccount   * Whether this customer's account is a test account.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getTestAccount() {
         return testAccount;
@@ -245,8 +228,7 @@ public class Customer  implements java.io.Serializable {
      * 
      * @param testAccount   * Whether this customer's account is a test account.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setTestAccount(java.lang.Boolean testAccount) {
         this.testAccount = testAccount;

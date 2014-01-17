@@ -35,8 +35,8 @@ public class AdGroupAdExperimentData  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExperimentDataStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ExperimentDataStatus experimentDataStatus;
 
     public AdGroupAdExperimentData() {
@@ -121,8 +121,8 @@ public class AdGroupAdExperimentData  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExperimentDataStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ExperimentDataStatus getExperimentDataStatus() {
         return experimentDataStatus;
@@ -136,8 +136,8 @@ public class AdGroupAdExperimentData  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExperimentDataStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public void setExperimentDataStatus(com.google.api.ads.adwords.axis.v201309.cm.ExperimentDataStatus experimentDataStatus) {
         this.experimentDataStatus = experimentDataStatus;

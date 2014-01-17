@@ -58,8 +58,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String biddingStrategyName;
 
     /* The type of the bidding strategy to be attached.
@@ -75,8 +74,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategySource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.BiddingStrategySource biddingStrategySource;
 
     /* The bidding strategy metadata. Bidding strategy can be associated
@@ -169,8 +167,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getBiddingStrategyName() {
         return biddingStrategyName;
@@ -186,8 +183,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setBiddingStrategyName(java.lang.String biddingStrategyName) {
         this.biddingStrategyName = biddingStrategyName;
@@ -230,8 +226,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategySource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.BiddingStrategySource getBiddingStrategySource() {
         return biddingStrategySource;
@@ -248,8 +243,7 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * be selected using the value "BiddingStrategySource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setBiddingStrategySource(com.google.api.ads.adwords.axis.v201306.cm.BiddingStrategySource biddingStrategySource) {
         this.biddingStrategySource = biddingStrategySource;

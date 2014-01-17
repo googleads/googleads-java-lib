@@ -140,8 +140,7 @@ public class BudgetOrder  implements java.io.Serializable {
      * <span class="constraint Selectable">This field can be selected using
      * the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderRequest lastRequest;
 
     public BudgetOrder() {
@@ -561,8 +560,7 @@ public class BudgetOrder  implements java.io.Serializable {
      * <span class="constraint Selectable">This field can be selected using
      * the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderRequest getLastRequest() {
         return lastRequest;
@@ -581,8 +579,7 @@ public class BudgetOrder  implements java.io.Serializable {
      * <span class="constraint Selectable">This field can be selected using
      * the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setLastRequest(com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderRequest lastRequest) {
         this.lastRequest = lastRequest;

@@ -32,6 +32,7 @@ import com.google.api.ads.adwords.jaxws.v201309.cm.Selector;
     com.google.api.ads.adwords.jaxws.v201309.billing.ObjectFactory.class,
     com.google.api.ads.adwords.jaxws.v201309.ch.ObjectFactory.class,
     com.google.api.ads.adwords.jaxws.v201309.cm.ObjectFactory.class,
+    com.google.api.ads.adwords.jaxws.v201309.express.ObjectFactory.class,
     com.google.api.ads.adwords.jaxws.v201309.mcm.ObjectFactory.class,
     com.google.api.ads.adwords.jaxws.v201309.o.ObjectFactory.class,
     com.google.api.ads.adwords.jaxws.v201309.rm.ObjectFactory.class

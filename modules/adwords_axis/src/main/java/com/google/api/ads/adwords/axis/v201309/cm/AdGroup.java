@@ -17,8 +17,8 @@ public class AdGroup  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span> */
@@ -38,8 +38,7 @@ public class AdGroup  implements java.io.Serializable {
      * the value "CampaignName".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String campaignName;
 
     /* Name of this ad group (at most 255 UTF-8 full-width characters).
@@ -131,8 +130,8 @@ public class AdGroup  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -150,8 +149,8 @@ public class AdGroup  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -201,8 +200,7 @@ public class AdGroup  implements java.io.Serializable {
      * the value "CampaignName".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCampaignName() {
         return campaignName;
@@ -217,8 +215,7 @@ public class AdGroup  implements java.io.Serializable {
      * the value "CampaignName".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCampaignName(java.lang.String campaignName) {
         this.campaignName = campaignName;

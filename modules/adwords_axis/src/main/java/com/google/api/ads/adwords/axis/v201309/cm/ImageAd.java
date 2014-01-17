@@ -31,8 +31,8 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  imp
      * copying images
      *                     over re-uploading the same image.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET, REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span> */
     private java.lang.Long adToCopyImageFrom;
 
     public ImageAd() {
@@ -118,8 +118,8 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  imp
      * copying images
      *                     over re-uploading the same image.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET, REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      */
     public java.lang.Long getAdToCopyImageFrom() {
         return adToCopyImageFrom;
@@ -135,8 +135,8 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  imp
      * copying images
      *                     over re-uploading the same image.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET, REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      */
     public void setAdToCopyImageFrom(java.lang.Long adToCopyImageFrom) {
         this.adToCopyImageFrom = adToCopyImageFrom;

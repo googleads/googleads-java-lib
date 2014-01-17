@@ -57,8 +57,7 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201306.cm.Ad  
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.Integer duration;
 
     public TemplateAd() {
@@ -240,8 +239,7 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201306.cm.Ad  
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getDuration() {
         return duration;
@@ -255,8 +253,7 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201306.cm.Ad  
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDuration(java.lang.Integer duration) {
         this.duration = duration;

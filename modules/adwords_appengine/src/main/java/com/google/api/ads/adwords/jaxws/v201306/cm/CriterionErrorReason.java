@@ -467,8 +467,7 @@ public enum CriterionErrorReason {
 
     /**
      * 
-     *                 The requested criteria type cannot be used with the campaign's bidding
-     *                 strategy.
+     *                 The requested criteria type cannot be used with campaign or ad group bidding strategy.
      *               
      * 
      */

@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.jaxws;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
+import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
@@ -38,16 +39,19 @@ import javax.xml.soap.SOAPFactory;
  * AdWords implementation of {@link HeaderHandler} for JAX-WS.
  *
  * @author Joseph DiLallo
+ * @author Josh Radcliff
  */
 public class AdWordsJaxWsHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {
 
-  private static final String REQUEST_HEADER_LOCAL_PART = "RequestHeader";
+  static final String REQUEST_HEADER_LOCAL_PART = "RequestHeader";
 
   private final SoapClientHandlerInterface<Object> soapClientHandler;
   private final AdWordsApiConfiguration adWordsApiConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
+  private final Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
+      subProductHeaderHandlerMap;
 
   /**
    * Constructor.
@@ -65,11 +69,14 @@ public class AdWordsJaxWsHeaderHandler implements
       SoapClientHandlerInterface soapClientHandler,
       AdWordsApiConfiguration adWordsApiConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
-      UserAgentCombiner userAgentCombiner) {
+      UserAgentCombiner userAgentCombiner,
+      Map<AdWordsSubProduct,
+          HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>> subProductHeaderHandlerMap) {
     this.soapClientHandler = soapClientHandler;
     this.adWordsApiConfiguration = adWordsApiConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
+    this.subProductHeaderHandlerMap = subProductHeaderHandlerMap;
   }
 
   /**
@@ -80,10 +87,14 @@ public class AdWordsJaxWsHeaderHandler implements
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws AuthenticationException,
       ServiceException {
-    Map<String, Object> headerData = readHeaderElements(adWordsSession);
+    Map<String, Object> headerData = readHeaderElements(adWordsSession, adWordsServiceDescriptor);
     setAuthenticationHeaders(soapClient, headerData, adWordsSession);
     soapClientHandler.setHeader(soapClient, null, null,
         constructSoapHeader(headerData, adWordsServiceDescriptor));
+    
+    HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
+        subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());
+    subProductHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
   }
 
   /**
@@ -110,9 +121,11 @@ public class AdWordsJaxWsHeaderHandler implements
    * set AdWords SOAP headers.
    *
    * @param adWordsSession the user's session object
+   * @param adWordsServiceDescriptor descriptor for the AdWords service
    * @return a map of HTTP header names to values
    */
-  private Map<String, Object> readHeaderElements(AdWordsSession adWordsSession) {
+  private Map<String, Object> readHeaderElements(AdWordsSession adWordsSession,
+      AdWordsServiceDescriptor adWordsServiceDescriptor) {
     Map<String, Object> mapToFill = Maps.newHashMap();
     mapToFill.put("developerToken", adWordsSession.getDeveloperToken());
     mapToFill.put("clientCustomerId", adWordsSession.getClientCustomerId());
@@ -132,22 +145,23 @@ public class AdWordsJaxWsHeaderHandler implements
    */
   private SOAPElement constructSoapHeader(Map<String, Object> headerData,
       AdWordsServiceDescriptor adWordsServiceDescriptor) {
-    String namespace =
+    String requestHeaderNamespace =
         adWordsApiConfiguration.getNamespacePrefix() + "/"
             + adWordsServiceDescriptor.getPackageGroup() + "/"
             + adWordsServiceDescriptor.getVersion();
-    String requestHeaderNamespace =
+
+    String requestElementsNamespace =
         adWordsApiConfiguration.getNamespacePrefix() + "/cm/"
             + adWordsServiceDescriptor.getVersion();
 
     try {
       SOAPFactory soapFactory = SOAPFactory.newInstance();
-      SOAPElement requestHeader = soapFactory.createElement(new QName(namespace,
+      SOAPElement requestHeader = soapFactory.createElement(new QName(requestHeaderNamespace,
           REQUEST_HEADER_LOCAL_PART));
       for (String headerElementName : headerData.keySet()) {
         if (headerData.get(headerElementName) != null) {
           SOAPElement newElement = requestHeader.addChildElement(headerElementName, null,
-              requestHeaderNamespace);
+              requestElementsNamespace);
           newElement.addTextNode(headerData.get(headerElementName).toString());
         }
       }

@@ -30,8 +30,7 @@ public class Vertical  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "VerticalParentId".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.Long verticalParentId;
 
     /* The category to target or exclude. Each subsequent element
@@ -98,8 +97,7 @@ public class Vertical  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "VerticalParentId".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getVerticalParentId() {
         return verticalParentId;
@@ -113,8 +111,7 @@ public class Vertical  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "VerticalParentId".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setVerticalParentId(java.lang.Long verticalParentId) {
         this.verticalParentId = verticalParentId;

@@ -20,29 +20,25 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /* <span class="constraint Selectable">This field can be selected
      * using the value "DeviceName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String deviceName;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "ManufacturerName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String manufacturerName;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "DeviceType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType deviceType;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String operatingSystemName;
 
     public MobileDevice() {
@@ -73,8 +69,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @return deviceName   * <span class="constraint Selectable">This field can be selected
      * using the value "DeviceName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDeviceName() {
         return deviceName;
@@ -87,8 +82,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @param deviceName   * <span class="constraint Selectable">This field can be selected
      * using the value "DeviceName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDeviceName(java.lang.String deviceName) {
         this.deviceName = deviceName;
@@ -101,8 +95,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @return manufacturerName   * <span class="constraint Selectable">This field can be selected
      * using the value "ManufacturerName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getManufacturerName() {
         return manufacturerName;
@@ -115,8 +108,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @param manufacturerName   * <span class="constraint Selectable">This field can be selected
      * using the value "ManufacturerName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setManufacturerName(java.lang.String manufacturerName) {
         this.manufacturerName = manufacturerName;
@@ -129,8 +121,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @return deviceType   * <span class="constraint Selectable">This field can be selected
      * using the value "DeviceType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType getDeviceType() {
         return deviceType;
@@ -143,8 +134,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @param deviceType   * <span class="constraint Selectable">This field can be selected
      * using the value "DeviceType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDeviceType(com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType deviceType) {
         this.deviceType = deviceType;
@@ -157,8 +147,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @return operatingSystemName   * <span class="constraint Selectable">This field can be selected
      * using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getOperatingSystemName() {
         return operatingSystemName;
@@ -171,8 +160,7 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * @param operatingSystemName   * <span class="constraint Selectable">This field can be selected
      * using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setOperatingSystemName(java.lang.String operatingSystemName) {
         this.operatingSystemName = operatingSystemName;

@@ -29,8 +29,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "Type".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.MediaMediaType type;
 
     /* Media reference ID key.
@@ -38,8 +38,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "ReferenceId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private java.lang.Long referenceId;
 
     /* Various dimension sizes for the media. Only applies to image
@@ -54,8 +54,7 @@ public class Media  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Media_Size_StringMapEntry[] urls;
 
     /* The mime type of the media.
@@ -63,8 +62,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "MimeType".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.MediaMimeType mimeType;
 
     /* The URL of where the original media was downloaded from (or
@@ -73,8 +72,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "SourceUrl".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private java.lang.String sourceUrl;
 
     /* The name of the media. The name can be used by clients to
@@ -89,8 +88,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "FileSize".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private java.lang.Long fileSize;
 
     /* Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
@@ -99,8 +98,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "CreationTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private java.lang.String creationTime;
 
     /* Indicates that this instance is a subtype of Media.
@@ -181,8 +180,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "Type".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MediaMediaType getType() {
         return type;
@@ -200,8 +199,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "Type".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201309.cm.MediaMediaType type) {
         this.type = type;
@@ -216,8 +215,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "ReferenceId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public java.lang.Long getReferenceId() {
         return referenceId;
@@ -232,8 +231,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "ReferenceId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setReferenceId(java.lang.Long referenceId) {
         this.referenceId = referenceId;
@@ -284,8 +283,7 @@ public class Media  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Media_Size_StringMapEntry[] getUrls() {
         return urls;
@@ -300,8 +298,7 @@ public class Media  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setUrls(com.google.api.ads.adwords.axis.v201309.cm.Media_Size_StringMapEntry[] urls) {
         this.urls = urls;
@@ -324,8 +321,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "MimeType".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MediaMimeType getMimeType() {
         return mimeType;
@@ -340,8 +337,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "MimeType".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setMimeType(com.google.api.ads.adwords.axis.v201309.cm.MediaMimeType mimeType) {
         this.mimeType = mimeType;
@@ -357,8 +354,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "SourceUrl".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public java.lang.String getSourceUrl() {
         return sourceUrl;
@@ -374,8 +371,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "SourceUrl".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setSourceUrl(java.lang.String sourceUrl) {
         this.sourceUrl = sourceUrl;
@@ -418,8 +415,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "FileSize".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public java.lang.Long getFileSize() {
         return fileSize;
@@ -434,8 +431,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "FileSize".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setFileSize(java.lang.Long fileSize) {
         this.fileSize = fileSize;
@@ -451,8 +448,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "CreationTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public java.lang.String getCreationTime() {
         return creationTime;
@@ -468,8 +465,8 @@ public class Media  implements java.io.Serializable {
      * be selected using the value "CreationTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : SET,
-     * REMOVE.  If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setCreationTime(java.lang.String creationTime) {
         this.creationTime = creationTime;

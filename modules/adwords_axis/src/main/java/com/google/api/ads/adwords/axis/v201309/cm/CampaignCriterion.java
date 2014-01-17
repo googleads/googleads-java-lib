@@ -24,8 +24,7 @@ public class CampaignCriterion  implements java.io.Serializable {
      * using the value "IsNegative".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean isNegative;
 
     /* The criterion part of the campaign criterion.
@@ -38,7 +37,9 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile),
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
+     * (mobile),
      *                 {@code 0}: to opt out of mobile</li>
      *                 </ul>
      *                 
@@ -119,8 +120,7 @@ public class CampaignCriterion  implements java.io.Serializable {
      * using the value "IsNegative".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getIsNegative() {
         return isNegative;
@@ -134,8 +134,7 @@ public class CampaignCriterion  implements java.io.Serializable {
      * using the value "IsNegative".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setIsNegative(java.lang.Boolean isNegative) {
         this.isNegative = isNegative;
@@ -174,7 +173,9 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile),
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
+     * (mobile),
      *                 {@code 0}: to opt out of mobile</li>
      *                 </ul>
      *                 
@@ -196,7 +197,9 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile),
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
+     * (mobile),
      *                 {@code 0}: to opt out of mobile</li>
      *                 </ul>
      *                 

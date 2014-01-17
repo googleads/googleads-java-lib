@@ -18,8 +18,8 @@ public class BidMultiplier  implements java.io.Serializable {
     private java.lang.Double multiplier;
 
     /* The bid after multiplying original bid with the multiplier.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Bid multipliedBid;
 
     public BidMultiplier() {
@@ -59,8 +59,8 @@ public class BidMultiplier  implements java.io.Serializable {
      * Gets the multipliedBid value for this BidMultiplier.
      * 
      * @return multipliedBid   * The bid after multiplying original bid with the multiplier.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Bid getMultipliedBid() {
         return multipliedBid;
@@ -71,8 +71,8 @@ public class BidMultiplier  implements java.io.Serializable {
      * Sets the multipliedBid value for this BidMultiplier.
      * 
      * @param multipliedBid   * The bid after multiplying original bid with the multiplier.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setMultipliedBid(com.google.api.ads.adwords.axis.v201306.cm.Bid multipliedBid) {
         this.multipliedBid = multipliedBid;

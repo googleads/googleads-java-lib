@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import com.google.api.ads.adwords.jaxws.v201309.express.KeywordSet;
+import com.google.api.ads.adwords.jaxws.v201309.express.NegativeCriterion;
+import com.google.api.ads.adwords.jaxws.v201309.express.ProductService;
 
 
 /**
@@ -41,6 +44,9 @@ import javax.xml.bind.annotation.XmlType;
     "criterionType"
 })
 @XmlSeeAlso({
+    KeywordSet.class,
+    NegativeCriterion.class,
+    ProductService.class,
     Platform.class,
     Placement.class,
     CriterionUserList.class,

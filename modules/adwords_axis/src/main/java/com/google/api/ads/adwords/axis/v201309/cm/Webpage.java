@@ -30,8 +30,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.Double criteriaCoverage;
 
     /* Keywordless criteria samples - List of sample urls that matches
@@ -39,8 +38,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String[] criteriaSamples;
 
     public Webpage() {
@@ -103,8 +101,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.Double getCriteriaCoverage() {
         return criteriaCoverage;
@@ -121,8 +118,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCriteriaCoverage(java.lang.Double criteriaCoverage) {
         this.criteriaCoverage = criteriaCoverage;
@@ -137,8 +133,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String[] getCriteriaSamples() {
         return criteriaSamples;
@@ -153,8 +148,7 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCriteriaSamples(java.lang.String[] criteriaSamples) {
         this.criteriaSamples = criteriaSamples;

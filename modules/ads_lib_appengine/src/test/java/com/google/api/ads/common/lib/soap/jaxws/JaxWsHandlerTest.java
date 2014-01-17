@@ -46,6 +46,7 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPFactory;
 import javax.xml.ws.Binding;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.Handler;
@@ -154,6 +155,79 @@ public class JaxWsHandlerTest {
     Object headerValue = new Object();
 
     jaxWsHandler.setHeader(mockSoapClient, namespace, headerName, headerValue);
+  }
+
+  /**
+   * Tests
+   * {@link JaxWsHandler#setHeaderChildString(BindingProvider, String, String, String, String)} when
+   * given valid inputs.
+   */
+  @Test
+  public void testSetHeaderChildString() throws Exception {
+    String parentNamespace = "parentNamespace";
+    String parentName = "parentName";
+
+    when(mockSoapClient.getBinding()).thenReturn(mockBinding);
+    when(mockBinding.getHandlerChain()).thenReturn(handlerChain);
+
+    // Add the parent header.
+    SOAPFactory soapFactory = SOAPFactory.newInstance();
+    SOAPElement parentHeader = soapFactory.createElement(parentName, null, parentNamespace);
+    jaxWsHandler.setHeader(mockSoapClient, parentNamespace, parentName, parentHeader);
+
+    // Add the child header.
+    String childNamespace = "childNamespace";
+    String childName = "childName";
+    String childValue = "foo";
+    jaxWsHandler.setHeaderChildString(mockSoapClient, parentName, childNamespace, childName,
+        childValue);
+    SOAPElement parentHeaderFromHandler =
+        (SOAPElement) jaxWsHandler.getHeader(mockSoapClient, parentName);
+
+    // Retrieve the added child and assert its attributes are correct.
+    SOAPElement childHeaderFromHandler = (SOAPElement) parentHeaderFromHandler.getFirstChild();
+
+    assertEquals("Child name incorrect", childName, childHeaderFromHandler.getNodeName());
+    assertEquals("Child namespace incorrect", childNamespace,
+        childHeaderFromHandler.getNamespaceURI());
+    assertEquals("Child value incorrect", childValue, childHeaderFromHandler.getValue());
+  }
+
+  /**
+   * Tests
+   * {@link JaxWsHandler#setHeaderChildString(BindingProvider, String, String, String, String)} when
+   * no headers exist (setHeader never called).
+   */
+  @Test(expected = NullPointerException.class)
+  public void testSetHeaderChildString_fail_noParents() throws Exception {
+    when(mockSoapClient.getBinding()).thenReturn(mockBinding);
+    when(mockBinding.getHandlerChain()).thenReturn(handlerChain);
+
+    jaxWsHandler.setHeaderChildString(mockSoapClient, "nonexistentParentName", "childNamespace",
+        "childName", "childValue");
+  }
+
+  /**
+   * Tests
+   * {@link JaxWsHandler#setHeaderChildString(BindingProvider, String, String, String, String)} when
+   * headers exist but the parent header name passed does not match any of them.
+   */
+  @Test(expected = NullPointerException.class)
+  public void testSetHeaderChildString_fail_noMatchingParent() throws Exception {
+    String parentNamespace = "parentNamespace";
+    String parentName = "parentName";
+
+    when(mockSoapClient.getBinding()).thenReturn(mockBinding);
+    when(mockBinding.getHandlerChain()).thenReturn(handlerChain);
+
+    // Add the parent header.
+    SOAPFactory soapFactory = SOAPFactory.newInstance();
+    SOAPElement parentHeader = soapFactory.createElement(parentName, null, parentNamespace);
+    jaxWsHandler.setHeader(mockSoapClient, parentNamespace, parentName, parentHeader);
+
+    // Add the child header but specify a non-existent parent header name.
+    jaxWsHandler.setHeaderChildString(mockSoapClient, parentName + "_nonexistent", "childNamespace",
+        "childName", "childValue");
   }
 
   @Test

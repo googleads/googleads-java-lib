@@ -42,8 +42,7 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201309.cm.C
      * in mutate operands. This
      *                     field will always be returned.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String snippet;
 
     /* The type of AppConversion, which identifies a conversion as
@@ -192,8 +191,7 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201309.cm.C
      * in mutate operands. This
      *                     field will always be returned.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getSnippet() {
         return snippet;
@@ -209,8 +207,7 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201309.cm.C
      * in mutate operands. This
      *                     field will always be returned.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setSnippet(java.lang.String snippet) {
         this.snippet = snippet;

@@ -19,15 +19,13 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
     /* <span class="constraint Selectable">This field can be selected
      * using the value "CarrierName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "CarrierCountryCode".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String countryCode;
 
     public Carrier() {
@@ -54,8 +52,7 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      * @return name   * <span class="constraint Selectable">This field can be selected
      * using the value "CarrierName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -68,8 +65,7 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      * @param name   * <span class="constraint Selectable">This field can be selected
      * using the value "CarrierName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -82,8 +78,7 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      * @return countryCode   * <span class="constraint Selectable">This field can be selected
      * using the value "CarrierCountryCode".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCountryCode() {
         return countryCode;
@@ -96,8 +91,7 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201309.cm.Criteri
      * @param countryCode   * <span class="constraint Selectable">This field can be selected
      * using the value "CarrierCountryCode".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCountryCode(java.lang.String countryCode) {
         this.countryCode = countryCode;

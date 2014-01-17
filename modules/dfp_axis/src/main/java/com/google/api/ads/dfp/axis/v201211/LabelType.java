@@ -21,10 +21,12 @@ public class LabelType implements java.io.Serializable {
     public static final java.lang.String _AD_UNIT_FREQUENCY_CAP = "AD_UNIT_FREQUENCY_CAP";
     public static final java.lang.String _AD_EXCLUSION = "AD_EXCLUSION";
     public static final java.lang.String _CREATIVE_WRAPPER = "CREATIVE_WRAPPER";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final LabelType COMPETITIVE_EXCLUSION = new LabelType(_COMPETITIVE_EXCLUSION);
     public static final LabelType AD_UNIT_FREQUENCY_CAP = new LabelType(_AD_UNIT_FREQUENCY_CAP);
     public static final LabelType AD_EXCLUSION = new LabelType(_AD_EXCLUSION);
     public static final LabelType CREATIVE_WRAPPER = new LabelType(_CREATIVE_WRAPPER);
+    public static final LabelType UNKNOWN = new LabelType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static LabelType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

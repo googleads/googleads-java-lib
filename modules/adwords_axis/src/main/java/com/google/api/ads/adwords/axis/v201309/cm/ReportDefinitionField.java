@@ -20,67 +20,58 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class ReportDefinitionField  implements java.io.Serializable {
     /* The field name.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String fieldName;
 
     /* The name that is displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String displayFieldName;
 
     /* The XML attribute in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String xmlAttributeName;
 
     /* The type of field. Useful for knowing what operation type to
      * pass in for
      *                 a given field in a predicate.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String fieldType;
 
     /* List of enum values for the corresponing field iff the field
      * is an enum
      *                 type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String[] enumValues;
 
     /* Indicates if the user can select this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean canSelect;
 
     /* Indicates if the user can filter on this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean canFilter;
 
     /* Indicates that the field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean isEnumType;
 
     /* Indicates that the field is only available with beta access.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private java.lang.Boolean isBeta;
 
     /* List of enum values in api to their corresponding display values
      * in the
      *                 downloaded reports.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.EnumValuePair[] enumValuePairs;
 
     public ReportDefinitionField() {
@@ -115,8 +106,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return fieldName   * The field name.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getFieldName() {
         return fieldName;
@@ -128,8 +118,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param fieldName   * The field name.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setFieldName(java.lang.String fieldName) {
         this.fieldName = fieldName;
@@ -141,8 +130,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return displayFieldName   * The name that is displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDisplayFieldName() {
         return displayFieldName;
@@ -154,8 +142,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param displayFieldName   * The name that is displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setDisplayFieldName(java.lang.String displayFieldName) {
         this.displayFieldName = displayFieldName;
@@ -167,8 +154,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return xmlAttributeName   * The XML attribute in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getXmlAttributeName() {
         return xmlAttributeName;
@@ -180,8 +166,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param xmlAttributeName   * The XML attribute in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setXmlAttributeName(java.lang.String xmlAttributeName) {
         this.xmlAttributeName = xmlAttributeName;
@@ -195,8 +180,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * pass in for
      *                 a given field in a predicate.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getFieldType() {
         return fieldType;
@@ -210,8 +194,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * pass in for
      *                 a given field in a predicate.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setFieldType(java.lang.String fieldType) {
         this.fieldType = fieldType;
@@ -225,8 +208,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * is an enum
      *                 type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String[] getEnumValues() {
         return enumValues;
@@ -240,8 +222,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * is an enum
      *                 type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEnumValues(java.lang.String[] enumValues) {
         this.enumValues = enumValues;
@@ -261,8 +242,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return canSelect   * Indicates if the user can select this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getCanSelect() {
         return canSelect;
@@ -274,8 +254,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param canSelect   * Indicates if the user can select this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCanSelect(java.lang.Boolean canSelect) {
         this.canSelect = canSelect;
@@ -287,8 +266,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return canFilter   * Indicates if the user can filter on this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getCanFilter() {
         return canFilter;
@@ -300,8 +278,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param canFilter   * Indicates if the user can filter on this field.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCanFilter(java.lang.Boolean canFilter) {
         this.canFilter = canFilter;
@@ -313,8 +290,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @return isEnumType   * Indicates that the field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getIsEnumType() {
         return isEnumType;
@@ -326,8 +302,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * 
      * @param isEnumType   * Indicates that the field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setIsEnumType(java.lang.Boolean isEnumType) {
         this.isEnumType = isEnumType;
@@ -338,8 +313,8 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * Gets the isBeta value for this ReportDefinitionField.
      * 
      * @return isBeta   * Indicates that the field is only available with beta access.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getIsBeta() {
         return isBeta;
@@ -350,8 +325,8 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * Sets the isBeta value for this ReportDefinitionField.
      * 
      * @param isBeta   * Indicates that the field is only available with beta access.
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setIsBeta(java.lang.Boolean isBeta) {
         this.isBeta = isBeta;
@@ -365,8 +340,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * in the
      *                 downloaded reports.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.EnumValuePair[] getEnumValuePairs() {
         return enumValuePairs;
@@ -380,8 +354,7 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * in the
      *                 downloaded reports.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEnumValuePairs(com.google.api.ads.adwords.axis.v201309.cm.EnumValuePair[] enumValuePairs) {
         this.enumValuePairs = enumValuePairs;

@@ -34,20 +34,17 @@ public class AdExtensionOverride  implements java.io.Serializable {
      *                 ACTIVE on add and will become DELETED on remove (ie.
      * cannot modify status)
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStatus status;
 
     /* Approval status
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideApprovalStatus approvalStatus;
 
     /* Stats for the ad extension override
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStats stats;
 
     public AdExtensionOverride() {
@@ -149,8 +146,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      *                 ACTIVE on add and will become DELETED on remove (ie.
      * cannot modify status)
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStatus getStatus() {
         return status;
@@ -165,8 +161,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      *                 ACTIVE on add and will become DELETED on remove (ie.
      * cannot modify status)
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStatus status) {
         this.status = status;
@@ -178,8 +173,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      * 
      * @return approvalStatus   * Approval status
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -191,8 +185,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      * 
      * @param approvalStatus   * Approval status
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setApprovalStatus(com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -204,8 +197,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      * 
      * @return stats   * Stats for the ad extension override
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStats getStats() {
         return stats;
@@ -217,8 +209,7 @@ public class AdExtensionOverride  implements java.io.Serializable {
      * 
      * @param stats   * Stats for the ad extension override
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverrideStats stats) {
         this.stats = stats;

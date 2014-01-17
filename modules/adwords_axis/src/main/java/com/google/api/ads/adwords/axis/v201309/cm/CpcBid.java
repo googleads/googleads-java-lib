@@ -40,8 +40,7 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201309.cm.Bids  im
      * can be selected using the value "CpcBidSource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BidSource cpcBidSource;
 
     public CpcBid() {
@@ -140,8 +139,7 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201309.cm.Bids  im
      * can be selected using the value "CpcBidSource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BidSource getCpcBidSource() {
         return cpcBidSource;
@@ -158,8 +156,7 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201309.cm.Bids  im
      * can be selected using the value "CpcBidSource".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCpcBidSource(com.google.api.ads.adwords.axis.v201309.cm.BidSource cpcBidSource) {
         this.cpcBidSource = cpcBidSource;

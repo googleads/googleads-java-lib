@@ -23,6 +23,7 @@ import com.google.api.ads.common.lib.soap.SoapClientHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
+import com.google.common.base.Preconditions;
 
 import org.apache.axis.AxisFault;
 import org.apache.axis.MessageContext;
@@ -30,6 +31,7 @@ import org.apache.axis.client.Service;
 import org.apache.axis.client.Stub;
 import org.apache.axis.message.SOAPHeaderElement;
 import org.apache.axis.transport.http.HTTPConstants;
+import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
@@ -95,6 +97,30 @@ public class AxisHandler extends SoapClientHandler<Stub> {
       soapClient.setHeader(soapHeaderElement);
     } catch (SOAPException e) {
       throw new ServiceException("Could not set header.", e);
+    }
+  }
+  
+  /**
+   * Updates the child attribute of headerName named childName to childValue.
+   *
+   * @param soapClient the stub
+   * @param parentHeaderName the name of the parent header
+   * @param childName the name of the child
+   * @param childValue the value for the child
+   *
+   * @throws NullPointerException if no header exists named parentHeaderName
+   */
+  public void setHeaderChild(Stub soapClient, String parentHeaderName, String childName,
+      Object childValue) {
+    SOAPHeaderElement headerElement = (SOAPHeaderElement) getHeader(soapClient, parentHeaderName);
+    Object headerObject = Preconditions.checkNotNull(headerElement,
+        "Parent header named %s does not exist", parentHeaderName).getObjectValue();
+    try {
+      BeanUtils.setProperty(headerObject, childName, childValue);
+    } catch (IllegalAccessException e) {
+      throw new ServiceException("Failed to set header child " + childName, e);
+    } catch (InvocationTargetException e) {
+      throw new ServiceException("Failed to set header child " + childName, e);
     }
   }
 

@@ -44,16 +44,16 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdApprovalStatus approvalStatus;
 
     /* List of disapproval reasons.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private java.lang.String[] disapprovalReasons;
 
     /* True if and only if this ad is not serving because it does
@@ -64,8 +64,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 approved status.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private java.lang.Boolean trademarkDisapproved;
 
     /* This Map provides a place to put new features and settings
@@ -219,8 +219,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -234,8 +234,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setApprovalStatus(com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -249,8 +249,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public java.lang.String[] getDisapprovalReasons() {
         return disapprovalReasons;
@@ -264,8 +264,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setDisapprovalReasons(java.lang.String[] disapprovalReasons) {
         this.disapprovalReasons = disapprovalReasons;
@@ -291,8 +291,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 approved status.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getTrademarkDisapproved() {
         return trademarkDisapproved;
@@ -310,8 +310,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 approved status.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setTrademarkDisapproved(java.lang.Boolean trademarkDisapproved) {
         this.trademarkDisapproved = trademarkDisapproved;

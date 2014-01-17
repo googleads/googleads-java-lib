@@ -48,8 +48,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@link NetworkSearchParameter}</li>
  * <li>{@link RelatedToQuerySearchParameter}</li>
  * <li>{@link RelatedToUrlSearchParameter}</li>
- * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SearchVolumeDeltaSearchParameter}</li>
+ * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SeedAdGroupIdSearchParameter}</li>
  * </ul><p>
  * <p><b>{@link IdeaType} PLACEMENT supports following {@link SearchParameter}s:</b><br/>

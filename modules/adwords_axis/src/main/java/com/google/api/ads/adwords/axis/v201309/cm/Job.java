@@ -14,20 +14,17 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public abstract class Job  implements java.io.Serializable {
     /* Failure reason if this job has failed.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ApiErrorReason failureReason;
 
     /* The statistics concerning the processing of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.JobStats stats;
 
     /* The billing summary specifying the cost of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BillingSummary billingSummary;
 
     /* Indicates that this instance is a subtype of Job.
@@ -56,8 +53,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @return failureReason   * Failure reason if this job has failed.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ApiErrorReason getFailureReason() {
         return failureReason;
@@ -69,8 +65,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @param failureReason   * Failure reason if this job has failed.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setFailureReason(com.google.api.ads.adwords.axis.v201309.cm.ApiErrorReason failureReason) {
         this.failureReason = failureReason;
@@ -82,8 +77,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @return stats   * The statistics concerning the processing of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.JobStats getStats() {
         return stats;
@@ -95,8 +89,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @param stats   * The statistics concerning the processing of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201309.cm.JobStats stats) {
         this.stats = stats;
@@ -108,8 +101,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @return billingSummary   * The billing summary specifying the cost of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BillingSummary getBillingSummary() {
         return billingSummary;
@@ -121,8 +113,7 @@ public abstract class Job  implements java.io.Serializable {
      * 
      * @param billingSummary   * The billing summary specifying the cost of this job.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setBillingSummary(com.google.api.ads.adwords.axis.v201309.cm.BillingSummary billingSummary) {
         this.billingSummary = billingSummary;

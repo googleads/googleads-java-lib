@@ -204,7 +204,6 @@ public enum ReportDefinitionReportType {
     /**
      * 
      *                 Reports per-phone-call details for calls tracked using call metrics.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */

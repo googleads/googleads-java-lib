@@ -30,8 +30,7 @@ public class MobileAppCategory  extends com.google.api.ads.adwords.axis.v201309.
 
     /* Name of this mobile app category.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String displayName;
 
     public MobileAppCategory() {
@@ -91,8 +90,7 @@ public class MobileAppCategory  extends com.google.api.ads.adwords.axis.v201309.
      * 
      * @return displayName   * Name of this mobile app category.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDisplayName() {
         return displayName;
@@ -104,8 +102,7 @@ public class MobileAppCategory  extends com.google.api.ads.adwords.axis.v201309.
      * 
      * @param displayName   * Name of this mobile app category.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDisplayName(java.lang.String displayName) {
         this.displayName = displayName;

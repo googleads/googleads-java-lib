@@ -51,12 +51,13 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 {@link StartDateTimeType#USE_START_DATE_TIME}. */
     private com.google.api.ads.dfp.axis.v201208.StartDateTimeType startDateTimeType;
 
-    /* The date and time on which the {@code LineItem} stops serving.
+    /* The date and time on which the {@code LineItem} will stop serving.
      * This
      *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
      * is set
      *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}. */
+     * {@link LineItem#startDateTime}. This end date and time does not include
+     * auto extension days. */
     private com.google.api.ads.dfp.axis.v201208.DateTime endDateTime;
 
     /* The number of days to allow a line item to deliver past its
@@ -737,12 +738,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the endDateTime value for this LineItemSummary.
      * 
-     * @return endDateTime   * The date and time on which the {@code LineItem} stops serving.
+     * @return endDateTime   * The date and time on which the {@code LineItem} will stop serving.
      * This
      *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
      * is set
      *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}.
+     * {@link LineItem#startDateTime}. This end date and time does not include
+     * auto extension days.
      */
     public com.google.api.ads.dfp.axis.v201208.DateTime getEndDateTime() {
         return endDateTime;
@@ -752,12 +754,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the endDateTime value for this LineItemSummary.
      * 
-     * @param endDateTime   * The date and time on which the {@code LineItem} stops serving.
+     * @param endDateTime   * The date and time on which the {@code LineItem} will stop serving.
      * This
      *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
      * is set
      *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}.
+     * {@link LineItem#startDateTime}. This end date and time does not include
+     * auto extension days.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201208.DateTime endDateTime) {
         this.endDateTime = endDateTime;

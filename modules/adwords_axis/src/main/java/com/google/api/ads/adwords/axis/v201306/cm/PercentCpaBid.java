@@ -25,8 +25,8 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201306.cm.B
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PercentCpaBidSource".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.BidSource percentCpaBidSource;
 
     public PercentCpaBid() {
@@ -80,8 +80,8 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201306.cm.B
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PercentCpaBidSource".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.BidSource getPercentCpaBidSource() {
         return percentCpaBidSource;
@@ -97,8 +97,8 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201306.cm.B
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PercentCpaBidSource".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setPercentCpaBidSource(com.google.api.ads.adwords.axis.v201306.cm.BidSource percentCpaBidSource) {
         this.percentCpaBidSource = percentCpaBidSource;

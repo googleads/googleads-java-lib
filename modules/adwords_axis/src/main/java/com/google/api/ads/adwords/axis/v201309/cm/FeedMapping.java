@@ -54,8 +54,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.FeedMappingStatus status;
 
     /* The list of feed attributes to placeholder fields mappings.
@@ -181,8 +180,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.FeedMappingStatus getStatus() {
         return status;
@@ -197,8 +195,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.FeedMappingStatus status) {
         this.status = status;

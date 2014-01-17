@@ -19,8 +19,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanonicalName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String canonicalName;
 
     /* Approximate user population that will be targeted, rounded
@@ -28,8 +27,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Reach".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long reach;
 
     /* Locale of the name, as specified in the request. <b>Note:</b>
@@ -39,8 +37,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Filterable">This field can
      * be filtered on using the value "Locale".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String locale;
 
     /* Original search term, as specified in the input request for
@@ -52,8 +49,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <p>The number of search terms is limited to 25 per
      * request.</p>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String searchTerm;
 
     /* This is used as a hint and suggestions are restricted to this
@@ -111,8 +107,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanonicalName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCanonicalName() {
         return canonicalName;
@@ -126,8 +121,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanonicalName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCanonicalName(java.lang.String canonicalName) {
         this.canonicalName = canonicalName;
@@ -142,8 +136,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Reach".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getReach() {
         return reach;
@@ -158,8 +151,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Reach".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setReach(java.lang.Long reach) {
         this.reach = reach;
@@ -176,8 +168,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Filterable">This field can
      * be filtered on using the value "Locale".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getLocale() {
         return locale;
@@ -194,8 +185,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <span class="constraint Filterable">This field can
      * be filtered on using the value "Locale".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setLocale(java.lang.String locale) {
         this.locale = locale;
@@ -214,8 +204,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <p>The number of search terms is limited to 25 per
      * request.</p>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getSearchTerm() {
         return searchTerm;
@@ -234,8 +223,7 @@ public class LocationCriterion  implements java.io.Serializable {
      *                 <p>The number of search terms is limited to 25 per
      * request.</p>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSearchTerm(java.lang.String searchTerm) {
         this.searchTerm = searchTerm;

@@ -19,8 +19,7 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /* <span class="constraint Selectable">This field can be selected
      * using the value "PlatformName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String platformName;
 
     public Platform() {
@@ -45,8 +44,7 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      * @return platformName   * <span class="constraint Selectable">This field can be selected
      * using the value "PlatformName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getPlatformName() {
         return platformName;
@@ -59,8 +57,7 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      * @param platformName   * <span class="constraint Selectable">This field can be selected
      * using the value "PlatformName".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setPlatformName(java.lang.String platformName) {
         this.platformName = platformName;

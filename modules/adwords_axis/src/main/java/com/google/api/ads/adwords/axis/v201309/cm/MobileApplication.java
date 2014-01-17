@@ -46,8 +46,7 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201309.
      * can be selected using the value "DisplayName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String displayName;
 
     public MobileApplication() {
@@ -142,8 +141,7 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201309.
      * can be selected using the value "DisplayName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDisplayName() {
         return displayName;
@@ -158,8 +156,7 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201309.
      * can be selected using the value "DisplayName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDisplayName(java.lang.String displayName) {
         this.displayName = displayName;

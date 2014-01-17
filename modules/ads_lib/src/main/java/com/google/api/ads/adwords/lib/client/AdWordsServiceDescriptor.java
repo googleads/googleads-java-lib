@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,6 +38,11 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   private final Class<?> interfaceClass;
   private final String version;
   private final AdWordsApiConfiguration apiConfig;
+
+  /**
+   * Enumeration of high-level sub products within AdWords.
+   */
+  public enum AdWordsSubProduct{ DEFAULT, EXPRESS }
 
   /**
    * Constructor. Requires the necessary information to instantiate an AdWords
@@ -117,5 +122,12 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
     String packageName = interfaceClass.getPackage().getName();
     String[] parts = packageName.split("\\.");
     return parts[parts.length - 1];
+  }
+  
+  /**
+   * Gets the sub product for this service.
+   */
+  public AdWordsSubProduct getSubProduct() {
+    return apiConfig.getServiceSubProduct(version, getServiceName());
   }
 }

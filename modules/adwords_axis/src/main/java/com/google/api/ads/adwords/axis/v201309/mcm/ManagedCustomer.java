@@ -27,8 +27,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "Login".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String login;
 
     /* The company name of the account, if any.
@@ -36,8 +35,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CompanyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String companyName;
 
     /* The 10-digit ID that uniquely identifies the AdWords account.
@@ -45,8 +43,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long customerId;
 
     /* Whether this account can manage clients.
@@ -54,8 +51,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean canManageClients;
 
     /* The currency in which this account operates.
@@ -88,8 +84,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "TestAccount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean testAccount;
 
     public ManagedCustomer() {
@@ -155,8 +150,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "Login".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getLogin() {
         return login;
@@ -171,8 +165,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "Login".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setLogin(java.lang.String login) {
         this.login = login;
@@ -187,8 +180,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CompanyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCompanyName() {
         return companyName;
@@ -203,8 +195,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CompanyName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCompanyName(java.lang.String companyName) {
         this.companyName = companyName;
@@ -219,8 +210,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getCustomerId() {
         return customerId;
@@ -235,8 +225,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCustomerId(java.lang.Long customerId) {
         this.customerId = customerId;
@@ -251,8 +240,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getCanManageClients() {
         return canManageClients;
@@ -267,8 +255,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCanManageClients(java.lang.Boolean canManageClients) {
         this.canManageClients = canManageClients;
@@ -362,8 +349,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "TestAccount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getTestAccount() {
         return testAccount;
@@ -377,8 +363,7 @@ public class ManagedCustomer  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "TestAccount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setTestAccount(java.lang.Boolean testAccount) {
         this.testAccount = testAccount;

@@ -26,8 +26,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "SystemServingStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.SystemServingStatus systemServingStatus;
 
     /* Approval status.
@@ -35,16 +35,14 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "ApprovalStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.ApprovalStatus approvalStatus;
 
     /* List of disapproval reasons.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DisapprovalReasons".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String[] disapprovalReasons;
 
     /* Destination URL override when Ad is triggered by this criterion.
@@ -67,8 +65,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "FirstPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Bid firstPageCpc;
 
     /* An estimate of the cpc bid needed for your ad to appear above
@@ -82,20 +79,18 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Bid topOfPageCpc;
 
     /* Contains quality information about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.QualityInfo qualityInfo;
 
     /* Contains statistics about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Stats stats;
 
     /* Bidding configuration for this ad group criterion. To set the
@@ -200,8 +195,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "SystemServingStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.SystemServingStatus getSystemServingStatus() {
         return systemServingStatus;
@@ -215,8 +210,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "SystemServingStatus".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setSystemServingStatus(com.google.api.ads.adwords.axis.v201306.cm.SystemServingStatus systemServingStatus) {
         this.systemServingStatus = systemServingStatus;
@@ -231,8 +226,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "ApprovalStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.ApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -247,8 +241,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "ApprovalStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setApprovalStatus(com.google.api.ads.adwords.axis.v201306.cm.ApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -262,8 +255,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DisapprovalReasons".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String[] getDisapprovalReasons() {
         return disapprovalReasons;
@@ -277,8 +269,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DisapprovalReasons".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setDisapprovalReasons(java.lang.String[] disapprovalReasons) {
         this.disapprovalReasons = disapprovalReasons;
@@ -359,8 +350,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "FirstPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Bid getFirstPageCpc() {
         return firstPageCpc;
@@ -375,8 +365,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "FirstPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setFirstPageCpc(com.google.api.ads.adwords.axis.v201306.cm.Bid firstPageCpc) {
         this.firstPageCpc = firstPageCpc;
@@ -397,8 +386,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Bid getTopOfPageCpc() {
         return topOfPageCpc;
@@ -419,8 +408,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setTopOfPageCpc(com.google.api.ads.adwords.axis.v201306.cm.Bid topOfPageCpc) {
         this.topOfPageCpc = topOfPageCpc;
@@ -432,8 +421,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @return qualityInfo   * Contains quality information about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.QualityInfo getQualityInfo() {
         return qualityInfo;
@@ -445,8 +433,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @param qualityInfo   * Contains quality information about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setQualityInfo(com.google.api.ads.adwords.axis.v201306.cm.QualityInfo qualityInfo) {
         this.qualityInfo = qualityInfo;
@@ -458,8 +445,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @return stats   * Contains statistics about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Stats getStats() {
         return stats;
@@ -471,8 +457,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @param stats   * Contains statistics about the criterion.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201306.cm.Stats stats) {
         this.stats = stats;

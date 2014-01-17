@@ -27,8 +27,8 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "FeedItemId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span> */
     private java.lang.Long feedItemId;
 
     /* Status of feed item
@@ -36,8 +36,7 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.FeedItemStatus status;
 
     /* Start time in which this feed item is effective and can begin
@@ -51,8 +50,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span> */
     private java.lang.String startTime;
 
     /* End time in which this feed item is no longer effective and
@@ -66,8 +65,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span> */
     private java.lang.String endTime;
 
     /* The feed item's attribute values. For any unset/unspecified
@@ -85,8 +84,7 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ValidationDetails".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.FeedItemValidationDetail[] validationDetails;
 
     /* Device preference for the feed item.
@@ -174,8 +172,8 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "FeedItemId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public java.lang.Long getFeedItemId() {
         return feedItemId;
@@ -192,8 +190,8 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "FeedItemId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public void setFeedItemId(java.lang.Long feedItemId) {
         this.feedItemId = feedItemId;
@@ -208,8 +206,7 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.FeedItemStatus getStatus() {
         return status;
@@ -224,8 +221,7 @@ public class FeedItem  implements java.io.Serializable {
      * be selected using the value "Status".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.FeedItemStatus status) {
         this.status = status;
@@ -246,8 +242,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public java.lang.String getStartTime() {
         return startTime;
@@ -268,8 +264,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public void setStartTime(java.lang.String startTime) {
         this.startTime = startTime;
@@ -290,8 +286,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public java.lang.String getEndTime() {
         return endTime;
@@ -312,8 +308,8 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : REMOVE.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public void setEndTime(java.lang.String endTime) {
         this.endTime = endTime;
@@ -370,8 +366,7 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ValidationDetails".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.FeedItemValidationDetail[] getValidationDetails() {
         return validationDetails;
@@ -386,8 +381,7 @@ public class FeedItem  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ValidationDetails".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setValidationDetails(com.google.api.ads.adwords.axis.v201309.cm.FeedItemValidationDetail[] validationDetails) {
         this.validationDetails = validationDetails;

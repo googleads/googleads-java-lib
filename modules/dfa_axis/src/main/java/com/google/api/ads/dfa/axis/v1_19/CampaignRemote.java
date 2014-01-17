@@ -15,6 +15,6 @@ public interface CampaignRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_19.CampaignMigrationResult migrateCampaign(com.google.api.ads.dfa.axis.v1_19.CampaignMigrationRequest campaignMigrationRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CampaignCopyResult[] copyCampaigns(com.google.api.ads.dfa.axis.v1_19.CampaignCopyRequest[] campaignCopyRequests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CampaignSaveResult saveCampaign(com.google.api.ads.dfa.axis.v1_19.Campaign campaign) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.Campaign getCampaign(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.LandingPageSaveResult saveLandingPage(com.google.api.ads.dfa.axis.v1_19.LandingPage landingPage) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.Campaign getCampaign(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
 }

@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="AD_UNIT_FREQUENCY_CAP"/>
  *     &lt;enumeration value="AD_EXCLUSION"/>
  *     &lt;enumeration value="CREATIVE_WRAPPER"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -62,7 +63,16 @@ public enum LabelType {
      *               
      * 
      */
-    CREATIVE_WRAPPER;
+    CREATIVE_WRAPPER,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API
+     *                 version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

@@ -18,22 +18,19 @@ package com.google.api.ads.adwords.axis.v201309.billing;
 public class BudgetOrderRequest  implements java.io.Serializable {
     /* Status of the last {@link BudgetOrder} change.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderRequestStatus status;
 
     /* {@link DateTime} of when the request was received.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String date;
 
     /* Enables user to specify meaningful name for a billing account
      * to aid in reconciling monthly invoices. This name will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String billingAccountName;
 
     /* Enables user to enter a value that helps them reference this
@@ -41,8 +38,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 in their monthly invoices. This number will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String poNumber;
 
     /* Enables user to specify meaningful name for referencing this
@@ -50,24 +46,21 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 will be provided if none is specified. This name will
      * be printed in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String budgetOrderName;
 
     /* To specify an unlimited budget, set spendingLimit to -1 (in
      * micros),
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Money spendingLimit;
 
     /* StartDateTime cannot be in the past, it must be on or before
      * "20361231 235959 America/Los_Angeles". StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String startDateTime;
 
     /* EndDateTime must be on or before "20361231 235959 America/Los_Angeles"
@@ -77,8 +70,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 indicate infinite end date. StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String endDateTime;
 
     public BudgetOrderRequest() {
@@ -109,8 +101,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * 
      * @return status   * Status of the last {@link BudgetOrder} change.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderRequestStatus getStatus() {
         return status;
@@ -122,8 +113,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * 
      * @param status   * Status of the last {@link BudgetOrder} change.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderRequestStatus status) {
         this.status = status;
@@ -135,8 +125,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * 
      * @return date   * {@link DateTime} of when the request was received.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getDate() {
         return date;
@@ -148,8 +137,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * 
      * @param date   * {@link DateTime} of when the request was received.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setDate(java.lang.String date) {
         this.date = date;
@@ -163,8 +151,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * to aid in reconciling monthly invoices. This name will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getBillingAccountName() {
         return billingAccountName;
@@ -178,8 +165,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * to aid in reconciling monthly invoices. This name will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setBillingAccountName(java.lang.String billingAccountName) {
         this.billingAccountName = billingAccountName;
@@ -194,8 +180,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 in their monthly invoices. This number will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getPoNumber() {
         return poNumber;
@@ -210,8 +195,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 in their monthly invoices. This number will be printed
      * in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setPoNumber(java.lang.String poNumber) {
         this.poNumber = poNumber;
@@ -226,8 +210,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 will be provided if none is specified. This name will
      * be printed in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getBudgetOrderName() {
         return budgetOrderName;
@@ -242,8 +225,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 will be provided if none is specified. This name will
      * be printed in the monthly invoices.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setBudgetOrderName(java.lang.String budgetOrderName) {
         this.budgetOrderName = budgetOrderName;
@@ -257,8 +239,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * micros),
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Money getSpendingLimit() {
         return spendingLimit;
@@ -272,8 +253,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * micros),
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSpendingLimit(com.google.api.ads.adwords.axis.v201309.cm.Money spendingLimit) {
         this.spendingLimit = spendingLimit;
@@ -287,8 +267,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * "20361231 235959 America/Los_Angeles". StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getStartDateTime() {
         return startDateTime;
@@ -302,8 +281,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * "20361231 235959 America/Los_Angeles". StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStartDateTime(java.lang.String startDateTime) {
         this.startDateTime = startDateTime;
@@ -320,8 +298,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 indicate infinite end date. StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getEndDateTime() {
         return endDateTime;
@@ -338,8 +315,7 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      *                 indicate infinite end date. StartDateTime and EndDateTime
      * must use the same time zone.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEndDateTime(java.lang.String endDateTime) {
         this.endDateTime = endDateTime;

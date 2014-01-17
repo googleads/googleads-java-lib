@@ -22,7 +22,7 @@ public class Placement  extends com.google.api.ads.dfp.axis.v201208.SiteTargetin
      *                     length of 255 characters. */
     private java.lang.String name;
 
-    /* A description of the {@code Placement}. This value is required
+    /* A description of the {@code Placement}. This value is optional
      * and its
      *                     maximum length is 65,535 characters. */
     private java.lang.String description;
@@ -145,7 +145,7 @@ public class Placement  extends com.google.api.ads.dfp.axis.v201208.SiteTargetin
     /**
      * Gets the description value for this Placement.
      * 
-     * @return description   * A description of the {@code Placement}. This value is required
+     * @return description   * A description of the {@code Placement}. This value is optional
      * and its
      *                     maximum length is 65,535 characters.
      */
@@ -157,7 +157,7 @@ public class Placement  extends com.google.api.ads.dfp.axis.v201208.SiteTargetin
     /**
      * Sets the description value for this Placement.
      * 
-     * @param description   * A description of the {@code Placement}. This value is required
+     * @param description   * A description of the {@code Placement}. This value is optional
      * and its
      *                     maximum length is 65,535 characters.
      */

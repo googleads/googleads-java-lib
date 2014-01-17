@@ -51,6 +51,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
 
   private String clientLoginToken;
   private String clientCustomerId;
+  private Long expressBusinessId;
   private Boolean isValidateOnly;
   private Boolean isReportMoneyInMicros;
   private Boolean isPartialFailure;
@@ -100,6 +101,23 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
     this.clientCustomerId = clientCustomerId;
   }
 
+  /**
+   * Gets the AdWords Express business ID required for AdWords Express
+   * PromotionService
+   */
+  @Nullable
+  public Long getExpressBusinessId() {
+    return expressBusinessId;
+  }
+
+  /**
+   * Sets the AdWords Express business ID required for AdWords Express
+   * PromotionService
+   */
+  public void setExpressBusinessId(@Nullable Long businessId) {
+    this.expressBusinessId = businessId;
+  }
+  
   /**
    * Returns {@code true} if the session should only validate the request.
    */

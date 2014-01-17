@@ -9,7 +9,9 @@ package com.google.api.ads.dfp.axis.v201211;
 
 
 /**
- * The action used for deleting {@link LineItem} objects.
+ * The action used for deleting {@link LineItem} objects. A line item
+ * can be
+ *             deleted if it has never been eligible to serve.
  */
 public class DeleteLineItems  extends com.google.api.ads.dfp.axis.v201211.LineItemAction  implements java.io.Serializable {
     public DeleteLineItems() {

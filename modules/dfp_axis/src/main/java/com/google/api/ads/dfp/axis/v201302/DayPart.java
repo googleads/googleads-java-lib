@@ -17,10 +17,10 @@ public class DayPart  implements java.io.Serializable {
     /* Day of the week the target applies to. This field is required. */
     private com.google.api.ads.dfp.axis.v201302.DayOfWeek dayOfWeek;
 
-    /* Represents the start time of the targeted period. */
+    /* Represents the start time of the targeted period (inclusive). */
     private com.google.api.ads.dfp.axis.v201302.TimeOfDay startTime;
 
-    /* Represents the end time of the targeted period. */
+    /* Represents the end time of the targeted period (exclusive). */
     private com.google.api.ads.dfp.axis.v201302.TimeOfDay endTime;
 
     public DayPart() {
@@ -59,7 +59,7 @@ public class DayPart  implements java.io.Serializable {
     /**
      * Gets the startTime value for this DayPart.
      * 
-     * @return startTime   * Represents the start time of the targeted period.
+     * @return startTime   * Represents the start time of the targeted period (inclusive).
      */
     public com.google.api.ads.dfp.axis.v201302.TimeOfDay getStartTime() {
         return startTime;
@@ -69,7 +69,7 @@ public class DayPart  implements java.io.Serializable {
     /**
      * Sets the startTime value for this DayPart.
      * 
-     * @param startTime   * Represents the start time of the targeted period.
+     * @param startTime   * Represents the start time of the targeted period (inclusive).
      */
     public void setStartTime(com.google.api.ads.dfp.axis.v201302.TimeOfDay startTime) {
         this.startTime = startTime;
@@ -79,7 +79,7 @@ public class DayPart  implements java.io.Serializable {
     /**
      * Gets the endTime value for this DayPart.
      * 
-     * @return endTime   * Represents the end time of the targeted period.
+     * @return endTime   * Represents the end time of the targeted period (exclusive).
      */
     public com.google.api.ads.dfp.axis.v201302.TimeOfDay getEndTime() {
         return endTime;
@@ -89,7 +89,7 @@ public class DayPart  implements java.io.Serializable {
     /**
      * Sets the endTime value for this DayPart.
      * 
-     * @param endTime   * Represents the end time of the targeted period.
+     * @param endTime   * Represents the end time of the targeted period (exclusive).
      */
     public void setEndTime(com.google.api.ads.dfp.axis.v201302.TimeOfDay endTime) {
         this.endTime = endTime;

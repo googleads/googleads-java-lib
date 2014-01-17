@@ -17,8 +17,8 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span> */
@@ -47,8 +47,7 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "ServingStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.ServingStatus servingStatus;
 
     /* Date the campaign begins. On add, defaults to the current day
@@ -75,15 +74,14 @@ public class Campaign  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201306.cm.Budget budget;
 
     /* <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibility conversionOptimizerEligibility;
 
     /* Statistics for this campaign, returned by {@link CampaignService#get
      * get()} only if
      *                 requested in the selector.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.CampaignStats campaignStats;
 
     /* Ad serving optimization status.
@@ -178,8 +176,8 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -197,8 +195,8 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -280,8 +278,7 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "ServingStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.ServingStatus getServingStatus() {
         return servingStatus;
@@ -296,8 +293,7 @@ public class Campaign  implements java.io.Serializable {
      * be selected using the value "ServingStatus".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setServingStatus(com.google.api.ads.adwords.axis.v201306.cm.ServingStatus servingStatus) {
         this.servingStatus = servingStatus;
@@ -396,7 +392,7 @@ public class Campaign  implements java.io.Serializable {
      * Gets the conversionOptimizerEligibility value for this Campaign.
      * 
      * @return conversionOptimizerEligibility   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibility getConversionOptimizerEligibility() {
         return conversionOptimizerEligibility;
@@ -407,7 +403,7 @@ public class Campaign  implements java.io.Serializable {
      * Sets the conversionOptimizerEligibility value for this Campaign.
      * 
      * @param conversionOptimizerEligibility   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public void setConversionOptimizerEligibility(com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibility conversionOptimizerEligibility) {
         this.conversionOptimizerEligibility = conversionOptimizerEligibility;
@@ -421,8 +417,7 @@ public class Campaign  implements java.io.Serializable {
      * get()} only if
      *                 requested in the selector.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.CampaignStats getCampaignStats() {
         return campaignStats;
@@ -436,8 +431,7 @@ public class Campaign  implements java.io.Serializable {
      * get()} only if
      *                 requested in the selector.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCampaignStats(com.google.api.ads.adwords.axis.v201306.cm.CampaignStats campaignStats) {
         this.campaignStats = campaignStats;

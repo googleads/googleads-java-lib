@@ -41,8 +41,9 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     detailed usage. */
     private java.lang.Long campaignId;
 
-    /* The list of ad groups to estimate. At least one ad group is
-     * required.
+    /* The list of ad groups to estimate. This field is required and
+     * should not be {@code null}. At
+     *                     least one ad group is required.
      *                     
      *                     <p>New campaigns may only contain new ad groups.
      * If an
@@ -50,11 +51,7 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      * but the campaign is new,
      *                     the API will return an error.
      *                     <span class="constraint ContentsNotNull">This
-     * field must not contain {@code null} elements.</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * field must not contain {@code null} elements.</span> */
     private com.google.api.ads.adwords.axis.v201309.o.AdGroupEstimateRequest[] adGroupEstimateRequests;
 
     /* A list of {@link Criterion}s to be used for this Campaign.
@@ -192,8 +189,9 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
     /**
      * Gets the adGroupEstimateRequests value for this CampaignEstimateRequest.
      * 
-     * @return adGroupEstimateRequests   * The list of ad groups to estimate. At least one ad group is
-     * required.
+     * @return adGroupEstimateRequests   * The list of ad groups to estimate. This field is required and
+     * should not be {@code null}. At
+     *                     least one ad group is required.
      *                     
      *                     <p>New campaigns may only contain new ad groups.
      * If an
@@ -202,10 +200,6 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     the API will return an error.
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.o.AdGroupEstimateRequest[] getAdGroupEstimateRequests() {
         return adGroupEstimateRequests;
@@ -215,8 +209,9 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
     /**
      * Sets the adGroupEstimateRequests value for this CampaignEstimateRequest.
      * 
-     * @param adGroupEstimateRequests   * The list of ad groups to estimate. At least one ad group is
-     * required.
+     * @param adGroupEstimateRequests   * The list of ad groups to estimate. This field is required and
+     * should not be {@code null}. At
+     *                     least one ad group is required.
      *                     
      *                     <p>New campaigns may only contain new ad groups.
      * If an
@@ -225,10 +220,6 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     the API will return an error.
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public void setAdGroupEstimateRequests(com.google.api.ads.adwords.axis.v201309.o.AdGroupEstimateRequest[] adGroupEstimateRequests) {
         this.adGroupEstimateRequests = adGroupEstimateRequests;

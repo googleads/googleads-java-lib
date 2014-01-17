@@ -45,8 +45,7 @@ public class CampaignAdExtension  implements java.io.Serializable {
 
     /* Stats for the campaign ad extension.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.CampaignAdExtensionStats stats;
 
     public CampaignAdExtension() {
@@ -183,8 +182,7 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * 
      * @return stats   * Stats for the campaign ad extension.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.CampaignAdExtensionStats getStats() {
         return stats;
@@ -196,8 +194,7 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * 
      * @param stats   * Stats for the campaign ad extension.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201306.cm.CampaignAdExtensionStats stats) {
         this.stats = stats;

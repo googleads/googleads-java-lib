@@ -67,8 +67,7 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer referenceCount;
 
     /* If true, this budget was created through the BudgetService
@@ -93,8 +92,7 @@ public class Budget  implements java.io.Serializable {
      * using the value "BudgetStatus".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.BudgetBudgetStatus status;
 
     public Budget() {
@@ -297,8 +295,7 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getReferenceCount() {
         return referenceCount;
@@ -314,8 +311,7 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setReferenceCount(java.lang.Integer referenceCount) {
         this.referenceCount = referenceCount;
@@ -379,8 +375,7 @@ public class Budget  implements java.io.Serializable {
      * using the value "BudgetStatus".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.BudgetBudgetStatus getStatus() {
         return status;
@@ -394,8 +389,7 @@ public class Budget  implements java.io.Serializable {
      * using the value "BudgetStatus".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201306.cm.BudgetBudgetStatus status) {
         this.status = status;

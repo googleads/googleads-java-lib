@@ -64,8 +64,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code BulkMutateJobService} after adding a new
      * job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * ADD.  If this field is sent to the API, it will be ignored.</span> */
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: ADD.</span> */
     private java.lang.Long id;
 
     /* Defines which existing jobs are required to successfully process
@@ -73,8 +73,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     starting this job. This field can only be set
      * when adding a new job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET.  If this field is sent to the API, it will be ignored.</span> */
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: SET.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobPolicy policy;
 
     /* A request part of this job. Even though a {@code BulkMutateJob}
@@ -90,20 +90,17 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
 
     /* Status of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BasicJobStatus status;
 
     /* History of status changes of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobEvent[] history;
 
     /* The selected result part of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BulkMutateResult result;
 
     /* Total number of request parts (maximum of 100) in this job. */
@@ -116,8 +113,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code numRequestPartsReceived} equals
      *                     {@code numRequestParts}.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.Integer numRequestPartsReceived;
 
     public BulkMutateJob() {
@@ -159,8 +155,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code BulkMutateJobService} after adding a new
      * job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * ADD.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: ADD.</span>
      */
     public java.lang.Long getId() {
         return id;
@@ -174,8 +170,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code BulkMutateJobService} after adding a new
      * job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * ADD.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: ADD.</span>
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -190,8 +186,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     starting this job. This field can only be set
      * when adding a new job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobPolicy getPolicy() {
         return policy;
@@ -206,8 +202,8 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     starting this job. This field can only be set
      * when adding a new job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set for following {@link Operator}s :
-     * SET.  If this field is sent to the API, it will be ignored.</span>
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: SET.</span>
      */
     public void setPolicy(com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobPolicy policy) {
         this.policy = policy;
@@ -255,8 +251,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @return status   * Status of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BasicJobStatus getStatus() {
         return status;
@@ -268,8 +263,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @param status   * Status of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.BasicJobStatus status) {
         this.status = status;
@@ -281,8 +275,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @return history   * History of status changes of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobEvent[] getHistory() {
         return history;
@@ -294,8 +287,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @param history   * History of status changes of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setHistory(com.google.api.ads.adwords.axis.v201309.cm.BulkMutateJobEvent[] history) {
         this.history = history;
@@ -315,8 +307,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @return result   * The selected result part of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BulkMutateResult getResult() {
         return result;
@@ -328,8 +319,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      * 
      * @param result   * The selected result part of this job.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setResult(com.google.api.ads.adwords.axis.v201309.cm.BulkMutateResult result) {
         this.result = result;
@@ -366,8 +356,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code numRequestPartsReceived} equals
      *                     {@code numRequestParts}.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getNumRequestPartsReceived() {
         return numRequestPartsReceived;
@@ -384,8 +373,7 @@ public class BulkMutateJob  extends com.google.api.ads.adwords.axis.v201309.cm.J
      *                     {@code numRequestPartsReceived} equals
      *                     {@code numRequestParts}.
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setNumRequestPartsReceived(java.lang.Integer numRequestPartsReceived) {
         this.numRequestPartsReceived = numRequestPartsReceived;

@@ -44,8 +44,7 @@ public class Ad  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DisapprovalReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String[] disapprovalReasons;
 
     /* Indicates that this instance is a subtype of Ad.
@@ -186,8 +185,7 @@ public class Ad  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DisapprovalReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String[] getDisapprovalReasons() {
         return disapprovalReasons;
@@ -201,8 +199,7 @@ public class Ad  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DisapprovalReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setDisapprovalReasons(java.lang.String[] disapprovalReasons) {
         this.disapprovalReasons = disapprovalReasons;

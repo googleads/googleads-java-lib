@@ -50,8 +50,7 @@ public class SharedBiddingStrategy  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.SharedBiddingStrategyBiddingStrategyStatus status;
 
     /* <span class="constraint Selectable">This field can be selected
@@ -191,8 +190,7 @@ public class SharedBiddingStrategy  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.SharedBiddingStrategyBiddingStrategyStatus getStatus() {
         return status;
@@ -206,8 +204,7 @@ public class SharedBiddingStrategy  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201306.cm.SharedBiddingStrategyBiddingStrategyStatus status) {
         this.status = status;

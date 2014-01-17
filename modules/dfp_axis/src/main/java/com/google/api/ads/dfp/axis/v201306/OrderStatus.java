@@ -24,6 +24,7 @@ public class OrderStatus implements java.io.Serializable {
     public static final java.lang.String _PAUSED = "PAUSED";
     public static final java.lang.String _CANCELED = "CANCELED";
     public static final java.lang.String _DELETED = "DELETED";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final OrderStatus DRAFT = new OrderStatus(_DRAFT);
     public static final OrderStatus PENDING_APPROVAL = new OrderStatus(_PENDING_APPROVAL);
     public static final OrderStatus APPROVED = new OrderStatus(_APPROVED);
@@ -31,6 +32,7 @@ public class OrderStatus implements java.io.Serializable {
     public static final OrderStatus PAUSED = new OrderStatus(_PAUSED);
     public static final OrderStatus CANCELED = new OrderStatus(_CANCELED);
     public static final OrderStatus DELETED = new OrderStatus(_DELETED);
+    public static final OrderStatus UNKNOWN = new OrderStatus(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static OrderStatus fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

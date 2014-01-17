@@ -36,23 +36,20 @@ public class SharedSet  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
      * using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer memberCount;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer referenceCount;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.SharedSetStatus status;
 
     public SharedSet() {
@@ -172,8 +169,7 @@ public class SharedSet  implements java.io.Serializable {
      * @return memberCount   * <span class="constraint Selectable">This field can be selected
      * using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getMemberCount() {
         return memberCount;
@@ -186,8 +182,7 @@ public class SharedSet  implements java.io.Serializable {
      * @param memberCount   * <span class="constraint Selectable">This field can be selected
      * using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setMemberCount(java.lang.Integer memberCount) {
         this.memberCount = memberCount;
@@ -200,8 +195,7 @@ public class SharedSet  implements java.io.Serializable {
      * @return referenceCount   * <span class="constraint Selectable">This field can be selected
      * using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Integer getReferenceCount() {
         return referenceCount;
@@ -214,8 +208,7 @@ public class SharedSet  implements java.io.Serializable {
      * @param referenceCount   * <span class="constraint Selectable">This field can be selected
      * using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setReferenceCount(java.lang.Integer referenceCount) {
         this.referenceCount = referenceCount;
@@ -229,8 +222,7 @@ public class SharedSet  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.SharedSetStatus getStatus() {
         return status;
@@ -244,8 +236,7 @@ public class SharedSet  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201306.cm.SharedSetStatus status) {
         this.status = status;

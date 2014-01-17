@@ -14,14 +14,12 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class EnumValuePair  implements java.io.Serializable {
     /* The api enum value.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String enumValue;
 
     /* The enum value displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String enumDisplayValue;
 
     public EnumValuePair() {
@@ -40,8 +38,7 @@ public class EnumValuePair  implements java.io.Serializable {
      * 
      * @return enumValue   * The api enum value.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getEnumValue() {
         return enumValue;
@@ -53,8 +50,7 @@ public class EnumValuePair  implements java.io.Serializable {
      * 
      * @param enumValue   * The api enum value.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEnumValue(java.lang.String enumValue) {
         this.enumValue = enumValue;
@@ -66,8 +62,7 @@ public class EnumValuePair  implements java.io.Serializable {
      * 
      * @return enumDisplayValue   * The enum value displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getEnumDisplayValue() {
         return enumDisplayValue;
@@ -79,8 +74,7 @@ public class EnumValuePair  implements java.io.Serializable {
      * 
      * @param enumDisplayValue   * The enum value displayed in the downloaded report.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEnumDisplayValue(java.lang.String enumDisplayValue) {
         this.enumDisplayValue = enumDisplayValue;

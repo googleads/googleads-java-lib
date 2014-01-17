@@ -27,31 +27,27 @@ public class CampaignSharedSet  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String sharedSetName;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.SharedSetType sharedSetType;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "CampaignName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String campaignName;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.CampaignSharedSetStatus status;
 
     public CampaignSharedSet() {
@@ -139,8 +135,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * @return sharedSetName   * <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getSharedSetName() {
         return sharedSetName;
@@ -153,8 +148,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * @param sharedSetName   * <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSharedSetName(java.lang.String sharedSetName) {
         this.sharedSetName = sharedSetName;
@@ -168,8 +162,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * using the value "SharedSetType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.SharedSetType getSharedSetType() {
         return sharedSetType;
@@ -183,8 +176,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * using the value "SharedSetType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSharedSetType(com.google.api.ads.adwords.axis.v201309.cm.SharedSetType sharedSetType) {
         this.sharedSetType = sharedSetType;
@@ -197,8 +189,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * @return campaignName   * <span class="constraint Selectable">This field can be selected
      * using the value "CampaignName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCampaignName() {
         return campaignName;
@@ -211,8 +202,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * @param campaignName   * <span class="constraint Selectable">This field can be selected
      * using the value "CampaignName".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCampaignName(java.lang.String campaignName) {
         this.campaignName = campaignName;
@@ -226,8 +216,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.CampaignSharedSetStatus getStatus() {
         return status;
@@ -241,8 +230,7 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * using the value "Status".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.CampaignSharedSetStatus status) {
         this.status = status;

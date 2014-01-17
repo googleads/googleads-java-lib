@@ -19,8 +19,7 @@ public class AgeRange  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /* <span class="constraint Selectable">This field can be selected
      * using the value "AgeRangeType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span> */
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.AgeRangeAgeRangeType ageRangeType;
 
     public AgeRange() {
@@ -45,8 +44,7 @@ public class AgeRange  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      * @return ageRangeType   * <span class="constraint Selectable">This field can be selected
      * using the value "AgeRangeType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.AgeRangeAgeRangeType getAgeRangeType() {
         return ageRangeType;
@@ -59,8 +57,7 @@ public class AgeRange  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
      * @param ageRangeType   * <span class="constraint Selectable">This field can be selected
      * using the value "AgeRangeType".</span>
      *                     <span class="constraint ReadOnly">This field is
-     * read only and should not be set.  If this field is sent to the API,
-     * it will be ignored.</span>
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setAgeRangeType(com.google.api.ads.adwords.axis.v201306.cm.AgeRangeAgeRangeType ageRangeType) {
         this.ageRangeType = ageRangeType;

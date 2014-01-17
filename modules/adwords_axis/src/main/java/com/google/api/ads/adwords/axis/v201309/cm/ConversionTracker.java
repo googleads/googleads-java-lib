@@ -18,8 +18,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span> */
     private java.lang.Long id;
 
     /* Name of this conversion tracker.
@@ -45,8 +45,7 @@ public abstract class ConversionTracker  implements java.io.Serializable {
 
     /* Statistics for this conversion tracker.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ConversionTrackerStats stats;
 
     /* Lookback window for view-through conversions in days. This
@@ -136,8 +135,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public java.lang.Long getId() {
         return id;
@@ -153,8 +152,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -250,8 +249,7 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * 
      * @return stats   * Statistics for this conversion tracker.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ConversionTrackerStats getStats() {
         return stats;
@@ -263,8 +261,7 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * 
      * @param stats   * Statistics for this conversion tracker.
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201309.cm.ConversionTrackerStats stats) {
         this.stats = stats;

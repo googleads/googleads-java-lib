@@ -27,8 +27,7 @@ public class Criterion  implements java.io.Serializable {
      * using the value "CriteriaType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.CriterionType type;
 
     /* Indicates that this instance is a subtype of Criterion.
@@ -89,8 +88,7 @@ public class Criterion  implements java.io.Serializable {
      * using the value "CriteriaType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.CriterionType getType() {
         return type;
@@ -104,8 +102,7 @@ public class Criterion  implements java.io.Serializable {
      * using the value "CriteriaType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201309.cm.CriterionType type) {
         this.type = type;

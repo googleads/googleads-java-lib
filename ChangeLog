@@ -1,3 +1,17 @@
+1.23.0 - 01/16/2014
+-------------------
+AdWords:
+  - Added support for AdWords Express for v201309 (invite-only feature).
+
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
 1.22.1 - 12/05/2013
 -------------------
 AdWords:

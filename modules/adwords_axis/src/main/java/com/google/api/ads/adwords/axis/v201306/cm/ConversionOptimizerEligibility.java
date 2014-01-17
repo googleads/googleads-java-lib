@@ -16,16 +16,14 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean eligible;
 
     /* Reason why a campaign would be rejected for conversion optimizer.
      * <span class="constraint Selectable">This field can be selected using
      * the value "RejectionReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibilityRejectionReason[] rejectionReasons;
 
     public ConversionOptimizerEligibility() {
@@ -46,8 +44,7 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getEligible() {
         return eligible;
@@ -61,8 +58,7 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setEligible(java.lang.Boolean eligible) {
         this.eligible = eligible;
@@ -76,8 +72,7 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * <span class="constraint Selectable">This field can be selected using
      * the value "RejectionReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibilityRejectionReason[] getRejectionReasons() {
         return rejectionReasons;
@@ -91,8 +86,7 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * <span class="constraint Selectable">This field can be selected using
      * the value "RejectionReasons".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setRejectionReasons(com.google.api.ads.adwords.axis.v201306.cm.ConversionOptimizerEligibilityRejectionReason[] rejectionReasons) {
         this.rejectionReasons = rejectionReasons;

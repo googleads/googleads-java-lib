@@ -156,16 +156,16 @@ public final class Maps {
 
         result.add(newEntry);
       } catch (InvocationTargetException e) {
-        new IllegalStateException("Unexpected exception while creating map entries: "
+        throw new IllegalStateException("Unexpected exception while creating map entries: "
             + e.getMessage(), e.getTargetException());
       } catch (IllegalAccessException e) {
-        new IllegalStateException("Unexpected exception while creating map entries: "
+        throw new IllegalStateException("Unexpected exception while creating map entries: "
             + e.getMessage(), e);
       } catch (InstantiationException e) {
-        new IllegalStateException("Unexpected exception while creating map entries: "
+        throw new IllegalStateException("Unexpected exception while creating map entries: "
             + e.getMessage(), e);
       } catch (NoSuchMethodException e) {
-        new IllegalStateException("Unexpected exception while creating map entries: "
+        throw new IllegalStateException("Unexpected exception while creating map entries: "
             + e.getMessage(), e);
       }
     }

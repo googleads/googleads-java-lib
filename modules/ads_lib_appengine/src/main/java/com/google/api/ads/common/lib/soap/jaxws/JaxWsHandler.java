@@ -23,6 +23,7 @@ import com.google.api.ads.common.lib.soap.SoapClientHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.JaxWsCompatible;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
@@ -34,6 +35,7 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeaderElement;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.Handler;
@@ -118,6 +120,31 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
       throw new ServiceException("Unexpected SOAP header given for JAX-WS binding. Given "
           + "object of class \"" + headerValue.getClass().toString() + "\" but expecting "
           + "object of class \"" + SOAPElement.class + "\".", null);
+    }
+  }
+
+  /**
+   * Adds a child text node named childName to the existing header named headerName.
+   *
+   * @param soapClient the binding provider
+   * @param headerName the name of the existing header
+   * @param childNamespace the namespace of the new child
+   * @param childName the name of the new child
+   * @param childValue the value of the new child
+   *
+   * @throws NullPointerException if no header exists named headerName
+   */
+  public void setHeaderChildString(BindingProvider soapClient, final String headerName,
+      String childNamespace, String childName, String childValue) {
+    // Find the parent header SOAPElement
+    SOAPElement parentHeader = (SOAPElement) getHeader(soapClient, headerName);
+    Preconditions.checkNotNull(parentHeader, "No header element found with name: %s", headerName);
+    // Add a SOAPElement for the child
+    try {
+      SOAPElement childElement = parentHeader.addChildElement(new QName(childNamespace, childName));
+      childElement.setTextContent(childValue);
+    } catch (SOAPException e) {
+      throw new ServiceException("Failed to set header for child " + childName, e);
     }
   }
 

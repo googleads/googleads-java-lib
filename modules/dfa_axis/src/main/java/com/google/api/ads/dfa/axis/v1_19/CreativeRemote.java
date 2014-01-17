@@ -8,10 +8,11 @@
 package com.google.api.ads.dfa.axis.v1_19;
 
 public interface CreativeRemote extends java.rmi.Remote {
+    public com.google.api.ads.dfa.axis.v1_19.CreativeAssetRecordSet getCreativeAssets(com.google.api.ads.dfa.axis.v1_19.CreativeAssetSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.CreativeRecordSet getCreatives(com.google.api.ads.dfa.axis.v1_19.CreativeSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeSaveResult saveCreative(com.google.api.ads.dfa.axis.v1_19.CreativeBase creativeBase, long campaignId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeAssetSaveResult saveCreativeAsset(com.google.api.ads.dfa.axis.v1_19.CreativeAsset creativeAsset) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeCampaignAssociationResult[] associateCreativesToCampaign(long campaignId, long[] creativeIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.CreativeRecordSet getCreatives(com.google.api.ads.dfa.axis.v1_19.CreativeSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeCopyResult[] copyCreative(com.google.api.ads.dfa.axis.v1_19.CreativeCopyRequest[] copyRequests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeRenderingResult[] getCreativeRenderings(com.google.api.ads.dfa.axis.v1_19.CreativeRenderingRequest request) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.RichMediaCreativeBase uploadRichMediaAsset(com.google.api.ads.dfa.axis.v1_19.RichMediaAssetUploadRequest uploadRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
@@ -28,8 +29,7 @@ public interface CreativeRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_19.CreativeUploadSession getCompleteCreativeUploadSession(com.google.api.ads.dfa.axis.v1_19.CreativeUploadSessionSummary uploadSession) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeUploadSession createCreativesFromCreativeUploadSession(com.google.api.ads.dfa.axis.v1_19.CreativeUploadSession uploadSession) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public void deleteCreative(long creativeId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.CreativeAssetRecordSet getCreativeAssets(com.google.api.ads.dfa.axis.v1_19.CreativeAssetSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.CreativeBase getCreative(long creativeId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.CreativeType[] getCreativeTypes() throws java.rmi.RemoteException;
     public com.google.api.ads.dfa.axis.v1_19.CreativePlacementAssignmentResult[] assignCreativesToPlacements(com.google.api.ads.dfa.axis.v1_19.CreativePlacementAssignment[] creativePlacementAssignments) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.CreativeType[] getCreativeTypes() throws java.rmi.RemoteException;
+    public com.google.api.ads.dfa.axis.v1_19.CreativeBase getCreative(long creativeId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
 }

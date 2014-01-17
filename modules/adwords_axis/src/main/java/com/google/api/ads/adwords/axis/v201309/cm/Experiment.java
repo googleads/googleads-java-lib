@@ -16,8 +16,8 @@ public class Experiment  implements java.io.Serializable {
      * using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span> */
@@ -28,8 +28,7 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "ControlId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long controlId;
 
     /* <span class="constraint Selectable">This field can be selected
@@ -64,8 +63,7 @@ public class Experiment  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ServingStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ExperimentServingStatus servingStatus;
 
     /* The percentage of queries that will get routed to the experiment.
@@ -110,12 +108,11 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "LastModifiedDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String lastModifiedDateTime;
 
     /* <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ExperimentSummaryStats experimentSummaryStats;
 
     public Experiment() {
@@ -154,8 +151,8 @@ public class Experiment  implements java.io.Serializable {
      * using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -172,8 +169,8 @@ public class Experiment  implements java.io.Serializable {
      * using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set for following {@link Operator}s : ADD.
-     * If this field is sent to the API, it will be ignored.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -191,8 +188,7 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "ControlId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getControlId() {
         return controlId;
@@ -207,8 +203,7 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "ControlId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setControlId(java.lang.Long controlId) {
         this.controlId = controlId;
@@ -320,8 +315,7 @@ public class Experiment  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ServingStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ExperimentServingStatus getServingStatus() {
         return servingStatus;
@@ -335,8 +329,7 @@ public class Experiment  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ServingStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setServingStatus(com.google.api.ads.adwords.axis.v201309.cm.ExperimentServingStatus servingStatus) {
         this.servingStatus = servingStatus;
@@ -464,8 +457,7 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "LastModifiedDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -483,8 +475,7 @@ public class Experiment  implements java.io.Serializable {
      * be selected using the value "LastModifiedDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setLastModifiedDateTime(java.lang.String lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -495,7 +486,7 @@ public class Experiment  implements java.io.Serializable {
      * Gets the experimentSummaryStats value for this Experiment.
      * 
      * @return experimentSummaryStats   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ExperimentSummaryStats getExperimentSummaryStats() {
         return experimentSummaryStats;
@@ -506,7 +497,7 @@ public class Experiment  implements java.io.Serializable {
      * Sets the experimentSummaryStats value for this Experiment.
      * 
      * @param experimentSummaryStats   * <span class="constraint ReadOnly">This field is read only and
-     * should not be set.  If this field is sent to the API, it will be ignored.</span>
+     * will be ignored when sent to the API.</span>
      */
     public void setExperimentSummaryStats(com.google.api.ads.adwords.axis.v201309.cm.ExperimentSummaryStats experimentSummaryStats) {
         this.experimentSummaryStats = experimentSummaryStats;
