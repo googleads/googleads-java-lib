@@ -1,0 +1,848 @@
+1.23.0 - 01/16/2014
+-------------------
+AdWords:
+  - Added support for AdWords Express for v201309 (invite-only feature).
+
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.22.1 - 12/05/2013
+-------------------
+AdWords:
+  - Added AdWords Axis Utility Extension (beta).
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.22.0 - 11/25/2013
+-------------------
+AdWords:  
+  - Added SelectorBuilder to simplify building Selectors.
+  - A valid user agent is now required and must not be the default. Set
+    it via AdWordsSession.Builder.withUserAgent or the api.adwords.userAgent
+    ads.properties key.
+    
+DFA:
+  - A valid application name is now required and must not be the default. Set
+    it via DfaSession.Builder.withApplicationName or the api.dfa.applicationName
+    ads.properties key.
+    
+DFP:
+  - Added support for v201311.
+  - Starting in v201311, StatementBuilder.SUGGESTED_PAGE_LIMIT will be set to
+    500.
+  - A valid application name is now required and must not be the default. Set
+    it via DfpSession.Builder.withApplicationName or the api.dfp.applicationName
+    ads.properties key.
+    
+Common:
+  - No changes.
+
+1.21.0 - 11/18/2013
+-------------------
+AdWords:
+  - Removed the support for v201302.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.20.1 - 11/14/2013
+-------------------
+AdWords:
+  - Moved UseSharedBiddingStrategy example to advancedoperations from campaignmanagement.
+  - Added UpdateSiteLinks example to illustrate how to use new line 1 and 2 descriptions.
+  - Updated AddSiteLinks example to include new line 1 and 2 description fields.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - Fixed issue 69: NPE for null Value objects in PQL utilities.
+  - Added getNativeValue an getApiValue to PQL utility to ease work with Value
+    objects.
+    
+Common:
+  - No changes.
+
+1.20.0 - 10/04/2013
+-------------------
+AdWords:
+  - Added support for v201309.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.19.0 - 9/18/2013
+------------------
+AdWords:
+  - No changes.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - Added v201308.
+  - Removed deprecated versions v201203, v201204, and v201206.
+  - Renamed DateTimes.toStringForZone to DateTimes.toStringForTimeZone.
+  - Added DateTimes.toStringWithTimeZone to include time zones.
+  - Pql utilities will now convert DateTime and Date time values to into machine
+    readable strings. DateTimes will be in ISO-8061 format while Dates will be
+    in yyyy-MM-dd format.
+  - Added Pql.combineResultSets to easily combine result sets from paged
+    statements.
+    
+Common:
+  - No changes.
+
+1.18.1 - 8/02/2013
+------------------
+AdWords:
+  - Removed support for v201209.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.18.0 - 7/09/2013
+------------------
+AdWords:
+  - Added support for v201306.
+  
+DFA:
+  - No changes.
+  
+DFP:
+  - No changes.
+  
+Common:
+  - No changes.
+
+1.17.0 - 6/28/2013
+------------------
+AdWords:
+  - Added AdWords for Video support for v201302 (beta feature).
+  - Added GetRefreshToken example to be used with OfflineCredentials.
+  - The ads.properties file can now accept a refreshToken and client secrets.
+  - Removed deprecated environment methods and properties in
+    AdWordsSession.Builder.
+  - Removed OAuth1 support. OAuth2 should be used instead.
+  - ClientLogin is now deprecated. OAuth2 should be used instead.
+  - Updated all examples to use OfflineCredentials instead of ClientLogin.
+  
+DFA:
+  - Added GetRefreshToken example to be used with OfflineCredentials.
+  - The ads.properties file can now accept a refreshToken and client secrets.
+  - Username/password is now deprecated. OAuth2 should be used instead.
+  - Updated all examples to use OfflineCredentials.
+  
+DFP:
+  - Added GetRefreshToken example to be used with OfflineCredentials.
+  - The ads.properties file can now accept a refreshToken and client secrets.
+  - Removed deprecated environment methods and properties in
+    DfpSession.Builder.
+  - Removed OAuth1 support. OAuth2 should be used instead.
+  - ClientLogin is now deprecated. OAuth2 should be used instead.
+  - Updated all examples to use OfflineCredentials.
+  
+Common:
+  - Added OfflineCredentials utility to generate an OAuth2 Credential from
+    information stored in your ads.properties file. If you have not moved
+    off of ClientLogin yet, using this utility will ease the process.
+  - Removed deprecated modules (common_*, adwords_lib, dfp_lib, and dfa_lib)
+    from source control.
+
+1.16.0 - 6/24/2013
+------------------
+AdWords:
+  - No changes.
+  
+DFA:
+  - Removed the match table application from our example set. From now on, it
+    will be treated as its own sample application.
+  - Added automatic refreshing of DDMM tokens. Once your account has been
+    upgraded from DFA to DDMM, your login tokens have limited lifespans.
+    
+DFP:
+  - Added support for v201306.
+  - Added all remaining missing examples for v201302.
+  
+Common:
+  - No changes.
+
+1.15.2 - 5/09/2013
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updating our parent pom.xml file.
+
+1.15.1 - 5/08/2013
+------------------
+AdWords:
+  - Added support for AdGroupBidModifierService.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.15.0 - 4/25/2013
+------------------
+AdWords:
+  - Minor fixes to examples to address issues 36, 41.
+  - AdWords for Video API support and examples (beta feature).
+  - Removing support for v201206.
+
+DFA:
+  - Removed support for v1.18.
+  - Added support for v1.20.
+
+DFP:
+  - Fixed DfpInternals to reference DfpModule (issue 55).
+  - Included some examples for v201302 that were left out.
+
+Common:
+  - No changes.
+
+1.14.1 - 3/25/2013
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - Updated the sample application which generate match tables to use multiple
+    threads for increased performance.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.14.0 - 3/15/2013
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201302.
+  - The StatementBuilder classes no longer implement QueryBuilderInterface.
+
+Common:
+  - Removing all of the classes aimed at supporting Axis2. We have no plans to
+    support Axis2 at this time.
+
+1.13.0 - 3/04/2013
+------------------
+AdWords:
+  - Adding support for v201302.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.12.4 - 2/07/2013
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - Added an application to the DFA sample set which can generate match tables
+    from Data Transfer files. If you'd like to know more (or find out what a
+    match table or Data Transfer file is), please see the README in
+    dfa/axis/v1_19/matchtables.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.12.3 - 2/06/2013
+------------------
+AdWords:
+  - Adding code examples for enhanced campaign support using the
+    forwardCompatibilityMap.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.12.2 - 1/17/2013
+------------------
+AdWords:
+  - Removed deprecated com.google.api.ads.adwords.lib.factory.AdWordsServices
+    class. You must use com.google.api.ads.adwords.axis.factory.AdWordsServices
+    or com.google.api.ads.adwords.jaxws.factory.AdWordsServices instead.
+
+DFA:
+  - Removed deprecated com.google.api.ads.dfa.lib.factory.DfaServices class. You
+    must use com.google.api.ads.dfa.axis.factory.DfaServices instead.
+
+DFP:
+  - Removed deprecated com.google.api.ads.dfp.lib.factory.DfpServices class. You
+    must use com.google.api.ads.dfp.axis.factory.DfpServices or
+    com.google.api.ads.dfp.jaxws.factory.DfpServices instead.
+
+Common:
+  - Restored library to Java 1.5 compatibility when creating a single jar
+    assembly. This was due to newer versions of Guava not being compatible with
+    1.5. The artifact guava-jdk5 will now be used instead. Fixes issue 44.
+  - Removed our dependency on Reflections. Usage of all classes which relied on
+    Reflections has been deprecated since version 1.7.0.
+  - Updated the version of our selenium-java testing dependency.
+
+1.12.1 - 12/14/2012
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Changed version of selenium-java dependency to 2.27.0. Version 2.28.0 was
+    causing java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal errors.
+
+1.12.0 - 12/11/2012
+-------------------
+AdWords:
+  - Removed support for sandbox environment.
+  - Added support for configurable report download timeout.  Set property
+    api.adwords.reportDownloadTimeout in milliseconds in ads.properties.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201211.
+  - Updated generated code for all versions to support UnsupportedCreative and
+    new UKNOWN enum values.
+  - Removed support for v201111 and v201201.
+
+Common:
+  - Fixed issue where not all properties where being loaded from the
+    ads.properties file correctly.
+
+1.11.0 - 11/02/2012
+-------------------
+AdWords:
+  - Removed v201109 and v201109_1 support due to sunset.
+  - Fixed issue 33 by adding connect/read timeout to
+    ReportRequestFactoryHelper.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.10.2 - 10/23/2012
+-------------------
+AdWords:
+  - Fixing issue 31 by retaining a static reference to the JaxBSerializer,
+    which holds onto the JAXBContext reference.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Streams fix for issue 26.
+  - Removed synchronization on
+    BaseAdsServiceClientFactory.getServiceClientAsInterface() to fix issue 27.
+
+1.10.1 - 10/15/2012
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updated our dependency on Apache commons-configuration from version 1.6 to
+    1.7. This fixes issue 30.
+
+1.10.0 - 10/10/2012
+-------------------
+AdWords:
+  - Adding support for v201209.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.9.1 - 09/12/2012
+------------------
+AdWords:
+  - The Axis example project now has the configuration for exec-maven-plugin
+    inside a profile. This fixes issue 23.
+
+DFA:
+  - The Axis example project now has the configuration for exec-maven-plugin
+    inside a profile. This fixes issue 23.
+
+DFP:
+  - The Axis example project now has the configuration for exec-maven-plugin
+    inside a profile. This fixes issue 23.
+
+Common:
+  - ConfigurationHelper now creates a snapshot of the System properties when it
+    is instantiated rather than using the Apache SystemConfiguration class.
+    This prevents a ConcurrentModificationException from being thrown if a
+    property is added or removed from the System while our library is reading
+    from our configuration.
+
+1.9.0 - 09/06/2012
+------------------
+AdWords:
+  - Removed OAuth1.0 examples. See release 1.8.1 for more information.
+  - Updated OAuth2.0 examples to use Jackson2 instead of Gson.
+
+DFA:
+  - Updated OAuth2.0 examples to use Jackson2 instead of Gson.
+
+DFP:
+  - Removed OAuth1.0 examples. See release 1.8.1 for more information.
+  - Updated OAuth2.0 examples to use Jackson2 instead of Gson.
+
+Common:
+  - Parent pom dependencies are now locked to current release version at time
+    of this release. Each release will now include the most recent dependencies
+    at the time of release, i.e. replacing the RELEASE version.
+  - com.google.api-client dependency upgraded to 1.11.0 which removes support
+    for com.google.api.client.googleapis.auth.oauth
+
+1.8.1 - 09/05/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added link to header explanations in ads.properties file.
+
+Common:
+  - Deprecated use of OAuth1.0a via withOAuthParameters methods. If you are
+    using OAuth1.0a, please switch to OAuth2.0. Although we will continue to
+    support OAuth1.0a as long as the method is supported by Google, it may
+    become more difficult as other Google libraries begin to deprecate support.
+    See the following release note for more information.
+  - Locked parent dependency versions at the time of the 1.8.0 release due to
+    com.google.oauth-client and com.google.api-client dropping support of
+    GoogleOAuth OAuth1.0a authorization flows.
+
+1.8.0 - 08/23/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - Added support for v1.19.
+  - Added OAuth2 support, which is only supported in DFA API v1.19 and later.
+    OAuth2 tokens will be refreshed when they expire by default. This behavior
+    can be disabled by setting the "api.dfa.refreshOAuth2Token" key in your
+    ads.properties to "false".
+
+DFP:
+  - Added support for v201208.
+
+Common:
+  - No changes.
+
+1.7.2 - 08/13/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Updated generated java for all versions.
+
+Common:
+  - No changes.
+
+1.7.1 - 08/10/2012
+------------------
+AdWords:
+  - Fixed issue 20.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+1.7.0 - 08/09/2012
+------------------
+AdWords:
+  - com.google.api.ads.adwords.lib.factory.AdWordsServices is now deprecated.
+    Use com.google.api.ads.adwords.axis.factory.AdWordsServices or
+    com.google.api.ads.adwords.jaxws.factory.AdWordsServices instead.
+    We plan to remove this deprecated class in the future.
+
+DFA:
+  - com.google.api.ads.dfa.lib.factory.DfaServices is now deprecated. Use
+    com.google.api.ads.dfa.axis.factory.DfaServices instead.
+    We plan to remove this deprecated class in the future.
+
+DFP:
+  - com.google.api.ads.dfp.lib.factory.DfpServices class is now deprecated. Use
+    com.google.api.ads.dfp.axis.factory.DfpServices or
+    com.google.api.ads.dfp.jaxws.factory.DfpServices instead.
+    We plan to remove this deprecated class in the future.
+
+Common:
+  - Fixes Issue 17 - Usage of the Reflections toolkit can be avoided entirely by
+    using the new Services classes mentioned above.
+
+1.6.0 - 07/20/2012
+------------------
+AdWords:
+  - Adding support for v201206.
+  - Adding CustomerService and ManagedCustomerService to v201109 and v201109_1.
+  - Report downloads now toolkit agnostic.
+  - Adding support for AWQL in reports and examples.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Fixed issue where environment/endpoint was not optional if supplied via
+    builder. Environment/endpoint is now optional in properties and builder and
+    defaults to https://www.google.com.
+  - Deprecated withEnvironment/isEnvironment from DfpSession and
+    api.dfp.environment from ads.properties.
+
+Common:
+  - No changes.
+
+1.5.0 - 07/03/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201206.
+  - Changed suggested page size to 500 for utilities for v201206+.
+  - Fix for issue 14 - JaxWs PQL utils row conversion fails.
+
+Common:
+  - No changes.
+
+1.4.0 - 06/19/2012
+------------------
+AdWords:
+  - Added ability to have library automatically refresh 'offline' OAuth2 tokens.
+    This can be disabled by setting the "api.adwords.refreshOAuth2Token" key
+    in your ads.properties to "false".
+  - Updated user-agent.
+  - The AdWordsAxisHeaderHandler class has been moved from the
+    com.google.api.ads.adwords.lib.client package into the
+    com.google.api.ads.adwords.axis package. Correspondingly, it has been moved
+    from the ads_lib Maven artifact to the adwords_axis artifact.
+  - The AdWordsJaxWsHeaderHandler class has been moved from the
+    com.google.api.ads.adwords.lib.client package into the
+    com.google.api.ads.adwords.jaxws package. Correspondingly, it has been moved
+    from the ads_lib Maven artifact to the adwords_appengine artifact.
+
+DFA:
+  - Updated user-agent.
+  - The DfaAxisHeaderHandler class has been moved from the
+    com.google.api.ads.dfa.lib.client package into the
+    com.google.api.ads.dfa.axis package. Correspondingly, it has been moved
+    from the ads_lib Maven artifact to the dfa_axis artifact.
+  - The LoginTokensHelper class is now an interface. A concrete implementation
+    is now in the dfa_axis artifact.
+
+DFP:
+  - Removed references to sandbox environment. To test the DFP API, use
+    test networks which use the production environment. See
+    https://developers.google.com/doubleclick-publishers/docs/environments
+  - Added ability to have library automatically refresh 'offline' OAuth2 tokens.
+    This can be disabled by setting the "api.dfp.refreshOAuth2Token" key
+    in your ads.properties to "false".
+  - Updated user-agent.
+  - The DfpAxisHeaderHandler class has been moved from the
+    com.google.api.ads.dfp.lib.client package into the
+    com.google.api.ads.dfp.axis package. Correspondingly, it has been moved
+    from the ads_lib Maven artifact to the dfp_axis artifact.
+  - The DfpJaxWsHeaderHandler class has been moved from the
+    com.google.api.ads.dfp.lib.client package into the
+    com.google.api.ads.dfp.jaxws package. Correspondingly, it has been moved
+    from the ads_lib Maven artifact to the dfp_appengine artifact.
+
+Common:
+  - fromFile() methods will now throw a checked ConfigurationLoadException. This
+    may require a code change depending on how you called the method.
+
+1.3.0 - 05/18/2012
+------------------
+AdWords:
+  - Added support for OAuth2.
+  - Added support for v201109_1.
+  - AdHocReportDownloadHelper now encapsulates core download logic.
+  - Added AppEngine (JAX-WS) support for report downloads.
+  - Added logging to report downloads.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for OAuth2.
+
+1.2.1 - 05/15/2012
+------------------
+All:
+  - Updates to Maven poms to make building more efficient.
+  - Autogenerated code is now committed to git repository.
+
+1.2.0 - 05/14/2012
+------------------
+AdWords:
+  - Added experimental OAuth2 support and example.
+  - Added setters for authentication mechanisms to AdWordsSession. Setting one
+    type will null out other types.
+
+DFA:
+  - Support for v1.18 added to the DFA library.
+  - Removed support for v1.16.
+
+DFP:
+  - No changes.
+
+1.1.0 - 05/08/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201204.
+  - Added experimental OAuth2 support and example.
+  - Added setters for authentication mechanisms to DfpSession. Setting one type
+    will null out other types.
+  - Modified DateTime utilities to have a cleaner API and work with Calendar
+    instead of Date. The internals have been refactored to use joda.
+
+Common:
+  - Added logic to increase default timeout for App Engine requests to 10
+    minutes in the JAX-WS message context instead of 10 second default.
+    Issue # 9, 10.
+  - Added methods in the Media utility class to save media data to the file
+    system.
+
+1.0.1 - 04/20/2012
+------------------
+AdWords:
+  - Added support for v201109 BudgetOrderService.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added examples for InventoryService.
+  - Added StatementBuilder.removeLimitAndOffset().
+
+Common:
+  - Refactored ClientLoginTokens to use a Builder.
+    - Deprecated older way of creating tokens.
+  - Fixed issue 6.
+
+1.0.0 - 03/30/2012
+------------------
+AdWords:
+  - Environments specified in a properties file pulled in by
+    AdWordsSession.Builder's fromFile method can now be overridden by subsequent
+    calls to setEndpoint and/or setEnvironment.
+
+DFA:
+  - Removed support for v1.15.
+  - Environments specified in a properties file pulled in by
+    DfaSession.Builder's fromFile method can now be overridden by subsequent
+    calls to setEndpoint and/or setEnvironment.
+
+DFP:
+  - Added utilities such as Dates, DateTimes, Pql, ReportDownloader, and
+    StatementBuilder.
+  - Added support for v201203.
+  - Removed SANDBOX environment from DfpSession. Test networks are now the
+    preferred way of testing:
+    https://developers.google.com/doubleclick-publishers/docs/signup
+  - Fixed OAuth issues (request URL not set correctly).
+  - Environments specified in a properties file pulled in by
+    DfpSession.Builder's fromFile method can now be overridden by subsequent
+    calls to setEndpoint and/or setEnvironment.
+
+Common:
+  - Choices, CsvFiles, Maps, Media, and Streams made static.
+
+0.5.1 - 03/02/2012
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updated ClientLoginTokens to work on AppEngine.  See Issue #2.
+
+0.5.0 - 02/18/2012
+------------------
+AdWords:
+  - The packages containing autogenerated classes from Apache Axis have changed.
+    Ex. com.google.api.ads.adwords.{version} is now
+    com.google.api.ads.adwords.axis.{version}
+  - Added support for using the JAX-WS toolkit, which allows the AdWords library
+    to be used on Google's App Engine.
+  - Image, Map and Choice utilities have now been moved to common and made
+    non static
+DFA:
+  - The packages containing autogenerated classes from Apache Axis have changed.
+    Ex. com.google.api.ads.dfa.{version} is now
+    com.google.api.ads.dfa.axis.{version}
+  - Support for v1.17 added to the DFA library.
+  - dfa-api.properties file and DfaSession.Environment class both changed to use
+    HTTPS addresses.
+  - Fixed a bug which was preventing calls to the strategy service from
+    succeeding.
+
+DFP:
+  - Added v201201 support.
+  - The packages containing autogenerated classes from Apache Axis have changed.
+    Ex. com.google.api.ads.dfp.{version} is now
+    com.google.api.ads.dfp.axis.{version}
+  - Added support for using the JAX-WS toolkit, which allows the DFP library
+    to be used on Google's App Engine.
+  - Image, Map and Choice utilities have now been moved to common and made
+    non static
+
+0.4.0 - 12/29/2011
+------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Initial library release.
+
+0.3.0 - 12/28/2011
+------------------
+DFA:
+  - Support for DFA API v1.16 added to the DFA library.
+  - Improvements to the AdWords library were applied to the DFA library:
+    - DfaUser and DfaServiceSession were collapsed into one class, DfaSession.
+    - DfaServices can no longer be used statically and must be instantiated.
+    - Credentials and settings for the library were moved from the
+      dfa.properties file to the ads.properties file. Additionally, this file
+      may now be located in the user's home directory, in the current directory,
+      or in the classpath.
+    - The endpoint server can no longer be passed to DfaServices. It must now be
+      set on the DfaSession.
+  - The DFA library can now generate tokens against the test environment if this
+    environment is set on the DfaSession.
+  - dfa-build.properties file removed.
+
+AdWords:
+  - adwords-build.properties file removed.
+
+0.2.0 - 12/22/2011
+------------------
+DFA:
+  - No changes.
+
+AdWords:
+  - Initial library release.
+
+0.1.0 - 9/26/2011
+-----------------
+DFA:
+  - Initial library release.

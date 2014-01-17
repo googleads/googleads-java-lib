@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- Build file for Dfp JAX-WS code generation and packaging.            -->
+<!-- ======================================================================= -->
+<project basedir="." default="" name="ads-api-dfp-jaxws">
+  <property name="lib.root" location="../.." />
+  <import file="${lib.root}/common_ant/common.ant.xml" />
+  <import file="${lib.root}/common_ant/common-generate-jaxws.ant.xml" />
+
+  <property name="api.name" value="dfp" />
+  <property name="api.framework" value="jaxws" />
+  <property name="api.lib.dir" location="${modules.dir}/ads_lib" />
+  <property name="api.properties.file"
+      value="${api.lib.dir}/src/main/java/com/google/api/ads/dfp/lib/conf/props/dfp-api.properties" />
+
+  <!-- Directories -->
+  <property name="src.dir" value="${basedir}/src/main/java" />
+
+  <!-- ===================================================================== -->
+  <!-- Target: Loads the API properties and creates the src directory.       -->
+  <!-- ===================================================================== -->
+  <target name="init">
+    <mkdir dir="${src.dir}" />
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- Target: Generates code for this API and framework.                    -->
+  <!-- ===================================================================== -->
+  <target name="generate-java" depends="init">
+    <generate-java-for-all-versions properties.loc="${api.properties.file}"
+        api.name="${api.name}" src.output.dir="${src.dir}" />
+  </target>
+</project>
