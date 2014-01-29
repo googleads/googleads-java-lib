@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- Build file containing macros for code generatation.                     -->
+<!-- ======================================================================= -->
+<project name="common-generate">
+  <import file="common.ant.xml"/>
+
+  <taskdef name="xjc" classpathref="classpath.common"
+      classname="com.sun.tools.xjc.XJCTask" />
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Generates the code for an @api.name and @api.framework by      -->
+  <!-- calling the generate-java task in the                                 -->
+  <!-- @api.name-@api.framework/build.xml                                    -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-api-and-framework">
+    <attribute name="api.name"/>
+    <attribute name="api.framework"/>
+    <sequential>
+      <ant dir="${modules.dir}/@{api.name}-@{api.framework}"
+          target="generate-java"/>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Generates the code for all @versions of an @api.name.          -->
+  <!-- Called. from within a framework's build.xml.                          -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-all-versions-of-an-api">
+    <attribute name="api.name"/>
+    <attribute name="src.output.dir"/>
+    <sequential>
+      <for list="${api.@{api.name}.versions}" param="version">
+        <sequential>
+          <generate-java-for-version-of-an-api
+              api.name="@{api.name}" version="@{version}"
+              src.output.dir="@{src.output.dir}"/>
+        </sequential>
+      </for>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Generates the java for a @{version}.                           -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-version-of-an-api">
+    <attribute name="api.name"/>
+    <attribute name="version"/>
+    <attribute name="src.output.dir"/>
+    <sequential>
+      <generate-java-for-all-services-of-a-version
+          api.name="@{api.name}"
+          version="@{version}"
+          services="${api.@{api.name}.version.@{version}.services}"
+          src.output.dir="@{src.output.dir}"/>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro(abstract): Generates the java for all                           -->
+  <!-- @{group.services} of a @{version}.                                    -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-all-services-of-a-version">
+    <attribute name="api.name"/>
+    <attribute name="version"/>
+    <attribute name="services"/>
+    <attribute name="src.output.dir"/>
+    <sequential/>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro(abstract): Must be overriden by each framework to determine how -->
+  <!-- code should be generated for each @api.service.wsdl.url               -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-service">
+    <attribute name="namespacemapping"/>
+    <attribute name="version.package.default"/>
+    <attribute name="service"/>
+    <attribute name="service.wsdl.url"/>
+    <attribute name="service.package"/>
+    <attribute name="src.output.dir"/>
+    <sequential/>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Loads API properties for an @api.name.                         -->
+  <!-- ===================================================================== -->
+  <macrodef name="load-api-properties">
+    <attribute name="api.name"/>
+    <attribute name="api.properties.file"/>
+    <sequential>
+      <property name="api.lib.dir" location="${modules.dir}/@{api.name}_lib"/>
+      <loadproperties srcFile="@{api.properties.file}"/>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Generates the code for all @versions of an @api.name.          -->
+  <!-- Called. from within a framework's build.xml.                          -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-jaxb-java-for-all-versions-of-an-api">
+    <attribute name="api.name"/>
+    <attribute name="src.output.dir"/>
+    <attribute name="schemaKey"/>
+    <sequential>
+      <for list="${api.@{api.name}.versions}" param="version">
+        <sequential>
+          <generate-jaxb-java-for-version-of-an-api
+              api.name="@{api.name}" version="@{version}"
+              src.output.dir="@{src.output.dir}" schemaKey="@{schemaKey}" />
+        </sequential>
+      </for>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Generates the jaxb java for a @{version}.                           -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-jaxb-java-for-version-of-an-api">
+    <attribute name="api.name"/>
+    <attribute name="version"/>
+    <attribute name="src.output.dir"/>
+    <attribute name="schema.url"/>
+    <sequential>
+      <xjc schema="@{schema.url}"
+          destdir="@{src.output.dir}">
+        <arg value="-p" />
+        <arg value="com.google.api.ads.@{api.name}.lib.jaxb.@{version}"/>
+      </xjc>
+    </sequential>
+  </macrodef>
+</project>

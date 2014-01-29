@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- Build file containing macros for code generatation for DFA.             -->
+<!-- ======================================================================= -->
+<project name="common-generate-dfa">
+  <!-- ===================================================================== -->
+  <!-- Macro(override): Generates the java for all                           -->
+  <!-- @{group.services} of a @{version}.                                    -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-all-services-of-a-version">
+    <attribute name="api.name"/>
+    <attribute name="version"/>
+    <attribute name="services"/>
+    <attribute name="src.output.dir"/>
+    <sequential>
+      <for list="@{services}" param="service">
+        <sequential>
+          <generate-java-for-service
+              service="@{service}"
+              namespacemapping=
+                  "${api.@{api.name}.version.@{version}.namespacemapping}"
+              version.package.default=
+                  "${api.@{api.name}.version.@{version}.defaultpackage}"
+              service.package=
+                  "${api.@{api.name}.package.prefix}.@{version}"
+              service.wsdl.url=
+                  "${api.@{api.name}.server.default}/${api.@{api.name}.version.@{version}.servername}/api/dfa-api/@{service}${api.@{api.name}.wsdl.postfix}"
+              src.output.dir="@{src.output.dir}"/>
+        </sequential>
+      </for>
+    </sequential>
+  </macrodef>
+</project>
