@@ -111,9 +111,13 @@ public interface ForecastServiceInterface {
      *         values will result in
      *         {@link ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
      *         
-     *         @param lineItem the target of the forecast. Must be a prospective line item
-     *         that has not yet been booked in the system. i.e. {@link LineItem#id}
-     *         must be null.
+     *         @param lineItem the target of the forecast. If {@link LineItem#id} is null
+     *         or no line item exists with that ID, a forecast is computed for the
+     *         the subject, predicting what would happen if it were added to the
+     *         system. If a line item already exists with {@link LineItem#id}, the
+     *         forecast is computed for the subject, predicting what would happen
+     *         if the existing line item's settings were modified to match the
+     *         subject.
      *         @return the forecasted traffic estimates
      *       
      * 

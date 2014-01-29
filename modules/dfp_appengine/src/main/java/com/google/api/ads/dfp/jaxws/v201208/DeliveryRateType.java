@@ -38,7 +38,7 @@ public enum DeliveryRateType {
     /**
      * 
      *                 Line items are served more aggressively in the beginning of the flight
-     *                 date. This option is only available for premium publishers.
+     *                 date.
      *               
      * 
      */

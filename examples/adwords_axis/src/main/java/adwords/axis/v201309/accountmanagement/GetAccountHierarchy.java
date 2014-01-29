@@ -15,6 +15,7 @@
 package adwords.axis.v201309.accountmanagement;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomerLink;
@@ -76,8 +77,9 @@ public class GetAccountHierarchy {
         adWordsServices.get(session, ManagedCustomerServiceInterface.class);
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[]{"Login", "CustomerId",  "Name"});
+    Selector selector = new SelectorBuilder()
+        .fields("Login", "CustomerId", "Name")
+        .build();
 
     // Get results.
     ManagedCustomerPage page = managedCustomerService.get(selector);

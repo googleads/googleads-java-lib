@@ -15,6 +15,7 @@
 package adwords.axis.v201309.accountmanagement;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.ch.AdGroupChangeData;
 import com.google.api.ads.adwords.axis.v201309.ch.CampaignChangeData;
 import com.google.api.ads.adwords.axis.v201309.ch.ChangeStatus;
@@ -80,8 +81,9 @@ public class GetAccountChanges {
 
     // Get a list of all campaign IDs.
     List<Long> campaignIds = new ArrayList<Long>();
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id"});
+    Selector selector = new SelectorBuilder()
+        .fields("Id")
+        .build();
     CampaignPage campaigns = campaignService.get(selector);
     if (campaigns.getEntries() != null) {
       for (Campaign campaign : campaigns.getEntries()) {

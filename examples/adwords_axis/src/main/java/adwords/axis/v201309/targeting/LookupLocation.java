@@ -15,11 +15,10 @@
 package adwords.axis.v201309.targeting;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Location;
 import com.google.api.ads.adwords.axis.v201309.cm.LocationCriterion;
 import com.google.api.ads.adwords.axis.v201309.cm.LocationCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -88,16 +87,20 @@ public class LookupLocation {
     LocationCriterionServiceInterface locationCriterionService =
         adWordsServices.get(session, LocationCriterionServiceInterface.class);
 
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "LocationName", "CanonicalName", "DisplayType",
-        "ParentLocations", "Reach", "TargetingStatus"});
-
-    selector.setPredicates(new Predicate[] {
-        // Location names must match exactly, only EQUALS and IN are
-        // supported.
-        new Predicate("LocationName", PredicateOperator.IN, locationNames),
+    Selector selector = new SelectorBuilder()
+        .fields(
+            "Id",
+            "LocationName",
+            "CanonicalName",
+            "DisplayType",
+            "ParentLocations",
+            "Reach",
+            "TargetingStatus")
+        // Location names must match exactly, only EQUALS and IN are supported.
+        .in("LocationName", locationNames)
         // Set the locale of the returned location names.
-        new Predicate("Locale", PredicateOperator.EQUALS, new String[] {"en"})});
+        .equals("Locale", "en")
+        .build();
 
     // Make the get request.
     LocationCriterion[] locationCriteria = locationCriterionService.get(selector);

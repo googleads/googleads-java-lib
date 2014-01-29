@@ -14,19 +14,18 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.v201306.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201306.cm.AdExtension;
-import com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverride;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201306.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignAdExtension;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201306.cm.Criterion;
-import com.google.api.ads.adwords.axis.v201306.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201306.cm.Experiment;
-import com.google.api.ads.adwords.axis.v201306.cm.NegativeCampaignCriterion;
+import com.google.api.ads.adwords.axis.v201309.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201309.cm.AdExtension;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignAdExtension;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201309.cm.Criterion;
+import com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201309.cm.Experiment;
+import com.google.api.ads.adwords.axis.v201309.cm.NegativeCampaignCriterion;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
@@ -98,7 +97,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> remove is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201306.cm.CampaignServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.cm.CampaignServiceInterface}.</p>
    *
    * @return the updated ExtendedCampaign
    * @throws RemoteException for communication-related exceptions
@@ -372,64 +371,6 @@ public final class ExtendedCampaign {
   }
 
   /**
-   * Gets the AdExtensionOverrides for the ExtendedCampaign's Campaign.
-   *
-   * @return all the AdExtensionOverrides for the ExtendedCampaign's Campaign
-   * @throws RemoteException for communication-related exceptions
-   */
-  public List<AdExtensionOverride> getAdExtensionOverrides() throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().getByCampaignId(campaign.getId());
-  }
-
-  /**
-   * Inserts the AdExtensionOverrides into the ExtendedCampaign's Campaign.
-   *
-   * @param adExtensionOverrides the list of AdExtensionOverride to insert
-   * @return the updated list of AdExtensionOverrides
-   * @throws RemoteException for communication-related exceptions
-   */
-  public List<AdExtensionOverride> insertAdExtensionOverrides(
-      List<AdExtensionOverride> adExtensionOverrides) throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().insert(adExtensionOverrides);
-  }
-
-  /**
-   * Inserts the AdExtensionOverride into the ExtendedCampaign's Campaign.
-   *
-   * @param adExtensionOverride the AdExtensionOverride to insert
-   * @return the updated AdExtensionOverride
-   * @throws RemoteException for communication-related exceptions
-   */
-  public AdExtensionOverride insertAdExtensionOverride(AdExtensionOverride adExtensionOverride)
-      throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().insert(adExtensionOverride);
-  }
-
-  /**
-   * Removes the AdExtensionOverrides from the ExtendedCampaign's Campaign.
-   *
-   * @param adExtensionOverrides the list of AdExtensionOverrides to remove
-   * @return the updated list of AdExtensionOverrides
-   * @throws RemoteException for communication-related exceptions 
-   */
-  public List<AdExtensionOverride> removeAdExtensionOverrides(
-      List<AdExtensionOverride> adExtensionOverrides) throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().remove(adExtensionOverrides);
-  }
-
-  /**
-   * Removes the AdExtensionOverride from the ExtendedCampaign's Campaign.
-   *
-   * @param adExtensionOverride the AdExtensionOverride to remove
-   * @return the updated AdExtensionOverride
-   * @throws RemoteException for communication-related exceptions
-   */
-  public AdExtensionOverride removeAdExtensionOverride(AdExtensionOverride adExtensionOverride)
-      throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().remove(adExtensionOverride);
-  }
-
-  /**
    * Gets the Experiments for the ExtendedCampaign's Campaign.
    *
    * @return all the Experiments for the ExtendedCampaign's Campaign
@@ -466,7 +407,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201306.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiments the list of Experiments to update
    * @return the updated list of Experiments
@@ -481,7 +422,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201306.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiment the Experiment to update
    * @return the updated Experiment

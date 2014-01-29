@@ -10,6 +10,6 @@ package com.google.api.ads.dfa.axis.v1_20;
 public interface CreativeGroupRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.CreativeGroupSaveResult saveCreativeGroup(com.google.api.ads.dfa.axis.v1_20.CreativeGroup creativeGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void deleteCreativeGroup(long creativeGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.CreativeGroupRecordSet getCreativeGroups(com.google.api.ads.dfa.axis.v1_20.CreativeGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeGroup getCreativeGroup(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.CreativeGroupRecordSet getCreativeGroups(com.google.api.ads.dfa.axis.v1_20.CreativeGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

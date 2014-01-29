@@ -15,12 +15,10 @@
 package adwords.axis.v201309.targeting;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionPage;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -71,12 +69,20 @@ public class GetCampaignTargetingCriteria {
     int offset = 0;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"CampaignId", "Id", "CriteriaType", "PlatformName",
-        "LanguageName", "LocationName", "KeywordText"});
-    selector.setPredicates(new Predicate[] {new Predicate("CriteriaType", PredicateOperator.IN,
-        new String[] {"KEYWORD", "LANGUAGE", "LOCATION", "PLATFORM"})});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields(
+            "CampaignId",
+            "Id",
+            "CriteriaType",
+            "PlatformName",
+            "LanguageName",
+            "LocationName",
+            "KeywordText")
+        .in("CriteriaType", "KEYWORD", "LANGUAGE", "LOCATION", "PLATFORM")
+        .offset(0)
+        .limit(PAGE_SIZE)
+        .build();
 
     CampaignCriterionPage page = null;
     do {
@@ -94,7 +100,7 @@ public class GetCampaignTargetingCriteria {
         System.out.println("No campaign criteria were found.");
       }
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
     } while (offset < page.getTotalNumEntries());
   }
 }

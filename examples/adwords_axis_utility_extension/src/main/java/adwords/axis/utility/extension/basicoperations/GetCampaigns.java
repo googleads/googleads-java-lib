@@ -15,7 +15,7 @@
 package adwords.axis.utility.extension.basicoperations;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201306.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
 
 import java.util.List;
 

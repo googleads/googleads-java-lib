@@ -80,7 +80,7 @@ public class GetKeywords {
 
     // Create selector.
     Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "AdGroupId", "MatchType", "KeywordText"});
+    selector.setFields(new String[] {"Id", "AdGroupId", "KeywordMatchType", "KeywordText"});
     selector.setOrdering(new OrderBy[] {new OrderBy("AdGroupId", SortOrder.ASCENDING)});
     selector.setPaging(new Paging(offset, PAGE_SIZE));
 

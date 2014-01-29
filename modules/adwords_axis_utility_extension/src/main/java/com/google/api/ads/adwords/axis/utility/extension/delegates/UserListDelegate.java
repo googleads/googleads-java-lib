@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201306.rm.AdwordsUserListServiceInterface;
-import com.google.api.ads.adwords.axis.v201306.rm.UserList;
-import com.google.api.ads.adwords.axis.v201306.rm.UserListOperation;
+import com.google.api.ads.adwords.axis.v201309.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.axis.v201309.rm.UserList;
+import com.google.api.ads.adwords.axis.v201309.rm.UserListOperation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

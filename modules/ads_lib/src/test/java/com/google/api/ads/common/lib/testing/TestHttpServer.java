@@ -14,11 +14,11 @@
 
 package com.google.api.ads.common.lib.testing;
 
-import com.google.common.base.Charsets;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
-
 import org.openqa.selenium.net.PortProber;
 
 import org.mortbay.http.HttpContext;
@@ -33,7 +33,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
-
 
 /**
  * HTTP server used to verify requests and send mocked responses.
@@ -161,13 +160,13 @@ public class TestHttpServer {
         public InputStream openStream() throws IOException {
           return request.getInputStream();
         }
-      }.asCharSource(Charsets.UTF_8).read());
+      }.asCharSource(UTF_8).read());
 
       new ByteSink() {
         public OutputStream openStream() {
           return response.getOutputStream();
         }
-      }.asCharSink(Charsets.UTF_8).write(mockResponseBodies.get(numInteractions++));
+      }.asCharSink(UTF_8).write(mockResponseBodies.get(numInteractions++));
 
       return getContext(getServerUrl());
     }

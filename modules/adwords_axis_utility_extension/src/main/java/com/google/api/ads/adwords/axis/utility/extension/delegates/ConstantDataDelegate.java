@@ -15,15 +15,15 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
-import com.google.api.ads.adwords.axis.v201306.cm.AgeRange;
-import com.google.api.ads.adwords.axis.v201306.cm.Carrier;
-import com.google.api.ads.adwords.axis.v201306.cm.ConstantDataServiceInterface;
-import com.google.api.ads.adwords.axis.v201306.cm.CriterionUserInterest;
-import com.google.api.ads.adwords.axis.v201306.cm.Gender;
-import com.google.api.ads.adwords.axis.v201306.cm.Language;
-import com.google.api.ads.adwords.axis.v201306.cm.MobileDevice;
-import com.google.api.ads.adwords.axis.v201306.cm.OperatingSystemVersion;
-import com.google.api.ads.adwords.axis.v201306.cm.Vertical;
+import com.google.api.ads.adwords.axis.v201309.cm.AgeRange;
+import com.google.api.ads.adwords.axis.v201309.cm.Carrier;
+import com.google.api.ads.adwords.axis.v201309.cm.ConstantDataServiceInterface;
+import com.google.api.ads.adwords.axis.v201309.cm.CriterionUserInterest;
+import com.google.api.ads.adwords.axis.v201309.cm.Gender;
+import com.google.api.ads.adwords.axis.v201309.cm.Language;
+import com.google.api.ads.adwords.axis.v201309.cm.MobileDevice;
+import com.google.api.ads.adwords.axis.v201309.cm.OperatingSystemVersion;
+import com.google.api.ads.adwords.axis.v201309.cm.Vertical;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

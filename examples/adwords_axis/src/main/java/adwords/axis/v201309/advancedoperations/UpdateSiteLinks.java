@@ -15,6 +15,7 @@
 package adwords.axis.v201309.advancedoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AttributeFieldMapping;
 import com.google.api.ads.adwords.axis.v201309.cm.Feed;
 import com.google.api.ads.adwords.axis.v201309.cm.FeedAttribute;
@@ -32,8 +33,6 @@ import com.google.api.ads.adwords.axis.v201309.cm.FeedOperation;
 import com.google.api.ads.adwords.axis.v201309.cm.FeedReturnValue;
 import com.google.api.ads.adwords.axis.v201309.cm.FeedServiceInterface;
 import com.google.api.ads.adwords.axis.v201309.cm.Operator;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -100,12 +99,11 @@ public class UpdateSiteLinks {
   public static void runExample(AdWordsServices adWordsServices, AdWordsSession session,
       Long feedId, Map<Long, String[]> feedItemDescriptions) throws Exception {
     FeedServiceInterface feedService = adWordsServices.get(session, FeedServiceInterface.class);
-    Selector selector = new Selector();
-    // Do not include "Attributes" because you do not want to pass existing
-    // attributes into the subsequent mutate (SET) call.
-    selector.setFields(new String[] {"Id", "Attributes"});
-    selector.setPredicates(new Predicate[] {
-        new Predicate("Id", PredicateOperator.EQUALS, new String[] {feedId.toString()})});
+
+    Selector selector = new SelectorBuilder()
+        .fields("Id", "Attributes")
+        .equalsId(feedId)
+        .build();
     Feed feed = feedService.get(selector).getEntries()[0];
 
     // Add new attributes to the feed.
@@ -143,6 +141,8 @@ public class UpdateSiteLinks {
     line1Attribute.setName("Line 1 Description");
     line2Attribute.setType(FeedAttributeType.STRING);
     line2Attribute.setName("Line 2 Description");
+    
+    // Only include NEW attributes when adding attributes to a feed.
     feed.setAttributes(new FeedAttribute[] {line1Attribute, line2Attribute});
 
     FeedOperation feedOperation = new FeedOperation();
@@ -177,17 +177,15 @@ public class UpdateSiteLinks {
       Map<Long, String[]> feedItemDescriptions) throws Exception {
     FeedItemServiceInterface feedItemService =
         adWordsServices.get(session, FeedItemServiceInterface.class);
-    Selector itemSelector = new Selector();
-    itemSelector.setFields(new String[] {"FeedId", "FeedItemId", "AttributeValues"});
 
     List<String> feedItemIds = Lists.newArrayList(
         Iterables.transform(feedItemDescriptions.keySet(), Functions.toStringFunction()));
-    itemSelector.setPredicates(new Predicate[] {
+    Selector itemSelector = new SelectorBuilder()
+        .fields("FeedId", "FeedItemId", "AttributeValues")
         // Limit FeedItems to the feed.
-        new Predicate("FeedId", PredicateOperator.EQUALS, new String[] {feedId.toString()}),
+        .equalsId(feedId)
         // Limit FeedItems to the items in the feedItemDescriptions map.
-        new Predicate("FeedItemId", PredicateOperator.IN, feedItemIds.toArray(new String[0]))});
-
+        .in("FeedItemId", feedItemIds.toArray(new String[0])).build();
 
     FeedItem[] feedItems = feedItemService.get(itemSelector).getEntries();
 
@@ -242,11 +240,10 @@ public class UpdateSiteLinks {
       throws Exception {
     FeedMappingServiceInterface mappingService =
         adWordsServices.get(session, FeedMappingServiceInterface.class);
-    Selector selector = new Selector();
-    selector.setFields(
-        new String[] {"FeedId", "FeedMappingId", "PlaceholderType", "AttributeFieldMappings"});
-    selector.setPredicates(new Predicate[] {
-        new Predicate("FeedId", PredicateOperator.EQUALS, new String[] {feedId.toString()})});
+    Selector selector = new SelectorBuilder()
+        .fields("FeedId", "FeedMappingId", "PlaceholderType", "AttributeFieldMappings")
+        .equalsId(feedId)
+        .build();
 
     FeedMapping feedMapping = mappingService.get(selector).getEntries()[0];
 

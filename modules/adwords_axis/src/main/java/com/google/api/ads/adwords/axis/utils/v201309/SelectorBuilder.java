@@ -258,23 +258,23 @@ public class SelectorBuilder {
   }
 
   /**
-   * Adds the predicate <b>by</b> to the selector for the given field and value.
+   * Adds the predicate <b>equals</b> to the selector for the given field and value.
    *
    * @param propertyValue the property value as a String independently of the field type. The caller
    *        should take care of the formatting if it is necessary
    * @return the builder itself to proceed the chain.
    */
-  public SelectorBuilder by(String field, String propertyValue) {
+  public SelectorBuilder equals(String field, String propertyValue) {
     return this.singleValuePredicate(field, propertyValue, PredicateOperator.EQUALS);
   }
 
   /**
-   * Adds the predicate <b>not by</b> to the selector for the given field and value.
+   * Adds the predicate <b>not equals</b> to the selector for the given field and value.
    *
    * @param propertyValue the property value as a String independently of the field type. The caller
    *        should take care of the formatting if it is necessary
    */
-  public SelectorBuilder notBy(String field, String propertyValue) {
+  public SelectorBuilder notEquals(String field, String propertyValue) {
     return this.singleValuePredicate(field, propertyValue, PredicateOperator.NOT_EQUALS);
   }
 
@@ -386,13 +386,13 @@ public class SelectorBuilder {
   }
 
   /**
-   * Adds the predicate <b>BY</b> to the selector for the entity Id and the given id value.
+   * Adds the predicate <b>equals</b> to the selector for the entity Id and the given id value.
    *
    * @param id the ID of the current entity. This field represents different values for different
    *        entity types
    * @return the builder itself to proceed the chain.
    */
-  public SelectorBuilder byId(Long id) {
+  public SelectorBuilder equalsId(Long id) {
     return this.singleValuePredicate(ID_PROPERTY, id.toString(), PredicateOperator.EQUALS);
   }
 

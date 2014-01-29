@@ -59,6 +59,8 @@ public class PqlTest {
   private NumberValue numberValue1;
   private NumberValue numberValue2;
   private NumberValue numberValue3;
+  private NumberValue numberValue4;
+  private NumberValue numberValue5;
   private DateValue dateValue1;
   private DateTimeValue dateTimeValue1;
 
@@ -104,6 +106,12 @@ public class PqlTest {
 
     numberValue3 = new NumberValue();
     numberValue3.setValue("-1");
+    
+    numberValue4 = new NumberValue();
+    numberValue4.setValue("");
+    
+    numberValue5 = new NumberValue();
+    numberValue5.setValue(null);
 
     dateTime1 = new DateTime();
     date1 = new Date();
@@ -122,6 +130,7 @@ public class PqlTest {
     dateValue1 = new DateValue();
     dateValue1.setValue(date1);
   }
+
   @Test
   public void testToString() {
     assertEquals("value1", Pql.toString(textValue1));
@@ -151,6 +160,9 @@ public class PqlTest {
     assertEquals(false, Pql.getApiValue(booleanValue1));
     assertEquals(1L, Pql.getApiValue(numberValue1));
     assertEquals(1.02, Pql.getApiValue(numberValue2));
+    assertEquals(-1L, Pql.getApiValue(numberValue3));
+    assertEquals(null, Pql.getApiValue(numberValue4));
+    assertEquals(null, Pql.getApiValue(numberValue5));
     assertEquals(dateTime1, Pql.getApiValue(dateTimeValue1));
     assertEquals(date1, Pql.getApiValue(dateValue1));
     assertNull(Pql.getApiValue(new TextValue()));
@@ -162,6 +174,9 @@ public class PqlTest {
     assertEquals(false, Pql.getNativeValue(booleanValue1));
     assertEquals(1L, Pql.getNativeValue(numberValue1));
     assertEquals(1.02, Pql.getNativeValue(numberValue2));
+    assertEquals(-1L, Pql.getNativeValue(numberValue3));
+    assertEquals(null, Pql.getNativeValue(numberValue4));
+    assertEquals(null, Pql.getNativeValue(numberValue5));
     assertEquals(DateTimes.toDateTime(dateTimeValue1.getValue()),
         Pql.getNativeValue(dateTimeValue1));
     assertEquals("2012-12-02", Pql.getNativeValue(dateValue1));

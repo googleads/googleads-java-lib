@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for deleting {@link Order} objects.
+ *             The action used for deleting {@link Order} objects. All line items within
+ *             that order are also deleted. Orders can only be deleted if none of its line
+ *             items have been eligible to serve. This action can be used to delete
+ *             proposed orders and line items if they are no longer valid.
  *           
  * 
  * <p>Java class for DeleteOrders complex type.

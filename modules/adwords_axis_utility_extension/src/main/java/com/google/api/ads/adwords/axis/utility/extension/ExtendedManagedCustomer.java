@@ -16,24 +16,23 @@ package com.google.api.ads.adwords.axis.utility.extension;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201306.billing.BillingAccount;
-import com.google.api.ads.adwords.axis.v201306.billing.BudgetOrder;
-import com.google.api.ads.adwords.axis.v201306.cm.AdExtensionOverride;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroupAd;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201306.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201306.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201306.cm.Budget;
-import com.google.api.ads.adwords.axis.v201306.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignAdExtension;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignStatus;
-import com.google.api.ads.adwords.axis.v201306.cm.Feed;
-import com.google.api.ads.adwords.axis.v201306.cm.FeedItem;
-import com.google.api.ads.adwords.axis.v201306.cm.FeedMapping;
-import com.google.api.ads.adwords.axis.v201306.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201309.billing.BillingAccount;
+import com.google.api.ads.adwords.axis.v201309.billing.BudgetOrder;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAd;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201309.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201309.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201309.cm.Budget;
+import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignAdExtension;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignStatus;
+import com.google.api.ads.adwords.axis.v201309.cm.Feed;
+import com.google.api.ads.adwords.axis.v201309.cm.FeedItem;
+import com.google.api.ads.adwords.axis.v201309.cm.FeedMapping;
+import com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.OAuthException;
@@ -353,18 +352,6 @@ public final class ExtendedManagedCustomer {
   }
 
   /**
-   * Gets the AdExtensionOverrides for the ExtendedManagedCustomer's
-   * ManagedCustomer.
-   *
-   * @return all the AdExtensionOverrides for the ExtendedManagedCustomer's
-   *         ManagedCustomer
-   * @throws RemoteException for communication-related exceptions
-   */
-  public List<AdExtensionOverride> getAdExtensionOverrides() throws RemoteException {
-    return delegateLocator.getAdExtensionOverrideDelegate().get();
-  }
-
-  /**
    * Gets the AdParams for the ExtendedManagedCustomer's ManagedCustomer.
    *
    * @return all the AdParams for the ExtendedManagedCustomer's ManagedCustomer
@@ -389,7 +376,7 @@ public final class ExtendedManagedCustomer {
    * Inserts the BudgetOrder into the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> insertBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to insert
    * @return the updated BudgetOrder
@@ -403,7 +390,7 @@ public final class ExtendedManagedCustomer {
    * Updates the BudgetOrder for the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> updateBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to update
    * @return the updated BudgetOrder
@@ -417,7 +404,7 @@ public final class ExtendedManagedCustomer {
    * Removes the BudgetOrder from the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> removeBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201306.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201309.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to remove
    * @return the updated BudgetOrder

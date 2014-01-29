@@ -108,7 +108,7 @@ public enum DimensionFilter {
     /**
      * 
      *                 Filters the results to include only {@link Order} objects that have their
-     *                 {@link Order#startDateTime} in the past.
+     *                 {@link Order#startDateTime} in the past and their {@link Order#endDateTime} in the future.
      *               
      * 
      */

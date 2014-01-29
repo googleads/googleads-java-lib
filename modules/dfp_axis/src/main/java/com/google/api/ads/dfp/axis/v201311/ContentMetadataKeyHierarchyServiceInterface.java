@@ -27,6 +27,10 @@ public interface ContentMetadataKeyHierarchyServiceInterface extends java.rmi.Re
      *         <td>{@code name}</td>
      *         <td>{@link ContentMetadataKeyHierarchy#name}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link ContentMetadataKeyHierarchy#status}</td>
+     *         </tr>
      *         </table>
      *         
      *         

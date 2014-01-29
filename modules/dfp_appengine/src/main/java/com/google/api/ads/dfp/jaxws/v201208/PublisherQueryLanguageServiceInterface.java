@@ -71,7 +71,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <li>County</li>
  *       <li>Department</li>
  *       <li>DMA_Region</li>
- *       <li>Governate</li>
+ *       <li>Governorate</li>
  *       <li>Municipality</li>
  *       <li>Postal_Code</li>
  *       <li>Prefecture</li>
@@ -79,6 +79,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <li>Region</li>
  *       <li>State</li>
  *       <li>Territory</li>
+ *       <li>Tv_Region</li>
  *       <li>Union_Territory</li>
  *       </ul>
  *       </td>
@@ -533,6 +534,16 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>Name</td><td><code>Text</code></td><td>The name of the ad unit.</td></tr>
  * <tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the ad unit's parent. Every ad unit has a parent except for the root ad unit, which is created by Google.</td></tr>
  * <tr><td>PartnerId</td><td><code>Number</code></td><td>The unique ID of the {@link Company}, which is of type {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}, to which this ad unit belongs.</td></tr>
+ * </table>
+ * <h4 id="User">User</h4>
+ * <table>
+ * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
+ * <tr><td>Email</td><td><code>Text</code></td><td>The email or login of the user.</td></tr>
+ * <tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the user that is meaningful to the publisher.</td></tr>
+ * <tr><td>Id</td><td><code>Number</code></td><td>The unique ID of the user.</td></tr>
+ * <tr><td>Name</td><td><code>Text</code></td><td>The name of the user.</td></tr>
+ * <tr><td>RoleId</td><td><code>Number</code></td><td>The unique role ID of the user. {@link Role} objects that are created by Google will have negative IDs.</td></tr>
+ * <tr><td>RoleName</td><td><code>Text</code></td><td>The name of the {@link Role} assigned to the user.</td></tr>
  * </table>
  *     
  * 

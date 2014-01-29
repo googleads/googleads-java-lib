@@ -14,7 +14,6 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.utility.extension.delegates.AdExtensionOverrideDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupAdDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupBidModifierDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupCriterionDelegate;
@@ -45,7 +44,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201306.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 
@@ -63,7 +62,6 @@ public final class DelegateLocator{
 
   private final AdWordsSession adWordsSession;
 
-  private volatile AdExtensionOverrideDelegate adExtensionOverrideDelegate;
   private volatile AdGroupAdDelegate adGroupAdDelegate;
   private volatile AdGroupCriterionDelegate adGroupCriterionDelegate;
   private volatile AdGroupBidModifierDelegate adGroupBidModifierDelegate;
@@ -142,7 +140,6 @@ public final class DelegateLocator{
    */
   public DelegateLocator(AdWordsSession adWordsSession,
       ManagedCustomerDelegate managedCustomerDelegate,
-      AdExtensionOverrideDelegate adExtensionOverrideDelegate,
       AdGroupAdDelegate adGroupAdDelegate,
       AdGroupBidModifierDelegate adGroupBidModifierDelegate,
       AdGroupCriterionDelegate adGroupCriterionDelegate,
@@ -173,7 +170,6 @@ public final class DelegateLocator{
       UserListDelegate userListDelegate) {
     this.adWordsSession = AdWordsSessionUtil.copyWithUtilityUserAgent(adWordsSession);
     this.managedCustomerDelegate = managedCustomerDelegate;
-    this.adExtensionOverrideDelegate = adExtensionOverrideDelegate;
     this.adGroupAdDelegate = adGroupAdDelegate;
     this.adGroupBidModifierDelegate = adGroupBidModifierDelegate;
     this.adGroupCriterionDelegate = adGroupCriterionDelegate;
@@ -328,20 +324,6 @@ public final class DelegateLocator{
       }
     }
     return adGroupCriterionDelegate;
-  }
-
-  /**
-   * Gets the AdExtensionOverrideDelegate associated with the{@code adWordsSession}.
-   */
-  public AdExtensionOverrideDelegate getAdExtensionOverrideDelegate() {
-    if (adExtensionOverrideDelegate == null) {
-      synchronized (this) {
-        if (adExtensionOverrideDelegate == null) {
-          adExtensionOverrideDelegate = new AdExtensionOverrideDelegate(adWordsSession);
-        }
-      }
-    }
-    return adExtensionOverrideDelegate;
   }
 
   /**

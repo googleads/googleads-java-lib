@@ -15,17 +15,13 @@
 package adwords.axis.v201309.misc;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Dimensions;
 import com.google.api.ads.adwords.axis.v201309.cm.Media;
 import com.google.api.ads.adwords.axis.v201309.cm.MediaPage;
 import com.google.api.ads.adwords.axis.v201309.cm.MediaServiceInterface;
 import com.google.api.ads.adwords.axis.v201309.cm.MediaSize;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -79,16 +75,14 @@ public class GetAllImagesAndVideos {
     int offset = 0;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"MediaId", "Width", "Height", "MimeType"});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-    selector.setOrdering(new OrderBy[] {new OrderBy("MediaId", SortOrder.ASCENDING)});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-
-    // Create predicates.
-    Predicate typePredicate =
-        new Predicate("Type", PredicateOperator.IN, new String[] {"IMAGE", "VIDEO"});
-    selector.setPredicates(new Predicate[] {typePredicate});
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields("MediaId", "Width", "Height", "MimeType")
+        .orderAscBy("MediaId")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .in("Type", "IMAGE", "VIDEO")
+        .build();
 
     MediaPage page = null;
 
@@ -111,7 +105,7 @@ public class GetAllImagesAndVideos {
         System.out.println("No images/videos were found.");
       }
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
     } while (offset < page.getTotalNumEntries());
   }
 }

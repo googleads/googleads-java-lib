@@ -83,11 +83,11 @@ You will need to register an OAuth2 application to get a valid client ID and sec
 
 ### For using jars
 
-In the [releases section](https://github.com/googleads/googleads-java-lib/releases) download a file like adwords-axis-jars-and-examples-v.vv.vv.tar.gz and extract it.
+In the [releases section](https://github.com/googleads/googleads-java-lib/releases) download a file like ``adwords-axis-jars-and-examples-v.vv.vv.tar.gz`` and extract it.
 
 1) Modify
 
-You will need to modify the ads.properties file with your settings. This can be moved (not copied) to your home directory as well.
+You will need to modify the ``ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
 ```  
 $ vim ads.properties
 ```
@@ -97,21 +97,21 @@ Import the eclipse project by going to File > Import, then General > Existing pr
 
 3) Authenticate
 
-Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to src/adwords/axis/auth/GetRefreshToken.java and run the example.
+Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to ``src/adwords/axis/auth/GetRefreshToken.java`` and run the example.
 
 Copy the refresh token into your ads.properties file as you just did with your general settings and client ID/secret when prompted.
   
 4) Run example    
 
-Navigate in your project to src/adwords/axis/<version>/basicoperations/GetCampaigns.java and run the example.
+Navigate in your project to any example (e.g., ``src/adwords/axis/<version>/basicoperations/GetCampaigns.java``) and run the example.
 
-### For using maven
+### For using maven with Eclipse
 
-In the [releases section](https://github.com/googleads/googleads-java-lib/releases) download a file like adwords-axis-maven-and-examples-v.vv.vv.tar.gz and extract it.
+In the [releases section](https://github.com/googleads/googleads-java-lib/releases) download a file like ``adwords-axis-maven-and-examples-v.vv.vv.tar.gz`` and extract it.
 
 1) Modify
 
-You will need to modify the src/main/resources/ads.properties file with your settings. This can be moved (not copied) to your home directory as well.
+You will need to modify the ``src/main/resources/ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
 ```  
 $ vim src/main/resources/ads.properties
 ```
@@ -121,13 +121,46 @@ Import the eclipse project by going to File > Import, then General > Existing pr
 
 3) Authenticate
 
-Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to src/main/java/adwords/axis/auth/GetRefreshToken.java and run the example.
+Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to ``src/main/java/adwords/axis/auth/GetRefreshToken.java`` and run the example.
 
-Copy the refresh token into your src/main/resources/ads.properties file as you just did with your general settings and client ID/secret when prompted.
+Copy the refresh token into your ``src/main/resources/ads.properties`` file as you just did with your general settings and client ID/secret when prompted.
   
 4) Run example    
 
-Navigate in your project to src/main/java/adwords/axis/<version>/basicoperations/GetCampaigns.java and run the example.
+Navigate in your project to any example (e.g., ``src/adwords/axis/<version>/basicoperations/GetCampaigns.java``) and run the example.
+
+### For using maven from the command line
+
+In the [releases section](https://github.com/googleads/googleads-java-lib/releases) download a file like ``adwords-axis-maven-and-examples-v.vv.vv.tar.gz`` and extract it.
+
+1) Modify
+
+You will need to modify the ``src/main/resources/ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
+```  
+$ vim src/main/resources/ads.properties
+```
+
+2) Authenticate
+
+Now, generate OAuth2 credentials to be used with other examples.
+```
+$ cd path/to/extracted/distribution
+$ mvn -X compile
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.auth.GetRefreshToken"
+```
+Copy the refresh token into your ``src/main/resources/ads.properties`` file as you just did with your general settings and client ID/secret when prompted.
+
+You must have Maven recompile every time you modify the source code or resources in order for your changes to take effect.
+```
+$ mvn -X compile
+```
+
+3) Run example    
+
+This command runs the ``GetCampaigns`` example, but you can update the ``-Dexec.mainClass`` argument with the example of your choice.
+```
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201309.basicoperations.GetCampaigns"
+```
 
 ## Basic usage
 

@@ -1,3 +1,21 @@
+1.24.0 - 01/29/2014
+-------------------
+AdWords:
+  - Updated GetKeywords examples to use the proper match type field in the Selector.
+  - SelectorBuilder: changed the method signature "by" to "equals".
+  - Migrated AdWords Axis Utility Extension (beta) to v201309.
+  - Improved comments in the UpdateSiteLinks example.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Fixes issue #8: NumberValue with empty string should return null for
+    Pql.getApiValue
+
+Common:
+  - No changes.
+
 1.23.0 - 01/16/2014
 -------------------
 AdWords:

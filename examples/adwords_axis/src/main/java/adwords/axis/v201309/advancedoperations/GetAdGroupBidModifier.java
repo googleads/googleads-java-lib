@@ -15,10 +15,10 @@
 package adwords.axis.v201309.advancedoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidModifier;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidModifierPage;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidModifierServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -65,15 +65,12 @@ public class GetAdGroupBidModifier {
     AdGroupBidModifierServiceInterface adGroupBidModifierService =
         adWordsServices.get(session, AdGroupBidModifierServiceInterface.class);
 
-    int offset = 0;
-
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"CampaignId",
-        "AdGroupId",
-        "BidModifier",
-        "Id"});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
+    Selector selector = new SelectorBuilder()
+        .fields("CampaignId", "AdGroupId", "BidModifier", "Id")
+        .offset(0)
+        .limit(PAGE_SIZE)
+        .build();
 
     AdGroupBidModifierPage page = adGroupBidModifierService.get(selector);
     if (page.getEntries() != null) {

@@ -25,6 +25,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code name}</td>
  *             <td>{@link ContentMetadataKeyHierarchy#name}</td>
  *             </tr>
+ *             <tr>
+ *             <td>{@code status}</td>
+ *             <td>{@link ContentMetadataKeyHierarchy#status}</td>
+ *             </tr>
  *             </table>
  *             
  *             @param filterStatement a Publisher Query Language statement used to filter a set of

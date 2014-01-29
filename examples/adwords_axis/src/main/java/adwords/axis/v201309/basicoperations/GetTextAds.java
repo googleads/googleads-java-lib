@@ -15,15 +15,11 @@
 package adwords.axis.v201309.basicoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAd;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdPage;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -78,22 +74,16 @@ public class GetTextAds {
     boolean morePages = true;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "AdGroupId", "Status"});
-    selector.setOrdering(new OrderBy[] {new OrderBy("Id", SortOrder.ASCENDING)});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-
-    // Create predicates.
-    Predicate adGroupIdPredicate =
-        new Predicate("AdGroupId", PredicateOperator.IN, new String[] {adGroupId.toString()});
-    // By default disabled ads aren't returned by the selector. To return them
-    // include the DISABLED status in a predicate.
-    Predicate statusPredicate =
-        new Predicate("Status", PredicateOperator.IN,
-            new String[] {"ENABLED", "PAUSED", "DISABLED"});
-    Predicate adTypePredicate =
-        new Predicate("AdType", PredicateOperator.EQUALS, new String[] {"TEXT_AD"});
-    selector.setPredicates(new Predicate[] {adGroupIdPredicate, statusPredicate, adTypePredicate});
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields("Id", "AdGroupId", "Status")
+        .orderAscBy("Id")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .equals("AdGroupId", adGroupId.toString())
+        .in("Status", "ENABLED", "PAUSED", "DISABLED")
+        .equals("AdType", "TEXT_AD")
+        .build();
 
     while (morePages) {
       // Get all ads.
@@ -110,7 +100,7 @@ public class GetTextAds {
       }
 
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
       morePages = offset < page.getTotalNumEntries();
     }
   }

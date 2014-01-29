@@ -68,7 +68,9 @@ public class AdGroup  implements java.io.Serializable {
 
     /* Statistics for this ad group, returned by {@link AdGroupService#get
      * get()}
-     *                 only if requested in the selector. */
+     *                 only if requested in the selector.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Stats stats;
 
     /* This Map provides a place to put new features and settings
@@ -349,6 +351,8 @@ public class AdGroup  implements java.io.Serializable {
      * @return stats   * Statistics for this ad group, returned by {@link AdGroupService#get
      * get()}
      *                 only if requested in the selector.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Stats getStats() {
         return stats;
@@ -361,6 +365,8 @@ public class AdGroup  implements java.io.Serializable {
      * @param stats   * Statistics for this ad group, returned by {@link AdGroupService#get
      * get()}
      *                 only if requested in the selector.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setStats(com.google.api.ads.adwords.axis.v201306.cm.Stats stats) {
         this.stats = stats;

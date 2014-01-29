@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201306.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201306.cm.AdParamOperation;
-import com.google.api.ads.adwords.axis.v201306.cm.AdParamServiceInterface;
+import com.google.api.ads.adwords.axis.v201309.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201309.cm.AdParamOperation;
+import com.google.api.ads.adwords.axis.v201309.cm.AdParamServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
 

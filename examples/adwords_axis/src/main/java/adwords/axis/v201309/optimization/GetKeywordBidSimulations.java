@@ -15,12 +15,11 @@
 package adwords.axis.v201309.optimization;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.BidLandscapeLandscapePoint;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscape;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscapePage;
 import com.google.api.ads.adwords.axis.v201309.cm.DataServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -73,16 +72,20 @@ public class GetKeywordBidSimulations {
         adWordsServices.get(session, DataServiceInterface.class);
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"AdGroupId", "CriterionId", "StartDate", "EndDate", "Bid",
-        "LocalClicks", "LocalCost", "MarginalCpc", "LocalImpressions"});
-
-    // Create predicates.
-    Predicate adGroupIdPredicate =
-        new Predicate("AdGroupId", PredicateOperator.IN, new String[] {adGroupId.toString()});
-    Predicate criterionIdPredicate =
-        new Predicate("CriterionId", PredicateOperator.IN, new String[] {criterionId.toString()});
-    selector.setPredicates(new Predicate[] {adGroupIdPredicate, criterionIdPredicate});
+    Selector selector = new SelectorBuilder()
+        .fields(
+            "AdGroupId",
+            "CriterionId",
+            "StartDate",
+            "EndDate",
+            "Bid",
+            "LocalClicks",
+            "LocalCost",
+            "MarginalCpc",
+            "LocalImpressions")
+        .equals("AdGroupId", adGroupId.toString())
+        .equals("CriterionId", criterionId.toString())
+        .build();
 
     // Get bid landscape for ad group criteria.
     CriterionBidLandscapePage page = dataService.getCriterionBidLandscape(selector);

@@ -597,8 +597,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#status} for {@link Dimension#PROPOSAL_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Proposal#status} for {@link Dimension#PROPOSAL_NAME}, including those
+     *                 post-sold status, e.g. DRAFT(SOLD). Can be used for filtering.
      *               
      * 
      */

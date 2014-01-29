@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for deleting {@link LineItem} objects.
+ *             The action used for deleting {@link LineItem} objects. A line item can be
+ *             deleted if it has never been eligible to serve.
  *           
  * 
  * <p>Java class for DeleteLineItems complex type.

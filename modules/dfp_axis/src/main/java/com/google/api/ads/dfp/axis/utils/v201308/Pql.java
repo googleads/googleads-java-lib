@@ -140,7 +140,7 @@ public final class Pql {
     if (value instanceof BooleanValue) {
       return ((BooleanValue) value).getValue();
     } else if (value instanceof NumberValue) {
-      if (((NumberValue) value).getValue() == null) {
+      if (Strings.isNullOrEmpty(((NumberValue) value).getValue())) {
         return null;
       } else {
         try {

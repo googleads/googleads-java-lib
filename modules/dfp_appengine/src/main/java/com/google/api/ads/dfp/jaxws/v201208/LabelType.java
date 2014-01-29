@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="COMPETITIVE_EXCLUSION"/>
  *     &lt;enumeration value="AD_UNIT_FREQUENCY_CAP"/>
  *     &lt;enumeration value="AD_EXCLUSION"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -51,7 +52,16 @@ public enum LabelType {
      *               
      * 
      */
-    AD_EXCLUSION;
+    AD_EXCLUSION,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API
+     *                 version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

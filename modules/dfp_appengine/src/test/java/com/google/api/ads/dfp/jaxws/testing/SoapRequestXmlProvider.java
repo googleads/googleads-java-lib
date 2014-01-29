@@ -14,10 +14,11 @@
 
 package com.google.api.ads.dfp.jaxws.testing;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.ads.dfp.jaxws.DfpJaxWsModule;
-import com.google.common.base.Charsets;
 
 import java.io.IOException;
 
@@ -36,7 +37,7 @@ public class SoapRequestXmlProvider {
   public static String getClientLoginSoapRequest(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
         SoapRequestXmlProvider.class.getResourceAsStream("test_request_client_login.xml"),
-        Charsets.UTF_8);
+        UTF_8);
     return getTemplatedXml(soapXml, apiVersion);
   }
   
@@ -46,7 +47,7 @@ public class SoapRequestXmlProvider {
   public static String getOAuth2SoapRequest(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
         SoapRequestXmlProvider.class.getResourceAsStream("test_request_oauth2.xml"),
-        Charsets.UTF_8);
+        UTF_8);
     return getTemplatedXml(soapXml, apiVersion);
   }
   

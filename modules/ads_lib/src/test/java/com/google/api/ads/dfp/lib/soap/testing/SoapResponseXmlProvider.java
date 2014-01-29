@@ -14,9 +14,10 @@
 
 package com.google.api.ads.dfp.lib.soap.testing;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
-import com.google.common.base.Charsets;
 
 import java.io.IOException;
 
@@ -32,7 +33,7 @@ public class SoapResponseXmlProvider {
    */
   public static String getTestSoapResponse(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
-        SoapResponseXmlProvider.class.getResourceAsStream("test_response.xml"), Charsets.UTF_8);
+        SoapResponseXmlProvider.class.getResourceAsStream("test_response.xml"), UTF_8);
     return SoapXmlTemplater.templateResponse(soapXml, apiVersion);
   }
 }

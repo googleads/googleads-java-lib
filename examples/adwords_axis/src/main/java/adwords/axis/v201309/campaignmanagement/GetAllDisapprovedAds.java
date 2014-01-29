@@ -15,14 +15,11 @@
 package adwords.axis.v201309.campaignmanagement;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAd;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdPage;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupAdServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -70,16 +67,12 @@ public class GetAllDisapprovedAds {
         adWordsServices.get(session, AdGroupAdServiceInterface.class);
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "AdGroupAdDisapprovalReasons"});
-    selector.setOrdering(new OrderBy[] {new OrderBy("Id", SortOrder.ASCENDING)});
-
-    // Create predicates.
-    Predicate adGroupIdPredicate =
-        new Predicate("AdGroupId", PredicateOperator.IN, new String[] {adGroupId.toString()});
-    Predicate approvalStatusPredicate = new Predicate(
-        "AdGroupCreativeApprovalStatus", PredicateOperator.IN, new String[] {"DISAPPROVED"});
-    selector.setPredicates(new Predicate[] {adGroupIdPredicate, approvalStatusPredicate});
+    Selector selector = new SelectorBuilder()
+        .fields("Id", "AdGroupAdDisapprovalReasons")
+        .orderAscBy("Id")
+        .equals("AdGroupId", adGroupId.toString())
+        .equals("AdGroupCreativeApprovalStatus", "DISAPPROVED")
+        .build();
 
     // Get all disapproved ads.
     AdGroupAdPage page = adGroupAdService.get(selector);

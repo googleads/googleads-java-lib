@@ -14,13 +14,14 @@
 
 package com.google.api.ads.dfp.jaxws.utils.v201208;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.ads.dfp.jaxws.v201208.ApiException_Exception;
 import com.google.api.ads.dfp.jaxws.v201208.ExportFormat;
 import com.google.api.ads.dfp.jaxws.v201208.ReportJobStatus;
 import com.google.api.ads.dfp.jaxws.v201208.ReportServiceInterface;
 import com.google.api.ads.dfp.lib.utils.ReportCallback;
-import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
 
 import java.io.FileOutputStream;
@@ -49,7 +50,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class ReportDownloader {
 
-  public static final Charset REPORT_CHARSET = Charsets.UTF_8;
+  public static final Charset REPORT_CHARSET = UTF_8;
 
   /** The time to sleep before each request to the service. */
   public static final int SLEEP_TIMER = 30000;

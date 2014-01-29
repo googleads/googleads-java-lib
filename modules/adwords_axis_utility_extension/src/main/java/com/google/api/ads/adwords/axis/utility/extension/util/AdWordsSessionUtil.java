@@ -101,6 +101,8 @@ public class AdWordsSessionUtil {
     }
     if (userAgent != null) {
       builder = builder.withUserAgent(userAgent);
+    } else {
+      builder = builder.withUserAgent(USER_AGENT);
     }
     if (adWordsSession.getDeveloperToken() != null) {
       builder = builder.withDeveloperToken(adWordsSession.getDeveloperToken());

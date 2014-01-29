@@ -15,16 +15,12 @@
 package adwords.axis.v201309.basicoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterionPage;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201309.cm.Keyword;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -79,17 +75,15 @@ public class GetKeywords {
     boolean morePages = true;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "AdGroupId", "MatchType", "KeywordText"});
-    selector.setOrdering(new OrderBy[] {new OrderBy("AdGroupId", SortOrder.ASCENDING)});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-
-    // Create predicates.
-    Predicate adGroupIdPredicate =
-        new Predicate("AdGroupId", PredicateOperator.IN, new String[] {adGroupId.toString()});
-    Predicate criteriaTypePredicate =
-        new Predicate("CriteriaType", PredicateOperator.EQUALS, new String[] {"KEYWORD"});
-    selector.setPredicates(new Predicate[] {adGroupIdPredicate, criteriaTypePredicate});
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields("Id", "AdGroupId", "MatchType", "KeywordText")
+        .orderAscBy("AdGroupId")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .in("AdGroupId", adGroupId.toString())
+        .equals("CriteriaType", "KEYWORD")
+        .build();
 
     while (morePages) {
       // Get all ad group criteria.
@@ -111,7 +105,7 @@ public class GetKeywords {
       }
 
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
       morePages = offset < page.getTotalNumEntries();
     }
   }

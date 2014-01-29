@@ -14,10 +14,11 @@
 
 package com.google.api.ads.dfa.axis.testing;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.ads.dfa.axis.DfaAxisModule;
-import com.google.common.base.Charsets;
 
 import java.io.IOException;
 
@@ -37,7 +38,7 @@ public class SoapRequestXmlProvider {
       throws IOException {
     String soapXml = Streams.readAll(
         SoapRequestXmlProvider.class.getResourceAsStream("test_request_get_placement_types.xml"),
-        Charsets.UTF_8);
+        UTF_8);
     soapXml = soapXml.replaceAll("#TOKEN#", token);
     return getTemplatedXml(soapXml, apiVersion);
   }
@@ -48,7 +49,7 @@ public class SoapRequestXmlProvider {
   public static String getAuthenticateSoapRequest(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
         SoapRequestXmlProvider.class.getResourceAsStream("test_request_authenticate.xml"),
-        Charsets.UTF_8);
+        UTF_8);
     return getTemplatedXml(soapXml, apiVersion);
   }
 

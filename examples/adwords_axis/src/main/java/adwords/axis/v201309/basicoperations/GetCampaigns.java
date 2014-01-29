@@ -15,13 +15,11 @@
 package adwords.axis.v201309.basicoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignPage;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -70,10 +68,13 @@ public class GetCampaigns {
     int offset = 0;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "Name"});
-    selector.setOrdering(new OrderBy[] {new OrderBy("Name", SortOrder.ASCENDING)});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields("Id", "Name")
+        .orderAscBy("Name")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .build();
 
     CampaignPage page = null;
     do {
@@ -91,7 +92,7 @@ public class GetCampaigns {
       }
 
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
     } while (offset < page.getTotalNumEntries());
   }
 }

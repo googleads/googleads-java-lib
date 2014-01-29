@@ -8,6 +8,7 @@
 package com.google.api.ads.dfa.axis.v1_20;
 
 public interface AdRemote extends java.rmi.Remote {
+    public com.google.api.ads.dfa.axis.v1_20.MobilePlatform[] getMobilePlatforms() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AreaCode[] getAreaCodes(long[] countryIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.DesignatedMarketArea[] getDesignatedMarketAreas() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.State[] getStates(long[] countryIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
@@ -15,10 +16,9 @@ public interface AdRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.DomainType[] getDomainTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.ISP[] getISPs() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.OSP[] getOSPs() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.MobilePlatform[] getMobilePlatforms() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.DomainNameRecordSet getDomainNamesBySearchCriteria(com.google.api.ads.dfa.axis.v1_20.DomainNameSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void deleteAd(long adId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdRecordSet getAds(com.google.api.ads.dfa.axis.v1_20.AdSearchCriteria adSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.DomainNameRecordSet getDomainNamesBySearchCriteria(com.google.api.ads.dfa.axis.v1_20.DomainNameSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.UserListGroup[] getUserListGroupsByCriteria(com.google.api.ads.dfa.axis.v1_20.UserListSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.UserList[] getUserListsByCriteria(com.google.api.ads.dfa.axis.v1_20.UserListSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdSaveResult saveAd(com.google.api.ads.dfa.axis.v1_20.AdBase ad) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

@@ -15,15 +15,11 @@
 package adwords.axis.v201309.basicoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroup;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupPage;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.OrderBy;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
-import com.google.api.ads.adwords.axis.v201309.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -76,15 +72,14 @@ public class GetAdGroups {
     boolean morePages = true;
 
     // Create selector.
-    Selector selector = new Selector();
-    selector.setFields(new String[] {"Id", "Name"});
-    selector.setOrdering(new OrderBy[] {new OrderBy("Name", SortOrder.ASCENDING)});
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-
-    // Create predicates.
-    Predicate campaignIdPredicate =
-        new Predicate("CampaignId", PredicateOperator.IN, new String[] {campaignId.toString()});
-    selector.setPredicates(new Predicate[] {campaignIdPredicate});
+    SelectorBuilder builder = new SelectorBuilder();
+    Selector selector = builder
+        .fields("Id", "Name")
+        .orderAscBy("Name")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .equals("CampaignId", campaignId.toString())
+        .build();
 
     while (morePages) {
       // Get all ad groups.
@@ -101,7 +96,7 @@ public class GetAdGroups {
       }
 
       offset += PAGE_SIZE;
-      selector.getPaging().setStartIndex(offset);
+      selector = builder.increaseOffsetBy(PAGE_SIZE).build();
       morePages = offset < page.getTotalNumEntries();
     }
   }

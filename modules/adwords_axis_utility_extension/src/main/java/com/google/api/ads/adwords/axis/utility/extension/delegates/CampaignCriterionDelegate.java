@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignCriterionOperation;
-import com.google.api.ads.adwords.axis.v201306.cm.CampaignCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201306.cm.CriterionType;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionOperation;
+import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201309.cm.CriterionType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
 

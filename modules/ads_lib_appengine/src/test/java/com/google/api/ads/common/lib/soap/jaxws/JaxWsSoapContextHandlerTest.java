@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.soap.jaxws;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
@@ -21,7 +22,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.utils.Streams;
-import com.google.common.base.Charsets;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -86,7 +86,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml = new Answer<Object>() {
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charsets.UTF_8);
+        Streams.write(mockSoapXml, stream, UTF_8);
         return null;
       }
     };
@@ -106,7 +106,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml = new Answer<Object>() {
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charsets.UTF_8);
+        Streams.write(mockSoapXml, stream, UTF_8);
         return null;
       }
     };
@@ -142,7 +142,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml = new Answer<Object>() {
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charsets.UTF_8);
+        Streams.write(mockSoapXml, stream, UTF_8);
         return null;
       }
     };
@@ -186,7 +186,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml = new Answer<Object>() {
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charsets.UTF_8);
+        Streams.write(mockSoapXml, stream, UTF_8);
         return null;
       }
     };

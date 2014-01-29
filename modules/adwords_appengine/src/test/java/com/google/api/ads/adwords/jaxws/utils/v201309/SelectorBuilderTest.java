@@ -156,7 +156,7 @@ public class SelectorBuilderTest {
   public void testPredicatesBuild() {
     SelectorBuilder builder = new SelectorBuilder();
 
-    builder = builder.byId(10L);
+    builder = builder.equalsId(10L);
     Selector selector = builder.build();
 
     Assert.assertNotNull(selector.getPredicates());
@@ -343,7 +343,7 @@ public class SelectorBuilderTest {
   @Test
   public void testUniqueInternalPredicateState() {
     SelectorBuilder builder = new SelectorBuilder();
-    Selector selectorOne = builder.by("Id", "test").build();
+    Selector selectorOne = builder.equals("Id", "test").build();
     Selector selectorTwo = builder.build();
 
     Predicate predicateTwo = selectorTwo.getPredicates().get(0);
