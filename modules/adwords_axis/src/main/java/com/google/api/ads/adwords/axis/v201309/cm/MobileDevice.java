@@ -14,7 +14,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * an ID. A criterion of this type is only targetable.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected

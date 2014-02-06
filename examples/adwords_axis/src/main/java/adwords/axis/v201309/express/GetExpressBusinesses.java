@@ -15,15 +15,14 @@
 package adwords.axis.v201309.express;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Address;
 import com.google.api.ads.adwords.axis.v201309.cm.GeoPoint;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.axis.v201309.express.ExpressBusiness;
 import com.google.api.ads.adwords.axis.v201309.express.ExpressBusinessPage;
 import com.google.api.ads.adwords.axis.v201309.express.ExpressBusinessServiceInterface;
+import com.google.api.ads.adwords.axis.v201309.express.ExpressBusinessStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -75,13 +74,14 @@ public class GetExpressBusinesses {
 
     int offset = 0;
 
-    Selector selector = new Selector();
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-    selector.setFields(new String[] {"Id", "Name", "Website", "Address", "GeoPoint", "Status"});
     // To get all express businesses owned by the current customer,
-    // simply skip the call to selector.setPredicates below.
-    selector.setPredicates(new Predicate[] {
-        new Predicate("Status", PredicateOperator.EQUALS, new String[] {"ACTIVE"})});
+    // simply skip the call to SelectorBuilder.equals below
+    Selector selector = new SelectorBuilder()
+        .fields("Id", "Name", "Website", "Address", "GeoPoint", "Status")
+        .equals("Status", ExpressBusinessStatus.ACTIVE.getValue())
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .build();
 
     List<ExpressBusiness> businesses = Lists.newArrayList();
     ExpressBusinessPage page;

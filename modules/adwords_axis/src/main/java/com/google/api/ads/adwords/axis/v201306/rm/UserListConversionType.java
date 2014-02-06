@@ -22,8 +22,8 @@ public class UserListConversionType  implements java.io.Serializable {
     /* The category of the ConversionType based on the location where
      * the
      *                 conversion event was generated (from a user's perspective).
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.rm.UserListConversionTypeCategory category;
 
     public UserListConversionType() {
@@ -85,8 +85,8 @@ public class UserListConversionType  implements java.io.Serializable {
      * @return category   * The category of the ConversionType based on the location where
      * the
      *                 conversion event was generated (from a user's perspective).
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.rm.UserListConversionTypeCategory getCategory() {
         return category;
@@ -99,8 +99,8 @@ public class UserListConversionType  implements java.io.Serializable {
      * @param category   * The category of the ConversionType based on the location where
      * the
      *                 conversion event was generated (from a user's perspective).
-     * <span class="constraint ReadOnly">This field is read only and should
-     * not be set.  If this field is sent to the API, it will be ignored.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setCategory(com.google.api.ads.adwords.axis.v201306.rm.UserListConversionTypeCategory category) {
         this.category = category;

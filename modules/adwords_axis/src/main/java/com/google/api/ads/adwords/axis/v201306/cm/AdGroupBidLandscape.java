@@ -12,18 +12,12 @@ package com.google.api.ads.adwords.axis.v201306.cm;
  * Represents data about a bidlandscape for an adgroup.
  */
 public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v201306.cm.BidLandscape  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeType".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.AdGroupBidLandscapeType type;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span> */
     private java.lang.Boolean landscapeCurrent;
 
     public AdGroupBidLandscape() {
@@ -53,11 +47,8 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20130
     /**
      * Gets the type value for this AdGroupBidLandscape.
      * 
-     * @return type   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeType".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * @return type   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.AdGroupBidLandscapeType getType() {
         return type;
@@ -67,11 +58,8 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20130
     /**
      * Sets the type value for this AdGroupBidLandscape.
      * 
-     * @param type   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeType".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * @param type   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201306.cm.AdGroupBidLandscapeType type) {
         this.type = type;
@@ -81,11 +69,8 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20130
     /**
      * Gets the landscapeCurrent value for this AdGroupBidLandscape.
      * 
-     * @return landscapeCurrent   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * @return landscapeCurrent   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public java.lang.Boolean getLandscapeCurrent() {
         return landscapeCurrent;
@@ -95,11 +80,8 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20130
     /**
      * Sets the landscapeCurrent value for this AdGroupBidLandscape.
      * 
-     * @param landscapeCurrent   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * @param landscapeCurrent   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public void setLandscapeCurrent(java.lang.Boolean landscapeCurrent) {
         this.landscapeCurrent = landscapeCurrent;

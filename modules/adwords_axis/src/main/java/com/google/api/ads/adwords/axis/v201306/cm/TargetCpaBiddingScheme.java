@@ -30,7 +30,9 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /* Average CPA target.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * Filterable">This field can be filtered on.</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Money targetCpa;
 
     public TargetCpaBiddingScheme() {
@@ -52,6 +54,8 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Money getTargetCpa() {
         return targetCpa;
@@ -65,6 +69,8 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public void setTargetCpa(com.google.api.ads.adwords.axis.v201306.cm.Money targetCpa) {
         this.targetCpa = targetCpa;

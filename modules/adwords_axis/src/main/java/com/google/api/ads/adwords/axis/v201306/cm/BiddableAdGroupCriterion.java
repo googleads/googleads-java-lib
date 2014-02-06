@@ -78,9 +78,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Bid topOfPageCpc;
 
     /* Contains quality information about the criterion.
@@ -385,9 +384,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Bid getTopOfPageCpc() {
         return topOfPageCpc;
@@ -407,9 +405,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TopOfPageCpc".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setTopOfPageCpc(com.google.api.ads.adwords.axis.v201306.cm.Bid topOfPageCpc) {
         this.topOfPageCpc = topOfPageCpc;

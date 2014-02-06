@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Represents the mobile application to be targeted.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
- *             <span class="constraint Beta">This is a beta feature.</span>
  *           
  * 
  * <p>Java class for MobileApplication complex type.

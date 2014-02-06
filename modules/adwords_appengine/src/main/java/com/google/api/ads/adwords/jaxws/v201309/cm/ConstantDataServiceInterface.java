@@ -113,7 +113,6 @@ public interface ConstantDataServiceInterface {
      *         
      *         @return A list of mobile devices.
      *         @throws ApiException when there is at least one error with the request.
-     *         <span class="constraint Beta">This is a beta feature.</span>
      *       
      * 
      * @return
@@ -134,7 +133,6 @@ public interface ConstantDataServiceInterface {
      *         
      *         @return A list of operating system versions.
      *         @throws ApiException when there is at least one error with the request.
-     *         <span class="constraint Beta">This is a beta feature.</span>
      *       
      * 
      * @return

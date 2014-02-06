@@ -16,7 +16,7 @@ package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201309.cm.Operator;
 import com.google.api.ads.adwords.axis.v201309.mcm.LinkOperation;
@@ -31,12 +31,9 @@ import com.google.api.ads.adwords.axis.v201309.mcm.MutateManagerResults;
 import com.google.api.ads.adwords.axis.v201309.mcm.PendingInvitation;
 import com.google.api.ads.adwords.axis.v201309.mcm.PendingInvitationSelector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.common.collect.ImmutableList;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link ManagedCustomer}.
@@ -142,15 +139,14 @@ public final class ManagedCustomerDelegate extends AbstractGetMutateDelegate
    */
   public List<ManagedCustomer> getByCustomerIdCanManageClients(List<Long> customerIds,
       boolean canManageClients) throws RemoteException {
-    Map<FieldType<ManagedCustomer>, List<String>> predicates =
-        new HashMap<FieldType<ManagedCustomer>, List<String>>();
+    SelectorBuilder builder = createSelectorBuilder();
     if (customerIds != null && !customerIds.isEmpty()) {
-      predicates.put(SelectorFields.ManagedCustomer.CUSTOMER_ID,
-          ListUtil.asStringList(customerIds));
+      builder.in(SelectorFields.ManagedCustomer.CUSTOMER_ID.getField(),
+          ListUtil.asStringArray(customerIds));
     }
-    predicates.put(SelectorFields.ManagedCustomer.CAN_MANAGE_CLIENTS,
-        ImmutableList.of(String.valueOf(canManageClients)));
-    return get(createSelectorMultipleFields(predicates));
+    builder.equals(SelectorFields.ManagedCustomer.CAN_MANAGE_CLIENTS.getField(),
+        String.valueOf(canManageClients));
+    return get(builder.build());
   }
 
   /**

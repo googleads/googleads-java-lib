@@ -10,7 +10,6 @@ package com.google.api.ads.adwords.axis.v201306.cm;
 
 /**
  * Campaign level settings for tracking information.
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201306.cm.Setting  implements java.io.Serializable {
     /* Specify "NONE" to clear existing url.

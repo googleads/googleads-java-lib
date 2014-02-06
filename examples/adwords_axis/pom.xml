@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>adwords-axis-examples</artifactId>
-  <version>1.24.0</version>
+  <version>1.24.1</version>
 
   <packaging>jar</packaging>
 
@@ -121,12 +121,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.24.0</version>
+      <version>1.24.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis</artifactId>
-      <version>1.24.0</version>
+      <version>1.24.1</version>
     </dependency>
 
     <!-- Third party dependencies -->

@@ -8,8 +8,8 @@
 package com.google.api.ads.dfa.axis.v1_19;
 
 public interface SpotlightRemote extends java.rmi.Remote {
-    public com.google.api.ads.dfa.axis.v1_19.SpotlightActivityRecordSet getSpotlightActivities(com.google.api.ads.dfa.axis.v1_19.SpotlightActivitySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.SpotlightConfiguration getSpotlightConfiguration(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.SpotlightActivityRecordSet getSpotlightActivities(com.google.api.ads.dfa.axis.v1_19.SpotlightActivitySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.SpotlightActivity getSpotlightActivity(long spotlightActivityId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.SpotlightActivitySaveResult saveSpotlightActivity(com.google.api.ads.dfa.axis.v1_19.SpotlightActivity spotlightActivity) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.SpotlightConfigurationSaveResult saveSpotlightConfiguration(com.google.api.ads.dfa.axis.v1_19.SpotlightConfiguration spotlightConfiguration) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;

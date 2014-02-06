@@ -15,15 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscape;
 import com.google.api.ads.adwords.axis.v201309.cm.DataServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.common.collect.ImmutableList;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Specific AbstractGetDelegate for {@link CriterionBidLandscape}.
@@ -90,13 +88,12 @@ public final class DataCriterionBidLandscapeDelegate extends
    */
   public List<CriterionBidLandscape> getByAdGroupIdCriterionId(long adGroupId, long criterionId)
       throws RemoteException {
-    Map<SelectorFields.CriterionBidLandscape, List<String>> predicates =
-        new HashMap<SelectorFields.CriterionBidLandscape, List<String>>();
-    predicates.put(SelectorFields.CriterionBidLandscape.ADGROUP_ID,
-        ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(SelectorFields.CriterionBidLandscape.CRITERION_ID,
-        ImmutableList.of(String.valueOf(criterionId)));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.CriterionBidLandscape.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(
+           SelectorFields.CriterionBidLandscape.CRITERION_ID.getField(), 
+           String.valueOf(criterionId));
+    return get(builder.build());
   }
 
   /**

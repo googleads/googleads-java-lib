@@ -1,3 +1,21 @@
+1.24.1 - 02/05/2014
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Replaced java.nio.charset.StandardCharsets.UTF_8 with
+    com.google.common.base.Charsets.UTF_8 for Java 1.5 compatibility. Fixes
+    issue #10.
+  - com.google.http-client and org.seleniumhq.selenium artifacts are longer
+    RELEASE.
+
 1.24.0 - 01/29/2014
 -------------------
 AdWords:

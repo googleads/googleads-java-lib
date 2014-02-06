@@ -18,9 +18,7 @@ import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
@@ -29,7 +27,6 @@ import com.google.common.collect.Iterables;
 import java.lang.reflect.Array;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Abstract class that encapsulates gets, fields and selectors.
@@ -174,81 +171,26 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Creates a Generic Selector with all the fields declared in the subClass.
+   * Creates a Generic Selector Builder with all the fields declared in the subClass.
    */
-  private Selector createSelector() {
-    Selector selector = new Selector();
-    selector.setFields(fields);
-    return selector;
+  protected SelectorBuilder createSelectorBuilder() {
+    return new SelectorBuilder().fields(fields);
   }
 
   /**
-   * Creates a Generic Selector with all the fields declared in the subClass.
-   * @param predicates a list of {@link Predicate} to filter the results
-   * @return {@link Selector}
-   */
-  private Selector createSelector(List<Predicate> predicates) {
-    Selector selector = new Selector();
-    selector.setFields(fields);
-    Predicate[] predicatesArray = predicates.toArray(new Predicate[predicates.size()]);
-    selector.setPredicates(predicatesArray);
-    return selector;
-  }
-
-  /**
-   * Creates a Generic Selector with all the fields declared in the subClass and
+   * Creates a Generic Selector Builder with all the fields declared in the subClass and
    * adds a Predicate that says that the given field must have one of the given values.
    *
    * @param selectorField  field to be included in the predicate
    * @param fieldValues values for the field
-   * @return {@link Selector}
+   * @return {@link SelectorBuilder}
    */
-  private Selector createSelector(FieldType<T> selectorField, List<?> fieldValues,
+  private SelectorBuilder createSelectorBuilder(FieldType<T> selectorField, List<?> fieldValues,
       int startIndex, int numberResults) {
-    Selector selector = createSelector();
-    // Create and add predicates to selector
-    Predicate idPredicate = new Predicate();
-    idPredicate.setField(selectorField.getField());
-    idPredicate.setOperator(PredicateOperator.IN);
-    idPredicate.setValues(ListUtil.asStringArray(fieldValues));
-    selector.setPredicates(new Predicate[] { idPredicate });
-
-    // Create and add paging to selector
-    if (startIndex >= 0 && numberResults > 0) {
-      Paging paging = new Paging();
-      paging.setStartIndex(startIndex);
-      paging.setNumberResults(numberResults);
-      selector.setPaging(paging);
-    }
-    return selector;
-  }
-
-  /**
-   * Creates a Generic Selector with all the fields declared in the subClass and
-   * adds a Predicate for multiple fields and values provided.
-   *
-   * @param entitiesMap pair values of field and its values
-   * @return {@link Selector}
-   */
-  protected Selector createSelectorMultipleFields(
-      Map<? extends FieldType<T>, List<String>> entitiesMap) {
-    // Create selector.
-    Selector selector = createSelector();
-    // Create predicates
-    Predicate[] predicates = new Predicate[entitiesMap.size()];
-    int i = 0;
-    for (FieldType<T> selectorField : entitiesMap.keySet()) {
-      Predicate predicate = new Predicate();
-      predicate.setField(selectorField.getField());
-      predicate.setOperator(PredicateOperator.IN);
-      predicate.setValues(ListUtil.asStringArray(entitiesMap.get(selectorField)));
-      predicates[i++] = predicate;
-
-    }
-    if (predicates.length > 0) {
-      selector.setPredicates(predicates);
-    }
-    return selector;
+    return createSelectorBuilder()
+      .in(selectorField.getField(), ListUtil.asStringArray(fieldValues))
+      .offset(startIndex)
+      .limit(numberResults);
   }
 
   /**
@@ -258,7 +200,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * @throws RemoteException for communication-related exceptions
    */
   public List<T> get() throws RemoteException {
-    return get(createSelector());
+    return get(createSelectorBuilder().build());
   }
 
   /**
@@ -270,20 +212,8 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * @throws RemoteException for communication-related exceptions
    */
   public List<T> get(int startIndex, int numberResults) throws RemoteException {
-    Selector selector = createSelector();
-    selector.setPaging(new Paging(startIndex, numberResults));
-    return get(selector);
-  }
-
-  /**
-   * Gets all <T> objects using a Generic Selector filtering by an array of predicates.
-   * 
-   * @param predicates an array of {@link Predicate} to filter the results
-   * @return all the <T> objects for the ManagedCustomer
-   * @throws RemoteException for communication-related exceptions
-   */
-  public List<T> get(List<Predicate> predicates) throws RemoteException {
-    return get(createSelector(predicates));
+    SelectorBuilder builder = createSelectorBuilder().offset(startIndex).limit(numberResults);
+    return get(builder.build());
   }
 
   /**
@@ -315,7 +245,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, Object fieldValue)
       throws RemoteException {
-    return get(createSelector(selectorField, ImmutableList.of(fieldValue), 0, 0));
+    return get(createSelectorBuilder(selectorField, ImmutableList.of(fieldValue), 0, 0).build());
   }
 
   /**
@@ -328,7 +258,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, List<Long> fieldValues)
       throws RemoteException {
-    return get(createSelector(selectorField, fieldValues, 0, 0));
+    return get(createSelectorBuilder(selectorField, fieldValues, 0, 0).build());
   }
 
   /**
@@ -344,8 +274,8 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, long fieldValue, int startIndex,
       int numberResults) throws RemoteException {
-    return get(createSelector(
-        selectorField, ImmutableList.of(fieldValue), startIndex, numberResults));
+    return get(createSelectorBuilder(
+        selectorField, ImmutableList.of(fieldValue), startIndex, numberResults).build());
   }
 
   /**
@@ -361,7 +291,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, String fieldValue, int startIndex,
       int numberResults) throws RemoteException {
-    return get(createSelector(
-        selectorField, ImmutableList.of(fieldValue), startIndex, numberResults));
+    return get(createSelectorBuilder(
+        selectorField, ImmutableList.of(fieldValue), startIndex, numberResults).build());
   }
 }

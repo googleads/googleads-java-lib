@@ -14,12 +14,13 @@
 
 package com.google.api.ads.dfa.lib.soap.testing;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.apache.commons.lang.CharEncoding.UTF_8;
 
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 /**
  * Provides DFA API SOAP responses.
@@ -33,7 +34,8 @@ public class SoapResponseXmlProvider {
    */
   public static String getTestSoapResponse(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
-        SoapResponseXmlProvider.class.getResourceAsStream("test_response.xml"), UTF_8);
+        SoapResponseXmlProvider.class.getResourceAsStream("test_response.xml"),
+        Charset.forName(UTF_8));
     return SoapXmlTemplater.templateResponse(soapXml, apiVersion);
   }
 
@@ -44,7 +46,7 @@ public class SoapResponseXmlProvider {
       throws IOException {
     String soapXml = Streams.readAll(
         SoapResponseXmlProvider.class.getResourceAsStream("test_response_authenticate.xml"),
-        UTF_8);
+        Charset.forName(UTF_8));
     soapXml = soapXml.replaceAll("#TOKEN#", token);
     return SoapXmlTemplater.templateResponse(soapXml, apiVersion);
   }
@@ -55,7 +57,7 @@ public class SoapResponseXmlProvider {
   public static String getTestTokenExpiredResponse(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
         SoapResponseXmlProvider.class.getResourceAsStream("test_response_token_expired.xml"),
-        UTF_8);
+        Charset.forName(UTF_8));
     return SoapXmlTemplater.templateResponse(soapXml, apiVersion);
   }
 }

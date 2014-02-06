@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <a href="/adwords/api/docs/appendix/mobileappcategories">View the complete list of
  *             available mobile app categories</a>.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
- *             <span class="constraint Beta">This is a beta feature.</span>
  *           
  * 
  * <p>Java class for MobileAppCategory complex type.

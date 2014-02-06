@@ -16,16 +16,12 @@ package com.google.api.ads.adwords.axis.v201306.cm;
  * AdX.</span>
  */
 public class Language  extends com.google.api.ads.adwords.axis.v201306.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageCode".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.String code;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
     public Language() {
@@ -49,10 +45,8 @@ public class Language  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /**
      * Gets the code value for this Language.
      * 
-     * @return code   * <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageCode".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return code   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getCode() {
         return code;
@@ -62,10 +56,8 @@ public class Language  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /**
      * Sets the code value for this Language.
      * 
-     * @param code   * <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageCode".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param code   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setCode(java.lang.String code) {
         this.code = code;
@@ -75,10 +67,8 @@ public class Language  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /**
      * Gets the name value for this Language.
      * 
-     * @return name   * <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return name   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -88,10 +78,8 @@ public class Language  extends com.google.api.ads.adwords.axis.v201306.cm.Criter
     /**
      * Sets the name value for this Language.
      * 
-     * @param name   * <span class="constraint Selectable">This field can be selected
-     * using the value "LanguageName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param name   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

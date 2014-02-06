@@ -15,17 +15,15 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionOperation;
 import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.common.collect.ImmutableList;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link CampaignCriterion}.
@@ -85,13 +83,10 @@ public final class CampaignCriterionDelegate extends AbstractGetMutateDelegate<C
    */
   public List<CampaignCriterion> getByCampaignIdCriterionId(long campaignId, long criterionId)
       throws RemoteException {
-    Map<SelectorFields.CampaignCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.CampaignCriterion, List<String>>();
-    predicates.put(SelectorFields.CampaignCriterion.CAMPAIGN_ID,
-        ImmutableList.of(String.valueOf(campaignId)));
-    predicates
-    .put(SelectorFields.CampaignCriterion.ID, ImmutableList.of(String.valueOf(criterionId)));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.CampaignCriterion.CAMPAIGN_ID.getField(), String.valueOf(campaignId))
+      .equals(SelectorFields.CampaignCriterion.ID.getField(), String.valueOf(criterionId));
+    return get(builder.build());
   }
 
   /**
@@ -154,12 +149,9 @@ public final class CampaignCriterionDelegate extends AbstractGetMutateDelegate<C
    */
   public List<CampaignCriterion> getByCampaignIdCriterionType(Long campaignId,
       CriterionType criterionType) throws RemoteException {
-    Map<SelectorFields.CampaignCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.CampaignCriterion, List<String>>();
-    predicates.put(SelectorFields.CampaignCriterion.CAMPAIGN_ID,
-        ImmutableList.of(String.valueOf(campaignId)));
-    predicates.put(SelectorFields.CampaignCriterion.CRITERIA_TYPE,
-        ImmutableList.of(criterionType.getValue()));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.CampaignCriterion.CAMPAIGN_ID.getField(), String.valueOf(campaignId))
+      .equals(SelectorFields.CampaignCriterion.CRITERIA_TYPE.getField(), criterionType.getValue());
+    return get(builder.build());
   }
 }

@@ -6,7 +6,7 @@
       <ns1:authentication xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:ClientLogin">
         <ns1:token>TEST_TOKEN</ns1:token>
       </ns1:authentication>
-      <ns1:applicationName xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">TEST_APP (DfpApi-Java, Dfp-AppEngine/1.24.0, Common-Java/1.24.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
+      <ns1:applicationName xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">TEST_APP (DfpApi-Java, Dfp-AppEngine/1.24.1, Common-Java/1.24.1, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
     </ns1:RequestHeader>
   </S:Header>
   <S:Body>

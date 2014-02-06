@@ -16,10 +16,8 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * AdX.</span>
  */
 public class Platform  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "PlatformName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.String platformName;
 
     public Platform() {
@@ -41,10 +39,8 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
     /**
      * Gets the platformName value for this Platform.
      * 
-     * @return platformName   * <span class="constraint Selectable">This field can be selected
-     * using the value "PlatformName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return platformName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getPlatformName() {
         return platformName;
@@ -54,10 +50,8 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
     /**
      * Sets the platformName value for this Platform.
      * 
-     * @param platformName   * <span class="constraint Selectable">This field can be selected
-     * using the value "PlatformName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param platformName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setPlatformName(java.lang.String platformName) {
         this.platformName = platformName;

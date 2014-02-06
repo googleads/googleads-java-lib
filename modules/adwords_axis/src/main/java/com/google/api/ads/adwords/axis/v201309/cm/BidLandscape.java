@@ -31,15 +31,11 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
     /* First day on which this landscape is based. Typically, it could
      * be
      *                     up to a week ago.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String startDate;
 
     /* Last day on which this landscape is based.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String endDate;
@@ -134,8 +130,6 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * @return startDate   * First day on which this landscape is based. Typically, it could
      * be
      *                     up to a week ago.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -150,8 +144,6 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * @param startDate   * First day on which this landscape is based. Typically, it could
      * be
      *                     up to a week ago.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -164,8 +156,6 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * Gets the endDate value for this BidLandscape.
      * 
      * @return endDate   * Last day on which this landscape is based.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -178,8 +168,6 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * Sets the endDate value for this BidLandscape.
      * 
      * @param endDate   * Last day on which this landscape is based.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

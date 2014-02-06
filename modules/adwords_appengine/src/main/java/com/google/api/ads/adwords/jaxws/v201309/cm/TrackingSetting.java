@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Campaign level settings for tracking information.
- *             <span class="constraint Beta">This is a beta feature.</span>
  *           
  * 
  * <p>Java class for TrackingSetting complex type.

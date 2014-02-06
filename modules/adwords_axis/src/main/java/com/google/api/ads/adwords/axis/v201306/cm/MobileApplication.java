@@ -12,7 +12,6 @@ package com.google.api.ads.adwords.axis.v201306.cm;
  * Represents the mobile application to be targeted.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class MobileApplication  extends com.google.api.ads.adwords.axis.v201306.cm.Criterion  implements java.io.Serializable {
     /* A string that uniquely identifies a mobile application to AdWords

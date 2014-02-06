@@ -15,12 +15,11 @@
 package adwords.axis.v201309.express;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Criterion;
 import com.google.api.ads.adwords.axis.v201309.cm.Language;
 import com.google.api.ads.adwords.axis.v201309.cm.Money;
 import com.google.api.ads.adwords.axis.v201309.cm.Operator;
-import com.google.api.ads.adwords.axis.v201309.cm.Predicate;
-import com.google.api.ads.adwords.axis.v201309.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201309.cm.Proximity;
 import com.google.api.ads.adwords.axis.v201309.cm.ProximityDistanceUnits;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
@@ -83,10 +82,10 @@ public class AddPromotion {
 
     // Get the business for the businessId. We will need its geo point to create
     // a Proximity criterion for the new Promotion.
-    Selector businessSelector = new Selector();
-    businessSelector.setPredicates(new Predicate[] {
-        new Predicate("Id", PredicateOperator.EQUALS, new String[] {String.valueOf(businessId)})});
-    businessSelector.setFields(new String[] {"Id", "GeoPoint"});
+    Selector businessSelector = new SelectorBuilder()
+        .fields("Id", "GeoPoint")
+        .equals("Id", String.valueOf(businessId))
+        .build();
 
     ExpressBusiness business = businessService.get(businessSelector).getEntries(0);
 

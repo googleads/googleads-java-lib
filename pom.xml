@@ -102,6 +102,8 @@
             <include>com.google.guava:*</include>
             <include>com.google.api-client:*</include>
             <include>com.google.oauth-client:*</include>
+            <include>com.google.http-client:*</include>
+            <include>org.seleniumhq.selenium:*</include>
           </includes>
         </configuration>
       </plugin>

@@ -14,7 +14,7 @@
 
 package com.google.api.ads.dfp.axis.utils.v201308;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.apache.commons.lang.CharEncoding.UTF_8;
 
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.ads.dfp.axis.v201308.ExportFormat;
@@ -50,7 +50,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class ReportDownloader {
 
-  public static final Charset REPORT_CHARSET = UTF_8;
+  public static final Charset REPORT_CHARSET = Charset.forName(UTF_8);
 
   /** The time to sleep before each request to the service. */
   public static final int SLEEP_TIMER = 30000;

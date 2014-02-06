@@ -46,14 +46,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Selector }
-     * 
-     */
-    public Selector createSelector() {
-        return new Selector();
-    }
-
-    /**
      * Create an instance of {@link ApiException }
      * 
      */
@@ -2395,6 +2387,14 @@ public class ObjectFactory {
      */
     public AdGroupAdError createAdGroupAdError() {
         return new AdGroupAdError();
+    }
+
+    /**
+     * Create an instance of {@link Selector }
+     * 
+     */
+    public Selector createSelector() {
+        return new Selector();
     }
 
     /**

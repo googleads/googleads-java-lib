@@ -15,7 +15,7 @@
 package adwords.axis.v201309.express;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201309.cm.Paging;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.Selector;
 import com.google.api.ads.adwords.axis.v201309.express.Promotion;
 import com.google.api.ads.adwords.axis.v201309.express.PromotionPage;
@@ -76,20 +76,22 @@ public class GetPromotions {
 
     int offset = 0;
 
-    Selector selector = new Selector();
-    selector.setPaging(new Paging(offset, PAGE_SIZE));
-    selector.setFields(new String[] {"PromotionId",
-        "Name",
-        "Status",
-        "DestinationUrl",
-        "StreetAddressVisible",
-        "CallTrackingEnabled",
-        "ContentNetworkOptedOut",
-        "Budget",
-        "PromotionCriteria",
-        "RemainingBudget",
-        "Creatives",
-        "CampaignIds"});
+    Selector selector = new SelectorBuilder()
+        .fields("PromotionId",
+            "Name",
+            "Status",
+            "DestinationUrl",
+            "StreetAddressVisible",
+            "CallTrackingEnabled",
+            "ContentNetworkOptedOut",
+            "Budget",
+            "PromotionCriteria",
+            "RemainingBudget",
+            "Creatives",
+            "CampaignIds")
+        .offset(offset)
+        .limit(PAGE_SIZE)
+        .build();
 
     List<Promotion> promotions = Lists.newArrayList();
     PromotionPage page;

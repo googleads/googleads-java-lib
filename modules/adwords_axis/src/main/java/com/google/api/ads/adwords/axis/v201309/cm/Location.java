@@ -18,30 +18,21 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
     /* Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
      *                     LocationCriterionService.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String locationName;
 
     /* Display type of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DisplayType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String displayType;
 
     /* The targeting status of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetingStatus".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.LocationTargetingStatus targetingStatus;
 
     /* Ordered list of parents of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentLocations".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Location[] parentLocations;
@@ -74,9 +65,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * @return locationName   * Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
      *                     LocationCriterionService.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -91,9 +79,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * @param locationName   * Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
      *                     LocationCriterionService.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -106,8 +91,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Gets the displayType value for this Location.
      * 
      * @return displayType   * Display type of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DisplayType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -120,8 +103,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Sets the displayType value for this Location.
      * 
      * @param displayType   * Display type of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DisplayType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -134,8 +115,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Gets the targetingStatus value for this Location.
      * 
      * @return targetingStatus   * The targeting status of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetingStatus".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -148,8 +127,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Sets the targetingStatus value for this Location.
      * 
      * @param targetingStatus   * The targeting status of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetingStatus".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -162,8 +139,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Gets the parentLocations value for this Location.
      * 
      * @return parentLocations   * Ordered list of parents of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentLocations".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -176,8 +151,6 @@ public class Location  extends com.google.api.ads.adwords.axis.v201309.cm.Criter
      * Sets the parentLocations value for this Location.
      * 
      * @param parentLocations   * Ordered list of parents of the location criterion.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentLocations".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

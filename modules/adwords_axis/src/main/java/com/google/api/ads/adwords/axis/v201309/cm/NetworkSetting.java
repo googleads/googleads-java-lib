@@ -13,37 +13,26 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class NetworkSetting  implements java.io.Serializable {
     /* Ads will be served with Google.com search results.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetGoogleSearch".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span> */
     private java.lang.Boolean targetGoogleSearch;
 
     /* Ads will be served on partner sites in the Google Search Network
      * (requires {@code GOOGLE_SEARCH}).
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetSearchNetwork".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span> */
     private java.lang.Boolean targetSearchNetwork;
 
     /* Ads will be served on specified placements in the Google Display
      * Network.
-     *                 Placements are specified using {@code Placement} criteria.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TargetContentNetwork".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+     *                 Placements are specified using {@code Placement} criteria. */
     private java.lang.Boolean targetContentNetwork;
 
     /* Ads will be served on the Google Partner Network. This is available
      * to
      *                 only some specific Google partner accounts.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetPartnerSearchNetwork".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint AdxEnabled">This is disabled for AdX.</span> */
+     *                 <span class="constraint AdxEnabled">This is disabled
+     * for AdX.</span> */
     private java.lang.Boolean targetPartnerSearchNetwork;
 
     public NetworkSetting() {
@@ -65,9 +54,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * Gets the targetGoogleSearch value for this NetworkSetting.
      * 
      * @return targetGoogleSearch   * Ads will be served with Google.com search results.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetGoogleSearch".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -80,9 +66,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * Sets the targetGoogleSearch value for this NetworkSetting.
      * 
      * @param targetGoogleSearch   * Ads will be served with Google.com search results.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetGoogleSearch".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -96,9 +79,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * 
      * @return targetSearchNetwork   * Ads will be served on partner sites in the Google Search Network
      * (requires {@code GOOGLE_SEARCH}).
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetSearchNetwork".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -112,9 +92,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * 
      * @param targetSearchNetwork   * Ads will be served on partner sites in the Google Search Network
      * (requires {@code GOOGLE_SEARCH}).
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetSearchNetwork".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -129,9 +106,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * @return targetContentNetwork   * Ads will be served on specified placements in the Google Display
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TargetContentNetwork".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public java.lang.Boolean getTargetContentNetwork() {
         return targetContentNetwork;
@@ -144,9 +118,6 @@ public class NetworkSetting  implements java.io.Serializable {
      * @param targetContentNetwork   * Ads will be served on specified placements in the Google Display
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TargetContentNetwork".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setTargetContentNetwork(java.lang.Boolean targetContentNetwork) {
         this.targetContentNetwork = targetContentNetwork;
@@ -159,10 +130,8 @@ public class NetworkSetting  implements java.io.Serializable {
      * @return targetPartnerSearchNetwork   * Ads will be served on the Google Partner Network. This is available
      * to
      *                 only some specific Google partner accounts.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetPartnerSearchNetwork".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
+     *                 <span class="constraint AdxEnabled">This is disabled
+     * for AdX.</span>
      */
     public java.lang.Boolean getTargetPartnerSearchNetwork() {
         return targetPartnerSearchNetwork;
@@ -175,10 +144,8 @@ public class NetworkSetting  implements java.io.Serializable {
      * @param targetPartnerSearchNetwork   * Ads will be served on the Google Partner Network. This is available
      * to
      *                 only some specific Google partner accounts.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TargetPartnerSearchNetwork".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
+     *                 <span class="constraint AdxEnabled">This is disabled
+     * for AdX.</span>
      */
     public void setTargetPartnerSearchNetwork(java.lang.Boolean targetPartnerSearchNetwork) {
         this.targetPartnerSearchNetwork = targetPartnerSearchNetwork;

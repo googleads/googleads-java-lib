@@ -15,7 +15,6 @@ package com.google.api.ads.adwords.axis.v201306.cm;
  *             available mobile app categories</a>.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class MobileAppCategory  extends com.google.api.ads.adwords.axis.v201306.cm.Criterion  implements java.io.Serializable {
     /* ID of this mobile app category. A complete list of the available

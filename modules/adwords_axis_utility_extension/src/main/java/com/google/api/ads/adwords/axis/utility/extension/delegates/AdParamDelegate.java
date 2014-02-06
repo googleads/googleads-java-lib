@@ -15,16 +15,14 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdParam;
 import com.google.api.ads.adwords.axis.v201309.cm.AdParamOperation;
 import com.google.api.ads.adwords.axis.v201309.cm.AdParamServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.common.collect.ImmutableList;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdParam}.
@@ -93,11 +91,9 @@ public final class AdParamDelegate extends
    */
   public List<AdParam> getByAdGroupIdCriterionId(Long adGroupId, Long criterionId)
       throws RemoteException {
-    Map<SelectorFields.AdParam, List<String>> predicates =
-        new HashMap<SelectorFields.AdParam, List<String>>();
-    predicates.put(SelectorFields.AdParam.ADGROUP_ID, ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(
-        SelectorFields.AdParam.CRITERION_ID, ImmutableList.of(String.valueOf(criterionId)));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdParam.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(SelectorFields.AdParam.CRITERION_ID.getField(), String.valueOf(criterionId));
+    return get(builder.build());
   }
 }

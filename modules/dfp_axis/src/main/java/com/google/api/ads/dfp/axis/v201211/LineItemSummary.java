@@ -403,8 +403,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * {@code LineItem}. This attribute is readonly and is assigned by Google. */
     private com.google.api.ads.dfp.axis.v201211.LineItemSummaryReservationStatus reservationStatus;
 
-    /* The archival status of the {@code Order}. This attribute is
-     * readonly. */
+    /* The archival status of the {@code LineItem}. This attribute
+     * is readonly. */
     private java.lang.Boolean isArchived;
 
     /* The web property code used for dynamic allocation line items.
@@ -1892,8 +1892,8 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the isArchived value for this LineItemSummary.
      * 
-     * @return isArchived   * The archival status of the {@code Order}. This attribute is
-     * readonly.
+     * @return isArchived   * The archival status of the {@code LineItem}. This attribute
+     * is readonly.
      */
     public java.lang.Boolean getIsArchived() {
         return isArchived;
@@ -1903,8 +1903,8 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the isArchived value for this LineItemSummary.
      * 
-     * @param isArchived   * The archival status of the {@code Order}. This attribute is
-     * readonly.
+     * @param isArchived   * The archival status of the {@code LineItem}. This attribute
+     * is readonly.
      */
     public void setIsArchived(java.lang.Boolean isArchived) {
         this.isArchived = isArchived;

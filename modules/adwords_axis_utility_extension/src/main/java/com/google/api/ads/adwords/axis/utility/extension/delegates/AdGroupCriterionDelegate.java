@@ -15,18 +15,16 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
+import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterionOperation;
 import com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionType;
 import com.google.api.ads.adwords.axis.v201309.cm.CriterionUse;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.common.collect.ImmutableList;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupCriterion}.
@@ -86,13 +84,10 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    */
   public List<AdGroupCriterion> getByAdGroupIdCriterionId(Long adGroupId, Long criterionId)
       throws RemoteException {
-    Map<SelectorFields.AdGroupCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.AdGroupCriterion, List<String>>();
-    predicates.put(SelectorFields.AdGroupCriterion.ADGROUP_ID,
-        ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(SelectorFields.AdGroupCriterion.ID,
-        ImmutableList.of(String.valueOf(criterionId)));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdGroupCriterion.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(SelectorFields.AdGroupCriterion.ID.getField(), String.valueOf(criterionId));
+    return get(builder.build());
   }
 
   /**
@@ -167,13 +162,10 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    */
   public List<AdGroupCriterion> getByCriterionUseCriterionType(CriterionUse criterionUse,
       CriterionType criterionType) throws RemoteException {
-    Map<SelectorFields.AdGroupCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.AdGroupCriterion, List<String>>();
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERION_USE,
-        ImmutableList.of(criterionUse.getValue()));
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERIA_TYPE,
-        ImmutableList.of(criterionType.getValue()));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdGroupCriterion.CRITERION_USE.getField(), criterionUse.getValue())
+      .equals(SelectorFields.AdGroupCriterion.CRITERIA_TYPE.getField(), criterionType.getValue());
+    return get(builder.build());
   }
 
   /**
@@ -186,13 +178,10 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    */
   public List<AdGroupCriterion> getByAdGroupIdCriterionUse(Long adGroupId,
       CriterionUse criterionUse) throws RemoteException {
-    Map<SelectorFields.AdGroupCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.AdGroupCriterion, List<String>>();
-    predicates.put(SelectorFields.AdGroupCriterion.ADGROUP_ID,
-        ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERION_USE,
-        ImmutableList.of(criterionUse.getValue()));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdGroupCriterion.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(SelectorFields.AdGroupCriterion.CRITERION_USE.getField(), criterionUse.getValue());
+    return get(builder.build());
   }
 
   /**
@@ -205,13 +194,10 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    */
   public List<AdGroupCriterion> getByAdGroupIdCriterionType(Long adGroupId,
       CriterionType criterionType) throws RemoteException {
-    Map<SelectorFields.AdGroupCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.AdGroupCriterion, List<String>>();
-    predicates.put(SelectorFields.AdGroupCriterion.ADGROUP_ID,
-        ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERIA_TYPE,
-        ImmutableList.of(criterionType.getValue()));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdGroupCriterion.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(SelectorFields.AdGroupCriterion.CRITERIA_TYPE.getField(), criterionType.getValue());
+    return get(builder.build());
   }
 
   /**
@@ -225,14 +211,10 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    */
   public List<AdGroupCriterion> getByAdGroupIdCriterionUseCriterionType(Long adGroupId,
       CriterionUse criterionUse, CriterionType criterionType) throws RemoteException {
-    Map<SelectorFields.AdGroupCriterion, List<String>> predicates =
-        new HashMap<SelectorFields.AdGroupCriterion, List<String>>();
-    predicates.put(SelectorFields.AdGroupCriterion.ADGROUP_ID,
-        ImmutableList.of(String.valueOf(adGroupId)));
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERION_USE,
-        ImmutableList.of(criterionUse.getValue()));
-    predicates.put(SelectorFields.AdGroupCriterion.CRITERIA_TYPE,
-        ImmutableList.of(criterionType.getValue()));
-    return get(createSelectorMultipleFields(predicates));
+    SelectorBuilder builder = createSelectorBuilder()
+      .equals(SelectorFields.AdGroupCriterion.ADGROUP_ID.getField(), String.valueOf(adGroupId))
+      .equals(SelectorFields.AdGroupCriterion.CRITERION_USE.getField(), criterionUse.getValue())
+      .equals(SelectorFields.AdGroupCriterion.CRITERIA_TYPE.getField(), criterionType.getValue());
+    return get(builder.build());
   }
 }

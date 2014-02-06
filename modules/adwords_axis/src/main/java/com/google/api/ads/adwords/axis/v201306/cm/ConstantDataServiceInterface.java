@@ -56,7 +56,6 @@ public interface ConstantDataServiceInterface extends java.rmi.Remote {
      * @return A list of mobile devices.
      *         
      * @throws ApiException when there is at least one error with the request.
-     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.MobileDevice[] getMobileDeviceCriterion() throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201306.cm.ApiException;
 
@@ -67,7 +66,6 @@ public interface ConstantDataServiceInterface extends java.rmi.Remote {
      * @return A list of operating system versions.
      *         
      * @throws ApiException when there is at least one error with the request.
-     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.OperatingSystemVersion[] getOperatingSystemVersionCriterion() throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201306.cm.ApiException;
 

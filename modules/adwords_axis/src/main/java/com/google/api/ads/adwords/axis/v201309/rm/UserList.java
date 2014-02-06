@@ -29,8 +29,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsReadOnly".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean isReadOnly;
 
     /* Name of this user list.
@@ -68,8 +67,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "AccessReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.rm.AccessReason accessReason;
 
     /* Indicates if this share is still active. When a UserList is
@@ -100,16 +98,14 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "Size".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long size;
 
     /* Size range in terms of number of users of the UserList.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRange".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.rm.SizeRange sizeRange;
 
     /* Estimated number of users in this user list in the google.com
@@ -122,8 +118,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "SizeForSearch".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Long sizeForSearch;
 
     /* Size range in terms of number of users of the UserList, for
@@ -131,8 +126,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRangeForSearch".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span> */
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.rm.SizeRange sizeRangeForSearch;
 
     /* Indicates that this instance is a subtype of UserList.
@@ -218,8 +212,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsReadOnly".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getIsReadOnly() {
         return isReadOnly;
@@ -236,8 +229,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsReadOnly".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setIsReadOnly(java.lang.Boolean isReadOnly) {
         this.isReadOnly = isReadOnly;
@@ -366,8 +358,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "AccessReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.rm.AccessReason getAccessReason() {
         return accessReason;
@@ -384,8 +375,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "AccessReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setAccessReason(com.google.api.ads.adwords.axis.v201309.rm.AccessReason accessReason) {
         this.accessReason = accessReason;
@@ -471,8 +461,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "Size".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getSize() {
         return size;
@@ -490,8 +479,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "Size".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSize(java.lang.Long size) {
         this.size = size;
@@ -505,8 +493,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRange".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.rm.SizeRange getSizeRange() {
         return sizeRange;
@@ -520,8 +507,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRange".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSizeRange(com.google.api.ads.adwords.axis.v201309.rm.SizeRange sizeRange) {
         this.sizeRange = sizeRange;
@@ -541,8 +527,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "SizeForSearch".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Long getSizeForSearch() {
         return sizeForSearch;
@@ -562,8 +547,7 @@ public class UserList  implements java.io.Serializable {
      * be selected using the value "SizeForSearch".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSizeForSearch(java.lang.Long sizeForSearch) {
         this.sizeForSearch = sizeForSearch;
@@ -578,8 +562,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRangeForSearch".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.rm.SizeRange getSizeRangeForSearch() {
         return sizeRangeForSearch;
@@ -594,8 +577,7 @@ public class UserList  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SizeRangeForSearch".</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and should not be set.  If this field is sent to the API, it
-     * will be ignored.</span>
+     * only and will be ignored when sent to the API.</span>
      */
     public void setSizeRangeForSearch(com.google.api.ads.adwords.axis.v201309.rm.SizeRange sizeRangeForSearch) {
         this.sizeRangeForSearch = sizeRangeForSearch;
