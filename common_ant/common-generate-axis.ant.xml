@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- Build file containing macros for Axis code generation.                  -->
+<!-- ======================================================================= -->
+<project name="common-generate-axis">
+  <import file="common.ant.xml"/>
+
+  <taskdef resource="axis-tasks.properties" classpathref="classpath.common"/>
+
+  <!-- ===================================================================== -->
+  <!-- Macro(override): Default behavior to generate code for a service. Can -->
+  <!-- be overriden by an @api.name-@api.framework/build.xml.                -->
+  <!-- ===================================================================== -->
+  <macrodef name="generate-java-for-service">
+    <attribute name="namespacemapping"/>
+    <attribute name="version.package.default"/>
+    <attribute name="service"/>
+    <attribute name="service.wsdl.url"/>
+    <attribute name="service.package"/>
+    <attribute name="src.output.dir"/>
+    <sequential>
+      <property name="namespacemapping.file"
+          location="@{src.output.dir}/namespacemapping"/>
+      <create-namespacemapping-file file="${namespacemapping.file}"
+          namespacemapping="@{namespacemapping}"/>
+      <axis-wsdl2java
+          all="true"
+          url="@{service.wsdl.url}"
+          verbose="false"
+          output="@{src.output.dir}"
+          typemappingversion="1.2"
+          debug="false"
+          wrapArrays="true"
+          namespacemappingfile="${namespacemapping.file}"/>
+      <delete quiet="true" file="${namespacemapping.file}"/>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Create namespace mapping file from @namespacemapping.property  -->
+  <!-- to @file.                                                             -->
+  <!-- ===================================================================== -->
+  <macrodef name="create-namespacemapping-file">
+    <attribute name="namespacemapping"/>
+    <attribute name="file"/>
+    <sequential>
+      <echo file="@{file}">@{namespacemapping}</echo>
+      <replace file="@{file}" token="," value="${line.separator}"/>
+      <replace file="@{file}" token=":" value="\:"/>
+    </sequential>
+  </macrodef>
+</project>
