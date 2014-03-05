@@ -28,6 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code refreshRate}</td>
  *             <td>{@link ExchangeRate#refreshRate}</td>
  *             </tr>
+ *             <tr>
+ *             <td>{@code direction}</td>
+ *             <td>{@link ExchangeRate#direction}</td>
+ *             </tr>
+ *             <tr>
+ *             <td>{@code exchangeRate}</td>
+ *             <td>{@link ExchangeRate#exchangeRate}</td>
+ *             </tr>
  *             </table>
  *             
  *             @param exchangeRateAction the action to perform

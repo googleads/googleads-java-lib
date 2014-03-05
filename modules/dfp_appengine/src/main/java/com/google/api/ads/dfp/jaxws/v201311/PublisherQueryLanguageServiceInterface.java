@@ -515,6 +515,7 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>CreationDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last created. This attribute may be null for  {@code LineItem}s created before this feature was introduced.</td></tr>
  * <tr><td>DeliveryRateType</td><td><code>Text</code></td><td>The strategy for delivering ads over the course of the {@code LineItem}'s duration. This attribute is optional and defaults to {@link DeliveryRateType#EVENLY}. Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED} if specifically configured to on the network.</td></tr>
  * <tr><td>EndDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} stops serving.</td></tr>
+ * <tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the {@code LineItem} that is meaningful to the publisher.</td></tr>
  * <tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the {@code LineItem}. This attribute is read-only and is assigned by Google when a line item is created.</td></tr>
  * <tr><td>IsMissingCreatives</td><td><code>Boolean</code></td><td>Indicates if a {@code LineItem} is missing any {@link Creative creatives} for the {@code creativePlaceholders} specified.</td></tr>
  * <tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last modified.</td></tr>
@@ -544,6 +545,15 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>Name</td><td><code>Text</code></td><td>The name of the user.</td></tr>
  * <tr><td>RoleId</td><td><code>Number</code></td><td>The unique role ID of the user. {@link Role} objects that are created by Google will have negative IDs.</td></tr>
  * <tr><td>RoleName</td><td><code>Text</code></td><td>The name of the {@link Role} assigned to the user.</td></tr>
+ * </table>
+ * <h4 id="Exchange_Rate">Exchange_Rate</h4>
+ * <table>
+ * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
+ * <tr><td>CurrencyCode</td><td><code>Text</code></td><td>The currency code that the exchange rate is related to. The exchange rate is between this currency and {@link Network#currencyCode the network's currency}. This attribute is required for creation and then is readonly.</td></tr>
+ * <tr><td>Direction</td><td><code>Text</code></td><td>The direction that the exchange rate is in. It determines whether the exchange rate is from this currency to {@link Network#currencyCode the network's currency}, or from {@link Network#currencyCode the network's currency} to this currency. This attribute can be updated.</td></tr>
+ * <tr><td>ExchangeRate</td><td><code>Number</code></td><td>The latest exchange rate at current refresh rate and in current direction. The value is stored as the exchange rate times 10,000,000,000 truncated to a long. Setting this attribute requires the refresh rate to be already set to {@link ExchangeRateRefreshRate#FIXED}. Otherwise an exception will be thrown.</td></tr>
+ * <tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ExchangeRate}. This attribute is readonly and is assigned by Google when an exchange rate is created.</td></tr>
+ * <tr><td>RefreshRate</td><td><code>Text</code></td><td>The refresh rate at which the exchange rate is updated. Setting this attribute to {@link ExchangeRateRefreshRate#FIXED} without setting the exchange rate value will cause unknown exchange rate value returned in future queries.</td></tr>
  * </table>
  *     
  * 

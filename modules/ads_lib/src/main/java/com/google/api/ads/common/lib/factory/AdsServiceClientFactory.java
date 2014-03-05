@@ -63,9 +63,11 @@ public class AdsServiceClientFactory<C extends AdsServiceClient<S, D>,
    *     client
    * @param interfaceClass the class type of the desired client
    * @return a client for the specified ads service
+   * @throws ServiceException if the service client could not be created
    */
   public synchronized <T> T getServiceClient(S adsSession, Class<T> interfaceClass)
       throws ServiceException {
+    adsServiceFactoryHelper.checkServiceClientPreconditions(adsSession, interfaceClass);
     String version = adsServiceFactoryHelper.determineVersion(interfaceClass);
     D adsServiceDescriptor =
         adsServiceFactoryHelper.createServiceDescriptor(interfaceClass, version);

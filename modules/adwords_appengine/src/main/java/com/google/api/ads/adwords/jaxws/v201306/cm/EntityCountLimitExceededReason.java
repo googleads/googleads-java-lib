@@ -31,6 +31,16 @@ public enum EntityCountLimitExceededReason {
 
     ACCOUNT_LIMIT,
     CAMPAIGN_LIMIT,
+
+    /**
+     * 
+     *                 Indicates that this request would exceed the number of allowed entities in
+     *                 this ad group.  The exact entity type and limit being checked can be
+     *                 inferred from {@link #accountLimitType}, and the numeric id of the ad group
+     *                 involved is given by {@link #enclosingId}.
+     *               
+     * 
+     */
     ADGROUP_LIMIT,
 
     /**

@@ -28,8 +28,8 @@ public enum FeedOrigin {
 
     /**
      * 
-     *                 This {@link Feed} was created by the user. FeedAttributes may therefore be added by the
-     *                 user.
+     *                 The {@link FeedAttribute}s for this {@link Feed} are managed by the user.
+     *                 Users can add {@link FeedAttribute}s to this {@link Feed}.
      *               
      * 
      */
@@ -37,7 +37,10 @@ public enum FeedOrigin {
 
     /**
      * 
-     *                 This {@link Feed} is managed automatically. The user cannot add more FeedAttributes.
+     *                 The {@link FeedAttribute}s for an ADWORDS {@link Feed} are created
+     *                 by ADWORDS. Occasionally the attributes defined for a particular type
+     *                 of {@link Feed} is expanded. In this case, older {@link Feed}s of this
+     *                 type can be mutated to add the expanded attributes.
      *               
      * 
      */

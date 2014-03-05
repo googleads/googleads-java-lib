@@ -39,6 +39,7 @@ import com.google.api.ads.adwords.jaxws.v201309.rm.UserListReturnValue;
 })
 @XmlSeeAlso({
     UserListReturnValue.class,
+    BudgetOrderReturnValue.class,
     CampaignSharedSetReturnValue.class,
     FeedReturnValue.class,
     AdGroupFeedReturnValue.class,
@@ -58,8 +59,7 @@ import com.google.api.ads.adwords.jaxws.v201309.rm.UserListReturnValue;
     ExperimentReturnValue.class,
     AdGroupCriterionReturnValue.class,
     CampaignAdExtensionReturnValue.class,
-    CampaignFeedReturnValue.class,
-    BudgetOrderReturnValue.class
+    CampaignFeedReturnValue.class
 })
 public abstract class ListReturnValue {
 

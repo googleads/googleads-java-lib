@@ -19,7 +19,9 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
     /* The largest max CPC bid that can be set by the TargetSpend
      * bidder.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetSpendBidCeiling".</span> */
+     * can be selected using the value "TargetSpendBidCeiling".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Money bidCeiling;
 
     /* A spend target under which to maximize clicks. The TargetSpend
@@ -29,7 +31,9 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
      *                     amount. If not specified, the budget is used as
      * the spend target.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetSpendSpendTarget".</span> */
+     * can be selected using the value "TargetSpendSpendTarget".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.Money spendTarget;
 
     public TargetSpendBiddingScheme() {
@@ -53,6 +57,8 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
      * bidder.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetSpendBidCeiling".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Money getBidCeiling() {
         return bidCeiling;
@@ -66,6 +72,8 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
      * bidder.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetSpendBidCeiling".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public void setBidCeiling(com.google.api.ads.adwords.axis.v201306.cm.Money bidCeiling) {
         this.bidCeiling = bidCeiling;
@@ -83,6 +91,8 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
      * the spend target.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetSpendSpendTarget".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public com.google.api.ads.adwords.axis.v201306.cm.Money getSpendTarget() {
         return spendTarget;
@@ -100,6 +110,8 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
      * the spend target.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetSpendSpendTarget".</span>
+     *                     <span class="constraint InRange">This field must
+     * be greater than or equal to 0.</span>
      */
     public void setSpendTarget(com.google.api.ads.adwords.axis.v201306.cm.Money spendTarget) {
         this.spendTarget = spendTarget;

@@ -24,6 +24,8 @@ public class UploadConversion  extends com.google.api.ads.adwords.axis.v201309.c
      * attached to the individual conversion, this
      *                     value will be used instead. If this value is not
      * set, "1" will be used as the conversion value.
+     *                     This field is no longer used as of v201402 - see
+     * ConversionTracker.defaultRevenueValue.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "UploadUserRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span> */
@@ -68,6 +70,8 @@ public class UploadConversion  extends com.google.api.ads.adwords.axis.v201309.c
      * attached to the individual conversion, this
      *                     value will be used instead. If this value is not
      * set, "1" will be used as the conversion value.
+     *                     This field is no longer used as of v201402 - see
+     * ConversionTracker.defaultRevenueValue.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "UploadUserRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
@@ -86,6 +90,8 @@ public class UploadConversion  extends com.google.api.ads.adwords.axis.v201309.c
      * attached to the individual conversion, this
      *                     value will be used instead. If this value is not
      * set, "1" will be used as the conversion value.
+     *                     This field is no longer used as of v201402 - see
+     * ConversionTracker.defaultRevenueValue.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "UploadUserRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>

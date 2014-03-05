@@ -132,17 +132,17 @@ import com.google.api.ads.adwords.jaxws.v201306.rm.UserListError;
     QuotaCheckError.class,
     ExperimentServiceError.class,
     NotWhitelistedError.class,
-    BudgetOrderError.class,
-    CustomerOrderLineError.class,
+    AlertError.class,
+    ManagedCustomerServiceError.class,
     TargetingIdeaError.class,
     CurrencyCodeError.class,
     MatchesRegexError.class,
     TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201306.rm.CollectionSizeError.class,
-    UserListError.class,
+    BudgetOrderError.class,
+    CustomerOrderLineError.class,
     CustomerSyncError.class,
-    AlertError.class,
-    ManagedCustomerServiceError.class
+    com.google.api.ads.adwords.jaxws.v201306.rm.CollectionSizeError.class,
+    UserListError.class
 })
 public abstract class ApiError {
 

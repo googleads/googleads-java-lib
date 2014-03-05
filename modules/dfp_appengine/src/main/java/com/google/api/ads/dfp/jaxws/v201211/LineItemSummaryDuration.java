@@ -29,8 +29,12 @@ public enum LineItemSummaryDuration {
     /**
      * 
      *                 There is no limit on the number of ads delivered. The
-     *                 {@link LineItem#lineItemType} must be
-     *                 {@link LineItemType#PRICE_PRIORITY}.
+     *                 {@link LineItem#lineItemType} must be one of:
+     *                 <ul>
+     *                 <li>{@link LineItemType#PRICE_PRIORITY}</li>
+     *                 <li>{@link LineItemType#CLICK_TRACKING}</li>
+     *                 </ul>
+     *                 or if the {@link LineItem} is a Cost-Per-Action (CPA) {@link LineItem}.
      *               
      * 
      */
@@ -45,6 +49,10 @@ public enum LineItemSummaryDuration {
      *                 <li>{@link LineItemType#STANDARD}</li>
      *                 <li>{@link LineItemType#BULK}</li>
      *                 <li>{@link LineItemType#PRICE_PRIORITY}</li>
+     *                 <li>{@link LineItemType#ADSENSE}</li>
+     *                 <li>{@link LineItemType#AD_EXCHANGE}</li>
+     *                 <li>{@link LineItemType#ADMOB}</li>
+     *                 <li>{@link LineItemType#CLICK_TRACKING}</li>
      *                 </ul>
      *               
      * 
@@ -60,6 +68,10 @@ public enum LineItemSummaryDuration {
      *                 <li>{@link LineItemType#NETWORK}</li>
      *                 <li>{@link LineItemType#PRICE_PRIORITY}</li>
      *                 <li>{@link LineItemType#HOUSE}</li>
+     *                 <li>{@link LineItemType#ADSENSE}</li>
+     *                 <li>{@link LineItemType#AD_EXCHANGE}</li>
+     *                 <li>{@link LineItemType#ADMOB}</li>
+     *                 <li>{@link LineItemType#BUMPER}</li>
      *                 </ul>
      *               
      * 

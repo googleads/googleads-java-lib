@@ -28,14 +28,18 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     This upper limit applies to all keywords managed
      * by the strategy.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedBidCeiling".</span> */
+     * can be selected using the value "PageOnePromotedBidCeiling".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Money bidCeiling;
 
     /* Bid Multiplier to be applied to the relevant bid estimate (depending
      * on the strategyGoal)
      *                     in determining a keyword's new max cpc bid.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedBidModifier".</span> */
+     * can be selected using the value "PageOnePromotedBidModifier".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span> */
     private java.lang.Double bidModifier;
 
     /* Controls whether the strategy always follows bid estimate changes,
@@ -123,6 +127,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      * by the strategy.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedBidCeiling".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Money getBidCeiling() {
         return bidCeiling;
@@ -138,6 +144,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      * by the strategy.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedBidCeiling".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span>
      */
     public void setBidCeiling(com.google.api.ads.adwords.axis.v201309.cm.Money bidCeiling) {
         this.bidCeiling = bidCeiling;
@@ -152,6 +160,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     in determining a keyword's new max cpc bid.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedBidModifier".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span>
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -166,6 +176,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     in determining a keyword's new max cpc bid.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedBidModifier".</span>
+     * <span class="constraint InRange">This field must be greater than or
+     * equal to 0.</span>
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

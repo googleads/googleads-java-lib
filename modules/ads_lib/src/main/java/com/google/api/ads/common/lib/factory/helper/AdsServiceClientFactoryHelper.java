@@ -60,4 +60,16 @@ public interface AdsServiceClientFactoryHelper<C extends AdsServiceClient<S, D>,
     * @return a string representation of the version of this service
     */
     String determineVersion(Class<?> interfaceClass);
+
+    /**
+     * Checks preconditions of the session and interface and throws an exception
+     * if the client cannot be generated.
+     *
+     * @param adsSession the session containing the authentication method
+     * @param interfaceClass the ads service that a client is being generated for
+     * @throws ServiceException if the preconditions are not met for service client
+     *         creation
+     */
+    void checkServiceClientPreconditions(S adsSession, Class<?> interfaceClass)
+        throws ServiceException;
 }

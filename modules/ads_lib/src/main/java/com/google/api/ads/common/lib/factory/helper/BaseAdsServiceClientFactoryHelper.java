@@ -105,5 +105,11 @@ public abstract class BaseAdsServiceClientFactoryHelper<C extends AdsServiceClie
   Object createSoapClient(D adsServiceDescriptor) {
     return soapClientHandler.createSoapClient(adsServiceDescriptor);
   }
+
+  /**
+   * Default implementation of passing service client preconditions.
+   */
+  public void checkServiceClientPreconditions(S adsSession, Class<?> interfaceClass)
+      throws ServiceException {}
 }
 

@@ -39,12 +39,12 @@ public class AdvertisergroupSoapBindingStub extends org.apache.axis.client.Stub 
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("saveAdvertiserGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserGroup"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "AdvertiserGroup"), com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup.class, false, false);
+        oper.setName("assignAdvertisersToAdvertiserGroup");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserGroupId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "AdvertiserGroupSaveResult"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "saveAdvertiserGroupReturn"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserIds"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOf_xsd_long"), long[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -56,12 +56,12 @@ public class AdvertisergroupSoapBindingStub extends org.apache.axis.client.Stub 
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("assignAdvertisersToAdvertiserGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserGroupId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.setName("saveAdvertiserGroup");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserGroup"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "AdvertiserGroup"), com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "advertiserIds"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOf_xsd_long"), long[].class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "AdvertiserGroupSaveResult"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "saveAdvertiserGroupReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -338,12 +338,44 @@ public class AdvertisergroupSoapBindingStub extends org.apache.axis.client.Stub 
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult saveAdvertiserGroup(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup advertiserGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public void assignAdvertisersToAdvertiserGroup(long advertiserGroupId, long[] advertiserIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "assignAdvertisersToAdvertiserGroup"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(advertiserGroupId), advertiserIds});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult saveAdvertiserGroup(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup advertiserGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -364,38 +396,6 @@ public class AdvertisergroupSoapBindingStub extends org.apache.axis.client.Stub 
                 return (com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult.class);
             }
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public void assignAdvertisersToAdvertiserGroup(long advertiserGroupId, long[] advertiserIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "assignAdvertisersToAdvertiserGroup"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(advertiserGroupId), advertiserIds});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        extractAttachments(_call);
   } catch (org.apache.axis.AxisFault axisFaultException) {
     if (axisFaultException.detail != null) {
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {

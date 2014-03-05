@@ -136,15 +136,6 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAvailableStandardVariables");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfStandardVariable"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.StandardVariable[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableStandardVariablesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[7] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCountriesByCriteria");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CountrySearchCriteria"), com.google.api.ads.dfa.axis.v1_20.CountrySearchCriteria.class, false, false);
         oper.addParameter(param);
@@ -159,15 +150,28 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
+        _operations[7] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("deleteSpotlightActivity");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spolightActivityId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
         _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getSpotlightActivityGroups");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SpotlightActivityGroupSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSearchCriteria.class, false, false);
+        oper.setName("deleteSpotlightActivityGroup");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spolightActivityGroupId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SpotlightActivityGroupRecordSet"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupRecordSet.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightActivityGroupsReturn"));
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -184,13 +188,39 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAvailableStandardVariables");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfStandardVariable"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.StandardVariable[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableStandardVariablesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[10] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getSpotlightActivityGroups");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SpotlightActivityGroupSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSearchCriteria.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SpotlightActivityGroupRecordSet"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupRecordSet.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightActivityGroupsReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
+        _operations[11] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSpotlightActivityTypes");
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSpotlightActivityType"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityType[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightActivityTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[10] = oper;
+        _operations[12] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSpotlightTagCodeTypes");
@@ -199,7 +229,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightTagCodeTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[11] = oper;
+        _operations[13] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSpotlightTagFormatTypes");
@@ -208,7 +238,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightTagFormatTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[12] = oper;
+        _operations[14] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSpotlightTagMethodTypes");
@@ -217,7 +247,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSpotlightTagMethodTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[13] = oper;
+        _operations[15] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateActivityImageTags");
@@ -226,36 +256,6 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSpotlightActivityImageTagsSaveResult"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityImageTagsSaveResult[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateActivityImageTagsReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[14] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteSpotlightActivity");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spolightActivityId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[15] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteSpotlightActivityGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spolightActivityGroupId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -1017,43 +1017,12 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.StandardVariable[] getAvailableStandardVariables() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getAvailableStandardVariables"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.StandardVariable[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.StandardVariable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.StandardVariable[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public com.google.api.ads.dfa.axis.v1_20.Country[] getCountriesByCriteria(com.google.api.ads.dfa.axis.v1_20.CountrySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1087,12 +1056,107 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupRecordSet getSpotlightActivityGroups(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public void deleteSpotlightActivity(long spolightActivityId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "deleteSpotlightActivity"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(spolightActivityId)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public void deleteSpotlightActivityGroup(long spolightActivityGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[9]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "deleteSpotlightActivityGroup"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(spolightActivityGroupId)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.StandardVariable[] getAvailableStandardVariables() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[10]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getAvailableStandardVariables"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.StandardVariable[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.StandardVariable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.StandardVariable[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupRecordSet getSpotlightActivityGroups(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1131,7 +1195,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[10]);
+        _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1162,7 +1226,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[11]);
+        _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1193,7 +1257,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[12]);
+        _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1224,7 +1288,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[13]);
+        _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1255,7 +1319,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[14]);
+        _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1276,70 +1340,6 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
                 return (com.google.api.ads.dfa.axis.v1_20.SpotlightActivityImageTagsSaveResult[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SpotlightActivityImageTagsSaveResult[].class);
             }
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public void deleteSpotlightActivity(long spolightActivityId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[15]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "deleteSpotlightActivity"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(spolightActivityId)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public void deleteSpotlightActivityGroup(long spolightActivityGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[16]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "deleteSpotlightActivityGroup"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(spolightActivityGroupId)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        extractAttachments(_call);
   } catch (org.apache.axis.AxisFault axisFaultException) {
     if (axisFaultException.detail != null) {
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {

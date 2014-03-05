@@ -103,6 +103,14 @@ public interface ExchangeRateServiceInterface {
      *         <td>{@code refreshRate}</td>
      *         <td>{@link ExchangeRate#refreshRate}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code direction}</td>
+     *         <td>{@link ExchangeRate#direction}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code exchangeRate}</td>
+     *         <td>{@link ExchangeRate#exchangeRate}</td>
+     *         </tr>
      *         </table>
      *         
      *         @param filterStatement a Publisher Query Language statement used to filter
@@ -145,6 +153,14 @@ public interface ExchangeRateServiceInterface {
      *         <tr>
      *         <td>{@code refreshRate}</td>
      *         <td>{@link ExchangeRate#refreshRate}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code direction}</td>
+     *         <td>{@link ExchangeRate#direction}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code exchangeRate}</td>
+     *         <td>{@link ExchangeRate#exchangeRate}</td>
      *         </tr>
      *         </table>
      *         

@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             An interface for a logical user list operand. A logical user list is a
  *             combination of logical rules. Each rule is defined as a logical operator and
- *             a list of operands. Those operands can be of type UserList or UserInterest.
+ *             a list of operands. Those operands can be of type UserList.
  *           
  * 
  * <p>Java class for LogicalUserListOperand complex type.

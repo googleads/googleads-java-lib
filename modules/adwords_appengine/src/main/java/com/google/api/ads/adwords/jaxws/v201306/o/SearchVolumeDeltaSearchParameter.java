@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector} is
  *             equivalent to having no constraint on search volume delta specified.
  *             <p>This element is supported by following {@link IdeaType}s: KEYWORD.
- *             <p>This element is supported by following {@link RequestType}s: STATS.
+ *             <p>This element is supported by following {@link RequestType}s: STATS, IDEAS.
  *           
  * 
  * <p>Java class for SearchVolumeDeltaSearchParameter complex type.

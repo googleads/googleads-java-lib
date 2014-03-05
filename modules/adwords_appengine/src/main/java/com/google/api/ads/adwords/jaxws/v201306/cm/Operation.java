@@ -66,11 +66,11 @@ import com.google.api.ads.adwords.jaxws.v201306.rm.UserListOperation;
     CampaignTargetOperation.class,
     SharedSetOperation.class,
     AdGroupCriterionOperation.class,
-    BudgetOrderOperation.class,
-    UserListOperation.class,
     ManagedCustomerOperation.class,
     LinkOperation.class,
-    MoveOperation.class
+    MoveOperation.class,
+    BudgetOrderOperation.class,
+    UserListOperation.class
 })
 public abstract class Operation {
 

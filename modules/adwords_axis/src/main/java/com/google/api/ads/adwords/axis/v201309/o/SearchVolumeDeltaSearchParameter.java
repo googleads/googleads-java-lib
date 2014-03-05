@@ -21,7 +21,7 @@ package com.google.api.ads.adwords.axis.v201309.o;
  *             <p>This element is supported by following {@link IdeaType}s:
  * KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s:
- * STATS.
+ * STATS, IDEAS.
  */
 public class SearchVolumeDeltaSearchParameter  extends com.google.api.ads.adwords.axis.v201309.o.SearchParameter  implements java.io.Serializable {
     /* Used to specify the range of relative search volume delta. */

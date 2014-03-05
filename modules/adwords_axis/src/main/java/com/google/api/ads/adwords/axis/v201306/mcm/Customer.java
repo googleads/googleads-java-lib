@@ -37,9 +37,9 @@ public class Customer  implements java.io.Serializable {
      * must not be empty.</span> */
     private java.lang.String dateTimeZone;
 
-    /* An optional, non-unique descriptive for this customer.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+    /* An optional, non-unique descriptive name for this customer.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private java.lang.String descriptiveName;
 
     /* Whether this customer can manage other AdWords customers
@@ -166,9 +166,9 @@ public class Customer  implements java.io.Serializable {
     /**
      * Gets the descriptiveName value for this Customer.
      * 
-     * @return descriptiveName   * An optional, non-unique descriptive for this customer.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @return descriptiveName   * An optional, non-unique descriptive name for this customer.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public java.lang.String getDescriptiveName() {
         return descriptiveName;
@@ -178,9 +178,9 @@ public class Customer  implements java.io.Serializable {
     /**
      * Sets the descriptiveName value for this Customer.
      * 
-     * @param descriptiveName   * An optional, non-unique descriptive for this customer.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @param descriptiveName   * An optional, non-unique descriptive name for this customer.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setDescriptiveName(java.lang.String descriptiveName) {
         this.descriptiveName = descriptiveName;

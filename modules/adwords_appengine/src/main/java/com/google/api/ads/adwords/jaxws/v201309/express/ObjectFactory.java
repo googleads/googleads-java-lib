@@ -27,8 +27,8 @@ import com.google.api.ads.adwords.jaxws.v201309.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201309", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201309", "ResponseHeader");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201309", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201309", "ApiExceptionFault");
 
     /**
@@ -159,21 +159,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201309", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SoapResponseHeader }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201309", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201309", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**

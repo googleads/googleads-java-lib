@@ -42,7 +42,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201311.BillFrom billFrom;
 
     /* The {@link LineItem#costType} of the line item this row represents.
-     * This attribute is read-only. */
+     * This attribute is read-only.
+     *                 Replaced with {@link #rateType} beginning in v201403. */
     private com.google.api.ads.dfp.axis.v201311.CostType lineItemCostType;
 
     /* The {@link LineItem#costPerUnit} of the line item this row
@@ -62,7 +63,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPC}, this attribute will be set to
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
-     *                 This attribute is read-only. */
+     *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403. */
     private java.lang.Long dfpClicks;
 
     /* The impressions recorded by the DoubleClick for Publishers
@@ -72,7 +74,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPM}, this attribute will be set to
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is read-only. */
+     *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403. */
     private java.lang.Long dfpImpressions;
 
     /* The number of days the line item be impressed and recorded
@@ -82,7 +85,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPD}, this attribute will be set to
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is read-only. */
+     *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403. */
     private java.lang.Integer dfpLineItemDays;
 
     /* The clicks recorded by the third-party ad server.
@@ -91,7 +95,9 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPC}, this attribute will be set to
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403. */
     private java.lang.Long thirdPartyClicks;
 
     /* The impressions recorded by the third-party ad server.
@@ -100,7 +106,9 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPM}, this attribute will be set to
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403. */
     private java.lang.Long thirdPartyImpressions;
 
     /* The number of days the line item be impressed and recorded
@@ -110,7 +118,9 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPD}, this attribute will be set to
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403. */
     private java.lang.Integer thirdPartyLineItemDays;
 
     /* The clicks manually entered.
@@ -119,7 +129,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPC}, this attribute will be set to
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403. */
     private java.lang.Long manualClicks;
 
     /* The impressions manually entered.
@@ -128,7 +139,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPM}, this attribute will be set to
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403. */
     private java.lang.Long manualImpressions;
 
     /* The number of days the line item be impressed and entered manually.
@@ -137,19 +149,26 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 {@link CostType#CPD}, this attribute will be set to
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403. */
     private java.lang.Integer manualLineItemDays;
 
     /* The clicks depending upon the {@link #billFrom} value.
-     *                 This attribute is read-only. */
+     *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403. */
     private java.lang.Long reconciledClicks;
 
     /* The impression depending upon the {@link #billFrom} value.
-     *                 This attribute is read-only. */
+     *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403. */
     private java.lang.Long reconciledImpressions;
 
     /* The line item days depending upon the {@link #billFrom} value.
-     * This attribute is read-only. */
+     * This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403. */
     private java.lang.Integer reconciledLineItemDays;
 
     /* The revenue calculated based on the {@link #contractedGoal}
@@ -389,6 +408,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @return lineItemCostType   * The {@link LineItem#costType} of the line item this row represents.
      * This attribute is read-only.
+     *                 Replaced with {@link #rateType} beginning in v201403.
      */
     public com.google.api.ads.dfp.axis.v201311.CostType getLineItemCostType() {
         return lineItemCostType;
@@ -400,6 +420,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @param lineItemCostType   * The {@link LineItem#costType} of the line item this row represents.
      * This attribute is read-only.
+     *                 Replaced with {@link #rateType} beginning in v201403.
      */
     public void setLineItemCostType(com.google.api.ads.dfp.axis.v201311.CostType lineItemCostType) {
         this.lineItemCostType = lineItemCostType;
@@ -466,6 +487,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public java.lang.Long getDfpClicks() {
         return dfpClicks;
@@ -482,6 +504,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public void setDfpClicks(java.lang.Long dfpClicks) {
         this.dfpClicks = dfpClicks;
@@ -499,6 +522,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public java.lang.Long getDfpImpressions() {
         return dfpImpressions;
@@ -516,6 +540,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public void setDfpImpressions(java.lang.Long dfpImpressions) {
         this.dfpImpressions = dfpImpressions;
@@ -533,6 +558,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public java.lang.Integer getDfpLineItemDays() {
         return dfpLineItemDays;
@@ -550,6 +576,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #dfpVolume} beginning in v201403.
      */
     public void setDfpLineItemDays(java.lang.Integer dfpLineItemDays) {
         this.dfpLineItemDays = dfpLineItemDays;
@@ -566,6 +593,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public java.lang.Long getThirdPartyClicks() {
         return thirdPartyClicks;
@@ -582,6 +611,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public void setThirdPartyClicks(java.lang.Long thirdPartyClicks) {
         this.thirdPartyClicks = thirdPartyClicks;
@@ -598,6 +629,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public java.lang.Long getThirdPartyImpressions() {
         return thirdPartyImpressions;
@@ -614,6 +647,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public void setThirdPartyImpressions(java.lang.Long thirdPartyImpressions) {
         this.thirdPartyImpressions = thirdPartyImpressions;
@@ -631,6 +666,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public java.lang.Integer getThirdPartyLineItemDays() {
         return thirdPartyLineItemDays;
@@ -648,6 +685,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #thirdPartyVolume} beginning
+     * in v201403.
      */
     public void setThirdPartyLineItemDays(java.lang.Integer thirdPartyLineItemDays) {
         this.thirdPartyLineItemDays = thirdPartyLineItemDays;
@@ -664,6 +703,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public java.lang.Long getManualClicks() {
         return manualClicks;
@@ -680,6 +720,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledClicks} and used to
      *                 calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public void setManualClicks(java.lang.Long manualClicks) {
         this.manualClicks = manualClicks;
@@ -696,6 +737,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public java.lang.Long getManualImpressions() {
         return manualImpressions;
@@ -712,6 +754,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledImpressions} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public void setManualImpressions(java.lang.Long manualImpressions) {
         this.manualImpressions = manualImpressions;
@@ -728,6 +771,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public java.lang.Integer getManualLineItemDays() {
         return manualLineItemDays;
@@ -744,6 +788,7 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * {@link #reconciledLineItemDays} and
      *                 used to calculate the {@link #reconciledRevenue}.
      *                 This attribute is optional.
+     *                 Replaced with {@link #manualVolume} beginning in v201403.
      */
     public void setManualLineItemDays(java.lang.Integer manualLineItemDays) {
         this.manualLineItemDays = manualLineItemDays;
@@ -755,6 +800,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @return reconciledClicks   * The clicks depending upon the {@link #billFrom} value.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public java.lang.Long getReconciledClicks() {
         return reconciledClicks;
@@ -766,6 +813,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @param reconciledClicks   * The clicks depending upon the {@link #billFrom} value.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public void setReconciledClicks(java.lang.Long reconciledClicks) {
         this.reconciledClicks = reconciledClicks;
@@ -777,6 +826,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @return reconciledImpressions   * The impression depending upon the {@link #billFrom} value.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public java.lang.Long getReconciledImpressions() {
         return reconciledImpressions;
@@ -788,6 +839,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @param reconciledImpressions   * The impression depending upon the {@link #billFrom} value.
      *                 This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public void setReconciledImpressions(java.lang.Long reconciledImpressions) {
         this.reconciledImpressions = reconciledImpressions;
@@ -799,6 +852,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @return reconciledLineItemDays   * The line item days depending upon the {@link #billFrom} value.
      * This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public java.lang.Integer getReconciledLineItemDays() {
         return reconciledLineItemDays;
@@ -810,6 +865,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * 
      * @param reconciledLineItemDays   * The line item days depending upon the {@link #billFrom} value.
      * This attribute is read-only.
+     *                 Replaced with {@link #reconciledVolume} beginning
+     * in v201403.
      */
     public void setReconciledLineItemDays(java.lang.Integer reconciledLineItemDays) {
         this.reconciledLineItemDays = reconciledLineItemDays;

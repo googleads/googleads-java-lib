@@ -57,7 +57,8 @@ public class Feed  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201306.cm.FeedStatus status;
 
-    /* The creator of the Feed.
+    /* Specifies who manages the {@link FeedAttribute}s for the {@link
+     * Feed}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Origin".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -229,7 +230,8 @@ public class Feed  implements java.io.Serializable {
     /**
      * Gets the origin value for this Feed.
      * 
-     * @return origin   * The creator of the Feed.
+     * @return origin   * Specifies who manages the {@link FeedAttribute}s for the {@link
+     * Feed}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Origin".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -242,7 +244,8 @@ public class Feed  implements java.io.Serializable {
     /**
      * Sets the origin value for this Feed.
      * 
-     * @param origin   * The creator of the Feed.
+     * @param origin   * Specifies who manages the {@link FeedAttribute}s for the {@link
+     * Feed}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Origin".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

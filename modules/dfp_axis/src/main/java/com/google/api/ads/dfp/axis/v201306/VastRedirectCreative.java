@@ -11,17 +11,19 @@ package com.google.api.ads.dfp.axis.v201306;
 /**
  * A {@code Creative} that points to an externally hosted VAST ad
  * and is
- *             served via VAST 2.0 XML as a VAST Wrapper.  This creative
- * is read only.
+ *             served via VAST XML as a VAST Wrapper.
  */
 public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.Creative  implements java.io.Serializable {
-    /* The URL where the 3rd party VAST 2.0 XML is hosted. */
+    /* The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required. */
     private java.lang.String vastXmlUrl;
 
-    /* The type of VAST ad that this redirects to. */
+    /* The type of VAST ad that this redirects to. This attribute
+     * is required. */
     private com.google.api.ads.dfp.axis.v201306.VastRedirectType vastRedirectType;
 
-    /* The duration of the VAST ad in milliseconds. */
+    /* The duration of the VAST ad in milliseconds. This attribute
+     * is optional and defaults to 0. */
     private java.lang.Integer duration;
 
     /* The IDs of the companion creatives that are associated with
@@ -80,7 +82,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Gets the vastXmlUrl value for this VastRedirectCreative.
      * 
-     * @return vastXmlUrl   * The URL where the 3rd party VAST 2.0 XML is hosted.
+     * @return vastXmlUrl   * The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required.
      */
     public java.lang.String getVastXmlUrl() {
         return vastXmlUrl;
@@ -90,7 +93,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Sets the vastXmlUrl value for this VastRedirectCreative.
      * 
-     * @param vastXmlUrl   * The URL where the 3rd party VAST 2.0 XML is hosted.
+     * @param vastXmlUrl   * The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required.
      */
     public void setVastXmlUrl(java.lang.String vastXmlUrl) {
         this.vastXmlUrl = vastXmlUrl;
@@ -100,7 +104,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Gets the vastRedirectType value for this VastRedirectCreative.
      * 
-     * @return vastRedirectType   * The type of VAST ad that this redirects to.
+     * @return vastRedirectType   * The type of VAST ad that this redirects to. This attribute
+     * is required.
      */
     public com.google.api.ads.dfp.axis.v201306.VastRedirectType getVastRedirectType() {
         return vastRedirectType;
@@ -110,7 +115,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Sets the vastRedirectType value for this VastRedirectCreative.
      * 
-     * @param vastRedirectType   * The type of VAST ad that this redirects to.
+     * @param vastRedirectType   * The type of VAST ad that this redirects to. This attribute
+     * is required.
      */
     public void setVastRedirectType(com.google.api.ads.dfp.axis.v201306.VastRedirectType vastRedirectType) {
         this.vastRedirectType = vastRedirectType;
@@ -120,7 +126,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Gets the duration value for this VastRedirectCreative.
      * 
-     * @return duration   * The duration of the VAST ad in milliseconds.
+     * @return duration   * The duration of the VAST ad in milliseconds. This attribute
+     * is optional and defaults to 0.
      */
     public java.lang.Integer getDuration() {
         return duration;
@@ -130,7 +137,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201306.C
     /**
      * Sets the duration value for this VastRedirectCreative.
      * 
-     * @param duration   * The duration of the VAST ad in milliseconds.
+     * @param duration   * The duration of the VAST ad in milliseconds. This attribute
+     * is optional and defaults to 0.
      */
     public void setDuration(java.lang.Integer duration) {
         this.duration = duration;

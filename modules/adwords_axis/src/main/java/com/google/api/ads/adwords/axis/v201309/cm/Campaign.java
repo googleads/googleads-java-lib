@@ -18,10 +18,7 @@ public class Campaign  implements java.io.Serializable {
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: ADD.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span> */
+     * Operator}s: ADD.</span> */
     private java.lang.Long id;
 
     /* Name of this campaign. On add, defaults to <code>Campaign #<var>N</var></code>
@@ -29,9 +26,15 @@ public class Campaign  implements java.io.Serializable {
      *                 This field is required and should not be {@code null}
      * for ADD operations from
      *                 v201309 versions.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     *                 
+     *                 On SET and REMOVE operations, this can be used to
+     * address the campaign by name, if the
+     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
+     * be addressed by name.  If you
+     *                 wish to rename a campaign, you must provide the ID.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String name;
@@ -157,9 +160,6 @@ public class Campaign  implements java.io.Serializable {
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span>
      */
     public java.lang.Long getId() {
         return id;
@@ -176,9 +176,6 @@ public class Campaign  implements java.io.Serializable {
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span>
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -193,9 +190,15 @@ public class Campaign  implements java.io.Serializable {
      *                 This field is required and should not be {@code null}
      * for ADD operations from
      *                 v201309 versions.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     *                 
+     *                 On SET and REMOVE operations, this can be used to
+     * address the campaign by name, if the
+     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
+     * be addressed by name.  If you
+     *                 wish to rename a campaign, you must provide the ID.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -212,9 +215,15 @@ public class Campaign  implements java.io.Serializable {
      *                 This field is required and should not be {@code null}
      * for ADD operations from
      *                 v201309 versions.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     *                 
+     *                 On SET and REMOVE operations, this can be used to
+     * address the campaign by name, if the
+     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
+     * be addressed by name.  If you
+     *                 wish to rename a campaign, you must provide the ID.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */

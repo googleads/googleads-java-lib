@@ -18,6 +18,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -25,6 +26,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.common.lib.client.AdsServiceClient;
 import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 import com.google.api.ads.common.lib.client.AdsSession;
+import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
 import com.google.api.ads.common.lib.soap.testing.MockSoapClientInterface;
 
@@ -78,6 +80,36 @@ public class AdsServiceClientFactoryTest {
 
     when(adsServiceClientFactoryHelper.determineVersion(MockSoapClientInterface.class))
         .thenReturn(version);
+
+    when(adsServiceClientFactoryHelper.createServiceDescriptor(
+        MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
+    when(
+        adsServiceClientFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession))
+        .thenReturn(adsServiceClient);
+    when((Class<MockSoapClientInterface>) adsServiceDescriptor.getInterfaceClass())
+        .thenReturn(MockSoapClientInterface.class);
+    doReturn(null).when(adsServiceClientFactory).createProxy(any(AdsServiceClient.class),
+        any(Set.class));
+
+    MockSoapClientInterface testAdsServiceClient =
+        adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
+
+    verify(adsServiceClientFactory).createProxy(eq(adsServiceClient), setArg.capture());
+    assertTrue(setArg.getValue().contains(MockSoapClientInterface.class));
+  }
+
+  @Test(expected = ServiceException.class)
+  @SuppressWarnings({"unchecked", "rawtypes"})
+  public void testGetServiceClient_failPreconditions() {
+    String version = "v1.1";
+    ArgumentCaptor<Set> setArg = ArgumentCaptor.forClass(Set.class);
+
+   doThrow(new ServiceException("")).when(adsServiceClientFactoryHelper)
+       .checkServiceClientPreconditions(adsSession, MockSoapClientInterface.class);
+
+    when(adsServiceClientFactoryHelper.determineVersion(MockSoapClientInterface.class))
+        .thenReturn(version);
+
     when(adsServiceClientFactoryHelper.createServiceDescriptor(
         MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
     when(

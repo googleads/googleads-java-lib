@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INSUFFICIENT_SEARCH_PARAMETERS"/>
  *     &lt;enumeration value="INVALID_ATTRIBUTE_TYPE"/>
  *     &lt;enumeration value="INVALID_SEARCH_PARAMETERS"/>
+ *     &lt;enumeration value="INVALID_DOMAIN_SUFFIX"/>
  *     &lt;enumeration value="MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY"/>
  *     &lt;enumeration value="SERVICE_UNAVAILABLE"/>
  *     &lt;enumeration value="INVALID_URL_IN_SEARCH_PARAMETER"/>
@@ -83,6 +84,18 @@ public enum TargetingIdeaErrorReason {
      * 
      */
     INVALID_SEARCH_PARAMETERS,
+
+    /**
+     * 
+     *                 Error returned when the
+     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
+     *                 contains a
+     *                 {@link com.google.ads.api.services.targetingideas.search.DomainSuffixSearchParameter}s
+     *                 that contains an invalid domain suffix.
+     *               
+     * 
+     */
+    INVALID_DOMAIN_SUFFIX,
 
     /**
      * 

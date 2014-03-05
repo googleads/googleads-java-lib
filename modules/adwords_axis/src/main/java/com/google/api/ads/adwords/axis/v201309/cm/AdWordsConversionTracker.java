@@ -51,6 +51,7 @@ public class AdWordsConversionTracker  extends com.google.api.ads.adwords.axis.v
     /* The user-supplied revenue value for this conversion tracker.
      * This value is passed
      *                     through directly to the conversion tracker snippet.
+     * This field is no longer used as of v201402 - see ConversionTracker.defaultRevenueValue.
      * <span class="constraint Selectable">This field can be selected using
      * the value "UserRevenueValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span> */
@@ -252,6 +253,7 @@ public class AdWordsConversionTracker  extends com.google.api.ads.adwords.axis.v
      * @return userRevenueValue   * The user-supplied revenue value for this conversion tracker.
      * This value is passed
      *                     through directly to the conversion tracker snippet.
+     * This field is no longer used as of v201402 - see ConversionTracker.defaultRevenueValue.
      * <span class="constraint Selectable">This field can be selected using
      * the value "UserRevenueValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -267,6 +269,7 @@ public class AdWordsConversionTracker  extends com.google.api.ads.adwords.axis.v
      * @param userRevenueValue   * The user-supplied revenue value for this conversion tracker.
      * This value is passed
      *                     through directly to the conversion tracker snippet.
+     * This field is no longer used as of v201402 - see ConversionTracker.defaultRevenueValue.
      * <span class="constraint Selectable">This field can be selected using
      * the value "UserRevenueValue".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>

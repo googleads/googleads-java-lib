@@ -20,13 +20,24 @@ package com.google.api.ads.common.lib.exception;
  * @author Adam Rogal
  */
 public class ServiceException extends RuntimeException {
+
   /**
    * Constructor.
    *
    * @param message the exception message
-   * @param exception the underlying exception.
+   * @param exception the underlying exception
    */
   public ServiceException(String message, Throwable exception) {
     super(message, exception);
   }
+
+  /**
+   * Constructor.
+   *
+   * @param message the exception message
+   */
+  public ServiceException(String message) {
+    super(message);
+  }
 }
+

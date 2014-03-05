@@ -23,6 +23,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
     /* Day of the week the schedule applies to.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DayOfWeek".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -33,6 +36,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -42,6 +48,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "StartMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -53,6 +62,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -62,6 +74,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EndMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -97,6 +112,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * @return dayOfWeek   * Day of the week the schedule applies to.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DayOfWeek".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -112,6 +130,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * @param dayOfWeek   * Day of the week the schedule applies to.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "DayOfWeek".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -129,6 +150,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -146,6 +170,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -162,6 +189,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "StartMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -178,6 +208,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "StartMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -196,6 +229,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -214,6 +250,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -230,6 +269,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EndMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -246,6 +288,9 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201306.cm.Crit
      *                     The value can be 0, 15, 30, and 45.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EndMinute".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API for the following
+     * {@link Operator}s: REMOVE and SET.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

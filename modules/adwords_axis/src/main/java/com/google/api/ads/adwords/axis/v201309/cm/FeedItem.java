@@ -96,15 +96,19 @@ public class FeedItem  implements java.io.Serializable {
     /* FeedItemScheduling specifying times for when the feed item
      * may serve.
      *                 On retrieval or creation of the feed item, if the
-     * field is left null or unspecified,
+     * field is left null,
      *                 no feed item scheduling restrictions are placed on
      * the feed item.
      *                 On update, if the field is left unspecified, the previous
      * feedItemScheduling state will
      *                 not be changed.
+     *                 On update, if the field is set with a FeedItemScheduling
+     * with an empty feedItemSchedules
+     *                 list, the scheduling will be cleared of all FeedItemSchedules
+     * indicating the feed item
+     *                 has no scheduling restrictions.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Scheduling".</span>
-     *                 <span class="constraint Beta">This is a beta feature.</span> */
+     * be selected using the value "Scheduling".</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.FeedItemScheduling scheduling;
 
     public FeedItem() {
@@ -428,15 +432,19 @@ public class FeedItem  implements java.io.Serializable {
      * @return scheduling   * FeedItemScheduling specifying times for when the feed item
      * may serve.
      *                 On retrieval or creation of the feed item, if the
-     * field is left null or unspecified,
+     * field is left null,
      *                 no feed item scheduling restrictions are placed on
      * the feed item.
      *                 On update, if the field is left unspecified, the previous
      * feedItemScheduling state will
      *                 not be changed.
+     *                 On update, if the field is set with a FeedItemScheduling
+     * with an empty feedItemSchedules
+     *                 list, the scheduling will be cleared of all FeedItemSchedules
+     * indicating the feed item
+     *                 has no scheduling restrictions.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Scheduling".</span>
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.FeedItemScheduling getScheduling() {
         return scheduling;
@@ -449,15 +457,19 @@ public class FeedItem  implements java.io.Serializable {
      * @param scheduling   * FeedItemScheduling specifying times for when the feed item
      * may serve.
      *                 On retrieval or creation of the feed item, if the
-     * field is left null or unspecified,
+     * field is left null,
      *                 no feed item scheduling restrictions are placed on
      * the feed item.
      *                 On update, if the field is left unspecified, the previous
      * feedItemScheduling state will
      *                 not be changed.
+     *                 On update, if the field is set with a FeedItemScheduling
+     * with an empty feedItemSchedules
+     *                 list, the scheduling will be cleared of all FeedItemSchedules
+     * indicating the feed item
+     *                 has no scheduling restrictions.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Scheduling".</span>
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      */
     public void setScheduling(com.google.api.ads.adwords.axis.v201309.cm.FeedItemScheduling scheduling) {
         this.scheduling = scheduling;

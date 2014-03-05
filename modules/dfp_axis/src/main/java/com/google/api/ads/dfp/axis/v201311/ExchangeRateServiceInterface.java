@@ -64,6 +64,14 @@ public interface ExchangeRateServiceInterface extends java.rmi.Remote {
      *         <td>{@code refreshRate}</td>
      *         <td>{@link ExchangeRate#refreshRate}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code direction}</td>
+     *         <td>{@link ExchangeRate#direction}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code exchangeRate}</td>
+     *         <td>{@link ExchangeRate#exchangeRate}</td>
+     *         </tr>
      *         </table>
      *         
      *         
@@ -96,6 +104,14 @@ public interface ExchangeRateServiceInterface extends java.rmi.Remote {
      *         <tr>
      *         <td>{@code refreshRate}</td>
      *         <td>{@link ExchangeRate#refreshRate}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code direction}</td>
+     *         <td>{@link ExchangeRate#direction}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code exchangeRate}</td>
+     *         <td>{@link ExchangeRate#exchangeRate}</td>
      *         </tr>
      *         </table>
      *         

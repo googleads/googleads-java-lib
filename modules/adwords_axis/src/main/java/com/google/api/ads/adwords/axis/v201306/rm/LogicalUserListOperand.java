@@ -13,8 +13,7 @@ package com.google.api.ads.adwords.axis.v201306.rm;
  * is a
  *             combination of logical rules. Each rule is defined as
  * a logical operator and
- *             a list of operands. Those operands can be of type UserList
- * or UserInterest.
+ *             a list of operands. Those operands can be of type UserList.
  */
 public class LogicalUserListOperand  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201306.rm.UserInterest userInterest;

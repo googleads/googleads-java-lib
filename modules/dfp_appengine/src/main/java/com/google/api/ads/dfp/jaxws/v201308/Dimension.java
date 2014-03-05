@@ -642,6 +642,8 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by proposal salesperson ID.
+     *                 <p>
+     *                 Replaced with {@code ALL_SALESPEOPLE_ID} beginning in V201403.
      *               
      * 
      */
@@ -650,6 +652,8 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by proposal salesperson name.
+     *                 <p>
+     *                 Replaced with {@code ALL_SALESPEOPLE_NAME} beginning in V201403.
      *               
      * 
      */

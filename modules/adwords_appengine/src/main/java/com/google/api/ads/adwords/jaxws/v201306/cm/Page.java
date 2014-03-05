@@ -55,10 +55,10 @@ import com.google.api.ads.adwords.jaxws.v201306.rm.UserListPage;
     AdGroupPage.class,
     com.google.api.ads.adwords.jaxws.v201306.cm.NoStatsPage.class,
     BiddingStrategyPage.class,
-    BudgetOrderPage.class,
-    UserListPage.class,
     ManagedCustomerPage.class,
-    com.google.api.ads.adwords.jaxws.v201306.mcm.NoStatsPage.class
+    com.google.api.ads.adwords.jaxws.v201306.mcm.NoStatsPage.class,
+    BudgetOrderPage.class,
+    UserListPage.class
 })
 public abstract class Page {
 

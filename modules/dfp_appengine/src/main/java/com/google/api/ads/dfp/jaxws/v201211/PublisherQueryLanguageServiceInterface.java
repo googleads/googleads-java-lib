@@ -515,6 +515,7 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>CreationDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last created. This attribute may be null for  {@code LineItem}s created before this feature was introduced.</td></tr>
  * <tr><td>DeliveryRateType</td><td><code>Text</code></td><td>The strategy for delivering ads over the course of the {@code LineItem}'s duration. This attribute is optional and defaults to {@link DeliveryRateType#EVENLY}. Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED} if specifically configured to on the network.</td></tr>
  * <tr><td>EndDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} stops serving.</td></tr>
+ * <tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the {@code LineItem} that is meaningful to the publisher.</td></tr>
  * <tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the {@code LineItem}. This attribute is read-only and is assigned by Google when a line item is created.</td></tr>
  * <tr><td>IsMissingCreatives</td><td><code>Boolean</code></td><td>Indicates if a {@code LineItem} is missing any {@link Creative creatives} for the {@code creativePlaceholders} specified.</td></tr>
  * <tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last modified.</td></tr>

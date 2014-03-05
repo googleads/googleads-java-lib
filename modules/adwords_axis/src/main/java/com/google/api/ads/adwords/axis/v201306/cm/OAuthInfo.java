@@ -7,11 +7,20 @@
 
 package com.google.api.ads.adwords.axis.v201306.cm;
 
+
+/**
+ * Data used for authorization using OAuth.
+ *             For more information about OAuth, see:
+ *             {@link "https://developers.google.com/accounts/docs/OAuth2"}
+ */
 public class OAuthInfo  implements java.io.Serializable {
+    /* The HTTP method used to obtain authorization. */
     private java.lang.String httpMethod;
 
+    /* The HTTP request URL used to obtain authorization. */
     private java.lang.String httpRequestUrl;
 
+    /* The HTTP authorization header used to obtain authorization. */
     private java.lang.String httpAuthorizationHeader;
 
     public OAuthInfo() {
@@ -30,7 +39,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Gets the httpMethod value for this OAuthInfo.
      * 
-     * @return httpMethod
+     * @return httpMethod   * The HTTP method used to obtain authorization.
      */
     public java.lang.String getHttpMethod() {
         return httpMethod;
@@ -40,7 +49,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Sets the httpMethod value for this OAuthInfo.
      * 
-     * @param httpMethod
+     * @param httpMethod   * The HTTP method used to obtain authorization.
      */
     public void setHttpMethod(java.lang.String httpMethod) {
         this.httpMethod = httpMethod;
@@ -50,7 +59,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Gets the httpRequestUrl value for this OAuthInfo.
      * 
-     * @return httpRequestUrl
+     * @return httpRequestUrl   * The HTTP request URL used to obtain authorization.
      */
     public java.lang.String getHttpRequestUrl() {
         return httpRequestUrl;
@@ -60,7 +69,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Sets the httpRequestUrl value for this OAuthInfo.
      * 
-     * @param httpRequestUrl
+     * @param httpRequestUrl   * The HTTP request URL used to obtain authorization.
      */
     public void setHttpRequestUrl(java.lang.String httpRequestUrl) {
         this.httpRequestUrl = httpRequestUrl;
@@ -70,7 +79,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Gets the httpAuthorizationHeader value for this OAuthInfo.
      * 
-     * @return httpAuthorizationHeader
+     * @return httpAuthorizationHeader   * The HTTP authorization header used to obtain authorization.
      */
     public java.lang.String getHttpAuthorizationHeader() {
         return httpAuthorizationHeader;
@@ -80,7 +89,7 @@ public class OAuthInfo  implements java.io.Serializable {
     /**
      * Sets the httpAuthorizationHeader value for this OAuthInfo.
      * 
-     * @param httpAuthorizationHeader
+     * @param httpAuthorizationHeader   * The HTTP authorization header used to obtain authorization.
      */
     public void setHttpAuthorizationHeader(java.lang.String httpAuthorizationHeader) {
         this.httpAuthorizationHeader = httpAuthorizationHeader;

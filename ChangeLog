@@ -1,4 +1,25 @@
-1.24.1 - 02/05/2014
+1.25.0 - 03/05/2014
+-------------------
+AdWords:
+  - Added examples to get refresh token and create AdWordsSession without
+    using ads.properties file.
+
+DFA:
+  - Added examples to get refresh token and create DfaSession without
+    using ads.properties file.
+
+DFP:
+  - Added examples to get refresh token and create DfpSession without
+    using ads.properties file.
+  - Added support for v201403.
+  - Added LiveStreamEventService and RateCardCustomizationGroupService.
+  - Removed all non-bulk methods beginning with v201403.
+  - Disabled ClientLogin beginning with v201403.
+
+Common:
+  - No changes.
+
+1.24.1 - 02/06/2014
 -------------------
 AdWords:
   - No changes.
@@ -13,7 +34,7 @@ Common:
   - Replaced java.nio.charset.StandardCharsets.UTF_8 with
     com.google.common.base.Charsets.UTF_8 for Java 1.5 compatibility. Fixes
     issue #10.
-  - com.google.http-client and org.seleniumhq.selenium artifacts are longer
+  - com.google.http-client and org.seleniumhq.selenium artifacts are no longer
     RELEASE.
 
 1.24.0 - 01/29/2014
@@ -41,10 +62,10 @@ AdWords:
 
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
@@ -52,29 +73,29 @@ Common:
 -------------------
 AdWords:
   - Added AdWords Axis Utility Extension (beta).
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
 1.22.0 - 11/25/2013
 -------------------
-AdWords:  
+AdWords:
   - Added SelectorBuilder to simplify building Selectors.
   - A valid user agent is now required and must not be the default. Set
     it via AdWordsSession.Builder.withUserAgent or the api.adwords.userAgent
     ads.properties key.
-    
+
 DFA:
   - A valid application name is now required and must not be the default. Set
     it via DfaSession.Builder.withApplicationName or the api.dfa.applicationName
     ads.properties key.
-    
+
 DFP:
   - Added support for v201311.
   - Starting in v201311, StatementBuilder.SUGGESTED_PAGE_LIMIT will be set to
@@ -82,7 +103,7 @@ DFP:
   - A valid application name is now required and must not be the default. Set
     it via DfpSession.Builder.withApplicationName or the api.dfp.applicationName
     ads.properties key.
-    
+
 Common:
   - No changes.
 
@@ -90,13 +111,13 @@ Common:
 -------------------
 AdWords:
   - Removed the support for v201302.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
@@ -106,15 +127,15 @@ AdWords:
   - Moved UseSharedBiddingStrategy example to advancedoperations from campaignmanagement.
   - Added UpdateSiteLinks example to illustrate how to use new line 1 and 2 descriptions.
   - Updated AddSiteLinks example to include new line 1 and 2 description fields.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - Fixed issue 69: NPE for null Value objects in PQL utilities.
   - Added getNativeValue an getApiValue to PQL utility to ease work with Value
     objects.
-    
+
 Common:
   - No changes.
 
@@ -122,13 +143,13 @@ Common:
 -------------------
 AdWords:
   - Added support for v201309.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
@@ -136,10 +157,10 @@ Common:
 ------------------
 AdWords:
   - No changes.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - Added v201308.
   - Removed deprecated versions v201203, v201204, and v201206.
@@ -150,7 +171,7 @@ DFP:
     in yyyy-MM-dd format.
   - Added Pql.combineResultSets to easily combine result sets from paged
     statements.
-    
+
 Common:
   - No changes.
 
@@ -158,13 +179,13 @@ Common:
 ------------------
 AdWords:
   - Removed support for v201209.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
@@ -172,13 +193,13 @@ Common:
 ------------------
 AdWords:
   - Added support for v201306.
-  
+
 DFA:
   - No changes.
-  
+
 DFP:
   - No changes.
-  
+
 Common:
   - No changes.
 
@@ -193,13 +214,13 @@ AdWords:
   - Removed OAuth1 support. OAuth2 should be used instead.
   - ClientLogin is now deprecated. OAuth2 should be used instead.
   - Updated all examples to use OfflineCredentials instead of ClientLogin.
-  
+
 DFA:
   - Added GetRefreshToken example to be used with OfflineCredentials.
   - The ads.properties file can now accept a refreshToken and client secrets.
   - Username/password is now deprecated. OAuth2 should be used instead.
   - Updated all examples to use OfflineCredentials.
-  
+
 DFP:
   - Added GetRefreshToken example to be used with OfflineCredentials.
   - The ads.properties file can now accept a refreshToken and client secrets.
@@ -208,7 +229,7 @@ DFP:
   - Removed OAuth1 support. OAuth2 should be used instead.
   - ClientLogin is now deprecated. OAuth2 should be used instead.
   - Updated all examples to use OfflineCredentials.
-  
+
 Common:
   - Added OfflineCredentials utility to generate an OAuth2 Credential from
     information stored in your ads.properties file. If you have not moved
@@ -220,17 +241,17 @@ Common:
 ------------------
 AdWords:
   - No changes.
-  
+
 DFA:
   - Removed the match table application from our example set. From now on, it
     will be treated as its own sample application.
   - Added automatic refreshing of DDMM tokens. Once your account has been
     upgraded from DFA to DDMM, your login tokens have limited lifespans.
-    
+
 DFP:
   - Added support for v201306.
   - Added all remaining missing examples for v201302.
-  
+
 Common:
   - No changes.
 

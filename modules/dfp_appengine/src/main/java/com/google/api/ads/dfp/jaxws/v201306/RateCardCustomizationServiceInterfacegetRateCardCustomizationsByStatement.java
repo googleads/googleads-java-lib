@@ -24,6 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link RateCardCustomization#rateCardId}</td>
  *             </tr>
  *             <tr>
+ *             <td>{@code rateCardCustomizationGroupId}</td>
+ *             <td>{@link RateCardCustomization#rateCardCustomizationGroupId}</td>
+ *             </tr>
+ *             <tr>
  *             <td>{@code id}</td>
  *             <td>{@link RateCardCustomization#id}</td>
  *             </tr>

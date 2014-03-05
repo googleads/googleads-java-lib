@@ -212,11 +212,42 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY PRICE_PRIORITY}</td>
      * <td>{@link Duration#DAILY DAILY},
-     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 {@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}
+     *                 </td>
      *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE HOUSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADSENSE ADSENSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#AD_EXCHANGE AD_EXCHANGE}</td>
+     * <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME},</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADMOB ADMOB}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#CLICK_TRACKING CLICK_TRACKING}</td>
+     * <td>{@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#BUMPER BUMPER}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 </tr>
@@ -1180,11 +1211,42 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY PRICE_PRIORITY}</td>
      * <td>{@link Duration#DAILY DAILY},
-     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 {@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}
+     *                 </td>
      *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE HOUSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADSENSE ADSENSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#AD_EXCHANGE AD_EXCHANGE}</td>
+     * <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME},</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADMOB ADMOB}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#CLICK_TRACKING CLICK_TRACKING}</td>
+     * <td>{@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#BUMPER BUMPER}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 </tr>
@@ -1232,11 +1294,42 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY PRICE_PRIORITY}</td>
      * <td>{@link Duration#DAILY DAILY},
-     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 {@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}
+     *                 </td>
      *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE HOUSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADSENSE ADSENSE}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#AD_EXCHANGE AD_EXCHANGE}</td>
+     * <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME},</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#ADMOB ADMOB}</td>
+     *                 <td>{@link Duration#DAILY DAILY},
+     *                 {@link Duration#LIFETIME LIFETIME}</td>
+     *                 <td>{@link Duration#DAILY DAILY}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#CLICK_TRACKING CLICK_TRACKING}</td>
+     * <td>{@link Duration#LIFETIME LIFETIME},
+     *                 {@link Duration#NONE NONE}</td>
+     *                 <td>{@link Duration#LIFETIME LIFETIME}</td>
+     *                 </tr>
+     *                 <tr>
+     *                 <td>{@link LineItemType#BUMPER BUMPER}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 <td>{@link Duration#DAILY DAILY}</td>
      *                 </tr>

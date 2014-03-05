@@ -11,14 +11,15 @@ package com.google.api.ads.dfp.axis.v201208;
 /**
  * A {@code Creative} that points to an externally hosted VAST ad
  * and is
- *             served via VAST 2.0 XML as a VAST Wrapper.  This creative
- * is read only.
+ *             served via VAST XML as a VAST Wrapper.
  */
 public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201208.Creative  implements java.io.Serializable {
-    /* The URL where the 3rd party VAST 2.0 XML is hosted. */
+    /* The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required. */
     private java.lang.String vastXmlUrl;
 
-    /* The type of VAST ad that this redirects to. */
+    /* The type of VAST ad that this redirects to. This attribute
+     * is required. */
     private com.google.api.ads.dfp.axis.v201208.VastRedirectType vastRedirectType;
 
     /* The IDs of the companion creatives that are associated with
@@ -68,7 +69,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201208.C
     /**
      * Gets the vastXmlUrl value for this VastRedirectCreative.
      * 
-     * @return vastXmlUrl   * The URL where the 3rd party VAST 2.0 XML is hosted.
+     * @return vastXmlUrl   * The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required.
      */
     public java.lang.String getVastXmlUrl() {
         return vastXmlUrl;
@@ -78,7 +80,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201208.C
     /**
      * Sets the vastXmlUrl value for this VastRedirectCreative.
      * 
-     * @param vastXmlUrl   * The URL where the 3rd party VAST 2.0 XML is hosted.
+     * @param vastXmlUrl   * The URL where the 3rd party VAST XML is hosted. This attribute
+     * is required.
      */
     public void setVastXmlUrl(java.lang.String vastXmlUrl) {
         this.vastXmlUrl = vastXmlUrl;
@@ -88,7 +91,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201208.C
     /**
      * Gets the vastRedirectType value for this VastRedirectCreative.
      * 
-     * @return vastRedirectType   * The type of VAST ad that this redirects to.
+     * @return vastRedirectType   * The type of VAST ad that this redirects to. This attribute
+     * is required.
      */
     public com.google.api.ads.dfp.axis.v201208.VastRedirectType getVastRedirectType() {
         return vastRedirectType;
@@ -98,7 +102,8 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201208.C
     /**
      * Sets the vastRedirectType value for this VastRedirectCreative.
      * 
-     * @param vastRedirectType   * The type of VAST ad that this redirects to.
+     * @param vastRedirectType   * The type of VAST ad that this redirects to. This attribute
+     * is required.
      */
     public void setVastRedirectType(com.google.api.ads.dfp.axis.v201208.VastRedirectType vastRedirectType) {
         this.vastRedirectType = vastRedirectType;

@@ -247,6 +247,20 @@ public class PublisherQueryLanguageServiceSoapBindingStub extends org.apache.axi
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201311", "ExchangeRateError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201311.ExchangeRateError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201311", "ExchangeRateError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201311.ExchangeRateErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201311", "FeatureError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201311.FeatureError.class;

@@ -41,6 +41,14 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code lastModifiedDateTime}</td>
  *             <td>{@link Proposal#lastModifiedDateTime}</td>
  *             </tr>
+ *             <tr>
+ *             <td>{@code thirdPartyAdServerId}</td>
+ *             <td>{@link Proposal#thirdPartyAdServerId}</td>
+ *             </tr>
+ *             <tr>
+ *             <td>{@code customThirdPartyAdServerName}</td>
+ *             <td>{@link Proposal#customThirdPartyAdServerName}</td>
+ *             </tr>
  *             </table>
  *             
  *             @param filterStatement a Publisher Query Language statement used to filter

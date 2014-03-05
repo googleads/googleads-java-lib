@@ -21,6 +21,7 @@ public class TargetingIdeaErrorReason implements java.io.Serializable {
     public static final java.lang.String _INSUFFICIENT_SEARCH_PARAMETERS = "INSUFFICIENT_SEARCH_PARAMETERS";
     public static final java.lang.String _INVALID_ATTRIBUTE_TYPE = "INVALID_ATTRIBUTE_TYPE";
     public static final java.lang.String _INVALID_SEARCH_PARAMETERS = "INVALID_SEARCH_PARAMETERS";
+    public static final java.lang.String _INVALID_DOMAIN_SUFFIX = "INVALID_DOMAIN_SUFFIX";
     public static final java.lang.String _MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY = "MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY";
     public static final java.lang.String _SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE";
     public static final java.lang.String _INVALID_URL_IN_SEARCH_PARAMETER = "INVALID_URL_IN_SEARCH_PARAMETER";
@@ -31,6 +32,7 @@ public class TargetingIdeaErrorReason implements java.io.Serializable {
     public static final TargetingIdeaErrorReason INSUFFICIENT_SEARCH_PARAMETERS = new TargetingIdeaErrorReason(_INSUFFICIENT_SEARCH_PARAMETERS);
     public static final TargetingIdeaErrorReason INVALID_ATTRIBUTE_TYPE = new TargetingIdeaErrorReason(_INVALID_ATTRIBUTE_TYPE);
     public static final TargetingIdeaErrorReason INVALID_SEARCH_PARAMETERS = new TargetingIdeaErrorReason(_INVALID_SEARCH_PARAMETERS);
+    public static final TargetingIdeaErrorReason INVALID_DOMAIN_SUFFIX = new TargetingIdeaErrorReason(_INVALID_DOMAIN_SUFFIX);
     public static final TargetingIdeaErrorReason MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY = new TargetingIdeaErrorReason(_MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY);
     public static final TargetingIdeaErrorReason SERVICE_UNAVAILABLE = new TargetingIdeaErrorReason(_SERVICE_UNAVAILABLE);
     public static final TargetingIdeaErrorReason INVALID_URL_IN_SEARCH_PARAMETER = new TargetingIdeaErrorReason(_INVALID_URL_IN_SEARCH_PARAMETER);
