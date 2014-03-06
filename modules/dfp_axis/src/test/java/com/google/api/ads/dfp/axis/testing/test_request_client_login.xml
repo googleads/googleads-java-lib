@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <ns1:RequestHeader soapenv:mustUnderstand="0" xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">
+            <ns1:networkCode>TEST_NETWORK_CODE</ns1:networkCode>
+            <ns1:applicationName>TEST_APP (DfpApi-Java, Dfp-Axis/1.26.0, Common-Java/1.26.0, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns1:applicationName>                  
+            <ns1:authentication xsi:type="ns1:ClientLogin">
+                <ns1:token>TEST_TOKEN</ns1:token>
+            </ns1:authentication>
+        </ns1:RequestHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <createCompanies xmlns="https://www.google.com/apis/ads/publisher/#API_VERSION#">
+            <companies/>
+        </createCompanies>
+    </soapenv:Body>
+</soapenv:Envelope>

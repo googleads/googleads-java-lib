@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header>
+    <ns1:Security soapenv:mustUnderstand="0" xmlns:ns1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <ns1:UsernameToken mustUnderstand="0" actor="">
+        <ns1:Username>TEST_USERNAME</ns1:Username>
+        <ns1:Password>#TOKEN#</ns1:Password>
+      </ns1:UsernameToken>
+    </ns1:Security>
+    <ns2:RequestHeader soapenv:mustUnderstand="0" xmlns:ns2="http://www.doubleclick.net/dfa-api">
+      <ns2:applicationName mustUnderstand="0" actor="">TEST_APP (DfaApi-Java, Dfa-Axis/1.26.0, Common-Java/1.26.0, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns2:applicationName>
+    </ns2:RequestHeader>
+  </soapenv:Header>
+  <soapenv:Body>
+    <ns3:getPlacementTypes soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns3="http://www.doubleclick.net/dfa-api/#API_VERSION#"/>
+  </soapenv:Body>
+</soapenv:Envelope>
