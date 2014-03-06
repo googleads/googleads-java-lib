@@ -103,9 +103,8 @@ public class AddExperiment {
     experiment.setCampaignId(campaignId);
     experiment.setName("Interplanetary Experiment #" + System.currentTimeMillis());
     experiment.setQueryPercentage(10);
-    experiment.setStartDateTime(new DateTime().plusDays(1).toString("yyyyMMdd HHmmss Z"));
-
     // You can optionally provide these field(s).
+    experiment.setStartDateTime(new DateTime().plusDays(1).toString("yyyyMMdd HHmmss Z"));
     experiment.setEndDateTime(new DateTime().plusDays(30).toString("yyyyMMdd HHmmss Z"));
 
     // Create operation.

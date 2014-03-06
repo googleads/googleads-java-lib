@@ -1,3 +1,23 @@
+1.26.0 - 03/06/2014
+-------------------
+AdWords:
+  - Added support for v201402.
+  - Disabled ClientLogin beginning with v201402.
+  - Only include returnMoneyInMicros in the request header if it is
+    explicitly specified in ads.properties or set on the session or session
+    builder. See the note on returnMoneyInMicros at
+    https://developers.google.com/adwords/api/docs/guides/migration/v201402
+    for more details.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.25.0 - 03/05/2014
 -------------------
 AdWords:

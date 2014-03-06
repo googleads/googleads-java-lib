@@ -69,6 +69,8 @@ public class AdWordsSessionTest {
     assertEquals(session.getUserAgent(), "FooBar");
     assertEquals(session.getDeveloperToken(), "devTokendevTokendevTok");
     assertEquals(session.isPartialFailure(), Boolean.FALSE);
+    assertNull("reportMoneyInMicros should not be set if not explicitly specified in the config",
+        session.isReportMoneyInMicros());
   }
 
   /**
@@ -247,6 +249,8 @@ public class AdWordsSessionTest {
     assertSame(adWordsSession.getOAuth2Credential(), credential);
     assertEquals(adWordsSession.getEndpoint(), "https://www.google.com");
     assertEquals(adWordsSession.getDeveloperToken(), "developerToken");
+    assertNull("reportMoneyInMicros should not be set if not explicitly set in the builder",
+        adWordsSession.isReportMoneyInMicros());
   }
 
   /**
@@ -422,5 +426,41 @@ public class AdWordsSessionTest {
       assertTrue("Expected clientLoginToken in error message",
           e.getMessage().contains("clientLoginToken"));
     }
+  }
+  
+  /**
+   * Tests that isReportMoneyInMicros is properly set on the session when enabled. 
+   */
+  @Test
+  public void testBuilder_moneyInMicrosEnabled() throws Exception {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
+    AdWordsSession adWordsSession = new AdWordsSession.Builder()
+        .withUserAgent("FooBar")
+        .withEndpoint("https://www.google.com")
+        .withOAuth2Credential(credential)
+        .withDeveloperToken("developerToken")
+        .enableReportMoneyInMicros()
+        .build();
+    assertEquals("reportMoneyInMicros should be set when explicitly enabled in the builder",
+        true, adWordsSession.isReportMoneyInMicros());
+  }
+  
+  /**
+   * Tests that isReportMoneyInMicros is properly set on the session when disabled. 
+   */
+  @Test
+  public void testBuilder_moneyInMicrosDisabled() throws Exception {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
+    AdWordsSession adWordsSession = new AdWordsSession.Builder()
+        .withUserAgent("FooBar")
+        .withEndpoint("https://www.google.com")
+        .withOAuth2Credential(credential)
+        .withDeveloperToken("developerToken")
+        .disableReportMoneyInMicros()
+        .build();
+    assertEquals("reportMoneyInMicros should be set when explicitly disabled in the builder",
+        false, adWordsSession.isReportMoneyInMicros());
   }
 }

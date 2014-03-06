@@ -254,7 +254,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
     private String clientCustomerId;
     private Boolean isPartialFailure;
     private Boolean isValidateOnly;
-    private Boolean isReportMoneyInMicros = Boolean.FALSE;
+    private Boolean isReportMoneyInMicros;
     private Credential oAuth2Credential;
 
     private final Logger libLogger;
@@ -316,7 +316,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
       this.isPartialFailure = config.getBoolean("api.adwords.isPartialFailure", null);
       this.endpoint = config.getString("api.adwords.endpoint", null);
       this.isReportMoneyInMicros = config.getBoolean("api.adwords.reportMoneyInMicros",
-          Boolean.FALSE);
+          null);
       this.clientLoginToken = config.getString("api.adwords.clientLoginToken", null);
 
       return this;
@@ -392,6 +392,14 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
      */
     public Builder enableReportMoneyInMicros() {
       this.isReportMoneyInMicros = true;
+      return this;
+    }
+    
+    /**
+     * Disable downloading of money values in reports in micros.
+     */
+    public Builder disableReportMoneyInMicros() {
+      this.isReportMoneyInMicros = false;
       return this;
     }
 

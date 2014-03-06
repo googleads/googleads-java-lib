@@ -125,8 +125,9 @@ public class ReportRequestFactoryHelper {
     httpHeaders.setUserAgent(userAgentCombiner.getUserAgent(session.getUserAgent()));
     httpHeaders.set("developerToken", session.getDeveloperToken());
     httpHeaders.set("clientCustomerId", session.getClientCustomerId());
-    httpHeaders.set("returnMoneyInMicros", Boolean.toString(
-        session.isReportMoneyInMicros()));
+    if (session.isReportMoneyInMicros() != null) {
+      httpHeaders.set("returnMoneyInMicros", Boolean.toString(session.isReportMoneyInMicros()));
+    }
     return httpHeaders;
   }
 

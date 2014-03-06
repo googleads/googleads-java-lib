@@ -44,10 +44,14 @@ import com.google.api.ads.adwords.jaxws.v201309.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
+    KeywordSet.class,
+    NegativeCriterion.class,
+    ProductService.class,
     Platform.class,
     Placement.class,
     CriterionUserList.class,
     MobileAppCategory.class,
+    Keyword.class,
     OperatingSystemVersion.class,
     Webpage.class,
     Proximity.class,
@@ -62,11 +66,7 @@ import com.google.api.ads.adwords.jaxws.v201309.express.ProductService;
     Carrier.class,
     Vertical.class,
     AdSchedule.class,
-    MobileApplication.class,
-    KeywordSet.class,
-    NegativeCriterion.class,
-    Keyword.class,
-    ProductService.class
+    MobileApplication.class
 })
 public class Criterion {
 
