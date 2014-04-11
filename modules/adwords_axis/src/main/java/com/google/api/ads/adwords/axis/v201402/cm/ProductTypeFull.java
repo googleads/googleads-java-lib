@@ -16,9 +16,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  *             <pre>{@code "Home & Garden > Kitchen & Dining > Kitchen
  * Appliances > Refrigerators"}</pre>
  *             
- *             This ProductDimension is only permitted for ProductScopes
- * in
- *             Product Listing Ad campaigns.
+ *             <p>Not supported by campaigns of {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductTypeFull  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
     private java.lang.String value;

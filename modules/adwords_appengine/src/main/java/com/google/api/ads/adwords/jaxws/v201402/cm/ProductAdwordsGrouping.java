@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An adwords grouping string. This ProductDimension is only permitted for ProductScopes in
- *             Product Listing Ad campaigns.
+ *             An {@code adwords grouping} string. Not supported by campaigns of
+ *             {@link AdvertisingChannelType#SHOPPING}.
  *           
  * 
  * <p>Java class for ProductAdwordsGrouping complex type.

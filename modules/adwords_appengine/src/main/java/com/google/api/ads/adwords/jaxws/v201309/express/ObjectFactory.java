@@ -47,6 +47,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ProductServicePage }
+     * 
+     */
+    public ProductServicePage createProductServicePage() {
+        return new ProductServicePage();
+    }
+
+    /**
      * Create an instance of {@link Creative }
      * 
      */

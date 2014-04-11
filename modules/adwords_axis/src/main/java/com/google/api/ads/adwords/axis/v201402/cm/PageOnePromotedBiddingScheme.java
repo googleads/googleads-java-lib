@@ -20,7 +20,9 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      * to be shown on
      *                     search result pages.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedStrategyGoal".</span> */
+     * can be selected using the value "PageOnePromotedStrategyGoal".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.PageOnePromotedBiddingSchemeStrategyGoal strategyGoal;
 
     /* Strategy maximum bid limit in advertiser local currency micro
@@ -98,6 +100,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     search result pages.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedStrategyGoal".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.PageOnePromotedBiddingSchemeStrategyGoal getStrategyGoal() {
         return strategyGoal;
@@ -112,6 +116,8 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     search result pages.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "PageOnePromotedStrategyGoal".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setStrategyGoal(com.google.api.ads.adwords.axis.v201402.cm.PageOnePromotedBiddingSchemeStrategyGoal strategyGoal) {
         this.strategyGoal = strategyGoal;

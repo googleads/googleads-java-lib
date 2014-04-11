@@ -104,7 +104,8 @@ public class GetKeywordIdeas {
     // Language setting (optional).
     // The ID can be found in the documentation:
     //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
-    // Note: As of v201302, only a single language parameter is allowed.
+    // See the documentation for limits on the number of allowed language parameters:
+    //   https://developers.google.com/adwords/api/docs/reference/latest/TargetingIdeaService.LanguageSearchParameter
     LanguageSearchParameter languageParameter = new LanguageSearchParameter();
     Language english = new Language();
     english.setId(1000L);

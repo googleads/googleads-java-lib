@@ -13,8 +13,7 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <pre>{@code "Home & Garden > Kitchen & Dining > Kitchen Appliances > Refrigerators"}</pre>
  *             
- *             This ProductDimension is only permitted for ProductScopes in
- *             Product Listing Ad campaigns.
+ *             <p>Not supported by campaigns of {@link AdvertisingChannelType#SHOPPING}.
  *           
  * 
  * <p>Java class for ProductTypeFull complex type.

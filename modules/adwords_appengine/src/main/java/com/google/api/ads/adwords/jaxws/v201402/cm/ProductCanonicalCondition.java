@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A canonical condition.
+ *             A canonical condition. Only supported by campaigns of
+ *             {@link AdvertisingChannelType#SHOPPING}.
  *           
  * 
  * <p>Java class for ProductCanonicalCondition complex type.

@@ -18,10 +18,7 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
      *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
-     * >AdWords Help Center</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EnhancedCpcEnabled".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+     * >AdWords Help Center</a>. */
     private java.lang.Boolean enhancedCpcEnabled;
 
     public ManualCpcBiddingScheme() {
@@ -44,9 +41,6 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     information about enhanced CPC, see the
      *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
      * >AdWords Help Center</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EnhancedCpcEnabled".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.Boolean getEnhancedCpcEnabled() {
         return enhancedCpcEnabled;
@@ -61,9 +55,6 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     information about enhanced CPC, see the
      *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
      * >AdWords Help Center</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EnhancedCpcEnabled".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setEnhancedCpcEnabled(java.lang.Boolean enhancedCpcEnabled) {
         this.enhancedCpcEnabled = enhancedCpcEnabled;

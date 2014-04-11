@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.26.1-SNAPSHOT</version>
+    <version>1.27.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,7 +29,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>1.26.1-SNAPSHOT</version>
+  <version>1.27.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library</name>
@@ -133,7 +133,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava-jdk5</artifactId>
-      <version>16.0</version>
+      <version>17.0-rc2</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
@@ -184,19 +184,19 @@
     <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client</artifactId>
-      <version>1.17.0-rc</version>
+      <version>1.18.0-rc</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.17.0-rc</version>
+      <version>1.18.0-rc</version>
     </dependency>
 
     <!-- Testing dependencies -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>2.40.0</version>
+      <version>2.41.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

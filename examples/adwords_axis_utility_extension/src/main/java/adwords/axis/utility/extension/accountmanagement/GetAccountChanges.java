@@ -15,10 +15,10 @@
 package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201309.ch.AdGroupChangeData;
-import com.google.api.ads.adwords.axis.v201309.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201309.ch.ChangeStatus;
-import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201402.ch.AdGroupChangeData;
+import com.google.api.ads.adwords.axis.v201402.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201402.ch.ChangeStatus;
+import com.google.api.ads.adwords.axis.v201402.cm.Campaign;
 
 import java.util.ArrayList;
 import java.util.Arrays;

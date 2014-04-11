@@ -56,8 +56,8 @@ import com.google.api.ads.adwords.jaxws.v201402.rm.UserListReturnValue;
     AdGroupCriterionReturnValue.class,
     CampaignAdExtensionReturnValue.class,
     CampaignFeedReturnValue.class,
-    BudgetOrderReturnValue.class,
-    UserListReturnValue.class
+    UserListReturnValue.class,
+    BudgetOrderReturnValue.class
 })
 public abstract class ListReturnValue {
 

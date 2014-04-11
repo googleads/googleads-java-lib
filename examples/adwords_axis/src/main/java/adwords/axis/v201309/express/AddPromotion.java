@@ -42,7 +42,7 @@ import java.util.List;
 
 /**
  * This example adds a new promotion to an express business. To get promotions, run
- * GetPromotions.java.
+ * GetPromotions.java. To get product/service suggestions, run GetProductServices.java.
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
@@ -109,9 +109,11 @@ public class AddPromotion {
     // Criteria
     List<Criterion> criteria = Lists.newArrayList();
 
-    // Criterion - Travel Agency product service
+    // Criterion - Travel Agency product/service.  See GetProductServices.java for an example
+    // of how to get valid product/service settings.
     ProductService productService = new ProductService();
     productService.setText("Travel Agency");
+    productService.setLocale("en_US");
     criteria.add(productService);
 
     // Criterion - English language

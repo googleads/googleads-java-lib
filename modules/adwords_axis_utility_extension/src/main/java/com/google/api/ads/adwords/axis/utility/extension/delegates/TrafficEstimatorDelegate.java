@@ -14,9 +14,9 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201309.o.CampaignEstimate;
-import com.google.api.ads.adwords.axis.v201309.o.TrafficEstimatorSelector;
-import com.google.api.ads.adwords.axis.v201309.o.TrafficEstimatorServiceInterface;
+import com.google.api.ads.adwords.axis.v201402.o.CampaignEstimate;
+import com.google.api.ads.adwords.axis.v201402.o.TrafficEstimatorSelector;
+import com.google.api.ads.adwords.axis.v201402.o.TrafficEstimatorServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

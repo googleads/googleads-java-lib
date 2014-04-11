@@ -12,8 +12,8 @@ public interface AdRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_19.DesignatedMarketArea[] getDesignatedMarketAreas() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.State[] getStates(long[] countryIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.Bandwidth[] getBandwidths() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.DomainType[] getDomainTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.ISP[] getISPs() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.DomainType[] getDomainTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.OSP[] getOSPs() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.MobilePlatform[] getMobilePlatforms() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public void deleteAd(long adId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;

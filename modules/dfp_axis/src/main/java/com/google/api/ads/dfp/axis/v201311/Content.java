@@ -35,7 +35,8 @@ public class Content  implements java.io.Serializable {
      * is read-only. */
     private com.google.api.ads.dfp.axis.v201311.ContentStatusDefinedBy statusDefinedBy;
 
-    /* The date and time this content was last modified. */
+    /* The date and time at which this content was last modified.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201311.DateTime lastModifiedDateTime;
 
     /* A collection of custom targeting value IDs manually assigned
@@ -50,7 +51,8 @@ public class Content  implements java.io.Serializable {
     private long[] mappingRuleDefinedCustomTargetingValueIds;
 
     /* Information about the content from the CMS it was ingested
-     * from. */
+     * from.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201311.CmsContent[] cmsSources;
 
     public Content() {
@@ -169,7 +171,8 @@ public class Content  implements java.io.Serializable {
     /**
      * Gets the lastModifiedDateTime value for this Content.
      * 
-     * @return lastModifiedDateTime   * The date and time this content was last modified.
+     * @return lastModifiedDateTime   * The date and time at which this content was last modified.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201311.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -179,7 +182,8 @@ public class Content  implements java.io.Serializable {
     /**
      * Sets the lastModifiedDateTime value for this Content.
      * 
-     * @param lastModifiedDateTime   * The date and time this content was last modified.
+     * @param lastModifiedDateTime   * The date and time at which this content was last modified.
+     *                 This attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.dfp.axis.v201311.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -257,6 +261,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @return cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201311.CmsContent[] getCmsSources() {
         return cmsSources;
@@ -268,6 +273,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @param cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public void setCmsSources(com.google.api.ads.dfp.axis.v201311.CmsContent[] cmsSources) {
         this.cmsSources = cmsSources;

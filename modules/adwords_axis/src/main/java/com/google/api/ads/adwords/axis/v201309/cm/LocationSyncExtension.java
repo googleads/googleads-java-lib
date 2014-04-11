@@ -24,10 +24,7 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
      * email - input only. */
     private java.lang.String authToken;
 
-    /* Authentication token (from OAuth API) for the email if OAuth
-     * athentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required. */
+    /* Required authentication token (from OAuth API) for the email. */
     private com.google.api.ads.adwords.axis.v201309.cm.OAuthInfo oAuthInfo;
 
     /* The business icon to use with the extension
@@ -116,10 +113,7 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
     /**
      * Gets the oAuthInfo value for this LocationSyncExtension.
      * 
-     * @return oAuthInfo   * Authentication token (from OAuth API) for the email if OAuth
-     * athentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required.
+     * @return oAuthInfo   * Required authentication token (from OAuth API) for the email.
      */
     public com.google.api.ads.adwords.axis.v201309.cm.OAuthInfo getOAuthInfo() {
         return oAuthInfo;
@@ -129,10 +123,7 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
     /**
      * Sets the oAuthInfo value for this LocationSyncExtension.
      * 
-     * @param oAuthInfo   * Authentication token (from OAuth API) for the email if OAuth
-     * athentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required.
+     * @param oAuthInfo   * Required authentication token (from OAuth API) for the email.
      */
     public void setOAuthInfo(com.google.api.ads.adwords.axis.v201309.cm.OAuthInfo oAuthInfo) {
         this.oAuthInfo = oAuthInfo;

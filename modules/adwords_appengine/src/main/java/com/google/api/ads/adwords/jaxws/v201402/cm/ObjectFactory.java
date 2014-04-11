@@ -222,19 +222,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TemplateElement }
-     * 
-     */
-    public TemplateElement createTemplateElement() {
-        return new TemplateElement();
-    }
-
-    /**
      * Create an instance of {@link BiddableAdGroupCriterionExperimentData }
      * 
      */
     public BiddableAdGroupCriterionExperimentData createBiddableAdGroupCriterionExperimentData() {
         return new BiddableAdGroupCriterionExperimentData();
+    }
+
+    /**
+     * Create an instance of {@link TemplateElement }
+     * 
+     */
+    public TemplateElement createTemplateElement() {
+        return new TemplateElement();
     }
 
     /**
@@ -478,19 +478,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CriterionUserList }
-     * 
-     */
-    public CriterionUserList createCriterionUserList() {
-        return new CriterionUserList();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdReturnValue }
      * 
      */
     public AdGroupAdReturnValue createAdGroupAdReturnValue() {
         return new AdGroupAdReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link CriterionUserList }
+     * 
+     */
+    public CriterionUserList createCriterionUserList() {
+        return new CriterionUserList();
     }
 
     /**

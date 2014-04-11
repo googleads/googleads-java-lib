@@ -301,6 +301,8 @@ public enum Dimension {
      *                 Breaks down reporting data by criteria predefined by DoubleClick For
      *                 Publishers like the operating system, browser etc. Cannot be used for
      *                 filtering.
+     *                 <p>
+     *                 Replaced with {@code TARGETING} beginning in v201405.
      *               
      * 
      */

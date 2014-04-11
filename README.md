@@ -20,6 +20,14 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs (
 
 For API and client library updates and news, please follow our [Google+ Ads Developers page](https://plus.google.com/+GoogleAdsDevelopers/posts) and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/) 
 
+### Support forum
+
+If you have questions about the client library or the APIs, you can ask them on our forums:
+  * [AdWords API Forum](https://groups.google.com/group/adwords-api)
+  * [DoubleClick for Publishers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
+  * [DoubleClick for Advertisers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-advertisers-api)
+  * [DoubleClick Ad Exchange Buyer API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-ad-exchange-buyer-api)
+
 ## Maven artifacts
 
 ### AdWords

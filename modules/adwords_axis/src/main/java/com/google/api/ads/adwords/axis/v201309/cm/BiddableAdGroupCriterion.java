@@ -14,8 +14,8 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion  implements java.io.Serializable {
     /* Current user set state of criterion.
      *                     
-     *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
+     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+     * On add, defaults to
      *                     {@code UserStatus.Active} if unspecified.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Status".</span><span class="constraint
@@ -151,8 +151,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @return userStatus   * Current user set state of criterion.
      *                     
-     *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
+     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+     * On add, defaults to
      *                     {@code UserStatus.Active} if unspecified.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Status".</span><span class="constraint
@@ -168,8 +168,8 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * 
      * @param userStatus   * Current user set state of criterion.
      *                     
-     *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
+     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+     * On add, defaults to
      *                     {@code UserStatus.Active} if unspecified.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Status".</span><span class="constraint

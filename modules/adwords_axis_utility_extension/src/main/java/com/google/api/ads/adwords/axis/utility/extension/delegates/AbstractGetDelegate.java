@@ -18,8 +18,8 @@ import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201309.cm.Selector;
+import com.google.api.ads.adwords.axis.utils.v201402.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201402.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -136,7 +136,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * support Generic Selectors.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201309.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201402.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return a list of <T>
@@ -158,7 +158,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * calling getEntries.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201309.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201402.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return Object, because AdParamPage does not extend Page
@@ -183,14 +183,32 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    *
    * @param selectorField  field to be included in the predicate
    * @param fieldValues values for the field
+   * @param startIndex index of the first result
+   * @param numberResults number of results 
    * @return {@link SelectorBuilder}
    */
   private SelectorBuilder createSelectorBuilder(FieldType<T> selectorField, List<?> fieldValues,
       int startIndex, int numberResults) {
-    return createSelectorBuilder()
+
+    SelectorBuilder selectorBuilder = createSelectorBuilder()
       .in(selectorField.getField(), ListUtil.asStringArray(fieldValues))
-      .offset(startIndex)
-      .limit(numberResults);
+      .offset(startIndex).limit(numberResults);
+    return selectorBuilder;
+  }
+
+  /**
+   * Creates a Generic Selector Builder with all the fields declared in the subClass and
+   * adds a Predicate that says that the given field must have one of the given values.
+   *
+   * @param selectorField  field to be included in the predicate
+   * @param fieldValues values for the field
+   * @return {@link SelectorBuilder}
+   */
+  private SelectorBuilder createSelectorBuilder(FieldType<T> selectorField, List<?> fieldValues) {
+
+    SelectorBuilder selectorBuilder = createSelectorBuilder()
+      .in(selectorField.getField(), ListUtil.asStringArray(fieldValues));
+    return selectorBuilder;
   }
 
   /**
@@ -245,7 +263,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, Object fieldValue)
       throws RemoteException {
-    return get(createSelectorBuilder(selectorField, ImmutableList.of(fieldValue), 0, 0).build());
+    return get(createSelectorBuilder(selectorField, ImmutableList.of(fieldValue)).build());
   }
 
   /**
@@ -258,7 +276,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    */
   protected List<T> getByField(FieldType<T> selectorField, List<Long> fieldValues)
       throws RemoteException {
-    return get(createSelectorBuilder(selectorField, fieldValues, 0, 0).build());
+    return get(createSelectorBuilder(selectorField, fieldValues).build());
   }
 
   /**

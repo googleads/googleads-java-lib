@@ -17,8 +17,8 @@ public interface NetworkRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.TimeZone[] getTimeZoneList() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.Permission[] getAllPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.NetworkPermission[] getAllNetworkPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.NetworkPermission[] getAssignedNetworkPermissions(long networkId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.NetworkRecordSet getNetworks(com.google.api.ads.dfa.axis.v1_20.NetworkSearchCriteria networkSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdministratorPermission[] getAdministratorPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.WidgetImageUploadResponse uploadNetworkWidgetImage(com.google.api.ads.dfa.axis.v1_20.WidgetImageUploadRequest request) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.NetworkRecordSet getNetworks(com.google.api.ads.dfa.axis.v1_20.NetworkSearchCriteria networkSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.NetworkPermission[] getAssignedNetworkPermissions(long networkId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

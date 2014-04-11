@@ -9,7 +9,8 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 
 
 /**
- * A canonical condition.
+ * A canonical condition. Only supported by campaigns of
+ *             {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductCanonicalCondition  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.cm.ProductCanonicalConditionCondition condition;

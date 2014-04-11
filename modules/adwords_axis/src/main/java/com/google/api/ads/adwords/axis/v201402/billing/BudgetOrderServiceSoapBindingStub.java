@@ -399,6 +399,13 @@ public class BudgetOrderServiceSoapBindingStub extends org.apache.axis.client.St
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "NotWhitelistedError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201402.cm.NotWhitelistedError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "NullError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201402.cm.NullError.class;

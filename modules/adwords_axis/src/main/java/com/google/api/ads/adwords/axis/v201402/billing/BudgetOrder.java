@@ -13,9 +13,10 @@ package com.google.api.ads.adwords.axis.v201402.billing;
  * BillingAccount}.
  */
 public class BudgetOrder  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "BillingAccountId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountId".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span> */
     private java.lang.String billingAccountId;
 
     /* <span class="constraint Selectable">This field can be selected
@@ -67,7 +68,7 @@ public class BudgetOrder  implements java.io.Serializable {
      * this string should be between 0 and 40, inclusive, (trimmed).</span> */
     private java.lang.String budgetOrderName;
 
-    /* A 12 digit billing id assigned to the user by Google. This
+    /* A 12 digit billing ID assigned to the user by Google. This
      * can be passed in as
      *                 "123456789012" or "1234-5678-9012".
      *                 
@@ -82,7 +83,7 @@ public class BudgetOrder  implements java.io.Serializable {
      * this string should be between 0 and 14, inclusive, (trimmed).</span> */
     private java.lang.String primaryBillingId;
 
-    /* For certain users, a secondary billing id will be required
+    /* For certain users, a secondary billing ID will be required
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
@@ -131,10 +132,11 @@ public class BudgetOrder  implements java.io.Serializable {
      * Operator}s : ADD.</span> */
     private java.lang.String endDateTime;
 
-    /* {@link #lastRequest} will contain fields that provide information
-     * on the last set of values
-     *                 that were passed in through the parent BudgetOrder
-     * for mutate.add and mutate.set.
+    /* Contains fields that provide information on the last set of
+     * values that
+     *                 were passed in through the parent BudgetOrder for
+     * mutate.add and
+     *                 mutate.set.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using
@@ -175,9 +177,10 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Gets the billingAccountId value for this BudgetOrder.
      * 
-     * @return billingAccountId   * <span class="constraint Selectable">This field can be selected
-     * using the value "BillingAccountId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return billingAccountId   * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountId".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      */
     public java.lang.String getBillingAccountId() {
         return billingAccountId;
@@ -187,9 +190,10 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Sets the billingAccountId value for this BudgetOrder.
      * 
-     * @param billingAccountId   * <span class="constraint Selectable">This field can be selected
-     * using the value "BillingAccountId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param billingAccountId   * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountId".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      */
     public void setBillingAccountId(java.lang.String billingAccountId) {
         this.billingAccountId = billingAccountId;
@@ -353,7 +357,7 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Gets the primaryBillingId value for this BudgetOrder.
      * 
-     * @return primaryBillingId   * A 12 digit billing id assigned to the user by Google. This
+     * @return primaryBillingId   * A 12 digit billing ID assigned to the user by Google. This
      * can be passed in as
      *                 "123456789012" or "1234-5678-9012".
      *                 
@@ -375,7 +379,7 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Sets the primaryBillingId value for this BudgetOrder.
      * 
-     * @param primaryBillingId   * A 12 digit billing id assigned to the user by Google. This
+     * @param primaryBillingId   * A 12 digit billing ID assigned to the user by Google. This
      * can be passed in as
      *                 "123456789012" or "1234-5678-9012".
      *                 
@@ -397,7 +401,7 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Gets the secondaryBillingId value for this BudgetOrder.
      * 
-     * @return secondaryBillingId   * For certain users, a secondary billing id will be required
+     * @return secondaryBillingId   * For certain users, a secondary billing ID will be required
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
@@ -417,7 +421,7 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Sets the secondaryBillingId value for this BudgetOrder.
      * 
-     * @param secondaryBillingId   * For certain users, a secondary billing id will be required
+     * @param secondaryBillingId   * For certain users, a secondary billing ID will be required
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
@@ -551,10 +555,11 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Gets the lastRequest value for this BudgetOrder.
      * 
-     * @return lastRequest   * {@link #lastRequest} will contain fields that provide information
-     * on the last set of values
-     *                 that were passed in through the parent BudgetOrder
-     * for mutate.add and mutate.set.
+     * @return lastRequest   * Contains fields that provide information on the last set of
+     * values that
+     *                 were passed in through the parent BudgetOrder for
+     * mutate.add and
+     *                 mutate.set.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using
@@ -570,10 +575,11 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Sets the lastRequest value for this BudgetOrder.
      * 
-     * @param lastRequest   * {@link #lastRequest} will contain fields that provide information
-     * on the last set of values
-     *                 that were passed in through the parent BudgetOrder
-     * for mutate.add and mutate.set.
+     * @param lastRequest   * Contains fields that provide information on the last set of
+     * values that
+     *                 were passed in through the parent BudgetOrder for
+     * mutate.add and
+     *                 mutate.set.
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using

@@ -31,7 +31,9 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span> */
+     * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span> */
     private java.lang.Double targetRoas;
 
     /* Maximum bid limit that applies to all keywords managed by the
@@ -75,6 +77,8 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public java.lang.Double getTargetRoas() {
         return targetRoas;
@@ -90,6 +94,8 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public void setTargetRoas(java.lang.Double targetRoas) {
         this.targetRoas = targetRoas;

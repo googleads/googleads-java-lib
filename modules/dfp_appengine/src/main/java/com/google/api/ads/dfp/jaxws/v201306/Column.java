@@ -843,6 +843,10 @@ public enum Column {
      *                 The total number of impressions delivered by both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -853,6 +857,10 @@ public enum Column {
      *                 The total number of clicks delivered by both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that
      *                 have been upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -863,6 +871,10 @@ public enum Column {
      *                 The sum of the CTR achieved from both DART and DoubleClick For Publishers
      *                 ad servers. This is only available for networks that have been upgraded
      *                 from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -873,6 +885,10 @@ public enum Column {
      *                 The sum of the CPM and CPC revenue generated from both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -883,6 +899,10 @@ public enum Column {
      *                 The sum of the CPM, CPC and CPD revenue generated from both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -894,6 +914,10 @@ public enum Column {
      *                 delivered by both DART and DoubleClick For Publishers ad servers.
      *                 This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -905,6 +929,10 @@ public enum Column {
      *                 delivered by both DART and DoubleClick For Publishers ad servers.
      *                 This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */

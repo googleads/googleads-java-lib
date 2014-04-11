@@ -47,7 +47,8 @@ public class Content  implements java.io.Serializable {
     private long[] mappingRuleDefinedCustomTargetingValueIds;
 
     /* Information about the content from the CMS it was ingested
-     * from. */
+     * from.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201306.CmsContent[] cmsSources;
 
     public Content() {
@@ -232,6 +233,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @return cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201306.CmsContent[] getCmsSources() {
         return cmsSources;
@@ -243,6 +245,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @param cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public void setCmsSources(com.google.api.ads.dfp.axis.v201306.CmsContent[] cmsSources) {
         this.cmsSources = cmsSources;

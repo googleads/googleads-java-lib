@@ -1,3 +1,21 @@
+1.27.0 - 04/11/2014
+-------------------
+AdWords:
+  - Removed support for v201306.
+  - Migrated AdWords Axis Utility Extension (beta) to v201402.
+  - Improved limit documentation in EstimateKeywordTraffic and
+    GetKeywordIdeas. Fixes issue #13.
+  - Added support for new AdWords Express ProductServiceService.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.26.0 - 03/06/2014
 -------------------
 AdWords:

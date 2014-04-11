@@ -15,11 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201309.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionOperation;
-import com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.CriterionType;
+import com.google.api.ads.adwords.axis.utils.v201402.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201402.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201402.cm.CampaignCriterionOperation;
+import com.google.api.ads.adwords.axis.v201402.cm.CampaignCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201402.cm.CriterionType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

@@ -21,17 +21,9 @@ public class AdCallMetricsConversion  extends com.google.api.ads.adwords.axis.v2
     /* The phone-call duration (in seconds) after which a conversion
      * should be reported for this
      *                     AdCallMetricsConversion.
-     *                     
-     *                     This field DOES NOT WORK in v201402 as of the
-     * time of this API release - for now, continue
-     *                     to specify call durations in the call feed items.
-     * Attempting
-     *                     to set this field will result in an API error.
-     * This field will become the source of truth
-     *                     for call durations for conversions later in 2014.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PhoneCallDuration".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "PhoneCallDuration".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 10000, inclusive.</span> */
     private java.lang.Long phoneCallDuration;
@@ -78,17 +70,9 @@ public class AdCallMetricsConversion  extends com.google.api.ads.adwords.axis.v2
      * @return phoneCallDuration   * The phone-call duration (in seconds) after which a conversion
      * should be reported for this
      *                     AdCallMetricsConversion.
-     *                     
-     *                     This field DOES NOT WORK in v201402 as of the
-     * time of this API release - for now, continue
-     *                     to specify call durations in the call feed items.
-     * Attempting
-     *                     to set this field will result in an API error.
-     * This field will become the source of truth
-     *                     for call durations for conversions later in 2014.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PhoneCallDuration".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "PhoneCallDuration".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 10000, inclusive.</span>
      */
@@ -103,17 +87,9 @@ public class AdCallMetricsConversion  extends com.google.api.ads.adwords.axis.v2
      * @param phoneCallDuration   * The phone-call duration (in seconds) after which a conversion
      * should be reported for this
      *                     AdCallMetricsConversion.
-     *                     
-     *                     This field DOES NOT WORK in v201402 as of the
-     * time of this API release - for now, continue
-     *                     to specify call durations in the call feed items.
-     * Attempting
-     *                     to set this field will result in an API error.
-     * This field will become the source of truth
-     *                     for call durations for conversions later in 2014.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PhoneCallDuration".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "PhoneCallDuration".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 10000, inclusive.</span>
      */

@@ -13,10 +13,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  *             Google Places.
  */
 public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v201402.cm.SystemFeedGenerationData  implements java.io.Serializable {
-    /* Authentication token (from OAuth API) for the email if OAuth
-     * authentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required. */
+    /* Required authentication token (from OAuth API) for the email. */
     private com.google.api.ads.adwords.axis.v201402.cm.OAuthInfo oAuthInfo;
 
     /* The email address for the Google Places location feed.
@@ -60,10 +57,7 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the oAuthInfo value for this PlacesLocationFeedData.
      * 
-     * @return oAuthInfo   * Authentication token (from OAuth API) for the email if OAuth
-     * authentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required.
+     * @return oAuthInfo   * Required authentication token (from OAuth API) for the email.
      */
     public com.google.api.ads.adwords.axis.v201402.cm.OAuthInfo getOAuthInfo() {
         return oAuthInfo;
@@ -73,10 +67,7 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the oAuthInfo value for this PlacesLocationFeedData.
      * 
-     * @param oAuthInfo   * Authentication token (from OAuth API) for the email if OAuth
-     * authentication should be used
-     *                     instead of ClientLogin API. One of either authToken
-     * or oAuthInfo is required.
+     * @param oAuthInfo   * Required authentication token (from OAuth API) for the email.
      */
     public void setOAuthInfo(com.google.api.ads.adwords.axis.v201402.cm.OAuthInfo oAuthInfo) {
         this.oAuthInfo = oAuthInfo;

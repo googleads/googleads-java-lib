@@ -761,6 +761,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 Represents {@link ProposalLineItem#rateType} for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
+     *                 Can be used for filtering.
      *               
      * 
      */

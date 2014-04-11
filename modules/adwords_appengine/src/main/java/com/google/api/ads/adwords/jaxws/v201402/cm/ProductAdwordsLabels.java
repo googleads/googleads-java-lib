@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An adwords labels string. This ProductDimension is only permitted for ProductScopes in
- *             Product Listing Ad campaigns.
+ *             An {@code adwords labels} string. Not supported by campaigns of
+ *             {@link AdvertisingChannelType#SHOPPING}.
  *           
  * 
  * <p>Java class for ProductAdwordsLabels complex type.

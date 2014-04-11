@@ -9,9 +9,9 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 
 
 /**
- * An adwords grouping string. This ProductDimension is only permitted
- * for ProductScopes in
- *             Product Listing Ad campaigns.
+ * An {@code adwords grouping} string. Not supported by campaigns
+ * of
+ *             {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductAdwordsGrouping  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
     private java.lang.String value;

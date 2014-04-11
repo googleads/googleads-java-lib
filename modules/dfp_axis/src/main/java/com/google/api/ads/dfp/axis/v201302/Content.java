@@ -36,7 +36,8 @@ public class Content  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201302.ContentStatusDefinedBy statusDefinedBy;
 
     /* Information about the content from the CMS it was ingested
-     * from. */
+     * from.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201302.CmsContent[] cmsSources;
 
     public Content() {
@@ -151,6 +152,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @return cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201302.CmsContent[] getCmsSources() {
         return cmsSources;
@@ -162,6 +164,7 @@ public class Content  implements java.io.Serializable {
      * 
      * @param cmsSources   * Information about the content from the CMS it was ingested
      * from.
+     *                 This attribute is read-only.
      */
     public void setCmsSources(com.google.api.ads.dfp.axis.v201302.CmsContent[] cmsSources) {
         this.cmsSources = cmsSources;

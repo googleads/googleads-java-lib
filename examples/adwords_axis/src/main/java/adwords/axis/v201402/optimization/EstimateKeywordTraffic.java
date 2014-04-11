@@ -76,7 +76,9 @@ public class EstimateKeywordTraffic {
     TrafficEstimatorServiceInterface trafficEstimatorService =
         adWordsServices.get(session, TrafficEstimatorServiceInterface.class);
 
-    // Create keywords. Up to 2000 keywords can be passed in a single request.
+    // Create keywords. Refer to the TrafficEstimatorService documentation for the maximum
+    // number of keywords that can be passed in a single request.
+    //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
     List<Keyword> keywords = new ArrayList<Keyword>();
     keywords.add(new Keyword(null, null, null, "mars cruise", KeywordMatchType.BROAD));
     keywords.add(new Keyword(null, null, null, "cheap cruise", KeywordMatchType.PHRASE));

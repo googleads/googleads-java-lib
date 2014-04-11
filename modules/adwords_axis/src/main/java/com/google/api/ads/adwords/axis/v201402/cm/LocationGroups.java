@@ -58,7 +58,7 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD, SET.</span> */
+     * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.Function matchingFunction;
 
     public LocationGroups() {
@@ -88,7 +88,7 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD, SET.</span>
+     * {@link Operator}s : ADD.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Function getMatchingFunction() {
         return matchingFunction;
@@ -106,7 +106,7 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD, SET.</span>
+     * {@link Operator}s : ADD.</span>
      */
     public void setMatchingFunction(com.google.api.ads.adwords.axis.v201402.cm.Function matchingFunction) {
         this.matchingFunction = matchingFunction;

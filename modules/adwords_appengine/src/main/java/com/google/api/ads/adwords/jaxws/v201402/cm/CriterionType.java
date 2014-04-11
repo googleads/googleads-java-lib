@@ -126,7 +126,7 @@ public enum CriterionType {
 
     /**
      * 
-     *                 Product Partitions for shopping.
+     *                 Product partition (product group) in a shopping campaign.
      *               
      * 
      */
@@ -239,8 +239,8 @@ public enum CriterionType {
 
     /**
      * 
-     *                 Scope of products in a shopping campaign. Contains a list of product dimensions,
-     *                 all of which a product has to match to be included in the campaign.
+     *                 Scope of products. Contains a list of product dimensions, all of which a product has to match
+     *                 to be included in the campaign.
      *               
      * 
      */
@@ -248,7 +248,7 @@ public enum CriterionType {
 
     /**
      * 
-     *                 Targeting based on product's sales channel in a shopping campaign.
+     *                 Targeting based on product's sales channel.
      *               
      * 
      */

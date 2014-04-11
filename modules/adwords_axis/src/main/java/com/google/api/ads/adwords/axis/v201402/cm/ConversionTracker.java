@@ -116,7 +116,9 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 this value is used.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint InRange">This field must be
+     * between 0 and 1000000000000, inclusive.</span> */
     private java.lang.Double defaultRevenueValue;
 
     /* Controls whether conversion event values are taken from the
@@ -516,6 +518,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint InRange">This field must be
+     * between 0 and 1000000000000, inclusive.</span>
      */
     public java.lang.Double getDefaultRevenueValue() {
         return defaultRevenueValue;
@@ -537,6 +541,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint InRange">This field must be
+     * between 0 and 1000000000000, inclusive.</span>
      */
     public void setDefaultRevenueValue(java.lang.Double defaultRevenueValue) {
         this.defaultRevenueValue = defaultRevenueValue;

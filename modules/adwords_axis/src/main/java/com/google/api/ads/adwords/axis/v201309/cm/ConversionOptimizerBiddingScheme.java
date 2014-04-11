@@ -37,18 +37,12 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      * clicks or pay per
      *                     conversions campaign. If the pricing model is
      * not specified it
-     *                     defaults to Clicks.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PricingMode".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     *                     defaults to Clicks. */
     private com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemePricingMode pricingMode;
 
     /* Bid type indicates if it is a Target CPA or Max CPA campaign.
      * If the Bid type is
-     *                     not specified it defaults to Target CPA.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     *                     not specified it defaults to Target CPA. */
     private com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemeBidType bidType;
 
     public ConversionOptimizerBiddingScheme() {
@@ -75,9 +69,6 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      *                     conversions campaign. If the pricing model is
      * not specified it
      *                     defaults to Clicks.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PricingMode".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemePricingMode getPricingMode() {
         return pricingMode;
@@ -94,9 +85,6 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      *                     conversions campaign. If the pricing model is
      * not specified it
      *                     defaults to Clicks.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PricingMode".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setPricingMode(com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemePricingMode pricingMode) {
         this.pricingMode = pricingMode;
@@ -109,9 +97,6 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      * @return bidType   * Bid type indicates if it is a Target CPA or Max CPA campaign.
      * If the Bid type is
      *                     not specified it defaults to Target CPA.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemeBidType getBidType() {
         return bidType;
@@ -124,9 +109,6 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      * @param bidType   * Bid type indicates if it is a Target CPA or Max CPA campaign.
      * If the Bid type is
      *                     not specified it defaults to Target CPA.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBidType(com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerBiddingSchemeBidType bidType) {
         this.bidType = bidType;

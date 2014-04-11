@@ -982,6 +982,10 @@ public enum Column {
      *                 The total number of impressions delivered by both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -992,6 +996,10 @@ public enum Column {
      *                 The total number of clicks delivered by both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that
      *                 have been upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1002,6 +1010,10 @@ public enum Column {
      *                 The sum of the CTR achieved from both DART and DoubleClick For Publishers
      *                 ad servers. This is only available for networks that have been upgraded
      *                 from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1012,6 +1024,10 @@ public enum Column {
      *                 The sum of the CPM and CPC revenue generated from both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1022,6 +1038,10 @@ public enum Column {
      *                 The sum of the CPM, CPC and CPD revenue generated from both DART and DoubleClick For
      *                 Publishers ad servers. This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1033,6 +1053,10 @@ public enum Column {
      *                 delivered by both DART and DoubleClick For Publishers ad servers.
      *                 This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1044,6 +1068,10 @@ public enum Column {
      *                 delivered by both DART and DoubleClick For Publishers ad servers.
      *                 This is only available for networks that have been
      *                 upgraded from the old to the new system.
+     *                 <p>
+     *                 DART data is available for the following timeframes:
+     *                 <ul><li>6 months before upgrade date for daily reports.</li>
+     *                 <li>16 months before upgrade date for monthly reports.</li>
      *               
      * 
      */
@@ -1713,6 +1741,8 @@ public enum Column {
     /**
      * 
      *                 The number of impressions viewed on the user's screen.
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS} beginning in V201405
      *               
      * 
      */
@@ -1721,6 +1751,8 @@ public enum Column {
     /**
      * 
      *                 The number of impressions not viewed on the user's screen.
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_NOT_VIEWABLE_IMPRESSIONS} beginning in V201405
      *               
      * 
      */
@@ -1729,6 +1761,8 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were sampled, but unmeasurable by active view.
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_NOT_MEASURABLE_IMPRESSIONS} beginning in V201405
      *               
      * 
      */
@@ -1738,6 +1772,8 @@ public enum Column {
      * 
      *                 The percentage of impressions viewed on the user's screen (out of the impressions measurable
      *                 by active view).
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE} beginning in V201405
      *               
      * 
      */
@@ -1746,6 +1782,8 @@ public enum Column {
     /**
      * 
      *                 Total number of impressions that were eligible to measure viewability.
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS} beginning in V201405
      *               
      * 
      */
@@ -1755,6 +1793,8 @@ public enum Column {
      * 
      *                 The percentage of impressions that were measurable by active view (out of all the impressions
      *                 sampled for active view).
+     *                 
+     *                 Replaced with {@code TOTAL_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE} beginning in V201405
      *               
      * 
      */

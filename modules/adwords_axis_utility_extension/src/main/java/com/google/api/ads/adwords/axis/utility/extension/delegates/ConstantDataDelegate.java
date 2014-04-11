@@ -15,15 +15,18 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
-import com.google.api.ads.adwords.axis.v201309.cm.AgeRange;
-import com.google.api.ads.adwords.axis.v201309.cm.Carrier;
-import com.google.api.ads.adwords.axis.v201309.cm.ConstantDataServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.CriterionUserInterest;
-import com.google.api.ads.adwords.axis.v201309.cm.Gender;
-import com.google.api.ads.adwords.axis.v201309.cm.Language;
-import com.google.api.ads.adwords.axis.v201309.cm.MobileDevice;
-import com.google.api.ads.adwords.axis.v201309.cm.OperatingSystemVersion;
-import com.google.api.ads.adwords.axis.v201309.cm.Vertical;
+import com.google.api.ads.adwords.axis.v201402.cm.AgeRange;
+import com.google.api.ads.adwords.axis.v201402.cm.Carrier;
+import com.google.api.ads.adwords.axis.v201402.cm.ConstantDataServiceInterface;
+import com.google.api.ads.adwords.axis.v201402.cm.ConstantDataServiceUserInterestTaxonomyType;
+import com.google.api.ads.adwords.axis.v201402.cm.CriterionUserInterest;
+import com.google.api.ads.adwords.axis.v201402.cm.Gender;
+import com.google.api.ads.adwords.axis.v201402.cm.Language;
+import com.google.api.ads.adwords.axis.v201402.cm.MobileDevice;
+import com.google.api.ads.adwords.axis.v201402.cm.OperatingSystemVersion;
+import com.google.api.ads.adwords.axis.v201402.cm.ProductBiddingCategoryData;
+import com.google.api.ads.adwords.axis.v201402.cm.Selector;
+import com.google.api.ads.adwords.axis.v201402.cm.Vertical;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;
@@ -139,16 +142,39 @@ public final class ConstantDataDelegate
   }
 
   /**
+   * Retrieves all the ProductBiddingCategoryDatas.
+   *
+   * @param selector should be a Generic Selector
+   *        (com.google.api.adwords.v201402.cm.Selector) or a specific
+   *        Selector appropriate to the ServiceInterface used that does not
+   *        support Generic Selectors
+   * @return a list of all the ProductBiddingCategoryDatas
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<ProductBiddingCategoryData> getProductBiddingCategoryData(Selector selector)
+          throws RemoteException {
+    // Using ReflectionUtil to execute getService().getUserInterestCriterion() with retries
+    ProductBiddingCategoryData[] productBiddingCategoryDatas =
+        (ProductBiddingCategoryData[]) ReflectionUtil.invokeCount(
+            "getProductBiddingCategoryData", getService(), classS,
+            selector, MAX_RETRY_COUNT);
+    return Arrays.asList(productBiddingCategoryDatas);
+  }
+
+  /**
    * Retrieves all the CriterionUserInterests.
    *
    * @return a list of all the CriterionUserInterests
    * @throws RemoteException for communication-related exceptions
    */
-  public List<CriterionUserInterest> getUserInterestCriterion() throws RemoteException {
+  public List<CriterionUserInterest> getUserInterestCriterion(
+      ConstantDataServiceUserInterestTaxonomyType constantDataServiceUserInterestTaxonomyType)
+          throws RemoteException {
     // Using ReflectionUtil to execute getService().getUserInterestCriterion() with retries
     CriterionUserInterest[] criterionUserInterests =
         (CriterionUserInterest[]) ReflectionUtil.invokeCount(
-            "getUserInterestCriterion", getService(), classS, MAX_RETRY_COUNT);
+            "getUserInterestCriterion", getService(), classS,
+            constantDataServiceUserInterestTaxonomyType, MAX_RETRY_COUNT);
     return Arrays.asList(criterionUserInterests);
   }
 

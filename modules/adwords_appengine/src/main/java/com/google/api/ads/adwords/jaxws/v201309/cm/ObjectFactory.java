@@ -54,6 +54,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Selector }
+     * 
+     */
+    public Selector createSelector() {
+        return new Selector();
+    }
+
+    /**
      * Create an instance of {@link CampaignSharedSetError }
      * 
      */
@@ -534,19 +542,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CriterionUserList }
-     * 
-     */
-    public CriterionUserList createCriterionUserList() {
-        return new CriterionUserList();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdReturnValue }
      * 
      */
     public AdGroupAdReturnValue createAdGroupAdReturnValue() {
         return new AdGroupAdReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link CriterionUserList }
+     * 
+     */
+    public CriterionUserList createCriterionUserList() {
+        return new CriterionUserList();
     }
 
     /**
@@ -2387,14 +2395,6 @@ public class ObjectFactory {
      */
     public AdGroupAdError createAdGroupAdError() {
         return new AdGroupAdError();
-    }
-
-    /**
-     * Create an instance of {@link Selector }
-     * 
-     */
-    public Selector createSelector() {
-        return new Selector();
     }
 
     /**

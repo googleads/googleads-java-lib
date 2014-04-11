@@ -14,7 +14,11 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 public class NetworkSetting  implements java.io.Serializable {
     /* Ads will be served with Google.com search results.
      *                 <span class="constraint AdxEnabled">This is disabled
-     * for AdX.</span> */
+     * for AdX.</span>
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to true for campaign channel type SEARCH.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel type DISPLAY.</span> */
     private java.lang.Boolean targetGoogleSearch;
 
     /* Ads will be served on partner sites in the Google Search Network
@@ -58,6 +62,10 @@ public class NetworkSetting  implements java.io.Serializable {
      * @return targetGoogleSearch   * Ads will be served with Google.com search results.
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to true for campaign channel type SEARCH.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel type DISPLAY.</span>
      */
     public java.lang.Boolean getTargetGoogleSearch() {
         return targetGoogleSearch;
@@ -70,6 +78,10 @@ public class NetworkSetting  implements java.io.Serializable {
      * @param targetGoogleSearch   * Ads will be served with Google.com search results.
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to true for campaign channel type SEARCH.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel type DISPLAY.</span>
      */
     public void setTargetGoogleSearch(java.lang.Boolean targetGoogleSearch) {
         this.targetGoogleSearch = targetGoogleSearch;

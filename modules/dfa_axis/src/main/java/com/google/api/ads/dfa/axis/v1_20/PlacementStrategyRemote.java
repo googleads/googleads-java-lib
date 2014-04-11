@@ -9,7 +9,7 @@ package com.google.api.ads.dfa.axis.v1_20;
 
 public interface PlacementStrategyRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.PlacementStrategyRecordSet getPlacementStrategiesByCriteria(com.google.api.ads.dfa.axis.v1_20.PlacementStrategySearchCriteria placementStrategySearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public void deletePlacementStrategy(long placementStrategyId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementStrategySaveResult savePlacementStrategy(com.google.api.ads.dfa.axis.v1_20.PlacementStrategy placementStrategy) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public void deletePlacementStrategy(long placementStrategyId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementStrategy getPlacementStrategy(long placementStrategyId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

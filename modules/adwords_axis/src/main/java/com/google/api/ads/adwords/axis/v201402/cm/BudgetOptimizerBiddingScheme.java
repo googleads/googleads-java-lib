@@ -16,9 +16,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * AdX.</span>
  */
 public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.axis.v201402.cm.BiddingScheme  implements java.io.Serializable {
-    /* Ceiling on bids placed by the budget optimizer.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidCeiling".</span> */
+    /* Ceiling on bids placed by the budget optimizer. */
     private com.google.api.ads.adwords.axis.v201402.cm.Money bidCeiling;
 
     /* The enhanced CPC bidding option for the campaign, which enables
@@ -49,8 +47,6 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
      * Gets the bidCeiling value for this BudgetOptimizerBiddingScheme.
      * 
      * @return bidCeiling   * Ceiling on bids placed by the budget optimizer.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidCeiling".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Money getBidCeiling() {
         return bidCeiling;
@@ -61,8 +57,6 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
      * Sets the bidCeiling value for this BudgetOptimizerBiddingScheme.
      * 
      * @param bidCeiling   * Ceiling on bids placed by the budget optimizer.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "BidCeiling".</span>
      */
     public void setBidCeiling(com.google.api.ads.adwords.axis.v201402.cm.Money bidCeiling) {
         this.bidCeiling = bidCeiling;

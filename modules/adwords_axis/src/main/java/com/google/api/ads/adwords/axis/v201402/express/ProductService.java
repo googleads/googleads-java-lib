@@ -17,9 +17,26 @@ package com.google.api.ads.adwords.axis.v201402.express;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span> */
+    /* product service text
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductServiceText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private java.lang.String text;
+
+    /* Input locale of the product service text (e.g. "en_US").
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Filterable">This field
+     * can be filtered on using the value "Locale".</span> */
+    private java.lang.String locale;
 
     public ProductService() {
     }
@@ -28,20 +45,30 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
            java.lang.Long id,
            com.google.api.ads.adwords.axis.v201402.cm.CriterionType type,
            java.lang.String criterionType,
-           java.lang.String text) {
+           java.lang.String text,
+           java.lang.String locale) {
         super(
             id,
             type,
             criterionType);
         this.text = text;
+        this.locale = locale;
     }
 
 
     /**
      * Gets the text value for this ProductService.
      * 
-     * @return text   * <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span>
+     * @return text   * product service text
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductServiceText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public java.lang.String getText() {
         return text;
@@ -51,11 +78,51 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
     /**
      * Sets the text value for this ProductService.
      * 
-     * @param text   * <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span>
+     * @param text   * product service text
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductServiceText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setText(java.lang.String text) {
         this.text = text;
+    }
+
+
+    /**
+     * Gets the locale value for this ProductService.
+     * 
+     * @return locale   * Input locale of the product service text (e.g. "en_US").
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Filterable">This field
+     * can be filtered on using the value "Locale".</span>
+     */
+    public java.lang.String getLocale() {
+        return locale;
+    }
+
+
+    /**
+     * Sets the locale value for this ProductService.
+     * 
+     * @param locale   * Input locale of the product service text (e.g. "en_US").
+     *                     
+     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
+     * is
+     *                     supported.
+     *                     <span class="constraint Filterable">This field
+     * can be filtered on using the value "Locale".</span>
+     */
+    public void setLocale(java.lang.String locale) {
+        this.locale = locale;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -72,7 +139,10 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
         _equals = super.equals(obj) && 
             ((this.text==null && other.getText()==null) || 
              (this.text!=null &&
-              this.text.equals(other.getText())));
+              this.text.equals(other.getText()))) &&
+            ((this.locale==null && other.getLocale()==null) || 
+             (this.locale!=null &&
+              this.locale.equals(other.getLocale())));
         __equalsCalc = null;
         return _equals;
     }
@@ -87,6 +157,9 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
         if (getText() != null) {
             _hashCode += getText().hashCode();
         }
+        if (getLocale() != null) {
+            _hashCode += getLocale().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -100,6 +173,13 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("text");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201402", "text"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locale");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201402", "locale"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

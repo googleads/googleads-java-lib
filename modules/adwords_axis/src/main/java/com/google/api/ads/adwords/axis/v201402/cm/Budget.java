@@ -37,6 +37,9 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
      * (trimmed).</span> */
@@ -45,7 +48,10 @@ public class Budget  implements java.io.Serializable {
     /* Period over which to spend the budget. <code>MONTHLY</code>
      * is not available to most users.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Period".</span> */
+     * be selected using the value "Period".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetPeriod period;
 
     /* Amount of budget in the local currency for the account.
@@ -53,12 +59,18 @@ public class Budget  implements java.io.Serializable {
      * be selected using the value "Amount".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
-     * greater than or equal to 1.</span> */
+     * greater than or equal to 1.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.Money amount;
 
     /* Delivery method for the budget.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DeliveryMethod".</span> */
+     * be selected using the value "DeliveryMethod".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetDeliveryMethod deliveryMethod;
 
     /* Number of campaigns actively using this budget. This field
@@ -85,7 +97,10 @@ public class Budget  implements java.io.Serializable {
      *                 result in an error.</p>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsBudgetExplicitlyShared".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE.</span> */
     private java.lang.Boolean isExplicitlyShared;
 
     /* <span class="constraint Selectable">This field can be selected
@@ -176,6 +191,9 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
      * (trimmed).</span>
@@ -197,6 +215,9 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BudgetName".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
      * (trimmed).</span>
@@ -213,6 +234,9 @@ public class Budget  implements java.io.Serializable {
      * is not available to most users.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Period".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetPeriod getPeriod() {
         return period;
@@ -226,6 +250,9 @@ public class Budget  implements java.io.Serializable {
      * is not available to most users.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Period".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      */
     public void setPeriod(com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetPeriod period) {
         this.period = period;
@@ -241,6 +268,9 @@ public class Budget  implements java.io.Serializable {
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
      * greater than or equal to 1.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Money getAmount() {
         return amount;
@@ -256,6 +286,9 @@ public class Budget  implements java.io.Serializable {
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
      * greater than or equal to 1.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public void setAmount(com.google.api.ads.adwords.axis.v201402.cm.Money amount) {
         this.amount = amount;
@@ -268,6 +301,9 @@ public class Budget  implements java.io.Serializable {
      * @return deliveryMethod   * Delivery method for the budget.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DeliveryMethod".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetDeliveryMethod getDeliveryMethod() {
         return deliveryMethod;
@@ -280,6 +316,9 @@ public class Budget  implements java.io.Serializable {
      * @param deliveryMethod   * Delivery method for the budget.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DeliveryMethod".</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public void setDeliveryMethod(com.google.api.ads.adwords.axis.v201402.cm.BudgetBudgetDeliveryMethod deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
@@ -337,6 +376,9 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsBudgetExplicitlyShared".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE.</span>
      */
     public java.lang.Boolean getIsExplicitlyShared() {
         return isExplicitlyShared;
@@ -362,6 +404,9 @@ public class Budget  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "IsBudgetExplicitlyShared".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE.</span>
      */
     public void setIsExplicitlyShared(java.lang.Boolean isExplicitlyShared) {
         this.isExplicitlyShared = isExplicitlyShared;

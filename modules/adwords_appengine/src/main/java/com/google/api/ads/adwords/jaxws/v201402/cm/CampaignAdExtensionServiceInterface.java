@@ -13,14 +13,10 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Use this service to manage campaign ad extensions.
- *       
- *       <p>Campaign ad extensions attach additional information to a standard text
- *       ad (such as a business address, phone number, or additional site links) and
- *       apply to all text ads within the specified campaign. For general information
- *       about ad extensions, see the <a
- *       href="//support.google.com/adwords/bin/answer.py?answer=2375499"
- *       >AdWords Help Center</a>.</p>
+ *       Use this service to manage location ad extensions. Other types of
+ *       <a href="//support.google.com/adwords/answer/3465883">ad extensions</a>
+ *       (sitelinks, call extensions, etc.) have been subsumed by
+ *       <a href="/adwords/api/docs/guides/feed-services">feeds</a>.
  *       
  *       <p class="note"><b>Note:</b> An ad extension can be associated with
  *       only one campaign.</p>

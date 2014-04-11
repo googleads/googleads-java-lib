@@ -55,10 +55,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.mcm.ManagedCustomer}.
    */
   public enum ManagedCustomer
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.mcm.ManagedCustomer> {
     CAN_MANAGE_CLIENTS("CanManageClients", true),
     COMPANY_NAME("CompanyName", true),
     CURRENCY_CODE("CurrencyCode", true),
@@ -94,9 +94,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.Campaign}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.Campaign}.
    */
-  public enum Campaign implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.Campaign> {
+  public enum Campaign implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.Campaign> {
     AD_SERVING_OPTIMIZATION_STATUS("AdServingOptimizationStatus", false),
     AMOUNT("Amount", true),
     BID_CEILING("BidCeiling", false),
@@ -155,10 +155,10 @@ public final class SelectorFields {
 
   
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroupAd}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroupAd}.
    */
   public enum AdGroupAd
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroupAd> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroupAd> {
     ADGROUPAD_TRADEMARK_DISAPPROVED("AdGroupAdTrademarkDisapproved", false),
     ADGROUP_CREATIVE_APPROVAL_STATUS("AdGroupCreativeApprovalStatus", true),
     ADGROUP_ID("AdGroupId", true),
@@ -245,10 +245,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroupCriterion}.
    */
   public enum AdGroupCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroupCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroupCriterion> {
     ADGROUP_ID("AdGroupId", true),
     AGE_RANGE_TYPE("AgeRangeType", false),
     APPROVAL_STATUS("ApprovalStatus", true),
@@ -375,9 +375,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroup}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroup}.
    */
-  public enum AdGroup implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroup> {
+  public enum AdGroup implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroup> {
     BID_TYPE("BidType", true),
     BIDDING_STRATEGY_TYPE("BiddingStrategyType", true),
     CAMPAIGN_ID("CampaignId", true),
@@ -425,10 +425,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroupFeed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroupFeed}.
    */
   public enum AdGroupFeed
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroupFeed> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroupFeed> {
     ADGROUP_ID("AdGroupId", true),
     FEED_ID("FeedId", true),
     MATCHING_FUNCTION("MatchingFunction", false),
@@ -461,9 +461,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdParam}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdParam}.
    */
-  public enum AdParam implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdParam> {
+  public enum AdParam implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdParam> {
     ADGROUP_ID("AdGroupId", true),
     CRITERION_ID("CriterionId", true),
     INSERTION_TEXT("InsertionText", false),
@@ -495,9 +495,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.Budget}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.Budget}.
    */
-  public enum Budget implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.Budget> {
+  public enum Budget implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.Budget> {
     AMOUNT("Amount", true),
     BUDGET_ID("BudgetId", true),
     BUDGET_NAME("BudgetName", true),
@@ -533,10 +533,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.billing.BudgetOrder}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.billing.BudgetOrder}.
    */
   public enum BudgetOrder
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.billing.BudgetOrder> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.billing.BudgetOrder> {
     BILLING_ACCOUNT_ID("BillingAccountId", true),
     BILLING_ACCOUNT_NAME("BillingAccountName", true), //New Billing
     BUDGET_ORDER_NAME("BudgetOrderName", true), //New Billing
@@ -580,10 +580,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.CampaignAdExtension}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtension}.
    */
   public enum CampaignAdExtension
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.CampaignAdExtension> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtension> {
     AD_EXTENSION_ID("AdExtensionId", true),
     ADDRESS("Address", false),
     ADVERTISER_NAME("AdvertiserName", false),
@@ -671,10 +671,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.CampaignCriterion}.
    */
   public enum CampaignCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.CampaignCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.CampaignCriterion> {
     ADDRESS("Address", false),
     AGE_RANGE_TYPE("AgeRangeType", false),
     ARGUMENT("Argument", false),
@@ -748,10 +748,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.CampaignFeed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.CampaignFeed}.
    */
   public enum CampaignFeed
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.CampaignFeed> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.CampaignFeed> {
     CAMPAIGN_ID("CampaignId", true),
     FEED_ID("FeedId", true),
     MATCHING_FUNCTION("MatchingFunction", false),
@@ -784,13 +784,12 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.ConversionTracker}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.ConversionTracker}.
    */
   public enum ConversionTracker
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.ConversionTracker> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.ConversionTracker> {
     APP_ID("AppId", true),
     APP_PLATFORM("AppPlatform", true),
-    APP_USER_REVENUE_VALUE("AppUserRevenueValue", true),
     BACKGROUND_COLOR("BackgroundColor", true),
     CATEGORY("Category", true),
     CONVERSION_PAGE_LANGUAGE("ConversionPageLanguage", true),
@@ -806,7 +805,6 @@ public final class SelectorFields {
     STATUS("Status", true),
     TEXT_FORMAT("TextFormat", true),
     TRACKING_CODE_TYPE("TrackingCodeType", true),
-    USER_REVENUE_VALUE("UserRevenueValue", true),
     VIEWTHROUGH_LOOKBACK_WINDOW("ViewthroughLookbackWindow", true);
 
     private String field;
@@ -835,10 +833,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidLandscape}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidLandscape}.
    */
   public enum AdGroupBidLandscape
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidLandscape> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidLandscape> {
     ADGROUP_ID("AdGroupId", true),
     BID("Bid", true),
     CAMPAIGN_ID("CampaignId", true),
@@ -878,10 +876,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscape}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.CriterionBidLandscape}.
    */
   public enum CriterionBidLandscape
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.CriterionBidLandscape> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.CriterionBidLandscape> {
     ADGROUP_ID("AdGroupId", true),
     BID("Bid", true),
     CAMPAIGN_ID("CampaignId", true),
@@ -920,10 +918,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.Experiment}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.Experiment}.
    */
   public enum Experiment
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.Experiment> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.Experiment> {
     ADGROUP_ADS_COUNT("AdGroupAdsCount", false),
     ADGROUP_CRITERIA_COUNT("AdGroupCriteriaCount", false),
     ADGROUPS_COUNT("AdGroupsCount", false),
@@ -964,9 +962,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.Feed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.Feed}.
    */
-  public enum Feed implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.Feed> {
+  public enum Feed implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.Feed> {
     ATTRIBUTES("Attributes", false),
     FEED_STATUS("FeedStatus", true),
     ID("Id", true),
@@ -999,9 +997,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.FeedItem}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.FeedItem}.
    */
-  public enum FeedItem implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.FeedItem> {
+  public enum FeedItem implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.FeedItem> {
     ATTRIBUTE_VALUES("AttributeValues", false),
     DEVICE_PREFERENCE("DevicePreference", true),
     END_TIME("EndTime", false),
@@ -1037,10 +1035,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.FeedMapping}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.FeedMapping}.
    */
   public enum FeedMapping
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.FeedMapping> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.FeedMapping> {
     ATTRIBUTE_FIELD_MAPPINGS("AttributeFieldMappings", true),
     FEED_ID("FeedId", true),
     FEED_MAPPING_ID("FeedMappingId", true),
@@ -1072,10 +1070,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.LocationCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.LocationCriterion}.
    */
   public enum LocationCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.LocationCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.LocationCriterion> {
     CANONICAL_NAME("CanonicalName", false),
     CRITERIA_TYPE("CriteriaType", true),
     DISPLAY_TYPE("DisplayType", false),
@@ -1111,9 +1109,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.Media}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.Media}.
    */
-  public enum Media implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.Media> {
+  public enum Media implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.Media> {
     ADVERTISING_ID("AdvertisingId", true),
     CREATION_TIME("CreationTime", true),
     DIMENSIONS("Dimensions", false),
@@ -1157,9 +1155,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.rm.UserList}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.rm.UserList}.
    */
-  public enum UserList implements FieldType<com.google.api.ads.adwords.axis.v201309.rm.UserList> {
+  public enum UserList implements FieldType<com.google.api.ads.adwords.axis.v201402.rm.UserList> {
     ACCESS_REASON("AccessReason", true),
     ACCOUNT_USER_LIST_STATUS("AccountUserListStatus", true),
     CONVERSION_TYPES("ConversionTypes", false),
@@ -1200,10 +1198,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidModifier}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidModifier}.
    */
   public enum AdGroupBidModifier
-      implements FieldType<com.google.api.ads.adwords.axis.v201309.cm.AdGroupBidModifier> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidModifier> {
     ADGROUP_ID("AdGroupId", true),
     BID_MODIFIER("BidModifier", true),
     BID_MODIFIER_SORUCE("BidModifierSource", true),

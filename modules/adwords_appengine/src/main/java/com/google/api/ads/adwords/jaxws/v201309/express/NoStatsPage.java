@@ -33,6 +33,7 @@ import com.google.api.ads.adwords.jaxws.v201309.cm.Page;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NoStatsPage")
 @XmlSeeAlso({
+    ProductServicePage.class,
     PromotionPage.class,
     ExpressBusinessPage.class
 })

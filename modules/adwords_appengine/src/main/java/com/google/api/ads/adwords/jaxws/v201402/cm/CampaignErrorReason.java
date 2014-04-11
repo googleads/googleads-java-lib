@@ -86,7 +86,8 @@ public enum CampaignErrorReason {
 
     /**
      * 
-     *                 Trying to modify name of campaign to one already assigned to another campaign.
+     *                 Trying to modify the name of an active or paused campaign, where the name is already
+     *                 assigned to another active or paused campaign.
      *               
      * 
      */

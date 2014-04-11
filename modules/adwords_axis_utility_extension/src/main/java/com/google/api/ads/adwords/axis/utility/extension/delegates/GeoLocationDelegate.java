@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
-import com.google.api.ads.adwords.axis.v201309.cm.Address;
-import com.google.api.ads.adwords.axis.v201309.cm.GeoLocation;
-import com.google.api.ads.adwords.axis.v201309.cm.GeoLocationSelector;
-import com.google.api.ads.adwords.axis.v201309.cm.GeoLocationServiceInterface;
+import com.google.api.ads.adwords.axis.v201402.cm.Address;
+import com.google.api.ads.adwords.axis.v201402.cm.GeoLocation;
+import com.google.api.ads.adwords.axis.v201402.cm.GeoLocationSelector;
+import com.google.api.ads.adwords.axis.v201402.cm.GeoLocationServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

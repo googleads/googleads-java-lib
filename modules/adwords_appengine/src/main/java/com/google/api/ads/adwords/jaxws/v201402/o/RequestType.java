@@ -40,6 +40,9 @@ public enum RequestType {
      *                 Request for stats for entries in selector.
      *                 This {@link RequestType} can be used to request
      *                 the stats for keywords/placements that the user already has.
+     *                 
+     *                 <p>Stats are generated once a month (typically on the last week of the
+     *                 month) from the historical data of previous months.</p>
      *               
      * 
      */

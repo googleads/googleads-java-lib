@@ -326,6 +326,8 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#id}.
      *                 Not available as a dimension to report on.
+     *                 <p>
+     *                 Replaced with {@code PARENT_AD_UNIT_ID} beginning in V201405.
      *               
      * 
      */
@@ -335,6 +337,8 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#name}.
      *                 Not available as a dimension to report on.
+     *                 <p>
+     *                 Replaced with {@code PARENT_AD_UNIT_NAME} beginning in V201405.
      *               
      * 
      */
@@ -364,6 +368,8 @@ public enum Dimension {
      *                 Breaks down reporting data by criteria predefined by DoubleClick For
      *                 Publishers like the operating system, browser etc. Cannot be used for
      *                 filtering.
+     *                 <p>
+     *                 Replaced with {@code TARGETING} beginning in v201405.
      *               
      * 
      */

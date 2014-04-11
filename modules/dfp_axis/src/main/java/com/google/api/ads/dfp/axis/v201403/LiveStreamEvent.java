@@ -14,7 +14,7 @@ package com.google.api.ads.dfp.axis.v201403;
  */
 public class LiveStreamEvent  implements java.io.Serializable {
     /* The unique ID of the {@code LiveStreamEvent}. This value is
-     * readonly and
+     * read-only and
      *                 is assigned by Google. */
     private java.lang.Long id;
 
@@ -37,12 +37,12 @@ public class LiveStreamEvent  implements java.io.Serializable {
 
     /* The date and time this {@code LiveStreamEvent} was created.
      * This attribute
-     *                 is readonly. */
+     *                 is read-only. */
     private com.google.api.ads.dfp.axis.v201403.DateTime creationDateTime;
 
     /* The date and time this {@code LiveStreamEvent} was last modified.
      * This
-     *                 attribute is readonly. */
+     *                 attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201403.DateTime lastModifiedDateTime;
 
     /* The start date and time of this {@code LiveStreamEvent}. This
@@ -104,7 +104,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the id value for this LiveStreamEvent.
      * 
      * @return id   * The unique ID of the {@code LiveStreamEvent}. This value is
-     * readonly and
+     * read-only and
      *                 is assigned by Google.
      */
     public java.lang.Long getId() {
@@ -116,7 +116,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the id value for this LiveStreamEvent.
      * 
      * @param id   * The unique ID of the {@code LiveStreamEvent}. This value is
-     * readonly and
+     * read-only and
      *                 is assigned by Google.
      */
     public void setId(java.lang.Long id) {
@@ -205,7 +205,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
      * This attribute
-     *                 is readonly.
+     *                 is read-only.
      */
     public com.google.api.ads.dfp.axis.v201403.DateTime getCreationDateTime() {
         return creationDateTime;
@@ -217,7 +217,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
      * This attribute
-     *                 is readonly.
+     *                 is read-only.
      */
     public void setCreationDateTime(com.google.api.ads.dfp.axis.v201403.DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
@@ -229,7 +229,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
      * This
-     *                 attribute is readonly.
+     *                 attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201403.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -241,7 +241,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
      * This
-     *                 attribute is readonly.
+     *                 attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.dfp.axis.v201403.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;

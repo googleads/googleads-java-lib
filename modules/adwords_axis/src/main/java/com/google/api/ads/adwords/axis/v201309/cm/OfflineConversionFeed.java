@@ -48,12 +48,9 @@ public class OfflineConversionFeed  implements java.io.Serializable {
 
     /* The time that this conversion occurred at.
      *                 <p>
-     *                 If a timezone is not specified, the timezone from
-     * the account to
-     *                 which this conversion belongs to will be used. Note
-     * this may be
-     *                 different from the account used for uploading in case
-     * of MCC.
+     *                 This has to be after the click time. A time in the
+     * future is not allowed.
+     *                 A timezone is always required.
      *                 <p>
      *                 When a conversion for the same google click ID, conversion
      * name
@@ -67,8 +64,6 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ConversionTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint DateWithinRange">This date
-     * must be in the range [1970-01-01, TODAY].</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.String conversionTime;
@@ -195,12 +190,9 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      * 
      * @return conversionTime   * The time that this conversion occurred at.
      *                 <p>
-     *                 If a timezone is not specified, the timezone from
-     * the account to
-     *                 which this conversion belongs to will be used. Note
-     * this may be
-     *                 different from the account used for uploading in case
-     * of MCC.
+     *                 This has to be after the click time. A time in the
+     * future is not allowed.
+     *                 A timezone is always required.
      *                 <p>
      *                 When a conversion for the same google click ID, conversion
      * name
@@ -214,8 +206,6 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ConversionTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint DateWithinRange">This date
-     * must be in the range [1970-01-01, TODAY].</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -229,12 +219,9 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      * 
      * @param conversionTime   * The time that this conversion occurred at.
      *                 <p>
-     *                 If a timezone is not specified, the timezone from
-     * the account to
-     *                 which this conversion belongs to will be used. Note
-     * this may be
-     *                 different from the account used for uploading in case
-     * of MCC.
+     *                 This has to be after the click time. A time in the
+     * future is not allowed.
+     *                 A timezone is always required.
      *                 <p>
      *                 When a conversion for the same google click ID, conversion
      * name
@@ -248,8 +235,6 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ConversionTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint DateWithinRange">This date
-     * must be in the range [1970-01-01, TODAY].</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

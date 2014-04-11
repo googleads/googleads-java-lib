@@ -30,7 +30,7 @@ import javax.xml.ws.ResponseWrapper;
  *       
  *       <p>The maximum number of {@linkplain KeywordEstimateRequest keyword estimate
  *       requests} across all campaign estimate requests and
- *       ad group estimate requests is 500.</p>
+ *       ad group estimate requests is 2500.</p>
  *       
  *       <p>The maximum number of {@linkplain AdGroupEstimateRequest adgroup estimate
  *       requests} across all campaign estimate requests is 50.</p>

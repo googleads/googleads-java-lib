@@ -29,10 +29,11 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v201309.cm.BiddingScheme  implements java.io.Serializable {
     /* Average CPA target.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpa".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span> */
+     * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Money targetCpa;
 
     public TargetCpaBiddingScheme() {
@@ -52,10 +53,11 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      * 
      * @return targetCpa   * Average CPA target.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpa".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Money getTargetCpa() {
         return targetCpa;
@@ -67,10 +69,11 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      * 
      * @param targetCpa   * Average CPA target.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpa".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public void setTargetCpa(com.google.api.ads.adwords.axis.v201309.cm.Money targetCpa) {
         this.targetCpa = targetCpa;

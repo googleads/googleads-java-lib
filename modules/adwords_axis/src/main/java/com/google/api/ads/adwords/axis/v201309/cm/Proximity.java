@@ -23,30 +23,22 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * AdX.</span>
  */
 public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
-    /* Latitude and longitude.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span> */
+    /* Latitude and longitude. */
     private com.google.api.ads.adwords.axis.v201309.cm.GeoPoint geoPoint;
 
     /* Radius distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusDistanceUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ProximityDistanceUnits radiusDistanceUnits;
 
     /* Radius expressed in distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusInUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private java.lang.Double radiusInUnits;
 
-    /* Full address; <code>null</code> if unknonwn.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span> */
+    /* Full address; <code>null</code> if unknonwn. */
     private com.google.api.ads.adwords.axis.v201309.cm.Address address;
 
     public Proximity() {
@@ -75,8 +67,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Gets the geoPoint value for this Proximity.
      * 
      * @return geoPoint   * Latitude and longitude.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.GeoPoint getGeoPoint() {
         return geoPoint;
@@ -87,8 +77,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Sets the geoPoint value for this Proximity.
      * 
      * @param geoPoint   * Latitude and longitude.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span>
      */
     public void setGeoPoint(com.google.api.ads.adwords.axis.v201309.cm.GeoPoint geoPoint) {
         this.geoPoint = geoPoint;
@@ -99,8 +87,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Gets the radiusDistanceUnits value for this Proximity.
      * 
      * @return radiusDistanceUnits   * Radius distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusDistanceUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -114,8 +100,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Sets the radiusDistanceUnits value for this Proximity.
      * 
      * @param radiusDistanceUnits   * Radius distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusDistanceUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -129,8 +113,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Gets the radiusInUnits value for this Proximity.
      * 
      * @return radiusInUnits   * Radius expressed in distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusInUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -144,8 +126,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Sets the radiusInUnits value for this Proximity.
      * 
      * @param radiusInUnits   * Radius expressed in distance units.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "RadiusInUnits".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -159,8 +139,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Gets the address value for this Proximity.
      * 
      * @return address   * Full address; <code>null</code> if unknonwn.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Address getAddress() {
         return address;
@@ -171,8 +149,6 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201309.cm.Crite
      * Sets the address value for this Proximity.
      * 
      * @param address   * Full address; <code>null</code> if unknonwn.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span>
      */
     public void setAddress(com.google.api.ads.adwords.axis.v201309.cm.Address address) {
         this.address = address;

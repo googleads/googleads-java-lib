@@ -27,7 +27,6 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -93,7 +92,9 @@ public class GetExpressBusinesses {
       if (page.getTotalNumEntries() > 0) {
         for (ExpressBusiness business : page.getEntries()) {
           Address address = business.getAddress();
-          GeoPoint geoPoint = Objects.firstNonNull(business.getGeoPoint(), new GeoPoint());
+          GeoPoint geoPoint = business.getGeoPoint() != null ?
+              business.getGeoPoint() :
+              new GeoPoint();
           System.out.printf("Express business found with name '%s' id %d website: %s "
               + "address: %s,%s,%s,%s,%s geo point: %d,%d status: %s%n",
               business.getName(),

@@ -44,9 +44,8 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201309.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201402.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-
 
 /**
  * DelegateLocator allows the developer to find all the Delegates for the AdWords API services.
@@ -67,7 +66,7 @@ public final class DelegateLocator{
   private volatile AdGroupBidModifierDelegate adGroupBidModifierDelegate;
   private volatile AdGroupFeedDelegate adGroupFeedDelegate;
   private volatile AdGroupDelegate adGroupDelegate;
-  private volatile  AdParamDelegate adParamDelegate;
+  private volatile AdParamDelegate adParamDelegate;
   private volatile AlertDelegate alertDelegate;
   private volatile BudgetOrderDelegate budgetOrderDelegate;
   private volatile BudgetDelegate budgetDelegate;

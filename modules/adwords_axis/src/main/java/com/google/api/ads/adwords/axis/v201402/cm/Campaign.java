@@ -140,7 +140,7 @@ public class Campaign  implements java.io.Serializable {
      * the value "DisplaySelect".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel type DISPLAY.</span> */
+     * only be set to false for campaign channel types: DISPLAY, SHOPPING.</span> */
     private java.lang.Boolean displaySelect;
 
     public Campaign() {
@@ -656,7 +656,7 @@ public class Campaign  implements java.io.Serializable {
      * the value "DisplaySelect".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel type DISPLAY.</span>
+     * only be set to false for campaign channel types: DISPLAY, SHOPPING.</span>
      */
     public java.lang.Boolean getDisplaySelect() {
         return displaySelect;
@@ -677,7 +677,7 @@ public class Campaign  implements java.io.Serializable {
      * the value "DisplaySelect".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel type DISPLAY.</span>
+     * only be set to false for campaign channel types: DISPLAY, SHOPPING.</span>
      */
     public void setDisplaySelect(java.lang.Boolean displaySelect) {
         this.displaySelect = displaySelect;

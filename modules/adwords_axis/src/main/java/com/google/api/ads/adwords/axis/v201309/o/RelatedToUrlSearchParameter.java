@@ -39,8 +39,8 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
 
     /* Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}.  Ignored on {@code KEYWORD}
-     * queries, */
+     *                     Default is {@code false}. Valid only for {@code
+     * PLACEMENT} queries. */
     private java.lang.Boolean includeSubUrls;
 
     public RelatedToUrlSearchParameter() {
@@ -114,8 +114,8 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
      * 
      * @return includeSubUrls   * Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}.  Ignored on {@code KEYWORD}
-     * queries,
+     *                     Default is {@code false}. Valid only for {@code
+     * PLACEMENT} queries.
      */
     public java.lang.Boolean getIncludeSubUrls() {
         return includeSubUrls;
@@ -127,8 +127,8 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
      * 
      * @param includeSubUrls   * Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}.  Ignored on {@code KEYWORD}
-     * queries,
+     *                     Default is {@code false}. Valid only for {@code
+     * PLACEMENT} queries.
      */
     public void setIncludeSubUrls(java.lang.Boolean includeSubUrls) {
         this.includeSubUrls = includeSubUrls;

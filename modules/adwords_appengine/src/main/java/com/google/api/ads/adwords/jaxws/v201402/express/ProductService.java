@@ -24,6 +24,7 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Criterion;
  *     &lt;extension base="{https://adwords.google.com/api/adwords/cm/v201402}Criterion">
  *       &lt;sequence>
  *         &lt;element name="text" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -34,13 +35,15 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Criterion;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProductService", propOrder = {
-    "text"
+    "text",
+    "locale"
 })
 public class ProductService
     extends Criterion
 {
 
     protected String text;
+    protected String locale;
 
     /**
      * Gets the value of the text property.
@@ -64,6 +67,30 @@ public class ProductService
      */
     public void setText(String value) {
         this.text = value;
+    }
+
+    /**
+     * Gets the value of the locale property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLocale() {
+        return locale;
+    }
+
+    /**
+     * Sets the value of the locale property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLocale(String value) {
+        this.locale = value;
     }
 
 }
