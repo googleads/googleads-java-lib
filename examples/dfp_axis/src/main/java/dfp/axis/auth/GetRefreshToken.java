@@ -45,7 +45,7 @@ import java.io.InputStreamReader;
  */
 public class GetRefreshToken {
 
-  private static final String SCOPE = "https://www.google.com/apis/ads/publisher";
+  private static final String SCOPE = "https://adwords.google.com/api/adwords/";
 
   // This callback URL will allow you to copy the token from the success screen.
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
