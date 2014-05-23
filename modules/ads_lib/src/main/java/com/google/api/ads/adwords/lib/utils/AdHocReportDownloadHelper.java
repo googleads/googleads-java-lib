@@ -20,13 +20,12 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
+import com.google.api.client.util.Charsets;
 import com.google.common.annotations.VisibleForTesting;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.nio.charset.Charset;
 
 /**
  * Helper class that handles AdHoc report downloads. Requests will be logged (header and payload) to
@@ -37,13 +36,16 @@ import java.net.MalformedURLException;
  */
 public class AdHocReportDownloadHelper {
 
-  private static final Logger logger = LoggerFactory.getLogger(
-      AdHocReportDownloadHelper.class.getPackage().getName() + ".report_download");
-
   private final AdWordsSession session;
   private final ReportRequestFactoryHelper reportRequestFactoryHelper;
   private final String version;
 
+  /**
+   * The default Charset for report request and response contents.
+   */
+  @VisibleForTesting
+  public static final Charset REPORT_CHARSET = Charsets.UTF_8;
+  
   /**
    * Constructor that stores the session for authentication and uses the provided version to
    * determine the report endpoint.
@@ -99,7 +101,18 @@ public class AdHocReportDownloadHelper {
       HttpRequest httpRequest = requestFactory
           .buildPostRequest(new GenericUrl(downloadUrl), reportBodyProvider.getHttpContent());
       HttpResponse response = httpRequest.execute();
-      return new RawReportDownloadResponse(response.getStatusCode(), response.getContent());
+      
+      Charset charSet = REPORT_CHARSET;
+      // Unfortunately, HttpResponse.getContentCharset defaults to Charsets.ISO_8859_1 if the
+      // underlying MediaType is null or doesn't have a Charset parameter. Since we want to
+      // default to REPORT_CHARSET, we have to inspect the MediaType ourselves.
+      if (response.getMediaType() != null
+          && response.getMediaType().getCharsetParameter() != null) {
+        charSet = response.getMediaType().getCharsetParameter();
+      }
+
+      return new RawReportDownloadResponse(response.getStatusCode(), response.getContent(),
+          charSet);
     } catch (MalformedURLException e) {
       throw new ReportException("Created invalid report download URL.", e);
     } catch (IOException e) {

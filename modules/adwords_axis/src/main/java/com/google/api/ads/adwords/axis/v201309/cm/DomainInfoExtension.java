@@ -15,8 +15,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v201309.cm.AdExtension  implements java.io.Serializable {
     /* The Internet domain name that this extension represents. E.g.
      * "google.com" or "www.google.com"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DomainName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -25,8 +23,6 @@ public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v20130
 
     /* A language code that indicates what language the contents of
      * the domain is in. E.g. "en"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LanguageCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">This string
@@ -54,8 +50,6 @@ public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v20130
      * 
      * @return domainName   * The Internet domain name that this extension represents. E.g.
      * "google.com" or "www.google.com"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DomainName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -71,8 +65,6 @@ public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v20130
      * 
      * @param domainName   * The Internet domain name that this extension represents. E.g.
      * "google.com" or "www.google.com"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DomainName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -88,8 +80,6 @@ public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v20130
      * 
      * @return languageCode   * A language code that indicates what language the contents of
      * the domain is in. E.g. "en"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LanguageCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">This string
@@ -105,8 +95,6 @@ public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v20130
      * 
      * @param languageCode   * A language code that indicates what language the contents of
      * the domain is in. E.g. "en"
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LanguageCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">This string

@@ -31,10 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code id}</td>
  *             <td>{@link RateCardCustomization#id}</td>
  *             </tr>
- *             <tr>
- *             <td>{@code status}</td>
- *             <td>{@link RateCardCustomization#status}</td>
- *             </tr>
  *             </table>
  *             
  *             @param filterStatement a Publisher Query Language statement used to filter

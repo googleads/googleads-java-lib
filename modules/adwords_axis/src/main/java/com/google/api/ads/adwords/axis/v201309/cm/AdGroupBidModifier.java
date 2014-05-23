@@ -14,16 +14,10 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  *             bid modifier values.
  */
 public class AdGroupBidModifier  implements java.io.Serializable {
-    /* The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The campaign that the criterion is in. */
     private java.lang.Long campaignId;
 
     /* The adgroup that the bid modifier override is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Long adGroupId;
@@ -44,18 +38,12 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
      * for opting out
      *                 of mobile.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span> */
     private java.lang.Double bidModifier;
 
     /* Bid modifier source.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifierSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BidModifierSource bidModifierSource;
@@ -81,9 +69,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Gets the campaignId value for this AdGroupBidModifier.
      * 
      * @return campaignId   * The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getCampaignId() {
         return campaignId;
@@ -94,9 +79,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Sets the campaignId value for this AdGroupBidModifier.
      * 
      * @param campaignId   * The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setCampaignId(java.lang.Long campaignId) {
         this.campaignId = campaignId;
@@ -107,9 +89,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Gets the adGroupId value for this AdGroupBidModifier.
      * 
      * @return adGroupId   * The adgroup that the bid modifier override is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -122,9 +101,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Sets the adGroupId value for this AdGroupBidModifier.
      * 
      * @param adGroupId   * The adgroup that the bid modifier override is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -175,9 +151,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
      * for opting out
      *                 of mobile.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span>
@@ -197,9 +170,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
      * for opting out
      *                 of mobile.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span>
@@ -213,9 +183,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Gets the bidModifierSource value for this AdGroupBidModifier.
      * 
      * @return bidModifierSource   * Bid modifier source.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifierSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -228,9 +195,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * Sets the bidModifierSource value for this AdGroupBidModifier.
      * 
      * @param bidModifierSource   * Bid modifier source.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BidModifierSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

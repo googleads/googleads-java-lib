@@ -18,7 +18,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Maps;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -44,8 +43,7 @@ import javax.xml.xpath.XPathFactory;
  */
 public class XmlFieldExtractor {
 
-  private static final Logger logger = LoggerFactory.getLogger(
-      AdHocReportDownloadHelper.class.getPackage().getName() + ".report_download");
+  private final Logger logger;
 
   private DocumentBuilder builder;
   private XPath xpath;
@@ -61,18 +59,21 @@ public class XmlFieldExtractor {
       throw new IllegalStateException("Couldn't construct a DocumentBuilder", e);
     }
     xpath = XPathFactory.newInstance().newXPath();
+    logger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getReportServiceLogger()
+        .getLogger();
   }
 
   /**
    * Locates the target fields in the specified XML and uses a wildcard XPath to
    * identify the first matching node and return it in a map.
    *
-   * For example, for the xml: {@code <xml><bar>BAR</bar></xml></code>} and
+   * <p>For example, for the xml: {@code <xml><bar>BAR</bar></xml></code>} and
    * field "bar", this class return a map with key "bar" and value "BAR".
    *
-   * @param xml Stream of XML to process
+   * @param xml Stream of XML to process.
    * @param fields List of fields to look for.
-   * @returns Mapping of fieldname to value (only if field was located and not null).
+   * @return Non-null map of fieldname to value. Will only contain entries for fields found
+   * in the stream.
    */
   public Map<String, String> extract(InputStream xml, String[] fields) {
     Map<String, String> parsedFields = Maps.newHashMap();

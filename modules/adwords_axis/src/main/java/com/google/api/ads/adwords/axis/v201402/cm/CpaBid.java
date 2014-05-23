@@ -13,10 +13,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class CpaBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  implements java.io.Serializable {
     /* Target cost per acquisition/conversion. This is applicable
-     * only at the ad group level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * only at the ad group level. */
     private com.google.api.ads.adwords.axis.v201402.cm.Money bid;
 
     public CpaBid() {
@@ -36,9 +33,6 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * 
      * @return bid   * Target cost per acquisition/conversion. This is applicable
      * only at the ad group level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Money getBid() {
         return bid;
@@ -50,9 +44,6 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * 
      * @param bid   * Target cost per acquisition/conversion. This is applicable
      * only at the ad group level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TargetCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBid(com.google.api.ads.adwords.axis.v201402.cm.Money bid) {
         this.bid = bid;

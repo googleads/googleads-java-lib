@@ -13,18 +13,12 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class AdGroupCriterion  implements java.io.Serializable {
     /* The ad group this criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Long adGroupId;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "CriterionUse".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.CriterionUse criterionUse;
 
     /* The criterion part of the ad group criterion.
@@ -68,9 +62,6 @@ public class AdGroupCriterion  implements java.io.Serializable {
      * Gets the adGroupId value for this AdGroupCriterion.
      * 
      * @return adGroupId   * The ad group this criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -83,9 +74,6 @@ public class AdGroupCriterion  implements java.io.Serializable {
      * Sets the adGroupId value for this AdGroupCriterion.
      * 
      * @param adGroupId   * The ad group this criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -97,11 +85,8 @@ public class AdGroupCriterion  implements java.io.Serializable {
     /**
      * Gets the criterionUse value for this AdGroupCriterion.
      * 
-     * @return criterionUse   * <span class="constraint Selectable">This field can be selected
-     * using the value "CriterionUse".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @return criterionUse   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.CriterionUse getCriterionUse() {
         return criterionUse;
@@ -111,11 +96,8 @@ public class AdGroupCriterion  implements java.io.Serializable {
     /**
      * Sets the criterionUse value for this AdGroupCriterion.
      * 
-     * @param criterionUse   * <span class="constraint Selectable">This field can be selected
-     * using the value "CriterionUse".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @param criterionUse   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setCriterionUse(com.google.api.ads.adwords.axis.v201402.cm.CriterionUse criterionUse) {
         this.criterionUse = criterionUse;

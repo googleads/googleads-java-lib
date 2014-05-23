@@ -12,29 +12,17 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * Container for criterion quality information.
  */
 public class QualityInfo  implements java.io.Serializable {
-    /* Whether the keyword relevance is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsKeywordAdRelevanceAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+    /* Whether the keyword relevance is acceptable. */
     private java.lang.Boolean isKeywordAdRelevanceAcceptable;
 
-    /* Whether the landing page quality is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsLandingPageQualityAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+    /* Whether the landing page quality is acceptable. */
     private java.lang.Boolean isLandingPageQualityAcceptable;
 
-    /* Whether the latency to load the landing page is acceptable.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsLandingPageLatencyAcceptable".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* Whether the latency to load the landing page is acceptable. */
     private java.lang.Boolean isLandingPageLatencyAcceptable;
 
     /* Keyword quality score that ranges from 1 to 10, 1 being the
-     * lowest, 10 the highest.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "QualityScore".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * lowest, 10 the highest. */
     private java.lang.Integer qualityScore;
 
     public QualityInfo() {
@@ -56,9 +44,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Gets the isKeywordAdRelevanceAcceptable value for this QualityInfo.
      * 
      * @return isKeywordAdRelevanceAcceptable   * Whether the keyword relevance is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsKeywordAdRelevanceAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.Boolean getIsKeywordAdRelevanceAcceptable() {
         return isKeywordAdRelevanceAcceptable;
@@ -69,9 +54,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Sets the isKeywordAdRelevanceAcceptable value for this QualityInfo.
      * 
      * @param isKeywordAdRelevanceAcceptable   * Whether the keyword relevance is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsKeywordAdRelevanceAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setIsKeywordAdRelevanceAcceptable(java.lang.Boolean isKeywordAdRelevanceAcceptable) {
         this.isKeywordAdRelevanceAcceptable = isKeywordAdRelevanceAcceptable;
@@ -82,9 +64,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Gets the isLandingPageQualityAcceptable value for this QualityInfo.
      * 
      * @return isLandingPageQualityAcceptable   * Whether the landing page quality is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsLandingPageQualityAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.Boolean getIsLandingPageQualityAcceptable() {
         return isLandingPageQualityAcceptable;
@@ -95,9 +74,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Sets the isLandingPageQualityAcceptable value for this QualityInfo.
      * 
      * @param isLandingPageQualityAcceptable   * Whether the landing page quality is acceptable.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsLandingPageQualityAcceptable".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setIsLandingPageQualityAcceptable(java.lang.Boolean isLandingPageQualityAcceptable) {
         this.isLandingPageQualityAcceptable = isLandingPageQualityAcceptable;
@@ -108,9 +84,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Gets the isLandingPageLatencyAcceptable value for this QualityInfo.
      * 
      * @return isLandingPageLatencyAcceptable   * Whether the latency to load the landing page is acceptable.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsLandingPageLatencyAcceptable".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Boolean getIsLandingPageLatencyAcceptable() {
         return isLandingPageLatencyAcceptable;
@@ -121,9 +94,6 @@ public class QualityInfo  implements java.io.Serializable {
      * Sets the isLandingPageLatencyAcceptable value for this QualityInfo.
      * 
      * @param isLandingPageLatencyAcceptable   * Whether the latency to load the landing page is acceptable.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsLandingPageLatencyAcceptable".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setIsLandingPageLatencyAcceptable(java.lang.Boolean isLandingPageLatencyAcceptable) {
         this.isLandingPageLatencyAcceptable = isLandingPageLatencyAcceptable;
@@ -135,9 +105,6 @@ public class QualityInfo  implements java.io.Serializable {
      * 
      * @return qualityScore   * Keyword quality score that ranges from 1 to 10, 1 being the
      * lowest, 10 the highest.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "QualityScore".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Integer getQualityScore() {
         return qualityScore;
@@ -149,9 +116,6 @@ public class QualityInfo  implements java.io.Serializable {
      * 
      * @param qualityScore   * Keyword quality score that ranges from 1 to 10, 1 being the
      * lowest, 10 the highest.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "QualityScore".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setQualityScore(java.lang.Integer qualityScore) {
         this.qualityScore = qualityScore;

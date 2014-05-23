@@ -23,6 +23,8 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration;
+import com.google.api.ads.adwords.lib.utils.logging.AdWordsServiceLoggers;
+import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -70,10 +72,21 @@ public class ReportRequestFactoryHelperTest {
   private AdWordsSession adWordsSession;
   @Mock
   private AdWordsLibConfiguration adWordsLibConfiguration;
+  @Mock
+  private AdWordsServiceLoggers adWordsServiceLoggers;
+  @Mock
+  private ReportServiceLogger reportServiceLogger;
 
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    
+    // Sets up mock behavior common to all tests.
+    when(internals.getAuthorizationHeaderProvider()).thenReturn(authorizationHeaderProvider);
+    when(internals.getUserAgentCombiner()).thenReturn(userAgentCombiner);
+    when(internals.getAdWordsLibConfiguration()).thenReturn(adWordsLibConfiguration);
+    when(internals.getAdWordsServiceLoggers()).thenReturn(adWordsServiceLoggers);
+    when(adWordsServiceLoggers.getReportServiceLogger()).thenReturn(reportServiceLogger);
   }
 
   /**
@@ -81,10 +94,6 @@ public class ReportRequestFactoryHelperTest {
    */
   @Test
   public void testConstructor() throws Exception {
-    when(internals.getAuthorizationHeaderProvider()).thenReturn(authorizationHeaderProvider);
-    when(internals.getUserAgentCombiner()).thenReturn(userAgentCombiner);
-    when(internals.getAdWordsLibConfiguration()).thenReturn(adWordsLibConfiguration);
-
     new ReportRequestFactoryHelper(adWordsSession, internals);
 
     verify(internals).getAuthorizationHeaderProvider();
@@ -123,9 +132,6 @@ public class ReportRequestFactoryHelperTest {
     LowLevelHttpRequest lowLevelRequest = Mockito.mock(LowLevelHttpRequest.class);
     HttpTransport transport = createTransport(lowLevelRequest);
     when(internals.getHttpTransport()).thenReturn(transport);
-    when(internals.getAuthorizationHeaderProvider()).thenReturn(authorizationHeaderProvider);
-    when(internals.getUserAgentCombiner()).thenReturn(userAgentCombiner);
-    when(internals.getAdWordsLibConfiguration()).thenReturn(adWordsLibConfiguration);
     when(adWordsLibConfiguration.getReportDownloadTimeout()).thenReturn(42);
     AdWordsSession session = new AdWordsSession.Builder()
         .withDeveloperToken("foodevtoken")

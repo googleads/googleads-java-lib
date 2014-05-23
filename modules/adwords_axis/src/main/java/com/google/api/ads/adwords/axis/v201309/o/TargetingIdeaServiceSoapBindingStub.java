@@ -276,6 +276,13 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "CollectionSizeError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201309.cm.CollectionSizeErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "ComparableValue");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201309.cm.ComparableValue.class;
@@ -801,13 +808,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "StringLengthError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201309.cm.StringLengthError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -823,6 +823,13 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "StringLengthError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201309.cm.StringLengthError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "StringLengthError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201309.cm.StringLengthErrorReason.class;
@@ -1015,13 +1022,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201309", "DoubleAttribute");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201309.o.DoubleAttribute.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201309", "DoubleComparisonOperation");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201309.o.DoubleComparisonOperation.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1281,13 +1281,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201309", "SearchParameter");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201309.o.SearchParameter.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201309", "SearchVolumeDeltaSearchParameter");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201309.o.SearchVolumeDeltaSearchParameter.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

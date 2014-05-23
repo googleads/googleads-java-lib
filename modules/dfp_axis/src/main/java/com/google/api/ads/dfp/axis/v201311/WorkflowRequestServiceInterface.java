@@ -28,16 +28,24 @@ public interface WorkflowRequestServiceInterface extends java.rmi.Remote {
      *         <td>{@link WorkflowRequest#workflowRuleName}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code status}</td>
-     *         <td>{@link WorkflowApprovalRequest#status}</td>
-     *         </tr>
-     *         <tr>
      *         <td>{@code entityType}</td>
      *         <td>{@link WorkflowRequest#entityType}</td>
      *         </tr>
      *         <tr>
      *         <td>{@code entityId}</td>
      *         <td>{@link WorkflowRequest#entityId}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code approvalStatus}</td>
+     *         <td>{@link WorkflowApprovalRequest#status}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code conditionStatus}</td>
+     *         <td>{@link WorkflowExternalConditionRequest#status}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code type}</td>
+     *         <td>{@link WorkflowRequest#type</td>
      *         </tr>
      *         </table>
      *         

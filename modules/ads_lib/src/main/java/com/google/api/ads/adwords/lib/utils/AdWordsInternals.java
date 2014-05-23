@@ -16,11 +16,11 @@ package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.AdWordsModule;
 import com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration;
+import com.google.api.ads.adwords.lib.utils.logging.AdWordsServiceLoggers;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.auth.OAuth2Helper;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.Internals;
-import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.client.http.HttpTransport;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
@@ -41,8 +41,8 @@ public class AdWordsInternals extends Internals {
   public AdWordsInternals(AuthorizationHeaderProvider authorizationHeaderProvider,
       UserAgentCombiner userAgentCombiner, HttpTransport httpTransport,
       AdWordsLibConfiguration adWordsLibConfiguration,
-      AdsServiceLoggers adsServiceLoggers, OAuth2Helper oAuth2Helper) {
-    super(authorizationHeaderProvider, userAgentCombiner, httpTransport, adsServiceLoggers,
+      AdWordsServiceLoggers adWordsServiceLoggers, OAuth2Helper oAuth2Helper) {
+    super(authorizationHeaderProvider, userAgentCombiner, httpTransport, adWordsServiceLoggers,
         oAuth2Helper);
     this.adWordsLibConfiguration = adWordsLibConfiguration;
   }
@@ -59,5 +59,12 @@ public class AdWordsInternals extends Internals {
    */
   public AdWordsLibConfiguration getAdWordsLibConfiguration() {
     return adWordsLibConfiguration;
+  }
+  
+  /**
+   * Returns the utility that provides access to additional AdWords-specific loggers.
+   */
+  public AdWordsServiceLoggers getAdWordsServiceLoggers() {
+    return (AdWordsServiceLoggers) getAdsServiceLoggers();
   }
 }

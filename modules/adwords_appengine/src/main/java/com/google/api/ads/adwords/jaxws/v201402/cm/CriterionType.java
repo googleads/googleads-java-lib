@@ -101,7 +101,6 @@ public enum CriterionType {
     /**
      * 
      *                 Mobile applications to target.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */
@@ -110,7 +109,6 @@ public enum CriterionType {
     /**
      * 
      *                 Mobile application categories to target.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */
@@ -191,7 +189,6 @@ public enum CriterionType {
     /**
      * 
      *                 Mobile devices to target.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */

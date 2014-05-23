@@ -38,9 +38,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     TargetingSetting.class,
     DynamicSearchAdsSetting.class,
+    ExplorerAutoOptimizerSetting.class,
     GeoTargetTypeSetting.class,
     TrackingSetting.class,
-    ExplorerAutoOptimizerSetting.class,
     KeywordMatchSetting.class,
     ShoppingSetting.class,
     RealTimeBiddingSetting.class

@@ -42,8 +42,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * phone number.
      *                     See the list of <a href="/adwords/api/docs/appendix/geotargeting">
      * available country codes</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CountryCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -51,9 +49,7 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
     private java.lang.String countryCode;
 
     /* Indicates whether this represents a call tracking extension.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCallTrackingEnabled".</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span> */
+     * <span class="constraint Beta">This is a beta feature.</span> */
     private java.lang.Boolean isCallTrackingEnabled;
 
     /* Indicates whether the extended ad should be call only, where
@@ -61,9 +57,7 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      *                     will be displayed and the URL will not. This affects
      * search and display ads
      *                     in high end mobile devices (e.g. iPhone and Android
-     * phones).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsCallOnly".</span> */
+     * phones). */
     private java.lang.Boolean isCallOnly;
 
     public MobileExtension() {
@@ -129,8 +123,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * phone number.
      *                     See the list of <a href="/adwords/api/docs/appendix/geotargeting">
      * available country codes</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CountryCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -148,8 +140,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * phone number.
      *                     See the list of <a href="/adwords/api/docs/appendix/geotargeting">
      * available country codes</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CountryCode".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -164,9 +154,7 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * Gets the isCallTrackingEnabled value for this MobileExtension.
      * 
      * @return isCallTrackingEnabled   * Indicates whether this represents a call tracking extension.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCallTrackingEnabled".</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span>
+     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public java.lang.Boolean getIsCallTrackingEnabled() {
         return isCallTrackingEnabled;
@@ -177,9 +165,7 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * Sets the isCallTrackingEnabled value for this MobileExtension.
      * 
      * @param isCallTrackingEnabled   * Indicates whether this represents a call tracking extension.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCallTrackingEnabled".</span>
-     *                     <span class="constraint Beta">This is a beta feature.</span>
+     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public void setIsCallTrackingEnabled(java.lang.Boolean isCallTrackingEnabled) {
         this.isCallTrackingEnabled = isCallTrackingEnabled;
@@ -195,8 +181,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * search and display ads
      *                     in high end mobile devices (e.g. iPhone and Android
      * phones).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsCallOnly".</span>
      */
     public java.lang.Boolean getIsCallOnly() {
         return isCallOnly;
@@ -212,8 +196,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * search and display ads
      *                     in high end mobile devices (e.g. iPhone and Android
      * phones).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsCallOnly".</span>
      */
     public void setIsCallOnly(java.lang.Boolean isCallOnly) {
         this.isCallOnly = isCallOnly;

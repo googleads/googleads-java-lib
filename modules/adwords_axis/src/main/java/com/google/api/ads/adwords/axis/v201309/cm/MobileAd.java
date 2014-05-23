@@ -67,19 +67,13 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  implements java.io.Serializable {
-    /* The headline of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdHeadline".</span> */
+    /* The headline of the ad. */
     private java.lang.String headline;
 
-    /* The description line.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdDescription".</span> */
+    /* The description line. */
     private java.lang.String description;
 
-    /* The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMarkupLanguages".</span> */
+    /* The list of markup languages to use for the mobile ad. */
     private com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] markupLanguages;
 
     /* The list of mobile carriers to use for the mobile ad. Each
@@ -90,17 +84,13 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * reserved keyword
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
-     * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMobileCarriers".</span> */
+     * mobile carriers</a>. */
     private java.lang.String[] mobileCarriers;
 
     /* The business name of the mobile ad.
      *                     Must not exceed 20 characters (except for ads
      * targeted
-     *                     to Japan, which must not exceed 10 Japanese characters).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "MobileAdBusinessName".</span> */
+     *                     to Japan, which must not exceed 10 Japanese characters). */
     private java.lang.String businessName;
 
     /* The country code for the phone number in the click-to-call
@@ -108,15 +98,11 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      *                     The click-to-call ad will display only in this
      * country.
      *                     This field will be used to verify the phone number
-     * format and validate the targeted mobile carriers.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdCountryCode".</span> */
+     * format and validate the targeted mobile carriers. */
     private java.lang.String countryCode;
 
     /* The click-to-call phone number.
-     *                     Must not exceed 20 characters.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdPhoneNumber".</span> */
+     *                     Must not exceed 20 characters. */
     private java.lang.String phoneNumber;
 
     public MobileAd() {
@@ -155,8 +141,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Gets the headline value for this MobileAd.
      * 
      * @return headline   * The headline of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdHeadline".</span>
      */
     public java.lang.String getHeadline() {
         return headline;
@@ -167,8 +151,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Sets the headline value for this MobileAd.
      * 
      * @param headline   * The headline of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdHeadline".</span>
      */
     public void setHeadline(java.lang.String headline) {
         this.headline = headline;
@@ -179,8 +161,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Gets the description value for this MobileAd.
      * 
      * @return description   * The description line.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdDescription".</span>
      */
     public java.lang.String getDescription() {
         return description;
@@ -191,8 +171,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Sets the description value for this MobileAd.
      * 
      * @param description   * The description line.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdDescription".</span>
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -203,8 +181,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Gets the markupLanguages value for this MobileAd.
      * 
      * @return markupLanguages   * The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMarkupLanguages".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] getMarkupLanguages() {
         return markupLanguages;
@@ -215,8 +191,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * Sets the markupLanguages value for this MobileAd.
      * 
      * @param markupLanguages   * The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMarkupLanguages".</span>
      */
     public void setMarkupLanguages(com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] markupLanguages) {
         this.markupLanguages = markupLanguages;
@@ -243,8 +217,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
      * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMobileCarriers".</span>
      */
     public java.lang.String[] getMobileCarriers() {
         return mobileCarriers;
@@ -263,8 +235,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
      * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdMobileCarriers".</span>
      */
     public void setMobileCarriers(java.lang.String[] mobileCarriers) {
         this.mobileCarriers = mobileCarriers;
@@ -286,8 +256,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      *                     Must not exceed 20 characters (except for ads
      * targeted
      *                     to Japan, which must not exceed 10 Japanese characters).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "MobileAdBusinessName".</span>
      */
     public java.lang.String getBusinessName() {
         return businessName;
@@ -301,8 +269,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      *                     Must not exceed 20 characters (except for ads
      * targeted
      *                     to Japan, which must not exceed 10 Japanese characters).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "MobileAdBusinessName".</span>
      */
     public void setBusinessName(java.lang.String businessName) {
         this.businessName = businessName;
@@ -318,8 +284,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * country.
      *                     This field will be used to verify the phone number
      * format and validate the targeted mobile carriers.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdCountryCode".</span>
      */
     public java.lang.String getCountryCode() {
         return countryCode;
@@ -335,8 +299,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * country.
      *                     This field will be used to verify the phone number
      * format and validate the targeted mobile carriers.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdCountryCode".</span>
      */
     public void setCountryCode(java.lang.String countryCode) {
         this.countryCode = countryCode;
@@ -348,8 +310,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * 
      * @return phoneNumber   * The click-to-call phone number.
      *                     Must not exceed 20 characters.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdPhoneNumber".</span>
      */
     public java.lang.String getPhoneNumber() {
         return phoneNumber;
@@ -361,8 +321,6 @@ public class MobileAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  im
      * 
      * @param phoneNumber   * The click-to-call phone number.
      *                     Must not exceed 20 characters.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileAdPhoneNumber".</span>
      */
     public void setPhoneNumber(java.lang.String phoneNumber) {
         this.phoneNumber = phoneNumber;

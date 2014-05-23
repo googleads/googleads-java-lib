@@ -6,13 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201402.billing.BudgetOrderOperation;
-import com.google.api.ads.adwords.jaxws.v201402.express.ExpressBusinessOperation;
-import com.google.api.ads.adwords.jaxws.v201402.express.PromotionOperation;
-import com.google.api.ads.adwords.jaxws.v201402.mcm.LinkOperation;
-import com.google.api.ads.adwords.jaxws.v201402.mcm.ManagedCustomerOperation;
-import com.google.api.ads.adwords.jaxws.v201402.mcm.MoveOperation;
-import com.google.api.ads.adwords.jaxws.v201402.rm.UserListOperation;
+import com.google.api.ads.adwords.jaxws.v201402.video.TargetingGroupOperation;
 
 
 /**
@@ -46,34 +40,7 @@ import com.google.api.ads.adwords.jaxws.v201402.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
-    AdParamOperation.class,
-    OfflineConversionFeedOperation.class,
-    BiddingStrategyOperation.class,
-    FeedItemOperation.class,
-    AdGroupAdOperation.class,
-    CampaignCriterionOperation.class,
-    AdGroupFeedOperation.class,
-    FeedOperation.class,
-    BudgetOperation.class,
-    ExperimentOperation.class,
-    FeedMappingOperation.class,
-    CustomerFeedOperation.class,
-    AdGroupOperation.class,
-    ConversionTrackerOperation.class,
-    CampaignAdExtensionOperation.class,
-    AdExtensionOverrideOperation.class,
-    CampaignFeedOperation.class,
-    CampaignOperation.class,
-    AdGroupBidModifierOperation.class,
-    CampaignTargetOperation.class,
-    AdGroupCriterionOperation.class,
-    PromotionOperation.class,
-    ExpressBusinessOperation.class,
-    UserListOperation.class,
-    ManagedCustomerOperation.class,
-    LinkOperation.class,
-    MoveOperation.class,
-    BudgetOrderOperation.class
+    TargetingGroupOperation.class
 })
 public abstract class Operation {
 

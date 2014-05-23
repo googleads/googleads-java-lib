@@ -344,18 +344,34 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 is also {@code VIDEO_PLAYER}. */
     private com.google.api.ads.dfp.axis.v201302.EnvironmentType environmentType;
 
-    /* The delivery option for companions. This is only valid if the
-     * environment type is
-     *                 {@link EnvironmentType#VIDEO_PLAYER} or the roadblocking
-     * type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for video environments or
-     *                 roadblocking creatives is {@link CompanionDeliveryOption#OPTIONAL}.
-     * The default
-     *                 value in other cases is {@link CompanionDeliveryOption#UNKNOWN}.
-     * Providing something
-     *                 other than {@link CompanionDeliveryOption#UNKNOWN}
-     * will cause an error. */
+    /* The delivery option for companions. Setting this field is only
+     * meaningful
+     *                 if the following conditions are met:
+     *                 <ol>
+     *                 <li>
+     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     * on your network.
+     *                 </li>
+     *                 <li>
+     *                 One of the following is true (both cannot be true,
+     * these are mutually
+     *                 exclusive).
+     *                 <ul>
+     *                 <li>
+     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * </li>
+     *                 <li>
+     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </li>
+     *                 </ul>
+     *                 </li>
+     *                 </ol>
+     *                 <p>
+     *                 This field is optional and defaults to
+     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
+     * conditions are met.
+     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
+     * and is not meaningful. */
     private com.google.api.ads.dfp.axis.v201302.CompanionDeliveryOption companionDeliveryOption;
 
     /* Specifies options to prevent ads from replacing or appearing
@@ -1671,18 +1687,34 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the companionDeliveryOption value for this LineItemSummary.
      * 
-     * @return companionDeliveryOption   * The delivery option for companions. This is only valid if the
-     * environment type is
-     *                 {@link EnvironmentType#VIDEO_PLAYER} or the roadblocking
-     * type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for video environments or
-     *                 roadblocking creatives is {@link CompanionDeliveryOption#OPTIONAL}.
-     * The default
-     *                 value in other cases is {@link CompanionDeliveryOption#UNKNOWN}.
-     * Providing something
-     *                 other than {@link CompanionDeliveryOption#UNKNOWN}
-     * will cause an error.
+     * @return companionDeliveryOption   * The delivery option for companions. Setting this field is only
+     * meaningful
+     *                 if the following conditions are met:
+     *                 <ol>
+     *                 <li>
+     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     * on your network.
+     *                 </li>
+     *                 <li>
+     *                 One of the following is true (both cannot be true,
+     * these are mutually
+     *                 exclusive).
+     *                 <ul>
+     *                 <li>
+     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * </li>
+     *                 <li>
+     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </li>
+     *                 </ul>
+     *                 </li>
+     *                 </ol>
+     *                 <p>
+     *                 This field is optional and defaults to
+     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
+     * conditions are met.
+     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
+     * and is not meaningful.
      */
     public com.google.api.ads.dfp.axis.v201302.CompanionDeliveryOption getCompanionDeliveryOption() {
         return companionDeliveryOption;
@@ -1692,18 +1724,34 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the companionDeliveryOption value for this LineItemSummary.
      * 
-     * @param companionDeliveryOption   * The delivery option for companions. This is only valid if the
-     * environment type is
-     *                 {@link EnvironmentType#VIDEO_PLAYER} or the roadblocking
-     * type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for video environments or
-     *                 roadblocking creatives is {@link CompanionDeliveryOption#OPTIONAL}.
-     * The default
-     *                 value in other cases is {@link CompanionDeliveryOption#UNKNOWN}.
-     * Providing something
-     *                 other than {@link CompanionDeliveryOption#UNKNOWN}
-     * will cause an error.
+     * @param companionDeliveryOption   * The delivery option for companions. Setting this field is only
+     * meaningful
+     *                 if the following conditions are met:
+     *                 <ol>
+     *                 <li>
+     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     * on your network.
+     *                 </li>
+     *                 <li>
+     *                 One of the following is true (both cannot be true,
+     * these are mutually
+     *                 exclusive).
+     *                 <ul>
+     *                 <li>
+     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * </li>
+     *                 <li>
+     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </li>
+     *                 </ul>
+     *                 </li>
+     *                 </ol>
+     *                 <p>
+     *                 This field is optional and defaults to
+     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
+     * conditions are met.
+     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
+     * and is not meaningful.
      */
     public void setCompanionDeliveryOption(com.google.api.ads.dfp.axis.v201302.CompanionDeliveryOption companionDeliveryOption) {
         this.companionDeliveryOption = companionDeliveryOption;

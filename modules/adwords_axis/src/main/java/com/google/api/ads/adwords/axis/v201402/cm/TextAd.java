@@ -14,22 +14,13 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  implements java.io.Serializable {
-    /* The headline of the ad
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Headline".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The headline of the ad */
     private java.lang.String headline;
 
-    /* The first description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description1".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The first description line */
     private java.lang.String description1;
 
-    /* The second description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description2".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The second description line */
     private java.lang.String description2;
 
     public TextAd() {
@@ -60,9 +51,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Gets the headline value for this TextAd.
      * 
      * @return headline   * The headline of the ad
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Headline".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getHeadline() {
         return headline;
@@ -73,9 +61,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Sets the headline value for this TextAd.
      * 
      * @param headline   * The headline of the ad
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Headline".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setHeadline(java.lang.String headline) {
         this.headline = headline;
@@ -86,9 +71,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Gets the description1 value for this TextAd.
      * 
      * @return description1   * The first description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description1".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getDescription1() {
         return description1;
@@ -99,9 +81,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Sets the description1 value for this TextAd.
      * 
      * @param description1   * The first description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description1".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setDescription1(java.lang.String description1) {
         this.description1 = description1;
@@ -112,9 +91,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Gets the description2 value for this TextAd.
      * 
      * @return description2   * The second description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description2".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getDescription2() {
         return description2;
@@ -125,9 +101,6 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  impl
      * Sets the description2 value for this TextAd.
      * 
      * @param description2   * The second description line
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description2".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setDescription2(java.lang.String description2) {
         this.description2 = description2;

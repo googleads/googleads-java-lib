@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns a list of bid landscapes for the ad groups specified in the selector.
+ *             Returns a list of {@link AdGroupBidLandscape}s for the ad groups specified in the selector.
+ *             In the result, the returned {@link LandscapePoint}s are grouped into
+ *             {@link AdGroupBidLandscape}s by their ad groups, and numberResults of paging limits the total
+ *             number of {@link LandscapePoint}s instead of number of {@link AdGroupBidLandscape}s.
  *             
  *             @param serviceSelector Selects the entities to return bid landscapes for.
  *             @return A list of bid landscapes.

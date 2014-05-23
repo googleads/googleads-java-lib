@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             A customization of a {@link RateCard} which could be applied to the line item
  *             and charges extra premiums.
+ *             
+ *             <p>Rate card customizations are referred to as premiums in the UI.
  *           
  * 
  * <p>Java class for RateCardCustomization complex type.

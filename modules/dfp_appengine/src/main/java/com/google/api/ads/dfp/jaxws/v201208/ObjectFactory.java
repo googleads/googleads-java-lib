@@ -556,6 +556,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidPhoneNumberError }
+     * 
+     */
+    public InvalidPhoneNumberError createInvalidPhoneNumberError() {
+        return new InvalidPhoneNumberError();
+    }
+
+    /**
      * Create an instance of {@link ApplicationException }
      * 
      */
@@ -2084,19 +2092,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Date }
-     * 
-     */
-    public Date createDate() {
-        return new Date();
-    }
-
-    /**
      * Create an instance of {@link DateTime }
      * 
      */
     public DateTime createDateTime() {
         return new DateTime();
+    }
+
+    /**
+     * Create an instance of {@link Date }
+     * 
+     */
+    public Date createDate() {
+        return new Date();
     }
 
     /**

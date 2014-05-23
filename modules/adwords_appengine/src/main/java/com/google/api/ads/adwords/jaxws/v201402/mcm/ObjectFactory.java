@@ -27,9 +27,9 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/mcm/v201402", "ApiExceptionFault");
-    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/mcm/v201402", "ResponseHeader");
     private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/mcm/v201402", "RequestHeader");
+    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/mcm/v201402", "ResponseHeader");
+    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/mcm/v201402", "ApiExceptionFault");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201402.mcm
@@ -39,59 +39,91 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutateLinkResponse }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutateLinkResponse createManagedCustomerServiceInterfacemutateLinkResponse() {
+        return new ManagedCustomerServiceInterfacemutateLinkResponse();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfaceget }
+     * 
+     */
+    public ManagedCustomerServiceInterfaceget createManagedCustomerServiceInterfaceget() {
+        return new ManagedCustomerServiceInterfaceget();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacegetResponse }
+     * 
+     */
+    public ManagedCustomerServiceInterfacegetResponse createManagedCustomerServiceInterfacegetResponse() {
+        return new ManagedCustomerServiceInterfacegetResponse();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacegetPendingInvitations }
+     * 
+     */
+    public ManagedCustomerServiceInterfacegetPendingInvitations createManagedCustomerServiceInterfacegetPendingInvitations() {
+        return new ManagedCustomerServiceInterfacegetPendingInvitations();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutateManager }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutateManager createManagedCustomerServiceInterfacemutateManager() {
+        return new ManagedCustomerServiceInterfacemutateManager();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutateResponse }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutateResponse createManagedCustomerServiceInterfacemutateResponse() {
+        return new ManagedCustomerServiceInterfacemutateResponse();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutateManagerResponse }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutateManagerResponse createManagedCustomerServiceInterfacemutateManagerResponse() {
+        return new ManagedCustomerServiceInterfacemutateManagerResponse();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutateLink }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutateLink createManagedCustomerServiceInterfacemutateLink() {
+        return new ManagedCustomerServiceInterfacemutateLink();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacegetPendingInvitationsResponse }
+     * 
+     */
+    public ManagedCustomerServiceInterfacegetPendingInvitationsResponse createManagedCustomerServiceInterfacegetPendingInvitationsResponse() {
+        return new ManagedCustomerServiceInterfacegetPendingInvitationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerServiceInterfacemutate }
+     * 
+     */
+    public ManagedCustomerServiceInterfacemutate createManagedCustomerServiceInterfacemutate() {
+        return new ManagedCustomerServiceInterfacemutate();
+    }
+
+    /**
      * Create an instance of {@link ManagedCustomerOperation }
      * 
      */
     public ManagedCustomerOperation createManagedCustomerOperation() {
         return new ManagedCustomerOperation();
-    }
-
-    /**
-     * Create an instance of {@link Detail }
-     * 
-     */
-    public Detail createDetail() {
-        return new Detail();
-    }
-
-    /**
-     * Create an instance of {@link ManagedCustomerPage }
-     * 
-     */
-    public ManagedCustomerPage createManagedCustomerPage() {
-        return new ManagedCustomerPage();
-    }
-
-    /**
-     * Create an instance of {@link ManagedCustomerLink }
-     * 
-     */
-    public ManagedCustomerLink createManagedCustomerLink() {
-        return new ManagedCustomerLink();
-    }
-
-    /**
-     * Create an instance of {@link MutateLinkResults }
-     * 
-     */
-    public MutateLinkResults createMutateLinkResults() {
-        return new MutateLinkResults();
-    }
-
-    /**
-     * Create an instance of {@link Customer }
-     * 
-     */
-    public Customer createCustomer() {
-        return new Customer();
-    }
-
-    /**
-     * Create an instance of {@link AlertError }
-     * 
-     */
-    public AlertError createAlertError() {
-        return new AlertError();
     }
 
     /**
@@ -108,14 +140,6 @@ public class ObjectFactory {
      */
     public LinkOperation createLinkOperation() {
         return new LinkOperation();
-    }
-
-    /**
-     * Create an instance of {@link AlertPage }
-     * 
-     */
-    public AlertPage createAlertPage() {
-        return new AlertPage();
     }
 
     /**
@@ -143,14 +167,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Alert }
-     * 
-     */
-    public Alert createAlert() {
-        return new Alert();
-    }
-
-    /**
      * Create an instance of {@link MutateManagerResults }
      * 
      */
@@ -159,11 +175,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AlertQuery }
+     * Create an instance of {@link ManagedCustomerPage }
      * 
      */
-    public AlertQuery createAlertQuery() {
-        return new AlertQuery();
+    public ManagedCustomerPage createManagedCustomerPage() {
+        return new ManagedCustomerPage();
+    }
+
+    /**
+     * Create an instance of {@link ManagedCustomerLink }
+     * 
+     */
+    public ManagedCustomerLink createManagedCustomerLink() {
+        return new ManagedCustomerLink();
     }
 
     /**
@@ -175,6 +199,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MutateLinkResults }
+     * 
+     */
+    public MutateLinkResults createMutateLinkResults() {
+        return new MutateLinkResults();
+    }
+
+    /**
      * Create an instance of {@link ManagedCustomer }
      * 
      */
@@ -183,20 +215,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AlertSelector }
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
      * 
      */
-    public AlertSelector createAlertSelector() {
-        return new AlertSelector();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/mcm/v201402", name = "ApiExceptionFault")
-    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
-        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/mcm/v201402", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**
@@ -209,12 +233,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/mcm/v201402", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/mcm/v201402", name = "ApiExceptionFault")
+    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
+        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
     }
 
 }

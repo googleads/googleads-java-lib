@@ -30,7 +30,10 @@ public interface DataServiceInterface {
 
     /**
      * 
-     *         Returns a list of bid landscapes for the ad groups specified in the selector.
+     *         Returns a list of {@link AdGroupBidLandscape}s for the ad groups specified in the selector.
+     *         In the result, the returned {@link LandscapePoint}s are grouped into
+     *         {@link AdGroupBidLandscape}s by their ad groups, and numberResults of paging limits the total
+     *         number of {@link LandscapePoint}s instead of number of {@link AdGroupBidLandscape}s.
      *         
      *         @param serviceSelector Selects the entities to return bid landscapes for.
      *         @return A list of bid landscapes.
@@ -54,7 +57,10 @@ public interface DataServiceInterface {
 
     /**
      * 
-     *         Returns a list of bid landscapes for the criteria specified in the selector.
+     *         Returns a list of {@link CriterionBidLandscape}s for the criteria specified in the selector.
+     *         In the result, the returned {@link LandscapePoint}s are grouped into
+     *         {@link CriterionBidLandscape}s by their criteria, and numberResults of paging limits the total
+     *         number of {@link LandscapePoint}s instead of number of {@link CriterionBidLandscape}s.
      *         
      *         @param serviceSelector Selects the entities to return bid landscapes for.
      *         @return A list of bid landscapes.
@@ -78,7 +84,10 @@ public interface DataServiceInterface {
 
     /**
      * 
-     *         Returns a list of bid landscapes for the ad groups that match the query.
+     *         Returns a list of {@link AdGroupBidLandscape}s for the ad groups that match the query. In the
+     *         result, the returned {@link LandscapePoint}s are grouped into {@link AdGroupBidLandscape}s
+     *         by their ad groups, and numberResults of paging limits the total number of
+     *         {@link LandscapePoint}s instead of number of {@link AdGroupBidLandscape}s.
      *         
      *         @param query The SQL-like AWQL query string.
      *         @return A list of bid landscapes.
@@ -102,7 +111,10 @@ public interface DataServiceInterface {
 
     /**
      * 
-     *         Returns a list of bid landscapes for the criteria that match the query.
+     *         Returns a list of {@link CriterionBidLandscape}s for the criteria that match the query. In the
+     *         result, the returned {@link LandscapePoint}s are grouped into {@link CriterionBidLandscape}s
+     *         by their criteria, and numberResults of paging limits the total number of
+     *         {@link LandscapePoint}s instead of number of {@link CriterionBidLandscape}s.
      *         
      *         @param query The SQL-like AWQL query string.
      *         @return A list of bid landscapes.

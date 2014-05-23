@@ -16,12 +16,9 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class CampaignAdExtension  implements java.io.Serializable {
     /* Campaign ID of the campaign to which the ad extension is connected.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "CampaignId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span> */
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD, REMOVE.</span> */
     private java.lang.Long campaignId;
 
     /* Ad extension.
@@ -31,16 +28,10 @@ public class CampaignAdExtension  implements java.io.Serializable {
 
     /* Status of ad extension in the campaign - defaults to {@code
      * ACTIVE} on add
-     *                 if unspecified.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     *                 if unspecified. */
     private com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionStatus status;
 
-    /* Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ApprovalStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* Approval status. */
     private com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionApprovalStatus approvalStatus;
 
     public CampaignAdExtension() {
@@ -62,12 +53,9 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * Gets the campaignId value for this CampaignAdExtension.
      * 
      * @return campaignId   * Campaign ID of the campaign to which the ad extension is connected.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "CampaignId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD, REMOVE.</span>
      */
     public java.lang.Long getCampaignId() {
         return campaignId;
@@ -78,12 +66,9 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * Sets the campaignId value for this CampaignAdExtension.
      * 
      * @param campaignId   * Campaign ID of the campaign to which the ad extension is connected.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "CampaignId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD, REMOVE.</span>
      */
     public void setCampaignId(java.lang.Long campaignId) {
         this.campaignId = campaignId;
@@ -120,9 +105,6 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * @return status   * Status of ad extension in the campaign - defaults to {@code
      * ACTIVE} on add
      *                 if unspecified.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionStatus getStatus() {
         return status;
@@ -135,9 +117,6 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * @param status   * Status of ad extension in the campaign - defaults to {@code
      * ACTIVE} on add
      *                 if unspecified.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionStatus status) {
         this.status = status;
@@ -148,9 +127,6 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * Gets the approvalStatus value for this CampaignAdExtension.
      * 
      * @return approvalStatus   * Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ApprovalStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -161,9 +137,6 @@ public class CampaignAdExtension  implements java.io.Serializable {
      * Sets the approvalStatus value for this CampaignAdExtension.
      * 
      * @param approvalStatus   * Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ApprovalStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setApprovalStatus(com.google.api.ads.adwords.axis.v201402.cm.CampaignAdExtensionApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;

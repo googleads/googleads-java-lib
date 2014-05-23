@@ -113,6 +113,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span> */
@@ -127,6 +130,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span> */
@@ -483,6 +489,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -501,6 +510,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "StartDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -522,6 +534,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -543,6 +558,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "EndDateTime".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>

@@ -38,24 +38,18 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
     /* Type of the product partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PartitionType".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.ProductPartitionType partitionType;
 
     /* ID of the parent product partition subdivision. Undefined for
-     * the root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentCriterionId".</span> */
+     * the root partition. */
     private java.lang.Long parentCriterionId;
 
     /* Dimension value with which this product partition is refining
      * its parent. Undefined for the
-     *                     root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CaseValue".</span> */
+     *                     root partition. */
     private com.google.api.ads.adwords.axis.v201402.cm.ProductDimension caseValue;
 
     public ProductPartition() {
@@ -82,8 +76,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * Gets the partitionType value for this ProductPartition.
      * 
      * @return partitionType   * Type of the product partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PartitionType".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -97,8 +89,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * Sets the partitionType value for this ProductPartition.
      * 
      * @param partitionType   * Type of the product partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PartitionType".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -113,8 +103,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * 
      * @return parentCriterionId   * ID of the parent product partition subdivision. Undefined for
      * the root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentCriterionId".</span>
      */
     public java.lang.Long getParentCriterionId() {
         return parentCriterionId;
@@ -126,8 +114,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * 
      * @param parentCriterionId   * ID of the parent product partition subdivision. Undefined for
      * the root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ParentCriterionId".</span>
      */
     public void setParentCriterionId(java.lang.Long parentCriterionId) {
         this.parentCriterionId = parentCriterionId;
@@ -140,8 +126,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * @return caseValue   * Dimension value with which this product partition is refining
      * its parent. Undefined for the
      *                     root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CaseValue".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.ProductDimension getCaseValue() {
         return caseValue;
@@ -154,8 +138,6 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201402.c
      * @param caseValue   * Dimension value with which this product partition is refining
      * its parent. Undefined for the
      *                     root partition.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CaseValue".</span>
      */
     public void setCaseValue(com.google.api.ads.adwords.axis.v201402.cm.ProductDimension caseValue) {
         this.caseValue = caseValue;

@@ -6,8 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201402.billing.BudgetOrderReturnValue;
-import com.google.api.ads.adwords.jaxws.v201402.rm.UserListReturnValue;
+import com.google.api.ads.adwords.jaxws.v201402.video.TargetingGroupReturnValue;
 
 
 /**
@@ -38,26 +37,7 @@ import com.google.api.ads.adwords.jaxws.v201402.rm.UserListReturnValue;
     "listReturnValueType"
 })
 @XmlSeeAlso({
-    FeedReturnValue.class,
-    AdGroupFeedReturnValue.class,
-    BiddingStrategyReturnValue.class,
-    CampaignCriterionReturnValue.class,
-    AdGroupAdReturnValue.class,
-    CampaignReturnValue.class,
-    BudgetReturnValue.class,
-    ConversionTrackerReturnValue.class,
-    FeedMappingReturnValue.class,
-    AdGroupBidModifierReturnValue.class,
-    AdGroupReturnValue.class,
-    FeedItemReturnValue.class,
-    OfflineConversionFeedReturnValue.class,
-    CustomerFeedReturnValue.class,
-    ExperimentReturnValue.class,
-    AdGroupCriterionReturnValue.class,
-    CampaignAdExtensionReturnValue.class,
-    CampaignFeedReturnValue.class,
-    UserListReturnValue.class,
-    BudgetOrderReturnValue.class
+    TargetingGroupReturnValue.class
 })
 public abstract class ListReturnValue {
 

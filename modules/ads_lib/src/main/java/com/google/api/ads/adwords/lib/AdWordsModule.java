@@ -16,6 +16,8 @@ package com.google.api.ads.adwords.lib;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceClient;
 import com.google.api.ads.adwords.lib.conf.AdWordsConfigurationModule;
+import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
+import com.google.api.ads.adwords.lib.utils.logging.AdWordsLoggingModule;
 import com.google.api.ads.common.lib.AdsModule;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -37,4 +39,11 @@ public class AdWordsModule extends AdsModule {
     install(new AdWordsConfigurationModule());
     bind(HttpTransport.class).to(NetHttpTransport.class);
   }
+
+  @Override
+  protected void configureLogging(String loggerPrefix) {
+    install(new AdWordsLoggingModule(loggerPrefix,
+        AdHocReportDownloadHelper.class.getPackage().getName()));
+  }
+
 }

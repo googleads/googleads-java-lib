@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     PercentCpaBid.class,
-    CpaBid.class,
     CpcBid.class,
+    CpaBid.class,
     CpmBid.class
 })
 public abstract class Bids {

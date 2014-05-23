@@ -22,18 +22,13 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  implements java.io.Serializable {
-    /* ID of the template to use.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* ID of the template to use. */
     private java.lang.Long templateId;
 
     /* Group ID of all template ads, which should be created together.
      * Template ads in the same union reference the same data but have different
      * dimensions. Single ads do not have a union ID. If a template ad specifies
-     * an ad union with only one ad, no union will be created.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdUnionId".</span> */
+     * an ad union with only one ad, no union will be created. */
     private com.google.api.ads.adwords.axis.v201309.cm.AdUnionId adUnionId;
 
     /* List of elements (each containing a set of fields) for the
@@ -47,23 +42,17 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
     private com.google.api.ads.adwords.axis.v201309.cm.Dimensions dimensions;
 
     /* Name of this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String name;
 
     /* Duration of this ad (if it contains playable media).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.Integer duration;
 
     /* For copies, the ad id of the ad this was or should be copied
-     * from.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateOriginAdId".</span> */
+     * from. */
     private java.lang.Long originAdId;
 
     public TemplateAd() {
@@ -102,9 +91,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Gets the templateId value for this TemplateAd.
      * 
      * @return templateId   * ID of the template to use.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getTemplateId() {
         return templateId;
@@ -115,9 +101,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Sets the templateId value for this TemplateAd.
      * 
      * @param templateId   * ID of the template to use.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setTemplateId(java.lang.Long templateId) {
         this.templateId = templateId;
@@ -131,8 +114,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Template ads in the same union reference the same data but have different
      * dimensions. Single ads do not have a union ID. If a template ad specifies
      * an ad union with only one ad, no union will be created.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdUnionId".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.AdUnionId getAdUnionId() {
         return adUnionId;
@@ -146,8 +127,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Template ads in the same union reference the same data but have different
      * dimensions. Single ads do not have a union ID. If a template ad specifies
      * an ad union with only one ad, no union will be created.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdUnionId".</span>
      */
     public void setAdUnionId(com.google.api.ads.adwords.axis.v201309.cm.AdUnionId adUnionId) {
         this.adUnionId = adUnionId;
@@ -214,8 +193,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Gets the name value for this TemplateAd.
      * 
      * @return name   * Name of this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -228,8 +205,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Sets the name value for this TemplateAd.
      * 
      * @param name   * Name of this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdName".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -242,8 +217,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Gets the duration value for this TemplateAd.
      * 
      * @return duration   * Duration of this ad (if it contains playable media).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -256,8 +229,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * Sets the duration value for this TemplateAd.
      * 
      * @param duration   * Duration of this ad (if it contains playable media).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateAdDuration".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -271,8 +242,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * 
      * @return originAdId   * For copies, the ad id of the ad this was or should be copied
      * from.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateOriginAdId".</span>
      */
     public java.lang.Long getOriginAdId() {
         return originAdId;
@@ -284,8 +253,6 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  
      * 
      * @param originAdId   * For copies, the ad id of the ad this was or should be copied
      * from.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "TemplateOriginAdId".</span>
      */
     public void setOriginAdId(java.lang.Long originAdId) {
         this.originAdId = originAdId;

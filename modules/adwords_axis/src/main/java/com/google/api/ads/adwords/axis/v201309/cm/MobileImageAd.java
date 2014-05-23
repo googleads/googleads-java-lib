@@ -18,9 +18,7 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  implements java.io.Serializable {
-    /* The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMarkupLanguages".</span> */
+    /* The list of markup languages to use for the mobile ad. */
     private com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] markupLanguages;
 
     /* The list of mobile carriers to use for the mobile ad.  Each
@@ -32,10 +30,8 @@ public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.A
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
      * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMobileCarriers".</span>
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span> */
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span> */
     private java.lang.String[] mobileCarriers;
 
     /* Image to be used in the mobile image ad. */
@@ -69,8 +65,6 @@ public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.A
      * Gets the markupLanguages value for this MobileImageAd.
      * 
      * @return markupLanguages   * The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMarkupLanguages".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] getMarkupLanguages() {
         return markupLanguages;
@@ -81,8 +75,6 @@ public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.A
      * Sets the markupLanguages value for this MobileImageAd.
      * 
      * @param markupLanguages   * The list of markup languages to use for the mobile ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMarkupLanguages".</span>
      */
     public void setMarkupLanguages(com.google.api.ads.adwords.axis.v201309.cm.MarkupLanguageType[] markupLanguages) {
         this.markupLanguages = markupLanguages;
@@ -109,10 +101,8 @@ public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.A
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
      * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMobileCarriers".</span>
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public java.lang.String[] getMobileCarriers() {
         return mobileCarriers;
@@ -131,10 +121,8 @@ public class MobileImageAd  extends com.google.api.ads.adwords.axis.v201309.cm.A
      *                     'ALLCARRIERS'. See <a
      *                     href="/adwords/api/docs/appendix/mobilecarriers">available
      * mobile carriers</a>.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MobileImageAdMobileCarriers".</span>
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public void setMobileCarriers(java.lang.String[] mobileCarriers) {
         this.mobileCarriers = mobileCarriers;

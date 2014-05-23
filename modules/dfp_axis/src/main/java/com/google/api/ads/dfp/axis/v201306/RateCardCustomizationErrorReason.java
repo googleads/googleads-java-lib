@@ -18,8 +18,10 @@ public class RateCardCustomizationErrorReason implements java.io.Serializable {
     }
 
     public static final java.lang.String _INVALID_RATE_TYPE = "INVALID_RATE_TYPE";
+    public static final java.lang.String _UNSUPPORTED_OPERATION = "UNSUPPORTED_OPERATION";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final RateCardCustomizationErrorReason INVALID_RATE_TYPE = new RateCardCustomizationErrorReason(_INVALID_RATE_TYPE);
+    public static final RateCardCustomizationErrorReason UNSUPPORTED_OPERATION = new RateCardCustomizationErrorReason(_UNSUPPORTED_OPERATION);
     public static final RateCardCustomizationErrorReason UNKNOWN = new RateCardCustomizationErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static RateCardCustomizationErrorReason fromValue(java.lang.String value)

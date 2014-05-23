@@ -33,7 +33,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "NoStatsPage")
 @XmlSeeAlso({
     AdGroupBidLandscapePage.class,
-    ConversionTrackerPage.class,
     CriterionBidLandscapePage.class
 })
 public abstract class NoStatsPage

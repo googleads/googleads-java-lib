@@ -68,7 +68,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      *                 This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201403.BrowserLanguageTargeting browserLanguageSegment;
 
-    /* The operating system segmentation. {@link BrowserLanguageTargeting#isTargeted}
+    /* The operating system segmentation. {@link OperatingSystemTargeting#isTargeted}
      * must be {@code true}.
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).
@@ -324,7 +324,7 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Gets the operatingSystemSegment value for this ProductSegmentation.
      * 
-     * @return operatingSystemSegment   * The operating system segmentation. {@link BrowserLanguageTargeting#isTargeted}
+     * @return operatingSystemSegment   * The operating system segmentation. {@link OperatingSystemTargeting#isTargeted}
      * must be {@code true}.
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).
@@ -339,7 +339,7 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Sets the operatingSystemSegment value for this ProductSegmentation.
      * 
-     * @param operatingSystemSegment   * The operating system segmentation. {@link BrowserLanguageTargeting#isTargeted}
+     * @param operatingSystemSegment   * The operating system segmentation. {@link OperatingSystemTargeting#isTargeted}
      * must be {@code true}.
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).

@@ -13,9 +13,6 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class AdGroupAd  implements java.io.Serializable {
     /* The id of the adgroup containing this ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Long adGroupId;
@@ -32,9 +29,6 @@ public class AdGroupAd  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdExperimentData experimentData;
 
     /* The status of the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to ENABLED for campaign channel type SHOPPING.</span>
      *                 <span class="constraint Required">This field is required
@@ -43,19 +37,13 @@ public class AdGroupAd  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdStatus status;
 
     /* Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdApprovalStatus approvalStatus;
 
     /* List of disapproval reasons.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.String[] disapprovalReasons;
 
     /* True if and only if this ad is not serving because it does
@@ -64,10 +52,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 This field is only useful when {@link #approvalStatus
      * approvalStatus} is an
      *                 approved status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean trademarkDisapproved;
 
     /* This Map provides a place to put new features and settings
@@ -106,9 +92,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the adGroupId value for this AdGroupAd.
      * 
      * @return adGroupId   * The id of the adgroup containing this ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -121,9 +104,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the adGroupId value for this AdGroupAd.
      * 
      * @param adGroupId   * The id of the adgroup containing this ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -186,9 +166,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the status value for this AdGroupAd.
      * 
      * @return status   * The status of the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to ENABLED for campaign channel type SHOPPING.</span>
      *                 <span class="constraint Required">This field is required
@@ -204,9 +181,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the status value for this AdGroupAd.
      * 
      * @param status   * The status of the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Status".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to ENABLED for campaign channel type SHOPPING.</span>
      *                 <span class="constraint Required">This field is required
@@ -222,11 +196,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the approvalStatus value for this AdGroupAd.
      * 
      * @return approvalStatus   * Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -237,11 +208,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the approvalStatus value for this AdGroupAd.
      * 
      * @param approvalStatus   * Approval status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupCreativeApprovalStatus".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setApprovalStatus(com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -252,11 +220,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the disapprovalReasons value for this AdGroupAd.
      * 
      * @return disapprovalReasons   * List of disapproval reasons.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String[] getDisapprovalReasons() {
         return disapprovalReasons;
@@ -267,11 +232,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the disapprovalReasons value for this AdGroupAd.
      * 
      * @param disapprovalReasons   * List of disapproval reasons.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdDisapprovalReasons".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setDisapprovalReasons(java.lang.String[] disapprovalReasons) {
         this.disapprovalReasons = disapprovalReasons;
@@ -295,10 +257,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 This field is only useful when {@link #approvalStatus
      * approvalStatus} is an
      *                 approved status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getTrademarkDisapproved() {
         return trademarkDisapproved;
@@ -314,10 +274,8 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 This field is only useful when {@link #approvalStatus
      * approvalStatus} is an
      *                 approved status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupAdTrademarkDisapproved".</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setTrademarkDisapproved(java.lang.Boolean trademarkDisapproved) {
         this.trademarkDisapproved = trademarkDisapproved;

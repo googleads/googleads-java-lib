@@ -17,9 +17,6 @@ public class AdExtension  implements java.io.Serializable {
     /* ID of ad extension.
      *                 <p>Do <b>not</b> use this in a {@link CampaignAdExtension#mutate}
      * ADD operation.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdExtensionId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : REMOVE.</span> */
@@ -48,9 +45,6 @@ public class AdExtension  implements java.io.Serializable {
      * @return id   * ID of ad extension.
      *                 <p>Do <b>not</b> use this in a {@link CampaignAdExtension#mutate}
      * ADD operation.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdExtensionId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : REMOVE.</span>
@@ -66,9 +60,6 @@ public class AdExtension  implements java.io.Serializable {
      * @param id   * ID of ad extension.
      *                 <p>Do <b>not</b> use this in a {@link CampaignAdExtension#mutate}
      * ADD operation.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdExtensionId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : REMOVE.</span>

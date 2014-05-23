@@ -14,8 +14,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class TemplateElement  implements java.io.Serializable {
     /* Unique name for this element.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "UniqueName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.String uniqueName;
@@ -42,8 +40,6 @@ public class TemplateElement  implements java.io.Serializable {
      * Gets the uniqueName value for this TemplateElement.
      * 
      * @return uniqueName   * Unique name for this element.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "UniqueName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -56,8 +52,6 @@ public class TemplateElement  implements java.io.Serializable {
      * Sets the uniqueName value for this TemplateElement.
      * 
      * @param uniqueName   * Unique name for this element.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "UniqueName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

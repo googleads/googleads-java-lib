@@ -1,3 +1,18 @@
+1.28.0 - 05/21/2014
+-------------------
+AdWords:
+  - Added AdWords for Video v201309 support. This is a beta feature.
+  - Added report request and response logging. Fixes issue #12.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.27.0 - 04/11/2014
 -------------------
 AdWords:

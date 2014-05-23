@@ -13,20 +13,14 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201309.cm.Bids  implements java.io.Serializable {
     /* Percent CPA for ad group or criteria. This is used for calculating
-     * the bid value.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * the bid value. */
     private java.lang.Integer bid;
 
     /* The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBidSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BidSource percentCpaBidSource;
 
     public PercentCpaBid() {
@@ -48,9 +42,6 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201309.cm.B
      * 
      * @return bid   * Percent CPA for ad group or criteria. This is used for calculating
      * the bid value.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Integer getBid() {
         return bid;
@@ -62,9 +53,6 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201309.cm.B
      * 
      * @param bid   * Percent CPA for ad group or criteria. This is used for calculating
      * the bid value.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBid(java.lang.Integer bid) {
         this.bid = bid;
@@ -77,11 +65,8 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201309.cm.B
      * @return percentCpaBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBidSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BidSource getPercentCpaBidSource() {
         return percentCpaBidSource;
@@ -94,11 +79,8 @@ public class PercentCpaBid  extends com.google.api.ads.adwords.axis.v201309.cm.B
      * @param percentCpaBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PercentCpaBidSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setPercentCpaBidSource(com.google.api.ads.adwords.axis.v201309.cm.BidSource percentCpaBidSource) {
         this.percentCpaBidSource = percentCpaBidSource;

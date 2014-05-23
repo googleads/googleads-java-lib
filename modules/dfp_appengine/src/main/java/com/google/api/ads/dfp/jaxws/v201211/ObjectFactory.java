@@ -572,6 +572,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidPhoneNumberError }
+     * 
+     */
+    public InvalidPhoneNumberError createInvalidPhoneNumberError() {
+        return new InvalidPhoneNumberError();
+    }
+
+    /**
      * Create an instance of {@link ApplicationException }
      * 
      */
@@ -684,6 +692,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReportQuery }
+     * 
+     */
+    public ReportQuery createReportQuery() {
+        return new ReportQuery();
+    }
+
+    /**
      * Create an instance of {@link DeliveryData }
      * 
      */
@@ -697,14 +713,6 @@ public class ObjectFactory {
      */
     public OperatingSystem createOperatingSystem() {
         return new OperatingSystem();
-    }
-
-    /**
-     * Create an instance of {@link ReportQuery }
-     * 
-     */
-    public ReportQuery createReportQuery() {
-        return new ReportQuery();
     }
 
     /**

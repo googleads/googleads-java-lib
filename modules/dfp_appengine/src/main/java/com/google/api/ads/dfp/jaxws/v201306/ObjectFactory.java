@@ -660,6 +660,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidPhoneNumberError }
+     * 
+     */
+    public InvalidPhoneNumberError createInvalidPhoneNumberError() {
+        return new InvalidPhoneNumberError();
+    }
+
+    /**
      * Create an instance of {@link ApplicationException }
      * 
      */
@@ -1940,19 +1948,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteLineItems }
-     * 
-     */
-    public DeleteLineItems createDeleteLineItems() {
-        return new DeleteLineItems();
-    }
-
-    /**
      * Create an instance of {@link RequiredCollectionError }
      * 
      */
     public RequiredCollectionError createRequiredCollectionError() {
         return new RequiredCollectionError();
+    }
+
+    /**
+     * Create an instance of {@link DeleteLineItems }
+     * 
+     */
+    public DeleteLineItems createDeleteLineItems() {
+        return new DeleteLineItems();
     }
 
     /**

@@ -48,7 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@link NetworkSearchParameter}</li>
  * <li>{@link RelatedToQuerySearchParameter}</li>
  * <li>{@link RelatedToUrlSearchParameter}</li>
- * <li>{@link SearchVolumeDeltaSearchParameter}</li>
  * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SeedAdGroupIdSearchParameter}</li>
  * </ul><p>
@@ -98,7 +97,6 @@ import javax.xml.bind.annotation.XmlType;
     RelatedToQuerySearchParameter.class,
     SearchVolumeSearchParameter.class,
     LocationSearchParameter.class,
-    SearchVolumeDeltaSearchParameter.class,
     CompetitionSearchParameter.class,
     LanguageSearchParameter.class
 })

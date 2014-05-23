@@ -13,18 +13,12 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class CampaignCriterion  implements java.io.Serializable {
     /* The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Long campaignId;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "IsNegative".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.Boolean isNegative;
 
     /* The criterion part of the campaign criterion.
@@ -43,10 +37,7 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 {@code 0}: to opt out of mobile</li>
      *                 </ul>
      *                 
-     *                 Specify {@code -1.0} to clear existing bid modifier.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "BidModifier".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+     *                 Specify {@code -1.0} to clear existing bid modifier. */
     private java.lang.Double bidModifier;
 
     /* This Map provides a place to put new features and settings
@@ -87,9 +78,6 @@ public class CampaignCriterion  implements java.io.Serializable {
      * Gets the campaignId value for this CampaignCriterion.
      * 
      * @return campaignId   * The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -102,9 +90,6 @@ public class CampaignCriterion  implements java.io.Serializable {
      * Sets the campaignId value for this CampaignCriterion.
      * 
      * @param campaignId   * The campaign that the criterion is in.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "CampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -116,11 +101,8 @@ public class CampaignCriterion  implements java.io.Serializable {
     /**
      * Gets the isNegative value for this CampaignCriterion.
      * 
-     * @return isNegative   * <span class="constraint Selectable">This field can be selected
-     * using the value "IsNegative".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @return isNegative   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getIsNegative() {
         return isNegative;
@@ -130,11 +112,8 @@ public class CampaignCriterion  implements java.io.Serializable {
     /**
      * Sets the isNegative value for this CampaignCriterion.
      * 
-     * @param isNegative   * <span class="constraint Selectable">This field can be selected
-     * using the value "IsNegative".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @param isNegative   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setIsNegative(java.lang.Boolean isNegative) {
         this.isNegative = isNegative;
@@ -180,9 +159,6 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 </ul>
      *                 
      *                 Specify {@code -1.0} to clear existing bid modifier.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "BidModifier".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -204,9 +180,6 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 </ul>
      *                 
      *                 Specify {@code -1.0} to clear existing bid modifier.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "BidModifier".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

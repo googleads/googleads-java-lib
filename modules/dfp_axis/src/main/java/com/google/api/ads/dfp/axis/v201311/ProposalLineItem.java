@@ -52,7 +52,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code ProposalLineItem} is enabled to begin serving. This attribute
      * is required
      *                 and must be in the future when it turns into a line
-     * item. */
+     * item.
+     *                 This attribute becomes readonly once the {@code ProposalLineItem}
+     * has started delivering. */
     private com.google.api.ads.dfp.axis.v201311.DateTime startDateTime;
 
     /* The date and time at which the line item associated with the
@@ -565,6 +567,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is required
      *                 and must be in the future when it turns into a line
      * item.
+     *                 This attribute becomes readonly once the {@code ProposalLineItem}
+     * has started delivering.
      */
     public com.google.api.ads.dfp.axis.v201311.DateTime getStartDateTime() {
         return startDateTime;
@@ -579,6 +583,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is required
      *                 and must be in the future when it turns into a line
      * item.
+     *                 This attribute becomes readonly once the {@code ProposalLineItem}
+     * has started delivering.
      */
     public void setStartDateTime(com.google.api.ads.dfp.axis.v201311.DateTime startDateTime) {
         this.startDateTime = startDateTime;

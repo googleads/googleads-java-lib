@@ -60,6 +60,7 @@ import javax.xml.bind.annotation.XmlType;
     EntityLimitReachedError.class,
     NullError.class,
     AdUnitTypeError.class,
+    InvalidPhoneNumberError.class,
     CreativeError.class,
     StringLengthError.class,
     InvalidColorError.class,

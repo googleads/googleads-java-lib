@@ -11,7 +11,7 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 /**
  * Represents Platform criterion.
  *             <p>A criterion of this type can only be created using
- * an ID. A criterion of this type is only targetable.
+ * an ID.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
  */

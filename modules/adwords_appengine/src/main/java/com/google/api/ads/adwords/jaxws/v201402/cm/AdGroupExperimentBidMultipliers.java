@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
     "adGroupExperimentBidMultipliersType"
 })
 @XmlSeeAlso({
-    ManualCPMAdGroupExperimentBidMultipliers.class,
-    ManualCPCAdGroupExperimentBidMultipliers.class
+    ManualCPCAdGroupExperimentBidMultipliers.class,
+    ManualCPMAdGroupExperimentBidMultipliers.class
 })
 public abstract class AdGroupExperimentBidMultipliers {
 

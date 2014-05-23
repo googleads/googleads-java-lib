@@ -18,19 +18,13 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      *                     <ul><li>keyword targeting on search network.</li>
      * <li>keywords & placements for content targeting.</li></ul>
      *                     At the ad group criteria level, this is the max
-     * cpc bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * cpc bid. */
     private com.google.api.ads.adwords.axis.v201402.cm.Money bid;
 
     /* Max CPC (cost per click) bid override for content. This can
      * be specified at the
      *                     ad group level only to override the default bid
      * for content targeting.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.Money contentBid;
@@ -38,9 +32,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
     /* The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BidSource cpcBidSource;
@@ -71,9 +62,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * <li>keywords & placements for content targeting.</li></ul>
      *                     At the ad group criteria level, this is the max
      * cpc bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Money getBid() {
         return bid;
@@ -90,9 +78,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * <li>keywords & placements for content targeting.</li></ul>
      *                     At the ad group criteria level, this is the max
      * cpc bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBid(com.google.api.ads.adwords.axis.v201402.cm.Money bid) {
         this.bid = bid;
@@ -106,9 +91,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * be specified at the
      *                     ad group level only to override the default bid
      * for content targeting.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span>
      */
@@ -124,9 +106,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * be specified at the
      *                     ad group level only to override the default bid
      * for content targeting.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span>
      */
@@ -141,9 +120,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * @return cpcBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -158,9 +134,6 @@ public class CpcBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * @param cpcBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpcBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

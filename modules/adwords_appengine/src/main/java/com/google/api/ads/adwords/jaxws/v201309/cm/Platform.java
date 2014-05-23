@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents Platform criterion.
- *             <p>A criterion of this type can only be created using an ID. A criterion of this type is only targetable.
+ *             <p>A criterion of this type can only be created using an ID.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

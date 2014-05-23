@@ -34,10 +34,13 @@ public class LoggingModule extends AbstractModule {
     bind(PrettyPrinterInterface.class).to(PrettyPrinter.class).in(Singleton.class);
     bind(Logger.class)
         .annotatedWith(Names.named("libLogger")).toInstance(AdsServiceLoggers.ADS_API_LIB_LOG);
-    bind(Logger.class).annotatedWith(Names.named("soapXmlLogger")).toProvider(
-        new LoggerProvider(loggerPrefix, "soapXmlLogger")).asEagerSingleton();
-    bind(Logger.class).annotatedWith(Names.named("requestInfoLogger")).toProvider(
-        new LoggerProvider(loggerPrefix, "requestInfoLogger")).asEagerSingleton();
+    configureLogger(loggerPrefix, "soapXmlLogger");
+    configureLogger(loggerPrefix, "requestInfoLogger");
+  }
+
+  protected void configureLogger(String prefix, String name) {
+    bind(Logger.class).annotatedWith(Names.named(name)).toProvider(
+        new LoggerProvider(prefix, name)).asEagerSingleton();
   }
 
   /**

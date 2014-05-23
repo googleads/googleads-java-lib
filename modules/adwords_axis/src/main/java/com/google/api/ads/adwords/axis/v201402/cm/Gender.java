@@ -11,15 +11,13 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 /**
  * Represents a Gender criterion.
  *             <p>A criterion of this type can only be created using
- * an ID. A criterion of this type is only excludable.
+ * an ID.
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class Gender  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "GenderType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.GenderGenderType genderType;
 
     public Gender() {
@@ -41,10 +39,8 @@ public class Gender  extends com.google.api.ads.adwords.axis.v201402.cm.Criterio
     /**
      * Gets the genderType value for this Gender.
      * 
-     * @return genderType   * <span class="constraint Selectable">This field can be selected
-     * using the value "GenderType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return genderType   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.GenderGenderType getGenderType() {
         return genderType;
@@ -54,10 +50,8 @@ public class Gender  extends com.google.api.ads.adwords.axis.v201402.cm.Criterio
     /**
      * Sets the genderType value for this Gender.
      * 
-     * @param genderType   * <span class="constraint Selectable">This field can be selected
-     * using the value "GenderType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param genderType   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setGenderType(com.google.api.ads.adwords.axis.v201402.cm.GenderGenderType genderType) {
         this.genderType = genderType;

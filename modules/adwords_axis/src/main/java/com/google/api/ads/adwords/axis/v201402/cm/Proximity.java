@@ -18,7 +18,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  *             geocoded into a lat/long pair. Note: If a geoPoint value
  * is provided, the address is not
  *             used for calculating the lat/long to target.
- *             <p> A criterion of this type is only targetable.
+ *             <p>
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
  */

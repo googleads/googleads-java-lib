@@ -44,8 +44,7 @@ import javax.xml.bind.annotation.XmlType;
     "existingCount"
 })
 @XmlSeeAlso({
-    AdGroupCriterionLimitExceeded.class,
-    AdGroupAdCountLimitExceeded.class
+    AdGroupCriterionLimitExceeded.class
 })
 public class EntityCountLimitExceeded
     extends ApiError

@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns a list of bid landscapes for the criteria specified in the selector.
+ *             Returns a list of {@link CriterionBidLandscape}s for the criteria specified in the selector.
+ *             In the result, the returned {@link LandscapePoint}s are grouped into
+ *             {@link CriterionBidLandscape}s by their criteria, and numberResults of paging limits the total
+ *             number of {@link LandscapePoint}s instead of number of {@link CriterionBidLandscape}s.
  *             
  *             @param serviceSelector Selects the entities to return bid landscapes for.
  *             @return A list of bid landscapes.

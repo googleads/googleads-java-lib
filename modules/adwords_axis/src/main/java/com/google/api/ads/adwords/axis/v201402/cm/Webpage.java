@@ -16,8 +16,6 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
     /* The webpage criterion parameter.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Parameter".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -27,16 +25,12 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * coverage based on the
      *                     website target, negative website targets and negative
      * keywords in the ad group and campaign.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.Double criteriaCoverage;
 
     /* Keywordless criteria samples - List of sample urls that matches
      * with the website target.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String[] criteriaSamples;
@@ -65,8 +59,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * Gets the parameter value for this Webpage.
      * 
      * @return parameter   * The webpage criterion parameter.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Parameter".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -80,8 +72,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * Sets the parameter value for this Webpage.
      * 
      * @param parameter   * The webpage criterion parameter.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Parameter".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -98,8 +88,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * coverage based on the
      *                     website target, negative website targets and negative
      * keywords in the ad group and campaign.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -115,8 +103,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * coverage based on the
      *                     website target, negative website targets and negative
      * keywords in the ad group and campaign.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaCoverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -130,8 +116,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * 
      * @return criteriaSamples   * Keywordless criteria samples - List of sample urls that matches
      * with the website target.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -145,8 +129,6 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201402.cm.Criteri
      * 
      * @param criteriaSamples   * Keywordless criteria samples - List of sample urls that matches
      * with the website target.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CriteriaSamples".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

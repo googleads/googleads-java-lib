@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{https://adwords.google.com/api/adwords/cm/v201402}ApiError">
  *       &lt;sequence>
+ *         &lt;element name="reason" type="{https://adwords.google.com/api/adwords/cm/v201402}NotWhitelistedError.Reason" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -29,10 +30,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NotWhitelistedError")
+@XmlType(name = "NotWhitelistedError", propOrder = {
+    "reason"
+})
 public class NotWhitelistedError
     extends ApiError
 {
 
+    protected NotWhitelistedErrorReason reason;
+
+    /**
+     * Gets the value of the reason property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NotWhitelistedErrorReason }
+     *     
+     */
+    public NotWhitelistedErrorReason getReason() {
+        return reason;
+    }
+
+    /**
+     * Sets the value of the reason property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NotWhitelistedErrorReason }
+     *     
+     */
+    public void setReason(NotWhitelistedErrorReason value) {
+        this.reason = value;
+    }
 
 }

@@ -11,8 +11,9 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 /**
  * Represents Location criterion.
  *             <p>A criterion of this type can only be created using
- * an ID. A criterion of this type can be either targeted or excluded.
- * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
+ * an ID.
+ *             <span class="constraint AdxEnabled">This is enabled for
+ * AdX.</span>
  */
 public class Location  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
     /* Name of the location criterion. <b> Note:</b> This field is

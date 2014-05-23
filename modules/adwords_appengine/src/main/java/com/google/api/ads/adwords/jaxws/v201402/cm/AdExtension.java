@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
     "adExtensionType"
 })
 @XmlSeeAlso({
-    LocationExtension.class,
-    LocationSyncExtension.class
+    LocationSyncExtension.class,
+    LocationExtension.class
 })
 public class AdExtension {
 

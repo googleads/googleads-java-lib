@@ -32,10 +32,7 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class ProductAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  implements java.io.Serializable {
     /* Promotional line for this ad. This text will be displayed in
      * addition to
-     *                     the products.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PromotionLine".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     *                     the products. */
     private java.lang.String promotionLine;
 
     public ProductAd() {
@@ -64,9 +61,6 @@ public class ProductAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  i
      * @return promotionLine   * Promotional line for this ad. This text will be displayed in
      * addition to
      *                     the products.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PromotionLine".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getPromotionLine() {
         return promotionLine;
@@ -79,9 +73,6 @@ public class ProductAd  extends com.google.api.ads.adwords.axis.v201309.cm.Ad  i
      * @param promotionLine   * Promotional line for this ad. This text will be displayed in
      * addition to
      *                     the products.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PromotionLine".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setPromotionLine(java.lang.String promotionLine) {
         this.promotionLine = promotionLine;

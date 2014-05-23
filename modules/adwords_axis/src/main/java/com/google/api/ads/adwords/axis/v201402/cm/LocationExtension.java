@@ -22,52 +22,35 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * is specified, the
      *                     provinceCode value is saved as a provinceName,
      * i.e. provinceCode is
-     *                     ignored by the service.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span> */
+     *                     ignored by the service. */
     private com.google.api.ads.adwords.axis.v201402.cm.Address address;
 
     /* The lat/long point of the location (as is populated in GeoLocation
      * by
-     *                     GeoLocationService).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span> */
+     *                     GeoLocationService). */
     private com.google.api.ads.adwords.axis.v201402.cm.GeoPoint geoPoint;
 
     /* Byte data encoding address and geo point (as is populated in
      * GeoLocation
      *                     by GeoLocationService).
-     *                     Input only. Required on location extension creation.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "EncodedLocation".</span> */
+     *                     Input only. Required on location extension creation. */
     private byte[] encodedLocation;
 
     /* The name of the company located at the given address
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CompanyName".</span>
      *                     <span class="constraint StringLength">The length
      * of this string should be between 1 and 80, inclusive.</span> */
     private java.lang.String companyName;
 
-    /* The phone number for the location
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PhoneNumber".</span> */
+    /* The phone number for the location */
     private java.lang.String phoneNumber;
 
-    /* The source which generated the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationExtensionSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+    /* The source which generated the extension */
     private com.google.api.ads.adwords.axis.v201402.cm.LocationExtensionSource source;
 
-    /* The business icon to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IconMediaId".</span> */
+    /* The business icon to use with the extension */
     private java.lang.Long iconMediaId;
 
-    /* The store front image to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageMediaId".</span> */
+    /* The store front image to use with the extension */
     private java.lang.Long imageMediaId;
 
     public LocationExtension() {
@@ -112,8 +95,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      *                     provinceCode value is saved as a provinceName,
      * i.e. provinceCode is
      *                     ignored by the service.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Address getAddress() {
         return address;
@@ -134,8 +115,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      *                     provinceCode value is saved as a provinceName,
      * i.e. provinceCode is
      *                     ignored by the service.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Address".</span>
      */
     public void setAddress(com.google.api.ads.adwords.axis.v201402.cm.Address address) {
         this.address = address;
@@ -148,8 +127,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * @return geoPoint   * The lat/long point of the location (as is populated in GeoLocation
      * by
      *                     GeoLocationService).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.GeoPoint getGeoPoint() {
         return geoPoint;
@@ -162,8 +139,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * @param geoPoint   * The lat/long point of the location (as is populated in GeoLocation
      * by
      *                     GeoLocationService).
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "GeoPoint".</span>
      */
     public void setGeoPoint(com.google.api.ads.adwords.axis.v201402.cm.GeoPoint geoPoint) {
         this.geoPoint = geoPoint;
@@ -177,8 +152,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * GeoLocation
      *                     by GeoLocationService).
      *                     Input only. Required on location extension creation.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "EncodedLocation".</span>
      */
     public byte[] getEncodedLocation() {
         return encodedLocation;
@@ -192,8 +165,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * GeoLocation
      *                     by GeoLocationService).
      *                     Input only. Required on location extension creation.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "EncodedLocation".</span>
      */
     public void setEncodedLocation(byte[] encodedLocation) {
         this.encodedLocation = encodedLocation;
@@ -204,8 +175,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Gets the companyName value for this LocationExtension.
      * 
      * @return companyName   * The name of the company located at the given address
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CompanyName".</span>
      *                     <span class="constraint StringLength">The length
      * of this string should be between 1 and 80, inclusive.</span>
      */
@@ -218,8 +187,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Sets the companyName value for this LocationExtension.
      * 
      * @param companyName   * The name of the company located at the given address
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CompanyName".</span>
      *                     <span class="constraint StringLength">The length
      * of this string should be between 1 and 80, inclusive.</span>
      */
@@ -232,8 +199,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Gets the phoneNumber value for this LocationExtension.
      * 
      * @return phoneNumber   * The phone number for the location
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PhoneNumber".</span>
      */
     public java.lang.String getPhoneNumber() {
         return phoneNumber;
@@ -244,8 +209,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Sets the phoneNumber value for this LocationExtension.
      * 
      * @param phoneNumber   * The phone number for the location
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PhoneNumber".</span>
      */
     public void setPhoneNumber(java.lang.String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -256,9 +219,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Gets the source value for this LocationExtension.
      * 
      * @return source   * The source which generated the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationExtensionSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.LocationExtensionSource getSource() {
         return source;
@@ -269,9 +229,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Sets the source value for this LocationExtension.
      * 
      * @param source   * The source which generated the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "LocationExtensionSource".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setSource(com.google.api.ads.adwords.axis.v201402.cm.LocationExtensionSource source) {
         this.source = source;
@@ -282,8 +239,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Gets the iconMediaId value for this LocationExtension.
      * 
      * @return iconMediaId   * The business icon to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IconMediaId".</span>
      */
     public java.lang.Long getIconMediaId() {
         return iconMediaId;
@@ -294,8 +249,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Sets the iconMediaId value for this LocationExtension.
      * 
      * @param iconMediaId   * The business icon to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IconMediaId".</span>
      */
     public void setIconMediaId(java.lang.Long iconMediaId) {
         this.iconMediaId = iconMediaId;
@@ -306,8 +259,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Gets the imageMediaId value for this LocationExtension.
      * 
      * @return imageMediaId   * The store front image to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageMediaId".</span>
      */
     public java.lang.Long getImageMediaId() {
         return imageMediaId;
@@ -318,8 +269,6 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201402.
      * Sets the imageMediaId value for this LocationExtension.
      * 
      * @param imageMediaId   * The store front image to use with the extension
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageMediaId".</span>
      */
     public void setImageMediaId(java.lang.Long imageMediaId) {
         this.imageMediaId = imageMediaId;

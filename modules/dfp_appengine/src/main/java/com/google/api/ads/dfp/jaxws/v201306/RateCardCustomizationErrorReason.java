@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="RateCardCustomizationError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="INVALID_RATE_TYPE"/>
+ *     &lt;enumeration value="UNSUPPORTED_OPERATION"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -32,6 +33,14 @@ public enum RateCardCustomizationErrorReason {
      * 
      */
     INVALID_RATE_TYPE,
+
+    /**
+     * 
+     *                 Indicates that the requested operation is not supported.
+     *               
+     * 
+     */
+    UNSUPPORTED_OPERATION,
 
     /**
      * 

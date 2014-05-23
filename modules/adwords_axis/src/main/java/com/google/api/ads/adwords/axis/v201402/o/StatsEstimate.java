@@ -9,7 +9,12 @@ package com.google.api.ads.adwords.axis.v201402.o;
 
 
 /**
- * Represents a set of stats for a traffic estimate.
+ * Represents a set of stats for a daily traffic estimate.
+ *             As of v201406 {@code averageCpc}, {@code averagePosition}
+ * and {@code clickThroughRate} will be
+ *             {@code null} when not defined (respectively, if {@code
+ * clicksPerDay} or
+ *             {@code impressionsPerDay} are 0).
  */
 public class StatsEstimate  implements java.io.Serializable {
     /* The estimated average CPC. */
@@ -18,15 +23,14 @@ public class StatsEstimate  implements java.io.Serializable {
     /* The estimated average position. */
     private java.lang.Double averagePosition;
 
-    /* The estimated number of clicks per day, in floating point representation. */
-    private java.lang.Float clicksPerDay;
-
-    /* The estimated number of impressions per day, in floating point
-     * representation. */
-    private java.lang.Float impressionsPerDay;
-
     /* The estimated click through rate. */
     private java.lang.Double clickThroughRate;
+
+    /* The estimated number of clicks, in floating point representation. */
+    private java.lang.Float clicksPerDay;
+
+    /* The estimated number of impressions, in floating point representation. */
+    private java.lang.Float impressionsPerDay;
 
     /* The estimated total cost. */
     private com.google.api.ads.adwords.axis.v201402.cm.Money totalCost;
@@ -37,15 +41,15 @@ public class StatsEstimate  implements java.io.Serializable {
     public StatsEstimate(
            com.google.api.ads.adwords.axis.v201402.cm.Money averageCpc,
            java.lang.Double averagePosition,
+           java.lang.Double clickThroughRate,
            java.lang.Float clicksPerDay,
            java.lang.Float impressionsPerDay,
-           java.lang.Double clickThroughRate,
            com.google.api.ads.adwords.axis.v201402.cm.Money totalCost) {
            this.averageCpc = averageCpc;
            this.averagePosition = averagePosition;
+           this.clickThroughRate = clickThroughRate;
            this.clicksPerDay = clicksPerDay;
            this.impressionsPerDay = impressionsPerDay;
-           this.clickThroughRate = clickThroughRate;
            this.totalCost = totalCost;
     }
 
@@ -91,48 +95,6 @@ public class StatsEstimate  implements java.io.Serializable {
 
 
     /**
-     * Gets the clicksPerDay value for this StatsEstimate.
-     * 
-     * @return clicksPerDay   * The estimated number of clicks per day, in floating point representation.
-     */
-    public java.lang.Float getClicksPerDay() {
-        return clicksPerDay;
-    }
-
-
-    /**
-     * Sets the clicksPerDay value for this StatsEstimate.
-     * 
-     * @param clicksPerDay   * The estimated number of clicks per day, in floating point representation.
-     */
-    public void setClicksPerDay(java.lang.Float clicksPerDay) {
-        this.clicksPerDay = clicksPerDay;
-    }
-
-
-    /**
-     * Gets the impressionsPerDay value for this StatsEstimate.
-     * 
-     * @return impressionsPerDay   * The estimated number of impressions per day, in floating point
-     * representation.
-     */
-    public java.lang.Float getImpressionsPerDay() {
-        return impressionsPerDay;
-    }
-
-
-    /**
-     * Sets the impressionsPerDay value for this StatsEstimate.
-     * 
-     * @param impressionsPerDay   * The estimated number of impressions per day, in floating point
-     * representation.
-     */
-    public void setImpressionsPerDay(java.lang.Float impressionsPerDay) {
-        this.impressionsPerDay = impressionsPerDay;
-    }
-
-
-    /**
      * Gets the clickThroughRate value for this StatsEstimate.
      * 
      * @return clickThroughRate   * The estimated click through rate.
@@ -149,6 +111,46 @@ public class StatsEstimate  implements java.io.Serializable {
      */
     public void setClickThroughRate(java.lang.Double clickThroughRate) {
         this.clickThroughRate = clickThroughRate;
+    }
+
+
+    /**
+     * Gets the clicksPerDay value for this StatsEstimate.
+     * 
+     * @return clicksPerDay   * The estimated number of clicks, in floating point representation.
+     */
+    public java.lang.Float getClicksPerDay() {
+        return clicksPerDay;
+    }
+
+
+    /**
+     * Sets the clicksPerDay value for this StatsEstimate.
+     * 
+     * @param clicksPerDay   * The estimated number of clicks, in floating point representation.
+     */
+    public void setClicksPerDay(java.lang.Float clicksPerDay) {
+        this.clicksPerDay = clicksPerDay;
+    }
+
+
+    /**
+     * Gets the impressionsPerDay value for this StatsEstimate.
+     * 
+     * @return impressionsPerDay   * The estimated number of impressions, in floating point representation.
+     */
+    public java.lang.Float getImpressionsPerDay() {
+        return impressionsPerDay;
+    }
+
+
+    /**
+     * Sets the impressionsPerDay value for this StatsEstimate.
+     * 
+     * @param impressionsPerDay   * The estimated number of impressions, in floating point representation.
+     */
+    public void setImpressionsPerDay(java.lang.Float impressionsPerDay) {
+        this.impressionsPerDay = impressionsPerDay;
     }
 
 
@@ -189,15 +191,15 @@ public class StatsEstimate  implements java.io.Serializable {
             ((this.averagePosition==null && other.getAveragePosition()==null) || 
              (this.averagePosition!=null &&
               this.averagePosition.equals(other.getAveragePosition()))) &&
+            ((this.clickThroughRate==null && other.getClickThroughRate()==null) || 
+             (this.clickThroughRate!=null &&
+              this.clickThroughRate.equals(other.getClickThroughRate()))) &&
             ((this.clicksPerDay==null && other.getClicksPerDay()==null) || 
              (this.clicksPerDay!=null &&
               this.clicksPerDay.equals(other.getClicksPerDay()))) &&
             ((this.impressionsPerDay==null && other.getImpressionsPerDay()==null) || 
              (this.impressionsPerDay!=null &&
               this.impressionsPerDay.equals(other.getImpressionsPerDay()))) &&
-            ((this.clickThroughRate==null && other.getClickThroughRate()==null) || 
-             (this.clickThroughRate!=null &&
-              this.clickThroughRate.equals(other.getClickThroughRate()))) &&
             ((this.totalCost==null && other.getTotalCost()==null) || 
              (this.totalCost!=null &&
               this.totalCost.equals(other.getTotalCost())));
@@ -218,14 +220,14 @@ public class StatsEstimate  implements java.io.Serializable {
         if (getAveragePosition() != null) {
             _hashCode += getAveragePosition().hashCode();
         }
+        if (getClickThroughRate() != null) {
+            _hashCode += getClickThroughRate().hashCode();
+        }
         if (getClicksPerDay() != null) {
             _hashCode += getClicksPerDay().hashCode();
         }
         if (getImpressionsPerDay() != null) {
             _hashCode += getImpressionsPerDay().hashCode();
-        }
-        if (getClickThroughRate() != null) {
-            _hashCode += getClickThroughRate().hashCode();
         }
         if (getTotalCost() != null) {
             _hashCode += getTotalCost().hashCode();
@@ -255,6 +257,13 @@ public class StatsEstimate  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("clickThroughRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201402", "clickThroughRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("clicksPerDay");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201402", "clicksPerDay"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "float"));
@@ -265,13 +274,6 @@ public class StatsEstimate  implements java.io.Serializable {
         elemField.setFieldName("impressionsPerDay");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201402", "impressionsPerDay"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "float"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("clickThroughRate");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201402", "clickThroughRate"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

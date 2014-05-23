@@ -39,10 +39,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     EnhancedCpcBiddingScheme.class,
     ManualCpcBiddingScheme.class,
-    BudgetOptimizerBiddingScheme.class,
-    PercentCpaBiddingScheme.class,
     TargetRoasBiddingScheme.class,
     ManualCpmBiddingScheme.class,
+    PercentCpaBiddingScheme.class,
+    BudgetOptimizerBiddingScheme.class,
     TargetSpendBiddingScheme.class,
     PageOnePromotedBiddingScheme.class,
     ConversionOptimizerBiddingScheme.class,

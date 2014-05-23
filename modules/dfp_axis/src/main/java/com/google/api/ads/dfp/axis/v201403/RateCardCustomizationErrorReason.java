@@ -23,6 +23,7 @@ public class RateCardCustomizationErrorReason implements java.io.Serializable {
     public static final java.lang.String _FEATURE_NOT_BELONGS_TO_GROUP = "FEATURE_NOT_BELONGS_TO_GROUP";
     public static final java.lang.String _SAME_GROUP_DIFFERENT_FEATURE = "SAME_GROUP_DIFFERENT_FEATURE";
     public static final java.lang.String _DIFFERENT_GROUP_SAME_FEATURE = "DIFFERENT_GROUP_SAME_FEATURE";
+    public static final java.lang.String _UNSUPPORTED_OPERATION = "UNSUPPORTED_OPERATION";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final RateCardCustomizationErrorReason INVALID_RATE_TYPE = new RateCardCustomizationErrorReason(_INVALID_RATE_TYPE);
     public static final RateCardCustomizationErrorReason CANNOT_ADD_TO_GROUP_BY_PRICING_METHOD = new RateCardCustomizationErrorReason(_CANNOT_ADD_TO_GROUP_BY_PRICING_METHOD);
@@ -30,6 +31,7 @@ public class RateCardCustomizationErrorReason implements java.io.Serializable {
     public static final RateCardCustomizationErrorReason FEATURE_NOT_BELONGS_TO_GROUP = new RateCardCustomizationErrorReason(_FEATURE_NOT_BELONGS_TO_GROUP);
     public static final RateCardCustomizationErrorReason SAME_GROUP_DIFFERENT_FEATURE = new RateCardCustomizationErrorReason(_SAME_GROUP_DIFFERENT_FEATURE);
     public static final RateCardCustomizationErrorReason DIFFERENT_GROUP_SAME_FEATURE = new RateCardCustomizationErrorReason(_DIFFERENT_GROUP_SAME_FEATURE);
+    public static final RateCardCustomizationErrorReason UNSUPPORTED_OPERATION = new RateCardCustomizationErrorReason(_UNSUPPORTED_OPERATION);
     public static final RateCardCustomizationErrorReason UNKNOWN = new RateCardCustomizationErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static RateCardCustomizationErrorReason fromValue(java.lang.String value)

@@ -53,7 +53,6 @@ package com.google.api.ads.adwords.axis.v201309.o;
  * <li>{@link NetworkSearchParameter}</li>
  * <li>{@link RelatedToQuerySearchParameter}</li>
  * <li>{@link RelatedToUrlSearchParameter}</li>
- * <li>{@link SearchVolumeDeltaSearchParameter}</li>
  * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SeedAdGroupIdSearchParameter}</li>
  * </ul><p>

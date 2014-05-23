@@ -11,35 +11,27 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 /**
  * Represents a Operating System Version Criterion.
  *             <p>A criterion of this type can only be created using
- * an ID. A criterion of this type is only targetable.
+ * an ID.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
  */
 public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
     /* The name of the operating system.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
     /* The OS Major Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMajorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.Integer osMajorVersion;
 
     /* The OS Minor Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMinorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.Integer osMinorVersion;
 
     /* The operator type.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatorType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.OperatingSystemVersionOperatorType operatorType;
@@ -70,8 +62,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Gets the name value for this OperatingSystemVersion.
      * 
      * @return name   * The name of the operating system.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -84,8 +74,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Sets the name value for this OperatingSystemVersion.
      * 
      * @param name   * The name of the operating system.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatingSystemName".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -98,8 +86,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Gets the osMajorVersion value for this OperatingSystemVersion.
      * 
      * @return osMajorVersion   * The OS Major Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMajorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -112,8 +98,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Sets the osMajorVersion value for this OperatingSystemVersion.
      * 
      * @param osMajorVersion   * The OS Major Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMajorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -126,8 +110,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Gets the osMinorVersion value for this OperatingSystemVersion.
      * 
      * @return osMinorVersion   * The OS Minor Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMinorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -140,8 +122,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Sets the osMinorVersion value for this OperatingSystemVersion.
      * 
      * @param osMinorVersion   * The OS Minor Version number.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OsMinorVersion".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -154,8 +134,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Gets the operatorType value for this OperatingSystemVersion.
      * 
      * @return operatorType   * The operator type.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatorType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -168,8 +146,6 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
      * Sets the operatorType value for this OperatingSystemVersion.
      * 
      * @param operatorType   * The operator type.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "OperatorType".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

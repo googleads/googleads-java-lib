@@ -12,18 +12,12 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * Manual impression based bids.
  */
 public class CpmBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  implements java.io.Serializable {
-    /* Max CPM (cost per thousand impressions) bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* Max CPM (cost per thousand impressions) bid. */
     private com.google.api.ads.adwords.axis.v201402.cm.Money bid;
 
     /* The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BidSource cpmBidSource;
@@ -46,9 +40,6 @@ public class CpmBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * Gets the bid value for this CpmBid.
      * 
      * @return bid   * Max CPM (cost per thousand impressions) bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Money getBid() {
         return bid;
@@ -59,9 +50,6 @@ public class CpmBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * Sets the bid value for this CpmBid.
      * 
      * @param bid   * Max CPM (cost per thousand impressions) bid.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBid".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBid(com.google.api.ads.adwords.axis.v201402.cm.Money bid) {
         this.bid = bid;
@@ -74,9 +62,6 @@ public class CpmBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * @return cpmBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -91,9 +76,6 @@ public class CpmBid  extends com.google.api.ads.adwords.axis.v201402.cm.Bids  im
      * @param cpmBidSource   * The level (ad group or criterion) at which the bid was set.
      * This is applicable
      *                     only at the criteria level.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "CpmBidSource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

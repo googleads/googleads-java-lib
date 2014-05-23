@@ -13,9 +13,6 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
  */
 public class ManualCPMAdGroupExperimentBidMultipliers  extends com.google.api.ads.adwords.axis.v201402.cm.AdGroupExperimentBidMultipliers  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpmMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier maxCpmMultiplier;
 
     public ManualCPMAdGroupExperimentBidMultipliers() {
@@ -33,9 +30,7 @@ public class ManualCPMAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Gets the maxCpmMultiplier value for this ManualCPMAdGroupExperimentBidMultipliers.
      * 
-     * @return maxCpmMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpmMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return maxCpmMultiplier
      */
     public com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier getMaxCpmMultiplier() {
         return maxCpmMultiplier;
@@ -45,9 +40,7 @@ public class ManualCPMAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Sets the maxCpmMultiplier value for this ManualCPMAdGroupExperimentBidMultipliers.
      * 
-     * @param maxCpmMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpmMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param maxCpmMultiplier
      */
     public void setMaxCpmMultiplier(com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier maxCpmMultiplier) {
         this.maxCpmMultiplier = maxCpmMultiplier;

@@ -61,6 +61,7 @@ import javax.xml.bind.annotation.XmlType;
     ProposalLineItemActionError.class,
     NullError.class,
     AdUnitTypeError.class,
+    InvalidPhoneNumberError.class,
     BillingError.class,
     CreativeError.class,
     RateCardCustomizationError.class,

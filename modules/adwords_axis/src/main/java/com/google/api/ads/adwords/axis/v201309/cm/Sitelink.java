@@ -12,18 +12,14 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * Class to represent a single sitelink
  */
 public class Sitelink  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "DisplayText".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 35, inclusive.</span> */
     private java.lang.String displayText;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "DestinationUrl".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 2076, inclusive.</span> */
     private java.lang.String destinationUrl;
@@ -42,10 +38,8 @@ public class Sitelink  implements java.io.Serializable {
     /**
      * Gets the displayText value for this Sitelink.
      * 
-     * @return displayText   * <span class="constraint Selectable">This field can be selected
-     * using the value "DisplayText".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @return displayText   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 35, inclusive.</span>
      */
@@ -57,10 +51,8 @@ public class Sitelink  implements java.io.Serializable {
     /**
      * Sets the displayText value for this Sitelink.
      * 
-     * @param displayText   * <span class="constraint Selectable">This field can be selected
-     * using the value "DisplayText".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @param displayText   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 35, inclusive.</span>
      */
@@ -72,10 +64,8 @@ public class Sitelink  implements java.io.Serializable {
     /**
      * Gets the destinationUrl value for this Sitelink.
      * 
-     * @return destinationUrl   * <span class="constraint Selectable">This field can be selected
-     * using the value "DestinationUrl".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @return destinationUrl   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 2076, inclusive.</span>
      */
@@ -87,10 +77,8 @@ public class Sitelink  implements java.io.Serializable {
     /**
      * Sets the destinationUrl value for this Sitelink.
      * 
-     * @param destinationUrl   * <span class="constraint Selectable">This field can be selected
-     * using the value "DestinationUrl".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @param destinationUrl   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 1 and 2076, inclusive.</span>
      */

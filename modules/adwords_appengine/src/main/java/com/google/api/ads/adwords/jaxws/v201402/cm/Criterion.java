@@ -6,9 +6,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201402.express.KeywordSet;
-import com.google.api.ads.adwords.jaxws.v201402.express.NegativeCriterion;
-import com.google.api.ads.adwords.jaxws.v201402.express.ProductService;
 
 
 /**
@@ -44,34 +41,16 @@ import com.google.api.ads.adwords.jaxws.v201402.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
-    Platform.class,
-    Placement.class,
-    ProductSalesChannel.class,
+    CriterionUserInterest.class,
+    Product.class,
     CriterionUserList.class,
     MobileAppCategory.class,
-    ProductScope.class,
-    OperatingSystemVersion.class,
-    Webpage.class,
-    LocationGroups.class,
-    Proximity.class,
-    Product.class,
-    Location.class,
-    CriterionUserInterest.class,
-    MobileDevice.class,
-    ContentLabel.class,
-    Language.class,
-    ProductPartition.class,
-    Gender.class,
-    AgeRange.class,
-    Carrier.class,
     Vertical.class,
-    AdSchedule.class,
-    IpBlock.class,
-    MobileApplication.class,
-    KeywordSet.class,
-    NegativeCriterion.class,
     Keyword.class,
-    ProductService.class
+    Placement.class,
+    Location.class,
+    Language.class,
+    MobileApplication.class
 })
 public class Criterion {
 

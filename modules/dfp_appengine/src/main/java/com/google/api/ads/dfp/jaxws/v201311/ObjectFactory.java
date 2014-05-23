@@ -668,6 +668,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidPhoneNumberError }
+     * 
+     */
+    public InvalidPhoneNumberError createInvalidPhoneNumberError() {
+        return new InvalidPhoneNumberError();
+    }
+
+    /**
      * Create an instance of {@link ApplicationException }
      * 
      */

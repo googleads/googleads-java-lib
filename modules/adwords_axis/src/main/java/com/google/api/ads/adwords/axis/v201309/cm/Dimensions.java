@@ -13,17 +13,11 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class Dimensions  implements java.io.Serializable {
     /* Width of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Width".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Integer width;
 
     /* Height of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Height".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Integer height;
@@ -43,9 +37,6 @@ public class Dimensions  implements java.io.Serializable {
      * Gets the width value for this Dimensions.
      * 
      * @return width   * Width of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Width".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -58,9 +49,6 @@ public class Dimensions  implements java.io.Serializable {
      * Sets the width value for this Dimensions.
      * 
      * @param width   * Width of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Width".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -73,9 +61,6 @@ public class Dimensions  implements java.io.Serializable {
      * Gets the height value for this Dimensions.
      * 
      * @return height   * Height of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Height".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -88,9 +73,6 @@ public class Dimensions  implements java.io.Serializable {
      * Sets the height value for this Dimensions.
      * 
      * @param height   * Height of the dimension
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Height".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

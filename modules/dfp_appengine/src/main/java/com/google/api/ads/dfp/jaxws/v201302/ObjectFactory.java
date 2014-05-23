@@ -588,6 +588,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidPhoneNumberError }
+     * 
+     */
+    public InvalidPhoneNumberError createInvalidPhoneNumberError() {
+        return new InvalidPhoneNumberError();
+    }
+
+    /**
      * Create an instance of {@link ApplicationException }
      * 
      */
@@ -604,6 +612,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReportDownloadOptions }
+     * 
+     */
+    public ReportDownloadOptions createReportDownloadOptions() {
+        return new ReportDownloadOptions();
+    }
+
+    /**
      * Create an instance of {@link DeviceCapabilityTargeting }
      * 
      */
@@ -617,14 +633,6 @@ public class ObjectFactory {
      */
     public AspectRatioImageCreative createAspectRatioImageCreative() {
         return new AspectRatioImageCreative();
-    }
-
-    /**
-     * Create an instance of {@link ReportDownloadOptions }
-     * 
-     */
-    public ReportDownloadOptions createReportDownloadOptions() {
-        return new ReportDownloadOptions();
     }
 
     /**
@@ -1252,19 +1260,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdUnitParent }
-     * 
-     */
-    public AdUnitParent createAdUnitParent() {
-        return new AdUnitParent();
-    }
-
-    /**
      * Create an instance of {@link LineItemError }
      * 
      */
     public LineItemError createLineItemError() {
         return new LineItemError();
+    }
+
+    /**
+     * Create an instance of {@link AdUnitParent }
+     * 
+     */
+    public AdUnitParent createAdUnitParent() {
+        return new AdUnitParent();
     }
 
     /**
@@ -1604,19 +1612,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteLineItems }
-     * 
-     */
-    public DeleteLineItems createDeleteLineItems() {
-        return new DeleteLineItems();
-    }
-
-    /**
      * Create an instance of {@link RequiredCollectionError }
      * 
      */
     public RequiredCollectionError createRequiredCollectionError() {
         return new RequiredCollectionError();
+    }
+
+    /**
+     * Create an instance of {@link DeleteLineItems }
+     * 
+     */
+    public DeleteLineItems createDeleteLineItems() {
+        return new DeleteLineItems();
     }
 
     /**
@@ -2236,19 +2244,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DayPart }
-     * 
-     */
-    public DayPart createDayPart() {
-        return new DayPart();
-    }
-
-    /**
      * Create an instance of {@link RemoveAdUnitsFromPlacement }
      * 
      */
     public RemoveAdUnitsFromPlacement createRemoveAdUnitsFromPlacement() {
         return new RemoveAdUnitsFromPlacement();
+    }
+
+    /**
+     * Create an instance of {@link DayPart }
+     * 
+     */
+    public DayPart createDayPart() {
+        return new DayPart();
     }
 
     /**
@@ -2356,19 +2364,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomCriteria }
-     * 
-     */
-    public CustomCriteria createCustomCriteria() {
-        return new CustomCriteria();
-    }
-
-    /**
      * Create an instance of {@link BandwidthGroupTargeting }
      * 
      */
     public BandwidthGroupTargeting createBandwidthGroupTargeting() {
         return new BandwidthGroupTargeting();
+    }
+
+    /**
+     * Create an instance of {@link CustomCriteria }
+     * 
+     */
+    public CustomCriteria createCustomCriteria() {
+        return new CustomCriteria();
     }
 
     /**

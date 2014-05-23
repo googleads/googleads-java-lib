@@ -25,10 +25,8 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class ProductScope  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "Dimensions".</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
+    /* <span class="constraint NotEmpty">This field must contain at
+     * least one element.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -53,10 +51,8 @@ public class ProductScope  extends com.google.api.ads.adwords.axis.v201402.cm.Cr
     /**
      * Gets the dimensions value for this ProductScope.
      * 
-     * @return dimensions   * <span class="constraint Selectable">This field can be selected
-     * using the value "Dimensions".</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
+     * @return dimensions   * <span class="constraint NotEmpty">This field must contain at
+     * least one element.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -69,10 +65,8 @@ public class ProductScope  extends com.google.api.ads.adwords.axis.v201402.cm.Cr
     /**
      * Sets the dimensions value for this ProductScope.
      * 
-     * @param dimensions   * <span class="constraint Selectable">This field can be selected
-     * using the value "Dimensions".</span>
-     *                     <span class="constraint NotEmpty">This field must
-     * contain at least one element.</span>
+     * @param dimensions   * <span class="constraint NotEmpty">This field must contain at
+     * least one element.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

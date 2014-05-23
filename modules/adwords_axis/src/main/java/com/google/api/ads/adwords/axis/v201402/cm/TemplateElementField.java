@@ -13,15 +13,11 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class TemplateElementField  implements java.io.Serializable {
     /* The name of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.String name;
 
     /* The type of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldType".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.TemplateElementFieldType type;
@@ -29,9 +25,7 @@ public class TemplateElementField  implements java.io.Serializable {
     /* Text value for text field types. Null if not text field.
      *                 The field is a text field if type is ADDRESS, ENUM,
      * TEXT, URL,
-     *                 or VISIBLE_URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldText".</span> */
+     *                 or VISIBLE_URL. */
     private java.lang.String fieldText;
 
     /* Media value for non-text field types. Null if a text field.
@@ -58,8 +52,6 @@ public class TemplateElementField  implements java.io.Serializable {
      * Gets the name value for this TemplateElementField.
      * 
      * @return name   * The name of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -72,8 +64,6 @@ public class TemplateElementField  implements java.io.Serializable {
      * Sets the name value for this TemplateElementField.
      * 
      * @param name   * The name of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldName".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -86,8 +76,6 @@ public class TemplateElementField  implements java.io.Serializable {
      * Gets the type value for this TemplateElementField.
      * 
      * @return type   * The type of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldType".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -100,8 +88,6 @@ public class TemplateElementField  implements java.io.Serializable {
      * Sets the type value for this TemplateElementField.
      * 
      * @param type   * The type of this field.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldType".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -117,8 +103,6 @@ public class TemplateElementField  implements java.io.Serializable {
      *                 The field is a text field if type is ADDRESS, ENUM,
      * TEXT, URL,
      *                 or VISIBLE_URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldText".</span>
      */
     public java.lang.String getFieldText() {
         return fieldText;
@@ -132,8 +116,6 @@ public class TemplateElementField  implements java.io.Serializable {
      *                 The field is a text field if type is ADDRESS, ENUM,
      * TEXT, URL,
      *                 or VISIBLE_URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "TemplateElementFieldText".</span>
      */
     public void setFieldText(java.lang.String fieldText) {
         this.fieldText = fieldText;

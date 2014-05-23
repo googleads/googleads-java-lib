@@ -17,24 +17,15 @@ public class FrequencyCap  implements java.io.Serializable {
     /* Maximum number of impressions allowed during the time range
      * by this cap.
      *                 To remove the frequency cap on a campaign, set this
-     * field to {@code 0}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "FrequencyCapMaxImpressions".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span> */
+     * field to {@code 0}. */
     private java.lang.Long impressions;
 
     /* Unit of time the cap is defined at.
-     *                 Only the Day, Week and Month time units are supported.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TimeUnit".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+     *                 Only the Day, Week and Month time units are supported. */
     private com.google.api.ads.adwords.axis.v201402.cm.TimeUnit timeUnit;
 
     /* The level on which the cap is to be applied (creative/adgroup).
-     * Cap is applied to all the entities of this level in the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Level".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * Cap is applied to all the entities of this level in the campaign. */
     private com.google.api.ads.adwords.axis.v201402.cm.Level level;
 
     public FrequencyCap() {
@@ -57,9 +48,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * by this cap.
      *                 To remove the frequency cap on a campaign, set this
      * field to {@code 0}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "FrequencyCapMaxImpressions".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getImpressions() {
         return impressions;
@@ -73,9 +61,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * by this cap.
      *                 To remove the frequency cap on a campaign, set this
      * field to {@code 0}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "FrequencyCapMaxImpressions".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setImpressions(java.lang.Long impressions) {
         this.impressions = impressions;
@@ -87,9 +72,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * 
      * @return timeUnit   * Unit of time the cap is defined at.
      *                 Only the Day, Week and Month time units are supported.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TimeUnit".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.TimeUnit getTimeUnit() {
         return timeUnit;
@@ -101,9 +83,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * 
      * @param timeUnit   * Unit of time the cap is defined at.
      *                 Only the Day, Week and Month time units are supported.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "TimeUnit".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setTimeUnit(com.google.api.ads.adwords.axis.v201402.cm.TimeUnit timeUnit) {
         this.timeUnit = timeUnit;
@@ -115,9 +94,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * 
      * @return level   * The level on which the cap is to be applied (creative/adgroup).
      * Cap is applied to all the entities of this level in the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Level".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.Level getLevel() {
         return level;
@@ -129,9 +105,6 @@ public class FrequencyCap  implements java.io.Serializable {
      * 
      * @param level   * The level on which the cap is to be applied (creative/adgroup).
      * Cap is applied to all the entities of this level in the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Level".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setLevel(com.google.api.ads.adwords.axis.v201402.cm.Level level) {
         this.level = level;

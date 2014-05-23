@@ -13,17 +13,13 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class ConversionOptimizerEligibility  implements java.io.Serializable {
     /* If the campaign is eligible to enter conversion optimizer.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean eligible;
 
     /* Reason why a campaign would be rejected for conversion optimizer.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "RejectionReasons".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerEligibilityRejectionReason[] rejectionReasons;
 
     public ConversionOptimizerEligibility() {
@@ -41,8 +37,6 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * Gets the eligible value for this ConversionOptimizerEligibility.
      * 
      * @return eligible   * If the campaign is eligible to enter conversion optimizer.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -55,8 +49,6 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * Sets the eligible value for this ConversionOptimizerEligibility.
      * 
      * @param eligible   * If the campaign is eligible to enter conversion optimizer.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Eligible".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -69,10 +61,8 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * Gets the rejectionReasons value for this ConversionOptimizerEligibility.
      * 
      * @return rejectionReasons   * Reason why a campaign would be rejected for conversion optimizer.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "RejectionReasons".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerEligibilityRejectionReason[] getRejectionReasons() {
         return rejectionReasons;
@@ -83,10 +73,8 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
      * Sets the rejectionReasons value for this ConversionOptimizerEligibility.
      * 
      * @param rejectionReasons   * Reason why a campaign would be rejected for conversion optimizer.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "RejectionReasons".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setRejectionReasons(com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerEligibilityRejectionReason[] rejectionReasons) {
         this.rejectionReasons = rejectionReasons;

@@ -20,6 +20,7 @@ import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
 import com.google.api.ads.adwords.lib.utils.RawReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
@@ -65,7 +66,8 @@ public class ReportDownloaderTest {
   @Test
   public void testSuccess() throws Exception {
     ByteArrayInputStream stream = new ByteArrayInputStream("Report data".getBytes());
-    RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(200, stream);
+    RawReportDownloadResponse rawResponse =
+        new RawReportDownloadResponse(200, stream, AdHocReportDownloadHelper.REPORT_CHARSET);
     ReportDownloadResponse response =
         new ReportDownloader(adWordsSession).handleResponse(rawResponse);
     assertEquals(200, response.getHttpStatus());
@@ -77,7 +79,8 @@ public class ReportDownloaderTest {
   public void testFailure_cannotReadStream() throws Exception {
     InputStream stream = Mockito.mock(InputStream.class);
     when(stream.read(isA(byte[].class))).thenThrow(new IOException());
-    RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(400, stream);
+    RawReportDownloadResponse rawResponse =
+        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET);
     try {
       new ReportDownloader(adWordsSession).handleResponse(rawResponse);
       fail("Should have thrown an exception");
@@ -89,7 +92,8 @@ public class ReportDownloaderTest {
   @Test
   public void testFailure_validXmlResponse() throws Exception {
     InputStream stream = new ByteArrayInputStream(GOLDEN_ERROR_XML.getBytes());
-    RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(400, stream);
+    RawReportDownloadResponse rawResponse =
+        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET);
     try {
       new ReportDownloader(adWordsSession).handleResponse(rawResponse);
       fail("Should have thrown an exception");
@@ -104,7 +108,8 @@ public class ReportDownloaderTest {
   @Test
   public void testFailure_mostlyValidXmlResponse() throws Exception {
     InputStream stream = new ByteArrayInputStream(ERROR_XML.getBytes());
-    RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(400, stream);
+    RawReportDownloadResponse rawResponse =
+        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET);
     try {
       new ReportDownloader(adWordsSession).handleResponse(rawResponse);
       fail("Should have thrown an exception");
@@ -119,7 +124,8 @@ public class ReportDownloaderTest {
   @Test
   public void testFailure_invalidXmlResponse() throws Exception {
     InputStream stream = new ByteArrayInputStream(ERROR_TEXT.getBytes());
-    RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(400, stream);
+    RawReportDownloadResponse rawResponse =
+        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET);
     try {
       new ReportDownloader(adWordsSession).handleResponse(rawResponse);
       fail("Should have thrown an exception");

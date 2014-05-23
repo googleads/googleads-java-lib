@@ -9,7 +9,10 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Money;
 
 /**
  * 
- *             Represents a set of stats for a traffic estimate.
+ *             Represents a set of stats for a daily traffic estimate.
+ *             As of v201406 {@code averageCpc}, {@code averagePosition} and {@code clickThroughRate} will be
+ *             {@code null} when not defined (respectively, if {@code clicksPerDay} or
+ *             {@code impressionsPerDay} are 0).
  *           
  * 
  * <p>Java class for StatsEstimate complex type.
@@ -23,9 +26,9 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Money;
  *       &lt;sequence>
  *         &lt;element name="averageCpc" type="{https://adwords.google.com/api/adwords/cm/v201402}Money" minOccurs="0"/>
  *         &lt;element name="averagePosition" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+ *         &lt;element name="clickThroughRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="clicksPerDay" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
  *         &lt;element name="impressionsPerDay" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         &lt;element name="clickThroughRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="totalCost" type="{https://adwords.google.com/api/adwords/cm/v201402}Money" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -39,18 +42,18 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Money;
 @XmlType(name = "StatsEstimate", propOrder = {
     "averageCpc",
     "averagePosition",
+    "clickThroughRate",
     "clicksPerDay",
     "impressionsPerDay",
-    "clickThroughRate",
     "totalCost"
 })
 public class StatsEstimate {
 
     protected Money averageCpc;
     protected Double averagePosition;
+    protected Double clickThroughRate;
     protected Float clicksPerDay;
     protected Float impressionsPerDay;
-    protected Double clickThroughRate;
     protected Money totalCost;
 
     /**
@@ -102,6 +105,30 @@ public class StatsEstimate {
     }
 
     /**
+     * Gets the value of the clickThroughRate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    public Double getClickThroughRate() {
+        return clickThroughRate;
+    }
+
+    /**
+     * Sets the value of the clickThroughRate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    public void setClickThroughRate(Double value) {
+        this.clickThroughRate = value;
+    }
+
+    /**
      * Gets the value of the clicksPerDay property.
      * 
      * @return
@@ -147,30 +174,6 @@ public class StatsEstimate {
      */
     public void setImpressionsPerDay(Float value) {
         this.impressionsPerDay = value;
-    }
-
-    /**
-     * Gets the value of the clickThroughRate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getClickThroughRate() {
-        return clickThroughRate;
-    }
-
-    /**
-     * Sets the value of the clickThroughRate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setClickThroughRate(Double value) {
-        this.clickThroughRate = value;
     }
 
     /**

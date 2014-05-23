@@ -10,8 +10,14 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 public interface DataServiceInterface extends java.rmi.Remote {
 
     /**
-     * Returns a list of bid landscapes for the ad groups specified
-     * in the selector.
+     * Returns a list of {@link AdGroupBidLandscape}s for the ad groups
+     * specified in the selector.
+     *         In the result, the returned {@link LandscapePoint}s are grouped
+     * into
+     *         {@link AdGroupBidLandscape}s by their ad groups, and numberResults
+     * of paging limits the total
+     *         number of {@link LandscapePoint}s instead of number of {@link
+     * AdGroupBidLandscape}s.
      *         
      *         
      * @param serviceSelector Selects the entities to return bid landscapes
@@ -24,8 +30,14 @@ public interface DataServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidLandscapePage getAdGroupBidLandscape(com.google.api.ads.adwords.axis.v201402.cm.Selector serviceSelector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Returns a list of bid landscapes for the criteria specified
-     * in the selector.
+     * Returns a list of {@link CriterionBidLandscape}s for the criteria
+     * specified in the selector.
+     *         In the result, the returned {@link LandscapePoint}s are grouped
+     * into
+     *         {@link CriterionBidLandscape}s by their criteria, and numberResults
+     * of paging limits the total
+     *         number of {@link LandscapePoint}s instead of number of {@link
+     * CriterionBidLandscape}s.
      *         
      *         
      * @param serviceSelector Selects the entities to return bid landscapes
@@ -38,9 +50,14 @@ public interface DataServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201402.cm.CriterionBidLandscapePage getCriterionBidLandscape(com.google.api.ads.adwords.axis.v201402.cm.Selector serviceSelector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Returns a list of bid landscapes for the ad groups that match
-     * the query.
-     *         
+     * Returns a list of {@link AdGroupBidLandscape}s for the ad groups
+     * that match the query. In the
+     *         result, the returned {@link LandscapePoint}s are grouped into
+     * {@link AdGroupBidLandscape}s
+     *         by their ad groups, and numberResults of paging limits the
+     * total number of
+     *         {@link LandscapePoint}s instead of number of {@link AdGroupBidLandscape}s.
+     * 
      *         
      * @param query The SQL-like AWQL query string.
      *         
@@ -52,9 +69,14 @@ public interface DataServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201402.cm.AdGroupBidLandscapePage queryAdGroupBidLandscape(java.lang.String query) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Returns a list of bid landscapes for the criteria that match
-     * the query.
-     *         
+     * Returns a list of {@link CriterionBidLandscape}s for the criteria
+     * that match the query. In the
+     *         result, the returned {@link LandscapePoint}s are grouped into
+     * {@link CriterionBidLandscape}s
+     *         by their criteria, and numberResults of paging limits the
+     * total number of
+     *         {@link LandscapePoint}s instead of number of {@link CriterionBidLandscape}s.
+     * 
      *         
      * @param query The SQL-like AWQL query string.
      *         

@@ -20,10 +20,12 @@ public class BaseRateErrorReason implements java.io.Serializable {
     public static final java.lang.String _CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID = "CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID";
     public static final java.lang.String _INVALID_CURRENCY_CODE = "INVALID_CURRENCY_CODE";
     public static final java.lang.String _PRODUCT_TEMPLATE_ARCHIVED = "PRODUCT_TEMPLATE_ARCHIVED";
+    public static final java.lang.String _UNSUPPORTED_OPERATION = "UNSUPPORTED_OPERATION";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final BaseRateErrorReason CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID = new BaseRateErrorReason(_CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID);
     public static final BaseRateErrorReason INVALID_CURRENCY_CODE = new BaseRateErrorReason(_INVALID_CURRENCY_CODE);
     public static final BaseRateErrorReason PRODUCT_TEMPLATE_ARCHIVED = new BaseRateErrorReason(_PRODUCT_TEMPLATE_ARCHIVED);
+    public static final BaseRateErrorReason UNSUPPORTED_OPERATION = new BaseRateErrorReason(_UNSUPPORTED_OPERATION);
     public static final BaseRateErrorReason UNKNOWN = new BaseRateErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static BaseRateErrorReason fromValue(java.lang.String value)

@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID"/>
  *     &lt;enumeration value="INVALID_CURRENCY_CODE"/>
+ *     &lt;enumeration value="UNSUPPORTED_OPERATION"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -42,6 +43,14 @@ public enum BaseRateErrorReason {
      * 
      */
     INVALID_CURRENCY_CODE,
+
+    /**
+     * 
+     *                 Indicates that the requested operation is not supported.
+     *               
+     * 
+     */
+    UNSUPPORTED_OPERATION,
 
     /**
      * 

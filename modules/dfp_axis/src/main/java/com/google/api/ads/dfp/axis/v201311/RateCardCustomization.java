@@ -12,6 +12,9 @@ package com.google.api.ads.dfp.axis.v201311;
  * A customization of a {@link RateCard} which could be applied to
  * the line item
  *             and charges extra premiums.
+ *             
+ *             <p>Rate card customizations are referred to as premiums
+ * in the UI.
  */
 public class RateCardCustomization  implements java.io.Serializable {
     /* The ID of the {@link RateCard} object to which this rate card

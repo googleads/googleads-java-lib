@@ -753,8 +753,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal line item ID. Can be used to filter by
-     *                 proposal line item ID.
+     *                 Breaks down reporting data by {@link ProposalLineItem#id}. Can be used to filter by
+     *                 {@link ProposalLineItem#id}.
      *               
      * 
      */
@@ -762,8 +762,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal line item name. Can be used to filter by
-     *                 proposal line item name.
+     *                 Breaks down reporting data by {@link ProposalLineItem#name}. Can be used to filter by
+     *                 {@link ProposalLineItem#name}.
      *               
      * 
      */
@@ -771,7 +771,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal ID. Can be used to filter by proposal ID.
+     *                 Breaks down reporting data by {@link Proposal#id}. Can be used to filter by
+     *                 {@link Proposal#id}.
      *               
      * 
      */
@@ -779,7 +780,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal name. Can be used to filter by proposal name.
+     *                 Breaks down reporting data by {@link Proposal#name}. Can be used to filter by
+     *                 {@link Proposal#name}.
      *               
      * 
      */
@@ -787,8 +789,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by salesperson ID, including both salesperson and secondary
-     *                 salespeople. Can be used to filter by all salespeople ID.
+     *                 Breaks down reporting data by salesperson {@link User#id}, including both salesperson and
+     *                 secondary salespeople. Can be used to filter by all salespeople {@link User#id}.
      *               
      * 
      */
@@ -796,8 +798,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by salesperson name, including both salesperson and secondary
-     *                 salespeople. Can be used to filter by all salespeople name.
+     *                 Breaks down reporting data by salesperson {@link User#name}, including both salesperson and
+     *                 secondary salespeople. Can be used to filter by all salespeople {@link User#name}.
      *               
      * 
      */
@@ -805,8 +807,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal agency ID. Can be used to filter by
-     *                 proposal agency ID.
+     *                 Breaks down reporting data by proposal agency {@link Company#id}. Can be used to filter by
+     *                 proposal agency {@link Company#id}.
      *               
      * 
      */
@@ -814,8 +816,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by proposal agency name. Can be used to filter by
-     *                 proposal agency name.
+     *                 Breaks down reporting data by proposal agency {@link Company#name}. Can be used to filter by
+     *                 proposal agency {@link Company#name}.
      *               
      * 
      */
@@ -823,7 +825,7 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by product ID. Can be used to filter by product ID.
+     *                 Breaks down reporting data by {@link Product#id}. Can be used to filter by {@link Product#id}.
      *               
      * 
      */
@@ -831,7 +833,7 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by product name.
+     *                 Breaks down reporting data by {@link Product#name}.
      *               
      * 
      */
@@ -839,8 +841,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by product template ID. Can be used to filter by product template
-     *                 ID.
+     *                 Breaks down reporting data by {@link ProductTemplate#id}. Can be used to filter by
+     *                 {@link ProductTemplate#id}.
      *               
      * 
      */
@@ -848,8 +850,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by product template name. Can be used to filter by product template
-     *                 name.
+     *                 Breaks down reporting data by {@link ProductTemplate#name}. Can be used to filter by
+     *                 {@link ProductTemplate#name}.
      *               
      * 
      */

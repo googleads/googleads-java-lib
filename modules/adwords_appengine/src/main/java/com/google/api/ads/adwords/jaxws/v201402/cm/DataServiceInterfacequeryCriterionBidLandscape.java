@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns a list of bid landscapes for the criteria that match the query.
+ *             Returns a list of {@link CriterionBidLandscape}s for the criteria that match the query. In the
+ *             result, the returned {@link LandscapePoint}s are grouped into {@link CriterionBidLandscape}s
+ *             by their criteria, and numberResults of paging limits the total number of
+ *             {@link LandscapePoint}s instead of number of {@link CriterionBidLandscape}s.
  *             
  *             @param query The SQL-like AWQL query string.
  *             @return A list of bid landscapes.

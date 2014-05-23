@@ -13,9 +13,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class Campaign  implements java.io.Serializable {
     /* ID of this campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span> */
@@ -32,33 +29,20 @@ public class Campaign  implements java.io.Serializable {
      *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
      * be addressed by name.  If you
      *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
-     *                 <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     * <span class="constraint StringLength">This string must not be empty.</span> */
     private java.lang.String name;
 
-    /* Status of this campaign. On add, defaults to <code>ACTIVE</code>.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+    /* Status of this campaign. On add, defaults to <code>ACTIVE</code>. */
     private com.google.api.ads.adwords.axis.v201309.cm.CampaignStatus status;
 
     /* Serving status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ServingStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ServingStatus servingStatus;
 
     /* Date the campaign begins. On add, defaults to the current day
      * in the parent account's local timezone. The date's format should be
-     * YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * YYYYMMDD. */
     private java.lang.String startDate;
 
     /* Date the campaign ends. On add, defaults to <code>20371231</code>,
@@ -66,10 +50,7 @@ public class Campaign  implements java.io.Serializable {
      *                 campaign will run indefinitely. To set an existing
      * campaign to run indefinitely, set this
      *                 field to <code>203712<b>30</b></code>. The date's
-     * format should be YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * format should be YYYYMMDD. */
     private java.lang.String endDate;
 
     /* Current base budget of campaign; default if no custom budgets
@@ -80,17 +61,13 @@ public class Campaign  implements java.io.Serializable {
      * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.ConversionOptimizerEligibility conversionOptimizerEligibility;
 
-    /* Ad serving optimization status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdServingOptimizationStatus".</span> */
+    /* Ad serving optimization status. */
     private com.google.api.ads.adwords.axis.v201309.cm.AdServingOptimizationStatus adServingOptimizationStatus;
 
     /* Frequency cap for this campaign. */
     private com.google.api.ads.adwords.axis.v201309.cm.FrequencyCap frequencyCap;
 
-    /* List of settings for the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Settings".</span> */
+    /* List of settings for the campaign. */
     private com.google.api.ads.adwords.axis.v201309.cm.Setting[] settings;
 
     /* Network settings for the campaign indicating where the campaign
@@ -154,9 +131,6 @@ public class Campaign  implements java.io.Serializable {
      * Gets the id value for this Campaign.
      * 
      * @return id   * ID of this campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
@@ -170,9 +144,6 @@ public class Campaign  implements java.io.Serializable {
      * Sets the id value for this Campaign.
      * 
      * @param id   * ID of this campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
@@ -196,11 +167,7 @@ public class Campaign  implements java.io.Serializable {
      *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
      * be addressed by name.  If you
      *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
-     *                 <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * <span class="constraint StringLength">This string must not be empty.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -221,11 +188,7 @@ public class Campaign  implements java.io.Serializable {
      *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
      * be addressed by name.  If you
      *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
-     *                 <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * <span class="constraint StringLength">This string must not be empty.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -236,9 +199,6 @@ public class Campaign  implements java.io.Serializable {
      * Gets the status value for this Campaign.
      * 
      * @return status   * Status of this campaign. On add, defaults to <code>ACTIVE</code>.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.CampaignStatus getStatus() {
         return status;
@@ -249,9 +209,6 @@ public class Campaign  implements java.io.Serializable {
      * Sets the status value for this Campaign.
      * 
      * @param status   * Status of this campaign. On add, defaults to <code>ACTIVE</code>.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.CampaignStatus status) {
         this.status = status;
@@ -262,9 +219,6 @@ public class Campaign  implements java.io.Serializable {
      * Gets the servingStatus value for this Campaign.
      * 
      * @return servingStatus   * Serving status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ServingStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -277,9 +231,6 @@ public class Campaign  implements java.io.Serializable {
      * Sets the servingStatus value for this Campaign.
      * 
      * @param servingStatus   * Serving status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ServingStatus".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -294,9 +245,6 @@ public class Campaign  implements java.io.Serializable {
      * @return startDate   * Date the campaign begins. On add, defaults to the current day
      * in the parent account's local timezone. The date's format should be
      * YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getStartDate() {
         return startDate;
@@ -309,9 +257,6 @@ public class Campaign  implements java.io.Serializable {
      * @param startDate   * Date the campaign begins. On add, defaults to the current day
      * in the parent account's local timezone. The date's format should be
      * YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setStartDate(java.lang.String startDate) {
         this.startDate = startDate;
@@ -327,9 +272,6 @@ public class Campaign  implements java.io.Serializable {
      * campaign to run indefinitely, set this
      *                 field to <code>203712<b>30</b></code>. The date's
      * format should be YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getEndDate() {
         return endDate;
@@ -345,9 +287,6 @@ public class Campaign  implements java.io.Serializable {
      * campaign to run indefinitely, set this
      *                 field to <code>203712<b>30</b></code>. The date's
      * format should be YYYYMMDD.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndDate".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setEndDate(java.lang.String endDate) {
         this.endDate = endDate;
@@ -402,8 +341,6 @@ public class Campaign  implements java.io.Serializable {
      * Gets the adServingOptimizationStatus value for this Campaign.
      * 
      * @return adServingOptimizationStatus   * Ad serving optimization status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdServingOptimizationStatus".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.AdServingOptimizationStatus getAdServingOptimizationStatus() {
         return adServingOptimizationStatus;
@@ -414,8 +351,6 @@ public class Campaign  implements java.io.Serializable {
      * Sets the adServingOptimizationStatus value for this Campaign.
      * 
      * @param adServingOptimizationStatus   * Ad serving optimization status.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdServingOptimizationStatus".</span>
      */
     public void setAdServingOptimizationStatus(com.google.api.ads.adwords.axis.v201309.cm.AdServingOptimizationStatus adServingOptimizationStatus) {
         this.adServingOptimizationStatus = adServingOptimizationStatus;
@@ -446,8 +381,6 @@ public class Campaign  implements java.io.Serializable {
      * Gets the settings value for this Campaign.
      * 
      * @return settings   * List of settings for the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Settings".</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.Setting[] getSettings() {
         return settings;
@@ -458,8 +391,6 @@ public class Campaign  implements java.io.Serializable {
      * Sets the settings value for this Campaign.
      * 
      * @param settings   * List of settings for the campaign.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Settings".</span>
      */
     public void setSettings(com.google.api.ads.adwords.axis.v201309.cm.Setting[] settings) {
         this.settings = settings;

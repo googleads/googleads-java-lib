@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="FEATURE_NOT_BELONGS_TO_GROUP"/>
  *     &lt;enumeration value="SAME_GROUP_DIFFERENT_FEATURE"/>
  *     &lt;enumeration value="DIFFERENT_GROUP_SAME_FEATURE"/>
+ *     &lt;enumeration value="UNSUPPORTED_OPERATION"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -83,6 +84,14 @@ public enum RateCardCustomizationErrorReason {
      * 
      */
     DIFFERENT_GROUP_SAME_FEATURE,
+
+    /**
+     * 
+     *                 Indicates that the requested operation is not supported.
+     *               
+     * 
+     */
+    UNSUPPORTED_OPERATION,
 
     /**
      * 

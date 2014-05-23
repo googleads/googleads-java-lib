@@ -121,8 +121,8 @@ public class AddShoppingCampaign {
     // Display result.
     campaign = campaignAddResult.getValue(0);
 
-    System.out.printf("Campaign with name '%s' and ID %d was added.%n", campaign.getId(),
-        campaign.getName());
+    System.out.printf("Campaign with name '%s' and ID %d was added.%n", campaign.getName(),
+        campaign.getId());
 
     // Get the AdGroupService.
     AdGroupServiceInterface adGroupService =

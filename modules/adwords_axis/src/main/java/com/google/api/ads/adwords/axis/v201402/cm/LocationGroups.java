@@ -54,8 +54,6 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * 
      *                     This allows advertisers to target based on the
      * semantics of the location.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -84,8 +82,6 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * 
      *                     This allows advertisers to target based on the
      * semantics of the location.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -102,8 +98,6 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201402.cm.
      * 
      *                     This allows advertisers to target based on the
      * semantics of the location.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MatchingFunction".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

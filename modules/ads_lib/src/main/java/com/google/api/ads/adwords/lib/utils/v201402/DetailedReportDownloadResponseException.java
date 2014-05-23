@@ -51,6 +51,7 @@ public class DetailedReportDownloadResponseException extends ReportDownloadRespo
     return errorText;
   }
 
+  @Override
   public String toString() {
     List<String> parts = Lists.newArrayList();
     parts.add("HTTP Response Code: " + this.getHttpStatus());

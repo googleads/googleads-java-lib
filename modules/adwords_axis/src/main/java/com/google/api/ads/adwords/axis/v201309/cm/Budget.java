@@ -22,21 +22,16 @@ public class Budget  implements java.io.Serializable {
      * across
      *                 different campaigns--the system will then allocate
      * the Budget
-     *                 among the Campaigns to get the optimum result.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     *                 among the Campaigns to get the optimum result. */
     private java.lang.Long budgetId;
 
-    /* Name of the Budget. Every explicitly shared Budget must have
-     * a non-null non-empty name.
-     *                 In addition, all explicitly shared budget names owned
-     * by an account must be distinct. Budgets
-     *                 that are not explicitly shared derive their name from
-     * the attached Campaign's name.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+    /* Name of the Budget. When creating a Budget through BudgetService,
+     * every explicitly shared
+     *                 Budget must have a non-null non-empty name. In addition,
+     * all explicitly shared Budget
+     *                 names owned by an account must be distinct. Budgets
+     * that are not explicitly shared derive
+     *                 their name from the attached Campaign's name.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -45,19 +40,16 @@ public class Budget  implements java.io.Serializable {
      * (trimmed).</span> */
     private java.lang.String name;
 
-    /* Period over which to spend the budget. <code>MONTHLY</code>
-     * is not available to most users.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Period".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: REMOVE and SET.</span> */
+    /* Period over which to spend the budget. Defaults to DAILY when
+     * creating
+     *                 a Budget through BudgetService.
+     *                 <code>MONTHLY</code> is not available to most users.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetPeriod period;
 
     /* Amount of budget in the local currency for the account.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Amount".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
      * greater than or equal to 1.</span>
      *                 <span class="constraint ReadOnly">This field is read
@@ -65,9 +57,11 @@ public class Budget  implements java.io.Serializable {
      * Operator}s: REMOVE.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.Money amount;
 
-    /* Delivery method for the budget.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DeliveryMethod".</span>
+    /* Delivery method for the Budget which determines the rate at
+     * which the
+     *                 Budget is spent. Defaults to STANDARD and can be changed
+     * through
+     *                 BudgetService ADD or SET operations.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span> */
@@ -76,16 +70,12 @@ public class Budget  implements java.io.Serializable {
     /* Number of campaigns actively using this budget. This field
      * is only
      *                 populated for Get operations.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer referenceCount;
 
-    /* If true, this budget was created through the BudgetService
-     *                 or through the UI shared library with the purpose
-     * of sharing
-     *                 this budget across one or more campaigns.
+    /* If true, this budget was created with the purpose of sharing
+     * this budget across one or more campaigns.
      *                 <p>If false, this budget was created with the intention
      * to be
      *                 dedicatedly used with a single campaign, and the Budget's
@@ -95,19 +85,13 @@ public class Budget  implements java.io.Serializable {
      *                 and status. Attempting to share this budget with a
      * second Campaign will
      *                 result in an error.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsBudgetExplicitlyShared".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE.</span> */
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span> */
     private java.lang.Boolean isExplicitlyShared;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "BudgetStatus".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetStatus status;
 
     public Budget() {
@@ -147,9 +131,6 @@ public class Budget  implements java.io.Serializable {
      *                 different campaigns--the system will then allocate
      * the Budget
      *                 among the Campaigns to get the optimum result.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getBudgetId() {
         return budgetId;
@@ -170,9 +151,6 @@ public class Budget  implements java.io.Serializable {
      *                 different campaigns--the system will then allocate
      * the Budget
      *                 among the Campaigns to get the optimum result.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBudgetId(java.lang.Long budgetId) {
         this.budgetId = budgetId;
@@ -182,15 +160,13 @@ public class Budget  implements java.io.Serializable {
     /**
      * Gets the name value for this Budget.
      * 
-     * @return name   * Name of the Budget. Every explicitly shared Budget must have
-     * a non-null non-empty name.
-     *                 In addition, all explicitly shared budget names owned
-     * by an account must be distinct. Budgets
-     *                 that are not explicitly shared derive their name from
-     * the attached Campaign's name.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return name   * Name of the Budget. When creating a Budget through BudgetService,
+     * every explicitly shared
+     *                 Budget must have a non-null non-empty name. In addition,
+     * all explicitly shared Budget
+     *                 names owned by an account must be distinct. Budgets
+     * that are not explicitly shared derive
+     *                 their name from the attached Campaign's name.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -206,15 +182,13 @@ public class Budget  implements java.io.Serializable {
     /**
      * Sets the name value for this Budget.
      * 
-     * @param name   * Name of the Budget. Every explicitly shared Budget must have
-     * a non-null non-empty name.
-     *                 In addition, all explicitly shared budget names owned
-     * by an account must be distinct. Budgets
-     *                 that are not explicitly shared derive their name from
-     * the attached Campaign's name.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param name   * Name of the Budget. When creating a Budget through BudgetService,
+     * every explicitly shared
+     *                 Budget must have a non-null non-empty name. In addition,
+     * all explicitly shared Budget
+     *                 names owned by an account must be distinct. Budgets
+     * that are not explicitly shared derive
+     *                 their name from the attached Campaign's name.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -230,13 +204,13 @@ public class Budget  implements java.io.Serializable {
     /**
      * Gets the period value for this Budget.
      * 
-     * @return period   * Period over which to spend the budget. <code>MONTHLY</code>
-     * is not available to most users.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Period".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: REMOVE and SET.</span>
+     * @return period   * Period over which to spend the budget. Defaults to DAILY when
+     * creating
+     *                 a Budget through BudgetService.
+     *                 <code>MONTHLY</code> is not available to most users.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE and SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetPeriod getPeriod() {
         return period;
@@ -246,13 +220,13 @@ public class Budget  implements java.io.Serializable {
     /**
      * Sets the period value for this Budget.
      * 
-     * @param period   * Period over which to spend the budget. <code>MONTHLY</code>
-     * is not available to most users.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Period".</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: REMOVE and SET.</span>
+     * @param period   * Period over which to spend the budget. Defaults to DAILY when
+     * creating
+     *                 a Budget through BudgetService.
+     *                 <code>MONTHLY</code> is not available to most users.
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API for the following {@link Operator}s:
+     * REMOVE and SET.</span>
      */
     public void setPeriod(com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetPeriod period) {
         this.period = period;
@@ -263,9 +237,6 @@ public class Budget  implements java.io.Serializable {
      * Gets the amount value for this Budget.
      * 
      * @return amount   * Amount of budget in the local currency for the account.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Amount".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
      * greater than or equal to 1.</span>
      *                 <span class="constraint ReadOnly">This field is read
@@ -281,9 +252,6 @@ public class Budget  implements java.io.Serializable {
      * Sets the amount value for this Budget.
      * 
      * @param amount   * Amount of budget in the local currency for the account.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Amount".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint InRange">This field must be
      * greater than or equal to 1.</span>
      *                 <span class="constraint ReadOnly">This field is read
@@ -298,9 +266,11 @@ public class Budget  implements java.io.Serializable {
     /**
      * Gets the deliveryMethod value for this Budget.
      * 
-     * @return deliveryMethod   * Delivery method for the budget.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DeliveryMethod".</span>
+     * @return deliveryMethod   * Delivery method for the Budget which determines the rate at
+     * which the
+     *                 Budget is spent. Defaults to STANDARD and can be changed
+     * through
+     *                 BudgetService ADD or SET operations.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -313,9 +283,11 @@ public class Budget  implements java.io.Serializable {
     /**
      * Sets the deliveryMethod value for this Budget.
      * 
-     * @param deliveryMethod   * Delivery method for the budget.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DeliveryMethod".</span>
+     * @param deliveryMethod   * Delivery method for the Budget which determines the rate at
+     * which the
+     *                 Budget is spent. Defaults to STANDARD and can be changed
+     * through
+     *                 BudgetService ADD or SET operations.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -331,8 +303,6 @@ public class Budget  implements java.io.Serializable {
      * @return referenceCount   * Number of campaigns actively using this budget. This field
      * is only
      *                 populated for Get operations.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -347,8 +317,6 @@ public class Budget  implements java.io.Serializable {
      * @param referenceCount   * Number of campaigns actively using this budget. This field
      * is only
      *                 populated for Get operations.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -360,10 +328,8 @@ public class Budget  implements java.io.Serializable {
     /**
      * Gets the isExplicitlyShared value for this Budget.
      * 
-     * @return isExplicitlyShared   * If true, this budget was created through the BudgetService
-     *                 or through the UI shared library with the purpose
-     * of sharing
-     *                 this budget across one or more campaigns.
+     * @return isExplicitlyShared   * If true, this budget was created with the purpose of sharing
+     * this budget across one or more campaigns.
      *                 <p>If false, this budget was created with the intention
      * to be
      *                 dedicatedly used with a single campaign, and the Budget's
@@ -373,12 +339,9 @@ public class Budget  implements java.io.Serializable {
      *                 and status. Attempting to share this budget with a
      * second Campaign will
      *                 result in an error.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsBudgetExplicitlyShared".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public java.lang.Boolean getIsExplicitlyShared() {
         return isExplicitlyShared;
@@ -388,10 +351,8 @@ public class Budget  implements java.io.Serializable {
     /**
      * Sets the isExplicitlyShared value for this Budget.
      * 
-     * @param isExplicitlyShared   * If true, this budget was created through the BudgetService
-     *                 or through the UI shared library with the purpose
-     * of sharing
-     *                 this budget across one or more campaigns.
+     * @param isExplicitlyShared   * If true, this budget was created with the purpose of sharing
+     * this budget across one or more campaigns.
      *                 <p>If false, this budget was created with the intention
      * to be
      *                 dedicatedly used with a single campaign, and the Budget's
@@ -401,12 +362,9 @@ public class Budget  implements java.io.Serializable {
      *                 and status. Attempting to share this budget with a
      * second Campaign will
      *                 result in an error.</p>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "IsBudgetExplicitlyShared".</span><span
-     * class="constraint Filterable">This field can be filtered on.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE.</span>
      */
     public void setIsExplicitlyShared(java.lang.Boolean isExplicitlyShared) {
         this.isExplicitlyShared = isExplicitlyShared;
@@ -416,11 +374,8 @@ public class Budget  implements java.io.Serializable {
     /**
      * Gets the status value for this Budget.
      * 
-     * @return status   * <span class="constraint Selectable">This field can be selected
-     * using the value "BudgetStatus".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @return status   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetStatus getStatus() {
         return status;
@@ -430,11 +385,8 @@ public class Budget  implements java.io.Serializable {
     /**
      * Sets the status value for this Budget.
      * 
-     * @param status   * <span class="constraint Selectable">This field can be selected
-     * using the value "BudgetStatus".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * @param status   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201309.cm.BudgetBudgetStatus status) {
         this.status = status;

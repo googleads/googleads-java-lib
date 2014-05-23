@@ -13,6 +13,9 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  *             out of bounds.
  */
 public class CollectionSizeError  extends com.google.api.ads.adwords.axis.v201309.cm.ApiError  implements java.io.Serializable {
+    /* The error reason represented by an enum. */
+    private com.google.api.ads.adwords.axis.v201309.cm.CollectionSizeErrorReason reason;
+
     public CollectionSizeError() {
     }
 
@@ -20,12 +23,34 @@ public class CollectionSizeError  extends com.google.api.ads.adwords.axis.v20130
            java.lang.String fieldPath,
            java.lang.String trigger,
            java.lang.String errorString,
-           java.lang.String apiErrorType) {
+           java.lang.String apiErrorType,
+           com.google.api.ads.adwords.axis.v201309.cm.CollectionSizeErrorReason reason) {
         super(
             fieldPath,
             trigger,
             errorString,
             apiErrorType);
+        this.reason = reason;
+    }
+
+
+    /**
+     * Gets the reason value for this CollectionSizeError.
+     * 
+     * @return reason   * The error reason represented by an enum.
+     */
+    public com.google.api.ads.adwords.axis.v201309.cm.CollectionSizeErrorReason getReason() {
+        return reason;
+    }
+
+
+    /**
+     * Sets the reason value for this CollectionSizeError.
+     * 
+     * @param reason   * The error reason represented by an enum.
+     */
+    public void setReason(com.google.api.ads.adwords.axis.v201309.cm.CollectionSizeErrorReason reason) {
+        this.reason = reason;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -39,7 +64,10 @@ public class CollectionSizeError  extends com.google.api.ads.adwords.axis.v20130
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = super.equals(obj);
+        _equals = super.equals(obj) && 
+            ((this.reason==null && other.getReason()==null) || 
+             (this.reason!=null &&
+              this.reason.equals(other.getReason())));
         __equalsCalc = null;
         return _equals;
     }
@@ -51,6 +79,9 @@ public class CollectionSizeError  extends com.google.api.ads.adwords.axis.v20130
         }
         __hashCodeCalc = true;
         int _hashCode = super.hashCode();
+        if (getReason() != null) {
+            _hashCode += getReason().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -61,6 +92,13 @@ public class CollectionSizeError  extends com.google.api.ads.adwords.axis.v20130
 
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "CollectionSizeError"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reason");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "reason"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "CollectionSizeError.Reason"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**

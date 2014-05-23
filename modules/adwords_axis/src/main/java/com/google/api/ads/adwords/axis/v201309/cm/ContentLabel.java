@@ -15,9 +15,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class ContentLabel  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
     /* Content label type
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentLabelType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -43,9 +40,6 @@ public class ContentLabel  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * Gets the contentLabelType value for this ContentLabel.
      * 
      * @return contentLabelType   * Content label type
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentLabelType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -59,9 +53,6 @@ public class ContentLabel  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
      * Sets the contentLabelType value for this ContentLabel.
      * 
      * @param contentLabelType   * Content label type
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ContentLabelType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

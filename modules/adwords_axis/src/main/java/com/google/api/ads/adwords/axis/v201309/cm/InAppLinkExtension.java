@@ -29,8 +29,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309.cm.AdExtension  implements java.io.Serializable {
     /* The visible text displayed when the link in rendered in an
      * ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkText".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -38,8 +36,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
     private java.lang.String inAppLinkText;
 
     /* The destination URL of the in-app link.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkUrl".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -47,18 +43,14 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
     private java.lang.String inAppLinkUrl;
 
     /* The Application Store that the target application belongs to.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AppStore".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.InAppLinkExtensionAppStore appStore;
 
     /* The store-specific ID for the target application.
      *                     
      *                     <p>E.g. com.foo.bar for Google Play or 1234567
      * for iTunes.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "AppId".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String appId;
@@ -88,8 +80,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * 
      * @return inAppLinkText   * The visible text displayed when the link in rendered in an
      * ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkText".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -105,8 +95,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * 
      * @param inAppLinkText   * The visible text displayed when the link in rendered in an
      * ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkText".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -121,8 +109,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * Gets the inAppLinkUrl value for this InAppLinkExtension.
      * 
      * @return inAppLinkUrl   * The destination URL of the in-app link.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkUrl".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -137,8 +123,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * Sets the inAppLinkUrl value for this InAppLinkExtension.
      * 
      * @param inAppLinkUrl   * The destination URL of the in-app link.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "InAppLinkUrl".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      *                     <span class="constraint StringLength">The length
@@ -153,10 +137,8 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * Gets the appStore value for this InAppLinkExtension.
      * 
      * @return appStore   * The Application Store that the target application belongs to.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AppStore".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.InAppLinkExtensionAppStore getAppStore() {
         return appStore;
@@ -167,10 +149,8 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      * Sets the appStore value for this InAppLinkExtension.
      * 
      * @param appStore   * The Application Store that the target application belongs to.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AppStore".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setAppStore(com.google.api.ads.adwords.axis.v201309.cm.InAppLinkExtensionAppStore appStore) {
         this.appStore = appStore;
@@ -184,8 +164,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      *                     
      *                     <p>E.g. com.foo.bar for Google Play or 1234567
      * for iTunes.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "AppId".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -201,8 +179,6 @@ public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309
      *                     
      *                     <p>E.g. com.foo.bar for Google Play or 1234567
      * for iTunes.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "AppId".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

@@ -13,14 +13,8 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
  */
 public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ads.adwords.axis.v201309.cm.AdGroupExperimentBidMultipliers  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier maxCpcMultiplier;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "MaxContentCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier maxContentCpcMultiplier;
 
     public ManualCPCAdGroupExperimentBidMultipliers() {
@@ -40,9 +34,7 @@ public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Gets the maxCpcMultiplier value for this ManualCPCAdGroupExperimentBidMultipliers.
      * 
-     * @return maxCpcMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return maxCpcMultiplier
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier getMaxCpcMultiplier() {
         return maxCpcMultiplier;
@@ -52,9 +44,7 @@ public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Sets the maxCpcMultiplier value for this ManualCPCAdGroupExperimentBidMultipliers.
      * 
-     * @param maxCpcMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param maxCpcMultiplier
      */
     public void setMaxCpcMultiplier(com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier maxCpcMultiplier) {
         this.maxCpcMultiplier = maxCpcMultiplier;
@@ -64,9 +54,7 @@ public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Gets the maxContentCpcMultiplier value for this ManualCPCAdGroupExperimentBidMultipliers.
      * 
-     * @return maxContentCpcMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxContentCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return maxContentCpcMultiplier
      */
     public com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier getMaxContentCpcMultiplier() {
         return maxContentCpcMultiplier;
@@ -76,9 +64,7 @@ public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ad
     /**
      * Sets the maxContentCpcMultiplier value for this ManualCPCAdGroupExperimentBidMultipliers.
      * 
-     * @param maxContentCpcMultiplier   * <span class="constraint Selectable">This field can be selected
-     * using the value "MaxContentCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param maxContentCpcMultiplier
      */
     public void setMaxContentCpcMultiplier(com.google.api.ads.adwords.axis.v201309.cm.BidMultiplier maxContentCpcMultiplier) {
         this.maxContentCpcMultiplier = maxContentCpcMultiplier;

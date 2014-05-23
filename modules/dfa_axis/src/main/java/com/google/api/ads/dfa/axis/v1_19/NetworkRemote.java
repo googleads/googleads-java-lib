@@ -18,7 +18,7 @@ public interface NetworkRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_19.Permission[] getAllPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.NetworkPermission[] getAllNetworkPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.NetworkPermission[] getAssignedNetworkPermissions(long networkId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.NetworkRecordSet getNetworks(com.google.api.ads.dfa.axis.v1_19.NetworkSearchCriteria networkSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.AdministratorPermission[] getAdministratorPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.WidgetImageUploadResponse uploadNetworkWidgetImage(com.google.api.ads.dfa.axis.v1_19.WidgetImageUploadRequest request) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.NetworkRecordSet getNetworks(com.google.api.ads.dfa.axis.v1_19.NetworkSearchCriteria networkSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
 }

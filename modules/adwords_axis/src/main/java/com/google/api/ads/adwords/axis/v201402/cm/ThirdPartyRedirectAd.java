@@ -16,30 +16,22 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v201402.cm.RichMediaAd  implements java.io.Serializable {
     /* Defines whether or not the ad is cookie targeted.
      *                     (i.e. user list targeting, or the network's equivalent).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCookieTargeted".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private java.lang.Boolean isCookieTargeted;
 
     /* Defines whether or not the ad is targeting user interest.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsUserInterestTargeted".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.Boolean isUserInterestTargeted;
 
     /* Defines whether or not the ad contains a tracking pixel of
      * any kind.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsTagged".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.Boolean isTagged;
 
-    /* Video Types of the ad. (RealMedia, Quick Time etc.)
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "VideoTypes".</span> */
+    /* Video Types of the ad. (RealMedia, Quick Time etc.) */
     private com.google.api.ads.adwords.axis.v201402.cm.VideoType[] videoTypes;
 
     /* Allowed expanding directions. These directions are used to
@@ -47,9 +39,7 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      *                     publishers' ad slots. For example, if a slot allows
      * expansion toward the
      *                     right, only ads with EXPANDING_RIGHT specified
-     * will show up there.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ExpandingDirections".</span> */
+     * will show up there. */
     private com.google.api.ads.adwords.axis.v201402.cm.ThirdPartyRedirectAdExpandingDirection[] expandingDirections;
 
     public ThirdPartyRedirectAd() {
@@ -103,10 +93,8 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * 
      * @return isCookieTargeted   * Defines whether or not the ad is cookie targeted.
      *                     (i.e. user list targeting, or the network's equivalent).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCookieTargeted".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public java.lang.Boolean getIsCookieTargeted() {
         return isCookieTargeted;
@@ -118,10 +106,8 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * 
      * @param isCookieTargeted   * Defines whether or not the ad is cookie targeted.
      *                     (i.e. user list targeting, or the network's equivalent).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "IsCookieTargeted".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setIsCookieTargeted(java.lang.Boolean isCookieTargeted) {
         this.isCookieTargeted = isCookieTargeted;
@@ -132,8 +118,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * Gets the isUserInterestTargeted value for this ThirdPartyRedirectAd.
      * 
      * @return isUserInterestTargeted   * Defines whether or not the ad is targeting user interest.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsUserInterestTargeted".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -146,8 +130,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * Sets the isUserInterestTargeted value for this ThirdPartyRedirectAd.
      * 
      * @param isUserInterestTargeted   * Defines whether or not the ad is targeting user interest.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsUserInterestTargeted".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -161,8 +143,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * 
      * @return isTagged   * Defines whether or not the ad contains a tracking pixel of
      * any kind.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsTagged".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -176,8 +156,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * 
      * @param isTagged   * Defines whether or not the ad contains a tracking pixel of
      * any kind.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "IsTagged".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -190,8 +168,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * Gets the videoTypes value for this ThirdPartyRedirectAd.
      * 
      * @return videoTypes   * Video Types of the ad. (RealMedia, Quick Time etc.)
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "VideoTypes".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.VideoType[] getVideoTypes() {
         return videoTypes;
@@ -202,8 +178,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * Sets the videoTypes value for this ThirdPartyRedirectAd.
      * 
      * @param videoTypes   * Video Types of the ad. (RealMedia, Quick Time etc.)
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "VideoTypes".</span>
      */
     public void setVideoTypes(com.google.api.ads.adwords.axis.v201402.cm.VideoType[] videoTypes) {
         this.videoTypes = videoTypes;
@@ -227,8 +201,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * expansion toward the
      *                     right, only ads with EXPANDING_RIGHT specified
      * will show up there.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ExpandingDirections".</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.ThirdPartyRedirectAdExpandingDirection[] getExpandingDirections() {
         return expandingDirections;
@@ -244,8 +216,6 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2014
      * expansion toward the
      *                     right, only ads with EXPANDING_RIGHT specified
      * will show up there.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ExpandingDirections".</span>
      */
     public void setExpandingDirections(com.google.api.ads.adwords.axis.v201402.cm.ThirdPartyRedirectAdExpandingDirection[] expandingDirections) {
         this.expandingDirections = expandingDirections;

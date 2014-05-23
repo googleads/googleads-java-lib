@@ -47,10 +47,10 @@ import javax.xml.bind.annotation.XmlType;
     "adType"
 })
 @XmlSeeAlso({
-    MobileImageAd.class,
     MobileAd.class,
     DynamicSearchAd.class,
     ProductAd.class,
+    MobileImageAd.class,
     TextAd.class,
     ImageAd.class,
     TemplateAd.class,

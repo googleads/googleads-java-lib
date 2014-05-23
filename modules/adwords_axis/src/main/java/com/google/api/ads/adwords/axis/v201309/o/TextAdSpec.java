@@ -9,11 +9,13 @@ package com.google.api.ads.adwords.axis.v201309.o;
 
 
 /**
- * Specification for a text ad. Currently there are no customizable
- * options on text ads, but the presence of a {@code TextAdSpec} in a
- * request indicates that text ads are a desired result, and the presence
- * of a {@code TextAdSpec} in a response indicates that there are text
- * ads available in the requested inventory.
+ * Specification for a text ad. The presence of a {@code TextAdSpec}
+ * in a
+ *             request indicates that text ads are a desired result,
+ * and the presence
+ *             of a {@code TextAdSpec} in a response indicates that there
+ * are text
+ *             ads available in the requested inventory.
  */
 public class TextAdSpec  implements java.io.Serializable {
     public TextAdSpec() {

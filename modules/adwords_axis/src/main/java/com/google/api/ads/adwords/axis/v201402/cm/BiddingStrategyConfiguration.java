@@ -45,34 +45,22 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      *                 assigned a BiddingStrategyId. The BiddingStrategyId
      * can be shared across campaigns,
      *                 ad groups and ad group criteria.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span> */
     private java.lang.Long biddingStrategyId;
 
     /* Name of the bidding strategy. This is applicable only for flexible
      * bidding strategies.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String biddingStrategyName;
 
-    /* The type of the bidding strategy to be attached.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The type of the bidding strategy to be attached. */
     private com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategyType biddingStrategyType;
 
     /* Indicates where the bidding strategy is associated i.e. campaign,
      * ad group or
      *                 ad group criterion.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategySource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategySource biddingStrategySource;
@@ -126,9 +114,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      *                 assigned a BiddingStrategyId. The BiddingStrategyId
      * can be shared across campaigns,
      *                 ad groups and ad group criteria.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -147,9 +132,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      *                 assigned a BiddingStrategyId. The BiddingStrategyId
      * can be shared across campaigns,
      *                 ad groups and ad group criteria.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -163,9 +145,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * 
      * @return biddingStrategyName   * Name of the bidding strategy. This is applicable only for flexible
      * bidding strategies.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -179,9 +158,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * 
      * @param biddingStrategyName   * Name of the bidding strategy. This is applicable only for flexible
      * bidding strategies.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -194,9 +170,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Gets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @return biddingStrategyType   * The type of the bidding strategy to be attached.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategyType getBiddingStrategyType() {
         return biddingStrategyType;
@@ -207,9 +180,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Sets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @param biddingStrategyType   * The type of the bidding strategy to be attached.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategyType".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setBiddingStrategyType(com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategyType biddingStrategyType) {
         this.biddingStrategyType = biddingStrategyType;
@@ -222,9 +192,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * @return biddingStrategySource   * Indicates where the bidding strategy is associated i.e. campaign,
      * ad group or
      *                 ad group criterion.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategySource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -239,9 +206,6 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * @param biddingStrategySource   * Indicates where the bidding strategy is associated i.e. campaign,
      * ad group or
      *                 ad group criterion.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BiddingStrategySource".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

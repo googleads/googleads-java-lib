@@ -8,8 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Specification for a text ad. Currently there are no customizable
- *             options on text ads, but the presence of a {@code TextAdSpec} in a
+ *             Specification for a text ad. The presence of a {@code TextAdSpec} in a
  *             request indicates that text ads are a desired result, and the presence
  *             of a {@code TextAdSpec} in a response indicates that there are text
  *             ads available in the requested inventory.

@@ -59,10 +59,6 @@ public interface BaseRateServiceInterface extends java.rmi.Remote {
      *         <td>{@link BaseRate#id}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code status}</td>
-     *         <td>{@link BaseRate#status}</td>
-     *         </tr>
-     *         <tr>
      *         <td>{@code productTemplateId}</td>
      *         <td>{@link ProductTemplateBaseRate#id}<br><b>Note:</b>&nbsp;Cannot
      * be

@@ -16,16 +16,11 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  */
 public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.google.api.ads.adwords.axis.v201402.cm.AdGroupCriterionExperimentBidMultiplier  implements java.io.Serializable {
     /* Multiplier used for adjusting bids in manual maximum CPC bidding
-     * strategies.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+     * strategies. */
     private com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier maxCpcMultiplier;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "MultiplierSource".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.MultiplierSource multiplierSource;
 
     public ManualCPCAdGroupCriterionExperimentBidMultiplier() {
@@ -47,9 +42,6 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
      * 
      * @return maxCpcMultiplier   * Multiplier used for adjusting bids in manual maximum CPC bidding
      * strategies.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier getMaxCpcMultiplier() {
         return maxCpcMultiplier;
@@ -61,9 +53,6 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
      * 
      * @param maxCpcMultiplier   * Multiplier used for adjusting bids in manual maximum CPC bidding
      * strategies.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "MaxCpcMultiplier".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setMaxCpcMultiplier(com.google.api.ads.adwords.axis.v201402.cm.BidMultiplier maxCpcMultiplier) {
         this.maxCpcMultiplier = maxCpcMultiplier;
@@ -73,10 +62,8 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
     /**
      * Gets the multiplierSource value for this ManualCPCAdGroupCriterionExperimentBidMultiplier.
      * 
-     * @return multiplierSource   * <span class="constraint Selectable">This field can be selected
-     * using the value "MultiplierSource".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return multiplierSource   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.MultiplierSource getMultiplierSource() {
         return multiplierSource;
@@ -86,10 +73,8 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
     /**
      * Sets the multiplierSource value for this ManualCPCAdGroupCriterionExperimentBidMultiplier.
      * 
-     * @param multiplierSource   * <span class="constraint Selectable">This field can be selected
-     * using the value "MultiplierSource".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param multiplierSource   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setMultiplierSource(com.google.api.ads.adwords.axis.v201402.cm.MultiplierSource multiplierSource) {
         this.multiplierSource = multiplierSource;

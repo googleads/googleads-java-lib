@@ -29,8 +29,10 @@ public class CreativePlaceholder  implements java.io.Serializable {
 
     /* The companions that the creative is expected to have. This
      * attribute can
-     *                 only be set if the line item it belongs to has an
-     *                 {@code environmentType} of {@link EnvironmentType#VIDEO_PLAYER}. */
+     *                 only be set if the line item it belongs to has a
+     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
+     * or
+     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}. */
     private com.google.api.ads.dfp.axis.v201403.CreativePlaceholder[] companions;
 
     /* The set of label frequency caps applied directly to this creative
@@ -115,8 +117,10 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * 
      * @return companions   * The companions that the creative is expected to have. This
      * attribute can
-     *                 only be set if the line item it belongs to has an
-     *                 {@code environmentType} of {@link EnvironmentType#VIDEO_PLAYER}.
+     *                 only be set if the line item it belongs to has a
+     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
+     * or
+     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}.
      */
     public com.google.api.ads.dfp.axis.v201403.CreativePlaceholder[] getCompanions() {
         return companions;
@@ -128,8 +132,10 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * 
      * @param companions   * The companions that the creative is expected to have. This
      * attribute can
-     *                 only be set if the line item it belongs to has an
-     *                 {@code environmentType} of {@link EnvironmentType#VIDEO_PLAYER}.
+     *                 only be set if the line item it belongs to has a
+     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
+     * or
+     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}.
      */
     public void setCompanions(com.google.api.ads.dfp.axis.v201403.CreativePlaceholder[] companions) {
         this.companions = companions;

@@ -42,10 +42,6 @@ public interface RateCardCustomizationServiceInterface extends java.rmi.Remote {
      *         <td>{@code id}</td>
      *         <td>{@link RateCardCustomization#id}</td>
      *         </tr>
-     *         <tr>
-     *         <td>{@code status}</td>
-     *         <td>{@link RateCardCustomization#status}</td>
-     *         </tr>
      *         </table>
      *         
      *         

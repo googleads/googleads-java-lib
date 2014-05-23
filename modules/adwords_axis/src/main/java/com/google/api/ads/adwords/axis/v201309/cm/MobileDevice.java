@@ -11,27 +11,21 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 /**
  * Represents a Mobile Device Criterion.
  *             <p>A criterion of this type can only be created using
- * an ID. A criterion of this type is only targetable.
+ * an ID.
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
  */
 public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.String deviceName;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "ManufacturerName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private java.lang.String manufacturerName;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span> */
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType deviceType;
 
     /* <span class="constraint Selectable">This field can be selected
@@ -65,10 +59,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Gets the deviceName value for this MobileDevice.
      * 
-     * @return deviceName   * <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return deviceName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getDeviceName() {
         return deviceName;
@@ -78,10 +70,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Sets the deviceName value for this MobileDevice.
      * 
-     * @param deviceName   * <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param deviceName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setDeviceName(java.lang.String deviceName) {
         this.deviceName = deviceName;
@@ -91,10 +81,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Gets the manufacturerName value for this MobileDevice.
      * 
-     * @return manufacturerName   * <span class="constraint Selectable">This field can be selected
-     * using the value "ManufacturerName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return manufacturerName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public java.lang.String getManufacturerName() {
         return manufacturerName;
@@ -104,10 +92,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Sets the manufacturerName value for this MobileDevice.
      * 
-     * @param manufacturerName   * <span class="constraint Selectable">This field can be selected
-     * using the value "ManufacturerName".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param manufacturerName   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setManufacturerName(java.lang.String manufacturerName) {
         this.manufacturerName = manufacturerName;
@@ -117,10 +103,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Gets the deviceType value for this MobileDevice.
      * 
-     * @return deviceType   * <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @return deviceType   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType getDeviceType() {
         return deviceType;
@@ -130,10 +114,8 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201309.cm.Cr
     /**
      * Sets the deviceType value for this MobileDevice.
      * 
-     * @param deviceType   * <span class="constraint Selectable">This field can be selected
-     * using the value "DeviceType".</span>
-     *                     <span class="constraint ReadOnly">This field is
-     * read only and will be ignored when sent to the API.</span>
+     * @param deviceType   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
      */
     public void setDeviceType(com.google.api.ads.adwords.axis.v201309.cm.MobileDeviceDeviceType deviceType) {
         this.deviceType = deviceType;

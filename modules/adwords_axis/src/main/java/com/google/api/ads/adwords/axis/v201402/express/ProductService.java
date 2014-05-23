@@ -17,7 +17,7 @@ package com.google.api.ads.adwords.axis.v201402.express;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.Criterion  implements java.io.Serializable {
-    /* product service text
+    /* Text of the product service.
      *                     
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
@@ -34,8 +34,10 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
      *                     supported.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Locale".</span> */
+     *                     <p>This field is required for
+     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     * <span class="constraint Filterable">This field can be filtered on
+     * using the value "Locale".</span> */
     private java.lang.String locale;
 
     public ProductService() {
@@ -59,7 +61,7 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
     /**
      * Gets the text value for this ProductService.
      * 
-     * @return text   * product service text
+     * @return text   * Text of the product service.
      *                     
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
@@ -78,7 +80,7 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
     /**
      * Sets the text value for this ProductService.
      * 
-     * @param text   * product service text
+     * @param text   * Text of the product service.
      *                     
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
@@ -102,8 +104,10 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
      *                     supported.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Locale".</span>
+     *                     <p>This field is required for
+     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     * <span class="constraint Filterable">This field can be filtered on
+     * using the value "Locale".</span>
      */
     public java.lang.String getLocale() {
         return locale;
@@ -118,8 +122,10 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201402.cm.
      *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
      * is
      *                     supported.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Locale".</span>
+     *                     <p>This field is required for
+     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     * <span class="constraint Filterable">This field can be filtered on
+     * using the value "Locale".</span>
      */
     public void setLocale(java.lang.String locale) {
         this.locale = locale;

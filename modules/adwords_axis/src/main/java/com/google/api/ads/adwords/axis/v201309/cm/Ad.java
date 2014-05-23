@@ -16,28 +16,16 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class Ad  implements java.io.Serializable {
     /* ID of this ad. This field is ignored when creating
-     *                 ads using {@code AdGroupAdService}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+     *                 ads using {@code AdGroupAdService}. */
     private java.lang.Long id;
 
-    /* Destination URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Url".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span> */
+    /* Destination URL. */
     private java.lang.String url;
 
-    /* Visible URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DisplayUrl".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* Visible URL. */
     private java.lang.String displayUrl;
 
-    /* The device preference for the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DevicePreference".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* The device preference for the ad. */
     private java.lang.Long devicePreference;
 
     /* Indicates that this instance is a subtype of Ad.
@@ -68,9 +56,6 @@ public class Ad  implements java.io.Serializable {
      * 
      * @return id   * ID of this ad. This field is ignored when creating
      *                 ads using {@code AdGroupAdService}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public java.lang.Long getId() {
         return id;
@@ -82,9 +67,6 @@ public class Ad  implements java.io.Serializable {
      * 
      * @param id   * ID of this ad. This field is ignored when creating
      *                 ads using {@code AdGroupAdService}.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Id".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -95,9 +77,6 @@ public class Ad  implements java.io.Serializable {
      * Gets the url value for this Ad.
      * 
      * @return url   * Destination URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Url".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public java.lang.String getUrl() {
         return url;
@@ -108,9 +87,6 @@ public class Ad  implements java.io.Serializable {
      * Sets the url value for this Ad.
      * 
      * @param url   * Destination URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Url".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
      */
     public void setUrl(java.lang.String url) {
         this.url = url;
@@ -121,9 +97,6 @@ public class Ad  implements java.io.Serializable {
      * Gets the displayUrl value for this Ad.
      * 
      * @return displayUrl   * Visible URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DisplayUrl".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getDisplayUrl() {
         return displayUrl;
@@ -134,9 +107,6 @@ public class Ad  implements java.io.Serializable {
      * Sets the displayUrl value for this Ad.
      * 
      * @param displayUrl   * Visible URL.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DisplayUrl".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setDisplayUrl(java.lang.String displayUrl) {
         this.displayUrl = displayUrl;
@@ -147,9 +117,6 @@ public class Ad  implements java.io.Serializable {
      * Gets the devicePreference value for this Ad.
      * 
      * @return devicePreference   * The device preference for the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DevicePreference".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getDevicePreference() {
         return devicePreference;
@@ -160,9 +127,6 @@ public class Ad  implements java.io.Serializable {
      * Sets the devicePreference value for this Ad.
      * 
      * @param devicePreference   * The device preference for the ad.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DevicePreference".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      */
     public void setDevicePreference(java.lang.Long devicePreference) {
         this.devicePreference = devicePreference;

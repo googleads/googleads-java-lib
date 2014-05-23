@@ -21,8 +21,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Criterion  implements java.io.Serializable {
     /* Day of the week the schedule applies to.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DayOfWeek".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -32,8 +30,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
     private com.google.api.ads.adwords.axis.v201309.cm.DayOfWeek dayOfWeek;
 
     /* Starting hour in 24 hour time.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -46,8 +42,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
 
     /* Interval starts these minutes after the starting hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -58,8 +52,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
 
     /* Ending hour in 24 hour time; <code>24</code> signifies end
      * of the day.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -72,8 +64,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
 
     /* Interval ends these minutes after the ending hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -110,8 +100,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * Gets the dayOfWeek value for this AdSchedule.
      * 
      * @return dayOfWeek   * Day of the week the schedule applies to.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DayOfWeek".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -128,8 +116,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * Sets the dayOfWeek value for this AdSchedule.
      * 
      * @param dayOfWeek   * Day of the week the schedule applies to.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "DayOfWeek".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -146,8 +132,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * Gets the startHour value for this AdSchedule.
      * 
      * @return startHour   * Starting hour in 24 hour time.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -166,8 +150,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * Sets the startHour value for this AdSchedule.
      * 
      * @param startHour   * Starting hour in 24 hour time.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 23, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -187,8 +169,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @return startMinute   * Interval starts these minutes after the starting hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -206,8 +186,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @param startMinute   * Interval starts these minutes after the starting hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "StartMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -225,8 +203,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @return endHour   * Ending hour in 24 hour time; <code>24</code> signifies end
      * of the day.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -246,8 +222,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @param endHour   * Ending hour in 24 hour time; <code>24</code> signifies end
      * of the day.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndHour".</span>
      *                     <span class="constraint InRange">This field must
      * be between 0 and 24, inclusive.</span>
      *                     <span class="constraint ReadOnly">This field is
@@ -267,8 +241,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @return endMinute   * Interval ends these minutes after the ending hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>
@@ -286,8 +258,6 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201309.cm.Crit
      * 
      * @param endMinute   * Interval ends these minutes after the ending hour.
      *                     The value can be 0, 15, 30, and 45.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "EndMinute".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API for the following
      * {@link Operator}s: REMOVE and SET.</span>

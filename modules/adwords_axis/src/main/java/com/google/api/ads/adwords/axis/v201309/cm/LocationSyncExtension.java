@@ -14,8 +14,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  */
 public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201309.cm.AdExtension  implements java.io.Serializable {
     /* Email associated with the LBC backend data
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Email".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String email;
@@ -33,9 +31,7 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
     private java.lang.Long iconMediaId;
 
     /* Whether we should copy homepage url from LBC entries as the
-     * destination url in location extension.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ShouldSyncUrl".</span> */
+     * destination url in location extension. */
     private java.lang.Boolean shouldSyncUrl;
 
     public LocationSyncExtension() {
@@ -64,8 +60,6 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
      * Gets the email value for this LocationSyncExtension.
      * 
      * @return email   * Email associated with the LBC backend data
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Email".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -78,8 +72,6 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
      * Sets the email value for this LocationSyncExtension.
      * 
      * @param email   * Email associated with the LBC backend data
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Email".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -159,8 +151,6 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
      * 
      * @return shouldSyncUrl   * Whether we should copy homepage url from LBC entries as the
      * destination url in location extension.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ShouldSyncUrl".</span>
      */
     public java.lang.Boolean getShouldSyncUrl() {
         return shouldSyncUrl;
@@ -172,8 +162,6 @@ public class LocationSyncExtension  extends com.google.api.ads.adwords.axis.v201
      * 
      * @param shouldSyncUrl   * Whether we should copy homepage url from LBC entries as the
      * destination url in location extension.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ShouldSyncUrl".</span>
      */
     public void setShouldSyncUrl(java.lang.Boolean shouldSyncUrl) {
         this.shouldSyncUrl = shouldSyncUrl;

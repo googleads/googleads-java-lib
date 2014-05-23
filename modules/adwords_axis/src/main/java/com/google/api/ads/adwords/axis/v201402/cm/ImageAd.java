@@ -18,9 +18,6 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  imp
     private com.google.api.ads.adwords.axis.v201402.cm.Image image;
 
     /* The name label for this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageCreativeName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String name;
@@ -83,9 +80,6 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  imp
      * Gets the name value for this ImageAd.
      * 
      * @return name   * The name label for this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageCreativeName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -98,9 +92,6 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201402.cm.Ad  imp
      * Sets the name value for this ImageAd.
      * 
      * @param name   * The name label for this ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "ImageCreativeName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

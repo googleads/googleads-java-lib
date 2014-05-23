@@ -75,7 +75,9 @@ public class Proposal  implements java.io.Serializable {
      * its
      *                 {@link ProposalCompanyAssociation#companyId} will
      * be copied to
-     *                 {@link Order#advertiserId}. */
+     *                 {@link Order#advertiserId}.
+     *                 This attribute becomes readonly once the {@code Proposal}
+     * has been pushed. */
     private com.google.api.ads.dfp.axis.v201311.ProposalCompanyAssociation advertiser;
 
     /* List of agencies and the set of {@link Contact} objects associated
@@ -600,6 +602,8 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link ProposalCompanyAssociation#companyId} will
      * be copied to
      *                 {@link Order#advertiserId}.
+     *                 This attribute becomes readonly once the {@code Proposal}
+     * has been pushed.
      */
     public com.google.api.ads.dfp.axis.v201311.ProposalCompanyAssociation getAdvertiser() {
         return advertiser;
@@ -622,6 +626,8 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link ProposalCompanyAssociation#companyId} will
      * be copied to
      *                 {@link Order#advertiserId}.
+     *                 This attribute becomes readonly once the {@code Proposal}
+     * has been pushed.
      */
     public void setAdvertiser(com.google.api.ads.dfp.axis.v201311.ProposalCompanyAssociation advertiser) {
         this.advertiser = advertiser;

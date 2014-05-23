@@ -27,9 +27,6 @@ import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.common.annotations.VisibleForTesting;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -56,9 +53,6 @@ import javax.xml.namespace.QName;
  * @author Kevin Winter
  */
 public class ReportDownloader {
-
-  private static final Logger logger = LoggerFactory.getLogger(
-      AdHocReportDownloadHelper.class.getPackage().getName() + ".report_download");
 
   /** The version to append to url for Ad Hoc report downloads. */
   private static final String VERSION = "v201309";
@@ -111,7 +105,7 @@ public class ReportDownloader {
     }
     String responseText;
     try {
-      responseText = Streams.readAll(response.getInputStream());
+      responseText = Streams.readAll(response.getInputStream(), response.getCharset());
     } catch (IOException e1) {
       throw new ReportDownloadResponseException(response.getHttpStatus(), e1);
     }

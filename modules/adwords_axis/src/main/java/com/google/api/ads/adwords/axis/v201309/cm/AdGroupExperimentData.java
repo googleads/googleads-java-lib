@@ -13,19 +13,14 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
  */
 public class AdGroupExperimentData  implements java.io.Serializable {
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "ExperimentId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span> */
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span> */
     private java.lang.Long experimentId;
 
     /* Status of this adgroup in the experiment. It must be specified
      * while adding
      *                 experiment data, which could come through a SET as
      * well.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentDeltaStatus".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span> */
@@ -34,8 +29,6 @@ public class AdGroupExperimentData  implements java.io.Serializable {
     /* Status of the experiment row. If this is set to DELETED in
      * a SET operation, the adgroup
      *                 will be removed from the experiment.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentRowStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span> */
@@ -62,11 +55,8 @@ public class AdGroupExperimentData  implements java.io.Serializable {
     /**
      * Gets the experimentId value for this AdGroupExperimentData.
      * 
-     * @return experimentId   * <span class="constraint Selectable">This field can be selected
-     * using the value "ExperimentId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @return experimentId   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public java.lang.Long getExperimentId() {
         return experimentId;
@@ -76,11 +66,8 @@ public class AdGroupExperimentData  implements java.io.Serializable {
     /**
      * Sets the experimentId value for this AdGroupExperimentData.
      * 
-     * @param experimentId   * <span class="constraint Selectable">This field can be selected
-     * using the value "ExperimentId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @param experimentId   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public void setExperimentId(java.lang.Long experimentId) {
         this.experimentId = experimentId;
@@ -94,8 +81,6 @@ public class AdGroupExperimentData  implements java.io.Serializable {
      * while adding
      *                 experiment data, which could come through a SET as
      * well.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentDeltaStatus".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -112,8 +97,6 @@ public class AdGroupExperimentData  implements java.io.Serializable {
      * while adding
      *                 experiment data, which could come through a SET as
      * well.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentDeltaStatus".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -129,8 +112,6 @@ public class AdGroupExperimentData  implements java.io.Serializable {
      * @return experimentDataStatus   * Status of the experiment row. If this is set to DELETED in
      * a SET operation, the adgroup
      *                 will be removed from the experiment.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentRowStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
@@ -146,8 +127,6 @@ public class AdGroupExperimentData  implements java.io.Serializable {
      * @param experimentDataStatus   * Status of the experiment row. If this is set to DELETED in
      * a SET operation, the adgroup
      *                 will be removed from the experiment.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ExperimentRowStatus".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
