@@ -2069,8 +2069,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue of the proposal line item. When revenue is summed up to proposal
-     *                 level additional adjustment is applied.
+     *                 The contracted net revenue of the {@link ProposalLineItem}. When revenue is summed up to
+     *                 proposal level additional adjustment is applied.
      *               
      * 
      */
@@ -2078,8 +2078,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue in local currency of the proposal line item. When revenue is summed
-     *                 up to proposal level additional adjustment is applied.
+     *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}. When revenue
+     *                 is summed up to proposal level additional adjustment is applied.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
      *               
@@ -2089,7 +2089,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted gross revenue of the proposal line item, including agency commission. When
+     *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission. When
      *                 revenue is summed up to proposal level additional adjustment is applied.
      *               
      * 
@@ -2098,8 +2098,9 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted gross revenue in local currency of the proposal line item, including agency
-     *                 commission. When revenue is summed up to proposal level additional adjustment is applied.
+     *                 The contracted gross revenue in the local currency of the {@link ProposalLineItem}, including
+     *                 agency commission. When revenue is summed up to proposal level additional adjustment is
+     *                 applied.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
      *               
@@ -2109,8 +2110,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue of the proposal line item. This revenue is the raw revenue without
-     *                 proposal additional adjustment applied.
+     *                 The contracted net revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
+     *                 without proposal additional adjustment applied.
      *               
      * 
      */
@@ -2118,8 +2119,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted gross revenue of the proposal line item. This revenue is the raw revenue without
-     *                 proposal additional adjustment applied, and including agency commission.
+     *                 The contracted gross revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
+     *                 without proposal additional adjustment applied, and including agency commission.
      *               
      * 
      */
@@ -2127,7 +2128,8 @@ public enum Column {
 
     /**
      * 
-     *                 The value added tax on contracted net revenue of the proposal line item or proposal.
+     *                 The value added tax on contracted net revenue of the {@link ProposalLineItem} or
+     *                 {@link Proposal}.
      *               
      * 
      */
@@ -2135,8 +2137,8 @@ public enum Column {
 
     /**
      * 
-     *                 The value added tax on contracted net revenue in local currency of the proposal line item or
-     *                 proposal.
+     *                 The value added tax on contracted net revenue in the local currency of the
+     *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_VAT}
      *               
@@ -2146,7 +2148,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted agency commission of the proposal line item or proposal.
+     *                 The contracted agency commission of the {@link ProposalLineItem} or {@link Proposal}.
      *               
      * 
      */
@@ -2154,7 +2156,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted agency commission in local currency of the proposal line item or proposal.
+     *                 The contracted agency commission in the local currency of the {@link ProposalLineItem} or
+     *                 {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION}
      *               
@@ -2164,7 +2167,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted impressions of the proposal line item.
+     *                 The contracted impressions of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2172,7 +2175,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted clicks of the proposal line item.
+     *                 The contracted clicks of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2180,7 +2183,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted volume of the proposal line item. Volume represents impressions for
+     *                 The contracted volume of the {@link ProposalLineItem}. Volume represents impressions for
      *                 rate type CPM, clicks for CPC, and days for CPD.
      *               
      * 
@@ -2189,7 +2192,7 @@ public enum Column {
 
     /**
      * 
-     *                 The budget of the proposal.
+     *                 The budget of the {@link Proposal}.
      *               
      * 
      */
@@ -2197,8 +2200,8 @@ public enum Column {
 
     /**
      * 
-     *                 The remaining budget of the proposal. It is calculated by subtracting the contracted net
-     *                 revenue from the budget.
+     *                 The remaining budget of the {@link Proposal}. It is calculated by subtracting the contracted
+     *                 net revenue from the budget.
      *               
      * 
      */
@@ -2206,7 +2209,7 @@ public enum Column {
 
     /**
      * 
-     *                 The buffered impressions of proposal line item.
+     *                 The buffered impressions of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2214,7 +2217,7 @@ public enum Column {
 
     /**
      * 
-     *                 The buffered clicks of proposal line item.
+     *                 The buffered clicks of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2222,8 +2225,10 @@ public enum Column {
 
     /**
      * 
-     *                 The unified net revenue of the proposal line item. It is a combination of the billable net
-     *                 revenue and the forecasted net revenue when query date range is from past to future.
+     *                 The unified net revenue of the {@link ProposalLineItem}. It is a combination of
+     *                 {@link #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}, {@link #BILLING_BILLABLE_NET_REVENUE},
+     *                 and {@link #UNIFIED_REVENUE_FORECASTED_NET_REVENUE} when query date range spans historical
+     *                 delivery and forecasted delivery.
      *               
      * 
      */
@@ -2231,9 +2236,11 @@ public enum Column {
 
     /**
      * 
-     *                 The unified net revenue of the proposal line item in local currency. It is a combination of the
-     *                 billable net revenue and the forecasted net revenue when query date range is from past to
-     *                 future.
+     *                 The unified net revenue of the {@link ProposalLineItem} in local currency. It is a
+     *                 combination of {@link #UNIFIED_REVENUE_LOCAL_UNRECONCILED_NET_REVENUE},
+     *                 {@link #BILLING_LOCAL_BILLABLE_NET_REVENUE},
+     *                 and {@link #UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE} when query date range spans
+     *                 historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE}
      *               
@@ -2243,8 +2250,10 @@ public enum Column {
 
     /**
      * 
-     *                 The unified gross revenue of the proposal line item. It is a combination of the billable gross
-     *                 revenue and the forecasted gross revenue when query date range is from past to future.
+     *                 The unified net revenue of the {@link ProposalLineItem}. It is a combination of
+     *                 {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}, {@link #BILLING_BILLABLE_GROSS_REVENUE},
+     *                 and {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE} when query date range spans historical
+     *                 delivery and forecasted delivery.
      *               
      * 
      */
@@ -2252,9 +2261,11 @@ public enum Column {
 
     /**
      * 
-     *                 The unified gross revenue of the proposal line item in local currency. It is a combination of
-     *                 the billable gross revenue and the forecasted gross revenue when query date range is from past
-     *                 to future.
+     *                 The unified gross revenue of the {@link ProposalLineItem} in local currency. It is a
+     *                 combination of {@link #UNIFIED_REVENUE_LOCAL_UNRECONCILED_GROSS_REVENUE},
+     *                 {@link #BILLING_LOCAL_BILLABLE_GROSS_REVENUE}, and
+     *                 {@link #UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE} when query date range spans historical
+     *                 delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE}
      *               
@@ -2264,9 +2275,10 @@ public enum Column {
 
     /**
      * 
-     *                 The unified agency commission of the proposal line item. It is a combination of the billable
-     *                 agency commission and the forecasted agency commission when query date range is from past to
-     *                 future.
+     *                 The unified agency commission of the {@link ProposalLineItem}. It is a combination of the
+     *                 unreconciled agency commission, the {@link #BILLING_BILLABLE_AGENCY_COMMISSION},
+     *                 and the forecasted agency commission when query date range spans historical delivery and
+     *                 forecasted delivery.
      *               
      * 
      */
@@ -2274,9 +2286,10 @@ public enum Column {
 
     /**
      * 
-     *                 The unified agency commission of the proposal line item in local currency. It is a combination
-     *                 of the billable agency commission and the forecasted agency commission when query date range is
-     *                 from past to future.
+     *                 The unified agency commission of the {@link ProposalLineItem} in local currency. It is a
+     *                 combination of the unreconciled agency commission, the
+     *                 {@link #BILLING_BILLABLE_AGENCY_COMMISSION}, and the forecasted agency commission when query
+     *                 date range spans historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION}
      *               
@@ -2286,9 +2299,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline net revenue of the proposal line item. It is calculated by multiplying probability
-     *                 to close by the contracted revenue for those unsold proposals. There is no revenue for those
-     *                 sold proposals.
+     *                 The pipeline net revenue of the {@link ProposalLineItem}. It is calculated by multiplying
+     *                 probability to close by the contracted revenue for those unsold {@link ProposalLineItem}s.
+     *                 There is no revenue for those sold {@link ProposalLineItem}s.
      *               
      * 
      */
@@ -2296,9 +2309,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline net revenue in local currency of the proposal line item. It is calculated by
-     *                 multiplying probability to close by the contracted revenue for those unsold proposals. There
-     *                 is no revenue for those sold proposals.
+     *                 The pipeline net revenue in the local currency of the {@link ProposalLineItem}. It is
+     *                 calculated by multiplying probability to close by the contracted revenue for those unsold
+     *                 {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE}
      *               
@@ -2308,9 +2321,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline gross revenue of the proposal line item. It is calculated by multiplying
+     *                 The pipeline gross revenue of the {@link ProposalLineItem}. It is calculated by multiplying
      *                 probability to close by the contracted revenue including agency commission for those
-     *                 unsold proposals. There is no revenue for those sold proposals.
+     *                 unsold {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
      *               
      * 
      */
@@ -2318,9 +2331,10 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline gross revenue in local currency of the proposal line item. It is calculated by
-     *                 multiplying probability to close by the contracted revenue including agency commission
-     *                 for those unsold proposals. There is no revenue for those sold proposals.
+     *                 The pipeline gross revenue in the local currency of the {@link ProposalLineItem}. It is
+     *                 calculated by multiplying probability to close by the contracted revenue including agency
+     *                 commission for those unsold {@link ProposalLineItem}s. There is no revenue for those sold
+     *                 {@link ProposalLineItem}s.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_GROSS_REVENUE}
      *               
@@ -2330,9 +2344,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline agency commission of the proposal line item. It is calculated by multiplying
-     *                 probability to close by the contracted agency commission for those unsold proposals.
-     *                 There is no revenue for those sold proposals.
+     *                 The pipeline agency commission of the {@link ProposalLineItem}. It is calculated by multiplying
+     *                 probability to close by the contracted agency commission for those unsold
+     *                 {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
      *               
      * 
      */
@@ -2340,9 +2354,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline agency commission in local currency of the proposal line item. It is calculated
-     *                 by multiplying probability to close by the contracted agency commission for those unsold
-     *                 proposals. There is no revenue for those sold proposals.
+     *                 The pipeline agency commission in the local currency of the {@link ProposalLineItem}. It is
+     *                 calculated by multiplying probability to close by the contracted agency commission for those
+     *                 unsold {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION}
      *               
@@ -2352,7 +2366,7 @@ public enum Column {
 
     /**
      * 
-     *                 The last reconciliation date of the proposal line item.
+     *                 The last reconciliation date of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2360,7 +2374,7 @@ public enum Column {
 
     /**
      * 
-     *                 The reconciliation status of the proposal line item.
+     *                 The reconciliation status of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2368,8 +2382,8 @@ public enum Column {
 
     /**
      * 
-     *                 The DFP volume of the proposal line item, which is used for reconciliation. Volume represents
-     *                 impressions for rate type CPM, clicks for CPC and days for CPD.
+     *                 The DFP volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
+     *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *               
      * 
      */
@@ -2377,8 +2391,8 @@ public enum Column {
 
     /**
      * 
-     *                 The third party volume of the proposal line item, which is used for reconciliation. Volume
-     *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
+     *                 The third party volume of the {@link ProposalLineItem}, which is used for reconciliation.
+     *                 Volume represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *               
      * 
      */
@@ -2386,7 +2400,7 @@ public enum Column {
 
     /**
      * 
-     *                 The reconciled volume of the proposal line item, which is used for reconciliation. Volume
+     *                 The reconciled volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *               
      * 
@@ -2403,8 +2417,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net revenue of the proposal line item. It is calculated from reconciled volume and
-     *                 rate, with cap applied.
+     *                 The billable net revenue of the {@link ProposalLineItem}. It is calculated from reconciled
+     *                 volume and rate, with cap applied.
      *               
      * 
      */
@@ -2412,8 +2426,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net revenue in local currency of the proposal line item. It is calculated from
-     *                 reconciled volume and rate, with cap applied.
+     *                 The billable net revenue in the local currency of the {@link ProposalLineItem}. It is
+     *                 calculated from reconciled volume and rate, with cap applied.
      *                 
      *                 See {@link #BILLING_BILLABLE_NET_REVENUE}
      *               
@@ -2423,8 +2437,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable gross revenue of the proposal line item. It is calculated from reconciled volume
-     *                 and rate, with cap applied, and including agency commission.
+     *                 The billable gross revenue of the {@link ProposalLineItem}. It is calculated from reconciled
+     *                 volume and rate, with cap applied, and including agency commission.
      *               
      * 
      */
@@ -2432,8 +2446,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable gross revenue in local currency of the proposal line item. It is calculated from
-     *                 reconciled volume and rate, with cap applied, and including agency commission.
+     *                 The billable gross revenue in the local currency of the {@link ProposalLineItem}. It is
+     *                 calculated from reconciled volume and rate, with cap applied, and including agency commission.
      *                 
      *                 See {@link #BILLING_BILLABLE_GROSS_REVENUE}
      *               
@@ -2443,7 +2457,8 @@ public enum Column {
 
     /**
      * 
-     *                 The value added tax on billable net revenue of the proposal line item or proposal.
+     *                 The value added tax on billable net revenue of the {@link ProposalLineItem} or
+     *                 {@link Proposal}.
      *               
      * 
      */
@@ -2451,8 +2466,8 @@ public enum Column {
 
     /**
      * 
-     *                 The value added tax on billable net revenue in local currency of the proposal line item or
-     *                 proposal.
+     *                 The value added tax on billable net revenue in the local currency of the
+     *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_VAT}
      *               
@@ -2462,7 +2477,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable agency commission of the proposal line item or proposal.
+     *                 The billable agency commission of the {@link ProposalLineItem} or {@link Proposal}.
      *               
      * 
      */
@@ -2470,7 +2485,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable agency commission in local currency of the proposal line item or proposal.
+     *                 The billable agency commission in the local currency of the {@link ProposalLineItem} or
+     *                 {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_AGENCY_COMMISSION}
      *               
@@ -2480,7 +2496,7 @@ public enum Column {
 
     /**
      * 
-     *                 The additional adjustment of the proposal.
+     *                 The additional adjustment of the {@link Proposal}.
      *               
      * 
      */
@@ -2488,7 +2504,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net overall discount of the proposal line item.
+     *                 The contracted net overall discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2496,7 +2512,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net overall discount of the proposal line item.
+     *                 The billable net overall discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2504,7 +2520,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net excluded premiums of the proposal line item.
+     *                 The billable net excluded premiums of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2512,7 +2528,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net advertiser discount of the proposal line item.
+     *                 The billable net advertiser discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2520,7 +2536,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net product adjustment of the proposal line item.
+     *                 The billable net product adjustment of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2528,7 +2544,7 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net proposal discount of the proposal line item.
+     *                 The billable net proposal discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2536,7 +2552,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net excluded premiums of the proposal line item.
+     *                 The contracted net excluded premiums of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2544,7 +2560,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net advertiser discount of the proposal line item.
+     *                 The contracted net advertiser discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2552,7 +2568,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net product adjustment of the proposal line item.
+     *                 The contracted net product adjustment of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2560,7 +2576,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net proposal discount of the proposal line item.
+     *                 The contracted net proposal discount of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2568,8 +2584,8 @@ public enum Column {
 
     /**
      * 
-     *                 The shared pipeline net revenue of the proposal line item. It is calculated by multiplying
-     *                 salesperson credit by the pipeline net revenue.
+     *                 The shared pipeline net revenue of the {@link ProposalLineItem}. It is calculated by
+     *                 multiplying salesperson credit by the pipeline net revenue.
      *               
      * 
      */
@@ -2577,8 +2593,8 @@ public enum Column {
 
     /**
      * 
-     *                 The shared pipeline gross revenue of the proposal line item. It is calculated by multiplying
-     *                 salesperson credit by the pipeline gross revenue.
+     *                 The shared pipeline gross revenue of the {@link ProposalLineItem}. It is calculated by
+     *                 multiplying salesperson credit by the pipeline gross revenue.
      *               
      * 
      */
@@ -2586,7 +2602,7 @@ public enum Column {
 
     /**
      * 
-     *                 The shared unified net revenue of the proposal line item. It is calculated by multiplying
+     *                 The shared unified net revenue of the {@link ProposalLineItem}. It is calculated by multiplying
      *                 salesperson credit by the unified net revenue.
      *               
      * 
@@ -2595,8 +2611,8 @@ public enum Column {
 
     /**
      * 
-     *                 The shared unified gross revenue of the proposal line item. It is calculated by multiplying
-     *                 salesperson credit by the unified gross revenue.
+     *                 The shared unified gross revenue of the {@link ProposalLineItem}. It is calculated by
+     *                 multiplying salesperson credit by the unified gross revenue.
      *               
      * 
      */

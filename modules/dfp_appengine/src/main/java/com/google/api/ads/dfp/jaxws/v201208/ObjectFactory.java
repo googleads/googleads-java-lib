@@ -1164,19 +1164,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdUnitParent }
-     * 
-     */
-    public AdUnitParent createAdUnitParent() {
-        return new AdUnitParent();
-    }
-
-    /**
      * Create an instance of {@link LineItemError }
      * 
      */
     public LineItemError createLineItemError() {
         return new LineItemError();
+    }
+
+    /**
+     * Create an instance of {@link AdUnitParent }
+     * 
+     */
+    public AdUnitParent createAdUnitParent() {
+        return new AdUnitParent();
     }
 
     /**
@@ -1468,19 +1468,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteLineItems }
-     * 
-     */
-    public DeleteLineItems createDeleteLineItems() {
-        return new DeleteLineItems();
-    }
-
-    /**
      * Create an instance of {@link RequiredCollectionError }
      * 
      */
     public RequiredCollectionError createRequiredCollectionError() {
         return new RequiredCollectionError();
+    }
+
+    /**
+     * Create an instance of {@link DeleteLineItems }
+     * 
+     */
+    public DeleteLineItems createDeleteLineItems() {
+        return new DeleteLineItems();
     }
 
     /**
@@ -2140,19 +2140,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomCriteria }
-     * 
-     */
-    public CustomCriteria createCustomCriteria() {
-        return new CustomCriteria();
-    }
-
-    /**
      * Create an instance of {@link BandwidthGroupTargeting }
      * 
      */
     public BandwidthGroupTargeting createBandwidthGroupTargeting() {
         return new BandwidthGroupTargeting();
+    }
+
+    /**
+     * Create an instance of {@link CustomCriteria }
+     * 
+     */
+    public CustomCriteria createCustomCriteria() {
+        return new CustomCriteria();
     }
 
     /**

@@ -18,7 +18,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Only the extension for a given {@code AppStore} will render on the device
  *             relevant to that {@code AppStore} (e.g. iPhones for {@code AppStore.ITUNES}
  *             and Android phones for {@code AppStore.GOOGLE_PLAY}).
- *             <span class="constraint Beta">This is a beta feature.</span>
  *           
  * 
  * <p>Java class for InAppLinkExtension complex type.

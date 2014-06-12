@@ -24,7 +24,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
  *             relevant to that {@code AppStore} (e.g. iPhones for {@code
  * AppStore.ITUNES}
  *             and Android phones for {@code AppStore.GOOGLE_PLAY}).
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class InAppLinkExtension  extends com.google.api.ads.adwords.axis.v201309.cm.AdExtension  implements java.io.Serializable {
     /* The visible text displayed when the link in rendered in an

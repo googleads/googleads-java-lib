@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CPC"/>
  *     &lt;enumeration value="CPD"/>
  *     &lt;enumeration value="CPM"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -69,7 +70,15 @@ public enum CostType {
      *               
      * 
      */
-    CPM;
+    CPM,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

@@ -581,7 +581,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#creationDateTime} for {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents {@link Proposal#creationDateTime} for {@link Dimension#PROPOSAL_NAME}. Can be used
+     *                 for filtering.
      *               
      * 
      */
@@ -686,7 +687,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link Proposal#poNumber} of {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents {@link Proposal#poNumber} for {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -694,7 +695,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the primary salesperson of {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents name and email address in the form of name(email) of primary salesperson for
+     *                 {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -702,8 +704,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the secondary salespeople as a comma separated string for
-     *                 {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents name and email addresses in the form of name(email) of secondary salespeople as a
+     *                 comma separated string for {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -806,8 +808,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the line item type (if applicable) and line item priority
-     *                 (if applicable) of {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
+     *                 Represents line item type (if applicable) and line item priority (if applicable) for
+     *                 {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
      *               
      * 
      */

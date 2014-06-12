@@ -10,7 +10,6 @@ package com.google.api.ads.adwords.axis.v201309.cm;
 
 /**
  * Domain extension, which adds domain info to ads.
- *             <span class="constraint Beta">This is a beta feature.</span>
  */
 public class DomainInfoExtension  extends com.google.api.ads.adwords.axis.v201309.cm.AdExtension  implements java.io.Serializable {
     /* The Internet domain name that this extension represents. E.g.

@@ -69,7 +69,7 @@ public class DfaAxisHeaderHandlerTest {
   @Mock private SOAPElement passwordElem;
   @Mock private Object soapClient;
 
-  private static final String NAMESPACE = "www.example.com";
+  private static final String NAMESPACE_PREFIX = "www.example.com";
   private static final String USERNAME = "username";
   private static final String AUTH_TOKEN = "authToken";
   private static final String APP_NAME = "ads-java-lib";
@@ -77,7 +77,8 @@ public class DfaAxisHeaderHandlerTest {
   private static final String LIB_SIG = "DfaApi-Java-1.0.0";
   private static final long NETWORK_ID = 1500L;
   private static final String WSSE_NAMESPACE =
-    "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+      "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+  private static final String VERSIONED_NAMESPACE = NAMESPACE_PREFIX + "/" + VERSION;
 
   /**
    * Constructor.
@@ -96,7 +97,7 @@ public class DfaAxisHeaderHandlerTest {
         .build();
 
     wsseQName = new QName(WSSE_NAMESPACE, "UsernameToken");
-    requestQName = new QName(NAMESPACE, "applicationName");
+    requestQName = new QName(VERSIONED_NAMESPACE, "applicationName");
 
     loginDfaServiceDescriptor = new DfaServiceDescriptor(LoginRemote.class, VERSION);
     nonLoginDfaServiceDescriptor = new DfaServiceDescriptor(FunRemote.class, VERSION);
@@ -122,7 +123,7 @@ public class DfaAxisHeaderHandlerTest {
    */
   private void setMocksToExpectSetRequestHeader() throws Exception {
     when(dfaApiConfiguration.getNamespacePrefix())
-        .thenReturn(NAMESPACE);
+        .thenReturn(NAMESPACE_PREFIX);
     when(soapClientHandler.createSoapHeaderElement(
         eq(requestQName))).thenReturn(requestHeaderElem);
     when(userAgentCombiner.getUserAgent(APP_NAME)).thenReturn(LIB_SIG);
@@ -134,7 +135,8 @@ public class DfaAxisHeaderHandlerTest {
    */
   private void verifyRequestHeader(String appName) throws Exception {
     verify(soapClientHandler).setHeader(
-        eq(soapClient), eq(NAMESPACE), eq("RequestHeader"), eq(requestHeaderElem));
+        eq(soapClient), eq(VERSIONED_NAMESPACE), eq("RequestHeader"),
+        eq(requestHeaderElem));
     verify(requestHeaderElem).addTextNode(appName);
   }
 

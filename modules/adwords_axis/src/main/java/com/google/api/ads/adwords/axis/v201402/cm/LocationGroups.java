@@ -11,7 +11,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 /**
  * Represents a criterion containing a function that when evaluated
  * specifies how to target
- *             based on the type of the location. These ???location groups???
+ *             based on the type of the location. These "location groups"
  * are custom, dynamic bundles of
  *             locations (for instance "High income areas in California"
  * or "Airports in France").

@@ -43,10 +43,10 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             <tr>
  *             <td>{@code type}</td>
- *             <td>{@link WorkflowRequest#type</td>
+ *             <td>{@link WorkflowRequest#type}</td>
  *             </tr>
  *             </table>
- *             
+ *             <p>Starting in V201405 a {@code type} filter must be used</p>
  *             @param filterStatement a Publisher Query Language statement used to filter a set of proposals
  *             @return the workflow requests that match the given filter
  *           

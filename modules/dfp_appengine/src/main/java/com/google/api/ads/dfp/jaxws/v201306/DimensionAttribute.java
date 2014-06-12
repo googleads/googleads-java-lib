@@ -529,7 +529,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#creationDateTime} for {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents {@link Proposal#creationDateTime} for {@link Dimension#PROPOSAL_NAME}. Can be used
+     *                 for filtering.
      *               
      * 
      */

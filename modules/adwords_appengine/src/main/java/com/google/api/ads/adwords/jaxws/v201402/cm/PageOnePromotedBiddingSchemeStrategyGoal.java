@@ -24,7 +24,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PageOnePromotedBiddingSchemeStrategyGoal {
 
+
+    /**
+     * 
+     *                 First page on google.com.
+     *               
+     * 
+     */
     PAGE_ONE,
+
+    /**
+     * 
+     *                 Top slots of the first page on google.com.
+     *               
+     * 
+     */
     PAGE_ONE_PROMOTED;
 
     public String value() {

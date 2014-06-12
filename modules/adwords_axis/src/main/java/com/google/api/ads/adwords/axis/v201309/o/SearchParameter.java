@@ -32,9 +32,12 @@ package com.google.api.ads.adwords.axis.v201309.o;
  * </ul><p>
  *             
  *             A request should only contain one instance of each {@link
- * SearchParameter}
- *             <p>One or more of the following {@link SearchParameter}s
- * are required:<br/>
+ * SearchParameter}.
+ *             
+ *             NOTICE: Starting with version v201406, requests containing
+ * multiple
+ *             instances of the same search parameter will be rejected.
+ * <p>One or more of the following {@link SearchParameter}s are required:<br/>
  * <ul><li>{@link CategoryProductsAndServicesSearchParameter}</li>
  * <li>{@link LocationSearchParameter}</li>
  * <li>{@link RelatedToQuerySearchParameter}</li>

@@ -56,8 +56,7 @@ public class UpdateLicas {
 
     // Create a statement to select a single LICA for a line item.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("lineItemId = :lineItemId")
-        .where("creativeId = :creativeId")
+        .where("lineItemId = :lineItemId AND creativeId = :creativeId")
         .orderBy("lineItemId ASC, creativeId ASC")
         .limit(1)
         .withBindVariableValue("lineItemId", lineItemId)

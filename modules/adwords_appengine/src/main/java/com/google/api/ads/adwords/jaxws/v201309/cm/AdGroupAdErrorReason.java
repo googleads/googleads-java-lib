@@ -39,7 +39,7 @@ public enum AdGroupAdErrorReason {
 
     /**
      * 
-     *                 Deleted ads may not be modified
+     *                 Removed ads may not be modified
      *               
      * 
      */

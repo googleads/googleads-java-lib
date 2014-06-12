@@ -98,7 +98,7 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
 
       setWsseSecurityHeader(soapClient, username, token);
     }
-    setRequestHeader(soapClient, dfaSession);
+    setRequestHeader(soapClient, dfaSession, dfaServiceDescriptor);
   }
 
   /**
@@ -128,11 +128,14 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
    *
    * @param soapClient the SOAP client
    * @param dfaSession the session associated with this client
+   * @param dfaServiceDescriptor the descriptor for the current DFA service
    * @throws ServiceException thrown if setting the header fails
    */
-  private void setRequestHeader(Object soapClient, DfaSession dfaSession) {
+  private void setRequestHeader(Object soapClient, DfaSession dfaSession,
+      DfaServiceDescriptor dfaServiceDescriptor) {
     try {
-      String namespace = dfaApiConfiguration.getNamespacePrefix();
+      String namespace = dfaApiConfiguration.getNamespacePrefix() + "/"
+          + dfaServiceDescriptor.getVersion();
       QName requestHeaderNode = new QName(namespace, "applicationName");
       SOAPHeaderElement appNameToken = soapClientHandler.createSoapHeaderElement(
           requestHeaderNode);

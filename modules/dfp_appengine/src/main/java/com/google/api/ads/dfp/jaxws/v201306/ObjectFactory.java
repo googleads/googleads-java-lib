@@ -1540,19 +1540,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdUnitParent }
-     * 
-     */
-    public AdUnitParent createAdUnitParent() {
-        return new AdUnitParent();
-    }
-
-    /**
      * Create an instance of {@link LineItemError }
      * 
      */
     public LineItemError createLineItemError() {
         return new LineItemError();
+    }
+
+    /**
+     * Create an instance of {@link AdUnitParent }
+     * 
+     */
+    public AdUnitParent createAdUnitParent() {
+        return new AdUnitParent();
     }
 
     /**
@@ -2676,19 +2676,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DayPart }
-     * 
-     */
-    public DayPart createDayPart() {
-        return new DayPart();
-    }
-
-    /**
      * Create an instance of {@link RemoveAdUnitsFromPlacement }
      * 
      */
     public RemoveAdUnitsFromPlacement createRemoveAdUnitsFromPlacement() {
         return new RemoveAdUnitsFromPlacement();
+    }
+
+    /**
+     * Create an instance of {@link DayPart }
+     * 
+     */
+    public DayPart createDayPart() {
+        return new DayPart();
     }
 
     /**
@@ -2820,19 +2820,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomCriteria }
-     * 
-     */
-    public CustomCriteria createCustomCriteria() {
-        return new CustomCriteria();
-    }
-
-    /**
      * Create an instance of {@link BandwidthGroupTargeting }
      * 
      */
     public BandwidthGroupTargeting createBandwidthGroupTargeting() {
         return new BandwidthGroupTargeting();
+    }
+
+    /**
+     * Create an instance of {@link CustomCriteria }
+     * 
+     */
+    public CustomCriteria createCustomCriteria() {
+        return new CustomCriteria();
     }
 
     /**

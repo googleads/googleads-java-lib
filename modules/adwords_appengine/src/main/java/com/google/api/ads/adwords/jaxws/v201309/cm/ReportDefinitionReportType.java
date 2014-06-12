@@ -171,7 +171,6 @@ public enum ReportDefinitionReportType {
     /**
      * 
      *                 Reports data for shared sets.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */
@@ -180,7 +179,6 @@ public enum ReportDefinitionReportType {
     /**
      * 
      *                 Reports data for campaign shared sets.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */
@@ -189,7 +187,6 @@ public enum ReportDefinitionReportType {
     /**
      * 
      *                 Provides a downloadable snapshot of shared set criteria.
-     *                 <span class="constraint Beta">This is a beta feature.</span>
      *               
      * 
      */

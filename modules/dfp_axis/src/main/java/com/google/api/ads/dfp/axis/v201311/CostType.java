@@ -20,9 +20,11 @@ public class CostType implements java.io.Serializable {
     public static final java.lang.String _CPC = "CPC";
     public static final java.lang.String _CPD = "CPD";
     public static final java.lang.String _CPM = "CPM";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final CostType CPC = new CostType(_CPC);
     public static final CostType CPD = new CostType(_CPD);
     public static final CostType CPM = new CostType(_CPM);
+    public static final CostType UNKNOWN = new CostType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static CostType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

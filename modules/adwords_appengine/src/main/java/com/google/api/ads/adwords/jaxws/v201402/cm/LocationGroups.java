@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a criterion containing a function that when evaluated specifies how to target
- *             based on the type of the location. These ???location groups??? are custom, dynamic bundles of
+ *             based on the type of the location. These "location groups" are custom, dynamic bundles of
  *             locations (for instance "High income areas in California" or "Airports in France").
  *             
  *             <p>Examples:</p>

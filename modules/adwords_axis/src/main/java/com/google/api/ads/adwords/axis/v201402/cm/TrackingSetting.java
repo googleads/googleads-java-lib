@@ -12,7 +12,10 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * Campaign level settings for tracking information.
  */
 public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201402.cm.Setting  implements java.io.Serializable {
-    /* Specify "NONE" to clear existing url.
+    /* The url used for dynamic tracking.  For more information, see
+     * the
+     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
+     * Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String trackingUrl;
@@ -32,7 +35,10 @@ public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201402.cm
     /**
      * Gets the trackingUrl value for this TrackingSetting.
      * 
-     * @return trackingUrl   * Specify "NONE" to clear existing url.
+     * @return trackingUrl   * The url used for dynamic tracking.  For more information, see
+     * the
+     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
+     * Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -44,7 +50,10 @@ public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201402.cm
     /**
      * Sets the trackingUrl value for this TrackingSetting.
      * 
-     * @param trackingUrl   * Specify "NONE" to clear existing url.
+     * @param trackingUrl   * The url used for dynamic tracking.  For more information, see
+     * the
+     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
+     * Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */

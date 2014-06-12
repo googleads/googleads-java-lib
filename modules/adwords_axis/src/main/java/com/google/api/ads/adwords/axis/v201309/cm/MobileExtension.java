@@ -48,8 +48,7 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * of this string should be between 2 and 2, inclusive.</span> */
     private java.lang.String countryCode;
 
-    /* Indicates whether this represents a call tracking extension.
-     * <span class="constraint Beta">This is a beta feature.</span> */
+    /* Indicates whether this represents a call tracking extension. */
     private java.lang.Boolean isCallTrackingEnabled;
 
     /* Indicates whether the extended ad should be call only, where
@@ -154,7 +153,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * Gets the isCallTrackingEnabled value for this MobileExtension.
      * 
      * @return isCallTrackingEnabled   * Indicates whether this represents a call tracking extension.
-     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public java.lang.Boolean getIsCallTrackingEnabled() {
         return isCallTrackingEnabled;
@@ -165,7 +163,6 @@ public class MobileExtension  extends com.google.api.ads.adwords.axis.v201309.cm
      * Sets the isCallTrackingEnabled value for this MobileExtension.
      * 
      * @param isCallTrackingEnabled   * Indicates whether this represents a call tracking extension.
-     * <span class="constraint Beta">This is a beta feature.</span>
      */
     public void setIsCallTrackingEnabled(java.lang.Boolean isCallTrackingEnabled) {
         this.isCallTrackingEnabled = isCallTrackingEnabled;

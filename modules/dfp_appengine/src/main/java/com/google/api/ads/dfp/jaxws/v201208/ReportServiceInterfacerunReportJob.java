@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Initiates the execution of a {@link ReportQuery} on the server.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
  *             <ul>
  *             <li>{@link ReportJob#reportQuery}</li>
  *             </ul>

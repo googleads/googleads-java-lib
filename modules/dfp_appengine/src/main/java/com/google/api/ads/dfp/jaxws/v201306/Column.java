@@ -1896,10 +1896,12 @@ public enum Column {
 
     /**
      * 
-     *                 The forecasted net revenue of the proposal line item. It is calculated from forecasted volume
-     *                 and rate, with cap applied.
+     *                 The forecasted net revenue of the {@link ProposalLineItem}. It is calculated from forecasted
+     *                 volume and rate, with cap applied.
      *                 <p>
      *                 This is no longer supported after v201306.
+     *                 <p>
+     *                 Replaced with {@link #UNIFIED_REVENUE_FORECASTED_NET_REVENUE} beginning in v201405.
      *               
      * 
      */
@@ -1907,8 +1909,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue of the proposal line item. When revenue is summed up to proposal
-     *                 level additional adjustment is applied.
+     *                 The contracted net revenue of the {@link ProposalLineItem}. When revenue is summed up to
+     *                 proposal level additional adjustment is applied.
      *                 <p>
      *                 Replaced with {@code CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE} beginning in v201308.
      *               
@@ -1918,8 +1920,8 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue of the proposal line item. This revenue is the raw revenue without
-     *                 proposal additional adjustment applied.
+     *                 The contracted net revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
+     *                 without proposal additional adjustment applied.
      *                 <p>
      *                 Replaced with {@code CONTRACTED_REVENUE_CONTRACTED_PLACEMENT_NET_REVENUE} beginning in v201308.
      *               
@@ -1929,7 +1931,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted impressions of the proposal line item.
+     *                 The contracted impressions of the {@link ProposalLineItem}.
      *                 <p>
      *                 Replaced with {@code SALES_CONTRACT_CONTRACTED_IMPRESSIONS} beginning in v201308.
      *               
@@ -1939,7 +1941,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted clicks of the proposal line item.
+     *                 The contracted clicks of the {@link ProposalLineItem}.
      *                 <p>
      *                 Replaced with {@code SALES_CONTRACT_CONTRACTED_CLICKS} beginning in v201308.
      *               
@@ -1949,7 +1951,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted volume of the proposal line item. Volume represents impressions for
+     *                 The contracted volume of the {@link ProposalLineItem}. Volume represents impressions for
      *                 cost type CPM, clicks for CPC, and days for CPD.
      *                 <p>
      *                 Replaced with {@code SALES_CONTRACT_CONTRACTED_VOLUME} beginning in v201308.
@@ -1960,7 +1962,7 @@ public enum Column {
 
     /**
      * 
-     *                 The budget of the proposal.
+     *                 The budget of the {@link Proposal}.
      *                 <p>
      *                 Replaced with {@code SALES_CONTRACT_BUDGET} beginning in v201308.
      *               
@@ -1970,8 +1972,8 @@ public enum Column {
 
     /**
      * 
-     *                 The remaining budget of the proposal. It is calculated by subtracting the contracted net
-     *                 revenue from the budget.
+     *                 The remaining budget of the {@link Proposal}. It is calculated by subtracting the contracted
+     *                 net revenue from the budget.
      *                 <p>
      *                 Replaced with {@code SALES_CONTRACT_REMAINING_BUDGET} beginning in v201308.
      *               
@@ -1981,8 +1983,8 @@ public enum Column {
 
     /**
      * 
-     *                 The unified net revenue of the proposal line item. It is a combination of billable revenue,
-     *                 unreconciled revenue and forecasted revenue.
+     *                 The unified net revenue of the {@link ProposalLineItem}. It is a combination of billable
+     *                 revenue, unreconciled revenue and forecasted revenue.
      *                 <p>
      *                 Replaced with {@code UNIFIED_REVENUE_UNIFIED_NET_REVENUE} beginning in v201308.
      *               
@@ -1992,9 +1994,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline net revenue of the proposal line item. It is calculated by multiplying
-     *                 probability to close by the contracted revenue for those unsold proposals. There is
-     *                 no revenue for those sold proposals.
+     *                 The pipeline net revenue of the {@link ProposalLineItem}. It is calculated by multiplying
+     *                 probability to close by the contracted revenue for those unsold {@link ProposalLineItem}s.
+     *                 There is no revenue for those sold {@link ProposalLineItem}s.
      *                 <p>
      *                 Replaced with {@code SALES_PIPELINE_PIPELINE_NET_REVENUE} beginning in v201308.
      *               
@@ -2004,7 +2006,7 @@ public enum Column {
 
     /**
      * 
-     *                 The last reconciliation date of the proposal line item.
+     *                 The last reconciliation date of the {@link ProposalLineItem}.
      *                 <p>
      *                 Replaced with {@code RECONCILIATION_LAST_DATE_TIME} beginning in v201308.
      *               
@@ -2014,7 +2016,7 @@ public enum Column {
 
     /**
      * 
-     *                 The reconciliation status of the proposal line item.
+     *                 The reconciliation status of the {@link ProposalLineItem}.
      *                 <p>
      *                 Replaced with {@code RECONCILIATION_RECONCILIATION_STATUS} beginning in v201308.
      *               
@@ -2024,8 +2026,8 @@ public enum Column {
 
     /**
      * 
-     *                 The DFP volume of the proposal line item, which is used for reconciliation. Volume represents
-     *                 impressions for rate type CPM, clicks for CPC and days for CPD.
+     *                 The DFP volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
+     *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *                 <p>
      *                 Replaced with {@code RECONCILIATION_DFP_VOLUME} beginning in v201308.
      *               
@@ -2035,8 +2037,8 @@ public enum Column {
 
     /**
      * 
-     *                 The third party volume of the proposal line item, which is used for reconciliation. Volume
-     *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
+     *                 The third party volume of the {@link ProposalLineItem}, which is used for reconciliation.
+     *                 Volume represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *                 <p>
      *                 Replaced with {@code RECONCILIATION_THIRD_PARTY_VOLUME} beginning in v201308.
      *               
@@ -2046,7 +2048,7 @@ public enum Column {
 
     /**
      * 
-     *                 The reconciled volume of the proposal line item, which is used for reconciliation. Volume
+     *                 The reconciled volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
      *                 <p>
      *                 Replaced with {@code RECONCILIATION_RECONCILED_VOLUME} beginning in v201308.
@@ -2057,8 +2059,8 @@ public enum Column {
 
     /**
      * 
-     *                 The billable net revenue of the proposal line item. It is calculated from reconciled volume and
-     *                 rate, with cap applied.
+     *                 The billable net revenue of the {@link ProposalLineItem}. It is calculated from reconciled
+     *                 volume and rate, with cap applied.
      *                 <p>
      *                 Replaced with {@code BILLING_BILLABLE_NET_REVENUE} beginning in v201308.
      *               
@@ -2068,7 +2070,7 @@ public enum Column {
 
     /**
      * 
-     *                 The additional adjustment of the proposal.
+     *                 The additional adjustment of the {@link Proposal}.
      *                 <p>
      *                 Replaced with {@code DISCOUNTS_BREAKDOWN_ADDITIONAL_ADJUSTMENT} beginning in v201308.
      *               

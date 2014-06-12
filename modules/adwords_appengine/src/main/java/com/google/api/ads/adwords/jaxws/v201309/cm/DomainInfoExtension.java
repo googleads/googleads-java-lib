@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Domain extension, which adds domain info to ads.
- *             <span class="constraint Beta">This is a beta feature.</span>
  *           
  * 
  * <p>Java class for DomainInfoExtension complex type.

@@ -28,7 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  *             related information (eg. {@link CompetitionSearchParameter}, etc.).</li>
  *             </ul><p>
  *             
- *             A request should only contain one instance of each {@link SearchParameter}
+ *             A request should only contain one instance of each {@link SearchParameter}.
+ *             
+ *             NOTICE: Starting with version v201406, requests containing multiple
+ *             instances of the same search parameter will be rejected.
  *             <p>One or more of the following {@link SearchParameter}s are required:<br/>
  * <ul><li>{@link CategoryProductsAndServicesSearchParameter}</li>
  * <li>{@link LocationSearchParameter}</li>

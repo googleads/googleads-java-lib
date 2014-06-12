@@ -44,7 +44,7 @@ public enum CampaignStatus {
 
     /**
      * 
-     *                 Campaign has been deleted.
+     *                 Campaign has been removed.
      *               
      * 
      */
