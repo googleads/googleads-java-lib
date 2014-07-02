@@ -89,7 +89,7 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10000 with the range from 0 to
-     *                 100000. This attibute is 0 by default and will be
+     *                 100000. This attribute is 0 by default and will be
      * used to calculate the revenue
      *                 in reporting. */
     private java.lang.Integer probabilityToClose;
@@ -620,7 +620,7 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10000 with the range from 0 to
-     *                 100000. This attibute is 0 by default and will be
+     *                 100000. This attribute is 0 by default and will be
      * used to calculate the revenue
      *                 in reporting.
      */
@@ -636,7 +636,7 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10000 with the range from 0 to
-     *                 100000. This attibute is 0 by default and will be
+     *                 100000. This attribute is 0 by default and will be
      * used to calculate the revenue
      *                 in reporting.
      */

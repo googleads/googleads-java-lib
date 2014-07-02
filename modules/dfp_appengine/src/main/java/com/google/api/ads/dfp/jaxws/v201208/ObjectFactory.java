@@ -668,6 +668,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReportQuery }
+     * 
+     */
+    public ReportQuery createReportQuery() {
+        return new ReportQuery();
+    }
+
+    /**
      * Create an instance of {@link DeliveryData }
      * 
      */
@@ -681,14 +689,6 @@ public class ObjectFactory {
      */
     public OperatingSystem createOperatingSystem() {
         return new OperatingSystem();
-    }
-
-    /**
-     * Create an instance of {@link ReportQuery }
-     * 
-     */
-    public ReportQuery createReportQuery() {
-        return new ReportQuery();
     }
 
     /**
@@ -1089,6 +1089,14 @@ public class ObjectFactory {
      */
     public ResumeAndOverbookLineItems createResumeAndOverbookLineItems() {
         return new ResumeAndOverbookLineItems();
+    }
+
+    /**
+     * Create an instance of {@link TokenError }
+     * 
+     */
+    public TokenError createTokenError() {
+        return new TokenError();
     }
 
     /**

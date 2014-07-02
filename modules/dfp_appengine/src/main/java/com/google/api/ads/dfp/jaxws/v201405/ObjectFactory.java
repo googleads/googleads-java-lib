@@ -1524,6 +1524,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TokenError }
+     * 
+     */
+    public TokenError createTokenError() {
+        return new TokenError();
+    }
+
+    /**
      * Create an instance of {@link ResumeAndOverbookLineItems }
      * 
      */

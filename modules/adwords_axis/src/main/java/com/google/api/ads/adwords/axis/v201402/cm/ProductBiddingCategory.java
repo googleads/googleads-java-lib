@@ -24,7 +24,10 @@ public class ProductBiddingCategory  extends com.google.api.ads.adwords.axis.v20
      * can be filtered on using the value "ParentDimensionType".</span>
      *                     <span class="constraint OneOf">The value must
      * be one of {BIDDING_CATEGORY_L1, BIDDING_CATEGORY_L2, BIDDING_CATEGORY_L3,
-     * BIDDING_CATEGORY_L4, BIDDING_CATEGORY_L5}.</span> */
+     * BIDDING_CATEGORY_L4, BIDDING_CATEGORY_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type;
 
     /* ID of the product category.
@@ -56,6 +59,9 @@ public class ProductBiddingCategory  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint OneOf">The value must
      * be one of {BIDDING_CATEGORY_L1, BIDDING_CATEGORY_L2, BIDDING_CATEGORY_L3,
      * BIDDING_CATEGORY_L4, BIDDING_CATEGORY_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType getType() {
         return type;
@@ -72,6 +78,9 @@ public class ProductBiddingCategory  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint OneOf">The value must
      * be one of {BIDDING_CATEGORY_L1, BIDDING_CATEGORY_L2, BIDDING_CATEGORY_L3,
      * BIDDING_CATEGORY_L4, BIDDING_CATEGORY_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type) {
         this.type = type;

@@ -51,7 +51,7 @@ public enum ExperimentErrorReason {
 
     /**
      * 
-     *                 Cannot create experiment data in DELETED status
+     *                 Cannot create experiment data in REMOVED status
      *               
      * 
      */

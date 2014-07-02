@@ -30,6 +30,9 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final java.lang.String _CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT = "CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT";
     public static final java.lang.String _AD_EXTENSIONS_PERFORMANCE_REPORT = "AD_EXTENSIONS_PERFORMANCE_REPORT";
     public static final java.lang.String _DESTINATION_URL_REPORT = "DESTINATION_URL_REPORT";
+    public static final java.lang.String _SHARED_SET_REPORT = "SHARED_SET_REPORT";
+    public static final java.lang.String _CAMPAIGN_SHARED_SET_REPORT = "CAMPAIGN_SHARED_SET_REPORT";
+    public static final java.lang.String _SHARED_SET_CRITERIA_REPORT = "SHARED_SET_CRITERIA_REPORT";
     public static final java.lang.String _CREATIVE_CONVERSION_REPORT = "CREATIVE_CONVERSION_REPORT";
     public static final java.lang.String _CALL_METRICS_CALL_DETAILS_REPORT = "CALL_METRICS_CALL_DETAILS_REPORT";
     public static final java.lang.String _KEYWORDLESS_QUERY_REPORT = "KEYWORDLESS_QUERY_REPORT";
@@ -69,6 +72,9 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final ReportDefinitionReportType CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT = new ReportDefinitionReportType(_CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType AD_EXTENSIONS_PERFORMANCE_REPORT = new ReportDefinitionReportType(_AD_EXTENSIONS_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType DESTINATION_URL_REPORT = new ReportDefinitionReportType(_DESTINATION_URL_REPORT);
+    public static final ReportDefinitionReportType SHARED_SET_REPORT = new ReportDefinitionReportType(_SHARED_SET_REPORT);
+    public static final ReportDefinitionReportType CAMPAIGN_SHARED_SET_REPORT = new ReportDefinitionReportType(_CAMPAIGN_SHARED_SET_REPORT);
+    public static final ReportDefinitionReportType SHARED_SET_CRITERIA_REPORT = new ReportDefinitionReportType(_SHARED_SET_CRITERIA_REPORT);
     public static final ReportDefinitionReportType CREATIVE_CONVERSION_REPORT = new ReportDefinitionReportType(_CREATIVE_CONVERSION_REPORT);
     public static final ReportDefinitionReportType CALL_METRICS_CALL_DETAILS_REPORT = new ReportDefinitionReportType(_CALL_METRICS_CALL_DETAILS_REPORT);
     public static final ReportDefinitionReportType KEYWORDLESS_QUERY_REPORT = new ReportDefinitionReportType(_KEYWORDLESS_QUERY_REPORT);

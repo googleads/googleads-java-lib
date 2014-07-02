@@ -58,10 +58,10 @@ public interface AdGroupServiceInterface {
 
     /**
      * 
-     *         Adds, updates, or deletes ad groups.
+     *         Adds, updates, or removes ad groups.
      *         <p class="note"><b>Note:</b> {@link AdGroupOperation} does not support the
-     *         {@code REMOVE} operator. To delete an ad group, set its
-     *         {@link AdGroup#status status} to {@code DELETED}.</p>
+     *         {@code REMOVE} operator. To remove an ad group, set its
+     *         {@link AdGroup#status status} to {@code REMOVED}.</p>
      *         
      *         @param operations List of unique operations. The same ad group cannot be
      *         specified in more than one operation.

@@ -63,6 +63,7 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final java.lang.String _CANNOT_CHANGE_CURRENCY = "CANNOT_CHANGE_CURRENCY";
     public static final java.lang.String _INVALID_FOR_OFFLINE = "INVALID_FOR_OFFLINE";
     public static final java.lang.String _INVALID_LINE_ITEM_DATE_TIME = "INVALID_LINE_ITEM_DATE_TIME";
+    public static final java.lang.String _UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION = "UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final LineItemErrorReason ALREADY_STARTED = new LineItemErrorReason(_ALREADY_STARTED);
     public static final LineItemErrorReason UPDATE_RESERVATION_NOT_ALLOWED = new LineItemErrorReason(_UPDATE_RESERVATION_NOT_ALLOWED);
@@ -110,6 +111,7 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final LineItemErrorReason CANNOT_CHANGE_CURRENCY = new LineItemErrorReason(_CANNOT_CHANGE_CURRENCY);
     public static final LineItemErrorReason INVALID_FOR_OFFLINE = new LineItemErrorReason(_INVALID_FOR_OFFLINE);
     public static final LineItemErrorReason INVALID_LINE_ITEM_DATE_TIME = new LineItemErrorReason(_INVALID_LINE_ITEM_DATE_TIME);
+    public static final LineItemErrorReason UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION = new LineItemErrorReason(_UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION);
     public static final LineItemErrorReason UNKNOWN = new LineItemErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static LineItemErrorReason fromValue(java.lang.String value)

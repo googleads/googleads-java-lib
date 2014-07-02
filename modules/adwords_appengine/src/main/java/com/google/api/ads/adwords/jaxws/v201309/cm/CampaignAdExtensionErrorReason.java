@@ -41,7 +41,7 @@ public enum CampaignAdExtensionErrorReason {
 
     /**
      * 
-     *                 Cannot add a CampaignAdExtension with status DELETED
+     *                 Cannot add a CampaignAdExtension with status REMOVED.
      *               
      * 
      */
@@ -49,7 +49,7 @@ public enum CampaignAdExtensionErrorReason {
 
     /**
      * 
-     *                 Cannot operate on a CampaignAdExtension with status DELETED
+     *                 Cannot operate on a CampaignAdExtension with status REMOVED.
      *               
      * 
      */

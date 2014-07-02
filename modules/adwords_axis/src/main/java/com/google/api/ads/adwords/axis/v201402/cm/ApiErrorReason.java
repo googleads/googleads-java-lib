@@ -72,6 +72,8 @@ public class ApiErrorReason  implements java.io.Serializable {
 
     private com.google.api.ads.adwords.axis.v201402.cm.FunctionErrorReason functionErrorReason;
 
+    private com.google.api.ads.adwords.axis.v201402.cm.FunctionParsingErrorReason functionParsingErrorReason;
+
     private com.google.api.ads.adwords.axis.v201402.cm.IdErrorReason idErrorReason;
 
     private com.google.api.ads.adwords.axis.v201402.cm.ImageErrorReason imageErrorReason;
@@ -162,6 +164,7 @@ public class ApiErrorReason  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201402.cm.FeedItemErrorReason feedItemErrorReason,
            com.google.api.ads.adwords.axis.v201402.cm.ForwardCompatibilityErrorReason forwardCompatibilityErrorReason,
            com.google.api.ads.adwords.axis.v201402.cm.FunctionErrorReason functionErrorReason,
+           com.google.api.ads.adwords.axis.v201402.cm.FunctionParsingErrorReason functionParsingErrorReason,
            com.google.api.ads.adwords.axis.v201402.cm.IdErrorReason idErrorReason,
            com.google.api.ads.adwords.axis.v201402.cm.ImageErrorReason imageErrorReason,
            com.google.api.ads.adwords.axis.v201402.cm.InternalApiErrorReason internalApiErrorReason,
@@ -220,6 +223,7 @@ public class ApiErrorReason  implements java.io.Serializable {
            this.feedItemErrorReason = feedItemErrorReason;
            this.forwardCompatibilityErrorReason = forwardCompatibilityErrorReason;
            this.functionErrorReason = functionErrorReason;
+           this.functionParsingErrorReason = functionParsingErrorReason;
            this.idErrorReason = idErrorReason;
            this.imageErrorReason = imageErrorReason;
            this.internalApiErrorReason = internalApiErrorReason;
@@ -848,6 +852,26 @@ public class ApiErrorReason  implements java.io.Serializable {
      */
     public void setFunctionErrorReason(com.google.api.ads.adwords.axis.v201402.cm.FunctionErrorReason functionErrorReason) {
         this.functionErrorReason = functionErrorReason;
+    }
+
+
+    /**
+     * Gets the functionParsingErrorReason value for this ApiErrorReason.
+     * 
+     * @return functionParsingErrorReason
+     */
+    public com.google.api.ads.adwords.axis.v201402.cm.FunctionParsingErrorReason getFunctionParsingErrorReason() {
+        return functionParsingErrorReason;
+    }
+
+
+    /**
+     * Sets the functionParsingErrorReason value for this ApiErrorReason.
+     * 
+     * @param functionParsingErrorReason
+     */
+    public void setFunctionParsingErrorReason(com.google.api.ads.adwords.axis.v201402.cm.FunctionParsingErrorReason functionParsingErrorReason) {
+        this.functionParsingErrorReason = functionParsingErrorReason;
     }
 
 
@@ -1512,6 +1536,9 @@ public class ApiErrorReason  implements java.io.Serializable {
             ((this.functionErrorReason==null && other.getFunctionErrorReason()==null) || 
              (this.functionErrorReason!=null &&
               this.functionErrorReason.equals(other.getFunctionErrorReason()))) &&
+            ((this.functionParsingErrorReason==null && other.getFunctionParsingErrorReason()==null) || 
+             (this.functionParsingErrorReason!=null &&
+              this.functionParsingErrorReason.equals(other.getFunctionParsingErrorReason()))) &&
             ((this.idErrorReason==null && other.getIdErrorReason()==null) || 
              (this.idErrorReason!=null &&
               this.idErrorReason.equals(other.getIdErrorReason()))) &&
@@ -1696,6 +1723,9 @@ public class ApiErrorReason  implements java.io.Serializable {
         }
         if (getFunctionErrorReason() != null) {
             _hashCode += getFunctionErrorReason().hashCode();
+        }
+        if (getFunctionParsingErrorReason() != null) {
+            _hashCode += getFunctionParsingErrorReason().hashCode();
         }
         if (getIdErrorReason() != null) {
             _hashCode += getIdErrorReason().hashCode();
@@ -1998,6 +2028,13 @@ public class ApiErrorReason  implements java.io.Serializable {
         elemField.setFieldName("functionErrorReason");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "FunctionErrorReason"));
         elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "FunctionError.Reason"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("functionParsingErrorReason");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "FunctionParsingErrorReason"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "FunctionParsingError.Reason"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

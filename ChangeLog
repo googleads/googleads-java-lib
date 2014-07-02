@@ -1,3 +1,18 @@
+1.29.1 - 07/02/2014
+-------------------
+AdWords:
+  - Added whitelist-only shared set services to v201402.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added new LineItem error reason.
+  - Added TokenError to UserService.
+
+Common:
+  - No changes.
+
 1.29.0 - 06/12/2014
 -------------------
 AdWords:

@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
+ * or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
+ * regarding copyright ownership. The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * with the License. You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
+ * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -30,11 +31,11 @@
   <description>
     Parent POM of the Java client libraries for the Google ads APIs.
   </description>
-  
+
   <url>https://github.com/googleads/googleads-java-lib/</url>
   <issueManagement>
     <system>github.com</system>
-    <url>      
+    <url>
       https://github.com/googleads/googleads-java-lib/issues
     </url>
   </issueManagement>
@@ -48,10 +49,10 @@
   </licenses>
 
   <scm>
-    <connection>      
+    <connection>
       scm:git:https://github.com/googleads/googleads-java-lib
     </connection>
-    <developerConnection>      
+    <developerConnection>
       scm:git:https://github.com/googleads/googleads-java-lib
     </developerConnection>
     <url>
@@ -191,8 +192,8 @@
     <module>modules/adwords_axis</module>
     <module>modules/dfa_axis</module>
     <module>modules/dfp_appengine</module>
-    <module>modules/dfp_axis</module>   
-    <module>modules/adwords_axis_utility_extension</module> 
+    <module>modules/dfp_axis</module>
+    <module>modules/adwords_axis_utility_extension</module>
   </modules>
 
   <profiles>
@@ -201,11 +202,11 @@
       <properties>
         <sonatypeReleaseId>sonatype-nexus-staging</sonatypeReleaseId>
         <sonatypeReleaseUrl>
-https://oss.sonatype.org/service/local/staging/deploy/maven2
+          https://oss.sonatype.org/service/local/staging/deploy/maven2
         </sonatypeReleaseUrl>
         <sonatypeSnapshotId>sonatype-nexus-snapshots</sonatypeSnapshotId>
         <sonatypeSnapshotUrl>
-https://oss.sonatype.org/content/repositories/snapshots/
+          https://oss.sonatype.org/content/repositories/snapshots/
         </sonatypeSnapshotUrl>
       </properties>
       <distributionManagement>
@@ -224,6 +225,30 @@ https://oss.sonatype.org/content/repositories/snapshots/
           <url>https://repository.sonatype.org/content/groups/forge/</url>
         </repository>
       </repositories>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.2</version>
+            <executions>
+              <execution>
+                <id>default-deploy</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <serverId>sonatype-nexus-staging</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <skipStaging>true</skipStaging>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     <profile>
       <id>release-sign-artifacts</id>

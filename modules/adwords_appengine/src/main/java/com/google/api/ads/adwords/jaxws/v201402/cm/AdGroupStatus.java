@@ -44,7 +44,7 @@ public enum AdGroupStatus {
 
     /**
      * 
-     *                 Deleted.
+     *                 Removed.
      *               
      * 
      */

@@ -25,7 +25,6 @@ public class UserListErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_DESCRIPTION = "INVALID_DESCRIPTION";
     public static final java.lang.String _INVALID_NAME = "INVALID_NAME";
     public static final java.lang.String _INVALID_TYPE = "INVALID_TYPE";
-    public static final java.lang.String _INVALID_INTEGRATION_CODE = "INVALID_INTEGRATION_CODE";
     public static final java.lang.String _INVALID_USER_LIST_LOGICAL_RULE_OPERAND = "INVALID_USER_LIST_LOGICAL_RULE_OPERAND";
     public static final java.lang.String _NAME_ALREADY_USED = "NAME_ALREADY_USED";
     public static final java.lang.String _NEW_CONVERSION_TYPE_NAME_REQUIRED = "NEW_CONVERSION_TYPE_NAME_REQUIRED";
@@ -41,7 +40,6 @@ public class UserListErrorReason implements java.io.Serializable {
     public static final UserListErrorReason INVALID_DESCRIPTION = new UserListErrorReason(_INVALID_DESCRIPTION);
     public static final UserListErrorReason INVALID_NAME = new UserListErrorReason(_INVALID_NAME);
     public static final UserListErrorReason INVALID_TYPE = new UserListErrorReason(_INVALID_TYPE);
-    public static final UserListErrorReason INVALID_INTEGRATION_CODE = new UserListErrorReason(_INVALID_INTEGRATION_CODE);
     public static final UserListErrorReason INVALID_USER_LIST_LOGICAL_RULE_OPERAND = new UserListErrorReason(_INVALID_USER_LIST_LOGICAL_RULE_OPERAND);
     public static final UserListErrorReason NAME_ALREADY_USED = new UserListErrorReason(_NAME_ALREADY_USED);
     public static final UserListErrorReason NEW_CONVERSION_TYPE_NAME_REQUIRED = new UserListErrorReason(_NEW_CONVERSION_TYPE_NAME_REQUIRED);

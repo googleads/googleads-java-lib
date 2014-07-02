@@ -32,10 +32,12 @@ public class UserList  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean isReadOnly;
 
-    /* Name of this user list.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span> */
+    /* Name of this user list. Depending on its AccessReason, the
+     * user list name
+     *                 may not be unique (e.g. if {@code AccessReason=SHARED}).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span> */
     private java.lang.String name;
 
     /* Description of this user list.
@@ -239,10 +241,12 @@ public class UserList  implements java.io.Serializable {
     /**
      * Gets the name value for this UserList.
      * 
-     * @return name   * Name of this user list.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return name   * Name of this user list. Depending on its AccessReason, the
+     * user list name
+     *                 may not be unique (e.g. if {@code AccessReason=SHARED}).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -252,10 +256,12 @@ public class UserList  implements java.io.Serializable {
     /**
      * Sets the name value for this UserList.
      * 
-     * @param name   * Name of this user list.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param name   * Name of this user list. Depending on its AccessReason, the
+     * user list name
+     *                 may not be unique (e.g. if {@code AccessReason=SHARED}).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

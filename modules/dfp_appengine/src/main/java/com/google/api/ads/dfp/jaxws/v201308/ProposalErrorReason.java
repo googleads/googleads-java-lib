@@ -56,7 +56,7 @@ public enum ProposalErrorReason {
 
     /**
      * 
-     *                 Advertiser cannot update after proposal been pushed.
+     *                 Advertiser cannot be updated once the proposal has been reserved.
      *               
      * 
      */
@@ -64,7 +64,7 @@ public enum ProposalErrorReason {
 
     /**
      * 
-     *                 Propsoal cannot update when it's not in DRAFT status or it is archived.
+     *                 Proposal cannot be updated when its status is not {@code DRAFT} or it is archived.
      *               
      * 
      */

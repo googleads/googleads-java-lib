@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Data used to configure a location feed populated from
- *             Google Places.
+ *             Google My Business Locations.
  *           
  * 
  * <p>Java class for PlacesLocationFeedData complex type.

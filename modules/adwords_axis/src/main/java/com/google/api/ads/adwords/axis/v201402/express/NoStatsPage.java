@@ -7,11 +7,6 @@
 
 package com.google.api.ads.adwords.axis.v201402.express;
 
-
-/**
- * Base class for Get results for a page of entities that do not use
- * statistics.
- */
 public abstract class NoStatsPage  extends com.google.api.ads.adwords.axis.v201402.cm.Page  implements java.io.Serializable {
     public NoStatsPage() {
     }

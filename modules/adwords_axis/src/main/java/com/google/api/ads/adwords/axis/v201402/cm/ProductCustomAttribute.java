@@ -21,7 +21,10 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
      * of the custom attribute.
      *                     <span class="constraint OneOf">The value must
      * be one of {CUSTOM_ATTRIBUTE_0, CUSTOM_ATTRIBUTE_1, CUSTOM_ATTRIBUTE_2,
-     * CUSTOM_ATTRIBUTE_3, CUSTOM_ATTRIBUTE_4}.</span> */
+     * CUSTOM_ATTRIBUTE_3, CUSTOM_ATTRIBUTE_4}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type;
 
     private java.lang.String value;
@@ -48,6 +51,9 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint OneOf">The value must
      * be one of {CUSTOM_ATTRIBUTE_0, CUSTOM_ATTRIBUTE_1, CUSTOM_ATTRIBUTE_2,
      * CUSTOM_ATTRIBUTE_3, CUSTOM_ATTRIBUTE_4}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType getType() {
         return type;
@@ -62,6 +68,9 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint OneOf">The value must
      * be one of {CUSTOM_ATTRIBUTE_0, CUSTOM_ATTRIBUTE_1, CUSTOM_ATTRIBUTE_2,
      * CUSTOM_ATTRIBUTE_3, CUSTOM_ATTRIBUTE_4}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type) {
         this.type = type;

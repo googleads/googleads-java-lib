@@ -8,10 +8,6 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *             Base class for Get results for a page of entities that do not use statistics.
- *           
- * 
  * <p>Java class for NoStatsPage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

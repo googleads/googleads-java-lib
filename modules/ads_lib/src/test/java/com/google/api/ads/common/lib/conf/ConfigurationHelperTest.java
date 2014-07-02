@@ -14,16 +14,21 @@
 
 package com.google.api.ads.common.lib.conf;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.common.lib.conf.ConfigurationHelper.ConfigurationInfo;
+import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
+import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.SystemConfiguration;
+import org.apache.commons.lang.SystemUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,6 +42,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Test for {@link ConfigurationHelper}.
@@ -49,10 +55,11 @@ public class ConfigurationHelperTest {
   private ConfigurationHelper configurationHelper;
   private Map<String, String> test1Properties;
   private Map<String, String> test3Properties;
-  private String[] allPropertyKeys = {"a.b.c", "a.b.d", "e.f.g", "e.f.h", "testProperty"};
+  private String[] allPropertyKeys = {"a.b.c", "a.b.d", "e.f.g", "e.f.h", "i.j.k", "testProperty"};
 
   @Before
   public void setUp() {
+    AbstractConfiguration.setDefaultListDelimiter(',');
     clearSystemProperties();
     this.configurationHelper = new ConfigurationHelper();
     this.test1Properties = new HashMap<String, String>() {{
@@ -63,6 +70,9 @@ public class ConfigurationHelperTest {
     this.test3Properties = new HashMap<String, String>() {{
         this.put("a.b.c", "jklm");
         this.put("e.f.h", "90123");
+        // The value in the file is "foo,bar" but AbstractConfiguration.getString(key) only returns
+        // the first item in a collection.
+        this.put("i.j.k", "foo");
       }};
   }
 
@@ -119,8 +129,7 @@ public class ConfigurationHelperTest {
 
   @Test(expected = ConfigurationLoadException.class)
   public void testFromFile_stringDoesNotExist() throws Exception {
-    Configuration configuration =
-        configurationHelper.fromFile("/" + System.currentTimeMillis());
+    configurationHelper.fromFile("/" + System.currentTimeMillis());
   }
 
   @Test
@@ -139,8 +148,7 @@ public class ConfigurationHelperTest {
 
   @Test(expected = ConfigurationLoadException.class)
   public void testFromFile_urlDoesNotExist() throws Exception {
-    Configuration configuration =
-        configurationHelper.fromFile(new URL("file:///" + System.currentTimeMillis()));
+    configurationHelper.fromFile(new URL("file:///" + System.currentTimeMillis()));
   }
 
   @Test
@@ -151,17 +159,71 @@ public class ConfigurationHelperTest {
     assertPropertiesEquals(test1Properties, configuration);
   }
 
+  /**
+   * Asserts that reading list values from a properties file works properly when the default
+   * list delimiter is not modified.
+   */
+  @Test
+  public void testFromFile_listValuesWithDefaultDelimiterUnchanged() throws Exception {
+    Configuration configuration = configurationHelper.fromFile(ConfigurationHelperTest.class
+        .getResource("props/test3.properties"));
+    assertPropertiesEquals(test3Properties, configuration);
+    String[] stringArray = configuration.getStringArray("i.j.k");
+    assertArrayEquals(new String[]{"foo", "bar"}, stringArray);
+  }
+  
+  /**
+   * Asserts that reading list values from a properties file works properly when the default
+   * list delimiter is modified.
+   */
+  @Test
+  public void testFromFile_listValuesWithDefaultDelimiterChanged() throws Exception {
+    AbstractConfiguration.setDefaultListDelimiter('|');
+    Configuration configuration = configurationHelper.fromFile(
+        ConfigurationHelperTest.class.getResource("props/test3.properties"));
+    assertPropertiesEquals(test3Properties, configuration);
+    String[] stringArray = configuration.getStringArray("i.j.k");
+    assertArrayEquals(new String[] {"foo", "bar"}, stringArray);
+  }
+  
   @Test
   public void testFromSystem() throws Exception {
-    for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
+    for (Map.Entry<String, String> entry : test3Properties.entrySet()) {
       System.setProperty(entry.getKey(), entry.getValue());
     }
-    assertContains(test1Properties, configurationHelper.fromSystem());
+    assertContains(test3Properties, configurationHelper.fromSystem());
+  }
+  
+  @Test
+  public void testFromSystem_containsListValues() throws Exception {
+    AbstractConfiguration.setDefaultListDelimiter('|');
+    Map<String, String> properties = Maps.newHashMap();
+    properties.put("testProperty", "b,bee");
+    
+    for (Entry<String, String> entry : properties.entrySet()) {
+      System.setProperty(entry.getKey(), entry.getValue());
+    }
+    
+    Splitter splitter = Splitter.on(',');
+    Configuration systemConfiguration = configurationHelper.fromSystem();
+    for (Entry<String, String> entry : properties.entrySet()) {
+      String[] actualValues = systemConfiguration.getStringArray(entry.getKey());
+      String[] expectedValues;
+      if ("line.separator".equals(entry.getKey())) {
+        expectedValues = new String[] {SystemUtils.LINE_SEPARATOR};
+      } else {
+        expectedValues = splitter.splitToList(entry.getValue()).toArray(new String[0]);
+      }
+      assertArrayEquals(String.format("Values for key %s do not match", entry.getKey()),
+          expectedValues, actualValues);
+    }
   }
 
   @Test
   public void testCreateCombinedConfiguration_justSystem() throws Exception {
-    assertContains(new SystemConfiguration(),
+    SystemConfiguration systemConfig = new SystemConfiguration();
+    systemConfig.setTrimmingDisabled(true);
+    assertContains(systemConfig,
         configurationHelper.createCombinedConfiguration(null, null));
   }
 
@@ -241,7 +303,7 @@ public class ConfigurationHelperTest {
 
     System.setProperty("testProperty", "testValue");
 
-    Configuration configuration = configurationHelper.createCombinedConfiguration(null,
+    configurationHelper.createCombinedConfiguration(null,
         Lists.<ConfigurationInfo<URL>>newArrayList(new ConfigurationInfo<URL>(
             new URL("file:///does/not/exist" + System.currentTimeMillis()), false)));
   }
@@ -360,7 +422,9 @@ public class ConfigurationHelperTest {
 
   /**
    * Asserts that the configuration matches the properties and that they have
-   * the same number of entries.
+   * the same number of entries. If the value for a key contains the list delimiter
+   * then this method will only confirm that the <em>first</em> value in the delimited
+   * list matches the key's value in <code>properties</code>.
    */
   private static void assertPropertiesEquals(Map<String, String> properties,
       Configuration configuration) {
@@ -369,13 +433,13 @@ public class ConfigurationHelperTest {
     Iterator keys = configuration.getKeys();
     while (keys.hasNext()) {
       String key = (String) keys.next();
-      assertEquals(properties.get(key), configuration.getString(key));
+      assertPropertyEquals(key, properties.get(key), configuration.getString(key));
       count++;
     }
     assertEquals("Configuration does not have the same number of properties",
         properties.size(), count);
   }
-
+  
   /**
    * Asserts that the actual configuration contains the expected ones.
    */
@@ -384,7 +448,7 @@ public class ConfigurationHelperTest {
     Iterator keys = expected.getKeys();
     while (keys.hasNext()) {
       String key = (String) keys.next();
-      assertEquals(expected.getString(key), actual.getString(key));
+      assertPropertyEquals(key, expected.getString(key), actual.getString(key));
     }
   }
 
@@ -393,8 +457,15 @@ public class ConfigurationHelperTest {
    */
   private static void assertContains(Map<String, String> properties, Configuration configuration) {
     for (Map.Entry<String, String> entry : properties.entrySet()) {
-      assertEquals(properties.get(entry.getKey()), configuration.getString(entry.getKey()));
+      String key = entry.getKey();
+      assertPropertyEquals(key, properties.get(key), configuration.getString(key));
     }
+  }
+
+  private static void assertPropertyEquals(String key, Object expectedValue,
+      Object actualValue) {
+    assertEquals(String.format("Unexpected value for key: %s", key),
+        expectedValue, actualValue);
   }
 
   /**

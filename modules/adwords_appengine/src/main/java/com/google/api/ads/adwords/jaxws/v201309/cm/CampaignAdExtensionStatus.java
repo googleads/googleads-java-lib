@@ -27,7 +27,7 @@ public enum CampaignAdExtensionStatus {
 
     /**
      * 
-     *                 Active.
+     *                 Enabled.
      *               
      * 
      */
@@ -35,7 +35,7 @@ public enum CampaignAdExtensionStatus {
 
     /**
      * 
-     *                 Deleted.
+     *                 Removed.
      *               
      * 
      */

@@ -104,7 +104,7 @@ public enum FeedErrorReason {
 
     /**
      * 
-     *                 The given id refers to a deleted Feed. Deleted Feeds are immutable.
+     *                 The given id refers to a removed Feed. Removed Feeds are immutable.
      *               
      * 
      */

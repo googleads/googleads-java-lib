@@ -73,7 +73,9 @@ public class AdUnit  implements java.io.Serializable {
      * of serving
      *                 the ad.
      *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation.
+     * can be set during ad unit creation. If it
+     *                 is not provided, it will be assigned by Google based
+     * off of the inventory unit ID.
      *                 Before V201311, this attribute is read-only and assigned
      * by Google.
      *                 Once an ad unit is created, its {@code adUnitCode}
@@ -448,7 +450,9 @@ public class AdUnit  implements java.io.Serializable {
      * of serving
      *                 the ad.
      *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation.
+     * can be set during ad unit creation. If it
+     *                 is not provided, it will be assigned by Google based
+     * off of the inventory unit ID.
      *                 Before V201311, this attribute is read-only and assigned
      * by Google.
      *                 Once an ad unit is created, its {@code adUnitCode}
@@ -466,7 +470,9 @@ public class AdUnit  implements java.io.Serializable {
      * of serving
      *                 the ad.
      *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation.
+     * can be set during ad unit creation. If it
+     *                 is not provided, it will be assigned by Google based
+     * off of the inventory unit ID.
      *                 Before V201311, this attribute is read-only and assigned
      * by Google.
      *                 Once an ad unit is created, its {@code adUnitCode}

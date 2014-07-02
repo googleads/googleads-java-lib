@@ -24,11 +24,11 @@ public interface AdGroupServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201309.cm.AdGroupPage get(com.google.api.ads.adwords.axis.v201309.cm.Selector serviceSelector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201309.cm.ApiException;
 
     /**
-     * Adds, updates, or deletes ad groups.
+     * Adds, updates, or removes ad groups.
      *         <p class="note"><b>Note:</b> {@link AdGroupOperation} does
      * not support the
-     *         {@code REMOVE} operator. To delete an ad group, set its
-     *         {@link AdGroup#status status} to {@code DELETED}.</p>
+     *         {@code REMOVE} operator. To remove an ad group, set its
+     *         {@link AdGroup#status status} to {@code REMOVED}.</p>
      *         
      *         
      * @param operations List of unique operations. The same ad group cannot

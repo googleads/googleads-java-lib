@@ -21,10 +21,12 @@ public class PromotionStatus implements java.io.Serializable {
     public static final java.lang.String _ACTIVE = "ACTIVE";
     public static final java.lang.String _PAUSED = "PAUSED";
     public static final java.lang.String _DELETED = "DELETED";
+    public static final java.lang.String _UPGRADED_TO_ADWORDS = "UPGRADED_TO_ADWORDS";
     public static final PromotionStatus DRAFT = new PromotionStatus(_DRAFT);
     public static final PromotionStatus ACTIVE = new PromotionStatus(_ACTIVE);
     public static final PromotionStatus PAUSED = new PromotionStatus(_PAUSED);
     public static final PromotionStatus DELETED = new PromotionStatus(_DELETED);
+    public static final PromotionStatus UPGRADED_TO_ADWORDS = new PromotionStatus(_UPGRADED_TO_ADWORDS);
     public java.lang.String getValue() { return _value_;}
     public static PromotionStatus fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

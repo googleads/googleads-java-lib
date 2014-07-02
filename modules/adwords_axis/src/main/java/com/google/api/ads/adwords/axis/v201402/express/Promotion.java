@@ -52,6 +52,11 @@ public class Promotion  implements java.io.Serializable {
      * be selected using the value "DestinationUrl".</span> */
     private java.lang.String destinationUrl;
 
+    /* Phone number associated with this promotion.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PhoneNumber".</span> */
+    private com.google.api.ads.adwords.axis.v201402.express.PhoneNumber phoneNumber;
+
     /* Whether the street address of the business should be visible.
      * Default is 'True'.
      *                 <span class="constraint Selectable">This field can
@@ -117,6 +122,7 @@ public class Promotion  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201402.express.PromotionStatus status,
            com.google.api.ads.adwords.axis.v201402.express.Creative[] creatives,
            java.lang.String destinationUrl,
+           com.google.api.ads.adwords.axis.v201402.express.PhoneNumber phoneNumber,
            java.lang.Boolean streetAddressVisible,
            java.lang.Boolean callTrackingEnabled,
            com.google.api.ads.adwords.axis.v201402.cm.Money budget,
@@ -128,6 +134,7 @@ public class Promotion  implements java.io.Serializable {
            this.status = status;
            this.creatives = creatives;
            this.destinationUrl = destinationUrl;
+           this.phoneNumber = phoneNumber;
            this.streetAddressVisible = streetAddressVisible;
            this.callTrackingEnabled = callTrackingEnabled;
            this.budget = budget;
@@ -288,6 +295,30 @@ public class Promotion  implements java.io.Serializable {
      */
     public void setDestinationUrl(java.lang.String destinationUrl) {
         this.destinationUrl = destinationUrl;
+    }
+
+
+    /**
+     * Gets the phoneNumber value for this Promotion.
+     * 
+     * @return phoneNumber   * Phone number associated with this promotion.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PhoneNumber".</span>
+     */
+    public com.google.api.ads.adwords.axis.v201402.express.PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
+
+
+    /**
+     * Sets the phoneNumber value for this Promotion.
+     * 
+     * @param phoneNumber   * Phone number associated with this promotion.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PhoneNumber".</span>
+     */
+    public void setPhoneNumber(com.google.api.ads.adwords.axis.v201402.express.PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
 
@@ -529,6 +560,9 @@ public class Promotion  implements java.io.Serializable {
             ((this.destinationUrl==null && other.getDestinationUrl()==null) || 
              (this.destinationUrl!=null &&
               this.destinationUrl.equals(other.getDestinationUrl()))) &&
+            ((this.phoneNumber==null && other.getPhoneNumber()==null) || 
+             (this.phoneNumber!=null &&
+              this.phoneNumber.equals(other.getPhoneNumber()))) &&
             ((this.streetAddressVisible==null && other.getStreetAddressVisible()==null) || 
              (this.streetAddressVisible!=null &&
               this.streetAddressVisible.equals(other.getStreetAddressVisible()))) &&
@@ -580,6 +614,9 @@ public class Promotion  implements java.io.Serializable {
         }
         if (getDestinationUrl() != null) {
             _hashCode += getDestinationUrl().hashCode();
+        }
+        if (getPhoneNumber() != null) {
+            _hashCode += getPhoneNumber().hashCode();
         }
         if (getStreetAddressVisible() != null) {
             _hashCode += getStreetAddressVisible().hashCode();
@@ -658,6 +695,13 @@ public class Promotion  implements java.io.Serializable {
         elemField.setFieldName("destinationUrl");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201402", "destinationUrl"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201402", "phoneNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201402", "PhoneNumber"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

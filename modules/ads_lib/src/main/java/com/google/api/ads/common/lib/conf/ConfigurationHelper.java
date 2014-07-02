@@ -57,9 +57,11 @@ public class ConfigurationHelper {
    * @returns properties loaded from the specified path or null.
    */
   public Configuration fromFile(String path) throws ConfigurationLoadException {
-    PropertiesConfiguration propertiesConfiguration = new PropertiesConfiguration();
+    PropertiesConfiguration propertiesConfiguration =
+        setupConfiguration(new PropertiesConfiguration());
+    propertiesConfiguration.setFileName(path);
     try {
-      propertiesConfiguration.load(path);
+      propertiesConfiguration.load();
     } catch (ConfigurationException e) {
       if (Throwables.getRootCause(e) instanceof AccessControlException){
         AdsServiceLoggers.ADS_API_LIB_LOG.debug("Properties could not be loaded.", e);
@@ -80,8 +82,11 @@ public class ConfigurationHelper {
    * @returns properties loaded from the specified path or null.
    */
   public Configuration fromFile(File path) throws ConfigurationLoadException {
+    PropertiesConfiguration configuration = setupConfiguration(new PropertiesConfiguration());
+    configuration.setFile(path);
     try {
-      return new PropertiesConfiguration(path);
+      configuration.load();
+      return configuration;
     } catch (ConfigurationException e) {
       throw new ConfigurationLoadException(
           "Encountered a problem reading the provided configuration file \"" + path + "\"!", e);
@@ -97,8 +102,11 @@ public class ConfigurationHelper {
    * @returns properties loaded from the specified path or null.
    */
   public Configuration fromFile(URL path) throws ConfigurationLoadException {
+    PropertiesConfiguration configuration = setupConfiguration(new PropertiesConfiguration());
+    configuration.setURL(path);
     try {
-      return new PropertiesConfiguration(path);
+      configuration.load();
+      return configuration;
     } catch (ConfigurationException e) {
       throw new ConfigurationLoadException(
           "Encountered a problem reading the provided configuration file \"" + path + "\"!", e);
@@ -109,7 +117,12 @@ public class ConfigurationHelper {
    * Loads configuration from system defined arguments, i.e. -Dapi.x.y.z=abc.
    */
   public Configuration fromSystem() {
-    return new MapConfiguration((Properties) System.getProperties().clone());
+    MapConfiguration mapConfig =
+        setupConfiguration(new MapConfiguration((Properties) System.getProperties().clone()));
+    // Disables trimming so system properties that include whitespace (such as line.separator) will
+    // be preserved.
+    mapConfig.setTrimmingDisabled(true);
+    return mapConfig;
   }
 
   /**
@@ -127,7 +140,8 @@ public class ConfigurationHelper {
   public CombinedConfiguration createCombinedConfiguration(
       @Nullable List<ConfigurationInfo<String>> paths,
       @Nullable List<ConfigurationInfo<URL>> urls) throws ConfigurationLoadException {
-    CombinedConfiguration combinedConfiguration = new CombinedConfiguration(new OverrideCombiner());
+    CombinedConfiguration combinedConfiguration =
+        setupConfiguration(new CombinedConfiguration(new OverrideCombiner()));
 
     // System configuration will override all other configurations.
     addConfiguration(combinedConfiguration, fromSystem());
@@ -179,7 +193,7 @@ public class ConfigurationHelper {
     if (configuration instanceof AbstractConfiguration) {
       combinedConfiguration.addConfiguration((AbstractConfiguration) configuration);
     } else {
-      combinedConfiguration.addConfiguration(new AbstractConfiguration() {
+      combinedConfiguration.addConfiguration(setupConfiguration(new AbstractConfiguration() {
 
         public boolean isEmpty() {
           return configuration.isEmpty();
@@ -202,7 +216,7 @@ public class ConfigurationHelper {
         protected void addPropertyDirect(String key, Object value) {
           configuration.addProperty(key, value);
         }
-      });
+      }));
     }
   }
 
@@ -240,6 +254,19 @@ public class ConfigurationHelper {
     return newList(Lists.<T>newArrayList(locations), isOptional);
   }
 
+  /**
+   * Sets attributes of the configuration to common values. Pass any Configuration objects
+   * created by this helper to this method to ensure consistency.
+   *  
+   * @param configuration the new configuration to set up
+   * @return the same configuration that was passed, updated with common attribute values
+   */
+  private <C extends AbstractConfiguration> C setupConfiguration(C configuration) {
+    configuration.setListDelimiter(',');
+    configuration.setDelimiterParsingDisabled(false);
+    return configuration;
+  }
+  
   /**
    * Information about the configuration.
 

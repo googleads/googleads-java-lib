@@ -23,7 +23,10 @@ public class ProductType  extends com.google.api.ads.adwords.axis.v201402.cm.Pro
      * the product type.
      *                     <span class="constraint OneOf">The value must
      * be one of {PRODUCT_TYPE_L1, PRODUCT_TYPE_L2, PRODUCT_TYPE_L3, PRODUCT_TYPE_L4,
-     * PRODUCT_TYPE_L5}.</span> */
+     * PRODUCT_TYPE_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type;
 
     private java.lang.String value;
@@ -50,6 +53,9 @@ public class ProductType  extends com.google.api.ads.adwords.axis.v201402.cm.Pro
      *                     <span class="constraint OneOf">The value must
      * be one of {PRODUCT_TYPE_L1, PRODUCT_TYPE_L2, PRODUCT_TYPE_L3, PRODUCT_TYPE_L4,
      * PRODUCT_TYPE_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType getType() {
         return type;
@@ -64,6 +70,9 @@ public class ProductType  extends com.google.api.ads.adwords.axis.v201402.cm.Pro
      *                     <span class="constraint OneOf">The value must
      * be one of {PRODUCT_TYPE_L1, PRODUCT_TYPE_L2, PRODUCT_TYPE_L3, PRODUCT_TYPE_L4,
      * PRODUCT_TYPE_L5}.</span>
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201402.cm.ProductDimensionType type) {
         this.type = type;

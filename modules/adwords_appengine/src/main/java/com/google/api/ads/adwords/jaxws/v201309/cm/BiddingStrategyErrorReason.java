@@ -47,7 +47,7 @@ public enum BiddingStrategyErrorReason {
     /**
      * 
      *                 Only bidding strategies not linked to campaigns, adgroups or adgroup criteria can be
-     *                 deleted.
+     *                 removed.
      *               
      * 
      */

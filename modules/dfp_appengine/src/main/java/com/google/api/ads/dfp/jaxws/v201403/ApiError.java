@@ -87,6 +87,7 @@ import javax.xml.bind.annotation.XmlType;
     PermissionError.class,
     LineItemOperationError.class,
     TeamError.class,
+    TokenError.class,
     ProductTemplateError.class,
     CreativeSetError.class,
     ApiVersionError.class,

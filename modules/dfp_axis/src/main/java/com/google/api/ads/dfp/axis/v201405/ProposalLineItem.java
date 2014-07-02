@@ -254,25 +254,26 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is readonly. */
     private java.lang.Boolean isSold;
 
-    /* The base rate of the {@code ProposalLineItem}. This attribute
-     * is readonly. */
+    /* The base rate of the {@code ProposalLineItem} in proposal currency.
+     * This attribute is readonly. */
     private com.google.api.ads.dfp.axis.v201405.Money baseRate;
 
-    /* The amount of money to spend per impression or click. It supports
-     * precision
+    /* The amount of money to spend per impression or click in proposal
+     * currency.
+     *                 It supports precision of 2 decimal places in terms
+     * of the fundamental currency
+     *                 unit, so the {@link Money#microAmount} must be multiples
+     * of 10000. This attribute is
+     *                 required. */
+    private com.google.api.ads.dfp.axis.v201405.Money costPerUnit;
+
+    /* The cost of the {@code ProposalLineItem} in proposal currency.
+     * It supports precision
      *                 of 2 decimal places in terms of the fundamental currency
      * unit, so the
      *                 {@link Money#microAmount} must be multiples of 10000.
      * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly. */
-    private com.google.api.ads.dfp.axis.v201405.Money costPerUnit;
-
-    /* The cost of the {@code ProposalLineItem}. It supports precision
-     * of 2 decimal places in terms of the fundamental currency unit, so
-     * the
-     *                 {@link Money#microAmount} must be multiples of 10000.
-     * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly. */
+     *                 required. */
     private com.google.api.ads.dfp.axis.v201405.Money cost;
 
     /* Indicates how well the line item generated from this proposal
@@ -1383,8 +1384,8 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the baseRate value for this ProposalLineItem.
      * 
-     * @return baseRate   * The base rate of the {@code ProposalLineItem}. This attribute
-     * is readonly.
+     * @return baseRate   * The base rate of the {@code ProposalLineItem} in proposal currency.
+     * This attribute is readonly.
      */
     public com.google.api.ads.dfp.axis.v201405.Money getBaseRate() {
         return baseRate;
@@ -1394,8 +1395,8 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the baseRate value for this ProposalLineItem.
      * 
-     * @param baseRate   * The base rate of the {@code ProposalLineItem}. This attribute
-     * is readonly.
+     * @param baseRate   * The base rate of the {@code ProposalLineItem} in proposal currency.
+     * This attribute is readonly.
      */
     public void setBaseRate(com.google.api.ads.dfp.axis.v201405.Money baseRate) {
         this.baseRate = baseRate;
@@ -1405,13 +1406,13 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the costPerUnit value for this ProposalLineItem.
      * 
-     * @return costPerUnit   * The amount of money to spend per impression or click. It supports
-     * precision
-     *                 of 2 decimal places in terms of the fundamental currency
-     * unit, so the
-     *                 {@link Money#microAmount} must be multiples of 10000.
-     * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly.
+     * @return costPerUnit   * The amount of money to spend per impression or click in proposal
+     * currency.
+     *                 It supports precision of 2 decimal places in terms
+     * of the fundamental currency
+     *                 unit, so the {@link Money#microAmount} must be multiples
+     * of 10000. This attribute is
+     *                 required.
      */
     public com.google.api.ads.dfp.axis.v201405.Money getCostPerUnit() {
         return costPerUnit;
@@ -1421,13 +1422,13 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the costPerUnit value for this ProposalLineItem.
      * 
-     * @param costPerUnit   * The amount of money to spend per impression or click. It supports
-     * precision
-     *                 of 2 decimal places in terms of the fundamental currency
-     * unit, so the
-     *                 {@link Money#microAmount} must be multiples of 10000.
-     * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly.
+     * @param costPerUnit   * The amount of money to spend per impression or click in proposal
+     * currency.
+     *                 It supports precision of 2 decimal places in terms
+     * of the fundamental currency
+     *                 unit, so the {@link Money#microAmount} must be multiples
+     * of 10000. This attribute is
+     *                 required.
      */
     public void setCostPerUnit(com.google.api.ads.dfp.axis.v201405.Money costPerUnit) {
         this.costPerUnit = costPerUnit;
@@ -1437,12 +1438,13 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the cost value for this ProposalLineItem.
      * 
-     * @return cost   * The cost of the {@code ProposalLineItem}. It supports precision
-     * of 2 decimal places in terms of the fundamental currency unit, so
-     * the
+     * @return cost   * The cost of the {@code ProposalLineItem} in proposal currency.
+     * It supports precision
+     *                 of 2 decimal places in terms of the fundamental currency
+     * unit, so the
      *                 {@link Money#microAmount} must be multiples of 10000.
      * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly.
+     *                 required.
      */
     public com.google.api.ads.dfp.axis.v201405.Money getCost() {
         return cost;
@@ -1452,12 +1454,13 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the cost value for this ProposalLineItem.
      * 
-     * @param cost   * The cost of the {@code ProposalLineItem}. It supports precision
-     * of 2 decimal places in terms of the fundamental currency unit, so
-     * the
+     * @param cost   * The cost of the {@code ProposalLineItem} in proposal currency.
+     * It supports precision
+     *                 of 2 decimal places in terms of the fundamental currency
+     * unit, so the
      *                 {@link Money#microAmount} must be multiples of 10000.
      * This attribute is
-     *                 required. The {@link Money#currencyCode} is readonly.
+     *                 required.
      */
     public void setCost(com.google.api.ads.dfp.axis.v201405.Money cost) {
         this.cost = cost;

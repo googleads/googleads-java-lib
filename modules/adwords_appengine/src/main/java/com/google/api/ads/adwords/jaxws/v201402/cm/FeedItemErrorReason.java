@@ -47,7 +47,7 @@ public enum FeedItemErrorReason {
 
     /**
      * 
-     *                 Cannot operate on deleted feed item.
+     *                 Cannot operate on removed feed item.
      *               
      * 
      */

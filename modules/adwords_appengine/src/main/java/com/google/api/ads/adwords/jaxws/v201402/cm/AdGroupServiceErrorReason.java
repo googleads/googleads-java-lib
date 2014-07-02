@@ -49,7 +49,7 @@ public enum AdGroupServiceErrorReason {
 
     /**
      * 
-     *                 Cannot delete an adgroup, adgroup status can be marked deleted
+     *                 Cannot remove an adgroup, adgroup status can be marked removed
      *                 using set operator.
      *               
      * 

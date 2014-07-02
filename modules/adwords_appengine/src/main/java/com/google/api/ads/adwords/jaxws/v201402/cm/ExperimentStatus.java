@@ -36,7 +36,7 @@ public enum ExperimentStatus {
 
     /**
      * 
-     *                 Experiment has been deleted.
+     *                 Experiment has been removed.
      *               
      * 
      */

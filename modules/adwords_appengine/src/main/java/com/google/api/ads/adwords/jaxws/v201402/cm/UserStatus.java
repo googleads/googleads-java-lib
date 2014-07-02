@@ -36,7 +36,7 @@ public enum UserStatus {
 
     /**
      * 
-     *                 Criterion is deleted.
+     *                 Criterion is removed.
      *               
      * 
      */

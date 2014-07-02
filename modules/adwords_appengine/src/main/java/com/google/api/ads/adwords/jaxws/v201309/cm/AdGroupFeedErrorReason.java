@@ -57,7 +57,7 @@ public enum AdGroupFeedErrorReason {
 
     /**
      * 
-     *                 Cannot operate on deleted adgroup feed.
+     *                 Cannot operate on removed adgroup feed.
      *               
      * 
      */

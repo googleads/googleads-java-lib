@@ -57,7 +57,7 @@ public enum CustomerFeedErrorReason {
 
     /**
      * 
-     *                 Cannot modify deleted customer feed.
+     *                 Cannot modify removed customer feed.
      *               
      * 
      */

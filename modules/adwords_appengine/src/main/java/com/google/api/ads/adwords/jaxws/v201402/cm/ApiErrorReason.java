@@ -51,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="FeedItemErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}FeedItemError.Reason"/>
  *         &lt;element name="ForwardCompatibilityErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}ForwardCompatibilityError.Reason"/>
  *         &lt;element name="FunctionErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}FunctionError.Reason"/>
+ *         &lt;element name="FunctionParsingErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}FunctionParsingError.Reason"/>
  *         &lt;element name="IdErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}IdError.Reason"/>
  *         &lt;element name="ImageErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}ImageError.Reason"/>
  *         &lt;element name="InternalApiErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201402}InternalApiError.Reason"/>
@@ -119,6 +120,7 @@ import javax.xml.bind.annotation.XmlType;
     "feedItemErrorReason",
     "forwardCompatibilityErrorReason",
     "functionErrorReason",
+    "functionParsingErrorReason",
     "idErrorReason",
     "imageErrorReason",
     "internalApiErrorReason",
@@ -210,6 +212,8 @@ public class ApiErrorReason {
     protected ForwardCompatibilityErrorReason forwardCompatibilityErrorReason;
     @XmlElement(name = "FunctionErrorReason")
     protected FunctionErrorReason functionErrorReason;
+    @XmlElement(name = "FunctionParsingErrorReason")
+    protected FunctionParsingErrorReason functionParsingErrorReason;
     @XmlElement(name = "IdErrorReason")
     protected IdErrorReason idErrorReason;
     @XmlElement(name = "ImageErrorReason")
@@ -985,6 +989,30 @@ public class ApiErrorReason {
      */
     public void setFunctionErrorReason(FunctionErrorReason value) {
         this.functionErrorReason = value;
+    }
+
+    /**
+     * Gets the value of the functionParsingErrorReason property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FunctionParsingErrorReason }
+     *     
+     */
+    public FunctionParsingErrorReason getFunctionParsingErrorReason() {
+        return functionParsingErrorReason;
+    }
+
+    /**
+     * Sets the value of the functionParsingErrorReason property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FunctionParsingErrorReason }
+     *     
+     */
+    public void setFunctionParsingErrorReason(FunctionParsingErrorReason value) {
+        this.functionParsingErrorReason = value;
     }
 
     /**

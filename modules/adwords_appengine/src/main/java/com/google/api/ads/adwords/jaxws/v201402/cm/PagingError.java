@@ -7,11 +7,6 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *             Error codes for pagination.
- *             See {@link com.google.ads.api.services.common.pagination.Paging}.
- *           
- * 
  * <p>Java class for PagingError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -244,6 +244,13 @@ public class AdwordsUserListServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "NotWhitelistedError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201402.cm.NotWhitelistedErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "NullError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201402.cm.NullError.class;

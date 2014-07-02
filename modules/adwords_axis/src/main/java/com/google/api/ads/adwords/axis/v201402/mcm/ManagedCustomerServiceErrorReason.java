@@ -25,9 +25,6 @@ public class ManagedCustomerServiceErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_DESCRIPTIVE_NAME = "INVALID_DESCRIPTIVE_NAME";
     public static final java.lang.String _ADD_CUSTOMER_FAILURE = "ADD_CUSTOMER_FAILURE";
     public static final java.lang.String _SAVE_CUSTOMERS_FAILURE = "SAVE_CUSTOMERS_FAILURE";
-    public static final java.lang.String _ALREADY_MANAGED_BY_THIS_MANAGER = "ALREADY_MANAGED_BY_THIS_MANAGER";
-    public static final java.lang.String _ALREADY_INVITED_BY_THIS_MANAGER = "ALREADY_INVITED_BY_THIS_MANAGER";
-    public static final java.lang.String _NO_PENDING_INVITATION = "NO_PENDING_INVITATION";
     public static final java.lang.String _TEST_ACCOUNT_LINK_ERROR = "TEST_ACCOUNT_LINK_ERROR";
     public static final ManagedCustomerServiceErrorReason UNKNOWN = new ManagedCustomerServiceErrorReason(_UNKNOWN);
     public static final ManagedCustomerServiceErrorReason NOT_AUTHORIZED = new ManagedCustomerServiceErrorReason(_NOT_AUTHORIZED);
@@ -37,9 +34,6 @@ public class ManagedCustomerServiceErrorReason implements java.io.Serializable {
     public static final ManagedCustomerServiceErrorReason INVALID_DESCRIPTIVE_NAME = new ManagedCustomerServiceErrorReason(_INVALID_DESCRIPTIVE_NAME);
     public static final ManagedCustomerServiceErrorReason ADD_CUSTOMER_FAILURE = new ManagedCustomerServiceErrorReason(_ADD_CUSTOMER_FAILURE);
     public static final ManagedCustomerServiceErrorReason SAVE_CUSTOMERS_FAILURE = new ManagedCustomerServiceErrorReason(_SAVE_CUSTOMERS_FAILURE);
-    public static final ManagedCustomerServiceErrorReason ALREADY_MANAGED_BY_THIS_MANAGER = new ManagedCustomerServiceErrorReason(_ALREADY_MANAGED_BY_THIS_MANAGER);
-    public static final ManagedCustomerServiceErrorReason ALREADY_INVITED_BY_THIS_MANAGER = new ManagedCustomerServiceErrorReason(_ALREADY_INVITED_BY_THIS_MANAGER);
-    public static final ManagedCustomerServiceErrorReason NO_PENDING_INVITATION = new ManagedCustomerServiceErrorReason(_NO_PENDING_INVITATION);
     public static final ManagedCustomerServiceErrorReason TEST_ACCOUNT_LINK_ERROR = new ManagedCustomerServiceErrorReason(_TEST_ACCOUNT_LINK_ERROR);
     public java.lang.String getValue() { return _value_;}
     public static ManagedCustomerServiceErrorReason fromValue(java.lang.String value)

@@ -26,6 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT"/>
  *     &lt;enumeration value="AD_EXTENSIONS_PERFORMANCE_REPORT"/>
  *     &lt;enumeration value="DESTINATION_URL_REPORT"/>
+ *     &lt;enumeration value="SHARED_SET_REPORT"/>
+ *     &lt;enumeration value="CAMPAIGN_SHARED_SET_REPORT"/>
+ *     &lt;enumeration value="SHARED_SET_CRITERIA_REPORT"/>
  *     &lt;enumeration value="CREATIVE_CONVERSION_REPORT"/>
  *     &lt;enumeration value="CALL_METRICS_CALL_DETAILS_REPORT"/>
  *     &lt;enumeration value="KEYWORDLESS_QUERY_REPORT"/>
@@ -168,6 +171,30 @@ public enum ReportDefinitionReportType {
      * 
      */
     DESTINATION_URL_REPORT,
+
+    /**
+     * 
+     *                 Reports data for shared sets.
+     *               
+     * 
+     */
+    SHARED_SET_REPORT,
+
+    /**
+     * 
+     *                 Reports data for campaign shared sets.
+     *               
+     * 
+     */
+    CAMPAIGN_SHARED_SET_REPORT,
+
+    /**
+     * 
+     *                 Provides a downloadable snapshot of shared set criteria.
+     *               
+     * 
+     */
+    SHARED_SET_CRITERIA_REPORT,
 
     /**
      * 

@@ -31,6 +31,7 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Money;
  *         &lt;element name="status" type="{https://adwords.google.com/api/adwords/express/v201402}Promotion.Status" minOccurs="0"/>
  *         &lt;element name="creatives" type="{https://adwords.google.com/api/adwords/express/v201402}Creative" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="destinationUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="phoneNumber" type="{https://adwords.google.com/api/adwords/express/v201402}PhoneNumber" minOccurs="0"/>
  *         &lt;element name="streetAddressVisible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="callTrackingEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="budget" type="{https://adwords.google.com/api/adwords/cm/v201402}Money" minOccurs="0"/>
@@ -52,6 +53,7 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Money;
     "status",
     "creatives",
     "destinationUrl",
+    "phoneNumber",
     "streetAddressVisible",
     "callTrackingEnabled",
     "budget",
@@ -66,6 +68,7 @@ public class Promotion {
     protected PromotionStatus status;
     protected List<Creative> creatives;
     protected String destinationUrl;
+    protected PhoneNumber phoneNumber;
     protected Boolean streetAddressVisible;
     protected Boolean callTrackingEnabled;
     protected Money budget;
@@ -197,6 +200,30 @@ public class Promotion {
      */
     public void setDestinationUrl(String value) {
         this.destinationUrl = value;
+    }
+
+    /**
+     * Gets the value of the phoneNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PhoneNumber }
+     *     
+     */
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * Sets the value of the phoneNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PhoneNumber }
+     *     
+     */
+    public void setPhoneNumber(PhoneNumber value) {
+        this.phoneNumber = value;
     }
 
     /**

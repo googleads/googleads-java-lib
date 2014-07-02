@@ -45,7 +45,7 @@ public class Campaign  implements java.io.Serializable {
      * YYYYMMDD. */
     private java.lang.String startDate;
 
-    /* Date the campaign ends. On add, defaults to <code>20371231</code>,
+    /* Date the campaign ends. On add, defaults to <code>20371230</code>,
      * which means the
      *                 campaign will run indefinitely. To set an existing
      * campaign to run indefinitely, set this
@@ -266,7 +266,7 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Gets the endDate value for this Campaign.
      * 
-     * @return endDate   * Date the campaign ends. On add, defaults to <code>20371231</code>,
+     * @return endDate   * Date the campaign ends. On add, defaults to <code>20371230</code>,
      * which means the
      *                 campaign will run indefinitely. To set an existing
      * campaign to run indefinitely, set this
@@ -281,7 +281,7 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Sets the endDate value for this Campaign.
      * 
-     * @param endDate   * Date the campaign ends. On add, defaults to <code>20371231</code>,
+     * @param endDate   * Date the campaign ends. On add, defaults to <code>20371230</code>,
      * which means the
      *                 campaign will run indefinitely. To set an existing
      * campaign to run indefinitely, set this

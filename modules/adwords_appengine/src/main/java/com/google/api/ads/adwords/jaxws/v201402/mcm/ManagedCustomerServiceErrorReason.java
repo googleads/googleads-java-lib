@@ -21,9 +21,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_DESCRIPTIVE_NAME"/>
  *     &lt;enumeration value="ADD_CUSTOMER_FAILURE"/>
  *     &lt;enumeration value="SAVE_CUSTOMERS_FAILURE"/>
- *     &lt;enumeration value="ALREADY_MANAGED_BY_THIS_MANAGER"/>
- *     &lt;enumeration value="ALREADY_INVITED_BY_THIS_MANAGER"/>
- *     &lt;enumeration value="NO_PENDING_INVITATION"/>
  *     &lt;enumeration value="TEST_ACCOUNT_LINK_ERROR"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -99,30 +96,6 @@ public enum ManagedCustomerServiceErrorReason {
      * 
      */
     SAVE_CUSTOMERS_FAILURE,
-
-    /**
-     * 
-     *                 Attempt to establish a link with a client that is already managed by the manager.
-     *               
-     * 
-     */
-    ALREADY_MANAGED_BY_THIS_MANAGER,
-
-    /**
-     * 
-     *                 Attempt to invite a client that has already been invited by the manager.
-     *               
-     * 
-     */
-    ALREADY_INVITED_BY_THIS_MANAGER,
-
-    /**
-     * 
-     *                 Attempt to accept an invitation that doesn't exist.
-     *               
-     * 
-     */
-    NO_PENDING_INVITATION,
 
     /**
      * 

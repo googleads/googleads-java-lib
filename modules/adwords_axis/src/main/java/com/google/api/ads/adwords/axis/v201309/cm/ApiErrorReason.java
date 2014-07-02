@@ -68,6 +68,8 @@ public class ApiErrorReason  implements java.io.Serializable {
 
     private com.google.api.ads.adwords.axis.v201309.cm.ForwardCompatibilityErrorReason forwardCompatibilityErrorReason;
 
+    private com.google.api.ads.adwords.axis.v201309.cm.FunctionParsingErrorReason functionParsingErrorReason;
+
     private com.google.api.ads.adwords.axis.v201309.cm.IdErrorReason idErrorReason;
 
     private com.google.api.ads.adwords.axis.v201309.cm.ImageErrorReason imageErrorReason;
@@ -158,6 +160,7 @@ public class ApiErrorReason  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201309.cm.EntityNotFoundReason entityNotFoundReason,
            com.google.api.ads.adwords.axis.v201309.cm.FeedItemErrorReason feedItemErrorReason,
            com.google.api.ads.adwords.axis.v201309.cm.ForwardCompatibilityErrorReason forwardCompatibilityErrorReason,
+           com.google.api.ads.adwords.axis.v201309.cm.FunctionParsingErrorReason functionParsingErrorReason,
            com.google.api.ads.adwords.axis.v201309.cm.IdErrorReason idErrorReason,
            com.google.api.ads.adwords.axis.v201309.cm.ImageErrorReason imageErrorReason,
            com.google.api.ads.adwords.axis.v201309.cm.InternalApiErrorReason internalApiErrorReason,
@@ -215,6 +218,7 @@ public class ApiErrorReason  implements java.io.Serializable {
            this.entityNotFoundReason = entityNotFoundReason;
            this.feedItemErrorReason = feedItemErrorReason;
            this.forwardCompatibilityErrorReason = forwardCompatibilityErrorReason;
+           this.functionParsingErrorReason = functionParsingErrorReason;
            this.idErrorReason = idErrorReason;
            this.imageErrorReason = imageErrorReason;
            this.internalApiErrorReason = internalApiErrorReason;
@@ -804,6 +808,26 @@ public class ApiErrorReason  implements java.io.Serializable {
      */
     public void setForwardCompatibilityErrorReason(com.google.api.ads.adwords.axis.v201309.cm.ForwardCompatibilityErrorReason forwardCompatibilityErrorReason) {
         this.forwardCompatibilityErrorReason = forwardCompatibilityErrorReason;
+    }
+
+
+    /**
+     * Gets the functionParsingErrorReason value for this ApiErrorReason.
+     * 
+     * @return functionParsingErrorReason
+     */
+    public com.google.api.ads.adwords.axis.v201309.cm.FunctionParsingErrorReason getFunctionParsingErrorReason() {
+        return functionParsingErrorReason;
+    }
+
+
+    /**
+     * Sets the functionParsingErrorReason value for this ApiErrorReason.
+     * 
+     * @param functionParsingErrorReason
+     */
+    public void setFunctionParsingErrorReason(com.google.api.ads.adwords.axis.v201309.cm.FunctionParsingErrorReason functionParsingErrorReason) {
+        this.functionParsingErrorReason = functionParsingErrorReason;
     }
 
 
@@ -1482,6 +1506,9 @@ public class ApiErrorReason  implements java.io.Serializable {
             ((this.forwardCompatibilityErrorReason==null && other.getForwardCompatibilityErrorReason()==null) || 
              (this.forwardCompatibilityErrorReason!=null &&
               this.forwardCompatibilityErrorReason.equals(other.getForwardCompatibilityErrorReason()))) &&
+            ((this.functionParsingErrorReason==null && other.getFunctionParsingErrorReason()==null) || 
+             (this.functionParsingErrorReason!=null &&
+              this.functionParsingErrorReason.equals(other.getFunctionParsingErrorReason()))) &&
             ((this.idErrorReason==null && other.getIdErrorReason()==null) || 
              (this.idErrorReason!=null &&
               this.idErrorReason.equals(other.getIdErrorReason()))) &&
@@ -1663,6 +1690,9 @@ public class ApiErrorReason  implements java.io.Serializable {
         }
         if (getForwardCompatibilityErrorReason() != null) {
             _hashCode += getForwardCompatibilityErrorReason().hashCode();
+        }
+        if (getFunctionParsingErrorReason() != null) {
+            _hashCode += getFunctionParsingErrorReason().hashCode();
         }
         if (getIdErrorReason() != null) {
             _hashCode += getIdErrorReason().hashCode();
@@ -1954,6 +1984,13 @@ public class ApiErrorReason  implements java.io.Serializable {
         elemField.setFieldName("forwardCompatibilityErrorReason");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "ForwardCompatibilityErrorReason"));
         elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "ForwardCompatibilityError.Reason"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("functionParsingErrorReason");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "FunctionParsingErrorReason"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201309", "FunctionParsingError.Reason"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

@@ -46,7 +46,7 @@ public enum ExperimentServingStatus {
 
     /**
      * 
-     *                 Experiment has already ended, but not promoted or deleted
+     *                 Experiment has already ended, but not promoted or removed.
      *               
      * 
      */
@@ -54,7 +54,7 @@ public enum ExperimentServingStatus {
 
     /**
      * 
-     *                 Experiment has been deleted.
+     *                 Experiment has been removed.
      *               
      * 
      */

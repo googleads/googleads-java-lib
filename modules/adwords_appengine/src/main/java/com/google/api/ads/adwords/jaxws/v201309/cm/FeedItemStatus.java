@@ -36,7 +36,7 @@ public enum FeedItemStatus {
 
     /**
      * 
-     *                 Feed item is deleted
+     *                 Feed item is removed
      *               
      * 
      */

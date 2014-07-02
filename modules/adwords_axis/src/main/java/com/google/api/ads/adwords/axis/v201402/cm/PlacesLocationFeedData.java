@@ -10,27 +10,27 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 
 /**
  * Data used to configure a location feed populated from
- *             Google Places.
+ *             Google My Business Locations.
  */
 public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v201402.cm.SystemFeedGenerationData  implements java.io.Serializable {
     /* Required authentication token (from OAuth API) for the email. */
     private com.google.api.ads.adwords.axis.v201402.cm.OAuthInfo oAuthInfo;
 
-    /* The email address for the Google Places location feed.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+    /* The email address for the Google My Business location feed.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String emailAddress;
 
-    /* Used to filter Google Places business listings by business
-     * name. If businessNameFilter is set,
+    /* Used to filter Google My Business listings by business name.
+     * If businessNameFilter is set,
      *                     only listings with a matching business name are
      * candidates to be sync'd into FeedItems. */
     private java.lang.String businessNameFilter;
 
-    /* Used to filter Google Places listings by categories. If entries
-     * exist in categoryFilters, only
-     *                     listings that belong to any of the categories
+    /* Used to filter Google My Business listings by categories. If
+     * entries exist in categoryFilters,
+     *                     only listings that belong to any of the categories
      * are candidates to be sync'd into FeedItems.
      *                     If no entries exist in categoryFilters, then all
      * listings are candidates for syncing. */
@@ -77,10 +77,10 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @return emailAddress   * The email address for the Google Places location feed.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     * @return emailAddress   * The email address for the Google My Business location feed.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getEmailAddress() {
         return emailAddress;
@@ -90,10 +90,10 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @param emailAddress   * The email address for the Google Places location feed.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     * @param emailAddress   * The email address for the Google My Business location feed.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setEmailAddress(java.lang.String emailAddress) {
         this.emailAddress = emailAddress;
@@ -103,8 +103,8 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the businessNameFilter value for this PlacesLocationFeedData.
      * 
-     * @return businessNameFilter   * Used to filter Google Places business listings by business
-     * name. If businessNameFilter is set,
+     * @return businessNameFilter   * Used to filter Google My Business listings by business name.
+     * If businessNameFilter is set,
      *                     only listings with a matching business name are
      * candidates to be sync'd into FeedItems.
      */
@@ -116,8 +116,8 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the businessNameFilter value for this PlacesLocationFeedData.
      * 
-     * @param businessNameFilter   * Used to filter Google Places business listings by business
-     * name. If businessNameFilter is set,
+     * @param businessNameFilter   * Used to filter Google My Business listings by business name.
+     * If businessNameFilter is set,
      *                     only listings with a matching business name are
      * candidates to be sync'd into FeedItems.
      */
@@ -129,9 +129,9 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the categoryFilters value for this PlacesLocationFeedData.
      * 
-     * @return categoryFilters   * Used to filter Google Places listings by categories. If entries
-     * exist in categoryFilters, only
-     *                     listings that belong to any of the categories
+     * @return categoryFilters   * Used to filter Google My Business listings by categories. If
+     * entries exist in categoryFilters,
+     *                     only listings that belong to any of the categories
      * are candidates to be sync'd into FeedItems.
      *                     If no entries exist in categoryFilters, then all
      * listings are candidates for syncing.
@@ -144,9 +144,9 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the categoryFilters value for this PlacesLocationFeedData.
      * 
-     * @param categoryFilters   * Used to filter Google Places listings by categories. If entries
-     * exist in categoryFilters, only
-     *                     listings that belong to any of the categories
+     * @param categoryFilters   * Used to filter Google My Business listings by categories. If
+     * entries exist in categoryFilters,
+     *                     only listings that belong to any of the categories
      * are candidates to be sync'd into FeedItems.
      *                     If no entries exist in categoryFilters, then all
      * listings are candidates for syncing.

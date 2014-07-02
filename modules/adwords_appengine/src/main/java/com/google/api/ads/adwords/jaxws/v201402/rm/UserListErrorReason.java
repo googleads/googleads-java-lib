@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_DESCRIPTION"/>
  *     &lt;enumeration value="INVALID_NAME"/>
  *     &lt;enumeration value="INVALID_TYPE"/>
- *     &lt;enumeration value="INVALID_INTEGRATION_CODE"/>
  *     &lt;enumeration value="INVALID_USER_LIST_LOGICAL_RULE_OPERAND"/>
  *     &lt;enumeration value="NAME_ALREADY_USED"/>
  *     &lt;enumeration value="NEW_CONVERSION_TYPE_NAME_REQUIRED"/>
@@ -104,14 +103,6 @@ public enum UserListErrorReason {
      * 
      */
     INVALID_TYPE,
-
-    /**
-     * 
-     *                 Integration code is empty or invalid
-     *               
-     * 
-     */
-    INVALID_INTEGRATION_CODE,
 
     /**
      * 

@@ -45,6 +45,10 @@ public interface ReconciliationOrderReportServiceInterface extends java.rmi.Remo
      *         <td>{@link ReconciliationOrderReport#orderId}</td>
      *         </tr>
      *         <tr>
+     *         <td>{@code proposalId}</td>
+     *         <td>{@link ReconciliationOrderReport#proposalId}</td>
+     *         </tr>
+     *         <tr>
      *         <td>{@code status}</td>
      *         <td>{@link ReconciliationOrderReport#status}</td>
      *         </tr>
@@ -88,16 +92,26 @@ public interface ReconciliationOrderReportServiceInterface extends java.rmi.Remo
      *         <td>{@link ReconciliationOrderReport#orderId}</td>
      *         </tr>
      *         <tr>
+     *         <td>{@code proposalId}</td>
+     *         <td>{@link ReconciliationOrderReport#proposalId}</td>
+     *         </tr>
+     *         <tr>
      *         <td>{@code reconciliationReportId}</td>
      *         <td>{@link ReconciliationOrderReport#reconciliationReportId}</td>
      * </tr>
      *         </table>
-     *         
-     *         The {@code reconciliationReportId} field and {@code orderId}
-     * are required and can only be
-     *         combined with an {@code AND}. Furthermore, the results may
-     * only belong to one
-     *         {@link ReconciliationReport}.
+     *         The following statement patterns are supported:
+     *         <ul>
+     *         <li>reconciliationReportId = :reconciliationReportId AND orderId
+     * = :orderId</li>
+     *         <li>reconciliationReportId = :reconciliationReportId AND proposalId
+     * = :proposalId</li>
+     *         <li>reconciliationReportId = :reconciliationReportId
+     *         AND (orderId IN (...) OR proposalId IN (...))</li>
+     *         </ul>
+     *         The IN clause could be expanded to multiple OR expressions
+     * like
+     *         (orderId = :orderId OR orderId = :orderId OR ...)
      *         Only orders to which the API user has access will be included.
      * 
      *         

@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ACTIVE"/>
  *     &lt;enumeration value="PAUSED"/>
  *     &lt;enumeration value="DELETED"/>
+ *     &lt;enumeration value="UPGRADED_TO_ADWORDS"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -29,7 +30,8 @@ public enum PromotionStatus {
     DRAFT,
     ACTIVE,
     PAUSED,
-    DELETED;
+    DELETED,
+    UPGRADED_TO_ADWORDS;
 
     public String value() {
         return name();

@@ -30,6 +30,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ReconciliationOrderReport#orderId}</td>
  *             </tr>
  *             <tr>
+ *             <td>{@code proposalId}</td>
+ *             <td>{@link ReconciliationOrderReport#proposalId}</td>
+ *             </tr>
+ *             <tr>
  *             <td>{@code status}</td>
  *             <td>{@link ReconciliationOrderReport#status}</td>
  *             </tr>

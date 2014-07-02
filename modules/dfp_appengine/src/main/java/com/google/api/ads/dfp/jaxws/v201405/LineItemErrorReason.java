@@ -59,6 +59,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CANNOT_CHANGE_CURRENCY"/>
  *     &lt;enumeration value="INVALID_FOR_OFFLINE"/>
  *     &lt;enumeration value="INVALID_LINE_ITEM_DATE_TIME"/>
+ *     &lt;enumeration value="UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -452,6 +453,14 @@ public enum LineItemErrorReason {
      * 
      */
     INVALID_LINE_ITEM_DATE_TIME,
+
+    /**
+     * 
+     *                 The line item type is not supported for this API version.
+     *               
+     * 
+     */
+    UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION,
 
     /**
      * 
