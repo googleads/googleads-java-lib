@@ -98,7 +98,7 @@ public class GoogleClientSecretsBuilder {
     /**
      * Sets the client ID & secret to create the OAuth2 Credential with. If you
      * do not have a client ID or secret, please create one in the API console:
-     * https://cloud.google.com/console
+     * https://console.developers.google.com
      */
     public GoogleClientSecretsForApiBuilder withClientSecrets(String clientId,
         String clientSecret) {
@@ -126,14 +126,14 @@ public class GoogleClientSecretsBuilder {
       if (Strings.isNullOrEmpty(clientId) || clientId.startsWith("INSERT_CLIENT_ID_HERE")) {
         throw new ValidationException(String.format(
             "Client ID must be set%s\nIf you do not have a client ID or secret, "
-            + "please create one in the API console: https://cloud.google.com/console",
+            + "please create one in the API console: https://console.developers.google.com",
             filePath != null ? generateFilePathWarning("clientId") : "."), "clientId");
       }
 
       if (Strings.isNullOrEmpty(clientSecret) || clientId.startsWith("INSERT_CLIENT_SECRET_HERE")) {
         throw new ValidationException(String.format(
             "Client secret must be set%s\nIf you do not have a client ID or secret, "
-            + "please create one in the API console: https://cloud.google.com/console",
+            + "please create one in the API console: https://console.developers.google.com",
             filePath != null ? generateFilePathWarning("clientSecret") : "."),
             "clientSecret");
       }

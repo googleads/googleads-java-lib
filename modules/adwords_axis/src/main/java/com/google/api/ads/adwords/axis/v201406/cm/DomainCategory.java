@@ -1,0 +1,262 @@
+/**
+ * DomainCategory.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ */
+
+package com.google.api.ads.adwords.axis.v201406.cm;
+
+
+/**
+ * Represents domain category information.
+ */
+public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.DimensionProperties  implements java.io.Serializable {
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
+    private java.lang.String category;
+
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
+    private java.lang.Double coverage;
+
+    /* <span class="constraint Selectable">This field can be selected
+     * using the value "DomainName".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
+    private java.lang.String domainName;
+
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
+    private java.lang.String isoLanguage;
+
+    public DomainCategory() {
+    }
+
+    public DomainCategory(
+           java.lang.String dataEntryType,
+           com.google.api.ads.adwords.axis.v201406.cm.LevelOfDetail levelOfDetail,
+           java.lang.String category,
+           java.lang.Double coverage,
+           java.lang.String domainName,
+           java.lang.String isoLanguage) {
+        super(
+            dataEntryType,
+            levelOfDetail);
+        this.category = category;
+        this.coverage = coverage;
+        this.domainName = domainName;
+        this.isoLanguage = isoLanguage;
+    }
+
+
+    /**
+     * Gets the category value for this DomainCategory.
+     * 
+     * @return category   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public java.lang.String getCategory() {
+        return category;
+    }
+
+
+    /**
+     * Sets the category value for this DomainCategory.
+     * 
+     * @param category   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public void setCategory(java.lang.String category) {
+        this.category = category;
+    }
+
+
+    /**
+     * Gets the coverage value for this DomainCategory.
+     * 
+     * @return coverage   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public java.lang.Double getCoverage() {
+        return coverage;
+    }
+
+
+    /**
+     * Sets the coverage value for this DomainCategory.
+     * 
+     * @param coverage   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public void setCoverage(java.lang.Double coverage) {
+        this.coverage = coverage;
+    }
+
+
+    /**
+     * Gets the domainName value for this DomainCategory.
+     * 
+     * @return domainName   * <span class="constraint Selectable">This field can be selected
+     * using the value "DomainName".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
+     */
+    public java.lang.String getDomainName() {
+        return domainName;
+    }
+
+
+    /**
+     * Sets the domainName value for this DomainCategory.
+     * 
+     * @param domainName   * <span class="constraint Selectable">This field can be selected
+     * using the value "DomainName".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
+     */
+    public void setDomainName(java.lang.String domainName) {
+        this.domainName = domainName;
+    }
+
+
+    /**
+     * Gets the isoLanguage value for this DomainCategory.
+     * 
+     * @return isoLanguage   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public java.lang.String getIsoLanguage() {
+        return isoLanguage;
+    }
+
+
+    /**
+     * Sets the isoLanguage value for this DomainCategory.
+     * 
+     * @param isoLanguage   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public void setIsoLanguage(java.lang.String isoLanguage) {
+        this.isoLanguage = isoLanguage;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof DomainCategory)) return false;
+        DomainCategory other = (DomainCategory) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              this.category.equals(other.getCategory()))) &&
+            ((this.coverage==null && other.getCoverage()==null) || 
+             (this.coverage!=null &&
+              this.coverage.equals(other.getCoverage()))) &&
+            ((this.domainName==null && other.getDomainName()==null) || 
+             (this.domainName!=null &&
+              this.domainName.equals(other.getDomainName()))) &&
+            ((this.isoLanguage==null && other.getIsoLanguage()==null) || 
+             (this.isoLanguage!=null &&
+              this.isoLanguage.equals(other.getIsoLanguage())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCategory() != null) {
+            _hashCode += getCategory().hashCode();
+        }
+        if (getCoverage() != null) {
+            _hashCode += getCoverage().hashCode();
+        }
+        if (getDomainName() != null) {
+            _hashCode += getDomainName().hashCode();
+        }
+        if (getIsoLanguage() != null) {
+            _hashCode += getIsoLanguage().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(DomainCategory.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DomainCategory"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("coverage");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "coverage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("domainName");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "domainName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isoLanguage");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "isoLanguage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}

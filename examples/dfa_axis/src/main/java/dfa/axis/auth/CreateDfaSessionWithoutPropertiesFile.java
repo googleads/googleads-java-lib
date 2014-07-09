@@ -78,8 +78,8 @@ public class CreateDfaSessionWithoutPropertiesFile {
           advSearchCriteria);
 
       for (Advertiser result : advertiserRecordSet.getRecords()) {
-        System.out.printf("%s) Advertiser with name \"%s\", ID \"%s\", and spotlight " +
-            "configuration ID \"%s\" was found.%n", i++, result.getName(), result.getId(),
+        System.out.printf("%s) Advertiser with name \"%s\", ID \"%s\", and spotlight "
+            + "configuration ID \"%s\" was found.%n", i++, result.getName(), result.getId(),
             result.getSpotId());
       }
 
@@ -98,7 +98,7 @@ public class CreateDfaSessionWithoutPropertiesFile {
     if (CLIENT_ID.equals("INSERT_CLIENT_ID_HERE")
         || CLIENT_SECRET.equals("INSERT_CLIENT_SECRET_HERE")) {
       throw new IllegalArgumentException("Please input your client IDs or secret. "
-          + "See https://cloud.google.com/console/project");
+          + "See https://console.developers.google.com/project");
     }
 
     if (REFRESH_TOKEN.equals("INSERT_REFRESH_TOKEN_HERE")) {

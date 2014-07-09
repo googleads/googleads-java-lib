@@ -55,9 +55,13 @@ public class GetUsers {
     // Display user names, IDs, network IDs, subnetwork IDs, and group IDs.
     if (userRecordSet.getRecords().length > 0) {
       for (User user: userRecordSet.getRecords()) {
-        System.out.printf("User with name \"%s\", ID \"%s\", network ID \"%s\", subnetwork ID" +
-           " \"%s\", and user role id \"%s\" was found.%n", user.getName(), user.getId(),
-           user.getNetworkId(), user.getSubnetworkId(), user.getUserGroupId());
+        System.out.printf("User with name \"%s\", ID \"%s\", network ID \"%s\", subnetwork ID"
+            + " \"%s\", and user role id \"%s\" was found.%n",
+            user.getName(),
+            user.getId(),
+            user.getNetworkId(),
+            user.getSubnetworkId(),
+            user.getUserGroupId());
       }
     } else {
       System.out.println("No users found for your criteria.");

@@ -45,14 +45,16 @@ import java.io.InputStream;
 @RunWith(JUnit4.class)
 public class ReportDownloaderTest {
 
-  private static final String GOLDEN_ERROR_XML = "<?xml version=\"1.0\" " +
-      "encoding=\"UTF-8\" standalone=\"yes\"?><reportDownloadError>" +
-      "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>" +
-      "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError></reportDownloadError>";
+  private static final String GOLDEN_ERROR_XML = "<?xml version=\"1.0\" "
+      + "encoding=\"UTF-8\" standalone=\"yes\"?><reportDownloadError>"
+      + "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>"
+      + "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError>"
+      + "</reportDownloadError>";
 
-  private static final String ERROR_XML = "<reportDownloadError>" +
-      "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>" +
-      "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError></reportDownloadError>";
+  private static final String ERROR_XML = "<reportDownloadError>"
+      + "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>"
+      + "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError>"
+      + "</reportDownloadError>";
 
   private static final String ERROR_TEXT = "A problem occurred processing your response";
 

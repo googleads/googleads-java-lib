@@ -63,7 +63,8 @@ public class GetFirstPartyAudienceSegments {
         for (AudienceSegment audienceSegment : page.getResults()) {
           System.out.printf(
               "%d) Audience segment with ID \"%d\" and name \"%s\" of size " 
-              + "\"%d\" was found.\n", i++,
+              + "\"%d\" was found.%n",
+              i++,
               audienceSegment.getId(),
               audienceSegment.getName(),
               audienceSegment.getSize());
@@ -73,7 +74,7 @@ public class GetFirstPartyAudienceSegments {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

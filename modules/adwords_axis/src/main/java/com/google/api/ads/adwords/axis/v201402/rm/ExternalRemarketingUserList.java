@@ -10,7 +10,7 @@ package com.google.api.ads.adwords.axis.v201402.rm;
 
 /**
  * User lists created in the DoubleClick platform that are mapped
- *             from DoubleClick to AdWords.
+ *             from DoubleClick to AdWords. These lists are readonly.
  */
 public class ExternalRemarketingUserList  extends com.google.api.ads.adwords.axis.v201402.rm.UserList  implements java.io.Serializable {
     public ExternalRemarketingUserList() {

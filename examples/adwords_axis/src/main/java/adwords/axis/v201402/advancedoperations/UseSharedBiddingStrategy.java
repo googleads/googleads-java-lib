@@ -15,6 +15,7 @@
 package adwords.axis.v201402.advancedoperations;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.v201402.cm.AdvertisingChannelType;
 import com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201402.cm.BiddingStrategyOperation;
@@ -61,16 +62,16 @@ public class UseSharedBiddingStrategy {
   
   public static void main(String[] args) throws Exception {
     Credential oAuth2Credential = new OfflineCredentials.Builder()
-    .forApi(Api.ADWORDS)
-    .fromFile()
-    .build()
-    .generateCredential();
+        .forApi(Api.ADWORDS)
+        .fromFile()
+        .build()
+        .generateCredential();
 
     // Construct an AdWordsSession.
     AdWordsSession session = new AdWordsSession.Builder()
-    .fromFile()
-    .withOAuth2Credential(oAuth2Credential)
-    .build();
+        .fromFile()
+        .withOAuth2Credential(oAuth2Credential)
+        .build();
 
     AdWordsServices adWordsServices = new AdWordsServices();
 
@@ -211,6 +212,9 @@ public class UseSharedBiddingStrategy {
     keywordMatchSetting.setOptIn(true);
     campaign.setSettings(new Setting[] {keywordMatchSetting});
 
+    // Set advertising channel type (required).
+    campaign.setAdvertisingChannelType(AdvertisingChannelType.SEARCH);
+    
     // Set network targeting (recommended).
     NetworkSetting networkSetting = new NetworkSetting();
     networkSetting.setTargetGoogleSearch(true);

@@ -76,9 +76,9 @@ public class CreateCustomCreatives {
     customCreative.setCustomCreativeAssets(new CustomCreativeAsset[] {customCreativeAsset});
 
     // Set the HTML snippet using the custom creative asset macro.
-    customCreative.setHtmlSnippet("<a href='%%CLICK_URL_UNESC%%%%DEST_URL%%'>" +
-        "<img src='%%FILE:" + customCreativeAsset.getMacroName() + "%%'/>" +
-        "</a><br>Click above for great deals!");
+    customCreative.setHtmlSnippet("<a href='%%CLICK_URL_UNESC%%%%DEST_URL%%'>"
+        + "<img src='%%FILE:" + customCreativeAsset.getMacroName() + "%%'/>"
+        + "</a><br>Click above for great deals!");
 
     // Create the creative on the server.
     Creative[] creatives =
@@ -86,7 +86,7 @@ public class CreateCustomCreatives {
 
     for (Creative createdCreative : creatives) {
       System.out.printf("A creative with ID \"%d\", name \"%s\", and type \"%s\""
-          + " was created and can be previewed at: %s\n", createdCreative.getId(),
+          + " was created and can be previewed at: %s%n", createdCreative.getId(),
           createdCreative.getName(), createdCreative.getCreativeType(),
           createdCreative.getPreviewUrl());
     }

@@ -42,7 +42,7 @@ import java.io.InputStreamReader;
  */
 public class GetRefreshTokenWithoutPropertiesFile {
 
-  private static final String SCOPE = "https://adwords.google.com/api/adwords";
+  private static final String SCOPE = "https://www.googleapis.com/auth/adwords";
 
   // This callback URL will allow you to copy the token from the success screen.
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
@@ -91,7 +91,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     System.out.println("Please input your client ID and secret. "
           + "If you do not have a client ID or secret, please create one in "
-          + "the API console: https://cloud.google.com/console");
+          + "the API console: https://console.developers.google.com");
     System.out.println("Enter your client ID: ");
     String clientId = reader.readLine();
     if (Strings.isNullOrEmpty(clientId)) {
@@ -115,7 +115,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
       System.err.println(
           "Please input your client ID and secret. If you do not have a "
           + "client ID or secret, please create one in "
-          + "the API console: https://cloud.google.com/console");
+          + "the API console: https://console.developers.google.com");
       System.exit(1);
     }
 

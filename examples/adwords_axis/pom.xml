@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>adwords-axis-examples</artifactId>
-  <version>1.29.1</version>
+  <version>1.30.0</version>
 
   <packaging>jar</packaging>
 
@@ -36,7 +36,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smokeMainClass>adwords.axis.v201402.basicoperations.GetCampaigns</smokeMainClass>
+    <smokeMainClass>adwords.axis.v201406.basicoperations.GetCampaigns</smokeMainClass>
   </properties>
 
   <build>
@@ -121,12 +121,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.29.1</version>
+      <version>1.30.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis</artifactId>
-      <version>1.29.1</version>
+      <version>1.30.0</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -145,7 +145,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.6.2</version>
+      <version>1.7.7</version>
     </dependency>
   </dependencies>
 

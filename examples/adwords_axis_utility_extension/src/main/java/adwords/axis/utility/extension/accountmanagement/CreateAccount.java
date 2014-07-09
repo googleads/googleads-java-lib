@@ -30,9 +30,6 @@ import org.joda.time.DateTime;
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  *
- * Note: this code example won't work with test accounts. See
- * https://developers.google.com/adwords/api/docs/test-accounts
- *
  * @author Adam Rogal
  * @author Julian Toledo
  */

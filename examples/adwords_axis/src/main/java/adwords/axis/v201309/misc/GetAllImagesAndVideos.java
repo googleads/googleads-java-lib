@@ -94,12 +94,8 @@ public class GetAllImagesAndVideos {
       if (page != null && page.getEntries() != null) {
         for (Media media : page.getEntries()) {
           Map<MediaSize, Dimensions> dimensions = Maps.toMap(media.getDimensions());
-          System.out.println("Media with id '" + media.getMediaId() +
-              (!dimensions.isEmpty()
-                  ? "', dimensions '" + dimensions.get(MediaSize.FULL).getWidth() + "x"
-                    + dimensions.get(MediaSize.FULL).getHeight()
-                  : "") + "', and MIME type '"
-              + media.getMediaType() + "' was found.");
+          System.out.printf("Media with ID %d, dimensions %s, and MIME type '%s' was found.%n",
+              media.getMediaId(), toString(dimensions.get(MediaSize.FULL)), media.getMediaType());
         }
       } else {
         System.out.println("No images/videos were found.");
@@ -107,5 +103,15 @@ public class GetAllImagesAndVideos {
       offset += PAGE_SIZE;
       selector = builder.increaseOffsetBy(PAGE_SIZE).build();
     } while (offset < page.getTotalNumEntries());
+  }
+  
+  /**
+   * Returns a String representation of the provided Dimensions object, or null if the object is
+   * null.
+   */
+  private static String toString(Dimensions dimensions) {
+    return dimensions == null 
+        ? null
+        : String.format("%dx%d", dimensions.getWidth(), dimensions.getHeight());
   }
 }

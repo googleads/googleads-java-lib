@@ -57,8 +57,8 @@ public class GetUserRoles {
     // assigned permissions.
     if (userRoleRecordSet.getUserRoles().length > 0) {
       for (UserRole userRole: userRoleRecordSet.getUserRoles()) {
-        System.out.printf("User role with name \"%s\", ID \"%s\", subnetwork ID \"%s\", and " +
-            "assigned to \"%s\" users was found.%n", userRole.getName(), userRole.getId(),
+        System.out.printf("User role with name \"%s\", ID \"%s\", subnetwork ID \"%s\", and "
+            + "assigned to \"%s\" users was found.%n", userRole.getName(), userRole.getId(),
             userRole.getSubnetworkId(), userRole.getTotalAssignedUsers());
         if (userRole.getPermissions().length > 0) {
           System.out.printf("/tThe above user role has the following permissions:%n");

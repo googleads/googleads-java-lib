@@ -86,7 +86,7 @@ public class CreateCustomCreatives {
 
     for (Creative createdCreative : creatives) {
       System.out.printf("A creative with ID \"%d\", name \"%s\", and type \"%s\""
-          + " was created and can be previewed at: %s\n", createdCreative.getId(),
+          + " was created and can be previewed at: %s%n", createdCreative.getId(),
           createdCreative.getName(), createdCreative.getCreativeType(),
           createdCreative.getPreviewUrl());
     }

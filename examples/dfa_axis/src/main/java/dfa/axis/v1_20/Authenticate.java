@@ -51,8 +51,8 @@ public class Authenticate {
     UserProfile userProfile = loginService.authenticate(username, password);
 
     // Display user profile token, DFA account name and ID.
-    System.out.printf("User profile token is \"%s\", DFA account name is \"%s\", and DFA " +
-        "account ID is \"%s\".%n", userProfile.getToken(), userProfile.getNetworkName(),
+    System.out.printf("User profile token is \"%s\", DFA account name is \"%s\", and DFA "
+        + "account ID is \"%s\".%n", userProfile.getToken(), userProfile.getNetworkName(),
         userProfile.getNetworkId());
   }
 

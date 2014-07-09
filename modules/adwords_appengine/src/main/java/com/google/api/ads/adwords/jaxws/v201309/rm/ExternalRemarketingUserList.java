@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             User lists created in the DoubleClick platform that are mapped
- *             from DoubleClick to AdWords.
+ *             from DoubleClick to AdWords. These lists are readonly.
  *           
  * 
  * <p>Java class for ExternalRemarketingUserList complex type.

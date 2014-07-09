@@ -15,17 +15,17 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201309.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201309.cm.CampaignPage;
-import com.google.api.ads.adwords.axis.v201309.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201309.cm.Selector;
+import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201406.cm.CampaignPage;
+import com.google.api.ads.adwords.axis.v201406.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201406.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.adwords.lib.jaxb.v201309.DownloadFormat;
-import com.google.api.ads.adwords.lib.jaxb.v201309.ReportDefinition;
-import com.google.api.ads.adwords.lib.jaxb.v201309.ReportDefinitionDateRangeType;
-import com.google.api.ads.adwords.lib.jaxb.v201309.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.jaxb.v201406.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201406.ReportDefinition;
+import com.google.api.ads.adwords.lib.jaxb.v201406.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201406.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
-import com.google.api.ads.adwords.lib.utils.v201309.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.v201406.ReportDownloader;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -61,7 +61,7 @@ import java.net.HttpURLConnection;
  */
 public class AdvancedCreateCredentialFromScratch {
 
-  private static final String SCOPE = "https://adwords.google.com/api/adwords";
+  private static final String SCOPE = "https://www.googleapis.com/auth/adwords";
 
   // This callback URL will allow you to copy the token from the success screen.
   // This must match the one associated with your client ID.
@@ -158,8 +158,8 @@ public class AdvancedCreateCredentialFromScratch {
     }
 
     // Create selector.
-    com.google.api.ads.adwords.lib.jaxb.v201309.Selector reportSelector =
-        new com.google.api.ads.adwords.lib.jaxb.v201309.Selector();
+    com.google.api.ads.adwords.lib.jaxb.v201406.Selector reportSelector =
+        new com.google.api.ads.adwords.lib.jaxb.v201406.Selector();
     reportSelector.getFields().addAll(Lists.newArrayList(
         "CampaignId",
         "AdGroupId",

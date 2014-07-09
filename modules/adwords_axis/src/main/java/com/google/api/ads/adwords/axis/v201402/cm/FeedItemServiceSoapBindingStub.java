@@ -227,20 +227,6 @@ public class FeedItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "EntityAccessDenied");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201402.cm.EntityAccessDenied.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "EntityAccessDenied.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201402.cm.EntityAccessDeniedReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201402", "EntityCountLimitExceeded");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201402.cm.EntityCountLimitExceeded.class;

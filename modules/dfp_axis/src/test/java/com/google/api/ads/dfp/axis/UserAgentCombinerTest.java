@@ -33,7 +33,7 @@ import org.junit.runners.JUnit4;
 public class UserAgentCombinerTest extends TestCase {
 
   private static final String USER_AGENT =
-      "userAgent (DfpApi-Java, Dfp-Axis/1.29.1, Common-Java/1.29.1, Axis/1.4, Java/"
+      "userAgent (DfpApi-Java, Dfp-Axis/1.30.0, Common-Java/1.30.0, Axis/1.4, Java/"
           + System.getProperty("java.version") + ", maven)";
 
   /**

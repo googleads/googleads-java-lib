@@ -142,8 +142,8 @@ public class AdvancedCreateCredentialFromScratch {
           advSearchCriteria);
 
       for (Advertiser result : advertiserRecordSet.getRecords()) {
-        System.out.printf("%s) Advertiser with name \"%s\", ID \"%s\", and spotlight " +
-            "configuration ID \"%s\" was found.%n", i++, result.getName(), result.getId(),
+        System.out.printf("%s) Advertiser with name \"%s\", ID \"%s\", and spotlight "
+            + "configuration ID \"%s\" was found.%n", i++, result.getName(), result.getId(),
             result.getSpotId());
       }
 

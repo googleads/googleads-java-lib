@@ -177,7 +177,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201402.*;
+import com.google.api.ads.adwords.axis.v201406.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;
@@ -292,7 +292,7 @@ To bridge SLF4J for a logging framework, you must do the following:
      <dependency>
        <groupId>org.slf4j</groupId>
        <artifactId>slf4j-log4j12</artifactId>
-       <version>1.6.2</version>
+       <version>1.7.7</version>
      </dependency>
 
   2) If your logging framework requires a configuration file, you must place it

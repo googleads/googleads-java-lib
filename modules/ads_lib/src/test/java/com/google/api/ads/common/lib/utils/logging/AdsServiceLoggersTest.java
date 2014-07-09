@@ -75,7 +75,7 @@ public class AdsServiceLoggersTest {
 
     verify(requestInfoLogger).info(
         eq("Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\""),
-        eq(new Object[] {service, method, url}));
+        eq(service), eq(method), eq(url));
   }
 
   @Test

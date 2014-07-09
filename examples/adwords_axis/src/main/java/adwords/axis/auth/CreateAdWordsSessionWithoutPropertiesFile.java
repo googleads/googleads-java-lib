@@ -15,8 +15,8 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201309.mcm.Customer;
-import com.google.api.ads.adwords.axis.v201309.mcm.CustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201406.mcm.Customer;
+import com.google.api.ads.adwords.axis.v201406.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -77,7 +77,7 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
     if (CLIENT_ID.equals("INSERT_CLIENT_ID_HERE")
         || CLIENT_SECRET.equals("INSERT_CLIENT_SECRET_HERE")) {
       throw new IllegalArgumentException("Please input your client IDs or secret. "
-          + "See https://cloud.google.com/console/project");
+          + "See https://console.developers.google.com/project");
     }
 
     if (REFRESH_TOKEN.equals("INSERT_REFRESH_TOKEN_HERE")) {

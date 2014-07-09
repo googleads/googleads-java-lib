@@ -1,3 +1,19 @@
+1.30.0 - 07/09/2014
+-------------------
+AdWords:
+  - Added support for v201406.
+  - Updated OAuth scope. See
+    https://developers.google.com/adwords/api/docs/guides/authentication#scope for details.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Upgraded slf4j to 1.7.7.
+
 1.29.1 - 07/02/2014
 -------------------
 AdWords:

@@ -134,8 +134,8 @@ public class AddClickToDownloadAd {
     AdGroupAdReturnValue result = adGroupAdService.mutate(new AdGroupAdOperation[] {operation});
 
     for (AdGroupAd adGroupAd : result.getValue()) {
-      System.out.printf("New click-to-download ad with id = \"%d\" and url = \"%s\" " +
-          "was created.", adGroupAd.getAd().getId(), adGroupAd.getAd().getUrl());
+      System.out.printf("New click-to-download ad with ID = %d and url = \"%s\" was created.%n",
+          adGroupAd.getAd().getId(), adGroupAd.getAd().getUrl());
     }
   }
 }

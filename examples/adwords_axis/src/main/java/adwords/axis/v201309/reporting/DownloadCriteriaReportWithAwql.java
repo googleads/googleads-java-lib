@@ -60,10 +60,10 @@ public class DownloadCriteriaReportWithAwql {
 
   public static void runExample(AdWordsSession session, String reportFile) throws Exception {
     // Create query.
-    String query = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, " +
-      "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT " +
-      "WHERE Status IN [ACTIVE, PAUSED] " +
-      "DURING YESTERDAY";
+    String query = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, "
+        + "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT "
+        + "WHERE Status IN [ACTIVE, PAUSED] "
+        + "DURING YESTERDAY";
 
     try {
       // Set the property api.adwords.reportDownloadTimeout or call

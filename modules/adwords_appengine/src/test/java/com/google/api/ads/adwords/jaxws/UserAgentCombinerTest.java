@@ -33,7 +33,7 @@ import org.junit.runners.JUnit4;
 public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (AwApi-Java, AdWords-AppEngine/1.29.1, Common-Java/1.29.1,"
+      "userAgent (AwApi-Java, AdWords-AppEngine/1.30.0, Common-Java/1.30.0,"
           + " JAX-WS/Unknown, Java/" + System.getProperty("java.version") + ", maven)";
 
   /**

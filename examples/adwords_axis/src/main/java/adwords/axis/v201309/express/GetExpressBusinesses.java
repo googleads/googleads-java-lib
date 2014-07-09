@@ -91,22 +91,13 @@ public class GetExpressBusinesses {
       // Display businesses.
       if (page.getTotalNumEntries() > 0) {
         for (ExpressBusiness business : page.getEntries()) {
-          Address address = business.getAddress();
-          GeoPoint geoPoint = business.getGeoPoint() != null ?
-              business.getGeoPoint() :
-              new GeoPoint();
           System.out.printf("Express business found with name '%s' id %d website: %s "
-              + "address: %s,%s,%s,%s,%s geo point: %d,%d status: %s%n",
+              + "address: %s geo point: %s status: %s%n",
               business.getName(),
               business.getId(),
               business.getWebsite(),
-              address.getStreetAddress(),
-              address.getStreetAddress2(),
-              address.getCityName(),
-              address.getProvinceName(),
-              address.getPostalCode(),
-              geoPoint.getLatitudeInMicroDegrees(),
-              geoPoint.getLongitudeInMicroDegrees(),
+              toString(business.getAddress()),
+              toString(business.getGeoPoint()),
               business.getStatus().getValue());
           businesses.add(business);
         }
@@ -121,5 +112,29 @@ public class GetExpressBusinesses {
     System.out.printf("Found %d express businesses in total%n", businesses.size());
 
     return businesses;
+  }
+
+  /**
+   * Returns a String representation of the provided Address object, or null if the object is null.
+   */
+  private static String toString(Address address) {
+    return address == null
+        ? null
+        : String.format("%s,%s,%s,%s,%s",
+            address.getStreetAddress(),
+            address.getStreetAddress2(),
+            address.getCityName(),
+            address.getProvinceName(),
+            address.getPostalCode());
+  }
+
+  /**
+   * Returns a String representation of the provided GeoPoint object, or null if the object is null.
+   */
+  private static String toString(GeoPoint geoPoint) {
+    return geoPoint == null 
+        ? null
+        : String.format("%d,%d", geoPoint.getLatitudeInMicroDegrees(),
+            geoPoint.getLongitudeInMicroDegrees());
   }
 }

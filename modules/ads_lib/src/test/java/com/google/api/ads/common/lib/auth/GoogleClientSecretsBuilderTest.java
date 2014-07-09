@@ -156,7 +156,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client ID must be set as api.dfp.clientId in /home/user/path."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -178,7 +178,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client ID must be set."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -202,7 +202,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client secret must be set as api.dfp.clientSecret in /home/user/path."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -224,7 +224,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client secret must be set."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -258,7 +258,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client ID must be set."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -280,7 +280,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client ID must be set."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 
@@ -303,7 +303,7 @@ public class GoogleClientSecretsBuilderTest {
     } catch (ValidationException e) {
       assertEquals("Client secret must be set."
           + "\nIf you do not have a client ID or secret, please create one in the API "
-          + "console: https://cloud.google.com/console", e.getMessage());
+          + "console: https://console.developers.google.com", e.getMessage());
     }
   }
 }
