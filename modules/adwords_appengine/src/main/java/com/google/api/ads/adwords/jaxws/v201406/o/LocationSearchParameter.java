@@ -11,10 +11,9 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.Location;
 
 /**
  * 
- *             A {@link SearchParameter} for both {@code PLACEMENT} and {@code KEYWORD}
- *             {@link IdeaType}s used to indicate the locations being targeted. This can
- *             be used, for example, to search for {@code KEYWORD} {@link IdeaType}s that
- *             are best for Japan and Los Angeles.
+ *             A {@link SearchParameter} used to indicate the locations being targeted.
+ *             This can be used, for example, to search for {@code KEYWORD}
+ *             {@link IdeaType}s that are best for Japan and Los Angeles.
  *             
  *             <p>This parameter replaces the {@code CountryTargetSearchParameter}.
  *             

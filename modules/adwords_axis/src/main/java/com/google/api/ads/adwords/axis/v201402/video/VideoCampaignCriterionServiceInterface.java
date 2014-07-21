@@ -23,7 +23,7 @@ public interface VideoCampaignCriterionServiceInterface extends java.rmi.Remote 
     public com.google.api.ads.adwords.axis.v201402.video.VideoCampaignCriterionPage get(com.google.api.ads.adwords.axis.v201402.video.VideoCampaignCriterionSelector selector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Adds or deletes campaign level criteria.
+     * Adds or removes campaign level criteria.
      *         NOTE: CampaignCriterionOperation does not support the SET/UPDATE
      * operator.
      *         

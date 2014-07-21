@@ -23,7 +23,7 @@ public class VideoCampaign  implements java.io.Serializable {
      * must not be empty.</span> */
     private java.lang.String name;
 
-    /* Status of this video campaign. On add, defaults to ACTIVE. */
+    /* Status of this video campaign. On add, defaults to ENABLED. */
     private com.google.api.ads.adwords.axis.v201402.video.VideoCampaignStatus status;
 
     /* Date the campaign starts. The format for the date is YYYYMMDD. */
@@ -165,7 +165,7 @@ public class VideoCampaign  implements java.io.Serializable {
     /**
      * Gets the status value for this VideoCampaign.
      * 
-     * @return status   * Status of this video campaign. On add, defaults to ACTIVE.
+     * @return status   * Status of this video campaign. On add, defaults to ENABLED.
      */
     public com.google.api.ads.adwords.axis.v201402.video.VideoCampaignStatus getStatus() {
         return status;
@@ -175,7 +175,7 @@ public class VideoCampaign  implements java.io.Serializable {
     /**
      * Sets the status value for this VideoCampaign.
      * 
-     * @param status   * Status of this video campaign. On add, defaults to ACTIVE.
+     * @param status   * Status of this video campaign. On add, defaults to ENABLED.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201402.video.VideoCampaignStatus status) {
         this.status = status;

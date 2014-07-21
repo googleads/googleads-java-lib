@@ -62,7 +62,7 @@ public class YouTubeVideo  implements java.io.Serializable {
     /* Call-to-action overlay data for this video.
      *                 This is the only mutable field for this object and
      * it should be updated using the
-     *                 {@link VideoService.mutateCallToAction} method.
+     *                 VideoService.mutateCallToAction method.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span> */
@@ -71,14 +71,14 @@ public class YouTubeVideo  implements java.io.Serializable {
     /* Statistics for this video, if requested.
      *                 Always returned if statsSelector is specified, regardless
      * of segmentation.
-     *                 See {@link StatsSelector}.
+     *                 See StatsSelector.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.video.VideoEntityStats stats;
 
     /* Statistics about this video, segmented by the dimensions indicated
      * in the
-     *                 {@link StatsSelector}, if any.
+     *                 StatsSelector, if any.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201402.video.VideoEntityStats[] segmentedStats;
@@ -357,7 +357,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * @return callToAction   * Call-to-action overlay data for this video.
      *                 This is the only mutable field for this object and
      * it should be updated using the
-     *                 {@link VideoService.mutateCallToAction} method.
+     *                 VideoService.mutateCallToAction method.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -373,7 +373,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * @param callToAction   * Call-to-action overlay data for this video.
      *                 This is the only mutable field for this object and
      * it should be updated using the
-     *                 {@link VideoService.mutateCallToAction} method.
+     *                 VideoService.mutateCallToAction method.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET.</span>
@@ -389,7 +389,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * @return stats   * Statistics for this video, if requested.
      *                 Always returned if statsSelector is specified, regardless
      * of segmentation.
-     *                 See {@link StatsSelector}.
+     *                 See StatsSelector.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -404,7 +404,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * @param stats   * Statistics for this video, if requested.
      *                 Always returned if statsSelector is specified, regardless
      * of segmentation.
-     *                 See {@link StatsSelector}.
+     *                 See StatsSelector.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -418,7 +418,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * 
      * @return segmentedStats   * Statistics about this video, segmented by the dimensions indicated
      * in the
-     *                 {@link StatsSelector}, if any.
+     *                 StatsSelector, if any.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -432,7 +432,7 @@ public class YouTubeVideo  implements java.io.Serializable {
      * 
      * @param segmentedStats   * Statistics about this video, segmented by the dimensions indicated
      * in the
-     *                 {@link StatsSelector}, if any.
+     *                 StatsSelector, if any.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

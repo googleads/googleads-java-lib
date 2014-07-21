@@ -417,6 +417,33 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>contains any</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsAny(String field, String... values) {
+    return this.multipleValuePredicate(field, values, PredicateOperator.CONTAINS_ANY);
+  }
+
+  /**
+   * Adds the predicate <b>contains all</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsAll(String field, String... values) {
+    return this.multipleValuePredicate(field, values, PredicateOperator.CONTAINS_ALL);
+  }
+
+  /**
+   * Adds the predicate <b>contains none</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsNone(String field, String... values) {
+    return this.multipleValuePredicate(field, values, PredicateOperator.CONTAINS_NONE);
+  }
+
+  /**
    * Selects the specified field.
    *
    * @param propertyValues the values of the properties

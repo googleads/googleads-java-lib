@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Error associated with creation of new entities.
+ *           
+ * 
  * <p>Java class for NewEntityCreationError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

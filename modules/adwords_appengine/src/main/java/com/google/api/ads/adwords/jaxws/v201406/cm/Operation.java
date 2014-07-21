@@ -6,13 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderOperation;
-import com.google.api.ads.adwords.jaxws.v201406.express.ExpressBusinessOperation;
-import com.google.api.ads.adwords.jaxws.v201406.express.PromotionOperation;
-import com.google.api.ads.adwords.jaxws.v201406.mcm.LinkOperation;
-import com.google.api.ads.adwords.jaxws.v201406.mcm.ManagedCustomerOperation;
-import com.google.api.ads.adwords.jaxws.v201406.mcm.MoveOperation;
-import com.google.api.ads.adwords.jaxws.v201406.rm.UserListOperation;
+import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupOperation;
 
 
 /**
@@ -46,41 +40,7 @@ import com.google.api.ads.adwords.jaxws.v201406.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
-    UserListOperation.class,
-    ManagedCustomerOperation.class,
-    LinkOperation.class,
-    MoveOperation.class,
-    PromotionOperation.class,
-    ExpressBusinessOperation.class,
-    BudgetOrderOperation.class,
-    AdParamOperation.class,
-    OfflineConversionFeedOperation.class,
-    BiddingStrategyOperation.class,
-    FeedItemOperation.class,
-    AdGroupAdOperation.class,
-    CampaignCriterionOperation.class,
-    AdGroupFeedOperation.class,
-    FeedOperation.class,
-    LabelOperation.class,
-    BudgetOperation.class,
-    SharedCriterionOperation.class,
-    AdGroupLabelOperation.class,
-    ExperimentOperation.class,
-    FeedMappingOperation.class,
-    CampaignSharedSetOperation.class,
-    CustomerFeedOperation.class,
-    AdGroupOperation.class,
-    ConversionTrackerOperation.class,
-    CampaignAdExtensionOperation.class,
-    CampaignLabelOperation.class,
-    AdGroupCriterionLabelOperation.class,
-    CampaignFeedOperation.class,
-    CampaignOperation.class,
-    AdGroupBidModifierOperation.class,
-    CampaignTargetOperation.class,
-    SharedSetOperation.class,
-    AdGroupAdLabelOperation.class,
-    AdGroupCriterionOperation.class
+    TargetingGroupOperation.class
 })
 public abstract class Operation {
 

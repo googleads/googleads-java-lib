@@ -272,8 +272,7 @@ public class LineItemSummary  implements java.io.Serializable {
 
     /* The amount of money to spend per impression or click. This
      * attribute is
-     *                 required for creating a {@code LineItem}. The currency
-     * code is readonly. */
+     *                 required for creating a {@code LineItem}. */
     private com.google.api.ads.dfp.axis.v201306.Money costPerUnit;
 
     /* An amount to help the adserver rank inventory. {@link
@@ -284,7 +283,7 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 the actual {@link LineItem#costPerUnit}. This attribute
      * is optional
      *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0. The currency code is readonly. */
+     * currency with {@link Money#microAmount} 0. */
     private com.google.api.ads.dfp.axis.v201306.Money valueCostPerUnit;
 
     /* The method used for billing this {@code LineItem}. This attribute
@@ -1440,8 +1439,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @return costPerUnit   * The amount of money to spend per impression or click. This
      * attribute is
-     *                 required for creating a {@code LineItem}. The currency
-     * code is readonly.
+     *                 required for creating a {@code LineItem}.
      */
     public com.google.api.ads.dfp.axis.v201306.Money getCostPerUnit() {
         return costPerUnit;
@@ -1453,8 +1451,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @param costPerUnit   * The amount of money to spend per impression or click. This
      * attribute is
-     *                 required for creating a {@code LineItem}. The currency
-     * code is readonly.
+     *                 required for creating a {@code LineItem}.
      */
     public void setCostPerUnit(com.google.api.ads.dfp.axis.v201306.Money costPerUnit) {
         this.costPerUnit = costPerUnit;
@@ -1472,7 +1469,7 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 the actual {@link LineItem#costPerUnit}. This attribute
      * is optional
      *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0. The currency code is readonly.
+     * currency with {@link Money#microAmount} 0.
      */
     public com.google.api.ads.dfp.axis.v201306.Money getValueCostPerUnit() {
         return valueCostPerUnit;
@@ -1490,7 +1487,7 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 the actual {@link LineItem#costPerUnit}. This attribute
      * is optional
      *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0. The currency code is readonly.
+     * currency with {@link Money#microAmount} 0.
      */
     public void setValueCostPerUnit(com.google.api.ads.dfp.axis.v201306.Money valueCostPerUnit) {
         this.valueCostPerUnit = valueCostPerUnit;

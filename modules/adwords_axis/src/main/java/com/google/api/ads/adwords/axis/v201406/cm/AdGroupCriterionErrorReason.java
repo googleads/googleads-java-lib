@@ -48,6 +48,9 @@ public class AdGroupCriterionErrorReason implements java.io.Serializable {
     public static final java.lang.String _CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST = "CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST";
     public static final java.lang.String _CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS = "CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS";
     public static final java.lang.String _CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST = "CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST";
+    public static final java.lang.String _CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS = "CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS";
+    public static final java.lang.String _FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = "FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE";
+    public static final java.lang.String _FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = "FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final AdGroupCriterionErrorReason AD_GROUP_CRITERION_LABEL_DOES_NOT_EXIST = new AdGroupCriterionErrorReason(_AD_GROUP_CRITERION_LABEL_DOES_NOT_EXIST);
     public static final AdGroupCriterionErrorReason AD_GROUP_CRITERION_LABEL_ALREADY_EXISTS = new AdGroupCriterionErrorReason(_AD_GROUP_CRITERION_LABEL_ALREADY_EXISTS);
@@ -80,6 +83,9 @@ public class AdGroupCriterionErrorReason implements java.io.Serializable {
     public static final AdGroupCriterionErrorReason CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST = new AdGroupCriterionErrorReason(_CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST);
     public static final AdGroupCriterionErrorReason CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS = new AdGroupCriterionErrorReason(_CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS);
     public static final AdGroupCriterionErrorReason CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST = new AdGroupCriterionErrorReason(_CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST);
+    public static final AdGroupCriterionErrorReason CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS = new AdGroupCriterionErrorReason(_CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS);
+    public static final AdGroupCriterionErrorReason FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = new AdGroupCriterionErrorReason(_FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE);
+    public static final AdGroupCriterionErrorReason FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = new AdGroupCriterionErrorReason(_FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE);
     public static final AdGroupCriterionErrorReason UNKNOWN = new AdGroupCriterionErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static AdGroupCriterionErrorReason fromValue(java.lang.String value)

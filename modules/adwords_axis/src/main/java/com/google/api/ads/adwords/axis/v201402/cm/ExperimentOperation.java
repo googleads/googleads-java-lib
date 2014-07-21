@@ -10,7 +10,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
 
 /**
  * Operation for adding, updating or removing operations. For removing,
- * use SET and mark status as DELETED.
+ * use SET and mark status as REMOVED.
  */
 public class ExperimentOperation  extends com.google.api.ads.adwords.axis.v201402.cm.Operation  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.cm.Experiment operand;

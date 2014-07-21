@@ -27,15 +27,47 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/rm/v201406", "ResponseHeader");
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/rm/v201406", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/rm/v201406", "ApiExceptionFault");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/rm/v201406", "RequestHeader");
+    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/rm/v201406", "ResponseHeader");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201406.rm
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link AdwordsUserListServiceInterfacemutateResponse }
+     * 
+     */
+    public AdwordsUserListServiceInterfacemutateResponse createAdwordsUserListServiceInterfacemutateResponse() {
+        return new AdwordsUserListServiceInterfacemutateResponse();
+    }
+
+    /**
+     * Create an instance of {@link AdwordsUserListServiceInterfaceget }
+     * 
+     */
+    public AdwordsUserListServiceInterfaceget createAdwordsUserListServiceInterfaceget() {
+        return new AdwordsUserListServiceInterfaceget();
+    }
+
+    /**
+     * Create an instance of {@link AdwordsUserListServiceInterfacegetResponse }
+     * 
+     */
+    public AdwordsUserListServiceInterfacegetResponse createAdwordsUserListServiceInterfacegetResponse() {
+        return new AdwordsUserListServiceInterfacegetResponse();
+    }
+
+    /**
+     * Create an instance of {@link AdwordsUserListServiceInterfacemutate }
+     * 
+     */
+    public AdwordsUserListServiceInterfacemutate createAdwordsUserListServiceInterfacemutate() {
+        return new AdwordsUserListServiceInterfacemutate();
     }
 
     /**
@@ -143,12 +175,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapResponseHeader }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/rm/v201406", name = "ResponseHeader")
-    public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
-        return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/rm/v201406", name = "ApiExceptionFault")
+    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
+        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
     }
 
     /**
@@ -161,12 +193,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapResponseHeader }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/rm/v201406", name = "ApiExceptionFault")
-    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
-        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/rm/v201406", name = "ResponseHeader")
+    public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
+        return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
     }
 
 }

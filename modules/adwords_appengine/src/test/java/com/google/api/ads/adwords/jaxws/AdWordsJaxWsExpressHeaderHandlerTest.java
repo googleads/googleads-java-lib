@@ -86,13 +86,13 @@ public class AdWordsJaxWsExpressHeaderHandlerTest {
       throws Exception {
     when(adWordsSession.getExpressBusinessId()).thenReturn(businessId);
 
-    String version = "v201309";
+    String version = "v201406";
     String namespacePrefix = "http://www.example.com";
 
     when(adWordsServiceDescriptor.getVersion()).thenReturn(version);
     when(apiConfiguration.getNamespacePrefix()).thenReturn(namespacePrefix);
 
-    String expectedNamespace = "http://www.example.com/express/v201309";
+    String expectedNamespace = "http://www.example.com/express/v201406";
 
     expressHandler.setHeaders(bindingProvider, adWordsSession, adWordsServiceDescriptor);
 

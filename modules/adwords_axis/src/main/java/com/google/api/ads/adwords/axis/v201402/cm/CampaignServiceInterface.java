@@ -24,11 +24,11 @@ public interface CampaignServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201402.cm.CampaignPage get(com.google.api.ads.adwords.axis.v201402.cm.Selector serviceSelector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Adds, updates, or deletes campaigns.
+     * Adds, updates, or removes campaigns.
      *         <p class="note"><b>Note:</b> {@link CampaignOperation} does
      * not support the
-     *         <code>REMOVE</code> operator. To delete a campaign, set its
-     * {@link Campaign#status status} to <code>DELETED</code>.</p>
+     *         <code>REMOVE</code> operator. To remove a campaign, set its
+     * {@link Campaign#status status} to {@code REMOVED}.</p>
      *         
      * @param operations A list of unique operations.
      *         The same campaign cannot be specified in more than one operation.

@@ -37,6 +37,11 @@ public class ReportRequestFactoryHelper {
 
   /** The URI of the download server. */
   public static final String DOWNLOAD_SERVER_URI = "/api/adwords/reportdownload";
+  
+  /**
+   * The final version of the AdWords API that supports the returnMoneyInMicros header.
+   */
+  private static final String FINAL_RETURN_MONEY_IN_MICROS_VERSION = "v201402";
 
   private final AdWordsSession session;
   private final UserAgentCombiner userAgentCombiner;
@@ -102,8 +107,9 @@ public class ReportRequestFactoryHelper {
    * @throws AuthenticationException If OAuth authorization fails.
    */
   @VisibleForTesting
-  HttpRequestFactory getHttpRequestFactory(final String reportUrl) throws AuthenticationException {
-    final HttpHeaders httpHeaders = createHeaders(reportUrl);
+  HttpRequestFactory getHttpRequestFactory(final String reportUrl, String version)
+      throws AuthenticationException {
+    final HttpHeaders httpHeaders = createHeaders(reportUrl, version);
     return httpTransport.createRequestFactory(new HttpRequestInitializer() {
       public void initialize(HttpRequest request) throws IOException {
         request.setHeaders(httpHeaders);
@@ -121,7 +127,8 @@ public class ReportRequestFactoryHelper {
    * the session.
    * @throws AuthenticationException If OAuth authorization fails.
    */
-  private HttpHeaders createHeaders(String reportUrl) throws AuthenticationException {
+  private HttpHeaders createHeaders(String reportUrl, String version)
+      throws AuthenticationException {
     HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.setAuthorization(
         authorizationHeaderProvider.getAuthorizationHeader(session, reportUrl));
@@ -129,6 +136,11 @@ public class ReportRequestFactoryHelper {
     httpHeaders.set("developerToken", session.getDeveloperToken());
     httpHeaders.set("clientCustomerId", session.getClientCustomerId());
     if (session.isReportMoneyInMicros() != null) {
+      if (version != null && FINAL_RETURN_MONEY_IN_MICROS_VERSION.compareTo(version) < 0) {
+        throw new IllegalArgumentException(String.format(
+            "returnMoneyInMicros is not supported in version %s. See %s for details.", version,
+            "https://developers.google.com/adwords/api/docs/guides/reporting-concepts#money"));
+      }
       httpHeaders.set("returnMoneyInMicros", Boolean.toString(session.isReportMoneyInMicros()));
     }
     return httpHeaders;

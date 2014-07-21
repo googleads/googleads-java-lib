@@ -16,7 +16,10 @@ package com.google.api.ads.adwords.lib.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -37,15 +40,19 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.annotation.Nullable;
 
@@ -55,10 +62,16 @@ import javax.annotation.Nullable;
  * @author Kevin Winter
  * @author Joseph DiLallo
  */
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public class ReportRequestFactoryHelperTest {
 
   private static final GenericUrl ENDPOINT_URL = new GenericUrl("https://google.com/api/service");
+
+  /** Version of the AdWords API. */
+  private String version;
+
+  /** Whether <code>version<code> is supposed to support returnMoneyInMicros. */
+  private boolean isSupportsReturnMoneyInMicros;
 
   @Mock
   private AuthorizationHeaderProvider authorizationHeaderProvider;
@@ -77,6 +90,27 @@ public class ReportRequestFactoryHelperTest {
   @Mock
   private ReportServiceLogger reportServiceLogger;
 
+  @Parameters
+  public static Collection<Object[]> data() {
+    Collection<Object[]> parameters = new ArrayList<Object[]>();
+    parameters.add(new Object[] {"v201402", true});
+    parameters.add(new Object[] {"v201406", false});
+    parameters.add(new Object[] {null, true});
+    return parameters;
+  }
+  
+  /**
+   * Values for these arguments are supplied by the {@link #data()} method.
+   *
+   * @param version version of the AdWords API
+   * @param isSupportsReturnMoneyInMicros true if <code>version</code> is supposed to support
+   *        returnMoneyInMicros
+   */
+  public ReportRequestFactoryHelperTest(String version, boolean isSupportsReturnMoneyInMicros) {
+    this.version = version;
+    this.isSupportsReturnMoneyInMicros = isSupportsReturnMoneyInMicros;
+  }
+  
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
@@ -144,7 +178,26 @@ public class ReportRequestFactoryHelperTest {
         .thenReturn("fooauthheader");
     when(userAgentCombiner.getUserAgent(anyString())).thenReturn("foouseragent");
     ReportRequestFactoryHelper helper = new ReportRequestFactoryHelper(session, internals);
-    HttpRequestFactory requestFactory = helper.getHttpRequestFactory(ENDPOINT_URL.build());
+    HttpRequestFactory requestFactory;
+    try {
+      requestFactory = helper.getHttpRequestFactory(ENDPOINT_URL.build(), version);
+    } catch (IllegalArgumentException e) {
+      // This exception should only occur if returnMoneyInMicros was specified and
+      // !isSupportsReturnMoneyInMicros.
+      assertNotNull("IllegalArgumentException thrown but returnMoneyInMicros was null so "
+          + "validation of returnMoneyInMicros should have been skipped", returnMoneyInMicros);
+      if (isSupportsReturnMoneyInMicros) {
+        fail(String.format(
+            "returnMoneyInMicros validation failed but version %s supports returnMoneyInMicros: %s",
+            version, e));
+      }
+      // The version does not support returnMoneyInMicros - check that the exception message
+      // mentions returnMoneyInMicros to ensure that the IllegalArgumentException was not thrown
+      // for a different reason than expected.
+      assertThat("Should have failed because returnMoneyInMicros is not supported, but failed for "
+          + "a different reason", e.getMessage(), Matchers.containsString("returnMoneyInMicros"));
+      return;
+    }
     HttpRequest request = requestFactory.buildPostRequest(
         ENDPOINT_URL, new AwqlReportBodyProvider("select 1", "csv").getHttpContent());
     assertEquals(42, request.getConnectTimeout());

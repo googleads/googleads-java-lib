@@ -18,8 +18,8 @@ public class BiddableTargetingGroupCriterion  extends com.google.api.ads.adwords
     /* Current user set state of criterion.
      *                     
      *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
-     *                     {@code UserStatus.Active} if unspecified. */
+     * to REMOVED. Defaults to
+     *                     {@code ENABLED} if unspecified. */
     private com.google.api.ads.adwords.axis.v201402.video.UserStatus userStatus;
 
     /* Statistics for this criterion.
@@ -67,8 +67,8 @@ public class BiddableTargetingGroupCriterion  extends com.google.api.ads.adwords
      * @return userStatus   * Current user set state of criterion.
      *                     
      *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
-     *                     {@code UserStatus.Active} if unspecified.
+     * to REMOVED. Defaults to
+     *                     {@code ENABLED} if unspecified.
      */
     public com.google.api.ads.adwords.axis.v201402.video.UserStatus getUserStatus() {
         return userStatus;
@@ -81,8 +81,8 @@ public class BiddableTargetingGroupCriterion  extends com.google.api.ads.adwords
      * @param userStatus   * Current user set state of criterion.
      *                     
      *                     <p>During an ADD operation: It may not be set
-     * to DELETED. Defaults to
-     *                     {@code UserStatus.Active} if unspecified.
+     * to REMOVED. Defaults to
+     *                     {@code ENABLED} if unspecified.
      */
     public void setUserStatus(com.google.api.ads.adwords.axis.v201402.video.UserStatus userStatus) {
         this.userStatus = userStatus;

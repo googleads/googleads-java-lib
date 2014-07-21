@@ -11,7 +11,7 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.Operation;
  * 
  *             An operation on a video campaign.
  *             Note: The REMOVE operator is not supported. To remove a campaign, set
- *             its status to DELETED.
+ *             its status to REMOVED.
  *           
  * 
  * <p>Java class for VideoCampaignOperation complex type.

@@ -26,9 +26,6 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * This example deletes an ad group by setting the status to 'DELETED'. To get
  * ad groups, run GetAdGroups.java.
@@ -74,8 +71,6 @@ public class DeleteAdGroup {
     AdGroup adGroup = new AdGroup();
     adGroup.setId(adGroupId);
     adGroup.setStatus(AdGroupStatus.DELETED);
-    // We recommend including the original name when renaming before delete.
-    adGroup.setName("Deleted on " + new SimpleDateFormat("yyMMDD HH:mm:ss.S").format(new Date()));
 
     // Create operations.
     AdGroupOperation operation = new AdGroupOperation();

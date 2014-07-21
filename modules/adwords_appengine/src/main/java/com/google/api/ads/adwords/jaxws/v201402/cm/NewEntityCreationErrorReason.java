@@ -23,6 +23,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum NewEntityCreationErrorReason {
 
+
+    /**
+     * 
+     *                 Do not set the id field while creating new entities.
+     *               
+     * 
+     */
     CANNOT_SET_ID_FOR_ADD;
 
     public String value() {

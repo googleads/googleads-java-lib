@@ -92,8 +92,9 @@ public class GetTargetingGroupCriteria {
       if (page.getEntries() != null) {
         for (TargetingGroupCriterion targetingGroupCampaignCriterion : page.getEntries()) {
           String negative =
-              (targetingGroupCampaignCriterion instanceof NegativeTargetingGroupCriterion) ?
-                  " (negative)" : "";
+              (targetingGroupCampaignCriterion instanceof NegativeTargetingGroupCriterion)
+                  ? " (negative)"
+                  : "";
           System.out.printf("Video%s criterion id %d of type '%s' was found.%n",
               negative,
               targetingGroupCampaignCriterion.getCriterion().getId(),

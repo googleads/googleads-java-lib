@@ -14,7 +14,7 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * is not
  *             supported. To remove a campaign, set its {@link Campaign#status
  * status}
- *             to <code>DELETED</code>.</p>
+ *             to {@code REMOVED}.</p>
  */
 public class CampaignOperation  extends com.google.api.ads.adwords.axis.v201402.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and

@@ -12,11 +12,10 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * A biddable (positive) criterion in an adgroup.
  */
 public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v201402.cm.AdGroupCriterion  implements java.io.Serializable {
-    /* Current user set state of criterion.
-     *                     
-     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+    /* Current user-set state of criterion.
+     *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
-     *                     {@code UserStatus.Active} if unspecified.
+     *                     {@code ENABLED} if unspecified.
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.UserStatus userStatus;
@@ -130,11 +129,10 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
     /**
      * Gets the userStatus value for this BiddableAdGroupCriterion.
      * 
-     * @return userStatus   * Current user set state of criterion.
-     *                     
-     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+     * @return userStatus   * Current user-set state of criterion.
+     *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
-     *                     {@code UserStatus.Active} if unspecified.
+     *                     {@code ENABLED} if unspecified.
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span>
      */
@@ -146,11 +144,10 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
     /**
      * Sets the userStatus value for this BiddableAdGroupCriterion.
      * 
-     * @param userStatus   * Current user set state of criterion.
-     *                     
-     *                     <p>UserStatus may not be set to {@code UserStatus.Deleted}.
+     * @param userStatus   * Current user-set state of criterion.
+     *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
-     *                     {@code UserStatus.Active} if unspecified.
+     *                     {@code ENABLED} if unspecified.
      *                     <span class="constraint CampaignType">This field
      * may not be set for campaign channel type SHOPPING.</span>
      */

@@ -1,3 +1,24 @@
+1.31.0 - 07/21/2014
+-------------------
+AdWords:
+  - Removed support for v201309.
+  - Added AdWords for Video v201406 support. This is a beta feature.
+  - Added containsAny, containsAll, and containsNone methods to the
+    jaxws SelectorBuilder for v201406.
+  - Added unit tests for axis and jaxws v201406 SelectorBuilders.
+  - Added validation to ensure that returnMoneyInMicros is not set on
+    reporting requests for versions higher than v201402. See
+    https://developers.google.com/adwords/api/docs/guides/reporting-concepts#money.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.30.0 - 07/09/2014
 -------------------
 AdWords:

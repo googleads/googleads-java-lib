@@ -26,9 +26,6 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * This example removes a campaign by setting the status to 'REMOVED'. To get
  * campaigns, run GetCampaigns.java.
@@ -74,8 +71,6 @@ public class RemoveCampaign {
     Campaign campaign = new Campaign();
     campaign.setId(campaignId);
     campaign.setStatus(CampaignStatus.REMOVED);
-    // When removing a campaign, rename it to avoid name collisions with new campaigns.
-    campaign.setName("Removed on " + new SimpleDateFormat("yyMMDD HH:mm:ss.S").format(new Date()));
 
     // Create operations.
     CampaignOperation operation = new CampaignOperation();

@@ -18,8 +18,9 @@ public class Keyword  extends com.google.api.ads.adwords.axis.v201406.cm.Criteri
      * <span class="constraint Selectable">This field can be selected using
      * the value "KeywordText".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
-     *                     <span class="constraint MatchesRegex">This string
-     * must match the regular expression '[^\x00]*'</span>
+     *                     <span class="constraint MatchesRegex">Keyword
+     * text must not contain NUL (code point 0x0) characters. This is checked
+     * by the regular expression '[^\x00]*'.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -59,8 +60,9 @@ public class Keyword  extends com.google.api.ads.adwords.axis.v201406.cm.Criteri
      * <span class="constraint Selectable">This field can be selected using
      * the value "KeywordText".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
-     *                     <span class="constraint MatchesRegex">This string
-     * must match the regular expression '[^\x00]*'</span>
+     *                     <span class="constraint MatchesRegex">Keyword
+     * text must not contain NUL (code point 0x0) characters. This is checked
+     * by the regular expression '[^\x00]*'.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -77,8 +79,9 @@ public class Keyword  extends com.google.api.ads.adwords.axis.v201406.cm.Criteri
      * <span class="constraint Selectable">This field can be selected using
      * the value "KeywordText".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
-     *                     <span class="constraint MatchesRegex">This string
-     * must match the regular expression '[^\x00]*'</span>
+     *                     <span class="constraint MatchesRegex">Keyword
+     * text must not contain NUL (code point 0x0) characters. This is checked
+     * by the regular expression '[^\x00]*'.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

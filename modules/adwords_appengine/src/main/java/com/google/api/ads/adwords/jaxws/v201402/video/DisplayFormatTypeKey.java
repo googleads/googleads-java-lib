@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A SegmentKey for segmenting by {@link VideoAdDisplayFormat.Type}.
+ *             Segment key for segmenting by {@link
+ *             com.google.ads.api.services.video.common.types.VideoAdDisplayFormat.Type}.
  *           
  * 
  * <p>Java class for DisplayFormatTypeKey complex type.

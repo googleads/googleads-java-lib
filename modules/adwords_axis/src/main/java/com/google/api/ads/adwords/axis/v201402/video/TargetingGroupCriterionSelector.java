@@ -32,7 +32,7 @@ public class TargetingGroupCriterionSelector  implements java.io.Serializable {
     /* Only criterion with those statuses will be returned. Empty
      * list indicates all statuses.
      *                 
-     *                 A negative criteria matches the ACTIVE status, when
+     *                 A negative criteria matches the ENABLED status, when
      * selected through {@link #criterionUse}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
@@ -187,7 +187,7 @@ public class TargetingGroupCriterionSelector  implements java.io.Serializable {
      * @return userStatuses   * Only criterion with those statuses will be returned. Empty
      * list indicates all statuses.
      *                 
-     *                 A negative criteria matches the ACTIVE status, when
+     *                 A negative criteria matches the ENABLED status, when
      * selected through {@link #criterionUse}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
@@ -205,7 +205,7 @@ public class TargetingGroupCriterionSelector  implements java.io.Serializable {
      * @param userStatuses   * Only criterion with those statuses will be returned. Empty
      * list indicates all statuses.
      *                 
-     *                 A negative criteria matches the ACTIVE status, when
+     *                 A negative criteria matches the ENABLED status, when
      * selected through {@link #criterionUse}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>

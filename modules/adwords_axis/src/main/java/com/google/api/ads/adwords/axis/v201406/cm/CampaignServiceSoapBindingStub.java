@@ -599,6 +599,20 @@ public class CampaignServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "EntityAccessDenied");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201406.cm.EntityAccessDenied.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "EntityAccessDenied.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201406.cm.EntityAccessDeniedReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "EntityCountLimitExceeded");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.EntityCountLimitExceeded.class;
@@ -830,20 +844,6 @@ public class CampaignServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "OperationAccessDenied.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.OperationAccessDeniedReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "Operator");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.Operator.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -859,6 +859,20 @@ public class CampaignServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "OperationAccessDenied.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201406.cm.OperationAccessDeniedReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "Operator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201406.cm.Operator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "OperatorError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.OperatorError.class;

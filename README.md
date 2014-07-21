@@ -6,7 +6,7 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs (
 ## Features
 
   * Distributed via Maven
-  * Uses the SLF4J logging facade to log requests and SOAP messages, allowing you to plug in a concrete logging framework of your choice.  
+  * Uses the SLF4J logging facade to log requests and SOAP messages, allowing you to plug in a concrete logging framework of your choice.
   * Automatic handling of SOAP headers
   * Easy management of credentials, authentication, and session information
   * [JavaDoc](http://googleads.github.io/googleads-java-lib)
@@ -18,7 +18,7 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs (
 
 ## Announcements and updates
 
-For API and client library updates and news, please follow our [Google+ Ads Developers page](https://plus.google.com/+GoogleAdsDevelopers/posts) and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/) 
+For API and client library updates and news, please follow our [Google+ Ads Developers page](https://plus.google.com/+GoogleAdsDevelopers/posts) and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/)
 
 ### Support forum
 
@@ -96,7 +96,7 @@ In the [releases section](https://github.com/googleads/googleads-java-lib/releas
 1) Modify
 
 You will need to modify the ``ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
-```  
+```
 $ vim ads.properties
 ```
 2) Import
@@ -108,8 +108,8 @@ Import the eclipse project by going to File > Import, then General > Existing pr
 Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to ``src/adwords/axis/auth/GetRefreshToken.java`` and run the example.
 
 Copy the refresh token into your ads.properties file as you just did with your general settings and client ID/secret when prompted.
-  
-4) Run example    
+
+4) Run example
 
 Navigate in your project to any example (e.g., ``src/adwords/axis/<version>/basicoperations/GetCampaigns.java``) and run the example.
 
@@ -120,7 +120,7 @@ In the [releases section](https://github.com/googleads/googleads-java-lib/releas
 1) Modify
 
 You will need to modify the ``src/main/resources/ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
-```  
+```
 $ vim src/main/resources/ads.properties
 ```
 2) Import
@@ -132,8 +132,8 @@ Import the eclipse project by going to File > Import, then General > Existing pr
 Now, generate OAuth2 credentials to be used with other examples. Navigate in your project to ``src/main/java/adwords/axis/auth/GetRefreshToken.java`` and run the example.
 
 Copy the refresh token into your ``src/main/resources/ads.properties`` file as you just did with your general settings and client ID/secret when prompted.
-  
-4) Run example    
+
+4) Run example
 
 Navigate in your project to any example (e.g., ``src/adwords/axis/<version>/basicoperations/GetCampaigns.java``) and run the example.
 
@@ -144,7 +144,7 @@ In the [releases section](https://github.com/googleads/googleads-java-lib/releas
 1) Modify
 
 You will need to modify the ``src/main/resources/ads.properties`` file with your settings. This can be moved (not copied) to your home directory as well.
-```  
+```
 $ vim src/main/resources/ads.properties
 ```
 
@@ -163,11 +163,11 @@ You must have Maven recompile every time you modify the source code or resources
 $ mvn -X compile
 ```
 
-3) Run example    
+3) Run example
 
 This command runs the ``GetCampaigns`` example, but you can update the ``-Dexec.mainClass`` argument with the example of your choice.
 ```
-$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201309.basicoperations.GetCampaigns"
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201406.basicoperations.GetCampaigns"
 ```
 
 ## Basic usage
@@ -184,27 +184,27 @@ import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;
 
 public static void main(String[] args) throws Exception {
   /**
-   * Create an AdWordsSession instance, loading credentials from the 
+   * Create an AdWordsSession instance, loading credentials from the
    * properties file:
    */
-  
+
   // Get an OAuth2 credential.
   Credential credential = new OfflineCredentials.Builder()
       .forApi(OfflineCredentials.Api.AdWords)
       .fromFile()
       .build()
       .generateCredential();
-  
+
   // Construct an AdWordsSession.
   AdWordsSession session = new AdWordsSession.Builder()
       .fromFile()
       .withOAuth2Credential(credential)
       .build();
-  
+
   /**
    * Alternatively, you can specify your credentials in the constructor:
    */
-  
+
   // Get an OAuth2 credential.
   credential = new OfflineCredentials.Builder()
       .forApi(OfflineCredentials.Api.AdWords)
@@ -212,33 +212,33 @@ public static void main(String[] args) throws Exception {
       .withRefreshToken(refreshToken)
       .build()
       .generateCredential();
-  
+
   // Construct an AdWordsSession.
   session = new AdWordsSession.Builder()
       .withDeveloperToken(developerToken)
       // ...
       .withOAuth2Credential(credential)
       .build();
-  
+
   /**
-   * Instantiate the desired service class using the AdWordsServices utility and a 
+   * Instantiate the desired service class using the AdWordsServices utility and a
    * Class object representing your service.
    */
-  
+
   // Get the CampaignService.
   CampaignServiceInterface campaignService =
       new AdWordsServices().get(session, CampaignServiceInterface.class);
-  
+
   /**
    * Create data objects and invoke methods on the service class instance. The
    * data objects and methods map directly to the data objects and requests for
    * the corresponding web service.
    */
-  
+
   // Create selector.
   Selector selector = new Selector();
   selector.setFields(new String[] {"Id", "Name"});
-  
+
   // Get all campaigns.
   CampaignPage page = campaignService.get(selector);
 }
@@ -311,9 +311,9 @@ for their proxy.
 
 These properties can be set with java args in your eclipse run configuration:
 
-    -Dhttps.proxyHost=web-proxy -Dhttps.proxyPort=8080 -Dhttps.proxyUser=someone 
+    -Dhttps.proxyHost=web-proxy -Dhttps.proxyPort=8080 -Dhttps.proxyUser=someone
     -Dhttps.proxyPassword=secret ...
-        
+
 If necessary, set this up in code by doing the following:
 
     System.setProperty("https.proxyHost", "web-proxy");

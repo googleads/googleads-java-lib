@@ -97,7 +97,7 @@ public class AdHocReportDownloadHelper {
     try {
       String downloadUrl = generateReportUrl(version);
       HttpRequestFactory requestFactory =
-          reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl);
+          reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl, version);
       HttpRequest httpRequest = requestFactory
           .buildPostRequest(new GenericUrl(downloadUrl), reportBodyProvider.getHttpContent());
       HttpResponse response = httpRequest.execute();

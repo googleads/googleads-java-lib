@@ -25,10 +25,10 @@ public interface VideoTargetingGroupCriterionServiceInterface extends java.rmi.R
     public com.google.api.ads.adwords.axis.v201402.video.TargetingGroupCriterionPage get(com.google.api.ads.adwords.axis.v201402.video.TargetingGroupCriterionSelector selector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;
 
     /**
-     * Adds, updates, or deletes targeting group criteria.
+     * Adds, updates, or removes targeting group criteria.
      *         Note: TargetingGroupCriterionOperation does not support the
      * REMOVE operator. To
-     *         delete a targeting group, set its status to DELETED.
+     *         remove a targeting group, set its status to REMOVED.
      *         
      * @param operations A list of unique operations.
      *         

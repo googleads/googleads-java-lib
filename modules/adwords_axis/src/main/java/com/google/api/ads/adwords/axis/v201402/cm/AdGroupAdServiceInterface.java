@@ -11,8 +11,8 @@ public interface AdGroupAdServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns a list of AdGroupAds.
-     *         Deleted AdGroupAds are not returned by default.
-     *         
+     *         AdGroupAds that had been removed are not returned by default.
+     * 
      *         
      * @param serviceSelector The selector specifying the {@link AdGroupAd}s
      * to return.
@@ -41,7 +41,7 @@ public interface AdGroupAdServiceInterface extends java.rmi.Remote {
      * If
      *         you want to change any of the fields other than status, you
      * must
-     *         make a new ad and then delete the old one.</p>
+     *         make a new ad and then remove the old one.</p>
      *         <p>Remove - Removes the link between the specified AdGroup
      * and
      *         Ad.</p>
@@ -57,7 +57,7 @@ public interface AdGroupAdServiceInterface extends java.rmi.Remote {
      *         In the case of the remove operation, the return AdGroupAd
      * will simply be
      *         an AdGroupAd containing an Ad with the id set to the Ad being
-     * deleted from
+     * removed from
      *         the AdGroup.
      */
     public com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdReturnValue mutate(com.google.api.ads.adwords.axis.v201402.cm.AdGroupAdOperation[] operations) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201402.cm.ApiException;

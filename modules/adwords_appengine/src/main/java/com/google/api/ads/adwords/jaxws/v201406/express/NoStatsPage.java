@@ -29,9 +29,7 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.Page;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NoStatsPage")
 @XmlSeeAlso({
-    ProductServicePage.class,
-    PromotionPage.class,
-    ExpressBusinessPage.class
+    ProductServicePage.class
 })
 public abstract class NoStatsPage
     extends Page

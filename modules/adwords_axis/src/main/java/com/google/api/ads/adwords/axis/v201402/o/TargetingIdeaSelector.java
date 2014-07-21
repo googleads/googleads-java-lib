@@ -27,8 +27,7 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.o.SearchParameter[] searchParameters;
 
     /* Limits the request to responses of this {@link IdeaType}, e.g.
-     * {@code
-     *                 KEYWORDS} or {@code PLACEMENTS}.
+     * {@code KEYWORDS}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201402.o.IdeaType ideaType;
@@ -144,8 +143,7 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
      * Gets the ideaType value for this TargetingIdeaSelector.
      * 
      * @return ideaType   * Limits the request to responses of this {@link IdeaType}, e.g.
-     * {@code
-     *                 KEYWORDS} or {@code PLACEMENTS}.
+     * {@code KEYWORDS}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -158,8 +156,7 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
      * Sets the ideaType value for this TargetingIdeaSelector.
      * 
      * @param ideaType   * Limits the request to responses of this {@link IdeaType}, e.g.
-     * {@code
-     *                 KEYWORDS} or {@code PLACEMENTS}.
+     * {@code KEYWORDS}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

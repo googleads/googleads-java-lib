@@ -12,7 +12,7 @@ package com.google.api.ads.adwords.axis.v201402.video;
  * An operation on a video campaign.
  *             Note: The REMOVE operator is not supported. To remove
  * a campaign, set
- *             its status to DELETED.
+ *             its status to REMOVED.
  */
 public class VideoCampaignOperation  extends com.google.api.ads.adwords.axis.v201402.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and

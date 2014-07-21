@@ -32,7 +32,7 @@ public class TargetingGroup  implements java.io.Serializable {
      * must not be empty.</span> */
     private java.lang.String name;
 
-    /* Status of this video targeting group. On add, defaults to ACTIVE. */
+    /* Status of this video targeting group. On add, defaults to ENABLED. */
     private com.google.api.ads.adwords.axis.v201402.video.TargetingGroupStatus status;
 
     /* Bids per format.  Once a bid is added, it cannot be removed,
@@ -174,7 +174,7 @@ public class TargetingGroup  implements java.io.Serializable {
     /**
      * Gets the status value for this TargetingGroup.
      * 
-     * @return status   * Status of this video targeting group. On add, defaults to ACTIVE.
+     * @return status   * Status of this video targeting group. On add, defaults to ENABLED.
      */
     public com.google.api.ads.adwords.axis.v201402.video.TargetingGroupStatus getStatus() {
         return status;
@@ -184,7 +184,7 @@ public class TargetingGroup  implements java.io.Serializable {
     /**
      * Sets the status value for this TargetingGroup.
      * 
-     * @param status   * Status of this video targeting group. On add, defaults to ACTIVE.
+     * @param status   * Status of this video targeting group. On add, defaults to ENABLED.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201402.video.TargetingGroupStatus status) {
         this.status = status;

@@ -97,9 +97,9 @@ public class GetKeywordCriteria {
       // Display keywords.
       if (page.getEntries() != null) {
         for (TargetingGroupCriterion targetingGroupCriterion : page.getEntries()) {
-          String negative =
-              (targetingGroupCriterion instanceof NegativeTargetingGroupCriterion) ?
-                  " (negative)" : "";
+          String negative = (targetingGroupCriterion instanceof NegativeTargetingGroupCriterion) 
+              ? " (negative)"
+              : "";
           BaseKeyword keyword = (BaseKeyword) targetingGroupCriterion.getCriterion();
           System.out.printf("Criterion%s id %d, targeting group id %d, "
               + "and text '%s' was found.%n",

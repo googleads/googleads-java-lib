@@ -219,7 +219,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
           builder.withResponseInfo(new ResponseInfo.Builder().withSoapResponseXml(
               messageContext.getResponseMessage().getSOAPPartAsString()).build());
         } catch (AxisFault e) {
-         builder.withException(e);
+          builder.withException(e);
         }
       }
 

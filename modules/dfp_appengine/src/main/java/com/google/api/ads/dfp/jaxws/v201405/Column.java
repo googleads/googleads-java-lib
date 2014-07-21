@@ -2834,7 +2834,9 @@ public enum Column {
     /**
      * 
      *                 The number of impressions sent to Ad Exchange / AdSense, regardless of whether they
-     *                 won or lost (total number of dynamic allocation impressions)
+     *                 won or lost (total number of dynamic allocation impressions).
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_COMPETING_TOTAL} beginning in
+     *                 V201408.
      *               
      * 
      */
@@ -2850,9 +2852,9 @@ public enum Column {
 
     /**
      * 
-     *                 The number of Ad Exchange / AdSense and DFP impressions that are at
-     *                 "remnant priority level" or below, that match sizes allowed in Ad Exchange, and
-     *                 are not system defaults.
+     *                 The number of Ad Exchange / AdSense and DFP impressions.
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_ELIGIBLE_IMPRESSIONS_TOTAL} beginning in
+     *                 V201408.
      *               
      * 
      */
@@ -2861,6 +2863,8 @@ public enum Column {
     /**
      * 
      *                 The difference between eligible impressions and competing impressions in dynamic allocation.
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_TOTAL} beginning
+     *                 in V201408.
      *               
      * 
      */
@@ -2869,6 +2873,8 @@ public enum Column {
     /**
      * 
      *                 The percentage of eligible impressions that are not competing in dynamic allocation.
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_PERCENT_TOTAL}
+     *                 beginning in V201408.
      *               
      * 
      */
@@ -2877,6 +2883,8 @@ public enum Column {
     /**
      * 
      *                 The percent of eligible impressions participating in dynamic allocation.
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_SATURATION_RATE_TOTAL}
+     *                 beginning in V201408.
      *               
      * 
      */
@@ -2885,6 +2893,7 @@ public enum Column {
     /**
      * 
      *                 The percent of total dynamic allocation queries that won.
+     *                 Replaced with {@code DYNAMIC_ALLOCATION_OPPORTUNITY_MATCH_RATE_TOTAL} beginning in V201408.
      *               
      * 
      */

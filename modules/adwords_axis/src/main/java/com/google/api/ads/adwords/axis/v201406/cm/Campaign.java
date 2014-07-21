@@ -18,21 +18,22 @@ public class Campaign  implements java.io.Serializable {
      * Operator}s: ADD.</span> */
     private java.lang.Long id;
 
-    /* Name of this campaign. On add, defaults to <code>Campaign #<var>N</var></code>
-     * prior to v201309.
+    /* Name of this campaign.
      *                 This field is required and should not be {@code null}
-     * for ADD operations from
-     *                 v201309 versions.
+     * for ADD operations.
      *                 
-     *                 On SET and REMOVE operations, this can be used to
-     * address the campaign by name, if the
-     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
-     * be addressed by name.  If you
-     *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint StringLength">This string must not be empty.</span> */
+     *                 For SET and REMOVE operations, this can be used to
+     * address the campaign
+     *                 by name when the campaign is ENABLED or PAUSED. Removed
+     * campaigns cannot
+     *                 be addressed by name. If you wish to rename a campaign,
+     * you must provide
+     *                 the ID.
+     *                 <span class="constraint StringLength">This string
+     * must not be empty.</span> */
     private java.lang.String name;
 
-    /* Status of this campaign. On add, defaults to <code>ACTIVE</code>. */
+    /* Status of this campaign. On add, defaults to {@code ENABLED}. */
     private com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus status;
 
     /* Serving status.
@@ -54,7 +55,7 @@ public class Campaign  implements java.io.Serializable {
     private java.lang.String endDate;
 
     /* Current base budget of campaign; default if no custom budgets
-     * are active. */
+     * are enabled. */
     private com.google.api.ads.adwords.axis.v201406.cm.Budget budget;
 
     /* <span class="constraint ReadOnly">This field is read only and
@@ -213,18 +214,19 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Gets the name value for this Campaign.
      * 
-     * @return name   * Name of this campaign. On add, defaults to <code>Campaign #<var>N</var></code>
-     * prior to v201309.
+     * @return name   * Name of this campaign.
      *                 This field is required and should not be {@code null}
-     * for ADD operations from
-     *                 v201309 versions.
+     * for ADD operations.
      *                 
-     *                 On SET and REMOVE operations, this can be used to
-     * address the campaign by name, if the
-     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
-     * be addressed by name.  If you
-     *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint StringLength">This string must not be empty.</span>
+     *                 For SET and REMOVE operations, this can be used to
+     * address the campaign
+     *                 by name when the campaign is ENABLED or PAUSED. Removed
+     * campaigns cannot
+     *                 be addressed by name. If you wish to rename a campaign,
+     * you must provide
+     *                 the ID.
+     *                 <span class="constraint StringLength">This string
+     * must not be empty.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -234,18 +236,19 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Sets the name value for this Campaign.
      * 
-     * @param name   * Name of this campaign. On add, defaults to <code>Campaign #<var>N</var></code>
-     * prior to v201309.
+     * @param name   * Name of this campaign.
      *                 This field is required and should not be {@code null}
-     * for ADD operations from
-     *                 v201309 versions.
+     * for ADD operations.
      *                 
-     *                 On SET and REMOVE operations, this can be used to
-     * address the campaign by name, if the
-     *                 campaign is ACTIVE or PAUSED.  Deleted campaigns cannot
-     * be addressed by name.  If you
-     *                 wish to rename a campaign, you must provide the ID.
-     * <span class="constraint StringLength">This string must not be empty.</span>
+     *                 For SET and REMOVE operations, this can be used to
+     * address the campaign
+     *                 by name when the campaign is ENABLED or PAUSED. Removed
+     * campaigns cannot
+     *                 be addressed by name. If you wish to rename a campaign,
+     * you must provide
+     *                 the ID.
+     *                 <span class="constraint StringLength">This string
+     * must not be empty.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -255,7 +258,7 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Gets the status value for this Campaign.
      * 
-     * @return status   * Status of this campaign. On add, defaults to <code>ACTIVE</code>.
+     * @return status   * Status of this campaign. On add, defaults to {@code ENABLED}.
      */
     public com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus getStatus() {
         return status;
@@ -265,7 +268,7 @@ public class Campaign  implements java.io.Serializable {
     /**
      * Sets the status value for this Campaign.
      * 
-     * @param status   * Status of this campaign. On add, defaults to <code>ACTIVE</code>.
+     * @param status   * Status of this campaign. On add, defaults to {@code ENABLED}.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus status) {
         this.status = status;
@@ -354,7 +357,7 @@ public class Campaign  implements java.io.Serializable {
      * Gets the budget value for this Campaign.
      * 
      * @return budget   * Current base budget of campaign; default if no custom budgets
-     * are active.
+     * are enabled.
      */
     public com.google.api.ads.adwords.axis.v201406.cm.Budget getBudget() {
         return budget;
@@ -365,7 +368,7 @@ public class Campaign  implements java.io.Serializable {
      * Sets the budget value for this Campaign.
      * 
      * @param budget   * Current base budget of campaign; default if no custom budgets
-     * are active.
+     * are enabled.
      */
     public void setBudget(com.google.api.ads.adwords.axis.v201406.cm.Budget budget) {
         this.budget = budget;

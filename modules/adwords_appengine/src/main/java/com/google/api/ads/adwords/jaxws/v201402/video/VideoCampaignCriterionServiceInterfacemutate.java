@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Adds or deletes campaign level criteria.
+ *             Adds or removes campaign level criteria.
  *             NOTE: CampaignCriterionOperation does not support the SET/UPDATE operator.
  *             
  *             @param operations A list of unique operations.

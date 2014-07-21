@@ -26,9 +26,9 @@ public class AdGroupExperimentData  implements java.io.Serializable {
      * Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.ExperimentDeltaStatus experimentDeltaStatus;
 
-    /* Status of the experiment row. If this is set to DELETED in
-     * a SET operation, the adgroup
-     *                 will be removed from the experiment.
+    /* Status of the experiment row. If this is set to REMOVED in
+     * a SET operation,
+     *                 the adgroup will be removed from the experiment.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span> */
@@ -109,9 +109,9 @@ public class AdGroupExperimentData  implements java.io.Serializable {
     /**
      * Gets the experimentDataStatus value for this AdGroupExperimentData.
      * 
-     * @return experimentDataStatus   * Status of the experiment row. If this is set to DELETED in
-     * a SET operation, the adgroup
-     *                 will be removed from the experiment.
+     * @return experimentDataStatus   * Status of the experiment row. If this is set to REMOVED in
+     * a SET operation,
+     *                 the adgroup will be removed from the experiment.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
@@ -124,9 +124,9 @@ public class AdGroupExperimentData  implements java.io.Serializable {
     /**
      * Sets the experimentDataStatus value for this AdGroupExperimentData.
      * 
-     * @param experimentDataStatus   * Status of the experiment row. If this is set to DELETED in
-     * a SET operation, the adgroup
-     *                 will be removed from the experiment.
+     * @param experimentDataStatus   * Status of the experiment row. If this is set to REMOVED in
+     * a SET operation,
+     *                 the adgroup will be removed from the experiment.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>

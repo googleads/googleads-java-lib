@@ -30,12 +30,7 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.Selector;
 @WebService(name = "BudgetOrderServiceInterface", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
 @XmlSeeAlso({
     com.google.api.ads.adwords.jaxws.v201406.billing.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.ch.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.cm.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.express.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.mcm.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.o.ObjectFactory.class,
-    com.google.api.ads.adwords.jaxws.v201406.rm.ObjectFactory.class
+    com.google.api.ads.adwords.jaxws.v201406.cm.ObjectFactory.class
 })
 public interface BudgetOrderServiceInterface {
 
@@ -56,8 +51,8 @@ public interface BudgetOrderServiceInterface {
      */
     @WebMethod
     @WebResult(name = "rval", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
-    @RequestWrapper(localName = "get", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.Get")
-    @ResponseWrapper(localName = "getResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.GetResponse")
+    @RequestWrapper(localName = "get", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfaceget")
+    @ResponseWrapper(localName = "getResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfacegetResponse")
     public BudgetOrderPage get(
         @WebParam(name = "serviceSelector", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
         Selector serviceSelector)
@@ -78,8 +73,8 @@ public interface BudgetOrderServiceInterface {
      */
     @WebMethod
     @WebResult(name = "rval", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
-    @RequestWrapper(localName = "getBillingAccounts", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.GetBillingAccounts")
-    @ResponseWrapper(localName = "getBillingAccountsResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.GetBillingAccountsResponse")
+    @RequestWrapper(localName = "getBillingAccounts", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfacegetBillingAccounts")
+    @ResponseWrapper(localName = "getBillingAccountsResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfacegetBillingAccountsResponse")
     public List<BillingAccount> getBillingAccounts()
         throws ApiException
     ;
@@ -108,8 +103,8 @@ public interface BudgetOrderServiceInterface {
      */
     @WebMethod
     @WebResult(name = "rval", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
-    @RequestWrapper(localName = "mutate", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.Mutate")
-    @ResponseWrapper(localName = "mutateResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.MutateResponse")
+    @RequestWrapper(localName = "mutate", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfacemutate")
+    @ResponseWrapper(localName = "mutateResponse", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406", className = "com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterfacemutateResponse")
     public BudgetOrderReturnValue mutate(
         @WebParam(name = "operations", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201406")
         List<BudgetOrderOperation> operations)

@@ -94,9 +94,9 @@ public class GetVideoCampaignCriteria {
       // Display criteria.
       if (page.getEntries() != null) {
         for (VideoCampaignCriterion videoCampaignCriterion : page.getEntries()) {
-          String negative =
-              (videoCampaignCriterion instanceof NegativeVideoCampaignCriterion) ?
-                  " (negative)" : "";
+          String negative = (videoCampaignCriterion instanceof NegativeVideoCampaignCriterion)
+              ? " (negative)"
+              : "";
           System.out.printf("Video%s criterion ID '%d' of type '%s' was found.%n",
               negative,
               videoCampaignCriterion.getCriterion().getId(),

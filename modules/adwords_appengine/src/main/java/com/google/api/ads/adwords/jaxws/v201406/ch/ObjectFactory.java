@@ -39,6 +39,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CustomerSyncServiceInterfaceget }
+     * 
+     */
+    public CustomerSyncServiceInterfaceget createCustomerSyncServiceInterfaceget() {
+        return new CustomerSyncServiceInterfaceget();
+    }
+
+    /**
+     * Create an instance of {@link CustomerSyncServiceInterfacegetResponse }
+     * 
+     */
+    public CustomerSyncServiceInterfacegetResponse createCustomerSyncServiceInterfacegetResponse() {
+        return new CustomerSyncServiceInterfacegetResponse();
+    }
+
+    /**
      * Create an instance of {@link CustomerSyncSelector }
      * 
      */

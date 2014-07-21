@@ -27,7 +27,7 @@ public interface ExperimentServiceInterface extends java.rmi.Remote {
 
     /**
      * Mutates (add, update or remove) experiments.
-     *         <b>Note:</b> To REMOVE use SET and mark status to DELETED.
+     *         <b>Note:</b> To REMOVE use SET and mark status to REMOVED.
      * 
      * @param operations A list of unique operations.
      *         The same experiment cannot be specified in more than one operation.

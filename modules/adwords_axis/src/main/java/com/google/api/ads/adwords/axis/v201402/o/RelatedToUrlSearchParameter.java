@@ -9,9 +9,10 @@ package com.google.api.ads.adwords.axis.v201402.o;
 
 
 /**
- * A {@link SearchParameter} for {@code KEYWORD} and {@code PLACEMENT}
- * {@link IdeaType}s that specifies a set of URLs that results should
- * in some way be related too. For example, keyword results would be
+ * A {@link SearchParameter} that specifies a set of URLs that results
+ * should
+ *             in some way be related too. For example, keyword results
+ * would be
  *             similar to content keywords found on the related URLs.
  * <p>This search parameter can be used in bulk keyword requests through
  * the {@link com.google.ads.api.services.targetingideas.TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)}

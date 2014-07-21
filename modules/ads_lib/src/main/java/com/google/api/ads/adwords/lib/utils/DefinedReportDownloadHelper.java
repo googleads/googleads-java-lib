@@ -81,7 +81,7 @@ public class DefinedReportDownloadHelper {
       String downloadUrl = generateReportUrl(reportDefinitionId, version);
 
       HttpRequestFactory requestFactory =
-          reportUrlConnectionHelper.getHttpRequestFactory(downloadUrl);
+          reportUrlConnectionHelper.getHttpRequestFactory(downloadUrl, version);
       HttpRequest httpRequest = requestFactory.buildGetRequest(new GenericUrl(downloadUrl));
       HttpResponse httpResponse = httpRequest.execute();
 

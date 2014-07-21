@@ -9,7 +9,8 @@ package com.google.api.ads.adwords.axis.v201402.video;
 
 
 /**
- * A SegmentKey for segmenting by {@link VideoAdDisplayFormat.Type}.
+ * Segment key for segmenting by {@link VideoAdDisplayFormat} and
+ * {@link VideoAdNetwork}.
  */
 public class DisplayFormatNetworkKey  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201402.video.VideoAdDisplayFormat format;

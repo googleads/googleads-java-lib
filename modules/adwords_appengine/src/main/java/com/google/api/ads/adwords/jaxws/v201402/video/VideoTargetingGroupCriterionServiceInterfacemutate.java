@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Adds, updates, or deletes targeting group criteria.
+ *             Adds, updates, or removes targeting group criteria.
  *             Note: TargetingGroupCriterionOperation does not support the REMOVE operator. To
- *             delete a targeting group, set its status to DELETED.
+ *             remove a targeting group, set its status to REMOVED.
  *             @param operations A list of unique operations.
  *             @return The list of updated targeting group criteria, returned in the same order as the
  *             operations array.

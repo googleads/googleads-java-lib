@@ -9,25 +9,59 @@ package com.google.api.ads.adwords.axis.v201406.cm;
 
 
 /**
- * Represents domain category information.
+ * Represents categories that AdWords finds automatically for your
+ * website.
+ *             
+ *             <p>
+ *             No categories available means that AdWords couldn't automatically
+ * find categories for your
+ *             website. To control how categories are assigned, manually
+ * add breadcrumbs to your webpages.
+ *             
+ *             <p>
+ *             Categories can be filtered by domain name or by a set
+ * of campaign IDs.
  */
 public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.DimensionProperties  implements java.io.Serializable {
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* Recommended category for the website domain.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String category;
 
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* Coverage is the number of docs that match a label / number
+     * of docs that match the
+     *                     immediate parent label.
+     *                     <p>
+     *                     Example : united states/ca/sfo matches 500 docs
+     * and united states/ca matches 1000
+     *                     docs. The coverage will be 50%.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.Double coverage;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "DomainName".</span>
+    /* The domain for the website. Since many different domains can
+     * have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The domain can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DomainName".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String domainName;
 
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* The language for the website. Since many different domains
+     * can have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The language can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String isoLanguage;
 
     public DomainCategory() {
@@ -53,8 +87,9 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Gets the category value for this DomainCategory.
      * 
-     * @return category   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return category   * Recommended category for the website domain.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCategory() {
         return category;
@@ -64,8 +99,9 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Sets the category value for this DomainCategory.
      * 
-     * @param category   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param category   * Recommended category for the website domain.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCategory(java.lang.String category) {
         this.category = category;
@@ -75,8 +111,15 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Gets the coverage value for this DomainCategory.
      * 
-     * @return coverage   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return coverage   * Coverage is the number of docs that match a label / number
+     * of docs that match the
+     *                     immediate parent label.
+     *                     <p>
+     *                     Example : united states/ca/sfo matches 500 docs
+     * and united states/ca matches 1000
+     *                     docs. The coverage will be 50%.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.Double getCoverage() {
         return coverage;
@@ -86,8 +129,15 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Sets the coverage value for this DomainCategory.
      * 
-     * @param coverage   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param coverage   * Coverage is the number of docs that match a label / number
+     * of docs that match the
+     *                     immediate parent label.
+     *                     <p>
+     *                     Example : united states/ca/sfo matches 500 docs
+     * and united states/ca matches 1000
+     *                     docs. The coverage will be 50%.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCoverage(java.lang.Double coverage) {
         this.coverage = coverage;
@@ -97,8 +147,16 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Gets the domainName value for this DomainCategory.
      * 
-     * @return domainName   * <span class="constraint Selectable">This field can be selected
-     * using the value "DomainName".</span>
+     * @return domainName   * The domain for the website. Since many different domains can
+     * have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The domain can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DomainName".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -110,8 +168,16 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Sets the domainName value for this DomainCategory.
      * 
-     * @param domainName   * <span class="constraint Selectable">This field can be selected
-     * using the value "DomainName".</span>
+     * @param domainName   * The domain for the website. Since many different domains can
+     * have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The domain can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DomainName".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -123,8 +189,15 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Gets the isoLanguage value for this DomainCategory.
      * 
-     * @return isoLanguage   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return isoLanguage   * The language for the website. Since many different domains
+     * can have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The language can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getIsoLanguage() {
         return isoLanguage;
@@ -134,8 +207,15 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
     /**
      * Sets the isoLanguage value for this DomainCategory.
      * 
-     * @param isoLanguage   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param isoLanguage   * The language for the website. Since many different domains
+     * can have the same categories, the
+     *                     domain and the language are used to uniquely identify
+     * the categories.
+     *                     <p>
+     *                     The language can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setIsoLanguage(java.lang.String isoLanguage) {
         this.isoLanguage = isoLanguage;

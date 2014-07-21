@@ -67,8 +67,8 @@ public class AdWordsServiceClientFactoryHelperTest {
     AdWordsServiceClientFactoryHelper helper = new AdWordsServiceClientFactoryHelper(
         adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
         adsLibConfiguration);
-    assertEquals("v201309", helper.determineVersion(
-        com.google.api.ads.adwords.lib.factory.helper.testing.v201309.cm.TestService.class));
+    assertEquals("v201406", helper.determineVersion(
+        com.google.api.ads.adwords.lib.factory.helper.testing.v201406.cm.TestService.class));
   }
 
   @Test
@@ -95,7 +95,7 @@ public class AdWordsServiceClientFactoryHelperTest {
         .build();
 
     helper.checkServiceClientPreconditions(adWordsSession,
-        com.google.api.ads.adwords.lib.factory.helper.testing.v201402.cm.TestService.class);
+        com.google.api.ads.adwords.lib.factory.helper.testing.v201406.cm.TestService.class);
   }
 
   @Test
@@ -114,23 +114,6 @@ public class AdWordsServiceClientFactoryHelperTest {
         .build();
 
     helper.checkServiceClientPreconditions(adWordsSession,
-        com.google.api.ads.adwords.lib.factory.helper.testing.v201402.cm.TestService.class);
-  }
-
-  @Test
-  public void testCheckServiceClientPreconditions_passClientLoginOldVersion() throws Exception {
-    AdWordsServiceClientFactoryHelper helper = new AdWordsServiceClientFactoryHelper(
-        adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
-        adsLibConfiguration);
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken")
-        .build();
-
-    helper.checkServiceClientPreconditions(adWordsSession,
-        com.google.api.ads.adwords.lib.factory.helper.testing.v201309.cm.TestService.class);
+        com.google.api.ads.adwords.lib.factory.helper.testing.v201406.cm.TestService.class);
   }
 }

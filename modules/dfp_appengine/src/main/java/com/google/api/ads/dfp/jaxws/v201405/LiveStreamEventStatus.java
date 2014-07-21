@@ -46,7 +46,7 @@ public enum LiveStreamEventStatus {
 
     /**
      * 
-     *                 Indicates the {@link LiveStreamEvent} has been paused for stitching. This
+     *                 Indicates the {@link LiveStreamEvent} has been paused. This
      *                 can be made {@link #ACTIVE} at later time.
      *               
      * 

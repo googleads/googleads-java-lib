@@ -33,7 +33,7 @@ public interface VideoTargetingGroupServiceInterface extends java.rmi.Remote {
      *         <p>
      *         Note: TargetingGroupOperation does not support the REMOVE
      * operator. To
-     *         delete a targeting group, set its status to DELETED.
+     *         remove a targeting group, set its status to REMOVED.
      *         
      * @param operations A list of unique operations.
      *         The same targeting group name cannot be specified in more

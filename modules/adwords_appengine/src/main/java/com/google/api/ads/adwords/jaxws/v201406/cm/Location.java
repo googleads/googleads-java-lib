@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents Location criterion.
- *             <p>A criterion of this type can only be created using an ID. A criterion of this type can be either targeted or excluded.
+ *             <p>A criterion of this type can only be created using an ID.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

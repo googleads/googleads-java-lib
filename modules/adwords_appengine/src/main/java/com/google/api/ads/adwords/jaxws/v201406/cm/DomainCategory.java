@@ -8,7 +8,14 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents domain category information.
+ *             Represents categories that AdWords finds automatically for your website.
+ *             
+ *             <p>
+ *             No categories available means that AdWords couldn't automatically find categories for your
+ *             website. To control how categories are assigned, manually add breadcrumbs to your webpages.
+ *             
+ *             <p>
+ *             Categories can be filtered by domain name or by a set of campaign IDs.
  *           
  * 
  * <p>Java class for DomainCategory complex type.

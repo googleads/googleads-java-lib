@@ -35,7 +35,7 @@ public enum ProgrammaticErrorReason {
 
     /**
      * 
-     *                 Audience extension is not supported by programmatic line items
+     *                 Audience extension is not supported by programmatic line items.
      *               
      * 
      */
@@ -43,7 +43,7 @@ public enum ProgrammaticErrorReason {
 
     /**
      * 
-     *                 Video is currently not supported
+     *                 Video is currently not supported.
      *               
      * 
      */
@@ -51,7 +51,7 @@ public enum ProgrammaticErrorReason {
 
     /**
      * 
-     *                 Roadblocking is not supported by programmatic line items
+     *                 Roadblocking is not supported by programmatic line items.
      *               
      * 
      */

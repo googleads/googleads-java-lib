@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a Gender criterion.
- *             <p>A criterion of this type can only be created using an ID. A criterion of this type can be either targeted or excluded.
+ *             <p>A criterion of this type can only be created using an ID.
  *             <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
  *           
  * 

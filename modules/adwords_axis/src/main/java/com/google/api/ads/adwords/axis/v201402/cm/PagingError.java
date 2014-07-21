@@ -7,7 +7,13 @@
 
 package com.google.api.ads.adwords.axis.v201402.cm;
 
+
+/**
+ * Error codes for pagination.
+ *             See {@link com.google.ads.api.services.common.pagination.Paging}.
+ */
 public class PagingError  extends com.google.api.ads.adwords.axis.v201402.cm.ApiError  implements java.io.Serializable {
+    /* The error reason represented by an enum. */
     private com.google.api.ads.adwords.axis.v201402.cm.PagingErrorReason reason;
 
     public PagingError() {
@@ -31,7 +37,7 @@ public class PagingError  extends com.google.api.ads.adwords.axis.v201402.cm.Api
     /**
      * Gets the reason value for this PagingError.
      * 
-     * @return reason
+     * @return reason   * The error reason represented by an enum.
      */
     public com.google.api.ads.adwords.axis.v201402.cm.PagingErrorReason getReason() {
         return reason;
@@ -41,7 +47,7 @@ public class PagingError  extends com.google.api.ads.adwords.axis.v201402.cm.Api
     /**
      * Sets the reason value for this PagingError.
      * 
-     * @param reason
+     * @param reason   * The error reason represented by an enum.
      */
     public void setReason(com.google.api.ads.adwords.axis.v201402.cm.PagingErrorReason reason) {
         this.reason = reason;
