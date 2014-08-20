@@ -398,9 +398,23 @@ public class WorkflowActionServiceSoapBindingStub extends org.apache.axis.client
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "WorkflowActionPerformer");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "WorkflowActionType");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201306.WorkflowActionType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "WorkflowRoundActionPerformerType");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201306.WorkflowRoundActionPerformerType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);

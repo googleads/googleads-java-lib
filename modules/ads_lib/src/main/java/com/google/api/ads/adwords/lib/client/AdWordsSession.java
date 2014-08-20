@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.lib.client;
 
 import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
-import com.google.api.ads.common.lib.auth.ClientLoginCompatible;
 import com.google.api.ads.common.lib.auth.OAuth2Compatible;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
@@ -44,12 +43,8 @@ import javax.annotation.Nullable;
  *
  * @author Adam Rogal
  */
-public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLoginCompatible {
+public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
-  static final String DEPRECATION_MESSAGE = "ClientLogin is now deprecated. "
-      + "Please switch to OAuth2. See OfflineCredentials for more information.";
-
-  private String clientLoginToken;
   private String clientCustomerId;
   private Long expressBusinessId;
   private Boolean isValidateOnly;
@@ -81,10 +76,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
     this.oAuth2Credential = builder.oAuth2Credential;
     this.userAgent = builder.userAgent;
     this.libLogger = builder.libLogger;
-
-    if (builder.clientLoginToken != null) {
-      this.setClientLoginToken(builder.clientLoginToken);
-    }
   }
 
   /**
@@ -180,39 +171,10 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
   }
 
   /**
-   * Gets the client login token.
-   *
-   * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-   *             convenience. Please see the OfflineCredentials utility for
-   *             generating offline credentials easily.
-   */
-  @Deprecated
-  public String getClientLoginToken() {
-    return clientLoginToken;
-  }
-
-  /**
-   * Sets the ClientLogin Token. Any other authentication credentials on the
-   * session will be removed.
-   *
-   * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-   *             convenience. Please see the OfflineCredentials utility for
-   *             generating offline credentials easily.
-   */
-  @Deprecated
-  public void setClientLoginToken(String clientLoginToken) {
-    Preconditions.checkNotNull(clientLoginToken, "clientLoginToken cannot be null.");
-    clearAuthentication();
-    this.clientLoginToken = clientLoginToken;
-    libLogger.warn(DEPRECATION_MESSAGE);
-  }
-
-  /**
    * Clears all the authentication credentials from this session.
    */
   private void clearAuthentication() {
     oAuth2Credential = null;
-    clientLoginToken = null;
   }
 
   /**
@@ -248,7 +210,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
       com.google.api.ads.common.lib.utils.Builder<AdWordsSession> {
 
     private String endpoint;
-    private String clientLoginToken;
     private String userAgent;
     private String developerToken;
     private String clientCustomerId;
@@ -303,7 +264,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
      * <li>api.adwords.isPartialFailure</li>
      * <li>api.adwords.endpoint</li>
      * <li>api.adwords.reportMoneyInMicros</li>
-     * <li>Deprecated: api.adwords.clientLoginToken - use OAuth2 instead.</li>
      * </ul>
      *
      * @param config
@@ -317,23 +277,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
       this.endpoint = config.getString("api.adwords.endpoint", null);
       this.isReportMoneyInMicros = config.getBoolean("api.adwords.reportMoneyInMicros",
           null);
-      this.clientLoginToken = config.getString("api.adwords.clientLoginToken", null);
 
-      return this;
-    }
-
-    /**
-     * Includes hard-coded ClientLogin token that will be used instead of
-     * fetching a new one.
-     *
-     * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-     *             convenience. Please see the OfflineCredentials utility for
-     *             generating offline credentials easily.
-     */
-    @Deprecated
-    public Builder withClientLoginToken(String clientLoginToken) {
-      clearAuthentication();
-      this.clientLoginToken = clientLoginToken;
       return this;
     }
 
@@ -408,7 +352,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
      */
     private void clearAuthentication() {
       oAuth2Credential = null;
-      clientLoginToken = null;
     }
 
     /**
@@ -437,10 +380,8 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible, ClientLogin
      */
     private void validate() throws ValidationException {
       // Check for at least one authentication mechanism.
-      if (this.clientLoginToken == null
-          && this.oAuth2Credential == null) {
-        throw new ValidationException(
-            "ClientLogin or OAuth2 authentication must be used.", "");
+      if (this.oAuth2Credential == null) {
+        throw new ValidationException("OAuth2 authentication must be used.", "");
       }
 
       // Check that the developer token is set.

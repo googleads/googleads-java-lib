@@ -12,8 +12,13 @@ package com.google.api.ads.dfp.axis.v201403;
  * An AdMob backfill creative.
  */
 public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201403.BaseDynamicAllocationCreative  implements java.io.Serializable {
+    /* Optional parameters that you can append to the request to AdMob,
+     * for example,
+     *                     test=true&bgcolor=000000. */
     private java.lang.String additionalParameters;
 
+    /* The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
+     * for more information. This attribute is required. */
     private java.lang.String publisherId;
 
     public AdMobBackfillCreative() {
@@ -49,7 +54,9 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201403.
     /**
      * Gets the additionalParameters value for this AdMobBackfillCreative.
      * 
-     * @return additionalParameters
+     * @return additionalParameters   * Optional parameters that you can append to the request to AdMob,
+     * for example,
+     *                     test=true&bgcolor=000000.
      */
     public java.lang.String getAdditionalParameters() {
         return additionalParameters;
@@ -59,7 +66,9 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201403.
     /**
      * Sets the additionalParameters value for this AdMobBackfillCreative.
      * 
-     * @param additionalParameters
+     * @param additionalParameters   * Optional parameters that you can append to the request to AdMob,
+     * for example,
+     *                     test=true&bgcolor=000000.
      */
     public void setAdditionalParameters(java.lang.String additionalParameters) {
         this.additionalParameters = additionalParameters;
@@ -69,7 +78,8 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201403.
     /**
      * Gets the publisherId value for this AdMobBackfillCreative.
      * 
-     * @return publisherId
+     * @return publisherId   * The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
+     * for more information. This attribute is required.
      */
     public java.lang.String getPublisherId() {
         return publisherId;
@@ -79,7 +89,8 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201403.
     /**
      * Sets the publisherId value for this AdMobBackfillCreative.
      * 
-     * @param publisherId
+     * @param publisherId   * The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
+     * for more information. This attribute is required.
      */
     public void setPublisherId(java.lang.String publisherId) {
         this.publisherId = publisherId;

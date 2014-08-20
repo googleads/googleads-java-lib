@@ -22,7 +22,7 @@ public class ProductTemplateServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for ProductTemplateServiceInterfacePort
-    private java.lang.String ProductTemplateServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/ProductTemplateService";
+    private java.lang.String ProductTemplateServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/ProductTemplateService";
 
     public java.lang.String getProductTemplateServiceInterfacePortAddress() {
         return ProductTemplateServiceInterfacePort_address;

@@ -22,7 +22,7 @@ public class CreativeTemplateServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for CreativeTemplateServiceInterfacePort
-    private java.lang.String CreativeTemplateServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/CreativeTemplateService";
+    private java.lang.String CreativeTemplateServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/CreativeTemplateService";
 
     public java.lang.String getCreativeTemplateServiceInterfacePortAddress() {
         return CreativeTemplateServiceInterfacePort_address;

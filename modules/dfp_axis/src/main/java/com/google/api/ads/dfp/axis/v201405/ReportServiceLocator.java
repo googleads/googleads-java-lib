@@ -22,7 +22,7 @@ public class ReportServiceLocator extends org.apache.axis.client.Service impleme
     }
 
     // Use to get a proxy class for ReportServiceInterfacePort
-    private java.lang.String ReportServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/ReportService";
+    private java.lang.String ReportServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/ReportService";
 
     public java.lang.String getReportServiceInterfacePortAddress() {
         return ReportServiceInterfacePort_address;

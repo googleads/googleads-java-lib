@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v201405}ProductStatus" minOccurs="0"/>
  *         &lt;element name="productType" type="{https://www.google.com/apis/ads/publisher/v201405}ProductType" minOccurs="0"/>
  *         &lt;element name="productTemplateId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="productTemplateDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v201405}DateTime" minOccurs="0"/>
@@ -74,7 +74,7 @@ public class Product {
     protected ProductStatus status;
     protected ProductType productType;
     protected Long productTemplateId;
-    protected String id;
+    protected Long id;
     protected String notes;
     protected String productTemplateDescription;
     protected DateTime lastModifiedDateTime;
@@ -189,10 +189,10 @@ public class Product {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -201,10 +201,10 @@ public class Product {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public void setId(String value) {
+    public void setId(Long value) {
         this.id = value;
     }
 

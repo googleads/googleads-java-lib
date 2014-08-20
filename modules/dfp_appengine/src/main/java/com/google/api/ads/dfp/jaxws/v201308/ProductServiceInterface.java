@@ -41,29 +41,6 @@ public interface ProductServiceInterface {
 
     /**
      * 
-     *         Returns the {@link Product} uniquely identified by the given ID.
-     *         
-     *         @param productId the ID of the product, which must already exist
-     *         @return the {@code Product} uniquely identified by ID
-     *       
-     * 
-     * @param productId
-     * @return
-     *     returns com.google.api.ads.dfp.jaxws.v201308.Product
-     * @throws ApiException_Exception
-     */
-    @WebMethod
-    @WebResult(name = "rval", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308")
-    @RequestWrapper(localName = "getProduct", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308", className = "com.google.api.ads.dfp.jaxws.v201308.ProductServiceInterfacegetProduct")
-    @ResponseWrapper(localName = "getProductResponse", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308", className = "com.google.api.ads.dfp.jaxws.v201308.ProductServiceInterfacegetProductResponse")
-    public Product getProduct(
-        @WebParam(name = "productId", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308")
-        String productId)
-        throws ApiException_Exception
-    ;
-
-    /**
-     * 
      *         Gets a {@link ProductPage} of {@link Product} objects that satisfy the criteria specified by
      *         given {@link Statement#query}. The following fields are supported for filtering and/or sorting:
      *         
@@ -125,7 +102,7 @@ public interface ProductServiceInterface {
      *         <td>{@code id}</td>
      *         <td>{@link Product#id}</td>
      *         <td>Yes</td>
-     *         <td>No</td>
+     *         <td>Yes</td>
      *         </tr>
      *         <tr>
      *         <td>{@code lastModifiedDateTime}</td>

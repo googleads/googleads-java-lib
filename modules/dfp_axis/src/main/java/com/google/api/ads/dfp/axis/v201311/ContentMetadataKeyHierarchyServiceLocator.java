@@ -22,7 +22,7 @@ public class ContentMetadataKeyHierarchyServiceLocator extends org.apache.axis.c
     }
 
     // Use to get a proxy class for ContentMetadataKeyHierarchyServiceInterfacePort
-    private java.lang.String ContentMetadataKeyHierarchyServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/ContentMetadataKeyHierarchyService";
+    private java.lang.String ContentMetadataKeyHierarchyServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/ContentMetadataKeyHierarchyService";
 
     public java.lang.String getContentMetadataKeyHierarchyServiceInterfacePortAddress() {
         return ContentMetadataKeyHierarchyServiceInterfacePort_address;

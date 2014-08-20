@@ -1,3 +1,24 @@
+1.32.0 - 08/20/2014
+-------------------
+AdWords:
+  - Removed support for ClientLogin. For more information, see the [ClientLogin to OAuth2
+    Migration guide](https://developers.google.com/adwords/api/docs/guides/clientlogin-to-oauth2-migration-guide).
+  - Added example for using ad customizers.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201408.
+  - Updated default DFP endpoint to https://ads.google.com.
+  - Updated OAuth scope to https://www.googleapis.com/auth/dfp.
+  - Changed Product ID from String to Long.
+  - Updated create line item and get forecast examples in v201408 to show
+    how to set Goal.goalType.
+
+Common:
+  - No changes.
+
 1.31.0 - 07/21/2014
 -------------------
 AdWords:

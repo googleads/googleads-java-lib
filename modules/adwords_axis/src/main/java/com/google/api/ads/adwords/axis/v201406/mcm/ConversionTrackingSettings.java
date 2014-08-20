@@ -11,9 +11,9 @@ package com.google.api.ads.adwords.axis.v201406.mcm;
 /**
  * A collection of customer-wide settings related to AdWords Conversion
  * Tracking. Settings
- *             that apply a conversion type level can be accessed and
- * modified though
- *             {@code ConversionTrackerService}
+ *             that apply at the conversion type level can be accessed
+ * and modified though
+ *             {@code ConversionTrackerService}.
  */
 public class ConversionTrackingSettings  implements java.io.Serializable {
     /* When set to {@link ConversionOptimizerDeduplicationMode#MANY_PER_CLICK},

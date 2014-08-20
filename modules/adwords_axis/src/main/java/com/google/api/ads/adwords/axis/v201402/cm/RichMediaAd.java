@@ -23,8 +23,9 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2014
      *                     Required for standard third-party ads. */
     private com.google.api.ads.adwords.axis.v201402.cm.Dimensions dimensions;
 
-    /* Snippet for this ad.
-     *                     Required for standard third-party ads. */
+    /* Snippet for this ad. Required for standard third-party ads.
+     * <span class="constraint StringLength">The length of this string should
+     * be between 1 and 3072, inclusive.</span> */
     private java.lang.String snippet;
 
     /* Impression beacon URL for the ad. */
@@ -138,8 +139,9 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2014
     /**
      * Gets the snippet value for this RichMediaAd.
      * 
-     * @return snippet   * Snippet for this ad.
-     *                     Required for standard third-party ads.
+     * @return snippet   * Snippet for this ad. Required for standard third-party ads.
+     * <span class="constraint StringLength">The length of this string should
+     * be between 1 and 3072, inclusive.</span>
      */
     public java.lang.String getSnippet() {
         return snippet;
@@ -149,8 +151,9 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2014
     /**
      * Sets the snippet value for this RichMediaAd.
      * 
-     * @param snippet   * Snippet for this ad.
-     *                     Required for standard third-party ads.
+     * @param snippet   * Snippet for this ad. Required for standard third-party ads.
+     * <span class="constraint StringLength">The length of this string should
+     * be between 1 and 3072, inclusive.</span>
      */
     public void setSnippet(java.lang.String snippet) {
         this.snippet = snippet;

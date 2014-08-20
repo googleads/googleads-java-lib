@@ -29,7 +29,6 @@ import com.google.common.base.Preconditions;
 import com.google.inject.Inject;
 
 import org.apache.axis.client.Stub;
-import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -143,10 +142,6 @@ public class AdWordsAxisHeaderHandler implements
   private void setAuthenticationHeaders(Object soapClient, Object soapHeader,
       AdWordsSession adWordsSession) throws IllegalAccessException, InvocationTargetException,
       AuthenticationException {
-    if (adWordsSession.getClientLoginToken() != null) {
-      BeanUtils.setProperty(soapHeader, "authToken", adWordsSession.getClientLoginToken());
-    } else {
-      authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
-    }
+    authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
   }
 }

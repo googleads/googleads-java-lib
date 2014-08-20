@@ -73,6 +73,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <li>DMA_Region</li>
  *       <li>Governorate</li>
  *       <li>Municipality</li>
+ *       <li>Neighborhood</li>
  *       <li>Postal_Code</li>
  *       <li>Prefecture</li>
  *       <li>Province</li>
@@ -91,7 +92,8 @@ import javax.xml.ws.ResponseWrapper;
  *       </table>
  *       
  *       <h4>Country</h4>
- *       Deprecated. Use <strong>Geo_Target</strong> instead.
+ *       This table is deprecated. V201408 is the last version this table can be used in. Use
+ *       <strong>Geo_Target</strong> instead.
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -120,7 +122,8 @@ import javax.xml.ws.ResponseWrapper;
  *       </table>
  *       
  *       <h4>Region</h4>
- *       Deprecated. Use <strong>Geo_Target</strong> instead.
+ *       This table is deprecated. V201408 is the last version this table can be used in. Use
+ *       <strong>Geo_Target</strong> instead.
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -153,7 +156,8 @@ import javax.xml.ws.ResponseWrapper;
  *       </table>
  *       
  *       <h4>Metro</h4>
- *       Deprecated. Use <strong>Geo_Target</strong> instead.
+ *       This table is deprecated. V201408 is the last version this table can be used in. Use
+ *       <strong>Geo_Target</strong> instead.
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -186,7 +190,8 @@ import javax.xml.ws.ResponseWrapper;
  *       </table>
  *       
  *       <h4>City</h4>
- *       Deprecated. Use <strong>Geo_Target</strong> instead.
+ *       This table is deprecated. V201408 is the last version this table can be used in. Use
+ *       <strong>Geo_Target</strong> instead.
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -231,7 +236,8 @@ import javax.xml.ws.ResponseWrapper;
  *       </table>
  *       
  *       <h4>Postal_Code</h4>
- *       Deprecated. Use <strong>Geo_Target</strong> instead.
+ *       This table is deprecated. V201408 is the last version this table can be used in. Use
+ *       <strong>Geo_Target</strong> instead.
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>

@@ -52,7 +52,7 @@ public interface AdGroupAdServiceInterface {
     /**
      * 
      *         Returns a list of AdGroupAds.
-     *         Deleted AdGroupAds are not returned by default.
+     *         AdGroupAds that had been removed are not returned by default.
      *         
      *         @param serviceSelector The selector specifying the {@link AdGroupAd}s to return.
      *         @return The page containing the AdGroupAds that meet the criteria specified by the selector.
@@ -87,7 +87,7 @@ public interface AdGroupAdServiceInterface {
      *         straightforward - the status of the ad group ad is updated as
      *         specified. If any other field has changed, it will be ignored. If
      *         you want to change any of the fields other than status, you must
-     *         make a new ad and then delete the old one.</p>
+     *         make a new ad and then remove the old one.</p>
      *         <p>Remove - Removes the link between the specified AdGroup and
      *         Ad.</p>
      *         @param operations The operations to apply.
@@ -95,7 +95,7 @@ public interface AdGroupAdServiceInterface {
      *         applying the operation in the input list with the same index. For an
      *         add/set operation, the return AdGroupAd will be what is saved to the db.
      *         In the case of the remove operation, the return AdGroupAd will simply be
-     *         an AdGroupAd containing an Ad with the id set to the Ad being deleted from
+     *         an AdGroupAd containing an Ad with the id set to the Ad being removed from
      *         the AdGroup.
      *       
      * 

@@ -22,7 +22,7 @@ public class ActivityServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for ActivityServiceInterfacePort
-    private java.lang.String ActivityServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201308/ActivityService";
+    private java.lang.String ActivityServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201308/ActivityService";
 
     public java.lang.String getActivityServiceInterfacePortAddress() {
         return ActivityServiceInterfacePort_address;

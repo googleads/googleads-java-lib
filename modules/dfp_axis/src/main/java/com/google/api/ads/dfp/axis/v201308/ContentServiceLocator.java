@@ -22,7 +22,7 @@ public class ContentServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for ContentServiceInterfacePort
-    private java.lang.String ContentServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201308/ContentService";
+    private java.lang.String ContentServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201308/ContentService";
 
     public java.lang.String getContentServiceInterfacePortAddress() {
         return ContentServiceInterfacePort_address;

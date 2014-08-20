@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>dfp-axis-examples</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
 
   <packaging>jar</packaging>
   <name>DFP Examples using Axis</name>
@@ -35,7 +35,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smokeMainClass>dfp.axis.v201405.companyservice.GetAllCompanies</smokeMainClass>
+    <smokeMainClass>dfp.axis.v201408.companyservice.GetAllCompanies</smokeMainClass>
   </properties>
 
   <build>
@@ -97,19 +97,19 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.31.0</version>
+      <version>1.32.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfp-axis</artifactId>
-      <version>1.31.0</version>
+      <version>1.32.0</version>
     </dependency>
 
     <!-- Third party dependencies -->
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.18.0-rc</version>
+      <version>1.19.0</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>

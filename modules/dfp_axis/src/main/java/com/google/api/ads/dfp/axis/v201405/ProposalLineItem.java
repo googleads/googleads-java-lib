@@ -40,7 +40,7 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The unique ID of the {@link Product}, which the {@code ProposalLineItem}
      * is created from. This attribute is required for creation and then
      * is readonly. */
-    private java.lang.String productId;
+    private java.lang.Long productId;
 
     /* The name of the {@code ProposalLineItem} which should be unique
      * under the same
@@ -316,35 +316,37 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* Overrides the billing cap of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingSchedule will be used, according
-     * to the billingSource. */
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore. */
     private com.google.api.ads.dfp.axis.v201405.BillingCap billingCap;
 
     /* Overrides the billing schedule of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingCap will be used, according
-     * to the billingSource. */
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore. */
     private com.google.api.ads.dfp.axis.v201405.BillingSchedule billingSchedule;
 
     /* Overrides the billing source of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, If the
-     *                 value is {@link BillingSource#CONTRACTED}, the billingSchedule
-     * will be used for billing,
-     *                 otherwise the billingCap will be used. */
+     *                 If this field is overridden, then other required billing
+     * fields ({@link #billingCap},
+     *                 {@link #billingSchedule}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on this field. That is, none of the billing
+     * fields will inherit from
+     *                 their {@link Proposal} object anymore. */
     private com.google.api.ads.dfp.axis.v201405.BillingSource billingSource;
 
     /* The date and time this {@code ProposalLineItem} was last modified.
@@ -387,7 +389,7 @@ public class ProposalLineItem  implements java.io.Serializable {
            java.lang.Long id,
            java.lang.Long proposalId,
            java.lang.Long rateCardId,
-           java.lang.String productId,
+           java.lang.Long productId,
            java.lang.String name,
            com.google.api.ads.dfp.axis.v201405.DateTime startDateTime,
            com.google.api.ads.dfp.axis.v201405.DateTime endDateTime,
@@ -556,7 +558,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is created from. This attribute is required for creation and then
      * is readonly.
      */
-    public java.lang.String getProductId() {
+    public java.lang.Long getProductId() {
         return productId;
     }
 
@@ -568,7 +570,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is created from. This attribute is required for creation and then
      * is readonly.
      */
-    public void setProductId(java.lang.String productId) {
+    public void setProductId(java.lang.Long productId) {
         this.productId = productId;
     }
 
@@ -1589,12 +1591,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return billingCap   * Overrides the billing cap of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingSchedule will be used, according
-     * to the billingSource.
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingCap getBillingCap() {
         return billingCap;
@@ -1607,12 +1610,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param billingCap   * Overrides the billing cap of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingSchedule will be used, according
-     * to the billingSource.
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public void setBillingCap(com.google.api.ads.dfp.axis.v201405.BillingCap billingCap) {
         this.billingCap = billingCap;
@@ -1625,12 +1629,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return billingSchedule   * Overrides the billing schedule of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingCap will be used, according
-     * to the billingSource.
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingSchedule getBillingSchedule() {
         return billingSchedule;
@@ -1643,12 +1648,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param billingSchedule   * Overrides the billing schedule of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, Either
-     *                 this attribute or billingCap will be used, according
-     * to the billingSource.
+     *                 If this field is overridden, then other required billing
+     * fields
+     *                 ({@link #billingSource}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on the {@link #billingSource}. That is,
+     * none of the billing fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public void setBillingSchedule(com.google.api.ads.dfp.axis.v201405.BillingSchedule billingSchedule) {
         this.billingSchedule = billingSchedule;
@@ -1661,13 +1667,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return billingSource   * Overrides the billing source of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, If the
-     *                 value is {@link BillingSource#CONTRACTED}, the billingSchedule
-     * will be used for billing,
-     *                 otherwise the billingCap will be used.
+     *                 If this field is overridden, then other required billing
+     * fields ({@link #billingCap},
+     *                 {@link #billingSchedule}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on this field. That is, none of the billing
+     * fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingSource getBillingSource() {
         return billingSource;
@@ -1680,13 +1686,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param billingSource   * Overrides the billing source of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If none of {@link #billingCap}, {@link #billingSchedule}
-     * and {@link #billingSource} is set,
-     *                 this ProposalLineItem will use its {@link Proposal}'s
-     * billing settings. Otherwise, If the
-     *                 value is {@link BillingSource#CONTRACTED}, the billingSchedule
-     * will be used for billing,
-     *                 otherwise the billingCap will be used.
+     *                 If this field is overridden, then other required billing
+     * fields ({@link #billingCap},
+     *                 {@link #billingSchedule}, or {@link #billingBase})
+     * also need to be overridden
+     *                 depending on this field. That is, none of the billing
+     * fields will inherit from
+     *                 their {@link Proposal} object anymore.
      */
     public void setBillingSource(com.google.api.ads.dfp.axis.v201405.BillingSource billingSource) {
         this.billingSource = billingSource;
@@ -2165,7 +2171,7 @@ public class ProposalLineItem  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("productId");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "productId"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

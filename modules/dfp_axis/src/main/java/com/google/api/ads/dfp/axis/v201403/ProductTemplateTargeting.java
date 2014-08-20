@@ -78,6 +78,12 @@ public class ProductTemplateTargeting  implements java.io.Serializable {
     /* Specifies what custom criteria salespeople are allow to customize.
      * It refers the key id of customizable custom criteria here.
      *                 
+     *                 If {@link #isAllCustomTargetingKeysCustomizable} is
+     * {@code true}, then this attribute is
+     *                 ignored. The attribute {@link #isAllCustomTargetingKeysCustomizable}
+     * is available beginning in
+     *                 V201411.
+     *                 
      *                 This attribute is optional. */
     private long[] customizableCustomTargetingKeyIds;
 
@@ -394,6 +400,12 @@ public class ProductTemplateTargeting  implements java.io.Serializable {
      * @return customizableCustomTargetingKeyIds   * Specifies what custom criteria salespeople are allow to customize.
      * It refers the key id of customizable custom criteria here.
      *                 
+     *                 If {@link #isAllCustomTargetingKeysCustomizable} is
+     * {@code true}, then this attribute is
+     *                 ignored. The attribute {@link #isAllCustomTargetingKeysCustomizable}
+     * is available beginning in
+     *                 V201411.
+     *                 
      *                 This attribute is optional.
      */
     public long[] getCustomizableCustomTargetingKeyIds() {
@@ -406,6 +418,12 @@ public class ProductTemplateTargeting  implements java.io.Serializable {
      * 
      * @param customizableCustomTargetingKeyIds   * Specifies what custom criteria salespeople are allow to customize.
      * It refers the key id of customizable custom criteria here.
+     *                 
+     *                 If {@link #isAllCustomTargetingKeysCustomizable} is
+     * {@code true}, then this attribute is
+     *                 ignored. The attribute {@link #isAllCustomTargetingKeysCustomizable}
+     * is available beginning in
+     *                 V201411.
      *                 
      *                 This attribute is optional.
      */

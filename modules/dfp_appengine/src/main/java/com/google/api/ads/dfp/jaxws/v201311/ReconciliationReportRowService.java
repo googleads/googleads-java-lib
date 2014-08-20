@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "ReconciliationReportRowService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201311", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201311/ReconciliationReportRowService?wsdl")
+@WebServiceClient(name = "ReconciliationReportRowService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201311", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201311/ReconciliationReportRowService?wsdl")
 public class ReconciliationReportRowService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ReconciliationReportRowService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201311/ReconciliationReportRowService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201311/ReconciliationReportRowService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

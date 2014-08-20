@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents the status of triggered {@link RateCardCustomization} premiums.
+ *             Represents the status of a triggered {@link PremiumRateValue} (formerly
+ *             referred to as a {@code RateCardCustomization}).
  *           
  * 
  * <p>Java class for ProposalLineItemPremium complex type.

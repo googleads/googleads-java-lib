@@ -9,8 +9,8 @@ package com.google.api.ads.dfp.axis.v201306;
 
 
 /**
- * Represents the status of triggered {@link RateCardCustomization}
- * premiums.
+ * Represents the status of a triggered {@link PremiumRateValue} (formerly
+ * referred to as a {@code RateCardCustomization}).
  */
 public class ProposalLineItemPremium  implements java.io.Serializable {
     /* The unique ID of the {@link RateCardCustomization} which is

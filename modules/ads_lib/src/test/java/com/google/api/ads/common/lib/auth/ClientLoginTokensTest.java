@@ -210,12 +210,12 @@ public class ClientLoginTokensTest {
     ClientLogin clientLogin = new ClientLogin();
 
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.adwords.clientLoginToken", "AUTH_TOKEN");
+    config.setProperty("api.dfp.clientLoginToken", "AUTH_TOKEN");
 
     when(configurationHelper.fromFile("path")).thenReturn(config);
 
     ForApiBuilder builder = new ClientLoginTokens.ForApiBuilder(
-        configurationHelper, clientLogin, ClientLoginTokens.Api.ADWORDS);
+        configurationHelper, clientLogin, ClientLoginTokens.Api.DFP);
 
     ClientLoginTokens clientLoginTokens = builder.fromFile("path").build();
 

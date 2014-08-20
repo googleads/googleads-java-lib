@@ -18,6 +18,7 @@ public class ProgrammaticErrorReason implements java.io.Serializable {
     }
 
     public static final java.lang.String _AUDIENCE_EXTENSION_NOT_SUPPORTED = "AUDIENCE_EXTENSION_NOT_SUPPORTED";
+    public static final java.lang.String _AUTO_EXTENSION_DAYS_NOT_SUPPORTED = "AUTO_EXTENSION_DAYS_NOT_SUPPORTED";
     public static final java.lang.String _VIDEO_NOT_SUPPORTED = "VIDEO_NOT_SUPPORTED";
     public static final java.lang.String _ROADBLOCKING_NOT_SUPPORTED = "ROADBLOCKING_NOT_SUPPORTED";
     public static final java.lang.String _INVALID_CREATIVE_ROTATION = "INVALID_CREATIVE_ROTATION";
@@ -28,6 +29,7 @@ public class ProgrammaticErrorReason implements java.io.Serializable {
     public static final java.lang.String _CANNOT_UPDATE_BACKFILL_WEB_PROPERTY_FOR_APPROVED_LINE_ITEMS = "CANNOT_UPDATE_BACKFILL_WEB_PROPERTY_FOR_APPROVED_LINE_ITEMS";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ProgrammaticErrorReason AUDIENCE_EXTENSION_NOT_SUPPORTED = new ProgrammaticErrorReason(_AUDIENCE_EXTENSION_NOT_SUPPORTED);
+    public static final ProgrammaticErrorReason AUTO_EXTENSION_DAYS_NOT_SUPPORTED = new ProgrammaticErrorReason(_AUTO_EXTENSION_DAYS_NOT_SUPPORTED);
     public static final ProgrammaticErrorReason VIDEO_NOT_SUPPORTED = new ProgrammaticErrorReason(_VIDEO_NOT_SUPPORTED);
     public static final ProgrammaticErrorReason ROADBLOCKING_NOT_SUPPORTED = new ProgrammaticErrorReason(_ROADBLOCKING_NOT_SUPPORTED);
     public static final ProgrammaticErrorReason INVALID_CREATIVE_ROTATION = new ProgrammaticErrorReason(_INVALID_CREATIVE_ROTATION);

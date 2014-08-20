@@ -22,7 +22,7 @@ public class ProductServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for ProductServiceInterfacePort
-    private java.lang.String ProductServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201308/ProductService";
+    private java.lang.String ProductServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201308/ProductService";
 
     public java.lang.String getProductServiceInterfacePortAddress() {
         return ProductServiceInterfacePort_address;

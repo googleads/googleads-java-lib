@@ -22,7 +22,7 @@ public class CreativeServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for CreativeServiceInterfacePort
-    private java.lang.String CreativeServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201308/CreativeService";
+    private java.lang.String CreativeServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201308/CreativeService";
 
     public java.lang.String getCreativeServiceInterfacePortAddress() {
         return CreativeServiceInterfacePort_address;

@@ -28,7 +28,9 @@ public class AdUnit  implements java.io.Serializable {
     /* The ID of the ad unit's parent. Every ad unit has a parent
      * except for the
      *                 root ad unit, which is created by Google. This attribute
-     * is required. */
+     * is required when
+     *                 creating the ad unit. Once the ad unit is created
+     * this value will be read-only. */
     private java.lang.String parentId;
 
     /* This field is set to {@code true} if the ad unit has any children.
@@ -255,7 +257,9 @@ public class AdUnit  implements java.io.Serializable {
      * @return parentId   * The ID of the ad unit's parent. Every ad unit has a parent
      * except for the
      *                 root ad unit, which is created by Google. This attribute
-     * is required.
+     * is required when
+     *                 creating the ad unit. Once the ad unit is created
+     * this value will be read-only.
      */
     public java.lang.String getParentId() {
         return parentId;
@@ -268,7 +272,9 @@ public class AdUnit  implements java.io.Serializable {
      * @param parentId   * The ID of the ad unit's parent. Every ad unit has a parent
      * except for the
      *                 root ad unit, which is created by Google. This attribute
-     * is required.
+     * is required when
+     *                 creating the ad unit. Once the ad unit is created
+     * this value will be read-only.
      */
     public void setParentId(java.lang.String parentId) {
         this.parentId = parentId;

@@ -22,7 +22,7 @@ public class WorkflowRequestServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for WorkflowRequestServiceInterfacePort
-    private java.lang.String WorkflowRequestServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/WorkflowRequestService";
+    private java.lang.String WorkflowRequestServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/WorkflowRequestService";
 
     public java.lang.String getWorkflowRequestServiceInterfacePortAddress() {
         return WorkflowRequestServiceInterfacePort_address;

@@ -57,7 +57,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
   private final String endpoint;
   private final Logger libLogger;
 
-  public static final String DEFAULT_ENDPOINT = "https://www.google.com/";
+  public static final String DEFAULT_ENDPOINT = "https://ads.google.com/";
 
   private static final String DEFAULT_APPLICATION_NAME = "INSERT_APPLICATION_NAME_HERE";
 
@@ -278,7 +278,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
 
     /**
      * Override the endpoint server. Optional and defaults to
-     * https://www.google.com/.
+     * https://ads.google.com/.
      */
     public Builder withEndpoint(String endpoint) {
       this.endpoint = endpoint;

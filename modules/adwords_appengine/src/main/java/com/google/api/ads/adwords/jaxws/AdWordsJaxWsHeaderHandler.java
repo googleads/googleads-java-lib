@@ -109,11 +109,7 @@ public class AdWordsJaxWsHeaderHandler implements
   @VisibleForTesting
   void setAuthenticationHeaders(Object soapClient, Map<String, Object> headerElements,
       AdWordsSession adWordsSession) throws AuthenticationException {
-    if (adWordsSession.getClientLoginToken() != null) {
-      headerElements.put("authToken", adWordsSession.getClientLoginToken());
-    } else {
-      authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
-    }
+    authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
   }
 
   /**

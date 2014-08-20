@@ -22,7 +22,7 @@ public class CustomFieldServiceLocator extends org.apache.axis.client.Service im
     }
 
     // Use to get a proxy class for CustomFieldServiceInterfacePort
-    private java.lang.String CustomFieldServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/CustomFieldService";
+    private java.lang.String CustomFieldServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/CustomFieldService";
 
     public java.lang.String getCustomFieldServiceInterfacePortAddress() {
         return CustomFieldServiceInterfacePort_address;

@@ -22,7 +22,7 @@ public class LabelServiceLocator extends org.apache.axis.client.Service implemen
     }
 
     // Use to get a proxy class for LabelServiceInterfacePort
-    private java.lang.String LabelServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/LabelService";
+    private java.lang.String LabelServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/LabelService";
 
     public java.lang.String getLabelServiceInterfacePortAddress() {
         return LabelServiceInterfacePort_address;

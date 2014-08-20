@@ -25,10 +25,9 @@ public class WorkflowAction  implements java.io.Serializable {
      *                 255 characters. */
     private java.lang.String name;
 
-    /* The {@link User users} who are able to perform the {@code WorkflowAction}.
-     * This attribute is
-     *                 required and has a maximum size of 100. */
-    private long[] userIds;
+    /* List of {@code WorkflowActionPerformer}s who can perform this
+     * action. */
+    private com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer[] performers;
 
     /* The type of this action. This attribute is required. */
     private com.google.api.ads.dfp.axis.v201306.WorkflowActionType type;
@@ -39,11 +38,11 @@ public class WorkflowAction  implements java.io.Serializable {
     public WorkflowAction(
            java.lang.Long id,
            java.lang.String name,
-           long[] userIds,
+           com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer[] performers,
            com.google.api.ads.dfp.axis.v201306.WorkflowActionType type) {
            this.id = id;
            this.name = name;
-           this.userIds = userIds;
+           this.performers = performers;
            this.type = type;
     }
 
@@ -97,34 +96,32 @@ public class WorkflowAction  implements java.io.Serializable {
 
 
     /**
-     * Gets the userIds value for this WorkflowAction.
+     * Gets the performers value for this WorkflowAction.
      * 
-     * @return userIds   * The {@link User users} who are able to perform the {@code WorkflowAction}.
-     * This attribute is
-     *                 required and has a maximum size of 100.
+     * @return performers   * List of {@code WorkflowActionPerformer}s who can perform this
+     * action.
      */
-    public long[] getUserIds() {
-        return userIds;
+    public com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer[] getPerformers() {
+        return performers;
     }
 
 
     /**
-     * Sets the userIds value for this WorkflowAction.
+     * Sets the performers value for this WorkflowAction.
      * 
-     * @param userIds   * The {@link User users} who are able to perform the {@code WorkflowAction}.
-     * This attribute is
-     *                 required and has a maximum size of 100.
+     * @param performers   * List of {@code WorkflowActionPerformer}s who can perform this
+     * action.
      */
-    public void setUserIds(long[] userIds) {
-        this.userIds = userIds;
+    public void setPerformers(com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer[] performers) {
+        this.performers = performers;
     }
 
-    public long getUserIds(int i) {
-        return this.userIds[i];
+    public com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer getPerformers(int i) {
+        return this.performers[i];
     }
 
-    public void setUserIds(int i, long _value) {
-        this.userIds[i] = _value;
+    public void setPerformers(int i, com.google.api.ads.dfp.axis.v201306.WorkflowActionPerformer _value) {
+        this.performers[i] = _value;
     }
 
 
@@ -165,9 +162,9 @@ public class WorkflowAction  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.userIds==null && other.getUserIds()==null) || 
-             (this.userIds!=null &&
-              java.util.Arrays.equals(this.userIds, other.getUserIds()))) &&
+            ((this.performers==null && other.getPerformers()==null) || 
+             (this.performers!=null &&
+              java.util.Arrays.equals(this.performers, other.getPerformers()))) &&
             ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType())));
@@ -188,11 +185,11 @@ public class WorkflowAction  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getUserIds() != null) {
+        if (getPerformers() != null) {
             for (int i=0;
-                 i<java.lang.reflect.Array.getLength(getUserIds());
+                 i<java.lang.reflect.Array.getLength(getPerformers());
                  i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getUserIds(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getPerformers(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -227,9 +224,9 @@ public class WorkflowAction  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("userIds");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "userIds"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setFieldName("performers");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "performers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "WorkflowActionPerformer"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);

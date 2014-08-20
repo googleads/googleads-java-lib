@@ -63,7 +63,7 @@ public class CreateProposalLineItems {
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
   
   public static void runExample(DfpServices dfpServices, DfpSession session,
-      long proposalId, long rateCardId, String productId) throws Exception {
+      long proposalId, long rateCardId, long productId) throws Exception {
     // Get the ProposalLineItemService.
     ProposalLineItemServiceInterface proposalLineItemService =
         dfpServices.get(session, ProposalLineItemServiceInterface.class);
@@ -145,6 +145,6 @@ public class CreateProposalLineItems {
     DfpServices dfpServices = new DfpServices();
 
     runExample(dfpServices, session, Long.parseLong(PROPOSAL_ID),
-        Long.parseLong(RATE_CARD_ID), PRODUCT_ID);
+        Long.parseLong(RATE_CARD_ID), Long.parseLong(PRODUCT_ID));
   }
 }

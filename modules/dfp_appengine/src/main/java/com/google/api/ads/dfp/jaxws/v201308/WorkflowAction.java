@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -26,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="userIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="performers" type="{https://www.google.com/apis/ads/publisher/v201308}WorkflowActionPerformer" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="type" type="{https://www.google.com/apis/ads/publisher/v201308}WorkflowActionType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -40,15 +39,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "WorkflowAction", propOrder = {
     "id",
     "name",
-    "userIds",
+    "performers",
     "type"
 })
 public class WorkflowAction {
 
     protected Long id;
     protected String name;
-    @XmlElement(type = Long.class)
-    protected List<Long> userIds;
+    protected List<WorkflowActionPerformer> performers;
     protected WorkflowActionType type;
 
     /**
@@ -100,32 +98,32 @@ public class WorkflowAction {
     }
 
     /**
-     * Gets the value of the userIds property.
+     * Gets the value of the performers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the userIds property.
+     * This is why there is not a <CODE>set</CODE> method for the performers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getUserIds().add(newItem);
+     *    getPerformers().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Long }
+     * {@link WorkflowActionPerformer }
      * 
      * 
      */
-    public List<Long> getUserIds() {
-        if (userIds == null) {
-            userIds = new ArrayList<Long>();
+    public List<WorkflowActionPerformer> getPerformers() {
+        if (performers == null) {
+            performers = new ArrayList<WorkflowActionPerformer>();
         }
-        return this.userIds;
+        return this.performers;
     }
 
     /**

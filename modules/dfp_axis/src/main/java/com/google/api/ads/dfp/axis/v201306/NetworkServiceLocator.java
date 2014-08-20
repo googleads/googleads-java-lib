@@ -22,7 +22,7 @@ public class NetworkServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for NetworkServiceInterfacePort
-    private java.lang.String NetworkServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/NetworkService";
+    private java.lang.String NetworkServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/NetworkService";
 
     public java.lang.String getNetworkServiceInterfacePortAddress() {
         return NetworkServiceInterfacePort_address;

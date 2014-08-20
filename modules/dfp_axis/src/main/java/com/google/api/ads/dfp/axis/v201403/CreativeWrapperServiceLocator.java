@@ -22,7 +22,7 @@ public class CreativeWrapperServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for CreativeWrapperServiceInterfacePort
-    private java.lang.String CreativeWrapperServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/CreativeWrapperService";
+    private java.lang.String CreativeWrapperServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/CreativeWrapperService";
 
     public java.lang.String getCreativeWrapperServiceInterfacePortAddress() {
         return CreativeWrapperServiceInterfacePort_address;

@@ -22,7 +22,7 @@ public class ContentBundleServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for ContentBundleServiceInterfacePort
-    private java.lang.String ContentBundleServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/ContentBundleService";
+    private java.lang.String ContentBundleServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/ContentBundleService";
 
     public java.lang.String getContentBundleServiceInterfacePortAddress() {
         return ContentBundleServiceInterfacePort_address;

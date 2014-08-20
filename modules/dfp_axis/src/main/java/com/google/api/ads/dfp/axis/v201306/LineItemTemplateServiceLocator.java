@@ -22,7 +22,7 @@ public class LineItemTemplateServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for LineItemTemplateServiceInterfacePort
-    private java.lang.String LineItemTemplateServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/LineItemTemplateService";
+    private java.lang.String LineItemTemplateServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/LineItemTemplateService";
 
     public java.lang.String getLineItemTemplateServiceInterfacePortAddress() {
         return LineItemTemplateServiceInterfacePort_address;

@@ -22,7 +22,7 @@ public class CustomTargetingServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for CustomTargetingServiceInterfacePort
-    private java.lang.String CustomTargetingServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/CustomTargetingService";
+    private java.lang.String CustomTargetingServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/CustomTargetingService";
 
     public java.lang.String getCustomTargetingServiceInterfacePortAddress() {
         return CustomTargetingServiceInterfacePort_address;

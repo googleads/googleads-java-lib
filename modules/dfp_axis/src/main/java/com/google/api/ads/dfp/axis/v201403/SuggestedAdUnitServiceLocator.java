@@ -22,7 +22,7 @@ public class SuggestedAdUnitServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for SuggestedAdUnitServiceInterfacePort
-    private java.lang.String SuggestedAdUnitServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/SuggestedAdUnitService";
+    private java.lang.String SuggestedAdUnitServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/SuggestedAdUnitService";
 
     public java.lang.String getSuggestedAdUnitServiceInterfacePortAddress() {
         return SuggestedAdUnitServiceInterfacePort_address;

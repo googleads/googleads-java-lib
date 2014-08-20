@@ -22,7 +22,7 @@ public class AudienceSegmentServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for AudienceSegmentServiceInterfacePort
-    private java.lang.String AudienceSegmentServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/AudienceSegmentService";
+    private java.lang.String AudienceSegmentServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/AudienceSegmentService";
 
     public java.lang.String getAudienceSegmentServiceInterfacePortAddress() {
         return AudienceSegmentServiceInterfacePort_address;

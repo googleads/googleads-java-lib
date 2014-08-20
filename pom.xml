@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements. See the NOTICE file
@@ -17,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>client-libs-parent</artifactId>
-  <version>1.31.1-SNAPSHOT</version>
+  <version>1.32.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>Google Ads APIs Java Client Libraries Parent</name>
@@ -198,32 +198,16 @@
   <profiles>
     <profile>
       <id>sonatype</id>
-      <properties>
-        <sonatypeReleaseId>sonatype-nexus-staging</sonatypeReleaseId>
-        <sonatypeReleaseUrl>
-          https://oss.sonatype.org/service/local/staging/deploy/maven2
-        </sonatypeReleaseUrl>
-        <sonatypeSnapshotId>sonatype-nexus-snapshots</sonatypeSnapshotId>
-        <sonatypeSnapshotUrl>
-          https://oss.sonatype.org/content/repositories/snapshots/
-        </sonatypeSnapshotUrl>
-      </properties>
       <distributionManagement>
         <repository>
-          <id>${sonatypeReleaseId}</id>
-          <url>${sonatypeReleaseUrl}</url>
+          <id>sonatype-nexus-staging</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
-          <id>${sonatypeSnapshotId}</id>
-          <url>${sonatypeSnapshotUrl}</url>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
       </distributionManagement>
-      <repositories>
-        <repository>
-          <id>Forge Group</id>
-          <url>https://repository.sonatype.org/content/groups/forge/</url>
-        </repository>
-      </repositories>
       <build>
         <plugins>
           <plugin>
@@ -243,7 +227,6 @@
               <serverId>sonatype-nexus-staging</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
               <autoReleaseAfterClose>false</autoReleaseAfterClose>
-              <skipStaging>true</skipStaging>
             </configuration>
           </plugin>
         </plugins>

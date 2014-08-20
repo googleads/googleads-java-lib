@@ -22,7 +22,7 @@ public class ContactServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for ContactServiceInterfacePort
-    private java.lang.String ContactServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/ContactService";
+    private java.lang.String ContactServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/ContactService";
 
     public java.lang.String getContactServiceInterfacePortAddress() {
         return ContactServiceInterfacePort_address;

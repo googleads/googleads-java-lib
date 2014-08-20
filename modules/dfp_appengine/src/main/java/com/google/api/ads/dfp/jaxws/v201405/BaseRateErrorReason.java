@@ -47,7 +47,8 @@ public enum BaseRateErrorReason {
 
     /**
      * 
-     *                 Could not create or activate a base rate if the product template is archived.
+     *                 Cannot create or activate a base rate if the product template is
+     *                 archived.
      *               
      * 
      */
@@ -63,7 +64,8 @@ public enum BaseRateErrorReason {
 
     /**
      * 
-     *                 The value returned if the actual value is not exposed by the requested API version.
+     *                 The value returned if the actual value is not exposed by the requested
+     *                 API version.
      *               
      * 
      */

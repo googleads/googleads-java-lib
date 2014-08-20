@@ -79,7 +79,7 @@ public class DfpServiceClientFactoryHelperTest {
         .withApplicationName("FooBar")
         .withNetworkCode("1000")
         .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .build();
 
     helper.checkServiceClientPreconditions(dfpSession,
@@ -97,7 +97,7 @@ public class DfpServiceClientFactoryHelperTest {
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
         .withNetworkCode("1000")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withOAuth2Credential(credential)
         .build();
 
@@ -115,7 +115,7 @@ public class DfpServiceClientFactoryHelperTest {
         .withApplicationName("FooBar")
         .withNetworkCode("1000")
         .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .build();
 
     helper.checkServiceClientPreconditions(dfpSession,

@@ -20,7 +20,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.verify;
 
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.BearerToken;
@@ -96,23 +95,6 @@ public class AdWordsSessionTest {
       assertTrue(e.getMessage().contains(badEndpoint));
     }
   }
-
-  /**
-   * Tests that client login deprecation is warned from properties.
-   */
-  @Test
-  public void testReadPropertiesFromConfiguration_clientLoginDeprecationWarning() throws Exception {
-    PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.adwords.clientCustomerId", "1234567890");
-    config.setProperty("api.adwords.userAgent", "FooBar");
-    config.setProperty("api.adwords.developerToken", "devTokendevTokendevTok");
-    config.setProperty("api.adwords.isPartialFailure", "false");
-    config.setProperty("api.adwords.clientLoginToken", "clientLoginToken");
-
-    new AdWordsSession.Builder(mockLibLogger).from(config).build();
-
-    verify(mockLibLogger).warn(AdWordsSession.DEPRECATION_MESSAGE);
-  }
   
   /**
    * Tests that the builder correctly reads properties from a configuration.
@@ -177,61 +159,6 @@ public class AdWordsSessionTest {
   }
 
   /**
-   * Tests that the builder builds correctly for client login.
-   */
-  @Test
-  public void testBuilder_clientLogin() throws Exception {
-    AdWordsSession adWordsSession = new AdWordsSession.Builder().withUserAgent("FooBar")
-        .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken")
-        .build();
-
-    assertEquals(adWordsSession.getUserAgent(), "FooBar");
-    assertEquals(adWordsSession.getClientLoginToken(), "clientLoginToken");
-    assertEquals(adWordsSession.getEndpoint(), "https://www.google.com");
-    assertEquals(adWordsSession.getDeveloperToken(), "developerToken");
-  }
-
-
-  /**
-   * Tests that the builder builds correctly for client login.
-   */
-  @Test
-  public void testBuilder_clientLoginDeprecationWarning() throws Exception {
-    AdWordsSession adWordsSession = new AdWordsSession.Builder(mockLibLogger)
-            .withUserAgent("FooBar")
-            .withClientLoginToken("clientLoginToken")
-            .withEndpoint("https://www.google.com")
-            .withDeveloperToken("developerToken")
-            .build();
-
-    assertEquals(adWordsSession.getUserAgent(), "FooBar");
-    assertEquals(adWordsSession.getClientLoginToken(), "clientLoginToken");
-    assertEquals(adWordsSession.getEndpoint(), "https://www.google.com");
-    assertEquals(adWordsSession.getDeveloperToken(), "developerToken");
-
-    verify(mockLibLogger).warn(AdWordsSession.DEPRECATION_MESSAGE);
-  }
-
-  /**
-   * Tests that the builder builds correctly for client login.
-   */
-  @Test
-  public void testSetClientLoginDeprecationWarning() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder(mockLibLogger)
-        .withUserAgent("FooBar")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .build();
-
-    adWordsSession.setClientLoginToken("clientLoginToken");
-    verify(mockLibLogger).warn(AdWordsSession.DEPRECATION_MESSAGE);
-  }
-
-  /**
    * Tests that the builder builds correctly for OAuth2.
    */
   @Test
@@ -270,58 +197,6 @@ public class AdWordsSessionTest {
   }
 
   /**
-   * Verifies that when a second auth method is set into the builder the others are cleared.
-   */
-  @Test
-  public void testBuilder_clearsOtherAuths() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    AdWordsSession.Builder builder = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withClientLoginToken("foo")
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken");
-    assertEquals("foo", builder.build().getClientLoginToken());
-
-    builder.withOAuth2Credential(credential);
-    assertEquals(credential, builder.build().getOAuth2Credential());
-    assertNull(builder.build().getClientLoginToken());
-
-    builder.withClientLoginToken("foo");
-    assertNull(builder.build().getOAuth2Credential());
-    assertEquals("foo", builder.build().getClientLoginToken());
-  }
-
-  /**
-   * Verifies that when a second auth method is set into the builder the others are cleared.
-   */
-  @Test
-  public void testBuilder_bothAuthsClientLoginFirst() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    AdWordsSession.Builder builder = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withOAuth2Credential(credential)
-        .withClientLoginToken("foo")
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken");
-    assertEquals("foo", builder.build().getClientLoginToken());
-  }
-
-  /**
-   * Verifies that when a second auth method is set into the builder the others are cleared.
-   */
-  @Test
-  public void testBuilder_bothAuthsOAuth2First() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    AdWordsSession.Builder builder = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withClientLoginToken("foo")
-        .withOAuth2Credential(credential)
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken");
-    assertSame(credential, builder.build().getOAuth2Credential());
-  }
-
-  /**
    * Tests that the builder does not build for no auths.
    */
   @Test
@@ -333,7 +208,7 @@ public class AdWordsSessionTest {
           .withDeveloperToken("developerToken").build();
       fail("Validation exception expected.");
     } catch (ValidationException e) {
-      assertEquals("ClientLogin or OAuth2 authentication must be used.", e.getMessage());
+      assertEquals("OAuth2 authentication must be used.", e.getMessage());
     }
   }
   
@@ -379,35 +254,15 @@ public class AdWordsSessionTest {
   }
 
   /**
-   * Tests that setting authentication clears out other types of authentication.
-   */
-  @Test
-  public void testSetAutentication_clear() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder().withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withClientLoginToken("clientLogin")
-        .withDeveloperToken("developerToken")
-        .build();
-
-    adWordsSession.setOAuth2Credential(credential);
-    assertSame(credential, adWordsSession.getOAuth2Credential());
-    assertNull(adWordsSession.getClientLoginToken());
-
-    adWordsSession.setClientLoginToken("clientLogin");
-    assertEquals("clientLogin", adWordsSession.getClientLoginToken());
-    assertNull(adWordsSession.getOAuth2Credential());
-  }
-
-  /**
    * Tests that setting authentication to null errors.
    */
   @Test
   public void testSetAutentication_null() throws Exception {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+    
     AdWordsSession adWordsSession = new AdWordsSession.Builder().withUserAgent("FooBar")
         .withEndpoint("https://www.google.com")
-        .withClientLoginToken("clientLogin")
+        .withOAuth2Credential(credential)
         .withDeveloperToken("developerToken")
         .build();
 
@@ -417,14 +272,6 @@ public class AdWordsSessionTest {
     } catch (NullPointerException e) {
       assertTrue("Expected oAuth2Credential in error message",
           e.getMessage().contains("oAuth2Credential"));
-    }
-
-    try {
-      adWordsSession.setClientLoginToken(null);
-      fail("NullPointerException expected");
-    } catch (NullPointerException e) {
-      assertTrue("Expected clientLoginToken in error message",
-          e.getMessage().contains("clientLoginToken"));
     }
   }
   

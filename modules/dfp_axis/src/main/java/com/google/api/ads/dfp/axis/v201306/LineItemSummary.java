@@ -307,15 +307,26 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 are supported. */
     private java.lang.Double discount;
 
-    /* Number of units as specified in the contract that the advertiser
-     * has bought
-     *                 for this {@code LineItem}. This field is just a "FYI"
-     * for the trafficker to
-     *                 manually intervene with the {@code LineItem} when
-     * needed, it doesn't impact
-     *                 adserving or other backend systems. The default value
-     * is 0, which means
-     *                 contracted units bought is not set */
+    /* This attribute is only applicable for certain {@link #lineItemType
+     * line item types}
+     *                 and acts as an "FYI" or note, which does not impact
+     * adserving or other backend systems.
+     *                 <p>
+     *                 For {@link LineItemType#SPONSORSHIP} line items, this
+     * represents the minimum quantity,
+     *                 which is a lifetime impression volume goal for reporting
+     * purposes only.
+     *                 <p>
+     *                 For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity,
+     *                 which is the number of units specified in the contract
+     * the advertiser has bought for
+     *                 this {@code LineItem}. This field is just a "FYI"
+     * for traffickers to manually intervene
+     *                 with the {@code LineItem} when needed. This attribute
+     * is only available for
+     *                 {@link LineItemType#STANDARD} line items if you have
+     * this feature enabled on your network. */
     private java.lang.Long contractedUnitsBought;
 
     /* Details about the creatives that are expected to serve through
@@ -1581,15 +1592,26 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the contractedUnitsBought value for this LineItemSummary.
      * 
-     * @return contractedUnitsBought   * Number of units as specified in the contract that the advertiser
-     * has bought
-     *                 for this {@code LineItem}. This field is just a "FYI"
-     * for the trafficker to
-     *                 manually intervene with the {@code LineItem} when
-     * needed, it doesn't impact
-     *                 adserving or other backend systems. The default value
-     * is 0, which means
-     *                 contracted units bought is not set
+     * @return contractedUnitsBought   * This attribute is only applicable for certain {@link #lineItemType
+     * line item types}
+     *                 and acts as an "FYI" or note, which does not impact
+     * adserving or other backend systems.
+     *                 <p>
+     *                 For {@link LineItemType#SPONSORSHIP} line items, this
+     * represents the minimum quantity,
+     *                 which is a lifetime impression volume goal for reporting
+     * purposes only.
+     *                 <p>
+     *                 For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity,
+     *                 which is the number of units specified in the contract
+     * the advertiser has bought for
+     *                 this {@code LineItem}. This field is just a "FYI"
+     * for traffickers to manually intervene
+     *                 with the {@code LineItem} when needed. This attribute
+     * is only available for
+     *                 {@link LineItemType#STANDARD} line items if you have
+     * this feature enabled on your network.
      */
     public java.lang.Long getContractedUnitsBought() {
         return contractedUnitsBought;
@@ -1599,15 +1621,26 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the contractedUnitsBought value for this LineItemSummary.
      * 
-     * @param contractedUnitsBought   * Number of units as specified in the contract that the advertiser
-     * has bought
-     *                 for this {@code LineItem}. This field is just a "FYI"
-     * for the trafficker to
-     *                 manually intervene with the {@code LineItem} when
-     * needed, it doesn't impact
-     *                 adserving or other backend systems. The default value
-     * is 0, which means
-     *                 contracted units bought is not set
+     * @param contractedUnitsBought   * This attribute is only applicable for certain {@link #lineItemType
+     * line item types}
+     *                 and acts as an "FYI" or note, which does not impact
+     * adserving or other backend systems.
+     *                 <p>
+     *                 For {@link LineItemType#SPONSORSHIP} line items, this
+     * represents the minimum quantity,
+     *                 which is a lifetime impression volume goal for reporting
+     * purposes only.
+     *                 <p>
+     *                 For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity,
+     *                 which is the number of units specified in the contract
+     * the advertiser has bought for
+     *                 this {@code LineItem}. This field is just a "FYI"
+     * for traffickers to manually intervene
+     *                 with the {@code LineItem} when needed. This attribute
+     * is only available for
+     *                 {@link LineItemType#STANDARD} line items if you have
+     * this feature enabled on your network.
      */
     public void setContractedUnitsBought(java.lang.Long contractedUnitsBought) {
         this.contractedUnitsBought = contractedUnitsBought;

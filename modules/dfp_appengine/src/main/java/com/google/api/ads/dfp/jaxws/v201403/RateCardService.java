@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "RateCardService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201403", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201403/RateCardService?wsdl")
+@WebServiceClient(name = "RateCardService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201403", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201403/RateCardService?wsdl")
 public class RateCardService
     extends Service
 {
@@ -30,7 +30,7 @@ public class RateCardService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201403/RateCardService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201403/RateCardService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -167,13 +167,13 @@ public class DfpSessionTest {
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
         .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withNetworkCode("networkCode")
         .build();
 
     assertEquals(dfpSession.getApplicationName(), "FooBar");
     assertEquals(dfpSession.getClientLoginToken(), "clientLoginToken");
-    assertEquals(dfpSession.getEndpoint(), "https://www.google.com");
+    assertEquals(dfpSession.getEndpoint(), "https://ads.google.com");
     assertEquals(dfpSession.getNetworkCode(), "networkCode");
   }
 
@@ -185,7 +185,7 @@ public class DfpSessionTest {
     new DfpSession.Builder(mockLibLogger)
         .withApplicationName("FooBar")
         .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withNetworkCode("networkCode")
         .build();
 
@@ -202,7 +202,7 @@ public class DfpSessionTest {
     DfpSession dfpSession = new DfpSession.Builder(mockLibLogger)
         .withApplicationName("FooBar")
         .withOAuth2Credential(credential)
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withNetworkCode("networkCode")
         .build();
 
@@ -219,14 +219,14 @@ public class DfpSessionTest {
 
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withOAuth2Credential(credential)
         .withNetworkCode("networkCode")
         .build();
 
     assertEquals(dfpSession.getApplicationName(), "FooBar");
     assertSame(dfpSession.getOAuth2Credential(), credential);
-    assertEquals(dfpSession.getEndpoint(), "https://www.google.com");
+    assertEquals(dfpSession.getEndpoint(), "https://ads.google.com");
     assertEquals(dfpSession.getNetworkCode(), "networkCode");
   }
 
@@ -239,7 +239,7 @@ public class DfpSessionTest {
 
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withClientLoginToken("clientLogin")
         .withOAuth2Credential(credential)
         .withNetworkCode("networkCode")
@@ -269,7 +269,7 @@ public class DfpSessionTest {
     try {
       new DfpSession.Builder()
           .withApplicationName("FooBar")
-          .withEndpoint("https://www.google.com")
+          .withEndpoint("https://ads.google.com")
           .withNetworkCode("networkCode")
           .build();
       fail("Validation exception expected.");
@@ -287,7 +287,7 @@ public class DfpSessionTest {
 
     try {
       new DfpSession.Builder()
-          .withEndpoint("https://www.google.com")
+          .withEndpoint("https://ads.google.com")
           .withNetworkCode("networkCode")
           .withOAuth2Credential(credential)
           .build();
@@ -308,7 +308,7 @@ public class DfpSessionTest {
 
     try {
       new DfpSession.Builder()
-          .withEndpoint("https://www.google.com")
+          .withEndpoint("https://ads.google.com")
           .withNetworkCode("networkCode")
           .withOAuth2Credential(credential)
           .withApplicationName("INSERT_APPLICATION_NAME_HERE")
@@ -331,7 +331,7 @@ public class DfpSessionTest {
 
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withClientLoginToken("clientLogin")
         .withNetworkCode("networkCode")
         .build();
@@ -355,7 +355,7 @@ public class DfpSessionTest {
         .withApplicationName("FooBar")
         .withOAuth2Credential(credential)
         .withClientLoginToken("foo")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withNetworkCode("networkCode");
     assertEquals("foo", builder.build().getClientLoginToken());
   }
@@ -370,7 +370,7 @@ public class DfpSessionTest {
         .withApplicationName("FooBar")
         .withClientLoginToken("foo")
         .withOAuth2Credential(credential)
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withNetworkCode("networkCode");
     assertSame(credential, builder.build().getOAuth2Credential());
   }
@@ -382,7 +382,7 @@ public class DfpSessionTest {
   public void testSetAutentication_null() throws Exception {
     DfpSession dfpSession = new DfpSession.Builder()
         .withApplicationName("FooBar")
-        .withEndpoint("https://www.google.com")
+        .withEndpoint("https://ads.google.com")
         .withClientLoginToken("clientLogin")
         .withNetworkCode("networkCode")
         .build();

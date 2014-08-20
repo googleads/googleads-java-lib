@@ -96,9 +96,6 @@ public class AdWordsSessionUtil {
     if (adWordsSession.getEndpoint() != null) {
       builder = builder.withEndpoint(adWordsSession.getEndpoint());
     }
-    if (adWordsSession.getClientLoginToken() != null) {
-      builder = builder.withClientLoginToken(adWordsSession.getClientLoginToken());
-    }
     if (userAgent != null) {
       builder = builder.withUserAgent(userAgent);
     } else {

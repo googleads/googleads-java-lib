@@ -70,7 +70,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Transition is not allowed for budget optimizer campaign.
+     *                 Transition is not allowed for a budget optimizer campaign.
      *               
      * 
      */
@@ -78,7 +78,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Transition is not allowed for conversion optimizer campaign.
+     *                 Transition is not allowed for a conversion optimizer campaign.
      *               
      * 
      */
@@ -86,7 +86,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Conversion tracking is not enabled for the campaign for
+     *                 Conversion tracking is not enabled for the campaign that has
      *                 VBB transition.
      *               
      * 
@@ -103,7 +103,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Disable position preference by setting the position preference off on Campaign.
+     *                 Disable position preference by turning it off for the campaign.
      *               
      * 
      */
@@ -111,7 +111,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Explicit bid is invalid for the transition
+     *                 Explicit bid is invalid for the transition.
      *               
      * 
      */
@@ -119,8 +119,8 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Cannot set explicit bid for adgroups for transition
-     *                 e.g. ManualCPC from BudgetOptimizer, it takes the proxy bids.
+     *                 Cannot set an explicit bid for adgroups with transition,
+     *                 e.g., ManualCPC from BudgetOptimizer only takes proxy bids.
      *               
      * 
      */
@@ -128,8 +128,8 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Explicit bid is required for bidding transition
-     *                 e.g. ManualCPC <-> ManualCPM
+     *                 Explicit bid is required for bidding transition,
+     *                 e.g., ManualCPC <-> ManualCPM.
      *               
      * 
      */
@@ -138,7 +138,7 @@ public enum BiddingTransitionErrorReason {
     /**
      * 
      *                 Explicit bid specified for the bidding transition should match the
-     *                 bidding strategy, the campaign is transitioning to.
+     *                 bidding strategy of the transitioning campaign.
      *               
      * 
      */
@@ -146,7 +146,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 The required bid for transition is missing
+     *                 The required bid for transition is missing.
      *               
      * 
      */
@@ -154,7 +154,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Campaign has invalid status, it is deleted or suggested
+     *                 Campaign has an invalid status.
      *               
      * 
      */
@@ -162,7 +162,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Transition is not allowed since campaign is a CPM campaign.
+     *                 Transition is not allowed for CPM campaigns.
      *               
      * 
      */
@@ -170,7 +170,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Transition is not allowed since campaign is a percent CPA campaign.
+     *                 Transition is not allowed for percent CPA campaigns.
      *               
      * 
      */
@@ -178,7 +178,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 In case of budget optimizer, the only transition allowed is a switch to the
+     *                 For budget optimizer, the only transition allowed is a switch to the
      *                 previous strategy.
      *               
      * 
@@ -187,9 +187,9 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Not enough right kind of data required for conversion or not enough data
-     *                 in last 3 days suggesting the campaign is not stable enough to enter
-     *                 into conversion optimizer.
+     *                 Not enough required data for conversion, or not enough data
+     *                 in the last 3 days suggesting that the campaign is not stable enough to
+     *                 enter into the conversion optimizer.
      *               
      * 
      */
@@ -197,7 +197,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Not enough conversions tracked for VBB transitions.
+     *                 Not enough conversions tracked for VBB transition.
      *               
      * 
      */
@@ -205,7 +205,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Campaign is on search network - so can not switch to CPM.
+     *                 Campaign is on the search network--so can't switch to CPM.
      *               
      * 
      */
@@ -230,7 +230,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Transition to itself is not allowed.
+     *                 Transition to self is not allowed.
      *               
      * 
      */
@@ -238,7 +238,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Unknown Bidding strategy
+     *                 Unknown bidding strategy.
      *               
      * 
      */
@@ -262,8 +262,8 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Bidding transition failed. This is a default bidding transition error in case no
-     *                 other error matches. Please use a specific error.
+     *                 Bidding transition failed. This is the default bidding transition error when no
+     *                 other errors match.
      *               
      * 
      */
@@ -279,7 +279,7 @@ public enum BiddingTransitionErrorReason {
 
     /**
      * 
-     *                 Bidding transition is prohibited for campaigns having an active experiment
+     *                 Bidding transition is prohibited for campaigns that have an active experiment.
      *               
      * 
      */

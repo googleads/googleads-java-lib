@@ -58,10 +58,10 @@ public interface CampaignServiceInterface {
 
     /**
      * 
-     *         Adds, updates, or deletes campaigns.
+     *         Adds, updates, or removes campaigns.
      *         <p class="note"><b>Note:</b> {@link CampaignOperation} does not support the
-     *         <code>REMOVE</code> operator. To delete a campaign, set its
-     *         {@link Campaign#status status} to <code>DELETED</code>.</p>
+     *         <code>REMOVE</code> operator. To remove a campaign, set its
+     *         {@link Campaign#status status} to {@code REMOVED}.</p>
      *         @param operations A list of unique operations.
      *         The same campaign cannot be specified in more than one operation.
      *         @return The list of updated campaigns, returned in the same order as the

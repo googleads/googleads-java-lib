@@ -63,6 +63,7 @@ public class Customer  implements java.io.Serializable {
     /* URL template for constructing a tracking URL. */
     private java.lang.String trackingUrlTemplate;
 
+    /* Customer-level AdWords Conversion Tracking settings */
     private com.google.api.ads.adwords.axis.v201406.mcm.ConversionTrackingSettings conversionTrackingSettings;
 
     public Customer() {
@@ -323,7 +324,7 @@ public class Customer  implements java.io.Serializable {
     /**
      * Gets the conversionTrackingSettings value for this Customer.
      * 
-     * @return conversionTrackingSettings
+     * @return conversionTrackingSettings   * Customer-level AdWords Conversion Tracking settings
      */
     public com.google.api.ads.adwords.axis.v201406.mcm.ConversionTrackingSettings getConversionTrackingSettings() {
         return conversionTrackingSettings;
@@ -333,7 +334,7 @@ public class Customer  implements java.io.Serializable {
     /**
      * Sets the conversionTrackingSettings value for this Customer.
      * 
-     * @param conversionTrackingSettings
+     * @param conversionTrackingSettings   * Customer-level AdWords Conversion Tracking settings
      */
     public void setConversionTrackingSettings(com.google.api.ads.adwords.axis.v201406.mcm.ConversionTrackingSettings conversionTrackingSettings) {
         this.conversionTrackingSettings = conversionTrackingSettings;

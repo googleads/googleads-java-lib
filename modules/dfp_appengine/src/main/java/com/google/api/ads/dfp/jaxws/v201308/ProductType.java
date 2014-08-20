@@ -28,7 +28,7 @@ public enum ProductType {
 
     /**
      * 
-     *                 Product serve online Ads.
+     *                 For line items that are booked and managed in DFP.
      *               
      * 
      */
@@ -36,7 +36,8 @@ public enum ProductType {
 
     /**
      * 
-     *                 Product serve offline Ads.
+     *                 Offline charges indicate services you render for a client which are also outside of the DFP
+     *                 system, such as consulting or creative services.
      *               
      * 
      */

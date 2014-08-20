@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *             straightforward - the status of the ad group ad is updated as
  *             specified. If any other field has changed, it will be ignored. If
  *             you want to change any of the fields other than status, you must
- *             make a new ad and then delete the old one.</p>
+ *             make a new ad and then remove the old one.</p>
  *             <p>Remove - Removes the link between the specified AdGroup and
  *             Ad.</p>
  *             @param operations The operations to apply.
@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *             applying the operation in the input list with the same index. For an
  *             add/set operation, the return AdGroupAd will be what is saved to the db.
  *             In the case of the remove operation, the return AdGroupAd will simply be
- *             an AdGroupAd containing an Ad with the id set to the Ad being deleted from
+ *             an AdGroupAd containing an Ad with the id set to the Ad being removed from
  *             the AdGroup.
  *           
  * 

@@ -28,7 +28,7 @@ public enum BaseRateActionErrorReason {
 
     /**
      * 
-     *                 It is not allowed to activate multiple duplicated base rates.
+     *                 Duplicated base rates are allowed, but only one may be activated at any given time.
      *               
      * 
      */
@@ -36,7 +36,7 @@ public enum BaseRateActionErrorReason {
 
     /**
      * 
-     *                 An duplicated active base rate already exists.
+     *                 A duplicated active base rate already exists.
      *               
      * 
      */

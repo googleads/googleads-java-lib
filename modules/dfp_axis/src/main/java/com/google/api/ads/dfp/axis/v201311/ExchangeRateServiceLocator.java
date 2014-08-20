@@ -22,7 +22,7 @@ public class ExchangeRateServiceLocator extends org.apache.axis.client.Service i
     }
 
     // Use to get a proxy class for ExchangeRateServiceInterfacePort
-    private java.lang.String ExchangeRateServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/ExchangeRateService";
+    private java.lang.String ExchangeRateServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/ExchangeRateService";
 
     public java.lang.String getExchangeRateServiceInterfacePortAddress() {
         return ExchangeRateServiceInterfacePort_address;

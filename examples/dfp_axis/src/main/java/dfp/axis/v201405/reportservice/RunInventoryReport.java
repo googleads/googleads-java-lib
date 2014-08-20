@@ -56,11 +56,11 @@ public class RunInventoryReport {
     // Get the root ad unit ID to filter on.
     String rootAdUnitId = networkService.getCurrentNetwork().getEffectiveRootAdUnitId();
 
-    // Create statement to filter on an ancestor ad unit with the root ad unit ID to include all
+    // Create statement to filter on a parent ad unit with the root ad unit ID to include all
     // ad units in the network.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("AD_UNIT_ANCESTOR_AD_UNIT_ID = :ancestorAdUnitId")
-        .withBindVariableValue("ancestorAdUnitId", Long.parseLong(rootAdUnitId));
+        .where("PARENT_AD_UNIT_ID = :parentAdUnitId")
+        .withBindVariableValue("parentAdUnitId", Long.parseLong(rootAdUnitId));
 
     // Create report query.
     ReportQuery reportQuery = new ReportQuery();

@@ -19,8 +19,8 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
 import com.google.api.ads.dfp.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.jaxws.v201208.Company;
-import com.google.api.ads.dfp.jaxws.v201208.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201408.Company;
+import com.google.api.ads.dfp.jaxws.v201408.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -42,7 +42,8 @@ import java.util.List;
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201208";  
+  private static final String API_VERSION = "v201408";  
+  private static final String CLIENT_LOGIN_API_VERSION = "v201311";  
   
   /**
    * Default constructor.
@@ -54,7 +55,8 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
    */
   @Test
   public void testGoldenSoap_clientLogin() throws Exception {
-    testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
+    testHttpServer.setMockResponseBody(
+        SoapResponseXmlProvider.getTestSoapResponse(CLIENT_LOGIN_API_VERSION));
 
     DfpSession session = new DfpSession.Builder().withApplicationName("TEST_APP")
         .withClientLoginToken("TEST_TOKEN")
@@ -62,12 +64,13 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
         .withNetworkCode("TEST_NETWORK_CODE")
         .build();
 
-    CompanyServiceInterface companyService =
-        new DfpServices().get(session, CompanyServiceInterface.class);
-    List<Company> companies = companyService.createCompanies(Lists.newArrayList(new Company()));
+    com.google.api.ads.dfp.jaxws.v201311.CompanyServiceInterface companyService = new DfpServices()
+        .get(session, com.google.api.ads.dfp.jaxws.v201311.CompanyServiceInterface.class);
+    List<com.google.api.ads.dfp.jaxws.v201311.Company> companies = companyService.createCompanies(
+        Lists.newArrayList(new com.google.api.ads.dfp.jaxws.v201311.Company()));
 
     assertEquals(1234L, companies.get(0).getId().longValue());
-    assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(API_VERSION),
+    assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(CLIENT_LOGIN_API_VERSION),
         testHttpServer.getLastRequestBody());
   }
   

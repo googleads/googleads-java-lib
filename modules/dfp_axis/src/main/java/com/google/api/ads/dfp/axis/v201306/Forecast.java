@@ -17,30 +17,25 @@ package com.google.api.ads.dfp.axis.v201306;
  * possible inventory.
  *             From least to most, these are:
  *             
- *             <ul>
+ *             <dl>
  *             <li>Available units -- How many units can be booked without
- * affecting any
- *             other line items. Booking more than this number can overbook
- * lower or equal
- *             priority line items.
+ * affecting any other line items.
+ *             Booking more than this number can cause lower- and same-priority
+ * line items to underdeliver.
  *             <li>Possible units -- How many units can be booked without
- * affecting any
- *             higher priority line items. Booking more than this number
- * can overbook
- *             higher priority line items.
+ * affecting any higher priority line
+ *             items. Booking more than this number can cause the line
+ * item to underdeliver.
  *             <li>Matched (forecast) units -- How many units satisfy
  * all specified
  *             criteria.
- *             </ul>
+ *             </dl>
  *             
- *             <p>The term "<em>can</em> overbook" is used, because if
- * more impressions are
- *             served than are predicted, the extra available inventory
- * might enable all
- *             inventory guarantees to be met without overbooking.
- *             
- *             <p><img src="http://chart.apis.google.com/chart?chxl=0:|Available|Possible|Matched
- * (forecast)&chxp=0,20,60,100&chxs=0,000000,11.5,0,t,676767&chxtc=0,10&chxt=x&chs=440x75&cht=bhs&chco=D4F8AD,FFF15C,FC5D5D&chd=t:20|40|40&chp=0,0.05&chm=tNo+overbooking,000000,0,0,10,1,:-75|tOverbook+lower+priority,000000,0,0,10,1,:20|tOverbook+higher+priority,000000,0,0,10,1,:175"/>
+ *             <p>Underdelivery is caused by overbooking. However, if
+ * more impressions are served than are
+ *             predicted, the extra available inventory might enable
+ * all inventory guarantees to be met without
+ *             overbooking.
  */
 public class Forecast  implements java.io.Serializable {
     /* Uniquely identifies the {@code Forecast}. This value is read-only
@@ -88,12 +83,12 @@ public class Forecast  implements java.io.Serializable {
     private java.lang.Long matchedUnits;
 
     /* The maximum number of units, defined by {@link Forecast#unitType},
-     * that
-     *                 could be booked by taking inventory away from lower-priority
-     * line items.
-     *                 (Please note: booking this number may cause lower-priority
-     * line items to
-     *                 under deliver.) */
+     * that could be booked by
+     *                 taking inventory away from lower-priority line items
+     * and some same-priority line items.
+     *                 Please note: booking this number may cause lower-priority
+     * line items and some same-priority
+     *                 line items to underdeliver. */
     private java.lang.Long possibleUnits;
 
     /* The number of reserved units, defined by
@@ -301,12 +296,12 @@ public class Forecast  implements java.io.Serializable {
      * Gets the possibleUnits value for this Forecast.
      * 
      * @return possibleUnits   * The maximum number of units, defined by {@link Forecast#unitType},
-     * that
-     *                 could be booked by taking inventory away from lower-priority
-     * line items.
-     *                 (Please note: booking this number may cause lower-priority
-     * line items to
-     *                 under deliver.)
+     * that could be booked by
+     *                 taking inventory away from lower-priority line items
+     * and some same-priority line items.
+     *                 Please note: booking this number may cause lower-priority
+     * line items and some same-priority
+     *                 line items to underdeliver.
      */
     public java.lang.Long getPossibleUnits() {
         return possibleUnits;
@@ -317,12 +312,12 @@ public class Forecast  implements java.io.Serializable {
      * Sets the possibleUnits value for this Forecast.
      * 
      * @param possibleUnits   * The maximum number of units, defined by {@link Forecast#unitType},
-     * that
-     *                 could be booked by taking inventory away from lower-priority
-     * line items.
-     *                 (Please note: booking this number may cause lower-priority
-     * line items to
-     *                 under deliver.)
+     * that could be booked by
+     *                 taking inventory away from lower-priority line items
+     * and some same-priority line items.
+     *                 Please note: booking this number may cause lower-priority
+     * line items and some same-priority
+     *                 line items to underdeliver.
      */
     public void setPossibleUnits(java.lang.Long possibleUnits) {
         this.possibleUnits = possibleUnits;

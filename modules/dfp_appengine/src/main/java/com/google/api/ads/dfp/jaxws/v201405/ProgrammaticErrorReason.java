@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="ProgrammaticError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="AUDIENCE_EXTENSION_NOT_SUPPORTED"/>
+ *     &lt;enumeration value="AUTO_EXTENSION_DAYS_NOT_SUPPORTED"/>
  *     &lt;enumeration value="VIDEO_NOT_SUPPORTED"/>
  *     &lt;enumeration value="ROADBLOCKING_NOT_SUPPORTED"/>
  *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/>
@@ -40,6 +41,14 @@ public enum ProgrammaticErrorReason {
      * 
      */
     AUDIENCE_EXTENSION_NOT_SUPPORTED,
+
+    /**
+     * 
+     *                 Auto extension days is not supported by programmatic line items.
+     *               
+     * 
+     */
+    AUTO_EXTENSION_DAYS_NOT_SUPPORTED,
 
     /**
      * 

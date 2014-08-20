@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "LineItemTemplateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201306", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201306/LineItemTemplateService?wsdl")
+@WebServiceClient(name = "LineItemTemplateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201306", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201306/LineItemTemplateService?wsdl")
 public class LineItemTemplateService
     extends Service
 {
@@ -30,7 +30,7 @@ public class LineItemTemplateService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201306/LineItemTemplateService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201306/LineItemTemplateService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

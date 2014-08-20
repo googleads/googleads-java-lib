@@ -12,11 +12,11 @@ package com.google.api.ads.dfp.axis.v201306;
  * A base rate applied to a {@link Product}.
  */
 public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201306.BaseRate  implements java.io.Serializable {
-    /* The ID of {@link Product} this base rate is applied to.
-     *                     
+    /* The ID of the {@link Product} this base rate is applied to.
+     * 
      *                     This attribute is required and cannot be changed
      * after creation. */
-    private java.lang.String productId;
+    private java.lang.Long productId;
 
     /* The rate value to override the rate on the product template.
      * 
@@ -34,7 +34,7 @@ public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201306.BaseRa
            java.lang.Long id,
            com.google.api.ads.dfp.axis.v201306.BaseRateStatus status,
            java.lang.String baseRateType,
-           java.lang.String productId,
+           java.lang.Long productId,
            com.google.api.ads.dfp.axis.v201306.Money rate) {
         super(
             rateCardId,
@@ -49,12 +49,12 @@ public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201306.BaseRa
     /**
      * Gets the productId value for this ProductBaseRate.
      * 
-     * @return productId   * The ID of {@link Product} this base rate is applied to.
-     *                     
+     * @return productId   * The ID of the {@link Product} this base rate is applied to.
+     * 
      *                     This attribute is required and cannot be changed
      * after creation.
      */
-    public java.lang.String getProductId() {
+    public java.lang.Long getProductId() {
         return productId;
     }
 
@@ -62,12 +62,12 @@ public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201306.BaseRa
     /**
      * Sets the productId value for this ProductBaseRate.
      * 
-     * @param productId   * The ID of {@link Product} this base rate is applied to.
-     *                     
+     * @param productId   * The ID of the {@link Product} this base rate is applied to.
+     * 
      *                     This attribute is required and cannot be changed
      * after creation.
      */
-    public void setProductId(java.lang.String productId) {
+    public void setProductId(java.lang.Long productId) {
         this.productId = productId;
     }
 
@@ -149,7 +149,7 @@ public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201306.BaseRa
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("productId");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201306", "productId"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

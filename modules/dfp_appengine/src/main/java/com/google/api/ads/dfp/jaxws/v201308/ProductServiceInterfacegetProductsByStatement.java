@@ -70,7 +70,7 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code id}</td>
  *             <td>{@link Product#id}</td>
  *             <td>Yes</td>
- *             <td>No</td>
+ *             <td>Yes</td>
  *             </tr>
  *             <tr>
  *             <td>{@code lastModifiedDateTime}</td>

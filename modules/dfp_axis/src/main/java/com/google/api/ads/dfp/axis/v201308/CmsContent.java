@@ -21,8 +21,11 @@ public class CmsContent  implements java.io.Serializable {
      * is read-only. */
     private java.lang.String displayName;
 
-    /* The ID of the {@link Content} in the CMS. This attribute is
-     * read-only. */
+    /* The ID of the {@link Content} in the CMS. This ID will be a
+     * 3rd party
+     *                 ID, usually the ID of the content in a CMS (Content
+     * Management System).
+     *                 This attribute is read-only. */
     private java.lang.String cmsContentId;
 
     public CmsContent() {
@@ -85,8 +88,11 @@ public class CmsContent  implements java.io.Serializable {
     /**
      * Gets the cmsContentId value for this CmsContent.
      * 
-     * @return cmsContentId   * The ID of the {@link Content} in the CMS. This attribute is
-     * read-only.
+     * @return cmsContentId   * The ID of the {@link Content} in the CMS. This ID will be a
+     * 3rd party
+     *                 ID, usually the ID of the content in a CMS (Content
+     * Management System).
+     *                 This attribute is read-only.
      */
     public java.lang.String getCmsContentId() {
         return cmsContentId;
@@ -96,8 +102,11 @@ public class CmsContent  implements java.io.Serializable {
     /**
      * Sets the cmsContentId value for this CmsContent.
      * 
-     * @param cmsContentId   * The ID of the {@link Content} in the CMS. This attribute is
-     * read-only.
+     * @param cmsContentId   * The ID of the {@link Content} in the CMS. This ID will be a
+     * 3rd party
+     *                 ID, usually the ID of the content in a CMS (Content
+     * Management System).
+     *                 This attribute is read-only.
      */
     public void setCmsContentId(java.lang.String cmsContentId) {
         this.cmsContentId = cmsContentId;

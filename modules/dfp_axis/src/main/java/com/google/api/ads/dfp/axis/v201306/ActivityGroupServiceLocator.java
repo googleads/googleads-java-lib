@@ -22,7 +22,7 @@ public class ActivityGroupServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for ActivityGroupServiceInterfacePort
-    private java.lang.String ActivityGroupServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/ActivityGroupService";
+    private java.lang.String ActivityGroupServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/ActivityGroupService";
 
     public java.lang.String getActivityGroupServiceInterfacePortAddress() {
         return ActivityGroupServiceInterfacePort_address;

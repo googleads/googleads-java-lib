@@ -22,7 +22,7 @@ public class BaseRateServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for BaseRateServiceInterfacePort
-    private java.lang.String BaseRateServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/BaseRateService";
+    private java.lang.String BaseRateServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/BaseRateService";
 
     public java.lang.String getBaseRateServiceInterfacePortAddress() {
         return BaseRateServiceInterfacePort_address;

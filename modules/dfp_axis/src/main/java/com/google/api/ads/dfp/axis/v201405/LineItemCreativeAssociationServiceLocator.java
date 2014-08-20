@@ -22,7 +22,7 @@ public class LineItemCreativeAssociationServiceLocator extends org.apache.axis.c
     }
 
     // Use to get a proxy class for LineItemCreativeAssociationServiceInterfacePort
-    private java.lang.String LineItemCreativeAssociationServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/LineItemCreativeAssociationService";
+    private java.lang.String LineItemCreativeAssociationServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/LineItemCreativeAssociationService";
 
     public java.lang.String getLineItemCreativeAssociationServiceInterfacePortAddress() {
         return LineItemCreativeAssociationServiceInterfacePort_address;

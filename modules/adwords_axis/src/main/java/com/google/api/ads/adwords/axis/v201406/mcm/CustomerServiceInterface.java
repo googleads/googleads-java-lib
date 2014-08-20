@@ -18,12 +18,14 @@ public interface CustomerServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201406.mcm.Customer get() throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201406.cm.ApiException;
 
     /**
-     * Update an authorized customer. The only update currently provided
-     * is to enable or disable <a
-     *         href="https://support.google.com/analytics/answer/1033981?hl=en">
-     * auto-tagging </a>; see that
-     *         link for special cases affecting the use of auto-tagging.
+     * Update the authorized customer.
      *         
+     *         <p>While there are a limited set of properties available to
+     * update, please read this
+     *         <a href="https://support.google.com/analytics/answer/1033981">help
+     * center article
+     *         on auto-tagging</a> before updating {@code customer.autoTaggingEnabled}.
+     * 
      *         
      * @param customer the requested updated value for the customer.
      *         

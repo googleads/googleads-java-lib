@@ -21,8 +21,8 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.axis.v201302.Company;
-import com.google.api.ads.dfp.axis.v201302.CompanyServiceInterface;
+import com.google.api.ads.dfp.axis.v201408.Company;
+import com.google.api.ads.dfp.axis.v201408.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.auth.oauth2.Credential;
@@ -43,7 +43,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201302";
+  private static final String API_VERSION = "v201408";
+  private static final String CLIENT_LOGIN_API_VERSION = "v201311";
 
   /**
    * Default constructor.
@@ -55,7 +56,7 @@ public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
    */
   @Test
   public void testGoldenSoap_clientLogin() throws Exception {
-    testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
+    testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(CLIENT_LOGIN_API_VERSION));
 
     DfpSession session = new DfpSession.Builder().withApplicationName("TEST_APP")
         .withClientLoginToken("TEST_TOKEN")
@@ -63,12 +64,17 @@ public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
         .withNetworkCode("TEST_NETWORK_CODE")
         .build();
 
-    CompanyServiceInterface companyService =
-        new DfpServices().get(session, CompanyServiceInterface.class);
-    Company[] companies = companyService.createCompanies(new Company[] {new Company()});
+    com.google.api.ads.dfp.axis.v201311.CompanyServiceInterface companyService = new DfpServices()
+        .get(session, com.google.api.ads.dfp.axis.v201311.CompanyServiceInterface.class);
+
+    com.google.api.ads.dfp.axis.v201311.Company company =
+        new com.google.api.ads.dfp.axis.v201311.Company();
+
+    com.google.api.ads.dfp.axis.v201311.Company[] companies = companyService
+        .createCompanies(new com.google.api.ads.dfp.axis.v201311.Company[] {company});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(API_VERSION),
+    assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(CLIENT_LOGIN_API_VERSION),
         testHttpServer.getLastRequestBody());
   }
 

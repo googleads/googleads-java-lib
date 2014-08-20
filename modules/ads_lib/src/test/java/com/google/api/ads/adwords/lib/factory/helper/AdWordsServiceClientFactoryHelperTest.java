@@ -21,7 +21,6 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.helper.testing.foobar.cm.BadPackageService;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
@@ -55,7 +54,6 @@ public class AdWordsServiceClientFactoryHelperTest {
   private SoapClientHandlerInterface soapClientHandler;
   @Mock
   private AdsLibConfiguration adsLibConfiguration;
-  private AdWordsSession adWordsSession;
 
   @Before
   public void setup() {
@@ -80,23 +78,6 @@ public class AdWordsServiceClientFactoryHelperTest {
     assertEquals("BadPackage", helper.determineVersion(BadPackageService.class));
   }
 
-
-  @Test(expected = ServiceException.class)
-  public void testCheckServiceClientPreconditions_clientLoginDeprecated() throws Exception {
-    AdWordsServiceClientFactoryHelper helper = new AdWordsServiceClientFactoryHelper(
-        adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
-        adsLibConfiguration);
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken")
-        .build();
-
-    helper.checkServiceClientPreconditions(adWordsSession,
-        com.google.api.ads.adwords.lib.factory.helper.testing.v201406.cm.TestService.class);
-  }
 
   @Test
   public void testCheckServiceClientPreconditions_passOAuth2() throws Exception {

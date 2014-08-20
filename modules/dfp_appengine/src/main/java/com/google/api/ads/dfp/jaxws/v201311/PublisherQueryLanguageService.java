@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "PublisherQueryLanguageService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201311", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService?wsdl")
+@WebServiceClient(name = "PublisherQueryLanguageService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201311", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService?wsdl")
 public class PublisherQueryLanguageService
     extends Service
 {
@@ -30,7 +30,7 @@ public class PublisherQueryLanguageService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

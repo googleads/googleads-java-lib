@@ -22,7 +22,7 @@ public class TeamServiceLocator extends org.apache.axis.client.Service implement
     }
 
     // Use to get a proxy class for TeamServiceInterfacePort
-    private java.lang.String TeamServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/TeamService";
+    private java.lang.String TeamServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/TeamService";
 
     public java.lang.String getTeamServiceInterfacePortAddress() {
         return TeamServiceInterfacePort_address;

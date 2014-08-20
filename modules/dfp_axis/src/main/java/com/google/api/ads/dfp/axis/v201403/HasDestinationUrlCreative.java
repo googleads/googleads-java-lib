@@ -12,7 +12,7 @@ package com.google.api.ads.dfp.axis.v201403;
  * A {@code Creative} that has a destination url
  */
 public abstract class HasDestinationUrlCreative  extends com.google.api.ads.dfp.axis.v201403.Creative  implements java.io.Serializable {
-    /* The URL the user is directed to if they click on the creative.
+    /* The URL that the user is directed to if they click on the creative.
      * This
      *                     attribute is required and has a maximum length
      * of 1024 characters. */
@@ -49,7 +49,7 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.dfp.
     /**
      * Gets the destinationUrl value for this HasDestinationUrlCreative.
      * 
-     * @return destinationUrl   * The URL the user is directed to if they click on the creative.
+     * @return destinationUrl   * The URL that the user is directed to if they click on the creative.
      * This
      *                     attribute is required and has a maximum length
      * of 1024 characters.
@@ -62,7 +62,7 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.dfp.
     /**
      * Sets the destinationUrl value for this HasDestinationUrlCreative.
      * 
-     * @param destinationUrl   * The URL the user is directed to if they click on the creative.
+     * @param destinationUrl   * The URL that the user is directed to if they click on the creative.
      * This
      *                     attribute is required and has a maximum length
      * of 1024 characters.

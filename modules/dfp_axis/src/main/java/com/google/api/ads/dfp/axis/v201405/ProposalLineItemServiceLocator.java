@@ -22,7 +22,7 @@ public class ProposalLineItemServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for ProposalLineItemServiceInterfacePort
-    private java.lang.String ProposalLineItemServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/ProposalLineItemService";
+    private java.lang.String ProposalLineItemServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/ProposalLineItemService";
 
     public java.lang.String getProposalLineItemServiceInterfacePortAddress() {
         return ProposalLineItemServiceInterfacePort_address;

@@ -22,7 +22,7 @@ public class ReconciliationReportRowServiceLocator extends org.apache.axis.clien
     }
 
     // Use to get a proxy class for ReconciliationReportRowServiceInterfacePort
-    private java.lang.String ReconciliationReportRowServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/ReconciliationReportRowService";
+    private java.lang.String ReconciliationReportRowServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/ReconciliationReportRowService";
 
     public java.lang.String getReconciliationReportRowServiceInterfacePortAddress() {
         return ReconciliationReportRowServiceInterfacePort_address;

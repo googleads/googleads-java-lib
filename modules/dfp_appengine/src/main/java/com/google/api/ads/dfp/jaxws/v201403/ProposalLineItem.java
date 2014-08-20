@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="proposalId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="rateCardId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="productId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="productId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v201403}DateTime" minOccurs="0"/>
  *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v201403}DateTime" minOccurs="0"/>
@@ -121,7 +121,7 @@ public class ProposalLineItem {
     protected Long id;
     protected Long proposalId;
     protected Long rateCardId;
-    protected String productId;
+    protected Long productId;
     protected String name;
     protected DateTime startDateTime;
     protected DateTime endDateTime;
@@ -236,10 +236,10 @@ public class ProposalLineItem {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
@@ -248,10 +248,10 @@ public class ProposalLineItem {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public void setProductId(String value) {
+    public void setProductId(Long value) {
         this.productId = value;
     }
 

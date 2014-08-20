@@ -22,7 +22,7 @@ public class AdRuleServiceLocator extends org.apache.axis.client.Service impleme
     }
 
     // Use to get a proxy class for AdRuleServiceInterfacePort
-    private java.lang.String AdRuleServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/AdRuleService";
+    private java.lang.String AdRuleServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/AdRuleService";
 
     public java.lang.String getAdRuleServiceInterfacePortAddress() {
         return AdRuleServiceInterfacePort_address;

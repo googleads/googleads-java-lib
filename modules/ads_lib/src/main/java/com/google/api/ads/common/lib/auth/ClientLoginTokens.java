@@ -36,7 +36,7 @@ import java.net.URL;
  * Example usage:
  * <pre><code>
  * ClientLoginTokens clientLoginTokens = new ClientLoginTokens.Builder()
- *     .forApi(ClientLoginTokens.Api.ADWORDS)
+ *     .forApi(ClientLoginTokens.Api.DFP)
  *     .fromFile()
  *     .build();
  * String clientLoginToken = clientLoginTokens.requestToken();</code></pre>
@@ -70,7 +70,7 @@ public class ClientLoginTokens {
    * Enum representing the API that ClientLoginTokens can be used for.
    */
   public static enum Api {
-    ADWORDS("adwords", "api.adwords."), DFP("gam", "api.dfp.");
+    DFP("gam", "api.dfp.");
 
     private final String service;
     private final String propKeyPrefix;
@@ -245,8 +245,8 @@ public class ClientLoginTokens {
      * <li>email</li>
      * <li>password</li>
      * </ul><br>
-     * For example, the AdWords ClientLoginToken can be read from:
-     * <code>api.adwords.clientLoginToken</code>
+     * For example, the Dfp ClientLoginToken can be read from:
+     * <code>api.dfp.clientLoginToken</code>
      *
      * @param config the configuration
      * @return Builder populated from the Configuration

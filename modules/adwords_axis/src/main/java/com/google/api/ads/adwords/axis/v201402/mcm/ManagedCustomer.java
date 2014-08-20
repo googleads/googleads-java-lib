@@ -47,11 +47,11 @@ public class ManagedCustomer  implements java.io.Serializable {
     private java.lang.Long customerId;
 
     /* Whether this account can manage clients.
+     *                 This field is read only for external clients and will
+     * be ignored when sent to the API.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Boolean canManageClients;
 
     /* The currency in which this account operates.
@@ -236,11 +236,11 @@ public class ManagedCustomer  implements java.io.Serializable {
      * Gets the canManageClients value for this ManagedCustomer.
      * 
      * @return canManageClients   * Whether this account can manage clients.
+     *                 This field is read only for external clients and will
+     * be ignored when sent to the API.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.Boolean getCanManageClients() {
         return canManageClients;
@@ -251,11 +251,11 @@ public class ManagedCustomer  implements java.io.Serializable {
      * Sets the canManageClients value for this ManagedCustomer.
      * 
      * @param canManageClients   * Whether this account can manage clients.
+     *                 This field is read only for external clients and will
+     * be ignored when sent to the API.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
      */
     public void setCanManageClients(java.lang.Boolean canManageClients) {
         this.canManageClients = canManageClients;

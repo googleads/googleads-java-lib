@@ -22,7 +22,7 @@ public class ProposalServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for ProposalServiceInterfacePort
-    private java.lang.String ProposalServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/ProposalService";
+    private java.lang.String ProposalServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/ProposalService";
 
     public java.lang.String getProposalServiceInterfacePortAddress() {
         return ProposalServiceInterfacePort_address;

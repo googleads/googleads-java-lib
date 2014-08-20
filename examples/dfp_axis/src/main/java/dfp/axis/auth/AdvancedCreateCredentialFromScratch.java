@@ -1,4 +1,4 @@
-// Copyright 2013 Google Inc. All Rights Reserved.
+// Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package dfp.axis.auth;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
-import com.google.api.ads.dfp.axis.v201308.Network;
-import com.google.api.ads.dfp.axis.v201308.NetworkServiceInterface;
+import com.google.api.ads.dfp.axis.v201408.Network;
+import com.google.api.ads.dfp.axis.v201408.NetworkServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
@@ -49,7 +49,7 @@ import java.io.InputStreamReader;
  */
 public class AdvancedCreateCredentialFromScratch {
 
-  private static final String SCOPE = "https://www.google.com/apis/ads/publisher";
+  private static final String SCOPE = "https://www.googleapis.com/auth/dfp";
 
   // This callback URL will allow you to copy the token from the success screen.
   // This must match the one associated with your client ID.

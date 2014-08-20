@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CreativeTemplateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201308/CreativeTemplateService?wsdl")
+@WebServiceClient(name = "CreativeTemplateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201308", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201308/CreativeTemplateService?wsdl")
 public class CreativeTemplateService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CreativeTemplateService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201308/CreativeTemplateService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201308/CreativeTemplateService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

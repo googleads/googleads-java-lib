@@ -18,13 +18,11 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceClient;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
 import com.google.api.ads.common.lib.factory.helper.BaseAdsServiceClientFactoryHelper;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
-import com.google.common.base.Strings;
 import com.google.inject.Inject;
 
 import java.util.regex.Matcher;
@@ -41,7 +39,6 @@ public class AdWordsServiceClientFactoryHelper extends
                                       AdWordsServiceDescriptor> {
 
   private static final Pattern VERSION_PATTERN = Pattern.compile("^.*(v[0-9][^\\.]*).*$");
-  private static final String FINAL_CLIENT_LOGIN_VERSION = "v201309";
 
   private final AdsLibConfiguration adsLibConfiguration;
 
@@ -77,20 +74,6 @@ public class AdWordsServiceClientFactoryHelper extends
       return m.group(1);
     } else {
       return adsLibConfiguration.getDuckTypedVersion();
-    }
-  }
-
-
-  /**
-   * @see AdsServiceClientFactoryHelper#checkServiceClientPreconditions(AdsSession, Class)
-   */
-  public void checkServiceClientPreconditions(AdWordsSession adWordsSession,
-      Class<?> interfaceClass) throws ServiceException {
-    String version = determineVersion(interfaceClass);
-    if (!Strings.isNullOrEmpty(adWordsSession.getClientLoginToken())
-        && version.compareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
-      throw new ServiceException(String.format("ClientLogin is not supported in version %s."
-          + " Please upgrade to OAuth2.", version));
     }
   }
 }

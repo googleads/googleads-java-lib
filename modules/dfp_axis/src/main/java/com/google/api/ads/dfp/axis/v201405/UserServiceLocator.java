@@ -22,7 +22,7 @@ public class UserServiceLocator extends org.apache.axis.client.Service implement
     }
 
     // Use to get a proxy class for UserServiceInterfacePort
-    private java.lang.String UserServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/UserService";
+    private java.lang.String UserServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/UserService";
 
     public java.lang.String getUserServiceInterfacePortAddress() {
         return UserServiceInterfacePort_address;

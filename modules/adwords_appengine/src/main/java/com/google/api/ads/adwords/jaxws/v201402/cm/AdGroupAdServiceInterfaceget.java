@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Returns a list of AdGroupAds.
- *             Deleted AdGroupAds are not returned by default.
+ *             AdGroupAds that had been removed are not returned by default.
  *             
  *             @param serviceSelector The selector specifying the {@link AdGroupAd}s to return.
  *             @return The page containing the AdGroupAds that meet the criteria specified by the selector.

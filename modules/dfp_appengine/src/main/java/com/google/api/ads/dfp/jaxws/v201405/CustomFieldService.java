@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CustomFieldService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201405", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201405/CustomFieldService?wsdl")
+@WebServiceClient(name = "CustomFieldService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201405", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201405/CustomFieldService?wsdl")
 public class CustomFieldService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CustomFieldService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201405/CustomFieldService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201405/CustomFieldService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

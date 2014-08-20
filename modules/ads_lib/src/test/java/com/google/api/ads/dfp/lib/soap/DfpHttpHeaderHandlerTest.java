@@ -59,7 +59,7 @@ public class DfpHttpHeaderHandlerTest {
         new DfpSession.Builder()
             .withApplicationName("FooBar")
             .withClientLoginToken("clientLoginToken")
-            .withEndpoint("https://www.google.com")
+            .withEndpoint("https://ads.google.com")
             .withNetworkCode("networkCode")
             .build();
 

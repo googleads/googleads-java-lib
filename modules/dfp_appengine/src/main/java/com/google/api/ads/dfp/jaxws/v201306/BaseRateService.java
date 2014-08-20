@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "BaseRateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201306", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201306/BaseRateService?wsdl")
+@WebServiceClient(name = "BaseRateService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201306", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201306/BaseRateService?wsdl")
 public class BaseRateService
     extends Service
 {
@@ -30,7 +30,7 @@ public class BaseRateService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201306/BaseRateService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201306/BaseRateService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

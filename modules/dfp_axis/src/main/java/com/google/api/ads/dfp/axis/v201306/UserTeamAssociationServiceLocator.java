@@ -22,7 +22,7 @@ public class UserTeamAssociationServiceLocator extends org.apache.axis.client.Se
     }
 
     // Use to get a proxy class for UserTeamAssociationServiceInterfacePort
-    private java.lang.String UserTeamAssociationServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201306/UserTeamAssociationService";
+    private java.lang.String UserTeamAssociationServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201306/UserTeamAssociationService";
 
     public java.lang.String getUserTeamAssociationServiceInterfacePortAddress() {
         return UserTeamAssociationServiceInterfacePort_address;

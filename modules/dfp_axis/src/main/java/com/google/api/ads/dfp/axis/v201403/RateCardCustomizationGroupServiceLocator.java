@@ -22,7 +22,7 @@ public class RateCardCustomizationGroupServiceLocator extends org.apache.axis.cl
     }
 
     // Use to get a proxy class for RateCardCustomizationGroupServiceInterfacePort
-    private java.lang.String RateCardCustomizationGroupServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/RateCardCustomizationGroupService";
+    private java.lang.String RateCardCustomizationGroupServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/RateCardCustomizationGroupService";
 
     public java.lang.String getRateCardCustomizationGroupServiceInterfacePortAddress() {
         return RateCardCustomizationGroupServiceInterfacePort_address;

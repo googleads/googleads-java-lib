@@ -22,7 +22,7 @@ public class LiveStreamEventServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for LiveStreamEventServiceInterfacePort
-    private java.lang.String LiveStreamEventServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201403/LiveStreamEventService";
+    private java.lang.String LiveStreamEventServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201403/LiveStreamEventService";
 
     public java.lang.String getLiveStreamEventServiceInterfacePortAddress() {
         return LiveStreamEventServiceInterfacePort_address;

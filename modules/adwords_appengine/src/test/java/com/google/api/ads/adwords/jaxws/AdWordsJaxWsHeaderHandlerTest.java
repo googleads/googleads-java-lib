@@ -98,7 +98,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
 
   private static final String DEVELOPER_TOKEN = "DEVELOPER_TOKEN";
   private static final String CLIENT_CUSTOMER_ID = "CLIENT_CUSTOMER_ID";
-  private static final String CLIENT_LOGIN_TOKEN = "CLIENT_LOGIN_TOKEN";
   private static final String USER_AGENT = "USER_AGENT";
   private static final String VERSION = "v201101";
   private static final Long EXPRESS_BUSINESS_ID = 123456789L;
@@ -152,7 +151,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
 
     adWordsSession = new AdWordsSession.Builder()
         .withClientCustomerId(CLIENT_CUSTOMER_ID)
-        .withClientLoginToken(CLIENT_LOGIN_TOKEN)
+        .withOAuth2Credential(new Credential(BearerToken.authorizationHeaderAccessMethod()))
         .withDeveloperToken(DEVELOPER_TOKEN)
         .withUserAgent(USER_AGENT)
         .build();
@@ -178,7 +177,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
     expectedHeaders.put("developerToken", DEVELOPER_TOKEN);
     expectedHeaders.put("clientCustomerId", CLIENT_CUSTOMER_ID);
     expectedHeaders.put("validateOnly", "true");
-    expectedHeaders.put("authToken", CLIENT_LOGIN_TOKEN);
     expectedHeaders.put("userAgent", libSig);
     
     when(adWordsApiConfiguration.getNamespacePrefix()).thenReturn(namespacePrefix);
@@ -207,16 +205,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
     } else {
       fail("Generated headerValue is not a SOAPElement: " + headerArg.getValue());
     }
-  }
-
-  @Test
-  public void testSetAuthenticationHeaders_clientLogin() throws Exception {
-    Object soapClient = new Object();
-    Map<String, Object> headerElements = new HashMap<String, Object>();
-
-    headerHandler.setAuthenticationHeaders(soapClient, headerElements, adWordsSession);
-
-    assertEquals(CLIENT_LOGIN_TOKEN, headerElements.get("authToken"));
   }
 
   @Test

@@ -10,8 +10,8 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.ConversionDeduplicationMode;
 /**
  * 
  *             A collection of customer-wide settings related to AdWords Conversion Tracking. Settings
- *             that apply a conversion type level can be accessed and modified though
- *             {@code ConversionTrackerService}
+ *             that apply at the conversion type level can be accessed and modified though
+ *             {@code ConversionTrackerService}.
  *           
  * 
  * <p>Java class for ConversionTrackingSettings complex type.

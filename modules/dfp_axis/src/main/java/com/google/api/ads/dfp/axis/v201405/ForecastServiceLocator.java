@@ -22,7 +22,7 @@ public class ForecastServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for ForecastServiceInterfacePort
-    private java.lang.String ForecastServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201405/ForecastService";
+    private java.lang.String ForecastServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201405/ForecastService";
 
     public java.lang.String getForecastServiceInterfacePortAddress() {
         return ForecastServiceInterfacePort_address;

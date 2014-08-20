@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Operation for adding, updating or removing operations. For removing,
- *             use SET and mark status as DELETED.
+ *             use SET and mark status as REMOVED.
  *           
  * 
  * <p>Java class for ExperimentOperation complex type.

@@ -22,7 +22,7 @@ public class CreativeSetServiceLocator extends org.apache.axis.client.Service im
     }
 
     // Use to get a proxy class for CreativeSetServiceInterfacePort
-    private java.lang.String CreativeSetServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201308/CreativeSetService";
+    private java.lang.String CreativeSetServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201308/CreativeSetService";
 
     public java.lang.String getCreativeSetServiceInterfacePortAddress() {
         return CreativeSetServiceInterfacePort_address;

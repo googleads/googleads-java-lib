@@ -22,7 +22,7 @@ public class PublisherQueryLanguageServiceLocator extends org.apache.axis.client
     }
 
     // Use to get a proxy class for PublisherQueryLanguageServiceInterfacePort
-    private java.lang.String PublisherQueryLanguageServiceInterfacePort_address = "https://www.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService";
+    private java.lang.String PublisherQueryLanguageServiceInterfacePort_address = "https://ads.google.com/apis/ads/publisher/v201311/PublisherQueryLanguageService";
 
     public java.lang.String getPublisherQueryLanguageServiceInterfacePortAddress() {
         return PublisherQueryLanguageServiceInterfacePort_address;

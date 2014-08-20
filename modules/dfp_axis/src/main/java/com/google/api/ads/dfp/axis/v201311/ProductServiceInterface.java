@@ -10,17 +10,6 @@ package com.google.api.ads.dfp.axis.v201311;
 public interface ProductServiceInterface extends java.rmi.Remote {
 
     /**
-     * Returns the {@link Product} uniquely identified by the given
-     * ID.
-     *         
-     *         
-     * @param productId the ID of the product, which must already exist
-     *         
-     * @return the {@code Product} uniquely identified by ID
-     */
-    public com.google.api.ads.dfp.axis.v201311.Product getProduct(java.lang.String productId) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201311.ApiException;
-
-    /**
      * Gets a {@link ProductPage} of {@link Product} objects that
      * satisfy the criteria specified by
      *         given {@link Statement#query}. The following fields are supported
@@ -84,7 +73,7 @@ public interface ProductServiceInterface extends java.rmi.Remote {
      *         <td>{@code id}</td>
      *         <td>{@link Product#id}</td>
      *         <td>Yes</td>
-     *         <td>No</td>
+     *         <td>Yes</td>
      *         </tr>
      *         <tr>
      *         <td>{@code lastModifiedDateTime}</td>

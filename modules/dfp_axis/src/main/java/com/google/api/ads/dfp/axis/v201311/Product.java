@@ -38,12 +38,12 @@ public class Product  implements java.io.Serializable {
      * when a product is created. */
     private java.lang.Long productTemplateId;
 
-    /* Uniquely identifies the {@code Product}.
+    /* Unique identifier of the {@code Product}.
      *                 
-     *                 This attribute is read-only, with a maximum length
-     * of 1023 characters,
-     *                 and is assigned by Google when a product is created. */
-    private java.lang.String id;
+     *                 This attribute is read-only and is assigned by Google
+     * when
+     *                 a {@code Product} is created. */
+    private java.lang.Long id;
 
     /* The notes of this product.
      *                 
@@ -141,7 +141,7 @@ public class Product  implements java.io.Serializable {
            com.google.api.ads.dfp.axis.v201311.ProductStatus status,
            com.google.api.ads.dfp.axis.v201311.ProductType productType,
            java.lang.Long productTemplateId,
-           java.lang.String id,
+           java.lang.Long id,
            java.lang.String notes,
            java.lang.String productTemplateDescription,
            com.google.api.ads.dfp.axis.v201311.DateTime lastModifiedDateTime,
@@ -283,13 +283,13 @@ public class Product  implements java.io.Serializable {
     /**
      * Gets the id value for this Product.
      * 
-     * @return id   * Uniquely identifies the {@code Product}.
+     * @return id   * Unique identifier of the {@code Product}.
      *                 
-     *                 This attribute is read-only, with a maximum length
-     * of 1023 characters,
-     *                 and is assigned by Google when a product is created.
+     *                 This attribute is read-only and is assigned by Google
+     * when
+     *                 a {@code Product} is created.
      */
-    public java.lang.String getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
@@ -297,13 +297,13 @@ public class Product  implements java.io.Serializable {
     /**
      * Sets the id value for this Product.
      * 
-     * @param id   * Uniquely identifies the {@code Product}.
+     * @param id   * Unique identifier of the {@code Product}.
      *                 
-     *                 This attribute is read-only, with a maximum length
-     * of 1023 characters,
-     *                 and is assigned by Google when a product is created.
+     *                 This attribute is read-only and is assigned by Google
+     * when
+     *                 a {@code Product} is created.
      */
-    public void setId(java.lang.String id) {
+    public void setId(java.lang.Long id) {
         this.id = id;
     }
 
@@ -865,7 +865,7 @@ public class Product  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201311", "id"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

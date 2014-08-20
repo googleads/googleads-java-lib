@@ -165,7 +165,7 @@ public enum AdGroupCriterionErrorReason {
 
     /**
      * 
-     *                 For example, cannot add deleted biddable ad group criterion.
+     *                 For example, cannot add a biddable ad group criterion that had been removed.
      *               
      * 
      */

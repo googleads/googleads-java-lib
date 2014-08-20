@@ -70,7 +70,7 @@ public enum ComputedStatus {
     /**
      * 
      *                 The {@link LineItem} needs at least one more creative to be associated with
-     *                 it.
+     *                 it. This type is deprecated and please use {@link ComputedStatus.INACTIVE} instead.
      *               
      * 
      */

@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v201405}BaseRate">
  *       &lt;sequence>
- *         &lt;element name="productId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="productId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="rate" type="{https://www.google.com/apis/ads/publisher/v201405}Money" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -39,7 +39,7 @@ public class ProductBaseRate
     extends BaseRate
 {
 
-    protected String productId;
+    protected Long productId;
     protected Money rate;
 
     /**
@@ -47,10 +47,10 @@ public class ProductBaseRate
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
@@ -59,10 +59,10 @@ public class ProductBaseRate
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Long }
      *     
      */
-    public void setProductId(String value) {
+    public void setProductId(Long value) {
         this.productId = value;
     }
 

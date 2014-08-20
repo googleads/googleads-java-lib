@@ -2548,6 +2548,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link WorkflowActionPerformer }
+     * 
+     */
+    public WorkflowActionPerformer createWorkflowActionPerformer() {
+        return new WorkflowActionPerformer();
+    }
+
+    /**
      * Create an instance of {@link DeleteAdRules }
      * 
      */

@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
  *             An operation on an AdWords campaign.
  *             <p class="note"><b>Note:</b> The <code>REMOVE</code> operator is not
  *             supported. To remove a campaign, set its {@link Campaign#status status}
- *             to <code>DELETED</code>.</p>
+ *             to {@code REMOVED}.</p>
  *           
  * 
  * <p>Java class for CampaignOperation complex type.

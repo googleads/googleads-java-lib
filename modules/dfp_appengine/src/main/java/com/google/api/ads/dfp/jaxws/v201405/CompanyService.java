@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CompanyService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201405", wsdlLocation = "https://www.google.com/apis/ads/publisher/v201405/CompanyService?wsdl")
+@WebServiceClient(name = "CompanyService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201405", wsdlLocation = "https://ads.google.com/apis/ads/publisher/v201405/CompanyService?wsdl")
 public class CompanyService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CompanyService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://www.google.com/apis/ads/publisher/v201405/CompanyService?wsdl");
+            url = new URL("https://ads.google.com/apis/ads/publisher/v201405/CompanyService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
