@@ -22,7 +22,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>client-libs-parent</artifactId>
-  <version>1.33.0</version>
+  <version>1.33.1-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>Google Ads APIs Java Client Libraries Parent</name>
