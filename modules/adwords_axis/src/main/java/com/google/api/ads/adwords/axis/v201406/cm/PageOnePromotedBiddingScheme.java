@@ -60,7 +60,7 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     of the budget it is serving out of rises above
      * a threshold.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstained".</span> */
+     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstrained".</span> */
     private java.lang.Boolean raiseBidWhenBudgetConstained;
 
     /* Controls whether the strategy is allowed to raise bids on keywords
@@ -234,7 +234,7 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     of the budget it is serving out of rises above
      * a threshold.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstained".</span>
+     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstrained".</span>
      */
     public java.lang.Boolean getRaiseBidWhenBudgetConstained() {
         return raiseBidWhenBudgetConstained;
@@ -249,7 +249,7 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
      *                     of the budget it is serving out of rises above
      * a threshold.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstained".</span>
+     * can be selected using the value "PageOnePromotedRaiseBidWhenBudgetConstrained".</span>
      */
     public void setRaiseBidWhenBudgetConstained(java.lang.Boolean raiseBidWhenBudgetConstained) {
         this.raiseBidWhenBudgetConstained = raiseBidWhenBudgetConstained;

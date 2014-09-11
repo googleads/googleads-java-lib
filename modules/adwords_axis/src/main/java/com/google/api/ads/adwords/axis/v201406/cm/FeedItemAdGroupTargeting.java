@@ -19,7 +19,7 @@ package com.google.api.ads.adwords.axis.v201406.cm;
 public class FeedItemAdGroupTargeting  implements java.io.Serializable {
     /* The ID of the adgroup to target.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
+     * be selected using the value "TargetingAdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -40,7 +40,7 @@ public class FeedItemAdGroupTargeting  implements java.io.Serializable {
      * 
      * @return targetingAdGroupId   * The ID of the adgroup to target.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
+     * be selected using the value "TargetingAdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -56,7 +56,7 @@ public class FeedItemAdGroupTargeting  implements java.io.Serializable {
      * 
      * @param targetingAdGroupId   * The ID of the adgroup to target.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "AdGroupId".</span><span class="constraint
+     * be selected using the value "TargetingAdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link

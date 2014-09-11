@@ -14,6 +14,8 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  *             {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductAdwordsGrouping  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
+    /* <span class="constraint StringLength">This string must not
+     * be empty.</span> */
     private java.lang.String value;
 
     public ProductAdwordsGrouping() {
@@ -31,7 +33,8 @@ public class ProductAdwordsGrouping  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the value value for this ProductAdwordsGrouping.
      * 
-     * @return value
+     * @return value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -41,7 +44,8 @@ public class ProductAdwordsGrouping  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the value value for this ProductAdwordsGrouping.
      * 
-     * @param value
+     * @param value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

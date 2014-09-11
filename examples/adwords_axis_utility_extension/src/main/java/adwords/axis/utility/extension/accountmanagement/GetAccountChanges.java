@@ -15,10 +15,10 @@
 package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201402.ch.AdGroupChangeData;
-import com.google.api.ads.adwords.axis.v201402.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201402.ch.ChangeStatus;
-import com.google.api.ads.adwords.axis.v201402.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201406.ch.AdGroupChangeData;
+import com.google.api.ads.adwords.axis.v201406.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201406.ch.ChangeStatus;
+import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,9 +74,9 @@ public class GetAccountChanges {
         System.out.printf("\tAdded Campaign Targeting: '%b'.\n",
             campaignChanges.getCampaignTargetingChanged());
         System.out.printf("\tDeleted Ad Extensions: '%s'.\n",
-            Arrays.toString(campaignChanges.getDeletedAdExtensions()));
+            Arrays.toString(campaignChanges.getRemovedAdExtensions()));
         System.out.printf("\tDeleted Campaign Criteria: '%s'.\n",
-            Arrays.toString(campaignChanges.getDeletedCampaignCriteria()));
+            Arrays.toString(campaignChanges.getRemovedCampaignCriteria()));
 
         if (campaignChanges.getChangedAdGroups() != null) {
           for (AdGroupChangeData adGroupChanges : campaignChanges.getChangedAdGroups()) {
@@ -91,7 +91,7 @@ public class GetAccountChanges {
               System.out.printf("\t\tCriteria changed: '%s'.\n",
                   Arrays.toString(adGroupChanges.getChangedCriteria()));
               System.out.printf("\t\tCriteria deleted: '%s'.\n",
-                  Arrays.toString(adGroupChanges.getDeletedCriteria()));
+                  Arrays.toString(adGroupChanges.getRemovedCriteria()));
             }
           }
         }

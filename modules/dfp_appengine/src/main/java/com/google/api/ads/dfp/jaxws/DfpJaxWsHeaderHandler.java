@@ -15,6 +15,7 @@
 package com.google.api.ads.dfp.jaxws;
 
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
@@ -47,6 +48,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
 
   private final SoapClientHandlerInterface<Object> soapClientHandler;
   private final DfpApiConfiguration dfpApiConfiguration;
+  private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final DfpHttpHeaderHandler dfpHttpHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
@@ -66,11 +68,13 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
       @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
       SoapClientHandlerInterface soapClientHandler,
       DfpApiConfiguration dfpApiConfiguration,
+      AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
       DfpHttpHeaderHandler dfpHttpHeaderHandler,
       UserAgentCombiner userAgentCombiner) {
     this.soapClientHandler = soapClientHandler;
     this.dfpApiConfiguration = dfpApiConfiguration;
+    this.adsLibConfiguration = adsLibConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.dfpHttpHeaderHandler = dfpHttpHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
@@ -89,6 +93,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
     setAuthenticationHeaders(soapClient, headerData, dfpSession);
     soapClientHandler.setHeader(
         soapClient, null, null, constructSoapHeader(headerData, dfpServiceDescriptor));
+    soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
   }
 
   /**

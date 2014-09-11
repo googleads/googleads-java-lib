@@ -15,16 +15,18 @@
 package com.google.api.ads.adwords.axis.utility.extension.util;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
-import com.google.api.ads.adwords.axis.v201402.cm.ApiError;
-import com.google.api.ads.adwords.axis.v201402.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201402.cm.InternalApiError;
-import com.google.api.ads.adwords.axis.v201402.cm.RateExceededError;
+import com.google.api.ads.adwords.axis.v201406.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201406.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201406.cm.InternalApiError;
+import com.google.api.ads.adwords.axis.v201406.cm.RateExceededError;
 import com.google.common.collect.Maps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InterruptedIOException;
 import java.lang.reflect.Method;
+import java.net.ConnectException;
 import java.net.SocketException;
 import java.rmi.RemoteException;
 import java.util.HashMap;
@@ -142,9 +144,14 @@ public class ReflectionUtil {
         remoteException = UtilityLibraryException.getUnwrapApiExceptions(
             e, "Error during reflection for " + className + "." + methodName);
 
-        if (remoteException.getCause() != null &&
-            remoteException.getCause().getClass().isAssignableFrom(SocketException.class)) {
-          // Retrying if SocketException
+        Throwable cause = remoteException.getCause();
+
+        if (cause != null
+            && (cause.getClass().isAssignableFrom(SocketException.class)
+              || cause.getClass().isAssignableFrom(InterruptedIOException.class)
+              || cause.getClass().isAssignableFrom(ConnectException.class))) {
+
+          // Retrying if SocketException/InterruptedIOException/ConnectException
           retry = true;
 
           log.warn("SocketException error, retrying last operation: "

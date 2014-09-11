@@ -22,7 +22,6 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.client.AdsSession;
-import com.google.api.ads.common.lib.client.Endpoint;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -63,12 +62,6 @@ public class AuthorizationHeaderHandlerTest {
     final String endpoint = "endpoint";
     Object soapClient = new Object();
     AdsSession adsSession = new AdsSession() {
-
-      public boolean isEnvironment(Endpoint environment) {
-        return false;
-      }
-
-
       public String getEndpoint() {
         return endpoint;
       }

@@ -1,3 +1,19 @@
+1.33.0 - 09/11/2014
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201406.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added new auth example CreateDfpSessionUsingServiceAccount.java that shows
+    how to create a DfpSession using OAuth2 service account credentials.
+
+Common:
+  - Added support for optional SOAP compression. Fixes
+    [issue #1](https://github.com/googleads/googleads-java-lib/issues/1).
+
 1.32.0 - 08/20/2014
 -------------------
 AdWords:

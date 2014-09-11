@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201402.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201402.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201402.cm.AdParamOperation;
-import com.google.api.ads.adwords.axis.v201402.cm.AdParamServiceInterface;
+import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201406.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201406.cm.AdParamOperation;
+import com.google.api.ads.adwords.axis.v201406.cm.AdParamServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

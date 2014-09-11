@@ -47,4 +47,9 @@ public class DfaLibConfiguration extends AdsLibConfiguration {
   public boolean isAutoRefreshOAuth2TokenEnabled() {
     return config.getBoolean(KEY_PREFIX + "." + AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX, true);
   }
+  
+  @Override
+  public boolean isCompressionEnabled() {
+    return config.getBoolean(KEY_PREFIX + "." + USE_COMPRESSION_POSTFIX, false);
+  }
 }

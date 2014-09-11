@@ -20,7 +20,7 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      * click ID can be obtained from a query
      *                 parameter called 'gclid'.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ConversionGclid".</span><span class="constraint
+     * be selected using the value "GoogleClickId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -101,7 +101,7 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      * click ID can be obtained from a query
      *                 parameter called 'gclid'.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ConversionGclid".</span><span class="constraint
+     * be selected using the value "GoogleClickId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -123,7 +123,7 @@ public class OfflineConversionFeed  implements java.io.Serializable {
      * click ID can be obtained from a query
      *                 parameter called 'gclid'.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "ConversionGclid".</span><span class="constraint
+     * be selected using the value "GoogleClickId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>

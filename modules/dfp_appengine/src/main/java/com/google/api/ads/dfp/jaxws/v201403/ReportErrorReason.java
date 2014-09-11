@@ -244,8 +244,8 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 The time zone is specified a value different from {@link Network#timeZone}, but the time zone
-     *                 feature is not enabled.
+     *                 The time zone specified does not match the {@link Network#timeZone}, but the time zone
+     *                 reporting feature is not enabled.
      *               
      * 
      */

@@ -14,7 +14,7 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.exception;
 
-import com.google.api.ads.adwords.axis.v201402.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201406.cm.ApiException;
 import com.google.common.base.Throwables;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -86,7 +86,7 @@ public final class UtilityLibraryException extends RuntimeException {
   }
 
   /**
-   * Unwraps ApiException and RemoteException exceptions
+   * Unwraps ApiException, AxisFault and RemoteException exceptions
    *
    * @param exception the {@code Exception} to unwrap
    * @param message custom message to include in the UtilityLibraryException

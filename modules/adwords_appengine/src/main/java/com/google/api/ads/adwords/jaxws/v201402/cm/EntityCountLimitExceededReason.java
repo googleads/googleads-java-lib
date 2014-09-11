@@ -30,13 +30,32 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum EntityCountLimitExceededReason {
 
+
+    /**
+     * 
+     *                 Indicates that this request would exceed the number of allowed entities for the AdWords
+     *                 account. The exact entity type and limit being checked can be inferred from
+     *                 {@link #accountLimitType}.
+     *               
+     * 
+     */
     ACCOUNT_LIMIT,
+
+    /**
+     * 
+     *                 Indicates that this request would exceed the number of allowed entities in a Campaign.
+     *                 The exact entity type and limit being checked can be inferred from
+     *                 {@link #accountLimitType}, and the numeric id of the Campaign involved is given by
+     *                 {@link #enclosingId}.
+     *               
+     * 
+     */
     CAMPAIGN_LIMIT,
 
     /**
      * 
      *                 Indicates that this request would exceed the number of allowed entities in
-     *                 this ad group.  The exact entity type and limit being checked can be
+     *                 an ad group.  The exact entity type and limit being checked can be
      *                 inferred from {@link #accountLimitType}, and the numeric id of the ad group
      *                 involved is given by {@link #enclosingId}.
      *               

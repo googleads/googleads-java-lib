@@ -54,11 +54,6 @@ public class RunDeliveryReportForOrder {
     // Get the ReportService.
     ReportServiceInterface reportService = dfpServices.get(session, ReportServiceInterface.class);
 
-    // Create statement to filter for an order.
-    StatementBuilder statementBuilder = new StatementBuilder()
-        .where("ORDER_ID = :orderId")
-        .withBindVariableValue("orderId", orderId);
-
     // Create report query.
     ReportQuery reportQuery = new ReportQuery();
     reportQuery.setDimensions(new Dimension[] {Dimension.DATE, Dimension.ORDER_ID});
@@ -68,6 +63,11 @@ public class RunDeliveryReportForOrder {
     reportQuery.setDimensionAttributes(new DimensionAttribute[] {
         DimensionAttribute.ORDER_TRAFFICKER, DimensionAttribute.ORDER_START_DATE_TIME,
         DimensionAttribute.ORDER_END_DATE_TIME});
+
+    // Create statement to filter for an order.
+    StatementBuilder statementBuilder = new StatementBuilder()
+        .where("ORDER_ID = :orderId")
+        .withBindVariableValue("orderId", orderId);
 
     // Set the filter statement.
     reportQuery.setStatement(statementBuilder.toStatement());

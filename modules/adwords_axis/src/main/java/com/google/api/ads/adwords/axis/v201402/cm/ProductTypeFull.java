@@ -19,6 +19,8 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  *             <p>Not supported by campaigns of {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductTypeFull  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
+    /* <span class="constraint StringLength">This string must not
+     * be empty.</span> */
     private java.lang.String value;
 
     public ProductTypeFull() {
@@ -36,7 +38,8 @@ public class ProductTypeFull  extends com.google.api.ads.adwords.axis.v201402.cm
     /**
      * Gets the value value for this ProductTypeFull.
      * 
-     * @return value
+     * @return value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -46,7 +49,8 @@ public class ProductTypeFull  extends com.google.api.ads.adwords.axis.v201402.cm
     /**
      * Sets the value value for this ProductTypeFull.
      * 
-     * @param value
+     * @param value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

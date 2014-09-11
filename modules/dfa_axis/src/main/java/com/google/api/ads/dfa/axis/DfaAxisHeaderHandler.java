@@ -15,6 +15,7 @@
 package com.google.api.ads.dfa.axis;
 
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
@@ -45,6 +46,7 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
 
   private final SoapClientHandlerInterface<Object> soapClientHandler;
   private final DfaApiConfiguration dfaApiConfiguration;
+  private final AdsLibConfiguration adsLibConfiguration;
   private final LoginTokens loginTokens;
   private final UserAgentCombiner userAgentCombiner;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
@@ -65,6 +67,7 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
       @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
       SoapClientHandlerInterface soapClientHandler,
       DfaApiConfiguration dfaApiConfiguration,
+      AdsLibConfiguration adsLibConfiguration,
       LoginTokens loginTokens,
       UserAgentCombiner userAgentCombiner,
       AuthorizationHeaderHandler authorizationHeaderHandler) {
@@ -73,6 +76,7 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
     this.loginTokens = loginTokens;
     this.userAgentCombiner = userAgentCombiner;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
+    this.adsLibConfiguration = adsLibConfiguration;
   }
 
   /**
@@ -99,6 +103,8 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
       setWsseSecurityHeader(soapClient, username, token);
     }
     setRequestHeader(soapClient, dfaSession, dfaServiceDescriptor);
+
+    soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
   }
 
   /**

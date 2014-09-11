@@ -15,6 +15,7 @@
 package com.google.api.ads.dfp.jaxws;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
@@ -28,6 +29,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -45,11 +47,11 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   private static final String API_VERSION = "v201408";  
   private static final String CLIENT_LOGIN_API_VERSION = "v201311";  
   
-  /**
-   * Default constructor.
-   */
-  public DfpJaxWsSoapIntegrationTest() {}
-
+  @BeforeClass
+  public static void setupClass() {
+    System.setProperty("api.adwords.useCompression", "false");
+  }
+  
   /**
    * Tests making a JAX-WS DFP API call with ClientLogin.
    */
@@ -72,6 +74,8 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     assertEquals(1234L, companies.get(0).getId().longValue());
     assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(CLIENT_LOGIN_API_VERSION),
         testHttpServer.getLastRequestBody());
+    assertFalse("Did not request compression but request was compressed",
+        testHttpServer.wasLastRequestBodyCompressed());
   }
   
   /**
@@ -98,6 +102,8 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     assertEquals(1234L, companies.get(0).getId().longValue());
     assertEquals(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
+    assertFalse("Did not request compression but request was compressed",
+        testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
 }

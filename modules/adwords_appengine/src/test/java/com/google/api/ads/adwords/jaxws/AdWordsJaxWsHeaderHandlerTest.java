@@ -35,6 +35,7 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSub
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
@@ -92,6 +93,8 @@ public class AdWordsJaxWsHeaderHandlerTest {
   @Mock
   private AdWordsApiConfiguration adWordsApiConfiguration;
   @Mock
+  private AdsLibConfiguration adsLibConfiguration;
+  @Mock
   private AuthorizationHeaderHandler authorizationHeaderHandler;
   @Mock
   private UserAgentCombiner userAgentCombiner;
@@ -146,8 +149,12 @@ public class AdWordsJaxWsHeaderHandlerTest {
     subProductHandlerMap.put(AdWordsSubProduct.EXPRESS,
         new AdWordsJaxWsExpressHeaderHandler(soapClientHandler, adWordsApiConfiguration));
     
-    headerHandler = new AdWordsJaxWsHeaderHandler(soapClientHandler, adWordsApiConfiguration,
-        authorizationHeaderHandler, userAgentCombiner, subProductHandlerMap);
+    headerHandler = new AdWordsJaxWsHeaderHandler(soapClientHandler,
+        adWordsApiConfiguration,
+        adsLibConfiguration,
+        authorizationHeaderHandler,
+        userAgentCombiner,
+        subProductHandlerMap);
 
     adWordsSession = new AdWordsSession.Builder()
         .withClientCustomerId(CLIENT_CUSTOMER_ID)

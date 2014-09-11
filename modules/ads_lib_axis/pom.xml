@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.32.1-SNAPSHOT</version>
+    <version>1.33.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,7 +30,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib-axis</artifactId>
-  <version>1.32.1-SNAPSHOT</version>
+  <version>1.33.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library Axis components.</name>
@@ -38,6 +38,14 @@
 
   <build>
     <resources>
+      <resource>
+        <targetPath>com/google/api/ads/common/lib/soap/axis/conf/wsdd</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/common/lib/soap/axis/conf/wsdd</directory>
+        <includes>
+          <include>*.wsdd</include>
+        </includes>
+      </resource>
     </resources>
     <testResources>
       <testResource>
@@ -50,7 +58,7 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.32.1-SNAPSHOT</version>
+      <version>1.33.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -58,6 +66,11 @@
       <groupId>commons-discovery</groupId>
       <artifactId>commons-discovery</artifactId>
       <version>0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
     </dependency>
     <dependency>
       <groupId>javax.xml</groupId>

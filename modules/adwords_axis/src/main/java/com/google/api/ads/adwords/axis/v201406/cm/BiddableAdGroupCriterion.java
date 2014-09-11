@@ -81,9 +81,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
 
     /* Bid modifier of the criterion which is used when the criterion
      * is not in an absolute bidding
-     *                     dimension.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span> */
+     *                     dimension. */
     private java.lang.Double bidModifier;
 
     /* A list of possible final URLs after all cross domain redirects. */
@@ -439,8 +437,6 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * @return bidModifier   * Bid modifier of the criterion which is used when the criterion
      * is not in an absolute bidding
      *                     dimension.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span>
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -453,8 +449,6 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * @param bidModifier   * Bid modifier of the criterion which is used when the criterion
      * is not in an absolute bidding
      *                     dimension.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span>
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

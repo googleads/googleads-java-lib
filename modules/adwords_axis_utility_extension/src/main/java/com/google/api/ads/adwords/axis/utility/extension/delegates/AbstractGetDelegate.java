@@ -18,8 +18,8 @@ import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.utils.v201402.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201402.cm.Selector;
+import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201406.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -136,7 +136,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * support Generic Selectors.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201402.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201406.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return a list of <T>
@@ -158,7 +158,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * calling getEntries.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201402.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201406.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return Object, because AdParamPage does not extend Page

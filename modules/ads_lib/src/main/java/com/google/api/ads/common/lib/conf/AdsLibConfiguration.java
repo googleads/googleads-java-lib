@@ -33,6 +33,7 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
       "com.google.api.ads.common.lib.auth.cacheclientlogintokens";
   public static final String VERSION_KEY = "com.google.api.ads.version";
   public static final String AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX = "refreshOAuth2Token";
+  public static final String USE_COMPRESSION_POSTFIX = "useCompression";
 
   /**
    * Constructor.
@@ -70,5 +71,12 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
    */
   public boolean isAutoRefreshOAuth2TokenEnabled() {
     return true;
+  }
+  
+  /**
+   * Returns if requests and responses should be compressed.
+   */
+  public boolean isCompressionEnabled() {
+    return false;
   }
 }

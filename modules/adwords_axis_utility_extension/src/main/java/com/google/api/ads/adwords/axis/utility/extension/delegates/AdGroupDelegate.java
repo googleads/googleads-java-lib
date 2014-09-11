@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201402.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201402.cm.AdGroupOperation;
-import com.google.api.ads.adwords.axis.v201402.cm.AdGroupServiceInterface;
-import com.google.api.ads.adwords.axis.v201402.cm.AdGroupStatus;
+import com.google.api.ads.adwords.axis.v201406.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201406.cm.AdGroupOperation;
+import com.google.api.ads.adwords.axis.v201406.cm.AdGroupServiceInterface;
+import com.google.api.ads.adwords.axis.v201406.cm.AdGroupStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;
@@ -148,7 +148,7 @@ public final class AdGroupDelegate extends
   @Override
   public List<AdGroup> remove(List<AdGroup> list) throws RemoteException {
     for (AdGroup adGroup : list) {
-      adGroup.setStatus(AdGroupStatus.DELETED);
+      adGroup.setStatus(AdGroupStatus.REMOVED);
     }
     return update(list);
   }
@@ -162,7 +162,7 @@ public final class AdGroupDelegate extends
    */
   @Override
   public AdGroup remove(AdGroup adGroup) throws RemoteException {
-    adGroup.setStatus(AdGroupStatus.DELETED);
+    adGroup.setStatus(AdGroupStatus.REMOVED);
     return update(adGroup);
   }
 }

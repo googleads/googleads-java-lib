@@ -14,6 +14,7 @@
 
 package com.google.api.ads.dfa.axis.testing.mocks.v1_12;
 
+import org.apache.axis.EngineConfiguration;
 import org.apache.axis.client.Service;
 
 import java.rmi.Remote;
@@ -27,6 +28,11 @@ import javax.xml.rpc.ServiceException;
  */
 public class FunRemoteServiceLocator extends Service {
 
+  public FunRemoteServiceLocator(
+      @SuppressWarnings("unused") EngineConfiguration engineConfiguration) {
+    // Constructor required by AxisHandler
+  }
+  
   @SuppressWarnings("rawtypes")
   @Override
   public Remote getPort(Class serviceEndpointInterface) throws ServiceException {

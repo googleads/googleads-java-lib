@@ -13,6 +13,8 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  * {@link AdvertisingChannelType#SHOPPING}.
  */
 public class ProductAdwordsLabels  extends com.google.api.ads.adwords.axis.v201406.cm.ProductDimension  implements java.io.Serializable {
+    /* <span class="constraint StringLength">This string must not
+     * be empty.</span> */
     private java.lang.String value;
 
     public ProductAdwordsLabels() {
@@ -30,7 +32,8 @@ public class ProductAdwordsLabels  extends com.google.api.ads.adwords.axis.v2014
     /**
      * Gets the value value for this ProductAdwordsLabels.
      * 
-     * @return value
+     * @return value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -40,7 +43,8 @@ public class ProductAdwordsLabels  extends com.google.api.ads.adwords.axis.v2014
     /**
      * Sets the value value for this ProductAdwordsLabels.
      * 
-     * @param value
+     * @param value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

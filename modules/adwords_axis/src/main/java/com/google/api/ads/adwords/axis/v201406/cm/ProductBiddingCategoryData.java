@@ -24,8 +24,9 @@ public class ProductBiddingCategoryData  extends com.google.api.ads.adwords.axis
 
     /* The country of the taxonomy. It applies to all categories from
      * the taxonomy.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Country".</span> */
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Country".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.String country;
 
     /* A map of displayValues by their language code. The language
@@ -96,8 +97,9 @@ public class ProductBiddingCategoryData  extends com.google.api.ads.adwords.axis
      * 
      * @return country   * The country of the taxonomy. It applies to all categories from
      * the taxonomy.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Country".</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Country".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getCountry() {
         return country;
@@ -109,8 +111,9 @@ public class ProductBiddingCategoryData  extends com.google.api.ads.adwords.axis
      * 
      * @param country   * The country of the taxonomy. It applies to all categories from
      * the taxonomy.
-     *                     <span class="constraint Filterable">This field
-     * can be filtered on using the value "Country".</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Country".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setCountry(java.lang.String country) {
         this.country = country;

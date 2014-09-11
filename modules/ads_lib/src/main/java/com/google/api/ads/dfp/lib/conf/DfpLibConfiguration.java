@@ -43,7 +43,13 @@ public class DfpLibConfiguration extends AdsLibConfiguration {
    * Gets if OAuth2 token should be automatically refreshed. Default is
    * {@code true}.
    */
+  @Override
   public boolean isAutoRefreshOAuth2TokenEnabled() {
     return config.getBoolean(KEY_PREFIX + "." + AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX, true);
+  }
+  
+  @Override
+  public boolean isCompressionEnabled() {
+    return config.getBoolean(KEY_PREFIX + "." + USE_COMPRESSION_POSTFIX, false);
   }
 }

@@ -2460,6 +2460,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CollectionSizeError }
+     * 
+     */
+    public CollectionSizeError createCollectionSizeError() {
+        return new CollectionSizeError();
+    }
+
+    /**
      * Create an instance of {@link NoPoddingAdRuleSlot }
      * 
      */

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Apache Axis client configuration file required for compression.
+
+  See https://github.com/googleads/googleads-java-lib#user-content-how-do-i-enable-compression
+  for details.
+
+  -->
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+      xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" name="commonsHTTPConfig">
+  <transport name="http" pivot="java:org.apache.axis.transport.http.CommonsHTTPSender"/>
+  <transport name="local" pivot="java:org.apache.axis.transport.local.LocalSender"/>
+  <transport name="java" pivot="java:org.apache.axis.transport.java.JavaSender"/>
+</deployment>

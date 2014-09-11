@@ -41,6 +41,7 @@ public class AdWordsLibConfiguration extends AdsLibConfiguration {
     super(config);
   }
 
+  @Override
   public boolean isAutoRefreshOAuth2TokenEnabled() {
     return config.getBoolean(KEY_PREFIX + "." + AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX, true);
   }
@@ -52,5 +53,10 @@ public class AdWordsLibConfiguration extends AdsLibConfiguration {
   public int getReportDownloadTimeout() {
     return config.getInt(
         KEY_PREFIX + "." + REPORT_DOWNLOAD_TIMEOUT_KEY, DEFAULT_REPORT_DOWNLOAD_TIMEOUT);
+  }
+  
+  @Override
+  public boolean isCompressionEnabled() {
+    return config.getBoolean(KEY_PREFIX + "." + USE_COMPRESSION_POSTFIX, false);
   }
 }

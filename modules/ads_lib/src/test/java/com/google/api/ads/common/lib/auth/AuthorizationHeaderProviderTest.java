@@ -21,7 +21,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.client.AdsSession;
-import com.google.api.ads.common.lib.client.Endpoint;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
@@ -132,10 +131,6 @@ public class AuthorizationHeaderProviderTest {
 
     public String getEndpoint() {
       return null;
-    }
-
-    public boolean isEnvironment(Endpoint environment) {
-      return false;
     }
   }
 

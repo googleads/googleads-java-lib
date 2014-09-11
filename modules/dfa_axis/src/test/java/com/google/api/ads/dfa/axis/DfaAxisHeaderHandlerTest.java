@@ -21,6 +21,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
@@ -61,6 +62,7 @@ public class DfaAxisHeaderHandlerTest {
   @Mock private AuthorizationHeaderHandler authorizationHeaderHandler;
   @Mock private SoapClientHandlerInterface<Object> soapClientHandler;
   @Mock private DfaApiConfiguration dfaApiConfiguration;
+  @Mock private AdsLibConfiguration adsLibConfiguration;
   @Mock private LoginTokens loginTokens;
   @Mock private UserAgentCombiner userAgentCombiner;
   @Mock private SOAPHeaderElement wsseHeaderElem;
@@ -102,8 +104,12 @@ public class DfaAxisHeaderHandlerTest {
     loginDfaServiceDescriptor = new DfaServiceDescriptor(LoginRemote.class, VERSION);
     nonLoginDfaServiceDescriptor = new DfaServiceDescriptor(FunRemote.class, VERSION);
 
-    dfaHeaderHandler = new DfaAxisHeaderHandler(soapClientHandler, dfaApiConfiguration,
-        loginTokens, userAgentCombiner, authorizationHeaderHandler);
+    dfaHeaderHandler = new DfaAxisHeaderHandler(soapClientHandler,
+        dfaApiConfiguration,
+        adsLibConfiguration,
+        loginTokens,
+        userAgentCombiner,
+        authorizationHeaderHandler);
   }
 
   /**

@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.32.1-SNAPSHOT</version>
+    <version>1.33.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,13 +30,30 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>adwords-appengine</artifactId>
-  <version>1.32.1-SNAPSHOT</version>
+  <version>1.33.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>AdWords AppEngine components</name>
   <description>AdWords specific AppEngine components.</description>
 
   <build>
+    <plugins>
+      <!--
+      Configure the surefire-plugin used for the 'test' phase to execute each
+      test case in its own JVM. This prevents failures in tests that rely on
+      different configuration settings that impact singletons, such as the SOAP
+      compression integration tests.
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.17</version>
+        <configuration>
+          <reuseForks>false</reuseForks>
+          <forkCount>1</forkCount>
+        </configuration>
+      </plugin>
+    </plugins>
     <resources>
       <resource>
         <targetPath>com/google/api/ads/adwords/jaxws/conf/props</targetPath>
@@ -46,19 +63,37 @@
           <include>*.properties</include>
         </includes>
       </resource>
-     </resources>
+    </resources>
+    <testResources>
+      <testResource>
+        <targetPath>com/google/api/ads/adwords/jaxws/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/adwords/jaxws/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/adwords/jaxws/testing</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/adwords/jaxws/testing</directory>
+        <includes>
+          <include>*.xml</include>
+        </includes>
+      </testResource>
+    </testResources>
   </build>
 
   <dependencies>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib-appengine</artifactId>
-      <version>1.32.1-SNAPSHOT</version>
+      <version>1.33.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.32.1-SNAPSHOT</version>
+      <version>1.33.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -69,7 +104,19 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>1.32.1-SNAPSHOT</version>
+      <version>1.33.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>2.43.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>5.1.10</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

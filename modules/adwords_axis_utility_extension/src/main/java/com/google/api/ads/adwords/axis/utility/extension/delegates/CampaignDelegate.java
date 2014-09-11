@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201402.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201402.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201402.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201402.cm.CampaignStatus;
+import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201406.cm.CampaignOperation;
+import com.google.api.ads.adwords.axis.v201406.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;
@@ -113,7 +113,7 @@ public final class CampaignDelegate extends
   @Override
   public List<Campaign> remove(List<Campaign> list) throws RemoteException {
     for (Campaign campaign : list) {
-      campaign.setStatus(CampaignStatus.DELETED);
+      campaign.setStatus(CampaignStatus.REMOVED);
     }
     return update(list);
   }
@@ -127,7 +127,7 @@ public final class CampaignDelegate extends
    */
   @Override
   public Campaign remove(Campaign campaign) throws RemoteException {
-    campaign.setStatus(CampaignStatus.DELETED);
+    campaign.setStatus(CampaignStatus.REMOVED);
     return update(campaign);
   }
 }

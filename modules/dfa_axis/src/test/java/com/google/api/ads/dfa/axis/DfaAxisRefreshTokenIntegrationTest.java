@@ -15,6 +15,7 @@
 package com.google.api.ads.dfa.axis;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfa.axis.factory.DfaServices;
@@ -28,6 +29,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,6 +48,11 @@ public class DfaAxisRefreshTokenIntegrationTest extends MockHttpIntegrationTest 
   private static final String EXPIRED_TOKEN = "EXPIRED_TOKEN";
   private static final String OAUTH_ACCESS_TOKEN = "ACCESS_TOKEN";
 
+  @BeforeClass
+  public static void setupClass() {
+    System.setProperty("api.adwords.useCompression", "false");
+  }
+  
   /**
    * Tests making an Axis DFA API call with an expired DFA token.
    */
@@ -84,5 +91,7 @@ public class DfaAxisRefreshTokenIntegrationTest extends MockHttpIntegrationTest 
         SoapRequestXmlProvider.getGetPlacementTypesSoapRequest(API_VERSION, REGENERATED_TOKEN),
         testHttpServer.getAllRequestBodies().get(2));
     assertEquals(REGENERATED_TOKEN, session.getToken());
+    assertFalse("Did not request compression but request was compressed",
+        testHttpServer.wasLastRequestBodyCompressed());
   }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Header>
+    <RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">
+        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/1.33.0, Common-Java/1.33.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
+        <developerToken xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_DEVELOPER_TOKEN</developerToken>
+        <clientCustomerId xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_CLIENT_CUSTOMER_ID</clientCustomerId>
+    </RequestHeader>
+  </S:Header>
+  <S:Body>
+    <mutate xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#" xmlns:ns2="https://adwords.google.com/api/adwords/video/v201406">
+      <operations>
+        <operator>ADD</operator>
+        <operand>
+          <name>Test Budget Name</name>
+          <period>DAILY</period>
+          <amount>
+            <microAmount>50000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+        </operand>
+      </operations>
+    </mutate>
+  </S:Body>
+</S:Envelope>

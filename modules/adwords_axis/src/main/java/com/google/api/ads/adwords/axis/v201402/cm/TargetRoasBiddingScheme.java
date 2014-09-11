@@ -31,7 +31,7 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be between 0.01 and 1000.0, inclusive.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.Double targetRoas;
@@ -76,7 +76,7 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be between 0.01 and 1000.0, inclusive.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -93,7 +93,7 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetRoas".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be between 0.01 and 1000.0, inclusive.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

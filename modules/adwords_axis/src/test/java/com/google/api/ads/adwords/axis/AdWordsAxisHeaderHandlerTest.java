@@ -29,6 +29,7 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSub
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
 import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
@@ -74,6 +75,8 @@ public class AdWordsAxisHeaderHandlerTest {
   private Stub soapClient;
   @Mock
   private AdWordsApiConfiguration adWordsApiConfiguration;
+  @Mock
+  private AdsLibConfiguration adsLibConfiguration;
   @Mock
   private AuthorizationHeaderHandler authorizationHeaderHandler;
   @Mock
@@ -124,6 +127,7 @@ public class AdWordsAxisHeaderHandlerTest {
     
     headerHandler = new AdWordsAxisHeaderHandler(soapClientHandler,
         adWordsApiConfiguration,
+        adsLibConfiguration,
         authorizationHeaderHandler,
         userAgentCombiner,
         handlerMap,

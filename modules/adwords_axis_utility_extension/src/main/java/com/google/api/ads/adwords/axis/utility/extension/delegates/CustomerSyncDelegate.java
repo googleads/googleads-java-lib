@@ -14,10 +14,10 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201402.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201402.ch.CustomerSyncSelector;
-import com.google.api.ads.adwords.axis.v201402.ch.CustomerSyncServiceInterface;
-import com.google.api.ads.adwords.axis.v201402.cm.DateTimeRange;
+import com.google.api.ads.adwords.axis.v201406.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201406.ch.CustomerSyncSelector;
+import com.google.api.ads.adwords.axis.v201406.ch.CustomerSyncServiceInterface;
+import com.google.api.ads.adwords.axis.v201406.cm.DateTimeRange;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;

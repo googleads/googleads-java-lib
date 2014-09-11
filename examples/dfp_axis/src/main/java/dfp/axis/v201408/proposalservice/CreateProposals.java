@@ -42,30 +42,30 @@ import java.util.Random;
  * @author Nicholas Chen
  */
 public class CreateProposals {
-  
+
   // Set the ID of the advertiser that the proposal will belong to.
   private static final String ADVERTISER_ID = "INSERT_ADVERTISER_ID_HERE";
- 
+
   // Set the ID of the primary salesperson.
   private static final String PRIMARY_SALESPERSON_ID = "INSERT_PRIMARY_SALESPERSON_ID_HERE";
-  
+
   // Set the ID of the secondary salesperson.
   private static final String SECONDARY_SALESPERSON_ID = "INSERT_SECONDARY_SALESPERSON_ID_HERE";
-  
+
   // Set the ID of the primary trafficker.
   private static final String PRIMARY_TRAFFICKER_ID = "INSERT_PRIMARY_TRAFFICKER_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long advertiserId, long primarySalespersonId, long secondarySalespersonId,
       long primaryTraffickerId) throws Exception {
     // Get the ProposalService.
     ProposalServiceInterface proposalService =
         dfpServices.get(session, ProposalServiceInterface.class);
-    
+
     // Get the NetworkService.
     NetworkServiceInterface networkService =
         dfpServices.get(session, NetworkServiceInterface.class);
-    
+
     // Create a proposal.
     Proposal proposal = new Proposal();
     proposal.setName("Proposal #" + new Random().nextInt(Integer.MAX_VALUE));
@@ -75,16 +75,16 @@ public class CreateProposals {
     proposalCompanyAssociation.setCompanyId(advertiserId);
     proposalCompanyAssociation.setType(ProposalCompanyAssociationType.ADVERTISER);
     proposal.setAdvertiser(proposalCompanyAssociation);
-    
+
     // Create salesperson splits for the primary salesperson and secondary salespeople.
     SalespersonSplit primarySalesperson = new SalespersonSplit();
     primarySalesperson.setUserId(primarySalespersonId);
     primarySalesperson.setSplit(75000);
     proposal.setPrimarySalesperson(primarySalesperson);
-    
+
     SalespersonSplit secondarySalesperson = new SalespersonSplit();
     secondarySalesperson.setUserId(secondarySalespersonId);
-    secondarySalesperson.setSplit(25000);    
+    secondarySalesperson.setSplit(25000);
     proposal.setSecondarySalespeople(new SalespersonSplit[] {secondarySalesperson});
 
     // Set the probability to close to 100%.
@@ -92,7 +92,7 @@ public class CreateProposals {
 
     // Set the primary trafficker on the proposal for when it becomes an order.
     proposal.setPrimaryTraffickerId(primaryTraffickerId);
-    
+
     // Create a budget for the proposal worth 100 in the network local currency.
     Money budget = new Money();
     budget.setMicroAmount(100000000L);
@@ -104,7 +104,7 @@ public class CreateProposals {
 
     // Create the proposal on the server.
     Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
-    
+
     for (Proposal createdProposal : proposals) {
       System.out.printf("A proposal with ID \"%d\" and name \"%s\" was created.%n",
           createdProposal.getId(), createdProposal.getName());

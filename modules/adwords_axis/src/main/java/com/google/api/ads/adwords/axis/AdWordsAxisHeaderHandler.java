@@ -19,6 +19,7 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSub
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
@@ -44,6 +45,7 @@ public class AdWordsAxisHeaderHandler implements
 
   private final AxisHandler soapClientHandler;
   private final AdWordsApiConfiguration adWordsApiConfiguration;
+  private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
   private final Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
@@ -66,6 +68,7 @@ public class AdWordsAxisHeaderHandler implements
   AdWordsAxisHeaderHandler(
       AxisHandler soapClientHandler,
       AdWordsApiConfiguration adWordsApiConfiguration,
+      AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
       UserAgentCombiner userAgentCombiner,
       Map<AdWordsSubProduct,
@@ -73,6 +76,7 @@ public class AdWordsAxisHeaderHandler implements
       AxisSoapHeaderFactory<AdWordsServiceDescriptor> soapHeaderFactory) {
     this.soapClientHandler = soapClientHandler;
     this.adWordsApiConfiguration = adWordsApiConfiguration;
+    this.adsLibConfiguration = adsLibConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
     this.subProductHeaderHandlerMap = subProductHeaderHandlerMap;
@@ -111,6 +115,8 @@ public class AdWordsAxisHeaderHandler implements
       soapClientHandler.setHeaderChild(stub, REQUEST_HEADER_LOCAL_PART, "partialFailure",
           adWordsSession.isPartialFailure());
 
+      soapClientHandler.setCompression(stub, adsLibConfiguration.isCompressionEnabled());
+      
       HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
           subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());
 

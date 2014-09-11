@@ -42,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     CriterionUserInterest.class,
+    Platform.class,
     Product.class,
     CriterionUserList.class,
     MobileAppCategory.class,

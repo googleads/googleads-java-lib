@@ -121,6 +121,7 @@ import javax.xml.bind.annotation.XmlType;
     PublisherQueryLanguageContextError.class,
     GenericTargetingError.class,
     ProposalError.class,
+    CollectionSizeError.class,
     ContentPartnerError.class,
     NetworkError.class,
     UniqueError.class,

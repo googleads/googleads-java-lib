@@ -15,6 +15,7 @@
 package com.google.api.ads.dfp.axis;
 
 import com.google.api.ads.common.lib.client.HeaderHandler;
+import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
@@ -43,6 +44,7 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final DfpHttpHeaderHandler dfpHttpHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
+  private final AdsLibConfiguration adsLibConfiguration;
 
   /**
    * Constructor.
@@ -60,11 +62,13 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
       @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
       SoapClientHandlerInterface soapClientHandler,
       DfpApiConfiguration dfpApiConfiguration,
+      AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
       DfpHttpHeaderHandler dfpHttpHeaderHandler,
       UserAgentCombiner userAgentCombiner) {
     this.soapClientHandler = soapClientHandler;
     this.dfpApiConfiguration = dfpApiConfiguration;
+    this.adsLibConfiguration = adsLibConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.dfpHttpHeaderHandler = dfpHttpHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
@@ -95,6 +99,7 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
           dfpApiConfiguration.getNamespacePrefix() + "/"
               + dfpServiceDescriptor.getVersion();
       soapClientHandler.setHeader(soapClient, namespace, "RequestHeader", soapHeader);
+      soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
     } catch (InstantiationException e) {
       throw new ServiceException("Unexpected exception.", e);
     } catch (IllegalAccessException e) {

@@ -12,6 +12,8 @@ package com.google.api.ads.adwords.axis.v201402.cm;
  * A brand string.
  */
 public class ProductBrand  extends com.google.api.ads.adwords.axis.v201402.cm.ProductDimension  implements java.io.Serializable {
+    /* <span class="constraint StringLength">This string must not
+     * be empty.</span> */
     private java.lang.String value;
 
     public ProductBrand() {
@@ -29,7 +31,8 @@ public class ProductBrand  extends com.google.api.ads.adwords.axis.v201402.cm.Pr
     /**
      * Gets the value value for this ProductBrand.
      * 
-     * @return value
+     * @return value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -39,7 +42,8 @@ public class ProductBrand  extends com.google.api.ads.adwords.axis.v201402.cm.Pr
     /**
      * Sets the value value for this ProductBrand.
      * 
-     * @param value
+     * @param value   * <span class="constraint StringLength">This string must not
+     * be empty.</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

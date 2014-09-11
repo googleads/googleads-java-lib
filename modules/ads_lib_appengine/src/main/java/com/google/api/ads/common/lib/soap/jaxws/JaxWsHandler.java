@@ -171,29 +171,26 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   /**
    * Set whether SOAP requests should use compression.
    *
-   * TODO(jdilallo): Add hook to this.
-   *
    * @param soapClient the client to set compression settings for
    * @param compress whether or not to use compression
    */
   public void setCompression(BindingProvider soapClient, boolean compress) {
-        Map<String, String> headersMap = Maps.newHashMap();
-        if (compress) {
-          headersMap.put("Accept-Encoding", "gzip");
-          headersMap.put("Content-Encoding", "gzip");
-          putAllHttpHeaders(soapClient, headersMap);
-        } else {
-          @SuppressWarnings("unchecked") // HTTP Headers in JAXWS are always a map of
-                                         // String to List of String.
-          Map<String, List<String>> httpHeaders =
-              (Map<String, List<String>>) soapClient.getRequestContext().get(
-                  MessageContext.HTTP_REQUEST_HEADERS);
-          if (httpHeaders != null) {
-            httpHeaders.remove("Accept-Encoding");
-            httpHeaders.remove("Content-Encoding");
-          }
-        }
-
+    Map<String, String> headersMap = Maps.newHashMap();
+    if (compress) {
+      headersMap.put("Accept-Encoding", "gzip");
+      headersMap.put("Content-Encoding", "gzip");
+      putAllHttpHeaders(soapClient, headersMap);
+    } else {
+      @SuppressWarnings("unchecked") // HTTP Headers in JAXWS are always a map of
+                                     // String to List of String.
+      Map<String, List<String>> httpHeaders =
+          (Map<String, List<String>>) soapClient.getRequestContext().get(
+              MessageContext.HTTP_REQUEST_HEADERS);
+      if (httpHeaders != null) {
+        httpHeaders.remove("Accept-Encoding");
+        httpHeaders.remove("Content-Encoding");
+      }
+    }
   }
 
   /**

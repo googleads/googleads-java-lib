@@ -1,0 +1,6 @@
+{
+  "access_token" : "#ACCESS_TOKEN#",
+  "token_type" : "Bearer",
+  "expires_in" : #EXPIRATION_SECONDS#,
+  "refresh_token" : "#REFRESH_TOKEN#"
+}

@@ -16,7 +16,7 @@ package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedMcc;
-import com.google.api.ads.adwords.axis.v201402.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomer;
 
 import org.joda.time.DateTime;
 

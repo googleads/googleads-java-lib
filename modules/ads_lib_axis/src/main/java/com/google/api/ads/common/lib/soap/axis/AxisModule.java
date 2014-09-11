@@ -17,12 +17,14 @@ package com.google.api.ads.common.lib.soap.axis;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
+import com.google.api.ads.common.lib.soap.axis.conf.AdsAxisEngineConfigurationFactory;
 import com.google.api.ads.common.lib.useragent.FrameworkUserAgentProvider;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.name.Names;
 
+import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.Version;
 import org.apache.commons.configuration.Configuration;
 
@@ -55,9 +57,11 @@ public class AxisModule extends AbstractModule {
   @SuppressWarnings("rawtypes") // TypeLiteral of non-rawtypes does not work.
   @Override
   protected void configure() {
+    bind(EngineConfigurationFactory.class).to(AdsAxisEngineConfigurationFactory.class);
     bind(new TypeLiteral<SoapClientHandlerInterface>() {})
         .to(AxisHandler.class).asEagerSingleton();
     bind(FrameworkUserAgentProvider.class).to(AxisFrameworkUserAgentProvider.class);
+    
     try {
       bind(Configuration.class).annotatedWith(Names.named("axisResources")).toInstance(
           configurationHelper.fromFile(Version.class

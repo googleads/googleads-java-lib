@@ -33,7 +33,10 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}. */
+     *                 {@link ProposalLineItem#startDateTime}. This attribute
+     * will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have a start time. */
     private com.google.api.ads.dfp.axis.v201306.DateTime startDateTime;
 
     /* The date and time at which the order and line items associated
@@ -42,7 +45,10 @@ public class Proposal  implements java.io.Serializable {
      * is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}. */
+     *                 latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have an end time. */
     private com.google.api.ads.dfp.axis.v201306.DateTime endDateTime;
 
     /* The status of the {@code Proposal}. This attribute is readonly. */
@@ -414,7 +420,10 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}.
+     *                 {@link ProposalLineItem#startDateTime}. This attribute
+     * will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have a start time.
      */
     public com.google.api.ads.dfp.axis.v201306.DateTime getStartDateTime() {
         return startDateTime;
@@ -430,7 +439,10 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}.
+     *                 {@link ProposalLineItem#startDateTime}. This attribute
+     * will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have a start time.
      */
     public void setStartDateTime(com.google.api.ads.dfp.axis.v201306.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -446,7 +458,10 @@ public class Proposal  implements java.io.Serializable {
      * is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}.
+     *                 latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have an end time.
      */
     public com.google.api.ads.dfp.axis.v201306.DateTime getEndDateTime() {
         return endDateTime;
@@ -462,7 +477,10 @@ public class Proposal  implements java.io.Serializable {
      * is readonly and
      *                 is derived from the proposal line item of the proposal
      * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}.
+     *                 latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null,
+     *                 if this proposal has no related line items, or none
+     * of its line items have an end time.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201306.DateTime endDateTime) {
         this.endDateTime = endDateTime;

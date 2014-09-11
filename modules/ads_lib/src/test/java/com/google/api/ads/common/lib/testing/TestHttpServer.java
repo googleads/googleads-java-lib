@@ -21,9 +21,9 @@ import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
 import org.openqa.selenium.net.PortProber;
 
-
 import org.mortbay.http.HttpContext;
 import org.mortbay.http.HttpException;
+import org.mortbay.http.HttpFields;
 import org.mortbay.http.HttpMessage;
 import org.mortbay.http.HttpRequest;
 import org.mortbay.http.HttpResponse;
@@ -35,6 +35,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.zip.GZIPInputStream;
 
 /**
  * HTTP server used to verify requests and send mocked responses.
@@ -72,10 +73,18 @@ public class TestHttpServer {
   }
 
   /**
-   * Gets the body of the last request made to the server.
+   * Gets the body of the last request made to the server. This will be the inflated body if
+   * the last request was compressed.
    */
   public String getLastRequestBody() {
     return server.getLastRequestBody();
+  }
+
+  /**
+   * Gets if the body of the last request made to the server was compressed.
+   */
+  public boolean wasLastRequestBodyCompressed() {
+    return server.wasLastRequestBodyCompressed();
   }
 
   /**
@@ -132,6 +141,7 @@ public class TestHttpServer {
     private int port;
     private int numInteractions = 0;
     private List<String> requestBodies = Lists.newArrayList();
+    private List<Boolean> requestBodiesCompressionStates = Lists.newArrayList();
     private List<String> authorizationHttpHeaders = Lists.newArrayList();
     private List<String> mockResponseBodies = Lists.newArrayList();
 
@@ -158,13 +168,37 @@ public class TestHttpServer {
         throws IOException, HttpException {
       request.setState(HttpMessage.__MSG_EDITABLE);
       this.authorizationHttpHeaders.add(request.getHeader().get("Authorization"));
-      this.requestBodies.add(new ByteSource() {
+
+      // Read the raw bytes from the request.
+      final byte[] rawRequestBytes = new ByteSource() {
+        @Override
         public InputStream openStream() throws IOException {
           return request.getInputStream();
         }
-      }.asCharSource(Charset.forName(UTF_8)).read());
+      }.read();
+
+      // Inflate the raw bytes if they are in gzip format.
+      boolean isGzipFormat = "gzip".equals(request.getHeader().get(HttpFields.__ContentEncoding));
+
+      byte[] requestBytes;
+      if (isGzipFormat) {
+        requestBytes = new ByteSource(){
+          @Override
+          public InputStream openStream() throws IOException {
+            return new GZIPInputStream(ByteSource.wrap(rawRequestBytes).openStream());
+          }
+        }.read();
+      } else {
+        requestBytes = rawRequestBytes;
+      }
+
+      // Convert the (possibly inflated) request bytes to a string.
+      this.requestBodies.add(
+          ByteSource.wrap(requestBytes).asCharSource(Charset.forName(UTF_8)).read());
+      this.requestBodiesCompressionStates.add(isGzipFormat);
 
       new ByteSink() {
+        @Override
         public OutputStream openStream() {
           return response.getOutputStream();
         }
@@ -178,6 +212,13 @@ public class TestHttpServer {
      */
     private String getLastRequestBody() {
       return requestBodies.get(requestBodies.size() - 1);
+    }
+
+    /**
+     * Returns if the last request body was compressed.
+     */
+    private boolean wasLastRequestBodyCompressed() {
+      return requestBodiesCompressionStates.get(requestBodiesCompressionStates.size() - 1);
     }
 
     /**

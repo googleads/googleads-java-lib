@@ -299,6 +299,25 @@ To bridge SLF4J for a logging framework, you must do the following:
      in the resources directory. This distribution includes an example
      configuration for log4j named "log4j.properties".
 
+## How do I enable compression?
+
+First, add an entry to your `ads.properties` file for each API you plan to use.
+
+    # AdWords
+    api.adwords.useCompression=true
+    # DFP
+    api.dfp.useCompression=true
+    # DFA
+    api.dfa.useCompression=true
+
+If using JaxWs, then no further steps are required.
+
+If using Axis, then no further steps are required unless you are setting the
+`axis.ClientConfigFile` system property. If you are setting
+`axis.ClientConfigFile` to your own custom WSDD file and you want to use
+compression, please ensure that the `http` transport defined in your WSDD
+supports compression.
+
 ## Using a proxy
 
 It is recommended that the user set JVM arguments to configure this application

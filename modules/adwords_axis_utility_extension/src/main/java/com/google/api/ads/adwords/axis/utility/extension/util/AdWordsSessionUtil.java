@@ -39,7 +39,7 @@ public class AdWordsSessionUtil {
 
   /**
    * Creates a copy of the AdWordsSession.
-   * 
+   *
    * @param adWordsSession to copy from
    * @return a new copy of the AdWordsSession
    */
@@ -49,7 +49,7 @@ public class AdWordsSessionUtil {
 
   /**
    * Copies the AdWordsSession and Adds USER_AGENT to the userAgent.
-   * 
+   *
    * @param adWordsSession to copy from
    * @return a new copy of the AdWordsSession with the new userAgent
    */
@@ -67,7 +67,7 @@ public class AdWordsSessionUtil {
 
   /**
    * Copies (if needed) the AdWordsSession and Adds USER_AGENT to the userAgent.
-   * 
+   *
    * @param adWordsSession to copy from
    * @return a new copy of the AdWordsSession with the new userAgent only if needed
    */
@@ -85,12 +85,11 @@ public class AdWordsSessionUtil {
 
   /**
    * Creates a copy of the AdWordsSession and changes the userAgent.
-   * 
+   *
    * @param adWordsSession to copy from
    * @param userAgent the new User Agent for the session
    * @return a new copy of the AdWordsSession
    */
-  @SuppressWarnings("deprecation")
   public static AdWordsSession copy(AdWordsSession adWordsSession, String userAgent) {
     AdWordsSession.Builder builder = new Builder();
     if (adWordsSession.getEndpoint() != null) {

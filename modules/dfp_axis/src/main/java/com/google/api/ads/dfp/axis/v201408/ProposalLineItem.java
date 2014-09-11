@@ -50,17 +50,17 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The date and time at which the line item associated with the
      * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is required
-     *                 and must be in the future when it turns into a line
-     * item.
+     * is optional
+     *                 during creation, but required and must be in the future
+     * when it turns into a line item.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering. */
     private com.google.api.ads.dfp.axis.v201408.DateTime startDateTime;
 
     /* The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is required
-     * and
-     *                 must be after the {@link #startDateTime}. */
+     * {@code ProposalLineItem} stops beening served. This attribute is optional
+     * during creation,
+     *                 but required and must be after the {@link #startDateTime}. */
     private com.google.api.ads.dfp.axis.v201408.DateTime endDateTime;
 
     /* Provides any additional notes that may annotate the {@code
@@ -631,9 +631,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return startDateTime   * The date and time at which the line item associated with the
      * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is required
-     *                 and must be in the future when it turns into a line
-     * item.
+     * is optional
+     *                 during creation, but required and must be in the future
+     * when it turns into a line item.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -647,9 +647,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param startDateTime   * The date and time at which the line item associated with the
      * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is required
-     *                 and must be in the future when it turns into a line
-     * item.
+     * is optional
+     *                 during creation, but required and must be in the future
+     * when it turns into a line item.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -662,9 +662,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the endDateTime value for this ProposalLineItem.
      * 
      * @return endDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is required
-     * and
-     *                 must be after the {@link #startDateTime}.
+     * {@code ProposalLineItem} stops beening served. This attribute is optional
+     * during creation,
+     *                 but required and must be after the {@link #startDateTime}.
      */
     public com.google.api.ads.dfp.axis.v201408.DateTime getEndDateTime() {
         return endDateTime;
@@ -675,9 +675,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the endDateTime value for this ProposalLineItem.
      * 
      * @param endDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is required
-     * and
-     *                 must be after the {@link #startDateTime}.
+     * {@code ProposalLineItem} stops beening served. This attribute is optional
+     * during creation,
+     *                 but required and must be after the {@link #startDateTime}.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201408.DateTime endDateTime) {
         this.endDateTime = endDateTime;

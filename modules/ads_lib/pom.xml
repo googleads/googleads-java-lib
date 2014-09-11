@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.32.1-SNAPSHOT</version>
+    <version>1.33.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,7 +29,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>1.32.1-SNAPSHOT</version>
+  <version>1.33.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library</name>
@@ -46,6 +46,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
         <executions>
           <execution>
             <goals>
@@ -94,11 +95,35 @@
         <directory>src/main/resources</directory>
       </testResource>
       <testResource>
+        <targetPath>com/google/api/ads/common/lib/auth/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/common/lib/auth/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/common/lib/auth/testing</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/common/lib/auth/testing</directory>
+        <includes>
+          <include>*.txt</include>
+        </includes>
+      </testResource>
+      <testResource>
         <targetPath>com/google/api/ads/common/lib/conf/props</targetPath>
         <filtering>false</filtering>
         <directory>src/test/java/com/google/api/ads/common/lib/conf/props</directory>
         <includes>
           <include>*.properties</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <targetPath>com/google/api/ads/adwords/lib/soap/testing</targetPath>
+        <filtering>false</filtering>
+        <directory>src/test/java/com/google/api/ads/adwords/lib/soap/testing</directory>
+        <includes>
+          <include>*.xml</include>
         </includes>
       </testResource>
       <testResource>
@@ -115,14 +140,6 @@
         <directory>src/test/java/com/google/api/ads/dfp/lib/soap/testing</directory>
         <includes>
           <include>*.xml</include>
-        </includes>
-      </testResource>
-      <testResource>
-        <targetPath>com/google/api/ads/common/lib/auth/props</targetPath>
-        <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/common/lib/auth/props</directory>
-        <includes>
-          <include>*.properties</include>
         </includes>
       </testResource>
     </testResources>
@@ -196,7 +213,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>2.42.2</version>
+      <version>2.43.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>

@@ -24,8 +24,11 @@ import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 import com.google.common.base.Preconditions;
+import com.google.inject.Inject;
 
 import org.apache.axis.AxisFault;
+import org.apache.axis.EngineConfiguration;
+import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.MessageContext;
 import org.apache.axis.client.Service;
 import org.apache.axis.client.Stub;
@@ -47,6 +50,13 @@ import javax.xml.soap.SOAPException;
  */
 public class AxisHandler extends SoapClientHandler<Stub> {
 
+  private final EngineConfigurationFactory engineConfigurationFactory;
+  
+  @Inject
+  public AxisHandler(EngineConfigurationFactory engineConfigurationFactory) {
+    this.engineConfigurationFactory = engineConfigurationFactory;
+  }
+  
   /**
    * Sets the endpoint address of the given SOAP client.
    *
@@ -54,7 +64,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @param endpointAddress the target endpoint address
    */
   public void setEndpointAddress(Stub soapClient, String endpointAddress) {
-    soapClient._setProperty("javax.xml.rpc.service.endpoint.address", endpointAddress);
+    soapClient._setProperty(Stub.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
   }
 
   /**
@@ -128,6 +138,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @see SoapClientHandler#putAllHttpHeaders(Object, Map)
    */
   public void putAllHttpHeaders(Stub soapClient, Map<String, String> headersMap) {
+    @SuppressWarnings("unchecked")
     Hashtable<String, String> headers =
         (Hashtable<String, String>) soapClient._getProperty(HTTPConstants.REQUEST_HEADERS);
     if (headers == null) {
@@ -139,12 +150,10 @@ public class AxisHandler extends SoapClientHandler<Stub> {
 
   /**
    * Set whether SOAP requests should use compression.
-   *
+   * 
    * @param soapClient the client to set compression settings for
    * @param compress whether or not to use compression
    */
-  // TODO(arogal): Add info to README that you need to add the
-  //    client-config.wsdd to the root of the classpath
   public void setCompression(Stub soapClient, boolean compress) {
     soapClient._setProperty(HTTPConstants.MC_ACCEPT_GZIP, compress);
     soapClient._setProperty(HTTPConstants.MC_GZIP_REQUEST, compress);
@@ -162,8 +171,11 @@ public class AxisHandler extends SoapClientHandler<Stub> {
     try {
       if (soapServiceDescriptor instanceof AxisCompatible) {
         AxisCompatible axisCompatibleService = (AxisCompatible) soapServiceDescriptor;
+        EngineConfiguration engineConfiguration =
+            engineConfigurationFactory.getClientEngineConfig();
         Service locator = (Service) axisCompatibleService.getLocatorClass()
-            .getConstructor(new Class[0]).newInstance(new Object[0]);
+            .getConstructor(new Class[] {EngineConfiguration.class})
+            .newInstance(new Object[] {engineConfiguration});
         return (Stub) locator.getClass().getMethod("getPort", Class.class)
             .invoke(locator, soapServiceDescriptor.getInterfaceClass());
       }
@@ -231,7 +243,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @see SoapClientHandlerInterface#getEndpointAddress(Object)
    */
   public String getEndpointAddress(Stub soapClient) {
-    return (String) soapClient._getProperty("javax.xml.rpc.service.endpoint.address");
+    return (String) soapClient._getProperty(Stub.ENDPOINT_ADDRESS_PROPERTY);
   }
 
   /**
