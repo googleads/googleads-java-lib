@@ -83,8 +83,8 @@ public class UserList  implements java.io.Serializable {
      * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201402.rm.AccountUserListStatus accountUserListStatus;
 
-    /* Number of inactive days after which a user should be removed
-     * from the list.
+    /* Number of days a user's cookie stays on your list since its
+     * most recent addition to the list.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -427,8 +427,8 @@ public class UserList  implements java.io.Serializable {
     /**
      * Gets the membershipLifeSpan value for this UserList.
      * 
-     * @return membershipLifeSpan   * Number of inactive days after which a user should be removed
-     * from the list.
+     * @return membershipLifeSpan   * Number of days a user's cookie stays on your list since its
+     * most recent addition to the list.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -443,8 +443,8 @@ public class UserList  implements java.io.Serializable {
     /**
      * Sets the membershipLifeSpan value for this UserList.
      * 
-     * @param membershipLifeSpan   * Number of inactive days after which a user should be removed
-     * from the list.
+     * @param membershipLifeSpan   * Number of days a user's cookie stays on your list since its
+     * most recent addition to the list.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

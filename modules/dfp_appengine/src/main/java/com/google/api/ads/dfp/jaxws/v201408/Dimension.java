@@ -687,8 +687,9 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by gender and age group, i.e., MALE_13_TO_17, MALE_18_TO_24,
      *                 MALE_25_TO_34, MALE_35_TO_44, MALE_45_TO_54, MALE_55_TO_64, MALE_65_PLUS, FEMALE_13_TO_17,
-     *                 FEMALE_18_TO_24, FEMALE_25_TO_34, FEMALE_35_TO_44, FEMALE_45_TO_54, FEMALE_55_TO_64, and
-     *                 FEMALE_65_PLUS. Whenever this dimension is selected, {@link #COUNTRY_NAME} must be selected.
+     *                 FEMALE_18_TO_24, FEMALE_25_TO_34, FEMALE_35_TO_44, FEMALE_45_TO_54, FEMALE_55_TO_64,
+     *                 FEMALE_65_PLUS, UNKNOWN_0_TO_17 and UNKNOWN.
+     *                 Whenever this dimension is selected, {@link #COUNTRY_NAME} must be selected.
      *                 
      *                 <p>
      *                 This dimension is supported only for GRP columns.

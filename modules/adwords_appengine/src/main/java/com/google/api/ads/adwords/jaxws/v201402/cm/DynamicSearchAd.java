@@ -53,6 +53,9 @@ import javax.xml.bind.annotation.XmlType;
  *             <p>There are also special rules that come into play depending on whether the
  *             destination URL uses local click tracking or third-party click tracking.</p>
  *             
+ *             <p class="note">Note that {@code finalUrls} and {@code finalMobileUrls}
+ *             cannot be set for dynamic search ads.</p>
+ *             
  *             <p>For more information, see the article
  *             <a href="//support.google.com/adwords/answer/2549100">Using dynamic tracking URLs</a>.
  *             </p>

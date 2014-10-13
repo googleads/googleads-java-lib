@@ -13,7 +13,7 @@ public interface UserRemote extends java.rmi.Remote {
     public java.lang.String generateUniqueUsername(java.lang.String username) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void sendUserInvitationEmail(com.google.api.ads.dfa.axis.v1_20.UserInvitationEmailRequest emailRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.UserFilterType[] getAvailableUserFilterTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.TraffickerType[] getAvailableTraffickerTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.User getUser(long userId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

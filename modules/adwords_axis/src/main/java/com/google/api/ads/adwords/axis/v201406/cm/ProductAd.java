@@ -15,12 +15,8 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  * product data (managed using the Google Merchant Center) that is
  *             pulled from the Google base product feed specified in
  * the parent campaign's
- *             {@linkplain ProductExtension product extension}.
+ *             {@linkplain ShoppingSetting shopping setting}.
  *             
- *             <p>Product ads are only available to a limited set of
- * advertisers. If you
- *             are not eligible to use product ads, they will not serve.</p>
- * 
  *             <p class="caution"><b>Caution:</b> Product ads do not
  * use {@link #url url} or
  *             {@link #displayUrl displayUrl}; setting these fields on

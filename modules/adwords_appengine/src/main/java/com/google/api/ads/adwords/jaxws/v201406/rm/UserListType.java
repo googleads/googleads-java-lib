@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="REMARKETING"/>
  *     &lt;enumeration value="LOGICAL"/>
  *     &lt;enumeration value="EXTERNAL_REMARKETING"/>
+ *     &lt;enumeration value="RULE_BASED"/>
  *     &lt;enumeration value="SIMILAR"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -60,6 +61,14 @@ public enum UserListType {
      * 
      */
     EXTERNAL_REMARKETING,
+
+    /**
+     * 
+     *                 UserList associated with a rule.
+     *               
+     * 
+     */
+    RULE_BASED,
 
     /**
      * 

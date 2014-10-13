@@ -2,7 +2,7 @@
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
   <S:Header>
     <RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">
-        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/1.33.0, Common-Java/1.33.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
+        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/1.34.0, Common-Java/1.34.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
         <developerToken xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_DEVELOPER_TOKEN</developerToken>
         <clientCustomerId xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_CLIENT_CUSTOMER_ID</clientCustomerId>
     </RequestHeader>

@@ -122,14 +122,16 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.ConversionDeduplicationMode countingType;
 
     /* The value to use when the tag for this conversion tracker sends
-     * conversion events
-     *                 without values. This value is applied on the server
-     * side, and is applicable to all
-     *                 ConversionTracker subclasses.
-     *                 
-     *                 See also {@link ConversionTracker#alwaysUseDefaultRevenueValue}
-     * for details about when
-     *                 this value is used.
+     * conversion events without
+     *                 values. This value is applied on the server side,
+     * and is applicable to all ConversionTracker
+     *                 subclasses.
+     *                 <p>
+     *                 See also the corresponding {@link ConversionTracker#defaultRevenueCurrencyCode},
+     * and see
+     *                 {@link ConversionTracker#alwaysUseDefaultRevenueValue}
+     * for details about when this value is
+     *                 used.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -137,18 +139,20 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * between 0 and 1000000000000, inclusive.</span> */
     private java.lang.Double defaultRevenueValue;
 
-    /* Controls whether conversion event values are taken from the
-     * tag snippet or taken
-     *                 from {@link ConversionTracker#defaultRevenueValue}.
-     * If alwaysUseDefaultRevenueValue
-     *                 is true, then conversion events will always use defaultRevenueValue,
-     * even if
-     *                 the tag has supplied a value when reporting the conversion
-     * event.
-     *                 If alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
-     * is used
-     *                 only if the tag does not supply a value (the tag's
-     * value is used if present).
+    /* Controls whether conversion event values and currency codes
+     * are taken from the tag snippet or
+     *                 from {@link ConversionTracker#defaultRevenueValue}
+     * and
+     *                 {@link ConversionTracker#defaultRevenueCurrencyCode}.
+     * If alwaysUseDefaultRevenueValue is true,
+     *                 then conversion events will always use defaultRevenueValue
+     * and defaultRevenueCurrencyCode, even
+     *                 if the tag has supplied a value and/or code when reporting
+     * the conversion event.  If
+     *                 alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
+     * and defaultRevenueCurrencyCode
+     *                 are only used if the tag does not supply a value,
+     * or the tag's value is unparseable.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AlwaysUseDefaultRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span> */
@@ -571,14 +575,16 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * Gets the defaultRevenueValue value for this ConversionTracker.
      * 
      * @return defaultRevenueValue   * The value to use when the tag for this conversion tracker sends
-     * conversion events
-     *                 without values. This value is applied on the server
-     * side, and is applicable to all
-     *                 ConversionTracker subclasses.
-     *                 
-     *                 See also {@link ConversionTracker#alwaysUseDefaultRevenueValue}
-     * for details about when
-     *                 this value is used.
+     * conversion events without
+     *                 values. This value is applied on the server side,
+     * and is applicable to all ConversionTracker
+     *                 subclasses.
+     *                 <p>
+     *                 See also the corresponding {@link ConversionTracker#defaultRevenueCurrencyCode},
+     * and see
+     *                 {@link ConversionTracker#alwaysUseDefaultRevenueValue}
+     * for details about when this value is
+     *                 used.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -594,14 +600,16 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * Sets the defaultRevenueValue value for this ConversionTracker.
      * 
      * @param defaultRevenueValue   * The value to use when the tag for this conversion tracker sends
-     * conversion events
-     *                 without values. This value is applied on the server
-     * side, and is applicable to all
-     *                 ConversionTracker subclasses.
-     *                 
-     *                 See also {@link ConversionTracker#alwaysUseDefaultRevenueValue}
-     * for details about when
-     *                 this value is used.
+     * conversion events without
+     *                 values. This value is applied on the server side,
+     * and is applicable to all ConversionTracker
+     *                 subclasses.
+     *                 <p>
+     *                 See also the corresponding {@link ConversionTracker#defaultRevenueCurrencyCode},
+     * and see
+     *                 {@link ConversionTracker#alwaysUseDefaultRevenueValue}
+     * for details about when this value is
+     *                 used.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DefaultRevenueValue".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -616,18 +624,20 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     /**
      * Gets the alwaysUseDefaultRevenueValue value for this ConversionTracker.
      * 
-     * @return alwaysUseDefaultRevenueValue   * Controls whether conversion event values are taken from the
-     * tag snippet or taken
-     *                 from {@link ConversionTracker#defaultRevenueValue}.
-     * If alwaysUseDefaultRevenueValue
-     *                 is true, then conversion events will always use defaultRevenueValue,
-     * even if
-     *                 the tag has supplied a value when reporting the conversion
-     * event.
-     *                 If alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
-     * is used
-     *                 only if the tag does not supply a value (the tag's
-     * value is used if present).
+     * @return alwaysUseDefaultRevenueValue   * Controls whether conversion event values and currency codes
+     * are taken from the tag snippet or
+     *                 from {@link ConversionTracker#defaultRevenueValue}
+     * and
+     *                 {@link ConversionTracker#defaultRevenueCurrencyCode}.
+     * If alwaysUseDefaultRevenueValue is true,
+     *                 then conversion events will always use defaultRevenueValue
+     * and defaultRevenueCurrencyCode, even
+     *                 if the tag has supplied a value and/or code when reporting
+     * the conversion event.  If
+     *                 alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
+     * and defaultRevenueCurrencyCode
+     *                 are only used if the tag does not supply a value,
+     * or the tag's value is unparseable.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AlwaysUseDefaultRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
@@ -640,18 +650,20 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     /**
      * Sets the alwaysUseDefaultRevenueValue value for this ConversionTracker.
      * 
-     * @param alwaysUseDefaultRevenueValue   * Controls whether conversion event values are taken from the
-     * tag snippet or taken
-     *                 from {@link ConversionTracker#defaultRevenueValue}.
-     * If alwaysUseDefaultRevenueValue
-     *                 is true, then conversion events will always use defaultRevenueValue,
-     * even if
-     *                 the tag has supplied a value when reporting the conversion
-     * event.
-     *                 If alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
-     * is used
-     *                 only if the tag does not supply a value (the tag's
-     * value is used if present).
+     * @param alwaysUseDefaultRevenueValue   * Controls whether conversion event values and currency codes
+     * are taken from the tag snippet or
+     *                 from {@link ConversionTracker#defaultRevenueValue}
+     * and
+     *                 {@link ConversionTracker#defaultRevenueCurrencyCode}.
+     * If alwaysUseDefaultRevenueValue is true,
+     *                 then conversion events will always use defaultRevenueValue
+     * and defaultRevenueCurrencyCode, even
+     *                 if the tag has supplied a value and/or code when reporting
+     * the conversion event.  If
+     *                 alwaysUseDefaultRevenueValue is false, then defaultRevenueValue
+     * and defaultRevenueCurrencyCode
+     *                 are only used if the tag does not supply a value,
+     * or the tag's value is unparseable.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AlwaysUseDefaultRevenueValue".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>

@@ -9,8 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for resuming {@link Order} objects. All {@link LineItem}
- *             objects within the order will resume as well.
+ *             The action used for resuming {@link Order} objects. {@link LineItem} objects within
+ *             the order that are eligble to resume will resume as well.
  *           
  * 
  * <p>Java class for ResumeOrders complex type.

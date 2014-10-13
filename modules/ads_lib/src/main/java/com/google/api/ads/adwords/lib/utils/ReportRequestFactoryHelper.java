@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
@@ -142,6 +143,18 @@ public class ReportRequestFactoryHelper {
             "https://developers.google.com/adwords/api/docs/guides/reporting-concepts#money"));
       }
       httpHeaders.set("returnMoneyInMicros", Boolean.toString(session.isReportMoneyInMicros()));
+    }
+    ReportingConfiguration reportingConfiguration = session.getReportingConfiguration();
+    if (reportingConfiguration != null) {
+      reportingConfiguration.validate(version);
+      if (reportingConfiguration.isSkipReportHeader() != null) {
+        httpHeaders.set("skipReportHeader",
+            Boolean.toString(reportingConfiguration.isSkipReportHeader()));
+      }
+      if (reportingConfiguration.isSkipReportSummary() != null) {
+        httpHeaders.set("skipReportSummary",
+            Boolean.toString(reportingConfiguration.isSkipReportSummary()));
+      }
     }
     return httpHeaders;
   }

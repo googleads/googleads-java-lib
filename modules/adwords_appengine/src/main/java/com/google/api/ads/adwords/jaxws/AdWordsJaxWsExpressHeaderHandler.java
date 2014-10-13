@@ -41,7 +41,9 @@ public class AdWordsJaxWsExpressHeaderHandler implements
   
   @VisibleForTesting
   static final String EXPRESS_BUSINESS_ID_LOCAL_PART = "expressBusinessId";
-
+  @VisibleForTesting
+  static final String PLUS_PAGE_ID_LOCAL_PART = "pageId";
+  
   @Inject
   public AdWordsJaxWsExpressHeaderHandler(JaxWsHandler jaxHandler,
       AdWordsApiConfiguration adWordsApiConfiguration) {
@@ -52,16 +54,26 @@ public class AdWordsJaxWsExpressHeaderHandler implements
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws ServiceException,
       AuthenticationException {
-    if (adWordsSession.getExpressBusinessId() != null) {
+    if (adWordsSession.getExpressBusinessId() != null
+        || adWordsSession.getExpressPlusPageId() != null) {
+      Preconditions.checkArgument(!(adWordsSession.getExpressBusinessId() != null
+          && adWordsSession.getExpressPlusPageId() != null),
+          "Both expressBusinessId and expressPlusPageId are not null. Please set "
+          + "expressBusinessId, expressPlusPageId or neither, but not both.");
       Preconditions.checkArgument(soapClient instanceof BindingProvider,
           "soapClient must be BindingProvider but was: %s", soapClient);
       BindingProvider bindingProvider = (BindingProvider) soapClient;
       String childNamespace = String.format("%s/express/%s",
-          adWordsApiConfiguration.getNamespacePrefix(),
-          adWordsServiceDescriptor.getVersion());
-      jaxWsHandler.setHeaderChildString(bindingProvider,
-          AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, childNamespace,
-          EXPRESS_BUSINESS_ID_LOCAL_PART, adWordsSession.getExpressBusinessId().toString());
+          adWordsApiConfiguration.getNamespacePrefix(), adWordsServiceDescriptor.getVersion());
+      if (adWordsSession.getExpressPlusPageId() != null) {
+        jaxWsHandler.setHeaderChildString(bindingProvider,
+            AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, childNamespace,
+            PLUS_PAGE_ID_LOCAL_PART, adWordsSession.getExpressPlusPageId().toString());
+      } else {
+        jaxWsHandler.setHeaderChildString(bindingProvider,
+            AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, childNamespace,
+            EXPRESS_BUSINESS_ID_LOCAL_PART, adWordsSession.getExpressBusinessId().toString());
+      }
     }
   }
 }

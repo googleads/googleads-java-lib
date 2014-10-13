@@ -57,13 +57,13 @@ public class CreateProposalLineItems {
 
   // Set the ID of the proposal that the proposal line items will belong to.
   private static final String PROPOSAL_ID = "INSERT_PROPOSAL_ID_HERE";
-  
+
   // Set the ID of the product that the proposal line items should be created from.
   private static final String PRODUCT_ID = "INSERT_PRODUCT_ID_HERE";
-  
+
   // Set the ID of the rate card that the proposal line items should be priced with.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long proposalId, long rateCardId, long productId) throws Exception {
     // Get the ProposalLineItemService.
@@ -98,20 +98,20 @@ public class CreateProposalLineItems {
     proposalLineItem.setRateCardId(rateCardId);
     proposalLineItem.setProductId(productId);
     proposalLineItem.setTargeting(targeting);
-    
+
     // Set the length of the proposal line item to run.
     proposalLineItem.setStartDateTime(DateTimes.toDateTime(Instant.now(), "America/New_York"));
     proposalLineItem.setEndDateTime(
         DateTimes.toDateTime(Instant.now().plus(Duration.standardDays(30L)), "America/New_York"));
-    
+
     // Set delivery specifications for the proposal line item.
     proposalLineItem.setDeliveryRateType(DeliveryRateType.EVENLY);
     proposalLineItem.setCreativeRotationType(CreativeRotationType.OPTIMIZED);
-    
+
     // Set billing specifications for the proposal line item.
     proposalLineItem.setBillingCap(BillingCap.CAPPED_CUMULATIVE);
     proposalLineItem.setBillingSource(BillingSource.THIRD_PARTY_VOLUME);
-    
+
     // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
     // for a total value of $2.
     Goal goal = new Goal();
@@ -122,7 +122,7 @@ public class CreateProposalLineItems {
     proposalLineItem.setCost(new Money("USD", 2000000L));
     proposalLineItem.setCostPerUnit(new Money("USD", 2000000L));
     proposalLineItem.setRateType(RateType.CPM);
-    
+
     // Create the proposal line item on the server.
     ProposalLineItem[] proposalLineItems = proposalLineItemService.createProposalLineItems(
         new ProposalLineItem[] {proposalLineItem});

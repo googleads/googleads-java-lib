@@ -67,8 +67,8 @@ public class CreateProductTemplates {
         + "targeting Chrome browsers with product segmentation on ad units and geo targeting.");
     
     // Set the name macro which will be used to generate the names of the proposal line items.
-    // This will create a segmentation based on the line item type and ad unit.
-    productTemplate.setNameMacro("<line-item-type> - <ad-unit> - <template-name>");
+    // This will create a segmentation based on the line item type, ad unit, and location.
+    productTemplate.setNameMacro("<line-item-type> - <ad-unit> - <template-name> - <location>");
 
     // Set the product type so the created proposal line items will be trafficked in DFP.
     productTemplate.setProductType(ProductType.DFP);

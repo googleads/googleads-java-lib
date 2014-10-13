@@ -29,6 +29,10 @@ public class Campaign  implements java.io.Serializable {
      *                 be addressed by name. If you wish to rename a campaign,
      * you must provide
      *                 the ID.
+     *                 <span class="constraint MatchesRegex">Campaign names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String name;
@@ -194,6 +198,10 @@ public class Campaign  implements java.io.Serializable {
      *                 be addressed by name. If you wish to rename a campaign,
      * you must provide
      *                 the ID.
+     *                 <span class="constraint MatchesRegex">Campaign names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -216,6 +224,10 @@ public class Campaign  implements java.io.Serializable {
      *                 be addressed by name. If you wish to rename a campaign,
      * you must provide
      *                 the ID.
+     *                 <span class="constraint MatchesRegex">Campaign names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span>
      *                 <span class="constraint StringLength">This string
      * must not be empty.</span>
      */

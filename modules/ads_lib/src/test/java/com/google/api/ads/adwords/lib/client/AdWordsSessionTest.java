@@ -15,12 +15,15 @@
 package com.google.api.ads.adwords.lib.client;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
@@ -64,14 +67,47 @@ public class AdWordsSessionTest {
 
     AdWordsSession session =
         new AdWordsSession.Builder().from(config).withOAuth2Credential(credential).build();
-    assertEquals(session.getClientCustomerId(), "1234567890");
-    assertEquals(session.getUserAgent(), "FooBar");
-    assertEquals(session.getDeveloperToken(), "devTokendevTokendevTok");
-    assertEquals(session.isPartialFailure(), Boolean.FALSE);
+    assertEquals("1234567890", session.getClientCustomerId());
+    assertEquals("FooBar", session.getUserAgent());
+    assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
+    assertFalse(session.isPartialFailure());
     assertNull("reportMoneyInMicros should not be set if not explicitly specified in the config",
         session.isReportMoneyInMicros());
+    assertNull("reporting configuration should be null if no reporting options are in the config",
+        session.getReportingConfiguration());
   }
 
+  /**
+   * Tests that the builder correctly reads properties from a configuration when reporting
+   * options are included in the configuration.
+   */
+  @Test
+  public void testReadPropertiesFromConfigurationWithReportingConfig() throws ValidationException {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.adwords.clientCustomerId", "1234567890");
+    config.setProperty("api.adwords.userAgent", "FooBar");
+    config.setProperty("api.adwords.developerToken", "devTokendevTokendevTok");
+    config.setProperty("api.adwords.isPartialFailure", "false");
+    config.setProperty("api.adwords.reporting.skipHeader", "true");
+    config.setProperty("api.adwords.reporting.skipSummary", "false");
+
+    AdWordsSession session =
+        new AdWordsSession.Builder().from(config).withOAuth2Credential(credential).build();
+    assertEquals("1234567890", session.getClientCustomerId());
+    assertEquals("FooBar", session.getUserAgent());
+    assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
+    assertFalse(session.isPartialFailure());
+    assertNull("reportMoneyInMicros should not be set if not explicitly specified in the config",
+        session.isReportMoneyInMicros());
+    assertNotNull(
+        "reporting configuration should not be null if reporting options are in the config",
+        session.getReportingConfiguration());
+    assertTrue(session.getReportingConfiguration().isSkipReportHeader());
+    assertFalse(session.getReportingConfiguration().isSkipReportSummary());
+  }
+  
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
@@ -152,10 +188,10 @@ public class AdWordsSessionTest {
         .withDeveloperToken("developerToken")
         .build();
 
-    assertEquals(adWordsSession.getUserAgent(), "FooBar");
-    assertSame(adWordsSession.getOAuth2Credential(), credential);
-    assertEquals(adWordsSession.getEndpoint(), AdWordsSession.DEFAULT_ENDPOINT);
-    assertEquals(adWordsSession.getDeveloperToken(), "developerToken");
+    assertEquals("FooBar", adWordsSession.getUserAgent());
+    assertSame(credential, adWordsSession.getOAuth2Credential());
+    assertEquals(AdWordsSession.DEFAULT_ENDPOINT, adWordsSession.getEndpoint());
+    assertEquals("developerToken", adWordsSession.getDeveloperToken());
   }
 
   /**
@@ -172,10 +208,10 @@ public class AdWordsSessionTest {
         .withDeveloperToken("developerToken")
         .build();
 
-    assertEquals(adWordsSession.getUserAgent(), "FooBar");
-    assertSame(adWordsSession.getOAuth2Credential(), credential);
-    assertEquals(adWordsSession.getEndpoint(), "https://www.google.com");
-    assertEquals(adWordsSession.getDeveloperToken(), "developerToken");
+    assertEquals("FooBar", adWordsSession.getUserAgent());
+    assertSame(credential, adWordsSession.getOAuth2Credential());
+    assertEquals("https://www.google.com", adWordsSession.getEndpoint());
+    assertEquals("developerToken", adWordsSession.getDeveloperToken());
     assertNull("reportMoneyInMicros should not be set if not explicitly set in the builder",
         adWordsSession.isReportMoneyInMicros());
   }
@@ -257,7 +293,7 @@ public class AdWordsSessionTest {
    * Tests that setting authentication to null errors.
    */
   @Test
-  public void testSetAutentication_null() throws Exception {
+  public void testSetAuthentication_null() throws Exception {
     Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
     
     AdWordsSession adWordsSession = new AdWordsSession.Builder().withUserAgent("FooBar")
@@ -289,8 +325,8 @@ public class AdWordsSessionTest {
         .withDeveloperToken("developerToken")
         .enableReportMoneyInMicros()
         .build();
-    assertEquals("reportMoneyInMicros should be set when explicitly enabled in the builder",
-        true, adWordsSession.isReportMoneyInMicros());
+    assertTrue("reportMoneyInMicros should be set when explicitly enabled in the builder",
+        adWordsSession.isReportMoneyInMicros());
   }
   
   /**
@@ -307,7 +343,28 @@ public class AdWordsSessionTest {
         .withDeveloperToken("developerToken")
         .disableReportMoneyInMicros()
         .build();
-    assertEquals("reportMoneyInMicros should be set when explicitly disabled in the builder",
-        false, adWordsSession.isReportMoneyInMicros());
+    assertFalse("reportMoneyInMicros should be set when explicitly disabled in the builder",
+        adWordsSession.isReportMoneyInMicros());
+  }
+  
+  @Test
+  public void testBuilder_withReportingConfiguration() throws Exception {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+    
+    ReportingConfiguration reportingConfiguration =
+        new ReportingConfiguration.Builder().skipReportHeader(true).skipReportSummary(true).build();
+    
+    AdWordsSession adWordsSession = new AdWordsSession.Builder()
+        .withUserAgent("FooBar")
+        .withEndpoint("https://www.google.com")
+        .withOAuth2Credential(credential)
+        .withDeveloperToken("developerToken")
+        .withReportingConfiguration(reportingConfiguration)
+        .disableReportMoneyInMicros()
+        .build();
+    
+    ReportingConfiguration sessionReportingConfig = adWordsSession.getReportingConfiguration();
+    assertNotNull("reporting configuration should not be null when passed to the builder",
+        sessionReportingConfig);
   }
 }

@@ -61,9 +61,7 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      * <i>only</i> for users
      *                     whose location is related to the given locations.
      * 
-     *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span> */
+     *                     <p>The default value is DONT_CARE. */
     private com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingPositiveGeoTargetType positiveGeoTargetType;
 
     /* The setting used for negative geotargeting in this particular
@@ -76,9 +74,7 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      *                     <i>except</i> those whose location is related
      * to the given locations.
      *                     
-     *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span> */
+     *                     <p>The default value is DONT_CARE. */
     private com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingNegativeGeoTargetType negativeGeoTargetType;
 
     public GeoTargetTypeSetting() {
@@ -108,8 +104,6 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      *                     whose location is related to the given locations.
      * 
      *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingPositiveGeoTargetType getPositiveGeoTargetType() {
         return positiveGeoTargetType;
@@ -129,8 +123,6 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      *                     whose location is related to the given locations.
      * 
      *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span>
      */
     public void setPositiveGeoTargetType(com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingPositiveGeoTargetType positiveGeoTargetType) {
         this.positiveGeoTargetType = positiveGeoTargetType;
@@ -151,8 +143,6 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      * to the given locations.
      *                     
      *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span>
      */
     public com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingNegativeGeoTargetType getNegativeGeoTargetType() {
         return negativeGeoTargetType;
@@ -173,8 +163,6 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2014
      * to the given locations.
      *                     
      *                     <p>The default value is DONT_CARE.
-     *                     <span class="constraint CampaignType">This field
-     * may only be set to DONT_CARE for campaign channel type SHOPPING.</span>
      */
     public void setNegativeGeoTargetType(com.google.api.ads.adwords.axis.v201402.cm.GeoTargetTypeSettingNegativeGeoTargetType negativeGeoTargetType) {
         this.negativeGeoTargetType = negativeGeoTargetType;

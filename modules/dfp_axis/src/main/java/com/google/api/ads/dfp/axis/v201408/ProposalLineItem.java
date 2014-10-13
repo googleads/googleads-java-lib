@@ -100,7 +100,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * line item with CPM or CPC as the
      *                 rate type, so that the scheduled delivery goal could
      * be relaxed. This attribute is calculated
-     *                 from {@link Goal#units} and {@link #unitsBoughtBuffer},
+     *                 from {@link Goal#units} and {@link #contractedQuantityBuffer},
      * and is readonly. */
     private java.lang.Long scheduledQuantity;
 
@@ -827,7 +827,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * line item with CPM or CPC as the
      *                 rate type, so that the scheduled delivery goal could
      * be relaxed. This attribute is calculated
-     *                 from {@link Goal#units} and {@link #unitsBoughtBuffer},
+     *                 from {@link Goal#units} and {@link #contractedQuantityBuffer},
      * and is readonly.
      */
     public java.lang.Long getScheduledQuantity() {
@@ -842,7 +842,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * line item with CPM or CPC as the
      *                 rate type, so that the scheduled delivery goal could
      * be relaxed. This attribute is calculated
-     *                 from {@link Goal#units} and {@link #unitsBoughtBuffer},
+     *                 from {@link Goal#units} and {@link #contractedQuantityBuffer},
      * and is readonly.
      */
     public void setScheduledQuantity(java.lang.Long scheduledQuantity) {

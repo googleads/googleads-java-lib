@@ -16,7 +16,12 @@
     <attribute name="api.name" />
     <attribute name="src.output.dir" />
     <sequential>
-      <generateJaxWs propertiespath="@{properties.loc}" apiname="@{api.name}" apiframework="${api.framework}" gensrcdir="@{src.output.dir}" />
+      <generateJaxWs propertiespath="@{properties.loc}"
+        apiname="@{api.name}"
+        apiframework="${api.framework}"
+        gensrcdir="@{src.output.dir}"
+        rpcGetBinaryLocation="${rpcget}"
+        maxWsdlDownloadAttempts="5" />
     </sequential>
   </macrodef>
 </project>

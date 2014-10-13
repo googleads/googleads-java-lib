@@ -2070,7 +2070,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}. When revenue is summed up to
-     *                 proposal level additional adjustment is applied.
+     *                 the {@link Proposal} level, an additional adjustment is applied.
      *               
      * 
      */
@@ -2079,7 +2079,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}. When revenue
-     *                 is summed up to proposal level additional adjustment is applied.
+     *                 is summed up to the {@link Proposal} level, an additional adjustment is applied.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
      *               
@@ -2090,7 +2090,7 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission. When
-     *                 revenue is summed up to proposal level additional adjustment is applied.
+     *                 revenue is summed up to the {@link Proposal} level, an additional adjustment is applied.
      *               
      * 
      */
@@ -2099,8 +2099,8 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue in the local currency of the {@link ProposalLineItem}, including
-     *                 agency commission. When revenue is summed up to proposal level additional adjustment is
-     *                 applied.
+     *                 agency commission. When revenue is summed up to the {@link Proposal} level, an additional
+     *                 adjustment is applied.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
      *               
@@ -2111,7 +2111,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
-     *                 without proposal additional adjustment applied.
+     *                 without a {@link Proposal} level additional adjustment applied.
      *               
      * 
      */
@@ -2120,7 +2120,8 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
-     *                 without proposal additional adjustment applied, and including agency commission.
+     *                 without a {@link Proposal} level additional adjustment applied, and including agency
+     *                 commission.
      *               
      * 
      */

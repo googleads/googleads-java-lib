@@ -78,7 +78,7 @@ public interface ProductServiceInterface extends java.rmi.Remote {
      *         <tr>
      *         <td>{@code lastModifiedDateTime}</td>
      *         <td>{@link Product#lastModifiedDateTime}</td>
-     *         <td>No</td>
+     *         <td>Yes</td>
      *         <td>Yes</td>
      *         </tr>
      *         </table>

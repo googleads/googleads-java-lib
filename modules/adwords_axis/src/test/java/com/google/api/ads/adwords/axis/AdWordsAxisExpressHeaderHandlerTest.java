@@ -29,6 +29,8 @@ import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import org.apache.axis.client.Stub;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -38,6 +40,7 @@ import org.mockito.MockitoAnnotations;
  * 
  * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class AdWordsAxisExpressHeaderHandlerTest {
 
   private AdWordsAxisExpressHeaderHandler expressHandler;
@@ -74,18 +77,48 @@ public class AdWordsAxisExpressHeaderHandlerTest {
   }
   
   /**
-   * Tests that the business ID will NOT be set on the header when business ID
-   * is NOT set on the AdWordsSession.
+   * Tests that neither the business ID nor the plus page ID will be set on the header when
+   * neither business ID nor plus page ID is set on the AdWordsSession.
    */
   @Test
-  public void testSetHeaders_withoutBusinessId() throws ServiceException, AuthenticationException {
+  public void testSetHeaders_withoutBusinessId_withoutPlusPageId() throws ServiceException,
+      AuthenticationException {
     when(adWordsSession.getExpressBusinessId()).thenReturn(null);
-    
+    when(adWordsSession.getExpressPlusPageId()).thenReturn(null);
     expressHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
     
-    // setHeaders should be a no-op when there's no business ID on the session
+    // setHeaders should be a no-op when there's no business ID or plus page ID on the session
     verify(axisHandler, never()).setHeaderChild(Mockito.<Stub>any(), anyString(), anyString(),
         any());    
+  }
+
+  /**
+   * Tests that the plus page ID will be set on the header when plus page ID
+   * is set on the AdWordsSession.
+   */
+  @Test
+  public void testSetHeaders_withPlusPageId() throws ServiceException, AuthenticationException {
+    String plusPageId = "1234567890";
+    when(adWordsSession.getExpressBusinessId()).thenReturn(null);
+    when(adWordsSession.getExpressPlusPageId()).thenReturn(plusPageId);
+    expressHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
+  
+    verify(axisHandler).setHeaderChild(soapClient,
+        AdWordsAxisHeaderHandler.REQUEST_HEADER_LOCAL_PART,
+        AdWordsAxisExpressHeaderHandler.PLUS_PAGE_ID_LOCAL_PART, plusPageId);
+  }
+
+  /**
+   * Tests that the plus page ID will NOT be set on the header when plus page ID
+   * is NOT set on the AdWordsSession.
+   */
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetHeaders_bothIdsOnSession_fails() throws ServiceException,
+      AuthenticationException {
+    when(adWordsSession.getExpressBusinessId()).thenReturn(12345L);
+    when(adWordsSession.getExpressPlusPageId()).thenReturn("ABCDE");
+
+    expressHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
   }
 
 }

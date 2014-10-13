@@ -69,8 +69,8 @@ public class BudgetOrder  implements java.io.Serializable {
     private java.lang.String budgetOrderName;
 
     /* A 12 digit billing ID assigned to the user by Google. This
-     * can be passed in as
-     *                 "123456789012" or "1234-5678-9012".
+     * must be passed in
+     *                 as a string with dashes, e.g. "1234-5678-9012".
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
@@ -87,6 +87,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
+     *                 If specified, this must be passed in as a string with
+     * dashes, e.g. "1234-5678-9012".
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using
@@ -364,8 +366,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * Gets the primaryBillingId value for this BudgetOrder.
      * 
      * @return primaryBillingId   * A 12 digit billing ID assigned to the user by Google. This
-     * can be passed in as
-     *                 "123456789012" or "1234-5678-9012".
+     * must be passed in
+     *                 as a string with dashes, e.g. "1234-5678-9012".
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
@@ -386,8 +388,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * Sets the primaryBillingId value for this BudgetOrder.
      * 
      * @param primaryBillingId   * A 12 digit billing ID assigned to the user by Google. This
-     * can be passed in as
-     *                 "123456789012" or "1234-5678-9012".
+     * must be passed in
+     *                 as a string with dashes, e.g. "1234-5678-9012".
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
@@ -411,6 +413,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
+     *                 If specified, this must be passed in as a string with
+     * dashes, e.g. "1234-5678-9012".
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using
@@ -431,6 +435,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * on mutate.add.
      *                 If this requirement was not communicated to the user,
      * the user may ignore this parameter.
+     *                 If specified, this must be passed in as a string with
+     * dashes, e.g. "1234-5678-9012".
      *                 <span class="constraint Billing">This element only
      * applies if manager account is whitelisted for new billing backend.</span>
      * <span class="constraint Selectable">This field can be selected using

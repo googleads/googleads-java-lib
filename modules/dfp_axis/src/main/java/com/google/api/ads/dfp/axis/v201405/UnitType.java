@@ -19,8 +19,10 @@ public class UnitType implements java.io.Serializable {
 
     public static final java.lang.String _IMPRESSIONS = "IMPRESSIONS";
     public static final java.lang.String _CLICKS = "CLICKS";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final UnitType IMPRESSIONS = new UnitType(_IMPRESSIONS);
     public static final UnitType CLICKS = new UnitType(_CLICKS);
+    public static final UnitType UNKNOWN = new UnitType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static UnitType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

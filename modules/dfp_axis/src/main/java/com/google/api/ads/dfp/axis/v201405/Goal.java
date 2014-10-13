@@ -30,7 +30,13 @@ public class Goal  implements java.io.Serializable {
      * or
      *                 {@link LineItemType#HOUSE}, it represents the percentage
      * of remaining impressions
-     *                 reserved. */
+     *                 reserved.
+     *                 
+     *                 <p>If this is a secondary goal, it represents the
+     * number of impressions or conversions that
+     *                 the line item will stop serving at if reached. For
+     * valid line item types, see
+     *                 {@link LineItem#secondaryGoals}. */
     private java.lang.Long units;
 
     public Goal() {
@@ -82,6 +88,12 @@ public class Goal  implements java.io.Serializable {
      *                 {@link LineItemType#HOUSE}, it represents the percentage
      * of remaining impressions
      *                 reserved.
+     *                 
+     *                 <p>If this is a secondary goal, it represents the
+     * number of impressions or conversions that
+     *                 the line item will stop serving at if reached. For
+     * valid line item types, see
+     *                 {@link LineItem#secondaryGoals}.
      */
     public java.lang.Long getUnits() {
         return units;
@@ -106,6 +118,12 @@ public class Goal  implements java.io.Serializable {
      *                 {@link LineItemType#HOUSE}, it represents the percentage
      * of remaining impressions
      *                 reserved.
+     *                 
+     *                 <p>If this is a secondary goal, it represents the
+     * number of impressions or conversions that
+     *                 the line item will stop serving at if reached. For
+     * valid line item types, see
+     *                 {@link LineItem#secondaryGoals}.
      */
     public void setUnits(java.lang.Long units) {
         this.units = units;

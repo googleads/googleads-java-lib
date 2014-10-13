@@ -1910,7 +1910,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}. When revenue is summed up to
-     *                 proposal level additional adjustment is applied.
+     *                 the {@link Proposal} level, an additional adjustment is applied.
      *                 <p>
      *                 Replaced with {@code CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE} beginning in v201308.
      *               
@@ -1921,7 +1921,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}. This revenue is the raw revenue
-     *                 without proposal additional adjustment applied.
+     *                 without a {@link Proposal} level additional adjustment applied.
      *                 <p>
      *                 Replaced with {@code CONTRACTED_REVENUE_CONTRACTED_PLACEMENT_NET_REVENUE} beginning in v201308.
      *               

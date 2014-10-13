@@ -122,11 +122,36 @@
     <attribute name="src.output.dir"/>
     <attribute name="schema.url"/>
     <sequential>
-      <xjc schema="@{schema.url}"
+      <var name="schema.temp.wsdl.file" unset="true"/>
+      <tempfile prefix="wsdl" suffix=".wsdl" property="schema.temp.wsdl.file"/>
+      <copy-wsdl wsdlurl="@{schema.url}"
+          outputfile="${schema.temp.wsdl.file}"/>
+      <xjc schema="${schema.temp.wsdl.file}"
           destdir="@{src.output.dir}">
         <arg value="-p" />
         <arg value="com.google.api.ads.@{api.name}.lib.jaxb.@{version}"/>
       </xjc>
+    </sequential>
+  </macrodef>
+
+  <!-- ===================================================================== -->
+  <!-- Macro: Downloads the WSDL at @wsdlurl to @outputfile.                 -->
+  <!-- ===================================================================== -->
+  <macrodef name="copy-wsdl">
+    <attribute name="wsdlurl"/>
+    <attribute name="outputfile"/>
+    <sequential>
+      <exec executable="${curl}">
+        <arg line="--cacert ${cacert}"/>
+        <arg line="--retry 5"/>
+        <!-- silent output except show errors -->
+        <arg line="--silent"/>
+        <arg line="--show-error"/>
+        <!-- do not write error doc to output file -->
+        <arg line="--fail"/>
+        <arg line="--output @{outputfile}"/>
+        <arg line="@{wsdlurl}"/>
+      </exec>
     </sequential>
   </macrodef>
 </project>

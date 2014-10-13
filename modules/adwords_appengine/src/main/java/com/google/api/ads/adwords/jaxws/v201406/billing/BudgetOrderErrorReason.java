@@ -46,7 +46,8 @@ public enum BudgetOrderErrorReason {
 
     /**
      * 
-     *                 Customer is not whitelisted for new billing.
+     *                 The request contains a field that is only available if the manager account
+     *                 is whitelisted for new billing backend.
      *               
      * 
      */

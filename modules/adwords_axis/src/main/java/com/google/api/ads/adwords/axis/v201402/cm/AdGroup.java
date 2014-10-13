@@ -34,7 +34,11 @@ public class AdGroup  implements java.io.Serializable {
 
     /* Name of this ad group (at most 255 UTF-8 full-width characters).
      * This field is required and should not be {@code null} for ADD operations
-     * from v201309 version. */
+     * from v201309 version.
+     *                 <span class="constraint MatchesRegex">AdGroup names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span> */
     private java.lang.String name;
 
     /* Status of this ad group. */
@@ -190,6 +194,10 @@ public class AdGroup  implements java.io.Serializable {
      * @return name   * Name of this ad group (at most 255 UTF-8 full-width characters).
      * This field is required and should not be {@code null} for ADD operations
      * from v201309 version.
+     *                 <span class="constraint MatchesRegex">AdGroup names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -202,6 +210,10 @@ public class AdGroup  implements java.io.Serializable {
      * @param name   * Name of this ad group (at most 255 UTF-8 full-width characters).
      * This field is required and should not be {@code null} for ADD operations
      * from v201309 version.
+     *                 <span class="constraint MatchesRegex">AdGroup names
+     * must not contain any null (code point 0x0), NL line feed (code point
+     * 0xA) or carriage return (code point 0xD) characters. This is checked
+     * by the regular expression '[^\x00\x0A\x0D]*'.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

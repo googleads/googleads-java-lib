@@ -4,6 +4,7 @@
 <!-- ======================================================================= -->
 <project name="common-generate-axis">
   <import file="common.ant.xml"/>
+  <import file="common-generate.ant.xml"/>
 
   <taskdef resource="axis-tasks.properties" classpathref="classpath.common"/>
 
@@ -19,18 +20,24 @@
     <attribute name="service.package"/>
     <attribute name="src.output.dir"/>
     <sequential>
+      <var name="service.temp.wsdl.file" unset="true"/>
+      <tempfile prefix="wsdl" suffix=".wsdl" property="service.temp.wsdl.file"/>
+      <echo message="@{service.wsdl.url}"/>
+      <copy-wsdl wsdlurl="@{service.wsdl.url}"
+          outputfile="${service.temp.wsdl.file}"/>
       <property name="namespacemapping.file"
           location="@{src.output.dir}/namespacemapping"/>
       <create-namespacemapping-file file="${namespacemapping.file}"
           namespacemapping="@{namespacemapping}"/>
       <axis-wsdl2java
           all="true"
-          url="@{service.wsdl.url}"
+          url="${service.temp.wsdl.file}"
           verbose="false"
           output="@{src.output.dir}"
           typemappingversion="1.2"
           debug="false"
           wrapArrays="true"
+          failonnetworkerrors="true"
           namespacemappingfile="${namespacemapping.file}"/>
       <delete quiet="true" file="${namespacemapping.file}"/>
     </sequential>

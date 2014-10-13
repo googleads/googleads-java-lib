@@ -21,11 +21,13 @@ public class UserListType implements java.io.Serializable {
     public static final java.lang.String _REMARKETING = "REMARKETING";
     public static final java.lang.String _LOGICAL = "LOGICAL";
     public static final java.lang.String _EXTERNAL_REMARKETING = "EXTERNAL_REMARKETING";
+    public static final java.lang.String _RULE_BASED = "RULE_BASED";
     public static final java.lang.String _SIMILAR = "SIMILAR";
     public static final UserListType UNKNOWN = new UserListType(_UNKNOWN);
     public static final UserListType REMARKETING = new UserListType(_REMARKETING);
     public static final UserListType LOGICAL = new UserListType(_LOGICAL);
     public static final UserListType EXTERNAL_REMARKETING = new UserListType(_EXTERNAL_REMARKETING);
+    public static final UserListType RULE_BASED = new UserListType(_RULE_BASED);
     public static final UserListType SIMILAR = new UserListType(_SIMILAR);
     public java.lang.String getValue() { return _value_;}
     public static UserListType fromValue(java.lang.String value)

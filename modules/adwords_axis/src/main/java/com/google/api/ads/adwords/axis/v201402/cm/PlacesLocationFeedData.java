@@ -16,7 +16,7 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /* Required authentication token (from OAuth API) for the email. */
     private com.google.api.ads.adwords.axis.v201402.cm.OAuthInfo oAuthInfo;
 
-    /* The email address for the Google My Business location feed.
+    /* Email address used to access the Google My Business account.
      * <span class="constraint Required">This field is required and should
      * not be {@code null} when it is contained within {@link Operator}s
      * : ADD.</span> */
@@ -77,7 +77,7 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @return emailAddress   * The email address for the Google My Business location feed.
+     * @return emailAddress   * Email address used to access the Google My Business account.
      * <span class="constraint Required">This field is required and should
      * not be {@code null} when it is contained within {@link Operator}s
      * : ADD.</span>
@@ -90,7 +90,7 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @param emailAddress   * The email address for the Google My Business location feed.
+     * @param emailAddress   * Email address used to access the Google My Business account.
      * <span class="constraint Required">This field is required and should
      * not be {@code null} when it is contained within {@link Operator}s
      * : ADD.</span>

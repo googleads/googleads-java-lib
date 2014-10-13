@@ -9,11 +9,7 @@ package com.google.api.ads.adwords.axis.v201406.cm;
 
 
 /**
- * Represents errors in bid multipliers
- *             
- *             TODO(pbaheti): Calling this BidMultiplierError results
- * in grubby proto
- *             conflicts. There may be a better way to do this.
+ * Represents errors in bid multipliers.
  */
 public class MultiplierError  extends com.google.api.ads.adwords.axis.v201406.cm.ApiError  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.MultiplierErrorReason reason;

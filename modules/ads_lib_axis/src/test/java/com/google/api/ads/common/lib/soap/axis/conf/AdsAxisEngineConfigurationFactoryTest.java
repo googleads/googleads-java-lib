@@ -35,6 +35,8 @@ import org.apache.axis.configuration.EngineConfigurationFactoryFinder;
 import org.apache.axis.server.AxisServer;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -52,6 +54,7 @@ import java.util.List;
  *
  * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class AdsAxisEngineConfigurationFactoryTest {
 
   private AdsAxisEngineConfigurationFactory adsAxisConfigFactory;

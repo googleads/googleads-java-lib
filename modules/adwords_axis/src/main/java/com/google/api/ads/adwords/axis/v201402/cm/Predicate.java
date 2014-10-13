@@ -29,10 +29,11 @@ public class Predicate  implements java.io.Serializable {
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201402.cm.PredicateOperator operator;
 
-    /* The values by which to filter the field. The {@link Operator#IN}
-     * and {@link
-     *                 Operator#NOT_IN} take multiple values. All others
-     * take a single value.
+    /* The values by which to filter the field. The {@link Operator#CONTAINS_ALL},
+     * {@link Operator#CONTAINS_ANY}, {@link Operator#CONTAINS_NONE}, {@link
+     * Operator#IN}
+     *                 and {@link Operator#NOT_IN} take multiple values.
+     * All others take a single value.
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required
@@ -115,10 +116,11 @@ public class Predicate  implements java.io.Serializable {
     /**
      * Gets the values value for this Predicate.
      * 
-     * @return values   * The values by which to filter the field. The {@link Operator#IN}
-     * and {@link
-     *                 Operator#NOT_IN} take multiple values. All others
-     * take a single value.
+     * @return values   * The values by which to filter the field. The {@link Operator#CONTAINS_ALL},
+     * {@link Operator#CONTAINS_ANY}, {@link Operator#CONTAINS_NONE}, {@link
+     * Operator#IN}
+     *                 and {@link Operator#NOT_IN} take multiple values.
+     * All others take a single value.
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required
@@ -132,10 +134,11 @@ public class Predicate  implements java.io.Serializable {
     /**
      * Sets the values value for this Predicate.
      * 
-     * @param values   * The values by which to filter the field. The {@link Operator#IN}
-     * and {@link
-     *                 Operator#NOT_IN} take multiple values. All others
-     * take a single value.
+     * @param values   * The values by which to filter the field. The {@link Operator#CONTAINS_ALL},
+     * {@link Operator#CONTAINS_ANY}, {@link Operator#CONTAINS_NONE}, {@link
+     * Operator#IN}
+     *                 and {@link Operator#NOT_IN} take multiple values.
+     * All others take a single value.
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required

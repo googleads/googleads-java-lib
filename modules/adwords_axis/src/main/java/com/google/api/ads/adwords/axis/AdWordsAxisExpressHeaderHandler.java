@@ -38,6 +38,8 @@ public class AdWordsAxisExpressHeaderHandler implements
 
   @VisibleForTesting
   static final String EXPRESS_BUSINESS_ID_LOCAL_PART = "expressBusinessId";
+  @VisibleForTesting
+  static final String PLUS_PAGE_ID_LOCAL_PART = "pageId";
   
   @Inject
   public AdWordsAxisExpressHeaderHandler(AxisHandler axisHandler) {
@@ -47,12 +49,22 @@ public class AdWordsAxisExpressHeaderHandler implements
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws ServiceException,
       AuthenticationException {
-    if (adWordsSession.getExpressBusinessId() != null) {
+    if (adWordsSession.getExpressBusinessId() != null
+        || adWordsSession.getExpressPlusPageId() != null) {
+      Preconditions.checkArgument(!(adWordsSession.getExpressBusinessId() != null
+          && adWordsSession.getExpressPlusPageId() != null),
+          "Both expressBusinessId and expressPlusPageId are not null. Please set "
+          + "expressBusinessId, expressPlusPageId or neither, but not both.");
       Preconditions.checkArgument(soapClient instanceof Stub,
           "soapClient must be Stub but was: %s", soapClient);
       Stub stub = (Stub) soapClient;
-      axisHandler.setHeaderChild(stub, AdWordsAxisHeaderHandler.REQUEST_HEADER_LOCAL_PART,
-          EXPRESS_BUSINESS_ID_LOCAL_PART, adWordsSession.getExpressBusinessId());
+      if (adWordsSession.getExpressPlusPageId() != null) {
+        axisHandler.setHeaderChild(stub, AdWordsAxisHeaderHandler.REQUEST_HEADER_LOCAL_PART,
+            PLUS_PAGE_ID_LOCAL_PART, adWordsSession.getExpressPlusPageId());
+      } else {
+        axisHandler.setHeaderChild(stub, AdWordsAxisHeaderHandler.REQUEST_HEADER_LOCAL_PART,
+            EXPRESS_BUSINESS_ID_LOCAL_PART, adWordsSession.getExpressBusinessId());
+      }
     }
   }
 }

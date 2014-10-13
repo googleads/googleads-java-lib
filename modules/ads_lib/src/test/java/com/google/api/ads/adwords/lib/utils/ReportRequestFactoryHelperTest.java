@@ -25,6 +25,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration;
 import com.google.api.ads.adwords.lib.utils.logging.AdWordsServiceLoggers;
 import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
@@ -73,6 +74,9 @@ public class ReportRequestFactoryHelperTest {
   /** Whether <code>version<code> is supposed to support returnMoneyInMicros. */
   private boolean isSupportsReturnMoneyInMicros;
 
+  /** The reporting configuration to use for the test. */
+  private ReportingConfiguration reportingConfiguration;
+
   @Mock
   private AuthorizationHeaderProvider authorizationHeaderProvider;
   @Mock
@@ -93,9 +97,23 @@ public class ReportRequestFactoryHelperTest {
   @Parameters
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
-    parameters.add(new Object[] {"v201402", true});
-    parameters.add(new Object[] {"v201406", false});
-    parameters.add(new Object[] {null, true});
+    Boolean[] booleanValues = new Boolean[]{ true, false, null };
+    for (Boolean isSkipReportHeader : booleanValues) {
+      for (Boolean isSkipReportSummary : booleanValues) {
+        ReportingConfiguration reportingConfig = null;
+        if (isSkipReportHeader != null || isSkipReportSummary != null) {
+          reportingConfig = new ReportingConfiguration.Builder()
+              .skipReportHeader(isSkipReportHeader)
+              .skipReportSummary(isSkipReportSummary)
+              .build();
+        }
+        parameters.add(new Object[] {"v201402", true, null});
+        parameters.add(new Object[] {"v201406", false, null});
+        parameters.add(new Object[] {"v201409", false, reportingConfig});
+        parameters.add(new Object[] {null, true, reportingConfig});
+      }
+    }
+
     return parameters;
   }
   
@@ -106,9 +124,11 @@ public class ReportRequestFactoryHelperTest {
    * @param isSupportsReturnMoneyInMicros true if <code>version</code> is supposed to support
    *        returnMoneyInMicros
    */
-  public ReportRequestFactoryHelperTest(String version, boolean isSupportsReturnMoneyInMicros) {
+  public ReportRequestFactoryHelperTest(String version, boolean isSupportsReturnMoneyInMicros,
+      ReportingConfiguration reportingConfiguration) {
     this.version = version;
     this.isSupportsReturnMoneyInMicros = isSupportsReturnMoneyInMicros;
+    this.reportingConfiguration = reportingConfiguration;
   }
   
   @Before
@@ -172,6 +192,7 @@ public class ReportRequestFactoryHelperTest {
         .withClientCustomerId("fooclientcustomerid")
         .withOAuth2Credential(credential)
         .withUserAgent("userAgent")
+        .withReportingConfiguration(reportingConfiguration)
         .build();
     session.setReportMoneyInMicros(returnMoneyInMicros);
     when(authorizationHeaderProvider.getAuthorizationHeader(session, ENDPOINT_URL.build()))
@@ -214,6 +235,26 @@ public class ReportRequestFactoryHelperTest {
           headers.get("returnMoneyInMicros"));
     }
     assertTrue((headers.getUserAgent()).contains("foouseragent"));
+    
+    if (reportingConfiguration == null) {
+      assertFalse("skipReportHeader should not be in the header if no reporting config is set",
+          headers.containsKey("skipReportHeader"));
+      assertFalse("skipReportSummary should not be in the header if no reporting config is set",
+          headers.containsKey("skipReportSummary"));
+    } else {
+      String expectedSkipHeaderHeader =
+          reportingConfiguration.isSkipReportHeader() != null
+              ? Boolean.toString(reportingConfiguration.isSkipReportHeader())
+              : null;
+      String expectedSkipSummaryHeader =
+          reportingConfiguration.isSkipReportSummary() != null
+              ? Boolean.toString(reportingConfiguration.isSkipReportSummary())
+              : null;
+      assertEquals("skipReportHeader not equal to the reporting config setting",
+          expectedSkipHeaderHeader, headers.get("skipReportHeader"));
+      assertEquals("skipReportSummary not equal to the reporting config setting",
+          expectedSkipSummaryHeader, headers.get("skipReportSummary"));
+    }
   }
 
   private HttpTransport createTransport(final LowLevelHttpRequest request) {

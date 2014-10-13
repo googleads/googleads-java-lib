@@ -69,8 +69,8 @@ public enum ComputedStatus {
 
     /**
      * 
-     *                 The {@link LineItem} needs at least one more creative to be associated with
-     *                 it. This type is deprecated and please use {@link ComputedStatus.INACTIVE} instead.
+     *                 The {@link LineItem} needs at least one more creative to be associated with it.
+     *                 <p> Replaced with {@code INACTIVE} beginning in V201411.
      *               
      * 
      */

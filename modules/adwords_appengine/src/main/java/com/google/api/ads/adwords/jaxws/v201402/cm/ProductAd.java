@@ -13,10 +13,7 @@ import javax.xml.bind.annotation.XmlType;
  *             listing ad</a> in the AdWords user interface). A product ad displays
  *             product data (managed using the Google Merchant Center) that is
  *             pulled from the Google base product feed specified in the parent campaign's
- *             {@linkplain ProductExtension product extension}.
- *             
- *             <p>Product ads are only available to a limited set of advertisers. If you
- *             are not eligible to use product ads, they will not serve.</p>
+ *             {@linkplain ShoppingSetting shopping setting}.
  *             
  *             <p class="caution"><b>Caution:</b> Product ads do not use {@link #url url} or
  *             {@link #displayUrl displayUrl}; setting these fields on a product ad will

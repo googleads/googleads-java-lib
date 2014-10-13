@@ -67,24 +67,43 @@ public class AdWordsJaxWsExpressHeaderHandlerTest {
    */
   @Test
   public void testSetHeaders_withBusinessId() throws Exception {
-    testSetHeaders(123456789L, times(1));
+    testSetHeaders(123456789L, times(1), null, never());
   }
 
   /**
-   * Tests setHeaders when business ID is null on the session.
+   * Tests setHeaders when business ID and plus page ID are both null on the session.
    */
   @Test
-  public void testSetHeaders_withoutBusinessId() throws Exception {
-    testSetHeaders(null, never());
+  public void testSetHeaders_withoutBusinessId_withoutPlusPageId() throws Exception {
+    testSetHeaders(null, never(), null, never());
   }
 
   /**
-   * Tests setHeaders using the provided businessId. Will verify that setHeaderChild was (or was
-   * not) invoked according to setHeaderChildVerificationMode.
+   * Tests setHeaders when plus page ID is not null on the session.
    */
-  private void testSetHeaders(Long businessId, VerificationMode setHeaderChildVerificationMode)
+  @Test
+  public void testSetHeaders_withPlusPageId() throws Exception {
+    testSetHeaders(null, never(), "ABCDE", times(1));
+  }
+  
+  /**
+   * Tests setHeaders when business ID and plus page ID are both not null on the session.
+   */
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetHeaders_withBusinessId_withPlusPageId_fails() throws Exception {
+    testSetHeaders(123456789L, never(), "ABCDE", never());
+  }
+
+  /**
+   * Tests setHeaders using the provided businessId and plusPageId. Will verify that setHeaderChild
+   * was (or was not) invoked for each header according to its corresponding verification mode.
+   */
+  private void testSetHeaders(Long businessId, 
+      VerificationMode setBusinessIdHeaderChildVerificationMode, String plusPageId,
+      VerificationMode setPageIdHeaderChildVerificationMode)
       throws Exception {
     when(adWordsSession.getExpressBusinessId()).thenReturn(businessId);
+    when(adWordsSession.getExpressPlusPageId()).thenReturn(plusPageId);
 
     String version = "v201406";
     String namespacePrefix = "http://www.example.com";
@@ -96,10 +115,14 @@ public class AdWordsJaxWsExpressHeaderHandlerTest {
 
     expressHandler.setHeaders(bindingProvider, adWordsSession, adWordsServiceDescriptor);
 
-    verify(jaxHandler, setHeaderChildVerificationMode).setHeaderChildString(bindingProvider,
-        AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, expectedNamespace,
+    verify(jaxHandler, setBusinessIdHeaderChildVerificationMode).setHeaderChildString(
+        bindingProvider, AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, expectedNamespace,
         AdWordsJaxWsExpressHeaderHandler.EXPRESS_BUSINESS_ID_LOCAL_PART,
         businessId == null ? null : businessId.toString());
+    verify(jaxHandler, setPageIdHeaderChildVerificationMode).setHeaderChildString(bindingProvider,
+        AdWordsJaxWsHeaderHandler.REQUEST_HEADER_LOCAL_PART, expectedNamespace,
+        AdWordsJaxWsExpressHeaderHandler.PLUS_PAGE_ID_LOCAL_PART,
+        plusPageId == null ? null : plusPageId);
   }
 
 }

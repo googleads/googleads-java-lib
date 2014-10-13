@@ -14,55 +14,22 @@ import javax.xml.bind.annotation.XmlType;
  *             filtering:
  *             
  *             <table>
- *             <tr>
- *             <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
- *             </tr>
- *             <tr>
- *             <td>{@code costType}</td>
- *             <td>{@link LineItem#costType}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code id}</td>
- *             <td>{@link LineItem#id}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code lineItemType}</td>
- *             <td>{@link LineItem#lineItemType}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code name}</td>
- *             <td>{@link LineItem#name}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code orderId}</td>
- *             <td>{@link LineItem#orderId}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code status}</td>
- *             <td>{@link LineItem#status}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code unitsBought}</td>
- *             <td>{@link LineItem#unitsBought}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code deliveryRateType}</td>
- *             <td>{@link LineItem#deliveryRateType}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code lastModifiedDateTime}</td>
- *             <td>{@link LineItem#lastModifiedDateTime}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code creationDateTime}</td>
- *             <td>{@link LineItem#creationDateTime}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code isMissingCreatives}</td>
- *             <td>{@link LineItem#isMissingCreatives}</td>
- *             </tr>
- *             </table>
- *             
+ * <tr><th scope="col">PQL property</th><th scope="col">Entity property</th> </tr>
+ * <tr><td><code>CostType</code></td><td>{@link LineItem#costType}</td></tr>
+ * <tr><td><code>CreationDateTime</code></td><td>{@link LineItem#creationDateTime}</td></tr>
+ * <tr><td><code>DeliveryRateType</code></td><td>{@link LineItem#deliveryRateType}</td></tr>
+ * <tr><td><code>EndDateTime</code></td><td>{@link LineItem#endDateTime}</td></tr>
+ * <tr><td><code>ExternalId</code></td><td>{@link LineItem#externalId}</td></tr>
+ * <tr><td><code>Id</code></td><td>{@link LineItem#id}</td></tr>
+ * <tr><td><code>IsMissingCreatives</code></td><td>{@link LineItem#isMissingCreatives}</td></tr>
+ * <tr><td><code>LastModifiedDateTime</code></td><td>{@link LineItem#lastModifiedDateTime}</td></tr>
+ * <tr><td><code>LineItemType</code></td><td>{@link LineItem#lineItemType}</td></tr>
+ * <tr><td><code>Name</code></td><td>{@link LineItem#name}</td></tr>
+ * <tr><td><code>OrderId</code></td><td>{@link LineItem#orderId}</td></tr>
+ * <tr><td><code>StartDateTime</code></td><td>{@link LineItem#startDateTime}</td></tr>
+ * <tr><td><code>Status</code></td><td>{@link LineItem#status}</td></tr>
+ * <tr><td><code>UnitsBought</code></td><td>{@link LineItem#unitsBought}</td></tr>
+ * </table>
  *             @param filterStatement a Publisher Query Language statement used to filter
  *             a set of line items.
  *             @return the line items that match the given filter

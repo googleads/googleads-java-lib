@@ -31,7 +31,7 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201406.cm.Money targetCpa;
@@ -77,7 +77,7 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -93,7 +93,7 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
      *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 0.</span>
+     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

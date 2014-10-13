@@ -8,10 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents errors in bid multipliers
- *             
- *             TODO(pbaheti): Calling this BidMultiplierError results in grubby proto
- *             conflicts. There may be a better way to do this.
+ *             Represents errors in bid multipliers.
  *           
  * 
  * <p>Java class for MultiplierError complex type.

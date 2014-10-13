@@ -9,9 +9,9 @@ package com.google.api.ads.dfp.axis.v201405;
 
 
 /**
- * The action used for resuming {@link Order} objects. All {@link
- * LineItem}
- *             objects within the order will resume as well.
+ * The action used for resuming {@link Order} objects. {@link LineItem}
+ * objects within
+ *             the order that are eligble to resume will resume as well.
  */
 public class ResumeOrders  extends com.google.api.ads.dfp.axis.v201405.OrderAction  implements java.io.Serializable {
     /* Indicates whether the inventory check should be skipped when

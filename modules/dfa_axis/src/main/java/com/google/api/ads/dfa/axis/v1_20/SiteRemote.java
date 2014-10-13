@@ -8,8 +8,8 @@
 package com.google.api.ads.dfa.axis.v1_20;
 
 public interface SiteRemote extends java.rmi.Remote {
-    public com.google.api.ads.dfa.axis.v1_20.SiteRecordSet getSitesByCriteria(com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void linkDfaSiteToSiteDirectorySite(long dfaSiteId, long siteDirectorySiteId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.SiteRecordSet getSitesByCriteria(com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[] linkDfaSitesToSiteDirectorySites(com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingRequest[] requests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[] importSiteDirectorySites(com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportRequest[] requests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SiteSaveResult saveSiteDirectorySite(com.google.api.ads.dfa.axis.v1_20.Site site) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

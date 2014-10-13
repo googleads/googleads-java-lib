@@ -121,6 +121,20 @@
       <var name="service.wsdl.url.arg" unset="true"/>
       <var name="service.wsdl.url.arg"
           value="${api.@{api.name}.server.default}/@{group.url.part}/@{version}/@{service}${api.@{api.name}.wsdl.postfix}"/> 
+      <if>
+        <equals arg1="${api.@{api.name}.server.default}" arg2="qa"/>
+        <then>
+          <echo message="${api.@{api.name}.server.qa.@{group.url.part}}/0/api/adwords/@{group.url.part}/@{version}/@{service}${api.@{api.name}.wsdl.postfix}"/>
+          <tempfile prefix="wsdl" suffix=".wsdl" property="@{version}@{service}.temp.wsdl.file"/>            
+          <exec executable="${rpcget}" output="${@{version}@{service}.temp.wsdl.file}">
+            <arg line="-extra_headers=&quot;X-GFE-SSL:true&quot;"/>
+            <arg line="${api.@{api.name}.server.qa.@{group.url.part}}/0/api/adwords/@{group.url.part}/@{version}/@{service}${api.@{api.name}.wsdl.postfix}"/>              
+          </exec>
+          <makeurl file="${@{version}@{service}.temp.wsdl.file}" property="@{version}@{service}.fileurl"/>
+          <var name="service.wsdl.url.arg"
+              value="${@{version}@{service}.fileurl}"/> 
+        </then>
+      </if>    
       <echo message="${service.wsdl.url.arg}"/>
       <generate-java-for-service
           namespacemapping=
@@ -239,6 +253,19 @@
           <var name="service.xsd.url.arg" unset="true"/>
           <var name="service.xsd.url.arg"
               value="${api.adwords.server.default}/${api.adwords.version.@{version}.schema.@{schemaKey}}"/>   
+          <if>
+            <equals arg1="${api.@{api.name}.server.default}" arg2="qa"/>
+            <then>
+              <tempfile prefix="xsd" suffix=".xsd" property="@{version}.temp.xsd.file"/>           
+              <exec executable="${rpcget}" output="${@{version}.temp.xsd.file}">
+                <arg line="-extra_headers=&quot;X-GFE-SSL:true&quot;"/>
+                <arg line="${api.adwords.server.qa.report}/0/api/adwords/${api.adwords.version.@{version}.schema.@{schemaKey}}"/>              
+              </exec>              
+              <makeurl file="${@{version}.temp.xsd.file}" property="@{version}.fileurl"/>
+              <var name="service.xsd.url.arg"
+                  value="${@{version}.fileurl}"/> 
+            </then>
+          </if>
           <echo message="${service.xsd.url.arg}"/>
           <generate-jaxb-java-for-version-of-an-api
               api.name="@{api.name}" version="@{version}"

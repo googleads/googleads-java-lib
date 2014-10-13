@@ -458,7 +458,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 ??land Islands
+     *                 ?land Islands
      *               
      * 
      */
@@ -546,7 +546,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Barth??lemy
+     *                 Saint Barth?lemy
      *               
      * 
      */
@@ -786,7 +786,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Cura??ao
+     *                 Cura?ao
      *               
      * 
      */
@@ -1938,7 +1938,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 R??union
+     *                 R?union
      *               
      * 
      */
@@ -2106,7 +2106,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 S??o Tom?? and Pr??ncipe
+     *                 S?o Tom? and Pr?ncipe
      *               
      * 
      */

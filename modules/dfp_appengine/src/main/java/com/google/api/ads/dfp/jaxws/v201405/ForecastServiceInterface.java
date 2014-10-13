@@ -20,13 +20,13 @@ import javax.xml.ws.ResponseWrapper;
  *       
  *       <p>Test networks are unable to provide forecasts that would be
  *       comparable to the production environment because forecasts require traffic
- *       history. In the sandbox environment, a consistent behavior can be expected
+ *       history. For test networks, a consistent behavior can be expected
  *       for forecast requests, according to the following rules:
  *       
  *       <table>
  *       <tr>
- *       <th colspan="2">Inputs<br/>({@code LineItem} Fields)</th>
- *       <th colspan="4">Outputs<br/>({@code Forecast} Fields)</th>
+ *       <th colspan="2">Inputs<br/>({@link LineItem} Fields)</th>
+ *       <th colspan="4">Outputs<br/>({@link Forecast} Fields)</th>
  *       </tr>
  *       <tr>
  *       <th>{@link LineItem#lineItemType lineItemType}</th>
@@ -74,17 +74,33 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       <tr>
  *       <td>Not Sponsorship</td>
- *       <td>&lt;= 1,000,000</td>
- *       <td>unitsBought * 2</td>
- *       <td>availableUnits * 3</td>
+ *       <td>&lt;= 500,000</td>
+ *       <td>3 * unitsBought / 2</td>
+ *       <td>unitsBought * 6</td>
  *       <td>600,000<br/>For prospective: 0</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
  *       <td>Not Sponsorship</td>
- *       <td>&gt; 1,000,000</td>
+ *       <td>&gt; 500,000 and &lt;= 1,000,000</td>
  *       <td>unitsBought / 2</td>
- *       <td>availableUnits * 3</td>
+ *       <td>unitsBought * 6</td>
+ *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>&ndash;&ndash;</td>
+ *       </tr>
+ *       <tr>
+ *       <td>Not Sponsorship</td>
+ *       <td>&gt; 1,000,000 and &lt;= 1,500,000</td>
+ *       <td>unitsBought / 2</td>
+ *       <td>3 * unitsBought / 2</td>
+ *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>&ndash;&ndash;</td>
+ *       </tr>
+ *       <tr>
+ *       <td>Not Sponsorship</td>
+ *       <td>&gt; 1,500,000</td>
+ *       <td>unitsBought / 4</td>
+ *       <td>3 * unitsBought / 2</td>
  *       <td>600,000<br/>For prospective: 0</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>

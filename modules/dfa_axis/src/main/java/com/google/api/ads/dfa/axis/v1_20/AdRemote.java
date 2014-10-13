@@ -23,8 +23,8 @@ public interface AdRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.UserList[] getUserListsByCriteria(com.google.api.ads.dfa.axis.v1_20.UserListSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdSaveResult saveAd(com.google.api.ads.dfa.axis.v1_20.AdBase ad) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeAdAssociationSaveResultSet updateCreativeAssignmentProperties(com.google.api.ads.dfa.axis.v1_20.CreativeAdAssociationUpdateRequest associationUpdateRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.AdType[] getAdTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdCopyResult[] copyAds(com.google.api.ads.dfa.axis.v1_20.AdCopyRequest[] adCopyRequests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.AdType[] getAdTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.Country[] getCountries() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.Browser[] getBrowsers() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.City[] getCities(com.google.api.ads.dfa.axis.v1_20.CitySearchCriteria criteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

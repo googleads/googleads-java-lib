@@ -36,6 +36,8 @@ import com.google.common.collect.Sets;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -51,6 +53,7 @@ import java.util.Set;
  *
  * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class ReportServiceLoggerTest {
 
   @Mock

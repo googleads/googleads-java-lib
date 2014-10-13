@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.SoapHeader;
  *     &lt;extension base="{https://adwords.google.com/api/adwords/cm/v201402}SoapHeader">
  *       &lt;sequence>
  *         &lt;element name="expressBusinessId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+ *         &lt;element name="pageId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -32,13 +33,15 @@ import com.google.api.ads.adwords.jaxws.v201402.cm.SoapHeader;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ExpressSoapHeader", propOrder = {
-    "expressBusinessId"
+    "expressBusinessId",
+    "pageId"
 })
 public class ExpressSoapHeader
     extends SoapHeader
 {
 
     protected Long expressBusinessId;
+    protected String pageId;
 
     /**
      * Gets the value of the expressBusinessId property.
@@ -62,6 +65,30 @@ public class ExpressSoapHeader
      */
     public void setExpressBusinessId(Long value) {
         this.expressBusinessId = value;
+    }
+
+    /**
+     * Gets the value of the pageId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPageId() {
+        return pageId;
+    }
+
+    /**
+     * Sets the value of the pageId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPageId(String value) {
+        this.pageId = value;
     }
 
 }

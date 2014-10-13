@@ -18,17 +18,17 @@ package com.google.api.ads.dfp.axis.v201311;
  *             From least to most, these are:
  *             
  *             <dl>
- *             <li>Available units -- How many units can be booked without
- * affecting any other line items.
- *             Booking more than this number can cause lower- and same-priority
- * line items to underdeliver.
- *             <li>Possible units -- How many units can be booked without
- * affecting any higher priority line
- *             items. Booking more than this number can cause the line
- * item to underdeliver.
- *             <li>Matched (forecast) units -- How many units satisfy
- * all specified
- *             criteria.
+ *             <dt>Available units
+ *             <dd>How many units can be booked without affecting any
+ * other line items. Booking more than this
+ *             number can cause lower- and same-priority line items to
+ * underdeliver.
+ *             <dt>Possible units
+ *             <dd>How many units can be booked without affecting any
+ * higher priority line items. Booking more
+ *             than this number can cause the line item to underdeliver.
+ * <dt>Matched (forecast) units
+ *             <dd>How many units satisfy all specified criteria.
  *             </dl>
  *             
  *             <p>Underdelivery is caused by overbooking. However, if

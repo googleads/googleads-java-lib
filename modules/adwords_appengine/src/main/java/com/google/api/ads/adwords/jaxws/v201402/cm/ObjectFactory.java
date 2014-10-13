@@ -30,6 +30,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SoapResponseHeader }
+     * 
+     */
+    public SoapResponseHeader createSoapResponseHeader() {
+        return new SoapResponseHeader();
+    }
+
+    /**
+     * Create an instance of {@link SoapHeader }
+     * 
+     */
+    public SoapHeader createSoapHeader() {
+        return new SoapHeader();
+    }
+
+    /**
+     * Create an instance of {@link ApiException }
+     * 
+     */
+    public ApiException createApiException() {
+        return new ApiException();
+    }
+
+    /**
      * Create an instance of {@link OperatorError }
      * 
      */
@@ -99,14 +123,6 @@ public class ObjectFactory {
      */
     public NullError createNullError() {
         return new NullError();
-    }
-
-    /**
-     * Create an instance of {@link ApiException }
-     * 
-     */
-    public ApiException createApiException() {
-        return new ApiException();
     }
 
     /**
@@ -195,22 +211,6 @@ public class ObjectFactory {
      */
     public DistinctError createDistinctError() {
         return new DistinctError();
-    }
-
-    /**
-     * Create an instance of {@link SoapHeader }
-     * 
-     */
-    public SoapHeader createSoapHeader() {
-        return new SoapHeader();
-    }
-
-    /**
-     * Create an instance of {@link SoapResponseHeader }
-     * 
-     */
-    public SoapResponseHeader createSoapResponseHeader() {
-        return new SoapResponseHeader();
     }
 
     /**

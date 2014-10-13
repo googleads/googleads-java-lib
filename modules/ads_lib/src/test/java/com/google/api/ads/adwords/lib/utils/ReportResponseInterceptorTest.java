@@ -41,6 +41,8 @@ import com.google.api.client.util.GenericData;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -53,6 +55,7 @@ import java.io.InputStream;
  *
  * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class ReportResponseInterceptorTest {
 
   @Mock

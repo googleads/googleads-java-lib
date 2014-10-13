@@ -51,7 +51,7 @@ public class GetProposalLineItemsByStatement {
         .where("proposalId = :proposalId")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-        .withBindVariableValue("productId", proposalId);
+        .withBindVariableValue("proposalId", proposalId);
 
     // Default for total result set size.
     int totalResultSetSize = 0;

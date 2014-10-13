@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>1.33.1-SNAPSHOT</version>
+    <version>1.34.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,7 +30,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>dfp-axis</artifactId>
-  <version>1.33.1-SNAPSHOT</version>
+  <version>1.34.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>DFP Axis classes</name>
@@ -92,12 +92,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.33.1-SNAPSHOT</version>
+      <version>1.34.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib-axis</artifactId>
-      <version>1.33.1-SNAPSHOT</version>
+      <version>1.34.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -108,7 +108,7 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>1.33.1-SNAPSHOT</version>
+      <version>1.34.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>

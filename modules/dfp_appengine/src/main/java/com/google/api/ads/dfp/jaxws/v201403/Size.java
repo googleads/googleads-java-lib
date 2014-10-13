@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Represents the dimensions of an {@link AdUnit}, {@link LineItem} or {@link Creative}.
  *             <p>
- *             For interstitial size (out-of-page), {@code Size} must be 1x1.
+ *             For interstitial size (out-of-page) and native size, {@code Size} must be 1x1.
  *           
  * 
  * <p>Java class for Size complex type.

@@ -1,3 +1,18 @@
+1.34.0 - 10/10/2014
+-------------------
+AdWords:
+  - Added support and examples for v201409.
+
+DFA:
+  - Removed obsolete DFA6 examples. For more information, see the
+    [DCM upgrade guide](https://developers.google.com/doubleclick-advertisers/docs/upgrading).
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.33.0 - 09/11/2014
 -------------------
 AdWords:
