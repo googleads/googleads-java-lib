@@ -14,9 +14,9 @@ public interface SpotlightRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.SpotlightActivitySaveResult saveSpotlightActivity(com.google.api.ads.dfa.axis.v1_20.SpotlightActivity spotlightActivity) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SpotlightConfigurationSaveResult saveSpotlightConfiguration(com.google.api.ads.dfa.axis.v1_20.SpotlightConfiguration spotlightConfiguration) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSaveResult saveSpotlightActivityGroup(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroup spotlightActivityGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[] getAvailableCustomSpotlightVariables() throws java.rmi.RemoteException;
     public void deleteSpotlightActivity(long spolightActivityId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void deleteSpotlightActivityGroup(long spolightActivityGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[] getAvailableCustomSpotlightVariables() throws java.rmi.RemoteException;
     public com.google.api.ads.dfa.axis.v1_20.StandardVariable[] getAvailableStandardVariables() throws java.rmi.RemoteException;
     public com.google.api.ads.dfa.axis.v1_20.Country[] getCountriesByCriteria(com.google.api.ads.dfa.axis.v1_20.CountrySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupRecordSet getSpotlightActivityGroups(com.google.api.ads.dfa.axis.v1_20.SpotlightActivityGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

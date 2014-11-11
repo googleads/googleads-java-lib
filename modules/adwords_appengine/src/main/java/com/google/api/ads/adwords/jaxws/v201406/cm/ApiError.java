@@ -56,6 +56,16 @@ import com.google.api.ads.adwords.jaxws.v201406.video.VideoBiddingError;
     "apiErrorType"
 })
 @XmlSeeAlso({
+    TargetingGroupError.class,
+    ReportError.class,
+    TimeSeriesError.class,
+    VideoBiddingError.class,
+    SortingError.class,
+    SegmentationError.class,
+    PersistenceError.class,
+    EntityNotFoundError.class,
+    AdsApiError.class,
+    AccessError.class,
     OperatorError.class,
     InternalApiError.class,
     CollectionSizeError.class,
@@ -71,17 +81,7 @@ import com.google.api.ads.adwords.jaxws.v201406.video.VideoBiddingError;
     RangeError.class,
     AuthorizationError.class,
     DistinctError.class,
-    RegionCodeError.class,
-    TargetingGroupError.class,
-    ReportError.class,
-    TimeSeriesError.class,
-    VideoBiddingError.class,
-    SortingError.class,
-    SegmentationError.class,
-    PersistenceError.class,
-    EntityNotFoundError.class,
-    AdsApiError.class,
-    AccessError.class
+    RegionCodeError.class
 })
 public abstract class ApiError {
 

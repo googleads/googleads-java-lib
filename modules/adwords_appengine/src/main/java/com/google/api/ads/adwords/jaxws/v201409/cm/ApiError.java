@@ -144,11 +144,11 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListError;
     ExpressBusinessError.class,
     PromotionError.class,
     ManagedCustomerServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201409.rm.CollectionSizeError.class,
-    UserListError.class,
     TargetingIdeaError.class,
     com.google.api.ads.adwords.jaxws.v201409.o.CurrencyCodeError.class,
-    TrafficEstimatorError.class
+    TrafficEstimatorError.class,
+    com.google.api.ads.adwords.jaxws.v201409.rm.CollectionSizeError.class,
+    UserListError.class
 })
 public abstract class ApiError {
 

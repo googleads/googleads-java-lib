@@ -24,6 +24,40 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("importSiteDirectorySites");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "requests"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSiteDirectorySiteImportRequest"), com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportRequest[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSiteDirectorySiteImportResult"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "importSiteDirectorySitesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getDfaSite");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dfaSiteId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "DfaSite"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.DfaSite.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getDfaSiteReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("linkDfaSiteToSiteDirectorySite");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dfaSiteId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
@@ -38,24 +72,7 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[0] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getSitesByCriteria");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SiteSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SiteRecordSet"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SiteRecordSet.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getSitesByCriteriaReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[1] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("linkDfaSitesToSiteDirectorySites");
@@ -64,23 +81,6 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSiteDirectoryDfaSiteMappingResult"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "linkDfaSitesToSiteDirectorySitesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[2] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("importSiteDirectorySites");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "requests"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSiteDirectorySiteImportRequest"), com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportRequest[].class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfSiteDirectorySiteImportResult"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "importSiteDirectorySitesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -109,23 +109,6 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
         _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getDfaSite");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dfaSiteId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "DfaSite"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.DfaSite.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getDfaSiteReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[5] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDfaSites");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "DfaSiteSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.DfaSiteSearchCriteria.class, false, false);
         oper.addParameter(param);
@@ -140,7 +123,7 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[6] = oper;
+        _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("saveDfaSite");
@@ -157,13 +140,30 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[7] = oper;
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAvailableDfaSiteContactTypes");
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfDfaSiteContactType"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.DfaSiteContactType[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableDfaSiteContactTypesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
+        _operations[7] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getSitesByCriteria");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SiteSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "SiteRecordSet"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.SiteRecordSet.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getSitesByCriteriaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -612,12 +612,90 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
         }
     }
 
-    public void linkDfaSiteToSiteDirectorySite(long dfaSiteId, long siteDirectorySiteId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[] importSiteDirectorySites(com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportRequest[] requests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "importSiteDirectorySites"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {requests});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.DfaSite getDfaSite(long dfaSiteId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getDfaSite"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(dfaSiteId)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.DfaSite) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.DfaSite) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.DfaSite.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public void linkDfaSiteToSiteDirectorySite(long dfaSiteId, long siteDirectorySiteId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -644,51 +722,12 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.SiteRecordSet getSitesByCriteria(com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getSitesByCriteria"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.SiteRecordSet) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.SiteRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SiteRecordSet.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
     public com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[] linkDfaSitesToSiteDirectorySites(com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingRequest[] requests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -707,45 +746,6 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
                 return (com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SiteDirectoryDfaSiteMappingResult[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[] importSiteDirectorySites(com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportRequest[] requests) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "importSiteDirectorySites"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {requests});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SiteDirectorySiteImportResult[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -800,51 +800,12 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.DfaSite getDfaSite(long dfaSiteId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getDfaSite"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(dfaSiteId)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.DfaSite) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.DfaSite) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.DfaSite.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
     public com.google.api.ads.dfa.axis.v1_20.DfaSiteRecordSet getDfaSites(com.google.api.ads.dfa.axis.v1_20.DfaSiteSearchCriteria sc) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -883,7 +844,7 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
+        _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -922,7 +883,7 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -941,6 +902,45 @@ public class SiteSoapBindingStub extends org.apache.axis.client.Stub implements 
                 return (com.google.api.ads.dfa.axis.v1_20.DfaSiteContactType[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.dfa.axis.v1_20.DfaSiteContactType[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.DfaSiteContactType[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.SiteRecordSet getSitesByCriteria(com.google.api.ads.dfa.axis.v1_20.SiteSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getSitesByCriteria"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.SiteRecordSet) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.SiteRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.SiteRecordSet.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

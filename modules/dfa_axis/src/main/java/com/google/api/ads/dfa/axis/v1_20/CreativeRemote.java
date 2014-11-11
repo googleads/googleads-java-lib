@@ -10,6 +10,7 @@ package com.google.api.ads.dfa.axis.v1_20;
 public interface CreativeRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.CreativeAssetRecordSet getCreativeAssets(com.google.api.ads.dfa.axis.v1_20.CreativeAssetSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet getCreatives(com.google.api.ads.dfa.axis.v1_20.CreativeSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.InStreamVideoCreative deleteInStreamAsset(long creativeId, java.lang.String assetName) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeSaveResult saveCreative(com.google.api.ads.dfa.axis.v1_20.CreativeBase creativeBase, long campaignId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeAssetSaveResult saveCreativeAsset(com.google.api.ads.dfa.axis.v1_20.CreativeAsset creativeAsset) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeCampaignAssociationResult[] associateCreativesToCampaign(long campaignId, long[] creativeIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
@@ -22,7 +23,6 @@ public interface CreativeRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.RichMediaCreativeBase replaceRichMediaCreativePackage(long creativeId, byte[] fileData) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public java.lang.String getRichMediaPreviewURL(long creativeId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.InStreamVideoCreative uploadInStreamAsset(com.google.api.ads.dfa.axis.v1_20.InStreamAssetUploadRequest assetUploadRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.InStreamVideoCreative deleteInStreamAsset(long creativeId, java.lang.String assetName) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.InStreamVideoCreative replaceInStreamAsset(java.lang.String assetName, com.google.api.ads.dfa.axis.v1_20.InStreamAssetUploadRequest assetReplaceRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.RichMediaStandardEvent[] getRichMediaStandardEvents() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.CreativeUploadSession generateCreativeUploadSession(com.google.api.ads.dfa.axis.v1_20.CreativeUploadSessionRequest creativeUploadSessionRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

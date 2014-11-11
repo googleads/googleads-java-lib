@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "BudgetOrderService", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201409", wsdlLocation = "file:/tmp/wsdl2121084334251085096.wsdl")
+@WebServiceClient(name = "BudgetOrderService", targetNamespace = "https://adwords.google.com/api/adwords/billing/v201409", wsdlLocation = "file:/tmp/wsdl4237009192036823889.wsdl")
 public class BudgetOrderService
     extends Service
 {
@@ -30,7 +30,7 @@ public class BudgetOrderService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/tmp/wsdl2121084334251085096.wsdl");
+            url = new URL("file:/tmp/wsdl4237009192036823889.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
