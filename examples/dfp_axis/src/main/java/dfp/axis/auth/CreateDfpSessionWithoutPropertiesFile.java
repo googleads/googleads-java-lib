@@ -19,8 +19,8 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
-import com.google.api.ads.dfp.axis.v201311.Network;
-import com.google.api.ads.dfp.axis.v201311.NetworkServiceInterface;
+import com.google.api.ads.dfp.axis.v201411.Network;
+import com.google.api.ads.dfp.axis.v201411.NetworkServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 

@@ -15,10 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupAd;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupAdOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupAdServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -31,14 +33,18 @@ import java.util.List;
 public final class AdGroupAdDelegate extends
     AbstractGetMutateDelegate<AdGroupAd, AdGroupAdOperation, AdGroupAdServiceInterface> {
 
+  // We use another delegate for the Labels, just for the mutateLabel operation.
+  private final AdGroupAdLabelDelegate adGroupAdLabelDelegate;
+
   /**
    * Default Constructor.
    *
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    */
   public AdGroupAdDelegate(AdWordsSession adWordsSession) {
-    super(adWordsSession, SelectorFields.AdGroupAd.all(), AdGroupAd.class, AdGroupAdOperation.class,
-        AdGroupAdServiceInterface.class);
+    super(adWordsSession, SelectorFields.AdGroupAd.all(), AdGroupAd.class,
+        AdGroupAdOperation.class, AdGroupAdServiceInterface.class);
+    adGroupAdLabelDelegate = new AdGroupAdLabelDelegate(adWordsSession, this.getService());
   }
 
   /**
@@ -47,9 +53,11 @@ public final class AdGroupAdDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public AdGroupAdDelegate(AdWordsSession adWordsSession, AdGroupAdServiceInterface service) {
-    super(adWordsSession, SelectorFields.AdGroupAd.all(), AdGroupAd.class, AdGroupAdOperation.class,
-        service);
+  @VisibleForTesting
+  AdGroupAdDelegate(AdWordsSession adWordsSession, AdGroupAdServiceInterface service) {
+    super(adWordsSession, SelectorFields.AdGroupAd.all(), AdGroupAd.class,
+        AdGroupAdOperation.class, service);
+    adGroupAdLabelDelegate = new AdGroupAdLabelDelegate(adWordsSession, service);
   }
 
   /**
@@ -62,12 +70,13 @@ public final class AdGroupAdDelegate extends
       List<SelectorFields.AdGroupAd> selectorFields) {
     super(adWordsSession, selectorFields, AdGroupAd.class, AdGroupAdOperation.class,
         AdGroupAdServiceInterface.class);
+    adGroupAdLabelDelegate = new AdGroupAdLabelDelegate(adWordsSession, this.getService());
   }
 
   /**
    * Retrieves AdGroupAds by adIds.
    *
-   * @param adId
+   * @param adId the Id of the Ad to retrieve the AdGroupAd
    * @return a list of AdGroupAds matching the adIds
    *         or a RemoteException/ApiException in the client library call
    * @throws RemoteException for communication-related exceptions
@@ -79,7 +88,7 @@ public final class AdGroupAdDelegate extends
   /**
    * Retrieves AdGroupAds by adGroupIds.
    *
-   * @param adGroupIds
+   * @param adGroupIds the Ids of the AdGroup to retrieve the AdGroupAds
    * @return a list of AdGroupAds matching the adGroupIds
    * @throws RemoteException for communication-related exceptions
    */
@@ -90,7 +99,7 @@ public final class AdGroupAdDelegate extends
   /**
    * Retrieves AdGroupAds by adGroupId.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup to retrieve the AdGroupAds
    * @return a list of AdGroupAds matching the adGroupId
    * @throws RemoteException for communication-related exceptions
    */
@@ -101,7 +110,7 @@ public final class AdGroupAdDelegate extends
   /**
    * Retrieves AdGroupAds by adGroupId.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup to retrieve the AdGroupAds
    * @param numberResults number of results
    * @param startIndex index of the first result
    * @return a list of AdGroupAds matching the adGroupId in the range (startIndex, numberResults)
@@ -110,5 +119,64 @@ public final class AdGroupAdDelegate extends
   public List<AdGroupAd> getByAdGroupId(Long adGroupId, int startIndex, int numberResults)
       throws RemoteException {
     return getByField(SelectorFields.AdGroupAd.ADGROUP_ID, adGroupId, startIndex, numberResults);
+  }
+
+  /**
+   * Retrieves AdGroupAds by labelIds.
+   *
+   * @param labelIds the Ids of the Labels to retrieve the AdGroupAds
+   * @return a list of AdGroupAds matching labelIds
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupAd> getByLabelIds(List<Long> labelIds) throws RemoteException {
+    return getByFieldContainsAny(SelectorFields.AdGroupAd.LABELS, labelIds);
+  }
+
+  /**
+   * Creates a link (AdGroupAdLabel) between AdGroupAds and Labels.
+   *
+   * @param adGroupAdLabels the AdGroupAdLabels to add
+   * @return the AdGroupAdLabels added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupAdLabel> insertAdGroupAdLabel(List<AdGroupAdLabel> adGroupAdLabels)
+      throws RemoteException {
+    return adGroupAdLabelDelegate.insert(adGroupAdLabels);
+  }
+
+  /**
+   * Creates a link (AdGroupAdLabel) between AdGroupAds and Labels.
+   *
+   * @param adGroupAdLabel the AdGroupAdLabel to add
+   * @return the AdGroupAdLabel added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupAdLabel insertAdGroupAdLabel(AdGroupAdLabel adGroupAdLabel)
+      throws RemoteException {
+    return adGroupAdLabelDelegate.insert(adGroupAdLabel);
+  }
+
+  /**
+   * Removes a link (AdGroupAdLabel) between AdGroupAds and Labels.
+   *
+   * @param adGroupAdLabels the AdGroupAdLabels to remove
+   * @return the AdGroupAdLabels removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupAdLabel> removeAdGroupAdLabel(List<AdGroupAdLabel> adGroupAdLabels)
+      throws RemoteException {
+    return adGroupAdLabelDelegate.remove(adGroupAdLabels);
+  }
+
+  /**
+   * Removes a link (AdGroupAdLabel) between AdGroupAds and Labels.
+   *
+   * @param adGroupAdLabel the AdGroupAdLabel to remove
+   * @return the AdGroupAdLabel removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupAdLabel removeAdGroupAdLabel(AdGroupAdLabel adGroupAdLabel)
+      throws RemoteException {
+    return adGroupAdLabelDelegate.remove(adGroupAdLabel);
   }
 }

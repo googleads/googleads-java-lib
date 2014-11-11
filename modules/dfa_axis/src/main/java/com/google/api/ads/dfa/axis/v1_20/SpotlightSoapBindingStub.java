@@ -127,15 +127,6 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
         _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAvailableCustomSpotlightVariables");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfCustomSpotlightVariable"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableCustomSpotlightVariablesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[6] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("deleteSpotlightActivity");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spolightActivityId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
@@ -148,7 +139,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[7] = oper;
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("deleteSpotlightActivityGroup");
@@ -163,6 +154,15 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
+        _operations[7] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAvailableCustomSpotlightVariables");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ArrayOfCustomSpotlightVariable"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableCustomSpotlightVariablesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -986,43 +986,12 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[] getAvailableCustomSpotlightVariables() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getAvailableCustomSpotlightVariables"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public void deleteSpotlightActivity(long spolightActivityId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
+        _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1054,7 +1023,7 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1077,6 +1046,37 @@ public class SpotlightSoapBindingStub extends org.apache.axis.client.Stub implem
               throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
          }
    }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[] getAvailableCustomSpotlightVariables() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getAvailableCustomSpotlightVariables"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.CustomSpotlightVariable[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
     }

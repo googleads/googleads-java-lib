@@ -571,6 +571,8 @@ import javax.xml.ws.ResponseWrapper;
  * <h4 id="Audience_Segment">Audience_Segment</h4>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
+ * <tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment.</td></tr>
+ * <tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment.</td></tr>
  * <tr><td>OwnerAccountId</td><td><code>Number</code></td><td>The owner account id of the audience segment.</td></tr>
  * <tr><td>OwnerName</td><td><code>Text</code></td><td>The owner name of the audience segment.</td></tr>
  * <tr><td>SegmentType</td><td><code>Text</code></td><td>The type of the audience segment.</td></tr>

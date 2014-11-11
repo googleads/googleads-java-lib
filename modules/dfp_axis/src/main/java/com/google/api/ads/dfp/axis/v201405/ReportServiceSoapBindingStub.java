@@ -167,13 +167,6 @@ public class ReportServiceSoapBindingStub extends org.apache.axis.client.Stub im
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "Authentication");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201405.Authentication.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201405.AuthenticationError.class;

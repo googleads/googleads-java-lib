@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.Feed;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.Feed;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -48,7 +49,8 @@ public final class FeedDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public FeedDelegate(AdWordsSession adWordsSession, FeedServiceInterface service) {
+  @VisibleForTesting
+  FeedDelegate(AdWordsSession adWordsSession, FeedServiceInterface service) {
     super(adWordsSession, SelectorFields.Feed.all(), Feed.class, FeedOperation.class, service);
   }
 

@@ -14,10 +14,11 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201406.o.CampaignEstimate;
-import com.google.api.ads.adwords.axis.v201406.o.TrafficEstimatorSelector;
-import com.google.api.ads.adwords.axis.v201406.o.TrafficEstimatorServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.o.CampaignEstimate;
+import com.google.api.ads.adwords.axis.v201409.o.TrafficEstimatorSelector;
+import com.google.api.ads.adwords.axis.v201409.o.TrafficEstimatorServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.Arrays;
@@ -39,14 +40,15 @@ public final class TrafficEstimatorDelegate
   public TrafficEstimatorDelegate(AdWordsSession adWordsSession) {
     super(adWordsSession, TrafficEstimatorServiceInterface.class);
   }
-  
+
   /**
    * Constructor with custom service.
    *
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public TrafficEstimatorDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  TrafficEstimatorDelegate(AdWordsSession adWordsSession,
       TrafficEstimatorServiceInterface service) {
     super(adWordsSession, service);
   }

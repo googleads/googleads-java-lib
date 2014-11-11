@@ -16,23 +16,25 @@ package com.google.api.ads.adwords.axis.utility.extension;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201406.billing.BillingAccount;
-import com.google.api.ads.adwords.axis.v201406.billing.BudgetOrder;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupAd;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201406.cm.Budget;
-import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignAdExtension;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus;
-import com.google.api.ads.adwords.axis.v201406.cm.Feed;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedItem;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedMapping;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201409.billing.BillingAccount;
+import com.google.api.ads.adwords.axis.v201409.billing.BudgetOrder;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201409.cm.Budget;
+import com.google.api.ads.adwords.axis.v201409.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtension;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.Feed;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedItem;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedMapping;
+import com.google.api.ads.adwords.axis.v201409.cm.Label;
+import com.google.api.ads.adwords.axis.v201409.cm.LabelStatus;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.OAuthException;
@@ -130,7 +132,7 @@ public final class ExtendedManagedCustomer {
    * @return the converted list of ExtendedManagedCustomers
    */
   public static List<ExtendedManagedCustomer> as(List<ManagedCustomer> managedCustomers,
-      AdWordsSession adWordsSession) {    
+      AdWordsSession adWordsSession) {
     List<ExtendedManagedCustomer> listExtended = Lists.newArrayListWithCapacity(managedCustomers
         .size());
     for (ManagedCustomer managedCustomer : managedCustomers) {
@@ -182,16 +184,29 @@ public final class ExtendedManagedCustomer {
   }
 
   /**
-   * Gets the Campaigns for the ExtendedManagedCustomer's ManagedCustomer by campaignStatus
+   * Gets the Campaigns for the ExtendedManagedCustomer's ManagedCustomer by campaignStatus.
    *
-   * @param campaignStatus
+   * @param campaignStatus the Status of the Campaign
    * @return all the Campaigns for the ExtendedManagedCustomer's
-   *         ManagedCustomer
+   *         ManagedCustomer that match the status
    * @throws RemoteException for communication-related exceptions
    */
   public List<Campaign> getCampaignsByStatus(CampaignStatus campaignStatus)
       throws RemoteException {
     return delegateLocator.getCampaignDelegate().getByStatus(campaignStatus);
+  }
+
+  /**
+   * Gets the Campaigns for the ExtendedManagedCustomer's ManagedCustomer by labelIds.
+   *
+   * @param labelIds the Ids of the Labels to get the Campaigns
+   * @return all the Campaigns for the ExtendedManagedCustomer's
+   *         ManagedCustomer that match the labelIds
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Campaign> getCampaignsByLabelIds(List<Long> labelIds)
+      throws RemoteException {
+    return delegateLocator.getCampaignDelegate().getByLabelIds(labelIds);
   }
 
   /**
@@ -209,7 +224,7 @@ public final class ExtendedManagedCustomer {
   /**
    * Gets one Campaign as Extended for the ExtendedManagedCustomer's ManagedCustomer.
    *
-   * @param campaignId
+   * @param campaignId the Id of the Campaign
    * @return all the ExtendedCampaign for the ExtendedManagedCustomer's
    *         ManagedCustomer
    * @throws RemoteException for communication-related exceptions
@@ -223,15 +238,29 @@ public final class ExtendedManagedCustomer {
    * Gets the ExtendedCampaigns for the ExtendedManagedCustomer's ManagedCustomer
    * by campaignStatus.
    *
-   @param campaignStatus
+   @param campaignStatus the status of the Campign
    * @return all the ExtendedCampaigns for the ExtendedManagedCustomer's
-   *         ManagedCustomer
+   *         ManagedCustomer that match the campaignStatus
    * @throws RemoteException for communication-related exceptions
    */
   public List<ExtendedCampaign> getExtendedCampaignsByStatus(CampaignStatus campaignStatus)
       throws RemoteException {
     return ExtendedCampaign.as(
         delegateLocator.getCampaignDelegate().getByStatus(campaignStatus), delegateLocator);
+  }
+
+  /**
+   * Gets the ExtendedCampaigns for the ExtendedManagedCustomer's ManagedCustomer by labelIds.
+   *
+   * @param labelIds the Ids of the Labels to get the ExtendedCampaigns
+   * @return all the ExtendedCampaigns for the ExtendedManagedCustomer's
+   *         ManagedCustomer that match the labelIds
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<ExtendedCampaign> getExtendedCampaignsByLabelIds(List<Long> labelIds)
+      throws RemoteException {
+    return ExtendedCampaign.as(
+        delegateLocator.getCampaignDelegate().getByLabelIds(labelIds), delegateLocator);
   }
 
   /**
@@ -376,7 +405,7 @@ public final class ExtendedManagedCustomer {
    * Inserts the BudgetOrder into the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> insertBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201406.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to insert
    * @return the updated BudgetOrder
@@ -390,7 +419,7 @@ public final class ExtendedManagedCustomer {
    * Updates the BudgetOrder for the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> updateBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201406.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to update
    * @return the updated BudgetOrder
@@ -404,7 +433,7 @@ public final class ExtendedManagedCustomer {
    * Removes the BudgetOrder from the ExtendedManagedCustomer's ManagedCustomer.
    *
    * <p class="note"><b>Note:</b> removeBudgetOrder is limited to one operation per request.
-   * See {@link com.google.api.ads.adwords.axis.v201406.billing.BudgetOrderServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.billing.BudgetOrderServiceInterface}.</p>
    *
    * @param budgetOrder the BudgetOrder to remove
    * @return the updated BudgetOrder
@@ -760,7 +789,7 @@ public final class ExtendedManagedCustomer {
    * @return the updated list of FeedMappings
    * @throws RemoteException for communication-related exceptions
    */
-  public List<FeedMapping> removeFeedMappings(List<FeedMapping> feedMappings) 
+  public List<FeedMapping> removeFeedMappings(List<FeedMapping> feedMappings)
       throws RemoteException {
     return delegateLocator.getFeedMappingDelegate().remove(feedMappings);
   }
@@ -804,7 +833,7 @@ public final class ExtendedManagedCustomer {
    * @return the updated CampaignFeed
    * @throws RemoteException for communication-related exceptions
    */
-  public List<CampaignFeed> insertCampaignFeeds(List<CampaignFeed> campaignFeeds) 
+  public List<CampaignFeed> insertCampaignFeeds(List<CampaignFeed> campaignFeeds)
       throws RemoteException {
     return delegateLocator.getCampaignFeedDelegate().insert(campaignFeeds);
   }
@@ -868,7 +897,7 @@ public final class ExtendedManagedCustomer {
   /**
    * Gets the AdGroupFeeds for the ExtendedManagedCustomer's ManagedCustomer by feedId.
    *
-   * @param feedId
+   * @param feedId the Id of the Feed to the the AdGroupFeed
    * @return all the AdGroupFeeds for the ExtendedManagedCustomer's ManagedCustomer
    * @throws RemoteException for communication-related exceptions
    */
@@ -943,5 +972,98 @@ public final class ExtendedManagedCustomer {
   public List<AdGroupFeed> removeAdGroupFeeds(List<AdGroupFeed> adGroupFeeds)
       throws RemoteException {
     return delegateLocator.getAdGroupFeedDelegate().remove(adGroupFeeds);
+  }
+
+  /**
+   * Gets the Labels for the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @return all the Labels for the ExtendedManagedCustomer's
+   *         ManagedCustomer
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Label> getLabels() throws RemoteException {
+    return delegateLocator.getLabelDelegate().get();
+  }
+
+  /**
+   * Gets one Label for the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @param labelId the Id of the Label
+   * @return one Label for the ExtendedManagedCustomer's
+   *         ManagedCustomer
+   * @throws RemoteException for communication-related exceptions
+   */
+  public Label getLabel(Long labelId) throws RemoteException {
+    return delegateLocator.getLabelDelegate().getByLabelId(labelId);
+  }
+
+  /**
+   * Gets the Labels for the ExtendedManagedCustomer's ManagedCustomer by labelStatus.
+   *
+   * @param labelStatus the Status of the Label
+   * @return all the Labels for the ExtendedManagedCustomer's
+   *         ManagedCustomer
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Label> getLabelsByStatus(LabelStatus labelStatus)
+      throws RemoteException {
+    return delegateLocator.getLabelDelegate().getByStatus(labelStatus);
+  }
+
+  /**
+   * Gets the Labels for the ExtendedManagedCustomer's ManagedCustomer by labelName.
+   *
+   * @param labelName the Name of the Label
+   * @return all the Labels for the ExtendedManagedCustomer's
+   *         ManagedCustomer
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Label> getLabelsByName(String labelName)
+      throws RemoteException {
+    return delegateLocator.getLabelDelegate().getByName(labelName);
+  }
+
+  /**
+   * Inserts Labels into the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @param labels the list of Labels to insert
+   * @return the inserted list of Labels
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Label> insertLabels(List<Label> labels) throws RemoteException {
+    return delegateLocator.getLabelDelegate().insert(labels);
+  }
+
+  /**
+   * Inserts a Label into the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @param label the Label to insert
+   * @return the inserted Label
+   * @throws RemoteException for communication-related exceptions
+   */
+  public Label insertLabel(Label label) throws RemoteException {
+    return delegateLocator.getLabelDelegate().insert(label);
+  }
+
+  /**
+   * Removes Labels from the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @param labels the Labels to remove
+   * @return the removed Labels
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Label> removeLabels(List<Label> labels) throws RemoteException {
+    return delegateLocator.getLabelDelegate().remove(labels);
+  }
+
+  /**
+   * Removes a Label from the ExtendedManagedCustomer's ManagedCustomer.
+   *
+   * @param label the Label to remove
+   * @return the removed Label
+   * @throws RemoteException for communication-related exceptions
+   */
+  public Label removeLabel(Label label) throws RemoteException {
+    return delegateLocator.getLabelDelegate().remove(label);
   }
 }

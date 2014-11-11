@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201406.cm.AdParamOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.AdParamServiceInterface;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201409.cm.AdParamOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.AdParamServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -53,7 +54,8 @@ public final class AdParamDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public AdParamDelegate(AdWordsSession adWordsSession, AdParamServiceInterface service) {
+  @VisibleForTesting
+  AdParamDelegate(AdWordsSession adWordsSession, AdParamServiceInterface service) {
     super(adWordsSession, SelectorFields.AdParam.all(), AdParam.class, AdParamOperation.class,
         service);
   }

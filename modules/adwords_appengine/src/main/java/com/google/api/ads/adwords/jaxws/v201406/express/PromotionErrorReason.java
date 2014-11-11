@@ -14,12 +14,15 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="PromotionError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="BUSINESS_DELETED"/>
+ *     &lt;enumeration value="BUSINESS_COUNTRY_NOT_SUPPORTED"/>
+ *     &lt;enumeration value="BUSINESS_LANGUAGE_NOT_SUPPORTED"/>
  *     &lt;enumeration value="CURRENCY_NOT_SUPPORTED"/>
  *     &lt;enumeration value="GOOGLE_GRANT_ACCOUNT"/>
  *     &lt;enumeration value="AOL_ACCOUNT"/>
  *     &lt;enumeration value="MCC_ACCOUNT"/>
  *     &lt;enumeration value="INVALID_DESTINATION_URL"/>
  *     &lt;enumeration value="CALL_TRACKING_NOT_SUPPORTED"/>
+ *     &lt;enumeration value="DISABLED_ACCOUNT"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -38,6 +41,22 @@ public enum PromotionErrorReason {
      * 
      */
     BUSINESS_DELETED,
+
+    /**
+     * 
+     *                 The business address is in an unsupported country.
+     *               
+     * 
+     */
+    BUSINESS_COUNTRY_NOT_SUPPORTED,
+
+    /**
+     * 
+     *                 The plus page uses an unsupported language.
+     *               
+     * 
+     */
+    BUSINESS_LANGUAGE_NOT_SUPPORTED,
 
     /**
      * 
@@ -81,11 +100,19 @@ public enum PromotionErrorReason {
 
     /**
      * 
-     *                 Call tracking is not supported
+     *                 Call tracking is not supported.
      *               
      * 
      */
     CALL_TRACKING_NOT_SUPPORTED,
+
+    /**
+     * 
+     *                 AdWords account disabled.
+     *               
+     * 
+     */
+    DISABLED_ACCOUNT,
 
     /**
      * 

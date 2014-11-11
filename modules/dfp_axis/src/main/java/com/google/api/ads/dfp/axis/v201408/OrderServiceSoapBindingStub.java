@@ -231,13 +231,6 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "Authentication");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201408.Authentication.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.AuthenticationError.class;
@@ -346,6 +339,20 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "CreativeError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.CreativeErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "CrossSellError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201408.CrossSellError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "CrossSellError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201408.CrossSellErrorReason.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
@@ -840,13 +847,6 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "ProgrammaticStatus");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201408.ProgrammaticStatus.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -862,6 +862,13 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "ProgrammaticStatus");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201408.ProgrammaticStatus.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "PublisherQueryLanguageContextError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.PublisherQueryLanguageContextError.class;

@@ -20,7 +20,6 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupCriter
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupFeedDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdParamDelegate;
-import com.google.api.ads.adwords.axis.utility.extension.delegates.AlertDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.BudgetDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.BudgetOrderDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.CampaignAdExtensionDelegate;
@@ -37,6 +36,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedItemDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedMappingDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.GeoLocationDelegate;
+import com.google.api.ads.adwords.axis.utility.extension.delegates.LabelDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.LocationCriterionDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.ManagedCustomerDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.MediaDelegate;
@@ -44,7 +44,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 /**
@@ -67,7 +67,6 @@ public final class DelegateLocator{
   private volatile AdGroupFeedDelegate adGroupFeedDelegate;
   private volatile AdGroupDelegate adGroupDelegate;
   private volatile AdParamDelegate adParamDelegate;
-  private volatile AlertDelegate alertDelegate;
   private volatile BudgetOrderDelegate budgetOrderDelegate;
   private volatile BudgetDelegate budgetDelegate;
   private volatile CampaignAdExtensionDelegate campaignAdExtensionDelegate;
@@ -90,6 +89,7 @@ public final class DelegateLocator{
   private volatile TargetingIdeaDelegate targetingIdeaDelegate;
   private volatile TrafficEstimatorDelegate trafficEstimatorDelegate;
   private volatile UserListDelegate userListDelegate;
+  private volatile LabelDelegate labelDelegate;
 
   /**
    * Constructor for DelegateLocator with it's own AdWordsSession.
@@ -145,7 +145,6 @@ public final class DelegateLocator{
       AdGroupFeedDelegate adGroupFeedDelegate,
       AdGroupDelegate adGroupDelegate,
       AdParamDelegate adParamDelegate,
-      AlertDelegate alertDelegate,
       BudgetOrderDelegate budgetOrderDelegate,
       BudgetDelegate budgetDelegate,
       CampaignAdExtensionDelegate campaignAdExtensionDelegate,
@@ -166,7 +165,8 @@ public final class DelegateLocator{
       MediaDelegate mediaDelegate,
       TargetingIdeaDelegate targetingIdeaDelegate,
       TrafficEstimatorDelegate trafficEstimatorDelegate,
-      UserListDelegate userListDelegate) {
+      UserListDelegate userListDelegate,
+      LabelDelegate labelDelegate) {
     this.adWordsSession = AdWordsSessionUtil.copyWithUtilityUserAgent(adWordsSession);
     this.managedCustomerDelegate = managedCustomerDelegate;
     this.adGroupAdDelegate = adGroupAdDelegate;
@@ -175,7 +175,6 @@ public final class DelegateLocator{
     this.adGroupFeedDelegate = adGroupFeedDelegate;
     this.adGroupDelegate = adGroupDelegate;
     this.adParamDelegate = adParamDelegate;
-    this.alertDelegate = alertDelegate;
     this.budgetOrderDelegate = budgetOrderDelegate;
     this.budgetDelegate = budgetDelegate;
     this.campaignAdExtensionDelegate = campaignAdExtensionDelegate;
@@ -197,6 +196,7 @@ public final class DelegateLocator{
     this.targetingIdeaDelegate = targetingIdeaDelegate;
     this.trafficEstimatorDelegate = trafficEstimatorDelegate;
     this.userListDelegate = userListDelegate;
+    this.labelDelegate = labelDelegate;
   }
 
   /**
@@ -351,20 +351,6 @@ public final class DelegateLocator{
       }
     }
     return campaignAdExtensionDelegate;
-  }
-
-  /**
-   * Gets the AlertDelegate associated with the{@code adWordsSession}.
-   */
-  public AlertDelegate getAlertDelegate() {
-    if (alertDelegate == null) {
-      synchronized (this) {
-        if (alertDelegate == null) {
-          alertDelegate = new AlertDelegate(adWordsSession);
-        }
-      }
-    }
-    return alertDelegate;
   }
 
   /**
@@ -618,5 +604,19 @@ public final class DelegateLocator{
       }
     }
     return userListDelegate;
+  }
+
+  /**
+   * Gets the LabelDelegate associated with the {@code adWordsSession}.
+   */
+  public LabelDelegate getLabelDelegate() {
+    if (labelDelegate == null) {
+      synchronized (this) {
+        if (labelDelegate == null) {
+          labelDelegate = new LabelDelegate(adWordsSession);
+        }
+      }
+    }
+    return labelDelegate;
   }
 }

@@ -16,11 +16,12 @@ package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.billing.BillingAccount;
-import com.google.api.ads.adwords.axis.v201406.billing.BudgetOrder;
-import com.google.api.ads.adwords.axis.v201406.billing.BudgetOrderOperation;
-import com.google.api.ads.adwords.axis.v201406.billing.BudgetOrderServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.billing.BillingAccount;
+import com.google.api.ads.adwords.axis.v201409.billing.BudgetOrder;
+import com.google.api.ads.adwords.axis.v201409.billing.BudgetOrderOperation;
+import com.google.api.ads.adwords.axis.v201409.billing.BudgetOrderServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -54,7 +55,8 @@ public final class BudgetOrderDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public BudgetOrderDelegate(
+  @VisibleForTesting
+  BudgetOrderDelegate(
       AdWordsSession adWordsSession, BudgetOrderServiceInterface service, boolean newBilling) {
     super(adWordsSession, SelectorFields.BudgetOrder.all(newBilling), BudgetOrder.class,
         BudgetOrderOperation.class, service);

@@ -18,11 +18,12 @@ import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibrar
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201406.cm.ListReturnValue;
-import com.google.api.ads.adwords.axis.v201406.cm.Operation;
-import com.google.api.ads.adwords.axis.v201406.cm.Operator;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomerReturnValue;
+import com.google.api.ads.adwords.axis.v201409.cm.ListReturnValue;
+import com.google.api.ads.adwords.axis.v201409.cm.Operation;
+import com.google.api.ads.adwords.axis.v201409.cm.Operator;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerReturnValue;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ObjectArrays;
@@ -35,7 +36,7 @@ import java.util.List;
  * Abstract class that encapsulates mutates and operations.
  *
  * @param <T> type of object that the Service works with, for example Campaign, AdGroup, etc.
- * @param <OperationT> type of the com.google.api.adwords.v201406.cm.Operation specific for
+ * @param <OperationT> type of the com.google.api.adwords.v201409.cm.Operation specific for
  *        the object T for example: CampaignOperation, AdGroupOperation, etc.
  * @param <S> the service interface class. This is a class representing a SOAP service.
  *
@@ -49,7 +50,11 @@ import java.util.List;
 public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation, S>
     extends AbstractGetDelegate<T, S> {
 
+  private static final String MUTATE = "mutate";
+
   private final Class<OperationT> classOperationT;
+
+  private final String mutateMethodName;
 
   /**
    * Constructor without fields, used in services that do not support Generic Selectors.
@@ -57,13 +62,31 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201406.cm.Operation specific for classT
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession, Class<T> classT,
       Class<OperationT> classOperationT, Class<S> classS) {
     super(adWordsSession, classT, classS);
     this.classOperationT = classOperationT;
+    this.mutateMethodName = MUTATE;
+  }
+
+  /**
+   * Constructor without fields, used in services that do not support Generic Selectors.
+   *
+   * @param adWordsSession the {@code adWordsSession} to use with the service
+   * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
+   * @param classOperationT sub-class of the
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
+   * @param classS the service interface class for the SOAP service
+   * @param mutateMethodName a custom mutate method name
+   */
+  protected AbstractGetMutateDelegate(AdWordsSession adWordsSession, Class<T> classT,
+      Class<OperationT> classOperationT, Class<S> classS, String mutateMethodName) {
+    super(adWordsSession, classT, classS);
+    this.classOperationT = classOperationT;
+    this.mutateMethodName = mutateMethodName;
   }
 
   /**
@@ -73,13 +96,33 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201406.cm.Operation specific for classT
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    */
+  @VisibleForTesting
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession, Class<T> classT,
       Class<OperationT> classOperationT, S service) {
     super(adWordsSession, classT, service);
     this.classOperationT = classOperationT;
+    this.mutateMethodName = MUTATE;
+  }
+
+  /**
+   * Constructor without fields, used in services that do not support Generic Selectors
+   * and with custom service.
+   *
+   * @param adWordsSession the {@code adWordsSession} to use with the service
+   * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
+   * @param classOperationT sub-class of the
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
+   * @param service the custom service class for the SOAP service
+   * @param mutateMethodName a custom mutate method name
+   */
+  protected AbstractGetMutateDelegate(AdWordsSession adWordsSession, Class<T> classT,
+      Class<OperationT> classOperationT, S service, String mutateMethodName) {
+    super(adWordsSession, classT, service);
+    this.classOperationT = classOperationT;
+    this.mutateMethodName = mutateMethodName;
   }
 
   /**
@@ -89,7 +132,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201406.cm.Operation specific for classT
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
@@ -97,6 +140,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
       Class<T> classT, Class<OperationT> classOperationT, Class<S> classS) {
     super(adWordsSession, classT, classS, selectorFields);
     this.classOperationT = classOperationT;
+    this.mutateMethodName = MUTATE;
   }
 
   /**
@@ -106,7 +150,27 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201406.cm.Operation specific for classT
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
+   * @param classS the service interface class for the SOAP service
+   * @param mutateMethodName a custom mutate method name
+   */
+  protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
+      List<? extends FieldType<T>> selectorFields,
+      Class<T> classT, Class<OperationT> classOperationT, Class<S> classS,
+      String mutateMethodName) {
+    super(adWordsSession, classT, classS, selectorFields);
+    this.classOperationT = classOperationT;
+    this.mutateMethodName = mutateMethodName;
+  }
+
+  /**
+   * Constructor with fields, used in services that support Generic Selectors.
+   *
+   * @param adWordsSession the {@code adWordsSession} to use with the service
+   * @param selectorFields for the Generic Selectors using the SelectorField class
+   * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
+   * @param classOperationT sub-class of the
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
@@ -114,6 +178,26 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
           Class<OperationT> classOperationT, S service) {
     super(adWordsSession, classT, service, selectorFields);
     this.classOperationT = classOperationT;
+    this.mutateMethodName = MUTATE;
+  }
+
+  /**
+   * Constructor with fields, used in services that support Generic Selectors.
+   *
+   * @param adWordsSession the {@code adWordsSession} to use with the service
+   * @param selectorFields for the Generic Selectors using the SelectorField class
+   * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
+   * @param classOperationT sub-class of the
+   *        com.google.api.adwords.v201409.cm.Operation specific for classT
+   * @param service the custom service class for the SOAP service
+   * @param mutateMethodName a custom mutate method name
+   */
+  protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
+      List<? extends FieldType<T>> selectorFields, Class<T> classT,
+          Class<OperationT> classOperationT, S service, String mutateMethodName) {
+    super(adWordsSession, classT, service, selectorFields);
+    this.classOperationT = classOperationT;
+    this.mutateMethodName = mutateMethodName;
   }
 
   /**
@@ -192,7 +276,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
     OperationT[] operationsArray = operations.toArray(
         ObjectArrays.newArray(classOperationT, operations.size()));
     return ReflectionUtil.invokeCount(
-        "mutate", getService(), classS, operationsArray, MAX_RETRY_COUNT);
+        mutateMethodName, getService(), classS, operationsArray, MAX_RETRY_COUNT);
   }
 
   /**

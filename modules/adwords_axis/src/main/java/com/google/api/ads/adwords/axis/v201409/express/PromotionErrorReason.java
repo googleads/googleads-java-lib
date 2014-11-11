@@ -18,20 +18,26 @@ public class PromotionErrorReason implements java.io.Serializable {
     }
 
     public static final java.lang.String _BUSINESS_DELETED = "BUSINESS_DELETED";
+    public static final java.lang.String _BUSINESS_COUNTRY_NOT_SUPPORTED = "BUSINESS_COUNTRY_NOT_SUPPORTED";
+    public static final java.lang.String _BUSINESS_LANGUAGE_NOT_SUPPORTED = "BUSINESS_LANGUAGE_NOT_SUPPORTED";
     public static final java.lang.String _CURRENCY_NOT_SUPPORTED = "CURRENCY_NOT_SUPPORTED";
     public static final java.lang.String _GOOGLE_GRANT_ACCOUNT = "GOOGLE_GRANT_ACCOUNT";
     public static final java.lang.String _AOL_ACCOUNT = "AOL_ACCOUNT";
     public static final java.lang.String _MCC_ACCOUNT = "MCC_ACCOUNT";
     public static final java.lang.String _INVALID_DESTINATION_URL = "INVALID_DESTINATION_URL";
     public static final java.lang.String _CALL_TRACKING_NOT_SUPPORTED = "CALL_TRACKING_NOT_SUPPORTED";
+    public static final java.lang.String _DISABLED_ACCOUNT = "DISABLED_ACCOUNT";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final PromotionErrorReason BUSINESS_DELETED = new PromotionErrorReason(_BUSINESS_DELETED);
+    public static final PromotionErrorReason BUSINESS_COUNTRY_NOT_SUPPORTED = new PromotionErrorReason(_BUSINESS_COUNTRY_NOT_SUPPORTED);
+    public static final PromotionErrorReason BUSINESS_LANGUAGE_NOT_SUPPORTED = new PromotionErrorReason(_BUSINESS_LANGUAGE_NOT_SUPPORTED);
     public static final PromotionErrorReason CURRENCY_NOT_SUPPORTED = new PromotionErrorReason(_CURRENCY_NOT_SUPPORTED);
     public static final PromotionErrorReason GOOGLE_GRANT_ACCOUNT = new PromotionErrorReason(_GOOGLE_GRANT_ACCOUNT);
     public static final PromotionErrorReason AOL_ACCOUNT = new PromotionErrorReason(_AOL_ACCOUNT);
     public static final PromotionErrorReason MCC_ACCOUNT = new PromotionErrorReason(_MCC_ACCOUNT);
     public static final PromotionErrorReason INVALID_DESTINATION_URL = new PromotionErrorReason(_INVALID_DESTINATION_URL);
     public static final PromotionErrorReason CALL_TRACKING_NOT_SUPPORTED = new PromotionErrorReason(_CALL_TRACKING_NOT_SUPPORTED);
+    public static final PromotionErrorReason DISABLED_ACCOUNT = new PromotionErrorReason(_DISABLED_ACCOUNT);
     public static final PromotionErrorReason UNKNOWN = new PromotionErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static PromotionErrorReason fromValue(java.lang.String value)

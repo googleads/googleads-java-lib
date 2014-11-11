@@ -37,9 +37,6 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final java.lang.String _CALL_METRICS_CALL_DETAILS_REPORT = "CALL_METRICS_CALL_DETAILS_REPORT";
     public static final java.lang.String _KEYWORDLESS_QUERY_REPORT = "KEYWORDLESS_QUERY_REPORT";
     public static final java.lang.String _KEYWORDLESS_CATEGORY_REPORT = "KEYWORDLESS_CATEGORY_REPORT";
-    public static final java.lang.String _ACCOUNT_REACH_FREQUENCY_REPORT = "ACCOUNT_REACH_FREQUENCY_REPORT";
-    public static final java.lang.String _CAMPAIGN_REACH_FREQUENCY_REPORT = "CAMPAIGN_REACH_FREQUENCY_REPORT";
-    public static final java.lang.String _ADGROUP_REACH_FREQUENCY_REPORT = "ADGROUP_REACH_FREQUENCY_REPORT";
     public static final java.lang.String _CRITERIA_PERFORMANCE_REPORT = "CRITERIA_PERFORMANCE_REPORT";
     public static final java.lang.String _CLICK_PERFORMANCE_REPORT = "CLICK_PERFORMANCE_REPORT";
     public static final java.lang.String _BUDGET_PERFORMANCE_REPORT = "BUDGET_PERFORMANCE_REPORT";
@@ -59,7 +56,7 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final java.lang.String _SHOPPING_PERFORMANCE_REPORT = "SHOPPING_PERFORMANCE_REPORT";
     public static final java.lang.String _PRODUCT_PARTITION_REPORT = "PRODUCT_PARTITION_REPORT";
     public static final java.lang.String _PLACEHOLDER_REPORT = "PLACEHOLDER_REPORT";
-    public static final java.lang.String _AD_PLACEHOLDER_FEED_ITEM_REPORT = "AD_PLACEHOLDER_FEED_ITEM_REPORT";
+    public static final java.lang.String _AD_CUSTOMIZERS_FEED_ITEM_REPORT = "AD_CUSTOMIZERS_FEED_ITEM_REPORT";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ReportDefinitionReportType KEYWORDS_PERFORMANCE_REPORT = new ReportDefinitionReportType(_KEYWORDS_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType AD_PERFORMANCE_REPORT = new ReportDefinitionReportType(_AD_PERFORMANCE_REPORT);
@@ -81,9 +78,6 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final ReportDefinitionReportType CALL_METRICS_CALL_DETAILS_REPORT = new ReportDefinitionReportType(_CALL_METRICS_CALL_DETAILS_REPORT);
     public static final ReportDefinitionReportType KEYWORDLESS_QUERY_REPORT = new ReportDefinitionReportType(_KEYWORDLESS_QUERY_REPORT);
     public static final ReportDefinitionReportType KEYWORDLESS_CATEGORY_REPORT = new ReportDefinitionReportType(_KEYWORDLESS_CATEGORY_REPORT);
-    public static final ReportDefinitionReportType ACCOUNT_REACH_FREQUENCY_REPORT = new ReportDefinitionReportType(_ACCOUNT_REACH_FREQUENCY_REPORT);
-    public static final ReportDefinitionReportType CAMPAIGN_REACH_FREQUENCY_REPORT = new ReportDefinitionReportType(_CAMPAIGN_REACH_FREQUENCY_REPORT);
-    public static final ReportDefinitionReportType ADGROUP_REACH_FREQUENCY_REPORT = new ReportDefinitionReportType(_ADGROUP_REACH_FREQUENCY_REPORT);
     public static final ReportDefinitionReportType CRITERIA_PERFORMANCE_REPORT = new ReportDefinitionReportType(_CRITERIA_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType CLICK_PERFORMANCE_REPORT = new ReportDefinitionReportType(_CLICK_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType BUDGET_PERFORMANCE_REPORT = new ReportDefinitionReportType(_BUDGET_PERFORMANCE_REPORT);
@@ -103,7 +97,7 @@ public class ReportDefinitionReportType implements java.io.Serializable {
     public static final ReportDefinitionReportType SHOPPING_PERFORMANCE_REPORT = new ReportDefinitionReportType(_SHOPPING_PERFORMANCE_REPORT);
     public static final ReportDefinitionReportType PRODUCT_PARTITION_REPORT = new ReportDefinitionReportType(_PRODUCT_PARTITION_REPORT);
     public static final ReportDefinitionReportType PLACEHOLDER_REPORT = new ReportDefinitionReportType(_PLACEHOLDER_REPORT);
-    public static final ReportDefinitionReportType AD_PLACEHOLDER_FEED_ITEM_REPORT = new ReportDefinitionReportType(_AD_PLACEHOLDER_FEED_ITEM_REPORT);
+    public static final ReportDefinitionReportType AD_CUSTOMIZERS_FEED_ITEM_REPORT = new ReportDefinitionReportType(_AD_CUSTOMIZERS_FEED_ITEM_REPORT);
     public static final ReportDefinitionReportType UNKNOWN = new ReportDefinitionReportType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static ReportDefinitionReportType fromValue(java.lang.String value)

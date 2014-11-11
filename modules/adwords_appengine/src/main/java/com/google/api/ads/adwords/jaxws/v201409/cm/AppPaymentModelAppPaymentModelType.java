@@ -24,6 +24,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AppPaymentModelAppPaymentModelType {
 
+
+    /**
+     * 
+     *                 Represents paid-for apps.
+     *               
+     * 
+     */
     APP_PAYMENT_MODEL_PAID,
 
     /**

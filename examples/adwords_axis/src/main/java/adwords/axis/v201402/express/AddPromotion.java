@@ -132,17 +132,11 @@ public class AddPromotion {
 
     marsTourPromotion.setCriteria(criteria.toArray(new Criterion[criteria.size()]));
 
-    // Creatives
-    List<Creative> creatives = Lists.newArrayList();
-    Creative creative1 =
+    // Creative
+    Creative creative =
         new Creative("Standard Mars Trip", "Fly coach to Mars", "Free in-flight pretzels");
-    creatives.add(creative1);
 
-    Creative creative2 = new Creative("Deluxe Mars Trip", "Fly first class to Mars",
-        "Unlimited powdered orange drink");
-    creatives.add(creative2);
-
-    marsTourPromotion.setCreatives(creatives.toArray(new Creative[creatives.size()]));
+    marsTourPromotion.setCreatives(new Creative[] {creative});
 
     Promotion[] addedPromotions = promotionService.mutate(
         new PromotionOperation[] {new PromotionOperation(Operator.ADD, null, marsTourPromotion)});

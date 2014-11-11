@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "InventoryService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201408", wsdlLocation = "file:/tmp/wsdl1053898642924655256.wsdl")
+@WebServiceClient(name = "InventoryService", targetNamespace = "https://www.google.com/apis/ads/publisher/v201408", wsdlLocation = "file:/tmp/wsdl4648106893492497418.wsdl")
 public class InventoryService
     extends Service
 {
@@ -30,7 +30,7 @@ public class InventoryService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/tmp/wsdl1053898642924655256.wsdl");
+            url = new URL("file:/tmp/wsdl4648106893492497418.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -16,10 +16,11 @@ package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.LocationCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.LocationCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.Selector;
+import com.google.api.ads.adwords.axis.v201409.cm.LocationCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.LocationCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -53,7 +54,8 @@ public final class LocationCriterionDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public LocationCriterionDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  LocationCriterionDelegate(AdWordsSession adWordsSession,
       LocationCriterionServiceInterface service) {
     super(adWordsSession, LocationCriterion.class, service,
         SelectorFields.LocationCriterion.all());

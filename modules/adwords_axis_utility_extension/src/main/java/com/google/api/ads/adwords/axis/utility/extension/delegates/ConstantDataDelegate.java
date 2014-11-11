@@ -15,19 +15,20 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
-import com.google.api.ads.adwords.axis.v201406.cm.AgeRange;
-import com.google.api.ads.adwords.axis.v201406.cm.Carrier;
-import com.google.api.ads.adwords.axis.v201406.cm.ConstantDataServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.ConstantDataServiceUserInterestTaxonomyType;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionUserInterest;
-import com.google.api.ads.adwords.axis.v201406.cm.Gender;
-import com.google.api.ads.adwords.axis.v201406.cm.Language;
-import com.google.api.ads.adwords.axis.v201406.cm.MobileDevice;
-import com.google.api.ads.adwords.axis.v201406.cm.OperatingSystemVersion;
-import com.google.api.ads.adwords.axis.v201406.cm.ProductBiddingCategoryData;
-import com.google.api.ads.adwords.axis.v201406.cm.Selector;
-import com.google.api.ads.adwords.axis.v201406.cm.Vertical;
+import com.google.api.ads.adwords.axis.v201409.cm.AgeRange;
+import com.google.api.ads.adwords.axis.v201409.cm.Carrier;
+import com.google.api.ads.adwords.axis.v201409.cm.ConstantDataServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.ConstantDataServiceUserInterestTaxonomyType;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionUserInterest;
+import com.google.api.ads.adwords.axis.v201409.cm.Gender;
+import com.google.api.ads.adwords.axis.v201409.cm.Language;
+import com.google.api.ads.adwords.axis.v201409.cm.MobileDevice;
+import com.google.api.ads.adwords.axis.v201409.cm.OperatingSystemVersion;
+import com.google.api.ads.adwords.axis.v201409.cm.ProductBiddingCategoryData;
+import com.google.api.ads.adwords.axis.v201409.cm.Selector;
+import com.google.api.ads.adwords.axis.v201409.cm.Vertical;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.Arrays;
@@ -56,7 +57,8 @@ public final class ConstantDataDelegate
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public ConstantDataDelegate(
+  @VisibleForTesting
+  ConstantDataDelegate(
       AdWordsSession adWordsSession, ConstantDataServiceInterface service) {
     super(adWordsSession, service);
   }
@@ -145,7 +147,7 @@ public final class ConstantDataDelegate
    * Retrieves all the ProductBiddingCategoryDatas.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201406.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201409.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return a list of all the ProductBiddingCategoryDatas

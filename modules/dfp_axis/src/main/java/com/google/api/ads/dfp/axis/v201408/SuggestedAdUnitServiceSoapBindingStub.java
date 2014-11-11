@@ -156,13 +156,6 @@ public class SuggestedAdUnitServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "Authentication");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201408.Authentication.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.AuthenticationError.class;

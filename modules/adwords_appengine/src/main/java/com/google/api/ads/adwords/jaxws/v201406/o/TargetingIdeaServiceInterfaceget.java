@@ -14,12 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>The selector must specify a {@code paging} value, with {@code numberResults} set to 800 or
  *             less.  Large result sets must be composed through multiple calls to this method, advancing the
- *             paging {@code startIndex} value by {@code numberResults} with each call.
- *             
- *             <p>Only a relatively small total number of results will be available through this method.
- *             Much larger result sets may be available using
- *             {@link #getBulkKeywordIdeas(TargetingIdeaSelector)} at the price of reduced flexibility in
- *             selector options.
+ *             paging {@code startIndex} value by {@code numberResults} with each call.</p>
  *             
  *             @param selector Query describing the types of results to return when
  *             finding matches (similar keyword ideas/placement ideas).

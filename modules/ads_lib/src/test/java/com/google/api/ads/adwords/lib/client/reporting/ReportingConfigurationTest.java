@@ -22,12 +22,15 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration.Builder;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link ReportingConfiguration}.
  * 
  * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class ReportingConfigurationTest {
 
   @Test

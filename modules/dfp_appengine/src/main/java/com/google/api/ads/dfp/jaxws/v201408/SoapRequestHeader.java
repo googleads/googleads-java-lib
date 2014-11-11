@@ -22,7 +22,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="networkCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="applicationName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="authentication" type="{https://www.google.com/apis/ads/publisher/v201408}Authentication" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,14 +33,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SoapRequestHeader", propOrder = {
     "networkCode",
-    "applicationName",
-    "authentication"
+    "applicationName"
 })
 public class SoapRequestHeader {
 
     protected String networkCode;
     protected String applicationName;
-    protected Authentication authentication;
 
     /**
      * Gets the value of the networkCode property.
@@ -89,30 +86,6 @@ public class SoapRequestHeader {
      */
     public void setApplicationName(String value) {
         this.applicationName = value;
-    }
-
-    /**
-     * Gets the value of the authentication property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Authentication }
-     *     
-     */
-    public Authentication getAuthentication() {
-        return authentication;
-    }
-
-    /**
-     * Sets the value of the authentication property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Authentication }
-     *     
-     */
-    public void setAuthentication(Authentication value) {
-        this.authentication = value;
     }
 
 }

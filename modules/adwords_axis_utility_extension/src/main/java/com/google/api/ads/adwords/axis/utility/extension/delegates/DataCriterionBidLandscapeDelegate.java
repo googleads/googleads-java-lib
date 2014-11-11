@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.DataServiceInterface;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.DataServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -56,7 +57,8 @@ public final class DataCriterionBidLandscapeDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public DataCriterionBidLandscapeDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  DataCriterionBidLandscapeDelegate(AdWordsSession adWordsSession,
       DataServiceInterface service) {
     super(adWordsSession, CriterionBidLandscape.class, service,
         SelectorFields.CriterionBidLandscape.all());
@@ -91,7 +93,7 @@ public final class DataCriterionBidLandscapeDelegate extends
     SelectorBuilder builder = createSelectorBuilder()
       .equals(SelectorFields.CriterionBidLandscape.ADGROUP_ID.getField(), String.valueOf(adGroupId))
       .equals(
-           SelectorFields.CriterionBidLandscape.CRITERION_ID.getField(), 
+           SelectorFields.CriterionBidLandscape.CRITERION_ID.getField(),
            String.valueOf(criterionId));
     return get(builder.build());
   }

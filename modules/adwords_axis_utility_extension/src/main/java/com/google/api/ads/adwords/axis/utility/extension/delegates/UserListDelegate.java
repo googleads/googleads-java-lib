@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.rm.AdwordsUserListServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.rm.UserList;
-import com.google.api.ads.adwords.axis.v201406.rm.UserListOperation;
+import com.google.api.ads.adwords.axis.v201409.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.rm.UserList;
+import com.google.api.ads.adwords.axis.v201409.rm.UserListOperation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -47,7 +48,8 @@ public final class UserListDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public UserListDelegate(AdWordsSession adWordsSession, AdwordsUserListServiceInterface service) {
+  @VisibleForTesting
+  UserListDelegate(AdWordsSession adWordsSession, AdwordsUserListServiceInterface service) {
     super(adWordsSession, SelectorFields.UserList.all(), UserList.class, UserListOperation.class,
         service);
   }

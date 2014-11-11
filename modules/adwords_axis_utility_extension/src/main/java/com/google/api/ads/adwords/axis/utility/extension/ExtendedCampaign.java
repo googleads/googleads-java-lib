@@ -14,18 +14,19 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.v201406.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201406.cm.AdExtension;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignAdExtension;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.Criterion;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.Experiment;
-import com.google.api.ads.adwords.axis.v201406.cm.NegativeCampaignCriterion;
+import com.google.api.ads.adwords.axis.v201409.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201409.cm.AdExtension;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtension;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.Criterion;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.Experiment;
+import com.google.api.ads.adwords.axis.v201409.cm.NegativeCampaignCriterion;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
@@ -97,7 +98,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> remove is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.CampaignServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.CampaignServiceInterface}.</p>
    *
    * @return the updated ExtendedCampaign
    * @throws RemoteException for communication-related exceptions
@@ -227,10 +228,10 @@ public final class ExtendedCampaign {
     campaignCriterion.setCriterion(criterion);
     return delegateLocator.getCampaignCriterionDelegate().insert(campaignCriterion);
   }
-  
+
   /**
    * Inserts the Criterion as negative into the ExtendedCampaign's Campaign.
-   * 
+   *
    * <p class="note"><b>Note:</b> this method creates the
    * necessary NegativeCampaignCriterion implicitly.</p>
    *
@@ -327,7 +328,7 @@ public final class ExtendedCampaign {
       throws RemoteException {
     return delegateLocator.getCampaignAdExtensionDelegate().insert(campaignAdExtension);
   }
-  
+
   /**
    * Inserts the AdExtension into the ExtendedCampaign's Campaign.
    *
@@ -407,7 +408,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiments the list of Experiments to update
    * @return the updated list of Experiments
@@ -422,7 +423,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiment the Experiment to update
    * @return the updated Experiment
@@ -472,5 +473,33 @@ public final class ExtendedCampaign {
    */
   public List<CampaignFeed> getCampaignFeeds() throws RemoteException {
     return delegateLocator.getCampaignFeedDelegate().getByCampaignId(campaign.getId());
+  }
+
+  /**
+   * Inserts a CampaignLabel into the ExtendedCampaign's Campaign.
+   *
+   * <p>(Creates a Label to Campaign link).</p>
+   *
+   * @param labelId the Label to insert
+   * @return the new CampaignLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public CampaignLabel insertCampaignLabel(Long labelId) throws RemoteException {
+    CampaignLabel campaignLabel = new CampaignLabel(this.getCampaign().getId(),  labelId);
+    return delegateLocator.getCampaignDelegate().insertCampaignLabel(campaignLabel);
+  }
+
+  /**
+   * Removes a CampaignLabel into the ExtendedCampaign's Campaign.
+   *
+   * <p>(Deletes a Label to Campaign link).</p>
+   *
+   * @param labelId the Label to insert
+   * @return the new CampaignLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public CampaignLabel removeCampaignLabel(Long labelId) throws RemoteException {
+    CampaignLabel campaignLabel = new CampaignLabel(this.getCampaign().getId(),  labelId);
+    return delegateLocator.getCampaignDelegate().removeCampaignLabel(campaignLabel);
   }
 }

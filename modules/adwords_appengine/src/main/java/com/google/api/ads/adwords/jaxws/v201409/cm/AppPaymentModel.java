@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a criterion for targeting paid apps.
+ *             
+ *             <p>Possible IDs: {@code 30} ({@code APP_PAYMENT_MODEL_PAID}).</p>
  *             <p>A criterion of this type can only be created using an ID. A criterion of this type is only targetable.
  *             <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
  *           

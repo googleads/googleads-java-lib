@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
-import com.google.api.ads.adwords.axis.v201406.cm.Address;
-import com.google.api.ads.adwords.axis.v201406.cm.GeoLocation;
-import com.google.api.ads.adwords.axis.v201406.cm.GeoLocationSelector;
-import com.google.api.ads.adwords.axis.v201406.cm.GeoLocationServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.Address;
+import com.google.api.ads.adwords.axis.v201409.cm.GeoLocation;
+import com.google.api.ads.adwords.axis.v201409.cm.GeoLocationSelector;
+import com.google.api.ads.adwords.axis.v201409.cm.GeoLocationServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.Arrays;
@@ -47,7 +48,8 @@ public final class GeoLocationDelegate extends AbstractBaseDelegate<GeoLocationS
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public GeoLocationDelegate(AdWordsSession adWordsSession, GeoLocationServiceInterface service) {
+  @VisibleForTesting
+  GeoLocationDelegate(AdWordsSession adWordsSession, GeoLocationServiceInterface service) {
     super(adWordsSession, service);
   }
 

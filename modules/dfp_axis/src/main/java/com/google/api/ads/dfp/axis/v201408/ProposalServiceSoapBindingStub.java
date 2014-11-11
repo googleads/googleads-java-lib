@@ -196,13 +196,6 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "Authentication");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201408.Authentication.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.AuthenticationError.class;
@@ -847,6 +840,13 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "UpdateResult");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201408.UpdateResult.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -862,13 +862,6 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "UpdateResult");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201408.UpdateResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201408", "Value");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201408.Value.class;

@@ -1980,6 +1980,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CrossSellError }
+     * 
+     */
+    public CrossSellError createCrossSellError() {
+        return new CrossSellError();
+    }
+
+    /**
      * Create an instance of {@link DeactivatePlacements }
      * 
      */

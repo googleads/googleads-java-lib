@@ -15,11 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -37,6 +39,9 @@ import java.util.List;
 public final class CampaignDelegate extends
     AbstractGetMutateDelegate<Campaign, CampaignOperation, CampaignServiceInterface> {
 
+  // We use another delegate for the Labels, just for the mutateLabel operation.
+  private final CampaignLabelDelegate campaignLabelDelegate;
+
   /**
    * Default Constructor.
    *
@@ -45,6 +50,7 @@ public final class CampaignDelegate extends
   public CampaignDelegate(AdWordsSession adWordsSession) {
     super(adWordsSession, SelectorFields.Campaign.all(), Campaign.class, CampaignOperation.class,
         CampaignServiceInterface.class);
+    campaignLabelDelegate = new CampaignLabelDelegate(adWordsSession, this.getService());
   }
 
   /**
@@ -53,9 +59,11 @@ public final class CampaignDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
+  @VisibleForTesting
   public CampaignDelegate(AdWordsSession adWordsSession, CampaignServiceInterface service) {
     super(adWordsSession, SelectorFields.Campaign.all(),
         Campaign.class, CampaignOperation.class, service);
+    campaignLabelDelegate = new CampaignLabelDelegate(adWordsSession, service);
   }
 
   /**
@@ -64,16 +72,17 @@ public final class CampaignDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param selectorFields for the Generic Selectors using the SelectorField class
    */
-  public CampaignDelegate(AdWordsSession adWordsSession, 
+  public CampaignDelegate(AdWordsSession adWordsSession,
       List<SelectorFields.Campaign> selectorFields) {
     super(adWordsSession, selectorFields, Campaign.class, CampaignOperation.class,
         CampaignServiceInterface.class);
+    campaignLabelDelegate = new CampaignLabelDelegate(adWordsSession, this.getService());
   }
 
   /**
    * Retrieves Campaigns by campaignIds.
    *
-   * @param campaignIds
+   * @param campaignIds the Ids of the Campaigns
    * @return a list of Campaigns matching campaignIds
    * @throws RemoteException for communication-related exceptions
    */
@@ -84,7 +93,7 @@ public final class CampaignDelegate extends
   /**
    * Retrieves a Campaign by campaignId.
    *
-   * @param campaignId
+   * @param campaignId the Id of the Campaign
    * @return a list of Campaigns matching campaignId
    * @throws RemoteException for communication-related exceptions
    */
@@ -95,12 +104,23 @@ public final class CampaignDelegate extends
   /**
    * Retrieves Campaigns by campaignStatus.
    *
-   * @param campaignStatus
+   * @param campaignStatus the Status of the Campaign
    * @return a list of Campaigns matching campaignStatus
    * @throws RemoteException for communication-related exceptions
    */
   public List<Campaign> getByStatus(CampaignStatus campaignStatus) throws RemoteException {
     return getByField(SelectorFields.Campaign.STATUS, campaignStatus);
+  }
+
+  /**
+   * Retrieves Campaigns by labelIds.
+   *
+   * @param labelIds the Ids of the Labels to retrieve the Campaigns
+   * @return a list of Campaigns matching labelIds
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<Campaign> getByLabelIds(List<Long> labelIds) throws RemoteException {
+    return getByFieldContainsAny(SelectorFields.Campaign.LABELS, labelIds);
   }
 
   /**
@@ -129,5 +149,51 @@ public final class CampaignDelegate extends
   public Campaign remove(Campaign campaign) throws RemoteException {
     campaign.setStatus(CampaignStatus.REMOVED);
     return update(campaign);
+  }
+
+  /**
+   * Creates a link (CampaignLabel) between Campaigns and Labels.
+   *
+   * @param campaignLabels the CampaignLabels to add
+   * @return the CampaignLabels added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<CampaignLabel> insertCampaignLabel(List<CampaignLabel> campaignLabels)
+      throws RemoteException {
+    return campaignLabelDelegate.insert(campaignLabels);
+  }
+
+  /**
+   * Creates a link (CampaignLabel) between Campaigns and Labels.
+   *
+   * @param campaignLabel the CampaignLabel to add
+   * @return the CampaignLabel added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public CampaignLabel insertCampaignLabel(CampaignLabel campaignLabel) throws RemoteException {
+    return campaignLabelDelegate.insert(campaignLabel);
+  }
+
+  /**
+   * Removes a link (CampaignLabel) between Campaigns and Labels.
+   *
+   * @param campaignLabels the CampaignLabels to remove
+   * @return the CampaignLabels removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<CampaignLabel> removeCampaignLabel(List<CampaignLabel> campaignLabels)
+      throws RemoteException {
+    return campaignLabelDelegate.remove(campaignLabels);
+  }
+
+  /**
+   * Removes a link (CampaignLabel) between Campaigns and Labels.
+   *
+   * @param campaignLabel the CampaignLabel to remove
+   * @return the CampaignLabel removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public CampaignLabel removeCampaignLabel(CampaignLabel campaignLabel) throws RemoteException {
+    return campaignLabelDelegate.remove(campaignLabel);
   }
 }

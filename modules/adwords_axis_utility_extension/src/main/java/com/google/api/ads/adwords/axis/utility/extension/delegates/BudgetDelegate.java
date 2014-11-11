@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.Budget;
-import com.google.api.ads.adwords.axis.v201406.cm.BudgetOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.Budget;
+import com.google.api.ads.adwords.axis.v201409.cm.BudgetOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.BudgetServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -47,7 +48,8 @@ public final class BudgetDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public BudgetDelegate(AdWordsSession adWordsSession, BudgetServiceInterface service) {
+  @VisibleForTesting
+  BudgetDelegate(AdWordsSession adWordsSession, BudgetServiceInterface service) {
     super(adWordsSession, SelectorFields.Budget.all(), Budget.class, BudgetOperation.class,
         service);
   }

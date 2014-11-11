@@ -43,6 +43,23 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getCreatives");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CreativeSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.CreativeSearchCriteria.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CreativeRecordSet"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getCreativesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
+                      true
+                     ));
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("saveCreative");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "creativeBase"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CreativeBase"), com.google.api.ads.dfa.axis.v1_20.CreativeBase.class, false, false);
         oper.addParameter(param);
@@ -59,7 +76,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[1] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("saveCreativeAsset");
@@ -76,7 +93,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[2] = oper;
+        _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("associateCreativesToCampaign");
@@ -95,7 +112,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[3] = oper;
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("copyCreative");
@@ -112,7 +129,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[4] = oper;
+        _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCreativeRenderings");
@@ -129,7 +146,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[5] = oper;
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("uploadRichMediaAsset");
@@ -146,7 +163,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
                       true
                      ));
-        _operations[6] = oper;
+        _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("replaceRichMediaAsset");
@@ -157,23 +174,6 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "RichMediaCreativeBase"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.RichMediaCreativeBase.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "replaceRichMediaAssetReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_20.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "ApiException"), 
-                      true
-                     ));
-        _operations[7] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getCreatives");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CreativeSearchCriteria"), com.google.api.ads.dfa.axis.v1_20.CreativeSearchCriteria.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "CreativeRecordSet"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getCreativesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -1602,12 +1602,51 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.CreativeSaveResult saveCreative(com.google.api.ads.dfa.axis.v1_20.CreativeBase creativeBase, long campaignId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet getCreatives(com.google.api.ads.dfa.axis.v1_20.CreativeSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getCreatives"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_20.CreativeSaveResult saveCreative(com.google.api.ads.dfa.axis.v1_20.CreativeBase creativeBase, long campaignId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1646,7 +1685,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1685,7 +1724,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1724,7 +1763,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1763,7 +1802,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
+        _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1802,7 +1841,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1841,7 +1880,7 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
+        _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -1860,45 +1899,6 @@ public class CreativeSoapBindingStub extends org.apache.axis.client.Stub impleme
                 return (com.google.api.ads.dfa.axis.v1_20.RichMediaCreativeBase) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.dfa.axis.v1_20.RichMediaCreativeBase) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.RichMediaCreativeBase.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_20.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_20.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet getCreatives(com.google.api.ads.dfa.axis.v1_20.CreativeSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "getCreatives"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_20.CreativeRecordSet.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

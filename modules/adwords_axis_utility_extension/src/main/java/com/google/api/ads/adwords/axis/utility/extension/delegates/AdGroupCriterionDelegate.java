@@ -15,12 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterionOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionType;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionUse;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionType;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionUse;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;
@@ -29,15 +30,16 @@ import java.util.List;
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupCriterion}.
  *
- * <p>
- * Implementation is not thread-safe,
- * because AdWordsSession and Apache Axis service objects are not thread-safe.
- * </p>
+ * <p> Implementation is not thread-safe, because AdWordsSession
+ * and Apache Axis service objects are not thread-safe.</p>
  *
  * @author Julian Toledo
  */
 public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<AdGroupCriterion,
     AdGroupCriterionOperation, AdGroupCriterionServiceInterface> {
+
+  // We use another delegate for the Labels, just for the mutateLabel operation.
+  private final AdGroupCriterionLabelDelegate adGroupCriterionLabelDelegate;
 
   /**
    * Default Constructor.
@@ -48,6 +50,8 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
     super(adWordsSession, SelectorFields.AdGroupCriterion.all(includeBetaFields),
         AdGroupCriterion.class, AdGroupCriterionOperation.class,
         AdGroupCriterionServiceInterface.class);
+    adGroupCriterionLabelDelegate = new AdGroupCriterionLabelDelegate(adWordsSession,
+        this.getService());
   }
 
   /**
@@ -56,11 +60,13 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public AdGroupCriterionDelegate(AdWordsSession adWordsSession,
+  AdGroupCriterionDelegate(AdWordsSession adWordsSession,
       AdGroupCriterionServiceInterface service, boolean includeBetaFields) {
     super(adWordsSession, SelectorFields.AdGroupCriterion.all(includeBetaFields),
         AdGroupCriterion.class, AdGroupCriterionOperation.class, service);
-  }  
+    adGroupCriterionLabelDelegate = new AdGroupCriterionLabelDelegate(adWordsSession,
+        service);
+  }
 
   /**
    * Constructor with custom fields.
@@ -72,13 +78,15 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
       List<SelectorFields.AdGroupCriterion> selectorFields) {
     super(adWordsSession, selectorFields, AdGroupCriterion.class, AdGroupCriterionOperation.class,
         AdGroupCriterionServiceInterface.class);
+    adGroupCriterionLabelDelegate = new AdGroupCriterionLabelDelegate(adWordsSession,
+        this.getService());
   }
 
   /**
    * Retrieves AdGroupCriterions by adGroupId and criterionId (criterionId is not unique by itself).
    *
-   * @param adGroupId
-   * @param criterionId
+   * @param adGroupId the Id of the AdGroup
+   * @param criterionId the Id of the Criterion
    * @return a list of AdGroupCriterions matching the adGroupId and adGroupId
    * @throws RemoteException for communication-related exceptions
    */
@@ -93,7 +101,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by adGroupIds.
    *
-   * @param adGroupIds
+   * @param adGroupIds the Ids of the AdGroup
    * @return a list of AdGroupCriterions matching adGroupIds
    * @throws RemoteException for communication-related exceptions
    */
@@ -104,7 +112,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by adGroupId.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup
    * @return a list of AdGroupCriterions matching the adGroupId
    * @throws RemoteException for communication-related exceptions
    */
@@ -115,7 +123,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by adGroupId in the range (startIndex, numberResults).
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup
    * @param startIndex index of the first result
    * @param numberResults number of results 
    * @return a list of AdGroupCriterions matching the adGroupId
@@ -171,7 +179,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by adGroupId and CriterionUse.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup
    * @param criterionUse {@code CriterionUse}
    * @return a list of AdGroupCriterions matching the adGroupId and criterionUse
    * @throws RemoteException for communication-related exceptions
@@ -187,7 +195,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by adGroupId and CriterionType.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup
    * @param criterionType {@code CriterionType}
    * @return a list of AdGroupCriterions matching the adGroupId and criterionType
    * @throws RemoteException for communication-related exceptions
@@ -203,7 +211,7 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
   /**
    * Retrieves AdGroupCriterions by CriterionUse and CriterionType.
    *
-   * @param adGroupId
+   * @param adGroupId the Id of the AdGroup
    * @param criterionUse {@code CriterionUse}
    * @param criterionType {@code CriterionType}
    * @return a list of AdGroupCriterions matching the adGroupId, criterionUse and criterionType
@@ -216,5 +224,64 @@ public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<Ad
       .equals(SelectorFields.AdGroupCriterion.CRITERION_USE.getField(), criterionUse.getValue())
       .equals(SelectorFields.AdGroupCriterion.CRITERIA_TYPE.getField(), criterionType.getValue());
     return get(builder.build());
+  }
+
+  /**
+   * Retrieves AdGroupCriterions by labelIds.
+   *
+   * @param labelIds the Id of the Labels to retrieve the AdGroupCriterions
+   * @return a list of AdGroupCriterions matching labelIds
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupCriterion> getByLabelIds(List<Long> labelIds) throws RemoteException {
+    return getByFieldContainsAny(SelectorFields.AdGroupCriterion.LABELS, labelIds);
+  }
+
+  /**
+   * Creates a link (AdGroupCriterionLabel) between AdGroupCriterions and Labels.
+   *
+   * @param adGroupCriterionLabels the AdGroupCriterionLabels to add
+   * @return the AdGroupCriterionLabels added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupCriterionLabel> insertAdGroupCriterionLabel(
+      List<AdGroupCriterionLabel> adGroupCriterionLabels) throws RemoteException {
+    return adGroupCriterionLabelDelegate.insert(adGroupCriterionLabels);
+  }
+
+  /**
+   * Creates a link (AdGroupCriterionLabel) between AdGroupCriterions and Labels.
+   *
+   * @param adGroupCriterionLabel the AdGroupCriterionLabel to add
+   * @return the AdGroupCriterionLabel added
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupCriterionLabel insertAdGroupCriterionLabel(
+      AdGroupCriterionLabel adGroupCriterionLabel) throws RemoteException {
+    return adGroupCriterionLabelDelegate.insert(adGroupCriterionLabel);
+  }
+
+  /**
+   * Removes a link (AdGroupCriterionLabel) between AdGroupCriterions and Labels.
+   *
+   * @param adGroupCriterionLabels the AdGroupCriterionLabels to remove
+   * @return the AdGroupCriterionLabels removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public List<AdGroupCriterionLabel> removeAdGroupCriterionLabel(
+      List<AdGroupCriterionLabel> adGroupCriterionLabels) throws RemoteException {
+    return adGroupCriterionLabelDelegate.remove(adGroupCriterionLabels);
+  }
+
+  /**
+   * Removes a link (AdGroupCriterionLabel) between AdGroupCriterions and Labels.
+   *
+   * @param adGroupCriterionLabel the AdGroupCriterionLabel to remove
+   * @return the AdGroupCriterionLabel removed
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupCriterionLabel removeAdGroupCriterionLabel(
+      AdGroupCriterionLabel adGroupCriterionLabel) throws RemoteException {
+    return adGroupCriterionLabelDelegate.remove(adGroupCriterionLabel);
   }
 }

@@ -10,8 +10,9 @@ package com.google.api.ads.adwords.axis.v201409.cm;
 
 /**
  * Represents a criterion for targeting paid apps.
- *             <p>A criterion of this type can only be created using
- * an ID.
+ *             
+ *             <p>Possible IDs: {@code 30} ({@code APP_PAYMENT_MODEL_PAID}).</p>
+ * <p>A criterion of this type can only be created using an ID.
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX when it is contained within Operators: ADD, SET.</span>
  */

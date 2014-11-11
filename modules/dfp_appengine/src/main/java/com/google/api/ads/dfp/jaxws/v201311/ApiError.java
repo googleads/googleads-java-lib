@@ -105,6 +105,7 @@ import javax.xml.bind.annotation.XmlType;
     CustomFieldValueError.class,
     DayPartTargetingError.class,
     GeoTargetingError.class,
+    CrossSellError.class,
     RequiredCollectionError.class,
     CreativeAssetMacroError.class,
     CommonError.class,

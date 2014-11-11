@@ -15,12 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignCriterionOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionType;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterionOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -54,7 +55,8 @@ public final class CampaignCriterionDelegate extends AbstractGetMutateDelegate<C
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public CampaignCriterionDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  CampaignCriterionDelegate(AdWordsSession adWordsSession,
       CampaignCriterionServiceInterface service) {
     super(adWordsSession, SelectorFields.CampaignCriterion.all(), CampaignCriterion.class,
         CampaignCriterionOperation.class, service);

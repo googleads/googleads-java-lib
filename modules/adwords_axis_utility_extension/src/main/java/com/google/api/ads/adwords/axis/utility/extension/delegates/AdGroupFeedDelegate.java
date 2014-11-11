@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeedOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeedStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -48,7 +49,8 @@ public final class AdGroupFeedDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public AdGroupFeedDelegate(AdWordsSession adWordsSession, AdGroupFeedServiceInterface service) {
+  @VisibleForTesting
+  AdGroupFeedDelegate(AdWordsSession adWordsSession, AdGroupFeedServiceInterface service) {
     super(adWordsSession, SelectorFields.AdGroupFeed.all(),
         AdGroupFeed.class, AdGroupFeedOperation.class, service);
   }

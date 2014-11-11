@@ -1,4 +1,4 @@
-// Copyright 2012, Google Inc. All Rights Reserved.
+// Copyright 2014, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ import static org.junit.Assert.assertFalse;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
 import com.google.api.ads.dfp.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.jaxws.v201408.Company;
-import com.google.api.ads.dfp.jaxws.v201408.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201411.Company;
+import com.google.api.ads.dfp.jaxws.v201411.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -44,7 +44,7 @@ import java.util.List;
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201408";  
+  private static final String API_VERSION = "v201411";  
   private static final String CLIENT_LOGIN_API_VERSION = "v201311";  
   
   @BeforeClass

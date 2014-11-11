@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeedOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignFeedStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeedOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeedServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeedStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -48,7 +49,8 @@ public final class CampaignFeedDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public CampaignFeedDelegate(AdWordsSession adWordsSession, CampaignFeedServiceInterface service) {
+  @VisibleForTesting
+  CampaignFeedDelegate(AdWordsSession adWordsSession, CampaignFeedServiceInterface service) {
     super(adWordsSession, SelectorFields.CampaignFeed.all(),
         CampaignFeed.class, CampaignFeedOperation.class, service);
   }

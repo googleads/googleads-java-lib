@@ -14,10 +14,11 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201406.o.TargetingIdea;
-import com.google.api.ads.adwords.axis.v201406.o.TargetingIdeaSelector;
-import com.google.api.ads.adwords.axis.v201406.o.TargetingIdeaServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.o.TargetingIdea;
+import com.google.api.ads.adwords.axis.v201409.o.TargetingIdeaSelector;
+import com.google.api.ads.adwords.axis.v201409.o.TargetingIdeaServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.Arrays;
@@ -46,7 +47,8 @@ public final class TargetingIdeaDelegate
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public TargetingIdeaDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  TargetingIdeaDelegate(AdWordsSession adWordsSession,
       TargetingIdeaServiceInterface service) {
     super(adWordsSession, service);
   }
@@ -63,19 +65,5 @@ public final class TargetingIdeaDelegate
   public List<TargetingIdea> get(TargetingIdeaSelector targetingIdeaSelector)
       throws RemoteException {
     return Arrays.asList(getService().get(targetingIdeaSelector).getEntries());
-  }
-
-  /**
-   * Retrieves all TargetingIdeas for the ManagedCustomer associate with the adWordsSession 
-   * the TargetingIdeaSelector does not need fields.
-   *
-   * @param targetingIdeaSelector a {@code TargetingIdeaSelector}
-   *        this selector must specify a paging value, with numberResults set to 800 or less
-   * @return All the TargetingIdeas for the ManagedCustomer
-   * @throws RemoteException for communication-related exceptions
-   */
-  public List<TargetingIdea> getBulkKeywordIdeas(TargetingIdeaSelector targetingIdeaSelector)
-      throws RemoteException {
-    return Arrays.asList(getService().getBulkKeywordIdeas(targetingIdeaSelector).getEntries());
   }
 }

@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.ConversionTracker;
-import com.google.api.ads.adwords.axis.v201406.cm.ConversionTrackerOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.ConversionTrackerServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.ConversionTracker;
+import com.google.api.ads.adwords.axis.v201409.cm.ConversionTrackerOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.ConversionTrackerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -47,7 +48,8 @@ public final class ConversionTrackerDelegate extends AbstractGetMutateDelegate<C
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public ConversionTrackerDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  ConversionTrackerDelegate(AdWordsSession adWordsSession,
       ConversionTrackerServiceInterface service) {
     super(adWordsSession, SelectorFields.ConversionTracker.all(), ConversionTracker.class,
         ConversionTrackerOperation.class, service);

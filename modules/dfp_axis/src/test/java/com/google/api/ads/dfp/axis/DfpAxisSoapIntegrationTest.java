@@ -23,8 +23,8 @@ import com.google.api.ads.common.lib.auth.testing.AuthResponseProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.axis.v201408.Company;
-import com.google.api.ads.dfp.axis.v201408.CompanyServiceInterface;
+import com.google.api.ads.dfp.axis.v201411.Company;
+import com.google.api.ads.dfp.axis.v201411.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.auth.oauth2.Credential;
@@ -46,7 +46,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201408";
+  private static final String API_VERSION = "v201411";
   private static final String CLIENT_LOGIN_API_VERSION = "v201311";
 
   @BeforeClass

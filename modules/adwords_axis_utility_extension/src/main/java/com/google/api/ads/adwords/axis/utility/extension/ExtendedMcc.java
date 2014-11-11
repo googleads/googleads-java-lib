@@ -16,8 +16,8 @@ package com.google.api.ads.adwords.axis.utility.extension;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201406.billing.BillingAccount;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201409.billing.BillingAccount;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.OAuthException;

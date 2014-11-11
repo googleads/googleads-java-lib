@@ -49,36 +49,36 @@ import java.util.Random;
  *
  * @author Nicholas Chen
  */
-public class CreateProductTemplates { 
-  
+public class CreateProductTemplates {
+
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
     // Get the ProductTemplateService.
     ProductTemplateServiceInterface productTemplateService =
         dfpServices.get(session, ProductTemplateServiceInterface.class);
-    
+
     // Get the NetworkService.
     NetworkServiceInterface networkService =
         dfpServices.get(session, NetworkServiceInterface.class);
-    
+
     // Create a product template.
     ProductTemplate productTemplate = new ProductTemplate();
     productTemplate.setName("Product template #" + new Random().nextInt(Integer.MAX_VALUE));
     productTemplate.setDescription("This product template creates standard proposal line items "
         + "targeting Chrome browsers with product segmentation on ad units and geo targeting.");
-    
-    // Set the name macro which will be used to generate the names of the proposal line items.
+
+    // Set the name macro which will be used to generate the names of the products.
     // This will create a segmentation based on the line item type, ad unit, and location.
     productTemplate.setNameMacro("<line-item-type> - <ad-unit> - <template-name> - <location>");
 
     // Set the product type so the created proposal line items will be trafficked in DFP.
     productTemplate.setProductType(ProductType.DFP);
-    
+
     // Set rate type to create CPM priced proposal line items.
     productTemplate.setRateType(RateType.CPM);
-    
+
     // Optionally set the creative rotation of the product to serve one or more creatives.
     productTemplate.setRoadblockingType(RoadblockingType.ONE_OR_MORE);
-    
+
     // Create the master creative placeholder.
     CreativePlaceholder creativeMasterPlaceholder = new CreativePlaceholder();
     creativeMasterPlaceholder.setSize(new Size(728, 90, false));
@@ -90,10 +90,10 @@ public class CreateProductTemplates {
     // Set the size of creatives that can be associated with the product template.
     productTemplate.setCreativePlaceholders(
         new CreativePlaceholder[] {creativeMasterPlaceholder, companionCreativePlaceholder});
-    
+
     // Set the type of proposal line item to be created from the product template.
     productTemplate.setLineItemType(LineItemType.STANDARD);
-    
+
     // Get the root ad unit ID used to target the whole site.
     String rootAdUnitId = networkService.getCurrentNetwork().getEffectiveRootAdUnitId();
 
@@ -101,37 +101,37 @@ public class CreateProductTemplates {
     AdUnitTargeting adUnitTargeting = new AdUnitTargeting();
     adUnitTargeting.setAdUnitId(rootAdUnitId);
     adUnitTargeting.setIncludeDescendants(true);
-    
+
     // Create geo targeting for the US.
     Location countryLocation = new Location();
     countryLocation.setId(2840L);
-    
+
     // Create geo targeting for Hong Kong.
     Location regionLocation = new Location();
     regionLocation.setId(2344L);
 
     GeoTargeting geoTargeting = new GeoTargeting();
     geoTargeting.setTargetedLocations(new Location[] {countryLocation, regionLocation});
-    
+
+    // Add browser targeting to Chrome on the product template distinct from product segmentation.
+    Browser chromeBrowser = new Browser();
+    chromeBrowser.setId(500072L);
+
+    BrowserTargeting browserTargeting = new BrowserTargeting();
+    browserTargeting.setBrowsers(new Browser[] {chromeBrowser});
+
+    ProductTemplateTargeting productTemplateTargeting = new ProductTemplateTargeting();
+    productTemplateTargeting.setBrowserTargeting(browserTargeting);
+
+    productTemplate.setTargeting(productTemplateTargeting);
+
     // Add inventory and geo targeting as product segmentation.
     ProductSegmentation productSegmentation = new ProductSegmentation();
     productSegmentation.setAdUnitSegments(new AdUnitTargeting[] {adUnitTargeting});
     productSegmentation.setGeoSegment(geoTargeting);
-    
+
     productTemplate.setProductSegmentation(productSegmentation);
-    
-    // Add browser targeting to Chrome on the product template distinct from product segmentation.
-    Browser chromeBrowser = new Browser();
-    chromeBrowser.setId(500072L);
-    
-    BrowserTargeting browserTargeting = new BrowserTargeting();
-    browserTargeting.setBrowsers(new Browser[] {chromeBrowser});
-    
-    ProductTemplateTargeting productTemplateTargeting = new ProductTemplateTargeting();
-    productTemplateTargeting.setBrowserTargeting(browserTargeting);
-    
-    productTemplate.setTargeting(productTemplateTargeting);
-    
+
     // Create the product template on the server.
     ProductTemplate[] productTemplates =
         productTemplateService.createProductTemplates(new ProductTemplate[] {productTemplate});

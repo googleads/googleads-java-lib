@@ -13,7 +13,8 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs (
 
 ## Requirements
 
-  * Java 1.5+
+  * Java 1.5+, but note that this requirement will change to Java 1.6+
+  [in April 2015](http://googleadsdeveloper.blogspot.com/2014/11/minimum-java-version-requirement.html)
   * Maven 3.0+ not required, but recommended
 
 ## Announcements and updates

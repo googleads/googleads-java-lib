@@ -35,7 +35,7 @@ import com.google.api.client.auth.oauth2.Credential;
  * @author Nicholas Chen
  */
 public class GetProductsForProductTemplate {
-  
+
   // Set the ID of the product template to filter products by.
   private static final String PRODUCT_TEMPLATE_ID = "INSERT_PRODUCT_TEMPLATE_ID_HERE";
 

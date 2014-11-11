@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignAdExtension;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignAdExtensionOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.CampaignAdExtensionServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtension;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtensionOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtensionServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -49,7 +50,8 @@ public final class CampaignAdExtensionDelegate extends AbstractGetMutateDelegate
    * @param service the service class for CampaignAdExtensionServiceInterface
    * @param includeBetaFields
    */
-  public CampaignAdExtensionDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  CampaignAdExtensionDelegate(AdWordsSession adWordsSession,
       CampaignAdExtensionServiceInterface service, boolean includeBetaFields) {
     super(adWordsSession, SelectorFields.CampaignAdExtension.all(includeBetaFields),
         CampaignAdExtension.class, CampaignAdExtensionOperation.class, service);

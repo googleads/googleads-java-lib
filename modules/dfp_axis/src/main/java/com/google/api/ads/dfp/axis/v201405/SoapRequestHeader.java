@@ -18,19 +18,14 @@ public class SoapRequestHeader  implements java.io.Serializable {
     /* The name of client library application. */
     private java.lang.String applicationName;
 
-    /* The credentials used to authenticate the request. */
-    private com.google.api.ads.dfp.axis.v201405.Authentication authentication;
-
     public SoapRequestHeader() {
     }
 
     public SoapRequestHeader(
            java.lang.String networkCode,
-           java.lang.String applicationName,
-           com.google.api.ads.dfp.axis.v201405.Authentication authentication) {
+           java.lang.String applicationName) {
            this.networkCode = networkCode;
            this.applicationName = applicationName;
-           this.authentication = authentication;
     }
 
 
@@ -73,26 +68,6 @@ public class SoapRequestHeader  implements java.io.Serializable {
         this.applicationName = applicationName;
     }
 
-
-    /**
-     * Gets the authentication value for this SoapRequestHeader.
-     * 
-     * @return authentication   * The credentials used to authenticate the request.
-     */
-    public com.google.api.ads.dfp.axis.v201405.Authentication getAuthentication() {
-        return authentication;
-    }
-
-
-    /**
-     * Sets the authentication value for this SoapRequestHeader.
-     * 
-     * @param authentication   * The credentials used to authenticate the request.
-     */
-    public void setAuthentication(com.google.api.ads.dfp.axis.v201405.Authentication authentication) {
-        this.authentication = authentication;
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof SoapRequestHeader)) return false;
@@ -110,10 +85,7 @@ public class SoapRequestHeader  implements java.io.Serializable {
               this.networkCode.equals(other.getNetworkCode()))) &&
             ((this.applicationName==null && other.getApplicationName()==null) || 
              (this.applicationName!=null &&
-              this.applicationName.equals(other.getApplicationName()))) &&
-            ((this.authentication==null && other.getAuthentication()==null) || 
-             (this.authentication!=null &&
-              this.authentication.equals(other.getAuthentication())));
+              this.applicationName.equals(other.getApplicationName())));
         __equalsCalc = null;
         return _equals;
     }
@@ -130,9 +102,6 @@ public class SoapRequestHeader  implements java.io.Serializable {
         }
         if (getApplicationName() != null) {
             _hashCode += getApplicationName().hashCode();
-        }
-        if (getAuthentication() != null) {
-            _hashCode += getAuthentication().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -155,13 +124,6 @@ public class SoapRequestHeader  implements java.io.Serializable {
         elemField.setFieldName("applicationName");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "applicationName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("authentication");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "authentication"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "Authentication"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

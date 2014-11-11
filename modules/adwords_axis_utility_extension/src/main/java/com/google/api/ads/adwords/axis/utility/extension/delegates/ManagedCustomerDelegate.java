@@ -16,21 +16,23 @@ package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201406.cm.Operator;
-import com.google.api.ads.adwords.axis.v201406.mcm.LinkOperation;
-import com.google.api.ads.adwords.axis.v201406.mcm.LinkStatus;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomer;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomerLink;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomerOperation;
-import com.google.api.ads.adwords.axis.v201406.mcm.ManagedCustomerServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.mcm.MoveOperation;
-import com.google.api.ads.adwords.axis.v201406.mcm.MutateLinkResults;
-import com.google.api.ads.adwords.axis.v201406.mcm.MutateManagerResults;
-import com.google.api.ads.adwords.axis.v201406.mcm.PendingInvitation;
-import com.google.api.ads.adwords.axis.v201406.mcm.PendingInvitationSelector;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201409.cm.Operator;
+import com.google.api.ads.adwords.axis.v201409.mcm.LinkOperation;
+import com.google.api.ads.adwords.axis.v201409.mcm.LinkStatus;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerLink;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerOperation;
+import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.mcm.MoveOperation;
+import com.google.api.ads.adwords.axis.v201409.mcm.MutateLinkResults;
+import com.google.api.ads.adwords.axis.v201409.mcm.MutateManagerResults;
+import com.google.api.ads.adwords.axis.v201409.mcm.PendingInvitation;
+import com.google.api.ads.adwords.axis.v201409.mcm.PendingInvitationSelector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -65,7 +67,8 @@ public final class ManagedCustomerDelegate extends AbstractGetMutateDelegate
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public ManagedCustomerDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  ManagedCustomerDelegate(AdWordsSession adWordsSession,
       ManagedCustomerServiceInterface service) {
     // Fields are not necessary for Services that do not use Generic Selectors
     super(adWordsSession, SelectorFields.ManagedCustomer.all(), ManagedCustomer.class,
@@ -112,9 +115,13 @@ public final class ManagedCustomerDelegate extends AbstractGetMutateDelegate
    * @param customerId this String parameter is for support for the format 123-123-1234
    * @return a list of ManagedCustomers matching the customerId
    * @throws RemoteException for communication-related exceptions
+   * @throws NullPointerException if customerId is null
    */
   public ManagedCustomer getByCustomerId(String customerId) throws RemoteException {
-    return getOneByField(SelectorFields.ManagedCustomer.CUSTOMER_ID, customerId);
+    Preconditions.checkNotNull(customerId, "Null customer ID");
+    String customerIdWithoutDashes = customerId.replace("-", "");
+    return getOneByField(SelectorFields.ManagedCustomer.CUSTOMER_ID,
+        Long.valueOf(customerIdWithoutDashes));
   }
 
   /**

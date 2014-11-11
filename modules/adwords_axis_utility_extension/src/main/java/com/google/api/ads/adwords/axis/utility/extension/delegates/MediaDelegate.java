@@ -15,9 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.Media;
-import com.google.api.ads.adwords.axis.v201406.cm.MediaServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.Media;
+import com.google.api.ads.adwords.axis.v201409.cm.MediaServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.Arrays;
@@ -50,7 +51,8 @@ public final class MediaDelegate extends AbstractGetDelegate<Media, MediaService
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public MediaDelegate(AdWordsSession adWordsSession, MediaServiceInterface service) {
+  @VisibleForTesting
+  MediaDelegate(AdWordsSession adWordsSession, MediaServiceInterface service) {
     super(adWordsSession, Media.class, service, SelectorFields.Media.all());
   }
 

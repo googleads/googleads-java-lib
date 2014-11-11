@@ -14,11 +14,12 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201406.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201406.ch.CustomerSyncSelector;
-import com.google.api.ads.adwords.axis.v201406.ch.CustomerSyncServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.DateTimeRange;
+import com.google.api.ads.adwords.axis.v201409.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201409.ch.CustomerSyncSelector;
+import com.google.api.ads.adwords.axis.v201409.ch.CustomerSyncServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.DateTimeRange;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 
@@ -57,7 +58,8 @@ public final class CustomerSyncDelegate extends AbstractBaseDelegate<CustomerSyn
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public CustomerSyncDelegate(AdWordsSession adWordsSession, CustomerSyncServiceInterface service) {
+  @VisibleForTesting
+  CustomerSyncDelegate(AdWordsSession adWordsSession, CustomerSyncServiceInterface service) {
     super(adWordsSession, service);
   }
 

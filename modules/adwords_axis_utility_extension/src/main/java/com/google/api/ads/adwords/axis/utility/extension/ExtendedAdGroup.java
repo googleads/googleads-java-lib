@@ -14,15 +14,18 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.v201406.cm.Ad;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupAd;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201406.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.CriterionUse;
+import com.google.api.ads.adwords.axis.v201409.cm.Ad;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupLabel;
+import com.google.api.ads.adwords.axis.v201409.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.CriterionUse;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
@@ -93,7 +96,7 @@ public final class ExtendedAdGroup {
    *
    * <p class="note"><b>Note:</b> remove is not supported,
    * instead, set its status to {@code DELETED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.AdGroupServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupServiceInterface}.</p>
    *
    * @return the updated ExtendedAdGroup
    * @throws RemoteException for communication-related exceptions
@@ -112,7 +115,7 @@ public final class ExtendedAdGroup {
   public List<AdGroupCriterion> getAdGroupCriterions() throws RemoteException {
     return delegateLocator.getAdGroupCriterionDelegate().getByAdGroupId(adGroup.getId());
   }
-  
+
   /**
    * Gets the Negative AdGroupCriterions for the ExtendedAdGroup's AdGroup.
    *
@@ -123,7 +126,7 @@ public final class ExtendedAdGroup {
     return delegateLocator.getAdGroupCriterionDelegate().getByAdGroupIdCriterionUse(
         adGroup.getId(), CriterionUse.NEGATIVE);
   }
-  
+
   /**
    * Gets the Biddable (Positive) AdGroupCriterions for the ExtendedAdGroup's AdGroup.
    *
@@ -334,7 +337,7 @@ public final class ExtendedAdGroup {
    * Updates the AdParams for the ExtendedAdGroup's AdGroup.
    *
    * <p class="note"><b>Note:</b> insertAdParams is not supported, use update for new AdParams.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.AdParamServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.AdParamServiceInterface}.</p>
    *
    * @param adParams the list of AdParams to update
    * @return the updated list of AdParams
@@ -348,7 +351,7 @@ public final class ExtendedAdGroup {
    * Updates the AdParam for the ExtendedAdGroup's AdGroup.
    *
    * <p class="note"><b>Note:</b> insertAdParams is not supported, use update for new AdParams.
-   * See {@link com.google.api.ads.adwords.axis.v201406.cm.AdParamServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201409.cm.AdParamServiceInterface}.</p>
    *
    * @param adParam the AdParam to update
    * @return the updated AdParam
@@ -408,5 +411,101 @@ public final class ExtendedAdGroup {
    */
   public List<AdGroupFeed> getAdGroupFeeds() throws RemoteException {
     return delegateLocator.getAdGroupFeedDelegate().getByAdGroupId(adGroup.getId());
+  }
+
+  /**
+   * Inserts a AdGroupLabel into the ExtendedAdGroup's AdGroup.
+   *
+   * <p>(Creates a Label to AdGroup link).</p>
+   *
+   * @param labelId the Label to insert
+   * @return the new AdGroupLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupLabel insertAdGroupLabel(Long labelId) throws RemoteException {
+    AdGroupLabel adGroupLabel = new AdGroupLabel(this.getAdGroup().getId(),  labelId);
+    return delegateLocator.getAdGroupDelegate().insertAdGroupLabel(adGroupLabel);
+  }
+
+  /**
+   * Removes a AdGroupLabel into the ExtendedAdGroup's AdGroup.
+   *
+   * <p>(Deletes a Label to AdGroup link).</p>
+   *
+   * @param labelId the Label to insert
+   * @return the new AdGroupLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupLabel removeAdGroupLabel(Long labelId) throws RemoteException {
+    AdGroupLabel adGroupLabel = new AdGroupLabel(this.getAdGroup().getId(),  labelId);
+    return delegateLocator.getAdGroupDelegate().removeAdGroupLabel(adGroupLabel);
+  }
+
+  /**
+   * Inserts a AdGroupAdLabel into the ExtendedAdGroupAd's AdGroupAd.
+   *
+   * <p>(Creates a Label to AdGroupAd link).</p>
+   *
+   * @param labelId the Label to insert
+   * @param adId the AdId to insert
+   * @return the new AdGroupAdLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupAdLabel insertAdGroupAdLabel(Long labelId, long adId) throws RemoteException {
+    AdGroupAdLabel adGroupAdLabel = new AdGroupAdLabel(this.getAdGroup().getId(),  adId, labelId);
+    return delegateLocator.getAdGroupAdDelegate().insertAdGroupAdLabel(adGroupAdLabel);
+  }
+
+  /**
+   * Removes a AdGroupAdLabel into the ExtendedAdGroupAd's AdGroupAd.
+   *
+   * <p>(Deletes a Label to AdGroupAd link).</p>
+   *
+   * @param labelId the Label to insert
+   * @param adId the AdId to insert
+   * @return the new AdGroupAdLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupAdLabel removeAdGroupAdLabel(Long labelId, long adId) throws RemoteException {
+    AdGroupAdLabel adGroupAdLabel = new AdGroupAdLabel(this.getAdGroup().getId(), adId, labelId);
+    return delegateLocator.getAdGroupAdDelegate().removeAdGroupAdLabel(adGroupAdLabel);
+  }
+
+  /**
+   * Inserts a AdGroupCriterionLabel into the ExtendedAdGroupCriterion's AdGroupCriterion.
+   *
+   * <p>(Creates a Label to AdGroupCriterion link).</p>
+   *
+   * @param labelId the Label to insert
+   * @param criterionId the CriterionId to insert
+   * @return the new AdGroupCriterionLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupCriterionLabel insertAdGroupCriterionLabel(Long labelId, long criterionId)
+      throws RemoteException {
+    AdGroupCriterionLabel adGroupCriterionLabel = new AdGroupCriterionLabel(
+        this.getAdGroup().getId(),  criterionId, labelId);
+
+    return delegateLocator.getAdGroupCriterionDelegate().insertAdGroupCriterionLabel(
+        adGroupCriterionLabel);
+  }
+
+  /**
+   * Removes a AdGroupCriterionLabel into the ExtendedAdGroupCriterion's AdGroupCriterion.
+   *
+   * <p>(Deletes a Label to AdGroupCriterion link).</p>
+   *
+   * @param labelId the Label to insert
+   * @param criterionId the CriterionId to insert
+   * @return the new AdGroupCriterionLabel
+   * @throws RemoteException for communication-related exceptions
+   */
+  public AdGroupCriterionLabel removeAdGroupCriterionLabel(Long labelId, long criterionId)
+      throws RemoteException {
+    AdGroupCriterionLabel adGroupCriterionLabel = new AdGroupCriterionLabel(
+        this.getAdGroup().getId(), criterionId, labelId);
+
+    return delegateLocator.getAdGroupCriterionDelegate().removeAdGroupCriterionLabel(
+        adGroupCriterionLabel);
   }
 }

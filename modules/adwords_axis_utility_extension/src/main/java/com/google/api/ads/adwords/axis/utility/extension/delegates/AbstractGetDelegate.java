@@ -18,9 +18,10 @@ import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.utils.v201406.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201406.cm.Selector;
+import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
@@ -52,7 +53,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   /**
    * Constructor without fields, used in services that do not support Generic Selectors.
    *
-   * Fields are not necessary for Services that do not use Generic Selectors.
+   * <p>Fields are not necessary for Services that do not use Generic Selectors.
    *
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
@@ -68,12 +69,13 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * Constructor without fields, used in services that do not support Generic Selectors
    * and with custom service.
    * 
-   * Fields are not necessary for Services that do not use Generic Selectors.
+   * <p>Fields are not necessary for Services that do not use Generic Selectors.
    *
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param service the custom service class for the SOAP service
    */
+  @VisibleForTesting
   protected AbstractGetDelegate(AdWordsSession adWordsSession, Class<T> classT, S service) {
     super(adWordsSession, service);
     this.classT = classT;
@@ -113,7 +115,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   /**
    * Returns the classT type.
    *
-   * @returns classT type of object that the Service works with, for example Campaign, AdGroup, etc.
+   * @return classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    */
   public Class<T> getClassT() {
     return classT;
@@ -132,11 +134,11 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * Calls the appropriate Get method declared by the
    * ServiceInterface S.
    * 
-   * This method should be overridden by delegates for Services that do not
+   * <p>This method should be overridden by delegates for Services that do not
    * support Generic Selectors.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201406.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201409.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return a list of <T>
@@ -158,7 +160,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * calling getEntries.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201406.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201409.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return Object, because AdParamPage does not extend Page
@@ -311,5 +313,20 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
       int numberResults) throws RemoteException {
     return get(createSelectorBuilder(
         selectorField, ImmutableList.of(fieldValue), startIndex, numberResults).build());
+  }
+
+  /**
+   * Gets all the <T> objects using a Generic Selector with a containsAny predicate for a list of
+   * values.
+   *
+   * @param selectorField name of the field
+   * @param fieldValues list of values for the field in the predicate
+   * @return all the <T> objects matching the fieldValues
+   * @throws RemoteException for communication-related exceptions
+   */
+  protected List<T> getByFieldContainsAny(FieldType<T> selectorField, List<Long> fieldValues)
+      throws RemoteException {
+    return get(createSelectorBuilder()
+      .containsAny(selectorField.getField(), ListUtil.asStringArray(fieldValues)).build());
   }
 }

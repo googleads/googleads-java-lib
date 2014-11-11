@@ -1,3 +1,22 @@
+1.35.0 - 11/11/2014
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201409.
+  - Added Label support to AdWords Axis Utility Extension (beta).
+  - Modified AdWords Express AddPromotion.java examples to only
+    create one Creative per Promotion.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201411.
+  - Added SharedAdUnitService and AdExclusionRuleService.
+  - Removed examples for v201311.
+
+Common:
+  - No Changes.
+
 1.34.0 - 10/10/2014
 -------------------
 AdWords:

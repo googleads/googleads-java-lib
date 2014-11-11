@@ -77,7 +77,8 @@ public enum ProgrammaticErrorReason {
 
     /**
      * 
-     *                 Programmatic line items only support {@link LineItemType#STANDARD}.
+     *                 Programmatic line items only support {@link LineItemType#STANDARD} and
+     *                 {@link LineItemType#SPONSORSHIP} if the relevant feature is on.
      *               
      * 
      */

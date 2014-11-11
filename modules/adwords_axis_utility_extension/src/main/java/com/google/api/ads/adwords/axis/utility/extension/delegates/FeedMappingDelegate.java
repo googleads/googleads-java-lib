@@ -15,11 +15,12 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedMapping;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedMappingOperation;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedMappingServiceInterface;
-import com.google.api.ads.adwords.axis.v201406.cm.FeedMappingStatus;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedMapping;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedMappingOperation;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedMappingServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.FeedMappingStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -48,7 +49,8 @@ public final class FeedMappingDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public FeedMappingDelegate(AdWordsSession adWordsSession, FeedMappingServiceInterface service) {
+  @VisibleForTesting
+  FeedMappingDelegate(AdWordsSession adWordsSession, FeedMappingServiceInterface service) {
     super(adWordsSession, SelectorFields.FeedMapping.all(),
         FeedMapping.class, FeedMappingOperation.class, service);
   }

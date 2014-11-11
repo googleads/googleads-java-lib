@@ -15,9 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201406.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201406.cm.DataServiceInterface;
+import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201409.cm.DataServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -55,7 +56,8 @@ public final class DataAdGroupBidLandscapeDelegate extends
    * @param adWordsSession the {@code adWordsSession} to use with the delegate/service
    * @param service the custom service class for the SOAP service
    */
-  public DataAdGroupBidLandscapeDelegate(AdWordsSession adWordsSession,
+  @VisibleForTesting
+  DataAdGroupBidLandscapeDelegate(AdWordsSession adWordsSession,
       DataServiceInterface service) {
     super(adWordsSession, AdGroupBidLandscape.class, service,
         SelectorFields.AdGroupBidLandscape.all());

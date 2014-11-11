@@ -33,9 +33,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CALL_METRICS_CALL_DETAILS_REPORT"/>
  *     &lt;enumeration value="KEYWORDLESS_QUERY_REPORT"/>
  *     &lt;enumeration value="KEYWORDLESS_CATEGORY_REPORT"/>
- *     &lt;enumeration value="ACCOUNT_REACH_FREQUENCY_REPORT"/>
- *     &lt;enumeration value="CAMPAIGN_REACH_FREQUENCY_REPORT"/>
- *     &lt;enumeration value="ADGROUP_REACH_FREQUENCY_REPORT"/>
  *     &lt;enumeration value="CRITERIA_PERFORMANCE_REPORT"/>
  *     &lt;enumeration value="CLICK_PERFORMANCE_REPORT"/>
  *     &lt;enumeration value="BUDGET_PERFORMANCE_REPORT"/>
@@ -55,7 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="SHOPPING_PERFORMANCE_REPORT"/>
  *     &lt;enumeration value="PRODUCT_PARTITION_REPORT"/>
  *     &lt;enumeration value="PLACEHOLDER_REPORT"/>
- *     &lt;enumeration value="AD_PLACEHOLDER_FEED_ITEM_REPORT"/>
+ *     &lt;enumeration value="AD_CUSTOMIZERS_FEED_ITEM_REPORT"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -232,30 +229,6 @@ public enum ReportDefinitionReportType {
 
     /**
      * 
-     *                 Account reach and frequency performance report.
-     *               
-     * 
-     */
-    ACCOUNT_REACH_FREQUENCY_REPORT,
-
-    /**
-     * 
-     *                 Campaign reach and frequency performance report.
-     *               
-     * 
-     */
-    CAMPAIGN_REACH_FREQUENCY_REPORT,
-
-    /**
-     * 
-     *                 AdGroup reach and frequency performance report.
-     *               
-     * 
-     */
-    ADGROUP_REACH_FREQUENCY_REPORT,
-
-    /**
-     * 
      *                 Reports performance data for all published criteria types including keywords,
      *                 placements, topics, user-lists in a single report.
      *               
@@ -413,7 +386,7 @@ public enum ReportDefinitionReportType {
      *               
      * 
      */
-    AD_PLACEHOLDER_FEED_ITEM_REPORT,
+    AD_CUSTOMIZERS_FEED_ITEM_REPORT,
 
     /**
      * 
