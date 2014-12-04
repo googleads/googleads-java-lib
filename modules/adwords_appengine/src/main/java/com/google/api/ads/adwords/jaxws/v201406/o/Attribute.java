@@ -44,12 +44,10 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     InStreamAdInfoAttribute.class,
-    OpportunityIdeaTypeAttribute.class,
     LongAttribute.class,
     IntegerSetAttribute.class,
     AdSpecListAttribute.class,
     MonthlySearchVolumeAttribute.class,
-    BidLandscapeAttribute.class,
     CriterionAttribute.class,
     KeywordAttribute.class,
     LongRangeAttribute.class,

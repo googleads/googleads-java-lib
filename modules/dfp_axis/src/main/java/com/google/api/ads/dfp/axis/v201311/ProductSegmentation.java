@@ -25,42 +25,42 @@ public class ProductSegmentation  implements java.io.Serializable {
     /* The geographic segmentation. Segments should be set on the
      *                 {@link GeoTargeting#targetedLocations} field.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.GeoTargeting geoSegment;
 
     /* The ad unit targeting segmentation. For each ad unit segment,
      * {@link AdUnitTargeting#includeDescendants} must be true.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.AdUnitTargeting[] adUnitSegments;
 
     /* The placement targeting segmentation.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.PlacementTargeting placementSegment;
 
     /* The user domain segmentation. {@link UserDomainTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.UserDomainTargeting userDomainSegment;
 
     /* The bandwidth segmentation. {@link BandwidthGroupTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.BandwidthGroupTargeting bandwidthSegment;
 
     /* The browser segmentation. {@link BrowserTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.BrowserTargeting browserSegment;
 
     /* The browser language segmentation. {@link BrowserLanguageTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.BrowserLanguageTargeting browserLanguageSegment;
 
     /* The operating system segmentation. {@link OperatingSystemTargeting#isTargeted}
@@ -68,7 +68,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).
      *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201311.OperatingSystemTargeting operatingSystemSegment;
 
     public ProductSegmentation() {
@@ -100,7 +100,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return geoSegment   * The geographic segmentation. Segments should be set on the
      *                 {@link GeoTargeting#targetedLocations} field.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.GeoTargeting getGeoSegment() {
         return geoSegment;
@@ -113,7 +113,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param geoSegment   * The geographic segmentation. Segments should be set on the
      *                 {@link GeoTargeting#targetedLocations} field.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setGeoSegment(com.google.api.ads.dfp.axis.v201311.GeoTargeting geoSegment) {
         this.geoSegment = geoSegment;
@@ -126,7 +126,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return adUnitSegments   * The ad unit targeting segmentation. For each ad unit segment,
      * {@link AdUnitTargeting#includeDescendants} must be true.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.AdUnitTargeting[] getAdUnitSegments() {
         return adUnitSegments;
@@ -139,7 +139,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param adUnitSegments   * The ad unit targeting segmentation. For each ad unit segment,
      * {@link AdUnitTargeting#includeDescendants} must be true.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setAdUnitSegments(com.google.api.ads.dfp.axis.v201311.AdUnitTargeting[] adUnitSegments) {
         this.adUnitSegments = adUnitSegments;
@@ -159,7 +159,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * 
      * @return placementSegment   * The placement targeting segmentation.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.PlacementTargeting getPlacementSegment() {
         return placementSegment;
@@ -171,7 +171,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * 
      * @param placementSegment   * The placement targeting segmentation.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setPlacementSegment(com.google.api.ads.dfp.axis.v201311.PlacementTargeting placementSegment) {
         this.placementSegment = placementSegment;
@@ -184,7 +184,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return userDomainSegment   * The user domain segmentation. {@link UserDomainTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.UserDomainTargeting getUserDomainSegment() {
         return userDomainSegment;
@@ -197,7 +197,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param userDomainSegment   * The user domain segmentation. {@link UserDomainTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setUserDomainSegment(com.google.api.ads.dfp.axis.v201311.UserDomainTargeting userDomainSegment) {
         this.userDomainSegment = userDomainSegment;
@@ -210,7 +210,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return bandwidthSegment   * The bandwidth segmentation. {@link BandwidthGroupTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.BandwidthGroupTargeting getBandwidthSegment() {
         return bandwidthSegment;
@@ -223,7 +223,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param bandwidthSegment   * The bandwidth segmentation. {@link BandwidthGroupTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setBandwidthSegment(com.google.api.ads.dfp.axis.v201311.BandwidthGroupTargeting bandwidthSegment) {
         this.bandwidthSegment = bandwidthSegment;
@@ -236,7 +236,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return browserSegment   * The browser segmentation. {@link BrowserTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.BrowserTargeting getBrowserSegment() {
         return browserSegment;
@@ -249,7 +249,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param browserSegment   * The browser segmentation. {@link BrowserTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setBrowserSegment(com.google.api.ads.dfp.axis.v201311.BrowserTargeting browserSegment) {
         this.browserSegment = browserSegment;
@@ -262,7 +262,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @return browserLanguageSegment   * The browser language segmentation. {@link BrowserLanguageTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.BrowserLanguageTargeting getBrowserLanguageSegment() {
         return browserLanguageSegment;
@@ -275,7 +275,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      * @param browserLanguageSegment   * The browser language segmentation. {@link BrowserLanguageTargeting#isTargeted}
      * must be {@code true}.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setBrowserLanguageSegment(com.google.api.ads.dfp.axis.v201311.BrowserLanguageTargeting browserLanguageSegment) {
         this.browserLanguageSegment = browserLanguageSegment;
@@ -290,7 +290,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public com.google.api.ads.dfp.axis.v201311.OperatingSystemTargeting getOperatingSystemSegment() {
         return operatingSystemSegment;
@@ -305,7 +305,7 @@ public class ProductSegmentation  implements java.io.Serializable {
      *                 We only allow segment by Operating_System, not Operating_System_Version
      * (will be ignored).
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setOperatingSystemSegment(com.google.api.ads.dfp.axis.v201311.OperatingSystemTargeting operatingSystemSegment) {
         this.operatingSystemSegment = operatingSystemSegment;

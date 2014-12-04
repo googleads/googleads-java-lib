@@ -214,6 +214,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "AudienceSegmentError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.AudienceSegmentError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "AudienceSegmentError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.AudienceSegmentErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "Authentication");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201308.Authentication.class;
@@ -795,20 +809,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "InvalidUrlError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201308.InvalidUrlError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "InvalidUrlError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201308.InvalidUrlErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -824,6 +824,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "InvalidUrlError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.InvalidUrlError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "InvalidUrlError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.InvalidUrlErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "InventoryTargeting");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201308.InventoryTargeting.class;
@@ -1510,20 +1524,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "Value");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201308.Value.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "VideoBumperType");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201308.VideoBumperType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1539,6 +1539,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "Value");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.Value.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "VideoBumperType");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201308.VideoBumperType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201308", "VideoPosition");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201308.VideoPosition.class;

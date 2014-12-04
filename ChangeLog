@@ -1,3 +1,24 @@
+1.36.0 - 12/04/2014
+-------------------
+AdWords:
+  - Removed support for v201402.
+  - Removed support for reportMoneyInMicros from AdWordsSession. This feature is not supported in
+    v201406 and higher.
+  - Relaxed validation of ReportingConfiguration to allow usage with v201406.
+  - Fixed [github issue #23](https://github.com/googleads/googleads-java-lib/issues/23): add
+    a negative campaign criterion in the AddCampaignTargetingCriteria examples.
+  - Fixed [github issue #29](https://github.com/googleads/googleads-java-lib/issues/29):
+    EstimateKeywordTraffic.java example fails if StatsEstimate is missing values
+
+DFA:
+  - Removed support for DFA6 report service.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 1.35.1 - 11/11/2014
 -------------------
 AdWords:
@@ -11,7 +32,6 @@ DFP:
 
 Common:
   - No Changes.
-
 
 1.35.0 - 11/11/2014
 -------------------

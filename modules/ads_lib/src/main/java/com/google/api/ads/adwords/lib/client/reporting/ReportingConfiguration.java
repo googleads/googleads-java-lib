@@ -14,8 +14,6 @@
 
 package com.google.api.ads.adwords.lib.client.reporting;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import javax.annotation.Nullable;
 
 /**
@@ -25,13 +23,6 @@ import javax.annotation.Nullable;
  */
 public class ReportingConfiguration {
 
-  /**
-   * The minimum version of the AdWords API that supports the headers related to
-   * objects of this type.
-   */
-  @VisibleForTesting
-  static final String MINIMUM_REPORTING_CONFIGURATION_VERSION = "v201409";
-  
   private Boolean isSkipReportHeader;
   private Boolean isSkipReportSummary;
   
@@ -66,15 +57,12 @@ public class ReportingConfiguration {
   
   /**
    * Validates this object for the specified version of the AdWords API.
+   * @param version the version of the API to validate against, e.g., {@code v201409}.
    * 
    * @throws IllegalArgumentException if validation fails
    */
   public void validate(@Nullable String version) {
-    if (version != null && MINIMUM_REPORTING_CONFIGURATION_VERSION.compareTo(version) > 0) {
-      throw new IllegalArgumentException(String.format(
-          "ReportingConfiguration options are not supported in version %s. See %s for details.",
-          version, "https://developers.google.com/adwords/api/docs/guides/reporting"));
-    }
+    // Currently there are no validations needed.
   }
 
   /**

@@ -14,7 +14,7 @@
 
 package com.google.api.ads.adwords.axis;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 

@@ -108,20 +108,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "AdGroupBidLandscape");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.AdGroupBidLandscape.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "AdGroupBidLandscape.Type");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.AdGroupBidLandscapeType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "AdGroupCriterionError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.AdGroupCriterionError.class;
@@ -227,20 +213,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "BidLandscape");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.BidLandscape.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "BidLandscape.LandscapePoint");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.BidLandscapeLandscapePoint.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "BudgetError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.BudgetError.class;
@@ -304,13 +276,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "CriterionBidLandscape");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.CriterionBidLandscape.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "CriterionError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.CriterionError.class;
@@ -367,13 +332,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DataEntry");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.DataEntry.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DateError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.DateError.class;
@@ -388,13 +346,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DimensionProperties");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.DimensionProperties.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DistinctError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.DistinctError.class;
@@ -408,13 +359,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DomainCategory");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.DomainCategory.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "DoubleValue");
             cachedSerQNames.add(qName);
@@ -496,13 +440,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "Language");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.Language.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "LevelOfDetail");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.cm.LevelOfDetail.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -808,21 +745,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings1() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201406", "StatsQueryError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.cm.StatsQueryError.class;
@@ -886,6 +808,21 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings1() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "AdSpec");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.o.AdSpec.class;
@@ -920,13 +857,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "BidLandscapeAttribute");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.o.BidLandscapeAttribute.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "BooleanAttribute");
             cachedSerQNames.add(qName);
@@ -1197,20 +1127,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "NetworkSearchParameter");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201406.o.NetworkSearchParameter.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "OpportunityIdeaType");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.o.OpportunityIdeaType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201406", "OpportunityIdeaTypeAttribute");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201406.o.OpportunityIdeaTypeAttribute.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

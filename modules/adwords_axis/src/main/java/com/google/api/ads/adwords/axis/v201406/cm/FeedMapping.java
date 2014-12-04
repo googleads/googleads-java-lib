@@ -26,12 +26,13 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  */
 public class FeedMapping  implements java.io.Serializable {
     /* Id of this FeedMapping.
+     *                 &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : REMOVE.</span> */
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long feedMappingId;
 
     /* Id of the Feed that is mapped by this mapping.
@@ -39,8 +40,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span> */
+     * and should not be {@code null}.</span> */
     private java.lang.Long feedId;
 
     /* The placeholder type for this mapping.
@@ -58,11 +58,12 @@ public class FeedMapping  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.FeedMappingStatus status;
 
     /* The list of feed attributes to placeholder fields mappings.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AttributeFieldMappings".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span> */
+     * &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AttributeFieldMappings".</span> */
     private com.google.api.ads.adwords.axis.v201406.cm.AttributeFieldMapping[] attributeFieldMappings;
 
     /* The criterion type for this mapping. This field is mutually
@@ -94,12 +95,13 @@ public class FeedMapping  implements java.io.Serializable {
      * Gets the feedMappingId value for this FeedMapping.
      * 
      * @return feedMappingId   * Id of this FeedMapping.
+     *                 &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : REMOVE.</span>
      */
     public java.lang.Long getFeedMappingId() {
         return feedMappingId;
@@ -110,12 +112,13 @@ public class FeedMapping  implements java.io.Serializable {
      * Sets the feedMappingId value for this FeedMapping.
      * 
      * @param feedMappingId   * Id of this FeedMapping.
+     *                 &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : REMOVE.</span>
      */
     public void setFeedMappingId(java.lang.Long feedMappingId) {
         this.feedMappingId = feedMappingId;
@@ -130,8 +133,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span>
+     * and should not be {@code null}.</span>
      */
     public java.lang.Long getFeedId() {
         return feedId;
@@ -146,8 +148,7 @@ public class FeedMapping  implements java.io.Serializable {
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, REMOVE.</span>
+     * and should not be {@code null}.</span>
      */
     public void setFeedId(java.lang.Long feedId) {
         this.feedId = feedId;
@@ -214,11 +215,12 @@ public class FeedMapping  implements java.io.Serializable {
      * Gets the attributeFieldMappings value for this FeedMapping.
      * 
      * @return attributeFieldMappings   * The list of feed attributes to placeholder fields mappings.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AttributeFieldMappings".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     * &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AttributeFieldMappings".</span>
      */
     public com.google.api.ads.adwords.axis.v201406.cm.AttributeFieldMapping[] getAttributeFieldMappings() {
         return attributeFieldMappings;
@@ -229,11 +231,12 @@ public class FeedMapping  implements java.io.Serializable {
      * Sets the attributeFieldMappings value for this FeedMapping.
      * 
      * @param attributeFieldMappings   * The list of feed attributes to placeholder fields mappings.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "AttributeFieldMappings".</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     * &lt;span class="constraint Required"&gt;
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AttributeFieldMappings".</span>
      */
     public void setAttributeFieldMappings(com.google.api.ads.adwords.axis.v201406.cm.AttributeFieldMapping[] attributeFieldMappings) {
         this.attributeFieldMappings = attributeFieldMappings;

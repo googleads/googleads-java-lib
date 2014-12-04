@@ -93,14 +93,6 @@ public class ReportingConfigurationTest {
   }
   
   @Test
-  public void testValidate_supportedVersion_succeeds() {
-    ReportingConfiguration config =
-        new Builder().skipReportHeader(true).skipReportSummary(true).build();
-    config.validate(ReportingConfiguration.MINIMUM_REPORTING_CONFIGURATION_VERSION);
-    assertTrue("Validation should succeed", true);
-  }
-
-  @Test
   public void testValidate_nullVersion_succeeds() {
     ReportingConfiguration config =
         new Builder().skipReportHeader(true).skipReportSummary(true).build();
@@ -108,10 +100,11 @@ public class ReportingConfigurationTest {
     assertTrue("Validation should succeed", true);
   }
   
-  @Test(expected = IllegalArgumentException.class)
-  public void testValidate_unsupportedVersion_succeeds() {
+  @Test
+  public void testValidate_supportedVersion_succeeds() {
     ReportingConfiguration config =
         new Builder().skipReportHeader(true).skipReportSummary(true).build();
-    config.validate("v201406");
+    config.validate("v201409");
+    assertTrue("Validation should succeed", true);
   }
 }

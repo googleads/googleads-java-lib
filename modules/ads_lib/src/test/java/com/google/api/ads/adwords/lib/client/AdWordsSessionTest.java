@@ -29,13 +29,9 @@ import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
 
 /**
  * Tests for {@link AdWordsSession}.
@@ -44,13 +40,6 @@ import org.slf4j.Logger;
  */
 @RunWith(JUnit4.class)
 public class AdWordsSessionTest {
-
-  @Mock private Logger mockLibLogger;
-
-  @Before
-  public void setUp() {
-    MockitoAnnotations.initMocks(this);
-  }
 
   /**
    * Tests that the builder correctly reads properties from a configuration.
@@ -71,8 +60,6 @@ public class AdWordsSessionTest {
     assertEquals("FooBar", session.getUserAgent());
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
     assertFalse(session.isPartialFailure());
-    assertNull("reportMoneyInMicros should not be set if not explicitly specified in the config",
-        session.isReportMoneyInMicros());
     assertNull("reporting configuration should be null if no reporting options are in the config",
         session.getReportingConfiguration());
   }
@@ -99,8 +86,6 @@ public class AdWordsSessionTest {
     assertEquals("FooBar", session.getUserAgent());
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
     assertFalse(session.isPartialFailure());
-    assertNull("reportMoneyInMicros should not be set if not explicitly specified in the config",
-        session.isReportMoneyInMicros());
     assertNotNull(
         "reporting configuration should not be null if reporting options are in the config",
         session.getReportingConfiguration());
@@ -212,8 +197,6 @@ public class AdWordsSessionTest {
     assertSame(credential, adWordsSession.getOAuth2Credential());
     assertEquals("https://www.google.com", adWordsSession.getEndpoint());
     assertEquals("developerToken", adWordsSession.getDeveloperToken());
-    assertNull("reportMoneyInMicros should not be set if not explicitly set in the builder",
-        adWordsSession.isReportMoneyInMicros());
   }
 
   /**
@@ -311,42 +294,6 @@ public class AdWordsSessionTest {
     }
   }
   
-  /**
-   * Tests that isReportMoneyInMicros is properly set on the session when enabled. 
-   */
-  @Test
-  public void testBuilder_moneyInMicrosEnabled() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .enableReportMoneyInMicros()
-        .build();
-    assertTrue("reportMoneyInMicros should be set when explicitly enabled in the builder",
-        adWordsSession.isReportMoneyInMicros());
-  }
-  
-  /**
-   * Tests that isReportMoneyInMicros is properly set on the session when disabled. 
-   */
-  @Test
-  public void testBuilder_moneyInMicrosDisabled() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .disableReportMoneyInMicros()
-        .build();
-    assertFalse("reportMoneyInMicros should be set when explicitly disabled in the builder",
-        adWordsSession.isReportMoneyInMicros());
-  }
-  
   @Test
   public void testBuilder_withReportingConfiguration() throws Exception {
     Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
@@ -360,7 +307,6 @@ public class AdWordsSessionTest {
         .withOAuth2Credential(credential)
         .withDeveloperToken("developerToken")
         .withReportingConfiguration(reportingConfiguration)
-        .disableReportMoneyInMicros()
         .build();
     
     ReportingConfiguration sessionReportingConfig = adWordsSession.getReportingConfiguration();

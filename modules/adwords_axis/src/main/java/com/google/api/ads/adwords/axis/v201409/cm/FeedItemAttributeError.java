@@ -18,11 +18,13 @@ public class FeedItemAttributeError  implements java.io.Serializable {
      * to a specific set of attributes. */
     private long[] feedAttributeIds;
 
-    /* Validation error code. */
+    /* Validation error code. See the
+     *                 <a href="/adwords/api/docs/appendix/feed-errors">list
+     * of error codes</a>. */
     private java.lang.Integer validationErrorCode;
 
     /* Extra information about the error, including related field
-     * ids */
+     * IDs. */
     private java.lang.String errorInformation;
 
     public FeedItemAttributeError() {
@@ -75,7 +77,9 @@ public class FeedItemAttributeError  implements java.io.Serializable {
     /**
      * Gets the validationErrorCode value for this FeedItemAttributeError.
      * 
-     * @return validationErrorCode   * Validation error code.
+     * @return validationErrorCode   * Validation error code. See the
+     *                 <a href="/adwords/api/docs/appendix/feed-errors">list
+     * of error codes</a>.
      */
     public java.lang.Integer getValidationErrorCode() {
         return validationErrorCode;
@@ -85,7 +89,9 @@ public class FeedItemAttributeError  implements java.io.Serializable {
     /**
      * Sets the validationErrorCode value for this FeedItemAttributeError.
      * 
-     * @param validationErrorCode   * Validation error code.
+     * @param validationErrorCode   * Validation error code. See the
+     *                 <a href="/adwords/api/docs/appendix/feed-errors">list
+     * of error codes</a>.
      */
     public void setValidationErrorCode(java.lang.Integer validationErrorCode) {
         this.validationErrorCode = validationErrorCode;
@@ -96,7 +102,7 @@ public class FeedItemAttributeError  implements java.io.Serializable {
      * Gets the errorInformation value for this FeedItemAttributeError.
      * 
      * @return errorInformation   * Extra information about the error, including related field
-     * ids
+     * IDs.
      */
     public java.lang.String getErrorInformation() {
         return errorInformation;
@@ -107,7 +113,7 @@ public class FeedItemAttributeError  implements java.io.Serializable {
      * Sets the errorInformation value for this FeedItemAttributeError.
      * 
      * @param errorInformation   * Extra information about the error, including related field
-     * ids
+     * IDs.
      */
     public void setErrorInformation(java.lang.String errorInformation) {
         this.errorInformation = errorInformation;

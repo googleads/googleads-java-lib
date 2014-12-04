@@ -8,8 +8,8 @@
 package com.google.api.ads.dfa.axis.v1_19;
 
 public interface LoginRemote extends java.rmi.Remote {
-    public com.google.api.ads.dfa.axis.v1_19.UserProfile authenticate(java.lang.String username, java.lang.String password) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
-    public com.google.api.ads.dfa.axis.v1_19.UserProfile impersonateNetwork(java.lang.String username, java.lang.String token, long networkId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.UserProfile impersonateUser(java.lang.String username, java.lang.String token, java.lang.String userToImpersonate) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.UserProfile impersonateNetwork(java.lang.String username, java.lang.String token, long networkId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public com.google.api.ads.dfa.axis.v1_19.UserProfile authenticate(java.lang.String username, java.lang.String password) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.UserProfile changePassword(com.google.api.ads.dfa.axis.v1_19.ChangePasswordRequest changePasswordRequest) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
 }

@@ -56,6 +56,7 @@ public interface FeedMappingServiceInterface {
     /**
      * 
      *         Add and remove FeedMappings.
+     *         The following {@link Operator}s are supported: ADD, REMOVE.
      *         
      *         @param operations The operations to apply.
      *         @return The resulting FeedMappings.

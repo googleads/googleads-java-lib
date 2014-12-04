@@ -80,9 +80,21 @@ public class EstimateKeywordTraffic {
     // number of keywords that can be passed in a single request.
     //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
     List<Keyword> keywords = new ArrayList<Keyword>();
-    keywords.add(new Keyword(null, null, null, "mars cruise", KeywordMatchType.BROAD));
-    keywords.add(new Keyword(null, null, null, "cheap cruise", KeywordMatchType.PHRASE));
-    keywords.add(new Keyword(null, null, null, "cruise", KeywordMatchType.EXACT));
+    
+    Keyword marsCruiseKeyword = new Keyword();
+    marsCruiseKeyword.setText("mars cruise");
+    marsCruiseKeyword.setMatchType(KeywordMatchType.BROAD);
+    keywords.add(marsCruiseKeyword);
+    
+    Keyword cheapCruiseKeyword = new Keyword();
+    cheapCruiseKeyword.setText("cheap cruise");
+    cheapCruiseKeyword.setMatchType(KeywordMatchType.PHRASE);
+    keywords.add(cheapCruiseKeyword);
+    
+    Keyword cruiseKeyword = new Keyword();
+    cruiseKeyword.setText("cruise");
+    cruiseKeyword.setMatchType(KeywordMatchType.EXACT);
+    keywords.add(cruiseKeyword);
 
     // Create a keyword estimate request for each keyword.
     List<KeywordEstimateRequest> keywordEstimateRequests = new ArrayList<KeywordEstimateRequest>();
@@ -140,28 +152,57 @@ public class EstimateKeywordTraffic {
         }
 
         // Find the mean of the min and max values.
-        double meanAverageCpc =
-            (keywordEstimate.getMin().getAverageCpc().getMicroAmount() + keywordEstimate.getMax()
-                .getAverageCpc().getMicroAmount()) / 2.0;
-        double meanAveragePosition =
-            (keywordEstimate.getMin().getAveragePosition() + keywordEstimate.getMax()
-                .getAveragePosition()) / 2.0;
-        double meanClicks =
-            (keywordEstimate.getMin().getClicksPerDay() + keywordEstimate.getMax()
-                .getClicksPerDay()) / 2.0;
-        double meanTotalCost =
-            (keywordEstimate.getMin().getTotalCost().getMicroAmount() + keywordEstimate.getMax()
-                .getTotalCost().getMicroAmount()) / 2.0;
+        Double meanAverageCpc = calculateMean(keywordEstimate.getMin().getAverageCpc(),
+            keywordEstimate.getMax().getAverageCpc());
+        Double meanAveragePosition = calculateMean(keywordEstimate.getMin().getAveragePosition(),
+            keywordEstimate.getMax().getAveragePosition());
+        Double meanClicks = calculateMean(keywordEstimate.getMin().getClicksPerDay(),
+            keywordEstimate.getMax().getClicksPerDay());
+        Double meanTotalCost = calculateMean(keywordEstimate.getMin().getTotalCost(),
+            keywordEstimate.getMax().getTotalCost());
 
         System.out.printf("Results for the keyword with text \'%s\' and match type \'%s\':%n",
             keyword.getText(), keyword.getMatchType());
-        System.out.printf("\tEstimated average CPC: %.2f\n", meanAverageCpc);
-        System.out.printf("\tEstimated ad position: %.2f\n", meanAveragePosition);
-        System.out.printf("\tEstimated daily clicks: %.2f\n", meanClicks);
-        System.out.printf("\tEstimated daily cost: %.2f\n\n", meanTotalCost);
+        System.out.printf("\tEstimated average CPC: %s%n", formatMean(meanAverageCpc));
+        System.out.printf("\tEstimated ad position: %s%n", formatMean(meanAveragePosition));
+        System.out.printf("\tEstimated daily clicks: %s%n", formatMean(meanClicks));
+        System.out.printf("\tEstimated daily cost: %s%n%n", formatMean(meanTotalCost));
       }
     } else {
       System.out.println("No traffic estimates were returned.");
     }
+  }
+
+  /**
+   * Returns a formatted version of {@code mean}, handling nulls.
+   */
+  private static String formatMean(Double mean) {
+    if (mean == null) {
+      // Handle nulls separately, else the %.2f format below will
+      // truncate 'null' to 'nu'.
+      return null;
+    }
+    return String.format("%.2f", mean);
+  }
+
+  /**
+   * Returns the mean of the {@code microAmount} of the two Money values if neither is null, else
+   * returns null.
+   */
+  private static Double calculateMean(Money minMoney, Money maxMoney) {
+    if (minMoney == null || maxMoney == null) {
+      return null;
+    }
+    return calculateMean(minMoney.getMicroAmount(), maxMoney.getMicroAmount());
+  }
+
+  /**
+   * Returns the mean of the two Number values if neither is null, else returns null.
+   */
+  private static Double calculateMean(Number min, Number max) {
+    if (min == null || max == null) {
+      return null;
+    }
+    return (min.doubleValue() + max.doubleValue()) / 2;
   }
 }

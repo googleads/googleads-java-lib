@@ -29,10 +29,13 @@ import com.google.api.ads.adwords.axis.v201409.cm.FunctionOperator;
 import com.google.api.ads.adwords.axis.v201409.cm.GeoTargetOperand;
 import com.google.api.ads.adwords.axis.v201409.cm.IncomeOperand;
 import com.google.api.ads.adwords.axis.v201409.cm.IncomeTier;
+import com.google.api.ads.adwords.axis.v201409.cm.Keyword;
+import com.google.api.ads.adwords.axis.v201409.cm.KeywordMatchType;
 import com.google.api.ads.adwords.axis.v201409.cm.Language;
 import com.google.api.ads.adwords.axis.v201409.cm.Location;
 import com.google.api.ads.adwords.axis.v201409.cm.LocationExtensionOperand;
 import com.google.api.ads.adwords.axis.v201409.cm.LocationGroups;
+import com.google.api.ads.adwords.axis.v201409.cm.NegativeCampaignCriterion;
 import com.google.api.ads.adwords.axis.v201409.cm.Operator;
 import com.google.api.ads.adwords.axis.v201409.cm.PlacesOfInterestOperand;
 import com.google.api.ads.adwords.axis.v201409.cm.PlacesOfInterestOperandCategory;
@@ -141,6 +144,7 @@ public class AddCampaignTargetingCriteria {
     radiusMatchingFunction.setLhsOperand(new FunctionArgumentOperand[] {distance});
     radiusLocationGroup.setMatchingFunction(radiusMatchingFunction);
 
+    // Create operations to add each of the criteria above.
     List<CampaignCriterionOperation> operations = new ArrayList<CampaignCriterionOperation>();
     for (Criterion criterion : new Criterion[] {california,
         mexico,
@@ -157,6 +161,19 @@ public class AddCampaignTargetingCriteria {
       operation.setOperator(Operator.ADD);
       operations.add(operation);
     }
+    
+    // Add a negative campaign criterion.
+    Keyword negativeKeyword = new Keyword();
+    negativeKeyword.setText("jupiter cruise");
+    negativeKeyword.setMatchType(KeywordMatchType.BROAD);
+    CampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
+    negativeCriterion.setCampaignId(campaignId);
+    negativeCriterion.setCriterion(negativeKeyword);
+
+    CampaignCriterionOperation operation = new CampaignCriterionOperation();
+    operation.setOperand(negativeCriterion);
+    operation.setOperator(Operator.ADD);
+    operations.add(operation);
 
     CampaignCriterionReturnValue result =
         campaignCriterionService.mutate(operations
@@ -164,7 +181,7 @@ public class AddCampaignTargetingCriteria {
 
     // Display campaigns.
     for (CampaignCriterion campaignCriterion : result.getValue()) {
-      System.out.printf("Campaign criterion with campaign id '%s', criterion id '%s', "
+      System.out.printf("Campaign criterion with campaign ID '%s', criterion ID '%s', "
           + "and type '%s' was added.\n", campaignCriterion.getCampaignId(), campaignCriterion
           .getCriterion().getId(), campaignCriterion.getCriterion().getCriterionType());
     }

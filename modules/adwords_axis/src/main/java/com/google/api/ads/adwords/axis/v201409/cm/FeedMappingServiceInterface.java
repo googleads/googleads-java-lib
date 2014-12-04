@@ -25,7 +25,8 @@ public interface FeedMappingServiceInterface extends java.rmi.Remote {
 
     /**
      * Add and remove FeedMappings.
-     *         
+     *         The following {@link Operator}s are supported: ADD, REMOVE.
+     * 
      *         
      * @param operations The operations to apply.
      *         

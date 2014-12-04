@@ -239,6 +239,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AudienceSegmentError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.AudienceSegmentError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AudienceSegmentError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.AudienceSegmentErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.AuthenticationError.class;
@@ -834,20 +848,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "GrpTargetGender");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.GrpTargetGender.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "InternalApiError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.InternalApiError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -863,6 +863,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "GrpTargetGender");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.GrpTargetGender.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "InternalApiError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.InternalApiError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "InternalApiError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.InternalApiErrorReason.class;
@@ -1549,20 +1563,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "TechnologyTargetingError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.TechnologyTargetingError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "TechnologyTargetingError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.TechnologyTargetingErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1578,6 +1578,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "TechnologyTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.TechnologyTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "TechnologyTargetingError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.TechnologyTargetingErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "TextValue");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.TextValue.class;

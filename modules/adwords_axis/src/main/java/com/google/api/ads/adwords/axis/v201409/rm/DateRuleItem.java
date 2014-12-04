@@ -21,9 +21,7 @@ public class DateRuleItem  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201409.rm.DateRuleItemDateOperator op;
 
     /* The right hand side of date rule item. The date's format should
-     * be YYYYMMDD.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span> */
+     * be YYYYMMDD. */
     private java.lang.String value;
 
     public DateRuleItem() {
@@ -88,8 +86,6 @@ public class DateRuleItem  implements java.io.Serializable {
      * 
      * @return value   * The right hand side of date rule item. The date's format should
      * be YYYYMMDD.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -101,8 +97,6 @@ public class DateRuleItem  implements java.io.Serializable {
      * 
      * @param value   * The right hand side of date rule item. The date's format should
      * be YYYYMMDD.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

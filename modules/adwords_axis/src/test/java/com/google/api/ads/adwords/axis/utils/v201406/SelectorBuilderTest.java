@@ -14,6 +14,10 @@
 
 package com.google.api.ads.adwords.axis.utils.v201406;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import com.google.api.ads.adwords.axis.v201406.cm.CampaignStatus;
 import com.google.api.ads.adwords.axis.v201406.cm.DateRange;
 import com.google.api.ads.adwords.axis.v201406.cm.OrderBy;
@@ -21,8 +25,6 @@ import com.google.api.ads.adwords.axis.v201406.cm.Predicate;
 import com.google.api.ads.adwords.axis.v201406.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201406.cm.Selector;
 import com.google.api.ads.adwords.axis.v201406.cm.SortOrder;
-
-import junit.framework.Assert;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -59,8 +61,8 @@ public class SelectorBuilderTest {
 
     Selector selector = builder.build();
 
-    Assert.assertEquals(selector.getDateRange().getMin(), formatStart);
-    Assert.assertEquals(selector.getDateRange().getMax(), formatEnd);
+    assertEquals(formatStart, selector.getDateRange().getMin());
+    assertEquals(formatEnd, selector.getDateRange().getMax());
 
     String formatEndPlusOne = dateFormat.format(end.plusDays(1).toDate());
 
@@ -70,14 +72,14 @@ public class SelectorBuilderTest {
 
     selector.setDateRange(dateRange);
 
-    Assert.assertEquals(selector.getDateRange().getMin(), formatStart);
-    Assert.assertEquals(selector.getDateRange().getMax(), formatEndPlusOne);
+    assertEquals(formatStart, selector.getDateRange().getMin());
+    assertEquals(formatEndPlusOne, selector.getDateRange().getMax());
 
     Selector selectorRebuilt =
         builder.fields("Id", "Name", "Status").forDateRange(start, end).build();
 
-    Assert.assertEquals(selectorRebuilt.getDateRange().getMin(), formatStart);
-    Assert.assertEquals(selectorRebuilt.getDateRange().getMax(), formatEnd);
+    assertEquals(formatStart, selectorRebuilt.getDateRange().getMin());
+    assertEquals(formatEnd, selectorRebuilt.getDateRange().getMax());
 
   }
 
@@ -94,15 +96,15 @@ public class SelectorBuilderTest {
 
     Selector selector = builder.build();
 
-    Assert.assertEquals(7, selector.getFields().length);
+    assertEquals(7, selector.getFields().length);
 
-    Assert.assertEquals("Id", selector.getFields()[0]);
-    Assert.assertEquals("Name", selector.getFields()[1]);
-    Assert.assertEquals("Status", selector.getFields()[2]);
-    Assert.assertEquals("StartDate", selector.getFields()[3]);
-    Assert.assertEquals("EndDate", selector.getFields()[4]);
-    Assert.assertEquals("ServingStatus", selector.getFields()[5]);
-    Assert.assertEquals("Settings", selector.getFields()[6]);
+    assertEquals("Id", selector.getFields()[0]);
+    assertEquals("Name", selector.getFields()[1]);
+    assertEquals("Status", selector.getFields()[2]);
+    assertEquals("StartDate", selector.getFields()[3]);
+    assertEquals("EndDate", selector.getFields()[4]);
+    assertEquals("ServingStatus", selector.getFields()[5]);
+    assertEquals("Settings", selector.getFields()[6]);
 
     selector = builder.fields("Id",
         "Name",
@@ -114,16 +116,16 @@ public class SelectorBuilderTest {
         "Id",
         "AverageCpc").build();
 
-    Assert.assertEquals(8, selector.getFields().length);
+    assertEquals(8, selector.getFields().length);
 
-    Assert.assertEquals("Id", selector.getFields()[0]);
-    Assert.assertEquals("Name", selector.getFields()[1]);
-    Assert.assertEquals("Status", selector.getFields()[2]);
-    Assert.assertEquals("StartDate", selector.getFields()[3]);
-    Assert.assertEquals("EndDate", selector.getFields()[4]);
-    Assert.assertEquals("ServingStatus", selector.getFields()[5]);
-    Assert.assertEquals("Settings", selector.getFields()[6]);
-    Assert.assertEquals("AverageCpc", selector.getFields()[7]);
+    assertEquals("Id", selector.getFields()[0]);
+    assertEquals("Name", selector.getFields()[1]);
+    assertEquals("Status", selector.getFields()[2]);
+    assertEquals("StartDate", selector.getFields()[3]);
+    assertEquals("EndDate", selector.getFields()[4]);
+    assertEquals("ServingStatus", selector.getFields()[5]);
+    assertEquals("Settings", selector.getFields()[6]);
+    assertEquals("AverageCpc", selector.getFields()[7]);
 
   }
 
@@ -141,15 +143,15 @@ public class SelectorBuilderTest {
 
     Selector selector = builder.build();
 
-    Assert.assertEquals(7, selector.getFields().length);
+    assertEquals(7, selector.getFields().length);
 
-    Assert.assertEquals("Id", selector.getFields()[0]);
-    Assert.assertEquals("Name", selector.getFields()[1]);
-    Assert.assertEquals("Status", selector.getFields()[2]);
-    Assert.assertEquals("StartDate", selector.getFields()[3]);
-    Assert.assertEquals("EndDate", selector.getFields()[4]);
-    Assert.assertEquals("ServingStatus", selector.getFields()[5]);
-    Assert.assertEquals("Settings", selector.getFields()[6]);
+    assertEquals("Id", selector.getFields()[0]);
+    assertEquals("Name", selector.getFields()[1]);
+    assertEquals("Status", selector.getFields()[2]);
+    assertEquals("StartDate", selector.getFields()[3]);
+    assertEquals("EndDate", selector.getFields()[4]);
+    assertEquals("ServingStatus", selector.getFields()[5]);
+    assertEquals("Settings", selector.getFields()[6]);
 
   }
 
@@ -163,15 +165,15 @@ public class SelectorBuilderTest {
     builder = builder.equalsId(10L);
     Selector selector = builder.build();
 
-    Assert.assertNotNull(selector.getPredicates());
-    Assert.assertEquals(1, selector.getPredicates().length);
+    assertNotNull(selector.getPredicates());
+    assertEquals(1, selector.getPredicates().length);
 
     Predicate predicate = selector.getPredicates()[0];
-    Assert.assertEquals("Id", predicate.getField());
-    Assert.assertEquals(PredicateOperator.EQUALS, predicate.getOperator());
-    Assert.assertNotNull(predicate.getValues());
-    Assert.assertEquals(1, predicate.getValues().length);
-    Assert.assertEquals("10", predicate.getValues()[0]);
+    assertEquals("Id", predicate.getField());
+    assertEquals(PredicateOperator.EQUALS, predicate.getOperator());
+    assertNotNull(predicate.getValues());
+    assertEquals(1, predicate.getValues().length);
+    assertEquals("10", predicate.getValues()[0]);
 
   }
 
@@ -186,16 +188,16 @@ public class SelectorBuilderTest {
         builder.in("Status", CampaignStatus.ENABLED.toString(), CampaignStatus.REMOVED.toString());
     Selector selector = builder.build();
 
-    Assert.assertNotNull(selector.getPredicates());
-    Assert.assertEquals(1, selector.getPredicates().length);
+    assertNotNull(selector.getPredicates());
+    assertEquals(1, selector.getPredicates().length);
 
     Predicate predicate = selector.getPredicates()[0];
-    Assert.assertEquals("Status", predicate.getField());
-    Assert.assertEquals(PredicateOperator.IN, predicate.getOperator());
-    Assert.assertNotNull(predicate.getValues());
-    Assert.assertEquals(2, predicate.getValues().length);
-    Assert.assertEquals(CampaignStatus.ENABLED.toString(), predicate.getValues()[0]);
-    Assert.assertEquals(CampaignStatus.REMOVED.toString(), predicate.getValues()[1]);
+    assertEquals("Status", predicate.getField());
+    assertEquals(PredicateOperator.IN, predicate.getOperator());
+    assertNotNull(predicate.getValues());
+    assertEquals(2, predicate.getValues().length);
+    assertEquals(CampaignStatus.ENABLED.toString(), predicate.getValues()[0]);
+    assertEquals(CampaignStatus.REMOVED.toString(), predicate.getValues()[1]);
 
   }
 
@@ -209,39 +211,39 @@ public class SelectorBuilderTest {
     builder = builder.orderAscBy("AverageCpm");
     Selector selector = builder.build();
 
-    Assert.assertNotNull(selector.getOrdering());
-    Assert.assertEquals(1, selector.getOrdering().length);
+    assertNotNull(selector.getOrdering());
+    assertEquals(1, selector.getOrdering().length);
 
     OrderBy orderBy = selector.getOrdering()[0];
 
-    Assert.assertEquals("AverageCpm", orderBy.getField());
-    Assert.assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
     builder.orderAscBy("AverageCpm").orderDescBy("AverageCpc");
     selector = builder.build();
 
-    Assert.assertNotNull(selector.getOrdering());
-    Assert.assertEquals(2, selector.getOrdering().length);
+    assertNotNull(selector.getOrdering());
+    assertEquals(2, selector.getOrdering().length);
 
     orderBy = selector.getOrdering()[0];
 
-    Assert.assertEquals("AverageCpm", orderBy.getField());
-    Assert.assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
     orderBy = selector.getOrdering()[1];
 
-    Assert.assertEquals("AverageCpc", orderBy.getField());
-    Assert.assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
+    assertEquals("AverageCpc", orderBy.getField());
+    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
 
     selector = builder.removeOrderBy("AverageCpm").build();
 
-    Assert.assertNotNull(selector.getOrdering());
-    Assert.assertEquals(1, selector.getOrdering().length);
+    assertNotNull(selector.getOrdering());
+    assertEquals(1, selector.getOrdering().length);
 
     orderBy = selector.getOrdering()[0];
 
-    Assert.assertEquals("AverageCpc", orderBy.getField());
-    Assert.assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
+    assertEquals("AverageCpc", orderBy.getField());
+    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
 
   }
 
@@ -262,8 +264,8 @@ public class SelectorBuilderTest {
     builder = builder.forDateRange(start, end);
     Selector selector = builder.build();
 
-    Assert.assertEquals(selector.getDateRange().getMin(), formatStart);
-    Assert.assertEquals(selector.getDateRange().getMax(), formatEnd);
+    assertEquals(formatStart, selector.getDateRange().getMin());
+    assertEquals(formatEnd, selector.getDateRange().getMax());
   }
 
   /**
@@ -276,30 +278,30 @@ public class SelectorBuilderTest {
     builder = builder.offset(10);
     Selector selector = builder.build();
 
-    Assert.assertNotNull(selector.getPaging());
-    Assert.assertNotNull(selector.getPaging().getStartIndex());
-    Assert.assertNull(selector.getPaging().getNumberResults());
-    Assert.assertEquals(selector.getPaging().getStartIndex().intValue(), 10);
+    assertNotNull(selector.getPaging());
+    assertNotNull(selector.getPaging().getStartIndex());
+    assertNull(selector.getPaging().getNumberResults());
+    assertEquals(10, selector.getPaging().getStartIndex().intValue());
 
     selector = builder.offset(10).limit(20).build();
 
-    Assert.assertNotNull(selector.getPaging());
-    Assert.assertNotNull(selector.getPaging().getStartIndex());
-    Assert.assertNotNull(selector.getPaging().getNumberResults());
-    Assert.assertEquals(selector.getPaging().getStartIndex().intValue(), 10);
-    Assert.assertEquals(selector.getPaging().getNumberResults().intValue(), 20);
+    assertNotNull(selector.getPaging());
+    assertNotNull(selector.getPaging().getStartIndex());
+    assertNotNull(selector.getPaging().getNumberResults());
+    assertEquals(10, selector.getPaging().getStartIndex().intValue());
+    assertEquals(20, selector.getPaging().getNumberResults().intValue());
 
     selector = builder.offset(10).limit(20).increaseOffsetBy(5).build();
 
-    Assert.assertNotNull(selector.getPaging());
-    Assert.assertNotNull(selector.getPaging().getStartIndex());
-    Assert.assertNotNull(selector.getPaging().getNumberResults());
-    Assert.assertEquals(selector.getPaging().getStartIndex().intValue(), 15);
-    Assert.assertEquals(selector.getPaging().getNumberResults().intValue(), 20);
+    assertNotNull(selector.getPaging());
+    assertNotNull(selector.getPaging().getStartIndex());
+    assertNotNull(selector.getPaging().getNumberResults());
+    assertEquals(15, selector.getPaging().getStartIndex().intValue());
+    assertEquals(20, selector.getPaging().getNumberResults().intValue());
 
     selector = builder.offset(10).limit(20).increaseOffsetBy(5).removeLimitAndOffset().build();
 
-    Assert.assertNull(selector.getPaging());
+    assertNull(selector.getPaging());
 
     selector = builder.offset(10)
         .limit(20)
@@ -309,11 +311,11 @@ public class SelectorBuilderTest {
         .limit(4)
         .build();
 
-    Assert.assertNotNull(selector.getPaging());
-    Assert.assertNotNull(selector.getPaging().getStartIndex());
-    Assert.assertNotNull(selector.getPaging().getNumberResults());
-    Assert.assertEquals(selector.getPaging().getStartIndex().intValue(), 55);
-    Assert.assertEquals(selector.getPaging().getNumberResults().intValue(), 4);
+    assertNotNull(selector.getPaging());
+    assertNotNull(selector.getPaging().getStartIndex());
+    assertNotNull(selector.getPaging().getNumberResults());
+    assertEquals(55, selector.getPaging().getStartIndex().intValue());
+    assertEquals(4, selector.getPaging().getNumberResults().intValue());
 
   }
 
@@ -326,8 +328,8 @@ public class SelectorBuilderTest {
     Selector selectorOne = builder.fields("Id").offset(10).build();
     Selector selectorTwo = builder.fields("Status").offset(345).build();
 
-    Assert.assertEquals(10, selectorOne.getPaging().getStartIndex().intValue());
-    Assert.assertEquals(345, selectorTwo.getPaging().getStartIndex().intValue());
+    assertEquals(10, selectorOne.getPaging().getStartIndex().intValue());
+    assertEquals(345, selectorTwo.getPaging().getStartIndex().intValue());
   }
 
   /**
@@ -342,8 +344,8 @@ public class SelectorBuilderTest {
     OrderBy orderTwo = selectorTwo.getOrdering(0);
     orderTwo.setField("Status");
 
-    Assert.assertEquals("Id", selectorOne.getOrdering(0).getField());
-    Assert.assertEquals("Status", selectorTwo.getOrdering(0).getField());
+    assertEquals("Id", selectorOne.getOrdering(0).getField());
+    assertEquals("Status", selectorTwo.getOrdering(0).getField());
   }
 
   /**
@@ -358,8 +360,8 @@ public class SelectorBuilderTest {
     Predicate predicateTwo = selectorTwo.getPredicates(0);
     predicateTwo.setField("Status");
 
-    Assert.assertEquals("Id", selectorOne.getPredicates(0).getField());
-    Assert.assertEquals("Status", selectorTwo.getPredicates(0).getField());
+    assertEquals("Id", selectorOne.getPredicates(0).getField());
+    assertEquals("Status", selectorTwo.getPredicates(0).getField());
   }
 
   /**
@@ -378,10 +380,10 @@ public class SelectorBuilderTest {
     Selector selectorOne = builder.forDateRange(startOne, endOne).build();
     Selector selectorTwo = builder.forDateRange(startTwo, endTwo).build();
 
-    Assert.assertEquals(dateFormat.format(startOne.toDate()), selectorOne.getDateRange().getMin());
-    Assert.assertEquals(dateFormat.format(endOne.toDate()), selectorOne.getDateRange().getMax());
-    Assert.assertEquals(dateFormat.format(startTwo.toDate()), selectorTwo.getDateRange().getMin());
-    Assert.assertEquals(dateFormat.format(endTwo.toDate()), selectorTwo.getDateRange().getMax());
+    assertEquals(dateFormat.format(startOne.toDate()), selectorOne.getDateRange().getMin());
+    assertEquals(dateFormat.format(endOne.toDate()), selectorOne.getDateRange().getMax());
+    assertEquals(dateFormat.format(startTwo.toDate()), selectorTwo.getDateRange().getMin());
+    assertEquals(dateFormat.format(endTwo.toDate()), selectorTwo.getDateRange().getMax());
   }
 
 }

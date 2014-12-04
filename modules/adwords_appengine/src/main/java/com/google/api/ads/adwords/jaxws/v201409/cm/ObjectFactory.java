@@ -30,6 +30,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SoapResponseHeader }
+     * 
+     */
+    public SoapResponseHeader createSoapResponseHeader() {
+        return new SoapResponseHeader();
+    }
+
+    /**
+     * Create an instance of {@link SoapHeader }
+     * 
+     */
+    public SoapHeader createSoapHeader() {
+        return new SoapHeader();
+    }
+
+    /**
+     * Create an instance of {@link ApiException }
+     * 
+     */
+    public ApiException createApiException() {
+        return new ApiException();
+    }
+
+    /**
+     * Create an instance of {@link Selector }
+     * 
+     */
+    public Selector createSelector() {
+        return new Selector();
+    }
+
+    /**
      * Create an instance of {@link CampaignSharedSetError }
      * 
      */
@@ -747,14 +779,6 @@ public class ObjectFactory {
      */
     public ProductLegacyCondition createProductLegacyCondition() {
         return new ProductLegacyCondition();
-    }
-
-    /**
-     * Create an instance of {@link SoapHeader }
-     * 
-     */
-    public SoapHeader createSoapHeader() {
-        return new SoapHeader();
     }
 
     /**
@@ -1558,14 +1582,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SoapResponseHeader }
-     * 
-     */
-    public SoapResponseHeader createSoapResponseHeader() {
-        return new SoapResponseHeader();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdPage }
      * 
      */
@@ -1659,14 +1675,6 @@ public class ObjectFactory {
      */
     public TargetRoasBiddingScheme createTargetRoasBiddingScheme() {
         return new TargetRoasBiddingScheme();
-    }
-
-    /**
-     * Create an instance of {@link ApiException }
-     * 
-     */
-    public ApiException createApiException() {
-        return new ApiException();
     }
 
     /**
@@ -2627,14 +2635,6 @@ public class ObjectFactory {
      */
     public AdGroupAdError createAdGroupAdError() {
         return new AdGroupAdError();
-    }
-
-    /**
-     * Create an instance of {@link Selector }
-     * 
-     */
-    public Selector createSelector() {
-        return new Selector();
     }
 
     /**

@@ -24,6 +24,9 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  */
 public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.DimensionProperties  implements java.io.Serializable {
     /* Recommended category for the website domain.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Category".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String category;
@@ -35,6 +38,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     Example : united states/ca/sfo matches 500 docs
      * and united states/ca matches 1000
      *                     docs. The coverage will be 50%.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Coverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.Double coverage;
@@ -60,6 +65,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     <p>
      *                     The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IsoLanguage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String isoLanguage;
@@ -88,6 +95,9 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      * Gets the category value for this DomainCategory.
      * 
      * @return category   * Recommended category for the website domain.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Category".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -100,6 +110,9 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      * Sets the category value for this DomainCategory.
      * 
      * @param category   * Recommended category for the website domain.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Category".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -118,6 +131,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     Example : united states/ca/sfo matches 500 docs
      * and united states/ca matches 1000
      *                     docs. The coverage will be 50%.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Coverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -136,6 +151,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     Example : united states/ca/sfo matches 500 docs
      * and united states/ca matches 1000
      *                     docs. The coverage will be 50%.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "Coverage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -196,6 +213,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     <p>
      *                     The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IsoLanguage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -214,6 +233,8 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201406.cm.
      *                     <p>
      *                     The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IsoLanguage".</span>
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

@@ -45,7 +45,10 @@ import java.io.InputStreamReader;
  */
 public class GetRefreshToken {
 
-  private static final String SCOPE = "https://www.googleapis.com/auth/adwords";
+  /**
+   * The OAuth2 scope for the AdWords API.
+   */
+  public static final String SCOPE = "https://www.googleapis.com/auth/adwords";
 
   // This callback URL will allow you to copy the token from the success screen.
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";

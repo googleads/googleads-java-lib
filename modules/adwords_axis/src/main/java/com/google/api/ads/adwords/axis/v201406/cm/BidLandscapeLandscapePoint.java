@@ -15,23 +15,41 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  */
 public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /* The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span> */
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Bid".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201406.cm.Money bid;
 
-    /* Estimated number of clicks at this bid. */
+    /* Estimated number of clicks at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalClicks".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long clicks;
 
-    /* Estimated cost at this bid. */
+    /* Estimated cost at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalCost".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201406.cm.Money cost;
 
-    /* Estimated marginal cost per click. */
+    /* Estimated marginal cost per click.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarginalCpc".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201406.cm.Money marginalCpc;
 
-    /* Estimated number of impressions at this bid. */
+    /* Estimated number of impressions at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long impressions;
 
-    /* Estimated number of promoted impressions. */
+    /* Estimated number of promoted impressions.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromotedImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long promotedImpressions;
 
     public BidLandscapeLandscapePoint() {
@@ -57,8 +75,11 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the bid value for this BidLandscapeLandscapePoint.
      * 
      * @return bid   * The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Bid".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201406.cm.Money getBid() {
         return bid;
@@ -69,8 +90,11 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the bid value for this BidLandscapeLandscapePoint.
      * 
      * @param bid   * The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Bid".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public void setBid(com.google.api.ads.adwords.axis.v201406.cm.Money bid) {
         this.bid = bid;
@@ -81,6 +105,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the clicks value for this BidLandscapeLandscapePoint.
      * 
      * @return clicks   * Estimated number of clicks at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalClicks".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getClicks() {
         return clicks;
@@ -91,6 +118,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the clicks value for this BidLandscapeLandscapePoint.
      * 
      * @param clicks   * Estimated number of clicks at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalClicks".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setClicks(java.lang.Long clicks) {
         this.clicks = clicks;
@@ -101,6 +131,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the cost value for this BidLandscapeLandscapePoint.
      * 
      * @return cost   * Estimated cost at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalCost".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201406.cm.Money getCost() {
         return cost;
@@ -111,6 +144,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the cost value for this BidLandscapeLandscapePoint.
      * 
      * @param cost   * Estimated cost at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalCost".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setCost(com.google.api.ads.adwords.axis.v201406.cm.Money cost) {
         this.cost = cost;
@@ -121,6 +157,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the marginalCpc value for this BidLandscapeLandscapePoint.
      * 
      * @return marginalCpc   * Estimated marginal cost per click.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarginalCpc".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201406.cm.Money getMarginalCpc() {
         return marginalCpc;
@@ -131,6 +170,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the marginalCpc value for this BidLandscapeLandscapePoint.
      * 
      * @param marginalCpc   * Estimated marginal cost per click.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarginalCpc".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setMarginalCpc(com.google.api.ads.adwords.axis.v201406.cm.Money marginalCpc) {
         this.marginalCpc = marginalCpc;
@@ -141,6 +183,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the impressions value for this BidLandscapeLandscapePoint.
      * 
      * @return impressions   * Estimated number of impressions at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getImpressions() {
         return impressions;
@@ -151,6 +196,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the impressions value for this BidLandscapeLandscapePoint.
      * 
      * @param impressions   * Estimated number of impressions at this bid.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LocalImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setImpressions(java.lang.Long impressions) {
         this.impressions = impressions;
@@ -161,6 +209,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the promotedImpressions value for this BidLandscapeLandscapePoint.
      * 
      * @return promotedImpressions   * Estimated number of promoted impressions.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromotedImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getPromotedImpressions() {
         return promotedImpressions;
@@ -171,6 +222,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the promotedImpressions value for this BidLandscapeLandscapePoint.
      * 
      * @param promotedImpressions   * Estimated number of promoted impressions.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromotedImpressions".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setPromotedImpressions(java.lang.Long promotedImpressions) {
         this.promotedImpressions = promotedImpressions;

@@ -63,14 +63,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OpportunityIdeaTypeAttribute }
-     * 
-     */
-    public OpportunityIdeaTypeAttribute createOpportunityIdeaTypeAttribute() {
-        return new OpportunityIdeaTypeAttribute();
-    }
-
-    /**
      * Create an instance of {@link AdSpec }
      * 
      */
@@ -156,14 +148,6 @@ public class ObjectFactory {
      */
     public DisplayType createDisplayType() {
         return new DisplayType();
-    }
-
-    /**
-     * Create an instance of {@link BidLandscapeAttribute }
-     * 
-     */
-    public BidLandscapeAttribute createBidLandscapeAttribute() {
-        return new BidLandscapeAttribute();
     }
 
     /**

@@ -127,6 +127,10 @@ public interface ProposalServiceInterface {
      *         <td>{@link Proposal#id}</td>
      *         </tr>
      *         <tr>
+     *         <td>{@code dfpOrderId}</td>
+     *         <td>{@link Proposal#dfpOrderId}</td>
+     *         </tr>
+     *         <tr>
      *         <td>{@code name}</td>
      *         <td>{@link Proposal#name}</td>
      *         </tr>

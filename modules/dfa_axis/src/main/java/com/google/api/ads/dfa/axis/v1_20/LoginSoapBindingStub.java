@@ -24,14 +24,16 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("authenticate");
+        oper.setName("impersonateUser");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "username"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "userToImpersonate"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "UserProfile"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.UserProfile.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "authenticateReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "impersonateUserReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -64,16 +66,14 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("impersonateUser");
+        oper.setName("authenticate");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "username"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "userToImpersonate"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "UserProfile"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_20.UserProfile.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "impersonateUserReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "authenticateReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -234,7 +234,7 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
         }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.UserProfile authenticate(java.lang.String username, java.lang.String password) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public com.google.api.ads.dfa.axis.v1_20.UserProfile impersonateUser(java.lang.String username, java.lang.String token, java.lang.String userToImpersonate) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -243,11 +243,11 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "authenticate"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "impersonateUser"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {username, password});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {username, token, userToImpersonate});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -312,7 +312,7 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_20.UserProfile impersonateUser(java.lang.String username, java.lang.String token, java.lang.String userToImpersonate) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
+    public com.google.api.ads.dfa.axis.v1_20.UserProfile authenticate(java.lang.String username, java.lang.String password) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -321,11 +321,11 @@ public class LoginSoapBindingStub extends org.apache.axis.client.Stub implements
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "impersonateUser"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.20", "authenticate"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {username, token, userToImpersonate});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {username, password});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

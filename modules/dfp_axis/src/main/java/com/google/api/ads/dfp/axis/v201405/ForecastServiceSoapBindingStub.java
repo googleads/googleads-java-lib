@@ -214,6 +214,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "AudienceSegmentError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.AudienceSegmentError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "AudienceSegmentError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.AudienceSegmentErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201405.AuthenticationError.class;
@@ -795,20 +809,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "GrpProvider");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201405.GrpProvider.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "GrpSettings");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201405.GrpSettings.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -824,6 +824,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "GrpProvider");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.GrpProvider.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "GrpSettings");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.GrpSettings.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "GrpTargetGender");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201405.GrpTargetGender.class;
@@ -1510,20 +1524,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "UserDomainTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201405.UserDomainTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "UserDomainTargetingError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201405.UserDomainTargetingError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1539,6 +1539,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "UserDomainTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.UserDomainTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "UserDomainTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201405.UserDomainTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201405", "UserDomainTargetingError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201405.UserDomainTargetingErrorReason.class;

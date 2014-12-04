@@ -13,17 +13,31 @@ package com.google.api.ads.adwords.axis.v201409.cm;
  *             Google My Business Locations.
  */
 public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v201409.cm.SystemFeedGenerationData  implements java.io.Serializable {
-    /* Required authentication token (from OAuth API) for the email. */
+    /* Required authentication token (from OAuth API) for the email.</br>
+     * Use the following values when populating the oAuthInfo:
+     *                     <ul>
+     *                     <li>httpMethod: {@code GET}</li>
+     *                     <li>httpRequestUrl: {@code https://www.googleapis.com/auth/adwords}</li>
+     * <li>
+     *                     httpAuthorizationHeader: {@code Bearer *ACCESS_TOKEN*}
+     * (where *ACCESS_TOKEN* is generated from OAuth credentials for the
+     *                     emailAddress and a scope matching httpRequestUrl)
+     * </li>
+     *                     </ul> */
     private com.google.api.ads.adwords.axis.v201409.cm.OAuthInfo oAuthInfo;
 
-    /* Email address used to access the Google My Business account.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span> */
+    /* Email address of a Google My Business account or email address
+     * of a manager of the
+     *                     Google My Business account.
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private java.lang.String emailAddress;
 
-    /* Identifies the Google My Business account used for the location
-     * feed. */
+    /* Plus page ID of the managed business whose locations should
+     * be used. If this field is not set,
+     *                     then all businesses accessible by the user (specified
+     * by the emailAddress) are used. */
     private java.lang.String businessAccountIdentifier;
 
     /* Used to filter Google My Business listings by business name.
@@ -63,7 +77,17 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the oAuthInfo value for this PlacesLocationFeedData.
      * 
-     * @return oAuthInfo   * Required authentication token (from OAuth API) for the email.
+     * @return oAuthInfo   * Required authentication token (from OAuth API) for the email.</br>
+     * Use the following values when populating the oAuthInfo:
+     *                     <ul>
+     *                     <li>httpMethod: {@code GET}</li>
+     *                     <li>httpRequestUrl: {@code https://www.googleapis.com/auth/adwords}</li>
+     * <li>
+     *                     httpAuthorizationHeader: {@code Bearer *ACCESS_TOKEN*}
+     * (where *ACCESS_TOKEN* is generated from OAuth credentials for the
+     *                     emailAddress and a scope matching httpRequestUrl)
+     * </li>
+     *                     </ul>
      */
     public com.google.api.ads.adwords.axis.v201409.cm.OAuthInfo getOAuthInfo() {
         return oAuthInfo;
@@ -73,7 +97,17 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the oAuthInfo value for this PlacesLocationFeedData.
      * 
-     * @param oAuthInfo   * Required authentication token (from OAuth API) for the email.
+     * @param oAuthInfo   * Required authentication token (from OAuth API) for the email.</br>
+     * Use the following values when populating the oAuthInfo:
+     *                     <ul>
+     *                     <li>httpMethod: {@code GET}</li>
+     *                     <li>httpRequestUrl: {@code https://www.googleapis.com/auth/adwords}</li>
+     * <li>
+     *                     httpAuthorizationHeader: {@code Bearer *ACCESS_TOKEN*}
+     * (where *ACCESS_TOKEN* is generated from OAuth credentials for the
+     *                     emailAddress and a scope matching httpRequestUrl)
+     * </li>
+     *                     </ul>
      */
     public void setOAuthInfo(com.google.api.ads.adwords.axis.v201409.cm.OAuthInfo oAuthInfo) {
         this.oAuthInfo = oAuthInfo;
@@ -83,10 +117,12 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @return emailAddress   * Email address used to access the Google My Business account.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * @return emailAddress   * Email address of a Google My Business account or email address
+     * of a manager of the
+     *                     Google My Business account.
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public java.lang.String getEmailAddress() {
         return emailAddress;
@@ -96,10 +132,12 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the emailAddress value for this PlacesLocationFeedData.
      * 
-     * @param emailAddress   * Email address used to access the Google My Business account.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * @param emailAddress   * Email address of a Google My Business account or email address
+     * of a manager of the
+     *                     Google My Business account.
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setEmailAddress(java.lang.String emailAddress) {
         this.emailAddress = emailAddress;
@@ -109,8 +147,10 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the businessAccountIdentifier value for this PlacesLocationFeedData.
      * 
-     * @return businessAccountIdentifier   * Identifies the Google My Business account used for the location
-     * feed.
+     * @return businessAccountIdentifier   * Plus page ID of the managed business whose locations should
+     * be used. If this field is not set,
+     *                     then all businesses accessible by the user (specified
+     * by the emailAddress) are used.
      */
     public java.lang.String getBusinessAccountIdentifier() {
         return businessAccountIdentifier;
@@ -120,8 +160,10 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the businessAccountIdentifier value for this PlacesLocationFeedData.
      * 
-     * @param businessAccountIdentifier   * Identifies the Google My Business account used for the location
-     * feed.
+     * @param businessAccountIdentifier   * Plus page ID of the managed business whose locations should
+     * be used. If this field is not set,
+     *                     then all businesses accessible by the user (specified
+     * by the emailAddress) are used.
      */
     public void setBusinessAccountIdentifier(java.lang.String businessAccountIdentifier) {
         this.businessAccountIdentifier = businessAccountIdentifier;

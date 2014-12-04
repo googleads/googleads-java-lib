@@ -231,6 +231,20 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AudienceSegmentError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.AudienceSegmentError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AudienceSegmentError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.AudienceSegmentErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.AuthenticationError.class;
@@ -833,20 +847,6 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PermissionError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.PermissionError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PermissionError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.PermissionErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -862,6 +862,20 @@ public class OrderServiceSoapBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PermissionError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.PermissionError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PermissionError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.PermissionErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ProgrammaticError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.ProgrammaticError.class;

@@ -30,14 +30,16 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201409.cm.Ad  
     /* Second line of ad text. */
     private java.lang.String description2;
 
-    /* If set to true, enable call tracking for the creative. */
+    /* If set to true, enable call tracking for the creative. Enabling
+     * call
+     *                     tracking also enables call conversions. */
     private java.lang.Boolean callTracked;
 
-    /* Conversion type to attribute a call conversion to. Okay to
-     * leave it unset.
-     *                     Only in effect if callTracked is also set to true.
-     * If call_tracked is set
-     *                     to false, this field is ignored. */
+    /* Conversion type to attribute a call conversion to. If not set,
+     * then a
+     *                     default conversion type id is used. Only in effect
+     * if callTracked is also
+     *                     set to true otherwise this field is ignored. */
     private java.lang.Long conversionTypeId;
 
     /* Url to be used for phone number verification. */
@@ -192,7 +194,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201409.cm.Ad  
     /**
      * Gets the callTracked value for this CallOnlyAd.
      * 
-     * @return callTracked   * If set to true, enable call tracking for the creative.
+     * @return callTracked   * If set to true, enable call tracking for the creative. Enabling
+     * call
+     *                     tracking also enables call conversions.
      */
     public java.lang.Boolean getCallTracked() {
         return callTracked;
@@ -202,7 +206,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201409.cm.Ad  
     /**
      * Sets the callTracked value for this CallOnlyAd.
      * 
-     * @param callTracked   * If set to true, enable call tracking for the creative.
+     * @param callTracked   * If set to true, enable call tracking for the creative. Enabling
+     * call
+     *                     tracking also enables call conversions.
      */
     public void setCallTracked(java.lang.Boolean callTracked) {
         this.callTracked = callTracked;
@@ -212,11 +218,11 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201409.cm.Ad  
     /**
      * Gets the conversionTypeId value for this CallOnlyAd.
      * 
-     * @return conversionTypeId   * Conversion type to attribute a call conversion to. Okay to
-     * leave it unset.
-     *                     Only in effect if callTracked is also set to true.
-     * If call_tracked is set
-     *                     to false, this field is ignored.
+     * @return conversionTypeId   * Conversion type to attribute a call conversion to. If not set,
+     * then a
+     *                     default conversion type id is used. Only in effect
+     * if callTracked is also
+     *                     set to true otherwise this field is ignored.
      */
     public java.lang.Long getConversionTypeId() {
         return conversionTypeId;
@@ -226,11 +232,11 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201409.cm.Ad  
     /**
      * Sets the conversionTypeId value for this CallOnlyAd.
      * 
-     * @param conversionTypeId   * Conversion type to attribute a call conversion to. Okay to
-     * leave it unset.
-     *                     Only in effect if callTracked is also set to true.
-     * If call_tracked is set
-     *                     to false, this field is ignored.
+     * @param conversionTypeId   * Conversion type to attribute a call conversion to. If not set,
+     * then a
+     *                     default conversion type id is used. Only in effect
+     * if callTracked is also
+     *                     set to true otherwise this field is ignored.
      */
     public void setConversionTypeId(java.lang.Long conversionTypeId) {
         this.conversionTypeId = conversionTypeId;
