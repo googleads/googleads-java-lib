@@ -185,6 +185,10 @@
         <version>2.3</version>
         <configuration>
           <!-- put your configurations here -->
+          <shadedArtifactAttached>false</shadedArtifactAttached>
+          <createDependencyReducedPom>true</createDependencyReducedPom>
+          <createSourcesJar>false</createSourcesJar>
+          <shadeTestJar>true</shadeTestJar>
         </configuration>
         <executions>
           <execution>
@@ -197,6 +201,8 @@
                 <relocation>
                   <pattern>com.google.common</pattern>
                   <shadedPattern>com.shaded.google.common</shadedPattern>
+                </relocation>
+                <relocation>
                   <pattern>org.joda.time</pattern>
                   <shadedPattern>org.shaded.joda.time</shadedPattern>
                 </relocation>
@@ -219,6 +225,19 @@
     <module>modules/dfp_axis</module>
     <module>modules/adwords_axis_utility_extension</module>
   </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>kinja-nexus</id>
+      <name>Internal Releases</name>
+      <url>https://nexus.kinja-ops.com/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>kinja-nexus</id>
+      <name>Internal Releases</name>
+      <url>https://nexus.kinja-ops.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <profiles>
     <profile>
