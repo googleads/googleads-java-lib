@@ -16,7 +16,7 @@
 
 DEFAULT_VERSION=1.36.1
 # you can override the default version number by setting the first CLI parameter
-VERSION=${1:$DEFAULT_VERSION}
+VERSION=${1:-$DEFAULT_VERSION}
 
 mvn versions:set -DnewVersion=$VERSION
 
