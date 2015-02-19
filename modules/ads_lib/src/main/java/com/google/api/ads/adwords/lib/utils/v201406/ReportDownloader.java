@@ -23,7 +23,6 @@ import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.XmlFieldExtractor;
-import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -31,8 +30,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.util.Map;
-
-import javax.xml.namespace.QName;
 
 /**
  * Reports are fetched synchronously like in the following code:
@@ -59,32 +56,33 @@ public class ReportDownloader {
 
   private final AdHocReportDownloadHelper adHocReportDownloadHelper;
 
-  // Static so we hold only a single reference of the JAXBContext
-  private static final JaxBSerializer<ReportDefinition> serializer =
-      new JaxBSerializer<ReportDefinition>(ReportDefinition.class, new QName("reportDefinition"));
-
   /**
    * Constructs a {@link ReportDownloader}.
    *
    * @param session AdWordsSession to use to make report download requests.
    */
   public ReportDownloader(AdWordsSession session) {
-    this.adHocReportDownloadHelper = new AdHocReportDownloadHelper(session, VERSION);
+    this(new AdHocReportDownloadHelper(session, VERSION));
   }
 
+  @VisibleForTesting
+  ReportDownloader(AdHocReportDownloadHelper adHocReportDownloadHelper) {
+    this.adHocReportDownloadHelper = adHocReportDownloadHelper;
+  }
+  
   /**
    * Downloads a report and returns a ReportDownloadResponse with the results.
    *
    * @param reportDefinition to download a report for.
-   * @return {@link ReportDownloadResponse} When HTTP request completes. On
-   *         success, the outputStream will be flushed and closed.
+   * @return {@link ReportDownloadResponse} If the HTTP request completes successfully.
    * @throws ReportException If we don't receive a response from the server.
    * @throws ReportDownloadResponseException If the server indicates a problem
    *         with the request.
    */
   public ReportDownloadResponse downloadReport(ReportDefinition reportDefinition)
       throws ReportException, ReportDownloadResponseException {
-    return handleResponse(adHocReportDownloadHelper.downloadReport(toXml(reportDefinition)));
+    return handleResponse(adHocReportDownloadHelper.downloadReport(
+        new XmlReportDefinitionRequest(reportDefinition)));
   }
 
   /**
@@ -96,12 +94,10 @@ public class ReportDownloader {
    * @throws ReportDownloadResponseException if the server indicated there was a
    *         problem processing the report download request.
    */
-  @VisibleForTesting
-  ReportDownloadResponse handleResponse(RawReportDownloadResponse response)
+  private ReportDownloadResponse handleResponse(RawReportDownloadResponse response)
       throws ReportDownloadResponseException {
     if (response.getHttpStatus() == HttpURLConnection.HTTP_OK) {
-      return new ReportDownloadResponse(
-          response.getHttpStatus(), "SUCCESS", response.getInputStream());
+      return new ReportDownloadResponse(response);
     }
     String responseText;
     try {
@@ -126,20 +122,15 @@ public class ReportDownloader {
    *
    * @param reportQuery to download a report for.
    * @param format Format to download the report as. CSV,
-   * @return {@link ReportDownloadResponse} When HTTP request completes. On success, the
-   *         outputStream will be flushed and closed.
+   * @return {@link ReportDownloadResponse} If the HTTP request completes successfully.
    * @throws ReportException If there is any issue making HTTP request with server.
    * @throws ReportDownloadResponseException If the server indicates a problem
    *         with the request.
    */
   public ReportDownloadResponse downloadReport(String reportQuery, DownloadFormat format)
       throws ReportException, ReportDownloadResponseException {
-    return handleResponse(adHocReportDownloadHelper.downloadReport(reportQuery, format.value()));
-  }
-
-  @VisibleForTesting
-  String toXml(ReportDefinition reportDefinition) {
-    return serializer.serialize(reportDefinition);
+    return handleResponse(adHocReportDownloadHelper.downloadReport(
+        new AwqlReportRequest(reportQuery, format)));
   }
 
   /**

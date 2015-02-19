@@ -7,6 +7,12 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * Contains a list of associations between campaigns and shared sets
+ * resulting from the filtering and paging of
+ *             {@link CampaignSharedSetService#get} call.
+ */
 public class CampaignSharedSetPage  extends com.google.api.ads.adwords.axis.v201406.cm.NullStatsPage  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.CampaignSharedSet[] entries;
 

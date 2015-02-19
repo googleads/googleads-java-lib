@@ -129,26 +129,7 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
   @VisibleForTesting
   void setAuthenticationHeaders(DfpServiceDescriptor dfpServiceDescriptor, Object soapClient,
       Object soapHeader, DfpSession dfpSession) throws AuthenticationException {
-    if (dfpSession.getClientLoginToken() != null) {
-      try {
-        BeanUtils.setProperty(soapHeader, "authentication",
-            createClientLoginObject(dfpServiceDescriptor, dfpSession));
-      } catch (SecurityException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      } catch (IllegalAccessException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      } catch (InvocationTargetException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      } catch (InstantiationException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      } catch (NoSuchMethodException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      } catch (ClassNotFoundException e) {
-        throw new IllegalArgumentException("Could not set the header.", e);
-      }
-    } else {
-      authorizationHeaderHandler.setAuthorization(soapClient, dfpSession);
-    }
+    authorizationHeaderHandler.setAuthorization(soapClient, dfpSession);
   }
 
   /**
@@ -167,37 +148,5 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
       throws InstantiationException, IllegalAccessException, ClassNotFoundException {
     return Class.forName(adsServiceDescriptor.getInterfaceClass().getPackage().getName()
         + ".SoapRequestHeader").newInstance();
-  }
-
-  /**
-   * Creates a SOAP header.
-   *
-   * @param dfpServiceDescriptor the ads service descriptor
-   * @return the instantiated SOAP header
-   * @throws ClassNotFoundException if the client login class could not be found
-   * @throws IllegalAccessException if the client login class could not be
-   *         created
-   * @throws InstantiationException if the client login class could not be
-   *         created
-   * @throws NoSuchMethodException if the client login class could not be
-   *         created
-   * @throws InvocationTargetException if the client login class could not be
-   *         created
-   * @throws SecurityException if the client login class could not be
-   *         created
-   * @throws IllegalArgumentException if the client login class could not be
-   *         created
-   */
-  @VisibleForTesting
-  Object createClientLoginObject(DfpServiceDescriptor dfpServiceDescriptor, DfpSession dfpSession)
-      throws InstantiationException, IllegalAccessException, ClassNotFoundException,
-      IllegalArgumentException, SecurityException, InvocationTargetException,
-      NoSuchMethodException {
-    Class<?> interfaceClass = dfpServiceDescriptor.getInterfaceClass();
-    String packageName = interfaceClass.getPackage().getName();
-    Class<?> clientLoginClass = Class.forName(packageName + "." + "ClientLogin");
-
-    return clientLoginClass.getConstructor(String.class, String.class).newInstance(null,
-        dfpSession.getClientLoginToken());
   }
 }

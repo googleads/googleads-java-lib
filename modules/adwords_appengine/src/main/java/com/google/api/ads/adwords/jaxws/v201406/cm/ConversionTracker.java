@@ -63,9 +63,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     UploadConversion.class,
+    AdWordsConversionTracker.class,
     AdCallMetricsConversion.class,
-    AppConversion.class,
-    AdWordsConversionTracker.class
+    AppConversion.class
 })
 public abstract class ConversionTracker {
 

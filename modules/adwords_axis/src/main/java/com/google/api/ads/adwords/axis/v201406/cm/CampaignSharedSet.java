@@ -7,6 +7,11 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * CampaignSharedSets are used for managing the shared sets
+ *             associated with a campaign.
+ */
 public class CampaignSharedSet  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetId".</span><span class="constraint Filterable">This

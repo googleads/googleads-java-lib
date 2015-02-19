@@ -11,9 +11,9 @@ package com.google.api.ads.adwords.axis.v201406.cm;
 /**
  * Encapsulates the information about bids and bidding strategies.
  * 
- *             Bidding Strategy can be set on campaigns, ad groups or
- * ad group criteria.
- *             A bidding strategy can be set using one of the following:
+ *             <p>Bidding Strategy can be set on campaigns, ad groups
+ * or ad group criteria.
+ *             <p>A bidding strategy can be set using one of the following:
  * <ul>
  *             <li>{@linkplain BiddingStrategyConfiguration#biddingScheme
  * bidding scheme}</li>
@@ -23,19 +23,21 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  * bidding strategy ID} for
  *             flexible bid strategies.</li>
  *             </ul>
- *             If the bidding strategy type is used, then schemes are
- * created using default values.
+ *             <p>If the bidding strategy type is used, then schemes
+ * are created using default values.
  *             
- *             Bids can be set only on ad groups and ad group criteria.
+ *             <p>Bids can be set only on ad groups and ad group criteria.
  * They cannot be set on campaigns.
  *             Multiple bids can be set at the same time. Only the bids
- * that apply to the campaign's
- *             {@linkplain Campaign#biddingStrategyConfiguration bidding
- * strategy} will be used.
+ * that apply to the effective
+ *             bidding strategy will be used. Effective bidding strategy
+ * is considered to be the directly
+ *             attached strategy or inherited strategy from above level(s)
+ * when there?s no directly attached
+ *             strategy.
  *             
- *             For more information on flexible bidding, visit the
- *             <a href="https://support.google.com/adwords/answer/2979071">Help
- * Center</a>.
+ *             <p>For more information on flexible bidding, visit the
+ * <a href="https://support.google.com/adwords/answer/2979071">Help Center</a>.
  */
 public class BiddingStrategyConfiguration  implements java.io.Serializable {
     /* Id of the bidding strategy to be associated with the campaign,

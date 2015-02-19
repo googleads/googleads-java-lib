@@ -29,7 +29,7 @@ import com.google.common.collect.Iterables;
 import java.util.Arrays;
 
 /**
- * This example updates an exchange rate's refresh rate. To determine which exchange rates
+ * This example updates the value of an exchange rate. To determine which exchange rates
  * exist, run GetAllExchangeRates.java.
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
@@ -41,7 +41,7 @@ import java.util.Arrays;
  * @author Nicholas Chen
  */
 public class UpdateExchangeRates {
-  
+
   // Set the ID of the exchange rate to update.
   private static final String EXCHANGE_RATE_ID = "INSERT_EXCHANGE_RATE_ID_HERE";
 

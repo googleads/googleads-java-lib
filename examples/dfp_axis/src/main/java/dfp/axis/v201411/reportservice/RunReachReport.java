@@ -22,13 +22,17 @@ import com.google.api.ads.dfp.axis.v201411.Column;
 import com.google.api.ads.dfp.axis.v201411.DateRangeType;
 import com.google.api.ads.dfp.axis.v201411.Dimension;
 import com.google.api.ads.dfp.axis.v201411.ExportFormat;
+import com.google.api.ads.dfp.axis.v201411.ReportDownloadOptions;
 import com.google.api.ads.dfp.axis.v201411.ReportJob;
 import com.google.api.ads.dfp.axis.v201411.ReportQuery;
 import com.google.api.ads.dfp.axis.v201411.ReportServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.io.Files;
+import com.google.common.io.Resources;
 
 import java.io.File;
+import java.net.URL;
 
 /**
  * This example runs a reach report.
@@ -71,13 +75,17 @@ public class RunReachReport {
     reportDownloader.waitForReportReady();
 
     // Change to your file location.
-    String filePath = File.createTempFile("reach-report-", ".csv.gz").toString();
+    File file = File.createTempFile("reach-report-", ".csv.gz");
 
-    System.out.printf("Downloading report to %s ...", filePath);
+    System.out.printf("Downloading report to %s ...", file.toString());
 
     // Download the report.
-    reportDownloader.downloadReport(ExportFormat.CSV_DUMP, filePath);
-
+    ReportDownloadOptions options = new ReportDownloadOptions();
+    options.setExportFormat(ExportFormat.CSV_DUMP);
+    options.setUseGzipCompression(true);
+    URL url = reportDownloader.getDownloadUrl(options);
+    Resources.asByteSource(url).copyTo(Files.asByteSink(file));
+    
     System.out.println("done.");
   }
 

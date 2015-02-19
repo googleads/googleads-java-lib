@@ -1,3 +1,36 @@
+1.37.0 - 02/19/2015
+-------------------
+AdWords:
+  - Added new methods to ReportDownloadResponse to facilitate saving a report's contents to a file,
+    retrieving a report's contents as a string, and retrieving a report's contents as an
+    InputStream.
+  - Fixed AccountManagementTest to account for the fact that clientCustomerId is required on
+    ManagedCustomerService calls in v201409.
+  - Removed AdWords for Video services from v201406.
+  - Added ProductPartitionTree utility to simplify management of ProductPartition ad
+    group criteria in Shopping campaigns.
+  - Improved targetAll settings and comments in AddAdGroups examples.
+  - Updated multiple examples to use
+    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls). 
+  - Added UpgradeAdUrl example.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201502.
+  - Removed support for v201311, v201308, and v201306.
+  - Removed examples for v201403.
+  - Updated ForecastService examples.
+  - Added PackageService, ProductPackageService and ProductPackageItemService.
+  - Removed support for ClientLogin with the removal of v201311 and earlier.
+
+Common:
+  - Fixed [issue #33](https://github.com/googleads/googleads-java-lib/issues/33):
+    Some generated JAX-WS files contain an invalid wsdlLocation.
+  - Modified SOAP integration tests to make them Java 8 compatible. This required a new test
+    dependency on XMLUnit.
+
 1.36.0 - 12/04/2014
 -------------------
 AdWords:

@@ -27,8 +27,8 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201406", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201406", "ResponseHeader");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201406", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201406", "ApiExceptionFault");
 
     /**
@@ -36,22 +36,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link CustomerSyncServiceInterfaceget }
-     * 
-     */
-    public CustomerSyncServiceInterfaceget createCustomerSyncServiceInterfaceget() {
-        return new CustomerSyncServiceInterfaceget();
-    }
-
-    /**
-     * Create an instance of {@link CustomerSyncServiceInterfacegetResponse }
-     * 
-     */
-    public CustomerSyncServiceInterfacegetResponse createCustomerSyncServiceInterfacegetResponse() {
-        return new CustomerSyncServiceInterfacegetResponse();
     }
 
     /**
@@ -103,21 +87,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201406", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SoapResponseHeader }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201406", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201406", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**

@@ -87,12 +87,16 @@ public class AddAdGroups {
     // Targeting restriction settings - these settings only affect serving
     // for the Display Network.
     TargetingSetting targeting = new TargetingSetting();
+    // Restricting to serve ads that match your ad group placements.
+    // This is equivalent to choosing "Target and bid" in the UI.
     TargetingSettingDetail placements = new TargetingSettingDetail();
     placements.setCriterionTypeGroup(CriterionTypeGroup.PLACEMENT);
-    placements.setTargetAll(Boolean.TRUE);
+    placements.setTargetAll(Boolean.FALSE);
+    // Using your ad group verticals only for bidding. This is equivalent
+    // to choosing "Bid only" in the UI.
     TargetingSettingDetail verticals = new TargetingSettingDetail();
     verticals.setCriterionTypeGroup(CriterionTypeGroup.VERTICAL);
-    verticals.setTargetAll(Boolean.FALSE);
+    verticals.setTargetAll(Boolean.TRUE);
     targeting.setDetails(new TargetingSettingDetail[]{placements, verticals});
 
     // Create ad group bid.

@@ -504,6 +504,20 @@ public class FeedItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "Location");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201409.cm.Location.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "LocationTargetingStatus");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201409.cm.LocationTargetingStatus.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "MinuteOfHour");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201409.cm.MinuteOfHour.class;
@@ -812,20 +826,6 @@ public class FeedItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "SortOrder");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.SortOrder.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "StringLengthError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.StringLengthError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -841,6 +841,20 @@ public class FeedItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "SortOrder");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201409.cm.SortOrder.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "StringLengthError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201409.cm.StringLengthError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "StringLengthError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201409.cm.StringLengthErrorReason.class;

@@ -34,7 +34,6 @@ import javax.annotation.Nullable;
 public class AuthorizationHeaderProvider {
 
   @VisibleForTesting
-  static final String CLIENT_LOGIN_HEADER_PREFIX = "GoogleLogin auth=";
   private final OAuth2AuthorizationHeaderProvider oAuth2AuthorizationHeaderProvider;
   private final AdsLibConfiguration adsLibConfiguration;
   private final OAuth2Helper oAuth2Helper;
@@ -75,20 +74,10 @@ public class AuthorizationHeaderProvider {
     if (adsSession instanceof OAuth2Compatible
         && ((OAuth2Compatible) adsSession).getOAuth2Credential() != null) {
       return getOAuth2Header((OAuth2Compatible) adsSession);
-    } else if (adsSession instanceof ClientLoginCompatible &&
-        ((ClientLoginCompatible) adsSession).getClientLoginToken() != null) {
-      return getClientLoginHeader((ClientLoginCompatible) adsSession);
     } else {
       throw new IllegalArgumentException(
           "Session does not have any valid authentication mechanisms");
     }
-  }
-
-  /**
-   * Gets the ClientLogin header.
-   */
-  private String getClientLoginHeader(ClientLoginCompatible adsSession) {
-    return CLIENT_LOGIN_HEADER_PREFIX + adsSession.getClientLoginToken();
   }
 
   /**

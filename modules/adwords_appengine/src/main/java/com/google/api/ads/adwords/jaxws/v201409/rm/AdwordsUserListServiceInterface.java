@@ -60,6 +60,7 @@ public interface AdwordsUserListServiceInterface {
      *         
      *         Add - creates a set of user lists
      *         Set - updates a set of user lists
+     *         Remove - not supported
      *         
      *         @param operations the operations to apply
      *         @return a list of UserList objects

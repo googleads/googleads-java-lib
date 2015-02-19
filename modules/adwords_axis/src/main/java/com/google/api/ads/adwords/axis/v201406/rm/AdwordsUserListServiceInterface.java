@@ -28,6 +28,7 @@ public interface AdwordsUserListServiceInterface extends java.rmi.Remote {
      *         
      *         Add - creates a set of user lists
      *         Set - updates a set of user lists
+     *         Remove - not supported
      *         
      *         
      * @param operations the operations to apply

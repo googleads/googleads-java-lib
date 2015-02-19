@@ -9,6 +9,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains a list of criterion lists resulting from the filtering and paging of
+ *             {@link SharedSetService#get} call.
+ *           
+ * 
  * <p>Java class for SharedSetPage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Represents error codes for the SharedCriterionService.
+ *           
+ * 
  * <p>Java class for SharedCriterionError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

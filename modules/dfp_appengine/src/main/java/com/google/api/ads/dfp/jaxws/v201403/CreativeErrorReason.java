@@ -25,7 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="DUPLICATE_ASSET_IN_CREATIVE"/>
  *     &lt;enumeration value="CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY"/>
  *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE"/>
- *     &lt;enumeration value="CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -138,14 +137,6 @@ public enum CreativeErrorReason {
      * 
      */
     CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE,
-
-    /**
-     * 
-     *                 Video creatives cannot be copied across advertisers.
-     *               
-     * 
-     */
-    CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS,
 
     /**
      * 

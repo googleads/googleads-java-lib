@@ -8,8 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Errors associated with the size of the given collection being
- *             out of bounds.
+ *             Error for the size of the collection being too large
  *           
  * 
  * <p>Java class for CollectionSizeError complex type.

@@ -16,6 +16,8 @@ package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.UrlEncodedContent;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 
 import java.util.Map;
@@ -25,7 +27,7 @@ import java.util.Map;
  *
  * @author Kevin Winter
  */
-public class AwqlReportBodyProvider implements ReportBodyProvider {
+class AwqlReportBodyProvider implements ReportBodyProvider {
 
   private static final String REPORT_QUERY_KEY = "__rdquery";
   private static final String FORMAT_KEY = "__fmt";
@@ -40,8 +42,9 @@ public class AwqlReportBodyProvider implements ReportBodyProvider {
    * @param format Download format.
    */
   public AwqlReportBodyProvider(String reportQuery, String format) {
-    this.reportQuery = reportQuery;
-    this.format = format;
+    this.reportQuery =
+        Preconditions.checkNotNull(Strings.emptyToNull(reportQuery), "Null or empty report query");
+    this.format = Preconditions.checkNotNull(Strings.emptyToNull(format), "Null or empty format");
   }
 
   public HttpContent getHttpContent() {

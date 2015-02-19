@@ -7,6 +7,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             SharedSets are used for sharing entities across multiple campaigns
+ *             under the same account.
+ *           
+ * 
  * <p>Java class for SharedSet complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

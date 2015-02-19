@@ -152,7 +152,8 @@ public interface ConstantDataServiceInterface {
      * 
      *         Returns a list of shopping bidding categories.
      *         
-     *         A country predicate must be included in the selector.
+     *         A country predicate must be included in the selector, only {@link Predicate.Operator#EQUALS}
+     *         and {@link Predicate.Operator#IN} with a single value are supported in the country predicate.
      *         An empty parentDimensionType predicate will filter for root categories.
      *         
      *         @return A list of shopping bidding categories.

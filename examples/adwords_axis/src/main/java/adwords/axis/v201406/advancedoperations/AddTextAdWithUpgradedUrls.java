@@ -83,7 +83,7 @@ public class AddTextAdWithUpgradedUrls {
     // specify one at customer, campaign, ad group, ad, criterion or
     // feed item levels.
     textAd.setTrackingUrlTemplate(
-        "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}");
+        "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}");
     
     // Since your tracking url has two custom parameters, provide their
     // values too. This can be provided at campaign, ad group, ad, criterion

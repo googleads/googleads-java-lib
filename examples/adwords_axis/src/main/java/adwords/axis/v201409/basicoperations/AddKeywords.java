@@ -28,11 +28,15 @@ import com.google.api.ads.adwords.axis.v201409.cm.KeywordMatchType;
 import com.google.api.ads.adwords.axis.v201409.cm.Money;
 import com.google.api.ads.adwords.axis.v201409.cm.NegativeAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201409.cm.Operator;
+import com.google.api.ads.adwords.axis.v201409.cm.UrlList;
 import com.google.api.ads.adwords.axis.v201409.cm.UserStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.util.Charsets;
+
+import java.net.URLEncoder;
 
 /**
  * This example adds keywords to an ad group. To get ad groups, run
@@ -80,10 +84,10 @@ public class AddKeywords {
 
     // Create keywords.
     Keyword keyword1 = new Keyword();
-    keyword1.setText("mars");
+    keyword1.setText("mars cruise");
     keyword1.setMatchType(KeywordMatchType.BROAD);
     Keyword keyword2 = new Keyword();
-    keyword2.setText("pluto");
+    keyword2.setText("space hotel");
     keyword2.setMatchType(KeywordMatchType.EXACT);
 
     // Create biddable ad group criterion.
@@ -93,7 +97,11 @@ public class AddKeywords {
 
     // You can optionally provide these field(s).
     keywordBiddableAdGroupCriterion1.setUserStatus(UserStatus.PAUSED);
-    keywordBiddableAdGroupCriterion1.setDestinationUrl("http://example.com/mars");
+
+    String encodedFinalUrl = String.format("http://example.com/mars/cruise/?kw=%s",
+        URLEncoder.encode(keyword1.getText(), Charsets.UTF_8.name()));
+    keywordBiddableAdGroupCriterion1.setFinalUrls(new UrlList(new String[] {encodedFinalUrl}));
+    
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();
     CpcBid bid = new CpcBid();
     bid.setBid(new Money(null, 10000000L));

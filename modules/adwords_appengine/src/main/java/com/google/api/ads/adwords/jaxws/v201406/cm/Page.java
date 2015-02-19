@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupPage;
+import com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderPage;
+import com.google.api.ads.adwords.jaxws.v201406.mcm.ManagedCustomerPage;
+import com.google.api.ads.adwords.jaxws.v201406.rm.UserListPage;
 
 
 /**
@@ -39,7 +41,25 @@ import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupPage;
     "pageType"
 })
 @XmlSeeAlso({
-    TargetingGroupPage.class
+    BudgetOrderPage.class,
+    ExperimentPage.class,
+    BudgetPage.class,
+    CampaignPage.class,
+    AdGroupAdPage.class,
+    AdGroupCriterionPage.class,
+    CampaignCriterionPage.class,
+    AdGroupBidModifierPage.class,
+    SharedCriterionPage.class,
+    CampaignAdExtensionPage.class,
+    NullStatsPage.class,
+    AdGroupPage.class,
+    com.google.api.ads.adwords.jaxws.v201406.cm.NoStatsPage.class,
+    BiddingStrategyPage.class,
+    DomainCategoryPage.class,
+    com.google.api.ads.adwords.jaxws.v201406.express.NoStatsPage.class,
+    ManagedCustomerPage.class,
+    com.google.api.ads.adwords.jaxws.v201406.mcm.NoStatsPage.class,
+    UserListPage.class
 })
 public abstract class Page {
 

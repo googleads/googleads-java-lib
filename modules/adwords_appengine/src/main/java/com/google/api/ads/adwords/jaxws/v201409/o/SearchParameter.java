@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
  *             to specify how the user wants to filter the set of all possible
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdea}s.
- *             
+ *             <p>
  *             There is a {@link SearchParameter} for all types of inputs.
  *             {@link SearchParameter}s can conceptually be broken down into two types.
  *             <ul>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>Filter {@link SearchParameter}s are used to trim down the results based
  *             on {@link com.google.ads.api.services.targetingideas.attributes.Attribute}
  *             related information (eg. {@link CompetitionSearchParameter}, etc.).</li>
- *             </ul><p>
- *             
+ *             </ul>
+ *             <p>
  *             A request should only contain one instance of each {@link SearchParameter}.
- *             
+ *             <p>
  *             NOTICE: Starting with version v201406, requests containing multiple
  *             instances of the same search parameter will be rejected.
  *             <p>One or more of the following {@link SearchParameter}s are required:<br/>

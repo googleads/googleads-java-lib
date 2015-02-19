@@ -13,10 +13,11 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  * a SOAP request.
  */
 public class SoapHeader  implements java.io.Serializable {
-    /* Optional header: the customer id of the client of the MCC manager.
-     * Applicable only
-     *                 if an MCC manager, as identified by authToken, is
-     * acting on behalf of their client. */
+    /* The header identifies the customer id of the client of the
+     * MCC manager, if an MCC manager
+     *                 is acting on behalf of their client or the customer
+     * id of the advertiser managing their
+     *                 own account. */
     private java.lang.String clientCustomerId;
 
     /* Developer token to identify that the person making the call
@@ -63,10 +64,11 @@ public class SoapHeader  implements java.io.Serializable {
     /**
      * Gets the clientCustomerId value for this SoapHeader.
      * 
-     * @return clientCustomerId   * Optional header: the customer id of the client of the MCC manager.
-     * Applicable only
-     *                 if an MCC manager, as identified by authToken, is
-     * acting on behalf of their client.
+     * @return clientCustomerId   * The header identifies the customer id of the client of the
+     * MCC manager, if an MCC manager
+     *                 is acting on behalf of their client or the customer
+     * id of the advertiser managing their
+     *                 own account.
      */
     public java.lang.String getClientCustomerId() {
         return clientCustomerId;
@@ -76,10 +78,11 @@ public class SoapHeader  implements java.io.Serializable {
     /**
      * Sets the clientCustomerId value for this SoapHeader.
      * 
-     * @param clientCustomerId   * Optional header: the customer id of the client of the MCC manager.
-     * Applicable only
-     *                 if an MCC manager, as identified by authToken, is
-     * acting on behalf of their client.
+     * @param clientCustomerId   * The header identifies the customer id of the client of the
+     * MCC manager, if an MCC manager
+     *                 is acting on behalf of their client or the customer
+     * id of the advertiser managing their
+     *                 own account.
      */
     public void setClientCustomerId(java.lang.String clientCustomerId) {
         this.clientCustomerId = clientCustomerId;

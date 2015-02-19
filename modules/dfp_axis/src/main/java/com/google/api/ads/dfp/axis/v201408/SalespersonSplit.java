@@ -19,8 +19,8 @@ public class SalespersonSplit  implements java.io.Serializable {
     private java.lang.Long userId;
 
     /* The split can be attributed to the salesperson.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0. */
     private java.lang.Integer split;
@@ -64,8 +64,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * Gets the split value for this SalespersonSplit.
      * 
      * @return split   * The split can be attributed to the salesperson.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
      */
@@ -78,8 +78,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * Sets the split value for this SalespersonSplit.
      * 
      * @param split   * The split can be attributed to the salesperson.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
      */

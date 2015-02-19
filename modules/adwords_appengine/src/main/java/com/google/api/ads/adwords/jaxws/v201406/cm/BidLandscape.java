@@ -45,8 +45,8 @@ import javax.xml.bind.annotation.XmlType;
     "landscapePoints"
 })
 @XmlSeeAlso({
-    AdGroupBidLandscape.class,
-    CriterionBidLandscape.class
+    CriterionBidLandscape.class,
+    AdGroupBidLandscape.class
 })
 public abstract class BidLandscape
     extends DataEntry

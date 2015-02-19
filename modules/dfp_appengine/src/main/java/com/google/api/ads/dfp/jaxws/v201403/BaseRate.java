@@ -10,8 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A base rate that applies to a product template or product belonging to rate
- *             card.
+ *             A base rate that applies to a product template, product or product package
+ *             item belonging to rate card.
  *           
  * 
  * <p>Java class for BaseRate complex type.

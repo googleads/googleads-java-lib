@@ -39,10 +39,12 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -133,7 +135,7 @@ public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
    * expected values.
    */
   private void testBudgetServiceMutateRequest(AdWordsSession session) throws RemoteException,
-      ApiException, IOException {
+      ApiException, IOException, SAXException {
     BudgetServiceInterface companyService =
         new AdWordsServices().get(session, BudgetServiceInterface.class);
 
@@ -161,7 +163,7 @@ public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
-    assertEquals(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
   }
 }

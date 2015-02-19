@@ -21,11 +21,9 @@ import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.v201406.ReportDownloader;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
-import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.auth.oauth2.Credential;
 
 import java.io.File;
-import java.io.FileOutputStream;
 
 /**
  * This example downloads a criteria performance report with AWQL.
@@ -71,12 +69,11 @@ public class DownloadCriteriaReportWithAwql {
       // for CONNECT and READ in report downloads.
       ReportDownloadResponse response =
           new ReportDownloader(session).downloadReport(query, DownloadFormat.CSV);
-      FileOutputStream fos = new FileOutputStream(new File(reportFile));
-      Streams.copy(response.getInputStream(), fos);
-      fos.close();
-      System.out.println("Report successfully downloaded: " + reportFile);
+      response.saveToFile(reportFile);
+      
+      System.out.printf("Report successfully downloaded to: %s%n", reportFile);
     } catch (ReportDownloadResponseException e) {
-      System.out.println("Report was not downloaded. " + e);
+      System.out.printf("Report was not downloaded due to: %s%n", e);
     }
   }
 }

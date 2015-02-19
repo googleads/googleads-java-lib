@@ -6,7 +6,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupReturnValue;
+import com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderReturnValue;
+import com.google.api.ads.adwords.jaxws.v201406.rm.UserListReturnValue;
 
 
 /**
@@ -37,7 +38,34 @@ import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupReturnValue;
     "listReturnValueType"
 })
 @XmlSeeAlso({
-    TargetingGroupReturnValue.class
+    BudgetOrderReturnValue.class,
+    CampaignSharedSetReturnValue.class,
+    AdGroupAdLabelReturnValue.class,
+    FeedReturnValue.class,
+    AdGroupFeedReturnValue.class,
+    BiddingStrategyReturnValue.class,
+    CampaignCriterionReturnValue.class,
+    AdGroupAdReturnValue.class,
+    CampaignReturnValue.class,
+    LabelReturnValue.class,
+    BudgetReturnValue.class,
+    SharedCriterionReturnValue.class,
+    ConversionTrackerReturnValue.class,
+    FeedMappingReturnValue.class,
+    AdGroupBidModifierReturnValue.class,
+    AdGroupReturnValue.class,
+    FeedItemReturnValue.class,
+    OfflineConversionFeedReturnValue.class,
+    SharedSetReturnValue.class,
+    CustomerFeedReturnValue.class,
+    ExperimentReturnValue.class,
+    AdGroupCriterionLabelReturnValue.class,
+    AdGroupCriterionReturnValue.class,
+    CampaignLabelReturnValue.class,
+    CampaignAdExtensionReturnValue.class,
+    CampaignFeedReturnValue.class,
+    AdGroupLabelReturnValue.class,
+    UserListReturnValue.class
 })
 public abstract class ListReturnValue {
 

@@ -41,10 +41,16 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201411.C
      *                     to this creative.  This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
-    /* The SSL compatibility scan result for this creative. */
+    /* The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google. */
     private com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult;
 
-    /* The manual override for the SSL compatibility of this creative. */
+    /* The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}. */
     private com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride;
 
     public VastRedirectCreative() {
@@ -247,6 +253,9 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201411.C
      * Gets the sslScanResult value for this VastRedirectCreative.
      * 
      * @return sslScanResult   * The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public com.google.api.ads.dfp.axis.v201411.SslScanResult getSslScanResult() {
         return sslScanResult;
@@ -257,6 +266,9 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201411.C
      * Sets the sslScanResult value for this VastRedirectCreative.
      * 
      * @param sslScanResult   * The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public void setSslScanResult(com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult) {
         this.sslScanResult = sslScanResult;
@@ -267,6 +279,9 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201411.C
      * Gets the sslManualOverride value for this VastRedirectCreative.
      * 
      * @return sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public com.google.api.ads.dfp.axis.v201411.SslManualOverride getSslManualOverride() {
         return sslManualOverride;
@@ -277,6 +292,9 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201411.C
      * Sets the sslManualOverride value for this VastRedirectCreative.
      * 
      * @param sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public void setSslManualOverride(com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride) {
         this.sslManualOverride = sslManualOverride;

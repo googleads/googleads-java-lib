@@ -7,7 +7,13 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * Contains a list of shared set criteria results filtered and sorted
+ * as specified in the {@link SharedCriterionService#get} call
+ */
 public class SharedCriterionPage  extends com.google.api.ads.adwords.axis.v201406.cm.Page  implements java.io.Serializable {
+    /* The result entries in this page */
     private com.google.api.ads.adwords.axis.v201406.cm.SharedCriterion[] entries;
 
     public SharedCriterionPage() {
@@ -27,7 +33,7 @@ public class SharedCriterionPage  extends com.google.api.ads.adwords.axis.v20140
     /**
      * Gets the entries value for this SharedCriterionPage.
      * 
-     * @return entries
+     * @return entries   * The result entries in this page
      */
     public com.google.api.ads.adwords.axis.v201406.cm.SharedCriterion[] getEntries() {
         return entries;
@@ -37,7 +43,7 @@ public class SharedCriterionPage  extends com.google.api.ads.adwords.axis.v20140
     /**
      * Sets the entries value for this SharedCriterionPage.
      * 
-     * @param entries
+     * @param entries   * The result entries in this page
      */
     public void setEntries(com.google.api.ads.adwords.axis.v201406.cm.SharedCriterion[] entries) {
         this.entries = entries;

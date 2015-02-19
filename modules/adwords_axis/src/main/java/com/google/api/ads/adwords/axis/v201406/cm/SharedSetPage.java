@@ -7,7 +7,14 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * Contains a list of criterion lists resulting from the filtering
+ * and paging of
+ *             {@link SharedSetService#get} call.
+ */
 public class SharedSetPage  extends com.google.api.ads.adwords.axis.v201406.cm.NullStatsPage  implements java.io.Serializable {
+    /* The result entries in this page. */
     private com.google.api.ads.adwords.axis.v201406.cm.SharedSet[] entries;
 
     public SharedSetPage() {
@@ -27,7 +34,7 @@ public class SharedSetPage  extends com.google.api.ads.adwords.axis.v201406.cm.N
     /**
      * Gets the entries value for this SharedSetPage.
      * 
-     * @return entries
+     * @return entries   * The result entries in this page.
      */
     public com.google.api.ads.adwords.axis.v201406.cm.SharedSet[] getEntries() {
         return entries;
@@ -37,7 +44,7 @@ public class SharedSetPage  extends com.google.api.ads.adwords.axis.v201406.cm.N
     /**
      * Sets the entries value for this SharedSetPage.
      * 
-     * @param entries
+     * @param entries   * The result entries in this page.
      */
     public void setEntries(com.google.api.ads.adwords.axis.v201406.cm.SharedSet[] entries) {
         this.entries = entries;

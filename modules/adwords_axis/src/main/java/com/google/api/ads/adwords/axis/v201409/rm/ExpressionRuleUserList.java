@@ -16,7 +16,10 @@ public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v20
     /* Boolean rule that defines this user list. The rule consists
      * of a list of
      *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation.
+     * ORed for the evaluation. This
+     *                     field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -68,7 +71,10 @@ public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v20
      * @return rule   * Boolean rule that defines this user list. The rule consists
      * of a list of
      *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation.
+     * ORed for the evaluation. This
+     *                     field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -84,7 +90,10 @@ public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v20
      * @param rule   * Boolean rule that defines this user list. The rule consists
      * of a list of
      *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation.
+     * ORed for the evaluation. This
+     *                     field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

@@ -7,6 +7,11 @@
 
 package com.google.api.ads.adwords.axis.v201409.cm;
 
+
+/**
+ * A container for return values from the {@link SharedSetService#mutate}
+ * call.
+ */
 public class SharedSetReturnValue  extends com.google.api.ads.adwords.axis.v201409.cm.ListReturnValue  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201409.cm.SharedSet[] value;
 

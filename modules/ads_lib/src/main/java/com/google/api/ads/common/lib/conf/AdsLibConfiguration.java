@@ -29,8 +29,6 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
   public static final String AUTO_SET_PROXY_KEY = "com.google.api.ads.common.lib.autosetproxy";
   public static final String REFETCH_STALE_TOKENS_KEY =
       "com.google.api.ads.common.lib.auth.refetchstaletokens";
-  public static final String CACHE_CLIENT_LOGIN_TOKENS_KEY =
-      "com.google.api.ads.common.lib.auth.cacheclientlogintokens";
   public static final String VERSION_KEY = "com.google.api.ads.version";
   public static final String AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX = "refreshOAuth2Token";
   public static final String USE_COMPRESSION_POSTFIX = "useCompression";
@@ -56,13 +54,6 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
    */
   public boolean isAutoSetProxy() {
     return getBoolean(AUTO_SET_PROXY_KEY);
-  }
-
-  /**
-   * Is caching of ClientLogin tokens enabled.
-   */
-  public boolean isCachedClientLoginAuthTokensEnabled() {
-    return getBoolean(CACHE_CLIENT_LOGIN_TOKENS_KEY);
   }
 
   /**

@@ -9,9 +9,9 @@ package com.google.api.ads.dfp.axis.v201408;
 
 
 /**
- * A base rate that applies to a product template or product belonging
- * to rate
- *             card.
+ * A base rate that applies to a product template, product or product
+ * package
+ *             item belonging to rate card.
  */
 public abstract class BaseRate  implements java.io.Serializable {
     /* The ID of the {@link RateCard} object to which this base rate

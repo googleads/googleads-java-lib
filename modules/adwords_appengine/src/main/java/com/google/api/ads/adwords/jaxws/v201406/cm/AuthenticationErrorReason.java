@@ -55,6 +55,8 @@ public enum AuthenticationErrorReason {
     /**
      * 
      *                 Client Customer Id is required if CustomerIdMode is set to CLIENT_EXTERNAL_CUSTOMER_ID.
+     *                 Starting version V201409 ClientCustomerId will be required for all requests except
+     *                 for {@link CustomerService#get}
      *               
      * 
      */

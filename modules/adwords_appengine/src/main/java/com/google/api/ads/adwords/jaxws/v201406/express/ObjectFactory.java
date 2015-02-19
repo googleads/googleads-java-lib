@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 import com.google.api.ads.adwords.jaxws.v201406.cm.ApiException;
+import com.google.api.ads.adwords.jaxws.v201406.cm.SoapHeader;
 import com.google.api.ads.adwords.jaxws.v201406.cm.SoapResponseHeader;
 
 
@@ -26,8 +27,8 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201406", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201406", "ResponseHeader");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201406", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201406", "ApiExceptionFault");
 
     /**
@@ -35,6 +36,30 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusinessError }
+     * 
+     */
+    public ExpressBusinessError createExpressBusinessError() {
+        return new ExpressBusinessError();
+    }
+
+    /**
+     * Create an instance of {@link ProductServicePage }
+     * 
+     */
+    public ProductServicePage createProductServicePage() {
+        return new ProductServicePage();
+    }
+
+    /**
+     * Create an instance of {@link Creative }
+     * 
+     */
+    public Creative createCreative() {
+        return new Creative();
     }
 
     /**
@@ -46,35 +71,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BudgetSuggestionServiceInterfaceget }
+     * Create an instance of {@link BudgetSuggestionSelector }
      * 
      */
-    public BudgetSuggestionServiceInterfaceget createBudgetSuggestionServiceInterfaceget() {
-        return new BudgetSuggestionServiceInterfaceget();
+    public BudgetSuggestionSelector createBudgetSuggestionSelector() {
+        return new BudgetSuggestionSelector();
     }
 
     /**
-     * Create an instance of {@link BudgetSuggestionServiceInterfacegetResponse }
+     * Create an instance of {@link Promotion }
      * 
      */
-    public BudgetSuggestionServiceInterfacegetResponse createBudgetSuggestionServiceInterfacegetResponse() {
-        return new BudgetSuggestionServiceInterfacegetResponse();
-    }
-
-    /**
-     * Create an instance of {@link BudgetSuggestion }
-     * 
-     */
-    public BudgetSuggestion createBudgetSuggestion() {
-        return new BudgetSuggestion();
-    }
-
-    /**
-     * Create an instance of {@link NegativeKeyword }
-     * 
-     */
-    public NegativeKeyword createNegativeKeyword() {
-        return new NegativeKeyword();
+    public Promotion createPromotion() {
+        return new Promotion();
     }
 
     /**
@@ -86,19 +95,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BudgetSuggestionSelector }
+     * Create an instance of {@link PhoneNumber }
      * 
      */
-    public BudgetSuggestionSelector createBudgetSuggestionSelector() {
-        return new BudgetSuggestionSelector();
-    }
-
-    /**
-     * Create an instance of {@link ProductService }
-     * 
-     */
-    public ProductService createProductService() {
-        return new ProductService();
+    public PhoneNumber createPhoneNumber() {
+        return new PhoneNumber();
     }
 
     /**
@@ -110,12 +111,75 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExpressSoapHeader }{@code >}}
+     * Create an instance of {@link PromotionOperation }
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201406", name = "RequestHeader")
-    public JAXBElement<ExpressSoapHeader> createRequestHeader(ExpressSoapHeader value) {
-        return new JAXBElement<ExpressSoapHeader>(_RequestHeader_QNAME, ExpressSoapHeader.class, null, value);
+    public PromotionOperation createPromotionOperation() {
+        return new PromotionOperation();
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusinessOperation }
+     * 
+     */
+    public ExpressBusinessOperation createExpressBusinessOperation() {
+        return new ExpressBusinessOperation();
+    }
+
+    /**
+     * Create an instance of {@link BudgetSuggestion }
+     * 
+     */
+    public BudgetSuggestion createBudgetSuggestion() {
+        return new BudgetSuggestion();
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusiness }
+     * 
+     */
+    public ExpressBusiness createExpressBusiness() {
+        return new ExpressBusiness();
+    }
+
+    /**
+     * Create an instance of {@link NegativeKeyword }
+     * 
+     */
+    public NegativeKeyword createNegativeKeyword() {
+        return new NegativeKeyword();
+    }
+
+    /**
+     * Create an instance of {@link PromotionError }
+     * 
+     */
+    public PromotionError createPromotionError() {
+        return new PromotionError();
+    }
+
+    /**
+     * Create an instance of {@link PromotionPage }
+     * 
+     */
+    public PromotionPage createPromotionPage() {
+        return new PromotionPage();
+    }
+
+    /**
+     * Create an instance of {@link ProductService }
+     * 
+     */
+    public ProductService createProductService() {
+        return new ProductService();
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusinessPage }
+     * 
+     */
+    public ExpressBusinessPage createExpressBusinessPage() {
+        return new ExpressBusinessPage();
     }
 
     /**
@@ -125,6 +189,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201406", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201406", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**

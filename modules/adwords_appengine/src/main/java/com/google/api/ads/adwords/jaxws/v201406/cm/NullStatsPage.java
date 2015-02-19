@@ -28,7 +28,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NullStatsPage")
 @XmlSeeAlso({
-    SharedSetPage.class
+    CampaignFeedPage.class,
+    FeedPage.class,
+    FeedMappingPage.class,
+    CampaignSharedSetPage.class,
+    SharedSetPage.class,
+    AdGroupFeedPage.class,
+    CustomerFeedPage.class,
+    FeedItemPage.class
 })
 public abstract class NullStatsPage
     extends Page

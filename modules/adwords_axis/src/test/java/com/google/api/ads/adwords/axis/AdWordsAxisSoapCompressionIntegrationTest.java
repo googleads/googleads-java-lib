@@ -33,6 +33,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 
+import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -100,7 +101,7 @@ public class AdWordsAxisSoapCompressionIntegrationTest extends MockHttpIntegrati
     
     assertTrue("Compression was enabled but the last request body was not compressed",
         testHttpServer.wasLastRequestBodyCompressed());
-    assertEquals(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }

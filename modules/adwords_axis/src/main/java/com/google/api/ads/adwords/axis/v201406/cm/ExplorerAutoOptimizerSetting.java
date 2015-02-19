@@ -9,7 +9,10 @@ package com.google.api.ads.adwords.axis.v201406.cm;
 
 
 /**
- * Settings for Explorer (GDN Auto Optimizer).
+ * Settings for the
+ *             <a href="//support.google.com/adwords/answer/190596">Display
+ * Campaign Optimizer</a>,
+ *             initially termed "Explorer".
  */
 public class ExplorerAutoOptimizerSetting  extends com.google.api.ads.adwords.axis.v201406.cm.Setting  implements java.io.Serializable {
     private java.lang.Boolean optIn;

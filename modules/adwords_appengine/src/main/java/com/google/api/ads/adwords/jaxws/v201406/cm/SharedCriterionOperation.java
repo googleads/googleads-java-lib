@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Operation for adding/removing a criterion from a shared set.
+ *           
+ * 
  * <p>Java class for SharedCriterionOperation complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

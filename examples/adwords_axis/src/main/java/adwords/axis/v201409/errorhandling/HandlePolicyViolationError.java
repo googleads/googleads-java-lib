@@ -91,7 +91,7 @@ public class HandlePolicyViolationError {
     exemptableTextAd.setDescription1("Visit the Red Planet in style.");
     exemptableTextAd.setDescription2("Low-gravity fun for everyone!");
     exemptableTextAd.setDisplayUrl("www.example.com");
-    exemptableTextAd.setUrl("http://www.example.com/");
+    exemptableTextAd.setFinalUrls(new String[] {"http://www.example.com/"});
 
     // Create ad group ad.
     AdGroupAd exemptableAdGroupAd = new AdGroupAd();
@@ -109,7 +109,7 @@ public class HandlePolicyViolationError {
     nonExemptableTextAd.setDescription1("Visit the Red Planet in style.");
     nonExemptableTextAd.setDescription2("Low-gravity fun for everyone.");
     nonExemptableTextAd.setDisplayUrl("www.example.com");
-    nonExemptableTextAd.setUrl("http://www.example.com/");
+    nonExemptableTextAd.setFinalUrls(new String[] {"http://www.example.com/"});
 
     // Create ad group ad.
     AdGroupAd nonExemptableAdGroupAd = new AdGroupAd();
@@ -126,7 +126,7 @@ public class HandlePolicyViolationError {
 
     try {
       // Validate the ads.
-      AdGroupAdReturnValue result = adGroupAdService.mutate(operations);
+      adGroupAdService.mutate(operations);
     } catch (ApiException e) {
       Set<Integer> indicesToRemove = new HashSet<Integer>();
       for (ApiError error : e.getErrors()) {

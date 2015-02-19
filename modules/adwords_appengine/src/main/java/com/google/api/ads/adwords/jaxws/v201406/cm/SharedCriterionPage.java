@@ -9,6 +9,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains a list of shared set criteria results filtered and sorted
+ *             as specified in the {@link SharedCriterionService#get} call
+ *           
+ * 
  * <p>Java class for SharedCriterionPage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

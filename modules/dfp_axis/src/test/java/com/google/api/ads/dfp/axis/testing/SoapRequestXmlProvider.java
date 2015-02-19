@@ -31,17 +31,7 @@ import java.nio.charset.Charset;
 public class SoapRequestXmlProvider {
   
   private static final String PRODUCT_FRAMEWORK_NAME = "Dfp-Axis";
-  
-  /**
-   * Get a request made using client login authentication.
-   */
-  public static String getClientLoginSoapRequest(String apiVersion) throws IOException {
-    String soapXml = Streams.readAll(
-        SoapRequestXmlProvider.class.getResourceAsStream("test_request_client_login.xml"),
-        Charset.forName(UTF_8));
-    return getTemplatedXml(soapXml, apiVersion);
-  }
-  
+ 
   /**
    * Get a request made using OAuth2 authentication.
    */

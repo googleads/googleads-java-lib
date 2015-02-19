@@ -9,11 +9,9 @@ package com.google.api.ads.dfp.axis.v201408;
 
 
 /**
- * Errors associated with the size of the given collection being
- *             out of bounds.
+ * Error for the size of the collection being too large
  */
 public class CollectionSizeError  extends com.google.api.ads.dfp.axis.v201408.ApiError  implements java.io.Serializable {
-    /* The error reason represented by an enum. */
     private com.google.api.ads.dfp.axis.v201408.CollectionSizeErrorReason reason;
 
     public CollectionSizeError() {
@@ -37,7 +35,7 @@ public class CollectionSizeError  extends com.google.api.ads.dfp.axis.v201408.Ap
     /**
      * Gets the reason value for this CollectionSizeError.
      * 
-     * @return reason   * The error reason represented by an enum.
+     * @return reason
      */
     public com.google.api.ads.dfp.axis.v201408.CollectionSizeErrorReason getReason() {
         return reason;
@@ -47,7 +45,7 @@ public class CollectionSizeError  extends com.google.api.ads.dfp.axis.v201408.Ap
     /**
      * Sets the reason value for this CollectionSizeError.
      * 
-     * @param reason   * The error reason represented by an enum.
+     * @param reason
      */
     public void setReason(com.google.api.ads.dfp.axis.v201408.CollectionSizeErrorReason reason) {
         this.reason = reason;

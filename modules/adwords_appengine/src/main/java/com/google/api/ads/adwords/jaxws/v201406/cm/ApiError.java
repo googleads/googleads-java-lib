@@ -6,16 +6,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201406.video.AccessError;
-import com.google.api.ads.adwords.jaxws.v201406.video.AdsApiError;
-import com.google.api.ads.adwords.jaxws.v201406.video.EntityNotFoundError;
-import com.google.api.ads.adwords.jaxws.v201406.video.PersistenceError;
-import com.google.api.ads.adwords.jaxws.v201406.video.ReportError;
-import com.google.api.ads.adwords.jaxws.v201406.video.SegmentationError;
-import com.google.api.ads.adwords.jaxws.v201406.video.SortingError;
-import com.google.api.ads.adwords.jaxws.v201406.video.TargetingGroupError;
-import com.google.api.ads.adwords.jaxws.v201406.video.TimeSeriesError;
-import com.google.api.ads.adwords.jaxws.v201406.video.VideoBiddingError;
+import com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderError;
+import com.google.api.ads.adwords.jaxws.v201406.billing.CustomerOrderLineError;
+import com.google.api.ads.adwords.jaxws.v201406.ch.CustomerSyncError;
+import com.google.api.ads.adwords.jaxws.v201406.express.ExpressBusinessError;
+import com.google.api.ads.adwords.jaxws.v201406.express.PromotionError;
+import com.google.api.ads.adwords.jaxws.v201406.mcm.AlertError;
+import com.google.api.ads.adwords.jaxws.v201406.mcm.ManagedCustomerServiceError;
+import com.google.api.ads.adwords.jaxws.v201406.o.TargetingIdeaError;
+import com.google.api.ads.adwords.jaxws.v201406.o.TrafficEstimatorError;
+import com.google.api.ads.adwords.jaxws.v201406.rm.UserListError;
 
 
 /**
@@ -56,32 +56,103 @@ import com.google.api.ads.adwords.jaxws.v201406.video.VideoBiddingError;
     "apiErrorType"
 })
 @XmlSeeAlso({
-    TargetingGroupError.class,
-    ReportError.class,
-    TimeSeriesError.class,
-    VideoBiddingError.class,
-    SortingError.class,
-    SegmentationError.class,
-    PersistenceError.class,
-    EntityNotFoundError.class,
-    AdsApiError.class,
-    AccessError.class,
-    OperatorError.class,
+    BudgetOrderError.class,
+    CustomerOrderLineError.class,
+    CampaignSharedSetError.class,
     InternalApiError.class,
-    CollectionSizeError.class,
-    QuotaCheckError.class,
-    StringLengthError.class,
     ReadOnlyError.class,
-    RateExceededError.class,
+    com.google.api.ads.adwords.jaxws.v201406.cm.CurrencyCodeError.class,
+    CampaignError.class,
+    BulkMutateJobError.class,
     NullError.class,
-    NotEmptyError.class,
+    DateError.class,
+    AuthorizationError.class,
+    AdGroupCriterionError.class,
+    ExperimentError.class,
+    QueryError.class,
+    StringLengthError.class,
+    ClientTermsError.class,
+    AdParamError.class,
+    TargetError.class,
+    RequestError.class,
+    AdGroupFeedError.class,
+    EntityNotFound.class,
+    QuotaError.class,
+    RangeError.class,
+    BiddingTransitionError.class,
+    SharedCriterionError.class,
+    GeoLocationError.class,
+    MultiplierError.class,
+    SelectorError.class,
+    ReportDefinitionError.class,
+    com.google.api.ads.adwords.jaxws.v201406.cm.MatchesRegexError.class,
+    CampaignCriterionError.class,
+    BiddingStrategyError.class,
+    EntityAccessDenied.class,
+    PolicyViolationError.class,
+    StatsQueryError.class,
+    VideoError.class,
+    IdError.class,
+    OperationAccessDenied.class,
+    RegionCodeError.class,
+    ConversionTrackingError.class,
+    CustomerFeedError.class,
+    RateExceededError.class,
+    LocationCriterionServiceError.class,
+    AdxError.class,
+    FunctionError.class,
+    FunctionParsingError.class,
     RequiredError.class,
     AuthenticationError.class,
-    DateError.class,
-    RangeError.class,
-    AuthorizationError.class,
+    FeedItemError.class,
+    BiddingErrors.class,
+    SettingError.class,
+    PagingError.class,
+    CriterionError.class,
+    MediaError.class,
+    OperatorError.class,
+    BudgetError.class,
+    NotEmptyError.class,
+    AdGroupServiceError.class,
+    BiddingError.class,
+    com.google.api.ads.adwords.jaxws.v201406.cm.CollectionSizeError.class,
+    FeedError.class,
+    UrlError.class,
+    NewEntityCreationError.class,
+    DatabaseError.class,
+    ImageError.class,
+    CampaignAdExtensionError.class,
+    AdError.class,
+    ForwardCompatibilityError.class,
+    CampaignFeedError.class,
+    AdExtensionError.class,
+    RejectedError.class,
+    AudioError.class,
+    LabelError.class,
+    FeedMappingError.class,
     DistinctError.class,
-    RegionCodeError.class
+    AdGroupAdError.class,
+    SizeLimitError.class,
+    DateRangeError.class,
+    EntityCountLimitExceeded.class,
+    JobError.class,
+    DataError.class,
+    OfflineConversionError.class,
+    SharedSetError.class,
+    QuotaCheckError.class,
+    ExperimentServiceError.class,
+    NotWhitelistedError.class,
+    ExpressBusinessError.class,
+    PromotionError.class,
+    CustomerSyncError.class,
+    TargetingIdeaError.class,
+    com.google.api.ads.adwords.jaxws.v201406.o.CurrencyCodeError.class,
+    com.google.api.ads.adwords.jaxws.v201406.o.MatchesRegexError.class,
+    TrafficEstimatorError.class,
+    AlertError.class,
+    ManagedCustomerServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201406.rm.CollectionSizeError.class,
+    UserListError.class
 })
 public abstract class ApiError {
 

@@ -38,7 +38,7 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
     /* Specifies the number of days after which a user's cookie will
      * be removed from the audience
      *                     segment due to inactivity. This attribute is required
-     * and can be between 1 and 180. */
+     * and can be between 1 and 540. */
     private java.lang.Integer membershipExpirationDays;
 
     public RuleBasedFirstPartyAudienceSegmentSummary() {
@@ -149,7 +149,7 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @return membershipExpirationDays   * Specifies the number of days after which a user's cookie will
      * be removed from the audience
      *                     segment due to inactivity. This attribute is required
-     * and can be between 1 and 180.
+     * and can be between 1 and 540.
      */
     public java.lang.Integer getMembershipExpirationDays() {
         return membershipExpirationDays;
@@ -162,7 +162,7 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @param membershipExpirationDays   * Specifies the number of days after which a user's cookie will
      * be removed from the audience
      *                     segment due to inactivity. This attribute is required
-     * and can be between 1 and 180.
+     * and can be between 1 and 540.
      */
     public void setMembershipExpirationDays(java.lang.Integer membershipExpirationDays) {
         this.membershipExpirationDays = membershipExpirationDays;

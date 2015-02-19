@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  *             by a lat/long pair. The caller may also alternatively provide address fields which will be
  *             geocoded into a lat/long pair. Note: If a geoPoint value is provided, the address is not
  *             used for calculating the lat/long to target.
- *             <p>
+ *             <p> A criterion of this type is only targetable.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

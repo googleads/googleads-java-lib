@@ -78,8 +78,8 @@ public class AddClickToDownloadAd {
     clickToDownloadAppAd.setName("Ad for jupiter adventure game");
     clickToDownloadAppAd.setTemplateId(353L);
 
-    clickToDownloadAppAd.setUrl(
-        "http://play.google.com/store/apps/details?id=com.example.jupiteradventure");
+    clickToDownloadAppAd.setFinalUrls(
+        new String[] {"http://play.google.com/store/apps/details?id=com.example.jupiteradventure"});
     clickToDownloadAppAd.setDisplayUrl("play.google.com");
 
     // Create the template elements for the ad. You can refer to
@@ -135,7 +135,7 @@ public class AddClickToDownloadAd {
 
     for (AdGroupAd adGroupAd : result.getValue()) {
       System.out.printf("New click-to-download ad with ID = %d and url = \"%s\" was created.%n",
-          adGroupAd.getAd().getId(), adGroupAd.getAd().getUrl());
+          adGroupAd.getAd().getId(), adGroupAd.getAd().getFinalUrls(0));
     }
   }
 }

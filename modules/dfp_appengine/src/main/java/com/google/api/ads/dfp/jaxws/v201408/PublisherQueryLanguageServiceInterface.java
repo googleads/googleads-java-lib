@@ -564,8 +564,8 @@ import javax.xml.ws.ResponseWrapper;
  * <h4 id="Programmatic_Buyer">Programmatic_Buyer</h4>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>AdxBuyerNetworkId</td><td><code>Number</code></td><td>The Id used by Adx to bill the appropriate buyer network for a programmatic order.</td></tr>
- * <tr><td>BuyerId</td><td><code>Number</code></td><td>The Id used by the buyer for their billing reference. This may represent either an Advertiser or Partner ID.</td></tr>
+ * <tr><td>AdxBuyerNetworkId</td><td><code>Number</code></td><td>The ID used by Adx to bill the appropriate buyer network for a programmatic order.</td></tr>
+ * <tr><td>BuyerId</td><td><code>Number</code></td><td>The ID used by the buyer for their billing reference. This may represent either an Advertiser or Partner ID.</td></tr>
  * <tr><td>Name</td><td><code>Text</code></td><td>Display name that references the buyer.</td></tr>
  * </table>
  * <h4 id="Audience_Segment_Category">Audience_Segment_Category</h4>

@@ -7,6 +7,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             CampaignSharedSets are used for managing the shared sets
+ *             associated with a campaign.
+ *           
+ * 
  * <p>Java class for CampaignSharedSet complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

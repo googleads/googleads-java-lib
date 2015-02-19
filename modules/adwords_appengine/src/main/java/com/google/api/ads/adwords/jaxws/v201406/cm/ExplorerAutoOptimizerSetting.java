@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Settings for Explorer (GDN Auto Optimizer).
+ *             Settings for the
+ *             <a href="//support.google.com/adwords/answer/190596">Display Campaign Optimizer</a>,
+ *             initially termed "Explorer".
  *           
  * 
  * <p>Java class for ExplorerAutoOptimizerSetting complex type.

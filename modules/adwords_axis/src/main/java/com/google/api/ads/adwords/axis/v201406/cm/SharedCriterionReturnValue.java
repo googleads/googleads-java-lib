@@ -7,6 +7,10 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * Container for the return value from the SharedSetCriterionService.
+ */
 public class SharedCriterionReturnValue  extends com.google.api.ads.adwords.axis.v201406.cm.ListReturnValue  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.SharedCriterion[] value;
 

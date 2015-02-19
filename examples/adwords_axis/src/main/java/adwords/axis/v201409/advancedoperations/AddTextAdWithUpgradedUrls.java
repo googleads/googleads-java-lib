@@ -29,9 +29,7 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example adds a text ad that uses upgraded URLs. This example
- * will only work if your account is a test account or is whitelisted for
- * this feature.
+ * This example adds a text ad that uses advanced features of upgraded URLs.
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
@@ -83,7 +81,7 @@ public class AddTextAdWithUpgradedUrls {
     // specify one at customer, campaign, ad group, ad, criterion or
     // feed item levels.
     textAd.setTrackingUrlTemplate(
-        "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}");
+        "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}");
     
     // Since your tracking url has two custom parameters, provide their
     // values too. This can be provided at campaign, ad group, ad, criterion

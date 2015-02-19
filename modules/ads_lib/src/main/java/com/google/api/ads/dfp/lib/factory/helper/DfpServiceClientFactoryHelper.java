@@ -15,7 +15,6 @@
 package com.google.api.ads.dfp.lib.factory.helper;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
@@ -24,7 +23,6 @@ import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.dfp.lib.client.DfpServiceClient;
 import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
 import com.google.api.ads.dfp.lib.client.DfpSession;
-import com.google.common.base.Strings;
 import com.google.inject.Inject;
 
 import java.util.regex.Matcher;
@@ -41,7 +39,6 @@ public class DfpServiceClientFactoryHelper extends
                                       DfpServiceDescriptor> {
 
   private static final Pattern VERSION_PATTERN = Pattern.compile("^.*(v[0-9][^\\.]*).*$");
-  private static final String FINAL_CLIENT_LOGIN_VERSION = "v201311";
 
   private final AdsLibConfiguration adsLibConfiguration;
 
@@ -78,19 +75,6 @@ public class DfpServiceClientFactoryHelper extends
       return version.replace('_', '.');
     } else {
       return adsLibConfiguration.getDuckTypedVersion();
-    }
-  }
-
-  /**
-   * @see AdsServiceClientFactoryHelper#checkServiceClientPreconditions(AdsSession, Class)
-   */
-  public void checkServiceClientPreconditions(DfpSession dfpSession, Class<?> interfaceClass)
-      throws ServiceException {
-    String version = determineVersion(interfaceClass);
-    if (!Strings.isNullOrEmpty(dfpSession.getClientLoginToken())
-        && version.compareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
-      throw new ServiceException(String.format("ClientLogin is not supported in version %s."
-          + " Please upgrade to OAuth2.", version));
     }
   }
 }

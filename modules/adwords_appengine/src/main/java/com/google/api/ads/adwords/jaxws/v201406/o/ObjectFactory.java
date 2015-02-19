@@ -27,8 +27,8 @@ import com.google.api.ads.adwords.jaxws.v201406.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/o/v201406", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/o/v201406", "ResponseHeader");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/o/v201406", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/o/v201406", "ApiExceptionFault");
 
     /**
@@ -39,35 +39,131 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TrafficEstimatorServiceInterfaceget }
+     * Create an instance of {@link InStreamAdInfoAttribute }
      * 
      */
-    public TrafficEstimatorServiceInterfaceget createTrafficEstimatorServiceInterfaceget() {
-        return new TrafficEstimatorServiceInterfaceget();
+    public InStreamAdInfoAttribute createInStreamAdInfoAttribute() {
+        return new InStreamAdInfoAttribute();
     }
 
     /**
-     * Create an instance of {@link TrafficEstimatorServiceInterfacegetResponse }
+     * Create an instance of {@link DisplayAdSpecAdSizeSpec }
      * 
      */
-    public TrafficEstimatorServiceInterfacegetResponse createTrafficEstimatorServiceInterfacegetResponse() {
-        return new TrafficEstimatorServiceInterfacegetResponse();
+    public DisplayAdSpecAdSizeSpec createDisplayAdSpecAdSizeSpec() {
+        return new DisplayAdSpecAdSizeSpec();
     }
 
     /**
-     * Create an instance of {@link TrafficEstimatorResult }
+     * Create an instance of {@link AdFormatSpec }
      * 
      */
-    public TrafficEstimatorResult createTrafficEstimatorResult() {
-        return new TrafficEstimatorResult();
+    public AdFormatSpec createAdFormatSpec() {
+        return new AdFormatSpec();
     }
 
     /**
-     * Create an instance of {@link Estimate }
+     * Create an instance of {@link AdSpec }
      * 
      */
-    public Estimate createEstimate() {
-        return new Estimate();
+    public AdSpec createAdSpec() {
+        return new AdSpec();
+    }
+
+    /**
+     * Create an instance of {@link LongAttribute }
+     * 
+     */
+    public LongAttribute createLongAttribute() {
+        return new LongAttribute();
+    }
+
+    /**
+     * Create an instance of {@link CategoryProductsAndServicesSearchParameter }
+     * 
+     */
+    public CategoryProductsAndServicesSearchParameter createCategoryProductsAndServicesSearchParameter() {
+        return new CategoryProductsAndServicesSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link RelatedToUrlSearchParameter }
+     * 
+     */
+    public RelatedToUrlSearchParameter createRelatedToUrlSearchParameter() {
+        return new RelatedToUrlSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link IncludeAdultContentSearchParameter }
+     * 
+     */
+    public IncludeAdultContentSearchParameter createIncludeAdultContentSearchParameter() {
+        return new IncludeAdultContentSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link IdeaTextFilterSearchParameter }
+     * 
+     */
+    public IdeaTextFilterSearchParameter createIdeaTextFilterSearchParameter() {
+        return new IdeaTextFilterSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link IntegerSetAttribute }
+     * 
+     */
+    public IntegerSetAttribute createIntegerSetAttribute() {
+        return new IntegerSetAttribute();
+    }
+
+    /**
+     * Create an instance of {@link FlashDisplayType }
+     * 
+     */
+    public FlashDisplayType createFlashDisplayType() {
+        return new FlashDisplayType();
+    }
+
+    /**
+     * Create an instance of {@link AdSpecListAttribute }
+     * 
+     */
+    public AdSpecListAttribute createAdSpecListAttribute() {
+        return new AdSpecListAttribute();
+    }
+
+    /**
+     * Create an instance of {@link MonthlySearchVolumeAttribute }
+     * 
+     */
+    public MonthlySearchVolumeAttribute createMonthlySearchVolumeAttribute() {
+        return new MonthlySearchVolumeAttribute();
+    }
+
+    /**
+     * Create an instance of {@link DisplayType }
+     * 
+     */
+    public DisplayType createDisplayType() {
+        return new DisplayType();
+    }
+
+    /**
+     * Create an instance of {@link CriterionAttribute }
+     * 
+     */
+    public CriterionAttribute createCriterionAttribute() {
+        return new CriterionAttribute();
+    }
+
+    /**
+     * Create an instance of {@link InStreamAdSpec }
+     * 
+     */
+    public InStreamAdSpec createInStreamAdSpec() {
+        return new InStreamAdSpec();
     }
 
     /**
@@ -79,11 +175,43 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MatchesRegexError }
+     * Create an instance of {@link SeedAdGroupIdSearchParameter }
      * 
      */
-    public MatchesRegexError createMatchesRegexError() {
-        return new MatchesRegexError();
+    public SeedAdGroupIdSearchParameter createSeedAdGroupIdSearchParameter() {
+        return new SeedAdGroupIdSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link ImageDisplayType }
+     * 
+     */
+    public ImageDisplayType createImageDisplayType() {
+        return new ImageDisplayType();
+    }
+
+    /**
+     * Create an instance of {@link InStreamAdInfo }
+     * 
+     */
+    public InStreamAdInfo createInStreamAdInfo() {
+        return new InStreamAdInfo();
+    }
+
+    /**
+     * Create an instance of {@link WebpageDescriptor }
+     * 
+     */
+    public WebpageDescriptor createWebpageDescriptor() {
+        return new WebpageDescriptor();
+    }
+
+    /**
+     * Create an instance of {@link KeywordAttribute }
+     * 
+     */
+    public KeywordAttribute createKeywordAttribute() {
+        return new KeywordAttribute();
     }
 
     /**
@@ -95,27 +223,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TrafficEstimatorError }
+     * Create an instance of {@link LongRangeAttribute }
      * 
      */
-    public TrafficEstimatorError createTrafficEstimatorError() {
-        return new TrafficEstimatorError();
+    public LongRangeAttribute createLongRangeAttribute() {
+        return new LongRangeAttribute();
     }
 
     /**
-     * Create an instance of {@link CampaignEstimate }
+     * Create an instance of {@link TargetingIdeaPage }
      * 
      */
-    public CampaignEstimate createCampaignEstimate() {
-        return new CampaignEstimate();
-    }
-
-    /**
-     * Create an instance of {@link KeywordEstimateRequest }
-     * 
-     */
-    public KeywordEstimateRequest createKeywordEstimateRequest() {
-        return new KeywordEstimateRequest();
+    public TargetingIdeaPage createTargetingIdeaPage() {
+        return new TargetingIdeaPage();
     }
 
     /**
@@ -127,6 +247,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TargetingIdeaError }
+     * 
+     */
+    public TargetingIdeaError createTargetingIdeaError() {
+        return new TargetingIdeaError();
+    }
+
+    /**
      * Create an instance of {@link CurrencyCodeError }
      * 
      */
@@ -135,11 +263,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StatsEstimate }
+     * Create an instance of {@link HtmlDisplayType }
      * 
      */
-    public StatsEstimate createStatsEstimate() {
-        return new StatsEstimate();
+    public HtmlDisplayType createHtmlDisplayType() {
+        return new HtmlDisplayType();
+    }
+
+    /**
+     * Create an instance of {@link MoneyAttribute }
+     * 
+     */
+    public MoneyAttribute createMoneyAttribute() {
+        return new MoneyAttribute();
+    }
+
+    /**
+     * Create an instance of {@link TypeAttributeMapEntry }
+     * 
+     */
+    public TypeAttributeMapEntry createTypeAttributeMapEntry() {
+        return new TypeAttributeMapEntry();
     }
 
     /**
@@ -151,6 +295,94 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdSpecListSearchParameter }
+     * 
+     */
+    public AdSpecListSearchParameter createAdSpecListSearchParameter() {
+        return new AdSpecListSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link PlacementTypeSearchParameter }
+     * 
+     */
+    public PlacementTypeSearchParameter createPlacementTypeSearchParameter() {
+        return new PlacementTypeSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link TrafficEstimatorResult }
+     * 
+     */
+    public TrafficEstimatorResult createTrafficEstimatorResult() {
+        return new TrafficEstimatorResult();
+    }
+
+    /**
+     * Create an instance of {@link ExcludedKeywordSearchParameter }
+     * 
+     */
+    public ExcludedKeywordSearchParameter createExcludedKeywordSearchParameter() {
+        return new ExcludedKeywordSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link AdFormatSpecListAttribute }
+     * 
+     */
+    public AdFormatSpecListAttribute createAdFormatSpecListAttribute() {
+        return new AdFormatSpecListAttribute();
+    }
+
+    /**
+     * Create an instance of {@link MatchesRegexError }
+     * 
+     */
+    public MatchesRegexError createMatchesRegexError() {
+        return new MatchesRegexError();
+    }
+
+    /**
+     * Create an instance of {@link DoubleAttribute }
+     * 
+     */
+    public DoubleAttribute createDoubleAttribute() {
+        return new DoubleAttribute();
+    }
+
+    /**
+     * Create an instance of {@link DisplayAdSpec }
+     * 
+     */
+    public DisplayAdSpec createDisplayAdSpec() {
+        return new DisplayAdSpec();
+    }
+
+    /**
+     * Create an instance of {@link TargetingIdea }
+     * 
+     */
+    public TargetingIdea createTargetingIdea() {
+        return new TargetingIdea();
+    }
+
+    /**
+     * Create an instance of {@link NetworkSearchParameter }
+     * 
+     */
+    public NetworkSearchParameter createNetworkSearchParameter() {
+        return new NetworkSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link RelatedToQuerySearchParameter }
+     * 
+     */
+    public RelatedToQuerySearchParameter createRelatedToQuerySearchParameter() {
+        return new RelatedToQuerySearchParameter();
+    }
+
+    /**
      * Create an instance of {@link TrafficEstimatorSelector }
      * 
      */
@@ -159,12 +391,171 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * Create an instance of {@link PlacementAttribute }
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/o/v201406", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
+    public PlacementAttribute createPlacementAttribute() {
+        return new PlacementAttribute();
+    }
+
+    /**
+     * Create an instance of {@link IntegerAttribute }
+     * 
+     */
+    public IntegerAttribute createIntegerAttribute() {
+        return new IntegerAttribute();
+    }
+
+    /**
+     * Create an instance of {@link Range }
+     * 
+     */
+    public Range createRange() {
+        return new Range();
+    }
+
+    /**
+     * Create an instance of {@link Estimate }
+     * 
+     */
+    public Estimate createEstimate() {
+        return new Estimate();
+    }
+
+    /**
+     * Create an instance of {@link SearchVolumeSearchParameter }
+     * 
+     */
+    public SearchVolumeSearchParameter createSearchVolumeSearchParameter() {
+        return new SearchVolumeSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link BooleanAttribute }
+     * 
+     */
+    public BooleanAttribute createBooleanAttribute() {
+        return new BooleanAttribute();
+    }
+
+    /**
+     * Create an instance of {@link LongComparisonOperation }
+     * 
+     */
+    public LongComparisonOperation createLongComparisonOperation() {
+        return new LongComparisonOperation();
+    }
+
+    /**
+     * Create an instance of {@link MonthlySearchVolume }
+     * 
+     */
+    public MonthlySearchVolume createMonthlySearchVolume() {
+        return new MonthlySearchVolume();
+    }
+
+    /**
+     * Create an instance of {@link TrafficEstimatorError }
+     * 
+     */
+    public TrafficEstimatorError createTrafficEstimatorError() {
+        return new TrafficEstimatorError();
+    }
+
+    /**
+     * Create an instance of {@link IdeaTypeAttribute }
+     * 
+     */
+    public IdeaTypeAttribute createIdeaTypeAttribute() {
+        return new IdeaTypeAttribute();
+    }
+
+    /**
+     * Create an instance of {@link CampaignEstimate }
+     * 
+     */
+    public CampaignEstimate createCampaignEstimate() {
+        return new CampaignEstimate();
+    }
+
+    /**
+     * Create an instance of {@link LocationSearchParameter }
+     * 
+     */
+    public LocationSearchParameter createLocationSearchParameter() {
+        return new LocationSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link KeywordEstimateRequest }
+     * 
+     */
+    public KeywordEstimateRequest createKeywordEstimateRequest() {
+        return new KeywordEstimateRequest();
+    }
+
+    /**
+     * Create an instance of {@link TargetingIdeaSelector }
+     * 
+     */
+    public TargetingIdeaSelector createTargetingIdeaSelector() {
+        return new TargetingIdeaSelector();
+    }
+
+    /**
+     * Create an instance of {@link StatsEstimate }
+     * 
+     */
+    public StatsEstimate createStatsEstimate() {
+        return new StatsEstimate();
+    }
+
+    /**
+     * Create an instance of {@link CompetitionSearchParameter }
+     * 
+     */
+    public CompetitionSearchParameter createCompetitionSearchParameter() {
+        return new CompetitionSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link StringAttribute }
+     * 
+     */
+    public StringAttribute createStringAttribute() {
+        return new StringAttribute();
+    }
+
+    /**
+     * Create an instance of {@link WebpageDescriptorAttribute }
+     * 
+     */
+    public WebpageDescriptorAttribute createWebpageDescriptorAttribute() {
+        return new WebpageDescriptorAttribute();
+    }
+
+    /**
+     * Create an instance of {@link TextAdSpec }
+     * 
+     */
+    public TextAdSpec createTextAdSpec() {
+        return new TextAdSpec();
+    }
+
+    /**
+     * Create an instance of {@link LanguageSearchParameter }
+     * 
+     */
+    public LanguageSearchParameter createLanguageSearchParameter() {
+        return new LanguageSearchParameter();
+    }
+
+    /**
+     * Create an instance of {@link PlacementTypeAttribute }
+     * 
+     */
+    public PlacementTypeAttribute createPlacementTypeAttribute() {
+        return new PlacementTypeAttribute();
     }
 
     /**
@@ -174,6 +565,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/o/v201406", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/o/v201406", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**

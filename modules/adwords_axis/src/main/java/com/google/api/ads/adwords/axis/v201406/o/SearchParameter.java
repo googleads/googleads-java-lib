@@ -13,7 +13,7 @@ package com.google.api.ads.adwords.axis.v201406.o;
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
  * to specify how the user wants to filter the set of all possible
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdea}s.
- * 
+ * <p>
  *             There is a {@link SearchParameter} for all types of inputs.
  * {@link SearchParameter}s can conceptually be broken down into two
  * types.
@@ -29,11 +29,11 @@ package com.google.api.ads.adwords.axis.v201406.o;
  * based
  *             on {@link com.google.ads.api.services.targetingideas.attributes.Attribute}
  * related information (eg. {@link CompetitionSearchParameter}, etc.).</li>
- * </ul><p>
- *             
+ * </ul>
+ *             <p>
  *             A request should only contain one instance of each {@link
  * SearchParameter}.
- *             
+ *             <p>
  *             NOTICE: Starting with version v201406, requests containing
  * multiple
  *             instances of the same search parameter will be rejected.

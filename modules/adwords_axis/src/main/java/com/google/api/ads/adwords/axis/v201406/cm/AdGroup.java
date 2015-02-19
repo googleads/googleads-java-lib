@@ -80,14 +80,14 @@ public class AdGroup  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     /* Bidding configuration for this ad group. To set the bids on
-     * the ad groups
-     *                 use {@link BiddingStrategyConfiguration#bids}. Multiple
-     * bids can be set on
-     *                 ad group at the same time. Only the bids that apply
-     * to the campaign's bidding
-     *                 strategy {@linkplain Campaign#biddingStrategyConfiguration
-     * bidding strategy}
-     *                 will be used. */
+     * the ad groups use
+     *                 {@link BiddingStrategyConfiguration#bids}. Multiple
+     * bids can be set on ad group at the same
+     *                 time. Only the bids that apply to the effective bidding
+     * strategy will be used. Effective
+     *                 bidding strategy is considered to be the directly
+     * attached strategy or inherited campaign level
+     *                 strategy when there?s no directly attached strategy. */
     private com.google.api.ads.adwords.axis.v201406.cm.BiddingStrategyConfiguration biddingStrategyConfiguration;
 
     /* Allows advertisers to specify a criteria dimension on which
@@ -425,14 +425,14 @@ public class AdGroup  implements java.io.Serializable {
      * Gets the biddingStrategyConfiguration value for this AdGroup.
      * 
      * @return biddingStrategyConfiguration   * Bidding configuration for this ad group. To set the bids on
-     * the ad groups
-     *                 use {@link BiddingStrategyConfiguration#bids}. Multiple
-     * bids can be set on
-     *                 ad group at the same time. Only the bids that apply
-     * to the campaign's bidding
-     *                 strategy {@linkplain Campaign#biddingStrategyConfiguration
-     * bidding strategy}
-     *                 will be used.
+     * the ad groups use
+     *                 {@link BiddingStrategyConfiguration#bids}. Multiple
+     * bids can be set on ad group at the same
+     *                 time. Only the bids that apply to the effective bidding
+     * strategy will be used. Effective
+     *                 bidding strategy is considered to be the directly
+     * attached strategy or inherited campaign level
+     *                 strategy when there?s no directly attached strategy.
      */
     public com.google.api.ads.adwords.axis.v201406.cm.BiddingStrategyConfiguration getBiddingStrategyConfiguration() {
         return biddingStrategyConfiguration;
@@ -443,14 +443,14 @@ public class AdGroup  implements java.io.Serializable {
      * Sets the biddingStrategyConfiguration value for this AdGroup.
      * 
      * @param biddingStrategyConfiguration   * Bidding configuration for this ad group. To set the bids on
-     * the ad groups
-     *                 use {@link BiddingStrategyConfiguration#bids}. Multiple
-     * bids can be set on
-     *                 ad group at the same time. Only the bids that apply
-     * to the campaign's bidding
-     *                 strategy {@linkplain Campaign#biddingStrategyConfiguration
-     * bidding strategy}
-     *                 will be used.
+     * the ad groups use
+     *                 {@link BiddingStrategyConfiguration#bids}. Multiple
+     * bids can be set on ad group at the same
+     *                 time. Only the bids that apply to the effective bidding
+     * strategy will be used. Effective
+     *                 bidding strategy is considered to be the directly
+     * attached strategy or inherited campaign level
+     *                 strategy when there?s no directly attached strategy.
      */
     public void setBiddingStrategyConfiguration(com.google.api.ads.adwords.axis.v201406.cm.BiddingStrategyConfiguration biddingStrategyConfiguration) {
         this.biddingStrategyConfiguration = biddingStrategyConfiguration;

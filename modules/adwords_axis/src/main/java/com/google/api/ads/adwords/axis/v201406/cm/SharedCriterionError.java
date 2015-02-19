@@ -7,6 +7,10 @@
 
 package com.google.api.ads.adwords.axis.v201406.cm;
 
+
+/**
+ * Represents error codes for the SharedCriterionService.
+ */
 public class SharedCriterionError  extends com.google.api.ads.adwords.axis.v201406.cm.ApiError  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201406.cm.SharedCriterionErrorReason reason;
 

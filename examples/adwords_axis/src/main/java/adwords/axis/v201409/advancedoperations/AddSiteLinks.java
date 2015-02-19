@@ -86,21 +86,23 @@ public class AddSiteLinks {
     AdWordsServices adWordsServices = new AdWordsServices();
 
     Long campaignId = Long.valueOf("INSERT_CAMPAIGN_ID_HERE");
+    String feedName = "INSERT_FEED_NAME_HERE";
 
-    runExample(adWordsServices, session, campaignId);
+    runExample(adWordsServices, session, campaignId, feedName);
   }
 
-  public static void runExample(
-      AdWordsServices adWordsServices, AdWordsSession session, Long campaignId) throws Exception {
+  public static void runExample(AdWordsServices adWordsServices, AdWordsSession session,
+      Long campaignId, String feedName) throws Exception {
     SiteLinksDataHolder siteLinksData = new SiteLinksDataHolder();
-    createSiteLinksFeed(adWordsServices, session, siteLinksData);
+    createSiteLinksFeed(adWordsServices, session, siteLinksData, feedName);
     createSiteLinksFeedItems(adWordsServices, session, siteLinksData);
     createSiteLinksFeedMapping(adWordsServices, session, siteLinksData);
     createSiteLinksCampaignFeed(adWordsServices, session, siteLinksData, campaignId);
   }
 
   private static void createSiteLinksFeed(
-      AdWordsServices adWordsServices, AdWordsSession session, SiteLinksDataHolder siteLinksData)
+      AdWordsServices adWordsServices, AdWordsSession session, SiteLinksDataHolder siteLinksData,
+      String feedName)
       throws Exception {
     // Get the FeedService.
     FeedServiceInterface feedService = adWordsServices.get(session, FeedServiceInterface.class);
@@ -109,9 +111,9 @@ public class AddSiteLinks {
     FeedAttribute textAttribute = new FeedAttribute();
     textAttribute.setType(FeedAttributeType.STRING);
     textAttribute.setName("Link Text");
-    FeedAttribute urlAttribute = new FeedAttribute();
-    urlAttribute.setType(FeedAttributeType.URL);
-    urlAttribute.setName("Link URL");
+    FeedAttribute finalUrlAttribute = new FeedAttribute();
+    finalUrlAttribute.setType(FeedAttributeType.URL_LIST);
+    finalUrlAttribute.setName("Link Final URLs");
     FeedAttribute line1Attribute = new FeedAttribute();
     line1Attribute.setType(FeedAttributeType.STRING);
     line1Attribute.setName("Line 1 Description");
@@ -121,9 +123,9 @@ public class AddSiteLinks {
 
     // Create the feed.
     Feed siteLinksFeed = new Feed();
-    siteLinksFeed.setName("Feed For Site Links#" + System.currentTimeMillis());
+    siteLinksFeed.setName(feedName);
     siteLinksFeed.setAttributes(
-        new FeedAttribute[] {textAttribute, urlAttribute, line1Attribute, line2Attribute});
+        new FeedAttribute[] {textAttribute, finalUrlAttribute, line1Attribute, line2Attribute});
     siteLinksFeed.setOrigin(FeedOrigin.USER);
 
     // Create operation.
@@ -138,11 +140,11 @@ public class AddSiteLinks {
     siteLinksData.siteLinksFeedId = savedFeed.getId();
     FeedAttribute[] savedAttributes = savedFeed.getAttributes();
     siteLinksData.linkTextFeedAttributeId = savedAttributes[0].getId();
-    siteLinksData.linkUrlFeedAttributeId = savedAttributes[1].getId();
+    siteLinksData.linkFinalUrlFeedAttributeId = savedAttributes[1].getId();
     siteLinksData.line1FeedAttributeId = savedAttributes[2].getId();
     siteLinksData.line2FeedAttributeId = savedAttributes[3].getId();
     System.out.printf("Feed with name '%s' and ID %d with linkTextAttributeId %d"
-        + " and linkUrlAttributeId %d and line1AttributeId %d"
+        + " and linkFinalUrlAttributeId %d and line1AttributeId %d"
         + " and line2AttributeId %d was created.\n",
         savedFeed.getName(),
         savedFeed.getId(),
@@ -189,7 +191,7 @@ public class AddSiteLinks {
   // See the Placeholder reference page for a list of all the placeholder types and fields.
   // https://developers.google.com/adwords/api/docs/appendix/placeholders
   private static final int PLACEHOLDER_FIELD_SITELINK_LINK_TEXT = 1;
-  private static final int PLACEHOLDER_FIELD_SITELINK_URL = 2;
+  private static final int PLACEHOLDER_FIELD_SITELINK_FINAL_URL = 5;
   private static final int PLACEHOLDER_FIELD_LINE_1_TEXT = 3;
   private static final int PLACEHOLDER_FIELD_LINE_2_TEXT = 4;
 
@@ -203,9 +205,9 @@ public class AddSiteLinks {
     AttributeFieldMapping linkTextFieldMapping = new AttributeFieldMapping();
     linkTextFieldMapping.setFeedAttributeId(siteLinksData.linkTextFeedAttributeId);
     linkTextFieldMapping.setFieldId(PLACEHOLDER_FIELD_SITELINK_LINK_TEXT);
-    AttributeFieldMapping linkUrlFieldMapping = new AttributeFieldMapping();
-    linkUrlFieldMapping.setFeedAttributeId(siteLinksData.linkUrlFeedAttributeId);
-    linkUrlFieldMapping.setFieldId(PLACEHOLDER_FIELD_SITELINK_URL);
+    AttributeFieldMapping linkFinalUrlFieldMapping = new AttributeFieldMapping();
+    linkFinalUrlFieldMapping.setFeedAttributeId(siteLinksData.linkFinalUrlFeedAttributeId);
+    linkFinalUrlFieldMapping.setFieldId(PLACEHOLDER_FIELD_SITELINK_FINAL_URL);
     AttributeFieldMapping line1FieldMapping = new AttributeFieldMapping();
     line1FieldMapping.setFeedAttributeId(siteLinksData.line1FeedAttributeId);
     line1FieldMapping.setFieldId(PLACEHOLDER_FIELD_LINE_1_TEXT);
@@ -219,7 +221,7 @@ public class AddSiteLinks {
     feedMapping.setPlaceholderType(PLACEHOLDER_SITELINKS);
     feedMapping.setFeedId(siteLinksData.siteLinksFeedId);
     feedMapping.setAttributeFieldMappings(new AttributeFieldMapping[] {linkTextFieldMapping,
-        linkUrlFieldMapping, line1FieldMapping, line2FieldMapping});
+        linkFinalUrlFieldMapping, line1FieldMapping, line2FieldMapping});
     FeedMappingOperation operation = new FeedMappingOperation();
     operation.setOperand(feedMapping);
     operation.setOperator(Operator.ADD);
@@ -303,14 +305,14 @@ public class AddSiteLinks {
   }
 
   private static FeedItemOperation newSiteLinkFeedItemAddOperation(
-      SiteLinksDataHolder siteLinksData, String text, String url, String line1, String line2) {
+      SiteLinksDataHolder siteLinksData, String text, String finalUrl, String line1, String line2) {
     // Create the FeedItemAttributeValues for our text values.
     FeedItemAttributeValue linkTextAttributeValue = new FeedItemAttributeValue();
     linkTextAttributeValue.setFeedAttributeId(siteLinksData.linkTextFeedAttributeId);
     linkTextAttributeValue.setStringValue(text);
-    FeedItemAttributeValue linkUrlAttributeValue = new FeedItemAttributeValue();
-    linkUrlAttributeValue.setFeedAttributeId(siteLinksData.linkUrlFeedAttributeId);
-    linkUrlAttributeValue.setStringValue(url);
+    FeedItemAttributeValue linkFinalUrlAttributeValue = new FeedItemAttributeValue();
+    linkFinalUrlAttributeValue.setFeedAttributeId(siteLinksData.linkFinalUrlFeedAttributeId);
+    linkFinalUrlAttributeValue.setStringValues(new String[] {finalUrl});
     FeedItemAttributeValue line1TextAttributeValue = new FeedItemAttributeValue();
     line1TextAttributeValue.setFeedAttributeId(siteLinksData.line1FeedAttributeId);
     line1TextAttributeValue.setStringValue(line1);
@@ -322,7 +324,7 @@ public class AddSiteLinks {
     FeedItem item = new FeedItem();
     item.setFeedId(siteLinksData.siteLinksFeedId);
     item.setAttributeValues(new FeedItemAttributeValue[] {linkTextAttributeValue,
-        linkUrlAttributeValue, line1TextAttributeValue, line2TextAttributeValue});
+        linkFinalUrlAttributeValue, line1TextAttributeValue, line2TextAttributeValue});
 
     // Optional: use item.setStartTime() and item.setEndTime() to specify the
     // time period for the feed to deliver.  The example below will make the feed
@@ -342,7 +344,7 @@ public class AddSiteLinks {
   private static class SiteLinksDataHolder {
     private Long siteLinksFeedId;
     private Long linkTextFeedAttributeId;
-    private Long linkUrlFeedAttributeId;
+    private Long linkFinalUrlFeedAttributeId;
     private Long line1FeedAttributeId;
     private Long line2FeedAttributeId;
     private List<Long> siteLinkFeedItemIds = new ArrayList<Long>();

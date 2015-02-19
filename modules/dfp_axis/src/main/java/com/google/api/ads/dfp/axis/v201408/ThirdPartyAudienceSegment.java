@@ -19,7 +19,11 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.dfp.axis.v201
 
     /* Specifies CPM cost for the given segment. This attribute is
      * readonly and is assigned by the
-     *                     data provider. */
+     *                     data provider.
+     *                     
+     *                     <p> The CPM cost comes from the active pricing,
+     * if there is one;
+     *                     otherwise it comes from the latest pricing. */
     private com.google.api.ads.dfp.axis.v201408.Money cost;
 
     /* Specifies the date and time at which this segment becomes available
@@ -93,6 +97,10 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.dfp.axis.v201
      * @return cost   * Specifies CPM cost for the given segment. This attribute is
      * readonly and is assigned by the
      *                     data provider.
+     *                     
+     *                     <p> The CPM cost comes from the active pricing,
+     * if there is one;
+     *                     otherwise it comes from the latest pricing.
      */
     public com.google.api.ads.dfp.axis.v201408.Money getCost() {
         return cost;
@@ -105,6 +113,10 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.dfp.axis.v201
      * @param cost   * Specifies CPM cost for the given segment. This attribute is
      * readonly and is assigned by the
      *                     data provider.
+     *                     
+     *                     <p> The CPM cost comes from the active pricing,
+     * if there is one;
+     *                     otherwise it comes from the latest pricing.
      */
     public void setCost(com.google.api.ads.dfp.axis.v201408.Money cost) {
         this.cost = cost;

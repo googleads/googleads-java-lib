@@ -140,7 +140,7 @@ public class AdWordsSessionUtil {
    */
   public static AdWordsSession fromFileWithOAuth2()
       throws OAuthException, ValidationException, ConfigurationLoadException {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
+    // Generate a refreshable OAuth2 credential 
     // and can be used in place of a service account.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)

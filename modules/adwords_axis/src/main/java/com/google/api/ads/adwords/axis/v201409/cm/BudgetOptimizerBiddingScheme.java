@@ -12,6 +12,15 @@ package com.google.api.ads.adwords.axis.v201409.cm;
  * In budget optimizer, Google automatically places bids for the user
  * based on
  *             their daily/monthly budget.
+ *             
+ *             <p><b>Note:</b>
+ *             This bidding strategy has been deprecated and replaced
+ * with
+ *             {@linkplain TargetSpendBiddingScheme TargetSpend}. We
+ * no longer allow
+ *             advertisers to opt into this strategy--{@code BudgetOptimizerBiddingScheme}
+ * solely exists so that advertisers can access campaigns that had specified
+ * this strategy.</p>
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX.</span>
  */

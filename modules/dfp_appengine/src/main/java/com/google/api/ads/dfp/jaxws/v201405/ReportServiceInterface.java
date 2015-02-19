@@ -113,10 +113,12 @@ public interface ReportServiceInterface {
 
     /**
      * 
-     *         Returns the {@link ReportJob} uniquely identified by the given ID.
+     *         Returns the {@link ReportJob} uniquely identified by the given ID with only the
+     *         {@link ReportJob#reportJobStatus} and {@link ReportJob#id} fields filled in.
      *         
      *         @param reportJobId the Id of the report job which must already exist
-     *         @return the {@code ReportJob} uniquely identified by the given ID
+     *         @return the {@code ReportJob} uniquely identified by the given ID with the ID and status
+     *         fields filled in.
      *       
      * 
      * @param reportJobId

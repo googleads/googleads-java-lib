@@ -7,6 +7,10 @@
 
 package com.google.api.ads.adwords.axis.v201409.cm;
 
+
+/**
+ * Operation for adding/removing a criterion from a shared set.
+ */
 public class SharedCriterionOperation  extends com.google.api.ads.adwords.axis.v201409.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and
      * should not be {@code null}.</span> */

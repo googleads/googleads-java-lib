@@ -29,7 +29,21 @@ public enum SharedCriterionErrorReason {
 
     EXCEEDS_CRITERIA_LIMIT,
     INCORRECT_CRITERION_TYPE,
+
+    /**
+     * 
+     *                 Cannot add the same crietrion as positive and negative in the same shared set.
+     *               
+     * 
+     */
     CANNOT_TARGET_AND_EXCLUDE,
+
+    /**
+     * 
+     *                 Negative shared set type requires a negative shared set criterion.
+     *               
+     * 
+     */
     NEGATIVE_CRITERION_REQUIRED,
     UNKNOWN;
 
