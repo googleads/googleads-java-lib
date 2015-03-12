@@ -28,7 +28,7 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
     private com.google.api.ads.adwords.axis.v201406.cm.ProductDimensionType type;
 
     /* <span class="constraint StringLength">This string must not
-     * be empty.</span> */
+     * be empty, (trimmed).</span> */
     private java.lang.String value;
 
     public ProductCustomAttribute() {
@@ -83,7 +83,7 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
      * Gets the value value for this ProductCustomAttribute.
      * 
      * @return value   * <span class="constraint StringLength">This string must not
-     * be empty.</span>
+     * be empty, (trimmed).</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -94,7 +94,7 @@ public class ProductCustomAttribute  extends com.google.api.ads.adwords.axis.v20
      * Sets the value value for this ProductCustomAttribute.
      * 
      * @param value   * <span class="constraint StringLength">This string must not
-     * be empty.</span>
+     * be empty, (trimmed).</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;

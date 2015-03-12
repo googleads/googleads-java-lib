@@ -1,3 +1,21 @@
+1.38.0 - 03/12/2015
+-------------------
+AdWords:
+  - Added support and examples for v201502.
+  - Renamed AddSiteLinks to AddSiteLinksUsingFeeds, and added new AddSiteLinks and
+    MigrateToExtensionSettings examples for the new extension setting services.
+  - Fixed [github issue 36](https://github.com/googleads/googleads-java-lib/issues/36):
+    getBid() of root ProductPartition returns NULL.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updated joda-time dependency to version 2.1.
+
 1.37.0 - 02/19/2015
 -------------------
 AdWords:

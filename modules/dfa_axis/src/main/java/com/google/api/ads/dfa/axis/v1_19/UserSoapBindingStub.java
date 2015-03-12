@@ -24,10 +24,10 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAvailableTraffickerTypes");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ArrayOfTraffickerType"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.TraffickerType[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableTraffickerTypesReturn"));
+        oper.setName("getAvailableUserFilterCriteriaTypes");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ArrayOfUserFilterCriteriaType"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableUserFilterCriteriaTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -120,10 +120,10 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAvailableUserFilterCriteriaTypes");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ArrayOfUserFilterCriteriaType"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableUserFilterCriteriaTypesReturn"));
+        oper.setName("getAvailableTraffickerTypes");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ArrayOfTraffickerType"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.TraffickerType[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getAvailableTraffickerTypesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -436,7 +436,7 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         }
     }
 
-    public com.google.api.ads.dfa.axis.v1_19.TraffickerType[] getAvailableTraffickerTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+    public com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -445,7 +445,7 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getAvailableTraffickerTypes"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getAvailableUserFilterCriteriaTypes"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -457,9 +457,9 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         else {
             extractAttachments(_call);
             try {
-                return (com.google.api.ads.dfa.axis.v1_19.TraffickerType[]) _resp;
+                return (com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_19.TraffickerType[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.TraffickerType[].class);
+                return (com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -663,7 +663,7 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+    public com.google.api.ads.dfa.axis.v1_19.TraffickerType[] getAvailableTraffickerTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -672,7 +672,7 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getAvailableUserFilterCriteriaTypes"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getAvailableTraffickerTypes"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -684,9 +684,9 @@ public class UserSoapBindingStub extends org.apache.axis.client.Stub implements 
         else {
             extractAttachments(_call);
             try {
-                return (com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[]) _resp;
+                return (com.google.api.ads.dfa.axis.v1_19.TraffickerType[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.UserFilterCriteriaType[].class);
+                return (com.google.api.ads.dfa.axis.v1_19.TraffickerType[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.TraffickerType[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

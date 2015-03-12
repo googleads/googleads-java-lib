@@ -112,14 +112,15 @@ public class ProductPartitionTree {
   /**
    * Constructor that initializes the temp ID generator based on the ID of the root node.
    *
-   * @param adGroupId
-   * @param biddingStrategyConfig
-   * @param rootNode
+   * @param adGroupId the ID of the ad group
+   * @param biddingStrategyConfig the bidding strategy configuration of the ad group
+   * @param rootNode the root node of the tree
    */
   private ProductPartitionTree(long adGroupId, BiddingStrategyConfiguration biddingStrategyConfig,
       ProductPartitionNode rootNode) {
     this.adGroupId = adGroupId;
-    this.biddingStrategyConfig = biddingStrategyConfig;
+    this.biddingStrategyConfig =
+        Preconditions.checkNotNull(biddingStrategyConfig, "Null bidding strategy configuration");
     this.root = Preconditions.checkNotNull(rootNode, "Null root node");
 
     long startingTempId;
@@ -285,12 +286,23 @@ public class ProductPartitionTree {
         "No root criterion found in the list of ad group criteria for ad group ID %s", adGroupId);
 
     AdGroupCriterion rootCriterion = Iterables.getOnlyElement(parentIdMap.get(null));
+
     Preconditions.checkState(rootCriterion instanceof BiddableAdGroupCriterion,
         "Root criterion for ad group ID %s is not a BiddableAdGroupCriterion", adGroupId);
+    BiddableAdGroupCriterion biddableRootCriterion = (BiddableAdGroupCriterion) rootCriterion;
+
     BiddingStrategyConfiguration biddingStrategyConfig =
-        ((BiddableAdGroupCriterion) rootCriterion).getBiddingStrategyConfiguration();
+        biddableRootCriterion.getBiddingStrategyConfiguration();
+    Preconditions.checkState(biddingStrategyConfig != null,
+        "Null bidding strategy config on the root node of ad group ID %s", adGroupId);
     ProductPartitionNode rootNode = new ProductPartitionNode(null, (ProductDimension) null,
         rootCriterion.getCriterion().getId(), new ProductDimensionComparator());
+
+    // Set the root's bid if a bid exists on the BiddableAdGroupCriterion.
+    Money rootNodeBid = getBid(biddableRootCriterion);
+    if (rootNodeBid != null) {
+      rootNode = rootNode.asBiddableUnit().setBid(rootNodeBid.getMicroAmount());
+    }
 
     addChildNodes(rootNode, parentIdMap);
 

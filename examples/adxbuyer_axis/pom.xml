@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>adxbuyer-axis-examples</artifactId>
-  <version>1.37.0</version>
+  <version>1.38.0</version>
 
   <packaging>jar</packaging>
   <name>AdWords and DoubleClick Ad Exchange Buyer Examples using Axis</name>
@@ -85,12 +85,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.37.0</version>
+      <version>1.38.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis</artifactId>
-      <version>1.37.0</version>
+      <version>1.38.0</version>
     </dependency>
 
     <!-- Third party dependencies -->

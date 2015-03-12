@@ -102,6 +102,8 @@ public class ReportRequestFactoryHelperTest {
         parameters.add(new Object[] {"v201406", reportingConfig});
         parameters.add(new Object[] {"v201409", null});
         parameters.add(new Object[] {"v201409", reportingConfig});
+        parameters.add(new Object[] {"v201502", null});
+        parameters.add(new Object[] {"v201502", reportingConfig});
         parameters.add(new Object[] {null, reportingConfig});
       }
     }

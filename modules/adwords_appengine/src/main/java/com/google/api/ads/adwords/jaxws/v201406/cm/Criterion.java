@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import com.google.api.ads.adwords.jaxws.v201406.express.KeywordGroup;
 import com.google.api.ads.adwords.jaxws.v201406.express.KeywordSet;
 import com.google.api.ads.adwords.jaxws.v201406.express.NegativeCriterion;
 import com.google.api.ads.adwords.jaxws.v201406.express.ProductService;
@@ -68,10 +69,11 @@ import com.google.api.ads.adwords.jaxws.v201406.express.ProductService;
     AdSchedule.class,
     IpBlock.class,
     MobileApplication.class,
-    KeywordSet.class,
+    KeywordGroup.class,
     NegativeCriterion.class,
     Keyword.class,
-    ProductService.class
+    ProductService.class,
+    KeywordSet.class
 })
 public class Criterion {
 

@@ -569,6 +569,13 @@ public class BudgetSuggestionServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201409", "KeywordGroup");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201409.express.KeywordGroup.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201409", "KeywordSet");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201409.express.KeywordSet.class;

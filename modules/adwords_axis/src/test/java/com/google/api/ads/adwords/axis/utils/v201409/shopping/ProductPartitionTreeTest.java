@@ -499,16 +499,18 @@ public class ProductPartitionTreeTest {
       } else {
         BiddableAdGroupCriterion biddable = new BiddableAdGroupCriterion();
         biddable.setUserStatus(UserStatus.ENABLED);
+        
+        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
         if (isUnit && bid != null) {
-          BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
           CpcBid cpcBid = new CpcBid();
           Money bidMoney = new Money();
           bidMoney.setMicroAmount(bid);
           cpcBid.setBid(bidMoney);
           cpcBid.setCpcBidSource(BidSource.CRITERION);
           biddingConfig.setBids(new Bids[] {cpcBid});
-          biddable.setBiddingStrategyConfiguration(biddingConfig);
         }
+        biddable.setBiddingStrategyConfiguration(biddingConfig);
+        
         adGroupCriterion = biddable;
       }
       adGroupCriterion.setCriterion(partition);

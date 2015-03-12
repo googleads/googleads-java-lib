@@ -41,7 +41,6 @@ import com.google.api.ads.adwords.jaxws.v201406.rm.UserListPage;
     "pageType"
 })
 @XmlSeeAlso({
-    BudgetOrderPage.class,
     ExperimentPage.class,
     BudgetPage.class,
     CampaignPage.class,
@@ -59,6 +58,7 @@ import com.google.api.ads.adwords.jaxws.v201406.rm.UserListPage;
     com.google.api.ads.adwords.jaxws.v201406.express.NoStatsPage.class,
     ManagedCustomerPage.class,
     com.google.api.ads.adwords.jaxws.v201406.mcm.NoStatsPage.class,
+    BudgetOrderPage.class,
     UserListPage.class
 })
 public abstract class Page {

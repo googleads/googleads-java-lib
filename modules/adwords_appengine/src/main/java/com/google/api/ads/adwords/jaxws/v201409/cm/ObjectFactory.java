@@ -70,6 +70,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdCustomizerFeedAttribute }
+     * 
+     */
+    public AdCustomizerFeedAttribute createAdCustomizerFeedAttribute() {
+        return new AdCustomizerFeedAttribute();
+    }
+
+    /**
      * Create an instance of {@link TargetingSetting }
      * 
      */
@@ -214,6 +222,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CampaignExtensionSettingReturnValue }
+     * 
+     */
+    public CampaignExtensionSettingReturnValue createCampaignExtensionSettingReturnValue() {
+        return new CampaignExtensionSettingReturnValue();
+    }
+
+    /**
      * Create an instance of {@link OfflineConversionFeedOperation }
      * 
      */
@@ -334,6 +350,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdCustomizerFeedOperation }
+     * 
+     */
+    public AdCustomizerFeedOperation createAdCustomizerFeedOperation() {
+        return new AdCustomizerFeedOperation();
+    }
+
+    /**
      * Create an instance of {@link FeedItemDevicePreference }
      * 
      */
@@ -374,11 +398,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdCustomizerFeedReturnValue }
+     * 
+     */
+    public AdCustomizerFeedReturnValue createAdCustomizerFeedReturnValue() {
+        return new AdCustomizerFeedReturnValue();
+    }
+
+    /**
      * Create an instance of {@link CampaignCriterionReturnValue }
      * 
      */
     public CampaignCriterionReturnValue createCampaignCriterionReturnValue() {
         return new CampaignCriterionReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link CampaignExtensionSettingPage }
+     * 
+     */
+    public CampaignExtensionSettingPage createCampaignExtensionSettingPage() {
+        return new CampaignExtensionSettingPage();
     }
 
     /**
@@ -467,6 +507,14 @@ public class ObjectFactory {
      */
     public AdParamError createAdParamError() {
         return new AdParamError();
+    }
+
+    /**
+     * Create an instance of {@link AdGroupExtensionSettingOperation }
+     * 
+     */
+    public AdGroupExtensionSettingOperation createAdGroupExtensionSettingOperation() {
+        return new AdGroupExtensionSettingOperation();
     }
 
     /**
@@ -646,6 +694,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SitelinkFeedItem }
+     * 
+     */
+    public SitelinkFeedItem createSitelinkFeedItem() {
+        return new SitelinkFeedItem();
+    }
+
+    /**
      * Create an instance of {@link JobResult }
      * 
      */
@@ -766,6 +822,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReviewFeedItem }
+     * 
+     */
+    public ReviewFeedItem createReviewFeedItem() {
+        return new ReviewFeedItem();
+    }
+
+    /**
      * Create an instance of {@link DateTimeRange }
      * 
      */
@@ -798,6 +862,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CallFeedItem }
+     * 
+     */
+    public CallFeedItem createCallFeedItem() {
+        return new CallFeedItem();
+    }
+
+    /**
      * Create an instance of {@link ConversionOptimizerEligibility }
      * 
      */
@@ -819,6 +891,14 @@ public class ObjectFactory {
      */
     public LabelReturnValue createLabelReturnValue() {
         return new LabelReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link ExtensionFeedItem }
+     * 
+     */
+    public ExtensionFeedItem createExtensionFeedItem() {
+        return new ExtensionFeedItem();
     }
 
     /**
@@ -894,6 +974,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CampaignExtensionSettingOperation }
+     * 
+     */
+    public CampaignExtensionSettingOperation createCampaignExtensionSettingOperation() {
+        return new CampaignExtensionSettingOperation();
+    }
+
+    /**
      * Create an instance of {@link MultiplierError }
      * 
      */
@@ -942,6 +1030,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AppFeedItem }
+     * 
+     */
+    public AppFeedItem createAppFeedItem() {
+        return new AppFeedItem();
+    }
+
+    /**
      * Create an instance of {@link Webpage }
      * 
      */
@@ -987,6 +1083,14 @@ public class ObjectFactory {
      */
     public BiddingStrategyError createBiddingStrategyError() {
         return new BiddingStrategyError();
+    }
+
+    /**
+     * Create an instance of {@link CustomerExtensionSettingReturnValue }
+     * 
+     */
+    public CustomerExtensionSettingReturnValue createCustomerExtensionSettingReturnValue() {
+        return new CustomerExtensionSettingReturnValue();
     }
 
     /**
@@ -1142,6 +1246,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CustomerExtensionSettingPage }
+     * 
+     */
+    public CustomerExtensionSettingPage createCustomerExtensionSettingPage() {
+        return new CustomerExtensionSettingPage();
+    }
+
+    /**
      * Create an instance of {@link AdGroupFeedOperation }
      * 
      */
@@ -1230,6 +1342,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ExtensionSetting }
+     * 
+     */
+    public ExtensionSetting createExtensionSetting() {
+        return new ExtensionSetting();
+    }
+
+    /**
      * Create an instance of {@link ConversionTrackingError }
      * 
      */
@@ -1251,6 +1371,14 @@ public class ObjectFactory {
      */
     public AdGroupLabel createAdGroupLabel() {
         return new AdGroupLabel();
+    }
+
+    /**
+     * Create an instance of {@link CustomerExtensionSetting }
+     * 
+     */
+    public CustomerExtensionSetting createCustomerExtensionSetting() {
+        return new CustomerExtensionSetting();
     }
 
     /**
@@ -1603,6 +1731,22 @@ public class ObjectFactory {
      */
     public SharedCriterionOperation createSharedCriterionOperation() {
         return new SharedCriterionOperation();
+    }
+
+    /**
+     * Create an instance of {@link CallConversionType }
+     * 
+     */
+    public CallConversionType createCallConversionType() {
+        return new CallConversionType();
+    }
+
+    /**
+     * Create an instance of {@link AdGroupExtensionSettingReturnValue }
+     * 
+     */
+    public AdGroupExtensionSettingReturnValue createAdGroupExtensionSettingReturnValue() {
+        return new AdGroupExtensionSettingReturnValue();
     }
 
     /**
@@ -2102,6 +2246,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdGroupExtensionSetting }
+     * 
+     */
+    public AdGroupExtensionSetting createAdGroupExtensionSetting() {
+        return new AdGroupExtensionSetting();
+    }
+
+    /**
      * Create an instance of {@link TargetingSettingDetail }
      * 
      */
@@ -2158,6 +2310,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdGroupExtensionSettingPage }
+     * 
+     */
+    public AdGroupExtensionSettingPage createAdGroupExtensionSettingPage() {
+        return new AdGroupExtensionSettingPage();
+    }
+
+    /**
      * Create an instance of {@link ImageError }
      * 
      */
@@ -2171,6 +2331,14 @@ public class ObjectFactory {
      */
     public ProductAdwordsGrouping createProductAdwordsGrouping() {
         return new ProductAdwordsGrouping();
+    }
+
+    /**
+     * Create an instance of {@link AdCustomizerFeedPage }
+     * 
+     */
+    public AdCustomizerFeedPage createAdCustomizerFeedPage() {
+        return new AdCustomizerFeedPage();
     }
 
     /**
@@ -2195,6 +2363,14 @@ public class ObjectFactory {
      */
     public ConstantData createConstantData() {
         return new ConstantData();
+    }
+
+    /**
+     * Create an instance of {@link ExtensionSettingError }
+     * 
+     */
+    public ExtensionSettingError createExtensionSettingError() {
+        return new ExtensionSettingError();
     }
 
     /**
@@ -2267,6 +2443,14 @@ public class ObjectFactory {
      */
     public GeoPoint createGeoPoint() {
         return new GeoPoint();
+    }
+
+    /**
+     * Create an instance of {@link AdCustomizerFeedError }
+     * 
+     */
+    public AdCustomizerFeedError createAdCustomizerFeedError() {
+        return new AdCustomizerFeedError();
     }
 
     /**
@@ -2379,6 +2563,14 @@ public class ObjectFactory {
      */
     public AdGroupCriterionLabelOperation createAdGroupCriterionLabelOperation() {
         return new AdGroupCriterionLabelOperation();
+    }
+
+    /**
+     * Create an instance of {@link AdCustomizerFeed }
+     * 
+     */
+    public AdCustomizerFeed createAdCustomizerFeed() {
+        return new AdCustomizerFeed();
     }
 
     /**
@@ -2694,6 +2886,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CustomerExtensionSettingOperation }
+     * 
+     */
+    public CustomerExtensionSettingOperation createCustomerExtensionSettingOperation() {
+        return new CustomerExtensionSettingOperation();
+    }
+
+    /**
      * Create an instance of {@link CampaignAdExtensionReturnValue }
      * 
      */
@@ -2771,6 +2971,14 @@ public class ObjectFactory {
      */
     public WebsiteCallMetricsConversion createWebsiteCallMetricsConversion() {
         return new WebsiteCallMetricsConversion();
+    }
+
+    /**
+     * Create an instance of {@link CampaignExtensionSetting }
+     * 
+     */
+    public CampaignExtensionSetting createCampaignExtensionSetting() {
+        return new CampaignExtensionSetting();
     }
 
     /**

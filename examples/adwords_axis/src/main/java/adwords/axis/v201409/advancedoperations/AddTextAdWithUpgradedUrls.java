@@ -109,7 +109,7 @@ public class AddTextAdWithUpgradedUrls {
     // item levels.
     textAd.setFinalMobileUrls(new String[] {"http://mobile.example.com/cruise/space/",
         "http://mobile.example.com/locations/mars/"});
-
+    
     // Create ad group ad.
     AdGroupAd textAdGroupAd = new AdGroupAd();
     textAdGroupAd.setAdGroupId(adGroupId);

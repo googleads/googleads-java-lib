@@ -49,8 +49,11 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListOperation;
     AdParamOperation.class,
     OfflineConversionFeedOperation.class,
     BiddingStrategyOperation.class,
+    AdCustomizerFeedOperation.class,
     FeedItemOperation.class,
+    AdGroupExtensionSettingOperation.class,
     AdGroupAdOperation.class,
+    CampaignExtensionSettingOperation.class,
     CampaignCriterionOperation.class,
     AdGroupFeedOperation.class,
     FeedOperation.class,
@@ -71,16 +74,17 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListOperation;
     CampaignOperation.class,
     AdGroupBidModifierOperation.class,
     CampaignTargetOperation.class,
+    CustomerExtensionSettingOperation.class,
     SharedSetOperation.class,
     AdGroupAdLabelOperation.class,
     AdGroupCriterionOperation.class,
+    BudgetOrderOperation.class,
+    UserListOperation.class,
+    ExpressBusinessOperation.class,
+    PromotionOperation.class,
     ManagedCustomerOperation.class,
     LinkOperation.class,
-    MoveOperation.class,
-    PromotionOperation.class,
-    ExpressBusinessOperation.class,
-    BudgetOrderOperation.class,
-    UserListOperation.class
+    MoveOperation.class
 })
 public abstract class Operation {
 

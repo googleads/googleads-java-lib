@@ -13,7 +13,7 @@ package com.google.api.ads.adwords.axis.v201406.cm;
  */
 public class ProductBrand  extends com.google.api.ads.adwords.axis.v201406.cm.ProductDimension  implements java.io.Serializable {
     /* <span class="constraint StringLength">This string must not
-     * be empty.</span> */
+     * be empty, (trimmed).</span> */
     private java.lang.String value;
 
     public ProductBrand() {
@@ -32,7 +32,7 @@ public class ProductBrand  extends com.google.api.ads.adwords.axis.v201406.cm.Pr
      * Gets the value value for this ProductBrand.
      * 
      * @return value   * <span class="constraint StringLength">This string must not
-     * be empty.</span>
+     * be empty, (trimmed).</span>
      */
     public java.lang.String getValue() {
         return value;
@@ -43,7 +43,7 @@ public class ProductBrand  extends com.google.api.ads.adwords.axis.v201406.cm.Pr
      * Sets the value value for this ProductBrand.
      * 
      * @param value   * <span class="constraint StringLength">This string must not
-     * be empty.</span>
+     * be empty, (trimmed).</span>
      */
     public void setValue(java.lang.String value) {
         this.value = value;
