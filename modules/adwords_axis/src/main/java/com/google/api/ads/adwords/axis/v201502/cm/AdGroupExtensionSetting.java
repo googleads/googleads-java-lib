@@ -9,12 +9,12 @@ package com.google.api.ads.adwords.axis.v201502.cm;
 
 
 /**
- * An AdGroupExtensionSetting is used add or modify extensions being
- * served for the specified
- *             adgroup.
+ * An AdGroupExtensionSetting is used to add or modify extensions
+ * being served for the specified
+ *             ad group.
  */
 public class AdGroupExtensionSetting  implements java.io.Serializable {
-    /* The id of the adgroup for the feed items being added or modified.
+    /* The id of the ad group for the feed items being added or modified.
      * <span class="constraint Selectable">This field can be selected using
      * the value "AdGroupId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -31,7 +31,7 @@ public class AdGroupExtensionSetting  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201502.cm.FeedType extensionType;
 
     /* The extension setting specifying which extensions to serve
-     * for the specified adgroup. If
+     * for the specified ad group. If
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
      *                 extensions are disabled for the specified extensionType.
@@ -56,7 +56,7 @@ public class AdGroupExtensionSetting  implements java.io.Serializable {
     /**
      * Gets the adGroupId value for this AdGroupExtensionSetting.
      * 
-     * @return adGroupId   * The id of the adgroup for the feed items being added or modified.
+     * @return adGroupId   * The id of the ad group for the feed items being added or modified.
      * <span class="constraint Selectable">This field can be selected using
      * the value "AdGroupId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -71,7 +71,7 @@ public class AdGroupExtensionSetting  implements java.io.Serializable {
     /**
      * Sets the adGroupId value for this AdGroupExtensionSetting.
      * 
-     * @param adGroupId   * The id of the adgroup for the feed items being added or modified.
+     * @param adGroupId   * The id of the ad group for the feed items being added or modified.
      * <span class="constraint Selectable">This field can be selected using
      * the value "AdGroupId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -117,7 +117,7 @@ public class AdGroupExtensionSetting  implements java.io.Serializable {
      * Gets the extensionSetting value for this AdGroupExtensionSetting.
      * 
      * @return extensionSetting   * The extension setting specifying which extensions to serve
-     * for the specified adgroup. If
+     * for the specified ad group. If
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
      *                 extensions are disabled for the specified extensionType.
@@ -134,7 +134,7 @@ public class AdGroupExtensionSetting  implements java.io.Serializable {
      * Sets the extensionSetting value for this AdGroupExtensionSetting.
      * 
      * @param extensionSetting   * The extension setting specifying which extensions to serve
-     * for the specified adgroup. If
+     * for the specified ad group. If
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
      *                 extensions are disabled for the specified extensionType.

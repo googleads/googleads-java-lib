@@ -138,6 +138,10 @@ public class ReportRequestFactoryHelper {
         httpHeaders.set("skipReportHeader",
             Boolean.toString(reportingConfiguration.isSkipReportHeader()));
       }
+      if (reportingConfiguration.isSkipColumnHeader() != null) {
+        httpHeaders.set("skipColumnHeader",
+            Boolean.toString(reportingConfiguration.isSkipColumnHeader()));
+      }
       if (reportingConfiguration.isSkipReportSummary() != null) {
         httpHeaders.set("skipReportSummary",
             Boolean.toString(reportingConfiguration.isSkipReportSummary()));

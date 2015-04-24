@@ -25,7 +25,7 @@ public enum AdGroupExtensionSettingField implements EntityField {
   // Fields constants definitions
 
   /**
-   * The id of the adgroup for the feed items being added or modified.
+   * The id of the ad group for the feed items being added or modified.
    */
   @Filterable
   AdGroupId(true),

@@ -28,6 +28,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.DateTimeRange;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.CampaignField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -82,7 +83,7 @@ public class GetAccountChanges {
     // Get a list of all campaign IDs.
     List<Long> campaignIds = new ArrayList<Long>();
     Selector selector = new SelectorBuilder()
-        .fields("Id")
+        .fields(CampaignField.Id)
         .build();
     CampaignPage campaigns = campaignService.get(selector);
     if (campaigns.getEntries() != null) {

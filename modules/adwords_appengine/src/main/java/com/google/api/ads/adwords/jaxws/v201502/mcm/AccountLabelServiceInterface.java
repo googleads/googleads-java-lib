@@ -18,7 +18,7 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Selector;
  *       
  *       <p>This service should only ever return/accept labels that are accessible by the authenticated
  *       user.  Labels created by a manager are not accessible to any customers managed
- *       by this manager.
+ *       by this manager.  Only manager customers may create these labels.
  *       
  *       <p>To apply a label to a managed customer, see
  *       {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabel}.

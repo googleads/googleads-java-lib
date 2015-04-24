@@ -134,8 +134,6 @@ public class ApiErrorReason  implements java.io.Serializable {
 
     private com.google.api.ads.adwords.axis.v201409.cm.StringLengthErrorReason stringLengthErrorReason;
 
-    private com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason targetErrorReason;
-
     private com.google.api.ads.adwords.axis.v201409.cm.UrlErrorReason urlErrorReason;
 
     public ApiErrorReason() {
@@ -203,7 +201,6 @@ public class ApiErrorReason  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201409.cm.StatsQueryErrorReason statsQueryErrorReason,
            com.google.api.ads.adwords.axis.v201409.cm.StringFormatErrorReason stringFormatErrorReason,
            com.google.api.ads.adwords.axis.v201409.cm.StringLengthErrorReason stringLengthErrorReason,
-           com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason targetErrorReason,
            com.google.api.ads.adwords.axis.v201409.cm.UrlErrorReason urlErrorReason) {
            this.adErrorReason = adErrorReason;
            this.adExtensionErrorReason = adExtensionErrorReason;
@@ -266,7 +263,6 @@ public class ApiErrorReason  implements java.io.Serializable {
            this.statsQueryErrorReason = statsQueryErrorReason;
            this.stringFormatErrorReason = stringFormatErrorReason;
            this.stringLengthErrorReason = stringLengthErrorReason;
-           this.targetErrorReason = targetErrorReason;
            this.urlErrorReason = urlErrorReason;
     }
 
@@ -1492,26 +1488,6 @@ public class ApiErrorReason  implements java.io.Serializable {
 
 
     /**
-     * Gets the targetErrorReason value for this ApiErrorReason.
-     * 
-     * @return targetErrorReason
-     */
-    public com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason getTargetErrorReason() {
-        return targetErrorReason;
-    }
-
-
-    /**
-     * Sets the targetErrorReason value for this ApiErrorReason.
-     * 
-     * @param targetErrorReason
-     */
-    public void setTargetErrorReason(com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason targetErrorReason) {
-        this.targetErrorReason = targetErrorReason;
-    }
-
-
-    /**
      * Gets the urlErrorReason value for this ApiErrorReason.
      * 
      * @return urlErrorReason
@@ -1725,9 +1701,6 @@ public class ApiErrorReason  implements java.io.Serializable {
             ((this.stringLengthErrorReason==null && other.getStringLengthErrorReason()==null) || 
              (this.stringLengthErrorReason!=null &&
               this.stringLengthErrorReason.equals(other.getStringLengthErrorReason()))) &&
-            ((this.targetErrorReason==null && other.getTargetErrorReason()==null) || 
-             (this.targetErrorReason!=null &&
-              this.targetErrorReason.equals(other.getTargetErrorReason()))) &&
             ((this.urlErrorReason==null && other.getUrlErrorReason()==null) || 
              (this.urlErrorReason!=null &&
               this.urlErrorReason.equals(other.getUrlErrorReason())));
@@ -1924,9 +1897,6 @@ public class ApiErrorReason  implements java.io.Serializable {
         }
         if (getStringLengthErrorReason() != null) {
             _hashCode += getStringLengthErrorReason().hashCode();
-        }
-        if (getTargetErrorReason() != null) {
-            _hashCode += getTargetErrorReason().hashCode();
         }
         if (getUrlErrorReason() != null) {
             _hashCode += getUrlErrorReason().hashCode();
@@ -2365,13 +2335,6 @@ public class ApiErrorReason  implements java.io.Serializable {
         elemField.setFieldName("stringLengthErrorReason");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "StringLengthErrorReason"));
         elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "StringLengthError.Reason"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("targetErrorReason");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetErrorReason"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetError.Reason"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

@@ -57,6 +57,14 @@ public class ProductPartitionNode {
    * Therefore, this map does <em>not</em> obey the general contract of the {@link Map} interface.
    */
   private final SortedMap<ProductDimension, ProductPartitionNode> children;
+  
+  /**
+   * Union of relevant attributes from all subclasses of ProductDimension. Used by
+   * {@link #toString(ProductDimension)} to construct a String representation of a ProductDimension
+   * instance.
+   */
+  private static final ImmutableList<String> DIMENSION_PROPERTY_NAMES =
+      ImmutableList.of("type", "condition", "value", "channel", "channelExclusivity");
 
   /**
    * Constructor that sets the parent node, dimension, and partitionId. This constructor does
@@ -258,16 +266,11 @@ public class ProductPartitionNode {
     try {
       @SuppressWarnings("unchecked")
       Map<String, String> propertiesMap = BeanUtils.describe(dimension);
-      if (propertiesMap.containsKey("type")) {
-        attributeToStrings.add(String.format("type=%s", BeanUtils.getProperty(dimension, "type")));
-      }
-      if (propertiesMap.containsKey("condition")) {
-        attributeToStrings.add(
-            String.format("condition=%s", BeanUtils.getProperty(dimension, "condition")));
-      }
-      if (propertiesMap.containsKey("value")) {
-        attributeToStrings.add(
-            String.format("value=%s", BeanUtils.getProperty(dimension, "value")));
+      for (String propertyName : DIMENSION_PROPERTY_NAMES) {
+        if (propertiesMap.containsKey(propertyName)) {
+          attributeToStrings.add(
+              String.format("%s=%s", propertyName, BeanUtils.getProperty(dimension, propertyName)));
+        }
       }
     } catch (Exception e) {
       attributeToStrings.add("--UNKNOWN--");

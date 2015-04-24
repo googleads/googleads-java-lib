@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.Label;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.CampaignField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -77,12 +78,12 @@ public class GetCampaignsByLabel {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("Id", "Name", "Labels")
+        .fields(CampaignField.Id, CampaignField.Name, CampaignField.Labels)
         // Labels filtering is performed by ID. You can use containsAny to select campaigns with
         // any of the label IDs, containsAll to select campaigns with all of the label IDs, or
         // containsNone to select campaigns with none of the label IDs.
-        .containsAny("Labels", labelId.toString())
-        .orderAscBy("Name")
+        .containsAny(CampaignField.Labels, labelId.toString())
+        .orderAscBy(CampaignField.Name)
         .offset(offset)
         .limit(PAGE_SIZE)
         .build();

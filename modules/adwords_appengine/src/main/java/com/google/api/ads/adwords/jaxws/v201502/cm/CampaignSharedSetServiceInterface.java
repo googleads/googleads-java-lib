@@ -13,7 +13,7 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       This service is used for managing associations between {code SharedSet} entities
+ *       This service is used for managing associations between {@code SharedSet} entities
  *       and {@code Campaign} entities.
  *     
  * 

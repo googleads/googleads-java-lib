@@ -49,10 +49,6 @@ public class Operand  implements java.io.Serializable {
 
     private com.google.api.ads.adwords.axis.v201409.cm.PlaceHolder placeHolder;
 
-    private com.google.api.ads.adwords.axis.v201409.cm.TargetList targetList;
-
-    private com.google.api.ads.adwords.axis.v201409.cm.Target target;
-
     public Operand() {
     }
 
@@ -74,9 +70,7 @@ public class Operand  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201409.cm.Job job,
            com.google.api.ads.adwords.axis.v201409.cm.Label label,
            com.google.api.ads.adwords.axis.v201409.cm.Media media,
-           com.google.api.ads.adwords.axis.v201409.cm.PlaceHolder placeHolder,
-           com.google.api.ads.adwords.axis.v201409.cm.TargetList targetList,
-           com.google.api.ads.adwords.axis.v201409.cm.Target target) {
+           com.google.api.ads.adwords.axis.v201409.cm.PlaceHolder placeHolder) {
            this.adGroupAdLabel = adGroupAdLabel;
            this.adGroupAd = adGroupAd;
            this.adGroupBidModifier = adGroupBidModifier;
@@ -95,8 +89,6 @@ public class Operand  implements java.io.Serializable {
            this.label = label;
            this.media = media;
            this.placeHolder = placeHolder;
-           this.targetList = targetList;
-           this.target = target;
     }
 
 
@@ -459,46 +451,6 @@ public class Operand  implements java.io.Serializable {
         this.placeHolder = placeHolder;
     }
 
-
-    /**
-     * Gets the targetList value for this Operand.
-     * 
-     * @return targetList
-     */
-    public com.google.api.ads.adwords.axis.v201409.cm.TargetList getTargetList() {
-        return targetList;
-    }
-
-
-    /**
-     * Sets the targetList value for this Operand.
-     * 
-     * @param targetList
-     */
-    public void setTargetList(com.google.api.ads.adwords.axis.v201409.cm.TargetList targetList) {
-        this.targetList = targetList;
-    }
-
-
-    /**
-     * Gets the target value for this Operand.
-     * 
-     * @return target
-     */
-    public com.google.api.ads.adwords.axis.v201409.cm.Target getTarget() {
-        return target;
-    }
-
-
-    /**
-     * Sets the target value for this Operand.
-     * 
-     * @param target
-     */
-    public void setTarget(com.google.api.ads.adwords.axis.v201409.cm.Target target) {
-        this.target = target;
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Operand)) return false;
@@ -564,13 +516,7 @@ public class Operand  implements java.io.Serializable {
               this.media.equals(other.getMedia()))) &&
             ((this.placeHolder==null && other.getPlaceHolder()==null) || 
              (this.placeHolder!=null &&
-              this.placeHolder.equals(other.getPlaceHolder()))) &&
-            ((this.targetList==null && other.getTargetList()==null) || 
-             (this.targetList!=null &&
-              this.targetList.equals(other.getTargetList()))) &&
-            ((this.target==null && other.getTarget()==null) || 
-             (this.target!=null &&
-              this.target.equals(other.getTarget())));
+              this.placeHolder.equals(other.getPlaceHolder())));
         __equalsCalc = null;
         return _equals;
     }
@@ -635,12 +581,6 @@ public class Operand  implements java.io.Serializable {
         }
         if (getPlaceHolder() != null) {
             _hashCode += getPlaceHolder().hashCode();
-        }
-        if (getTargetList() != null) {
-            _hashCode += getTargetList().hashCode();
-        }
-        if (getTarget() != null) {
-            _hashCode += getTarget().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -775,20 +715,6 @@ public class Operand  implements java.io.Serializable {
         elemField.setFieldName("placeHolder");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "PlaceHolder"));
         elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "PlaceHolder"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("targetList");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetList"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetList"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("target");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "Target"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "Target"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

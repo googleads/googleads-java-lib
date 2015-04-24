@@ -325,6 +325,7 @@ public enum DimensionAttribute {
      *                 The lifetime impressions for {@link Dimension#ORDER_NAME} delivered by both DART
      *                 and DoubleClick for Publishers ad servers. This is only available for
      *                 networks that have been upgraded from the old to the new system.
+     *                 <p> This dimension attribute is deprecated use {@link #ORDER_LIFETIME_IMPRESSIONS} instead.
      *               
      * 
      */
@@ -335,6 +336,7 @@ public enum DimensionAttribute {
      *                 The lifetime clicks for {@link Dimension#ORDER_NAME} delivered by both DART and
      *                 DoubleClick for Publishers ad servers. This is only available for networks
      *                 that have been upgraded from the old to the new system.
+     *                 <p> This dimension attribute is deprecated use {@link #ORDER_LIFETIME_CLICKS} instead.
      *               
      * 
      */
@@ -450,6 +452,7 @@ public enum DimensionAttribute {
      *                 The lifetime impressions for {@link Dimension#LINE_ITEM_NAME} delivered by
      *                 both DART and DoubleClick for Publishers ad servers. This is only available
      *                 for networks that have been upgraded from the old to the new system.
+     *                 <p> This dimension attribute is deprecated use {@link #LINE_ITEM_LIFETIME_IMPRESSIONS} instead.
      *               
      * 
      */
@@ -460,6 +463,7 @@ public enum DimensionAttribute {
      *                 The lifetime clicks for {@link Dimension#LINE_ITEM_NAME} delivered by both
      *                 DART and DoubleClick for Publishers ad servers. This is only available for
      *                 networks that have been upgraded from the old to the new system.
+     *                 <p> This dimension attribute is deprecated use {@link #LINE_ITEM_LIFETIME_CLICKS} instead.
      *               
      * 
      */

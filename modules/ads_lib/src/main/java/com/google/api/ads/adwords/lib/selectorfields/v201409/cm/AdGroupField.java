@@ -169,6 +169,7 @@ public enum AdGroupField implements EntityField {
 
   /**
    * Average CPA target.
+   * This target should be greater than or equal to minimum billable unit based on the currency for the account.
    */
   @Filterable
   TargetCpa(true),

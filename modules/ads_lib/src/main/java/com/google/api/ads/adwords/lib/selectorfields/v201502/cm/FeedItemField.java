@@ -58,16 +58,37 @@ public enum FeedItemField implements EntityField {
   FeedItemId(true),
 
   /**
-   * ID of this criterion.
+   * Display type of the location criterion.
    */
-  @Filterable
-  Id(true),
+  GeoTargetingDisplayType(false),
+
+  /**
+   * Name of the location criterion.
+   * <b> Note:</b> This field is filterable only in LocationCriterionService.
+   */
+  GeoTargetingLocationName(false),
+
+  /**
+   * Ordered list of parents of the location criterion.
+   */
+  GeoTargetingParentLocations(false),
+
+  /**
+   * The targeting status of the location criterion.
+   */
+  GeoTargetingStatus(false),
 
   /**
    * Match type of this keyword.
    */
   @Filterable
   KeywordMatchType(true),
+
+  /**
+   * ID of this criterion.
+   */
+  @Filterable
+  KeywordTargetingCriterionId(true),
 
   /**
    * Text of this keyword (at most 80 characters and ten words).

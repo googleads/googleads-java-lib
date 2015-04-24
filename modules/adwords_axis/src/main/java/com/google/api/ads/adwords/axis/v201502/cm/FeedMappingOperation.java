@@ -10,6 +10,9 @@ package com.google.api.ads.adwords.axis.v201502.cm;
 
 /**
  * Operation used to create a FeedMapping.
+ *             
+ *             <p>The following {@link Operator}s are supported: ADD,
+ * REMOVE.
  */
 public class FeedMappingOperation  extends com.google.api.ads.adwords.axis.v201502.cm.Operation  implements java.io.Serializable {
     /* The FeedMapping to create

@@ -27,11 +27,11 @@ package com.google.api.ads.adwords.axis.v201409.cm;
  * AdX.</span>
  */
 public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v201409.cm.BiddingScheme  implements java.io.Serializable {
-    /* Average CPA target.
+    /* Average CPA target. This target should be greater than or equal
+     * to minimum billable unit based
+     *                     on the currency for the account.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
-     *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201409.cm.Money targetCpa;
@@ -73,11 +73,11 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the targetCpa value for this TargetCpaBiddingScheme.
      * 
-     * @return targetCpa   * Average CPA target.
+     * @return targetCpa   * Average CPA target. This target should be greater than or equal
+     * to minimum billable unit based
+     *                     on the currency for the account.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
-     *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -89,11 +89,11 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the targetCpa value for this TargetCpaBiddingScheme.
      * 
-     * @param targetCpa   * Average CPA target.
+     * @param targetCpa   * Average CPA target. This target should be greater than or equal
+     * to minimum billable unit based
+     *                     on the currency for the account.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "TargetCpa".</span>
-     *                     <span class="constraint InRange">This field must
-     * be greater than or equal to 1.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

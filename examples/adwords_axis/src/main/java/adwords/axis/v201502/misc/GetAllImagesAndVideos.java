@@ -23,6 +23,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.MediaServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.MediaSize;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.MediaField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.utils.Maps;
@@ -77,11 +78,11 @@ public class GetAllImagesAndVideos {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("MediaId", "Width", "Height", "MimeType")
-        .orderAscBy("MediaId")
+        .fields(MediaField.MediaId, MediaField.Width, MediaField.Height, MediaField.MimeType)
+        .orderAscBy(MediaField.MediaId)
         .offset(offset)
         .limit(PAGE_SIZE)
-        .in("Type", "IMAGE", "VIDEO")
+        .in(MediaField.Type, "IMAGE", "VIDEO")
         .build();
 
     MediaPage page = null;

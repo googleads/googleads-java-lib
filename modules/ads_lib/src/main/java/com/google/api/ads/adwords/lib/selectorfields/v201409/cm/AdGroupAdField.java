@@ -56,7 +56,8 @@ public enum AdGroupAdField implements EntityField {
   /**
    * Business name of the ad.
    */
-  CallOnlyAdBusinessName(false),
+  @Filterable
+  CallOnlyAdBusinessName(true),
 
   /**
    * If set to true, enable call tracking for the creative.
@@ -80,12 +81,14 @@ public enum AdGroupAdField implements EntityField {
   /**
    * First line of ad text.
    */
-  CallOnlyAdDescription1(false),
+  @Filterable
+  CallOnlyAdDescription1(true),
 
   /**
    * Second line of ad text.
    */
-  CallOnlyAdDescription2(false),
+  @Filterable
+  CallOnlyAdDescription2(true),
 
   /**
    * Phone number string for the ad.

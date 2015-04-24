@@ -70,7 +70,6 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListError;
     StringLengthError.class,
     ClientTermsError.class,
     AdParamError.class,
-    TargetError.class,
     RequestError.class,
     AdGroupFeedError.class,
     EntityNotFound.class,
@@ -140,17 +139,17 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListError;
     QuotaCheckError.class,
     ExperimentServiceError.class,
     NotWhitelistedError.class,
+    CustomerSyncError.class,
     BudgetOrderError.class,
     CustomerOrderLineError.class,
-    com.google.api.ads.adwords.jaxws.v201409.rm.CollectionSizeError.class,
-    UserListError.class,
     PromotionError.class,
     ExpressBusinessError.class,
-    CustomerSyncError.class,
+    ManagedCustomerServiceError.class,
     TargetingIdeaError.class,
     com.google.api.ads.adwords.jaxws.v201409.o.CurrencyCodeError.class,
     TrafficEstimatorError.class,
-    ManagedCustomerServiceError.class
+    com.google.api.ads.adwords.jaxws.v201409.rm.CollectionSizeError.class,
+    UserListError.class
 })
 public abstract class ApiError {
 

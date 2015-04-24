@@ -113,6 +113,7 @@ public class AdWordsSessionUtil {
     if (adWordsSession.getReportingConfiguration() != null) {
       ReportingConfiguration reportingConfig = new ReportingConfiguration.Builder()
           .skipReportHeader(adWordsSession.getReportingConfiguration().isSkipReportHeader())
+          .skipColumnHeader(adWordsSession.getReportingConfiguration().isSkipColumnHeader())
           .skipReportSummary(adWordsSession.getReportingConfiguration().isSkipReportSummary())
           .build();
       builder = builder.withReportingConfiguration(reportingConfig);

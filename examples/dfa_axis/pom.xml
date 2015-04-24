@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>dfa-axis-examples</artifactId>
-  <version>1.38.0</version>
+  <version>1.39.0</version>
 
   <packaging>jar</packaging>
   <name>DFA Examples using Axis</name>
@@ -97,19 +97,19 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>1.38.0</version>
+      <version>1.39.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfa-axis</artifactId>
-      <version>1.38.0</version>
+      <version>1.39.0</version>
     </dependency>
 
     <!-- Third party dependencies -->
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.19.0</version>
+      <version>1.20.0</version>
     </dependency>
 
     <!-- Configuration to use log4j for logging -->

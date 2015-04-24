@@ -27,7 +27,8 @@ public class Feed  implements java.io.Serializable {
 
     /* Name of the Feed.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span>
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -40,8 +41,10 @@ public class Feed  implements java.io.Serializable {
      *                 will be appended to the existing list of attributes
      * unless this list is an exact copy of the
      *                 existing list (as would be obtained via {@link FeedService#get}).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Attributes".</span>
+     * If an empty attributes list is provided, the existing list of attributes
+     * will not be changed.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Attributes".</span>
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required
@@ -127,7 +130,8 @@ public class Feed  implements java.io.Serializable {
      * 
      * @return name   * Name of the Feed.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span>
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -144,7 +148,8 @@ public class Feed  implements java.io.Serializable {
      * 
      * @param name   * Name of the Feed.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Name".</span>
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -164,8 +169,10 @@ public class Feed  implements java.io.Serializable {
      *                 will be appended to the existing list of attributes
      * unless this list is an exact copy of the
      *                 existing list (as would be obtained via {@link FeedService#get}).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Attributes".</span>
+     * If an empty attributes list is provided, the existing list of attributes
+     * will not be changed.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Attributes".</span>
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required
@@ -185,8 +192,10 @@ public class Feed  implements java.io.Serializable {
      *                 will be appended to the existing list of attributes
      * unless this list is an exact copy of the
      *                 existing list (as would be obtained via {@link FeedService#get}).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Attributes".</span>
+     * If an empty attributes list is provided, the existing list of attributes
+     * will not be changed.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Attributes".</span>
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
      *                 <span class="constraint Required">This field is required

@@ -10,6 +10,8 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Operation;
 /**
  * 
  *             An operation to apply or remove an account label from a managed customer.
+ *             
+ *             <p class="note"><b>Note:</b> The {@code SET} operator is not supported.</p>
  *           
  * 
  * <p>Java class for ManagedCustomerLabelOperation complex type.

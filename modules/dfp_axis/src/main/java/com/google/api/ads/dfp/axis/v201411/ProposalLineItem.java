@@ -57,6 +57,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering. */
     private com.google.api.ads.dfp.axis.v201411.DateTime startDateTime;
@@ -64,7 +66,9 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The date and time at which the line item associated with the
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
-     *                 but required and must be after the {@link #startDateTime}. */
+     *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}. */
     private com.google.api.ads.dfp.axis.v201411.DateTime endDateTime;
 
     /* Provides any additional notes that may annotate the {@code
@@ -290,10 +294,10 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required. */
     private com.google.api.ads.dfp.axis.v201411.Money costPerUnit;
 
@@ -681,6 +685,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -697,6 +703,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -712,6 +720,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
      *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}.
      */
     public com.google.api.ads.dfp.axis.v201411.DateTime getEndDateTime() {
         return endDateTime;
@@ -725,6 +735,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
      *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201411.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -1562,10 +1574,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return costPerUnit   * The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required.
      */
     public com.google.api.ads.dfp.axis.v201411.Money getCostPerUnit() {
@@ -1578,10 +1590,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param costPerUnit   * The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required.
      */
     public void setCostPerUnit(com.google.api.ads.dfp.axis.v201411.Money costPerUnit) {

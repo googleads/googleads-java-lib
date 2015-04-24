@@ -12,14 +12,18 @@ package com.google.api.ads.adwords.axis.v201502.mcm;
  * A label ID and customer ID the label applies to.
  */
 public class ManagedCustomerLabel  implements java.io.Serializable {
-    /* The ID of an existing label to be applied to the account. */
+    /* The ID of an existing label to be applied to the account.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
     private java.lang.Long labelId;
 
     /* The 10-digit customer ID that identifies this account.  Note
      * that this is a long (do not
      *                 include hyphens in the middle), just like
      *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
-     * ManagedCustomer.customerId}. */
+     * ManagedCustomer.customerId}.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
     private java.lang.Long customerId;
 
     public ManagedCustomerLabel() {
@@ -37,6 +41,8 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
      * Gets the labelId value for this ManagedCustomerLabel.
      * 
      * @return labelId   * The ID of an existing label to be applied to the account.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public java.lang.Long getLabelId() {
         return labelId;
@@ -47,6 +53,8 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
      * Sets the labelId value for this ManagedCustomerLabel.
      * 
      * @param labelId   * The ID of an existing label to be applied to the account.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public void setLabelId(java.lang.Long labelId) {
         this.labelId = labelId;
@@ -61,6 +69,8 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
      *                 include hyphens in the middle), just like
      *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
      * ManagedCustomer.customerId}.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public java.lang.Long getCustomerId() {
         return customerId;
@@ -75,6 +85,8 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
      *                 include hyphens in the middle), just like
      *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
      * ManagedCustomer.customerId}.
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public void setCustomerId(java.lang.Long customerId) {
         this.customerId = customerId;

@@ -24,6 +24,7 @@ import com.google.api.ads.adwords.axis.v201502.express.ExpressBusinessPage;
 import com.google.api.ads.adwords.axis.v201502.express.ExpressBusinessServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.express.ExpressBusinessStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.ExpressBusinessField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -76,8 +77,14 @@ public class GetExpressBusinesses {
     // To get all express businesses owned by the current customer,
     // simply skip the call to SelectorBuilder.equals below
     Selector selector = new SelectorBuilder()
-        .fields("Id", "Name", "Website", "Address", "GeoPoint", "Status")
-        .equals("Status", ExpressBusinessStatus.ENABLED.getValue())
+        .fields(
+            ExpressBusinessField.Id,
+            ExpressBusinessField.Name,
+            ExpressBusinessField.Website,
+            ExpressBusinessField.Address,
+            ExpressBusinessField.GeoPoint,
+            ExpressBusinessField.Status)
+        .equals(ExpressBusinessField.Status, ExpressBusinessStatus.ENABLED.getValue())
         .offset(offset)
         .limit(PAGE_SIZE)
         .build();

@@ -18,7 +18,9 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.common.lib.utils.Streams;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -39,6 +41,10 @@ import java.util.zip.GZIPOutputStream;
  */
 @RunWith(JUnit4.class)
 public class ReportDownloadResponseTest {
+  
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   /**
    * Test method for
    * {@link com.google.api.ads.adwords.lib.utils.ReportDownloadResponse#getInputStream()}.
@@ -107,11 +113,12 @@ public class ReportDownloadResponseTest {
         Streams.readAll(new FileInputStream(outputFile), StandardCharsets.UTF_8));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFailedResponse_fails() {
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(
         HttpURLConnection.HTTP_BAD_REQUEST, new ByteArrayInputStream("failed".getBytes()),
         StandardCharsets.UTF_8, "CSV");
+    thrown.expect(IllegalArgumentException.class);
     new ReportDownloadResponse(rawResponse);
   }
 }

@@ -1144,6 +1144,7 @@ public enum Column {
      *                 insufficient information about the {@link LineItem}.</td>
      *                 </tr>
      *                 </table>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_DELIVERY_INDICATOR} instead.
      *               
      * 
      */
@@ -1158,6 +1159,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_IMPRESSIONS} instead.
      *               
      * 
      */
@@ -1172,6 +1174,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_CLICKS} instead.
      *               
      * 
      */
@@ -1186,6 +1189,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_CTR} instead.
      *               
      * 
      */
@@ -1200,6 +1204,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_CPM_AND_CPC_REVENUE} instead.
      *               
      * 
      */
@@ -1214,6 +1219,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_ALL_REVENUE} instead.
      *               
      * 
      */
@@ -1229,6 +1235,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM} instead.
      *               
      * 
      */
@@ -1244,6 +1251,7 @@ public enum Column {
      *                 DART data is available for the following timeframes:
      *                 <ul><li>6 months before upgrade date for daily reports.</li>
      *                 <li>16 months before upgrade date for monthly reports.</li>
+     *                 <p> This column is deprecated use {@link #AD_SERVER_WITH_CPD_AVERAGE_ECPM} instead.
      *               
      * 
      */
@@ -3059,7 +3067,7 @@ public enum Column {
     /**
      * 
      *                 The unreconciled net revenue of the {@link ProposalLineItem}. It is the portion of
-     *                 {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} comming from unreconciled DFP volume.
+     *                 {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from unreconciled DFP volume.
      *               
      * 
      */

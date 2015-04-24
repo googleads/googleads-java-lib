@@ -15,19 +15,39 @@
 package com.google.api.ads.adwords.axis.utils.v201409.shopping;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.ads.adwords.axis.v201409.cm.ProductAdwordsGrouping;
+import com.google.api.ads.adwords.axis.v201409.cm.ProductAdwordsLabels;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductBiddingCategory;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductBrand;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductCanonicalCondition;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductCanonicalConditionCondition;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductCustomAttribute;
+import com.google.api.ads.adwords.axis.v201409.cm.ProductDimension;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductDimensionType;
+import com.google.api.ads.adwords.axis.v201409.cm.ProductLegacyCondition;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductOfferId;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductType;
+import com.google.api.ads.adwords.axis.v201409.cm.ProductTypeFull;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.google.common.reflect.ClassPath;
+import com.google.common.reflect.ClassPath.ClassInfo;
 
+import org.hamcrest.Matchers;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Tests for {@link ProductDimensions}.
@@ -37,7 +57,22 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ProductDimensionsTest {
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   private static final String STRING_VALUE = "dummy";
+
+  /**
+   * Set of legacy {@link ProductDimension} subclasses that are not supported by shopping campaigns.
+   */
+  private static final ImmutableSet<Class<? extends ProductDimension>> LEGACY_DIMENSION_TYPES =
+      ImmutableSet
+          .<Class<? extends ProductDimension>>builder()
+          .add(ProductAdwordsGrouping.class)
+          .add(ProductAdwordsLabels.class)
+          .add(ProductLegacyCondition.class)
+          .add(ProductTypeFull.class)
+          .build();
 
   /**
    * Test method for createType.
@@ -52,8 +87,9 @@ public class ProductDimensionsTest {
   /**
    * Test method for createType with a null product type level. This should fail.
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testCreateType_nullTypeLevel_fails() {
+    thrown.expect(NullPointerException.class);
     ProductDimensions.createType(null, STRING_VALUE);
   }
 
@@ -81,8 +117,9 @@ public class ProductDimensionsTest {
   /**
    * Test method for testCreateBiddingCategory with a null category level. This should fail.
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testCreateBiddingCategory_nullCategoryLevel_fails() {
+    thrown.expect(NullPointerException.class);
     ProductDimensions.createBiddingCategory(null, 1L);
   }
 
@@ -118,8 +155,87 @@ public class ProductDimensionsTest {
   /**
    * Test method for testCreateBiddingCategory with a null category level. This should fail.
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testCreateCustomAttribute_nullAttributeLevel_fails() {
+    thrown.expect(NullPointerException.class);
     ProductDimensions.createCustomAttribute(null, STRING_VALUE);
+  }
+
+  /**
+   * Test that verifies that {@link ProductDimensions} has a {@code createX} method for every
+   * subclass {@code X} of {@link ProductDimension}.
+   */
+  @SuppressWarnings("unchecked")
+  @Test
+  public void testCreateMethodExistsForEveryDimensionSubclass() throws Exception {
+    String basePackageNameForVersion = ProductDimension.class.getPackage().getName()
+        .substring(0, ProductDimension.class.getPackage().getName().length() - ".cm".length());
+
+    ClassPath classPath = ClassPath.from(ProductDimension.class.getClassLoader());
+    Set<Class<? extends ProductDimension>> dimensionSubclasses = Sets.newHashSet();
+    for (ClassInfo classInfo : classPath.getTopLevelClassesRecursive(basePackageNameForVersion)) {
+      Class<?> classInfoClass = classInfo.load();
+      if (ProductDimension.class.isAssignableFrom(classInfoClass)
+          && ProductDimension.class != classInfoClass) {
+        dimensionSubclasses.add((Class<? extends ProductDimension>) classInfoClass);
+      }
+    }
+
+    Map<Class<? extends ProductDimension>, Method> factoryMethodsMap =
+        getAllProductDimensionFactoryMethods();
+    for (Class<? extends ProductDimension> dimensionSubclass : dimensionSubclasses) {
+      if (!LEGACY_DIMENSION_TYPES.contains(dimensionSubclass)) {
+        assertThat(
+            "No factory method exists for subclass " + dimensionSubclass + " of ProductDimension",
+            dimensionSubclass, Matchers.isIn(factoryMethodsMap.keySet()));
+      }
+    }
+  }
+
+  /**
+   * Test that verifies that this test class has a test method for every {@code createX} method of
+   * {@link ProductDimensions}.
+   */
+  @Test
+  public void testCoverageOfAllCreateMethods() throws Exception {
+    // Collect all of the testCreateX methods from this test class.
+    Set<String> actualTestMethodNames = Sets.newHashSet();
+    for (Method method : getClass().getMethods()) {
+      String methodName = method.getName();
+      if (methodName.startsWith("testCreate") && !methodName.contains("_")) {
+        actualTestMethodNames.add(methodName);
+      }
+    }
+
+    // Assert that each createX method of ProductDimensions has a corresponding
+    // testCreateX method in this test class.
+    for (Entry<Class<? extends ProductDimension>, Method> methodEntry :
+        getAllProductDimensionFactoryMethods().entrySet()) {
+      Method method = methodEntry.getValue();
+      String methodName = method.getName();
+      if (methodName.startsWith("create")) {
+        String expectedTestMethodName = "testCreate" + methodName.substring("create".length());
+        assertThat("No test exists for factory method", expectedTestMethodName,
+            Matchers.isIn(actualTestMethodNames));
+      }
+    }
+  }
+
+  /**
+   * Returns a map of return type to {@code createX} method from {@link ProductDimensions}.
+   */
+  @SuppressWarnings("unchecked")
+  static Map<Class<? extends ProductDimension>, Method> getAllProductDimensionFactoryMethods() {
+    Map<Class<? extends ProductDimension>, Method> methodsMap = Maps.newHashMap();
+    for (Method method : ProductDimensions.class.getMethods()) {
+      String methodName = method.getName();
+      if (methodName.startsWith("create")) {
+        Class<?> returnType = method.getReturnType();
+        assertTrue(String.format("Return type %s of %s is not a subclass of ProductDimension",
+            returnType, methodName), ProductDimension.class.isAssignableFrom(returnType));
+        methodsMap.put((Class<? extends ProductDimension>) returnType, method);
+      }
+    }
+    return methodsMap;
   }
 }

@@ -25,7 +25,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createPackages");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "packageDtos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"), com.google.api.ads.dfp.axis.v201502.Package[].class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "packages"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"), com.google.api.ads.dfp.axis.v201502.Package[].class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"));
@@ -82,7 +82,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatePackages");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "packageDtos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"), com.google.api.ads.dfp.axis.v201502.Package[].class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "packages"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"), com.google.api.ads.dfp.axis.v201502.Package[].class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "Package"));
@@ -935,7 +935,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
         }
     }
 
-    public com.google.api.ads.dfp.axis.v201502.Package[] createPackages(com.google.api.ads.dfp.axis.v201502.Package[] packageDtos) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException {
+    public com.google.api.ads.dfp.axis.v201502.Package[] createPackages(com.google.api.ads.dfp.axis.v201502.Package[] packages) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -951,7 +951,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {packageDtos});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {packages});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1061,7 +1061,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
 }
     }
 
-    public com.google.api.ads.dfp.axis.v201502.Package[] updatePackages(com.google.api.ads.dfp.axis.v201502.Package[] packageDtos) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException {
+    public com.google.api.ads.dfp.axis.v201502.Package[] updatePackages(com.google.api.ads.dfp.axis.v201502.Package[] packages) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1077,7 +1077,7 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {packageDtos});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {packages});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

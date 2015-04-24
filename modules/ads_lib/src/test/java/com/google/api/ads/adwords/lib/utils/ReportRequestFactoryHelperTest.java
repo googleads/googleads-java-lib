@@ -90,21 +90,23 @@ public class ReportRequestFactoryHelperTest {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     Boolean[] booleanValues = new Boolean[]{ true, false, null };
     for (Boolean isSkipReportHeader : booleanValues) {
-      for (Boolean isSkipReportSummary : booleanValues) {
-        ReportingConfiguration reportingConfig = null;
-        if (isSkipReportHeader != null || isSkipReportSummary != null) {
-          reportingConfig = new ReportingConfiguration.Builder()
-              .skipReportHeader(isSkipReportHeader)
-              .skipReportSummary(isSkipReportSummary)
-              .build();
+      for (Boolean isSkipColumnHeader : booleanValues) {
+        for (Boolean isSkipReportSummary : booleanValues) {
+          ReportingConfiguration reportingConfig = null;
+          if (isSkipReportHeader != null || isSkipColumnHeader != null
+              || isSkipReportSummary != null) {
+            reportingConfig = new ReportingConfiguration.Builder()
+                .skipReportHeader(isSkipReportHeader)
+                .skipColumnHeader(isSkipColumnHeader)
+                .skipReportSummary(isSkipReportSummary)
+                .build();
+          }
+          parameters.add(new Object[] {"v201409", null});
+          parameters.add(new Object[] {"v201409", reportingConfig});
+          parameters.add(new Object[] {"v201502", null});
+          parameters.add(new Object[] {"v201502", reportingConfig});
+          parameters.add(new Object[] {null, reportingConfig});
         }
-        parameters.add(new Object[] {"v201406", null});
-        parameters.add(new Object[] {"v201406", reportingConfig});
-        parameters.add(new Object[] {"v201409", null});
-        parameters.add(new Object[] {"v201409", reportingConfig});
-        parameters.add(new Object[] {"v201502", null});
-        parameters.add(new Object[] {"v201502", reportingConfig});
-        parameters.add(new Object[] {null, reportingConfig});
       }
     }
 
@@ -185,15 +187,21 @@ public class ReportRequestFactoryHelperTest {
           headers.containsKey("skipReportSummary"));
     } else {
       String expectedSkipHeaderHeader =
-          reportingConfiguration.isSkipReportHeader() != null
-              ? Boolean.toString(reportingConfiguration.isSkipReportHeader())
+          reportingConfiguration.isSkipReportHeader() != null ? Boolean.toString(
+              reportingConfiguration.isSkipReportHeader())
+              : null;
+      String expectedSkipColumnHeaderHeader =
+          reportingConfiguration.isSkipColumnHeader() != null ? Boolean.toString(
+              reportingConfiguration.isSkipColumnHeader())
               : null;
       String expectedSkipSummaryHeader =
-          reportingConfiguration.isSkipReportSummary() != null
-              ? Boolean.toString(reportingConfiguration.isSkipReportSummary())
+          reportingConfiguration.isSkipReportSummary() != null ? Boolean.toString(
+              reportingConfiguration.isSkipReportSummary())
               : null;
       assertEquals("skipReportHeader not equal to the reporting config setting",
           expectedSkipHeaderHeader, headers.get("skipReportHeader"));
+      assertEquals("skipColumnHeader not equal to the reporting config setting",
+          expectedSkipColumnHeaderHeader, headers.get("skipColumnHeader"));
       assertEquals("skipReportSummary not equal to the reporting config setting",
           expectedSkipSummaryHeader, headers.get("skipReportSummary"));
     }

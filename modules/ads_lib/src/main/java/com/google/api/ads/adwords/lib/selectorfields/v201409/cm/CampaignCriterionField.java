@@ -35,13 +35,23 @@ public enum CampaignCriterionField implements EntityField {
   AgeRangeType(false),
 
   /**
+   * A string that uniquely identifies a mobile application to AdWords API.
+   * The format of this string is "<code>{platform}-{platform_native_id}</code>", where <code>platform</code> is "1" for iOS apps and "2" for Android apps, and where <code>platform_native_id</code> is the mobile application identifier native to the corresponding platform.
+   * For iOS, this native identifier is the 9 digit string that appears at the end of an App Store URL (e.g., "476943146" for "Flood-It! 2" whose App Store link is http://itunes.apple.com/us/app/flood-it!-2/id476943146).
+   * For Android, this native identifier is the application's package name (e.g., "com.labpixies.colordrips" for "Color Drips" given Google Play link https://play.google.com/store/apps/details?id=com.labpixies.colordrips).
+   * A well formed app id for AdWords API would thus be "1-476943146" for iOS and "2-com.labpixies.colordrips" for Android.
+   */
+  @Filterable
+  AppId(true),
+
+  /**
    * Value of the product operand to comapare against
    */
   Argument(false),
 
   /**
    * The modifier for bids when the criterion matches.
-   * Allowable modifier values depend on the criterion: <ul> <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li> <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile), {@code 0}: to opt out of mobile</li> </ul> Specify {@code -1.0} to clear existing bid modifier.
+   * <p>Allowable modifier values depend on the criterion: <ul> <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li> <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile), {@code 0}: to opt out of mobile</li> </ul> Specify {@code -1.0} to clear existing bid modifier.
    */
   @Filterable
   BidModifier(true),

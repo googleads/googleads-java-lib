@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  *             Adds managed customers.
  *             
  *             <p class="note"><b>Note:</b> {@link ManagedCustomerOperation} only supports
- *             {@code ADD} operator. </p>
+ *             {@code ADD} operator.</p>
  *             
  *             @param operations List of unique operations.
  *             @return The list of updated managed customers, returned in the same order as the

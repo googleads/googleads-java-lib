@@ -92,6 +92,7 @@ public enum BiddingStrategyField implements EntityField {
 
   /**
    * Average CPA target.
+   * This target should be greater than or equal to minimum billable unit based on the currency for the account.
    */
   TargetCpa(false),
 

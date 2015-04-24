@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.AdGroupPage;
 import com.google.api.ads.adwords.axis.v201502.cm.AdGroupServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.AdGroupField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -74,11 +75,11 @@ public class GetAdGroups {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("Id", "Name")
-        .orderAscBy("Name")
+        .fields(AdGroupField.Id, AdGroupField.Name)
+        .orderAscBy(AdGroupField.Name)
         .offset(offset)
         .limit(PAGE_SIZE)
-        .equals("CampaignId", campaignId.toString())
+        .equals(AdGroupField.CampaignId, campaignId.toString())
         .build();
 
     while (morePages) {

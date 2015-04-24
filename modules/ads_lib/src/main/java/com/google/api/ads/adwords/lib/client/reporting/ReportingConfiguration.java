@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 public class ReportingConfiguration {
 
   private Boolean isSkipReportHeader;
+  private Boolean isSkipColumnHeader;
   private Boolean isSkipReportSummary;
   
   private ReportingConfiguration(){
@@ -35,6 +36,7 @@ public class ReportingConfiguration {
    */
   private ReportingConfiguration(ReportingConfiguration configToClone) {
     this.isSkipReportHeader = configToClone.isSkipReportHeader;
+    this.isSkipColumnHeader = configToClone.isSkipColumnHeader;
     this.isSkipReportSummary = configToClone.isSkipReportSummary;
   }
   
@@ -47,6 +49,15 @@ public class ReportingConfiguration {
     return isSkipReportHeader;
   }
 
+  /**
+   * Return if report responses should skip the header row containing the
+   * column names.
+   */
+  @Nullable
+  public Boolean isSkipColumnHeader() {
+    return isSkipColumnHeader;
+  }
+  
   /**
    * Return if report responses should skip the summary row containing totals.
    */
@@ -74,11 +85,19 @@ public class ReportingConfiguration {
     private ReportingConfiguration reportingConfiguration = new ReportingConfiguration();
     
     /**
-     * Sets if report responses should skip the header row containing the
-     * report name and date range.
+     * Sets if report responses should skip the header row containing the report name and date
+     * range.
      */
     public Builder skipReportHeader(Boolean isSkipReportHeader) {
       reportingConfiguration.isSkipReportHeader = isSkipReportHeader;
+      return this;
+    }
+
+    /**
+     * Sets if report responses should skip the header row containing the report column names.
+     */
+    public Builder skipColumnHeader(Boolean isSkipColumnHeader) {
+      reportingConfiguration.isSkipColumnHeader = isSkipColumnHeader;
       return this;
     }
     

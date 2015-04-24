@@ -46,7 +46,7 @@ public class Budget  implements java.io.Serializable {
      *                 <code>MONTHLY</code> is not available to most users.
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE and SET.</span> */
+     * REMOVE.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetPeriod period;
 
     /* Amount of budget in the local currency for the account.
@@ -210,7 +210,7 @@ public class Budget  implements java.io.Serializable {
      *                 <code>MONTHLY</code> is not available to most users.
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE and SET.</span>
+     * REMOVE.</span>
      */
     public com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetPeriod getPeriod() {
         return period;
@@ -226,7 +226,7 @@ public class Budget  implements java.io.Serializable {
      *                 <code>MONTHLY</code> is not available to most users.
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API for the following {@link Operator}s:
-     * REMOVE and SET.</span>
+     * REMOVE.</span>
      */
     public void setPeriod(com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetPeriod period) {
         this.period = period;

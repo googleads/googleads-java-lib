@@ -9,8 +9,8 @@ package com.google.api.ads.adwords.axis.v201502.cm;
 
 
 /**
- * A CampaignExtensionSetting is used add or modify extensions being
- * served for the specified
+ * A CampaignExtensionSetting is used to add or modify extensions
+ * being served for the specified
  *             campaign.
  */
 public class CampaignExtensionSetting  implements java.io.Serializable {

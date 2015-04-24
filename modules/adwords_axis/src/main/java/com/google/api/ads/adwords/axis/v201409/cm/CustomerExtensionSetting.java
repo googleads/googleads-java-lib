@@ -9,8 +9,8 @@ package com.google.api.ads.adwords.axis.v201409.cm;
 
 
 /**
- * A CustomerExtensionSetting is used add or modify extensions being
- * served for the customer.
+ * A CustomerExtensionSetting is used to add or modify extensions
+ * being served for the customer.
  */
 public class CustomerExtensionSetting  implements java.io.Serializable {
     /* The extension type the extension setting applies to.

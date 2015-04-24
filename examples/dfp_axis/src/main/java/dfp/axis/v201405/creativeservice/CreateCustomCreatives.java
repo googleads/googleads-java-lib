@@ -93,8 +93,7 @@ public class CreateCustomCreatives {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

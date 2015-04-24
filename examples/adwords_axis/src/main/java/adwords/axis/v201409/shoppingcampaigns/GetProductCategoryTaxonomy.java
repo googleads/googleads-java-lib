@@ -20,6 +20,7 @@ import com.google.api.ads.adwords.axis.v201409.cm.ConstantDataServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductBiddingCategoryData;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.ConstantDataField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -69,7 +70,7 @@ public class GetProductCategoryTaxonomy {
         adWordsServices.get(session, ConstantDataServiceInterface.class);
     
     Selector selector = new SelectorBuilder()
-      .equals("Country", "US")
+      .equals(ConstantDataField.Country, "US")
       .build();
     
     ProductBiddingCategoryData[] results =

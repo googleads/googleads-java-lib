@@ -3,7 +3,7 @@
   <S:Header>
     <ns1:RequestHeader xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">
       <ns1:networkCode xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">TEST_NETWORK_CODE</ns1:networkCode>
-      <ns1:applicationName xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">TEST_APP (DfpApi-Java, Dfp-AppEngine/1.38.0, Common-Java/1.38.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
+      <ns1:applicationName xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">TEST_APP (DfpApi-Java, Dfp-AppEngine/1.39.0, Common-Java/1.39.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
     </ns1:RequestHeader>
   </S:Header>
   <S:Body>

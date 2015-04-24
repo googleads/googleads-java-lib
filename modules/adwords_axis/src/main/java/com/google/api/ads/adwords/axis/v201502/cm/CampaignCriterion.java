@@ -28,10 +28,12 @@ public class CampaignCriterion  implements java.io.Serializable {
 
     /* The modifier for bids when the criterion matches.
      *                 
-     *                 Allowable modifier values depend on the criterion:
+     *                 <p>Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
      * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
      *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
      * (mobile),
      *                 {@code 0}: to opt out of mobile</li>
@@ -149,10 +151,12 @@ public class CampaignCriterion  implements java.io.Serializable {
      * 
      * @return bidModifier   * The modifier for bids when the criterion matches.
      *                 
-     *                 Allowable modifier values depend on the criterion:
+     *                 <p>Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
      * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
      *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
      * (mobile),
      *                 {@code 0}: to opt out of mobile</li>
@@ -170,10 +174,12 @@ public class CampaignCriterion  implements java.io.Serializable {
      * 
      * @param bidModifier   * The modifier for bids when the criterion matches.
      *                 
-     *                 Allowable modifier values depend on the criterion:
+     *                 <p>Allowable modifier values depend on the criterion:
      * <ul>
      *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
      * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
+     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
+     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
      *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
      * (mobile),
      *                 {@code 0}: to opt out of mobile</li>

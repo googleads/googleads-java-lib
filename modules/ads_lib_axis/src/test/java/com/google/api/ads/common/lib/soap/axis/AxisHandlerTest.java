@@ -32,7 +32,9 @@ import org.apache.axis.client.Stub;
 import org.apache.axis.message.SOAPHeaderElement;
 import org.apache.axis.transport.http.HTTPConstants;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -55,6 +57,9 @@ public class AxisHandlerTest {
   @Mock
   private EngineConfigurationFactory engineConfigurationFactory;
   
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
@@ -62,8 +67,9 @@ public class AxisHandlerTest {
     stub = axisHandler.createSoapClient(new MockAxisCompatibleServiceDescriptor());
   }
 
-  @Test(expected = ServiceException.class)
+  @Test
   public void testCreateSoapClient_failNotAxisCompatible() {
+    thrown.expect(ServiceException.class);
     axisHandler.createSoapClient(Mockito.mock(SoapServiceDescriptor.class));
   }
   
@@ -89,8 +95,9 @@ public class AxisHandlerTest {
         headerElement.getValue());
   }
   
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testSetChildHeader_failParentMissing() {
+    thrown.expect(NullPointerException.class);
     axisHandler.setHeaderChild(stub, "parent", "child", "123");
   }
   

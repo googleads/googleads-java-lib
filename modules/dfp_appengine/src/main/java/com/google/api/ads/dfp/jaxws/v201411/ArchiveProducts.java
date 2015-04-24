@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used to archive products.
+ *             This action is deprecated and is a no-op, use {@link ArchiveProductTemplates} instead.
  *           
  * 
  * <p>Java class for ArchiveProducts complex type.

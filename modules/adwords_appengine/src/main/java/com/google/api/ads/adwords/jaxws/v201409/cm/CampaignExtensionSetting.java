@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A CampaignExtensionSetting is used add or modify extensions being served for the specified
+ *             A CampaignExtensionSetting is used to add or modify extensions being served for the specified
  *             campaign.
  *           
  * 

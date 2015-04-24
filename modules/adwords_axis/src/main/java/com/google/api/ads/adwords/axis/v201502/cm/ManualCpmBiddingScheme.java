@@ -13,6 +13,9 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  */
 public class ManualCpmBiddingScheme  extends com.google.api.ads.adwords.axis.v201502.cm.BiddingScheme  implements java.io.Serializable {
+    /* Active View CPM option. When enabled, the advertiser only pays
+     * for the impression when
+     *                     the ad is visible on screen. */
     private java.lang.Boolean activeViewCpmEnabled;
 
     public ManualCpmBiddingScheme() {
@@ -30,7 +33,9 @@ public class ManualCpmBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the activeViewCpmEnabled value for this ManualCpmBiddingScheme.
      * 
-     * @return activeViewCpmEnabled
+     * @return activeViewCpmEnabled   * Active View CPM option. When enabled, the advertiser only pays
+     * for the impression when
+     *                     the ad is visible on screen.
      */
     public java.lang.Boolean getActiveViewCpmEnabled() {
         return activeViewCpmEnabled;
@@ -40,7 +45,9 @@ public class ManualCpmBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the activeViewCpmEnabled value for this ManualCpmBiddingScheme.
      * 
-     * @param activeViewCpmEnabled
+     * @param activeViewCpmEnabled   * Active View CPM option. When enabled, the advertiser only pays
+     * for the impression when
+     *                     the ad is visible on screen.
      */
     public void setActiveViewCpmEnabled(java.lang.Boolean activeViewCpmEnabled) {
         this.activeViewCpmEnabled = activeViewCpmEnabled;

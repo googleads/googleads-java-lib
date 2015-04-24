@@ -25,6 +25,7 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Predicate;
 import com.google.api.ads.adwords.jaxws.v201502.cm.PredicateOperator;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Selector;
 import com.google.api.ads.adwords.jaxws.v201502.cm.SortOrder;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.CampaignField;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -207,7 +208,7 @@ public class SelectorBuilderTest {
   public void testOrderByBuild() {
     SelectorBuilder builder = new SelectorBuilder();
 
-    builder = builder.orderAscBy("AverageCpm");
+    builder = builder.orderAscBy(CampaignField.BidType);
     Selector selector = builder.build();
 
     assertNotNull(selector.getOrdering());
@@ -215,35 +216,70 @@ public class SelectorBuilderTest {
 
     OrderBy orderBy = selector.getOrdering().get(0);
 
-    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
-    builder.orderDescBy("AverageCpc");
+    builder.orderAscBy(CampaignField.Amount).orderDescBy(CampaignField.BidType);
     selector = builder.build();
 
     assertNotNull(selector.getOrdering());
-    assertEquals(2, selector.getOrdering().size());
+    assertEquals(3, selector.getOrdering().size());
 
     orderBy = selector.getOrdering().get(0);
 
-    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
     orderBy = selector.getOrdering().get(1);
 
-    assertEquals("AverageCpc", orderBy.getField());
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+
+    orderBy = selector.getOrdering().get(2);
+
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
 
-    selector = builder.removeOrderBy("AverageCpm").build();
+    // Removing the OrderBy for BidType
+    selector = builder.removeOrderBy("BidType").build();
 
     assertNotNull(selector.getOrdering());
     assertEquals(1, selector.getOrdering().size());
 
     orderBy = selector.getOrdering().get(0);
 
-    assertEquals("AverageCpc", orderBy.getField());
-    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+  }
 
+  /**
+   * Tests that when a repeated ORDER BY clause is added to the selector, it is actually ignored.
+   */
+  @Test
+  public void testOrderBySubstitution() {
+    SelectorBuilder builder = new SelectorBuilder();
+
+    builder = builder.orderAscBy(CampaignField.BidType).orderDescBy(CampaignField.Amount);
+    Selector selector = builder.build();
+
+    assertNotNull(selector.getOrdering());
+    assertEquals(2, selector.getOrdering().size());
+
+    builder.orderAscBy(CampaignField.BidType);
+    selector = builder.build();
+
+    assertNotNull(selector.getOrdering());
+    assertEquals(2, selector.getOrdering().size());
+
+    OrderBy orderBy = selector.getOrdering().get(0);
+
+    assertEquals("BidType", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+
+    orderBy = selector.getOrdering().get(1);
+
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
   }
 
   /**

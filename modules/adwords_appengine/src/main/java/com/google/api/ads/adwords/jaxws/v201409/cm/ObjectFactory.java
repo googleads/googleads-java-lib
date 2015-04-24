@@ -542,14 +542,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TargetError }
-     * 
-     */
-    public TargetError createTargetError() {
-        return new TargetError();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdReturnValue }
      * 
      */
@@ -966,14 +958,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdScheduleTarget }
-     * 
-     */
-    public AdScheduleTarget createAdScheduleTarget() {
-        return new AdScheduleTarget();
-    }
-
-    /**
      * Create an instance of {@link CampaignExtensionSettingOperation }
      * 
      */
@@ -1171,14 +1155,6 @@ public class ObjectFactory {
      */
     public Proximity createProximity() {
         return new Proximity();
-    }
-
-    /**
-     * Create an instance of {@link AdScheduleTargetList }
-     * 
-     */
-    public AdScheduleTargetList createAdScheduleTargetList() {
-        return new AdScheduleTargetList();
     }
 
     /**
@@ -2803,14 +2779,6 @@ public class ObjectFactory {
      */
     public Carrier createCarrier() {
         return new Carrier();
-    }
-
-    /**
-     * Create an instance of {@link CampaignTargetOperation }
-     * 
-     */
-    public CampaignTargetOperation createCampaignTargetOperation() {
-        return new CampaignTargetOperation();
     }
 
     /**

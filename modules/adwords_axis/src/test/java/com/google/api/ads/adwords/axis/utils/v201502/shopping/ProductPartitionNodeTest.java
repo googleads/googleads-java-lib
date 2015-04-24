@@ -23,9 +23,20 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.ads.adwords.axis.v201502.cm.ProductBiddingCategory;
 import com.google.api.ads.adwords.axis.v201502.cm.ProductBrand;
 import com.google.api.ads.adwords.axis.v201502.cm.ProductCanonicalCondition;
 import com.google.api.ads.adwords.axis.v201502.cm.ProductCanonicalConditionCondition;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductChannel;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductChannelExclusivity;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductCustomAttribute;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductDimension;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductDimensionType;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductOfferId;
+import com.google.api.ads.adwords.axis.v201502.cm.ProductType;
+import com.google.api.ads.adwords.axis.v201502.cm.ShoppingProductChannel;
+import com.google.api.ads.adwords.axis.v201502.cm.ShoppingProductChannelExclusivity;
+import com.google.common.collect.Maps;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -34,6 +45,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Tests for {@link ProductPartitionNode}.
@@ -245,6 +259,52 @@ public class ProductPartitionNodeTest {
         brandOtherNode.hasChild(conditionNew));
     assertFalse("hasChild should return false for any removed child dimension",
         brandOtherNode.hasChild(conditionUsed));
+  }
+  
+  /**
+   * Test to confirm that {@link ProductPartitionNode#toString(ProductDimension)} handles each
+   * subclass of {@link ProductDimension}. This will help ensure that
+   * {@link ProductPartitionNode#toString(ProductDimension)} is kept up to date with changes in
+   * {@link ProductDimensions}.
+   */
+  @Test
+  public void testDimensionToString() throws Exception {
+    // Use reflection to determine which subclasses of ProductDimension have a factory
+    // method in ProductDimensions.
+    Set<Class<? extends ProductDimension>> dimensionSubclasses =
+        ProductDimensionsTest.getAllProductDimensionFactoryMethods().keySet();
+
+    // Create a sample instance for each subclass of ProductDimension.
+    Map<Class<? extends ProductDimension>, ProductDimension> dimensionsByType = Maps.newHashMap();
+    dimensionsByType.put(ProductBrand.class, ProductDimensions.createBrand("testBrand"));
+    dimensionsByType.put(ProductBiddingCategory.class,
+        ProductDimensions.createBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1, 123L));
+    dimensionsByType.put(ProductCanonicalCondition.class,
+        ProductDimensions.createCanonicalCondition(ProductCanonicalConditionCondition.NEW));
+    dimensionsByType.put(ProductChannel.class,
+        ProductDimensions.createChannel(ShoppingProductChannel.LOCAL));
+    dimensionsByType.put(ProductChannelExclusivity.class, ProductDimensions
+        .createChannelExclusivity(ShoppingProductChannelExclusivity.SINGLE_CHANNEL));
+    dimensionsByType.put(ProductCustomAttribute.class, ProductDimensions.createCustomAttribute(
+        ProductDimensionType.CUSTOM_ATTRIBUTE_2, "testAttribute"));
+    dimensionsByType.put(ProductOfferId.class, ProductDimensions.createOfferId("testOfferId"));
+    dimensionsByType.put(ProductType.class,
+        ProductDimensions.createType(ProductDimensionType.PRODUCT_TYPE_L3, "testType"));
+
+    // For each ProductDimension subclass, assert that we have a sample instance and that
+    // ProductPartitionNode.toString(ProductDimension) produces a meaningful String for the
+    // sample instance.
+    for (Class<? extends ProductDimension> dimensionSubclass : dimensionSubclasses) {
+      ProductDimension sampleDimension = dimensionsByType.get(dimensionSubclass);
+      assertNotNull("No sample dimension found for ProductDimension subclass " + dimensionSubclass
+          + ". Add a sample instance of this type to the dimensionsByType map in this test.",
+          sampleDimension);
+      String dimensionToString = ProductPartitionNode.toString(sampleDimension);
+      assertThat("ProductPartitionNode.toString does not appear to recognize any attributes of "
+          + dimensionSubclass, dimensionToString, Matchers.not(Matchers.containsString("[]")));
+      assertThat("ProductPartitionNode.toString failed to interpret the attributes of a "
+          + dimensionSubclass, dimensionToString, Matchers.not(Matchers.containsString("UNKNOWN")));
+    }
   }
 }
 

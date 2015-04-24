@@ -38,7 +38,7 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         
      *         <p class="note"><b>Note:</b> {@link ManagedCustomerOperation}
      * only supports
-     *         {@code ADD} operator. </p>
+     *         {@code ADD} operator.</p>
      *         
      *         
      * @param operations List of unique operations.
@@ -50,26 +50,24 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerReturnValue mutate(com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerOperation[] operations) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201502.cm.ApiException;
 
     /**
-     * Adds {@link com.google.ads.api.services.mcm.common.labels.Label}s
-     * to, and removes
-     *         {@linkplain Label}s from, {@link ManagedCustomer}s.
-     *         
-     *         <p>To add a {@linkplain Label} to a {@linkplain ManagedCustomer},
-     * use
-     *         {@link Operator#ADD}.
-     *         To remove a {@linkplain Label} from a {@linkplain ManagedCustomer},
-     * use
-     *         {@link Operator#REMOVE}.
-     *         <p>The label must already exist (see
-     *         {@link com.google.ads.api.services.mcm.labels.AccountLabelService.mutate}
-     * for how to
-     *         create them) and be owned by the authenticated user.
-     *         <p>The {@linkplain ManagedCustomer} must already exist and
-     * be managed by the customer
-     *         making the request (either directly or indirectly).
-     *         <p>A label may be applied to at most 1000 customers.
+     * Adds {@linkplain AccountLabel}s to, and removes
+     *         {@linkplain AccountLabel}s from, {@linkplain ManagedCustomer}s.
+     * 
+     *         <p>To add an {@linkplain AccountLabel} to a {@linkplain ManagedCustomer},
+     * use {@link Operator#ADD}.
+     *         To remove an {@linkplain AccountLabel} from a {@linkplain
+     * ManagedCustomer},
+     *         use {@link Operator#REMOVE}.</p>
+     *         <p>The label must already exist (see {@link AccountLabelService#mutate}
+     * for
+     *         how to create them) and be owned by the authenticated user.</p>
+     * <p>The {@linkplain ManagedCustomer} must already exist and be managed
+     * by
+     *         the customer making the request (either directly or indirectly).</p>
+     * <p>An AccountLabel may be applied to at most 1000 customers.</p>
      *         <p>This method does not support partial failures, and will
-     * fail if any operation is invalid.
+     * fail if any
+     *         operation is invalid.</p>
      */
     public com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerLabelReturnValue mutateLabel(com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerLabelOperation[] operations) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201502.cm.ApiException;
 
@@ -79,11 +77,11 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         Operator + Link Status):
      *         
      *         <ul>
-     *         <li>ADD + PENDING:   manager extends invitations
-     *         <li>SET + CANCELLED: manager rescinds invitations
-     *         <li>SET + INACTIVE:  manager/client terminates links
-     *         <li>SET + ACTIVE:    client accepts invitations
-     *         <li>SET + REFUSED:   client declines invitations
+     *         <li>ADD + PENDING:   manager extends invitations</li>
+     *         <li>SET + CANCELLED: manager rescinds invitations</li>
+     *         <li>SET + INACTIVE:  manager/client terminates links</li>
+     *         <li>SET + ACTIVE:    client accepts invitations</li>
+     *         <li>SET + REFUSED:   client declines invitations</li>
      *         </ul>
      *         
      *         
@@ -102,7 +100,7 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>SET + ACTIVE: manager moves client customers to new managers
      * within the same MCC
-     *         hierarchy
+     *         hierarchy</li>
      *         </ul>
      *         
      *         

@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Operation used to create a FeedMapping.
+ *             
+ *             <p>The following {@link Operator}s are supported: ADD, REMOVE.
  *           
  * 
  * <p>Java class for FeedMappingOperation complex type.

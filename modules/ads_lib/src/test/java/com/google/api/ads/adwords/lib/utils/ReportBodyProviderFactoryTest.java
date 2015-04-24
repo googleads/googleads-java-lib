@@ -21,7 +21,9 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.adwords.lib.utils.ReportRequest.RequestType;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -43,6 +45,9 @@ public class ReportBodyProviderFactoryTest {
 
   @Mock
   private ReportRequest reportRequest;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   public enum MockDownloadFormat {
     CSV
@@ -76,8 +81,9 @@ public class ReportBodyProviderFactoryTest {
         reportBodyProvider.getClass());
   }
 
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testNullRequestType() {
+    thrown.expect(NullPointerException.class);
     reportBodyProviderFactory.getReportBodyProvider(reportRequest);
   }
 

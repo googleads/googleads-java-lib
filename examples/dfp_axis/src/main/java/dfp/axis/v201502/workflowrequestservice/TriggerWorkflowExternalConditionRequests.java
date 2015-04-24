@@ -20,6 +20,7 @@ import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201502.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201502.UpdateResult;
 import com.google.api.ads.dfp.axis.v201502.WorkflowEntityType;
+import com.google.api.ads.dfp.axis.v201502.WorkflowExternalConditionStatus;
 import com.google.api.ads.dfp.axis.v201502.WorkflowRequest;
 import com.google.api.ads.dfp.axis.v201502.WorkflowRequestPage;
 import com.google.api.ads.dfp.axis.v201502.WorkflowRequestServiceInterface;
@@ -53,11 +54,14 @@ public class TriggerWorkflowExternalConditionRequests {
 
     // Create a statement to select workflow external condition requests for a proposal.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("WHERE entityId = :entityId and entityType = :entityType and type = :type")
+        .where("WHERE entityId = :entityId and entityType = :entityType "
+            + "and type = :type and conditionStatus = :conditionStatus")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
         .withBindVariableValue("entityId", proposalId)
         .withBindVariableValue("entityType", WorkflowEntityType.PROPOSAL.toString())
+        .withBindVariableValue("conditionStatus",
+            WorkflowExternalConditionStatus.PENDING.toString())
         .withBindVariableValue("type",
             WorkflowRequestType.WORKFLOW_EXTERNAL_CONDITION_REQUEST.toString());
 
@@ -109,8 +113,7 @@ public class TriggerWorkflowExternalConditionRequests {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

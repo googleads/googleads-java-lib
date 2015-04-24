@@ -26,6 +26,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.ConstantOperand;
 import com.google.api.ads.adwords.axis.v201502.cm.ExtensionFeedItem;
 import com.google.api.ads.adwords.axis.v201502.cm.ExtensionSetting;
+import com.google.api.ads.adwords.axis.v201502.cm.ExtensionSettingPlatform;
 import com.google.api.ads.adwords.axis.v201502.cm.Feed;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedItem;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedItemAttributeValue;
@@ -39,7 +40,9 @@ import com.google.api.ads.adwords.axis.v201502.cm.FeedMappingServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedPage;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedType;
+import com.google.api.ads.adwords.axis.v201502.cm.Function;
 import com.google.api.ads.adwords.axis.v201502.cm.FunctionArgumentOperand;
+import com.google.api.ads.adwords.axis.v201502.cm.FunctionOperand;
 import com.google.api.ads.adwords.axis.v201502.cm.FunctionOperator;
 import com.google.api.ads.adwords.axis.v201502.cm.Operator;
 import com.google.api.ads.adwords.axis.v201502.cm.RequestContextOperand;
@@ -127,6 +130,9 @@ public class MigrateToExtensionSettings {
         // Retrieve the sitelinks that have been associated with this campaign.
         Set<Long> feedItemIds = getFeedItemIdsForCampaign(campaignFeed);
 
+        ExtensionSettingPlatform platformRestrictions =
+            getPlatformRestictionsForCampaign(campaignFeed);
+
         if (feedItemIds.isEmpty()) {
           System.out.printf("Migration skipped for campaign feed with campaign ID %d "
               + "and feed ID %d because no mapped feed item IDs were found in the "
@@ -137,13 +143,18 @@ public class MigrateToExtensionSettings {
           deleteCampaignFeed(adWordsServices, session, campaignFeed);
 
           // Create extension settings instead of sitelinks.
-          createExtensionSetting(adWordsServices, session, feedItems, campaignFeed, feedItemIds);
+          createExtensionSetting(adWordsServices,
+              session,
+              feedItems,
+              campaignFeed,
+              feedItemIds,
+              platformRestrictions);
 
           // Mark the sitelinks from the feed for deletion.
           allFeedItemsToDelete.addAll(feedItemIds);
         }
       }
-      
+
       // Delete all the sitelinks from the feed.
       deleteOldFeedItems(adWordsServices, session, allFeedItemsToDelete, feed);
     }
@@ -210,7 +221,7 @@ public class MigrateToExtensionSettings {
 
   /**
    * Gets the feed mapping for a feed.
-   * 
+   *
    * @return a multimap from feed attribute ID to the set of field IDs mapped to the attribute
    */
   private static Multimap<Long, Integer> getFeedMapping(AdWordsServices adWordsServices,
@@ -296,7 +307,7 @@ public class MigrateToExtensionSettings {
 
     return feedItems;
   }
-  
+
   /**
    * Deletes the old feed items for which extension settings have been created.
    */
@@ -335,10 +346,14 @@ public class MigrateToExtensionSettings {
    * @param feedItems the list of all feed items
    * @param campaignFeed the original campaign feed
    * @param feedItemIds IDs of the feed items for which extension settings should be created
+   * @param platformRestrictions the platform restrictions for the new campaign extension setting
    */
   private static void createExtensionSetting(AdWordsServices adWordsServices,
-      AdWordsSession session, Map<Long, SiteLinkFromFeed> feedItems, CampaignFeed campaignFeed,
-      Set<Long> feedItemIds) throws Exception {
+      AdWordsSession session,
+      Map<Long, SiteLinkFromFeed> feedItems,
+      CampaignFeed campaignFeed,
+      Set<Long> feedItemIds,
+      ExtensionSettingPlatform platformRestrictions) throws Exception {
     // Get the CampaignExtensionSettingService.
     CampaignExtensionSettingServiceInterface campaignExtensionSettingService =
         adWordsServices.get(session, CampaignExtensionSettingServiceInterface.class);
@@ -355,7 +370,7 @@ public class MigrateToExtensionSettings {
       SiteLinkFromFeed siteLinkFromFeed = feedItems.get(feedItemId);
       SitelinkFeedItem siteLinkFeedItem = new SitelinkFeedItem();
       siteLinkFeedItem.setSitelinkText(siteLinkFromFeed.text);
-      
+
       if (siteLinkFromFeed.finalUrls != null && siteLinkFromFeed.finalUrls.length > 0) {
         siteLinkFeedItem.setSitelinkFinalUrls(new UrlList(siteLinkFromFeed.finalUrls));
         if (siteLinkFromFeed.finalMobileUrls != null
@@ -367,7 +382,7 @@ public class MigrateToExtensionSettings {
       } else {
         siteLinkFeedItem.setSitelinkUrl(siteLinkFromFeed.url);
       }
-      
+
       siteLinkFeedItem.setSitelinkLine2(siteLinkFromFeed.line2);
       siteLinkFeedItem.setSitelinkLine3(siteLinkFromFeed.line3);
       siteLinkFeedItem.setScheduling(siteLinkFromFeed.scheduling);
@@ -377,6 +392,8 @@ public class MigrateToExtensionSettings {
 
     extensionSetting.setExtensions(
         extensionFeedItems.toArray(new ExtensionFeedItem[extensionFeedItems.size()]));
+
+    extensionSetting.setPlatformRestrictions(platformRestrictions);
 
     campaignExtensionSetting.setExtensionSetting(extensionSetting);
 
@@ -404,25 +421,85 @@ public class MigrateToExtensionSettings {
   }
 
   /**
+   * Gets the platform restrictions for sitelinks in a campaign.
+   */
+  private static ExtensionSettingPlatform getPlatformRestictionsForCampaign(
+      CampaignFeed campaignFeed) {
+    String platformRestrictions = ExtensionSettingPlatform.NONE.getValue();
+
+    if (FunctionOperator.AND.equals(campaignFeed.getMatchingFunction().getOperator())) {
+      for (FunctionArgumentOperand argument : campaignFeed.getMatchingFunction().getLhsOperand()) {
+        if (argument instanceof FunctionOperand) {
+          FunctionOperand operand = (FunctionOperand) argument;
+          if (FunctionOperator.EQUALS.equals(operand.getValue().getOperator())
+              && (operand.getValue().getLhsOperand(0) instanceof RequestContextOperand)) {
+            RequestContextOperand requestContextOperand =
+                (RequestContextOperand) operand.getValue().getLhsOperand(0);
+            if (RequestContextOperandContextType.DEVICE_PLATFORM.equals(
+                requestContextOperand.getContextType())) {
+              platformRestrictions =
+                  ((ConstantOperand) operand.getValue().getRhsOperand(0)).getStringValue();
+            }
+          }
+        }
+      }
+    }
+    return ExtensionSettingPlatform.fromString(platformRestrictions.toUpperCase());
+  }
+
+  /**
    * Returns the list of feed item IDs that are used by a campaign through a given campaign feed.
    */
   private static Set<Long> getFeedItemIdsForCampaign(CampaignFeed campaignFeed) throws Exception {
     Set<Long> feedItemIds = Sets.newHashSet();
-    if (campaignFeed.getMatchingFunction().getLhsOperand().length == 1
-        && campaignFeed.getMatchingFunction().getLhsOperand(0) instanceof RequestContextOperand) {
+
+    FunctionOperator functionOperator = campaignFeed.getMatchingFunction().getOperator();
+
+    if (FunctionOperator.IN.equals(functionOperator)) {
+      // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+      // Extract feed items if applicable.
+      feedItemIds.addAll(getFeedItemIdsFromArgument(campaignFeed.getMatchingFunction()));
+    } else if (FunctionOperator.AND.equals(functionOperator)) {
+      for (FunctionArgumentOperand argument : campaignFeed.getMatchingFunction().getLhsOperand()) {
+        // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+        // Extract feed items if applicable.
+        if (argument instanceof FunctionOperand) {
+          FunctionOperand operand = (FunctionOperand) argument;
+          if (FunctionOperator.IN.equals(operand.getValue().getOperator())) {
+            feedItemIds.addAll(getFeedItemIdsFromArgument(operand.getValue()));
+          }
+        }
+      }
+
+    } else {
+      // There are no other matching functions involving feed item IDs.
+    }
+
+    return feedItemIds;
+  }
+
+  /**
+   * Gets the set of feed item IDs from the function if it is of the form:
+   * {@code IN(FEED_ITEM_ID,{xxx,xxx})}. Otherwise, returns an empty set.
+   */
+  private static Set<Long> getFeedItemIdsFromArgument(Function function) {
+    Set<Long> feedItemIds = Sets.newHashSet();
+
+    if (function.getLhsOperand().length == 1
+        && function.getLhsOperand(0) instanceof RequestContextOperand) {
       RequestContextOperand requestContextOperand =
-          (RequestContextOperand) campaignFeed.getMatchingFunction().getLhsOperand(0);
+          (RequestContextOperand) function.getLhsOperand(0);
       if (RequestContextOperandContextType.FEED_ITEM_ID.equals(
           requestContextOperand.getContextType())
-          && FunctionOperator.IN.equals(campaignFeed.getMatchingFunction().getOperator())) {
-        for (FunctionArgumentOperand argument :
-            campaignFeed.getMatchingFunction().getRhsOperand()) {
+          && FunctionOperator.IN.equals(function.getOperator())) {
+        for (FunctionArgumentOperand argument : function.getRhsOperand()) {
           if (argument instanceof ConstantOperand) {
             feedItemIds.add(((ConstantOperand) argument).getLongValue());
           }
         }
       }
     }
+
     return feedItemIds;
   }
 

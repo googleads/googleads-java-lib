@@ -23,6 +23,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.AdUrlUpgrade;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.AdGroupAdField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -99,8 +100,8 @@ public class UpgradeAdUrl {
   private static AdGroupAd getAdGroupAd(AdGroupAdServiceInterface adGroupAdService, Long adGroupId,
       Long adId) throws Exception {
     Selector selector = new SelectorBuilder()
-        .fields("Id", "Url")
-        .equals("AdGroupId", adGroupId.toString())
+        .fields(AdGroupAdField.Id, AdGroupAdField.Url)
+        .equals(AdGroupAdField.AdGroupId, adGroupId.toString())
         .equalsId(adId)
         .build();
     

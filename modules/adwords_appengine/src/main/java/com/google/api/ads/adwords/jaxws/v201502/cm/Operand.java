@@ -40,8 +40,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Label" type="{https://adwords.google.com/api/adwords/cm/v201502}Label"/>
  *         &lt;element name="Media" type="{https://adwords.google.com/api/adwords/cm/v201502}Media"/>
  *         &lt;element name="PlaceHolder" type="{https://adwords.google.com/api/adwords/cm/v201502}PlaceHolder"/>
- *         &lt;element name="TargetList" type="{https://adwords.google.com/api/adwords/cm/v201502}TargetList"/>
- *         &lt;element name="Target" type="{https://adwords.google.com/api/adwords/cm/v201502}Target"/>
  *       &lt;/choice>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -69,9 +67,7 @@ import javax.xml.bind.annotation.XmlType;
     "job",
     "label",
     "media",
-    "placeHolder",
-    "targetList",
-    "target"
+    "placeHolder"
 })
 public class Operand {
 
@@ -111,10 +107,6 @@ public class Operand {
     protected Media media;
     @XmlElement(name = "PlaceHolder")
     protected PlaceHolder placeHolder;
-    @XmlElement(name = "TargetList")
-    protected TargetList targetList;
-    @XmlElement(name = "Target")
-    protected Target target;
 
     /**
      * Gets the value of the adGroupAdLabel property.
@@ -546,54 +538,6 @@ public class Operand {
      */
     public void setPlaceHolder(PlaceHolder value) {
         this.placeHolder = value;
-    }
-
-    /**
-     * Gets the value of the targetList property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TargetList }
-     *     
-     */
-    public TargetList getTargetList() {
-        return targetList;
-    }
-
-    /**
-     * Sets the value of the targetList property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TargetList }
-     *     
-     */
-    public void setTargetList(TargetList value) {
-        this.targetList = value;
-    }
-
-    /**
-     * Gets the value of the target property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Target }
-     *     
-     */
-    public Target getTarget() {
-        return target;
-    }
-
-    /**
-     * Sets the value of the target property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Target }
-     *     
-     */
-    public void setTarget(Target value) {
-        this.target = value;
     }
 
 }

@@ -50,6 +50,9 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      *         {@link ReportJob#reportJobStatus} and {@link ReportJob#id}
      * fields filled in.
      *         
+     *         <p>Replaced with {@code ReportService.getReportJobStatus}
+     * beginning in V201505.
+     *         
      *         
      * @param reportJobId the Id of the report job which must already exist
      * 

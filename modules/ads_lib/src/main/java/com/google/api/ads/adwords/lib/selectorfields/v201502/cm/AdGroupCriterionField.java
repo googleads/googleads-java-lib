@@ -25,7 +25,8 @@ public enum AdGroupCriterionField implements EntityField {
   // Fields constants definitions
 
   /**
-   * 
+   * Active View CPM option.
+   * When enabled, the advertiser only pays for the impression when the ad is visible on screen.
    */
   @Filterable
   ActiveViewCpmEnabled(true),
@@ -40,6 +41,16 @@ public enum AdGroupCriterionField implements EntityField {
    * 
    */
   AgeRangeType(false),
+
+  /**
+   * A string that uniquely identifies a mobile application to AdWords API.
+   * The format of this string is "<code>{platform}-{platform_native_id}</code>", where <code>platform</code> is "1" for iOS apps and "2" for Android apps, and where <code>platform_native_id</code> is the mobile application identifier native to the corresponding platform.
+   * For iOS, this native identifier is the 9 digit string that appears at the end of an App Store URL (e.g., "476943146" for "Flood-It! 2" whose App Store link is http://itunes.apple.com/us/app/flood-it!-2/id476943146).
+   * For Android, this native identifier is the application's package name (e.g., "com.labpixies.colordrips" for "Color Drips" given Google Play link https://play.google.com/store/apps/details?id=com.labpixies.colordrips).
+   * A well formed app id for AdWords API would thus be "1-476943146" for iOS and "2-com.labpixies.colordrips" for Android.
+   */
+  @Filterable
+  AppId(true),
 
   /**
    * 

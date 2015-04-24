@@ -30,7 +30,9 @@ import com.google.api.ads.adwords.axis.v201409.cm.ProductPartition;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductPartitionType;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -47,6 +49,9 @@ public class ProductPartitionNodeAdapterTest {
   private ProductPartitionNode parentNode;
   private ProductPartitionNode childNode;
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   @Before
   public void setUp() throws Exception {
     adGroupId = -1L;
@@ -133,13 +138,11 @@ public class ProductPartitionNodeAdapterTest {
    * Tests creating a criterion for a SET bid operation for an excluded unit node. This should fail
    * since excluded nodes cannot have bids.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCreateCriterionForSetBid_excludedNode_fails() {
     childNode = childNode.asExcludedUnit();
-
-    testCommonAttributes(childNode,
-        ProductPartitionNodeAdapter.createCriterionForSetBid(childNode, adGroupId, biddingConfig),
-        false);
+    thrown.expect(IllegalArgumentException.class);
+    ProductPartitionNodeAdapter.createCriterionForSetBid(childNode, adGroupId, biddingConfig);
   }
 
   /**

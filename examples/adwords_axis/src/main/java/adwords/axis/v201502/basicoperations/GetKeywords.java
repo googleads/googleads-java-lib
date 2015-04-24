@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.AdGroupCriterionServiceInterfa
 import com.google.api.ads.adwords.axis.v201502.cm.Keyword;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.AdGroupCriterionField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -77,12 +78,16 @@ public class GetKeywords {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("Id", "AdGroupId", "MatchType", "KeywordText")
-        .orderAscBy("AdGroupId")
+        .fields(
+            AdGroupCriterionField.Id,
+            AdGroupCriterionField.AdGroupId,
+            AdGroupCriterionField.KeywordMatchType,
+            AdGroupCriterionField.KeywordText)
+        .orderAscBy(AdGroupCriterionField.AdGroupId)
         .offset(offset)
         .limit(PAGE_SIZE)
-        .in("AdGroupId", adGroupId.toString())
-        .equals("CriteriaType", "KEYWORD")
+        .in(AdGroupCriterionField.AdGroupId, adGroupId.toString())
+        .equals(AdGroupCriterionField.CriteriaType, "KEYWORD")
         .build();
 
     while (morePages) {

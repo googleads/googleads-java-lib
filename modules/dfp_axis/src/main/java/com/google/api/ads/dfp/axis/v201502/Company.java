@@ -61,7 +61,11 @@ public class Company  implements java.io.Serializable {
 
     /* Specifies the company's credit status. This attribute is optional
      * and
-     *                 defaults to {@link CreditStatus#ACTIVE}. */
+     *                 defaults to {@link CreditStatus#ACTIVE} when basic
+     * credit status settings
+     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
+     * advanced credit status
+     *                 settings are enabled. */
     private com.google.api.ads.dfp.axis.v201502.CompanyCreditStatus creditStatus;
 
     /* The set of labels applied to this company. */
@@ -341,7 +345,11 @@ public class Company  implements java.io.Serializable {
      * 
      * @return creditStatus   * Specifies the company's credit status. This attribute is optional
      * and
-     *                 defaults to {@link CreditStatus#ACTIVE}.
+     *                 defaults to {@link CreditStatus#ACTIVE} when basic
+     * credit status settings
+     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
+     * advanced credit status
+     *                 settings are enabled.
      */
     public com.google.api.ads.dfp.axis.v201502.CompanyCreditStatus getCreditStatus() {
         return creditStatus;
@@ -353,7 +361,11 @@ public class Company  implements java.io.Serializable {
      * 
      * @param creditStatus   * Specifies the company's credit status. This attribute is optional
      * and
-     *                 defaults to {@link CreditStatus#ACTIVE}.
+     *                 defaults to {@link CreditStatus#ACTIVE} when basic
+     * credit status settings
+     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
+     * advanced credit status
+     *                 settings are enabled.
      */
     public void setCreditStatus(com.google.api.ads.dfp.axis.v201502.CompanyCreditStatus creditStatus) {
         this.creditStatus = creditStatus;

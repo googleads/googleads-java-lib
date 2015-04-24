@@ -25,7 +25,8 @@ public enum CampaignField implements EntityField {
   // Fields constants definitions
 
   /**
-   * 
+   * Active View CPM option.
+   * When enabled, the advertiser only pays for the impression when the ad is visible on screen.
    */
   @Filterable
   ActiveViewCpmEnabled(true),
@@ -244,6 +245,24 @@ public enum CampaignField implements EntityField {
    */
   @Filterable
   TargetContentNetwork(true),
+
+  /**
+   * Average CPA target.
+   * This target should be greater than or equal to minimum billable unit based on the currency for the account.
+   */
+  TargetCpa(false),
+
+  /**
+   * Maximum cpc bid limit that applies to all keywords managed by the strategy.
+   */
+  @Filterable
+  TargetCpaMaxCpcBidCeiling(true),
+
+  /**
+   * Minimum cpc bid limit that applies to all keywords managed by the strategy.
+   */
+  @Filterable
+  TargetCpaMaxCpcBidFloor(true),
 
   /**
    * Ads will be served with Google.com search results.

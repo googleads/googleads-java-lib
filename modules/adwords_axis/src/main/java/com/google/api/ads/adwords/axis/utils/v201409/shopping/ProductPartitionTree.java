@@ -38,9 +38,13 @@ import com.google.api.ads.adwords.axis.v201409.cm.ProductPartitionType;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.axis.v201409.cm.UserStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.AdGroupCriterionField;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.AdGroupField;
 import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractSequentialIterator;
+import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.LinkedListMultimap;
@@ -99,15 +103,26 @@ public class ProductPartitionTree {
    * Required fields for any {@link Selector} used to fetch {@link AdGroupCriterion} objects used by
    * an instance of this class.
    */
-  public static final List<String> REQUIRED_SELECTOR_FIELDS = ImmutableList.of("AdGroupId",
-      "Id",
-      "ParentCriterionId",
-      "PartitionType",
-      "CriteriaType",
-      "CaseValue",
-      "CpcBid",
-      "CpcBidSource",
-      "Status");
+  public static final List<AdGroupCriterionField> REQUIRED_SELECTOR_FIELD_ENUMS = ImmutableList.of(
+      AdGroupCriterionField.AdGroupId,
+      AdGroupCriterionField.Id,
+      AdGroupCriterionField.ParentCriterionId,
+      AdGroupCriterionField.PartitionType,
+      AdGroupCriterionField.CriteriaType,
+      AdGroupCriterionField.CaseValue,
+      AdGroupCriterionField.CpcBid,
+      AdGroupCriterionField.CpcBidSource,
+      AdGroupCriterionField.Status);
+
+  /**
+   * Required fields for any {@link Selector} used to fetch {@link AdGroupCriterion} objects used by
+   * an instance of this class.
+   *
+   * @deprecated Use the {@code REQUIRED_SELECTOR_FIELD_ENUMS} instead.
+   */
+  @Deprecated
+  public static final List<String> REQUIRED_SELECTOR_FIELDS = ImmutableList.copyOf(
+      Collections2.transform(REQUIRED_SELECTOR_FIELD_ENUMS, Functions.toStringFunction()));
 
   /**
    * Constructor that initializes the temp ID generator based on the ID of the root node.
@@ -187,10 +202,14 @@ public class ProductPartitionTree {
         services.get(session, AdGroupCriterionServiceInterface.class);
 
     SelectorBuilder selectorBuilder = new SelectorBuilder()
-        .fields(REQUIRED_SELECTOR_FIELDS.toArray(new String[REQUIRED_SELECTOR_FIELDS.size()]))
-        .equals("AdGroupId", adGroupId.toString())
-        .equals("CriteriaType", "PRODUCT_PARTITION")
-        .in("Status", UserStatus.ENABLED.getValue(), UserStatus.PAUSED.getValue())
+        .fields(REQUIRED_SELECTOR_FIELD_ENUMS.toArray(
+            new String[REQUIRED_SELECTOR_FIELD_ENUMS.size()]))
+        .equals(AdGroupCriterionField.AdGroupId, adGroupId.toString())
+        .equals(AdGroupCriterionField.CriteriaType, "PRODUCT_PARTITION")
+        .in(
+            AdGroupCriterionField.Status,
+            UserStatus.ENABLED.getValue(),
+            UserStatus.PAUSED.getValue())
         .limit(PAGE_SIZE);
 
     AdGroupCriterionPage adGroupCriterionPage;
@@ -591,7 +610,11 @@ public class ProductPartitionTree {
     AdGroupServiceInterface adGroupService = services.get(session, AdGroupServiceInterface.class);
 
     Selector selector = new SelectorBuilder()
-        .fields("Id", "BiddingStrategyType", "BiddingStrategyId", "BiddingStrategyName")
+        .fields(
+            AdGroupField.Id,
+            AdGroupField.BiddingStrategyType,
+            AdGroupField.BiddingStrategyId,
+            AdGroupField.BiddingStrategyName)
         .equalsId(adGroupId).build();
 
     AdGroupPage adGroupPage = adGroupService.get(selector);

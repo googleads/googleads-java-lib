@@ -240,6 +240,24 @@ public enum CampaignField implements EntityField {
   TargetContentNetwork(true),
 
   /**
+   * Average CPA target.
+   * This target should be greater than or equal to minimum billable unit based on the currency for the account.
+   */
+  TargetCpa(false),
+
+  /**
+   * Maximum cpc bid limit that applies to all keywords managed by the strategy.
+   */
+  @Filterable
+  TargetCpaMaxCpcBidCeiling(true),
+
+  /**
+   * Minimum cpc bid limit that applies to all keywords managed by the strategy.
+   */
+  @Filterable
+  TargetCpaMaxCpcBidFloor(true),
+
+  /**
    * Ads will be served with Google.com search results.
    */
   @Filterable

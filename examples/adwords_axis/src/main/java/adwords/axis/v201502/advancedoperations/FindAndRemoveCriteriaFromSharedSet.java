@@ -31,6 +31,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.SharedCriterionReturnValue;
 import com.google.api.ads.adwords.axis.v201502.cm.SharedCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.SharedSetType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.CampaignSharedSetField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -85,9 +86,15 @@ public class FindAndRemoveCriteriaFromSharedSet {
     // First, retrieve all shared sets associated with the campaign.
     int offset = 0;
     SelectorBuilder selectorBuilder = new SelectorBuilder()
-      .fields("SharedSetId", "CampaignId", "SharedSetName", "SharedSetType")
-      .equals("CampaignId", campaignId.toString())
-      .in("SharedSetType", SharedSetType.NEGATIVE_KEYWORDS.getValue(),
+      .fields(
+          CampaignSharedSetField.SharedSetId,
+          CampaignSharedSetField.CampaignId,
+          CampaignSharedSetField.SharedSetName,
+          CampaignSharedSetField.SharedSetType)
+      .equals(CampaignSharedSetField.CampaignId, campaignId.toString())
+      .in(
+          CampaignSharedSetField.SharedSetType,
+          SharedSetType.NEGATIVE_KEYWORDS.getValue(),
           SharedSetType.NEGATIVE_PLACEMENTS.getValue())
       .limit(PAGE_SIZE);
     

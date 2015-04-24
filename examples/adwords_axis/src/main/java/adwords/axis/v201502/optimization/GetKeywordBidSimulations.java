@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.CriterionBidLandscapePage;
 import com.google.api.ads.adwords.axis.v201502.cm.DataServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.DataField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -74,17 +75,16 @@ public class GetKeywordBidSimulations {
     // Create selector.
     Selector selector = new SelectorBuilder()
         .fields(
-            "AdGroupId",
-            "CriterionId",
-            "StartDate",
-            "EndDate",
-            "Bid",
-            "LocalClicks",
-            "LocalCost",
-            "MarginalCpc",
-            "LocalImpressions")
-        .equals("AdGroupId", adGroupId.toString())
-        .equals("CriterionId", criterionId.toString())
+            DataField.AdGroupId,
+            DataField.CriterionId,
+            DataField.StartDate,
+            DataField.EndDate,
+            DataField.Bid,
+            DataField.LocalClicks,
+            DataField.LocalCost,
+            DataField.LocalImpressions)
+        .equals(DataField.AdGroupId, adGroupId.toString())
+        .equals(DataField.CriterionId, criterionId.toString())
         .build();
 
     // Get bid landscape for ad group criteria.

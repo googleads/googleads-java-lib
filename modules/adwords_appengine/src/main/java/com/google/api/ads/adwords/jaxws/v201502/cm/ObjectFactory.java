@@ -30,6 +30,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SoapResponseHeader }
+     * 
+     */
+    public SoapResponseHeader createSoapResponseHeader() {
+        return new SoapResponseHeader();
+    }
+
+    /**
+     * Create an instance of {@link SoapHeader }
+     * 
+     */
+    public SoapHeader createSoapHeader() {
+        return new SoapHeader();
+    }
+
+    /**
+     * Create an instance of {@link ApiException }
+     * 
+     */
+    public ApiException createApiException() {
+        return new ApiException();
+    }
+
+    /**
      * Create an instance of {@link CampaignSharedSetError }
      * 
      */
@@ -542,14 +566,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TargetError }
-     * 
-     */
-    public TargetError createTargetError() {
-        return new TargetError();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdReturnValue }
      * 
      */
@@ -806,14 +822,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SoapHeader }
-     * 
-     */
-    public SoapHeader createSoapHeader() {
-        return new SoapHeader();
-    }
-
-    /**
      * Create an instance of {@link BudgetPage }
      * 
      */
@@ -963,14 +971,6 @@ public class ObjectFactory {
      */
     public CpaBid createCpaBid() {
         return new CpaBid();
-    }
-
-    /**
-     * Create an instance of {@link AdScheduleTarget }
-     * 
-     */
-    public AdScheduleTarget createAdScheduleTarget() {
-        return new AdScheduleTarget();
     }
 
     /**
@@ -1171,14 +1171,6 @@ public class ObjectFactory {
      */
     public Proximity createProximity() {
         return new Proximity();
-    }
-
-    /**
-     * Create an instance of {@link AdScheduleTargetList }
-     * 
-     */
-    public AdScheduleTargetList createAdScheduleTargetList() {
-        return new AdScheduleTargetList();
     }
 
     /**
@@ -1702,14 +1694,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SoapResponseHeader }
-     * 
-     */
-    public SoapResponseHeader createSoapResponseHeader() {
-        return new SoapResponseHeader();
-    }
-
-    /**
      * Create an instance of {@link AdGroupAdPage }
      * 
      */
@@ -1819,14 +1803,6 @@ public class ObjectFactory {
      */
     public TargetRoasBiddingScheme createTargetRoasBiddingScheme() {
         return new TargetRoasBiddingScheme();
-    }
-
-    /**
-     * Create an instance of {@link ApiException }
-     * 
-     */
-    public ApiException createApiException() {
-        return new ApiException();
     }
 
     /**
@@ -2835,14 +2811,6 @@ public class ObjectFactory {
      */
     public Carrier createCarrier() {
         return new Carrier();
-    }
-
-    /**
-     * Create an instance of {@link CampaignTargetOperation }
-     * 
-     */
-    public CampaignTargetOperation createCampaignTargetOperation() {
-        return new CampaignTargetOperation();
     }
 
     /**

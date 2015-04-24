@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An AdGroupExtensionSetting is used add or modify extensions being served for the specified
- *             adgroup.
+ *             An AdGroupExtensionSetting is used to add or modify extensions being served for the specified
+ *             ad group.
  *           
  * 
  * <p>Java class for AdGroupExtensionSetting complex type.

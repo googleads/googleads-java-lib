@@ -30,8 +30,11 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.net.UrlEscapers;
 import org.openqa.selenium.net.PortProber;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -53,6 +56,9 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
   @Mock
   private ReportRequest reportRequest;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   /** Enum of download format that's not version-specific */
   enum TestDownloadFormat {
@@ -117,7 +123,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
    * Tests that the helper will throw a {@link ConnectException} wrapped in a
    * {@link ReportException} when the endpoint is for an unused port on localhost.
    */
-  @Test(expected = ConnectException.class)
+  @Test
   public void testBadEndpoint_fails() throws Throwable {
     int port = PortProber.findFreePort();
 
@@ -137,13 +143,11 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     String awqlString = "SELECT BadField1 FROM NOT_A_REPORT DURING NOT_A_TIME_PERIOD";
     when(reportRequest.getReportRequestString()).thenReturn(awqlString);
 
-    try {
-      helper.downloadReport(reportRequest);
-    } catch (ReportException e) {
-      // The cause should be a ConnectException (see expected annotation) since the endpoint
-      // port is not in use.
-      throw e.getCause();
-    }
+    // The cause should be a ConnectException (see expected annotation) since the endpoint
+    // port is not in use.
+    thrown.expect(ReportException.class);
+    thrown.expectCause(Matchers.<Exception>instanceOf(ConnectException.class));
+    helper.downloadReport(reportRequest);
   }
 
   /**
@@ -151,31 +155,31 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
    *
    * @throws Exception
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testMissingXmlString_fails() throws Exception {
     when(reportRequest.getRequestType()).thenReturn(RequestType.XML);
-
+    thrown.expect(NullPointerException.class);
     helper.downloadReport(reportRequest);
   }
 
   /**
    * Tests that validation on the AWQL report definition string is propagated by the helper.
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testMissingAwqlString_fails() throws Exception {
     when(reportRequest.getRequestType()).thenReturn(RequestType.AWQL);
-
+    thrown.expect(NullPointerException.class);
     helper.downloadReport(reportRequest);
   }
 
   /**
    * Tests that validation for {@link ReportRequest#getRequestType()} is propagated by the helper.
    */
-  @Test(expected = NullPointerException.class)
+  @Test
   public void testMissingRequestType_fails() throws Exception {
     String awqlString = "SELECT BadField1 FROM NOT_A_REPORT DURING NOT_A_TIME_PERIOD";
     when(reportRequest.getReportRequestString()).thenReturn(awqlString);
-
+    thrown.expect(NullPointerException.class);
     helper.downloadReport(reportRequest);
   }
 

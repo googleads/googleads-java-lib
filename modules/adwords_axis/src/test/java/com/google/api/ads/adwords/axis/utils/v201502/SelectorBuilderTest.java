@@ -25,6 +25,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.Predicate;
 import com.google.api.ads.adwords.axis.v201502.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.axis.v201502.cm.SortOrder;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.CampaignField;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -47,7 +48,7 @@ public class SelectorBuilderTest {
    */
   @Test
   @SuppressWarnings("unchecked")
-  public void testSelctorBuilderImmutability() {
+  public void testSelectorBuilderImmutability() {
     DateFormat dateFormat = new SimpleDateFormat(SelectorBuilder.DEFAULT_DATE_FORMAT);
 
     SelectorBuilder builder = new SelectorBuilder();
@@ -106,15 +107,15 @@ public class SelectorBuilderTest {
     assertEquals("ServingStatus", selector.getFields()[5]);
     assertEquals("Settings", selector.getFields()[6]);
 
-    selector = builder.fields("Id",
-        "Name",
-        "Status",
-        "StartDate",
-        "EndDate",
-        "ServingStatus",
-        "Settings",
-        "Id",
-        "AverageCpc").build();
+    selector = builder.fields(CampaignField.Id,
+        CampaignField.Name,
+        CampaignField.Status,
+        CampaignField.StartDate,
+        CampaignField.EndDate,
+        CampaignField.ServingStatus,
+        CampaignField.Settings,
+        CampaignField.Id,
+        CampaignField.Amount).build();
 
     assertEquals(8, selector.getFields().length);
 
@@ -125,7 +126,7 @@ public class SelectorBuilderTest {
     assertEquals("EndDate", selector.getFields()[4]);
     assertEquals("ServingStatus", selector.getFields()[5]);
     assertEquals("Settings", selector.getFields()[6]);
-    assertEquals("AverageCpc", selector.getFields()[7]);
+    assertEquals("Amount", selector.getFields()[7]);
 
   }
 
@@ -184,8 +185,8 @@ public class SelectorBuilderTest {
   public void testPredicatesInBuild() {
     SelectorBuilder builder = new SelectorBuilder();
 
-    builder =
-        builder.in("Status", CampaignStatus.ENABLED.toString(), CampaignStatus.REMOVED.toString());
+    builder = builder.in(CampaignField.Status, CampaignStatus.ENABLED.toString(),
+        CampaignStatus.REMOVED.toString());
     Selector selector = builder.build();
 
     assertNotNull(selector.getPredicates());
@@ -208,7 +209,7 @@ public class SelectorBuilderTest {
   public void testOrderByBuild() {
     SelectorBuilder builder = new SelectorBuilder();
 
-    builder = builder.orderAscBy("AverageCpm");
+    builder = builder.orderAscBy(CampaignField.BidType);
     Selector selector = builder.build();
 
     assertNotNull(selector.getOrdering());
@@ -216,35 +217,70 @@ public class SelectorBuilderTest {
 
     OrderBy orderBy = selector.getOrdering()[0];
 
-    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
-    builder.orderAscBy("AverageCpm").orderDescBy("AverageCpc");
+    builder.orderAscBy(CampaignField.Amount).orderDescBy(CampaignField.BidType);
     selector = builder.build();
 
     assertNotNull(selector.getOrdering());
-    assertEquals(2, selector.getOrdering().length);
+    assertEquals(3, selector.getOrdering().length);
 
     orderBy = selector.getOrdering()[0];
 
-    assertEquals("AverageCpm", orderBy.getField());
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
 
     orderBy = selector.getOrdering()[1];
 
-    assertEquals("AverageCpc", orderBy.getField());
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+
+    orderBy = selector.getOrdering()[2];
+
+    assertEquals("BidType", orderBy.getField());
     assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
 
-    selector = builder.removeOrderBy("AverageCpm").build();
+    // Removing the OrderBy for BidType
+    selector = builder.removeOrderBy("BidType").build();
 
     assertNotNull(selector.getOrdering());
     assertEquals(1, selector.getOrdering().length);
 
     orderBy = selector.getOrdering()[0];
 
-    assertEquals("AverageCpc", orderBy.getField());
-    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+  }
 
+  /**
+   * Tests that when a repeated ORDER BY clause is added to the selector, it is actually ignored.
+   */
+  @Test
+  public void testOrderBySubstitution() {
+    SelectorBuilder builder = new SelectorBuilder();
+
+    builder = builder.orderAscBy(CampaignField.BidType).orderDescBy(CampaignField.Amount);
+    Selector selector = builder.build();
+
+    assertNotNull(selector.getOrdering());
+    assertEquals(2, selector.getOrdering().length);
+
+    builder.orderAscBy(CampaignField.BidType);
+    selector = builder.build();
+
+    assertNotNull(selector.getOrdering());
+    assertEquals(2, selector.getOrdering().length);
+
+    OrderBy orderBy = selector.getOrdering()[0];
+
+    assertEquals("BidType", orderBy.getField());
+    assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+
+    orderBy = selector.getOrdering()[1];
+
+    assertEquals("Amount", orderBy.getField());
+    assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
   }
 
   /**
@@ -303,7 +339,8 @@ public class SelectorBuilderTest {
 
     assertNull(selector.getPaging());
 
-    selector = builder.offset(10)
+    selector = builder
+        .offset(10)
         .limit(20)
         .increaseOffsetBy(5)
         .removeLimitAndOffset()
@@ -326,7 +363,7 @@ public class SelectorBuilderTest {
   public void testUniqueInternalPagingState() {
     SelectorBuilder builder = new SelectorBuilder();
     Selector selectorOne = builder.fields("Id").offset(10).build();
-    Selector selectorTwo = builder.fields("Status").offset(345).build();
+    Selector selectorTwo = builder.fields(CampaignField.Status).offset(345).build();
 
     assertEquals(10, selectorOne.getPaging().getStartIndex().intValue());
     assertEquals(345, selectorTwo.getPaging().getStartIndex().intValue());
@@ -338,7 +375,7 @@ public class SelectorBuilderTest {
   @Test
   public void testUniqueInternalOrderByState() {
     SelectorBuilder builder = new SelectorBuilder();
-    Selector selectorOne = builder.orderAscBy("Id").build();
+    Selector selectorOne = builder.orderAscBy(CampaignField.Id).build();
     Selector selectorTwo = builder.build();
 
     OrderBy orderTwo = selectorTwo.getOrdering(0);

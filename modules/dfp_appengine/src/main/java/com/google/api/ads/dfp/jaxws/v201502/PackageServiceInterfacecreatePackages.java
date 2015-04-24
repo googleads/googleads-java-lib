@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link Package#name}</li>
  *             </ul>
  *             
- *             @param packageDtos the packages to create
+ *             @param packages the packages to create
  *             @return the created packages with their IDs filled in
  *           
  * 
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;complexContent>
  *       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *         &lt;sequence>
- *           &lt;element name="packageDtos" type="{https://www.google.com/apis/ads/publisher/v201502}Package" maxOccurs="unbounded" minOccurs="0"/>
+ *           &lt;element name="packages" type="{https://www.google.com/apis/ads/publisher/v201502}Package" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;/sequence>
  *       &lt;/restriction>
  *     &lt;/complexContent>
@@ -46,26 +46,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "packageDtos"
+    "packages"
 })
 @XmlRootElement(name = "createPackages")
 public class PackageServiceInterfacecreatePackages {
 
-    protected List<Package> packageDtos;
+    protected List<Package> packages;
 
     /**
-     * Gets the value of the packageDtos property.
+     * Gets the value of the packages property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the packageDtos property.
+     * This is why there is not a <CODE>set</CODE> method for the packages property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPackageDtos().add(newItem);
+     *    getPackages().add(newItem);
      * </pre>
      * 
      * 
@@ -75,11 +75,11 @@ public class PackageServiceInterfacecreatePackages {
      * 
      * 
      */
-    public List<Package> getPackageDtos() {
-        if (packageDtos == null) {
-            packageDtos = new ArrayList<Package>();
+    public List<Package> getPackages() {
+        if (packages == null) {
+            packages = new ArrayList<Package>();
         }
-        return this.packageDtos;
+        return this.packages;
     }
 
 }

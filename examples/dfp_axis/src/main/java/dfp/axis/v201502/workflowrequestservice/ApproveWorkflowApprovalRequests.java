@@ -19,6 +19,7 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201502.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201502.UpdateResult;
+import com.google.api.ads.dfp.axis.v201502.WorkflowApprovalRequestStatus;
 import com.google.api.ads.dfp.axis.v201502.WorkflowEntityType;
 import com.google.api.ads.dfp.axis.v201502.WorkflowRequest;
 import com.google.api.ads.dfp.axis.v201502.WorkflowRequestPage;
@@ -52,11 +53,14 @@ public class ApproveWorkflowApprovalRequests {
 
     // Create a statement to select workflow approval requests for a proposal.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("WHERE entityId = :entityId and entityType = :entityType and type = :type")
+        .where("WHERE entityId = :entityId and entityType = :entityType "
+            + "and type = :type and approvalStatus = :approvalStatus")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
         .withBindVariableValue("entityId", proposalId)
         .withBindVariableValue("entityType", WorkflowEntityType.PROPOSAL.toString())
+        .withBindVariableValue("approvalStatus",
+            WorkflowApprovalRequestStatus.PENDING_APPROVAL.toString())
         .withBindVariableValue("type", WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.toString());
 
     // Default for total result set size.
@@ -105,8 +109,7 @@ public class ApproveWorkflowApprovalRequests {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

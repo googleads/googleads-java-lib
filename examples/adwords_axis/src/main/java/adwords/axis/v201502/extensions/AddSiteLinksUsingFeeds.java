@@ -20,8 +20,6 @@ import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeed;
 import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedOperation;
 import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedReturnValue;
 import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.ConstantOperand;
-import com.google.api.ads.adwords.axis.v201502.cm.ConstantOperandConstantType;
 import com.google.api.ads.adwords.axis.v201502.cm.Feed;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedAttribute;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedAttributeType;
@@ -39,16 +37,12 @@ import com.google.api.ads.adwords.axis.v201502.cm.FeedOrigin;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedReturnValue;
 import com.google.api.ads.adwords.axis.v201502.cm.FeedServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.Function;
-import com.google.api.ads.adwords.axis.v201502.cm.FunctionArgumentOperand;
-import com.google.api.ads.adwords.axis.v201502.cm.FunctionOperand;
-import com.google.api.ads.adwords.axis.v201502.cm.FunctionOperator;
 import com.google.api.ads.adwords.axis.v201502.cm.Operator;
-import com.google.api.ads.adwords.axis.v201502.cm.RequestContextOperand;
-import com.google.api.ads.adwords.axis.v201502.cm.RequestContextOperandContextType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.base.Joiner;
 
 import adwords.axis.v201502.basicoperations.AddCampaigns;
 
@@ -245,52 +239,22 @@ public class AddSiteLinksUsingFeeds {
     CampaignFeedServiceInterface campaignFeedService =
         adWordsServices.get(session, CampaignFeedServiceInterface.class);
 
-    RequestContextOperand requestContextOperand = new RequestContextOperand();
-    requestContextOperand.setContextType(RequestContextOperandContextType.FEED_ITEM_ID);
-
-    Function feedItemFunction = new Function();
-    feedItemFunction.setLhsOperand(new FunctionArgumentOperand[] {requestContextOperand});
-    feedItemFunction.setOperator(FunctionOperator.IN);
-
-    List<FunctionArgumentOperand> operands = new ArrayList<FunctionArgumentOperand>();
-    for (long feedItemId : siteLinksData.siteLinkFeedItemIds) {
-      ConstantOperand constantOperand = new ConstantOperand();
-      constantOperand.setLongValue(feedItemId);
-      constantOperand.setType(ConstantOperandConstantType.LONG);
-      operands.add(constantOperand);
-    }
-    feedItemFunction.setRhsOperand(operands.toArray(new FunctionArgumentOperand[operands.size()]));
-
-    // Optional: to target to a platform, define a function and 'AND' it with
-    // the feed item ID link:
-    RequestContextOperand platformRequestContextOperand = new RequestContextOperand();
-    platformRequestContextOperand.setContextType(RequestContextOperandContextType.DEVICE_PLATFORM);
-
-    ConstantOperand platformOperand = new ConstantOperand();
-    platformOperand.setStringValue("Mobile");
-    platformOperand.setType(ConstantOperandConstantType.STRING);
-
-    Function platformFunction = new Function();
-    platformFunction.setLhsOperand(new FunctionArgumentOperand[] {platformRequestContextOperand});
-    platformFunction.setOperator(FunctionOperator.EQUALS);
-    platformFunction.setRhsOperand(new FunctionArgumentOperand[] {platformOperand});
-
-    // Combine the two functions using an AND operation.
-    FunctionOperand feedItemFunctionOperand = new FunctionOperand();
-    feedItemFunctionOperand.setValue(feedItemFunction);
-
-    FunctionOperand platformFunctionOperand = new FunctionOperand();
-    platformFunctionOperand.setValue(platformFunction);
-
-    Function combinedFunction = new Function();
-    combinedFunction.setOperator(FunctionOperator.AND);
-    combinedFunction.setLhsOperand(
-        new FunctionArgumentOperand[] {feedItemFunctionOperand, platformFunctionOperand});
+    // Construct a matching function that associates the sitelink feed items to the campaign, and
+    // sets the device preference to mobile. See the matching function guide at
+    // https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
+    // for more details.
+    String matchingFunctionString = String.format(
+        "AND( IN(FEED_ITEM_ID, {%s}), EQUALS(CONTEXT.DEVICE, 'Mobile') )",
+        Joiner.on(',').join(siteLinksData.siteLinkFeedItemIds));
 
     CampaignFeed campaignFeed = new CampaignFeed();
     campaignFeed.setFeedId(siteLinksData.siteLinksFeedId);
     campaignFeed.setCampaignId(campaignId);
-    campaignFeed.setMatchingFunction(combinedFunction);
+    
+    Function matchingFunction = new Function();
+    matchingFunction.setFunctionString(matchingFunctionString);
+    
+    campaignFeed.setMatchingFunction(matchingFunction);
     // Specifying placeholder types on the CampaignFeed allows the same feed
     // to be used for different placeholders in different Campaigns.
     campaignFeed.setPlaceholderTypes(new int[] {PLACEHOLDER_SITELINKS});

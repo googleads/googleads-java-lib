@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A CustomerExtensionSetting is used add or modify extensions being served for the customer.
+ *             A CustomerExtensionSetting is used to add or modify extensions being served for the customer.
  *           
  * 
  * <p>Java class for CustomerExtensionSetting complex type.

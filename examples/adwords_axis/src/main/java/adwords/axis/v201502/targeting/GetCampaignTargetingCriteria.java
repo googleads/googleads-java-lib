@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201502.cm.CampaignCriterionPage;
 import com.google.api.ads.adwords.axis.v201502.cm.CampaignCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201502.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.CampaignCriterionField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -72,14 +73,14 @@ public class GetCampaignTargetingCriteria {
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
         .fields(
-            "CampaignId",
-            "Id",
-            "CriteriaType",
-            "PlatformName",
-            "LanguageName",
-            "LocationName",
-            "KeywordText")
-        .in("CriteriaType", "KEYWORD", "LANGUAGE", "LOCATION", "PLATFORM")
+            CampaignCriterionField.CampaignId,
+            CampaignCriterionField.Id,
+            CampaignCriterionField.CriteriaType,
+            CampaignCriterionField.PlatformName,
+            CampaignCriterionField.LanguageName,
+            CampaignCriterionField.LocationName,
+            CampaignCriterionField.KeywordText)
+        .in(CampaignCriterionField.CriteriaType, "KEYWORD", "LANGUAGE", "LOCATION", "PLATFORM")
         .offset(0)
         .limit(PAGE_SIZE)
         .build();

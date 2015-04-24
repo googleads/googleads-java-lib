@@ -45,11 +45,11 @@ public interface PackageServiceInterface {
      *         <li>{@link Package#name}</li>
      *         </ul>
      *         
-     *         @param packageDtos the packages to create
+     *         @param packages the packages to create
      *         @return the created packages with their IDs filled in
      *       
      * 
-     * @param packageDtos
+     * @param packages
      * @return
      *     returns java.util.List<com.google.api.ads.dfp.jaxws.v201502.Package>
      * @throws ApiException_Exception
@@ -59,8 +59,8 @@ public interface PackageServiceInterface {
     @RequestWrapper(localName = "createPackages", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502", className = "com.google.api.ads.dfp.jaxws.v201502.PackageServiceInterfacecreatePackages")
     @ResponseWrapper(localName = "createPackagesResponse", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502", className = "com.google.api.ads.dfp.jaxws.v201502.PackageServiceInterfacecreatePackagesResponse")
     public List<Package> createPackages(
-        @WebParam(name = "packageDtos", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502")
-        List<Package> packageDtos)
+        @WebParam(name = "packages", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502")
+        List<Package> packages)
         throws ApiException_Exception
     ;
 
@@ -151,11 +151,11 @@ public interface PackageServiceInterface {
      * 
      *         Updates the specified {@link Package} objects.
      *         
-     *         @param packageDtos the packages to update
+     *         @param packages the packages to update
      *         @return the updated packages
      *       
      * 
-     * @param packageDtos
+     * @param packages
      * @return
      *     returns java.util.List<com.google.api.ads.dfp.jaxws.v201502.Package>
      * @throws ApiException_Exception
@@ -165,8 +165,8 @@ public interface PackageServiceInterface {
     @RequestWrapper(localName = "updatePackages", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502", className = "com.google.api.ads.dfp.jaxws.v201502.PackageServiceInterfaceupdatePackages")
     @ResponseWrapper(localName = "updatePackagesResponse", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502", className = "com.google.api.ads.dfp.jaxws.v201502.PackageServiceInterfaceupdatePackagesResponse")
     public List<Package> updatePackages(
-        @WebParam(name = "packageDtos", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502")
-        List<Package> packageDtos)
+        @WebParam(name = "packages", targetNamespace = "https://www.google.com/apis/ads/publisher/v201502")
+        List<Package> packages)
         throws ApiException_Exception
     ;
 

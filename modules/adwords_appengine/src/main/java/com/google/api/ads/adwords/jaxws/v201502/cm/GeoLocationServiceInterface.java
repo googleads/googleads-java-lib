@@ -17,8 +17,8 @@ import javax.xml.ws.ResponseWrapper;
  *       form of an address. The data returned by GeoLocationService is required
  *       for the following tasks:
  *       <ul>
- *       <li>Adding a {@linkplain LocationExtension location extension} with
- *       CampaignAdExtensionService or AdExtensionOverrideService.</li>
+ *       <li>Adding a
+ *       <a href="https://support.google.com/adwords/answer/2404182">location extension</a>.</li>
  *       <li>Adding a {@linkplain Proximity proximity target} with
  *       CampaignCriterionService.</li>
  *       </ul>

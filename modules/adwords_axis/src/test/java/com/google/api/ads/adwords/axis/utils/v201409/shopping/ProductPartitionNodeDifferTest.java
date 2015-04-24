@@ -19,7 +19,9 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.ads.adwords.axis.utils.v201409.shopping.ProductPartitionNodeDiffer.NodeDifference;
 import com.google.api.ads.adwords.axis.v201409.cm.ProductDimension;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -35,6 +37,9 @@ public class ProductPartitionNodeDifferTest {
 
   private final Comparator<ProductDimension> dimensionComparator = new ProductDimensionComparator();
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   /**
    * Test for when both nodes are null.
    */
@@ -92,12 +97,13 @@ public class ProductPartitionNodeDifferTest {
    * Test for when the dimensions of the two nodes differ. In this case, expect an
    * IllegalArgumentException.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFindNodeDifference_differentDimensionTypes_fails() {
     ProductPartitionNode origNode = new ProductPartitionNode(null,
         ProductDimensions.createBrand("nike"), -1L, dimensionComparator);
     ProductPartitionNode newNode = new ProductPartitionNode(null,
         ProductDimensions.createOfferId("1234"), -1L, dimensionComparator);
+    thrown.expect(IllegalArgumentException.class);
     ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator);
   }
 
@@ -105,11 +111,12 @@ public class ProductPartitionNodeDifferTest {
    * Test for when the dimensions of the two nodes differ and the original node has a null
    * dimension. In this case, expect an IllegalArgumentException.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFindNodeDifference_differentDimensionTypes_origNullDimension_fails() {
     ProductPartitionNode origNode = new ProductPartitionNode(null, null, -1L, dimensionComparator);
     ProductPartitionNode newNode = new ProductPartitionNode(null,
         ProductDimensions.createOfferId("1234"), -1L, dimensionComparator);
+    thrown.expect(IllegalArgumentException.class);
     ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator);
   }
 
@@ -117,11 +124,12 @@ public class ProductPartitionNodeDifferTest {
    * Test for when the dimensions of the two nodes differ and the new node has a null dimension. In
    * this case, expect an IllegalArgumentException.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFindNodeDifference_differentDimensionTypes_newNullDimension_fails() {
     ProductPartitionNode origNode = new ProductPartitionNode(null,
         ProductDimensions.createOfferId("1234"), -1L, dimensionComparator);
     ProductPartitionNode newNode = new ProductPartitionNode(null, null, -1L, dimensionComparator);
+    thrown.expect(IllegalArgumentException.class);
     ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator);
   }
 

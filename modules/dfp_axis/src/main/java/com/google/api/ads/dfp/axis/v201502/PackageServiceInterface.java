@@ -20,11 +20,11 @@ public interface PackageServiceInterface extends java.rmi.Remote {
      *         </ul>
      *         
      *         
-     * @param packageDtos the packages to create
+     * @param packages the packages to create
      *         
      * @return the created packages with their IDs filled in
      */
-    public com.google.api.ads.dfp.axis.v201502.Package[] createPackages(com.google.api.ads.dfp.axis.v201502.Package[] packageDtos) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException;
+    public com.google.api.ads.dfp.axis.v201502.Package[] createPackages(com.google.api.ads.dfp.axis.v201502.Package[] packages) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException;
 
     /**
      * Gets a {@link PackagePage} of {@link Package} objects
@@ -89,9 +89,9 @@ public interface PackageServiceInterface extends java.rmi.Remote {
      * Updates the specified {@link Package} objects.
      *         
      *         
-     * @param packageDtos the packages to update
+     * @param packages the packages to update
      *         
      * @return the updated packages
      */
-    public com.google.api.ads.dfp.axis.v201502.Package[] updatePackages(com.google.api.ads.dfp.axis.v201502.Package[] packageDtos) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException;
+    public com.google.api.ads.dfp.axis.v201502.Package[] updatePackages(com.google.api.ads.dfp.axis.v201502.Package[] packages) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201502.ApiException;
 }

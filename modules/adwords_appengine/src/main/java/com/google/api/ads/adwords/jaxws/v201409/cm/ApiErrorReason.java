@@ -82,7 +82,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="StatsQueryErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201409}StatsQueryError.Reason"/>
  *         &lt;element name="StringFormatErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201409}StringFormatError.Reason"/>
  *         &lt;element name="StringLengthErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201409}StringLengthError.Reason"/>
- *         &lt;element name="TargetErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201409}TargetError.Reason"/>
  *         &lt;element name="UrlErrorReason" type="{https://adwords.google.com/api/adwords/cm/v201409}UrlError.Reason"/>
  *       &lt;/choice>
  *     &lt;/restriction>
@@ -155,7 +154,6 @@ import javax.xml.bind.annotation.XmlType;
     "statsQueryErrorReason",
     "stringFormatErrorReason",
     "stringLengthErrorReason",
-    "targetErrorReason",
     "urlErrorReason"
 })
 public class ApiErrorReason {
@@ -282,8 +280,6 @@ public class ApiErrorReason {
     protected StringFormatErrorReason stringFormatErrorReason;
     @XmlElement(name = "StringLengthErrorReason")
     protected StringLengthErrorReason stringLengthErrorReason;
-    @XmlElement(name = "TargetErrorReason")
-    protected TargetErrorReason targetErrorReason;
     @XmlElement(name = "UrlErrorReason")
     protected UrlErrorReason urlErrorReason;
 
@@ -1749,30 +1745,6 @@ public class ApiErrorReason {
      */
     public void setStringLengthErrorReason(StringLengthErrorReason value) {
         this.stringLengthErrorReason = value;
-    }
-
-    /**
-     * Gets the value of the targetErrorReason property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TargetErrorReason }
-     *     
-     */
-    public TargetErrorReason getTargetErrorReason() {
-        return targetErrorReason;
-    }
-
-    /**
-     * Sets the value of the targetErrorReason property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TargetErrorReason }
-     *     
-     */
-    public void setTargetErrorReason(TargetErrorReason value) {
-        this.targetErrorReason = value;
     }
 
     /**

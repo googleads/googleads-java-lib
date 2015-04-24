@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
  *             Represents a list variable defined in a creative template. This is similar to
  *             {@link StringCreativeTemplateVariable}, except that there are possible choices to
  *             choose from.
- *             <p>
- *             Use {@link StringCreativeTemplateVariableValue} to specify the value
- *             for this variable when creating {@link TemplateCreative} from the {@link TemplateCreative}.
+ *             
+ *             <p>Use {@link StringCreativeTemplateVariableValue} to specify the value
+ *             for this variable when creating a {@link TemplateCreative} from a {@link CreativeTemplate}.
  *           
  * 
  * <p>Java class for ListStringCreativeTemplateVariable complex type.

@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <ul>
  *             <li>SET + ACTIVE: manager moves client customers to new managers within the same MCC
- *             hierarchy
+ *             hierarchy</li>
  *             </ul>
  *             
  *             @param operations List of unique operations.

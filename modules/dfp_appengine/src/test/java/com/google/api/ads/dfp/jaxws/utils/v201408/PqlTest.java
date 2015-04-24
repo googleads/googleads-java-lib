@@ -33,7 +33,9 @@ import com.google.api.ads.dfp.jaxws.v201408.Value;
 import com.google.common.collect.Lists;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -75,6 +77,9 @@ public class PqlTest {
   
   private DateTime dateTime1;
   private Date date1;
+  
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   public PqlTest() {}
 
@@ -181,8 +186,9 @@ public class PqlTest {
     assertEquals("", Pql.toString(new SetValue()));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testToString_invalidValue() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.toString(new MyValue());
   }
   
@@ -240,8 +246,9 @@ public class PqlTest {
     assertEquals(1, apiValue.size());
   }
   
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testGetApiValue_mixedSet() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.getApiValue(mixedSetValue);
   }
     
@@ -299,8 +306,9 @@ public class PqlTest {
     assertEquals(1, nativeValue.size());
   }
   
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testGetNativeValue_mixedSet() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.getNativeValue(mixedSetValue);
   }
   
@@ -329,8 +337,9 @@ public class PqlTest {
         Pql.getCsvValue(dateTimeSetValue));
   }
   
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testGetCsvValue_mixedSet() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.getCsvValue(mixedSetValue);
   }
   
@@ -397,16 +406,18 @@ public class PqlTest {
         DateTimes.toStringWithTimeZone(((DateTimeValue) value1).getValue()));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCreateValue_invalidType() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.createValue(new MyObject());
   }
   
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCreateValue_mixedSet() {
     Set<Object> mixedTypeSet = new LinkedHashSet<Object>();
     mixedTypeSet.add(dateTime1);
     mixedTypeSet.add("value1");
+    thrown.expect(IllegalArgumentException.class);
     Pql.createValue(mixedTypeSet);
   }
   
@@ -415,11 +426,12 @@ public class PqlTest {
     assertEquals(null, ((TextValue) Pql.createValue(null)).getValue());
   }
   
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCreateValue_nestedSets() {
     Set<Object> set = new LinkedHashSet<Object>();
     Set<Object> innerSet = new LinkedHashSet<Object>();
     set.add(innerSet);
+    thrown.expect(IllegalArgumentException.class);
     Pql.createValue(set);
   }
 
@@ -472,7 +484,7 @@ public class PqlTest {
         combinedResultSet.getRows().get(2).getValues());
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test  
   public void testCombineResultSet_badColumns() {
     Row row1 = new Row();
     row1.getValues().addAll(Lists.newArrayList(textValue1, booleanValue1, numberValue1));
@@ -491,6 +503,7 @@ public class PqlTest {
     resultSet2.getColumnTypes().addAll(Lists.newArrayList(column1, column2));
     resultSet2.getRows().addAll(Lists.newArrayList(row3));
 
+    thrown.expect(IllegalArgumentException.class);
     Pql.combineResultSets(resultSet1, resultSet2);
   }
 

@@ -15,11 +15,11 @@ import javax.xml.bind.annotation.XmlType;
  *             Operator + Link Status):
  *             
  *             <ul>
- *             <li>ADD + PENDING:   manager extends invitations
- *             <li>SET + CANCELLED: manager rescinds invitations
- *             <li>SET + INACTIVE:  manager/client terminates links
- *             <li>SET + ACTIVE:    client accepts invitations
- *             <li>SET + REFUSED:   client declines invitations
+ *             <li>ADD + PENDING:   manager extends invitations</li>
+ *             <li>SET + CANCELLED: manager rescinds invitations</li>
+ *             <li>SET + INACTIVE:  manager/client terminates links</li>
+ *             <li>SET + ACTIVE:    client accepts invitations</li>
+ *             <li>SET + REFUSED:   client declines invitations</li>
  *             </ul>
  *             
  *             @param operations the list of operations
