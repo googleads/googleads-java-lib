@@ -1519,6 +1519,7 @@ public enum Dimension {
     /**
      * 
      *                 Campaign date segment of Nielsen OCR reporting.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_SEGMENT} beginning in V201508.
      *               
      * 
      */
@@ -1531,6 +1532,8 @@ public enum Dimension {
      *                 MALE_55_TO_64, MALE_65_PLUS, FEMALE_18_TO_20, FEMALE_21_TO_24, FEMALE_25_TO_29,
      *                 FEMALE_30_TO_34, FEMALE_35_TO_39, FEMALE_40_TO_44, FEMALE_45_TO_49, FEMALE_50_TO_54,
      *                 FEMALE_55_TO_64, FEMALE_65_PLUS, and OTHER.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_DEMOGRAPHICS} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -1539,6 +1542,8 @@ public enum Dimension {
     /**
      * 
      *                 Data restatement date of Nielsen OCR data.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_RESTATEMENT_DATE} beginning in
+     *                 V201508.
      *               
      * 
      */

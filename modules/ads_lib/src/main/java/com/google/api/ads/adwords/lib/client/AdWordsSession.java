@@ -174,6 +174,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   /**
    * Gets the OAuth2 credentials.
    */
+  @Override
   public Credential getOAuth2Credential() {
     return oAuth2Credential;
   }
@@ -213,6 +214,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   /**
    * @return the endpoint
    */
+  @Override
   public String getEndpoint() {
     return endpoint;
   }
@@ -245,18 +247,22 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       this.configHelper = new ConfigurationHelper();
     }
 
+    @Override
     public Builder fromFile() throws ConfigurationLoadException {
       return fromFile(Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
 
+    @Override
     public Builder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
@@ -278,6 +284,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      * @param config
      * @return Builder populated from the Configuration
      */
+    @Override
     public Builder from(Configuration config) {
       this.clientCustomerId = config.getString("api.adwords.clientCustomerId", null);
       this.userAgent = config.getString("api.adwords.userAgent", null);
@@ -370,6 +377,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      * @return the built {@code AdWordsSession}
      * @throws ValidationException if the {@code AdWordsSession} did not validate
      */
+    @Override
     public AdWordsSession build() throws ValidationException {
       defaultOptionals();
       validate();

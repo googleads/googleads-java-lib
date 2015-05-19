@@ -64,6 +64,7 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
    * @param context the context of the SOAP message passing through this handler
    * @return whether this SOAP interaction should continue
    */
+  @Override
   public boolean handleMessage(SOAPMessageContext context) {
     if ((Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY)) {
       SOAPMessage soapMessage = context.getMessage();
@@ -122,6 +123,7 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
    * @param context the context of the SOAP message passing through this handler
    * @return whether this SOAP interaction should continue
    */
+  @Override
   public boolean handleFault(SOAPMessageContext context) {
       captureSoapXml(context);
       return true;
@@ -194,6 +196,7 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
   /**
    * @see SOAPHandler#getHeaders()
    */
+  @Override
   public Set<QName> getHeaders() {
     return null;
   }
@@ -201,5 +204,6 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
   /**
    * @see SOAPHandler#close(MessageContext)
    */
+  @Override
   public void close(MessageContext messageContext) {}
 }

@@ -9,6 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Lists all errors associated with workflow validation.
+ *             <p>In versions V201502 and earlier, the workflow error message defined by a network administrator
+ *             that describes how a workflow rule is violated is stored in the {@link #trigger}. Beginning in
+ *             V201505, it is stored in the {@link #errorString}.
  *           
  * 
  * <p>Java class for WorkflowValidationError complex type.

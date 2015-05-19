@@ -9,35 +9,36 @@ package com.google.api.ads.adwords.axis.v201502.o;
 
 
 /**
- * A set of {@link SearchParameter}s are supplied to the
+ * A set of {@link SearchParameter}s is supplied to the
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
  * to specify how the user wants to filter the set of all possible
  *             {@link com.google.ads.api.services.targetingideas.TargetingIdea}s.
- * <p>
- *             There is a {@link SearchParameter} for all types of inputs.
- * {@link SearchParameter}s can conceptually be broken down into two
- * types.
+ * 
+ *             <p>There is a {@link SearchParameter} for each type of
+ * input.
+ *             {@link SearchParameter}s can conceptually be broken down
+ * into two types.</p>
+ *             
  *             <ul>
  *             <li>Input {@link SearchParameter}s provide the seed information
  * from which
- *             ideas should be generated or statistic information is
- * desired
- *             (e.g. {@link RelatedToQuerySearchParameter},
- *             {@link RelatedToUrlSearchParameter}, etc).
- *             Such {@link SearchParameters} are required for valid requests.</li>
- * <li>Filter {@link SearchParameter}s are used to trim down the results
- * based
- *             on {@link com.google.ads.api.services.targetingideas.attributes.Attribute}
- * related information (eg. {@link CompetitionSearchParameter}, etc.).</li>
- * </ul>
- *             <p>
- *             A request should only contain one instance of each {@link
- * SearchParameter}.
- *             <p>
- *             NOTICE: Starting with version v201406, requests containing
- * multiple
- *             instances of the same search parameter will be rejected.
- * <p>One or more of the following {@link SearchParameter}s are required:<br/>
+ *             ideas or stats are to be generated (e.g., {@link RelatedToQuerySearchParameter},
+ * {@link RelatedToUrlSearchParameter}, etc.). This type of {@link SearchParameters}
+ * is required in requests.</li>
+ *             <li>Filter {@link SearchParameter}s (e.g., {@link CompetitionSearchParameter},
+ * etc.)
+ *             are used to trim down the results based on
+ *             {@link com.google.ads.api.services.targetingideas.attributes.Attribute}-related
+ * information.</li>
+ *             </ul>
+ *             
+ *             <p>A request should only contain one instance of each
+ * {@link SearchParameter}.
+ *             Requests containing multiple instances of the same search
+ * parameter will be
+ *             rejected.</p>
+ *             <p>One or more of the following {@link SearchParameter}s
+ * are required:<br/>
  * <ul><li>{@link CategoryProductsAndServicesSearchParameter}</li>
  * <li>{@link LocationSearchParameter}</li>
  * <li>{@link RelatedToQuerySearchParameter}</li>

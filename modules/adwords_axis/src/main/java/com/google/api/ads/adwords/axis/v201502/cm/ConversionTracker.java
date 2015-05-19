@@ -14,6 +14,17 @@ package com.google.api.ads.adwords.axis.v201502.cm;
 public abstract class ConversionTracker  implements java.io.Serializable {
     /* ID of this conversion tracker, {@code null} when creating a
      * new one.
+     *                 
+     *                 <p>There are some system-defined conversion trackers
+     * that are available
+     *                 for all customers to use.  See {@link ConversionTrackerService#mutate}
+     * for
+     *                 more information about how to modify these types.
+     *                 <ul>
+     *                 <li>179 - Calls from Ads</li>
+     *                 <li>214 - Android Downloads</li>
+     *                 <li>239 - Store Visits</li>
+     *                 </ul>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -22,8 +33,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * Operator}s: ADD.</span> */
     private java.lang.Long id;
 
-    /* The original conversion type on which this ConversionType is
-     * based.
+    /* The ID of the original conversion type on which this ConversionType
+     * is based.
      *                 This is used to facilitate a connection between an
      * existing shared conversion type
      *                 (e.g. Calls from ads) and an advertiser-specific conversion
@@ -105,10 +116,10 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 the time a conversion event happens and the previous
      * corresponding ad click.
      *                 
-     *                 Conversion events that occur more than this many days
-     * after the click are ignored.
+     *                 <p>Conversion events that occur more than this many
+     * days after the click are ignored.
      *                 
-     *                 This field is only editable for Adwords Conversions
+     *                 <p>This field is only editable for Adwords Conversions
      * and Upload Conversions, but has a system
      *                 defined default for other types of conversions. The
      * allowed range of values for this window
@@ -260,6 +271,17 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * 
      * @return id   * ID of this conversion tracker, {@code null} when creating a
      * new one.
+     *                 
+     *                 <p>There are some system-defined conversion trackers
+     * that are available
+     *                 for all customers to use.  See {@link ConversionTrackerService#mutate}
+     * for
+     *                 more information about how to modify these types.
+     *                 <ul>
+     *                 <li>179 - Calls from Ads</li>
+     *                 <li>214 - Android Downloads</li>
+     *                 <li>239 - Store Visits</li>
+     *                 </ul>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -277,6 +299,17 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * 
      * @param id   * ID of this conversion tracker, {@code null} when creating a
      * new one.
+     *                 
+     *                 <p>There are some system-defined conversion trackers
+     * that are available
+     *                 for all customers to use.  See {@link ConversionTrackerService#mutate}
+     * for
+     *                 more information about how to modify these types.
+     *                 <ul>
+     *                 <li>179 - Calls from Ads</li>
+     *                 <li>214 - Android Downloads</li>
+     *                 <li>239 - Store Visits</li>
+     *                 </ul>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "Id".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
@@ -292,8 +325,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     /**
      * Gets the originalConversionTypeId value for this ConversionTracker.
      * 
-     * @return originalConversionTypeId   * The original conversion type on which this ConversionType is
-     * based.
+     * @return originalConversionTypeId   * The ID of the original conversion type on which this ConversionType
+     * is based.
      *                 This is used to facilitate a connection between an
      * existing shared conversion type
      *                 (e.g. Calls from ads) and an advertiser-specific conversion
@@ -315,8 +348,8 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     /**
      * Sets the originalConversionTypeId value for this ConversionTracker.
      * 
-     * @param originalConversionTypeId   * The original conversion type on which this ConversionType is
-     * based.
+     * @param originalConversionTypeId   * The ID of the original conversion type on which this ConversionType
+     * is based.
      *                 This is used to facilitate a connection between an
      * existing shared conversion type
      *                 (e.g. Calls from ads) and an advertiser-specific conversion
@@ -579,10 +612,10 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 the time a conversion event happens and the previous
      * corresponding ad click.
      *                 
-     *                 Conversion events that occur more than this many days
-     * after the click are ignored.
+     *                 <p>Conversion events that occur more than this many
+     * days after the click are ignored.
      *                 
-     *                 This field is only editable for Adwords Conversions
+     *                 <p>This field is only editable for Adwords Conversions
      * and Upload Conversions, but has a system
      *                 defined default for other types of conversions. The
      * allowed range of values for this window
@@ -606,10 +639,10 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      *                 the time a conversion event happens and the previous
      * corresponding ad click.
      *                 
-     *                 Conversion events that occur more than this many days
-     * after the click are ignored.
+     *                 <p>Conversion events that occur more than this many
+     * days after the click are ignored.
      *                 
-     *                 This field is only editable for Adwords Conversions
+     *                 <p>This field is only editable for Adwords Conversions
      * and Upload Conversions, but has a system
      *                 defined default for other types of conversions. The
      * allowed range of values for this window

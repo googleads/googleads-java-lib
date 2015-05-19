@@ -294,45 +294,55 @@ public class SoapClientHandlerTest {
    */
   private static class SoapClientHandlerImpl extends SoapClientHandler<Object> {
 
+    @Override
     public Object createSoapClient(SoapServiceDescriptor soapServiceDescriptor)
         throws ServiceException {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public SoapCallReturn invokeSoapCall(SoapCall<Object> soapCall) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setEndpointAddress(Object soapClient, String endpointAddress) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public String getEndpointAddress(Object soapClient) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void clearHeaders(Object soapClient) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public SOAPHeaderElement createSoapHeaderElement(QName qName) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setHeader(
         Object soapClient, String namespace, String headerName, Object headerValue)
         throws ServiceException {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void putAllHttpHeaders(Object soapClient, Map<String, String> headersMap) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public Object getHeader(Object soapClient, String headerName) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setCompression(Object soapClient, boolean compress) {
       throw new UnsupportedOperationException();
     }

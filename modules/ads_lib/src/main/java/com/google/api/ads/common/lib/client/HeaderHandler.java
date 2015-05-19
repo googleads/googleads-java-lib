@@ -43,6 +43,7 @@ public interface HeaderHandler<S extends AdsSession, D extends AdsServiceDescrip
   public static class NoOpHeaderHandler<S extends AdsSession, D extends AdsServiceDescriptor>
     implements HeaderHandler<S, D>{
 
+    @Override
     public void setHeaders(Object soapClient, S adsSession, D adsServiceDescriptor)
         throws ServiceException, AuthenticationException {
       // No-op

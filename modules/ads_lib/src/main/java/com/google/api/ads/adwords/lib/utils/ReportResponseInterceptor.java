@@ -37,6 +37,7 @@ class ReportResponseInterceptor implements HttpResponseInterceptor {
     this.reportServiceLogger = reportServiceLogger;
   }
 
+  @Override
   public void interceptResponse(HttpResponse response) throws IOException {
     if (response == null) {
       return;

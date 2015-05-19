@@ -46,6 +46,7 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
+    UserListOperation.class,
     AdParamOperation.class,
     OfflineConversionFeedOperation.class,
     BiddingStrategyOperation.class,
@@ -77,13 +78,12 @@ import com.google.api.ads.adwords.jaxws.v201409.rm.UserListOperation;
     SharedSetOperation.class,
     AdGroupAdLabelOperation.class,
     AdGroupCriterionOperation.class,
-    BudgetOrderOperation.class,
     ExpressBusinessOperation.class,
     PromotionOperation.class,
     ManagedCustomerOperation.class,
     LinkOperation.class,
     MoveOperation.class,
-    UserListOperation.class
+    BudgetOrderOperation.class
 })
 public abstract class Operation {
 

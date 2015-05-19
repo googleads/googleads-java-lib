@@ -62,6 +62,7 @@ public class LoggingModule extends AbstractModule {
       this.logType = logType;
     }
 
+    @Override
     public Logger get() {
       return LoggerFactory.getLogger(loggerPrefix + "." + logType);
     }

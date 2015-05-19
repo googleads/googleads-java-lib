@@ -1,3 +1,22 @@
+2.0.0 - 05/19/2015
+-------------------
+AdWords:
+  - Changed minimum JRE version to 1.6.
+
+DFA:
+  - Changed minimum JRE version to 1.6.
+
+DFP:
+  - Added support for v201505.
+  - Removed examples for v201405.
+  - Updated report utility with new getReportJobStatus method.
+  - Removed MERGED_* metrics from the ReportService.
+  - Added advanced ProposalLineItem actions.
+  - Changed minimum JRE version to 1.6.
+
+Common:
+  - Changed minimum JRE version to 1.6.
+
 1.39.0 - 04/24/2015
 -------------------
 AdWords:

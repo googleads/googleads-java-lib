@@ -98,8 +98,8 @@ public enum ConversionTrackerField implements EntityField {
 
   /**
    * The click-through conversion (ctc) lookback window is the maximum number of days between the time a conversion event happens and the previous corresponding ad click.
-   * Conversion events that occur more than this many days after the click are ignored.
-   * This field is only editable for Adwords Conversions and Upload Conversions, but has a system defined default for other types of conversions.
+   * <p>Conversion events that occur more than this many days after the click are ignored.
+   * <p>This field is only editable for Adwords Conversions and Upload Conversions, but has a system defined default for other types of conversions.
    * The allowed range of values for this window depends on the type of conversion and may expand, but 7-90 days is the currently-allowed range.
    */
   @Filterable
@@ -137,6 +137,9 @@ public enum ConversionTrackerField implements EntityField {
 
   /**
    * ID of this conversion tracker, {@code null} when creating a new one.
+   * <p>There are some system-defined conversion trackers that are available for all customers to use.
+   * See {@link ConversionTrackerService#mutate} for more information about how to modify these types.
+   * <ul> <li>179 - Calls from Ads</li> <li>214 - Android Downloads</li> <li>239 - Store Visits</li> </ul>
    */
   @Filterable
   Id(true),
@@ -179,7 +182,7 @@ public enum ConversionTrackerField implements EntityField {
   NumConvertedClicks(true),
 
   /**
-   * The original conversion type on which this ConversionType is based.
+   * The ID of the original conversion type on which this ConversionType is based.
    * This is used to facilitate a connection between an existing shared conversion type (e.g.
    * Calls from ads) and an advertiser-specific conversion type.
    * This may only be specified for ADD operations, and can never be modified once a ConversionType is created.

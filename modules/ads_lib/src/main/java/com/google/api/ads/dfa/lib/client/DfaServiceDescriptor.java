@@ -49,6 +49,7 @@ public class DfaServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AdsServiceDescriptor#getInterfaceClass()
    */
+  @Override
   public Class<?> getInterfaceClass() {
     return interfaceClass;
   }
@@ -60,6 +61,7 @@ public class DfaServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
    * @throws ClassNotFoundException if the formulated locator class name name
    *     could not be found
    */
+  @Override
   public Class<?> getLocatorClass() throws ClassNotFoundException {
     return Class.forName(interfaceClass.getCanonicalName() + "ServiceLocator");
   }
@@ -83,6 +85,7 @@ public class DfaServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AdsServiceDescriptor#getEndpointAddress(String)
    */
+  @Override
   public String getEndpointAddress(String endpointServer) {
     return endpointServer + "/" + version + "/api/dfa-api/" + getServiceName();
   }
@@ -90,6 +93,7 @@ public class DfaServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AdsServiceDescriptor#getVersion()
    */
+  @Override
   public String getVersion() {
     return version;
   }

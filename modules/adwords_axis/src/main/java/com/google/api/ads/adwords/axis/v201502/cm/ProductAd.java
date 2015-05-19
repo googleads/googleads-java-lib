@@ -18,10 +18,18 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  *             {@linkplain ShoppingSetting shopping setting}.
  *             
  *             <p class="caution"><b>Caution:</b> Product ads do not
- * use {@link #url url} or
- *             {@link #displayUrl displayUrl}; setting these fields on
- * a product ad will
- *             cause an error.</p>
+ * use {@link #url url},
+ *             {@link #finalUrls finalUrls}, {@link #finalMobileUrls
+ * finalMobileUrls},
+ *             {@link #finalAppUrls finalAppUrls}, or {@link #displayUrl
+ * displayUrl};
+ *             setting these fields on a product ad will cause an error.
+ * {@link #urlCustomParameters urlCustomParameters} and
+ *             {@link #trackingUrlTemplate trackingUrlTemplate} can be
+ * set, but it is not
+ *             recommended, as they will not be used; they should be
+ * set at the ad group or
+ *             campaign level instead.</p>
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX when it is contained within Operators: ADD, SET.</span>
  */

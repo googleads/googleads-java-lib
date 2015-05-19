@@ -51,6 +51,7 @@ public class AdWordsJaxWsExpressHeaderHandler implements
     this.adWordsApiConfiguration = adWordsApiConfiguration;
   }
 
+  @Override
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws ServiceException,
       AuthenticationException {

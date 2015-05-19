@@ -86,6 +86,7 @@ public final class Streams {
    */
   public static String readAll(final InputStream inputStream, Charset charset) throws IOException {
     return new ByteSource() {
+      @Override
       public InputStream openStream() {
         return inputStream;
       }
@@ -118,6 +119,7 @@ public final class Streams {
   public static void write(String str, final OutputStream outputStream, Charset charset)
       throws IOException {
     new ByteSink() {
+      @Override
       public OutputStream openStream() {
         return outputStream;
       }
@@ -131,10 +133,12 @@ public final class Streams {
   public static void copy(final InputStream inputStream, final OutputStream outputStream)
       throws IOException {
     new ByteSource() {
+      @Override
       public InputStream openStream() {
         return inputStream;
       }
     }.copyTo(new ByteSink() {
+      @Override
       public OutputStream openStream() {
         return outputStream;
       }

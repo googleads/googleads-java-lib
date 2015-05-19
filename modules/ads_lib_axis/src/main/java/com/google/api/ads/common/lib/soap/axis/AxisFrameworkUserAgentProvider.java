@@ -39,6 +39,7 @@ public class AxisFrameworkUserAgentProvider implements FrameworkUserAgentProvide
     this.configuration = configuration;
   }
 
+  @Override
   public String getUserAgent() {
     return configuration.getString("axisUserAgent");
   }

@@ -374,6 +374,7 @@ public class ProductPartitionTree {
   public List<AdGroupCriterionOperation> getMutateOperations() {
     return Lists.transform(createMutateOperationPairs(),
         new Function<OperationPair, AdGroupCriterionOperation>() {
+          @Override
           public AdGroupCriterionOperation apply(OperationPair input) {
             return input.operation;
           }

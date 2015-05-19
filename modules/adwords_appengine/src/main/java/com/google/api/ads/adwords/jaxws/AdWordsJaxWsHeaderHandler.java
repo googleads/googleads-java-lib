@@ -88,6 +88,7 @@ public class AdWordsJaxWsHeaderHandler implements
    *      com.google.api.ads.common.lib.client.AdsSession,
    *      com.google.api.ads.common.lib.client.AdsServiceDescriptor)
    */
+  @Override
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws AuthenticationException,
       ServiceException {

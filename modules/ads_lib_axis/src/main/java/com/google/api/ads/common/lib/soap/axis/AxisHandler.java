@@ -63,6 +63,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @param soapClient the SOAP client to set the endpoint address for
    * @param endpointAddress the target endpoint address
    */
+  @Override
   public void setEndpointAddress(Stub soapClient, String endpointAddress) {
     soapClient._setProperty(Stub.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
   }
@@ -74,6 +75,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @param headerName the name of the header being looked for
    * @return the header element, if it exists
    */
+  @Override
   public Object getHeader(Stub soapClient, String headerName) {
     SOAPHeaderElement[] soapHeaders = soapClient.getHeaders();
     for (SOAPHeaderElement soapHeader : soapHeaders) {
@@ -89,6 +91,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    *
    * @param soapClient the client to remove the headers from
    */
+  @Override
   public void clearHeaders(Stub soapClient) {
     soapClient._setProperty(HTTPConstants.REQUEST_HEADERS, new Hashtable<String, String>());
     soapClient.clearHeaders();
@@ -97,6 +100,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   /**
    * @see  SoapClientHandler#setHeader(Object, String, String, Object)
    */
+  @Override
   public void setHeader(Stub soapClient, String namespace, String headerName,
       Object headerValue) {
     try {
@@ -137,6 +141,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   /**
    * @see SoapClientHandler#putAllHttpHeaders(Object, Map)
    */
+  @Override
   public void putAllHttpHeaders(Stub soapClient, Map<String, String> headersMap) {
     @SuppressWarnings("unchecked")
     Hashtable<String, String> headers =
@@ -154,6 +159,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @param soapClient the client to set compression settings for
    * @param compress whether or not to use compression
    */
+  @Override
   public void setCompression(Stub soapClient, boolean compress) {
     soapClient._setProperty(HTTPConstants.MC_ACCEPT_GZIP, compress);
     soapClient._setProperty(HTTPConstants.MC_GZIP_REQUEST, compress);
@@ -166,6 +172,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @return the SOAP client for this descriptor
    * @throws ServiceException thrown if the SOAP client cannot be created
    */
+  @Override
   public Stub createSoapClient(SoapServiceDescriptor soapServiceDescriptor)
       throws ServiceException {
     try {
@@ -204,6 +211,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @param soapCall the call to make to a SOAP web service
    * @return information about the SOAP response
    */
+  @Override
   public SoapCallReturn invokeSoapCall(SoapCall<Stub> soapCall) {
     Stub stub = soapCall.getSoapClient();
     SoapCallReturn.Builder builder = new SoapCallReturn.Builder();
@@ -242,6 +250,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   /**
    * @see SoapClientHandlerInterface#getEndpointAddress(Object)
    */
+  @Override
   public String getEndpointAddress(Stub soapClient) {
     return (String) soapClient._getProperty(Stub.ENDPOINT_ADDRESS_PROPERTY);
   }
@@ -249,6 +258,7 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   /**
    * @see SoapClientHandlerInterface#createSoapHeaderElement(QName)
    */
+  @Override
   public javax.xml.soap.SOAPHeaderElement createSoapHeaderElement(QName qName) {
     return new SOAPHeaderElement(qName);
   }

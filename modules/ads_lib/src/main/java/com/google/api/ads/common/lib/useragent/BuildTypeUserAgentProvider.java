@@ -36,6 +36,7 @@ public class BuildTypeUserAgentProvider implements UserAgentProvider {
     this.buildConfiguration = buildConfiguration;
   }
 
+  @Override
   public String getUserAgent() {
     return buildConfiguration.getBuildType();
   }

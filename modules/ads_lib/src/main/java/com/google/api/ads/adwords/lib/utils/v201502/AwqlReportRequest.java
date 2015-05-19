@@ -33,14 +33,17 @@ class AwqlReportRequest implements ReportRequest {
     this.downloadFormat = Preconditions.checkNotNull(downloadFormat, "Null download format");
   }
 
+  @Override
   public String getReportRequestString() {
     return awqlQuery;
   }
 
+  @Override
   public DownloadFormat getDownloadFormat() {
     return downloadFormat;
   }
 
+  @Override
   public RequestType getRequestType() {
     return RequestType.AWQL;
   }

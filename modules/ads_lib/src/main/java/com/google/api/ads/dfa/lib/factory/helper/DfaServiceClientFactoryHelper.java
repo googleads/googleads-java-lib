@@ -66,6 +66,7 @@ public class DfaServiceClientFactoryHelper extends
   /**
    * @see AdsServiceClientFactoryHelper#determineVersion(Class)
    */
+  @Override
   public String determineVersion(Class<?> interfaceClass) {
     Matcher m = VERSION_PATTERN.matcher(interfaceClass.getPackage().getName());
     if (m.matches()) {

@@ -107,6 +107,7 @@ public class ReportRequestFactoryHelper {
       throws AuthenticationException {
     final HttpHeaders httpHeaders = createHeaders(reportUrl, version);
     return httpTransport.createRequestFactory(new HttpRequestInitializer() {
+      @Override
       public void initialize(HttpRequest request) throws IOException {
         request.setHeaders(httpHeaders);
         request.setConnectTimeout(reportDownloadTimeout);

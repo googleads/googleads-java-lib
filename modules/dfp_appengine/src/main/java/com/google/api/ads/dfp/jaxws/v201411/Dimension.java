@@ -1001,6 +1001,7 @@ public enum Dimension {
     /**
      * 
      *                 Campaign date segment of Nielsen OCR reporting.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_SEGMENT} beginning in V201508.
      *               
      * 
      */

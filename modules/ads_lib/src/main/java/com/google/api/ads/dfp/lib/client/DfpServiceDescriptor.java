@@ -55,6 +55,7 @@ public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AdsServiceDescriptor#getInterfaceClass()
    */
+  @Override
   public Class<?> getInterfaceClass() throws ServiceException {
     return interfaceClass;
   }
@@ -63,6 +64,7 @@ public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
    * @throws MalformedURLException
    * @see AdsServiceDescriptor#getEndpointAddress(String)
    */
+  @Override
   public String getEndpointAddress(String endpointServer) throws MalformedURLException {
     String serviceName = getServiceName();
     String endpointServerUrl = new URL(endpointServer).toString();
@@ -75,6 +77,7 @@ public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AdsServiceDescriptor#getVersion()
    */
+  @Override
   public String getVersion() {
     return version;
   }
@@ -82,6 +85,7 @@ public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see AxisCompatible#getLocatorClass()
    */
+  @Override
   public Class<?> getLocatorClass() throws ClassNotFoundException {
     return Class.forName(
         interfaceClass.getPackage().getName() + "." + getServiceName() + "Locator");
@@ -101,6 +105,7 @@ public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatibl
   /**
    * @see JaxWsCompatible#getServiceClass()
    */
+  @Override
   public Class<?> getServiceClass() throws ClassNotFoundException {
     return Class.forName(interfaceClass.getPackage().getName() + "." + getServiceName());
   }

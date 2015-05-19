@@ -119,12 +119,14 @@ public class Product  implements java.io.Serializable {
     private java.lang.Boolean allowFrequencyCapsCustomization;
 
     /* The targeting for the created {@link ProposalLineItem}. It's
-     * combination of
+     * a combination of
      *                 {@link ProductTemplate#productTemplateSegment} and
      * {@link ProductTemplate#productTemplateTargeting}. See detail in {@link
      * ProductTemplate}.
      *                 
-     *                 This attribute is read-only. */
+     *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508. */
     private com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting targeting;
 
     /* The values of the custom fields associated with this {@code
@@ -614,12 +616,14 @@ public class Product  implements java.io.Serializable {
      * Gets the targeting value for this Product.
      * 
      * @return targeting   * The targeting for the created {@link ProposalLineItem}. It's
-     * combination of
+     * a combination of
      *                 {@link ProductTemplate#productTemplateSegment} and
      * {@link ProductTemplate#productTemplateTargeting}. See detail in {@link
      * ProductTemplate}.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508.
      */
     public com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting getTargeting() {
         return targeting;
@@ -630,12 +634,14 @@ public class Product  implements java.io.Serializable {
      * Sets the targeting value for this Product.
      * 
      * @param targeting   * The targeting for the created {@link ProposalLineItem}. It's
-     * combination of
+     * a combination of
      *                 {@link ProductTemplate#productTemplateSegment} and
      * {@link ProductTemplate#productTemplateTargeting}. See detail in {@link
      * ProductTemplate}.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508.
      */
     public void setTargeting(com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting targeting) {
         this.targeting = targeting;

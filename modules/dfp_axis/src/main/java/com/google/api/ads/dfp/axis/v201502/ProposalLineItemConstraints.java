@@ -29,7 +29,9 @@ public class ProposalLineItemConstraints  implements java.io.Serializable {
 
     /* The built-in targeting for the created {@link ProposalLineItem}.
      * 
-     *                 <p>This attribute is read-only. */
+     *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code productBuiltInTargeting} beginning
+     * in V201508. */
     private com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting builtInTargeting;
 
     public ProposalLineItemConstraints() {
@@ -109,6 +111,8 @@ public class ProposalLineItemConstraints  implements java.io.Serializable {
      * @return builtInTargeting   * The built-in targeting for the created {@link ProposalLineItem}.
      * 
      *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code productBuiltInTargeting} beginning
+     * in V201508.
      */
     public com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting getBuiltInTargeting() {
         return builtInTargeting;
@@ -121,6 +125,8 @@ public class ProposalLineItemConstraints  implements java.io.Serializable {
      * @param builtInTargeting   * The built-in targeting for the created {@link ProposalLineItem}.
      * 
      *                 <p>This attribute is read-only.
+     *                 <p>Replaced with {@code productBuiltInTargeting} beginning
+     * in V201508.
      */
     public void setBuiltInTargeting(com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting builtInTargeting) {
         this.builtInTargeting = builtInTargeting;

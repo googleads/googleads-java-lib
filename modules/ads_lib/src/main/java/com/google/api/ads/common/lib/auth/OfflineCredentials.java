@@ -225,18 +225,22 @@ public class OfflineCredentials {
       this.oAuth2Helper = oAuth2Helper;
     }
 
+    @Override
     public ForApiBuilder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path.toString());
     }
 
+    @Override
     public ForApiBuilder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path.getAbsolutePath());
     }
 
+    @Override
     public ForApiBuilder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path.toString());
     }
 
+    @Override
     public ForApiBuilder fromFile() throws ConfigurationLoadException {
       return fromFile(com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
@@ -257,6 +261,7 @@ public class OfflineCredentials {
      * @param config the configuration
      * @return Builder populated from the Configuration
      */
+    @Override
     public ForApiBuilder from(Configuration config) {
       this.refreshToken = config.getString(getPropertyKey("refreshToken"), null);
       this.clientId = config.getString(getPropertyKey("clientId"), null);
@@ -378,6 +383,7 @@ public class OfflineCredentials {
       }
     }
 
+    @Override
     public OfflineCredentials build() throws ValidationException {
       defaultOptionals();
       validate();

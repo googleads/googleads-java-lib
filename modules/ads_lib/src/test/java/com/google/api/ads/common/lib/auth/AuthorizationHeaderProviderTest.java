@@ -61,6 +61,7 @@ public class AuthorizationHeaderProviderTest {
   public void testGetAuthorizationHeader_oAuth2Refresh() throws Exception {
     final Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
     AdsSession adsSession = new OAuth2Session() {
+      @Override
       public Credential getOAuth2Credential() {
         return credential;
       }
@@ -80,6 +81,7 @@ public class AuthorizationHeaderProviderTest {
   public void testGetAuthorizationHeader_oAuth2NoRefresh() throws Exception {
     final Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
     AdsSession adsSession = new OAuth2Session() {
+      @Override
       public Credential getOAuth2Credential() {
         return credential;
       }
@@ -97,6 +99,7 @@ public class AuthorizationHeaderProviderTest {
 
   private abstract class BaseAdsSession implements AdsSession {
 
+    @Override
     public String getEndpoint() {
       return null;
     }

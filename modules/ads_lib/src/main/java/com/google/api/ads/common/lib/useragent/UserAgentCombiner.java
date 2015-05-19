@@ -74,6 +74,7 @@ public class UserAgentCombiner {
     return nonLibraryUserAgent + " ("
         + Joiner.on(", ").skipNulls().join(
             Lists.transform(userAgentProviders, new Function<UserAgentProvider, String>() {
+              @Override
               public String apply(@Nullable UserAgentProvider input) {
                 return input == null ? null : input.getUserAgent();
               }}))

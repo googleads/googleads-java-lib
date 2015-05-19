@@ -37,6 +37,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @param soapClient the SOAP client to set the endpoint address for
    * @param endpointAddress the target endpoint address
    */
+  @Override
   public void setEndpointAddress(Object soapClient, String endpointAddress) {}
 
   /**
@@ -46,6 +47,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @param headerName the name of the header being looked for
    * @return the header element, if it exists
    */
+  @Override
   public Object getHeader(Object soapClient, String headerName) {
     return null;
   }
@@ -55,6 +57,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    *
    * @param soapClient the client to remove the headers from
    */
+  @Override
   public void clearHeaders(Object soapClient) {
   }
 
@@ -67,6 +70,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @param headerValue the value that the header should have
    * @throws ServiceException thrown if the headers could not be set
    */
+  @Override
   public void setHeader(Object soapClient, String namespace, String headerName,
       Object headerValue) {
   }
@@ -77,6 +81,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @param soapClient the client to set compression settings for
    * @param compress whether or not to use compression
    */
+  @Override
   public void setCompression(Object soapClient, boolean compress) {
   }
 
@@ -87,6 +92,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @return the SOAP client for this descriptor
    * @throws ServiceException thrown if the SOAP client cannot be created
    */
+  @Override
   public Object createSoapClient(SoapServiceDescriptor soapServiceDescriptor)
       throws ServiceException {
     return null;
@@ -98,6 +104,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @param soapCall the call to make to a SOAP web service
    * @return information about the SOAP response
    */
+  @Override
   public SoapCallReturn invokeSoapCall(SoapCall<Object> soapCall) {
     return null;
   }
@@ -106,6 +113,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
    * createSoapHeaderElement(javax.xml.namespace.QName)
    */
+  @Override
   public javax.xml.soap.SOAPHeaderElement createSoapHeaderElement(QName qName) {
     return null;
   }
@@ -114,6 +122,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
    * getEndpointAddress(java.lang.Object)
    */
+  @Override
   public String getEndpointAddress(Object soapClient) {
     return null;
   }
@@ -122,5 +131,6 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
    * putAllHttpHeaders(java.lang.Object, java.util.Map)
    */
+  @Override
   public void putAllHttpHeaders(Object soapClient, Map<String, String> headersMap) {}
 }

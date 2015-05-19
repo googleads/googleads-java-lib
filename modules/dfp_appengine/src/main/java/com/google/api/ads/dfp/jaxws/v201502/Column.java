@@ -4270,6 +4270,8 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions tracked for Nielsen OCR measurement.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_IMPRESSIONS} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -4278,6 +4280,8 @@ public enum Column {
     /**
      * 
      *                 The population in the demographic.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_POPULATION_BASE} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -4286,6 +4290,8 @@ public enum Column {
     /**
      * 
      *                 The total number of different people within the selected demographic who were reached.
+     *                 <p>This column is deprecated and replaced with {@link #NIELSEN_OCR_UNIQUE_AUDIENCE} beginning
+     *                 in V201508.
      *               
      * 
      */
@@ -4294,6 +4300,8 @@ public enum Column {
     /**
      * 
      *                 The unique audience reached as a percentage of the population base.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_PERCENT_AUDIENCE_REACH} beginning
+     *                 in V201508.
      *               
      * 
      */
@@ -4302,6 +4310,8 @@ public enum Column {
     /**
      * 
      *                 The average number of times that a person within the target audience sees an advertisement.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_AVERAGE_FREQUENCY} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -4311,6 +4321,8 @@ public enum Column {
      * 
      *                 The unit of audience volume, which is based on the percentage of the reached target audience
      *                 population multiplied by the average frequency.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_GROSS_RATING_POINTS} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -4319,6 +4331,8 @@ public enum Column {
     /**
      * 
      *                 The share of impressions that reached the target demographic.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_PERCENT_IMPRESSIONS_SHARE}
+     *                 beginning in V201508.
      *               
      * 
      */
@@ -4327,6 +4341,8 @@ public enum Column {
     /**
      * 
      *                 The share of the total population represented by the population base.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_PERCENT_POPULATION_SHARE}
+     *                 beginning in V201508.
      *               
      * 
      */
@@ -4335,6 +4351,8 @@ public enum Column {
     /**
      * 
      *                 The share of the unique audience in the demographic.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_PERCENT_AUDIENCE_SHARE} beginning
+     *                 in V201508.
      *               
      * 
      */
@@ -4344,6 +4362,8 @@ public enum Column {
      * 
      *                 The relative unique audience in the demographic compared with its share of the overall
      *                 population.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_AUDIENCE_INDEX} beginning in
+     *                 V201508.
      *               
      * 
      */
@@ -4353,6 +4373,8 @@ public enum Column {
      * 
      *                 The relative impressions per person in the demographic compared with the impressions per person
      *                 for the overall population.
+     *                 <p>This column is deprecated and replaced with {@code NIELSEN_IMPRESSIONS_INDEX} beginning in
+     *                 V201508.
      *               
      * 
      */

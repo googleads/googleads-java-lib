@@ -24,10 +24,12 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteContentCategory");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "contentCategoryId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.setName("getContentCategories");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ContentCategorySearchCriteria"), com.google.api.ads.dfa.axis.v1_19.ContentCategorySearchCriteria.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ContentCategoryRecordSet"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getContentCategoriesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -56,12 +58,10 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getContentCategories");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ContentCategorySearchCriteria"), com.google.api.ads.dfa.axis.v1_19.ContentCategorySearchCriteria.class, false, false);
+        oper.setName("deleteContentCategory");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "contentCategoryId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ContentCategoryRecordSet"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getContentCategoriesReturn"));
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -289,7 +289,7 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
         }
     }
 
-    public void deleteContentCategory(long contentCategoryId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+    public com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet getContentCategories(com.google.api.ads.dfa.axis.v1_19.ContentCategorySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -298,16 +298,23 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "deleteContentCategory"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getContentCategories"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(contentCategoryId)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
         }
-        extractAttachments(_call);
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet.class);
+            }
+        }
   } catch (org.apache.axis.AxisFault axisFaultException) {
     if (axisFaultException.detail != null) {
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
@@ -360,7 +367,7 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet getContentCategories(com.google.api.ads.dfa.axis.v1_19.ContentCategorySearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+    public void deleteContentCategory(long contentCategoryId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -369,23 +376,16 @@ public class ContentcategorySoapBindingStub extends org.apache.axis.client.Stub 
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "getContentCategories"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "deleteContentCategory"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchCriteria});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(contentCategoryId)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
         }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.ContentCategoryRecordSet.class);
-            }
-        }
+        extractAttachments(_call);
   } catch (org.apache.axis.AxisFault axisFaultException) {
     if (axisFaultException.detail != null) {
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {

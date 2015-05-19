@@ -48,6 +48,7 @@ public final class SelectorFields {
    */
   public static <T extends FieldType<?>> String[] getFields(List<T> enums) {
     return Lists.transform(enums, new Function<FieldType<?>, String>() {
+      @Override
       public String apply(FieldType<?> selectorField) {
         return selectorField.getField();
       }
@@ -74,10 +75,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -137,10 +140,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -229,10 +234,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -309,10 +316,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -411,10 +420,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -447,10 +458,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -481,10 +494,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -519,10 +534,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -561,10 +578,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -626,10 +645,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -738,10 +759,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -770,10 +793,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -819,10 +844,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -862,10 +889,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -904,10 +933,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -948,10 +979,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -983,10 +1016,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1021,10 +1056,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1056,10 +1093,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1095,10 +1134,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1141,10 +1182,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1184,10 +1227,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1222,10 +1267,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
  
+    @Override
     public boolean getFilterable() {
       return filterable;
     }
@@ -1255,10 +1302,12 @@ public final class SelectorFields {
       this.filterable = filterable;
     }
 
+    @Override
     public String getField() {
       return field;
     }
 
+    @Override
     public boolean getFilterable() {
       return filterable;
     }

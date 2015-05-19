@@ -31,6 +31,7 @@ public class LoginSoapBindingStub implements LoginRemote {
    * @param password DFA user profile password
    * @return a user profile
    */
+  @Override
   public UserProfile authenticate(String username, String password) {
     return USER_PROFILE;
   }
@@ -43,6 +44,7 @@ public class LoginSoapBindingStub implements LoginRemote {
    * @param targetUsername username to impersonate
    * @return a user profile
    */
+  @Override
   public UserProfile impersonateUser(String username, String password, String targetUsername) {
     return USER_PROFILE;
   }
@@ -55,6 +57,7 @@ public class LoginSoapBindingStub implements LoginRemote {
    * @param networkId network to impersonate
    * @return a user profile
    */
+  @Override
   public UserProfile impersonateNetwork(String username, String password, long networkId) {
     return USER_PROFILE;
   }

@@ -28,24 +28,24 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
 
     /* The unit with which the goal or cap of the {@link LineItem}
      * is defined.
-     *                 Will be the same value as {@link LineItem#unitType}
-     * for both a set line item or
+     *                 Will be the same value as {@link Goal#unitType} for
+     * both a set line item or
      *                 a prospective one. */
     private com.google.api.ads.dfp.axis.v201502.UnitType unitType;
 
-    /* The number of units, defined by {@link LineItem#unitType},
-     * that will be delivered by the line
+    /* The number of units, defined by {@link Goal#unitType}, that
+     * will be delivered by the line
      *                 item. Delivery of existing line items that are of
      * same or lower priorities may be impacted. */
     private java.lang.Long predictedDeliveryUnits;
 
-    /* The number of units, defined by {@link LineItem#unitType},
-     * that have already been served if the
+    /* The number of units, defined by {@link Goal#unitType}, that
+     * have already been served if the
      *                 reservation is already running. */
     private java.lang.Long deliveredUnits;
 
-    /* The number of units, defined by {@link LineItem#unitType},
-     * that match the specified
+    /* The number of units, defined by {@link Goal#unitType}, that
+     * match the specified
      *                 {@link LineItem#targeting} and delivery settings. */
     private java.lang.Long matchedUnits;
 
@@ -129,8 +129,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
      * 
      * @return unitType   * The unit with which the goal or cap of the {@link LineItem}
      * is defined.
-     *                 Will be the same value as {@link LineItem#unitType}
-     * for both a set line item or
+     *                 Will be the same value as {@link Goal#unitType} for
+     * both a set line item or
      *                 a prospective one.
      */
     public com.google.api.ads.dfp.axis.v201502.UnitType getUnitType() {
@@ -143,8 +143,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
      * 
      * @param unitType   * The unit with which the goal or cap of the {@link LineItem}
      * is defined.
-     *                 Will be the same value as {@link LineItem#unitType}
-     * for both a set line item or
+     *                 Will be the same value as {@link Goal#unitType} for
+     * both a set line item or
      *                 a prospective one.
      */
     public void setUnitType(com.google.api.ads.dfp.axis.v201502.UnitType unitType) {
@@ -155,8 +155,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Gets the predictedDeliveryUnits value for this LineItemDeliveryForecast.
      * 
-     * @return predictedDeliveryUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that will be delivered by the line
+     * @return predictedDeliveryUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * will be delivered by the line
      *                 item. Delivery of existing line items that are of
      * same or lower priorities may be impacted.
      */
@@ -168,8 +168,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Sets the predictedDeliveryUnits value for this LineItemDeliveryForecast.
      * 
-     * @param predictedDeliveryUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that will be delivered by the line
+     * @param predictedDeliveryUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * will be delivered by the line
      *                 item. Delivery of existing line items that are of
      * same or lower priorities may be impacted.
      */
@@ -181,8 +181,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Gets the deliveredUnits value for this LineItemDeliveryForecast.
      * 
-     * @return deliveredUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that have already been served if the
+     * @return deliveredUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * have already been served if the
      *                 reservation is already running.
      */
     public java.lang.Long getDeliveredUnits() {
@@ -193,8 +193,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Sets the deliveredUnits value for this LineItemDeliveryForecast.
      * 
-     * @param deliveredUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that have already been served if the
+     * @param deliveredUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * have already been served if the
      *                 reservation is already running.
      */
     public void setDeliveredUnits(java.lang.Long deliveredUnits) {
@@ -205,8 +205,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Gets the matchedUnits value for this LineItemDeliveryForecast.
      * 
-     * @return matchedUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that match the specified
+     * @return matchedUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * match the specified
      *                 {@link LineItem#targeting} and delivery settings.
      */
     public java.lang.Long getMatchedUnits() {
@@ -217,8 +217,8 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
     /**
      * Sets the matchedUnits value for this LineItemDeliveryForecast.
      * 
-     * @param matchedUnits   * The number of units, defined by {@link LineItem#unitType},
-     * that match the specified
+     * @param matchedUnits   * The number of units, defined by {@link Goal#unitType}, that
+     * match the specified
      *                 {@link LineItem#targeting} and delivery settings.
      */
     public void setMatchedUnits(java.lang.Long matchedUnits) {

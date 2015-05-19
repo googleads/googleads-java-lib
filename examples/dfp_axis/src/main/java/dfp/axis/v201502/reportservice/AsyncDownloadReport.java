@@ -73,6 +73,7 @@ public class AsyncDownloadReport {
         new ReportDownloader(reportService, reportJob.getId());
 
     reportDownloader.whenReportReady(new ReportCallback() {
+      @Override
       public void onSuccess() {
         try {
           // Change to your file location.
@@ -94,14 +95,17 @@ public class AsyncDownloadReport {
         }
       }
 
+      @Override
       public void onInterruption() {
         System.err.println("Report download interupted.");
       }
 
+      @Override
       public void onFailure() {
         System.err.println("Report download failed.");
       }
 
+      @Override
       public void onException(Exception e) {
         System.err.println("Report download failed.");
         e.printStackTrace();

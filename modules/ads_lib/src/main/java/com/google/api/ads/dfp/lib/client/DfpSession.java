@@ -79,6 +79,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
   /**
    * Gets the OAuth2 credentials.
    */
+  @Override
   public Credential getOAuth2Credential() {
     return oAuth2Credential;
   }
@@ -96,6 +97,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
   /**
    * Gets the endpoint.
    */
+  @Override
   public String getEndpoint() {
     return endpoint;
   }
@@ -157,18 +159,22 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
       this.configHelper = configHelper;
     }
 
+    @Override
     public Builder fromFile() throws ConfigurationLoadException {
       return fromFile(Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
 
+    @Override
     public Builder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
@@ -186,6 +192,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
      * @param config the configuration
      * @return Builder populated from the configuration
      */
+    @Override
     public Builder from(Configuration config) {
       this.applicationName = config.getString("api.dfp.applicationName", null);
       this.networkCode = config.getString("api.dfp.networkCode", null);
@@ -242,6 +249,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
      * @return the built {@code DfpSession}
      * @throws ValidationException if the {@code DfpSession} did not validate
      */
+    @Override
     public DfpSession build() throws ValidationException {
       defaultOptionals();
       validate();

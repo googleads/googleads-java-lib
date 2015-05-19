@@ -16,9 +16,14 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Selector;
  * 
  *       Service for creating, editing, and deleting labels that can be applied to managed customers.
  *       
- *       <p>This service should only ever return/accept labels that are accessible by the authenticated
- *       user.  Labels created by a manager are not accessible to any customers managed
+ *       <p>Labels created by a manager are not accessible to any customers managed
  *       by this manager.  Only manager customers may create these labels.
+ *       
+ *       <p>Note that label access works a little differently in the API than it does in the
+ *       AdWords UI.  In the UI, a manager will never see a submanager's labels, and will always
+ *       be using his own labels regardless of which managed account he is viewing.  In this API,
+ *       like other API services, if you specify a submanager as the effective account for the API
+ *       request, then the request will operate on the submanager's labels.
  *       
  *       <p>To apply a label to a managed customer, see
  *       {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabel}.

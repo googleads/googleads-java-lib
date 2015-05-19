@@ -10,6 +10,11 @@ package com.google.api.ads.dfp.axis.v201405;
 
 /**
  * Lists all errors associated with workflow validation.
+ *             <p>In versions V201502 and earlier, the workflow error
+ * message defined by a network administrator
+ *             that describes how a workflow rule is violated is stored
+ * in the {@link #trigger}. Beginning in
+ *             V201505, it is stored in the {@link #errorString}.
  */
 public class WorkflowValidationError  extends com.google.api.ads.dfp.axis.v201405.ApiError  implements java.io.Serializable {
     /* The error reason represented by an enum. */
@@ -18,7 +23,10 @@ public class WorkflowValidationError  extends com.google.api.ads.dfp.axis.v20140
     /* The error message defined by a network administrator to indicate
      * the cause of the error. It
      *                     describes how a workflow rule is violated, and
-     * it is stored in the database. */
+     * it is stored in the database.
+     *                     <p>This field is deprecated. See the description
+     * of {@code WorkflowValidationError} above for
+     *                     more details. */
     private java.lang.String workflowErrorMessage;
 
     public WorkflowValidationError() {
@@ -68,6 +76,9 @@ public class WorkflowValidationError  extends com.google.api.ads.dfp.axis.v20140
      * the cause of the error. It
      *                     describes how a workflow rule is violated, and
      * it is stored in the database.
+     *                     <p>This field is deprecated. See the description
+     * of {@code WorkflowValidationError} above for
+     *                     more details.
      */
     public java.lang.String getWorkflowErrorMessage() {
         return workflowErrorMessage;
@@ -81,6 +92,9 @@ public class WorkflowValidationError  extends com.google.api.ads.dfp.axis.v20140
      * the cause of the error. It
      *                     describes how a workflow rule is violated, and
      * it is stored in the database.
+     *                     <p>This field is deprecated. See the description
+     * of {@code WorkflowValidationError} above for
+     *                     more details.
      */
     public void setWorkflowErrorMessage(java.lang.String workflowErrorMessage) {
         this.workflowErrorMessage = workflowErrorMessage;

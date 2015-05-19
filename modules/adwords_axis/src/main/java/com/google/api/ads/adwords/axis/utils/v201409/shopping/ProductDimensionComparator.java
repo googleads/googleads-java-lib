@@ -92,6 +92,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
     comparatorMap = mapBuilder.build();
   }
 
+  @Override
   public int compare(@Nullable ProductDimension d1, @Nullable ProductDimension d2) {
     // Confirm that each of d1 and d2 is either null or is a supported subclass of ProductDimension.
     Preconditions.checkArgument(d1 == null || comparatorMap.containsKey(d1.getClass()),
@@ -158,6 +159,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
   private static class ProductBiddingCategoryComparator implements
       Comparator<ProductBiddingCategory> {
 
+    @Override
     public int compare(ProductBiddingCategory o1, ProductBiddingCategory o2) {
       int result = NULLS_LAST_DIMENSION_TYPE_ORDERING.compare(o1.getType(), o2.getType());
       if (result != 0) {
@@ -175,6 +177,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
    */
   private static class ProductBrandComparator implements Comparator<ProductBrand> {
 
+    @Override
     public int compare(ProductBrand o1, ProductBrand o2) {
       return NULLS_LAST_CASE_INSENSITIVE_ORDERING.compare(o1.getValue(), o2.getValue());
     }
@@ -187,6 +190,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
   private static class ProductCanonicalConditionComparator implements
       Comparator<ProductCanonicalCondition> {
 
+    @Override
     public int compare(ProductCanonicalCondition o1, ProductCanonicalCondition o2) {
       ProductCanonicalConditionCondition condition1 = o1.getCondition();
       ProductCanonicalConditionCondition condition2 = o2.getCondition();
@@ -212,6 +216,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
   private static class ProductCustomAttributeComparator implements
       Comparator<ProductCustomAttribute> {
 
+    @Override
     public int compare(ProductCustomAttribute o1, ProductCustomAttribute o2) {
       int result = NULLS_LAST_DIMENSION_TYPE_ORDERING.compare(o1.getType(), o2.getType());
       if (result != 0) {
@@ -228,6 +233,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
    */
   private static class ProductOfferIdComparator implements Comparator<ProductOfferId> {
 
+    @Override
     public int compare(ProductOfferId o1, ProductOfferId o2) {
       return NULLS_LAST_CASE_INSENSITIVE_ORDERING.compare(o1.getValue(), o2.getValue());
     }
@@ -239,6 +245,7 @@ class ProductDimensionComparator implements Comparator<ProductDimension> {
    */
   private static class ProductTypeComparator implements Comparator<ProductType> {
 
+    @Override
     public int compare(ProductType o1, ProductType o2) {
       int result = NULLS_LAST_DIMENSION_TYPE_ORDERING.compare(o1.getType(), o2.getType());
       if (result != 0) {

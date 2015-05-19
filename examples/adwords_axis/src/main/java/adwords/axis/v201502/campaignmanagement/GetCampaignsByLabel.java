@@ -98,6 +98,7 @@ public class GetCampaignsByLabel {
         for (Campaign campaign : page.getEntries()) {
           String labels = Joiner.on(", ").join(Lists.transform(
               Lists.newArrayList(campaign.getLabels()), new Function<Label, String>() {
+                @Override
                 public String apply(Label label) {
                   return String.format("%d/%s", label.getId(), label.getName());
                 }

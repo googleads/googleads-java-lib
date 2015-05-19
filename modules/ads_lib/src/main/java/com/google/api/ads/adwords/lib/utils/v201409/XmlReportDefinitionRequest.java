@@ -39,14 +39,17 @@ class XmlReportDefinitionRequest implements ReportRequest {
     this.reportDefinition = Preconditions.checkNotNull(reportDefinition, "Null report definition");
   }
 
+  @Override
   public String getReportRequestString() {
     return SERIALIZER.serialize(reportDefinition);
   }
 
+  @Override
   public DownloadFormat getDownloadFormat() {
     return reportDefinition.getDownloadFormat();
   }
 
+  @Override
   public RequestType getRequestType() {
     return RequestType.XML;
   }

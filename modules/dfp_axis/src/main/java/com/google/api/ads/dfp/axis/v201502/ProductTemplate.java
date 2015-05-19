@@ -271,10 +271,12 @@ public class ProductTemplate  implements java.io.Serializable {
      *                 If this attribute is not specified, then all targeting
      * is not customizable.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      *                 Note: if {@link #productType} is {@link ProductType#DFP}
      * and {@link #productSegmentation} is
-     *                 not specified, this attribute is required. */
+     *                 not specified, this attribute is required.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508. */
     private com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting targeting;
 
     /* The values of the custom fields associated with this {@code
@@ -1093,10 +1095,12 @@ public class ProductTemplate  implements java.io.Serializable {
      *                 If this attribute is not specified, then all targeting
      * is not customizable.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      *                 Note: if {@link #productType} is {@link ProductType#DFP}
      * and {@link #productSegmentation} is
      *                 not specified, this attribute is required.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508.
      */
     public com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting getTargeting() {
         return targeting;
@@ -1111,10 +1115,12 @@ public class ProductTemplate  implements java.io.Serializable {
      *                 If this attribute is not specified, then all targeting
      * is not customizable.
      *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      *                 Note: if {@link #productType} is {@link ProductType#DFP}
      * and {@link #productSegmentation} is
      *                 not specified, this attribute is required.
+     *                 <p>Replaced with {@code builtInTargeting} beginning
+     * in V201508.
      */
     public void setTargeting(com.google.api.ads.dfp.axis.v201502.ProductTemplateTargeting targeting) {
         this.targeting = targeting;

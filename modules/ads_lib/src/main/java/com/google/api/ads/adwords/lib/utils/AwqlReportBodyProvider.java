@@ -47,6 +47,7 @@ class AwqlReportBodyProvider implements ReportBodyProvider {
     this.format = Preconditions.checkNotNull(Strings.emptyToNull(format), "Null or empty format");
   }
 
+  @Override
   public HttpContent getHttpContent() {
     Map<String, String> data = Maps.newHashMap();
     data.put(REPORT_QUERY_KEY, reportQuery);

@@ -40,6 +40,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
   private Map<String, Object> requestContext = new HashMap<String, Object>()
       {{ put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress); }};
 
+  @Override
   public String getTestMessage() {
     return "Here!";
   }
@@ -48,6 +49,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    * Unused in this mock.
    * @see javax.xml.ws.BindingProvider#getRequestContext()
    */
+  @Override
   public Map<String, Object> getRequestContext() {
     return requestContext;
   }
@@ -56,6 +58,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    * Unused in this mock.
    * @see javax.xml.ws.BindingProvider#getResponseContext()
    */
+  @Override
   public Map<String, Object> getResponseContext() {
     return null;
   }
@@ -63,6 +66,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
   /**
    * @see javax.xml.ws.BindingProvider#getBinding()
    */
+  @Override
   public Binding getBinding() {
     return binding;
   }
@@ -71,6 +75,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    * Unused in this mock.
    * @see javax.xml.ws.BindingProvider#getEndpointReference()
    */
+  @Override
   public EndpointReference getEndpointReference() {
     return null;
   }
@@ -79,6 +84,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    * Unused in this mock.
    * @see javax.xml.ws.BindingProvider#getEndpointReference(java.lang.Class)
    */
+  @Override
   public <T extends EndpointReference> T getEndpointReference(Class<T> clazz) {
     return null;
   }
@@ -104,6 +110,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
     /**
      * @see javax.xml.ws.Binding#getHandlerChain()
      */
+    @Override
     public List<Handler> getHandlerChain() {
       return chain;
     }
@@ -112,6 +119,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
      * Unused in this mock.
      * @see javax.xml.ws.Binding#setHandlerChain(java.util.List)
      */
+    @Override
     public void setHandlerChain(List<Handler> chain) {
     }
 
@@ -119,6 +127,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
      * Unused in this mock.
      * @see javax.xml.ws.Binding#getBindingID()
      */
+    @Override
     public String getBindingID() {
       return null;
     }

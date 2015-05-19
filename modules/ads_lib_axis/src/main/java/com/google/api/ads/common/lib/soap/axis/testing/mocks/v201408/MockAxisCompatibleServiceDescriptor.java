@@ -32,10 +32,12 @@ public class MockAxisCompatibleServiceDescriptor implements AdsServiceDescriptor
 
   public static final String VERSION = "v201408";
   
+  @Override
   public Class<?> getLocatorClass() throws ClassNotFoundException {
     return MockAxisServiceLocator.class;
   }
 
+  @Override
   public Class<?> getInterfaceClass() throws ServiceException {
     return MockAxisServiceInterface.class;
   }
@@ -48,6 +50,7 @@ public class MockAxisCompatibleServiceDescriptor implements AdsServiceDescriptor
    * {@code https://ads.google.com}, this method returns
    * {@code https://ads.google.com/mocks/v201408/MockAxisService}.
    */
+  @Override
   public String getEndpointAddress(String endpointServer) throws MalformedURLException {
     String trimmedEndPointServer = StringUtils.removeEnd(endpointServer, "/");
     return String.format("%s/mocks/%s/MockAxisService", trimmedEndPointServer, VERSION);
@@ -56,6 +59,7 @@ public class MockAxisCompatibleServiceDescriptor implements AdsServiceDescriptor
   /**
    * Returns {@link #VERSION}.
    */
+  @Override
   public String getVersion() {
     return VERSION;
   }

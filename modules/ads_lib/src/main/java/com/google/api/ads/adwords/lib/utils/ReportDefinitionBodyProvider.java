@@ -42,6 +42,7 @@ class ReportDefinitionBodyProvider implements ReportBodyProvider {
         "Null or empty report definition XML");
   }
 
+  @Override
   public HttpContent getHttpContent() {
     Map<String, String> data = Maps.newHashMap();
     data.put(REPORT_XML_KEY, reportDefinitionXml);
