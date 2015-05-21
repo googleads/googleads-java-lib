@@ -29,7 +29,6 @@ public class CreativeErrorReason implements java.io.Serializable {
     public static final java.lang.String _DUPLICATE_ASSET_IN_CREATIVE = "DUPLICATE_ASSET_IN_CREATIVE";
     public static final java.lang.String _CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY = "CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY";
     public static final java.lang.String _CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE = "CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE";
-    public static final java.lang.String _CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS = "CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS";
     public static final java.lang.String _CANNOT_CREATE_PROGRAMMATIC_CREATIVES = "CANNOT_CREATE_PROGRAMMATIC_CREATIVES";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final CreativeErrorReason FLASH_AND_FALLBACK_URL_ARE_SAME = new CreativeErrorReason(_FLASH_AND_FALLBACK_URL_ARE_SAME);
@@ -44,7 +43,6 @@ public class CreativeErrorReason implements java.io.Serializable {
     public static final CreativeErrorReason DUPLICATE_ASSET_IN_CREATIVE = new CreativeErrorReason(_DUPLICATE_ASSET_IN_CREATIVE);
     public static final CreativeErrorReason CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY = new CreativeErrorReason(_CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY);
     public static final CreativeErrorReason CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE = new CreativeErrorReason(_CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE);
-    public static final CreativeErrorReason CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS = new CreativeErrorReason(_CANNOT_COPY_VIDEO_CREATIVE_ACROSS_ADVERTISERS);
     public static final CreativeErrorReason CANNOT_CREATE_PROGRAMMATIC_CREATIVES = new CreativeErrorReason(_CANNOT_CREATE_PROGRAMMATIC_CREATIVES);
     public static final CreativeErrorReason UNKNOWN = new CreativeErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}

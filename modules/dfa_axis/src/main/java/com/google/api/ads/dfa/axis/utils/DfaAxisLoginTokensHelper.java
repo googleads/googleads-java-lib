@@ -48,6 +48,7 @@ public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
    * @return the {@code Class} object representing the login service
    * @throws ClassNotFoundException if the class cannot be resolved
    */
+  @Override
   public Class<?> getLoginClass(String stubPackage) throws ClassNotFoundException {
     return Class.forName(stubPackage + ".LoginRemote");
   }
@@ -59,6 +60,7 @@ public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
    * @return the {@code Class} object representing user profiles
    * @throws ClassNotFoundException if the class cannot be resolved
    */
+  @Override
   public Class<?> getUserProfileClass(String stubPackage) throws ClassNotFoundException {
     return Class.forName(stubPackage + ".UserProfile");
   }
@@ -70,6 +72,7 @@ public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
    * @param loginClass the {@code Class} type of the login service
    * @return a client pointing to the login service
    */
+  @Override
   public Object getLoginService(DfaSession session, Class<?> loginClass) {
     return dfaServiceClientFactory.getServiceClientAsInterface(session, loginClass);
   }
@@ -91,6 +94,7 @@ public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
    * @throws NoSuchMethodException if the {@code authenticate method} cannot be
    *     located
    */
+  @Override
   public Object authenticate(String username, String password, Class<?> loginClass,
       Object loginService) throws IllegalArgumentException, IllegalAccessException,
       InvocationTargetException, NoSuchMethodException {
@@ -115,6 +119,7 @@ public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
    * @throws IllegalAccessException if the {@code getToken} method cannot be
    *     accessed.
    */
+  @Override
   public String retrieveToken(Object userProfile) throws ClassNotFoundException,
       InvocationTargetException, NoSuchMethodException, IllegalAccessException {
     Class<?> paramTypes[] = new Class<?>[] {};

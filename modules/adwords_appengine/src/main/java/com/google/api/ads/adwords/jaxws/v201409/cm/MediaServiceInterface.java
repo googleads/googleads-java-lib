@@ -15,9 +15,8 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Use this service to manage media for your ads. For example:
  *       <ul>
- *       <li>Upload new images for <a
- *       href="CampaignAdExtensionService.LocationExtension.html">location
- *       extensions</a>.</li>
+ *       <li>Upload new images for
+ *       <a href="https://support.google.com/adwords/answer/2404182">location extensions</a>.</li>
  *       <li>Get the IDs of videos you want to use in
  *       {@linkplain TemplateAd template ads}.</li>
  *       </ul>

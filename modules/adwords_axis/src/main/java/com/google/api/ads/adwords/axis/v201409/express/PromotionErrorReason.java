@@ -17,27 +17,39 @@ public class PromotionErrorReason implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
+    public static final java.lang.String _MISSING_BUSINESS_NAME = "MISSING_BUSINESS_NAME";
     public static final java.lang.String _BUSINESS_DELETED = "BUSINESS_DELETED";
+    public static final java.lang.String _NOT_BUSINESS_OWNER = "NOT_BUSINESS_OWNER";
+    public static final java.lang.String _BUSINESS_OWNER_NOT_FOUND = "BUSINESS_OWNER_NOT_FOUND";
+    public static final java.lang.String _BUSINESS_OWNER_ACCOUNT_NOT_MATCHED = "BUSINESS_OWNER_ACCOUNT_NOT_MATCHED";
+    public static final java.lang.String _BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT = "BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT";
     public static final java.lang.String _BUSINESS_COUNTRY_NOT_SUPPORTED = "BUSINESS_COUNTRY_NOT_SUPPORTED";
     public static final java.lang.String _BUSINESS_LANGUAGE_NOT_SUPPORTED = "BUSINESS_LANGUAGE_NOT_SUPPORTED";
     public static final java.lang.String _CURRENCY_NOT_SUPPORTED = "CURRENCY_NOT_SUPPORTED";
-    public static final java.lang.String _GOOGLE_GRANT_ACCOUNT = "GOOGLE_GRANT_ACCOUNT";
     public static final java.lang.String _AOL_ACCOUNT = "AOL_ACCOUNT";
     public static final java.lang.String _MCC_ACCOUNT = "MCC_ACCOUNT";
     public static final java.lang.String _INVALID_DESTINATION_URL = "INVALID_DESTINATION_URL";
     public static final java.lang.String _CALL_TRACKING_NOT_SUPPORTED = "CALL_TRACKING_NOT_SUPPORTED";
-    public static final java.lang.String _DISABLED_ACCOUNT = "DISABLED_ACCOUNT";
+    public static final java.lang.String _INVALID_PHONE_NUMBER = "INVALID_PHONE_NUMBER";
+    public static final java.lang.String _PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = "PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED";
+    public static final java.lang.String _NON_LOCAL_BUSINESS = "NON_LOCAL_BUSINESS";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
+    public static final PromotionErrorReason MISSING_BUSINESS_NAME = new PromotionErrorReason(_MISSING_BUSINESS_NAME);
     public static final PromotionErrorReason BUSINESS_DELETED = new PromotionErrorReason(_BUSINESS_DELETED);
+    public static final PromotionErrorReason NOT_BUSINESS_OWNER = new PromotionErrorReason(_NOT_BUSINESS_OWNER);
+    public static final PromotionErrorReason BUSINESS_OWNER_NOT_FOUND = new PromotionErrorReason(_BUSINESS_OWNER_NOT_FOUND);
+    public static final PromotionErrorReason BUSINESS_OWNER_ACCOUNT_NOT_MATCHED = new PromotionErrorReason(_BUSINESS_OWNER_ACCOUNT_NOT_MATCHED);
+    public static final PromotionErrorReason BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT = new PromotionErrorReason(_BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT);
     public static final PromotionErrorReason BUSINESS_COUNTRY_NOT_SUPPORTED = new PromotionErrorReason(_BUSINESS_COUNTRY_NOT_SUPPORTED);
     public static final PromotionErrorReason BUSINESS_LANGUAGE_NOT_SUPPORTED = new PromotionErrorReason(_BUSINESS_LANGUAGE_NOT_SUPPORTED);
     public static final PromotionErrorReason CURRENCY_NOT_SUPPORTED = new PromotionErrorReason(_CURRENCY_NOT_SUPPORTED);
-    public static final PromotionErrorReason GOOGLE_GRANT_ACCOUNT = new PromotionErrorReason(_GOOGLE_GRANT_ACCOUNT);
     public static final PromotionErrorReason AOL_ACCOUNT = new PromotionErrorReason(_AOL_ACCOUNT);
     public static final PromotionErrorReason MCC_ACCOUNT = new PromotionErrorReason(_MCC_ACCOUNT);
     public static final PromotionErrorReason INVALID_DESTINATION_URL = new PromotionErrorReason(_INVALID_DESTINATION_URL);
     public static final PromotionErrorReason CALL_TRACKING_NOT_SUPPORTED = new PromotionErrorReason(_CALL_TRACKING_NOT_SUPPORTED);
-    public static final PromotionErrorReason DISABLED_ACCOUNT = new PromotionErrorReason(_DISABLED_ACCOUNT);
+    public static final PromotionErrorReason INVALID_PHONE_NUMBER = new PromotionErrorReason(_INVALID_PHONE_NUMBER);
+    public static final PromotionErrorReason PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = new PromotionErrorReason(_PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED);
+    public static final PromotionErrorReason NON_LOCAL_BUSINESS = new PromotionErrorReason(_NON_LOCAL_BUSINESS);
     public static final PromotionErrorReason UNKNOWN = new PromotionErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static PromotionErrorReason fromValue(java.lang.String value)

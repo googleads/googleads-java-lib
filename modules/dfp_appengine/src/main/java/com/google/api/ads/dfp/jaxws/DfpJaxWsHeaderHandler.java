@@ -31,7 +31,6 @@ import com.google.inject.Inject;
 
 import java.util.Map;
 
-import javax.xml.soap.Name;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPFactory;
@@ -84,6 +83,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
    * @see HeaderHandler#setHeaders(Object, com.google.api.ads.common.lib.client.AdsSession,
    *      com.google.api.ads.common.lib.client.AdsServiceDescriptor)
    */
+  @Override
   public void setHeaders(
       Object soapClient, DfpSession dfpSession, DfpServiceDescriptor dfpServiceDescriptor)
       throws AuthenticationException, ServiceException {
@@ -108,11 +108,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
   @VisibleForTesting
   void setAuthenticationHeaders(Object soapClient, Map<String, Object> headerElements,
       DfpSession dfpSession) throws AuthenticationException {
-    if (dfpSession.getClientLoginToken() != null) {
-      headerElements.put("authentication", dfpSession.getClientLoginToken());
-    } else {
-      authorizationHeaderHandler.setAuthorization(soapClient, dfpSession);
-    }
+    authorizationHeaderHandler.setAuthorization(soapClient, dfpSession);
   }
 
   /**
@@ -123,7 +119,8 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
    * @return a map of HTTP header names to values
    */
   private Map<String, Object> readHeaderElements(DfpSession dfpSession) {
-    Map<String, Object> mapToFill = Maps.newHashMap();
+    // The order here must match the order of the SoapRequestHeader elements in the WSDL.
+    Map<String, Object> mapToFill = Maps.newLinkedHashMap();
     mapToFill.put("networkCode", dfpSession.getNetworkCode());
     mapToFill.put("applicationName",
         userAgentCombiner.getUserAgent(dfpSession.getApplicationName()));
@@ -150,16 +147,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
         if (headerData.get(headerElementName) != null) {
           SOAPElement newElement =
               requestHeader.addChildElement(headerElementName, "ns1", requestHeaderNamespace);
-          if (headerElementName.equals("authentication")) {
-            Name xsiTypeString =
-                soapFactory.createName("type", "xsi", "http://www.w3.org/2001/XMLSchema-instance");
-            newElement.addAttribute(xsiTypeString, "ns1:ClientLogin");
-            SOAPElement tokenElement =
-                newElement.addChildElement("token", "ns1", requestHeaderNamespace);
-            tokenElement.addTextNode(headerData.get(headerElementName).toString());
-          } else {
-            newElement.addTextNode(headerData.get(headerElementName).toString());
-          }
+          newElement.addTextNode(headerData.get(headerElementName).toString());
         }
       }
       return requestHeader;

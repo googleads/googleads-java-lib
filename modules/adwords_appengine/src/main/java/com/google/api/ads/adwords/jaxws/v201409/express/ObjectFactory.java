@@ -39,11 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExpressBusinessError }
+     * Create an instance of {@link Creative }
      * 
      */
-    public ExpressBusinessError createExpressBusinessError() {
-        return new ExpressBusinessError();
+    public Creative createCreative() {
+        return new Creative();
     }
 
     /**
@@ -52,14 +52,6 @@ public class ObjectFactory {
      */
     public ProductServicePage createProductServicePage() {
         return new ProductServicePage();
-    }
-
-    /**
-     * Create an instance of {@link Creative }
-     * 
-     */
-    public Creative createCreative() {
-        return new Creative();
     }
 
     /**
@@ -87,19 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KeywordSet }
+     * Create an instance of {@link KeywordGroup }
      * 
      */
-    public KeywordSet createKeywordSet() {
-        return new KeywordSet();
-    }
-
-    /**
-     * Create an instance of {@link PhoneNumber }
-     * 
-     */
-    public PhoneNumber createPhoneNumber() {
-        return new PhoneNumber();
+    public KeywordGroup createKeywordGroup() {
+        return new KeywordGroup();
     }
 
     /**
@@ -111,35 +95,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PromotionOperation }
-     * 
-     */
-    public PromotionOperation createPromotionOperation() {
-        return new PromotionOperation();
-    }
-
-    /**
      * Create an instance of {@link ExpressBusinessOperation }
      * 
      */
     public ExpressBusinessOperation createExpressBusinessOperation() {
         return new ExpressBusinessOperation();
-    }
-
-    /**
-     * Create an instance of {@link BudgetSuggestion }
-     * 
-     */
-    public BudgetSuggestion createBudgetSuggestion() {
-        return new BudgetSuggestion();
-    }
-
-    /**
-     * Create an instance of {@link ExpressBusiness }
-     * 
-     */
-    public ExpressBusiness createExpressBusiness() {
-        return new ExpressBusiness();
     }
 
     /**
@@ -172,6 +132,54 @@ public class ObjectFactory {
      */
     public ProductService createProductService() {
         return new ProductService();
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusinessError }
+     * 
+     */
+    public ExpressBusinessError createExpressBusinessError() {
+        return new ExpressBusinessError();
+    }
+
+    /**
+     * Create an instance of {@link KeywordSet }
+     * 
+     */
+    public KeywordSet createKeywordSet() {
+        return new KeywordSet();
+    }
+
+    /**
+     * Create an instance of {@link PhoneNumber }
+     * 
+     */
+    public PhoneNumber createPhoneNumber() {
+        return new PhoneNumber();
+    }
+
+    /**
+     * Create an instance of {@link PromotionOperation }
+     * 
+     */
+    public PromotionOperation createPromotionOperation() {
+        return new PromotionOperation();
+    }
+
+    /**
+     * Create an instance of {@link ExpressBusiness }
+     * 
+     */
+    public ExpressBusiness createExpressBusiness() {
+        return new ExpressBusiness();
+    }
+
+    /**
+     * Create an instance of {@link BudgetSuggestion }
+     * 
+     */
+    public BudgetSuggestion createBudgetSuggestion() {
+        return new BudgetSuggestion();
     }
 
     /**

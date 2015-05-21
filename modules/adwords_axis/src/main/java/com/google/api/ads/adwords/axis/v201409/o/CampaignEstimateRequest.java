@@ -64,16 +64,15 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     specified by {@link #campaignId} by the following
      * mechanism:
      *                     
-     *                     <p>This field accepts three types of {@link Criterion}s:
+     *                     <p>This field accepts two types of {@link Criterion}s:
      * {@link Location}, which should contain
-     *                     all geographic targeting, {@link Language}, which
-     * should contain all language targeting and
-     *                     {@link Platform} which should contain all device
-     * targeting. If {@link Location}s are passed in,
-     *                     all geographic targeting in the campaign will
-     * be overridden. If any {@link Language}s are
-     *                     passed in, all language targeting in the campaign
-     * will be overridden.
+     *                     all geographic targeting and {@link Language},
+     * which should contain all language targeting.
+     *                     If {@link Location}s are passed in, all geographic
+     * targeting in the campaign will be
+     *                     overridden.  If any {@link Language}s are passed
+     * in, all language targeting in the campaign
+     *                     will be overridden.
      *                     
      *                     <p>If multiple {@link Location}s are specified,
      * the traffic estimate will
@@ -246,16 +245,15 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     specified by {@link #campaignId} by the following
      * mechanism:
      *                     
-     *                     <p>This field accepts three types of {@link Criterion}s:
+     *                     <p>This field accepts two types of {@link Criterion}s:
      * {@link Location}, which should contain
-     *                     all geographic targeting, {@link Language}, which
-     * should contain all language targeting and
-     *                     {@link Platform} which should contain all device
-     * targeting. If {@link Location}s are passed in,
-     *                     all geographic targeting in the campaign will
-     * be overridden. If any {@link Language}s are
-     *                     passed in, all language targeting in the campaign
-     * will be overridden.
+     *                     all geographic targeting and {@link Language},
+     * which should contain all language targeting.
+     *                     If {@link Location}s are passed in, all geographic
+     * targeting in the campaign will be
+     *                     overridden.  If any {@link Language}s are passed
+     * in, all language targeting in the campaign
+     *                     will be overridden.
      *                     
      *                     <p>If multiple {@link Location}s are specified,
      * the traffic estimate will
@@ -311,16 +309,15 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
      *                     specified by {@link #campaignId} by the following
      * mechanism:
      *                     
-     *                     <p>This field accepts three types of {@link Criterion}s:
+     *                     <p>This field accepts two types of {@link Criterion}s:
      * {@link Location}, which should contain
-     *                     all geographic targeting, {@link Language}, which
-     * should contain all language targeting and
-     *                     {@link Platform} which should contain all device
-     * targeting. If {@link Location}s are passed in,
-     *                     all geographic targeting in the campaign will
-     * be overridden. If any {@link Language}s are
-     *                     passed in, all language targeting in the campaign
-     * will be overridden.
+     *                     all geographic targeting and {@link Language},
+     * which should contain all language targeting.
+     *                     If {@link Location}s are passed in, all geographic
+     * targeting in the campaign will be
+     *                     overridden.  If any {@link Language}s are passed
+     * in, all language targeting in the campaign
+     *                     will be overridden.
      *                     
      *                     <p>If multiple {@link Location}s are specified,
      * the traffic estimate will

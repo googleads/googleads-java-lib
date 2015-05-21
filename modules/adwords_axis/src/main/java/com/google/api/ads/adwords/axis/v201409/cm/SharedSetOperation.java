@@ -7,9 +7,14 @@
 
 package com.google.api.ads.adwords.axis.v201409.cm;
 
+
+/**
+ * Operations for adding/updating SharedSet entities.
+ */
 public class SharedSetOperation  extends com.google.api.ads.adwords.axis.v201409.cm.Operation  implements java.io.Serializable {
-    /* <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span> */
+    /* CriterionList to operate on
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201409.cm.SharedSet operand;
 
     public SharedSetOperation() {
@@ -29,8 +34,9 @@ public class SharedSetOperation  extends com.google.api.ads.adwords.axis.v201409
     /**
      * Gets the operand value for this SharedSetOperation.
      * 
-     * @return operand   * <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span>
+     * @return operand   * CriterionList to operate on
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201409.cm.SharedSet getOperand() {
         return operand;
@@ -40,8 +46,9 @@ public class SharedSetOperation  extends com.google.api.ads.adwords.axis.v201409
     /**
      * Sets the operand value for this SharedSetOperation.
      * 
-     * @param operand   * <span class="constraint Required">This field is required and
-     * should not be {@code null}.</span>
+     * @param operand   * CriterionList to operate on
+     *                     <span class="constraint Required">This field is
+     * required and should not be {@code null}.</span>
      */
     public void setOperand(com.google.api.ads.adwords.axis.v201409.cm.SharedSet operand) {
         this.operand = operand;

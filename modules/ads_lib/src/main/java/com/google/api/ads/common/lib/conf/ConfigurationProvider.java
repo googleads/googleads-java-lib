@@ -61,6 +61,7 @@ public class ConfigurationProvider implements Provider<Configuration> {
     this.configurationHelper = configurationHelper;
   }
 
+  @Override
   public Configuration get() {
     try {
       return configurationHelper.createCombinedConfiguration(propertyFilePaths, propertyUrls);

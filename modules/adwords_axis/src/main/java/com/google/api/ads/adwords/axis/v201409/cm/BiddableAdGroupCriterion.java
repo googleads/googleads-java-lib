@@ -15,9 +15,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
     /* Current user-set state of criterion.
      *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
-     *                     {@code ENABLED} if unspecified.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span> */
+     *                     {@code ENABLED} if unspecified. */
     private com.google.api.ads.adwords.axis.v201409.cm.UserStatus userStatus;
 
     /* Serving status.
@@ -163,8 +161,6 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
      *                     {@code ENABLED} if unspecified.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span>
      */
     public com.google.api.ads.adwords.axis.v201409.cm.UserStatus getUserStatus() {
         return userStatus;
@@ -178,8 +174,6 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     UserStatus may not be set to {@code REMOVED}.
      * On add, defaults to
      *                     {@code ENABLED} if unspecified.
-     *                     <span class="constraint CampaignType">This field
-     * may not be set for campaign channel type SHOPPING.</span>
      */
     public void setUserStatus(com.google.api.ads.adwords.axis.v201409.cm.UserStatus userStatus) {
         this.userStatus = userStatus;

@@ -26,7 +26,7 @@ public class LineItemSummary  implements java.io.Serializable {
 
     /* The name of the line item. This attribute is required and has
      * a maximum
-     *                 length of 127 characters. */
+     *                 length of 255 characters. */
     private java.lang.String name;
 
     /* An identifier for the {@code LineItem} that is meaningful to
@@ -729,7 +729,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @return name   * The name of the line item. This attribute is required and has
      * a maximum
-     *                 length of 127 characters.
+     *                 length of 255 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -741,7 +741,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @param name   * The name of the line item. This attribute is required and has
      * a maximum
-     *                 length of 127 characters.
+     *                 length of 255 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;

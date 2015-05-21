@@ -22,15 +22,19 @@ import com.google.api.ads.dfp.axis.v201411.Column;
 import com.google.api.ads.dfp.axis.v201411.DateRangeType;
 import com.google.api.ads.dfp.axis.v201411.Dimension;
 import com.google.api.ads.dfp.axis.v201411.ExportFormat;
+import com.google.api.ads.dfp.axis.v201411.ReportDownloadOptions;
 import com.google.api.ads.dfp.axis.v201411.ReportJob;
 import com.google.api.ads.dfp.axis.v201411.ReportQuery;
 import com.google.api.ads.dfp.axis.v201411.ReportServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.utils.ReportCallback;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.io.Files;
+import com.google.common.io.Resources;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * This example downloads a report asynchronously using a callback.
@@ -69,15 +73,21 @@ public class AsyncDownloadReport {
         new ReportDownloader(reportService, reportJob.getId());
 
     reportDownloader.whenReportReady(new ReportCallback() {
+      @Override
       public void onSuccess() {
         try {
           // Change to your file location.
-          String filePath = File.createTempFile("async-report-", ".csv.gz").toString();
+          File file = File.createTempFile("async-report-", ".csv.gz");
 
-          System.out.printf("Downloading report to %s ...", filePath);
+          System.out.printf("Downloading report to %s ...", file.toString());
 
           // Download the report.
-          reportDownloader.downloadReport(ExportFormat.CSV_DUMP, filePath);
+          ReportDownloadOptions options = new ReportDownloadOptions();
+          options.setExportFormat(ExportFormat.CSV_DUMP);
+          options.setUseGzipCompression(true);
+          URL url = reportDownloader.getDownloadUrl(options);
+          Resources.asByteSource(url).copyTo(Files.asByteSink(file));
+          
 
           System.out.println("done.");
         } catch (IOException e) {
@@ -85,14 +95,17 @@ public class AsyncDownloadReport {
         }
       }
 
+      @Override
       public void onInterruption() {
         System.err.println("Report download interupted.");
       }
 
+      @Override
       public void onFailure() {
         System.err.println("Report download failed.");
       }
 
+      @Override
       public void onException(Exception e) {
         System.err.println("Report download failed.");
         e.printStackTrace();
@@ -101,8 +114,7 @@ public class AsyncDownloadReport {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

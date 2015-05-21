@@ -17,7 +17,6 @@ package com.google.api.ads.dfa.lib.client;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -25,7 +24,9 @@ import com.google.api.ads.dfa.lib.client.DfaSession.Environment;
 import com.google.api.client.auth.oauth2.Credential;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -37,6 +38,9 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfaSessionTest {
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   public DfaSessionTest() {}
 
   /**
@@ -89,8 +93,9 @@ public class DfaSessionTest {
     }
   }
 
-  @Test(expected = ValidationException.class)
+  @Test
   public void testBuilder_passwordAndTokenFails() throws ValidationException {
+    thrown.expect(ValidationException.class);
     new DfaSession.Builder()
         .withUsernameAndPassword("username", "password")
         .withUsernameAndToken("username", "token")
@@ -99,8 +104,9 @@ public class DfaSessionTest {
         .build();
   }
 
-  @Test(expected = ValidationException.class)
+  @Test
   public void testBuilder_passwordAndOAuth2Fails() throws ValidationException {
+    thrown.expect(ValidationException.class);
     new DfaSession.Builder()
         .withUsernameAndPassword("username", "password")
         .withUsernameAndOAuth2Credential("username", mock(Credential.class))
@@ -109,8 +115,9 @@ public class DfaSessionTest {
         .build();
   }
 
-  @Test(expected = ValidationException.class)
+  @Test
   public void testBuilder_oAuth2AndTokenFails() throws ValidationException {
+    thrown.expect(ValidationException.class);
     new DfaSession.Builder()
         .withUsernameAndOAuth2Credential("username", mock(Credential.class))
         .withUsernameAndToken("username", "token")
@@ -119,8 +126,9 @@ public class DfaSessionTest {
         .build();
   }
 
-  @Test(expected = ValidationException.class)
+  @Test
   public void testBuilder_usingAllAuthFails() throws ValidationException {
+    thrown.expect(ValidationException.class);
     new DfaSession.Builder()
         .withUsernameAndPassword("username", "password")
         .withUsernameAndOAuth2Credential("username", mock(Credential.class))
@@ -134,18 +142,14 @@ public class DfaSessionTest {
    * Tests that the builder does not build with no application name.
    */
   @Test
-  public void testBuilder_noApplicationName() throws Exception {    
-    try {
-      new DfaSession.Builder()          
-          .withEndpoint("https://www.google.com")
-          .withUsernameAndOAuth2Credential("username", mock(Credential.class))
-          .build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals(
-          "Application name must be set and not be the default [INSERT_APPLICATION_NAME_HERE]",
-          e.getMessage());
-    }
+  public void testBuilder_noApplicationName() throws Exception {
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(
+        "Application name must be set and not be the default [INSERT_APPLICATION_NAME_HERE]");
+    new DfaSession.Builder()          
+        .withEndpoint("https://www.google.com")
+        .withUsernameAndOAuth2Credential("username", mock(Credential.class))
+        .build();
   }
   
   /**
@@ -153,17 +157,13 @@ public class DfaSessionTest {
    */
   @Test
   public void testBuilder_defaultApplicationName() throws Exception {    
-    try {
-      new DfaSession.Builder()          
-          .withEndpoint("https://www.google.com")
-          .withUsernameAndOAuth2Credential("username", mock(Credential.class))
-          .withApplicationName("INSERT_APPLICATION_NAME_HERE")
-          .build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals(
-          "Application name must be set and not be the default [INSERT_APPLICATION_NAME_HERE]",
-          e.getMessage());
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(
+        "Application name must be set and not be the default [INSERT_APPLICATION_NAME_HERE]");
+    new DfaSession.Builder()          
+        .withEndpoint("https://www.google.com")
+        .withUsernameAndOAuth2Credential("username", mock(Credential.class))
+        .withApplicationName("INSERT_APPLICATION_NAME_HERE")
+        .build();
   }
 }

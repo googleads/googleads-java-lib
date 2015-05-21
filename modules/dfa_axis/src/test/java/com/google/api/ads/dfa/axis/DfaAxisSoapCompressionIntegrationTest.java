@@ -29,6 +29,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -77,7 +78,7 @@ public class DfaAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTe
     assertEquals(7, records.length);
     assertTrue("Compression was enabled but the last request body was not compressed",
         testHttpServer.wasLastRequestBodyCompressed());
-    assertEquals(
+    XMLAssert.assertXMLEqual(
         SoapRequestXmlProvider.getGetPlacementTypesSoapRequest(API_VERSION, OAUTH_ACCESS_TOKEN),
         testHttpServer.getAllRequestBodies().get(0));
   }

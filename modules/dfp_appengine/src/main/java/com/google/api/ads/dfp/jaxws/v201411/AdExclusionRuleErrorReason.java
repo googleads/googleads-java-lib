@@ -99,6 +99,10 @@ public enum AdExclusionRuleErrorReason {
      * 
      *                 Total number of ad units included in {@link AdExclusionRule#inventoryTargeting} is over the
      *                 allowed limit.
+     *                 
+     *                 <p>Replaced with
+     *                 {@code EntityChildrenLimitReachedError.Reason.AD_UNIT_LIMIT_FOR_AD_EXCLUSION_RULE_TARGETING_REACHED}
+     *                 beginning in v201505.
      *               
      * 
      */

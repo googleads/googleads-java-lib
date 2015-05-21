@@ -25,7 +25,9 @@ import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -54,6 +56,9 @@ public class AdWordsJaxWsExpressHeaderHandlerTest {
   private AdWordsServiceDescriptor adWordsServiceDescriptor;
   @Mock
   private BindingProvider bindingProvider;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() throws Exception {
@@ -89,8 +94,9 @@ public class AdWordsJaxWsExpressHeaderHandlerTest {
   /**
    * Tests setHeaders when business ID and plus page ID are both not null on the session.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testSetHeaders_withBusinessId_withPlusPageId_fails() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
     testSetHeaders(123456789L, never(), "ABCDE", never());
   }
 

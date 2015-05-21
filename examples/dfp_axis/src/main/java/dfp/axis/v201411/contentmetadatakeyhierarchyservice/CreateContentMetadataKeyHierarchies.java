@@ -88,7 +88,7 @@ public class CreateContentMetadataKeyHierarchies {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

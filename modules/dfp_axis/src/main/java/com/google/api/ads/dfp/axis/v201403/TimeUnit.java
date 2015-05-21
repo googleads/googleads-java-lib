@@ -25,6 +25,7 @@ public class TimeUnit implements java.io.Serializable {
     public static final java.lang.String _LIFETIME = "LIFETIME";
     public static final java.lang.String _POD = "POD";
     public static final java.lang.String _STREAM = "STREAM";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final TimeUnit MINUTE = new TimeUnit(_MINUTE);
     public static final TimeUnit HOUR = new TimeUnit(_HOUR);
     public static final TimeUnit DAY = new TimeUnit(_DAY);
@@ -33,6 +34,7 @@ public class TimeUnit implements java.io.Serializable {
     public static final TimeUnit LIFETIME = new TimeUnit(_LIFETIME);
     public static final TimeUnit POD = new TimeUnit(_POD);
     public static final TimeUnit STREAM = new TimeUnit(_STREAM);
+    public static final TimeUnit UNKNOWN = new TimeUnit(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static TimeUnit fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

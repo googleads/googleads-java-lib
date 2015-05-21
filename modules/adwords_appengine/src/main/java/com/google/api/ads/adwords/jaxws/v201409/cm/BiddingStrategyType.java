@@ -33,6 +33,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum BiddingStrategyType {
 
+
+    /**
+     * 
+     *                 Replaced by TARGET_SPEND. Kept only for legacy support.
+     *               
+     * 
+     */
     BUDGET_OPTIMIZER,
     CONVERSION_OPTIMIZER,
     MANUAL_CPC,

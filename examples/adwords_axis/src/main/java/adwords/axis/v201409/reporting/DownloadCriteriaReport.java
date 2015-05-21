@@ -26,12 +26,10 @@ import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.v201409.ReportDownloader;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
-import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Lists;
 
 import java.io.File;
-import java.io.FileOutputStream;
 
 /**
  * This example downloads a criteria performance report.
@@ -72,6 +70,7 @@ public class DownloadCriteriaReport {
         "Id",
         "CriteriaType",
         "Criteria",
+        "FinalUrls",
         "Impressions",
         "Clicks",
         "Cost"));
@@ -85,11 +84,12 @@ public class DownloadCriteriaReport {
     // Enable to allow rows with zero impressions to show.
     reportDefinition.setIncludeZeroImpressions(false);
     
-    // Optional: Set the reporting configuration of the session to suppress header or
+    // Optional: Set the reporting configuration of the session to suppress header, column name, or
     // summary rows in the report output. You can also configure this via your ads.properties
     // configuration file. See AdWordsSession.Builder.from(Configuration) for details.
     ReportingConfiguration reportingConfiguration = new ReportingConfiguration.Builder()
         .skipReportHeader(false)
+        .skipColumnHeader(false)
         .skipReportSummary(false)
         .build();
     session.setReportingConfiguration(reportingConfiguration);
@@ -102,12 +102,11 @@ public class DownloadCriteriaReport {
       // for CONNECT and READ in report downloads.
       ReportDownloadResponse response =
           new ReportDownloader(session).downloadReport(reportDefinition);
-      FileOutputStream fos = new FileOutputStream(new File(reportFile));
-      Streams.copy(response.getInputStream(), fos);
-      fos.close();
-      System.out.println("Report successfully downloaded: " + reportFile);
+      response.saveToFile(reportFile);
+      
+      System.out.printf("Report successfully downloaded to: %s%n", reportFile);
     } catch (ReportDownloadResponseException e) {
-      System.out.println("Report was not downloaded. " + e);
+      System.out.printf("Report was not downloaded due to: %s%n", e);
     }
   }
 }

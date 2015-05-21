@@ -1124,6 +1124,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PackageError }
+     * 
+     */
+    public PackageError createPackageError() {
+        return new PackageError();
+    }
+
+    /**
      * Create an instance of {@link UrlCreativeTemplateVariableValue }
      * 
      */
@@ -2452,6 +2460,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PackageActionError }
+     * 
+     */
+    public PackageActionError createPackageActionError() {
+        return new PackageActionError();
+    }
+
+    /**
      * Create an instance of {@link DeactivateLabels }
      * 
      */
@@ -2617,6 +2633,14 @@ public class ObjectFactory {
      */
     public ActivateLineItems createActivateLineItems() {
         return new ActivateLineItems();
+    }
+
+    /**
+     * Create an instance of {@link WorkflowValidationError }
+     * 
+     */
+    public WorkflowValidationError createWorkflowValidationError() {
+        return new WorkflowValidationError();
     }
 
     /**

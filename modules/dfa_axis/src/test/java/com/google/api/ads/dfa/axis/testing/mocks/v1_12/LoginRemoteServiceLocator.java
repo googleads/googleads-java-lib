@@ -27,14 +27,17 @@ public class LoginRemoteServiceLocator implements LoginRemoteService {
 
   public LoginRemoteServiceLocator() {}
 
+  @Override
   public String getloginAddress() {
     return LOGIN_ADDRESS;
   }
 
+  @Override
   public LoginRemote getlogin() {
     return new LoginSoapBindingStub();
   }
 
+  @Override
   public LoginRemote getlogin(URL portAddress) {
     return new LoginSoapBindingStub();
   }

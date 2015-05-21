@@ -38,6 +38,7 @@ public class AdHocReportDownloadHelper {
 
   private final AdWordsSession session;
   private final ReportRequestFactoryHelper reportRequestFactoryHelper;
+  private final ReportBodyProviderFactory reportBodyProviderFactory;
   private final String version;
 
   /**
@@ -54,50 +55,25 @@ public class AdHocReportDownloadHelper {
     this.session = session;
     this.version = version;
     this.reportRequestFactoryHelper = new ReportRequestFactoryHelper(session);
+    this.reportBodyProviderFactory = new ReportBodyProviderFactory();
   }
 
   /**
    * Downloads a report and returns a ReportDownloadResponse with the results.
    *
-   * @param reportDefinitionXml to download a report for.
-   * @return {@link ReportDownloadResponse} When HTTP request completes. On
-   *         success, the outputStream will be flushed and closed.
-   * @throws ReportException If there is any issue making HTTP request with
-   *         server.
-   */
-  public RawReportDownloadResponse downloadReport(String reportDefinitionXml)
-      throws ReportException {
-    return downloadReport(new ReportDefinitionBodyProvider(reportDefinitionXml));
-  }
-
-  /**
-   * Downloads a report query and returns a ReportDownloadResponse with the results.
-   *
-   * @param reportQuery to download a report for.
-   * @return {@link ReportDownloadResponse} When HTTP request completes. On
-   *         success, the outputStream will be flushed and closed.
-   * @throws ReportException If there is any issue making HTTP request with
-   *         server.
-   */
-  public RawReportDownloadResponse downloadReport(String reportQuery, String format)
-      throws ReportException {
-    return downloadReport(new AwqlReportBodyProvider(reportQuery, format));
-  }
-
-  /**
-   * Downloads a report and returns a ReportDownloadResponse with the results.
-   *
-   * @param reportBodyProvider with HttpContent to send to the server.
+   * @param reportRequest the report request.
    * @return encapsulated http response body and status code.
    * @throws ReportException If there is any exceptions making HTTP request to
    *         the server.
    */
-  protected RawReportDownloadResponse downloadReport(ReportBodyProvider reportBodyProvider)
+  public RawReportDownloadResponse downloadReport(ReportRequest reportRequest)
       throws ReportException {
     try {
       String downloadUrl = generateReportUrl(version);
       HttpRequestFactory requestFactory =
           reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl, version);
+      ReportBodyProvider reportBodyProvider =
+          reportBodyProviderFactory.getReportBodyProvider(reportRequest);
       HttpRequest httpRequest = requestFactory
           .buildPostRequest(new GenericUrl(downloadUrl), reportBodyProvider.getHttpContent());
       HttpResponse response = httpRequest.execute();
@@ -111,8 +87,8 @@ public class AdHocReportDownloadHelper {
         charSet = response.getMediaType().getCharsetParameter();
       }
 
-      return new RawReportDownloadResponse(response.getStatusCode(), response.getContent(),
-          charSet);
+      return new RawReportDownloadResponse(response.getStatusCode(), response.getContent(), charSet,
+          reportRequest.getDownloadFormat().name());
     } catch (MalformedURLException e) {
       throw new ReportException("Created invalid report download URL.", e);
     } catch (IOException e) {
@@ -128,8 +104,7 @@ public class AdHocReportDownloadHelper {
    * @param version to download from.
    * @return url to download a report from.
    */
-  @VisibleForTesting
-  String generateReportUrl(String version) {
+  private String generateReportUrl(String version) {
     return session.getEndpoint() + ReportRequestFactoryHelper.DOWNLOAD_SERVER_URI + '/' + version;
   }
 

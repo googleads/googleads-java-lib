@@ -39,6 +39,7 @@ public class ProductUserAgentProvider implements UserAgentProvider {
   /**
    * Generates the product user agent such as AwApi-Java.
    */
+  @Override
   public String getUserAgent() {
     return productConfiguration.getProductNamePrefix() + "-"
         + productConfiguration.getProductNamePostfix();

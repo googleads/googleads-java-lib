@@ -14,11 +14,11 @@ package com.google.api.ads.dfp.axis.v201403;
  *             {@link StringCreativeTemplateVariable}, except that there
  * are possible choices to
  *             choose from.
- *             <p>
- *             Use {@link StringCreativeTemplateVariableValue} to specify
- * the value
- *             for this variable when creating {@link TemplateCreative}
- * from the {@link TemplateCreative}.
+ *             
+ *             <p>Use {@link StringCreativeTemplateVariableValue} to
+ * specify the value
+ *             for this variable when creating a {@link TemplateCreative}
+ * from a {@link CreativeTemplate}.
  */
 public class ListStringCreativeTemplateVariable  extends com.google.api.ads.dfp.axis.v201403.StringCreativeTemplateVariable  implements java.io.Serializable {
     /* The values within the list users need to select from. */

@@ -70,6 +70,7 @@ public final class PrettyPrinter implements PrettyPrinterInterface {
    * @param xml the XML message to be pretty printed
    * @return the given message in pretty-printed format
    */
+  @Override
   public String prettyPrint(String xml) {
     if (transformer != null) {
       try {

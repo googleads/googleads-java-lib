@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="LIFETIME"/>
  *     &lt;enumeration value="POD"/>
  *     &lt;enumeration value="STREAM"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -53,7 +54,15 @@ public enum TimeUnit {
      *               
      * 
      */
-    STREAM;
+    STREAM,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

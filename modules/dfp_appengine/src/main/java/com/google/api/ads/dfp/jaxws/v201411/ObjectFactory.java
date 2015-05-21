@@ -2500,6 +2500,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PackageError }
+     * 
+     */
+    public PackageError createPackageError() {
+        return new PackageError();
+    }
+
+    /**
      * Create an instance of {@link LegacyDfpMobileCreative }
      * 
      */
@@ -2665,6 +2673,14 @@ public class ObjectFactory {
      */
     public DeviceManufacturerTargeting createDeviceManufacturerTargeting() {
         return new DeviceManufacturerTargeting();
+    }
+
+    /**
+     * Create an instance of {@link GrpSettingsError }
+     * 
+     */
+    public GrpSettingsError createGrpSettingsError() {
+        return new GrpSettingsError();
     }
 
     /**
@@ -3308,6 +3324,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PackageActionError }
+     * 
+     */
+    public PackageActionError createPackageActionError() {
+        return new PackageActionError();
+    }
+
+    /**
      * Create an instance of {@link DeactivateLabels }
      * 
      */
@@ -3385,6 +3409,14 @@ public class ObjectFactory {
      */
     public UniqueError createUniqueError() {
         return new UniqueError();
+    }
+
+    /**
+     * Create an instance of {@link WorkflowValidationError }
+     * 
+     */
+    public WorkflowValidationError createWorkflowValidationError() {
+        return new WorkflowValidationError();
     }
 
     /**

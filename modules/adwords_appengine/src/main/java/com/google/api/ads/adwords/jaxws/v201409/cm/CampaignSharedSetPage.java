@@ -9,6 +9,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains a list of associations between campaigns and shared sets
+ *             resulting from the filtering and paging of
+ *             {@link CampaignSharedSetService#get} call.
+ *           
+ * 
  * <p>Java class for CampaignSharedSetPage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -81,7 +81,7 @@ public interface ManagedCustomerServiceInterface {
      *         Adds managed customers.
      *         
      *         <p class="note"><b>Note:</b> {@link ManagedCustomerOperation} only supports
-     *         {@code ADD} operator. </p>
+     *         {@code ADD} operator.</p>
      *         
      *         @param operations List of unique operations.
      *         @return The list of updated managed customers, returned in the same order as the
@@ -109,11 +109,11 @@ public interface ManagedCustomerServiceInterface {
      *         Operator + Link Status):
      *         
      *         <ul>
-     *         <li>ADD + PENDING:   manager extends invitations
-     *         <li>SET + CANCELLED: manager rescinds invitations
-     *         <li>SET + INACTIVE:  manager/client terminates links
-     *         <li>SET + ACTIVE:    client accepts invitations
-     *         <li>SET + REFUSED:   client declines invitations
+     *         <li>ADD + PENDING:   manager extends invitations</li>
+     *         <li>SET + CANCELLED: manager rescinds invitations</li>
+     *         <li>SET + INACTIVE:  manager/client terminates links</li>
+     *         <li>SET + ACTIVE:    client accepts invitations</li>
+     *         <li>SET + REFUSED:   client declines invitations</li>
      *         </ul>
      *         
      *         @param operations the list of operations
@@ -142,7 +142,7 @@ public interface ManagedCustomerServiceInterface {
      *         
      *         <ul>
      *         <li>SET + ACTIVE: manager moves client customers to new managers within the same MCC
-     *         hierarchy
+     *         hierarchy</li>
      *         </ul>
      *         
      *         @param operations List of unique operations.

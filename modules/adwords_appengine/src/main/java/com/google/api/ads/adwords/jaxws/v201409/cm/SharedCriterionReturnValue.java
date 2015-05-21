@@ -9,6 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Container for the return value from the SharedSetCriterionService.
+ *           
+ * 
  * <p>Java class for SharedCriterionReturnValue complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -1,3 +1,98 @@
+2.0.0 - 05/19/2015
+-------------------
+AdWords:
+  - Changed minimum JRE version to 1.6.
+
+DFA:
+  - Changed minimum JRE version to 1.6.
+
+DFP:
+  - Added support for v201505.
+  - Removed examples for v201405.
+  - Updated report utility with new getReportJobStatus method.
+  - Removed MERGED_* metrics from the ReportService.
+  - Added advanced ProposalLineItem actions.
+  - Changed minimum JRE version to 1.6.
+
+Common:
+  - Changed minimum JRE version to 1.6.
+
+1.39.0 - 04/24/2015
+-------------------
+AdWords:
+  - Removed support and examples for v201406.
+  - Added support for the [skipColumnHeader option](https://developers.google.com/adwords/api/docs/guides/reporting#optional-headers)
+    introduced in v201502.
+  - Removed reference to `MarginalCpc` selector field in
+    [GetKeywordBidSimulations](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/java/adwords/axis/v201502/optimization/GetKeywordBidSimulations.java).
+    This field was removed from `DataService` in [v201502](https://developers.google.com/adwords/api/docs/guides/migration/v201502).
+  - Added Java enums that represent all the fields for all the entity services available on each API 
+    version.
+  - Added support for the Java enums in the SelectorBuilder utility class.
+  - Updated junit dependency to version 4.11.
+  - Updated hamcrest-all dependency to version 1.3.
+
+DFA:
+  - Updated junit dependency to version 4.11.
+
+DFP:
+  - Updated junit dependency to version 4.11.
+
+Common:
+  - Updated junit dependency to version 4.11.
+  - Updated hamcrest-all dependency to version 1.3.  
+
+1.38.0 - 03/12/2015
+-------------------
+AdWords:
+  - Added support and examples for v201502.
+  - Renamed AddSiteLinks to AddSiteLinksUsingFeeds, and added new AddSiteLinks and
+    MigrateToExtensionSettings examples for the new extension setting services.
+  - Fixed [github issue 36](https://github.com/googleads/googleads-java-lib/issues/36):
+    getBid() of root ProductPartition returns NULL.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updated joda-time dependency to version 2.1.
+
+1.37.0 - 02/19/2015
+-------------------
+AdWords:
+  - Added new methods to ReportDownloadResponse to facilitate saving a report's contents to a file,
+    retrieving a report's contents as a string, and retrieving a report's contents as an
+    InputStream.
+  - Fixed AccountManagementTest to account for the fact that clientCustomerId is required on
+    ManagedCustomerService calls in v201409.
+  - Removed AdWords for Video services from v201406.
+  - Added ProductPartitionTree utility to simplify management of ProductPartition ad
+    group criteria in Shopping campaigns.
+  - Improved targetAll settings and comments in AddAdGroups examples.
+  - Updated multiple examples to use
+    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls). 
+  - Added UpgradeAdUrl example.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201502.
+  - Removed support for v201311, v201308, and v201306.
+  - Removed examples for v201403.
+  - Updated ForecastService examples.
+  - Added PackageService, ProductPackageService and ProductPackageItemService.
+  - Removed support for ClientLogin with the removal of v201311 and earlier.
+
+Common:
+  - Fixed [issue #33](https://github.com/googleads/googleads-java-lib/issues/33):
+    Some generated JAX-WS files contain an invalid wsdlLocation.
+  - Modified SOAP integration tests to make them Java 8 compatible. This required a new test
+    dependency on XMLUnit.
+
 1.36.0 - 12/04/2014
 -------------------
 AdWords:

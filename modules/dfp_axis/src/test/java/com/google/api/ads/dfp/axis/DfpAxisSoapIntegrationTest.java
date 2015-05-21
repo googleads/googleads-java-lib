@@ -23,8 +23,8 @@ import com.google.api.ads.common.lib.auth.testing.AuthResponseProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.axis.v201411.Company;
-import com.google.api.ads.dfp.axis.v201411.CompanyServiceInterface;
+import com.google.api.ads.dfp.axis.v201505.Company;
+import com.google.api.ads.dfp.axis.v201505.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.auth.oauth2.Credential;
@@ -33,6 +33,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,42 +47,11 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201411";
-  private static final String CLIENT_LOGIN_API_VERSION = "v201311";
+  private static final String API_VERSION = "v201505";
 
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "false");
-  }
-  
-  /**
-   * Tests making a Axis DFP API call with ClientLogin.
-   */
-  @Test
-  public void testGoldenSoap_clientLogin() throws Exception {
-    testHttpServer.setMockResponseBody(
-        SoapResponseXmlProvider.getTestSoapResponse(CLIENT_LOGIN_API_VERSION));
-
-    DfpSession session = new DfpSession.Builder().withApplicationName("TEST_APP")
-        .withClientLoginToken("TEST_TOKEN")
-        .withEndpoint(testHttpServer.getServerUrl())
-        .withNetworkCode("TEST_NETWORK_CODE")
-        .build();
-
-    com.google.api.ads.dfp.axis.v201311.CompanyServiceInterface companyService = new DfpServices()
-        .get(session, com.google.api.ads.dfp.axis.v201311.CompanyServiceInterface.class);
-
-    com.google.api.ads.dfp.axis.v201311.Company company =
-        new com.google.api.ads.dfp.axis.v201311.Company();
-
-    com.google.api.ads.dfp.axis.v201311.Company[] companies = companyService
-        .createCompanies(new com.google.api.ads.dfp.axis.v201311.Company[] {company});
-
-    assertEquals(1234L, companies[0].getId().longValue());
-    assertEquals(SoapRequestXmlProvider.getClientLoginSoapRequest(CLIENT_LOGIN_API_VERSION),
-        testHttpServer.getLastRequestBody());
-    assertFalse("Did not request compression but request was compressed",
-        testHttpServer.wasLastRequestBodyCompressed());
   }
 
   /**
@@ -106,7 +76,7 @@ public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    assertEquals(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
@@ -156,7 +126,7 @@ public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    assertEquals(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());

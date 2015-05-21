@@ -69,6 +69,7 @@ public class AsyncDownloadReport {
         new ReportDownloader(reportService, reportJob.getId());
 
     reportDownloader.whenReportReady(new ReportCallback() {
+      @Override
       public void onSuccess() {
         try {
           // Change to your file location.
@@ -85,14 +86,17 @@ public class AsyncDownloadReport {
         }
       }
 
+      @Override
       public void onInterruption() {
         System.err.println("Report download interupted.");
       }
 
+      @Override
       public void onFailure() {
         System.err.println("Report download failed.");
       }
 
+      @Override
       public void onException(Exception e) {
         System.err.println("Report download failed.");
         e.printStackTrace();
@@ -101,8 +105,7 @@ public class AsyncDownloadReport {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

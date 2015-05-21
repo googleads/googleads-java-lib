@@ -40,6 +40,7 @@ public class ProductFrameworkUserAgentProvider implements UserAgentProvider {
   /**
    * Generates the framework user agent such as AdWords-Axis/1.4.
    */
+  @Override
   public String getUserAgent() {
     return productFrameworkConfiguration.getLibName() + "/"
         + productFrameworkConfiguration.getLibVersion();

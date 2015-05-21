@@ -31,7 +31,9 @@ import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelpe
 import com.google.api.ads.common.lib.soap.testing.MockSoapClientInterface;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
@@ -60,6 +62,8 @@ public class AdsServiceClientFactoryTest {
                                         AdsSession,
                                         AdsServiceDescriptor> adsServiceClientFactoryHelper;
   @Mock private AdsSession adsSession;
+
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   public AdsServiceClientFactoryTest() {}
 
@@ -91,14 +95,13 @@ public class AdsServiceClientFactoryTest {
     doReturn(null).when(adsServiceClientFactory).createProxy(any(AdsServiceClient.class),
         any(Set.class));
 
-    MockSoapClientInterface testAdsServiceClient =
-        adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
+    adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
 
     verify(adsServiceClientFactory).createProxy(eq(adsServiceClient), setArg.capture());
     assertTrue(setArg.getValue().contains(MockSoapClientInterface.class));
   }
 
-  @Test(expected = ServiceException.class)
+  @Test
   @SuppressWarnings({"unchecked", "rawtypes"})
   public void testGetServiceClient_failPreconditions() {
     String version = "v1.1";
@@ -120,8 +123,8 @@ public class AdsServiceClientFactoryTest {
     doReturn(null).when(adsServiceClientFactory).createProxy(any(AdsServiceClient.class),
         any(Set.class));
 
-    MockSoapClientInterface testAdsServiceClient =
-        adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
+    thrown.expect(ServiceException.class);
+    adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
 
     verify(adsServiceClientFactory).createProxy(eq(adsServiceClient), setArg.capture());
     assertTrue(setArg.getValue().contains(MockSoapClientInterface.class));

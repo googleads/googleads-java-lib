@@ -152,6 +152,7 @@ public class ReportResponseInterceptorTest {
      */
     public HttpRequestFactory createFakeRequestFactory() {
       return this.createRequestFactory(new HttpRequestInitializer() {
+        @Override
         public void initialize(HttpRequest request) throws IOException {
           request.setResponseInterceptor(ReportResponseInterceptorTest.this.interceptor);
         }

@@ -25,7 +25,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AppUrlOsType {
 
+
+    /**
+     * 
+     *                 The Apple IOS operating system,
+     *               
+     * 
+     */
     OS_TYPE_IOS,
+
+    /**
+     * 
+     *                 The Android operating system.
+     *               
+     * 
+     */
     OS_TYPE_ANDROID,
     UNKNOWN;
 

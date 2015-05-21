@@ -17,7 +17,6 @@ package com.google.api.ads.dfp.lib.factory.helper;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
@@ -53,7 +52,6 @@ public class DfpServiceClientFactoryHelperTest {
   private SoapClientHandlerInterface soapClientHandler;
   @Mock
   private AdsLibConfiguration adsLibConfiguration;
-  private DfpSession dfpSession;
 
   @Before
   public void setup() {
@@ -65,25 +63,8 @@ public class DfpServiceClientFactoryHelperTest {
     DfpServiceClientFactoryHelper helper = new DfpServiceClientFactoryHelper(
         adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
         adsLibConfiguration);
-    assertEquals("v201311", helper.determineVersion(
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201311.TestService.class));
-  }
-
-  @Test(expected = ServiceException.class)
-  public void testCheckServiceClientPreconditions_clientLoginDeprecated() throws Exception {
-    DfpServiceClientFactoryHelper helper = new DfpServiceClientFactoryHelper(
-        adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
-        adsLibConfiguration);
-
-    DfpSession dfpSession = new DfpSession.Builder()
-        .withApplicationName("FooBar")
-        .withNetworkCode("1000")
-        .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://ads.google.com")
-        .build();
-
-    helper.checkServiceClientPreconditions(dfpSession,
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201403.TestService.class);
+    assertEquals("v201502", helper.determineVersion(
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201502.TestService.class));
   }
 
   @Test
@@ -102,23 +83,6 @@ public class DfpServiceClientFactoryHelperTest {
         .build();
 
     helper.checkServiceClientPreconditions(dfpSession,
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201403.TestService.class);
-  }
-
-  @Test
-  public void testCheckServiceClientPreconditions_passClientLoginOldVersion() throws Exception {
-    DfpServiceClientFactoryHelper helper = new DfpServiceClientFactoryHelper(
-        adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
-        adsLibConfiguration);
-
-    DfpSession dfpSession = new DfpSession.Builder()
-        .withApplicationName("FooBar")
-        .withNetworkCode("1000")
-        .withClientLoginToken("clientLoginToken")
-        .withEndpoint("https://ads.google.com")
-        .build();
-
-    helper.checkServiceClientPreconditions(dfpSession,
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201311.TestService.class);
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201502.TestService.class);
   }
 }

@@ -28,8 +28,11 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example adds several text ads to a given ad group. To get adGroupId, run
- * AddAdGroup.java.
+ * This example adds several text ads to a given ad group. To get ad groups, run
+ * GetAdGroups.java. To learn how to handle policy violations and add
+ * exemption requests, see HandlePolicyViolationError.java. This code example
+ * uses only the final URL field when creating the Ad. To see more options,
+ * see AddTextAdWithUpgradedUrls.java.
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
@@ -70,20 +73,20 @@ public class AddTextAds {
     AdGroupAdServiceInterface adGroupAdService =
         adWordsServices.get(session, AdGroupAdServiceInterface.class);
 
-    // Create text ad.
+    // Create text ads.
     TextAd textAd1 = new TextAd();
     textAd1.setHeadline("Luxury Cruise to Mars");
     textAd1.setDescription1("Visit the Red Planet in style.");
     textAd1.setDescription2("Low-gravity fun for everyone!");
     textAd1.setDisplayUrl("www.example.com");
-    textAd1.setUrl("http://www.example.com");
+    textAd1.setFinalUrls(new String[] {"http://www.example.com/1"});
+    
     TextAd textAd2 = new TextAd();
     textAd2.setHeadline("Luxury Cruise to Mars");
     textAd2.setDescription1("Enjoy your stay at Red Planet.");
     textAd2.setDescription2("Buy your tickets now!");
     textAd2.setDisplayUrl("www.example.com");
-    textAd2.setUrl("http://www.example.com");
-
+    textAd2.setFinalUrls(new String[] {"http://www.example.com/2"});
 
     // Create ad group ad.
     AdGroupAd textAdGroupAd1 = new AdGroupAd();

@@ -45,7 +45,11 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The name of the {@code ProposalLineItem} which should be unique
      * under the same
      *                 {@link Proposal}. This attribute is required and has
-     * a maximum length of 255 characters. */
+     * a maximum length of 255 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.String name;
 
     /* The date and time at which the line item associated with the
@@ -53,6 +57,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering. */
     private com.google.api.ads.dfp.axis.v201405.DateTime startDateTime;
@@ -60,13 +66,19 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The date and time at which the line item associated with the
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
-     *                 but required and must be after the {@link #startDateTime}. */
+     *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}. */
     private com.google.api.ads.dfp.axis.v201405.DateTime endDateTime;
 
     /* Provides any additional notes that may annotate the {@code
      * ProposalLineItem}. This
      *                 attribute is optional and has a maximum length of
-     * 65,535 characters. */
+     * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.String notes;
 
     /* The cost adjustment applied to the {@code ProposalLineItem}.
@@ -227,7 +239,11 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The values of the custom fields associated with the {@code
      * ProposalLineItem}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201405.BaseCustomFieldValue[] customFieldValues;
 
     /* The set of labels applied directly to the {@code ProposalLineItem}.
@@ -260,10 +276,10 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required. */
     private com.google.api.ads.dfp.axis.v201405.Money costPerUnit;
 
@@ -322,7 +338,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * also need to be overridden
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
-     *                 their {@link Proposal} object anymore. */
+     *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201405.BillingCap billingCap;
 
     /* Overrides the billing schedule of this {@code ProposalLineItem}.
@@ -334,7 +354,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * also need to be overridden
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
-     *                 their {@link Proposal} object anymore. */
+     *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201405.BillingSchedule billingSchedule;
 
     /* Overrides the billing source of this {@code ProposalLineItem}.
@@ -346,7 +370,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * also need to be overridden
      *                 depending on this field. That is, none of the billing
      * fields will inherit from
-     *                 their {@link Proposal} object anymore. */
+     *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201405.BillingSource billingSource;
 
     /* The date and time this {@code ProposalLineItem} was last modified.
@@ -582,6 +610,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * under the same
      *                 {@link Proposal}. This attribute is required and has
      * a maximum length of 255 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.String getName() {
         return name;
@@ -595,6 +627,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * under the same
      *                 {@link Proposal}. This attribute is required and has
      * a maximum length of 255 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -609,6 +645,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -625,6 +663,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is optional
      *                 during creation, but required and must be in the future
      * when it turns into a line item.
+     *                 The {@link DateTime#timeZoneID} is required if start
+     * date time is not {@code null}.
      *                 This attribute becomes readonly once the {@code ProposalLineItem}
      * has started delivering.
      */
@@ -640,6 +680,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
      *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}.
      */
     public com.google.api.ads.dfp.axis.v201405.DateTime getEndDateTime() {
         return endDateTime;
@@ -653,6 +695,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code ProposalLineItem} stops beening served. This attribute is optional
      * during creation,
      *                 but required and must be after the {@link #startDateTime}.
+     * The {@link DateTime#timeZoneID} is
+     *                 required if end date time is not {@code null}.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201405.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -666,6 +710,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}. This
      *                 attribute is optional and has a maximum length of
      * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.String getNotes() {
         return notes;
@@ -679,6 +727,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}. This
      *                 attribute is optional and has a maximum length of
      * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setNotes(java.lang.String notes) {
         this.notes = notes;
@@ -1229,6 +1281,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return customFieldValues   * The values of the custom fields associated with the {@code
      * ProposalLineItem}.
      *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201405.BaseCustomFieldValue[] getCustomFieldValues() {
         return customFieldValues;
@@ -1241,6 +1297,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param customFieldValues   * The values of the custom fields associated with the {@code
      * ProposalLineItem}.
      *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setCustomFieldValues(com.google.api.ads.dfp.axis.v201405.BaseCustomFieldValue[] customFieldValues) {
         this.customFieldValues = customFieldValues;
@@ -1410,10 +1470,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return costPerUnit   * The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required.
      */
     public com.google.api.ads.dfp.axis.v201405.Money getCostPerUnit() {
@@ -1426,10 +1486,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param costPerUnit   * The amount of money to spend per impression or click in proposal
      * currency.
-     *                 It supports precision of 2 decimal places in terms
+     *                 It supports precision of 4 decimal places in terms
      * of the fundamental currency
      *                 unit, so the {@link Money#microAmount} must be multiples
-     * of 10000. This attribute is
+     * of 100. This attribute is
      *                 required.
      */
     public void setCostPerUnit(com.google.api.ads.dfp.axis.v201405.Money costPerUnit) {
@@ -1598,6 +1658,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingCap getBillingCap() {
         return billingCap;
@@ -1617,6 +1681,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingCap(com.google.api.ads.dfp.axis.v201405.BillingCap billingCap) {
         this.billingCap = billingCap;
@@ -1636,6 +1704,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingSchedule getBillingSchedule() {
         return billingSchedule;
@@ -1655,6 +1727,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on the {@link #billingSource}. That is,
      * none of the billing fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingSchedule(com.google.api.ads.dfp.axis.v201405.BillingSchedule billingSchedule) {
         this.billingSchedule = billingSchedule;
@@ -1674,6 +1750,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on this field. That is, none of the billing
      * fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201405.BillingSource getBillingSource() {
         return billingSource;
@@ -1693,6 +1773,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 depending on this field. That is, none of the billing
      * fields will inherit from
      *                 their {@link Proposal} object anymore.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingSource(com.google.api.ads.dfp.axis.v201405.BillingSource billingSource) {
         this.billingSource = billingSource;

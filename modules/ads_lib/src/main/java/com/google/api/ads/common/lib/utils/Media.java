@@ -95,6 +95,7 @@ public final class Media {
    */
   private static byte[] getByteArrayFromStream(final InputStream inputStream) throws IOException {
     return new ByteSource() {
+      @Override
       public InputStream openStream() {
         return inputStream;
       }
@@ -141,6 +142,7 @@ public final class Media {
   static void writeBytesToStream(byte[] bytes, final OutputStream outputStream)
       throws IOException {
     new ByteSink() {
+      @Override
       public OutputStream openStream() {
         return outputStream;
       }

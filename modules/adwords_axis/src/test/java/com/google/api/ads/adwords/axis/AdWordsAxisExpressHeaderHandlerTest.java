@@ -28,7 +28,9 @@ import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 
 import org.apache.axis.client.Stub;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -53,6 +55,9 @@ public class AdWordsAxisExpressHeaderHandlerTest {
   private Stub soapClient;
   @Mock
   private AdWordsServiceDescriptor adWordsServiceDescriptor;
+  
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
   
   @Before
   public void setUp() throws Exception {
@@ -112,12 +117,13 @@ public class AdWordsAxisExpressHeaderHandlerTest {
    * Tests that the plus page ID will NOT be set on the header when plus page ID
    * is NOT set on the AdWordsSession.
    */
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testSetHeaders_bothIdsOnSession_fails() throws ServiceException,
       AuthenticationException {
     when(adWordsSession.getExpressBusinessId()).thenReturn(12345L);
     when(adWordsSession.getExpressPlusPageId()).thenReturn("ABCDE");
 
+    thrown.expect(IllegalArgumentException.class);
     expressHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
   }
 

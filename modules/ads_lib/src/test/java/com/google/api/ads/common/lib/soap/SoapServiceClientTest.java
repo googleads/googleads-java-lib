@@ -22,8 +22,11 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.soap.testing.MockSoapClient;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -45,6 +48,8 @@ public class SoapServiceClientTest {
 
   @Mock private SoapClientHandler<Object> soapClientHandler;
   @Mock private MockSoapClient soapClient;
+
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   public SoapServiceClientTest() {}
 
@@ -121,17 +126,18 @@ public class SoapServiceClientTest {
     assertEquals(returnValue, result);
   }
 
-  @Test(expected = Throwable.class)
+  @Test
   public void testInvoke_soapClientMethodAuthenticationException() throws Throwable {
     Method indentityCallMethod = MockSoapClient.class.getMethod("identityCall", Object[].class);
     Object[] args = new String[] {"arg1", "arg2"};
 
     soapServiceClient.throwAuthException = true;
 
-    Object result = soapServiceClient.invoke(null, indentityCallMethod, args);
+    thrown.expect(Matchers.<Exception>equalTo(TestSoapServiceClient.AUTH_EXCEPTION));
+    soapServiceClient.invoke(null, indentityCallMethod, args);
   }
 
-  @Test(expected = NoSuchMethodException.class)
+  @Test
   public void testInvoke_soapClientMethodNoSuchmethodException() throws Throwable {
     Method indentityCallMethod = MockSoapClient.class.getMethod("identityCall", Object[].class);
     Object[] args = new String[] {"arg1", "arg2"};
@@ -139,7 +145,8 @@ public class SoapServiceClientTest {
     when(soapClientHandler.getSoapClientMethod(soapClient, indentityCallMethod))
         .thenThrow(new NoSuchMethodException());
 
-    Object result = soapServiceClient.invoke(null, indentityCallMethod, args);
+    thrown.expect(NoSuchMethodException.class);
+    soapServiceClient.invoke(null, indentityCallMethod, args);
   }
 
   @Test
@@ -179,11 +186,12 @@ public class SoapServiceClientTest {
     assertEquals(expectedException, soapServiceClient.handleException(expectedException));
   }
 
-  @Test(expected = NoSuchMethodException.class)
+  @Test
   public void testUnwrapSoapCallReturn_exception() throws Throwable {
     SoapCallReturn soapCallReturn =
         new SoapCallReturn.Builder().withException(new NoSuchMethodException()).build();
 
+    thrown.expect(NoSuchMethodException.class);
     soapServiceClient.unwrapSoapCallReturn(soapCallReturn);
   }
 

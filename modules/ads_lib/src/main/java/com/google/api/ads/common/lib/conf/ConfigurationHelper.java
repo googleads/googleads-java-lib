@@ -195,19 +195,23 @@ public class ConfigurationHelper {
     } else {
       combinedConfiguration.addConfiguration(setupConfiguration(new AbstractConfiguration() {
 
+        @Override
         public boolean isEmpty() {
           return configuration.isEmpty();
         }
 
+        @Override
         public Object getProperty(String key) {
           return configuration.getProperty(key);
         }
 
+        @Override
         @SuppressWarnings("rawtypes") // No rawtype in class.
         public Iterator getKeys() {
           return configuration.getKeys();
         }
 
+        @Override
         public boolean containsKey(String key) {
           return configuration.containsKey(key);
         }
@@ -234,6 +238,7 @@ public class ConfigurationHelper {
     }
 
     return Lists.transform(locations, new Function<T, ConfigurationInfo<T>>() {
+      @Override
       public ConfigurationInfo<T> apply(T input) {
         return new ConfigurationInfo<T>(input, isOptional);
       }

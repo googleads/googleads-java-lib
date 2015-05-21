@@ -769,23 +769,23 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetError");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "Vertical");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.TargetError.class;
+            cls = com.google.api.ads.adwords.axis.v201409.cm.Vertical.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetError.Reason");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201409", "AdFormatSpec");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason.class;
+            cls = com.google.api.ads.adwords.axis.v201409.o.AdFormatSpec.class;
             cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "Vertical");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201409", "AdFormatSpecListAttribute");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.Vertical.class;
+            cls = com.google.api.ads.adwords.axis.v201409.o.AdFormatSpecListAttribute.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -805,20 +805,6 @@ public class TargetingIdeaServiceSoapBindingStub extends org.apache.axis.client.
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201409", "AdFormatSpec");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.o.AdFormatSpec.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201409", "AdFormatSpecListAttribute");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.o.AdFormatSpecListAttribute.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/o/v201409", "AdSpec");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201409.o.AdSpec.class;

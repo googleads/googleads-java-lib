@@ -13,8 +13,7 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs (
 
 ## Requirements
 
-  * Java 1.5+, but note that this requirement will change to Java 1.6+
-  [in April 2015](http://googleadsdeveloper.blogspot.com/2014/11/minimum-java-version-requirement.html)
+  * Java 1.6+
   * Maven 3.0+ not required, but recommended
 
 ## Announcements and updates
@@ -168,7 +167,7 @@ $ mvn -X compile
 
 This command runs the ``GetCampaigns`` example, but you can update the ``-Dexec.mainClass`` argument with the example of your choice.
 ```
-$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201409.basicoperations.GetCampaigns"
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201502.basicoperations.GetCampaigns"
 ```
 
 ## Basic usage
@@ -178,7 +177,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201409.*;
+import com.google.api.ads.adwords.axis.v201502.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;

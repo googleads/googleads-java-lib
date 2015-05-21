@@ -7,6 +7,11 @@
 
 package com.google.api.ads.adwords.axis.v201409.cm;
 
+
+/**
+ * SharedSets are used for sharing entities across multiple campaigns
+ * under the same account.
+ */
 public class SharedSet  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
      * using the value "SharedSetId".</span><span class="constraint Filterable">This
@@ -16,38 +21,49 @@ public class SharedSet  implements java.io.Serializable {
      * Operator}s : SET, REMOVE.</span> */
     private java.lang.Long sharedSetId;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "Name".</span>
+    /* Shared Sets must have names that are case-insensitive unique
+     * across all
+     *                 other shared sets in the account (active and deleted).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 255, inclusive, in UTF-8 bytes.</span> */
+     * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
+     * (trimmed).</span> */
     private java.lang.String name;
 
     /* <span class="constraint Selectable">This field can be selected
      * using the value "Type".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201409.cm.SharedSetType type;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "MemberCount".</span>
+    /* The number of entities in the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer memberCount;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "ReferenceCount".</span>
+    /* The number of campaigns that actively use the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Integer referenceCount;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+    /* The status of the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201409.cm.SharedSetStatus status;
@@ -104,13 +120,18 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Gets the name value for this SharedSet.
      * 
-     * @return name   * <span class="constraint Selectable">This field can be selected
-     * using the value "Name".</span>
+     * @return name   * Shared Sets must have names that are case-insensitive unique
+     * across all
+     *                 other shared sets in the account (active and deleted).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 255, inclusive, in UTF-8 bytes.</span>
+     * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
+     * (trimmed).</span>
      */
     public java.lang.String getName() {
         return name;
@@ -120,13 +141,18 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Sets the name value for this SharedSet.
      * 
-     * @param name   * <span class="constraint Selectable">This field can be selected
-     * using the value "Name".</span>
+     * @param name   * Shared Sets must have names that are case-insensitive unique
+     * across all
+     *                 other shared sets in the account (active and deleted).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Name".</span><span class="constraint Filterable">This field
+     * can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 255, inclusive, in UTF-8 bytes.</span>
+     * this string should be between 1 and 255, inclusive, in UTF-8 bytes,
+     * (trimmed).</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -139,6 +165,9 @@ public class SharedSet  implements java.io.Serializable {
      * @return type   * <span class="constraint Selectable">This field can be selected
      * using the value "Type".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -154,6 +183,9 @@ public class SharedSet  implements java.io.Serializable {
      * @param type   * <span class="constraint Selectable">This field can be selected
      * using the value "Type".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: REMOVE and SET.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -166,8 +198,9 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Gets the memberCount value for this SharedSet.
      * 
-     * @return memberCount   * <span class="constraint Selectable">This field can be selected
-     * using the value "MemberCount".</span>
+     * @return memberCount   * The number of entities in the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -179,8 +212,9 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Sets the memberCount value for this SharedSet.
      * 
-     * @param memberCount   * <span class="constraint Selectable">This field can be selected
-     * using the value "MemberCount".</span>
+     * @param memberCount   * The number of entities in the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MemberCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -192,8 +226,9 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Gets the referenceCount value for this SharedSet.
      * 
-     * @return referenceCount   * <span class="constraint Selectable">This field can be selected
-     * using the value "ReferenceCount".</span>
+     * @return referenceCount   * The number of campaigns that actively use the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -205,8 +240,9 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Sets the referenceCount value for this SharedSet.
      * 
-     * @param referenceCount   * <span class="constraint Selectable">This field can be selected
-     * using the value "ReferenceCount".</span>
+     * @param referenceCount   * The number of campaigns that actively use the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceCount".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -218,9 +254,10 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Gets the status value for this SharedSet.
      * 
-     * @return status   * <span class="constraint Selectable">This field can be selected
-     * using the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     * @return status   * The status of the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -232,9 +269,10 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Sets the status value for this SharedSet.
      * 
-     * @param status   * <span class="constraint Selectable">This field can be selected
-     * using the value "Status".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     * @param status   * The status of the shared set.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

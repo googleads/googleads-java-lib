@@ -26,6 +26,7 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Returns the passed in {@code arg} as a single {@code Object}.
    */
+  @Override
   public Object identityCall(Object[] arg) {
     return arg;
   }
@@ -33,6 +34,7 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Returns the passed in {@code arg} as a single {@code Object}.
    */
+  @Override
   public Object identityCallSingle(Object arg) {
     return arg;
   }
@@ -40,6 +42,7 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Returns {@code arg1} and has an overloaded name.
    */
+  @Override
   public Object testOverloaded(String arg1, String arg2) {
     return arg1;
   }
@@ -47,6 +50,7 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Returns {@code arg1} and has an overloaded name.
    */
+  @Override
   public Object testOverloaded(int arg1) {
     return arg1;
   }
@@ -54,6 +58,7 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Returns the passed in {@code arg} as a single {@code Object}.
    */
+  @Override
   public Object lotsOfArgsCall(Object arg, Object[] arg1, Object arg2, Object arg3) {
     return arg;
   }
@@ -61,16 +66,19 @@ public class MockSoapClient implements MockSoapClientInterface {
   /**
    * Void call.
    */
+  @Override
   public void voidCall(Object[] arg) {}
 
   /**
    * Empty call.
    */
+  @Override
   public void emptyCall() {}
 
   /**
    * Throws an exception.
    */
+  @Override
   public Object throwException(Object[] arg) {
     throw EXCEPTION;
   }

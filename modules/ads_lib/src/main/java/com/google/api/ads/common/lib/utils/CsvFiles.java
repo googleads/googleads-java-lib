@@ -63,6 +63,7 @@ public final class CsvFiles {
     final Map<String, String> result = Maps.newHashMap();
     new CsvReader(fileName, headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] header, String[] line, int lineNumber) {
             result.put(line[key], line[value]);
           }
@@ -105,6 +106,7 @@ public final class CsvFiles {
     final Map<String, String[]> result = Maps.newHashMap();
     new CsvReader(fileName, headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] header, String[] line, int lineNumber) {
             result.put(line[0],
                 Arrays.asList(line)
@@ -130,6 +132,7 @@ public final class CsvFiles {
     final List<Map<String, String>> result = Lists.newArrayList();
     new CsvReader(fileName, headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] headers, String[] line, int lineNumber) {
             Map<String, String> data = Maps.newHashMap();
             for (int i = 0; i < line.length; i++) {
@@ -161,6 +164,7 @@ public final class CsvFiles {
     final List<String> result = Lists.newArrayList();
     new CsvReader(fileName, headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] headers, String[] line, int lineNumber) {
             result.add(line[column]);
           }
@@ -183,6 +187,7 @@ public final class CsvFiles {
     final List<String[]> result = Lists.newArrayList();
     new CsvReader(fileName, headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] headers, String[] line, int lineNumber) {
             result.add(line);
           }
@@ -204,6 +209,7 @@ public final class CsvFiles {
     final List<String[]> result = Lists.newArrayList();
     new CsvReader(new CSVReader(csvReader), headerPresent).processReader(
         new CsvReader.CsvWorker() {
+          @Override
           public void processLine(String[] headers, String[] line, int lineNumber) {
             result.add(line);
           }

@@ -66,11 +66,10 @@ public class BaseAdsServiceClientFactoryHelperTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
-    abstractAdsServiceClientFactoryHelper =
-        new BaseAdsServiceClientFactoryHelper<AdsServiceClient<AdsSession, AdsServiceDescriptor>,
-                                              AdsSession,
-                                              AdsServiceDescriptor>(
-            adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler) {
+    abstractAdsServiceClientFactoryHelper = new BaseAdsServiceClientFactoryHelper<
+        AdsServiceClient<AdsSession, AdsServiceDescriptor>, AdsSession, AdsServiceDescriptor>(
+        adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler) {
+      @Override
       @SuppressWarnings("rawtypes")
       public String determineVersion(Class interfaceClass) {
         return VERSION;

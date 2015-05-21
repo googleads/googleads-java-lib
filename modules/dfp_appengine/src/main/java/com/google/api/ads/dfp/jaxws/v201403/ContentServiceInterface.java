@@ -74,7 +74,7 @@ public interface ContentServiceInterface {
      *         </tr>
      *         <tr>
      *         <td>{@code lastModifiedDateTime}</td>
-     *         <td>{@link Content#lastModifiedDateTime}: Requires indexed content search to be enabled.</td>
+     *         <td>{@link Content#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
      *         
@@ -123,7 +123,7 @@ public interface ContentServiceInterface {
      *         </tr>
      *         <tr>
      *         <td>{@code lastModifiedDateTime}</td>
-     *         <td>{@link Content#lastModifiedDateTime>}: Requires indexed content search to be enabled.</td>
+     *         <td>{@link Content#lastModifiedDateTime>}</td>
      *         </tr>
      *         </table>
      *         

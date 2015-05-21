@@ -48,7 +48,6 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_ENVIRONMENT_TYPE = "INVALID_ENVIRONMENT_TYPE";
     public static final java.lang.String _INVALID_ENVIRONMENT_TYPE_FOR_PLATFORM = "INVALID_ENVIRONMENT_TYPE_FOR_PLATFORM";
     public static final java.lang.String _INVALID_TYPE_FOR_AUTO_EXTENSION = "INVALID_TYPE_FOR_AUTO_EXTENSION";
-    public static final java.lang.String _INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT = "INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT";
     public static final java.lang.String _VIDEO_INVALID_ROADBLOCKING = "VIDEO_INVALID_ROADBLOCKING";
     public static final java.lang.String _BACKFILL_TYPE_NOT_ALLOWED = "BACKFILL_TYPE_NOT_ALLOWED";
     public static final java.lang.String _INVALID_BACKFILL_LINK_TYPE = "INVALID_BACKFILL_LINK_TYPE";
@@ -100,7 +99,6 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final LineItemErrorReason INVALID_ENVIRONMENT_TYPE = new LineItemErrorReason(_INVALID_ENVIRONMENT_TYPE);
     public static final LineItemErrorReason INVALID_ENVIRONMENT_TYPE_FOR_PLATFORM = new LineItemErrorReason(_INVALID_ENVIRONMENT_TYPE_FOR_PLATFORM);
     public static final LineItemErrorReason INVALID_TYPE_FOR_AUTO_EXTENSION = new LineItemErrorReason(_INVALID_TYPE_FOR_AUTO_EXTENSION);
-    public static final LineItemErrorReason INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT = new LineItemErrorReason(_INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT);
     public static final LineItemErrorReason VIDEO_INVALID_ROADBLOCKING = new LineItemErrorReason(_VIDEO_INVALID_ROADBLOCKING);
     public static final LineItemErrorReason BACKFILL_TYPE_NOT_ALLOWED = new LineItemErrorReason(_BACKFILL_TYPE_NOT_ALLOWED);
     public static final LineItemErrorReason INVALID_BACKFILL_LINK_TYPE = new LineItemErrorReason(_INVALID_BACKFILL_LINK_TYPE);

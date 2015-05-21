@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Represents a criterion belonging to a shared set.
+ *           
+ * 
  * <p>Java class for SharedCriterion complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

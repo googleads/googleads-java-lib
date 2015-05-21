@@ -32,6 +32,7 @@ public class MockJaxWsCompatibleDescriptor implements SoapServiceDescriptor, Jax
   /**
    * @see com.google.api.ads.common.lib.soap.compatability.JaxWsCompatible#getServiceClass()
    */
+  @Override
   public Class<?> getServiceClass() throws ClassNotFoundException {
     return ServiceClass.class;
   }
@@ -39,6 +40,7 @@ public class MockJaxWsCompatibleDescriptor implements SoapServiceDescriptor, Jax
   /**
    * @see com.google.api.ads.common.lib.soap.SoapServiceDescriptor#getInterfaceClass()
    */
+  @Override
   public Class<?> getInterfaceClass() throws ServiceException {
     return CampaignServiceInterface.class;
   }
@@ -49,6 +51,7 @@ public class MockJaxWsCompatibleDescriptor implements SoapServiceDescriptor, Jax
    * @see com.google.api.ads.common.lib.soap.SoapServiceDescriptor#getEndpointAddress(
    * java.lang.String)
    */
+  @Override
   public String getEndpointAddress(String endpointServer) throws MalformedURLException {
     return null;
   }

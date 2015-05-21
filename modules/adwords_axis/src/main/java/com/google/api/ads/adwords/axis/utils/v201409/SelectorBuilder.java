@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201409.cm.Predicate;
 import com.google.api.ads.adwords.axis.v201409.cm.PredicateOperator;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.axis.v201409.cm.SortOrder;
+import com.google.api.ads.adwords.lib.selectorfields.EntityField;
 import com.google.common.collect.Sets;
 
 import org.joda.time.DateTime;
@@ -60,8 +61,8 @@ public class SelectorBuilder {
   /**
    * Builds a new Selector.
    *
-   * When a Selector is built by this method, the state of the builder doesn't change. If you need
-   * to clean the builder, the best way to do it, is by creating a new instance.
+   * <p>When a Selector is built by this method, the state of the builder doesn't change. If you
+   * need to clean the builder, the best way to do it, is by creating a new instance.
    *
    * @return the new Selector containing all the configuration that was set previously.
    */
@@ -123,7 +124,7 @@ public class SelectorBuilder {
   /**
    * Chooses the set of fields that will be selected via the API.
    *
-   * Calling this method multiple times will overwrite the previous fields that were set.
+   * <p>Calling this method multiple times will overwrite the previous fields that were set.
    *
    * @param fields the set of fields of the given entity.
    * @return the builder itself to proceed the chain.
@@ -132,6 +133,31 @@ public class SelectorBuilder {
     this.fields = Sets.newLinkedHashSet();
     Collections.addAll(this.fields, fields);
     return this;
+  }
+
+  /**
+   * Chooses the set of fields that will be selected via the API.
+   *
+   * <p>Calling this method multiple times will overwrite the previous fields that were set.
+   *
+   * @param fields the set of fields of the given entity as Java Enums.
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder fields(EntityField... fields) {
+    return fields(this.enumFieldsToNames(fields));
+  }
+
+  /**
+   * Returns the array of Strings resulting from calling {@code name()} on each field.
+   * 
+   * @param fields the array of fields as Java Enums.
+   */
+  private String[] enumFieldsToNames(EntityField... fields) {
+    String[] fieldsNames = new String[fields.length];
+    for (int i = 0; i < fields.length; i++) {
+      fieldsNames[i] = fields[i].name();
+    }
+    return fieldsNames;
   }
 
   /**
@@ -207,6 +233,15 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the order by the given field, on ASCENDING sort.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder orderAscBy(EntityField field) {
+    return this.orderAscBy(field.name());
+  }
+
+  /**
    * Adds the order by the given field, on DESCENDING sort.
    *
    * @return the builder itself to proceed the chain.
@@ -219,6 +254,15 @@ public class SelectorBuilder {
     this.ordering.add(orderBy);
 
     return this;
+  }
+
+  /**
+   * Adds the order by the given field, on DESCENDING sort.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder orderDescBy(EntityField field) {
+    return this.orderDescBy(field.name());
   }
 
   /**
@@ -236,6 +280,15 @@ public class SelectorBuilder {
     }
 
     return this;
+  }
+
+  /**
+   * Removes the order that is associated with the given field.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder removeOrderBy(EntityField field) {
+    return this.removeOrderBy(field.name());
   }
 
   /**
@@ -269,6 +322,17 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>equals</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder equals(EntityField field, String propertyValue) {
+    return this.equals(field.name(), propertyValue);
+  }
+
+  /**
    * Adds the predicate <b>not equals</b> to the selector for the given field and value.
    *
    * @param propertyValue the property value as a String independently of the field type. The caller
@@ -276,6 +340,16 @@ public class SelectorBuilder {
    */
   public SelectorBuilder notEquals(String field, String propertyValue) {
     return this.singleValuePredicate(field, propertyValue, PredicateOperator.NOT_EQUALS);
+  }
+
+  /**
+   * Adds the predicate <b>not equals</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder notEquals(EntityField field, String propertyValue) {
+    return this.notEquals(field.name(), propertyValue);
   }
 
   /**
@@ -289,6 +363,16 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>contains</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder contains(EntityField field, String propertyValue) {
+    return this.contains(field.name(), propertyValue);
+  }
+
+  /**
    * Adds the predicate <b>contains ignore case</b> to the selector for the given field and value.
    *
    * @param propertyValue the property value as a String independently of the field type. The caller
@@ -296,6 +380,16 @@ public class SelectorBuilder {
    */
   public SelectorBuilder containsIgnoreCase(String field, String propertyValue) {
     return this.singleValuePredicate(field, propertyValue, PredicateOperator.CONTAINS_IGNORE_CASE);
+  }
+
+  /**
+   * Adds the predicate <b>contains ignore case</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder containsIgnoreCase(EntityField field, String propertyValue) {
+    return this.containsIgnoreCase(field.name(), propertyValue);
   }
 
   /**
@@ -309,6 +403,16 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>does not contain</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder doesNotContain(EntityField field, String propertyValue) {
+    return this.doesNotContain(field.name(), propertyValue);
+  }
+
+  /**
    * Adds the predicate <b>does not contain ignore case</b> to the selector for the given field and
    * value.
    *
@@ -316,8 +420,19 @@ public class SelectorBuilder {
    *        should take care of the formatting if it is necessary
    */
   public SelectorBuilder doesNotContainIgnoreCase(String field, String propertyValue) {
-    return this.singleValuePredicate(
-        field, propertyValue, PredicateOperator.DOES_NOT_CONTAIN_IGNORE_CASE);
+    return this.singleValuePredicate(field, propertyValue,
+        PredicateOperator.DOES_NOT_CONTAIN_IGNORE_CASE);
+  }
+
+  /**
+   * Adds the predicate <b>does not contain ignore case</b> to the selector for the given field and
+   * value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder doesNotContainIgnoreCase(EntityField field, String propertyValue) {
+    return this.doesNotContainIgnoreCase(field.name(), propertyValue);
   }
 
   /**
@@ -327,8 +442,18 @@ public class SelectorBuilder {
    *        should take care of the formatting if it is necessary
    */
   public SelectorBuilder greaterThan(String field, long propertyValue) {
-    return this.singleValuePredicate(
-        field, Long.toString(propertyValue), PredicateOperator.GREATER_THAN);
+    return this.singleValuePredicate(field, Long.toString(propertyValue),
+        PredicateOperator.GREATER_THAN);
+  }
+
+  /**
+   * Adds the predicate <b>greater than</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder greaterThan(EntityField field, long propertyValue) {
+    return this.greaterThan(field.name(), propertyValue);
   }
 
   /**
@@ -338,8 +463,18 @@ public class SelectorBuilder {
    *        should take care of the formatting if it is necessary
    */
   public SelectorBuilder greaterThanEquals(String field, long propertyValue) {
-    return this.singleValuePredicate(
-        field, Long.toString(propertyValue), PredicateOperator.GREATER_THAN_EQUALS);
+    return this.singleValuePredicate(field, Long.toString(propertyValue),
+        PredicateOperator.GREATER_THAN_EQUALS);
+  }
+
+  /**
+   * Adds the predicate <b>greater than equals</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder greaterThanEquals(EntityField field, long propertyValue) {
+    return this.greaterThanEquals(field.name(), propertyValue);
   }
 
   /**
@@ -349,8 +484,18 @@ public class SelectorBuilder {
    *        should take care of the formatting if it is necessary
    */
   public SelectorBuilder lessThan(String field, long propertyValue) {
-    return this.singleValuePredicate(
-        field, Long.toString(propertyValue), PredicateOperator.LESS_THAN);
+    return this.singleValuePredicate(field, Long.toString(propertyValue),
+        PredicateOperator.LESS_THAN);
+  }
+
+  /**
+   * Adds the predicate <b>less than</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder lessThan(EntityField field, long propertyValue) {
+    return this.lessThan(field.name(), propertyValue);
   }
 
   /**
@@ -360,8 +505,18 @@ public class SelectorBuilder {
    *        should take care of the formatting if it is necessary
    */
   public SelectorBuilder lessThanEquals(String field, long propertyValue) {
-    return this.singleValuePredicate(
-        field, Long.toString(propertyValue), PredicateOperator.LESS_THAN_EQUALS);
+    return this.singleValuePredicate(field, Long.toString(propertyValue),
+        PredicateOperator.LESS_THAN_EQUALS);
+  }
+
+  /**
+   * Adds the predicate <b>less than equals</b> to the selector for the given field and value.
+   *
+   * @param propertyValue the property value as a String independently of the field type. The caller
+   *        should take care of the formatting if it is necessary
+   */
+  public SelectorBuilder lessThanEquals(EntityField field, long propertyValue) {
+    return this.lessThanEquals(field.name(), propertyValue);
   }
 
   /**
@@ -406,12 +561,30 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>in</b> to the selector for the given field and set of values.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder in(EntityField field, String... values) {
+    return this.in(field.name(), values);
+  }
+
+  /**
    * Adds the predicate <b>not in</b> to the selector for the given field and set of values.
    *
    * @return the builder itself to proceed the chain.
    */
   public SelectorBuilder notIn(String field, String... values) {
     return this.multipleValuePredicate(field, values, PredicateOperator.NOT_IN);
+  }
+
+  /**
+   * Adds the predicate <b>not in</b> to the selector for the given field and set of values.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder notIn(EntityField field, String... values) {
+    return this.notIn(field.name(), values);
   }
 
   /**
@@ -424,6 +597,15 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>contains any</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsAny(EntityField field, String... values) {
+    return this.containsAny(field.name(), values);
+  }
+
+  /**
    * Adds the predicate <b>contains all</b> to the selector for the given field and value.
    *
    * @return the builder itself to proceed the chain.
@@ -433,12 +615,30 @@ public class SelectorBuilder {
   }
 
   /**
+   * Adds the predicate <b>contains all</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsAll(EntityField field, String... values) {
+    return this.containsAll(field.name(), values);
+  }
+
+  /**
    * Adds the predicate <b>contains none</b> to the selector for the given field and value.
    *
    * @return the builder itself to proceed the chain.
    */
   public SelectorBuilder containsNone(String field, String... values) {
     return this.multipleValuePredicate(field, values, PredicateOperator.CONTAINS_NONE);
+  }
+
+  /**
+   * Adds the predicate <b>contains none</b> to the selector for the given field and value.
+   *
+   * @return the builder itself to proceed the chain.
+   */
+  public SelectorBuilder containsNone(EntityField field, String... values) {
+    return this.containsNone(field.name(), values);
   }
 
   /**

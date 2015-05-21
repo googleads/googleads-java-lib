@@ -21,8 +21,8 @@ public class Location  implements java.io.Serializable {
     /* Uniquely identifies each {@code Location}. */
     private java.lang.Long id;
 
-    /* The location type for this geographical entity (ex. Country,
-     * City, State, County, etc.) */
+    /* The location type for this geographical entity (ex. "COUNTRY",
+     * "CITY", "STATE", "COUNTY", etc.) */
     private java.lang.String type;
 
     /* The nearest location parent's ID for this geographical entity. */
@@ -77,8 +77,8 @@ public class Location  implements java.io.Serializable {
     /**
      * Gets the type value for this Location.
      * 
-     * @return type   * The location type for this geographical entity (ex. Country,
-     * City, State, County, etc.)
+     * @return type   * The location type for this geographical entity (ex. "COUNTRY",
+     * "CITY", "STATE", "COUNTY", etc.)
      */
     public java.lang.String getType() {
         return type;
@@ -88,8 +88,8 @@ public class Location  implements java.io.Serializable {
     /**
      * Sets the type value for this Location.
      * 
-     * @param type   * The location type for this geographical entity (ex. Country,
-     * City, State, County, etc.)
+     * @param type   * The location type for this geographical entity (ex. "COUNTRY",
+     * "CITY", "STATE", "COUNTY", etc.)
      */
     public void setType(java.lang.String type) {
         this.type = type;

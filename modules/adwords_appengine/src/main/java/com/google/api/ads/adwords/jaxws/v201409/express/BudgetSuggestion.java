@@ -32,6 +32,7 @@ import com.google.api.ads.adwords.jaxws.v201409.cm.Money;
  *         &lt;element name="maxBudget" type="{https://adwords.google.com/api/adwords/cm/v201409}Money" minOccurs="0"/>
  *         &lt;element name="budgetQuantiles" type="{https://adwords.google.com/api/adwords/cm/v201409}Money" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="impressions" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+ *         &lt;element name="currencyCode" type="{https://adwords.google.com/api/adwords/express/v201409}CurrencyCode" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -50,7 +51,8 @@ import com.google.api.ads.adwords.jaxws.v201409.cm.Money;
     "minBudget",
     "maxBudget",
     "budgetQuantiles",
-    "impressions"
+    "impressions",
+    "currencyCode"
 })
 public class BudgetSuggestion {
 
@@ -63,6 +65,7 @@ public class BudgetSuggestion {
     protected Money maxBudget;
     protected List<Money> budgetQuantiles;
     protected Long impressions;
+    protected CurrencyCode currencyCode;
 
     /**
      * Gets the value of the cpc property.
@@ -283,6 +286,30 @@ public class BudgetSuggestion {
      */
     public void setImpressions(Long value) {
         this.impressions = value;
+    }
+
+    /**
+     * Gets the value of the currencyCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CurrencyCode }
+     *     
+     */
+    public CurrencyCode getCurrencyCode() {
+        return currencyCode;
+    }
+
+    /**
+     * Sets the value of the currencyCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CurrencyCode }
+     *     
+     */
+    public void setCurrencyCode(CurrencyCode value) {
+        this.currencyCode = value;
     }
 
 }

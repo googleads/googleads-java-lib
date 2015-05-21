@@ -22,14 +22,14 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.ads.adwords.jaxws.v201406.billing.BudgetOrderServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.ch.CustomerSyncServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.express.ExpressBusinessServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.express.PromotionServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.mcm.ManagedCustomerServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.o.TargetingIdeaServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201406.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.billing.BudgetOrderServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.ch.CustomerSyncServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.express.ExpressBusinessServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.express.PromotionServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.mcm.ManagedCustomerServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.o.TargetingIdeaServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201502.rm.AdwordsUserListServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -118,7 +118,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
   @Parameters
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
-    // Test at least one standard interface for every subpackage of v201406
+    // Test at least one standard interface for every subpackage of v201502
     parameters.add(
         new Object[] {BudgetOrderServiceInterface.class, "billing", AdWordsSubProduct.DEFAULT});
     parameters.add(

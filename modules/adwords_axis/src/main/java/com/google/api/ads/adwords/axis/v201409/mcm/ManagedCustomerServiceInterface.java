@@ -38,7 +38,7 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         
      *         <p class="note"><b>Note:</b> {@link ManagedCustomerOperation}
      * only supports
-     *         {@code ADD} operator. </p>
+     *         {@code ADD} operator.</p>
      *         
      *         
      * @param operations List of unique operations.
@@ -55,11 +55,11 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         Operator + Link Status):
      *         
      *         <ul>
-     *         <li>ADD + PENDING:   manager extends invitations
-     *         <li>SET + CANCELLED: manager rescinds invitations
-     *         <li>SET + INACTIVE:  manager/client terminates links
-     *         <li>SET + ACTIVE:    client accepts invitations
-     *         <li>SET + REFUSED:   client declines invitations
+     *         <li>ADD + PENDING:   manager extends invitations</li>
+     *         <li>SET + CANCELLED: manager rescinds invitations</li>
+     *         <li>SET + INACTIVE:  manager/client terminates links</li>
+     *         <li>SET + ACTIVE:    client accepts invitations</li>
+     *         <li>SET + REFUSED:   client declines invitations</li>
      *         </ul>
      *         
      *         
@@ -78,7 +78,7 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>SET + ACTIVE: manager moves client customers to new managers
      * within the same MCC
-     *         hierarchy
+     *         hierarchy</li>
      *         </ul>
      *         
      *         

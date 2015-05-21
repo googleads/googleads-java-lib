@@ -42,6 +42,7 @@ public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFac
     this.wrappedFactory = EngineConfigurationFactoryDefault.newFactory(null);
   }
 
+  @Override
   public EngineConfiguration getClientEngineConfig() {
     // Only return the custom configuration for compression if the client config has not
     // been overridden.
@@ -53,6 +54,7 @@ public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFac
     return wrappedFactory.getClientEngineConfig();
   }
 
+  @Override
   public EngineConfiguration getServerEngineConfig() {
     return wrappedFactory.getServerEngineConfig();
   }

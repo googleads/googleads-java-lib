@@ -57,6 +57,7 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
     /**
      * @return the endpoint
      */
+    @Override
     public String getEndpoint() {
       return endpoint;
     }
@@ -125,6 +126,7 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
   /**
    * @return the endpoint
    */
+  @Override
   public String getEndpoint() {
     return endpoint;
   }
@@ -140,6 +142,7 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
   /**
    * Gets the OAuth2 credentials.
    */
+  @Override
   public Credential getOAuth2Credential() {
     return oAuth2Credential;
   }
@@ -171,18 +174,22 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
       this.configHelper = new ConfigurationHelper();
     }
 
+    @Override
     public Builder fromFile() throws ConfigurationLoadException {
       return fromFile(Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
 
+    @Override
     public Builder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
@@ -201,6 +208,7 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
      * @param config
      * @return Builder populated from the Configuration
      */
+    @Override
     public Builder from(Configuration config) {
       this.username = config.getString("api.dfa.username", null);
       this.password = config.getString("api.dfa.password", null);
@@ -296,6 +304,7 @@ public class DfaSession implements AdsSession, OAuth2Compatible {
      * @return the built {@code DfaSession}
      * @throws ValidationException if the {@code DfaSession} did not validate
      */
+    @Override
     public DfaSession build() throws ValidationException {
       validate();
       return new DfaSession(this);

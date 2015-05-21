@@ -20,6 +20,8 @@ import static org.mockito.Mockito.verify;
 
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.client.auth.oauth2.BearerToken;
+import com.google.api.client.auth.oauth2.Credential;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -55,10 +57,12 @@ public class DfpHttpHeaderHandlerTest {
   @Test
   public void testSetHeaders() throws Exception {
     Object soapClient = new Object();
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
     DfpSession dfpSession =
         new DfpSession.Builder()
             .withApplicationName("FooBar")
-            .withClientLoginToken("clientLoginToken")
+            .withOAuth2Credential(credential)
             .withEndpoint("https://ads.google.com")
             .withNetworkCode("networkCode")
             .build();

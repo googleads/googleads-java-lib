@@ -88,6 +88,7 @@ public class AdWordsJaxWsHeaderHandler implements
    *      com.google.api.ads.common.lib.client.AdsSession,
    *      com.google.api.ads.common.lib.client.AdsServiceDescriptor)
    */
+  @Override
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws AuthenticationException,
       ServiceException {
@@ -125,9 +126,10 @@ public class AdWordsJaxWsHeaderHandler implements
    * @return a map of HTTP header names to values
    */
   private Map<String, Object> readHeaderElements(AdWordsSession adWordsSession) {
-    Map<String, Object> mapToFill = Maps.newHashMap();
-    mapToFill.put("developerToken", adWordsSession.getDeveloperToken());
+    // The order here must match the order of the SoapHeader elements in the WSDL.
+    Map<String, Object> mapToFill = Maps.newLinkedHashMap();
     mapToFill.put("clientCustomerId", adWordsSession.getClientCustomerId());
+    mapToFill.put("developerToken", adWordsSession.getDeveloperToken());
     mapToFill.put("userAgent", userAgentCombiner.getUserAgent(adWordsSession.getUserAgent()));
     mapToFill.put("validateOnly", adWordsSession.isValidateOnly());
     mapToFill.put("partialFailure", adWordsSession.isPartialFailure());

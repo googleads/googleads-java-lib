@@ -15,8 +15,8 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Provides methods for creating, updating and retrieving {@link LiveStreamEvent}
  *       objects.
- *       <p>
- *       This feature is not yet openly available for DFP Video publishers.
+ *       
+ *       <p>This feature is not yet openly available for DFP Video publishers.
  *       Publishers will need to apply for access for this feature through their
  *       account managers.
  *       </p>

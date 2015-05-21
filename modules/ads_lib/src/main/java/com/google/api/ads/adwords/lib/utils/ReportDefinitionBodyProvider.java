@@ -16,6 +16,8 @@ package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.UrlEncodedContent;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 
 import java.util.Map;
@@ -25,7 +27,7 @@ import java.util.Map;
  *
  * @author Kevin Winter
  */
-public class ReportDefinitionBodyProvider implements ReportBodyProvider {
+class ReportDefinitionBodyProvider implements ReportBodyProvider {
 
   private static final String REPORT_XML_KEY = "__rdxml";
   private final String reportDefinitionXml;
@@ -35,10 +37,12 @@ public class ReportDefinitionBodyProvider implements ReportBodyProvider {
    *
    * @param reportDefinitionXml XML of the ReportDefinition to write.
    */
-  public ReportDefinitionBodyProvider(String reportDefinitionXml) {
-    this.reportDefinitionXml = reportDefinitionXml;
+  ReportDefinitionBodyProvider(String reportDefinitionXml) {
+    this.reportDefinitionXml = Preconditions.checkNotNull(Strings.emptyToNull(reportDefinitionXml),
+        "Null or empty report definition XML");
   }
 
+  @Override
   public HttpContent getHttpContent() {
     Map<String, String> data = Maps.newHashMap();
     data.put(REPORT_XML_KEY, reportDefinitionXml);

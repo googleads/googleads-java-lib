@@ -17,7 +17,6 @@ package adwords.axis.v201409.campaignmanagement;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd;
 import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdReturnValue;
 import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201409.cm.Operator;
@@ -80,7 +79,7 @@ public class ValidateTextAd {
     textAd1.setDescription1("Visit the Red Planet in style.");
     textAd1.setDescription2("Low-gravity fun for everyone!");
     textAd1.setDisplayUrl("www.example.com");
-    textAd1.setUrl("http://www.example.com");
+    textAd1.setFinalUrls(new String[] {"http://www.example.com"});
 
     // Create ad group ad.
     AdGroupAd textAdGroupAd1 = new AdGroupAd();
@@ -95,7 +94,8 @@ public class ValidateTextAd {
     AdGroupAdOperation[] operations = new AdGroupAdOperation[] {textAdGroupAdOperation1};
 
     // Add ads.
-    AdGroupAdReturnValue result = adGroupAdValidationService.mutate(operations);
+    adGroupAdValidationService.mutate(operations);
+    
     // No error means the request is valid.
 
     // Now let's check an invalid ad using a very long line to trigger an error.

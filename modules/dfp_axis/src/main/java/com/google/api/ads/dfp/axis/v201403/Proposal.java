@@ -30,7 +30,11 @@ public class Proposal  implements java.io.Serializable {
      *                 proposal and has a maximum length of 255 characters.
      * This attribute is
      *                 copied to {@link Order#name} when the proposal turns
-     * into an order. */
+     * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.String name;
 
     /* The option to specify whether the {@code Proposal} uses the
@@ -116,7 +120,11 @@ public class Proposal  implements java.io.Serializable {
      *                 default value is {@link BillingCap#CAPPED_CUMULATIVE}.
      * Either this attribute
      *                 or {@link #billingSchedule} will be used, according
-     * to the {@link #billingSource}. */
+     * to the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.BillingCap billingCap;
 
     /* The billing schedule of this {@code Proposal}. This attribute
@@ -124,7 +132,11 @@ public class Proposal  implements java.io.Serializable {
      *                 default value is {@link BillingSchedule#PRORATED}.
      * Either this attribute
      *                 or {@link #billingCap} will be used, according to
-     * the {@link #billingSource}. */
+     * the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.BillingSchedule billingSchedule;
 
     /* The billing source of this {@code Proposal}. This attribute
@@ -134,7 +146,11 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link BillingSource#CONTRACTED}, the {@link #billingSchedule}
      * will be used for
      *                 billing, otherwise the {@link billingCap} will be
-     * used. */
+     * used.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.BillingSource billingSource;
 
     /* User defined purchase order number for the {@code Proposal}.
@@ -142,13 +158,21 @@ public class Proposal  implements java.io.Serializable {
      *                 optional and has a maximum length of 63 characters.
      * It is copied to
      *                 {@link Order#poNumber} when the proposal turns into
-     * an order. */
+     * an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.String poNumber;
 
     /* Provides any additional notes that may annotate the {@code
      * Proposal}. This
      *                 attribute is optional and has a maximum length of
-     * 65,535 characters. */
+     * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.String notes;
 
     /* The total budget allocated for all the proposal line items
@@ -165,7 +189,11 @@ public class Proposal  implements java.io.Serializable {
     /* The primary salesperson who brokered the transaction with the
      * {@link #advertiser}.
      *                 This attribute is required when the proposal turns
-     * into an order. */
+     * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.SalespersonSplit primarySalesperson;
 
     /* List of secondary salespeople who are responsible for the sales
@@ -174,14 +202,22 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute is optional. A proposal could have
      * 8 secondary salespeople at most,
      *                 but must also have a {@link #primarySalesperson} if
-     * any secondary salesperson exists. */
+     * any secondary salesperson exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.SalespersonSplit[] secondarySalespeople;
 
     /* List of unique IDs of {@link User} objects who are the sales
      * planners of
      *                 the {@code Proposal}. This attribute is optional.
      * A proposal could have
-     *                 8 sales planners at most. */
+     *                 8 sales planners at most.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private long[] salesPlannerIds;
 
     /* The unique ID of the {@link User} who is primary trafficker
@@ -189,7 +225,11 @@ public class Proposal  implements java.io.Serializable {
      *                 trafficking the {@code Proposal}. This attribute is
      * required when the proposal
      *                 turns into an order, and will be copied to {@link
-     * Order#primaryTraffickerId} . */
+     * Order#primaryTraffickerId} .
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private java.lang.Long primaryTraffickerId;
 
     /* List of unique IDs of {@link User} objects who are responsible
@@ -198,16 +238,28 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is optional.
      *                 A proposal could have 8 secondary traffickers at most,
      * but must also have a primary
-     *                 trafficker if any secondary trafficker exists. */
+     *                 trafficker if any secondary trafficker exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private long[] secondaryTraffickerIds;
 
     /* The IDs of all teams that the {@code Proposal} is on directly.
-     * This attribute is optional. */
+     * This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private long[] appliedTeamIds;
 
     /* The values of the custom fields associated with the {@code
      * Proposal}.
-     *                 This attribute is optional. */
+     *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration. */
     private com.google.api.ads.dfp.axis.v201403.BaseCustomFieldValue[] customFieldValues;
 
     /* The set of labels applied directly to the {@code Proposal}.
@@ -224,17 +276,17 @@ public class Proposal  implements java.io.Serializable {
 
     /* The discount applied to the {@code Proposal} according to the
      * {@link #advertiser}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0. */
     private java.lang.Long advertiserDiscount;
 
     /* The proposal discount, which will be applied to all
      *                 {@link ProposalLineItem} objects in the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0. */
     private java.lang.Long proposalDiscount;
 
@@ -251,12 +303,9 @@ public class Proposal  implements java.io.Serializable {
      *                 The {@link Money#currencyCode} is readonly. */
     private com.google.api.ads.dfp.axis.v201403.Money additionalAdjustment;
 
-    /* The currency code of this {@code Proposal}. When the proposal
-     * has a {@code RateCard}, it's the
-     *                 {@link RateCard#currencyCode currency within the proposal's
-     * rate card}. Otherwise it's the
-     *                 {@link Network#currencyCode network's currency}. This
-     * attribute is readonly. */
+    /* The currency code of this {@code Proposal}. This attribute
+     * is optional and defaults to
+     *                 network's currency code. */
     private java.lang.String currencyCode;
 
     /* The exchange rate from the {@link #currencyCode} to the
@@ -277,16 +326,16 @@ public class Proposal  implements java.io.Serializable {
     private java.lang.Boolean refreshExchangeRate;
 
     /* The commission for the primary agency of the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 100
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0. */
     private java.lang.Long agencyCommission;
 
     /* The value added tax (VAT) applied on final cost of the {@code
      * Proposal}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 100
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0. */
     private java.lang.Long valueAddedTax;
@@ -477,6 +526,10 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is
      *                 copied to {@link Order#name} when the proposal turns
      * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.String getName() {
         return name;
@@ -492,6 +545,10 @@ public class Proposal  implements java.io.Serializable {
      * This attribute is
      *                 copied to {@link Order#name} when the proposal turns
      * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -783,6 +840,10 @@ public class Proposal  implements java.io.Serializable {
      * Either this attribute
      *                 or {@link #billingSchedule} will be used, according
      * to the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.BillingCap getBillingCap() {
         return billingCap;
@@ -798,6 +859,10 @@ public class Proposal  implements java.io.Serializable {
      * Either this attribute
      *                 or {@link #billingSchedule} will be used, according
      * to the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingCap(com.google.api.ads.dfp.axis.v201403.BillingCap billingCap) {
         this.billingCap = billingCap;
@@ -813,6 +878,10 @@ public class Proposal  implements java.io.Serializable {
      * Either this attribute
      *                 or {@link #billingCap} will be used, according to
      * the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.BillingSchedule getBillingSchedule() {
         return billingSchedule;
@@ -828,6 +897,10 @@ public class Proposal  implements java.io.Serializable {
      * Either this attribute
      *                 or {@link #billingCap} will be used, according to
      * the {@link #billingSource}.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingSchedule(com.google.api.ads.dfp.axis.v201403.BillingSchedule billingSchedule) {
         this.billingSchedule = billingSchedule;
@@ -845,6 +918,10 @@ public class Proposal  implements java.io.Serializable {
      * will be used for
      *                 billing, otherwise the {@link billingCap} will be
      * used.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.BillingSource getBillingSource() {
         return billingSource;
@@ -862,6 +939,10 @@ public class Proposal  implements java.io.Serializable {
      * will be used for
      *                 billing, otherwise the {@link billingCap} will be
      * used.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setBillingSource(com.google.api.ads.dfp.axis.v201403.BillingSource billingSource) {
         this.billingSource = billingSource;
@@ -877,6 +958,10 @@ public class Proposal  implements java.io.Serializable {
      * It is copied to
      *                 {@link Order#poNumber} when the proposal turns into
      * an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.String getPoNumber() {
         return poNumber;
@@ -892,6 +977,10 @@ public class Proposal  implements java.io.Serializable {
      * It is copied to
      *                 {@link Order#poNumber} when the proposal turns into
      * an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setPoNumber(java.lang.String poNumber) {
         this.poNumber = poNumber;
@@ -905,6 +994,10 @@ public class Proposal  implements java.io.Serializable {
      * Proposal}. This
      *                 attribute is optional and has a maximum length of
      * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.String getNotes() {
         return notes;
@@ -918,6 +1011,10 @@ public class Proposal  implements java.io.Serializable {
      * Proposal}. This
      *                 attribute is optional and has a maximum length of
      * 65,535 characters.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setNotes(java.lang.String notes) {
         this.notes = notes;
@@ -967,6 +1064,10 @@ public class Proposal  implements java.io.Serializable {
      * {@link #advertiser}.
      *                 This attribute is required when the proposal turns
      * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.SalespersonSplit getPrimarySalesperson() {
         return primarySalesperson;
@@ -980,6 +1081,10 @@ public class Proposal  implements java.io.Serializable {
      * {@link #advertiser}.
      *                 This attribute is required when the proposal turns
      * into an order.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setPrimarySalesperson(com.google.api.ads.dfp.axis.v201403.SalespersonSplit primarySalesperson) {
         this.primarySalesperson = primarySalesperson;
@@ -996,6 +1101,10 @@ public class Proposal  implements java.io.Serializable {
      * 8 secondary salespeople at most,
      *                 but must also have a {@link #primarySalesperson} if
      * any secondary salesperson exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.SalespersonSplit[] getSecondarySalespeople() {
         return secondarySalespeople;
@@ -1012,6 +1121,10 @@ public class Proposal  implements java.io.Serializable {
      * 8 secondary salespeople at most,
      *                 but must also have a {@link #primarySalesperson} if
      * any secondary salesperson exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setSecondarySalespeople(com.google.api.ads.dfp.axis.v201403.SalespersonSplit[] secondarySalespeople) {
         this.secondarySalespeople = secondarySalespeople;
@@ -1034,6 +1147,10 @@ public class Proposal  implements java.io.Serializable {
      *                 the {@code Proposal}. This attribute is optional.
      * A proposal could have
      *                 8 sales planners at most.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public long[] getSalesPlannerIds() {
         return salesPlannerIds;
@@ -1048,6 +1165,10 @@ public class Proposal  implements java.io.Serializable {
      *                 the {@code Proposal}. This attribute is optional.
      * A proposal could have
      *                 8 sales planners at most.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setSalesPlannerIds(long[] salesPlannerIds) {
         this.salesPlannerIds = salesPlannerIds;
@@ -1071,6 +1192,10 @@ public class Proposal  implements java.io.Serializable {
      * required when the proposal
      *                 turns into an order, and will be copied to {@link
      * Order#primaryTraffickerId} .
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public java.lang.Long getPrimaryTraffickerId() {
         return primaryTraffickerId;
@@ -1086,6 +1211,10 @@ public class Proposal  implements java.io.Serializable {
      * required when the proposal
      *                 turns into an order, and will be copied to {@link
      * Order#primaryTraffickerId} .
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setPrimaryTraffickerId(java.lang.Long primaryTraffickerId) {
         this.primaryTraffickerId = primaryTraffickerId;
@@ -1102,6 +1231,10 @@ public class Proposal  implements java.io.Serializable {
      *                 A proposal could have 8 secondary traffickers at most,
      * but must also have a primary
      *                 trafficker if any secondary trafficker exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public long[] getSecondaryTraffickerIds() {
         return secondaryTraffickerIds;
@@ -1118,6 +1251,10 @@ public class Proposal  implements java.io.Serializable {
      *                 A proposal could have 8 secondary traffickers at most,
      * but must also have a primary
      *                 trafficker if any secondary trafficker exists.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setSecondaryTraffickerIds(long[] secondaryTraffickerIds) {
         this.secondaryTraffickerIds = secondaryTraffickerIds;
@@ -1137,6 +1274,10 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return appliedTeamIds   * The IDs of all teams that the {@code Proposal} is on directly.
      * This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public long[] getAppliedTeamIds() {
         return appliedTeamIds;
@@ -1148,6 +1289,10 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param appliedTeamIds   * The IDs of all teams that the {@code Proposal} is on directly.
      * This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setAppliedTeamIds(long[] appliedTeamIds) {
         this.appliedTeamIds = appliedTeamIds;
@@ -1168,6 +1313,10 @@ public class Proposal  implements java.io.Serializable {
      * @return customFieldValues   * The values of the custom fields associated with the {@code
      * Proposal}.
      *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public com.google.api.ads.dfp.axis.v201403.BaseCustomFieldValue[] getCustomFieldValues() {
         return customFieldValues;
@@ -1180,6 +1329,10 @@ public class Proposal  implements java.io.Serializable {
      * @param customFieldValues   * The values of the custom fields associated with the {@code
      * Proposal}.
      *                 This attribute is optional.
+     *                 This attribute can be configured as editable after
+     * the proposal has been submitted.
+     *                 Please check with your network administrator for editable
+     * fields configuration.
      */
     public void setCustomFieldValues(com.google.api.ads.dfp.axis.v201403.BaseCustomFieldValue[] customFieldValues) {
         this.customFieldValues = customFieldValues;
@@ -1267,9 +1420,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return advertiserDiscount   * The discount applied to the {@code Proposal} according to the
      * {@link #advertiser}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public java.lang.Long getAdvertiserDiscount() {
@@ -1282,9 +1435,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param advertiserDiscount   * The discount applied to the {@code Proposal} according to the
      * {@link #advertiser}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public void setAdvertiserDiscount(java.lang.Long advertiserDiscount) {
@@ -1297,9 +1450,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return proposalDiscount   * The proposal discount, which will be applied to all
      *                 {@link ProposalLineItem} objects in the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public java.lang.Long getProposalDiscount() {
@@ -1312,9 +1465,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param proposalDiscount   * The proposal discount, which will be applied to all
      *                 {@link ProposalLineItem} objects in the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 1000
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public void setProposalDiscount(java.lang.Long proposalDiscount) {
@@ -1365,12 +1518,9 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the currencyCode value for this Proposal.
      * 
-     * @return currencyCode   * The currency code of this {@code Proposal}. When the proposal
-     * has a {@code RateCard}, it's the
-     *                 {@link RateCard#currencyCode currency within the proposal's
-     * rate card}. Otherwise it's the
-     *                 {@link Network#currencyCode network's currency}. This
-     * attribute is readonly.
+     * @return currencyCode   * The currency code of this {@code Proposal}. This attribute
+     * is optional and defaults to
+     *                 network's currency code.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -1380,12 +1530,9 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the currencyCode value for this Proposal.
      * 
-     * @param currencyCode   * The currency code of this {@code Proposal}. When the proposal
-     * has a {@code RateCard}, it's the
-     *                 {@link RateCard#currencyCode currency within the proposal's
-     * rate card}. Otherwise it's the
-     *                 {@link Network#currencyCode network's currency}. This
-     * attribute is readonly.
+     * @param currencyCode   * The currency code of this {@code Proposal}. This attribute
+     * is optional and defaults to
+     *                 network's currency code.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;
@@ -1458,9 +1605,9 @@ public class Proposal  implements java.io.Serializable {
      * Gets the agencyCommission value for this Proposal.
      * 
      * @return agencyCommission   * The commission for the primary agency of the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 100
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public java.lang.Long getAgencyCommission() {
@@ -1472,9 +1619,9 @@ public class Proposal  implements java.io.Serializable {
      * Sets the agencyCommission value for this Proposal.
      * 
      * @param agencyCommission   * The commission for the primary agency of the {@code Proposal}.
-     * The percentage value is in terms of millipercent, and must be multiples
-     * of 100
-     *                 with the range from 0 to 100000. This attribute is
+     * The percentage value is stored as millipercents, and must be multiples
+     * of 10
+     *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
      */
     public void setAgencyCommission(java.lang.Long agencyCommission) {
@@ -1487,8 +1634,8 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return valueAddedTax   * The value added tax (VAT) applied on final cost of the {@code
      * Proposal}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 100
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
      */
@@ -1502,8 +1649,8 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param valueAddedTax   * The value added tax (VAT) applied on final cost of the {@code
      * Proposal}.
-     *                 The percentage value is in terms of millipercent,
-     * and must be multiples of 100
+     *                 The percentage value is stored as millipercents, and
+     * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
      */

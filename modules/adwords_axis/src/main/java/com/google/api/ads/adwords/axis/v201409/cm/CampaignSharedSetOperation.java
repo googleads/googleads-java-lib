@@ -7,6 +7,10 @@
 
 package com.google.api.ads.adwords.axis.v201409.cm;
 
+
+/**
+ * Operations for adding/updating CampaignSharedSet entities.
+ */
 public class CampaignSharedSetOperation  extends com.google.api.ads.adwords.axis.v201409.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and
      * should not be {@code null}.</span> */
