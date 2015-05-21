@@ -76,6 +76,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    * @param soapClient the SOAP client to set the endpoint address for
    * @param endpointAddress the target endpoint address
    */
+  @Override
   public void setEndpointAddress(BindingProvider soapClient, String endpointAddress) {
     soapClient.getRequestContext().put(
         BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
@@ -88,6 +89,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    * @param headerName the name of the header being looked for
    * @return the header element, if it exists
    */
+  @Override
   public Object getHeader(BindingProvider soapClient, String headerName) {
     for (SOAPElement addedHeader : getContextHandlerFromClient(soapClient).getAddedHeaders()) {
       if (addedHeader.getNodeName().equals(headerName)) {
@@ -102,6 +104,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    *
    * @param soapClient the client to remove the headers from
    */
+  @Override
   public void clearHeaders(BindingProvider soapClient) {
     getContextHandlerFromClient(soapClient).clearHeaders();
     soapClient.getRequestContext().put(MessageContext.HTTP_REQUEST_HEADERS,
@@ -111,6 +114,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   /**
    * @see SoapClientHandler#setHeader(Object, String, String, Object)
    */
+  @Override
   public void setHeader(BindingProvider soapClient, String namespace, String headerName,
       Object headerValue) {
     if (headerValue instanceof SOAPElement) {
@@ -151,6 +155,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   /**
    * @see SoapClientHandler#putAllHttpHeaders(Object, Map)
    */
+  @Override
   public void putAllHttpHeaders(BindingProvider soapClient, Map<String, String> headersMap) {
     @SuppressWarnings("unchecked") // HTTP Headers in JAXWS are always a map of
                                    // String to List of String.
@@ -174,6 +179,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    * @param soapClient the client to set compression settings for
    * @param compress whether or not to use compression
    */
+  @Override
   public void setCompression(BindingProvider soapClient, boolean compress) {
     Map<String, String> headersMap = Maps.newHashMap();
     if (compress) {
@@ -200,6 +206,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    * @return the SOAP client for this descriptor
    * @throws ServiceException thrown if the SOAP client cannot be created
    */
+  @Override
   public BindingProvider createSoapClient(SoapServiceDescriptor soapServiceDescriptor)
       throws ServiceException {
     try {
@@ -257,6 +264,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    * @param soapCall the call to make to a SOAP web service
    * @return information about the SOAP response
    */
+  @Override
   public SoapCallReturn invokeSoapCall(SoapCall<BindingProvider> soapCall) {
     BindingProvider webService = soapCall.getSoapClient();
     SoapCallReturn.Builder builder = new SoapCallReturn.Builder();
@@ -287,6 +295,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   /**
    * @see SoapClientHandlerInterface#getEndpointAddress(Object)
    */
+  @Override
   public String getEndpointAddress(BindingProvider soapClient) {
     return (String) soapClient.getRequestContext().get(BindingProvider.ENDPOINT_ADDRESS_PROPERTY);
   }
@@ -296,6 +305,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
    *
    * @see SoapClientHandlerInterface#createSoapHeaderElement(QName)
    */
+  @Override
   public SOAPHeaderElement createSoapHeaderElement(QName qName) {
     throw new UnsupportedOperationException();
   }

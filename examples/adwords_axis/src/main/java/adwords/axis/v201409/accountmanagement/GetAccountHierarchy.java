@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerLink;
 import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerPage;
 import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.ManagedCustomerField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -78,7 +79,7 @@ public class GetAccountHierarchy {
 
     // Create selector.
     Selector selector = new SelectorBuilder()
-        .fields("CustomerId", "Name")
+        .fields(ManagedCustomerField.CustomerId, ManagedCustomerField.Name)
         .build();
 
     // Get results.

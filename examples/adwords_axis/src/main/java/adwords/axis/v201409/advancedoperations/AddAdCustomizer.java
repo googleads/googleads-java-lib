@@ -325,7 +325,7 @@ public class AddAdCustomizer {
     textAd.setHeadline("Luxury Cruise to {=CustomizerFeed.Name}");
     textAd.setDescription1("Only {=CustomizerFeed.Price}");
     textAd.setDescription2("Offer ends in {=countdown(CustomizerFeed.Date)}!");
-    textAd.setUrl("http://www.example.com");
+    textAd.setFinalUrls(new String[] {"http://www.example.com"});
     textAd.setDisplayUrl("www.example.com");
 
     // We add the same ad to both ad groups. When they serve, they will show different values, since

@@ -127,6 +127,7 @@ public class SetLineItemCustomFieldValue {
       List<String> customFieldValueStrings = Lists.transform(
           Arrays.asList(updatedLineItem.getCustomFieldValues()),
           new Function<BaseCustomFieldValue, String>() {
+            @Override
             public String apply(BaseCustomFieldValue baseCustomFieldValue) {
               if (baseCustomFieldValue instanceof CustomFieldValue
                   && ((CustomFieldValue) baseCustomFieldValue).getValue() instanceof NumberValue) {
@@ -151,8 +152,7 @@ public class SetLineItemCustomFieldValue {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()

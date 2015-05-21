@@ -26,7 +26,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -50,6 +52,8 @@ public class OAuth2HelperTest {
   @Mock private Logger libLogger;
   private Credential credential;
 
+  @Rule public ExpectedException thrown = ExpectedException.none();
+  
   private static final String ACCESS_TOKEN = "abc";
   private static final GenericUrl TOKEN_SERVER_URL = new GenericUrl("http://example.com/token");
   private static final String REFRESH_TOKEN = "refreshToken";
@@ -109,7 +113,7 @@ public class OAuth2HelperTest {
     oAuth2Helper.refreshCredential(credential);
   }
 
-  @Test(expected = IOException.class)
+  @Test
   public void testRefreshCredential_refreshFailedException() throws Exception {
     credential.setAccessToken(ACCESS_TOKEN);
     credential.setRefreshToken(REFRESH_TOKEN);
@@ -117,6 +121,7 @@ public class OAuth2HelperTest {
 
     Mockito.doThrow(new IOException("Failed")).when(oAuth2Helper).callRefreshToken(credential);
 
+    thrown.expect(IOException.class);
     oAuth2Helper.refreshCredential(credential);
   }
 }

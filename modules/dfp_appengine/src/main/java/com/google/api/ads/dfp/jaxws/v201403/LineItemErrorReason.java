@@ -45,7 +45,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_ENVIRONMENT_TYPE"/>
  *     &lt;enumeration value="INVALID_ENVIRONMENT_TYPE_FOR_PLATFORM"/>
  *     &lt;enumeration value="INVALID_TYPE_FOR_AUTO_EXTENSION"/>
- *     &lt;enumeration value="INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT"/>
  *     &lt;enumeration value="VIDEO_INVALID_ROADBLOCKING"/>
  *     &lt;enumeration value="BACKFILL_TYPE_NOT_ALLOWED"/>
  *     &lt;enumeration value="COMPANION_DELIVERY_OPTIONS_NOT_ALLOWED_WITH_BACKFILL"/>
@@ -336,14 +335,6 @@ public enum LineItemErrorReason {
      * 
      */
     INVALID_TYPE_FOR_AUTO_EXTENSION,
-
-    /**
-     * 
-     *                 Only goal-based line item types support contracted units bought.
-     *               
-     * 
-     */
-    INVALID_TYPE_FOR_CONTRACTED_UNITS_BOUGHT,
 
     /**
      * 

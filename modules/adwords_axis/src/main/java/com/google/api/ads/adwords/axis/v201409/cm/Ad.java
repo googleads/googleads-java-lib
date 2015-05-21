@@ -19,30 +19,50 @@ public class Ad  implements java.io.Serializable {
      *                 ads using {@code AdGroupAdService}. */
     private java.lang.Long id;
 
-    /* Destination URL. */
+    /* Destination URL.
+     *                 <p>Do not set this field if you are using upgraded
+     * URLs, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls */
     private java.lang.String url;
 
     /* Visible URL. */
     private java.lang.String displayUrl;
 
-    /* A list of possible final URLs after all cross domain redirects. */
+    /* A list of possible final URLs after all cross domain redirects.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span> */
     private java.lang.String[] finalUrls;
 
     /* A list of possible final mobile URLs after all cross domain
-     * redirects. */
+     * redirects.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span> */
     private java.lang.String[] finalMobileUrls;
 
     /* A list of final app URLs that will be used on mobile if the
      * user has the specific app
-     *                 installed. */
+     *                 installed.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls */
     private com.google.api.ads.adwords.axis.v201409.cm.AppUrl[] finalAppUrls;
 
-    /* URL template for constructing a tracking URL. */
+    /* URL template for constructing a tracking URL.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls */
     private java.lang.String trackingUrlTemplate;
 
     /* A list of mappings to be used for substituting URL custom parameter
      * tags in the
-     *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls. */
+     *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls */
     private com.google.api.ads.adwords.axis.v201409.cm.CustomParameters urlCustomParameters;
 
     /* The device preference for the ad. */
@@ -107,6 +127,9 @@ public class Ad  implements java.io.Serializable {
      * Gets the url value for this Ad.
      * 
      * @return url   * Destination URL.
+     *                 <p>Do not set this field if you are using upgraded
+     * URLs, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public java.lang.String getUrl() {
         return url;
@@ -117,6 +140,9 @@ public class Ad  implements java.io.Serializable {
      * Sets the url value for this Ad.
      * 
      * @param url   * Destination URL.
+     *                 <p>Do not set this field if you are using upgraded
+     * URLs, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public void setUrl(java.lang.String url) {
         this.url = url;
@@ -147,6 +173,10 @@ public class Ad  implements java.io.Serializable {
      * Gets the finalUrls value for this Ad.
      * 
      * @return finalUrls   * A list of possible final URLs after all cross domain redirects.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span>
      */
     public java.lang.String[] getFinalUrls() {
         return finalUrls;
@@ -157,6 +187,10 @@ public class Ad  implements java.io.Serializable {
      * Sets the finalUrls value for this Ad.
      * 
      * @param finalUrls   * A list of possible final URLs after all cross domain redirects.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span>
      */
     public void setFinalUrls(java.lang.String[] finalUrls) {
         this.finalUrls = finalUrls;
@@ -176,6 +210,11 @@ public class Ad  implements java.io.Serializable {
      * 
      * @return finalMobileUrls   * A list of possible final mobile URLs after all cross domain
      * redirects.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span>
      */
     public java.lang.String[] getFinalMobileUrls() {
         return finalMobileUrls;
@@ -187,6 +226,11 @@ public class Ad  implements java.io.Serializable {
      * 
      * @param finalMobileUrls   * A list of possible final mobile URLs after all cross domain
      * redirects.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
+     * <span class="constraint CollectionSize">The maximum size of this collection
+     * is 10.</span>
      */
     public void setFinalMobileUrls(java.lang.String[] finalMobileUrls) {
         this.finalMobileUrls = finalMobileUrls;
@@ -207,6 +251,9 @@ public class Ad  implements java.io.Serializable {
      * @return finalAppUrls   * A list of final app URLs that will be used on mobile if the
      * user has the specific app
      *                 installed.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public com.google.api.ads.adwords.axis.v201409.cm.AppUrl[] getFinalAppUrls() {
         return finalAppUrls;
@@ -219,6 +266,9 @@ public class Ad  implements java.io.Serializable {
      * @param finalAppUrls   * A list of final app URLs that will be used on mobile if the
      * user has the specific app
      *                 installed.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public void setFinalAppUrls(com.google.api.ads.adwords.axis.v201409.cm.AppUrl[] finalAppUrls) {
         this.finalAppUrls = finalAppUrls;
@@ -237,6 +287,9 @@ public class Ad  implements java.io.Serializable {
      * Gets the trackingUrlTemplate value for this Ad.
      * 
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -247,6 +300,9 @@ public class Ad  implements java.io.Serializable {
      * Sets the trackingUrlTemplate value for this Ad.
      * 
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 <p>This field is used for upgraded urls only, as described
+     * at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;
@@ -259,6 +315,8 @@ public class Ad  implements java.io.Serializable {
      * @return urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public com.google.api.ads.adwords.axis.v201409.cm.CustomParameters getUrlCustomParameters() {
         return urlCustomParameters;
@@ -271,6 +329,8 @@ public class Ad  implements java.io.Serializable {
      * @param urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
+     * <p>This field is used for upgraded urls only, as described at:
+     *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      */
     public void setUrlCustomParameters(com.google.api.ads.adwords.axis.v201409.cm.CustomParameters urlCustomParameters) {
         this.urlCustomParameters = urlCustomParameters;

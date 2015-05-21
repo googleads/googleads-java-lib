@@ -107,6 +107,7 @@ public class GoogleClientSecretsBuilder {
       return this;
     }
 
+    @Override
     public GoogleClientSecrets build() throws ValidationException {
       validate();
       Details details = new Details();
@@ -154,6 +155,7 @@ public class GoogleClientSecretsBuilder {
      * @param config the configuration
      * @return Builder populated from the Configuration
      */
+    @Override
     public GoogleClientSecretsForApiBuilder from(Configuration config) {
       clientId = config.getString(getPropertyKey("clientId"), null);
       clientSecret = config.getString(getPropertyKey("clientSecret"), null);
@@ -182,19 +184,23 @@ public class GoogleClientSecretsBuilder {
       return this;
     }
 
+    @Override
     public GoogleClientSecretsForApiBuilder fromFile(String path)
         throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path);
     }
 
+    @Override
     public GoogleClientSecretsForApiBuilder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path.getAbsolutePath());
     }
 
+    @Override
     public GoogleClientSecretsForApiBuilder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path), path.toString());
     }
 
+    @Override
     public GoogleClientSecretsForApiBuilder fromFile() throws ConfigurationLoadException {
       return fromFile(com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME);
     }

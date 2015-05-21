@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201409.cm.CampaignPage;
 import com.google.api.ads.adwords.axis.v201409.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.CampaignField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -70,8 +71,8 @@ public class GetCampaigns {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("Id", "Name")
-        .orderAscBy("Name")
+        .fields(CampaignField.Id, CampaignField.Name)
+        .orderAscBy(CampaignField.Name)
         .offset(offset)
         .limit(PAGE_SIZE)
         .build();

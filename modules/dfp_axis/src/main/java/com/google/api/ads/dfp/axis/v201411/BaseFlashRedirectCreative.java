@@ -31,10 +31,16 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
      *                     is populated by Google. */
     private java.lang.String fallbackPreviewUrl;
 
-    /* The SSL compatibility scan result of this creative. */
+    /* The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google. */
     private com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult;
 
-    /* The manual override for the SSL compatibility of this creative. */
+    /* The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}. */
     private com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride;
 
     public BaseFlashRedirectCreative() {
@@ -153,6 +159,9 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
      * Gets the sslScanResult value for this BaseFlashRedirectCreative.
      * 
      * @return sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public com.google.api.ads.dfp.axis.v201411.SslScanResult getSslScanResult() {
         return sslScanResult;
@@ -163,6 +172,9 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
      * Sets the sslScanResult value for this BaseFlashRedirectCreative.
      * 
      * @param sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public void setSslScanResult(com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult) {
         this.sslScanResult = sslScanResult;
@@ -173,6 +185,9 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
      * Gets the sslManualOverride value for this BaseFlashRedirectCreative.
      * 
      * @return sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public com.google.api.ads.dfp.axis.v201411.SslManualOverride getSslManualOverride() {
         return sslManualOverride;
@@ -183,6 +198,9 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
      * Sets the sslManualOverride value for this BaseFlashRedirectCreative.
      * 
      * @param sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public void setSslManualOverride(com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride) {
         this.sslManualOverride = sslManualOverride;

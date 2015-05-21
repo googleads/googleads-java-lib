@@ -14,41 +14,81 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import com.google.api.ads.common.lib.utils.Streams;
+import com.google.common.base.Preconditions;
+
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.util.zip.GZIPInputStream;
 
 import javax.annotation.Nullable;
 
 /**
- * Holder class for http status and response body. If the request was
- * successful, the inputstream contains the response, otherwise the
- * httpResponseMessage will have the error.
+ * Holder class for http status and response body for a <em>successful</em> request.
  *
  * @author Kevin Winter
  */
 public class ReportDownloadResponse {
 
-  private final int httpStatus;
-  private final String httpResponseMessage;
-  private InputStream inputStream;
+  private static final String HTTP_SUCCESS_MESSAGE = "SUCCESS";
 
-  public ReportDownloadResponse(
-      int httpStatus, String httpResponseMessage, InputStream inputStream) {
-    this.httpStatus = httpStatus;
-    this.httpResponseMessage = httpResponseMessage;
-    this.inputStream = inputStream;
+  private final RawReportDownloadResponse rawResponse;
+
+  /**
+   * Constructs a new instance from a successful raw response.
+   *
+   * @throws NullPointerException if {@code rawResponse} is null.
+   * @throws IllegalArgumentException if {@code rawResponse} does not have a successful HTTP status.
+   */
+  public ReportDownloadResponse(RawReportDownloadResponse rawResponse) {
+    this.rawResponse = Preconditions.checkNotNull(rawResponse, "Null raw response");
+    Preconditions.checkArgument(rawResponse.getHttpStatus() == HttpURLConnection.HTTP_OK,
+        "Expected a successful raw response but raw response status is: %s",
+        rawResponse.getHttpStatus());
   }
 
   public int getHttpStatus() {
-    return httpStatus;
+    return rawResponse.getHttpStatus();
   }
 
-  @Nullable
   public String getHttpResponseMessage() {
-    return httpResponseMessage;
+    return HTTP_SUCCESS_MESSAGE;
   }
 
   @Nullable
   public InputStream getInputStream() {
-    return inputStream;
+    return rawResponse.getInputStream();
+  }
+  
+  /**
+   * Returns the contents of the response as a String. Inflates the response if it is in one of the
+   * gzip formats.
+   *
+   * @throws IOException if unable to read the response contents
+   */
+  public String getAsString() throws IOException {
+    InputStream inputStream = isGzipped()
+        ? new GZIPInputStream(getInputStream())
+        : getInputStream();
+    return Streams.readAll(inputStream, rawResponse.getCharset());
+  }
+  
+  /**
+   * Writes the contents of the response to the specified File.
+   *
+   * @param outputFile the output file to write to
+   * @throws FileNotFoundException if unable to write to {@code outputFile}
+   * @throws IOException if unable to read the response contents
+   */
+  public void saveToFile(String outputFile) throws FileNotFoundException, IOException {
+    Streams.copy(getInputStream(), new BufferedOutputStream(new FileOutputStream(outputFile)));
+  }
+  
+  private boolean isGzipped() {
+    return rawResponse.getDownloadFormat().startsWith("GZIPPED");
   }
 }

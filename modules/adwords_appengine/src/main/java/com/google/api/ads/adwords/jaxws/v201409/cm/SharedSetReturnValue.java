@@ -9,6 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A container for return values from the {@link SharedSetService#mutate} call.
+ *           
+ * 
  * <p>Java class for SharedSetReturnValue complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

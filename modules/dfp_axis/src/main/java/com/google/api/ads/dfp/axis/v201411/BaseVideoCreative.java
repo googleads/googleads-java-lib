@@ -42,10 +42,16 @@ public abstract class BaseVideoCreative  extends com.google.api.ads.dfp.axis.v20
      *                     to this creative.  This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
-    /* The SSL compatibility scan result of this creative. */
+    /* The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google. */
     private com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult;
 
-    /* The manual override for the SSL compatibility of this creative. */
+    /* The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}. */
     private com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride;
 
     public BaseVideoCreative() {
@@ -258,6 +264,9 @@ public abstract class BaseVideoCreative  extends com.google.api.ads.dfp.axis.v20
      * Gets the sslScanResult value for this BaseVideoCreative.
      * 
      * @return sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public com.google.api.ads.dfp.axis.v201411.SslScanResult getSslScanResult() {
         return sslScanResult;
@@ -268,6 +277,9 @@ public abstract class BaseVideoCreative  extends com.google.api.ads.dfp.axis.v20
      * Sets the sslScanResult value for this BaseVideoCreative.
      * 
      * @param sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public void setSslScanResult(com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult) {
         this.sslScanResult = sslScanResult;
@@ -278,6 +290,9 @@ public abstract class BaseVideoCreative  extends com.google.api.ads.dfp.axis.v20
      * Gets the sslManualOverride value for this BaseVideoCreative.
      * 
      * @return sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public com.google.api.ads.dfp.axis.v201411.SslManualOverride getSslManualOverride() {
         return sslManualOverride;
@@ -288,6 +303,9 @@ public abstract class BaseVideoCreative  extends com.google.api.ads.dfp.axis.v20
      * Sets the sslManualOverride value for this BaseVideoCreative.
      * 
      * @param sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public void setSslManualOverride(com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride) {
         this.sslManualOverride = sslManualOverride;

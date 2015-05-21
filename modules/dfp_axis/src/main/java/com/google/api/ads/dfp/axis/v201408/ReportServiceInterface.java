@@ -46,12 +46,19 @@ public interface ReportServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns the {@link ReportJob} uniquely identified by the given
-     * ID.
+     * ID with only the
+     *         {@link ReportJob#reportJobStatus} and {@link ReportJob#id}
+     * fields filled in.
+     *         
+     *         <p>Replaced with {@code ReportService.getReportJobStatus}
+     * beginning in V201505.
      *         
      *         
      * @param reportJobId the Id of the report job which must already exist
      * 
      * @return the {@code ReportJob} uniquely identified by the given ID
+     * with the ID and status
+     *         fields filled in.
      */
     public com.google.api.ads.dfp.axis.v201408.ReportJob getReportJob(java.lang.Long reportJobId) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201408.ApiException;
 

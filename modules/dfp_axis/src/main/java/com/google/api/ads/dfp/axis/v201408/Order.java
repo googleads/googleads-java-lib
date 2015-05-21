@@ -71,7 +71,7 @@ public class Order  implements java.io.Serializable {
 
     /* The ISO currency code for the currency used by the {@code Order}.
      * This
-     *                 value is optional and defaults to "USD". */
+     *                 value is read-only and is the network's currency code. */
     private java.lang.String currencyCode;
 
     /* The unique ID of the {@link Company}, which is of type
@@ -495,7 +495,7 @@ public class Order  implements java.io.Serializable {
      * 
      * @return currencyCode   * The ISO currency code for the currency used by the {@code Order}.
      * This
-     *                 value is optional and defaults to "USD".
+     *                 value is read-only and is the network's currency code.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -507,7 +507,7 @@ public class Order  implements java.io.Serializable {
      * 
      * @param currencyCode   * The ISO currency code for the currency used by the {@code Order}.
      * This
-     *                 value is optional and defaults to "USD".
+     *                 value is read-only and is the network's currency code.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;

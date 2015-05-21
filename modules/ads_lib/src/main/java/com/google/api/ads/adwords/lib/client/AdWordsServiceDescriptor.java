@@ -64,6 +64,7 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   /**
    * @see AdsServiceDescriptor#getInterfaceClass()
    */
+  @Override
   public Class<?> getInterfaceClass() throws ServiceException {
     return interfaceClass;
   }
@@ -72,6 +73,7 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
    * @throws MalformedURLException
    * @see AdsServiceDescriptor#getEndpointAddress(String)
    */
+  @Override
   public String getEndpointAddress(String endpointServer) throws MalformedURLException {
     String serviceName = getServiceName();
     String endpointServerUrl = new URL(endpointServer).toString();
@@ -85,6 +87,7 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   /**
    * @see AdsServiceDescriptor#getVersion()
    */
+  @Override
   public String getVersion() {
     return version;
   }
@@ -92,6 +95,7 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   /**
    * @see AxisCompatible#getLocatorClass()
    */
+  @Override
   public Class<?> getLocatorClass() throws ClassNotFoundException {
     return Class.forName(
         interfaceClass.getPackage().getName() + "." + getServiceName() + "Locator");
@@ -100,6 +104,7 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   /**
    * @see JaxWsCompatible#getServiceClass()
    */
+  @Override
   public Class<?> getServiceClass() throws ClassNotFoundException {
     return Class.forName(interfaceClass.getPackage().getName() + "." + getServiceName());
   }

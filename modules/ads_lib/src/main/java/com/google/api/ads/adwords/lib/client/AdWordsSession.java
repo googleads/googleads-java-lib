@@ -174,6 +174,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   /**
    * Gets the OAuth2 credentials.
    */
+  @Override
   public Credential getOAuth2Credential() {
     return oAuth2Credential;
   }
@@ -213,6 +214,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   /**
    * @return the endpoint
    */
+  @Override
   public String getEndpoint() {
     return endpoint;
   }
@@ -245,18 +247,22 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       this.configHelper = new ConfigurationHelper();
     }
 
+    @Override
     public Builder fromFile() throws ConfigurationLoadException {
       return fromFile(Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
 
+    @Override
     public Builder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
@@ -271,12 +277,14 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      * <li>api.adwords.isPartialFailure</li>
      * <li>api.adwords.endpoint</li>
      * <li>api.adwords.reporting.skipHeader</li>
+     * <li>api.adwords.reporting.skipColumnHeader</li>
      * <li>api.adwords.reporting.skipSummary</li>
      * </ul>
      *
      * @param config
      * @return Builder populated from the Configuration
      */
+    @Override
     public Builder from(Configuration config) {
       this.clientCustomerId = config.getString("api.adwords.clientCustomerId", null);
       this.userAgent = config.getString("api.adwords.userAgent", null);
@@ -287,10 +295,13 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       // Only create a ReportConfiguration for this object if at least one reporting
       // configuration config value is present.
       Boolean isSkipReportHeader = config.getBoolean("api.adwords.reporting.skipHeader", null);
+      Boolean isSkipColumnHeader =
+          config.getBoolean("api.adwords.reporting.skipColumnHeader", null);
       Boolean isSkipReportSummary = config.getBoolean("api.adwords.reporting.skipSummary", null);
-      if (isSkipReportHeader != null || isSkipReportSummary != null) {
+      if (isSkipReportHeader != null || isSkipColumnHeader != null || isSkipReportSummary != null) {
         this.reportingConfiguration = new ReportingConfiguration.Builder()
             .skipReportHeader(isSkipReportHeader)
+            .skipColumnHeader(isSkipColumnHeader)
             .skipReportSummary(isSkipReportSummary)
             .build();
       }
@@ -366,6 +377,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      * @return the built {@code AdWordsSession}
      * @throws ValidationException if the {@code AdWordsSession} did not validate
      */
+    @Override
     public AdWordsSession build() throws ValidationException {
       defaultOptionals();
       validate();

@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdPage;
 import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.AdGroupAdField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -76,12 +77,12 @@ public class GetTextAds {
     // Create selector.
     SelectorBuilder builder = new SelectorBuilder();
     Selector selector = builder
-        .fields("Id", "AdGroupId", "Status")
-        .orderAscBy("Id")
+        .fields(AdGroupAdField.Id, AdGroupAdField.AdGroupId, AdGroupAdField.Status)
+        .orderAscBy(AdGroupAdField.Id)
         .offset(offset)
         .limit(PAGE_SIZE)
-        .equals("AdGroupId", adGroupId.toString())
-        .in("Status", "ENABLED", "PAUSED", "DISABLED")
+        .equals(AdGroupAdField.AdGroupId, adGroupId.toString())
+        .in(AdGroupAdField.Status, "ENABLED", "PAUSED", "DISABLED")
         .equals("AdType", "TEXT_AD")
         .build();
 

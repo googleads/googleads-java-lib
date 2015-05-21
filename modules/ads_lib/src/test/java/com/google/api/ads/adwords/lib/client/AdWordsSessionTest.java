@@ -78,6 +78,7 @@ public class AdWordsSessionTest {
     config.setProperty("api.adwords.developerToken", "devTokendevTokendevTok");
     config.setProperty("api.adwords.isPartialFailure", "false");
     config.setProperty("api.adwords.reporting.skipHeader", "true");
+    config.setProperty("api.adwords.reporting.skipColumnHeader", "true");
     config.setProperty("api.adwords.reporting.skipSummary", "false");
 
     AdWordsSession session =
@@ -90,6 +91,7 @@ public class AdWordsSessionTest {
         "reporting configuration should not be null if reporting options are in the config",
         session.getReportingConfiguration());
     assertTrue(session.getReportingConfiguration().isSkipReportHeader());
+    assertTrue(session.getReportingConfiguration().isSkipColumnHeader());
     assertFalse(session.getReportingConfiguration().isSkipReportSummary());
   }
   

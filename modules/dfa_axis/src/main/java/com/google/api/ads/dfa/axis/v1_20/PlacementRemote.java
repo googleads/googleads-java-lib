@@ -8,8 +8,6 @@
 package com.google.api.ads.dfa.axis.v1_20;
 
 public interface PlacementRemote extends java.rmi.Remote {
-    public com.google.api.ads.dfa.axis.v1_20.PlacementType[] getPlacementTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public com.google.api.ads.dfa.axis.v1_20.PlacementTagData getPlacementTagData(long campaignId, com.google.api.ads.dfa.axis.v1_20.PlacementTagCriteria[] placementTagCriterias) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementTagOption[] getRegularPlacementTagOptions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementTagOption[] getMobilePlacementTagOptions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementTagOption[] getInterstitialPlacementTagOptions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
@@ -24,6 +22,8 @@ public interface PlacementRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.PlacementGroupSaveResult savePlacementGroup(com.google.api.ads.dfa.axis.v1_20.PlacementGroup placementGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void deletePlacementGroup(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PlacementGroupType[] getPlacementGroupTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.PlacementType[] getPlacementTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.PlacementTagData getPlacementTagData(long campaignId, com.google.api.ads.dfa.axis.v1_20.PlacementTagCriteria[] placementTagCriterias) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.PricingType[] getPricingTypes() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.ProgrammaticSetting getProgrammaticSetting(long placementId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.Placement getPlacement(long id) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;

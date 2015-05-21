@@ -85,6 +85,7 @@ public class JaxWsSoapContextHandlerTest {
   public void testHandleMessage_inbound() throws Exception {
     final String mockSoapXml = "<Test>Xml Message</Test>";
     Answer<Object> writeXml = new Answer<Object>() {
+      @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
         Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
@@ -105,6 +106,7 @@ public class JaxWsSoapContextHandlerTest {
   public void testHandleMessage_outboundNoHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
     Answer<Object> writeXml = new Answer<Object>() {
+      @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
         Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
@@ -141,6 +143,7 @@ public class JaxWsSoapContextHandlerTest {
   public void testHandleMessage_outboundWithHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
     Answer<Object> writeXml = new Answer<Object>() {
+      @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
         Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
@@ -185,6 +188,7 @@ public class JaxWsSoapContextHandlerTest {
   public void testHandleFault() throws Exception {
     final String mockSoapXml = "<Fault>Xml Message</Fault>\n<Fault.Type>fatal</Fault.Type>";
     Answer<Object> writeXml = new Answer<Object>() {
+      @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
         OutputStream stream = (OutputStream) invocation.getArguments()[0];
         Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));

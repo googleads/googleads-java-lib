@@ -9,7 +9,8 @@ package com.google.api.ads.dfp.axis.v201403;
 
 
 /**
- * The action used to archive products.
+ * This action is deprecated and is a no-op, use {@link ArchiveProductTemplates}
+ * instead.
  */
 public class ArchiveProducts  extends com.google.api.ads.dfp.axis.v201403.ProductAction  implements java.io.Serializable {
     public ArchiveProducts() {

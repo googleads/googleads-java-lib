@@ -21,10 +21,16 @@ public class ThirdPartyCreative  extends com.google.api.ads.dfp.axis.v201411.Cre
      *                     attribute is read-only and is set by Google. */
     private java.lang.String expandedSnippet;
 
-    /* The SSL compatibility scan result for this creative. */
+    /* The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google. */
     private com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult;
 
-    /* The manual override for the SSL compatibility of this creative. */
+    /* The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}. */
     private com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride;
 
     /* A locked orientation for this creative to be displayed in. */
@@ -116,6 +122,9 @@ public class ThirdPartyCreative  extends com.google.api.ads.dfp.axis.v201411.Cre
      * Gets the sslScanResult value for this ThirdPartyCreative.
      * 
      * @return sslScanResult   * The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public com.google.api.ads.dfp.axis.v201411.SslScanResult getSslScanResult() {
         return sslScanResult;
@@ -126,6 +135,9 @@ public class ThirdPartyCreative  extends com.google.api.ads.dfp.axis.v201411.Cre
      * Sets the sslScanResult value for this ThirdPartyCreative.
      * 
      * @param sslScanResult   * The SSL compatibility scan result for this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public void setSslScanResult(com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult) {
         this.sslScanResult = sslScanResult;
@@ -136,6 +148,9 @@ public class ThirdPartyCreative  extends com.google.api.ads.dfp.axis.v201411.Cre
      * Gets the sslManualOverride value for this ThirdPartyCreative.
      * 
      * @return sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public com.google.api.ads.dfp.axis.v201411.SslManualOverride getSslManualOverride() {
         return sslManualOverride;
@@ -146,6 +161,9 @@ public class ThirdPartyCreative  extends com.google.api.ads.dfp.axis.v201411.Cre
      * Sets the sslManualOverride value for this ThirdPartyCreative.
      * 
      * @param sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public void setSslManualOverride(com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride) {
         this.sslManualOverride = sslManualOverride;

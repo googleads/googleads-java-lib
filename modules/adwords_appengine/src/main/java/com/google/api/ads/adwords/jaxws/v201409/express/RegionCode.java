@@ -362,7 +362,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Antigua and Barbuda
+     *                 Antigua & Barbuda
      *               
      * 
      */
@@ -474,7 +474,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Bosnia and Herzegovina
+     *                 Bosnia
      *               
      * 
      */
@@ -546,7 +546,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Barth?lemy
+     *                 St. Barth?lemy
      *               
      * 
      */
@@ -882,7 +882,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Ceuta and Melilla
+     *                 Ceuta & Melilla
      *               
      * 
      */
@@ -1370,7 +1370,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Kitts and Nevis
+     *                 St. Kitts & Nevis
      *               
      * 
      */
@@ -1434,7 +1434,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Lucia
+     *                 St. Lucia
      *               
      * 
      */
@@ -1538,7 +1538,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Martin
+     *                 St. Martin
      *               
      * 
      */
@@ -1578,7 +1578,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Myanmar (Burma)
+     *                 Myanmar
      *               
      * 
      */
@@ -1858,7 +1858,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Pierre and Miquelon
+     *                 St. Pierre & Miquelon
      *               
      * 
      */
@@ -2026,7 +2026,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Saint Helena
+     *                 St. Helena
      *               
      * 
      */
@@ -2042,7 +2042,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Svalbard and Jan Mayen
+     *                 Svalbard & Jan Mayen
      *               
      * 
      */
@@ -2106,7 +2106,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 S?o Tom? and Pr?ncipe
+     *                 S?o Tom? & Pr?ncipe
      *               
      * 
      */
@@ -2162,7 +2162,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Turks and Caicos Islands
+     *                 Turks & Caicos Islands
      *               
      * 
      */
@@ -2266,7 +2266,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Trinidad and Tobago
+     *                 Trinidad & Tobago
      *               
      * 
      */
@@ -2402,7 +2402,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 Wallis and Futuna
+     *                 Wallis & Futuna
      *               
      * 
      */
@@ -2666,7 +2666,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 South-Eastern Asia
+     *                 Southeast Asia
      *               
      * 
      */

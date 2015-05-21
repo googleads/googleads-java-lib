@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdPage;
 import com.google.api.ads.adwords.axis.v201409.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.AdGroupAdField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -68,10 +69,10 @@ public class GetAllDisapprovedAds {
 
     // Create selector.
     Selector selector = new SelectorBuilder()
-        .fields("Id", "AdGroupAdDisapprovalReasons")
-        .orderAscBy("Id")
-        .equals("AdGroupId", adGroupId.toString())
-        .equals("AdGroupCreativeApprovalStatus", "DISAPPROVED")
+        .fields(AdGroupAdField.Id, AdGroupAdField.AdGroupAdDisapprovalReasons)
+        .orderAscBy(AdGroupAdField.Id)
+        .equals(AdGroupAdField.AdGroupId, adGroupId.toString())
+        .equals(AdGroupAdField.AdGroupCreativeApprovalStatus, "DISAPPROVED")
         .build();
 
     // Get all disapproved ads.

@@ -59,8 +59,8 @@ public enum OfflineConversionErrorReason {
 
     /**
      * 
-     *                 This click occurred either before the conversion window for the
-     *                 concerned conversion name (default is 90 days).
+     *                 This click is either too old to be imported or occurred before the conversion window for the
+     *                 specified combination of conversion date and conversion name (default is 90 days).
      *               
      * 
      */

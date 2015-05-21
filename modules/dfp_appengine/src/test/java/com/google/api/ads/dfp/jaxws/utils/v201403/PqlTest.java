@@ -31,7 +31,9 @@ import com.google.api.ads.dfp.jaxws.v201403.Value;
 import com.google.common.collect.Lists;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -64,6 +66,9 @@ public class PqlTest {
   private DateTime dateTime1;
   private Date date1;
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+  
   public PqlTest() {}
 
   @Before
@@ -121,6 +126,7 @@ public class PqlTest {
     dateValue1 = new DateValue();
     dateValue1.setValue(date1);
   }
+  
   @Test
   public void testToString() {
     assertEquals("value1", Pql.toString(textValue1));
@@ -139,8 +145,9 @@ public class PqlTest {
     assertEquals("", Pql.toString(new DateValue()));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testToString_invalidValue() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.toString(new MyValue());
   }
   
@@ -179,8 +186,9 @@ public class PqlTest {
         DateTimes.toString(((DateValue) Pql.createValue(dateTime1.getDate())).getValue()));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCreateValue_invalidType() {
+    thrown.expect(IllegalArgumentException.class);
     Pql.createValue(new MyObject());
   }
 
@@ -236,7 +244,7 @@ public class PqlTest {
         combinedResultSet.getRows().get(2).getValues());
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testCombineResultSet_badColumns() {
     Row row1 = new Row();
     row1.getValues().addAll(Lists.newArrayList(textValue1, booleanValue1, numberValue1));
@@ -255,6 +263,7 @@ public class PqlTest {
     resultSet2.getColumnTypes().addAll(Lists.newArrayList(column1, column2));
     resultSet2.getRows().addAll(Lists.newArrayList(row3));
 
+    thrown.expect(IllegalArgumentException.class);
     Pql.combineResultSets(resultSet1, resultSet2);
   }
 

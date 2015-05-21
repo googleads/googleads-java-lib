@@ -30,7 +30,9 @@ import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.SystemConfiguration;
 import org.apache.commons.lang.SystemUtils;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -57,6 +59,9 @@ public class ConfigurationHelperTest {
   private Map<String, String> test3Properties;
   private String[] allPropertyKeys = {"a.b.c", "a.b.d", "e.f.g", "e.f.h", "i.j.k", "testProperty"};
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   @Before
   public void setUp() {
     AbstractConfiguration.setDefaultListDelimiter(',');
@@ -76,8 +81,9 @@ public class ConfigurationHelperTest {
       }};
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testUnsupportedConfigurationInfo() {
+    thrown.expect(IllegalArgumentException.class);
     new ConfigurationInfo<Long>(1234L, false);
   }
 
@@ -115,8 +121,9 @@ public class ConfigurationHelperTest {
     assertNull(ConfigurationHelper.newList(null, true));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testNewConfigurationInfoList_nullArguments() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
     ConfigurationHelper.newList(true, (Object[]) null);
   }
 
@@ -127,8 +134,9 @@ public class ConfigurationHelperTest {
     assertPropertiesEquals(test1Properties, configuration);
   }
 
-  @Test(expected = ConfigurationLoadException.class)
+  @Test
   public void testFromFile_stringDoesNotExist() throws Exception {
+    thrown.expect(ConfigurationLoadException.class);
     configurationHelper.fromFile("/" + System.currentTimeMillis());
   }
 
@@ -146,8 +154,9 @@ public class ConfigurationHelperTest {
     assertPropertiesEquals(test1Properties, configuration);
   }
 
-  @Test(expected = ConfigurationLoadException.class)
+  @Test
   public void testFromFile_urlDoesNotExist() throws Exception {
+    thrown.expect(ConfigurationLoadException.class);
     configurationHelper.fromFile(new URL("file:///" + System.currentTimeMillis()));
   }
 
@@ -294,7 +303,7 @@ public class ConfigurationHelperTest {
     assertEquals("testValue", configuration.getString("testProperty"));
   }
 
-  @Test(expected = ConfigurationLoadException.class)
+  @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlNotFound() throws Exception {
     for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
@@ -303,6 +312,7 @@ public class ConfigurationHelperTest {
 
     System.setProperty("testProperty", "testValue");
 
+    thrown.expect(ConfigurationLoadException.class);
     configurationHelper.createCombinedConfiguration(null,
         Lists.<ConfigurationInfo<URL>>newArrayList(new ConfigurationInfo<URL>(
             new URL("file:///does/not/exist" + System.currentTimeMillis()), false)));

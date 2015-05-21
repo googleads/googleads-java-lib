@@ -14,7 +14,6 @@
 
 package com.google.api.ads.dfp.lib.client;
 
-import com.google.api.ads.common.lib.auth.ClientLoginCompatible;
 import com.google.api.ads.common.lib.auth.OAuth2Compatible;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
@@ -43,12 +42,8 @@ import java.net.URL;
  *
  * @author Adam Rogal
  */
-public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginCompatible {
+public class DfpSession implements AdsSession, OAuth2Compatible {
 
-  static final String DEPRECATION_MESSAGE = "ClientLogin is now deprecated. "
-      + "Please switch to OAuth2. See OfflineCredentials for more information.";
-
-  private String clientLoginToken;
   private String networkCode;
   private Credential oAuth2Credential;
 
@@ -68,15 +63,10 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
    */
   private DfpSession(Builder builder) {
     this.applicationName = builder.applicationName;
-    this.clientLoginToken = builder.clientLoginToken;
     this.endpoint = builder.endpoint;
     this.networkCode = builder.networkCode;
     this.oAuth2Credential = builder.oAuth2Credential;
     this.libLogger = builder.libLogger;
-
-    if (builder.clientLoginToken != null) {
-      this.setClientLoginToken(builder.clientLoginToken);
-    }
   }
 
   /**
@@ -89,6 +79,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
   /**
    * Gets the OAuth2 credentials.
    */
+  @Override
   public Credential getOAuth2Credential() {
     return oAuth2Credential;
   }
@@ -104,36 +95,9 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
   }
 
   /**
-   * Gets the client login token.
-   *
-   * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-   *             convenience. Please see the OfflineCredentials utility for
-   *             generating offline credentials easily.
-   */
-  @Deprecated
-  public String getClientLoginToken() {
-    return clientLoginToken;
-  }
-
-  /**
-   * Sets the client login token. Any other authentication credentials on the
-   * session will be removed.
-   *
-   * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-   *             convenience. Please see the OfflineCredentials utility for
-   *             generating offline credentials easily.
-   */
-  @Deprecated
-  public void setClientLoginToken(String clientLoginToken) {
-    Preconditions.checkNotNull(clientLoginToken, "clientLoginToken cannot be null.");
-    clearAuthentication();
-    this.clientLoginToken = clientLoginToken;
-    libLogger.warn(DEPRECATION_MESSAGE);
-  }
-
-  /**
    * Gets the endpoint.
    */
+  @Override
   public String getEndpoint() {
     return endpoint;
   }
@@ -157,7 +121,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
    */
   private void clearAuthentication() {
     oAuth2Credential = null;
-    clientLoginToken = null;
   }
 
 
@@ -172,7 +135,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
 
     private String applicationName;
     private String endpoint;
-    private String clientLoginToken;
     private String networkCode;
     private Credential oAuth2Credential;
 
@@ -197,18 +159,22 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
       this.configHelper = configHelper;
     }
 
+    @Override
     public Builder fromFile() throws ConfigurationLoadException {
       return fromFile(Builder.DEFAULT_CONFIGURATION_FILENAME);
     }
 
+    @Override
     public Builder fromFile(String path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(File path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
 
+    @Override
     public Builder fromFile(URL path) throws ConfigurationLoadException {
       return from(configHelper.fromFile(path));
     }
@@ -221,33 +187,17 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
      * <li>api.dfp.applicationName</li>
      * <li>api.dfp.networkCode</li>
      * <li>api.dfp.endpoint</li>
-     * <li>Deprecated: api.dfp.clientLoginToken - use OAuth2 instead.</li>
      * </ul>
      *
      * @param config the configuration
      * @return Builder populated from the configuration
      */
+    @Override
     public Builder from(Configuration config) {
       this.applicationName = config.getString("api.dfp.applicationName", null);
       this.networkCode = config.getString("api.dfp.networkCode", null);
       this.endpoint = config.getString("api.dfp.endpoint", null);
-      this.clientLoginToken = config.getString("api.dfp.clientLoginToken", null);
 
-      return this;
-    }
-
-    /**
-     * Includes hard-coded ClientLogin token that will be used instead of
-     * fetching a new one.
-     *
-     * @deprecated It is encouraged that you switch to OAuth2 at your earliest
-     *             convenience. Please see the OfflineCredentials utility for
-     *             generating offline credentials easily.
-     */
-    @Deprecated
-    public Builder withClientLoginToken(String clientLoginToken) {
-      clearAuthentication();
-      this.clientLoginToken = clientLoginToken;
       return this;
     }
 
@@ -291,7 +241,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
      */
     private void clearAuthentication() {
       oAuth2Credential = null;
-      clientLoginToken = null;
     }
 
     /**
@@ -300,6 +249,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
      * @return the built {@code DfpSession}
      * @throws ValidationException if the {@code DfpSession} did not validate
      */
+    @Override
     public DfpSession build() throws ValidationException {
       defaultOptionals();
       validate();
@@ -320,10 +270,9 @@ public class DfpSession implements AdsSession, OAuth2Compatible, ClientLoginComp
      */
     private void validate() throws ValidationException {
       // Check for at least one authentication mechanism.
-      if (this.clientLoginToken == null
-          && this.oAuth2Credential == null) {
+      if (this.oAuth2Credential == null) {
         throw new ValidationException(
-            "Either ClientLogin or OAuth2 authentication must be used.", "");
+            "OAuth2 authentication must be used.", "");
       }
 
       // Check that application name is not empty or the default.

@@ -39,6 +39,7 @@ public class AdsLibraryUserAgentProvider implements UserAgentProvider {
   /**
    * Generates the library user agent such as Common-Java/1.4
    */
+  @Override
   public String getUserAgent() {
     return buildConfiguration.getLibName() + "/" + buildConfiguration.getLibVersion();
   }

@@ -27,11 +27,14 @@ public class RawReportDownloadResponse {
   private final int httpStatus;
   private final InputStream inputStream;
   private final Charset charset;
+  private final String downloadFormat;
 
-  public RawReportDownloadResponse(int httpStatus, InputStream inputStream, Charset charset) {
+  public RawReportDownloadResponse(int httpStatus, InputStream inputStream, Charset charset,
+      String downloadFormat) {
     this.httpStatus = httpStatus;
     this.inputStream = inputStream;
     this.charset = charset;
+    this.downloadFormat = downloadFormat;
   }
 
   public int getHttpStatus() {
@@ -44,5 +47,9 @@ public class RawReportDownloadResponse {
   
   public Charset getCharset() {
     return charset;
+  }
+  
+  public String getDownloadFormat() {
+    return downloadFormat;
   }
 }

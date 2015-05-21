@@ -21,7 +21,10 @@ package com.google.api.ads.adwords.axis.v201409.rm;
  *             </ul>
  */
 public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v201409.rm.RuleBasedUserList  implements java.io.Serializable {
-    /* Boolean rule that defines visitor of a page.
+    /* Boolean rule that defines visitor of a page. This field is
+     * selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -31,15 +34,21 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
      * then includes
      *                     all users before <code>endDate</code>. The date's
      * format should be YYYYMMDD.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListStartDate".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String startDate;
 
     /* End date of users visit. If set to <code>20371230</code>, then
      * includes
      *                     all users after <code>startDate</code>. The date's
      * format should be YYYYMMDD.
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListEndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -92,7 +101,10 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
     /**
      * Gets the rule value for this DateSpecificRuleUserList.
      * 
-     * @return rule   * Boolean rule that defines visitor of a page.
+     * @return rule   * Boolean rule that defines visitor of a page. This field is
+     * selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -105,7 +117,10 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
     /**
      * Sets the rule value for this DateSpecificRuleUserList.
      * 
-     * @param rule   * Boolean rule that defines visitor of a page.
+     * @param rule   * Boolean rule that defines visitor of a page. This field is
+     * selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListRule".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -122,9 +137,12 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
      * then includes
      *                     all users before <code>endDate</code>. The date's
      * format should be YYYYMMDD.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListStartDate".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getStartDate() {
         return startDate;
@@ -138,9 +156,12 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
      * then includes
      *                     all users before <code>endDate</code>. The date's
      * format should be YYYYMMDD.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListStartDate".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setStartDate(java.lang.String startDate) {
         this.startDate = startDate;
@@ -154,6 +175,9 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
      * includes
      *                     all users after <code>startDate</code>. The date's
      * format should be YYYYMMDD.
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListEndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -170,6 +194,9 @@ public class DateSpecificRuleUserList  extends com.google.api.ads.adwords.axis.v
      * includes
      *                     all users after <code>startDate</code>. The date's
      * format should be YYYYMMDD.
+     *                     This field is selected by default.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DateSpecificListEndDate".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

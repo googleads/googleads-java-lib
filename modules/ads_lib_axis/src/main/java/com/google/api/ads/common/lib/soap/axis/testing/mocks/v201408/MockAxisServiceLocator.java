@@ -46,15 +46,18 @@ public class MockAxisServiceLocator extends Service implements MockAxisService {
     return getMockServiceInterfacePort();
   }
 
+  @Override
   public MockAxisServiceInterface getMockServiceInterfacePort() throws ServiceException {
     return new MockAxisServiceSoapBindingStub(this);
   }
 
+  @Override
   public MockAxisServiceInterface getMockServiceInterfacePort(URL portAddress)
       throws ServiceException {
     return getMockServiceInterfacePort();
   }
 
+  @Override
   public String getMockServiceInterfacePortAddress() {
     return "https://ads.google.com/api/mock/v201408/MockAxisService";
   }

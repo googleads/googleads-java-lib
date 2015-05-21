@@ -40,22 +40,184 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PredicateOperator {
 
+
+    /**
+     * 
+     *                 Checks if the field is equal to the given value.
+     *                 
+     *                 <p>This operator is used with integers, dates, booleans, strings,
+     *                 enums, and sets.
+     *               
+     * 
+     */
     EQUALS,
+
+    /**
+     * 
+     *                 Checks if the field does not equal the given value.
+     *                 
+     *                 <p>This operator is used with integers, booleans, strings, enums,
+     *                 and sets.
+     *               
+     * 
+     */
     NOT_EQUALS,
+
+    /**
+     * 
+     *                 Checks if the field is equal to one of the given values.
+     *                 
+     *                 <p>This operator accepts multiple operands and is used with
+     *                 integers, booleans, strings, and enums.
+     *               
+     * 
+     */
     IN,
+
+    /**
+     * 
+     *                 Checks if the field does not equal any of the given values.
+     *                 
+     *                 <p>This operator accepts multiple operands and is used with
+     *                 integers, booleans, strings, and enums.
+     *               
+     * 
+     */
     NOT_IN,
+
+    /**
+     * 
+     *                 Checks if the field is greater than the given value.
+     *                 
+     *                 <p>This operator is used with numbers and dates.
+     *               
+     * 
+     */
     GREATER_THAN,
+
+    /**
+     * 
+     *                 Checks if the field is greater or equal to the given value.
+     *                 
+     *                 <p>This operator is used with numbers and dates.
+     *               
+     * 
+     */
     GREATER_THAN_EQUALS,
+
+    /**
+     * 
+     *                 Checks if the field is less than the given value.
+     *                 
+     *                 <p>This operator is used with numbers and dates.
+     *               
+     * 
+     */
     LESS_THAN,
+
+    /**
+     * 
+     *                 Checks if the field is less or equal to than the given value.
+     *                 
+     *                 <p>This operator is used with numbers and dates.
+     *               
+     * 
+     */
     LESS_THAN_EQUALS,
+
+    /**
+     * 
+     *                 Checks if the field starts with the given value.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     STARTS_WITH,
+
+    /**
+     * 
+     *                 Checks if the field starts with the given value, ignoring case.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     STARTS_WITH_IGNORE_CASE,
+
+    /**
+     * 
+     *                 Checks if the field contains the given value as a substring.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     CONTAINS,
+
+    /**
+     * 
+     *                 Checks if the field contains the given value as a substring, ignoring
+     *                 case.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     CONTAINS_IGNORE_CASE,
+
+    /**
+     * 
+     *                 Checks if the field does not contain the given value as a substring.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     DOES_NOT_CONTAIN,
+
+    /**
+     * 
+     *                 Checks if the field does not contain the given value as a substring,
+     *                 ignoring case.
+     *                 
+     *                 <p>This operator is used with strings.
+     *               
+     * 
+     */
     DOES_NOT_CONTAIN_IGNORE_CASE,
+
+    /**
+     * 
+     *                 Checks if the field contains <em>any</em> of the given values.
+     *                 
+     *                 <p>This operator accepts multiple values and is used on sets of numbers
+     *                 or strings.
+     *               
+     * 
+     */
     CONTAINS_ANY,
+
+    /**
+     * 
+     *                 Checks if the field contains <em>all</em> of the given values.
+     *                 
+     *                 <p>This operator accepts multiple values and is used on sets of numbers
+     *                 or strings.
+     *               
+     * 
+     */
     CONTAINS_ALL,
+
+    /**
+     * 
+     *                 Checks if the field contains <em>none</em> of the given values.
+     *                 
+     *                 <p>This operator accepts multiple values and is used on sets of numbers
+     *                 or strings.
+     *               
+     * 
+     */
     CONTAINS_NONE,
 
     /**

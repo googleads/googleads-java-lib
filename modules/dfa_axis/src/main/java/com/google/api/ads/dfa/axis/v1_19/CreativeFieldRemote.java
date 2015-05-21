@@ -8,8 +8,8 @@
 package com.google.api.ads.dfa.axis.v1_19;
 
 public interface CreativeFieldRemote extends java.rmi.Remote {
-    public void deleteCreativeField(long creativeFieldId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeFieldSaveResult saveCreativeField(com.google.api.ads.dfa.axis.v1_19.CreativeField creativeField) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
+    public void deleteCreativeField(long creativeFieldId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeFieldRecordSet getCreativeFields(com.google.api.ads.dfa.axis.v1_19.CreativeFieldSearchCriteria creativeFieldSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeFieldValueRecordSet getCreativeFieldValues(com.google.api.ads.dfa.axis.v1_19.CreativeFieldValueSearchCriteria creativeFieldValueSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;
     public com.google.api.ads.dfa.axis.v1_19.CreativeFieldValue getCreativeFieldValue(long creativeFieldValueId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException;

@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="CollectionSizeError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TOO_FEW"/>
- *     &lt;enumeration value="TOO_MANY"/>
+ *     &lt;enumeration value="TOO_LARGE"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -24,8 +24,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum CollectionSizeErrorReason {
 
-    TOO_FEW,
-    TOO_MANY;
+    TOO_LARGE,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

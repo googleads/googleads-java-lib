@@ -16,19 +16,26 @@ package com.google.api.ads.dfp.axis.utils.v201411;
 
 import static org.apache.commons.lang.CharEncoding.UTF_8;
 
-import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.ads.dfp.axis.v201411.ExportFormat;
+import com.google.api.ads.dfp.axis.v201411.ReportDownloadOptions;
 import com.google.api.ads.dfp.axis.v201411.ReportJobStatus;
 import com.google.api.ads.dfp.axis.v201411.ReportServiceInterface;
 import com.google.api.ads.dfp.lib.utils.ReportCallback;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.io.ByteSource;
+import com.google.common.io.CharSource;
+import com.google.common.io.Resources;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.rmi.RemoteException;
+import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -57,7 +64,24 @@ public class ReportDownloader {
 
   private final ReportServiceInterface reportService;
   private final long reportJobId;
+  
+  private static final Set<ExportFormat> SUPPORTED_CHARSOURCE_EXPORT_FORMATS =
+      ImmutableSet.of(ExportFormat.CSV_DUMP, ExportFormat.TSV, ExportFormat.XML);
+  
+  private static class GZippedByteSource extends ByteSource {
 
+    private ByteSource containedByteSource;
+
+    public GZippedByteSource(ByteSource zippedByteSource) {
+      containedByteSource = zippedByteSource;
+    }
+
+    @Override
+    public InputStream openStream() throws IOException {
+      return new GZIPInputStream(containedByteSource.openStream());
+    }
+  }
+  
   /**
    * Constructs a {@code ReportDownloader} object for a
    * {@link ReportServiceInterface} and a report job id that the the class works
@@ -145,7 +169,9 @@ public class ReportDownloader {
    * @throws IOException if there was an error performing any I/O action,
    *         including any SOAP calls
    * @throws IllegalStateException if the report is not ready to be downloaded
+   * @deprecated use {@link #getDownloadUrl(ReportDownloadOptions)}
    */
+  @Deprecated
   public void downloadReport(ExportFormat exportFormat, String fileName) throws IOException {
     downloadReport(exportFormat, new FileOutputStream(fileName));
   }
@@ -159,12 +185,17 @@ public class ReportDownloader {
    * @throws IOException if there was an error performing any I/O action,
    *     including any SOAP calls
    * @throws IllegalStateException if the report is not ready to be downloaded
+   * @deprecated use {@link #getDownloadUrl(ReportDownloadOptions)} 
    */
+  @Deprecated
   public void downloadReport(ExportFormat exportFormat, OutputStream outputStream)
       throws IOException {
-    Streams.copy(new URL(getDownloadUrl(exportFormat)).openStream(), outputStream);
+    ReportDownloadOptions options = new ReportDownloadOptions();
+    options.setExportFormat(exportFormat);
+    options.setUseGzipCompression(true);
+    Resources.asByteSource(getDownloadUrl(options)).copyTo(outputStream);
   }
-
+  
   /**
    * Gets the plain-text format report as a {@code String}.
    *
@@ -174,34 +205,57 @@ public class ReportDownloader {
    * @throws IOException if there was an error performing any I/O action,
    *         including any SOAP calls
    * @throws IllegalStateException if the report is not ready to be downloaded
+   * @deprecated use {@link #getReportAsCharSource(ReportDownloadOptions)}
    */
+  @Deprecated
   public String getReport(ExportFormat exportFormat) throws IOException {
-    return getGzipUrlStringContents(getDownloadUrl(exportFormat));
+    ReportDownloadOptions options = new ReportDownloadOptions();
+    options.setExportFormat(exportFormat);
+    options.setUseGzipCompression(true);
+    return getReportAsCharSource(options).read();
   }
-
+  
   /**
-   * Gets the download URL for a GZip or plain-text format report.
+   * Gets the download URL for a GZip or plain-text format report. If you requested
+   * a compressed report, you may want to save your file with a gz or zip extension.
+   * 
+   * <pre><code>
+   *  URL url = reportDownloader.getDownloadUrl(options);
+   *  Resources.asByteSource(url).copyTo(Files.asByteSink(file));
+   * </code></pre>
    *
-   * @param exportFormat the export format of the report
+   * @param options the options to download the report with
    * @return the URL for the report download
    * @throws RemoteException if there was an error performing any Axis call
+   * @throws MalformedURLException if there is an error forming the download URL
    * @throws IllegalStateException if the report is not ready to be downloaded
    */
-  private String getDownloadUrl(ExportFormat exportFormat) throws RemoteException {
+  public URL getDownloadUrl(ReportDownloadOptions options) throws RemoteException,
+      MalformedURLException {
     ReportJobStatus status = reportService.getReportJob(reportJobId).getReportJobStatus();
     Preconditions.checkState(status == ReportJobStatus.COMPLETED, "Report " + reportJobId
         + " must be completed before downloading. It is currently: " + status);
-    return reportService.getReportDownloadURL(reportJobId, exportFormat);
+    return new URL(reportService.getReportDownloadUrlWithOptions(reportJobId, options));
+  }
+  
+  /**
+   * Returns a CharSource of report contents with {@code ReportDownloadOptions}. The ExportFormat
+   * must be string-based, such as
+   * {@link com.google.api.ads.dfp.axis.v201411.ExportFormat#CSV_DUMP}.
+   *
+   * @param options the options to download the report with
+   * @return a new CharSource of report results
+   * @throws IOException if there was an error performing any I/O action, including any SOAP calls
+   * @throws IllegalStateException if the report is not ready to be downloaded
+   * @throws IllegalArgumentException if the {@link ExportFormat} is not a string-based format
+   */
+  public CharSource getReportAsCharSource(ReportDownloadOptions options) throws IOException {
+    Preconditions.checkArgument(
+        SUPPORTED_CHARSOURCE_EXPORT_FORMATS.contains(options.getExportFormat()),
+        "ExportFormat " + options.getExportFormat() + " cannot be used with CharSource");
+    ByteSource byteSource = Resources.asByteSource(getDownloadUrl(options));
+    return (options.getUseGzipCompression() ? new GZippedByteSource(byteSource) : byteSource)
+        .asCharSource(REPORT_CHARSET);
   }
 
-  /**
-   * Gets the report contents of a URL that is assumed to be Gzipped encoded.
-   *
-   * @param url the URL locating the Gzipped report
-   * @return the report contents of the URL
-   * @throws IOException if an I/O error occurs
-   */
-  private String getGzipUrlStringContents(String url) throws IOException {
-    return Streams.readAll(new GZIPInputStream(new URL(url).openStream()), REPORT_CHARSET);
-  }
 }

@@ -59,6 +59,10 @@ public class BudgetSuggestion  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long impressions;
 
+    /* <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span> */
+    private com.google.api.ads.adwords.axis.v201409.express.CurrencyCode currencyCode;
+
     public BudgetSuggestion() {
     }
 
@@ -71,7 +75,8 @@ public class BudgetSuggestion  implements java.io.Serializable {
            com.google.api.ads.adwords.axis.v201409.cm.Money minBudget,
            com.google.api.ads.adwords.axis.v201409.cm.Money maxBudget,
            com.google.api.ads.adwords.axis.v201409.cm.Money[] budgetQuantiles,
-           java.lang.Long impressions) {
+           java.lang.Long impressions,
+           com.google.api.ads.adwords.axis.v201409.express.CurrencyCode currencyCode) {
            this.cpc = cpc;
            this.minCpc = minCpc;
            this.maxCpc = maxCpc;
@@ -81,6 +86,7 @@ public class BudgetSuggestion  implements java.io.Serializable {
            this.maxBudget = maxBudget;
            this.budgetQuantiles = budgetQuantiles;
            this.impressions = impressions;
+           this.currencyCode = currencyCode;
     }
 
 
@@ -311,6 +317,28 @@ public class BudgetSuggestion  implements java.io.Serializable {
         this.impressions = impressions;
     }
 
+
+    /**
+     * Gets the currencyCode value for this BudgetSuggestion.
+     * 
+     * @return currencyCode   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public com.google.api.ads.adwords.axis.v201409.express.CurrencyCode getCurrencyCode() {
+        return currencyCode;
+    }
+
+
+    /**
+     * Sets the currencyCode value for this BudgetSuggestion.
+     * 
+     * @param currencyCode   * <span class="constraint ReadOnly">This field is read only and
+     * will be ignored when sent to the API.</span>
+     */
+    public void setCurrencyCode(com.google.api.ads.adwords.axis.v201409.express.CurrencyCode currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof BudgetSuggestion)) return false;
@@ -349,7 +377,10 @@ public class BudgetSuggestion  implements java.io.Serializable {
               java.util.Arrays.equals(this.budgetQuantiles, other.getBudgetQuantiles()))) &&
             ((this.impressions==null && other.getImpressions()==null) || 
              (this.impressions!=null &&
-              this.impressions.equals(other.getImpressions())));
+              this.impressions.equals(other.getImpressions()))) &&
+            ((this.currencyCode==null && other.getCurrencyCode()==null) || 
+             (this.currencyCode!=null &&
+              this.currencyCode.equals(other.getCurrencyCode())));
         __equalsCalc = null;
         return _equals;
     }
@@ -395,6 +426,9 @@ public class BudgetSuggestion  implements java.io.Serializable {
         }
         if (getImpressions() != null) {
             _hashCode += getImpressions().hashCode();
+        }
+        if (getCurrencyCode() != null) {
+            _hashCode += getCurrencyCode().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -467,6 +501,13 @@ public class BudgetSuggestion  implements java.io.Serializable {
         elemField.setFieldName("impressions");
         elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201409", "impressions"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currencyCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201409", "currencyCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201409", "CurrencyCode"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

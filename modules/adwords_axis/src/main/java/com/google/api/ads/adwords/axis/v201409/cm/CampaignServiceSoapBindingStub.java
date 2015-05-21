@@ -1202,20 +1202,6 @@ public class CampaignServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.TargetError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201409.cm.TargetErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201409", "TargetRoasBiddingScheme");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201409.cm.TargetRoasBiddingScheme.class;

@@ -81,6 +81,7 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
    *     in an exception. The exception thrown will be not be wrapped - it will
    *     adhere to the "throws" clause of the passed in {@code Method}.
    */
+  @Override
   public Object invoke(Object proxy, final Method method, final Object[] args)
       throws Throwable {
     try {

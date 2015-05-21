@@ -33,6 +33,8 @@ public enum LabelEntityAssociationErrorReason {
      *                 Labels can only be associated with {@link Company.Type#HOUSE_ADVERTISER},
      *                 {@link Company.Type#ADVERTISER} and {@link Company.Type#AD_NETWORK} type
      *                 of companies.
+     *                 
+     *                 <p>Replaced with {@code CompanyError.INVALID_LABEL_ASSOCIATION} beginning in V201508.
      *               
      * 
      */

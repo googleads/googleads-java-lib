@@ -107,6 +107,7 @@ public class ReportRequestFactoryHelper {
       throws AuthenticationException {
     final HttpHeaders httpHeaders = createHeaders(reportUrl, version);
     return httpTransport.createRequestFactory(new HttpRequestInitializer() {
+      @Override
       public void initialize(HttpRequest request) throws IOException {
         request.setHeaders(httpHeaders);
         request.setConnectTimeout(reportDownloadTimeout);
@@ -137,6 +138,10 @@ public class ReportRequestFactoryHelper {
       if (reportingConfiguration.isSkipReportHeader() != null) {
         httpHeaders.set("skipReportHeader",
             Boolean.toString(reportingConfiguration.isSkipReportHeader()));
+      }
+      if (reportingConfiguration.isSkipColumnHeader() != null) {
+        httpHeaders.set("skipColumnHeader",
+            Boolean.toString(reportingConfiguration.isSkipColumnHeader()));
       }
       if (reportingConfiguration.isSkipReportSummary() != null) {
         httpHeaders.set("skipReportSummary",

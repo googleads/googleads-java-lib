@@ -69,6 +69,7 @@ public final class ExtendedCampaign {
      return Lists.newArrayList(); 
     }
     return Lists.transform(campaigns, new Function<Campaign, ExtendedCampaign>() {
+      @Override
       public ExtendedCampaign apply(Campaign campaign) {
         return new ExtendedCampaign(campaign, delegateLocator);
       }

@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Represents error codes for the SharedSetService.
+ *           
+ * 
  * <p>Java class for SharedSetError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

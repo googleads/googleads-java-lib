@@ -67,6 +67,7 @@ public final class ExtendedAdGroup {
       return Lists.newArrayList(); 
     }
     return Lists.transform(adGroups, new Function<AdGroup, ExtendedAdGroup>() {
+      @Override
       public ExtendedAdGroup apply(AdGroup adGroup) {
         return new ExtendedAdGroup(adGroup, delegateLocator);
       }
@@ -298,6 +299,7 @@ public final class ExtendedAdGroup {
   public List<AdGroupAd> insertAds(List<Ad> ads) throws RemoteException {
     return delegateLocator.getAdGroupAdDelegate().insert(
         Lists.transform(ads, new Function<Ad, AdGroupAd>() {
+          @Override
           public AdGroupAd apply(Ad ad) {
             AdGroupAd adGroupAd = new AdGroupAd();
             adGroupAd.setAdGroupId(adGroup.getId());

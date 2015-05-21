@@ -17,14 +17,16 @@ package com.google.api.ads.common.lib.soap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.testing.MockSoapClient;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -50,6 +52,8 @@ public class SoapClientHandlerTest {
 
   private MockSoapClient soapClient;
   @Mock private SoapCall<Object> soapCall;
+
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @SuppressWarnings("unchecked")
   @Before
@@ -126,18 +130,18 @@ public class SoapClientHandlerTest {
     assertEquals(MockSoapClient.class.getMethod("identityCall", Object[].class), method);
   }
 
-  @Test(expected = NoSuchMethodException.class)
+  @Test
   public void testGetSoapClientMethod_noMethod() throws Exception {
-    Method method =
-        soapClientHandler.getSoapClientMethod(soapClient, SimilarMockSoapClient.class.getMethod(
-            "noSuchMethod", Object[].class, Object.class, Object.class));
+    thrown.expect(NoSuchMethodException.class);
+    soapClientHandler.getSoapClientMethod(soapClient, SimilarMockSoapClient.class.getMethod(
+        "noSuchMethod", Object[].class, Object.class, Object.class));
   }
 
-  @Test(expected = NoSuchMethodException.class)
+  @Test
   public void testGetSoapClientMethod_incorrectReturnType() throws Exception {
-    Method method =
-      soapClientHandler.getSoapClientMethod(soapClient, SimilarMockSoapClient.class.getMethod(
-          "voidCall", Object[].class));
+    thrown.expect(NoSuchMethodException.class);
+    soapClientHandler.getSoapClientMethod(soapClient,
+        SimilarMockSoapClient.class.getMethod("voidCall", Object[].class));
   }
 
   @Test
@@ -236,12 +240,9 @@ public class SoapClientHandlerTest {
     when(soapCall.getSoapClient()).thenReturn(mockSoapClient);
     when(soapCall.getSoapArgs()).thenReturn(new Object[] {args});
 
-    try {
-      Object result = soapClientHandler.invoke(soapCall);
-      fail("Exception should have been thrown.");
-    } catch (InvocationTargetException e) {
-      assertEquals(MockSoapClient.EXCEPTION, e.getCause());
-    }
+    thrown.expect(InvocationTargetException.class);
+    thrown.expectCause(Matchers.<Exception>is(MockSoapClient.EXCEPTION));
+    soapClientHandler.invoke(soapCall);
   }
 
   @Test
@@ -293,45 +294,55 @@ public class SoapClientHandlerTest {
    */
   private static class SoapClientHandlerImpl extends SoapClientHandler<Object> {
 
+    @Override
     public Object createSoapClient(SoapServiceDescriptor soapServiceDescriptor)
         throws ServiceException {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public SoapCallReturn invokeSoapCall(SoapCall<Object> soapCall) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setEndpointAddress(Object soapClient, String endpointAddress) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public String getEndpointAddress(Object soapClient) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void clearHeaders(Object soapClient) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public SOAPHeaderElement createSoapHeaderElement(QName qName) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setHeader(
         Object soapClient, String namespace, String headerName, Object headerValue)
         throws ServiceException {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void putAllHttpHeaders(Object soapClient, Map<String, String> headersMap) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public Object getHeader(Object soapClient, String headerName) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setCompression(Object soapClient, boolean compress) {
       throw new UnsupportedOperationException();
     }

@@ -10,11 +10,12 @@ package com.google.api.ads.adwords.axis.v201409.o;
 
 /**
  * Represents a set of stats for a daily traffic estimate.
- *             As of v201406 {@code averageCpc}, {@code averagePosition}
- * and {@code clickThroughRate} will be
- *             {@code null} when not defined (respectively, if {@code
- * clicksPerDay} or
- *             {@code impressionsPerDay} are 0).
+ *             
+ *             <p>{@code averageCpc}, {@code averagePosition} and {@code
+ * clickThroughRate} will be
+ *             {@code null} when not defined and {@code clicksPerDay}
+ * or {@code impressionsPerDay}
+ *             is {@code 0}, respectively.</p>
  */
 public class StatsEstimate  implements java.io.Serializable {
     /* The estimated average CPC. */

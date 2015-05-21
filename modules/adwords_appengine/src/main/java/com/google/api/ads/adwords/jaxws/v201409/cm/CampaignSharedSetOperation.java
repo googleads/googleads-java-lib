@@ -7,6 +7,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Operations for adding/updating CampaignSharedSet entities.
+ *           
+ * 
  * <p>Java class for CampaignSharedSetOperation complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -32,6 +32,7 @@ import com.google.api.ads.adwords.axis.v201409.express.PromotionOperation;
 import com.google.api.ads.adwords.axis.v201409.express.PromotionServiceInterface;
 import com.google.api.ads.adwords.axis.v201409.express.PromotionStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.ExpressBusinessField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -83,8 +84,8 @@ public class AddPromotion {
     // Get the business for the businessId. We will need its geo point to create
     // a Proximity criterion for the new Promotion.
     Selector businessSelector = new SelectorBuilder()
-        .fields("Id", "GeoPoint")
-        .equals("Id", String.valueOf(businessId))
+        .fields(ExpressBusinessField.Id, ExpressBusinessField.GeoPoint)
+        .equals(ExpressBusinessField.Id, String.valueOf(businessId))
         .build();
 
     ExpressBusiness business = businessService.get(businessSelector).getEntries(0);

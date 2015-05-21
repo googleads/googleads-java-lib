@@ -17,10 +17,10 @@ public class CollectionSizeErrorReason implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
-    public static final java.lang.String _TOO_FEW = "TOO_FEW";
-    public static final java.lang.String _TOO_MANY = "TOO_MANY";
-    public static final CollectionSizeErrorReason TOO_FEW = new CollectionSizeErrorReason(_TOO_FEW);
-    public static final CollectionSizeErrorReason TOO_MANY = new CollectionSizeErrorReason(_TOO_MANY);
+    public static final java.lang.String _TOO_LARGE = "TOO_LARGE";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
+    public static final CollectionSizeErrorReason TOO_LARGE = new CollectionSizeErrorReason(_TOO_LARGE);
+    public static final CollectionSizeErrorReason UNKNOWN = new CollectionSizeErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static CollectionSizeErrorReason fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

@@ -35,6 +35,9 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201409.
      * A well formed app id for AdWords API would thus be "1-476943146" for
      * iOS and
      *                     "2-com.labpixies.colordrips" for Android.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AppId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -90,6 +93,9 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201409.
      * A well formed app id for AdWords API would thus be "1-476943146" for
      * iOS and
      *                     "2-com.labpixies.colordrips" for Android.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AppId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -123,6 +129,9 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201409.
      * A well formed app id for AdWords API would thus be "1-476943146" for
      * iOS and
      *                     "2-com.labpixies.colordrips" for Android.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AppId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>

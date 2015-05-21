@@ -20,7 +20,9 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.dfa.lib.client.DfaSession;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
@@ -41,6 +43,8 @@ public class LoginTokensTest {
 
   @Mock private LoginTokensHelper loginTokensHelper;
   private DfaSession dfaSession;
+
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private static final String USERNAME = "username";
   private static final String PASSWORD = "password";
@@ -83,7 +87,7 @@ public class LoginTokensTest {
     assertEquals(AUTH_TOKEN, loginTickets.generateToken(STUB_PACKAGE, dfaSession));
   }
 
-  @Test(expected = LoginTokenException.class)
+  @Test
   @SuppressWarnings({"rawtypes", "unchecked"})
   public void testGenerateToken_exception() throws Exception {
     InvocationTargetException exception =
@@ -100,6 +104,7 @@ public class LoginTokensTest {
     when(loginTokensHelper.retrieveToken(Mockito.anyObject()))
         .thenReturn(AUTH_TOKEN);
 
+    thrown.expect(LoginTokenException.class);
     loginTickets.generateToken(STUB_PACKAGE, dfaSession);
   }
 

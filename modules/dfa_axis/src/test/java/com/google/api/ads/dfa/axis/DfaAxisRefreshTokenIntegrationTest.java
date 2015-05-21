@@ -29,6 +29,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 
+import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -81,13 +82,12 @@ public class DfaAxisRefreshTokenIntegrationTest extends MockHttpIntegrationTest 
     assertEquals(7, records.length);
     assertEquals(Lists.newArrayList(null, "Bearer " + OAUTH_ACCESS_TOKEN, null),
         testHttpServer.getAllAuthorizationHttpHeaders());
-    assertEquals(
+    XMLAssert.assertXMLEqual(
         SoapRequestXmlProvider.getGetPlacementTypesSoapRequest(API_VERSION, EXPIRED_TOKEN),
         testHttpServer.getAllRequestBodies().get(0));
-    assertEquals(
-        SoapRequestXmlProvider.getAuthenticateSoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getAuthenticateSoapRequest(API_VERSION),
         testHttpServer.getAllRequestBodies().get(1));
-    assertEquals(
+    XMLAssert.assertXMLEqual(
         SoapRequestXmlProvider.getGetPlacementTypesSoapRequest(API_VERSION, REGENERATED_TOKEN),
         testHttpServer.getAllRequestBodies().get(2));
     assertEquals(REGENERATED_TOKEN, session.getToken());

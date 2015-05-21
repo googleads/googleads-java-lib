@@ -82,6 +82,7 @@ public abstract class SoapClientHandler<T> implements SoapClientHandlerInterface
    *
    * TODO(api.arogal): Needs to check parameter types as well as name/return.
    */
+  @Override
   public Method getSoapClientMethod(T soapClient, Method method) throws NoSuchMethodException {
     for (Method soapClientMethod : soapClient.getClass().getMethods()) {
       if (method.getName().equals(soapClientMethod.getName())

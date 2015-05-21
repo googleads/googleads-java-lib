@@ -62,6 +62,7 @@ public class AuthorizationHeaderHandlerTest {
     final String endpoint = "endpoint";
     Object soapClient = new Object();
     AdsSession adsSession = new AdsSession() {
+      @Override
       public String getEndpoint() {
         return endpoint;
       }

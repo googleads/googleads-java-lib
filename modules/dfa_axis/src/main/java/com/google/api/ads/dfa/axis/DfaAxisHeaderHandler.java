@@ -84,6 +84,7 @@ public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServic
    *      com.google.api.ads.common.lib.client.AdsSession,
    *      com.google.api.ads.common.lib.client.AdsServiceDescriptor)
    */
+  @Override
   public void setHeaders(Object soapClient, DfaSession dfaSession,
       DfaServiceDescriptor dfaServiceDescriptor) throws AuthenticationException, ServiceException {
     if (dfaServiceDescriptor.getInterfaceClass().toString().endsWith("LoginRemote")){

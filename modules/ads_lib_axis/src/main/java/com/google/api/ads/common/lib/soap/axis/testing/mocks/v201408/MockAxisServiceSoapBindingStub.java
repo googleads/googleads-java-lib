@@ -30,10 +30,12 @@ public class MockAxisServiceSoapBindingStub extends Stub implements MockAxisServ
   public MockAxisServiceSoapBindingStub(javax.xml.rpc.Service service) {
   }
 
+  @Override
   public String getTestMessage() {
     return MockAxisServiceInterface.TEST_MESSAGE;
   }
   
+  @Override
   public String getTestMessageWithPrefix(String prefix) {
     return prefix + MockAxisServiceInterface.TEST_MESSAGE;
   }

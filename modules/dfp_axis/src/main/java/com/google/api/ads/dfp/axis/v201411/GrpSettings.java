@@ -18,19 +18,17 @@ package com.google.api.ads.dfp.axis.v201411;
 public class GrpSettings  implements java.io.Serializable {
     /* Specifies the minimum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null. */
+     *                 applicable if {@link #provider} is not null. */
     private java.lang.Long minTargetAge;
 
     /* Specifies the maximum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null. */
+     *                 applicable if {@link #provider} is not null. */
     private java.lang.Long maxTargetAge;
 
     /* Specifies the target gender of the {@link LineItem}. This field
      * is only applicable if
-     *                 {@link GfpSettings#provider} is not null. */
+     *                 {@link #provider} is not null. */
     private com.google.api.ads.dfp.axis.v201411.GrpTargetGender targetGender;
 
     /* Specifies the GRP provider of the {@link LineItem}. */
@@ -56,8 +54,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @return minTargetAge   * Specifies the minimum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null.
+     *                 applicable if {@link #provider} is not null.
      */
     public java.lang.Long getMinTargetAge() {
         return minTargetAge;
@@ -69,8 +66,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @param minTargetAge   * Specifies the minimum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null.
+     *                 applicable if {@link #provider} is not null.
      */
     public void setMinTargetAge(java.lang.Long minTargetAge) {
         this.minTargetAge = minTargetAge;
@@ -82,8 +78,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @return maxTargetAge   * Specifies the maximum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null.
+     *                 applicable if {@link #provider} is not null.
      */
     public java.lang.Long getMaxTargetAge() {
         return maxTargetAge;
@@ -95,8 +90,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @param maxTargetAge   * Specifies the maximum target age (in years) of the {@link LineItem}.
      * This field is only
-     *                 applicable if {@link GfpSettings#provider} is not
-     * null.
+     *                 applicable if {@link #provider} is not null.
      */
     public void setMaxTargetAge(java.lang.Long maxTargetAge) {
         this.maxTargetAge = maxTargetAge;
@@ -108,7 +102,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @return targetGender   * Specifies the target gender of the {@link LineItem}. This field
      * is only applicable if
-     *                 {@link GfpSettings#provider} is not null.
+     *                 {@link #provider} is not null.
      */
     public com.google.api.ads.dfp.axis.v201411.GrpTargetGender getTargetGender() {
         return targetGender;
@@ -120,7 +114,7 @@ public class GrpSettings  implements java.io.Serializable {
      * 
      * @param targetGender   * Specifies the target gender of the {@link LineItem}. This field
      * is only applicable if
-     *                 {@link GfpSettings#provider} is not null.
+     *                 {@link #provider} is not null.
      */
     public void setTargetGender(com.google.api.ads.dfp.axis.v201411.GrpTargetGender targetGender) {
         this.targetGender = targetGender;

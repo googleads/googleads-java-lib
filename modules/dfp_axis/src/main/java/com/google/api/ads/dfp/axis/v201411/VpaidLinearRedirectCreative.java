@@ -53,10 +53,16 @@ public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v2
      *                     to this creative.  This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
-    /* The SSL compatibility scan result of this creative. */
+    /* The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google. */
     private com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult;
 
-    /* The manual override for the SSL compatibility of this creative. */
+    /* The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}. */
     private com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride;
 
     public VpaidLinearRedirectCreative() {
@@ -297,6 +303,9 @@ public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v2
      * Gets the sslScanResult value for this VpaidLinearRedirectCreative.
      * 
      * @return sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public com.google.api.ads.dfp.axis.v201411.SslScanResult getSslScanResult() {
         return sslScanResult;
@@ -307,6 +316,9 @@ public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v2
      * Sets the sslScanResult value for this VpaidLinearRedirectCreative.
      * 
      * @param sslScanResult   * The SSL compatibility scan result of this creative.
+     *                     
+     *                     <p>This attribute is read-only and determined
+     * by Google.
      */
     public void setSslScanResult(com.google.api.ads.dfp.axis.v201411.SslScanResult sslScanResult) {
         this.sslScanResult = sslScanResult;
@@ -317,6 +329,9 @@ public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v2
      * Gets the sslManualOverride value for this VpaidLinearRedirectCreative.
      * 
      * @return sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public com.google.api.ads.dfp.axis.v201411.SslManualOverride getSslManualOverride() {
         return sslManualOverride;
@@ -327,6 +342,9 @@ public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v2
      * Sets the sslManualOverride value for this VpaidLinearRedirectCreative.
      * 
      * @param sslManualOverride   * The manual override for the SSL compatibility of this creative.
+     * 
+     *                     <p>This attribute is optional and defaults to
+     * {@link SslManualOverride#NO_OVERRIDE}.
      */
     public void setSslManualOverride(com.google.api.ads.dfp.axis.v201411.SslManualOverride sslManualOverride) {
         this.sslManualOverride = sslManualOverride;

@@ -43,6 +43,7 @@ public class DfaAxisTokenExpirationDetector implements TokenExpirationDetector {
    *     an exception, this will be {@code null}
    * @return true if the given exception signifies an expired DFA token, false otherwise
    */
+  @Override
   public boolean isTokenExpiredException(@Nullable Throwable exception) {
     if (exception instanceof AxisFault) {
       Object errorCode;
