@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.Label;
-import com.google.api.ads.adwords.axis.v201409.cm.LabelOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.LabelServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.cm.LabelStatus;
+import com.google.api.ads.adwords.axis.v201502.cm.Label;
+import com.google.api.ads.adwords.axis.v201502.cm.LabelOperation;
+import com.google.api.ads.adwords.axis.v201502.cm.LabelServiceInterface;
+import com.google.api.ads.adwords.axis.v201502.cm.LabelStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

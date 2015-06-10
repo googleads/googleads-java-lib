@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupLabelOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupServiceInterface;
+import com.google.api.ads.adwords.axis.v201502.cm.AdGroupLabel;
+import com.google.api.ads.adwords.axis.v201502.cm.AdGroupLabelOperation;
+import com.google.api.ads.adwords.axis.v201502.cm.AdGroupServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -26,9 +26,10 @@ import java.util.ArrayList;
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupLabel}.
  *
- * Labels are linked (ADD and REMOVE) to AdGroups using the AdGroupServiceInterface,
+ * <p>Labels are linked (ADD and REMOVE) to AdGroups using the AdGroupServiceInterface,
  * GETs in the other hand are in the LabelService.
- * Implementation is not thread-safe,
+ * 
+ * <p>Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  *
  * @author Julian Toledo

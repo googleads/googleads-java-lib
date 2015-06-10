@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabelOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignLabelOperation;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

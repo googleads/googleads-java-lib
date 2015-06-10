@@ -36,28 +36,28 @@ import com.google.api.client.auth.oauth2.Credential;
  * @author Nicholas Chen
  */
 public class CreateProductPackageItemBaseRates {
-  
+
   // Set the rate card ID to add the base rate to.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
-  
+
   // Set the product package item to apply this base rate to.
   private static final String PRODUCT_PACKAGE_ITEM_ID = "INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId,
       long productPackageItemId) throws Exception {
     // Get the BaseRateService.
     BaseRateServiceInterface baseRateService =
         dfpServices.get(session, BaseRateServiceInterface.class);
-    
+
     // Create a base rate for a product package item.
     ProductPackageItemBaseRate productPackageItemBaseRate = new ProductPackageItemBaseRate();
-    
+
     // Set the rate card ID that the product package item base rate belongs to.
     productPackageItemBaseRate.setRateCardId(rateCardId);
 
     // Set the product package item the base rate will be applied to.
     productPackageItemBaseRate.setProductPackageItemId(productPackageItemId);
-    
+
     // Create a rate worth $2 USD and set that on the product package item base rate.
     Money rate = new Money();
     rate.setCurrencyCode("USD");
@@ -67,7 +67,7 @@ public class CreateProductPackageItemBaseRates {
     // Create the product package item base rate on the server.
     BaseRate[] baseRates = baseRateService.createBaseRates(new BaseRate[] {
         productPackageItemBaseRate});
-    
+
     for (BaseRate createdBaseRate : baseRates) {
       System.out.printf("A product package item base rate with ID \"%d\" and rate \"%.2f\" %s was"
           + " created.%n", createdBaseRate.getId(),

@@ -12,9 +12,14 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The base class of all ad types. To update basic ad fields,
- *             you can construct an {@code Ad} object (instead of
- *             the ad's concrete type) with the appropriate fields set.
+ *             The base class of all ad types. {@code Ad} objects themselves cannot be modified. If you want to
+ *             make a change to an {@code Ad} object, you must REMOVE its AdGroupAd and ADD a new AdGroupAd with
+ *             the new {@code Ad}. This will result in a new {@code Ad} ID, so stats for the original {@code Ad}
+ *             and the new {@code Ad} will appear under separate IDs in reports.
+ *             
+ *             <p>When calling {@code AdGroupAdService} to update the {@code status} of an {@code AdGroupAd},
+ *             you can construct an {@code Ad} object (instead of the {@code Ad}'s concrete type) with the
+ *             {@link #id} field set.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

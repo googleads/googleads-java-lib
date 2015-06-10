@@ -15,11 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignStatus;
+import com.google.api.ads.adwords.axis.v201502.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignOperation;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -124,10 +124,11 @@ public final class CampaignDelegate extends
   }
 
   /**
-   * Removes Campaign. Removing it sets the campaigns' statuses to DELETED and performs a Set.
+   * Removes Campaign. Removing it sets the campaigns' statuses to {@code REMOVED} and performs a
+   * Set.
    *
    * @param list the list of Campaigns to remove
-   * @return the Campaigns deleted
+   * @return the Campaigns removed
    * @throws RemoteException for communication-related exceptions
    */
   @Override
@@ -139,10 +140,10 @@ public final class CampaignDelegate extends
   }
 
   /**
-   * Removes Campaign. Removing it sets the campaing's status to DELETED and performs a Set.
+   * Removes Campaign. Removing it sets the campaing's status to {@code REMOVED} and performs a Set.
    *
    * @param campaign the Campaign to remove
-   * @return the Campaign deleted
+   * @return the Campaign removed
    * @throws RemoteException for communication-related exceptions
    */
   @Override

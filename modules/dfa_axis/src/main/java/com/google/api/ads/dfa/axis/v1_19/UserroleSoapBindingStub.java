@@ -56,12 +56,12 @@ public class UserroleSoapBindingStub extends org.apache.axis.client.Stub impleme
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("saveUserRole");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "userGroup"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRole"), com.google.api.ads.dfa.axis.v1_19.UserRole.class, false, false);
+        oper.setName("getUserRoleSummaries");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSearchCriteria"), com.google.api.ads.dfa.axis.v1_19.UserRoleSearchCriteria.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSaveResult"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "saveUserRoleReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSummaryRecordSet"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUserRoleSummariesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -73,12 +73,12 @@ public class UserroleSoapBindingStub extends org.apache.axis.client.Stub impleme
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUserRoleSummaries");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "searchCriteria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSearchCriteria"), com.google.api.ads.dfa.axis.v1_19.UserRoleSearchCriteria.class, false, false);
+        oper.setName("saveUserRole");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "userGroup"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRole"), com.google.api.ads.dfa.axis.v1_19.UserRole.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSummaryRecordSet"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUserRoleSummariesReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "UserRoleSaveResult"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "saveUserRoleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -454,51 +454,12 @@ public class UserroleSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult saveUserRole(com.google.api.ads.dfa.axis.v1_19.UserRole userGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "saveUserRole"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userGroup});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_19.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_19.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
     public com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet getUserRoleSummaries(com.google.api.ads.dfa.axis.v1_19.UserRoleSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -517,6 +478,45 @@ public class UserroleSoapBindingStub extends org.apache.axis.client.Stub impleme
                 return (com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.UserRoleSummaryRecordSet.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_19.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_19.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult saveUserRole(com.google.api.ads.dfa.axis.v1_19.UserRole userGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "saveUserRole"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userGroup});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.UserRoleSaveResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

@@ -70,9 +70,8 @@ public enum AttributeType {
 
     /**
      * 
-     *                 Represents a keyword or placement, depending on request type. Starting at
-     *                 version v201206, only placement requests can retrieve this attribute.
-     *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD, PLACEMENT.
+     *                 Represents a placement, depending on request type.
+     *                 <p>This element is supported by following {@link IdeaType}s: PLACEMENT.
      *               
      * 
      */

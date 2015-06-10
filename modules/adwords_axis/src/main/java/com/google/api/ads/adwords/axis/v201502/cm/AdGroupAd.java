@@ -29,9 +29,9 @@ public class AdGroupAd  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201502.cm.AdGroupAdExperimentData experimentData;
 
     /* The status of the ad.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span> */
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : SET. */
     private com.google.api.ads.adwords.axis.v201502.cm.AdGroupAdStatus status;
 
     /* Approval status.
@@ -193,9 +193,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the status value for this AdGroupAd.
      * 
      * @return status   * The status of the ad.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span>
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : SET.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.AdGroupAdStatus getStatus() {
         return status;
@@ -206,9 +206,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the status value for this AdGroupAd.
      * 
      * @param status   * The status of the ad.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : SET.</span>
+     *                 This field is required and should not be {@code null}
+     * when it is contained within
+     *                 {@link Operator}s : SET.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201502.cm.AdGroupAdStatus status) {
         this.status = status;

@@ -96,7 +96,10 @@ public class AdGroup  implements java.io.Serializable {
      * only the content network and not search. */
     private com.google.api.ads.adwords.axis.v201502.cm.CriterionTypeGroup contentBidCriterionTypeGroup;
 
-    /* URL template for constructing a tracking URL. */
+    /* URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field. */
     private java.lang.String trackingUrlTemplate;
 
     /* A list of mappings to be used for substituting URL custom parameter
@@ -487,6 +490,9 @@ public class AdGroup  implements java.io.Serializable {
      * Gets the trackingUrlTemplate value for this AdGroup.
      * 
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -497,6 +503,9 @@ public class AdGroup  implements java.io.Serializable {
      * Sets the trackingUrlTemplate value for this AdGroup.
      * 
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;

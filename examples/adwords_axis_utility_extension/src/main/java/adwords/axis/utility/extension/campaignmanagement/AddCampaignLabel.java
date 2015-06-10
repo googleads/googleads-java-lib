@@ -15,8 +15,8 @@
 package adwords.axis.utility.extension.campaignmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.TextLabel;
+import com.google.api.ads.adwords.axis.v201502.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201502.cm.TextLabel;
 
 /**
  * This example creates a TextLabel and a Campaign Label.

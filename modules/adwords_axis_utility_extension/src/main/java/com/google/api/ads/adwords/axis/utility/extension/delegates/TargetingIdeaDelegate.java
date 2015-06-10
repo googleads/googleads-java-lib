@@ -14,9 +14,9 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201409.o.TargetingIdea;
-import com.google.api.ads.adwords.axis.v201409.o.TargetingIdeaSelector;
-import com.google.api.ads.adwords.axis.v201409.o.TargetingIdeaServiceInterface;
+import com.google.api.ads.adwords.axis.v201502.o.TargetingIdea;
+import com.google.api.ads.adwords.axis.v201502.o.TargetingIdeaSelector;
+import com.google.api.ads.adwords.axis.v201502.o.TargetingIdeaServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

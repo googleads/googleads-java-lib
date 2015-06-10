@@ -395,6 +395,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * The status of the ad.
+   * This field is required and should not be {@code null} when it is contained within {@link Operator}s : SET.
    */
   @Filterable
   Status(true),

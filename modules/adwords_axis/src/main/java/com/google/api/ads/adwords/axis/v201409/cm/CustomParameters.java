@@ -16,7 +16,11 @@ package com.google.api.ads.adwords.axis.v201409.cm;
  *             with this new map.
  */
 public class CustomParameters  implements java.io.Serializable {
-    /* The list of custom parameters. */
+    /* The list of custom parameters.
+     *                 
+     *                 <p>On update, all parameters can be cleared by providing
+     * an empty or null list and setting
+     *                 doReplace to true. */
     private com.google.api.ads.adwords.axis.v201409.cm.CustomParameter[] parameters;
 
     /* On SET operation, indicates that the current parameters should
@@ -39,6 +43,10 @@ public class CustomParameters  implements java.io.Serializable {
      * Gets the parameters value for this CustomParameters.
      * 
      * @return parameters   * The list of custom parameters.
+     *                 
+     *                 <p>On update, all parameters can be cleared by providing
+     * an empty or null list and setting
+     *                 doReplace to true.
      */
     public com.google.api.ads.adwords.axis.v201409.cm.CustomParameter[] getParameters() {
         return parameters;
@@ -49,6 +57,10 @@ public class CustomParameters  implements java.io.Serializable {
      * Sets the parameters value for this CustomParameters.
      * 
      * @param parameters   * The list of custom parameters.
+     *                 
+     *                 <p>On update, all parameters can be cleared by providing
+     * an empty or null list and setting
+     *                 doReplace to true.
      */
     public void setParameters(com.google.api.ads.adwords.axis.v201409.cm.CustomParameter[] parameters) {
         this.parameters = parameters;

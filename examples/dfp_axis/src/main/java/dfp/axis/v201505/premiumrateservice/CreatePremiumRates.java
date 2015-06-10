@@ -38,7 +38,7 @@ import com.google.api.client.auth.oauth2.Credential;
  * @author Nicholas Chen
  */
 public class CreatePremiumRates {
-  
+
   // Set the ID of the rate card to add premium rates to.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
 
@@ -47,12 +47,12 @@ public class CreatePremiumRates {
     // Get the PremiumRateService.
     PremiumRateServiceInterface premiumRateService =
         dfpServices.get(session, PremiumRateServiceInterface.class);
-    
+
     PremiumRate premiumRate = new PremiumRate();
-    
+
     // Create an ad unit premium to apply to the rate card.
     AdUnitPremiumFeature adUnitPremiumFeature = new AdUnitPremiumFeature();
-    
+
     // Create a CPM based premium rate value with adjustments in micro amounts.
     // This will adjust a CPM priced proposal line item that has
     // inventory targeting specified by 2 units of the currency associated with
@@ -62,7 +62,7 @@ public class CreatePremiumRates {
     cpmPremiumRateValue.setRateType(RateType.CPM);
     cpmPremiumRateValue.setAdjustmentSize(2000000L);
     cpmPremiumRateValue.setAdjustmentType(PremiumAdjustmentType.ABSOLUTE_VALUE);
-    
+
     // Create a CPC based premium rate value with adjustments in milli amounts.
     // This will adjust a CPC priced proposal line item that has
     // inventory targeting specified by 10% of the cost associated with the rate
@@ -72,7 +72,7 @@ public class CreatePremiumRates {
     cpcPremiumRateValue.setRateType(RateType.CPC);
     cpcPremiumRateValue.setAdjustmentSize(10000L);
     cpcPremiumRateValue.setAdjustmentType(PremiumAdjustmentType.PERCENTAGE);
-    
+
     // Associate premium rate with the rate card and set premium information.
     // This premium will apply for proposal line items targeting 'any' ad unit
     // for both CPM and CPC rate types.
@@ -81,10 +81,10 @@ public class CreatePremiumRates {
     premiumRate.setPremiumFeature(adUnitPremiumFeature);
     premiumRate.setPremiumRateValues(new PremiumRateValue[] {
         cpmPremiumRateValue, cpcPremiumRateValue});
-    
+
     PremiumRate[] createdPremiumRates =
         premiumRateService.createPremiumRates(new PremiumRate[] {premiumRate});
-    
+
     for (PremiumRate createdPremiumRate : createdPremiumRates) {
       System.out.printf("A premium rate for \"%s\" was added to the rate card with "
           + "ID of \"%d.\"%n",

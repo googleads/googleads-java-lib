@@ -134,7 +134,10 @@ public class Campaign  implements java.io.Serializable {
      *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201409.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
-    /* URL template for constructing a tracking URL. */
+    /* URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field. */
     private java.lang.String trackingUrlTemplate;
 
     /* A list of mappings to be used for substituting URL custom parameter
@@ -697,6 +700,9 @@ public class Campaign  implements java.io.Serializable {
      * Gets the trackingUrlTemplate value for this Campaign.
      * 
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -707,6 +713,9 @@ public class Campaign  implements java.io.Serializable {
      * Sets the trackingUrlTemplate value for this Campaign.
      * 
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;

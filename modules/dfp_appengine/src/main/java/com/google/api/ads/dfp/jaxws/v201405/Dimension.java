@@ -724,7 +724,7 @@ public enum Dimension {
      *                 
      *                 <p>Formatted as comma separated
      *                 {@link CustomTargetingKey key}-{@link CustomTargetingValue values}, where a key-value is
-     *                 formatted as {@code key=value_1,...,value_n}.
+     *                 formatted as {@code key1=value_1|...|value_n,key2=value_1|...|value_n,...}.
      *                 
      *                 <p>This dimension is supported only for sell-through columns.
      *               

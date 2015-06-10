@@ -94,7 +94,10 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      *                     installed. */
     private com.google.api.ads.adwords.axis.v201409.cm.AppUrlList finalAppUrls;
 
-    /* URL template for constructing a tracking URL. */
+    /* URL template for constructing a tracking URL.
+     *                     
+     *                     <p>On update, empty string ("") indicates to clear
+     * the field. */
     private java.lang.String trackingUrlTemplate;
 
     /* A list of mappings to be used for substituting URL custom parameter
@@ -526,6 +529,9 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Gets the trackingUrlTemplate value for this BiddableAdGroupCriterion.
      * 
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                     
+     *                     <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -536,6 +542,9 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Sets the trackingUrlTemplate value for this BiddableAdGroupCriterion.
      * 
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                     
+     *                     <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;

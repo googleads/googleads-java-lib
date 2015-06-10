@@ -2909,8 +2909,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue of the {@link ProposalLineItem}. When revenue is summed up to
-     *                 the {@link Proposal} level, an additional adjustment is applied.
+     *                 The contracted net revenue of the {@link ProposalLineItem}.
      *               
      * 
      */
@@ -2918,8 +2917,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}. When revenue
-     *                 is summed up to the {@link Proposal} level, an additional adjustment is applied.
+     *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
      *               
@@ -2929,8 +2927,7 @@ public enum Column {
 
     /**
      * 
-     *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission. When
-     *                 revenue is summed up to the {@link Proposal} level, an additional adjustment is applied.
+     *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission.
      *               
      * 
      */
@@ -2939,8 +2936,7 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue in the local currency of the {@link ProposalLineItem}, including
-     *                 agency commission. When revenue is summed up to the {@link Proposal} level, an additional
-     *                 adjustment is applied.
+     *                 agency commission.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
      *               
@@ -3336,6 +3332,9 @@ public enum Column {
     /**
      * 
      *                 The last reconciliation date of the {@link ProposalLineItem}.
+     *                 
+     *                 <p>Replaced with attribute {@code PROPOSAL_LINE_ITEM_LAST_RECONCILIATION_DATE_TIME}
+     *                 beginning in V201508.
      *               
      * 
      */
@@ -3344,6 +3343,9 @@ public enum Column {
     /**
      * 
      *                 The reconciliation status of the {@link ProposalLineItem}.
+     *                 
+     *                 <p>Replaced with attribute {@code PROPOSAL_LINE_ITEM_RECONCILIATION_STATUS}
+     *                 beginning in V201508.
      *               
      * 
      */

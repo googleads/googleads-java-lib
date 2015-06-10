@@ -60,7 +60,10 @@ public class Customer  implements java.io.Serializable {
     /* Whether auto-tagging is enabled for this customer. */
     private java.lang.Boolean autoTaggingEnabled;
 
-    /* URL template for constructing a tracking URL. */
+    /* URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field. */
     private java.lang.String trackingUrlTemplate;
 
     /* Customer-level AdWords Conversion Tracking settings */
@@ -305,6 +308,9 @@ public class Customer  implements java.io.Serializable {
      * Gets the trackingUrlTemplate value for this Customer.
      * 
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -315,6 +321,9 @@ public class Customer  implements java.io.Serializable {
      * Sets the trackingUrlTemplate value for this Customer.
      * 
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
+     *                 
+     *                 <p>On update, empty string ("") indicates to clear
+     * the field.
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;

@@ -22,7 +22,6 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.AdGroupFeedDe
 import com.google.api.ads.adwords.axis.utility.extension.delegates.AdParamDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.BudgetDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.BudgetOrderDelegate;
-import com.google.api.ads.adwords.axis.utility.extension.delegates.CampaignAdExtensionDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.CampaignCriterionDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.CampaignDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.CampaignFeedDelegate;
@@ -44,7 +43,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 /**
@@ -69,7 +68,6 @@ public final class DelegateLocator{
   private volatile AdParamDelegate adParamDelegate;
   private volatile BudgetOrderDelegate budgetOrderDelegate;
   private volatile BudgetDelegate budgetDelegate;
-  private volatile CampaignAdExtensionDelegate campaignAdExtensionDelegate;
   private volatile CampaignCriterionDelegate campaignCriterionDelegate;
   private volatile CampaignFeedDelegate campaignFeedDelegate;
   private volatile CampaignDelegate campaignDelegate;
@@ -147,7 +145,6 @@ public final class DelegateLocator{
       AdParamDelegate adParamDelegate,
       BudgetOrderDelegate budgetOrderDelegate,
       BudgetDelegate budgetDelegate,
-      CampaignAdExtensionDelegate campaignAdExtensionDelegate,
       CampaignCriterionDelegate campaignCriterionDelegate,
       CampaignFeedDelegate campaignFeedDelegate,
       CampaignDelegate campaignDelegate,
@@ -177,7 +174,6 @@ public final class DelegateLocator{
     this.adParamDelegate = adParamDelegate;
     this.budgetOrderDelegate = budgetOrderDelegate;
     this.budgetDelegate = budgetDelegate;
-    this.campaignAdExtensionDelegate = campaignAdExtensionDelegate;
     this.campaignCriterionDelegate = campaignCriterionDelegate;
     this.campaignFeedDelegate = campaignFeedDelegate;
     this.campaignDelegate = campaignDelegate;
@@ -337,20 +333,6 @@ public final class DelegateLocator{
       }
     }
     return campaignCriterionDelegate;
-  }
-
-  /**
-   * Gets the CampaignAdExtensionDelegate associated with the{@code adWordsSession}.
-   */
-  public CampaignAdExtensionDelegate getCampaignAdExtensionDelegate() {
-    if (campaignAdExtensionDelegate == null) {
-      synchronized (this) {
-        if (campaignAdExtensionDelegate == null) {
-          campaignAdExtensionDelegate = new CampaignAdExtensionDelegate(adWordsSession, false);
-        }
-      }
-    }
-    return campaignAdExtensionDelegate;
   }
 
   /**

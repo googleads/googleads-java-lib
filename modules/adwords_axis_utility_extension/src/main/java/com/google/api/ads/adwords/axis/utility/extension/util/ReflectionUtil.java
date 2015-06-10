@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.util;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
-import com.google.api.ads.adwords.axis.v201409.cm.ApiError;
-import com.google.api.ads.adwords.axis.v201409.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201409.cm.InternalApiError;
-import com.google.api.ads.adwords.axis.v201409.cm.RateExceededError;
+import com.google.api.ads.adwords.axis.v201502.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201502.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201502.cm.InternalApiError;
+import com.google.api.ads.adwords.axis.v201502.cm.RateExceededError;
 import com.google.common.collect.Maps;
 
 import org.slf4j.Logger;

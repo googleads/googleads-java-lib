@@ -9,8 +9,15 @@ package com.google.api.ads.dfp.axis.v201405;
 
 
 /**
- * A {@code LiveStreamEvent} represents schedule, content and ad stitching
- * information of a live stream event.
+ * A {@code LiveStreamEvent} encapsulates all the information necessary
+ * to enable DAI (Dynamic Ad Insertion) into a live video stream.
+ *             
+ *             <p>This includes information such as the start and expected
+ * end time of
+ *             the event, the URL of the actual content for DFP to pull
+ * and insert ads into,
+ *             as well as the metadata necessary to generate ad requests
+ * during the event.
  */
 public class LiveStreamEvent  implements java.io.Serializable {
     /* The unique ID of the {@code LiveStreamEvent}. This value is
@@ -24,8 +31,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * characters. */
     private java.lang.String name;
 
-    /* Provides any additional notes that may annotate {@code LiveStreamEvent}.
-     * This attribute is optional and has a maximum length of 65,535 characters. */
+    /* Additional notes to annotate the event with. This attribute
+     * is optional and
+     *                 has a maximum length of 65,535 characters. */
     private java.lang.String description;
 
     /* The status of this {@code LiveStreamEvent}. This attribute
@@ -160,8 +168,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Gets the description value for this LiveStreamEvent.
      * 
-     * @return description   * Provides any additional notes that may annotate {@code LiveStreamEvent}.
-     * This attribute is optional and has a maximum length of 65,535 characters.
+     * @return description   * Additional notes to annotate the event with. This attribute
+     * is optional and
+     *                 has a maximum length of 65,535 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -171,8 +180,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Sets the description value for this LiveStreamEvent.
      * 
-     * @param description   * Provides any additional notes that may annotate {@code LiveStreamEvent}.
-     * This attribute is optional and has a maximum length of 65,535 characters.
+     * @param description   * Additional notes to annotate the event with. This attribute
+     * is optional and
+     *                 has a maximum length of 65,535 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

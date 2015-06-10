@@ -190,6 +190,7 @@ public enum AdGroupField implements EntityField {
 
   /**
    * URL template for constructing a tracking URL.
+   * <p>On update, empty string ("") indicates to clear the field.
    */
   @Filterable
   TrackingUrlTemplate(true),

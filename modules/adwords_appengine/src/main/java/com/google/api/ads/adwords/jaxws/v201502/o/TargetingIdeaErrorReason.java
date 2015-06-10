@@ -63,8 +63,8 @@ public enum TargetingIdeaErrorReason {
      *                 {@link com.google.ads.api.services.targetingideas.attributes.IdeaType}
      *                 specified in the
      *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}.
-     *                 For example, if the {@code KEYWORD} idea type selector contain
-     *                 an AttributeType for {@code PLACEMENT}, this error will be returned.
+     *                 For example, if the {@code KEYWORD} {@code IDEAS} selector contains
+     *                 an {@code STATS} only AttributeType, this error will be returned.
      *               
      * 
      */

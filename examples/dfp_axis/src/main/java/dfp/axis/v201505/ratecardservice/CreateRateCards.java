@@ -40,7 +40,7 @@ public class CreateRateCards {
   // Set the IDs of the teams this rate card should be visible to. This is optional.
   private static final long[] TEAM_IDS = new long[] {
       Long.valueOf("INSERT_TEAM_ID_1_HERE"), Long.valueOf("INSERT_TEAM_ID_2_HERE")};
-  
+
   // Set the currency code to create the rate card with.
   private static final String CURRENCY_CODE = "INSERT_CURRENCY_CODE_HERE";
 
@@ -54,7 +54,7 @@ public class CreateRateCards {
     RateCard rateCard = new RateCard();
     rateCard.setName("RateCard #" + new Random().nextInt(Integer.MAX_VALUE));
     rateCard.setCurrencyCode(currencyCode);
-    
+
     if (teamIds.length != 0) {
       rateCard.setAppliedTeamIds(teamIds);
     }
