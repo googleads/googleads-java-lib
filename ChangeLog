@@ -1,3 +1,17 @@
+2.1.0 - 06/10/2015
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201502.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.0.0 - 05/19/2015
 -------------------
 AdWords:
