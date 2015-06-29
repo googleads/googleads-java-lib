@@ -8,9 +8,9 @@
 package com.google.api.ads.dfa.axis.v1_20;
 
 public interface AdvertiserGroupRemote extends java.rmi.Remote {
-    public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult saveAdvertiserGroup(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup advertiserGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void deleteAdvertiserGroup(long advertiserGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public void assignAdvertisersToAdvertiserGroup(long advertiserGroupId, long[] advertiserIds) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSaveResult saveAdvertiserGroup(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup advertiserGroup) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupRecordSet getAdvertiserGroups(com.google.api.ads.dfa.axis.v1_20.AdvertiserGroupSearchCriteria searchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AdvertiserGroup getAdvertiserGroup(long advertiserGroupId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

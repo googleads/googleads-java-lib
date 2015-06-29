@@ -14,23 +14,17 @@ package com.google.api.ads.adwords.axis.v201502.express;
 public class Creative  implements java.io.Serializable {
     /* The headline of the creative.
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span> */
+     * and should not be {@code null}.</span> */
     private java.lang.String headline;
 
     /* The first description line.
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span> */
+     * and should not be {@code null}.</span> */
     private java.lang.String line1;
 
     /* The second description line.
      *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span> */
+     * and should not be {@code null}.</span> */
     private java.lang.String line2;
 
     public Creative() {
@@ -52,8 +46,6 @@ public class Creative  implements java.io.Serializable {
      * @return headline   * The headline of the creative.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
      */
     public java.lang.String getHeadline() {
         return headline;
@@ -66,8 +58,6 @@ public class Creative  implements java.io.Serializable {
      * @param headline   * The headline of the creative.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
      */
     public void setHeadline(java.lang.String headline) {
         this.headline = headline;
@@ -80,8 +70,6 @@ public class Creative  implements java.io.Serializable {
      * @return line1   * The first description line.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span>
      */
     public java.lang.String getLine1() {
         return line1;
@@ -94,8 +82,6 @@ public class Creative  implements java.io.Serializable {
      * @param line1   * The first description line.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span>
      */
     public void setLine1(java.lang.String line1) {
         this.line1 = line1;
@@ -108,8 +94,6 @@ public class Creative  implements java.io.Serializable {
      * @return line2   * The second description line.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span>
      */
     public java.lang.String getLine2() {
         return line2;
@@ -122,8 +106,6 @@ public class Creative  implements java.io.Serializable {
      * @param line2   * The second description line.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
-     *                 <span class="constraint StringLength">The length of
-     * this string should be between 0 and 35, inclusive.</span>
      */
     public void setLine2(java.lang.String line2) {
         this.line2 = line2;

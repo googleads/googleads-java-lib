@@ -1018,7 +1018,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 U.K.
+     *                 UK
      *               
      * 
      */
@@ -2322,7 +2322,7 @@ public enum RegionCode {
 
     /**
      * 
-     *                 U.S.
+     *                 US
      *               
      * 
      */

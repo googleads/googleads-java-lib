@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="NOT_SERVING"/>
  *     &lt;enumeration value="INACTIVE"/>
  *     &lt;enumeration value="DELETED"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -61,7 +62,16 @@ public enum LineItemCreativeAssociationStatus {
      *               
      * 
      */
-    DELETED;
+    DELETED,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API
+     *                 version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

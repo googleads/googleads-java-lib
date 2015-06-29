@@ -56,15 +56,14 @@ import com.google.api.ads.adwords.jaxws.v201502.rm.UserListError;
     "apiErrorType"
 })
 @XmlSeeAlso({
-    com.google.api.ads.adwords.jaxws.v201502.mcm.CollectionSizeError.class,
-    LabelServiceError.class,
-    ManagedCustomerServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201502.mcm.CurrencyCodeError.class,
-    PromotionError.class,
-    ExpressBusinessError.class,
-    CustomerSyncError.class,
+    TargetingIdeaError.class,
+    com.google.api.ads.adwords.jaxws.v201502.o.CurrencyCodeError.class,
+    TrafficEstimatorError.class,
+    com.google.api.ads.adwords.jaxws.v201502.rm.CollectionSizeError.class,
+    UserListError.class,
     BudgetOrderError.class,
     CustomerOrderLineError.class,
+    CustomerSyncError.class,
     CampaignSharedSetError.class,
     InternalApiError.class,
     ReadOnlyError.class,
@@ -150,11 +149,12 @@ import com.google.api.ads.adwords.jaxws.v201502.rm.UserListError;
     QuotaCheckError.class,
     ExperimentServiceError.class,
     NotWhitelistedError.class,
-    TargetingIdeaError.class,
-    com.google.api.ads.adwords.jaxws.v201502.o.CurrencyCodeError.class,
-    TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201502.rm.CollectionSizeError.class,
-    UserListError.class
+    PromotionError.class,
+    ExpressBusinessError.class,
+    com.google.api.ads.adwords.jaxws.v201502.mcm.CollectionSizeError.class,
+    LabelServiceError.class,
+    ManagedCustomerServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201502.mcm.CurrencyCodeError.class
 })
 public abstract class ApiError {
 

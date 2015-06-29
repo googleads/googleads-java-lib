@@ -93,6 +93,8 @@ public class AdWordsSessionTest {
     assertTrue(session.getReportingConfiguration().isSkipReportHeader());
     assertTrue(session.getReportingConfiguration().isSkipColumnHeader());
     assertFalse(session.getReportingConfiguration().isSkipReportSummary());
+    assertNull("includeZeroImpressions is not settable from ads.properties, so should be null",
+        session.getReportingConfiguration().isIncludeZeroImpressions());
   }
   
   /**

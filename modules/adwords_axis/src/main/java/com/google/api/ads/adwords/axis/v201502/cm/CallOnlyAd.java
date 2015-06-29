@@ -10,8 +10,16 @@ package com.google.api.ads.adwords.axis.v201502.cm;
 
 /**
  * Represents a CallOnlyAd.
- *             <span class="constraint AdxEnabled">This is enabled for
- * AdX.</span>
+ *             
+ *             <p class="caution"><b>Caution:</b> Call only ads do not
+ * use {@link #url url},
+ *             {@link #finalUrls finalUrls}, {@link #finalMobileUrls
+ * finalMobileUrls},
+ *             {@link #finalAppUrls finalAppUrls}, {@link #urlCustomParameters
+ * urlCustomParameters},
+ *             or {@link #trackingUrlTemplate trackingUrlTemplate};
+ *             setting these fields on a call only ad will cause an error.
+ * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  */
 public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201502.cm.Ad  implements java.io.Serializable {
     /* Two letter country code for the ad. Examples: 'US', 'GB'. */

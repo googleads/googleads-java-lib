@@ -12,6 +12,8 @@ package com.google.api.ads.adwords.axis.v201502.mcm;
  * Operation for modifying ManagedCustomer links. See {@link ManagedCustomerService#mutateLink}.
  */
 public class LinkOperation  extends com.google.api.ads.adwords.axis.v201502.cm.Operation  implements java.io.Serializable {
+    /* <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerLink operand;
 
     public LinkOperation() {
@@ -31,7 +33,8 @@ public class LinkOperation  extends com.google.api.ads.adwords.axis.v201502.cm.O
     /**
      * Gets the operand value for this LinkOperation.
      * 
-     * @return operand
+     * @return operand   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerLink getOperand() {
         return operand;
@@ -41,7 +44,8 @@ public class LinkOperation  extends com.google.api.ads.adwords.axis.v201502.cm.O
     /**
      * Sets the operand value for this LinkOperation.
      * 
-     * @param operand
+     * @param operand   * <span class="constraint Required">This field is required and
+     * should not be {@code null}.</span>
      */
     public void setOperand(com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomerLink operand) {
         this.operand = operand;

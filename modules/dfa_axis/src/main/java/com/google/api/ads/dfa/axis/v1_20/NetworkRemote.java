@@ -18,7 +18,7 @@ public interface NetworkRemote extends java.rmi.Remote {
     public com.google.api.ads.dfa.axis.v1_20.AdministratorPermission[] getAdministratorPermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.WidgetImageUploadResponse uploadNetworkWidgetImage(com.google.api.ads.dfa.axis.v1_20.WidgetImageUploadRequest request) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.NetworkRecordSet getNetworks(com.google.api.ads.dfa.axis.v1_20.NetworkSearchCriteria networkSearchCriteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
-    public void executeAgreement(long agreementId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.AgreementRecordSet getAgreements(com.google.api.ads.dfa.axis.v1_20.AgreementSearchCriteria criteria) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
+    public void executeAgreement(long agreementId) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
     public com.google.api.ads.dfa.axis.v1_20.Currency[] getCurrencies() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_20.ApiException;
 }

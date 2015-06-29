@@ -25,7 +25,7 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Predicate;
 import com.google.api.ads.adwords.jaxws.v201502.cm.PredicateOperator;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Selector;
 import com.google.api.ads.adwords.jaxws.v201502.cm.SortOrder;
-import com.google.api.ads.adwords.lib.selectorfields.v201409.cm.CampaignField;
+import com.google.api.ads.adwords.lib.selectorfields.v201502.cm.CampaignField;
 
 import org.joda.time.DateTime;
 import org.junit.Test;

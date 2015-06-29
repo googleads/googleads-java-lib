@@ -26,6 +26,7 @@ public class ReportingConfiguration {
   private Boolean isSkipReportHeader;
   private Boolean isSkipColumnHeader;
   private Boolean isSkipReportSummary;
+  private Boolean isIncludeZeroImpressions;
   
   private ReportingConfiguration(){
     // Used by builder.
@@ -38,6 +39,7 @@ public class ReportingConfiguration {
     this.isSkipReportHeader = configToClone.isSkipReportHeader;
     this.isSkipColumnHeader = configToClone.isSkipColumnHeader;
     this.isSkipReportSummary = configToClone.isSkipReportSummary;
+    this.isIncludeZeroImpressions = configToClone.isIncludeZeroImpressions;
   }
   
   /**
@@ -64,6 +66,14 @@ public class ReportingConfiguration {
   @Nullable
   public Boolean isSkipReportSummary() {
     return isSkipReportSummary;
+  }
+  
+  /**
+   * Return if report responses should include zero impression rows.
+   */
+  @Nullable
+  public Boolean isIncludeZeroImpressions() {
+    return isIncludeZeroImpressions;
   }
   
   /**
@@ -106,6 +116,14 @@ public class ReportingConfiguration {
      */
     public Builder skipReportSummary(Boolean isSkipReportSummary) {
       reportingConfiguration.isSkipReportSummary = isSkipReportSummary;
+      return this;
+    }
+    
+    /**
+     * Sets if report responses should include zero impression rows.
+     */
+    public Builder includeZeroImpressions(Boolean isIncludeZeroImpressions) {
+      reportingConfiguration.isIncludeZeroImpressions = isIncludeZeroImpressions;
       return this;
     }
     

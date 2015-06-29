@@ -32,7 +32,7 @@ public class ExpressBusiness  implements java.io.Serializable {
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 80, inclusive.</span> */
+     * this string should be between 1 and 120, inclusive.</span> */
     private java.lang.String name;
 
     /* Status of this business.
@@ -142,7 +142,7 @@ public class ExpressBusiness  implements java.io.Serializable {
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 80, inclusive.</span>
+     * this string should be between 1 and 120, inclusive.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -160,7 +160,7 @@ public class ExpressBusiness  implements java.io.Serializable {
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 80, inclusive.</span>
+     * this string should be between 1 and 120, inclusive.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

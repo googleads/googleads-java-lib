@@ -33,31 +33,48 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReportingConfigurationTest {
 
-  @Test
+@Test
   public void testBuilder_allOptionsTrue() {
     ReportingConfiguration reportingConfiguration =
-        new Builder().skipReportHeader(true).skipColumnHeader(true).skipReportSummary(true).build();
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(true)
+            .skipReportSummary(true)
+            .includeZeroImpressions(true)
+            .build();
     assertTrue(reportingConfiguration.isSkipReportHeader());
     assertTrue(reportingConfiguration.isSkipColumnHeader());
     assertTrue(reportingConfiguration.isSkipReportSummary());
+    assertTrue(reportingConfiguration.isIncludeZeroImpressions());
   }
 
   @Test
   public void testBuilder_mixedOptions_trueFalse() {
-    ReportingConfiguration reportingConfiguration = new Builder().skipReportHeader(true)
-        .skipColumnHeader(true).skipReportSummary(false).build();
+    ReportingConfiguration reportingConfiguration =
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(true)
+            .skipReportSummary(false)
+            .includeZeroImpressions(false)
+            .build();
     assertTrue(reportingConfiguration.isSkipReportHeader());
     assertTrue(reportingConfiguration.isSkipColumnHeader());
     assertFalse(reportingConfiguration.isSkipReportSummary());
+    assertFalse(reportingConfiguration.isIncludeZeroImpressions());
   }
 
   @Test
   public void testBuilder_nullOptions() {
     ReportingConfiguration reportingConfiguration =
-        new Builder().skipReportHeader(null).skipReportSummary(null).build();
+        new Builder()
+            .skipReportHeader(null)
+            .skipReportSummary(null)
+            .includeZeroImpressions(null)
+            .build();
     assertNull(reportingConfiguration.isSkipReportHeader());
     assertNull(reportingConfiguration.isSkipColumnHeader());
     assertNull(reportingConfiguration.isSkipReportSummary());
+    assertNull(reportingConfiguration.isIncludeZeroImpressions());
   }
 
   @Test
@@ -66,6 +83,7 @@ public class ReportingConfigurationTest {
     assertNull(reportingConfiguration.isSkipReportHeader());
     assertNull(reportingConfiguration.isSkipColumnHeader());
     assertNull(reportingConfiguration.isSkipReportSummary());
+    assertNull(reportingConfiguration.isIncludeZeroImpressions());
   }
 
   /**
@@ -75,12 +93,17 @@ public class ReportingConfigurationTest {
   @Test
   public void testBuilder_returnsCopies() throws Exception {
     Builder builder =
-        new Builder().skipReportHeader(true).skipColumnHeader(false).skipReportSummary(true);
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(false)
+            .skipReportSummary(true)
+            .includeZeroImpressions(false);
 
     ReportingConfiguration config1 = builder.build();
     assertTrue(config1.isSkipReportHeader());
     assertFalse(config1.isSkipColumnHeader());
     assertTrue(config1.isSkipReportSummary());
+    assertFalse(config1.isIncludeZeroImpressions());
 
     assertNotSame("Build did not return a new instance on multiple invocations", config1,
         builder.build());
@@ -101,7 +124,12 @@ public class ReportingConfigurationTest {
   @Test
   public void testValidate_nullVersion_succeeds() {
     ReportingConfiguration config =
-        new Builder().skipReportHeader(true).skipColumnHeader(true).skipReportSummary(true).build();
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(true)
+            .skipReportSummary(true)
+            .includeZeroImpressions(true)
+            .build();
     config.validate(null);
     assertTrue("Validation should succeed", true);
   }
@@ -109,7 +137,12 @@ public class ReportingConfigurationTest {
   @Test
   public void testValidate_supportedVersions_succeeds() {
     ReportingConfiguration config =
-        new Builder().skipReportHeader(true).skipColumnHeader(true).skipReportSummary(true).build();
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(true)
+            .skipReportSummary(true)
+            .includeZeroImpressions(true)
+            .build();
     config.validate("v201409");
     assertTrue("Validation should succeed", true);
     config.validate("v201502");

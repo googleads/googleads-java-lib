@@ -57,7 +57,7 @@ public enum FunctionOperator {
      * 
      *                 Operator that takes two or more operands that are of type FunctionOperand
      *                 and checks that all the operands evaluate to true.
-     *                 All the operands must be in lhsOperand.
+     *                 For functions related to ad formats, all the operands must be in lhsOperand.
      *                 Return ConstantOperand with Bool type.
      *               
      * 

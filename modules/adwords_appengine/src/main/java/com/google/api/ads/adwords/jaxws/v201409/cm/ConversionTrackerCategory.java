@@ -41,8 +41,8 @@ public enum ConversionTrackerCategory {
      *                 Download is applicable only to {@link AppConversion} types,
      *                 and is an error to use in conjunction with other types.
      *                 AppConversions must use download only if they also specify
-     *                 {@link AppConversion#appConversionType} as DOWNLOAD. If any other
-     *                 appConversionType is used, then some other category besides
+     *                 {@link AppConversion#appConversionType} as DOWNLOAD or FIRST_OPEN.
+     *                 If any other appConversionType is used, then some other category besides
      *                 DOWNLOAD must be used.
      *               
      * 

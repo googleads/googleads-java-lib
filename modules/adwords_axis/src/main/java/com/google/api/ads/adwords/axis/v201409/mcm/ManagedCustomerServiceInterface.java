@@ -62,6 +62,17 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         <li>SET + REFUSED:   client declines invitations</li>
      *         </ul>
      *         
+     *         As of v201506 in addition to these, active links can also
+     * be marked hidden / unhidden.
+     *         <ul>
+     *         <li> An ACTIVE link can be marked hidden with SET + ACTIVE
+     * along with setting the
+     *         isHidden bit to true. </li>
+     *         <li> An ACTIVE link can be marked unhidden with SET + ACTIVE
+     * along with setting the
+     *         isHidden bit to false. </li>
+     *         </ul>
+     *         
      *         
      * @param operations the list of operations
      *         

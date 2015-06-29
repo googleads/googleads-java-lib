@@ -13,7 +13,7 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  * targeting.
  */
 public class LocationExtensionOperand  extends com.google.api.ads.adwords.axis.v201502.cm.FunctionArgumentOperand  implements java.io.Serializable {
-    /* Distance in units specifying the radius around location extensions.
+    /* Distance in units specifying the radius around targeted locations.
      * Only long and double are supported constant types.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
@@ -34,7 +34,7 @@ public class LocationExtensionOperand  extends com.google.api.ads.adwords.axis.v
     /**
      * Gets the radius value for this LocationExtensionOperand.
      * 
-     * @return radius   * Distance in units specifying the radius around location extensions.
+     * @return radius   * Distance in units specifying the radius around targeted locations.
      * Only long and double are supported constant types.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
@@ -47,7 +47,7 @@ public class LocationExtensionOperand  extends com.google.api.ads.adwords.axis.v
     /**
      * Sets the radius value for this LocationExtensionOperand.
      * 
-     * @param radius   * Distance in units specifying the radius around location extensions.
+     * @param radius   * Distance in units specifying the radius around targeted locations.
      * Only long and double are supported constant types.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>

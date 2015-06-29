@@ -41,6 +41,23 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("saveSubnetwork");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "subnetwork"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "Subnetwork"), com.google.api.ads.dfa.axis.v1_19.Subnetwork.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "SubnetworkSaveResult"));
+        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "saveSubnetworkReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "fault"),
+                      "com.google.api.ads.dfa.axis.v1_19.ApiException",
+                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ApiException"), 
+                      true
+                     ));
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllAvailablePermissions");
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ArrayOfPermission"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.Permission[].class);
@@ -53,7 +70,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ApiException"), 
                       true
                      ));
-        _operations[1] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDefaultPermissions");
@@ -68,7 +85,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ApiException"), 
                       true
                      ));
-        _operations[2] = oper;
+        _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSubnetworks");
@@ -85,7 +102,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
                       new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ApiException"), 
                       true
                      ));
-        _operations[3] = oper;
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSubnetworkSummaries");
@@ -94,23 +111,6 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
         oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "SubnetworkSummaryRecordSet"));
         oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.SubnetworkSummaryRecordSet.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSubnetworkSummariesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "fault"),
-                      "com.google.api.ads.dfa.axis.v1_19.ApiException",
-                      new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "ApiException"), 
-                      true
-                     ));
-        _operations[4] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("saveSubnetwork");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "subnetwork"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "Subnetwork"), com.google.api.ads.dfa.axis.v1_19.Subnetwork.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "SubnetworkSaveResult"));
-        oper.setReturnClass(com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "saveSubnetworkReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         oper.addFault(new org.apache.axis.description.FaultDesc(
@@ -420,12 +420,51 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
 }
     }
 
-    public com.google.api.ads.dfa.axis.v1_19.Permission[] getAllAvailablePermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+    public com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult saveSubnetwork(com.google.api.ads.dfa.axis.v1_19.Subnetwork subnetwork) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "saveSubnetwork"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {subnetwork});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_19.ApiException) {
+              throw (com.google.api.ads.dfa.axis.v1_19.ApiException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public com.google.api.ads.dfa.axis.v1_19.Permission[] getAllAvailablePermissions() throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -464,7 +503,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -503,7 +542,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -542,7 +581,7 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -561,45 +600,6 @@ public class SubnetworkSoapBindingStub extends org.apache.axis.client.Stub imple
                 return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSummaryRecordSet) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSummaryRecordSet) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.SubnetworkSummaryRecordSet.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.dfa.axis.v1_19.ApiException) {
-              throw (com.google.api.ads.dfa.axis.v1_19.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult saveSubnetwork(com.google.api.ads.dfa.axis.v1_19.Subnetwork subnetwork) throws java.rmi.RemoteException, com.google.api.ads.dfa.axis.v1_19.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://www.doubleclick.net/dfa-api/v1.19", "saveSubnetwork"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {subnetwork});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.dfa.axis.v1_19.SubnetworkSaveResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

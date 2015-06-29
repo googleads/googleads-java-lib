@@ -147,6 +147,11 @@ public class ReportRequestFactoryHelper {
         httpHeaders.set("skipReportSummary",
             Boolean.toString(reportingConfiguration.isSkipReportSummary()));
       }
+      if (reportingConfiguration.isIncludeZeroImpressions() != null) {
+        httpHeaders.set(
+            "includeZeroImpressions",
+            Boolean.toString(reportingConfiguration.isIncludeZeroImpressions()));
+      }
     }
     return httpHeaders;
   }

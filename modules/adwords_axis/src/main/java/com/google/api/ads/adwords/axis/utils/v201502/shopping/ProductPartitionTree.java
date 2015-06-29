@@ -203,7 +203,7 @@ public class ProductPartitionTree {
 
     SelectorBuilder selectorBuilder = new SelectorBuilder()
         .fields(REQUIRED_SELECTOR_FIELD_ENUMS.toArray(
-            new String[REQUIRED_SELECTOR_FIELD_ENUMS.size()]))
+            new AdGroupCriterionField[REQUIRED_SELECTOR_FIELD_ENUMS.size()]))
         .equals(AdGroupCriterionField.AdGroupId, adGroupId.toString())
         .equals(AdGroupCriterionField.CriteriaType, "PRODUCT_PARTITION")
         .in(

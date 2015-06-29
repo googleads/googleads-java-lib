@@ -9,6 +9,12 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a CallOnlyAd.
+ *             
+ *             <p class="caution"><b>Caution:</b> Call only ads do not use {@link #url url},
+ *             {@link #finalUrls finalUrls}, {@link #finalMobileUrls finalMobileUrls},
+ *             {@link #finalAppUrls finalAppUrls}, {@link #urlCustomParameters urlCustomParameters},
+ *             or {@link #trackingUrlTemplate trackingUrlTemplate};
+ *             setting these fields on a call only ad will cause an error.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

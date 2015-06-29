@@ -1,3 +1,19 @@
+2.2.0 - 06/26/2015
+-------------------
+AdWords:
+  - Added support and examples for v201506.
+  - Fix to avoid ArrayStoreException in ProductPartitionTree.createAdGroupTree.
+  - Added support for the new includeZeroImpressions HTTP header for reporting.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.1.0 - 06/10/2015
 -------------------
 AdWords:
