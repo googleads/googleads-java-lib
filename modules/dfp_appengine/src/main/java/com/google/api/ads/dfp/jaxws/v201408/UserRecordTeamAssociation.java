@@ -4,6 +4,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -48,7 +49,9 @@ import javax.xml.bind.annotation.XmlType;
 public abstract class UserRecordTeamAssociation {
 
     protected Long teamId;
+    @XmlSchemaType(name = "string")
     protected TeamAccessType overriddenTeamAccessType;
+    @XmlSchemaType(name = "string")
     protected TeamAccessType defaultTeamAccessType;
     @XmlElement(name = "UserRecordTeamAssociation.Type")
     protected String userRecordTeamAssociationType;

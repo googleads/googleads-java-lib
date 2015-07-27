@@ -311,7 +311,7 @@ public class OfflineCredentialsTest {
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client ID must be set as api.dfp.clientId in /home/user/path."
         + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://code.google.com/apis/console#access");
+        + "console: https://console.developers.google.com/project");
     builder.fromFile("/home/user/path").build();
   }
 
@@ -330,7 +330,7 @@ public class OfflineCredentialsTest {
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client ID must be set."
         + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://code.google.com/apis/console#access");
+        + "console: https://console.developers.google.com/project");
     builder.from(config).build();
   }
 
@@ -351,7 +351,7 @@ public class OfflineCredentialsTest {
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client secret must be set as api.dfp.clientSecret in /home/user/path."
         + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://code.google.com/apis/console#access");
+        + "console: https://console.developers.google.com/project");
     builder.fromFile("/home/user/path").build();
   }
 
@@ -370,7 +370,7 @@ public class OfflineCredentialsTest {
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client secret must be set."
         + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://code.google.com/apis/console#access");
+        + "console: https://console.developers.google.com/project");
     builder.from(config).build();
   }
 

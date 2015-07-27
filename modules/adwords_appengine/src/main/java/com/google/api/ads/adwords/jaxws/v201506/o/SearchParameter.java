@@ -85,17 +85,17 @@ import javax.xml.bind.annotation.XmlType;
     "searchParameterType"
 })
 @XmlSeeAlso({
-    CategoryProductsAndServicesSearchParameter.class,
-    RelatedToUrlSearchParameter.class,
-    IncludeAdultContentSearchParameter.class,
-    IdeaTextFilterSearchParameter.class,
     SeedAdGroupIdSearchParameter.class,
-    NetworkSearchParameter.class,
-    RelatedToQuerySearchParameter.class,
+    CategoryProductsAndServicesSearchParameter.class,
+    IdeaTextFilterSearchParameter.class,
+    RelatedToUrlSearchParameter.class,
+    LanguageSearchParameter.class,
+    CompetitionSearchParameter.class,
     SearchVolumeSearchParameter.class,
     LocationSearchParameter.class,
-    CompetitionSearchParameter.class,
-    LanguageSearchParameter.class
+    NetworkSearchParameter.class,
+    IncludeAdultContentSearchParameter.class,
+    RelatedToQuerySearchParameter.class
 })
 public abstract class SearchParameter {
 

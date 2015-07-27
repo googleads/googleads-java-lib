@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -48,6 +49,7 @@ public class AdCustomizerFeed {
 
     protected Long feedId;
     protected String feedName;
+    @XmlSchemaType(name = "string")
     protected FeedStatus feedStatus;
     protected List<AdCustomizerFeedAttribute> feedAttributes;
 

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201506.cm.ApiError;
 
@@ -43,6 +44,7 @@ public class ManagedCustomerServiceError
     extends ApiError
 {
 
+    @XmlSchemaType(name = "string")
     protected ManagedCustomerServiceErrorReason reason;
     @XmlElement(type = Long.class)
     protected List<Long> customerIds;

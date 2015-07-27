@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -41,7 +42,9 @@ import javax.xml.bind.annotation.XmlType;
 public class FrequencyCap {
 
     protected Long impressions;
+    @XmlSchemaType(name = "string")
     protected TimeUnit timeUnit;
+    @XmlSchemaType(name = "string")
     protected Level level;
 
     /**

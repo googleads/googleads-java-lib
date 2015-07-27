@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,7 +48,9 @@ public class ExchangeRate {
 
     protected Long id;
     protected String currencyCode;
+    @XmlSchemaType(name = "string")
     protected ExchangeRateRefreshRate refreshRate;
+    @XmlSchemaType(name = "string")
     protected ExchangeRateDirection direction;
     protected Long exchangeRate;
 

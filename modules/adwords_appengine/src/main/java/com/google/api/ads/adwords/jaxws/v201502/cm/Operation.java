@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201502.billing.BudgetOrderOperation;
@@ -48,49 +49,50 @@ import com.google.api.ads.adwords.jaxws.v201502.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
-    UserListOperation.class,
     BudgetOrderOperation.class,
-    AdParamOperation.class,
-    OfflineConversionFeedOperation.class,
-    BiddingStrategyOperation.class,
-    AdCustomizerFeedOperation.class,
-    FeedItemOperation.class,
-    AdGroupExtensionSettingOperation.class,
-    AdGroupAdOperation.class,
-    CampaignExtensionSettingOperation.class,
-    CampaignCriterionOperation.class,
-    AdGroupFeedOperation.class,
-    FeedOperation.class,
-    LabelOperation.class,
-    BudgetOperation.class,
-    SharedCriterionOperation.class,
-    AdGroupLabelOperation.class,
-    ExperimentOperation.class,
-    FeedMappingOperation.class,
-    CampaignSharedSetOperation.class,
     CustomerFeedOperation.class,
-    AdGroupOperation.class,
-    ConversionTrackerOperation.class,
-    CampaignAdExtensionOperation.class,
-    CampaignLabelOperation.class,
+    AdParamOperation.class,
+    AdGroupAdOperation.class,
     AdGroupCriterionLabelOperation.class,
-    CampaignFeedOperation.class,
-    CampaignOperation.class,
+    ConversionTrackerOperation.class,
+    CampaignSharedSetOperation.class,
     AdGroupBidModifierOperation.class,
+    BiddingStrategyOperation.class,
     CustomerExtensionSettingOperation.class,
     SharedSetOperation.class,
-    AdGroupAdLabelOperation.class,
     AdGroupCriterionOperation.class,
-    ExpressBusinessOperation.class,
-    PromotionOperation.class,
-    ManagedCustomerOperation.class,
-    AccountLabelOperation.class,
+    ExperimentOperation.class,
+    BudgetOperation.class,
+    FeedItemOperation.class,
+    CampaignLabelOperation.class,
+    SharedCriterionOperation.class,
+    CampaignExtensionSettingOperation.class,
+    FeedMappingOperation.class,
+    AdGroupLabelOperation.class,
+    CampaignCriterionOperation.class,
+    CampaignAdExtensionOperation.class,
+    AdCustomizerFeedOperation.class,
+    AdGroupOperation.class,
+    FeedOperation.class,
+    OfflineConversionFeedOperation.class,
+    AdGroupExtensionSettingOperation.class,
+    AdGroupFeedOperation.class,
+    LabelOperation.class,
+    AdGroupAdLabelOperation.class,
+    CampaignOperation.class,
+    CampaignFeedOperation.class,
+    UserListOperation.class,
     ManagedCustomerLabelOperation.class,
+    AccountLabelOperation.class,
+    MoveOperation.class,
     LinkOperation.class,
-    MoveOperation.class
+    ManagedCustomerOperation.class,
+    ExpressBusinessOperation.class,
+    PromotionOperation.class
 })
 public abstract class Operation {
 
+    @XmlSchemaType(name = "string")
     protected Operator operator;
     @XmlElement(name = "Operation.Type")
     protected String operationType;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -40,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 public class ConversionOptimizerEligibility {
 
     protected Boolean eligible;
+    @XmlSchemaType(name = "string")
     protected List<ConversionOptimizerEligibilityRejectionReason> rejectionReasons;
 
     /**

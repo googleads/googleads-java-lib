@@ -22,13 +22,13 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201502.cm.Ext
 
     /* The visible text displayed when the link is rendered in an
      * ad.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 1 and 25, inclusive.</span> */
     private java.lang.String appLinkText;
 
     /* The destination URL of the in-app link.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 0 and 2076, inclusive.</span> */
     private java.lang.String appUrl;
 
     public AppFeedItem() {
@@ -114,8 +114,8 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201502.cm.Ext
      * 
      * @return appLinkText   * The visible text displayed when the link is rendered in an
      * ad.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 1 and 25, inclusive.</span>
      */
     public java.lang.String getAppLinkText() {
         return appLinkText;
@@ -127,8 +127,8 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201502.cm.Ext
      * 
      * @param appLinkText   * The visible text displayed when the link is rendered in an
      * ad.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 1 and 25, inclusive.</span>
      */
     public void setAppLinkText(java.lang.String appLinkText) {
         this.appLinkText = appLinkText;
@@ -139,8 +139,8 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201502.cm.Ext
      * Gets the appUrl value for this AppFeedItem.
      * 
      * @return appUrl   * The destination URL of the in-app link.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 0 and 2076, inclusive.</span>
      */
     public java.lang.String getAppUrl() {
         return appUrl;
@@ -151,8 +151,8 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201502.cm.Ext
      * Sets the appUrl value for this AppFeedItem.
      * 
      * @param appUrl   * The destination URL of the in-app link.
-     *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     *                     <span class="constraint StringLength">The length
+     * of this string should be between 0 and 2076, inclusive.</span>
      */
     public void setAppUrl(java.lang.String appUrl) {
         this.appUrl = appUrl;

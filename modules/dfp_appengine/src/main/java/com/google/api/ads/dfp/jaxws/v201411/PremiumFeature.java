@@ -37,23 +37,23 @@ import javax.xml.bind.annotation.XmlType;
     "premiumFeatureType"
 })
 @XmlSeeAlso({
-    DeviceManufacturerPremiumFeature.class,
-    UnknownPremiumFeature.class,
+    AudienceSegmentPremiumFeature.class,
+    DeviceCapabilityPremiumFeature.class,
+    CustomTargetingPremiumFeature.class,
     BrowserPremiumFeature.class,
+    BandwidthPremiumFeature.class,
     FrequencyCapPremiumFeature.class,
     DaypartPremiumFeature.class,
-    UserDomainPremiumFeature.class,
-    MobileCarrierPremiumFeature.class,
-    OperatingSystemPremiumFeature.class,
+    DeviceManufacturerPremiumFeature.class,
+    UnknownPremiumFeature.class,
     PlacementPremiumFeature.class,
-    BandwidthPremiumFeature.class,
-    DeviceCategoryPremiumFeature.class,
+    UserDomainPremiumFeature.class,
     BrowserLanguagePremiumFeature.class,
-    AudienceSegmentPremiumFeature.class,
-    AdUnitPremiumFeature.class,
-    CustomTargetingPremiumFeature.class,
+    MobileCarrierPremiumFeature.class,
     GeographyPremiumFeature.class,
-    DeviceCapabilityPremiumFeature.class
+    DeviceCategoryPremiumFeature.class,
+    AdUnitPremiumFeature.class,
+    OperatingSystemPremiumFeature.class
 })
 public abstract class PremiumFeature {
 

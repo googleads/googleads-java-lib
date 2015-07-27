@@ -240,9 +240,11 @@ public class LineItemSummary  implements java.io.Serializable {
 
     /* The platform that the {@code LineItem} is targeting, the default
      * value is
-     *                 {@link TargetPlatform#WEB}. Line items will only serve
-     * to ad units that have the same
-     *                 {@link AdUnit#targetPlatform}. */
+     *                 {@link TargetPlatform#ANY}.
+     *                 <p>
+     *                 This field is deprecated in favor of desktop and mobile
+     * unification and should
+     *                 not be used or set to anything other than {@link TargetPlatform#ANY}. */
     private com.google.api.ads.dfp.axis.v201502.TargetPlatform targetPlatform;
 
     /* The environment that the {@code LineItem} is targeting. The
@@ -1430,9 +1432,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @return targetPlatform   * The platform that the {@code LineItem} is targeting, the default
      * value is
-     *                 {@link TargetPlatform#WEB}. Line items will only serve
-     * to ad units that have the same
-     *                 {@link AdUnit#targetPlatform}.
+     *                 {@link TargetPlatform#ANY}.
+     *                 <p>
+     *                 This field is deprecated in favor of desktop and mobile
+     * unification and should
+     *                 not be used or set to anything other than {@link TargetPlatform#ANY}.
      */
     public com.google.api.ads.dfp.axis.v201502.TargetPlatform getTargetPlatform() {
         return targetPlatform;
@@ -1444,9 +1448,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @param targetPlatform   * The platform that the {@code LineItem} is targeting, the default
      * value is
-     *                 {@link TargetPlatform#WEB}. Line items will only serve
-     * to ad units that have the same
-     *                 {@link AdUnit#targetPlatform}.
+     *                 {@link TargetPlatform#ANY}.
+     *                 <p>
+     *                 This field is deprecated in favor of desktop and mobile
+     * unification and should
+     *                 not be used or set to anything other than {@link TargetPlatform#ANY}.
      */
     public void setTargetPlatform(com.google.api.ads.dfp.axis.v201502.TargetPlatform targetPlatform) {
         this.targetPlatform = targetPlatform;

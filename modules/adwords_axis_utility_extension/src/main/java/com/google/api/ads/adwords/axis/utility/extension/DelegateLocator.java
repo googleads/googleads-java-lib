@@ -43,7 +43,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201502.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 /**

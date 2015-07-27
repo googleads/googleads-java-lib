@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -67,6 +68,7 @@ public class LiveStreamEvent {
     protected Long id;
     protected String name;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected LiveStreamEventStatus status;
     protected DateTime creationDateTime;
     protected DateTime lastModifiedDateTime;

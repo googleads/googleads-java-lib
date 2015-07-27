@@ -40,8 +40,8 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
      *                     defaults to Clicks. */
     private com.google.api.ads.adwords.axis.v201506.cm.ConversionOptimizerBiddingSchemePricingMode pricingMode;
 
-    /* Bid type indicates if it is a Target CPA or Max CPA campaign.
-     * If the Bid type is
+    /* Bid type indicates if it is a Target CPA campaign. If the Bid
+     * type is
      *                     not specified it defaults to Target CPA. */
     private com.google.api.ads.adwords.axis.v201506.cm.ConversionOptimizerBiddingSchemeBidType bidType;
 
@@ -94,8 +94,8 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
     /**
      * Gets the bidType value for this ConversionOptimizerBiddingScheme.
      * 
-     * @return bidType   * Bid type indicates if it is a Target CPA or Max CPA campaign.
-     * If the Bid type is
+     * @return bidType   * Bid type indicates if it is a Target CPA campaign. If the Bid
+     * type is
      *                     not specified it defaults to Target CPA.
      */
     public com.google.api.ads.adwords.axis.v201506.cm.ConversionOptimizerBiddingSchemeBidType getBidType() {
@@ -106,8 +106,8 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
     /**
      * Sets the bidType value for this ConversionOptimizerBiddingScheme.
      * 
-     * @param bidType   * Bid type indicates if it is a Target CPA or Max CPA campaign.
-     * If the Bid type is
+     * @param bidType   * Bid type indicates if it is a Target CPA campaign. If the Bid
+     * type is
      *                     not specified it defaults to Target CPA.
      */
     public void setBidType(com.google.api.ads.adwords.axis.v201506.cm.ConversionOptimizerBiddingSchemeBidType bidType) {

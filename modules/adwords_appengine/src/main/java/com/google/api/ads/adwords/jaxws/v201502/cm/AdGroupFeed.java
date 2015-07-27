@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -52,6 +53,7 @@ public class AdGroupFeed {
     protected Function matchingFunction;
     @XmlElement(type = Integer.class)
     protected List<Integer> placeholderTypes;
+    @XmlSchemaType(name = "string")
     protected AdGroupFeedStatus status;
 
     /**

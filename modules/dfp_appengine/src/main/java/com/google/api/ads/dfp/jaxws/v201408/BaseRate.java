@@ -42,8 +42,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     ProductTemplateBaseRate.class,
-    ProductBaseRate.class,
-    UnknownBaseRate.class
+    UnknownBaseRate.class,
+    ProductBaseRate.class
 })
 public abstract class BaseRate {
 

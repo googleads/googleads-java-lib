@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -69,6 +70,7 @@ public class Company {
 
     protected Long id;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected CompanyType type;
     protected String address;
     protected String email;
@@ -76,6 +78,7 @@ public class Company {
     protected String primaryPhone;
     protected String externalId;
     protected String comment;
+    @XmlSchemaType(name = "string")
     protected CompanyCreditStatus creditStatus;
     protected List<AppliedLabel> appliedLabels;
     protected Long primaryContactId;

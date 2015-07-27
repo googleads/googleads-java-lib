@@ -29,7 +29,9 @@ public class NetworkSetting  implements java.io.Serializable {
 
     /* Ads will be served on specified placements in the Google Display
      * Network.
-     *                 Placements are specified using {@code Placement} criteria. */
+     *                 Placements are specified using {@code Placement} criteria.
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel subtype SEARCH_MOBILE_APP.</span> */
     private java.lang.Boolean targetContentNetwork;
 
     /* Ads will be served on the Google Partner Network. This is available
@@ -118,6 +120,8 @@ public class NetworkSetting  implements java.io.Serializable {
      * @return targetContentNetwork   * Ads will be served on specified placements in the Google Display
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel subtype SEARCH_MOBILE_APP.</span>
      */
     public java.lang.Boolean getTargetContentNetwork() {
         return targetContentNetwork;
@@ -130,6 +134,8 @@ public class NetworkSetting  implements java.io.Serializable {
      * @param targetContentNetwork   * Ads will be served on specified placements in the Google Display
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
+     * <span class="constraint CampaignType">This field may only be set to
+     * false for campaign channel subtype SEARCH_MOBILE_APP.</span>
      */
     public void setTargetContentNetwork(java.lang.Boolean targetContentNetwork) {
         this.targetContentNetwork = targetContentNetwork;

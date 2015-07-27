@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -71,23 +72,26 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     UploadConversion.class,
-    AdWordsConversionTracker.class,
-    AdCallMetricsConversion.class,
+    AppConversion.class,
     WebsiteCallMetricsConversion.class,
-    AppConversion.class
+    AdCallMetricsConversion.class,
+    AdWordsConversionTracker.class
 })
 public abstract class ConversionTracker {
 
     protected Long id;
     protected Long originalConversionTypeId;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected ConversionTrackerStatus status;
+    @XmlSchemaType(name = "string")
     protected ConversionTrackerCategory category;
     protected Long conversionTypeOwnerCustomerId;
     protected Integer viewthroughLookbackWindow;
     protected Boolean isProductAdsChargeable;
     protected Integer productAdsChargeableConversionWindow;
     protected Integer ctcLookbackWindow;
+    @XmlSchemaType(name = "string")
     protected ConversionDeduplicationMode countingType;
     protected Double defaultRevenueValue;
     protected String defaultRevenueCurrencyCode;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -65,12 +66,14 @@ public class AdGroup {
     protected Long campaignId;
     protected String campaignName;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected AdGroupStatus status;
     protected List<Setting> settings;
     protected AdGroupExperimentData experimentData;
     protected List<Label> labels;
     protected List<StringStringMapEntry> forwardCompatibilityMap;
     protected BiddingStrategyConfiguration biddingStrategyConfiguration;
+    @XmlSchemaType(name = "string")
     protected CriterionTypeGroup contentBidCriterionTypeGroup;
     protected String trackingUrlTemplate;
     protected CustomParameters urlCustomParameters;

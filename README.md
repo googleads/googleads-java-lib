@@ -246,58 +246,9 @@ public static void main(String[] args) throws Exception {
 
 ## How do I enable logging?
 
-The client library uses SLF4J for all logging. If you want to turn logging on,
-you must include a plugin that bridges SLF4J with a concrete logging framework.
-To quickly get you started and to serve as an example of how to do this, this
-example distribution uses the log4j framework.
-
-There are the following loggers within the library:
-
-  - com.google.api.ads.adwords.lib.client.AdWordsServiceClient.soapXmlLogger
-    com.google.api.ads.dfa.lib.client.DfaServiceClient.soapXmlLogger
-    com.google.api.ads.dfp.lib.client.DfpServiceClient.soapXmlLogger
-
-    Logs incoming and outgoing SOAP requests/responses. SOAP requests and
-    responses are logged as WARN for exceptions and INFO for all other requests.
-    You can configure your logging framework to accept logs on these parameters.
-    See the example log4j.properties for more information.
-
-  - com.google.api.ads.adwords.lib.client.AdWordsServiceClient.requestInfoLogger
-    com.google.api.ads.dfa.lib.client.DfaServiceClient.requestInfoLogger
-    com.google.api.ads.dfp.lib.client.DfpServiceClient.requestInfoLogger
-
-    Logs all requests from the client library along with information such as the
-    timestamp, service, method, endpoint URL.
-
-Because the client library uses SLF4J, the behavior of these loggers is highly customizable. Please see the "log4j.properties" or "src/main/resources/log4j.properties" file for details on the default behavior in this example project.
-
-### If you are using jars
-
-To use a different framework than log4j, remove the slf4j-log4j12 jar from your classpath and fetch a different one here: http://www.slf4j.org/download.html
-
-### If you are using maven
-
-To bridge SLF4J for a logging framework, you must do the following:
-
-  1) Include the plugin and logging framework dependencies in the pom.xml file's
-     dependencies list.
-
-     <!-- Adds the log4j framework -->
-     <dependency>
-       <groupId>log4j</groupId>
-       <artifactId>log4j</artifactId>
-       <version>1.2.16</version>
-     </dependency>
-     <!-- Make SLF4J use log4j as the logging framework -->
-     <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-       <version>1.7.7</version>
-     </dependency>
-
-  2) If your logging framework requires a configuration file, you must place it
-     in the resources directory. This distribution includes an example
-     configuration for log4j named "log4j.properties".
+The client library uses SLF4J for all logging. Check out our
+[logging guide on github](https://github.com/googleads/googleads-java-lib/wiki/Logging)
+for more details.
 
 ## How do I enable compression?
 

@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "labelActionType"
 })
 @XmlSeeAlso({
-    DeactivateLabels.class,
-    ActivateLabels.class
+    ActivateLabels.class,
+    DeactivateLabels.class
 })
 public abstract class LabelAction {
 

@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,6 +44,7 @@ public class AppFeedItem
     extends ExtensionFeedItem
 {
 
+    @XmlSchemaType(name = "string")
     protected AppFeedItemAppStore appStore;
     protected String appId;
     protected String appLinkText;

@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,7 +48,9 @@ public class GrpSettings {
 
     protected Long minTargetAge;
     protected Long maxTargetAge;
+    @XmlSchemaType(name = "string")
     protected GrpTargetGender targetGender;
+    @XmlSchemaType(name = "string")
     protected GrpProvider provider;
     protected Long targetImpressionGoal;
 

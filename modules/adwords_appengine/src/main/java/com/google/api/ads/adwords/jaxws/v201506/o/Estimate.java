@@ -36,9 +36,9 @@ import javax.xml.bind.annotation.XmlType;
     "estimateType"
 })
 @XmlSeeAlso({
-    KeywordEstimate.class,
     AdGroupEstimate.class,
-    CampaignEstimate.class
+    CampaignEstimate.class,
+    KeywordEstimate.class
 })
 public class Estimate {
 

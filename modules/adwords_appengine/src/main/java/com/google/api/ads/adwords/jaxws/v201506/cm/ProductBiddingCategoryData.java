@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,6 +54,7 @@ public class ProductBiddingCategoryData
     protected ProductBiddingCategory dimensionValue;
     protected ProductBiddingCategory parentDimensionValue;
     protected String country;
+    @XmlSchemaType(name = "string")
     protected ShoppingBiddingDimensionStatus status;
     protected List<StringStringMapEntry> displayValue;
 

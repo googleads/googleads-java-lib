@@ -32,7 +32,7 @@ public enum AdGroupField implements EntityField {
   ActiveViewCpmEnabled(true),
 
   /**
-   * Bid type indicates if it is a Target CPA or Max CPA campaign.
+   * Bid type indicates if it is a Target CPA campaign.
    * If the Bid type is not specified it defaults to Target CPA.
    */
   @Filterable

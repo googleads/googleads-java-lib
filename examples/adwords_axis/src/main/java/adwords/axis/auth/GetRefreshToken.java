@@ -96,7 +96,7 @@ public class GetRefreshToken {
   public static void main(String[] args) throws Exception {
     // Get the client ID and secret from the ads.properties file.
     // If you do not have a client ID or secret, please create one in the
-    // API console: https://code.google.com/apis/console#access and set it
+    // API console: https://console.developers.google.com/project and set it
     // in the ads.properties file.
     GoogleClientSecrets clientSecrets = null;
     try {
@@ -109,7 +109,7 @@ public class GetRefreshToken {
           "Please input your client ID and secret into your ads.properties file, which is either "
           + "located in your home directory in your src/main/resources directory, or "
           + "on your classpath. If you do not have a client ID or secret, please create one in "
-          + "the API console: https://code.google.com/apis/console#access");
+          + "the API console: https://console.developers.google.com/project");
       System.exit(1);
     }
 

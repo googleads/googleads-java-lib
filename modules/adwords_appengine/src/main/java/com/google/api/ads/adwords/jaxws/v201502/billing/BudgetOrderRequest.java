@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.billing;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Money;
 
@@ -52,6 +53,7 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Money;
 })
 public class BudgetOrderRequest {
 
+    @XmlSchemaType(name = "string")
     protected BudgetOrderRequestStatus status;
     protected String date;
     protected String billingAccountName;

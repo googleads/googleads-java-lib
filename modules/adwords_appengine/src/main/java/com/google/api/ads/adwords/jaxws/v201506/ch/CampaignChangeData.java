@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -56,6 +57,7 @@ import javax.xml.bind.annotation.XmlType;
 public class CampaignChangeData {
 
     protected Long campaignId;
+    @XmlSchemaType(name = "string")
     protected ChangeStatus campaignChangeStatus;
     protected List<AdGroupChangeData> changedAdGroups;
     @XmlElement(type = Long.class)

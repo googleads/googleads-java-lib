@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "reconciliationOrderReportActionType"
 })
 @XmlSeeAlso({
-    RevertReconciliationOrderReports.class,
-    SubmitReconciliationOrderReports.class
+    SubmitReconciliationOrderReports.class,
+    RevertReconciliationOrderReports.class
 })
 public abstract class ReconciliationOrderReportAction {
 

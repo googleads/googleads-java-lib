@@ -36,10 +36,10 @@ import javax.xml.bind.annotation.XmlType;
     "proposalActionType"
 })
 @XmlSeeAlso({
-    UnarchiveProposals.class,
-    ArchiveProposals.class,
     RetractProposals.class,
-    SubmitProposalsForApproval.class
+    UnarchiveProposals.class,
+    SubmitProposalsForApproval.class,
+    ArchiveProposals.class
 })
 public abstract class ProposalAction {
 

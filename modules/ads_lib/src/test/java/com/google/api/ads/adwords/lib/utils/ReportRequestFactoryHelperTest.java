@@ -104,8 +104,6 @@ public class ReportRequestFactoryHelperTest {
                       .includeZeroImpressions(isIncludeZeroImpressions)
                       .build();
             }
-            parameters.add(new Object[] {"v201409", null});
-            parameters.add(new Object[] {"v201409", reportingConfig});
             parameters.add(new Object[] {"v201502", null});
             parameters.add(new Object[] {"v201502", reportingConfig});
             parameters.add(new Object[] {"v201506", null});

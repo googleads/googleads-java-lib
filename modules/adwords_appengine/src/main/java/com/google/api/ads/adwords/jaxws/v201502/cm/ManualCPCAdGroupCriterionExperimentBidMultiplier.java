@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -41,6 +42,7 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier
 {
 
     protected BidMultiplier maxCpcMultiplier;
+    @XmlSchemaType(name = "string")
     protected MultiplierSource multiplierSource;
 
     /**

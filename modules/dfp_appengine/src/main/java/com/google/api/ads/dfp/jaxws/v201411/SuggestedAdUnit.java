@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -55,7 +56,9 @@ public class SuggestedAdUnit {
     protected Long numRequests;
     protected List<String> path;
     protected List<AdUnitParent> parentPath;
+    @XmlSchemaType(name = "string")
     protected AdUnitTargetWindow targetWindow;
+    @XmlSchemaType(name = "string")
     protected TargetPlatform targetPlatform;
     protected List<AdUnitSize> suggestedAdUnitSizes;
 

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -56,17 +57,19 @@ import javax.xml.bind.annotation.XmlType;
     "extensionFeedItemType"
 })
 @XmlSeeAlso({
-    CalloutFeedItem.class,
+    CallFeedItem.class,
     SitelinkFeedItem.class,
     ReviewFeedItem.class,
-    CallFeedItem.class,
+    CalloutFeedItem.class,
     AppFeedItem.class
 })
 public class ExtensionFeedItem {
 
     protected Long feedId;
     protected Long feedItemId;
+    @XmlSchemaType(name = "string")
     protected FeedItemStatus status;
+    @XmlSchemaType(name = "string")
     protected FeedType feedType;
     protected String startTime;
     protected String endTime;

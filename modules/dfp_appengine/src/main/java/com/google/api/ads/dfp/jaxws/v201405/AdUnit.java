@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -91,11 +92,15 @@ public class AdUnit {
     protected List<AdUnitParent> parentPath;
     protected String name;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected AdUnitTargetWindow targetWindow;
+    @XmlSchemaType(name = "string")
     protected InventoryStatus status;
     protected String adUnitCode;
     protected List<AdUnitSize> adUnitSizes;
+    @XmlSchemaType(name = "string")
     protected TargetPlatform targetPlatform;
+    @XmlSchemaType(name = "string")
     protected MobilePlatform mobilePlatform;
     protected Boolean explicitlyTargeted;
     protected AdSenseSettingsInheritedProperty inheritedAdSenseSettings;
@@ -109,6 +114,7 @@ public class AdUnit {
     @XmlElement(type = Long.class)
     protected List<Long> appliedTeamIds;
     protected DateTime lastModifiedDateTime;
+    @XmlSchemaType(name = "string")
     protected SmartSizeMode smartSizeMode;
 
     /**

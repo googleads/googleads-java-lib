@@ -1,3 +1,19 @@
+2.3.0 - 07/27/2015
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201506.
+  - Removed support and examples for v201409. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+
+DFA:
+  - Removed support for v1.19.
+
+DFP:
+  - Removed support for v201403.
+
+Common:
+  - No changes.
+
 2.2.0 - 06/26/2015
 -------------------
 AdWords:
@@ -56,7 +72,7 @@ AdWords:
   - Removed reference to `MarginalCpc` selector field in
     [GetKeywordBidSimulations](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/java/adwords/axis/v201502/optimization/GetKeywordBidSimulations.java).
     This field was removed from `DataService` in [v201502](https://developers.google.com/adwords/api/docs/guides/migration/v201502).
-  - Added Java enums that represent all the fields for all the entity services available on each API 
+  - Added Java enums that represent all the fields for all the entity services available on each API
     version.
   - Added support for the Java enums in the SelectorBuilder utility class.
   - Updated junit dependency to version 4.11.
@@ -70,7 +86,7 @@ DFP:
 
 Common:
   - Updated junit dependency to version 4.11.
-  - Updated hamcrest-all dependency to version 1.3.  
+  - Updated hamcrest-all dependency to version 1.3.
 
 1.38.0 - 03/12/2015
 -------------------
@@ -103,7 +119,7 @@ AdWords:
     group criteria in Shopping campaigns.
   - Improved targetAll settings and comments in AddAdGroups examples.
   - Updated multiple examples to use
-    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls). 
+    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls).
   - Added UpgradeAdUrl example.
 
 DFA:

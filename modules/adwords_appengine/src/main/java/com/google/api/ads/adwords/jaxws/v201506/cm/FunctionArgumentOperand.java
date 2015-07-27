@@ -36,14 +36,14 @@ import javax.xml.bind.annotation.XmlType;
     "functionArgumentOperandType"
 })
 @XmlSeeAlso({
-    FeedAttributeOperand.class,
-    PlacesOfInterestOperand.class,
-    RequestContextOperand.class,
-    ConstantOperand.class,
     IncomeOperand.class,
-    GeoTargetOperand.class,
     LocationExtensionOperand.class,
-    FunctionOperand.class
+    PlacesOfInterestOperand.class,
+    GeoTargetOperand.class,
+    FunctionOperand.class,
+    FeedAttributeOperand.class,
+    RequestContextOperand.class,
+    ConstantOperand.class
 })
 public abstract class FunctionArgumentOperand {
 

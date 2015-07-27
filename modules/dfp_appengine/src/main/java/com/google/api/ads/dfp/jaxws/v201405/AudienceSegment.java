@@ -4,6 +4,7 @@ package com.google.api.ads.dfp.jaxws.v201405;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -51,17 +52,19 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     ThirdPartyAudienceSegment.class,
-    FirstPartyAudienceSegment.class,
-    SharedAudienceSegment.class
+    SharedAudienceSegment.class,
+    FirstPartyAudienceSegment.class
 })
 public class AudienceSegment {
 
     protected Long id;
     protected String name;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected AudienceSegmentStatus status;
     protected Long size;
     protected AudienceSegmentDataProvider dataProvider;
+    @XmlSchemaType(name = "string")
     protected AudienceSegmentAudienceSegmentType type;
     @XmlElement(name = "AudienceSegment.Type")
     protected String audienceSegmentType;

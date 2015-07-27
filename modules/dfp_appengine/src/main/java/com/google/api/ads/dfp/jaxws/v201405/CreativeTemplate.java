@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -56,7 +57,9 @@ public class CreativeTemplate {
     protected String description;
     protected List<CreativeTemplateVariable> variables;
     protected String snippet;
+    @XmlSchemaType(name = "string")
     protected CreativeTemplateStatus status;
+    @XmlSchemaType(name = "string")
     protected CreativeTemplateType type;
     protected Boolean isInterstitial;
 

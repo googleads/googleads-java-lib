@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201502.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201502.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201502.cm.DataServiceInterface;
+import com.google.api.ads.adwords.axis.utils.v201506.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201506.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201506.cm.DataServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

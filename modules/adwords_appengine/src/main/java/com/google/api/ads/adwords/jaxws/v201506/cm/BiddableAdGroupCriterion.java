@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -69,8 +70,11 @@ public class BiddableAdGroupCriterion
     extends AdGroupCriterion
 {
 
+    @XmlSchemaType(name = "string")
     protected UserStatus userStatus;
+    @XmlSchemaType(name = "string")
     protected SystemServingStatus systemServingStatus;
+    @XmlSchemaType(name = "string")
     protected ApprovalStatus approvalStatus;
     protected List<String> disapprovalReasons;
     protected String destinationUrl;

@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "dataEntryType"
 })
 @XmlSeeAlso({
-    DimensionProperties.class,
-    BidLandscape.class
+    BidLandscape.class,
+    DimensionProperties.class
 })
 public abstract class DataEntry {
 

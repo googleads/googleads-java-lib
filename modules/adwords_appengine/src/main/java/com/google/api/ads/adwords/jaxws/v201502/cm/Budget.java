@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -51,11 +52,14 @@ public class Budget {
 
     protected Long budgetId;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected BudgetBudgetPeriod period;
     protected Money amount;
+    @XmlSchemaType(name = "string")
     protected BudgetBudgetDeliveryMethod deliveryMethod;
     protected Integer referenceCount;
     protected Boolean isExplicitlyShared;
+    @XmlSchemaType(name = "string")
     protected BudgetBudgetStatus status;
 
     /**

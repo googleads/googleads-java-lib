@@ -295,7 +295,7 @@ public class OfflineCredentials {
     /**
      * Sets the client ID & secret to create the OAuth2 Credential with. If you
      * do not have a client ID or secret, please create one in the API console:
-     * https://code.google.com/apis/console#access
+     * https://console.developers.google.com/project
      */
     public ForApiBuilder withClientSecrets(String clientId, String clientSecret) {
       this.clientId = clientId;
@@ -341,7 +341,7 @@ public class OfflineCredentials {
       if (Strings.isNullOrEmpty(this.clientId)) {
         throw new ValidationException(String.format("Client ID must be set%s\n"
             + "If you do not have a client ID or secret, please create one in the API console: "
-            + "https://code.google.com/apis/console#access",
+            + "https://console.developers.google.com/project",
             this.filePath != null ? generateFilePathWarning("clientId") : "."),
             "clientId");
       }
@@ -349,7 +349,7 @@ public class OfflineCredentials {
       if (Strings.isNullOrEmpty(this.clientSecret)) {
         throw new ValidationException(String.format("Client secret must be set%s\n"
             + "If you do not have a client ID or secret, please create one in the API console: "
-            + "https://code.google.com/apis/console#access",
+            + "https://console.developers.google.com/project",
             this.filePath != null ? generateFilePathWarning("clientSecret") : "."),
             "clientSecret");
       }

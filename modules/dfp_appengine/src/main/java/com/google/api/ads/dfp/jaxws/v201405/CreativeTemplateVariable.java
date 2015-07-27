@@ -44,9 +44,9 @@ import javax.xml.bind.annotation.XmlType;
     "creativeTemplateVariableType"
 })
 @XmlSeeAlso({
-    StringCreativeTemplateVariable.class,
     LongCreativeTemplateVariable.class,
     AssetCreativeTemplateVariable.class,
+    StringCreativeTemplateVariable.class,
     UrlCreativeTemplateVariable.class
 })
 public abstract class CreativeTemplateVariable {

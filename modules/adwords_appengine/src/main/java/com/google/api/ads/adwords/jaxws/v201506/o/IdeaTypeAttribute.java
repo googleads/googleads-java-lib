@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.o;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -40,6 +41,7 @@ public class IdeaTypeAttribute
     extends Attribute
 {
 
+    @XmlSchemaType(name = "string")
     protected IdeaType value;
 
     /**

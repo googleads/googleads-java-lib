@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -68,7 +69,9 @@ public class BiddingStrategyConfiguration {
 
     protected Long biddingStrategyId;
     protected String biddingStrategyName;
+    @XmlSchemaType(name = "string")
     protected BiddingStrategyType biddingStrategyType;
+    @XmlSchemaType(name = "string")
     protected BiddingStrategySource biddingStrategySource;
     protected BiddingScheme biddingScheme;
     protected List<Bids> bids;

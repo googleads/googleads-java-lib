@@ -21,11 +21,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
 
     /* The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}. */
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link FlashCreative}
+     *                     is retrieved. */
     private byte[] flashByteArray;
 
     /* The name of the image asset to fallback on if the Flash creative
@@ -33,13 +31,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
      *                     loaded. */
     private java.lang.String fallbackImageName;
 
-    /* The contents of the fallback image asset as a byte array. This
-     * attribute is
-     *                     required. The {@code fallbackImageByteArray} will
-     * be {@code null} when a
-     *                     {@code FlashCreative} is retrieved. To view the
-     * fallback image, use the
-     *                     {@code fallbackPreviewUrl}. */
+    /* The contents of the fallback image asset as a byte array. The
+     * {@link fallbackImageByteArray} will be {@code null} when a
+     *                     {@link FlashCreative} is retrieved. */
     private byte[] fallbackImageByteArray;
 
     /* Allows the creative size to differ from the actual Flash asset
@@ -57,18 +51,18 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
      *                     is populated by Google. */
     private java.lang.String fallbackPreviewUrl;
 
-    /* The Flash asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google. */
+    /* The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google. */
     private com.google.api.ads.dfp.axis.v201502.Size flashAssetSize;
 
-    /* Fallback image asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google. */
+    /* The {@link Size} of the fallback image. Note that this may
+     * differ from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google. */
     private com.google.api.ads.dfp.axis.v201502.Size fallbackAssetSize;
 
     /* The SSL compatibility scan result of this creative.
@@ -162,11 +156,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
      * 
      * @return flashByteArray   * The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}.
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link FlashCreative}
+     *                     is retrieved.
      */
     public byte[] getFlashByteArray() {
         return flashByteArray;
@@ -178,11 +170,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
      * 
      * @param flashByteArray   * The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}.
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link FlashCreative}
+     *                     is retrieved.
      */
     public void setFlashByteArray(byte[] flashByteArray) {
         this.flashByteArray = flashByteArray;
@@ -216,13 +206,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Gets the fallbackImageByteArray value for this BaseFlashCreative.
      * 
-     * @return fallbackImageByteArray   * The contents of the fallback image asset as a byte array. This
-     * attribute is
-     *                     required. The {@code fallbackImageByteArray} will
-     * be {@code null} when a
-     *                     {@code FlashCreative} is retrieved. To view the
-     * fallback image, use the
-     *                     {@code fallbackPreviewUrl}.
+     * @return fallbackImageByteArray   * The contents of the fallback image asset as a byte array. The
+     * {@link fallbackImageByteArray} will be {@code null} when a
+     *                     {@link FlashCreative} is retrieved.
      */
     public byte[] getFallbackImageByteArray() {
         return fallbackImageByteArray;
@@ -232,13 +218,9 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Sets the fallbackImageByteArray value for this BaseFlashCreative.
      * 
-     * @param fallbackImageByteArray   * The contents of the fallback image asset as a byte array. This
-     * attribute is
-     *                     required. The {@code fallbackImageByteArray} will
-     * be {@code null} when a
-     *                     {@code FlashCreative} is retrieved. To view the
-     * fallback image, use the
-     *                     {@code fallbackPreviewUrl}.
+     * @param fallbackImageByteArray   * The contents of the fallback image asset as a byte array. The
+     * {@link fallbackImageByteArray} will be {@code null} when a
+     *                     {@link FlashCreative} is retrieved.
      */
     public void setFallbackImageByteArray(byte[] fallbackImageByteArray) {
         this.fallbackImageByteArray = fallbackImageByteArray;
@@ -320,11 +302,11 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Gets the flashAssetSize value for this BaseFlashCreative.
      * 
-     * @return flashAssetSize   * The Flash asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google.
+     * @return flashAssetSize   * The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google.
      */
     public com.google.api.ads.dfp.axis.v201502.Size getFlashAssetSize() {
         return flashAssetSize;
@@ -334,11 +316,11 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Sets the flashAssetSize value for this BaseFlashCreative.
      * 
-     * @param flashAssetSize   * The Flash asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google.
+     * @param flashAssetSize   * The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google.
      */
     public void setFlashAssetSize(com.google.api.ads.dfp.axis.v201502.Size flashAssetSize) {
         this.flashAssetSize = flashAssetSize;
@@ -348,11 +330,11 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Gets the fallbackAssetSize value for this BaseFlashCreative.
      * 
-     * @return fallbackAssetSize   * Fallback image asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google.
+     * @return fallbackAssetSize   * The {@link Size} of the fallback image. Note that this may
+     * differ from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google.
      */
     public com.google.api.ads.dfp.axis.v201502.Size getFallbackAssetSize() {
         return fallbackAssetSize;
@@ -362,11 +344,11 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
     /**
      * Sets the fallbackAssetSize value for this BaseFlashCreative.
      * 
-     * @param fallbackAssetSize   * Fallback image asset size. Note that this may differ from {@code
-     * size} if
-     *                     {@code overrideSize} is set to true. This attribute
-     * is read-only and is
-     *                     populated by Google.
+     * @param fallbackAssetSize   * The {@link Size} of the fallback image. Note that this may
+     * differ from {@link Creative#size}
+     *                     if {@link overrideSize} is set to true. This attribute
+     * is read-only and is populated by
+     *                     Google.
      */
     public void setFallbackAssetSize(com.google.api.ads.dfp.axis.v201502.Size fallbackAssetSize) {
         this.fallbackAssetSize = fallbackAssetSize;

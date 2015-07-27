@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -84,7 +85,9 @@ public class ReconciliationReportRow {
     protected Long advertiserId;
     protected Long proposalLineItemId;
     protected Long proposalId;
+    @XmlSchemaType(name = "string")
     protected BillFrom billFrom;
+    @XmlSchemaType(name = "string")
     protected RateType rateType;
     protected Money lineItemCostPerUnit;
     protected Long lineItemContractedUnitsBought;

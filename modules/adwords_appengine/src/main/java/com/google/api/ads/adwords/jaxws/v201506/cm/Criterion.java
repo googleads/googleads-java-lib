@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201506.express.KeywordGroup;
@@ -45,40 +46,41 @@ import com.google.api.ads.adwords.jaxws.v201506.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
-    Platform.class,
-    Placement.class,
-    CriterionUserList.class,
-    MobileAppCategory.class,
-    YouTubeVideo.class,
-    ProductScope.class,
-    OperatingSystemVersion.class,
-    Webpage.class,
-    AppPaymentModel.class,
-    LocationGroups.class,
-    Proximity.class,
-    YouTubeChannel.class,
-    Location.class,
-    CriterionUserInterest.class,
-    MobileDevice.class,
-    ContentLabel.class,
-    Language.class,
-    ProductPartition.class,
-    Gender.class,
-    AgeRange.class,
-    Carrier.class,
-    Vertical.class,
-    AdSchedule.class,
-    IpBlock.class,
-    MobileApplication.class,
     KeywordGroup.class,
+    KeywordSet.class,
     NegativeCriterion.class,
-    Keyword.class,
     ProductService.class,
-    KeywordSet.class
+    Gender.class,
+    CriterionUserList.class,
+    ContentLabel.class,
+    AdSchedule.class,
+    YouTubeVideo.class,
+    Placement.class,
+    MobileApplication.class,
+    CriterionUserInterest.class,
+    Language.class,
+    LocationGroups.class,
+    Vertical.class,
+    OperatingSystemVersion.class,
+    AgeRange.class,
+    Proximity.class,
+    Carrier.class,
+    MobileAppCategory.class,
+    MobileDevice.class,
+    Location.class,
+    Platform.class,
+    IpBlock.class,
+    ProductScope.class,
+    AppPaymentModel.class,
+    Keyword.class,
+    YouTubeChannel.class,
+    ProductPartition.class,
+    Webpage.class
 })
 public class Criterion {
 
     protected Long id;
+    @XmlSchemaType(name = "string")
     protected CriterionType type;
     @XmlElement(name = "Criterion.Type")
     protected String criterionType;

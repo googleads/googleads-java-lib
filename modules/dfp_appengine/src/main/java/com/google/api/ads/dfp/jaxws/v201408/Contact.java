@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -63,6 +64,7 @@ public class Contact
     protected Long id;
     protected String name;
     protected Long companyId;
+    @XmlSchemaType(name = "string")
     protected ContactStatus status;
     protected String address;
     protected String cellPhone;

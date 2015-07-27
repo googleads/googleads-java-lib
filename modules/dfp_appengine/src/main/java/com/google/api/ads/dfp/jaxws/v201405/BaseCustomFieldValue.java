@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
     "baseCustomFieldValueType"
 })
 @XmlSeeAlso({
-    DropDownCustomFieldValue.class,
-    CustomFieldValue.class
+    CustomFieldValue.class,
+    DropDownCustomFieldValue.class
 })
 public abstract class BaseCustomFieldValue {
 

@@ -36,9 +36,9 @@ import javax.xml.bind.annotation.XmlType;
     "adRuleActionType"
 })
 @XmlSeeAlso({
+    DeleteAdRules.class,
     ActivateAdRules.class,
-    DeactivateAdRules.class,
-    DeleteAdRules.class
+    DeactivateAdRules.class
 })
 public abstract class AdRuleAction {
 

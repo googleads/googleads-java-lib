@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AdExclusionRuleAction")
 @XmlSeeAlso({
-    DeactivateAdExclusionRules.class,
-    ActivateAdExclusionRules.class
+    ActivateAdExclusionRules.class,
+    DeactivateAdExclusionRules.class
 })
 public abstract class AdExclusionRuleAction {
 

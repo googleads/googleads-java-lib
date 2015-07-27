@@ -36,14 +36,14 @@ import javax.xml.bind.annotation.XmlType;
     "lineItemActionType"
 })
 @XmlSeeAlso({
-    ReleaseLineItems.class,
-    UnarchiveLineItems.class,
-    ResumeLineItems.class,
-    ArchiveLineItems.class,
-    DeleteLineItems.class,
     ActivateLineItems.class,
+    DeleteLineItems.class,
+    ArchiveLineItems.class,
+    ReleaseLineItems.class,
+    ReserveLineItems.class,
+    UnarchiveLineItems.class,
     PauseLineItems.class,
-    ReserveLineItems.class
+    ResumeLineItems.class
 })
 public abstract class LineItemAction {
 

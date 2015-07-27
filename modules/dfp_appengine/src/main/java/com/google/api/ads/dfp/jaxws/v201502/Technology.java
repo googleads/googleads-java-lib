@@ -37,17 +37,17 @@ import javax.xml.bind.annotation.XmlType;
     "name"
 })
 @XmlSeeAlso({
-    BandwidthGroup.class,
+    OperatingSystem.class,
+    BrowserLanguage.class,
+    DeviceCategory.class,
     MobileCarrier.class,
     MobileDevice.class,
-    DeviceCapability.class,
-    MobileDeviceSubmodel.class,
-    OperatingSystem.class,
-    Browser.class,
-    OperatingSystemVersion.class,
-    DeviceCategory.class,
+    BandwidthGroup.class,
     DeviceManufacturer.class,
-    BrowserLanguage.class
+    OperatingSystemVersion.class,
+    DeviceCapability.class,
+    Browser.class,
+    MobileDeviceSubmodel.class
 })
 public class Technology {
 

@@ -9,39 +9,35 @@ package com.google.api.ads.dfp.axis.v201405;
 
 
 /**
- * A {@link ReconciliationOrderReport} represents one order
- *             in the reconciliation report.
+ * Contains reconciliation data of an {@link Order} and/or {@link
+ * Proposal}.
  */
 public class ReconciliationOrderReport  implements java.io.Serializable {
     /* Uniquely identifies the {@code ReconciliationOrderReport}.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created. */
+     *                 This value is read-only and assigned by Google. */
     private java.lang.Long id;
 
-    /* The ID of the {@link ReconciliationReport} which owns this
-     * order report.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created. */
+    /* The ID of the {@link ReconciliationReport} this {@code ReconciliationOrderReport}
+     * belongs to.
+     *                 This value is read-only. */
     private java.lang.Long reconciliationReportId;
 
-    /* The ID of the {@link Order} to which this order report belongs.
-     * This value is read-only and is assigned by Google when the order report
-     * is created. */
+    /* If this reconciliation data is for an {@link Order}, then this
+     * contains that order's ID.
+     *                 Otherwise, this field will have a value of 0.
+     *                 This value is read-only. */
     private java.lang.Long orderId;
 
-    /* The reconciliation status of this order.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created. */
+    /* The status of this {@code ReconciliationOrderReport}.
+     *                 This value is read-only. */
     private com.google.api.ads.dfp.axis.v201405.ReconciliationOrderReportStatus status;
 
     /* The time when this order report is submitted.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created. */
+     *                 This value is read-only. */
     private com.google.api.ads.dfp.axis.v201405.DateTime submissionDateTime;
 
     /* The ID of the {@link User} who submitted this order report.
-     * This value is read-only and is assigned by Google when the order report
-     * is created. */
+     * This value is read-only. */
     private java.lang.Long submitterId;
 
     public ReconciliationOrderReport() {
@@ -67,8 +63,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Gets the id value for this ReconciliationOrderReport.
      * 
      * @return id   * Uniquely identifies the {@code ReconciliationOrderReport}.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     *                 This value is read-only and assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -79,8 +74,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Sets the id value for this ReconciliationOrderReport.
      * 
      * @param id   * Uniquely identifies the {@code ReconciliationOrderReport}.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     *                 This value is read-only and assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -90,10 +84,9 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Gets the reconciliationReportId value for this ReconciliationOrderReport.
      * 
-     * @return reconciliationReportId   * The ID of the {@link ReconciliationReport} which owns this
-     * order report.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     * @return reconciliationReportId   * The ID of the {@link ReconciliationReport} this {@code ReconciliationOrderReport}
+     * belongs to.
+     *                 This value is read-only.
      */
     public java.lang.Long getReconciliationReportId() {
         return reconciliationReportId;
@@ -103,10 +96,9 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Sets the reconciliationReportId value for this ReconciliationOrderReport.
      * 
-     * @param reconciliationReportId   * The ID of the {@link ReconciliationReport} which owns this
-     * order report.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     * @param reconciliationReportId   * The ID of the {@link ReconciliationReport} this {@code ReconciliationOrderReport}
+     * belongs to.
+     *                 This value is read-only.
      */
     public void setReconciliationReportId(java.lang.Long reconciliationReportId) {
         this.reconciliationReportId = reconciliationReportId;
@@ -116,9 +108,10 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Gets the orderId value for this ReconciliationOrderReport.
      * 
-     * @return orderId   * The ID of the {@link Order} to which this order report belongs.
-     * This value is read-only and is assigned by Google when the order report
-     * is created.
+     * @return orderId   * If this reconciliation data is for an {@link Order}, then this
+     * contains that order's ID.
+     *                 Otherwise, this field will have a value of 0.
+     *                 This value is read-only.
      */
     public java.lang.Long getOrderId() {
         return orderId;
@@ -128,9 +121,10 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Sets the orderId value for this ReconciliationOrderReport.
      * 
-     * @param orderId   * The ID of the {@link Order} to which this order report belongs.
-     * This value is read-only and is assigned by Google when the order report
-     * is created.
+     * @param orderId   * If this reconciliation data is for an {@link Order}, then this
+     * contains that order's ID.
+     *                 Otherwise, this field will have a value of 0.
+     *                 This value is read-only.
      */
     public void setOrderId(java.lang.Long orderId) {
         this.orderId = orderId;
@@ -140,9 +134,8 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Gets the status value for this ReconciliationOrderReport.
      * 
-     * @return status   * The reconciliation status of this order.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     * @return status   * The status of this {@code ReconciliationOrderReport}.
+     *                 This value is read-only.
      */
     public com.google.api.ads.dfp.axis.v201405.ReconciliationOrderReportStatus getStatus() {
         return status;
@@ -152,9 +145,8 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
     /**
      * Sets the status value for this ReconciliationOrderReport.
      * 
-     * @param status   * The reconciliation status of this order.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     * @param status   * The status of this {@code ReconciliationOrderReport}.
+     *                 This value is read-only.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201405.ReconciliationOrderReportStatus status) {
         this.status = status;
@@ -165,8 +157,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Gets the submissionDateTime value for this ReconciliationOrderReport.
      * 
      * @return submissionDateTime   * The time when this order report is submitted.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     *                 This value is read-only.
      */
     public com.google.api.ads.dfp.axis.v201405.DateTime getSubmissionDateTime() {
         return submissionDateTime;
@@ -177,8 +168,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Sets the submissionDateTime value for this ReconciliationOrderReport.
      * 
      * @param submissionDateTime   * The time when this order report is submitted.
-     *                 This value is read-only and is assigned by Google
-     * when the order report is created.
+     *                 This value is read-only.
      */
     public void setSubmissionDateTime(com.google.api.ads.dfp.axis.v201405.DateTime submissionDateTime) {
         this.submissionDateTime = submissionDateTime;
@@ -189,8 +179,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Gets the submitterId value for this ReconciliationOrderReport.
      * 
      * @return submitterId   * The ID of the {@link User} who submitted this order report.
-     * This value is read-only and is assigned by Google when the order report
-     * is created.
+     * This value is read-only.
      */
     public java.lang.Long getSubmitterId() {
         return submitterId;
@@ -201,8 +190,7 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * Sets the submitterId value for this ReconciliationOrderReport.
      * 
      * @param submitterId   * The ID of the {@link User} who submitted this order report.
-     * This value is read-only and is assigned by Google when the order report
-     * is created.
+     * This value is read-only.
      */
     public void setSubmitterId(java.lang.Long submitterId) {
         this.submitterId = submitterId;

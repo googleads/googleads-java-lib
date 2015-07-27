@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -60,6 +61,7 @@ public class CreativePlaceholder {
     protected List<AppliedLabel> effectiveAppliedLabels;
     protected Long id;
     protected Integer expectedCreativeCount;
+    @XmlSchemaType(name = "string")
     protected CreativeSizeType creativeSizeType;
 
     /**

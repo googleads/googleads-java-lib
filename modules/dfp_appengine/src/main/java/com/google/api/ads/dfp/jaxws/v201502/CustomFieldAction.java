@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CustomFieldAction")
 @XmlSeeAlso({
-    ActivateCustomFields.class,
-    DeactivateCustomFields.class
+    DeactivateCustomFields.class,
+    ActivateCustomFields.class
 })
 public class CustomFieldAction {
 

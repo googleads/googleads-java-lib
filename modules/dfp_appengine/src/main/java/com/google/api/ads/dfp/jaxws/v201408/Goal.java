@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -39,7 +40,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Goal {
 
+    @XmlSchemaType(name = "string")
     protected GoalType goalType;
+    @XmlSchemaType(name = "string")
     protected UnitType unitType;
     protected Long units;
 

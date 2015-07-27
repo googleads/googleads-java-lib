@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -75,16 +76,21 @@ public class Campaign {
 
     protected Long id;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected CampaignStatus status;
+    @XmlSchemaType(name = "string")
     protected ServingStatus servingStatus;
     protected String startDate;
     protected String endDate;
     protected Budget budget;
     protected ConversionOptimizerEligibility conversionOptimizerEligibility;
+    @XmlSchemaType(name = "string")
     protected AdServingOptimizationStatus adServingOptimizationStatus;
     protected FrequencyCap frequencyCap;
     protected List<Setting> settings;
+    @XmlSchemaType(name = "string")
     protected AdvertisingChannelType advertisingChannelType;
+    @XmlSchemaType(name = "string")
     protected AdvertisingChannelSubType advertisingChannelSubType;
     protected NetworkSetting networkSetting;
     protected List<Label> labels;

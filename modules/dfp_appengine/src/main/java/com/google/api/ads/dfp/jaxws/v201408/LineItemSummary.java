@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -151,26 +152,37 @@ public class LineItemSummary {
     protected String externalId;
     protected String orderName;
     protected DateTime startDateTime;
+    @XmlSchemaType(name = "string")
     protected StartDateTimeType startDateTimeType;
     protected DateTime endDateTime;
     protected Integer autoExtensionDays;
     protected Boolean unlimitedEndDateTime;
+    @XmlSchemaType(name = "string")
     protected CreativeRotationType creativeRotationType;
+    @XmlSchemaType(name = "string")
     protected DeliveryRateType deliveryRateType;
+    @XmlSchemaType(name = "string")
     protected RoadblockingType roadblockingType;
     protected List<FrequencyCap> frequencyCaps;
+    @XmlSchemaType(name = "string")
     protected LineItemType lineItemType;
     protected Integer priority;
     protected Money costPerUnit;
     protected Money valueCostPerUnit;
+    @XmlSchemaType(name = "string")
     protected CostType costType;
+    @XmlSchemaType(name = "string")
     protected LineItemDiscountType discountType;
     protected Double discount;
     protected Long contractedUnitsBought;
     protected List<CreativePlaceholder> creativePlaceholders;
+    @XmlSchemaType(name = "string")
     protected TargetPlatform targetPlatform;
+    @XmlSchemaType(name = "string")
     protected EnvironmentType environmentType;
+    @XmlSchemaType(name = "string")
     protected CompanionDeliveryOption companionDeliveryOption;
+    @XmlSchemaType(name = "string")
     protected CreativePersistenceType creativePersistenceType;
     protected Boolean allowOverbook;
     protected Boolean skipInventoryCheck;
@@ -179,7 +191,9 @@ public class LineItemSummary {
     protected DeliveryIndicator deliveryIndicator;
     protected DeliveryData deliveryData;
     protected Money budget;
+    @XmlSchemaType(name = "string")
     protected ComputedStatus status;
+    @XmlSchemaType(name = "string")
     protected LineItemSummaryReservationStatus reservationStatus;
     protected Boolean isArchived;
     protected String webPropertyCode;

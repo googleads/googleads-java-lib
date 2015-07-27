@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "getReportFields")
 public class ReportDefinitionServiceInterfacegetReportFields {
 
+    @XmlSchemaType(name = "string")
     protected ReportDefinitionReportType reportType;
 
     /**

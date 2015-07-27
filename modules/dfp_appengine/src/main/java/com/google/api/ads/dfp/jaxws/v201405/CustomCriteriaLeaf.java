@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CustomCriteriaLeaf")
 @XmlSeeAlso({
-    CustomCriteria.class,
-    AudienceSegmentCriteria.class
+    AudienceSegmentCriteria.class,
+    CustomCriteria.class
 })
 public abstract class CustomCriteriaLeaf
     extends CustomCriteriaNode

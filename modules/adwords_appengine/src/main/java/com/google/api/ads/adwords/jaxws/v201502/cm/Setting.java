@@ -37,12 +37,12 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     TargetingSetting.class,
-    DynamicSearchAdsSetting.class,
     GeoTargetTypeSetting.class,
     TrackingSetting.class,
-    ExplorerAutoOptimizerSetting.class,
+    RealTimeBiddingSetting.class,
+    DynamicSearchAdsSetting.class,
     ShoppingSetting.class,
-    RealTimeBiddingSetting.class
+    ExplorerAutoOptimizerSetting.class
 })
 public abstract class Setting {
 

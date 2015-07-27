@@ -33,10 +33,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "AdUnitAction")
 @XmlSeeAlso({
     DeactivateAdUnits.class,
+    RemoveAdUnitsFromPlacement.class,
     ActivateAdUnits.class,
-    ArchiveAdUnits.class,
     AssignAdUnitsToPlacement.class,
-    RemoveAdUnitsFromPlacement.class
+    ArchiveAdUnits.class
 })
 public abstract class AdUnitAction {
 

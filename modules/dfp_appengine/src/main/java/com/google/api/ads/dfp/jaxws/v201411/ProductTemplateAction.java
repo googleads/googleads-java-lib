@@ -36,9 +36,9 @@ import javax.xml.bind.annotation.XmlType;
     "productTemplateActionType"
 })
 @XmlSeeAlso({
-    DeactivateProductTemplates.class,
+    ArchiveProductTemplates.class,
     ActivateProductTemplates.class,
-    ArchiveProductTemplates.class
+    DeactivateProductTemplates.class
 })
 public abstract class ProductTemplateAction {
 

@@ -180,6 +180,7 @@ public class AddSiteLinksUsingFeeds {
     }
   }
 
+
   // See the Placeholder reference page for a list of all the placeholder types and fields.
   // https://developers.google.com/adwords/api/docs/appendix/placeholders
   private static final int PLACEHOLDER_SITELINKS = 1;
@@ -212,7 +213,7 @@ public class AddSiteLinksUsingFeeds {
     line2FieldMapping.setFieldId(PLACEHOLDER_FIELD_LINE_2_TEXT);
 
 
-    // Create the FieldMapping and operation.
+    // Create the FeedMapping and operation.
     FeedMapping feedMapping = new FeedMapping();
     feedMapping.setPlaceholderType(PLACEHOLDER_SITELINKS);
     feedMapping.setFeedId(siteLinksData.siteLinksFeedId);
@@ -250,10 +251,10 @@ public class AddSiteLinksUsingFeeds {
     CampaignFeed campaignFeed = new CampaignFeed();
     campaignFeed.setFeedId(siteLinksData.siteLinksFeedId);
     campaignFeed.setCampaignId(campaignId);
-    
+
     Function matchingFunction = new Function();
     matchingFunction.setFunctionString(matchingFunctionString);
-    
+
     campaignFeed.setMatchingFunction(matchingFunction);
     // Specifying placeholder types on the CampaignFeed allows the same feed
     // to be used for different placeholders in different Campaigns.

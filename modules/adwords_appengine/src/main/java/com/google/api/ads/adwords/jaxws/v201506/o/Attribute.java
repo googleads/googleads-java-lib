@@ -43,24 +43,24 @@ import javax.xml.bind.annotation.XmlType;
     "attributeType"
 })
 @XmlSeeAlso({
-    InStreamAdInfoAttribute.class,
-    LongAttribute.class,
-    IntegerSetAttribute.class,
-    AdSpecListAttribute.class,
-    MonthlySearchVolumeAttribute.class,
-    CriterionAttribute.class,
     KeywordAttribute.class,
-    LongRangeAttribute.class,
-    MoneyAttribute.class,
-    AdFormatSpecListAttribute.class,
-    DoubleAttribute.class,
-    PlacementAttribute.class,
-    IntegerAttribute.class,
-    BooleanAttribute.class,
-    IdeaTypeAttribute.class,
     StringAttribute.class,
+    MonthlySearchVolumeAttribute.class,
+    IdeaTypeAttribute.class,
+    LongAttribute.class,
+    CriterionAttribute.class,
+    IntegerSetAttribute.class,
+    IntegerAttribute.class,
+    DoubleAttribute.class,
+    LongRangeAttribute.class,
+    BooleanAttribute.class,
+    PlacementTypeAttribute.class,
     WebpageDescriptorAttribute.class,
-    PlacementTypeAttribute.class
+    PlacementAttribute.class,
+    AdSpecListAttribute.class,
+    MoneyAttribute.class,
+    InStreamAdInfoAttribute.class,
+    AdFormatSpecListAttribute.class
 })
 public abstract class Attribute {
 

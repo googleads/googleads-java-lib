@@ -36,10 +36,10 @@ import javax.xml.bind.annotation.XmlType;
     "workflowRequestActionType"
 })
 @XmlSeeAlso({
-    SkipWorkflowExternalConditionRequests.class,
-    TriggerWorkflowExternalConditionRequests.class,
+    ApproveWorkflowApprovalRequests.class,
     RejectWorkflowApprovalRequests.class,
-    ApproveWorkflowApprovalRequests.class
+    SkipWorkflowExternalConditionRequests.class,
+    TriggerWorkflowExternalConditionRequests.class
 })
 public abstract class WorkflowRequestAction {
 

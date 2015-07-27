@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201405;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,6 +44,7 @@ public class RateCardCustomizationGroup {
 
     protected Long id;
     protected Long rateCardId;
+    @XmlSchemaType(name = "string")
     protected PricingMethod pricingMethod;
     protected RateCardFeature rateCardFeature;
 

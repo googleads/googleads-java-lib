@@ -35,8 +35,8 @@ import javax.xml.bind.annotation.XmlType;
     "imageUrl"
 })
 @XmlSeeAlso({
-    ImageRedirectOverlayCreative.class,
-    ImageRedirectCreative.class
+    ImageRedirectCreative.class,
+    ImageRedirectOverlayCreative.class
 })
 public abstract class BaseImageRedirectCreative
     extends HasDestinationUrlCreative

@@ -36,12 +36,12 @@ import javax.xml.bind.annotation.XmlType;
     "valueType"
 })
 @XmlSeeAlso({
-    DateValue.class,
     BooleanValue.class,
-    NumberValue.class,
     TextValue.class,
     SetValue.class,
     DateTimeValue.class,
+    NumberValue.class,
+    DateValue.class,
     ObjectValue.class
 })
 public abstract class Value {

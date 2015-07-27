@@ -37,10 +37,10 @@ import javax.xml.bind.annotation.XmlType;
     "liveStreamEventActionType"
 })
 @XmlSeeAlso({
-    ActivateLiveStreamEvents.class,
-    ArchiveLiveStreamEvents.class,
     PauseLiveStreamEventAds.class,
-    PauseLiveStreamEvents.class
+    ArchiveLiveStreamEvents.class,
+    PauseLiveStreamEvents.class,
+    ActivateLiveStreamEvents.class
 })
 public abstract class LiveStreamEventAction {
 

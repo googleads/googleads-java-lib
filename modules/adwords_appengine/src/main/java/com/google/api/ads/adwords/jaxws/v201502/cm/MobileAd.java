@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -103,6 +104,7 @@ public class MobileAd
 
     protected String headline;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected List<MarkupLanguageType> markupLanguages;
     protected List<String> mobileCarriers;
     protected String businessName;

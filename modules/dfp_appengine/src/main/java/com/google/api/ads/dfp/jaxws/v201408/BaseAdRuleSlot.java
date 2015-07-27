@@ -4,6 +4,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -60,19 +61,22 @@ import javax.xml.bind.annotation.XmlType;
     "baseAdRuleSlotType"
 })
 @XmlSeeAlso({
+    NoPoddingAdRuleSlot.class,
     UnknownAdRuleSlot.class,
     StandardPoddingAdRuleSlot.class,
-    NoPoddingAdRuleSlot.class,
     OptimizedPoddingAdRuleSlot.class
 })
 public abstract class BaseAdRuleSlot {
 
     protected Long id;
+    @XmlSchemaType(name = "string")
     protected AdRuleSlotBehavior slotBehavior;
     protected Long minVideoAdDuration;
     protected Long maxVideoAdDuration;
+    @XmlSchemaType(name = "string")
     protected MidrollFrequencyType videoMidrollFrequencyType;
     protected String videoMidrollFrequency;
+    @XmlSchemaType(name = "string")
     protected AdRuleSlotBumper bumper;
     protected Long maxBumperDuration;
     protected Long minPodDuration;

@@ -55,16 +55,16 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     VastRedirectCreative.class,
-    ProgrammaticCreative.class,
-    ThirdPartyCreative.class,
-    TemplateCreative.class,
-    LegacyDfpCreative.class,
-    ClickTrackingCreative.class,
-    BaseDynamicAllocationCreative.class,
-    BaseRichMediaStudioCreative.class,
     UnsupportedCreative.class,
-    HasDestinationUrlCreative.class,
-    InternalRedirectCreative.class
+    ClickTrackingCreative.class,
+    ThirdPartyCreative.class,
+    ProgrammaticCreative.class,
+    LegacyDfpCreative.class,
+    TemplateCreative.class,
+    InternalRedirectCreative.class,
+    BaseRichMediaStudioCreative.class,
+    BaseDynamicAllocationCreative.class,
+    HasDestinationUrlCreative.class
 })
 public abstract class Creative {
 

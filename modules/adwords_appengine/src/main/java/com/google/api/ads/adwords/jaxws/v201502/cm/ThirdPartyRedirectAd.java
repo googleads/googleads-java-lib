@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -51,7 +52,9 @@ public class ThirdPartyRedirectAd
     protected Boolean isCookieTargeted;
     protected Boolean isUserInterestTargeted;
     protected Boolean isTagged;
+    @XmlSchemaType(name = "string")
     protected List<VideoType> videoTypes;
+    @XmlSchemaType(name = "string")
     protected List<ThirdPartyRedirectAdExpandingDirection> expandingDirections;
 
     /**

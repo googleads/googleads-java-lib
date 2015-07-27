@@ -52,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
     "fallbackAssetSize"
 })
 @XmlSeeAlso({
-    FlashOverlayCreative.class,
-    FlashCreative.class
+    FlashCreative.class,
+    FlashOverlayCreative.class
 })
 public abstract class BaseFlashCreative
     extends HasDestinationUrlCreative

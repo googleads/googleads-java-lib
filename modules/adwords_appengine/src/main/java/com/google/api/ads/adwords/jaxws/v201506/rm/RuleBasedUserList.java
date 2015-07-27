@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RuleBasedUserList")
 @XmlSeeAlso({
-    ExpressionRuleUserList.class,
-    DateSpecificRuleUserList.class
+    DateSpecificRuleUserList.class,
+    ExpressionRuleUserList.class
 })
 public class RuleBasedUserList
     extends UserList

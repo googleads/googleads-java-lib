@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Paging;
 
@@ -51,8 +52,11 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Paging;
 public class TargetingIdeaSelector {
 
     protected List<SearchParameter> searchParameters;
+    @XmlSchemaType(name = "string")
     protected IdeaType ideaType;
+    @XmlSchemaType(name = "string")
     protected RequestType requestType;
+    @XmlSchemaType(name = "string")
     protected List<AttributeType> requestedAttributeTypes;
     protected Paging paging;
     protected String localeCode;

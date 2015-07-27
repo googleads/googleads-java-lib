@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
     "sslManualOverride"
 })
 @XmlSeeAlso({
-    FlashOverlayCreative.class,
-    FlashCreative.class
+    FlashCreative.class,
+    FlashOverlayCreative.class
 })
 public abstract class BaseFlashCreative
     extends HasDestinationUrlCreative
@@ -72,7 +73,9 @@ public abstract class BaseFlashCreative
     protected String fallbackPreviewUrl;
     protected Size flashAssetSize;
     protected Size fallbackAssetSize;
+    @XmlSchemaType(name = "string")
     protected SslScanResult sslScanResult;
+    @XmlSchemaType(name = "string")
     protected SslManualOverride sslManualOverride;
 
     /**

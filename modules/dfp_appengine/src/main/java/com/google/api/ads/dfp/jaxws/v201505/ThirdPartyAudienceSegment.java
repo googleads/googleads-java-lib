@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201505;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -46,8 +47,10 @@ public class ThirdPartyAudienceSegment
     extends AudienceSegment
 {
 
+    @XmlSchemaType(name = "string")
     protected ThirdPartyAudienceSegmentAudienceSegmentApprovalStatus approvalStatus;
     protected Money cost;
+    @XmlSchemaType(name = "string")
     protected ThirdPartyAudienceSegmentLicenseType licenseType;
     protected DateTime startDateTime;
     protected DateTime endDateTime;

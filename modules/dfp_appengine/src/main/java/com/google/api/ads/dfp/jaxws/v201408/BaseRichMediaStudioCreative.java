@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -72,7 +73,9 @@ public abstract class BaseRichMediaStudioCreative
 {
 
     protected Long studioCreativeId;
+    @XmlSchemaType(name = "string")
     protected RichMediaStudioCreativeFormat creativeFormat;
+    @XmlSchemaType(name = "string")
     protected RichMediaStudioCreativeArtworkType artworkType;
     protected Long totalFileSize;
     protected List<String> adTagKeys;
@@ -84,6 +87,7 @@ public abstract class BaseRichMediaStudioCreative
     protected String overrideCss;
     protected String requiredFlashPluginVersion;
     protected Integer duration;
+    @XmlSchemaType(name = "string")
     protected RichMediaStudioCreativeBillingAttribute billingAttribute;
     protected List<RichMediaStudioChildAssetProperty> richMediaStudioChildAssetProperties;
 

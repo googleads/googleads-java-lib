@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,7 +48,9 @@ public class ConstantOperand
     extends FunctionArgumentOperand
 {
 
+    @XmlSchemaType(name = "string")
     protected ConstantOperandConstantType type;
+    @XmlSchemaType(name = "string")
     protected ConstantOperandUnit unit;
     protected Long longValue;
     protected Boolean booleanValue;

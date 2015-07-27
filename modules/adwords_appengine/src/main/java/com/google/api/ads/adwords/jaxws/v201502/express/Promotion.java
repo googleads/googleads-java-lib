@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Criterion;
 import com.google.api.ads.adwords.jaxws.v201502.cm.Money;
@@ -65,6 +66,7 @@ public class Promotion {
 
     protected Long id;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected PromotionStatus status;
     protected List<Creative> creatives;
     protected String destinationUrl;

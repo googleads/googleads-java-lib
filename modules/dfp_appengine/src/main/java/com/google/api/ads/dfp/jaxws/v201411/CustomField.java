@@ -4,6 +4,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -58,8 +59,11 @@ public class CustomField {
     protected String name;
     protected String description;
     protected Boolean isActive;
+    @XmlSchemaType(name = "string")
     protected CustomFieldEntityType entityType;
+    @XmlSchemaType(name = "string")
     protected CustomFieldDataType dataType;
+    @XmlSchemaType(name = "string")
     protected CustomFieldVisibility visibility;
     @XmlElement(name = "CustomField.Type")
     protected String customFieldType;

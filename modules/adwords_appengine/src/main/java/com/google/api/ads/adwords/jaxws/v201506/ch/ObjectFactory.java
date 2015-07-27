@@ -27,9 +27,9 @@ import com.google.api.ads.adwords.jaxws.v201506.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201506", "ApiExceptionFault");
     private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201506", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201506", "ResponseHeader");
+    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201506", "ApiExceptionFault");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201506.ch
@@ -39,11 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomerSyncSelector }
+     * Create an instance of {@link CustomerSyncError }
      * 
      */
-    public CustomerSyncSelector createCustomerSyncSelector() {
-        return new CustomerSyncSelector();
+    public CustomerSyncError createCustomerSyncError() {
+        return new CustomerSyncError();
     }
 
     /**
@@ -63,11 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomerSyncError }
+     * Create an instance of {@link AdGroupChangeData }
      * 
      */
-    public CustomerSyncError createCustomerSyncError() {
-        return new CustomerSyncError();
+    public AdGroupChangeData createAdGroupChangeData() {
+        return new AdGroupChangeData();
     }
 
     /**
@@ -79,20 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdGroupChangeData }
+     * Create an instance of {@link CustomerSyncSelector }
      * 
      */
-    public AdGroupChangeData createAdGroupChangeData() {
-        return new AdGroupChangeData();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201506", name = "ApiExceptionFault")
-    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
-        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    public CustomerSyncSelector createCustomerSyncSelector() {
+        return new CustomerSyncSelector();
     }
 
     /**
@@ -111,6 +102,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201506", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201506", name = "ApiExceptionFault")
+    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
+        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
     }
 
 }

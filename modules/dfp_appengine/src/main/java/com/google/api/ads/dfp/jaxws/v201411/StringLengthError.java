@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,6 +38,7 @@ public class StringLengthError
     extends ApiError
 {
 
+    @XmlSchemaType(name = "string")
     protected StringLengthErrorReason reason;
 
     /**

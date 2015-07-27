@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 public class AdUnitSize {
 
     protected Size size;
+    @XmlSchemaType(name = "string")
     protected EnvironmentType environmentType;
     protected List<AdUnitSize> companions;
     protected String fullDisplayString;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,7 +59,9 @@ public class AdGroupAd {
     protected Long adGroupId;
     protected Ad ad;
     protected AdGroupAdExperimentData experimentData;
+    @XmlSchemaType(name = "string")
     protected AdGroupAdStatus status;
+    @XmlSchemaType(name = "string")
     protected AdGroupAdApprovalStatus approvalStatus;
     protected List<String> trademarks;
     protected List<String> disapprovalReasons;

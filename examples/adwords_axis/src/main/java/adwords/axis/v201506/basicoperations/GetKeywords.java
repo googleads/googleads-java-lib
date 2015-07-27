@@ -80,14 +80,14 @@ public class GetKeywords {
     Selector selector = builder
         .fields(
             AdGroupCriterionField.Id,
-            AdGroupCriterionField.AdGroupId,
+            AdGroupCriterionField.CriteriaType,
             AdGroupCriterionField.KeywordMatchType,
             AdGroupCriterionField.KeywordText)
-        .orderAscBy(AdGroupCriterionField.AdGroupId)
+        .orderAscBy(AdGroupCriterionField.KeywordText)
         .offset(offset)
         .limit(PAGE_SIZE)
         .in(AdGroupCriterionField.AdGroupId, adGroupId.toString())
-        .equals(AdGroupCriterionField.CriteriaType, "KEYWORD")
+        .in(AdGroupCriterionField.CriteriaType, "KEYWORD")
         .build();
 
     while (morePages) {
@@ -98,12 +98,10 @@ public class GetKeywords {
       if (page.getEntries() != null && page.getEntries().length > 0) {
         // Display results.
         for (AdGroupCriterion adGroupCriterionResult : page.getEntries()) {
-          System.out.println("Keyword ad group criterion with ad group id \""
-              + adGroupCriterionResult.getAdGroupId() + "\", criterion id \""
-              + adGroupCriterionResult.getCriterion().getId() + "\", text \""
-              + ((Keyword) adGroupCriterionResult.getCriterion()).getText()
-              + "\" and match type \""
-              + ((Keyword) adGroupCriterionResult.getCriterion()).getMatchType() + "\" was found.");
+          Keyword keyword = (Keyword) adGroupCriterionResult.getCriterion();
+          System.out.printf(
+              "Keyword with text '%s', match type '%s', criteria type '%s', and ID %d was found.%n",
+              keyword.getText(), keyword.getMatchType(), keyword.getType(), keyword.getId());
         }
       } else {
         System.out.println("No ad group criteria were found.");

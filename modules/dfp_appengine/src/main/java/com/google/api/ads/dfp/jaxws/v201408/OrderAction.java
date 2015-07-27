@@ -36,19 +36,19 @@ import javax.xml.bind.annotation.XmlType;
     "orderActionType"
 })
 @XmlSeeAlso({
-    DisapproveOrders.class,
-    ResumeOrders.class,
-    ApproveOrdersWithoutReservationChanges.class,
-    SubmitOrdersForApprovalWithoutReservationChanges.class,
-    ApproveOrders.class,
+    UnarchiveOrders.class,
     PauseOrders.class,
+    SubmitOrdersForApproval.class,
+    ApproveOrdersWithoutReservationChanges.class,
+    DisapproveOrders.class,
+    DeleteOrders.class,
+    ApproveOrders.class,
+    SubmitOrdersForApprovalWithoutReservationChanges.class,
+    ResumeOrders.class,
     ArchiveOrders.class,
     DisapproveOrdersWithoutReservationChanges.class,
-    DeleteOrders.class,
-    RetractOrdersWithoutReservationChanges.class,
-    UnarchiveOrders.class,
     RetractOrders.class,
-    SubmitOrdersForApproval.class
+    RetractOrdersWithoutReservationChanges.class
 })
 public abstract class OrderAction {
 

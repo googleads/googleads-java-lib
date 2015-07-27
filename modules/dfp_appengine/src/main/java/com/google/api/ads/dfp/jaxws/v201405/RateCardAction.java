@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "rateCardActionType"
 })
 @XmlSeeAlso({
-    ActivateRateCards.class,
-    DeactivateRateCards.class
+    DeactivateRateCards.class,
+    ActivateRateCards.class
 })
 public abstract class RateCardAction {
 

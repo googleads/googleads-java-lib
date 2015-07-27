@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedOperation;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignFeedStatus;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeedOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeedServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeedStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

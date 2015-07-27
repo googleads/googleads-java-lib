@@ -28,10 +28,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NoStatsPage")
 @XmlSeeAlso({
-    AdGroupBidLandscapePage.class,
+    CriterionBidLandscapePage.class,
     LabelPage.class,
     ConversionTrackerPage.class,
-    CriterionBidLandscapePage.class
+    AdGroupBidLandscapePage.class
 })
 public abstract class NoStatsPage
     extends Page

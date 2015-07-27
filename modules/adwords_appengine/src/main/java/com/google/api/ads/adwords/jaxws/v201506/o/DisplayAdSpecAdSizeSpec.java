@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -52,6 +53,7 @@ public class DisplayAdSpecAdSizeSpec {
 
     protected Long width;
     protected Long height;
+    @XmlSchemaType(name = "string")
     protected List<DisplayAdSpecActivationOption> activationOptionFilter;
 
     /**

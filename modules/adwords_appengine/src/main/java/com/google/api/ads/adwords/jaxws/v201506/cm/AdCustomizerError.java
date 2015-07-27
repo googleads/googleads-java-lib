@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -45,6 +46,7 @@ public class AdCustomizerError
     extends ApiError
 {
 
+    @XmlSchemaType(name = "string")
     protected AdCustomizerErrorReason reason;
     protected String functionString;
     protected String operatorName;

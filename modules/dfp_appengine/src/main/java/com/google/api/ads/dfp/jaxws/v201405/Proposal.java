@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -119,16 +120,21 @@ public class Proposal {
     protected Long id;
     protected Long dfpOrderId;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected PricingModel pricingModel;
     protected DateTime startDateTime;
     protected DateTime endDateTime;
+    @XmlSchemaType(name = "string")
     protected ProposalStatus status;
     protected Boolean isArchived;
     protected ProposalCompanyAssociation advertiser;
     protected List<ProposalCompanyAssociation> agencies;
     protected Integer probabilityToClose;
+    @XmlSchemaType(name = "string")
     protected BillingCap billingCap;
+    @XmlSchemaType(name = "string")
     protected BillingSchedule billingSchedule;
+    @XmlSchemaType(name = "string")
     protected BillingSource billingSource;
     protected String poNumber;
     protected String notes;
@@ -154,6 +160,7 @@ public class Proposal {
     protected Long agencyCommission;
     protected Long valueAddedTax;
     protected Boolean isSold;
+    @XmlSchemaType(name = "string")
     protected ProposalApprovalStatus approvalStatus;
     protected DateTime lastModifiedDateTime;
     protected Integer thirdPartyAdServerId;

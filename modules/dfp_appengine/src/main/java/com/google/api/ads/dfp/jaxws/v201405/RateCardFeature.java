@@ -37,22 +37,22 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     DeviceManufacturerRateCardFeature.class,
-    AdUnitRateCardFeature.class,
-    MobileCarrierRateCardFeature.class,
     DeviceCapabilityRateCardFeature.class,
-    BrowserRateCardFeature.class,
     PlacementRateCardFeature.class,
-    UnknownRateCardFeature.class,
-    OperatingSystemRateCardFeature.class,
-    DaypartRateCardFeature.class,
-    FrequencyCapRateCardFeature.class,
-    GeographyRateCardFeature.class,
-    AudienceSegmentRateCardFeature.class,
-    DeviceCategoryRateCardFeature.class,
-    UserDomainRateCardFeature.class,
     CustomTargetingRateCardFeature.class,
+    BandwidthRateCardFeature.class,
+    UnknownRateCardFeature.class,
+    BrowserRateCardFeature.class,
+    FrequencyCapRateCardFeature.class,
     BrowserLanguageRateCardFeature.class,
-    BandwidthRateCardFeature.class
+    UserDomainRateCardFeature.class,
+    DeviceCategoryRateCardFeature.class,
+    AudienceSegmentRateCardFeature.class,
+    DaypartRateCardFeature.class,
+    OperatingSystemRateCardFeature.class,
+    GeographyRateCardFeature.class,
+    AdUnitRateCardFeature.class,
+    MobileCarrierRateCardFeature.class
 })
 public abstract class RateCardFeature {
 

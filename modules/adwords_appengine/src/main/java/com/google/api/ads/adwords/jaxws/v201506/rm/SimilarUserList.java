@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.rm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -49,6 +50,7 @@ public class SimilarUserList
     protected Long seedUserListId;
     protected String seedUserListName;
     protected String seedUserListDescription;
+    @XmlSchemaType(name = "string")
     protected UserListMembershipStatus seedUserListStatus;
     protected Long seedListSize;
 

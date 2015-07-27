@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -51,7 +52,9 @@ public class FeedItemPolicyData
 
     protected Integer placeholderType;
     protected Long feedMappingId;
+    @XmlSchemaType(name = "string")
     protected FeedItemValidationStatus validationStatus;
+    @XmlSchemaType(name = "string")
     protected FeedItemApprovalStatus approvalStatus;
     protected List<FeedItemAttributeError> validationErrors;
 

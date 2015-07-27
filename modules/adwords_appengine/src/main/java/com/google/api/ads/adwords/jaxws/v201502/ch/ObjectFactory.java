@@ -27,9 +27,9 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201502", "ApiExceptionFault");
-    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201502", "ResponseHeader");
     private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201502", "RequestHeader");
+    private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201502", "ResponseHeader");
+    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/ch/v201502", "ApiExceptionFault");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201502.ch
@@ -39,11 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomerSyncSelector }
+     * Create an instance of {@link CustomerSyncError }
      * 
      */
-    public CustomerSyncSelector createCustomerSyncSelector() {
-        return new CustomerSyncSelector();
+    public CustomerSyncError createCustomerSyncError() {
+        return new CustomerSyncError();
     }
 
     /**
@@ -63,11 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CustomerSyncError }
+     * Create an instance of {@link AdGroupChangeData }
      * 
      */
-    public CustomerSyncError createCustomerSyncError() {
-        return new CustomerSyncError();
+    public AdGroupChangeData createAdGroupChangeData() {
+        return new AdGroupChangeData();
     }
 
     /**
@@ -79,20 +79,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdGroupChangeData }
+     * Create an instance of {@link CustomerSyncSelector }
      * 
      */
-    public AdGroupChangeData createAdGroupChangeData() {
-        return new AdGroupChangeData();
+    public CustomerSyncSelector createCustomerSyncSelector() {
+        return new CustomerSyncSelector();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201502", name = "ApiExceptionFault")
-    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
-        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201502", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**
@@ -105,12 +105,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201502", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/ch/v201502", name = "ApiExceptionFault")
+    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
+        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
     }
 
 }

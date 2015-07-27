@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,9 +59,11 @@ public class FlashOverlayCreative
     protected List<Long> companionCreativeIds;
     protected List<ConversionEventTrackingUrlsMapEntry> trackingUrls;
     protected String customParameters;
+    @XmlSchemaType(name = "string")
     protected ApiFramework apiFramework;
     protected Integer duration;
     protected String vastPreviewUrl;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
 
     /**

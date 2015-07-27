@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -49,6 +50,7 @@ public class Label {
     protected String name;
     protected String description;
     protected Boolean isActive;
+    @XmlSchemaType(name = "string")
     protected List<LabelType> types;
 
     /**

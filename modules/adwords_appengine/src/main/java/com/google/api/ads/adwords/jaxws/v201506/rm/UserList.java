@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201506.rm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -65,10 +66,10 @@ import javax.xml.bind.annotation.XmlType;
     "userListType"
 })
 @XmlSeeAlso({
-    BasicUserList.class,
     SimilarUserList.class,
+    RuleBasedUserList.class,
     LogicalUserList.class,
-    RuleBasedUserList.class
+    BasicUserList.class
 })
 public class UserList {
 
@@ -76,15 +77,21 @@ public class UserList {
     protected Boolean isReadOnly;
     protected String name;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected UserListMembershipStatus status;
     protected String integrationCode;
+    @XmlSchemaType(name = "string")
     protected AccessReason accessReason;
+    @XmlSchemaType(name = "string")
     protected AccountUserListStatus accountUserListStatus;
     protected Long membershipLifeSpan;
     protected Long size;
+    @XmlSchemaType(name = "string")
     protected SizeRange sizeRange;
     protected Long sizeForSearch;
+    @XmlSchemaType(name = "string")
     protected SizeRange sizeRangeForSearch;
+    @XmlSchemaType(name = "string")
     protected UserListType listType;
     @XmlElement(name = "UserList.Type")
     protected String userListType;

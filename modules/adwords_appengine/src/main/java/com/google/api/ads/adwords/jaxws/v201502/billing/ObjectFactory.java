@@ -27,8 +27,8 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201502", "ApiExceptionFault");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201502", "ResponseHeader");
+    private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201502", "ApiExceptionFault");
     private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201502", "RequestHeader");
 
     /**
@@ -36,70 +36,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link MutateResponse }
-     * 
-     */
-    public MutateResponse createMutateResponse() {
-        return new MutateResponse();
-    }
-
-    /**
-     * Create an instance of {@link BudgetOrderReturnValue }
-     * 
-     */
-    public BudgetOrderReturnValue createBudgetOrderReturnValue() {
-        return new BudgetOrderReturnValue();
-    }
-
-    /**
-     * Create an instance of {@link GetBillingAccounts }
-     * 
-     */
-    public GetBillingAccounts createGetBillingAccounts() {
-        return new GetBillingAccounts();
-    }
-
-    /**
-     * Create an instance of {@link Get }
-     * 
-     */
-    public Get createGet() {
-        return new Get();
-    }
-
-    /**
-     * Create an instance of {@link GetResponse }
-     * 
-     */
-    public GetResponse createGetResponse() {
-        return new GetResponse();
-    }
-
-    /**
-     * Create an instance of {@link BudgetOrderPage }
-     * 
-     */
-    public BudgetOrderPage createBudgetOrderPage() {
-        return new BudgetOrderPage();
-    }
-
-    /**
-     * Create an instance of {@link GetBillingAccountsResponse }
-     * 
-     */
-    public GetBillingAccountsResponse createGetBillingAccountsResponse() {
-        return new GetBillingAccountsResponse();
-    }
-
-    /**
-     * Create an instance of {@link BillingAccount }
-     * 
-     */
-    public BillingAccount createBillingAccount() {
-        return new BillingAccount();
     }
 
     /**
@@ -119,27 +55,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BudgetOrderError }
+     * Create an instance of {@link GetResponse }
      * 
      */
-    public BudgetOrderError createBudgetOrderError() {
-        return new BudgetOrderError();
+    public GetResponse createGetResponse() {
+        return new GetResponse();
     }
 
     /**
-     * Create an instance of {@link CustomerOrderLineError }
+     * Create an instance of {@link BudgetOrderPage }
      * 
      */
-    public CustomerOrderLineError createCustomerOrderLineError() {
-        return new CustomerOrderLineError();
+    public BudgetOrderPage createBudgetOrderPage() {
+        return new BudgetOrderPage();
     }
 
     /**
-     * Create an instance of {@link BudgetOrder }
+     * Create an instance of {@link GetBillingAccounts }
      * 
      */
-    public BudgetOrder createBudgetOrder() {
-        return new BudgetOrder();
+    public GetBillingAccounts createGetBillingAccounts() {
+        return new GetBillingAccounts();
+    }
+
+    /**
+     * Create an instance of {@link Get }
+     * 
+     */
+    public Get createGet() {
+        return new Get();
+    }
+
+    /**
+     * Create an instance of {@link MutateResponse }
+     * 
+     */
+    public MutateResponse createMutateResponse() {
+        return new MutateResponse();
+    }
+
+    /**
+     * Create an instance of {@link BudgetOrderReturnValue }
+     * 
+     */
+    public BudgetOrderReturnValue createBudgetOrderReturnValue() {
+        return new BudgetOrderReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link GetBillingAccountsResponse }
+     * 
+     */
+    public GetBillingAccountsResponse createGetBillingAccountsResponse() {
+        return new GetBillingAccountsResponse();
+    }
+
+    /**
+     * Create an instance of {@link BillingAccount }
+     * 
+     */
+    public BillingAccount createBillingAccount() {
+        return new BillingAccount();
     }
 
     /**
@@ -151,12 +127,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
+     * Create an instance of {@link BudgetOrderError }
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201502", name = "ApiExceptionFault")
-    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
-        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    public BudgetOrderError createBudgetOrderError() {
+        return new BudgetOrderError();
+    }
+
+    /**
+     * Create an instance of {@link BudgetOrder }
+     * 
+     */
+    public BudgetOrder createBudgetOrder() {
+        return new BudgetOrder();
+    }
+
+    /**
+     * Create an instance of {@link CustomerOrderLineError }
+     * 
+     */
+    public CustomerOrderLineError createCustomerOrderLineError() {
+        return new CustomerOrderLineError();
     }
 
     /**
@@ -166,6 +157,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201502", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201502", name = "ApiExceptionFault")
+    public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
+        return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
     }
 
     /**

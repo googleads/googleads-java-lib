@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
     "primaryImageAsset"
 })
 @XmlSeeAlso({
-    ImageCreative.class,
-    ImageOverlayCreative.class
+    ImageOverlayCreative.class,
+    ImageCreative.class
 })
 public abstract class BaseImageCreative
     extends HasDestinationUrlCreative

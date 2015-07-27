@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -52,7 +53,9 @@ public abstract class WorkflowRequest {
     protected Long id;
     protected String workflowRuleName;
     protected Long entityId;
+    @XmlSchemaType(name = "string")
     protected WorkflowEntityType entityType;
+    @XmlSchemaType(name = "string")
     protected WorkflowRequestType type;
 
     /**

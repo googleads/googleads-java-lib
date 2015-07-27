@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -46,6 +47,7 @@ public class FlashCreative
 
     protected SwiffyFallbackAsset swiffyAsset;
     protected Boolean createSwiffyAsset;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
     protected Boolean clickTagOverlayEnabled;
 

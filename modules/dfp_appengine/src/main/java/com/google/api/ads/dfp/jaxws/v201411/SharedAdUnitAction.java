@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "sharedAdUnitActionType"
 })
 @XmlSeeAlso({
-    RejectSharedAdUnits.class,
-    ApproveSharedAdUnits.class
+    ApproveSharedAdUnits.class,
+    RejectSharedAdUnits.class
 })
 public abstract class SharedAdUnitAction {
 

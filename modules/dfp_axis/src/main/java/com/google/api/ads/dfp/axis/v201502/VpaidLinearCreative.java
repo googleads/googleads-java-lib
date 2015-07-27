@@ -23,11 +23,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
 
     /* The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}. */
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link
+     *                     FlashCreative} is retrieved. */
     private byte[] flashByteArray;
 
     /* Allows the creative size to differ from the actual Flash asset
@@ -35,9 +33,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
      *                     attribute is optional. */
     private java.lang.Boolean overrideSize;
 
-    /* The Flash asset size. Note that this may differ from {@link
-     * #size} if
-     *                     {@link #overrideSize} is set to true. This attribute
+    /* The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link size} if
+     *                     {@link overrideSize} is set to true. This attribute
      * is read-only and is
      *                     populated by Google. */
     private com.google.api.ads.dfp.axis.v201502.Size flashAssetSize;
@@ -157,11 +155,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
      * 
      * @return flashByteArray   * The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}.
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link
+     *                     FlashCreative} is retrieved.
      */
     public byte[] getFlashByteArray() {
         return flashByteArray;
@@ -173,11 +169,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
      * 
      * @param flashByteArray   * The contents of the Flash asset as a byte array. This attribute
      * is
-     *                     required. The {@code flashByteArray} will be {@code
-     * null} when the {@code
-     *                     FlashCreative} is retrieved. To view the Flash
-     * image, use the {@code
-     *                     previewUrl}.
+     *                     required. The {@link flashByteArray} will be {@code
+     * null} when the {@link
+     *                     FlashCreative} is retrieved.
      */
     public void setFlashByteArray(byte[] flashByteArray) {
         this.flashByteArray = flashByteArray;
@@ -211,9 +205,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
     /**
      * Gets the flashAssetSize value for this VpaidLinearCreative.
      * 
-     * @return flashAssetSize   * The Flash asset size. Note that this may differ from {@link
-     * #size} if
-     *                     {@link #overrideSize} is set to true. This attribute
+     * @return flashAssetSize   * The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link size} if
+     *                     {@link overrideSize} is set to true. This attribute
      * is read-only and is
      *                     populated by Google.
      */
@@ -225,9 +219,9 @@ public class VpaidLinearCreative  extends com.google.api.ads.dfp.axis.v201502.Ha
     /**
      * Sets the flashAssetSize value for this VpaidLinearCreative.
      * 
-     * @param flashAssetSize   * The Flash asset size. Note that this may differ from {@link
-     * #size} if
-     *                     {@link #overrideSize} is set to true. This attribute
+     * @param flashAssetSize   * The {@link Size} of the Flash asset. Note that this may differ
+     * from {@link size} if
+     *                     {@link overrideSize} is set to true. This attribute
      * is read-only and is
      *                     populated by Google.
      */

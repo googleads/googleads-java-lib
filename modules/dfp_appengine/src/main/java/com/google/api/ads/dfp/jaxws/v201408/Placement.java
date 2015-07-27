@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -59,6 +60,7 @@ public class Placement
     protected String name;
     protected String description;
     protected String placementCode;
+    @XmlSchemaType(name = "string")
     protected InventoryStatus status;
     protected Boolean isAdSenseTargetingEnabled;
     protected String adSenseTargetingLocale;

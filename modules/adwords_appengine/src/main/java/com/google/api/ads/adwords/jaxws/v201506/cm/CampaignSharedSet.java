@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -49,8 +50,10 @@ public class CampaignSharedSet {
     protected Long sharedSetId;
     protected Long campaignId;
     protected String sharedSetName;
+    @XmlSchemaType(name = "string")
     protected SharedSetType sharedSetType;
     protected String campaignName;
+    @XmlSchemaType(name = "string")
     protected CampaignSharedSetStatus status;
 
     /**

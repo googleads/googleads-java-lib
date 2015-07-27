@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -58,17 +59,19 @@ import javax.xml.bind.annotation.XmlType;
     "mediaType"
 })
 @XmlSeeAlso({
-    Image.class,
+    Audio.class,
     Video.class,
-    Audio.class
+    Image.class
 })
 public class Media {
 
     protected Long mediaId;
+    @XmlSchemaType(name = "string")
     protected MediaMediaType type;
     protected Long referenceId;
     protected List<MediaSizeDimensionsMapEntry> dimensions;
     protected List<MediaSizeStringMapEntry> urls;
+    @XmlSchemaType(name = "string")
     protected MediaMimeType mimeType;
     protected String sourceUrl;
     protected String name;

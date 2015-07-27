@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
     "lineItemCreativeAssociationActionType"
 })
 @XmlSeeAlso({
-    ActivateLineItemCreativeAssociations.class,
-    DeactivateLineItemCreativeAssociations.class
+    DeactivateLineItemCreativeAssociations.class,
+    ActivateLineItemCreativeAssociations.class
 })
 public abstract class LineItemCreativeAssociationAction {
 

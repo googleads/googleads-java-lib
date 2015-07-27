@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201506.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -48,10 +49,13 @@ public class AdWordsConversionTracker
 {
 
     protected String snippet;
+    @XmlSchemaType(name = "string")
     protected AdWordsConversionTrackerMarkupLanguage markupLanguage;
+    @XmlSchemaType(name = "string")
     protected AdWordsConversionTrackerTextFormat textFormat;
     protected String conversionPageLanguage;
     protected String backgroundColor;
+    @XmlSchemaType(name = "string")
     protected AdWordsConversionTrackerTrackingCodeType trackingCodeType;
 
     /**

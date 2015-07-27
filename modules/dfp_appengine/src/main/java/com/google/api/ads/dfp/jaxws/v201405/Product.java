@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -71,16 +72,21 @@ import javax.xml.bind.annotation.XmlType;
 public class Product {
 
     protected String name;
+    @XmlSchemaType(name = "string")
     protected ProductStatus status;
+    @XmlSchemaType(name = "string")
     protected ProductType productType;
     protected Long productTemplateId;
     protected Long id;
     protected String notes;
     protected String productTemplateDescription;
     protected DateTime lastModifiedDateTime;
+    @XmlSchemaType(name = "string")
     protected RateType rateType;
+    @XmlSchemaType(name = "string")
     protected RoadblockingType roadblockingType;
     protected List<CreativePlaceholder> creativePlaceholders;
+    @XmlSchemaType(name = "string")
     protected LineItemType lineItemType;
     protected Integer priority;
     protected List<FrequencyCap> frequencyCaps;

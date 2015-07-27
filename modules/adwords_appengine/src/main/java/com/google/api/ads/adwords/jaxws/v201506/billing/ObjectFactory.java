@@ -27,79 +27,15 @@ import com.google.api.ads.adwords.jaxws.v201506.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201506", "RequestHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201506", "ApiExceptionFault");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201506", "ResponseHeader");
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/billing/v201506", "RequestHeader");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201506.billing
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link MutateResponse }
-     * 
-     */
-    public MutateResponse createMutateResponse() {
-        return new MutateResponse();
-    }
-
-    /**
-     * Create an instance of {@link BudgetOrderReturnValue }
-     * 
-     */
-    public BudgetOrderReturnValue createBudgetOrderReturnValue() {
-        return new BudgetOrderReturnValue();
-    }
-
-    /**
-     * Create an instance of {@link GetBillingAccounts }
-     * 
-     */
-    public GetBillingAccounts createGetBillingAccounts() {
-        return new GetBillingAccounts();
-    }
-
-    /**
-     * Create an instance of {@link Get }
-     * 
-     */
-    public Get createGet() {
-        return new Get();
-    }
-
-    /**
-     * Create an instance of {@link GetResponse }
-     * 
-     */
-    public GetResponse createGetResponse() {
-        return new GetResponse();
-    }
-
-    /**
-     * Create an instance of {@link BudgetOrderPage }
-     * 
-     */
-    public BudgetOrderPage createBudgetOrderPage() {
-        return new BudgetOrderPage();
-    }
-
-    /**
-     * Create an instance of {@link GetBillingAccountsResponse }
-     * 
-     */
-    public GetBillingAccountsResponse createGetBillingAccountsResponse() {
-        return new GetBillingAccountsResponse();
-    }
-
-    /**
-     * Create an instance of {@link BillingAccount }
-     * 
-     */
-    public BillingAccount createBillingAccount() {
-        return new BillingAccount();
     }
 
     /**
@@ -119,19 +55,83 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetResponse }
+     * 
+     */
+    public GetResponse createGetResponse() {
+        return new GetResponse();
+    }
+
+    /**
+     * Create an instance of {@link BudgetOrderPage }
+     * 
+     */
+    public BudgetOrderPage createBudgetOrderPage() {
+        return new BudgetOrderPage();
+    }
+
+    /**
+     * Create an instance of {@link GetBillingAccounts }
+     * 
+     */
+    public GetBillingAccounts createGetBillingAccounts() {
+        return new GetBillingAccounts();
+    }
+
+    /**
+     * Create an instance of {@link Get }
+     * 
+     */
+    public Get createGet() {
+        return new Get();
+    }
+
+    /**
+     * Create an instance of {@link MutateResponse }
+     * 
+     */
+    public MutateResponse createMutateResponse() {
+        return new MutateResponse();
+    }
+
+    /**
+     * Create an instance of {@link BudgetOrderReturnValue }
+     * 
+     */
+    public BudgetOrderReturnValue createBudgetOrderReturnValue() {
+        return new BudgetOrderReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link GetBillingAccountsResponse }
+     * 
+     */
+    public GetBillingAccountsResponse createGetBillingAccountsResponse() {
+        return new GetBillingAccountsResponse();
+    }
+
+    /**
+     * Create an instance of {@link BillingAccount }
+     * 
+     */
+    public BillingAccount createBillingAccount() {
+        return new BillingAccount();
+    }
+
+    /**
+     * Create an instance of {@link BudgetOrderRequest }
+     * 
+     */
+    public BudgetOrderRequest createBudgetOrderRequest() {
+        return new BudgetOrderRequest();
+    }
+
+    /**
      * Create an instance of {@link BudgetOrderError }
      * 
      */
     public BudgetOrderError createBudgetOrderError() {
         return new BudgetOrderError();
-    }
-
-    /**
-     * Create an instance of {@link CustomerOrderLineError }
-     * 
-     */
-    public CustomerOrderLineError createCustomerOrderLineError() {
-        return new CustomerOrderLineError();
     }
 
     /**
@@ -143,11 +143,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BudgetOrderRequest }
+     * Create an instance of {@link CustomerOrderLineError }
      * 
      */
-    public BudgetOrderRequest createBudgetOrderRequest() {
-        return new BudgetOrderRequest();
+    public CustomerOrderLineError createCustomerOrderLineError() {
+        return new CustomerOrderLineError();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201506", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
     /**
@@ -166,15 +175,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201506", name = "ResponseHeader")
     public JAXBElement<SoapResponseHeader> createResponseHeader(SoapResponseHeader value) {
         return new JAXBElement<SoapResponseHeader>(_ResponseHeader_QNAME, SoapResponseHeader.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/billing/v201506", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
 }

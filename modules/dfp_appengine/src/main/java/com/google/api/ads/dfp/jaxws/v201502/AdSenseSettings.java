@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -63,9 +64,13 @@ public class AdSenseSettings {
     protected String backgroundColor;
     protected String textColor;
     protected String urlColor;
+    @XmlSchemaType(name = "string")
     protected AdSenseSettingsAdType adType;
+    @XmlSchemaType(name = "string")
     protected AdSenseSettingsBorderStyle borderStyle;
+    @XmlSchemaType(name = "string")
     protected AdSenseSettingsFontFamily fontFamily;
+    @XmlSchemaType(name = "string")
     protected AdSenseSettingsFontSize fontSize;
     protected List<SizeStringMapEntry> afcFormats;
 

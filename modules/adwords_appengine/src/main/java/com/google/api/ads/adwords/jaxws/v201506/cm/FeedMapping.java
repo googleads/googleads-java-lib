@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -59,6 +60,7 @@ public class FeedMapping {
     protected Long feedMappingId;
     protected Long feedId;
     protected Integer placeholderType;
+    @XmlSchemaType(name = "string")
     protected FeedMappingStatus status;
     protected List<AttributeFieldMapping> attributeFieldMappings;
     protected Integer criterionType;

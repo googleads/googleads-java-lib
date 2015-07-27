@@ -15,18 +15,18 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
-import com.google.api.ads.adwords.axis.v201502.cm.AgeRange;
-import com.google.api.ads.adwords.axis.v201502.cm.Carrier;
-import com.google.api.ads.adwords.axis.v201502.cm.ConstantDataServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.ConstantDataServiceUserInterestTaxonomyType;
-import com.google.api.ads.adwords.axis.v201502.cm.CriterionUserInterest;
-import com.google.api.ads.adwords.axis.v201502.cm.Gender;
-import com.google.api.ads.adwords.axis.v201502.cm.Language;
-import com.google.api.ads.adwords.axis.v201502.cm.MobileDevice;
-import com.google.api.ads.adwords.axis.v201502.cm.OperatingSystemVersion;
-import com.google.api.ads.adwords.axis.v201502.cm.ProductBiddingCategoryData;
-import com.google.api.ads.adwords.axis.v201502.cm.Selector;
-import com.google.api.ads.adwords.axis.v201502.cm.Vertical;
+import com.google.api.ads.adwords.axis.v201506.cm.AgeRange;
+import com.google.api.ads.adwords.axis.v201506.cm.Carrier;
+import com.google.api.ads.adwords.axis.v201506.cm.ConstantDataServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.ConstantDataServiceUserInterestTaxonomyType;
+import com.google.api.ads.adwords.axis.v201506.cm.CriterionUserInterest;
+import com.google.api.ads.adwords.axis.v201506.cm.Gender;
+import com.google.api.ads.adwords.axis.v201506.cm.Language;
+import com.google.api.ads.adwords.axis.v201506.cm.MobileDevice;
+import com.google.api.ads.adwords.axis.v201506.cm.OperatingSystemVersion;
+import com.google.api.ads.adwords.axis.v201506.cm.ProductBiddingCategoryData;
+import com.google.api.ads.adwords.axis.v201506.cm.Selector;
+import com.google.api.ads.adwords.axis.v201506.cm.Vertical;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -147,7 +147,7 @@ public final class ConstantDataDelegate
    * Retrieves all the ProductBiddingCategoryDatas.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201502.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201506.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return a list of all the ProductBiddingCategoryDatas

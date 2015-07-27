@@ -123,7 +123,7 @@ public class AddCampaigns {
 
     // You can optionally provide these field(s).
     campaign.setStartDate(new DateTime().plusDays(1).toString("yyyyMMdd"));
-    campaign.setStartDate(new DateTime().plusDays(30).toString("yyyyMMdd"));
+    campaign.setEndDate(new DateTime().plusDays(30).toString("yyyyMMdd"));
     campaign.setAdServingOptimizationStatus(AdServingOptimizationStatus.ROTATE);
     campaign.setFrequencyCap(new FrequencyCap(5L, TimeUnit.DAY, Level.ADGROUP));
 

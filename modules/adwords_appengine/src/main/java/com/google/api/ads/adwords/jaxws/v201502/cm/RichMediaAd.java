@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -67,7 +68,9 @@ public abstract class RichMediaAd
     protected Integer adDuration;
     protected Long certifiedVendorFormatId;
     protected String sourceUrl;
+    @XmlSchemaType(name = "string")
     protected RichMediaAdRichMediaAdType richMediaAdType;
+    @XmlSchemaType(name = "string")
     protected List<RichMediaAdAdAttribute> adAttributes;
 
     /**

@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.o;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201502.cm.ApiError;
 
@@ -38,6 +39,7 @@ public class CurrencyCodeError
     extends ApiError
 {
 
+    @XmlSchemaType(name = "string")
     protected CurrencyCodeErrorReason reason;
 
     /**

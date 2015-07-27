@@ -211,7 +211,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     when(reportRequest.getRequestType()).thenReturn(RequestType.XML);
 
     String xmlString =
-        "<reportDefinition xmlns=\"https://adwords.google.com/api/adwords/cm/v201409\">"
+        "<reportDefinition xmlns=\"https://adwords.google.com/api/adwords/cm/v201506\">"
         + "  <selector>                                        "
         + "    <fields>CampaignId</fields>                     "
         + "    <fields>CampaignName</fields>                   "

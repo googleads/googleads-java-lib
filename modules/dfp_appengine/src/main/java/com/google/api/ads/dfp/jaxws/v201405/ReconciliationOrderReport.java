@@ -3,13 +3,13 @@ package com.google.api.ads.dfp.jaxws.v201405;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * 
- *             A {@link ReconciliationOrderReport} represents one order
- *             in the reconciliation report.
+ *             Contains reconciliation data of an {@link Order} and/or {@link Proposal}.
  *           
  * 
  * <p>Java class for ReconciliationOrderReport complex type.
@@ -49,6 +49,7 @@ public class ReconciliationOrderReport {
     protected Long id;
     protected Long reconciliationReportId;
     protected Long orderId;
+    @XmlSchemaType(name = "string")
     protected ReconciliationOrderReportStatus status;
     protected DateTime submissionDateTime;
     protected Long submitterId;

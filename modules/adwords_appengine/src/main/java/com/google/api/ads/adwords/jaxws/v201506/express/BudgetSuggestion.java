@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201506.cm.Money;
 
@@ -65,6 +66,7 @@ public class BudgetSuggestion {
     protected Money maxBudget;
     protected List<Money> budgetQuantiles;
     protected Long impressions;
+    @XmlSchemaType(name = "string")
     protected CurrencyCode currencyCode;
 
     /**

@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201502.cm.ConversionTracker;
-import com.google.api.ads.adwords.axis.v201502.cm.ConversionTrackerOperation;
-import com.google.api.ads.adwords.axis.v201502.cm.ConversionTrackerServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.ConversionTracker;
+import com.google.api.ads.adwords.axis.v201506.cm.ConversionTrackerOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.ConversionTrackerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

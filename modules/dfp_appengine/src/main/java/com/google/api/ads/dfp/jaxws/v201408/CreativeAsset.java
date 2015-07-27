@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201408;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,6 +54,7 @@ public class CreativeAsset {
     protected Long fileSize;
     protected String assetUrl;
     protected Size size;
+    @XmlSchemaType(name = "string")
     protected ImageDensity imageDensity;
 
     /**

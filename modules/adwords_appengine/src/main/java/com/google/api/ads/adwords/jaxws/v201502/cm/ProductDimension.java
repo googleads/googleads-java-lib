@@ -37,17 +37,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     ProductBiddingCategory.class,
-    ProductLegacyCondition.class,
     ProductChannel.class,
-    ProductAdwordsLabels.class,
-    ProductCustomAttribute.class,
-    ProductBrand.class,
     ProductCanonicalCondition.class,
+    ProductCustomAttribute.class,
     ProductTypeFull.class,
-    ProductOfferId.class,
-    ProductAdwordsGrouping.class,
+    ProductType.class,
     ProductChannelExclusivity.class,
-    ProductType.class
+    ProductAdwordsLabels.class,
+    ProductLegacyCondition.class,
+    ProductAdwordsGrouping.class,
+    ProductOfferId.class,
+    ProductBrand.class
 })
 public abstract class ProductDimension {
 

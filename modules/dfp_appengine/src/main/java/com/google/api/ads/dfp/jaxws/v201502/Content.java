@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -60,7 +61,9 @@ public class Content {
 
     protected Long id;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected ContentStatus status;
+    @XmlSchemaType(name = "string")
     protected ContentStatusDefinedBy statusDefinedBy;
     protected DateTime importDateTime;
     protected DateTime lastModifiedDateTime;

@@ -70,7 +70,7 @@ public enum AdGroupCriterionField implements EntityField {
   BidModifier(true),
 
   /**
-   * Bid type indicates if it is a Target CPA or Max CPA campaign.
+   * Bid type indicates if it is a Target CPA campaign.
    * If the Bid type is not specified it defaults to Target CPA.
    */
   @Filterable

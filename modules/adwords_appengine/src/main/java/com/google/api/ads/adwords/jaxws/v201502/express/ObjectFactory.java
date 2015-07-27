@@ -27,55 +27,15 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.SoapResponseHeader;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201502", "RequestHeader");
     private final static QName _ResponseHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201502", "ResponseHeader");
     private final static QName _ApiExceptionFault_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201502", "ApiExceptionFault");
+    private final static QName _RequestHeader_QNAME = new QName("https://adwords.google.com/api/adwords/express/v201502", "RequestHeader");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.google.api.ads.adwords.jaxws.v201502.express
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Creative }
-     * 
-     */
-    public Creative createCreative() {
-        return new Creative();
-    }
-
-    /**
-     * Create an instance of {@link ProductServicePage }
-     * 
-     */
-    public ProductServicePage createProductServicePage() {
-        return new ProductServicePage();
-    }
-
-    /**
-     * Create an instance of {@link ExpressSoapHeader }
-     * 
-     */
-    public ExpressSoapHeader createExpressSoapHeader() {
-        return new ExpressSoapHeader();
-    }
-
-    /**
-     * Create an instance of {@link BudgetSuggestionSelector }
-     * 
-     */
-    public BudgetSuggestionSelector createBudgetSuggestionSelector() {
-        return new BudgetSuggestionSelector();
-    }
-
-    /**
-     * Create an instance of {@link Promotion }
-     * 
-     */
-    public Promotion createPromotion() {
-        return new Promotion();
     }
 
     /**
@@ -87,11 +47,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NegativeCriterion }
+     * Create an instance of {@link ExpressBusinessError }
      * 
      */
-    public NegativeCriterion createNegativeCriterion() {
-        return new NegativeCriterion();
+    public ExpressBusinessError createExpressBusinessError() {
+        return new ExpressBusinessError();
     }
 
     /**
@@ -103,14 +63,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NegativeKeyword }
-     * 
-     */
-    public NegativeKeyword createNegativeKeyword() {
-        return new NegativeKeyword();
-    }
-
-    /**
      * Create an instance of {@link PromotionError }
      * 
      */
@@ -119,51 +71,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PromotionPage }
+     * Create an instance of {@link Promotion }
      * 
      */
-    public PromotionPage createPromotionPage() {
-        return new PromotionPage();
-    }
-
-    /**
-     * Create an instance of {@link ProductService }
-     * 
-     */
-    public ProductService createProductService() {
-        return new ProductService();
-    }
-
-    /**
-     * Create an instance of {@link ExpressBusinessError }
-     * 
-     */
-    public ExpressBusinessError createExpressBusinessError() {
-        return new ExpressBusinessError();
-    }
-
-    /**
-     * Create an instance of {@link KeywordSet }
-     * 
-     */
-    public KeywordSet createKeywordSet() {
-        return new KeywordSet();
-    }
-
-    /**
-     * Create an instance of {@link PhoneNumber }
-     * 
-     */
-    public PhoneNumber createPhoneNumber() {
-        return new PhoneNumber();
-    }
-
-    /**
-     * Create an instance of {@link PromotionOperation }
-     * 
-     */
-    public PromotionOperation createPromotionOperation() {
-        return new PromotionOperation();
+    public Promotion createPromotion() {
+        return new Promotion();
     }
 
     /**
@@ -175,14 +87,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BudgetSuggestion }
-     * 
-     */
-    public BudgetSuggestion createBudgetSuggestion() {
-        return new BudgetSuggestion();
-    }
-
-    /**
      * Create an instance of {@link ExpressBusinessPage }
      * 
      */
@@ -191,12 +95,99 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * Create an instance of {@link PromotionPage }
      * 
      */
-    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201502", name = "RequestHeader")
-    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
-        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
+    public PromotionPage createPromotionPage() {
+        return new PromotionPage();
+    }
+
+    /**
+     * Create an instance of {@link KeywordSet }
+     * 
+     */
+    public KeywordSet createKeywordSet() {
+        return new KeywordSet();
+    }
+
+    /**
+     * Create an instance of {@link Creative }
+     * 
+     */
+    public Creative createCreative() {
+        return new Creative();
+    }
+
+    /**
+     * Create an instance of {@link NegativeCriterion }
+     * 
+     */
+    public NegativeCriterion createNegativeCriterion() {
+        return new NegativeCriterion();
+    }
+
+    /**
+     * Create an instance of {@link BudgetSuggestionSelector }
+     * 
+     */
+    public BudgetSuggestionSelector createBudgetSuggestionSelector() {
+        return new BudgetSuggestionSelector();
+    }
+
+    /**
+     * Create an instance of {@link BudgetSuggestion }
+     * 
+     */
+    public BudgetSuggestion createBudgetSuggestion() {
+        return new BudgetSuggestion();
+    }
+
+    /**
+     * Create an instance of {@link NegativeKeyword }
+     * 
+     */
+    public NegativeKeyword createNegativeKeyword() {
+        return new NegativeKeyword();
+    }
+
+    /**
+     * Create an instance of {@link ExpressSoapHeader }
+     * 
+     */
+    public ExpressSoapHeader createExpressSoapHeader() {
+        return new ExpressSoapHeader();
+    }
+
+    /**
+     * Create an instance of {@link ProductService }
+     * 
+     */
+    public ProductService createProductService() {
+        return new ProductService();
+    }
+
+    /**
+     * Create an instance of {@link PromotionOperation }
+     * 
+     */
+    public PromotionOperation createPromotionOperation() {
+        return new PromotionOperation();
+    }
+
+    /**
+     * Create an instance of {@link PhoneNumber }
+     * 
+     */
+    public PhoneNumber createPhoneNumber() {
+        return new PhoneNumber();
+    }
+
+    /**
+     * Create an instance of {@link ProductServicePage }
+     * 
+     */
+    public ProductServicePage createProductServicePage() {
+        return new ProductServicePage();
     }
 
     /**
@@ -215,6 +206,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201502", name = "ApiExceptionFault")
     public JAXBElement<ApiException> createApiExceptionFault(ApiException value) {
         return new JAXBElement<ApiException>(_ApiExceptionFault_QNAME, ApiException.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SoapHeader }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "https://adwords.google.com/api/adwords/express/v201502", name = "RequestHeader")
+    public JAXBElement<SoapHeader> createRequestHeader(SoapHeader value) {
+        return new JAXBElement<SoapHeader>(_RequestHeader_QNAME, SoapHeader.class, null, value);
     }
 
 }

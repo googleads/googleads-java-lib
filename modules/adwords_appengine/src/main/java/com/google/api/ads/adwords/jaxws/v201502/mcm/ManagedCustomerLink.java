@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.mcm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,6 +44,7 @@ public class ManagedCustomerLink {
 
     protected Long managerCustomerId;
     protected Long clientCustomerId;
+    @XmlSchemaType(name = "string")
     protected LinkStatus linkStatus;
     protected String pendingDescriptiveName;
 

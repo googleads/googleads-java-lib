@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -74,6 +75,7 @@ public class Forecast {
 
     protected Long id;
     protected Long orderId;
+    @XmlSchemaType(name = "string")
     protected UnitType unitType;
     protected Long availableUnits;
     protected Long deliveredUnits;

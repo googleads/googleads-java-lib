@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201506.cm.Criterion;
 
@@ -41,6 +42,7 @@ import com.google.api.ads.adwords.jaxws.v201506.cm.Criterion;
 public class BudgetSuggestionSelector {
 
     protected List<Criterion> criteria;
+    @XmlSchemaType(name = "string")
     protected CurrencyCode currencyCode;
 
     /**

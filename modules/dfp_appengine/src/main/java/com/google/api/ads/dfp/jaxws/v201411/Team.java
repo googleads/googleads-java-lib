@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,6 +59,7 @@ public class Team {
     protected String description;
     protected Boolean hasAllCompanies;
     protected Boolean hasAllInventory;
+    @XmlSchemaType(name = "string")
     protected TeamAccessType teamAccessType;
     @XmlElement(type = Long.class)
     protected List<Long> companyIds;

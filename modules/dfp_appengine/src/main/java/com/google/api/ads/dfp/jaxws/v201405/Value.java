@@ -37,11 +37,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     DateTimeValue.class,
-    DateValue.class,
     BooleanValue.class,
-    NumberValue.class,
     TextValue.class,
-    SetValue.class
+    NumberValue.class,
+    SetValue.class,
+    DateValue.class
 })
 public abstract class Value {
 

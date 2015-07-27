@@ -64,14 +64,14 @@ import javax.xml.bind.annotation.XmlType;
     "adType"
 })
 @XmlSeeAlso({
-    CallOnlyAd.class,
     DynamicSearchAd.class,
     ProductAd.class,
-    TextAd.class,
-    ImageAd.class,
-    TemplateAd.class,
     DeprecatedAd.class,
-    RichMediaAd.class
+    RichMediaAd.class,
+    TemplateAd.class,
+    TextAd.class,
+    CallOnlyAd.class,
+    ImageAd.class
 })
 public class Ad {
 

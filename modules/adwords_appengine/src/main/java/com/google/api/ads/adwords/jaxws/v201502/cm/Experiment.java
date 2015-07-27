@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -59,7 +60,9 @@ public class Experiment {
     protected Long controlId;
     protected Long campaignId;
     protected String name;
+    @XmlSchemaType(name = "string")
     protected ExperimentStatus status;
+    @XmlSchemaType(name = "string")
     protected ExperimentServingStatus servingStatus;
     protected Integer queryPercentage;
     protected String startDateTime;

@@ -3,6 +3,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -56,6 +57,7 @@ public class LocationExtension
     protected byte[] encodedLocation;
     protected String companyName;
     protected String phoneNumber;
+    @XmlSchemaType(name = "string")
     protected LocationExtensionSource source;
     protected Long iconMediaId;
     protected Long imageMediaId;

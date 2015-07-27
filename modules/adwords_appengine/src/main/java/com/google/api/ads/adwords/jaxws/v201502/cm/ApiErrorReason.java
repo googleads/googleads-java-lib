@@ -4,6 +4,7 @@ package com.google.api.ads.adwords.jaxws.v201502.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -161,130 +162,193 @@ import javax.xml.bind.annotation.XmlType;
 public class ApiErrorReason {
 
     @XmlElement(name = "AdCustomizerErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdCustomizerErrorReason adCustomizerErrorReason;
     @XmlElement(name = "AdErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdErrorReason adErrorReason;
     @XmlElement(name = "AdExtensionErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdExtensionErrorReason adExtensionErrorReason;
     @XmlElement(name = "AdGroupAdErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdGroupAdErrorReason adGroupAdErrorReason;
     @XmlElement(name = "AdGroupCriterionErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdGroupCriterionErrorReason adGroupCriterionErrorReason;
     @XmlElement(name = "AdGroupServiceErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdGroupServiceErrorReason adGroupServiceErrorReason;
     @XmlElement(name = "AdxErrorReason")
+    @XmlSchemaType(name = "string")
     protected AdxErrorReason adxErrorReason;
     @XmlElement(name = "AuthenticationErrorReason")
+    @XmlSchemaType(name = "string")
     protected AuthenticationErrorReason authenticationErrorReason;
     @XmlElement(name = "AuthorizationErrorReason")
+    @XmlSchemaType(name = "string")
     protected AuthorizationErrorReason authorizationErrorReason;
     @XmlElement(name = "BetaErrorReason")
+    @XmlSchemaType(name = "string")
     protected BetaErrorReason betaErrorReason;
     @XmlElement(name = "BiddingErrorReason")
+    @XmlSchemaType(name = "string")
     protected BiddingErrorReason biddingErrorReason;
     @XmlElement(name = "BiddingErrorsReason")
+    @XmlSchemaType(name = "string")
     protected BiddingErrorsReason biddingErrorsReason;
     @XmlElement(name = "BiddingTransitionErrorReason")
+    @XmlSchemaType(name = "string")
     protected BiddingTransitionErrorReason biddingTransitionErrorReason;
     @XmlElement(name = "BudgetErrorReason")
+    @XmlSchemaType(name = "string")
     protected BudgetErrorReason budgetErrorReason;
     @XmlElement(name = "BulkMutateJobErrorReason")
+    @XmlSchemaType(name = "string")
     protected BulkMutateJobErrorReason bulkMutateJobErrorReason;
     @XmlElement(name = "CampaignAdExtensionErrorReason")
+    @XmlSchemaType(name = "string")
     protected CampaignAdExtensionErrorReason campaignAdExtensionErrorReason;
     @XmlElement(name = "CampaignCriterionErrorReason")
+    @XmlSchemaType(name = "string")
     protected CampaignCriterionErrorReason campaignCriterionErrorReason;
     @XmlElement(name = "CampaignErrorReason")
+    @XmlSchemaType(name = "string")
     protected CampaignErrorReason campaignErrorReason;
     @XmlElement(name = "ClientTermsErrorReason")
+    @XmlSchemaType(name = "string")
     protected ClientTermsErrorReason clientTermsErrorReason;
     @XmlElement(name = "CollectionSizeErrorReason")
+    @XmlSchemaType(name = "string")
     protected CollectionSizeErrorReason collectionSizeErrorReason;
     @XmlElement(name = "CriterionErrorReason")
+    @XmlSchemaType(name = "string")
     protected CriterionErrorReason criterionErrorReason;
     @XmlElement(name = "DatabaseErrorReason")
+    @XmlSchemaType(name = "string")
     protected DatabaseErrorReason databaseErrorReason;
     @XmlElement(name = "DateErrorReason")
+    @XmlSchemaType(name = "string")
     protected DateErrorReason dateErrorReason;
     @XmlElement(name = "DateRangeErrorReason")
+    @XmlSchemaType(name = "string")
     protected DateRangeErrorReason dateRangeErrorReason;
     @XmlElement(name = "DistinctErrorReason")
+    @XmlSchemaType(name = "string")
     protected DistinctErrorReason distinctErrorReason;
     @XmlElement(name = "EntityAccessDeniedReason")
+    @XmlSchemaType(name = "string")
     protected EntityAccessDeniedReason entityAccessDeniedReason;
     @XmlElement(name = "EntityCountLimitExceededReason")
+    @XmlSchemaType(name = "string")
     protected EntityCountLimitExceededReason entityCountLimitExceededReason;
     @XmlElement(name = "EntityNotFoundReason")
+    @XmlSchemaType(name = "string")
     protected EntityNotFoundReason entityNotFoundReason;
     @XmlElement(name = "ExperimentErrorReason")
+    @XmlSchemaType(name = "string")
     protected ExperimentErrorReason experimentErrorReason;
     @XmlElement(name = "FeedAttributeReferenceErrorReason")
+    @XmlSchemaType(name = "string")
     protected FeedAttributeReferenceErrorReason feedAttributeReferenceErrorReason;
     @XmlElement(name = "FeedItemErrorReason")
+    @XmlSchemaType(name = "string")
     protected FeedItemErrorReason feedItemErrorReason;
     @XmlElement(name = "ForwardCompatibilityErrorReason")
+    @XmlSchemaType(name = "string")
     protected ForwardCompatibilityErrorReason forwardCompatibilityErrorReason;
     @XmlElement(name = "FunctionErrorReason")
+    @XmlSchemaType(name = "string")
     protected FunctionErrorReason functionErrorReason;
     @XmlElement(name = "FunctionParsingErrorReason")
+    @XmlSchemaType(name = "string")
     protected FunctionParsingErrorReason functionParsingErrorReason;
     @XmlElement(name = "IdErrorReason")
+    @XmlSchemaType(name = "string")
     protected IdErrorReason idErrorReason;
     @XmlElement(name = "ImageErrorReason")
+    @XmlSchemaType(name = "string")
     protected ImageErrorReason imageErrorReason;
     @XmlElement(name = "InternalApiErrorReason")
+    @XmlSchemaType(name = "string")
     protected InternalApiErrorReason internalApiErrorReason;
     @XmlElement(name = "JobErrorReason")
+    @XmlSchemaType(name = "string")
     protected JobErrorReason jobErrorReason;
     @XmlElement(name = "MediaErrorReason")
+    @XmlSchemaType(name = "string")
     protected MediaErrorReason mediaErrorReason;
     @XmlElement(name = "MultiplierErrorReason")
+    @XmlSchemaType(name = "string")
     protected MultiplierErrorReason multiplierErrorReason;
     @XmlElement(name = "NewEntityCreationErrorReason")
+    @XmlSchemaType(name = "string")
     protected NewEntityCreationErrorReason newEntityCreationErrorReason;
     @XmlElement(name = "NotEmptyErrorReason")
+    @XmlSchemaType(name = "string")
     protected NotEmptyErrorReason notEmptyErrorReason;
     @XmlElement(name = "NullErrorReason")
+    @XmlSchemaType(name = "string")
     protected NullErrorReason nullErrorReason;
     @XmlElement(name = "OperationAccessDeniedReason")
+    @XmlSchemaType(name = "string")
     protected OperationAccessDeniedReason operationAccessDeniedReason;
     @XmlElement(name = "OperatorErrorReason")
+    @XmlSchemaType(name = "string")
     protected OperatorErrorReason operatorErrorReason;
     @XmlElement(name = "PagingErrorReason")
+    @XmlSchemaType(name = "string")
     protected PagingErrorReason pagingErrorReason;
     @XmlElement(name = "PolicyViolationErrorReason")
+    @XmlSchemaType(name = "string")
     protected PolicyViolationErrorReason policyViolationErrorReason;
     @XmlElement(name = "QueryErrorReason")
+    @XmlSchemaType(name = "string")
     protected QueryErrorReason queryErrorReason;
     @XmlElement(name = "QuotaCheckErrorReason")
+    @XmlSchemaType(name = "string")
     protected QuotaCheckErrorReason quotaCheckErrorReason;
     @XmlElement(name = "RangeErrorReason")
+    @XmlSchemaType(name = "string")
     protected RangeErrorReason rangeErrorReason;
     @XmlElement(name = "RateExceededErrorReason")
+    @XmlSchemaType(name = "string")
     protected RateExceededErrorReason rateExceededErrorReason;
     @XmlElement(name = "ReadOnlyErrorReason")
+    @XmlSchemaType(name = "string")
     protected ReadOnlyErrorReason readOnlyErrorReason;
     @XmlElement(name = "RegionCodeErrorReason")
+    @XmlSchemaType(name = "string")
     protected RegionCodeErrorReason regionCodeErrorReason;
     @XmlElement(name = "RejectedErrorReason")
+    @XmlSchemaType(name = "string")
     protected RejectedErrorReason rejectedErrorReason;
     @XmlElement(name = "RequestErrorReason")
+    @XmlSchemaType(name = "string")
     protected RequestErrorReason requestErrorReason;
     @XmlElement(name = "RequiredErrorReason")
+    @XmlSchemaType(name = "string")
     protected RequiredErrorReason requiredErrorReason;
     @XmlElement(name = "SelectorErrorReason")
+    @XmlSchemaType(name = "string")
     protected SelectorErrorReason selectorErrorReason;
     @XmlElement(name = "SettingErrorReason")
+    @XmlSchemaType(name = "string")
     protected SettingErrorReason settingErrorReason;
     @XmlElement(name = "SizeLimitErrorReason")
+    @XmlSchemaType(name = "string")
     protected SizeLimitErrorReason sizeLimitErrorReason;
     @XmlElement(name = "StatsQueryErrorReason")
+    @XmlSchemaType(name = "string")
     protected StatsQueryErrorReason statsQueryErrorReason;
     @XmlElement(name = "StringFormatErrorReason")
+    @XmlSchemaType(name = "string")
     protected StringFormatErrorReason stringFormatErrorReason;
     @XmlElement(name = "StringLengthErrorReason")
+    @XmlSchemaType(name = "string")
     protected StringLengthErrorReason stringLengthErrorReason;
     @XmlElement(name = "UrlErrorReason")
+    @XmlSchemaType(name = "string")
     protected UrlErrorReason urlErrorReason;
 
     /**

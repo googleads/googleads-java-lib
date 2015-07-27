@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201411;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -37,22 +38,23 @@ import javax.xml.bind.annotation.XmlType;
     "destinationUrlType"
 })
 @XmlSeeAlso({
-    CustomCreative.class,
-    VpaidLinearCreative.class,
-    AspectRatioImageCreative.class,
-    LegacyDfpMobileCreative.class,
-    VpaidLinearRedirectCreative.class,
     BaseFlashCreative.class,
+    LegacyDfpMobileCreative.class,
+    CustomCreative.class,
+    BaseVideoCreative.class,
+    VpaidLinearCreative.class,
     BaseFlashRedirectCreative.class,
     BaseImageRedirectCreative.class,
-    BaseImageCreative.class,
-    BaseVideoCreative.class
+    VpaidLinearRedirectCreative.class,
+    AspectRatioImageCreative.class,
+    BaseImageCreative.class
 })
 public abstract class HasDestinationUrlCreative
     extends Creative
 {
 
     protected String destinationUrl;
+    @XmlSchemaType(name = "string")
     protected DestinationUrlType destinationUrlType;
 
     /**

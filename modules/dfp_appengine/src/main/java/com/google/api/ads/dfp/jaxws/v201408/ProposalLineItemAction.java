@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "proposalLineItemActionType"
 })
 @XmlSeeAlso({
-    UnarchiveProposalLineItems.class,
-    ArchiveProposalLineItems.class
+    ArchiveProposalLineItems.class,
+    UnarchiveProposalLineItems.class
 })
 public abstract class ProposalLineItemAction {
 

@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
     "creativeWrapperActionType"
 })
 @XmlSeeAlso({
-    ActivateCreativeWrappers.class,
-    DeactivateCreativeWrappers.class
+    DeactivateCreativeWrappers.class,
+    ActivateCreativeWrappers.class
 })
 public abstract class CreativeWrapperAction {
 

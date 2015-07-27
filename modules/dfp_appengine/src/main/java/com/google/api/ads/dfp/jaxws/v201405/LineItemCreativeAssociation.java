@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -68,10 +69,12 @@ public class LineItemCreativeAssociation {
     protected Double manualCreativeRotationWeight;
     protected Integer sequentialCreativeRotationIndex;
     protected DateTime startDateTime;
+    @XmlSchemaType(name = "string")
     protected StartDateTimeType startDateTimeType;
     protected DateTime endDateTime;
     protected String destinationUrl;
     protected List<Size> sizes;
+    @XmlSchemaType(name = "string")
     protected LineItemCreativeAssociationStatus status;
     protected LineItemCreativeAssociationStats stats;
     protected DateTime lastModifiedDateTime;

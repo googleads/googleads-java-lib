@@ -35,15 +35,15 @@ import javax.xml.bind.annotation.XmlType;
     "destinationUrl"
 })
 @XmlSeeAlso({
-    CustomCreative.class,
     VpaidLinearCreative.class,
-    AspectRatioImageCreative.class,
-    LegacyDfpMobileCreative.class,
-    VpaidLinearRedirectCreative.class,
-    BaseFlashCreative.class,
     BaseFlashRedirectCreative.class,
-    BaseImageRedirectCreative.class,
+    BaseFlashCreative.class,
+    VpaidLinearRedirectCreative.class,
+    LegacyDfpMobileCreative.class,
+    CustomCreative.class,
+    AspectRatioImageCreative.class,
     BaseVideoCreative.class,
+    BaseImageRedirectCreative.class,
     BaseImageCreative.class
 })
 public abstract class HasDestinationUrlCreative
