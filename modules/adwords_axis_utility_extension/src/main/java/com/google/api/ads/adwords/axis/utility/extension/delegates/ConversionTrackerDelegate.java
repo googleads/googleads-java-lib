@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link ConversionTracker}.
- *
- * @author Julian Toledo
  */
 public final class ConversionTrackerDelegate extends AbstractGetMutateDelegate<ConversionTracker,
     ConversionTrackerOperation, ConversionTrackerServiceInterface> {

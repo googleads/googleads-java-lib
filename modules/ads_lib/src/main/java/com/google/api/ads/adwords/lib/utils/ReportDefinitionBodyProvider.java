@@ -24,8 +24,6 @@ import java.util.Map;
 
 /**
  * Writes report definition XML to an output stream in the correct format.
- *
- * @author Kevin Winter
  */
 class ReportDefinitionBodyProvider implements ReportBodyProvider {
 

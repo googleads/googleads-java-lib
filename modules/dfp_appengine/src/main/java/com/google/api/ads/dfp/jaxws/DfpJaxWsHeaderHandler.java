@@ -37,9 +37,6 @@ import javax.xml.soap.SOAPFactory;
 
 /**
  * DFP implementation of {@link HeaderHandler} for JAX-WS.
- *
- * @author Joseph DiLallo
- * @author Jeff Sham
  */
 public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServiceDescriptor> {
 

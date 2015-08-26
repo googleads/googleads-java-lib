@@ -33,6 +33,7 @@ public enum GoalType {
      *                 {@link LineItem#lineItemType} must be one of:
      *                 <ul>
      *                 <li>{@link LineItemType#PRICE_PRIORITY}</li>
+     *                 <li>{@link LineItemType#AD_EXCHANGE}</li>
      *                 <li>{@link LineItemType#CLICK_TRACKING}</li>
      *                 </ul>
      *               

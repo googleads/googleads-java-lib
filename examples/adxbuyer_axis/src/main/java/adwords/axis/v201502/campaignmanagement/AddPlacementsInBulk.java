@@ -46,12 +46,6 @@ import java.util.regex.Pattern;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: MutateJobService.mutate
- * Tags: MutateJobService.get
- * Tags: MutateJobService.getResult
- *
- * @author Kevin Winter 
  */
 public class AddPlacementsInBulk {
 

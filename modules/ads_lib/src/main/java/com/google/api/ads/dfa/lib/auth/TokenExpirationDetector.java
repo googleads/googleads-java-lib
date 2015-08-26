@@ -18,8 +18,6 @@ import javax.annotation.Nullable;
 
 /**
  * Utility which detects exceptions returned from the DFA API due to expired DFA tokens.
- *
- * @author Joseph DiLallo
  */
 public interface TokenExpirationDetector {
 

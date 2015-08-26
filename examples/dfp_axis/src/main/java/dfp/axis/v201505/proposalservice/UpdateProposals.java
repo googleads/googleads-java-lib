@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProposalService.getProposalsByStatement
- * Tags: ProposalService.updateProposals
- *
- * @author Nicholas Chen
  */
 public class UpdateProposals {
   

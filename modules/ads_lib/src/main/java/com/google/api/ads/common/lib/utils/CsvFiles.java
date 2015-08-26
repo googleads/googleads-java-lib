@@ -31,8 +31,6 @@ import java.util.Map;
 
 /**
  * A utility class for processing and handling CSV files.
- *
- * @author Adam Rogal
  */
 public final class CsvFiles {
   /**

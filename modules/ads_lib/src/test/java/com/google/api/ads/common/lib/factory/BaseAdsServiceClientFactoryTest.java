@@ -32,8 +32,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for the {@link AdsServiceClientFactory} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class BaseAdsServiceClientFactoryTest {

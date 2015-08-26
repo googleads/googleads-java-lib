@@ -43,8 +43,6 @@ import javax.xml.ws.handler.MessageContext;
 
 /**
  * SOAP Client Handler implementation for use with JAX-WS.
- *
- * @author Joseph DiLallo
  */
 public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
 

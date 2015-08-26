@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link Experiment}.
- *
- * @author Julian Toledo
  */
 public final class ExperimentDelegate extends
     AbstractGetMutateDelegate<Experiment, ExperimentOperation, ExperimentServiceInterface> {

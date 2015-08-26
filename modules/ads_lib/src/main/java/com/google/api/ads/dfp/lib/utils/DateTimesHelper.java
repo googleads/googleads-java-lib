@@ -30,8 +30,6 @@ import java.util.TimeZone;
  *
  * @param <T> the {@code DateTime} type
  * @param <D> the {@code Date} type
- *
- * @author Adam Rogal
  */
 public class DateTimesHelper<T, D> {
 

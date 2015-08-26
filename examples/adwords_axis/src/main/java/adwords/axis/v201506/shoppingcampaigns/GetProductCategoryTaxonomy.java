@@ -36,10 +36,6 @@ import java.util.Map;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ConstantDataService.getProductBiddingCategoryData
- *
- * @author Josh Radcliff
  */
 public class GetProductCategoryTaxonomy {
 

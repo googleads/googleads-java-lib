@@ -26,8 +26,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Integration tests for {@link OfflineCredentials}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class OfflineCredentialsIntegrationTest extends MockHttpIntegrationTest {

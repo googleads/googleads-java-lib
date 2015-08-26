@@ -46,8 +46,6 @@ import java.util.List;
 /**
  * ExtendedManagedCustomer, encapsulates the {@link ManagedCustomer} level
  * operations.
- *
- * @author Julian Toledo
  */
 public final class ExtendedManagedCustomer {
 

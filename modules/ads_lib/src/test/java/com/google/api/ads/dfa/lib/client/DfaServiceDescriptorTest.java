@@ -27,8 +27,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Test for the {@link DfaServiceDescriptor} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class DfaServiceDescriptorTest {

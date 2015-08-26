@@ -54,10 +54,10 @@ Goals
 
 * Bring a further abstraction to the current Java Client Library framework to allow faster
   learning and development;
-  
+
 * Provide some protection from the constant changes in the underlying API, so that developers
   can work more on adding new functionality, and less on running to keep still;
-  
+
 * Lifting the underlying base operations that are hardest to understand and code into the Objects
   they serve, so that complicated calls to the Services don’t have to be directly built by the
   developer;
@@ -68,7 +68,7 @@ Non-Goals
 
 * Produce a replacement for the current Java Client Library. On the contrary, the new Utility
   classes extend already existing objects and services.
-  
+
 * Add more work to developers, migrating to a new Utility release has to be easier and shorter
   than migrating to new client library without using Utility.
 

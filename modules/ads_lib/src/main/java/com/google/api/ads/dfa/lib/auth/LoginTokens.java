@@ -22,8 +22,6 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * A utility class that can authenticate against the DFA API and return
  * authentication tokens.
- *
- * @author Joseph DiLallo
  */
 public class LoginTokens {
 

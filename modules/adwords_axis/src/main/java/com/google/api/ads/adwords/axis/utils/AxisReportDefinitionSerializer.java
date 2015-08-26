@@ -31,7 +31,6 @@ import javax.xml.namespace.QName;
 /**
  * Serializes an Axis generated class to XML suitable for ReportDownloads.
  *
- * @author Kevin Winter
  *
  * @param <T> Class we are serializing.
  */

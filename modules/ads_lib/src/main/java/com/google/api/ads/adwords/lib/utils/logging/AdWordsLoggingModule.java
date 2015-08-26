@@ -18,8 +18,6 @@ import com.google.api.ads.common.lib.utils.logging.LoggingModule;
 
 /**
  * AdWords-specific logging module.
- *
- * @author Josh Radcliff
  */
 public class AdWordsLoggingModule extends LoggingModule {
 

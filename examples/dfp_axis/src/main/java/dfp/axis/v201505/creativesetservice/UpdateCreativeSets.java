@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeSetService.getCreativeSetsByStatement
- * Tags: CreativeSetService.updateCreativeSet
- *
- * @author Adam Rogal
  */
 public class UpdateCreativeSets {
 

@@ -27,7 +27,6 @@ import com.google.api.ads.adwords.axis.v201506.cm.TextLabel;
  * <p>Tags: LabelService.mutate</p>
  *
  * @category adx-exclude
- * @author Julian Toledo
  */
 public class AddCampaignLabel {
 

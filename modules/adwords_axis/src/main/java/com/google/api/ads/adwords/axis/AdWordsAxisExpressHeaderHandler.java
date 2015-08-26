@@ -28,8 +28,6 @@ import org.apache.axis.client.Stub;
 
 /**
  * AdWords Express-specific header handler.
- *
- * @author Josh Radcliff
  */
 public class AdWordsAxisExpressHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {

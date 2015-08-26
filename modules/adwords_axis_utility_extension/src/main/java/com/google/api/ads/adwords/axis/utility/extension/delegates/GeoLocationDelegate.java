@@ -28,8 +28,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link GeoLocationServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class GeoLocationDelegate extends AbstractBaseDelegate<GeoLocationServiceInterface> {
 

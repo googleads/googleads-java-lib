@@ -22,8 +22,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration information for DFA library.
- *
- * @author Adam Rogal
  */
 public class DfaLibConfiguration extends AdsLibConfiguration {
 

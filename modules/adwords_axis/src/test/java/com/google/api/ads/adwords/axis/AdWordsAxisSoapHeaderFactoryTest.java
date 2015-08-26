@@ -39,8 +39,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Tests for the {@link AdWordsAxisSoapHeaderFactory} class.
- *
- * @author Josh Radcliff
  */
 @RunWith(Parameterized.class)
 public class AdWordsAxisSoapHeaderFactoryTest {

@@ -25,10 +25,6 @@ import com.google.api.ads.dfa.lib.client.DfaSession;
  * It also shows how to specify the username, token, and application name for
  * the client library to use, rather than having it read it in from a
  * configuration file.
- *
- * Tags: placement.getPlacementTypes
- *
- * @author Joseph DiLallo
  */
 public class GetPlacementTypesWithGivenUsernameToken {
 

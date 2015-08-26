@@ -18,8 +18,6 @@ import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 
 /**
  * Factory for creating subproduct-specific Axis soap headers.
- *
- * @author Josh Radcliff
  */
 public interface AxisSoapHeaderFactory<D extends AdsServiceDescriptor> {
 

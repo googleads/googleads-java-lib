@@ -31,8 +31,6 @@ import java.io.IOException;
 /**
  * Verifies that we correctly wire in all properties files to our
  * {@link DfaLibConfiguration}.
- * 
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfaLibConfigurationIntegrationTest {

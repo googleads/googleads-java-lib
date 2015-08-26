@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link UserList}.
- *
- * @author Julian Toledo
  */
 public final class UserListDelegate extends
     AbstractGetMutateDelegate<UserList, UserListOperation, AdwordsUserListServiceInterface> {

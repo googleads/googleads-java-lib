@@ -26,8 +26,6 @@ import java.util.List;
  * Exception wrapping the ReportDownloadError the server responded with. Will
  * populate the fieldPath, trigger and type fields if the XML can be parsed
  * successfully, otherwise errorText should have the HTTP response body.
- *
- * @author Kevin Winter
  */
 public class DetailedReportDownloadResponseException extends ReportDownloadResponseException {
 

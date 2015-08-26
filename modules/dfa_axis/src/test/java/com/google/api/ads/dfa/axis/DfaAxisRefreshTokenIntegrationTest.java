@@ -38,8 +38,6 @@ import org.junit.runners.JUnit4;
 /**
  * Tests that a DFA Axis SOAP call with an expired DFA token causes a new token to be generated.
  * After a new token is generated, the request should be retried.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class DfaAxisRefreshTokenIntegrationTest extends MockHttpIntegrationTest {

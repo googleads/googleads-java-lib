@@ -54,8 +54,6 @@ import java.util.Queue;
 
 /**
  * Tests for {@link ProductPartitionTree}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductPartitionTreeTest {

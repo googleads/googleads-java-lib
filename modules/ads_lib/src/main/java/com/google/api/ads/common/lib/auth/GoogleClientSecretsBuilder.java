@@ -29,8 +29,6 @@ import java.net.URL;
 
 /**
  * Builder for {@link GoogleClientSecrets}.
- *
- * @author Adam Rogal
  */
 public class GoogleClientSecretsBuilder {
 

@@ -32,10 +32,6 @@ import com.google.common.base.Joiner;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: SuggestedAdUnitService.getSuggestedAdUnitsByStatement
- *
- * @author Adam Rogal
  */
 public class GetHighlyRequestedSuggestedAdUnits {
 

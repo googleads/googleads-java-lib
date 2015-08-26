@@ -31,8 +31,6 @@ import java.util.List;
  * ExtendedMcc encapsulates the MCC Level operations.
  *
  * <p>This class does not guard its mutable reference for AdWordsSession
- *
- * @author Julian Toledo
  */
 public final class ExtendedMcc {
 

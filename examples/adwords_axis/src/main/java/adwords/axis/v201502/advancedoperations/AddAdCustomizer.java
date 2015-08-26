@@ -48,10 +48,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: AdCustomizerFeedService.mutate, FeedItemService.mutate, AdGroupAdService.mutate
- *
- * @author Josh Radcliff
  */
 public class AddAdCustomizer {
 

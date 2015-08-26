@@ -18,7 +18,5 @@ import org.apache.axis.client.Stub;
 
 /**
  * Mock of an Apache Axis Stub.
- *
- * @author Joseph DiLallo
  */
 public class FunSoapBindingStub extends Stub implements FunRemote {}

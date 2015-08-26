@@ -21,8 +21,6 @@ import java.util.Comparator;
 
 /**
  * Static utility class that detects the differences between two {@link ProductPartitionNode}s.
- *
- * @author Josh Radcliff
  */
 class ProductPartitionNodeDiffer {
 

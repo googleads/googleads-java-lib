@@ -29,8 +29,6 @@ import com.google.common.base.Preconditions;
 /**
  * Adapter that translates {@link ProductPartitionNode} objects into {@link AdGroupCriterion}
  * objects for various operations.
- * 
- * @author Josh Radcliff
  */
 class ProductPartitionNodeAdapter {
 

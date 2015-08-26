@@ -18,8 +18,6 @@ import javax.annotation.Nullable;
 
 /**
  * Additional AdWords report configuration options.
- * 
- * @author Josh Radcliff
  */
 public class ReportingConfiguration {
 
@@ -89,7 +87,6 @@ public class ReportingConfiguration {
   /**
    * Builder for {@link ReportingConfiguration} objects.
    * 
-   * @author Josh Radcliff
    */
   public static class Builder {
     private ReportingConfiguration reportingConfiguration = new ReportingConfiguration();

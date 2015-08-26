@@ -28,10 +28,6 @@ import com.google.api.ads.dfa.lib.client.DfaSession;
  * It also shows how to specify the username, password, and application name for
  * the client library to use, rather than having it read it in from a
  * configuration file.
- *
- * Tags: campaign.getCampaignsByCriteria
- *
- * @author Joseph DiLallo
  */
 public class GetCampaignsWithGivenUsernamePassword {
 

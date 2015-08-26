@@ -27,11 +27,6 @@ import java.util.List;
 
 /**
  * This example gets the changes in the account during the last 24 hours.
- *
- * Tags: CustomerSyncService.get
- *
- * @author Kevin Winter
- * @author Julian Toledo
  */
 public class GetAccountChanges {
 

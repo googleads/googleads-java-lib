@@ -27,8 +27,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link Feed}.
- *
- * @author Julian Toledo
  */
 public final class FeedDelegate extends
     AbstractGetMutateDelegate<Feed, FeedOperation, FeedServiceInterface> {

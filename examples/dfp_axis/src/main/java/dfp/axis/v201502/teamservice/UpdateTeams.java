@@ -37,11 +37,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: TeamService.getTeamsByStatement
- * Tags: TeamService.updateTeams
- *
- * @author Adam Rogal
  */
 public class UpdateTeams {
 

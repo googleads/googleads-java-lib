@@ -23,8 +23,6 @@ import org.slf4j.Logger;
 
 /**
  * Service logger that also provides access to additional AdWords-specific loggers.
- *
- * @author Josh Radcliff
  */
 public class AdWordsServiceLoggers extends AdsServiceLoggers {
 

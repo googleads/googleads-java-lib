@@ -27,8 +27,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link ReportingConfiguration}.
- * 
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ReportingConfigurationTest {

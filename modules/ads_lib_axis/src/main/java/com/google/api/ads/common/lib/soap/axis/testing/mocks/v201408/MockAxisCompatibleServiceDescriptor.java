@@ -24,8 +24,6 @@ import java.net.MalformedURLException;
 
 /**
  * Mock implementation of SoapServiceDescriptor that also implements AxisCompatible.
- * 
- * @author Josh Radcliff
  */
 public class MockAxisCompatibleServiceDescriptor implements AdsServiceDescriptor,
     AxisCompatible {

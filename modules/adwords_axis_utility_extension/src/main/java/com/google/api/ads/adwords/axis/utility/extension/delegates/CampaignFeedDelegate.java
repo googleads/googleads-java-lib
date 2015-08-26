@@ -27,8 +27,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link CampaignFeed}.
- *
- * @author Julian Toledo
  */
 public final class CampaignFeedDelegate extends
     AbstractGetMutateDelegate<CampaignFeed, CampaignFeedOperation, CampaignFeedServiceInterface> {

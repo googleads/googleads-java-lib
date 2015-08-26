@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link TrafficEstimatorServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class TrafficEstimatorDelegate
     extends AbstractBaseDelegate<TrafficEstimatorServiceInterface> {

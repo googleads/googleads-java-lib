@@ -27,7 +27,6 @@ import javax.xml.namespace.QName;
 /**
  * Serializes a JAX-WS generated class to XML.
  *
- * @author Kevin Winter
  *
  * @param <T> Class we are serializing.
  */

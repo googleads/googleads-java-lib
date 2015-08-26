@@ -39,8 +39,6 @@ import java.util.zip.GZIPInputStream;
 
 /**
  * HTTP server used to verify requests and send mocked responses.
- *
- * @author Adam Rogal
  */
 public class TestHttpServer {
 

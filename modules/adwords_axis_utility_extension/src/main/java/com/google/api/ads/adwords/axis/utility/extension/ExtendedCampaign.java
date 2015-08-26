@@ -34,8 +34,6 @@ import java.util.List;
 
 /**
  * ExtendedCampaign, encapsulates the {@link Campaign} level operations.
- *
- * @author Julian Toledo
  */
 public final class ExtendedCampaign {
 

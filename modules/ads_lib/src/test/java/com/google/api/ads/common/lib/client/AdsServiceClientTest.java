@@ -30,9 +30,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for the {@link AdsServiceClient} class.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AdsServiceClientTest {

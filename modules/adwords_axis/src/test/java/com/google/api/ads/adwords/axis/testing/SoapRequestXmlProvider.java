@@ -25,8 +25,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides Axis AdWords API SOAP requests.
- * 
- * @author Josh Radcliff
  */
 public class SoapRequestXmlProvider {
   

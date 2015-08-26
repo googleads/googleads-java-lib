@@ -45,8 +45,6 @@ import java.util.Map;
 
 /**
  * Tests for {@link AxisHandler}.
- * 
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AxisHandlerTest {

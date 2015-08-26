@@ -22,8 +22,6 @@ import com.google.inject.Injector;
 
 /**
  * Base for a utility class which creates DFA service clients.
- *
- * @author Joseph DiLallo
  */
 public abstract class BaseDfaServices extends BaseServices<DfaServiceClient,
                                                            DfaSession,

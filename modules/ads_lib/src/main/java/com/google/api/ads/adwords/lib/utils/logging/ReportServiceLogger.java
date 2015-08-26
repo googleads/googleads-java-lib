@@ -38,8 +38,6 @@ import java.util.Set;
  *   <li>Log successful requests (header and payload) and responses to INFO.</li>
  *   <li>Log failed requests (header and payload) and responses to WARN.</li>
  * </ul>
- * 
- * @author Josh Radcliff
  */
 public class ReportServiceLogger {
 

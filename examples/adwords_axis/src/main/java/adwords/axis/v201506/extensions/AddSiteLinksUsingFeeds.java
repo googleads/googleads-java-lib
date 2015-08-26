@@ -56,13 +56,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: CampaignFeedService.mutate, FeedItemService.mutate, FeedMappingService.mutate
- * Tags: FeedService.mutate
- *
- * Category: adx-exclude
- *
- * @author Kevin Winter
  */
 public class AddSiteLinksUsingFeeds {
 

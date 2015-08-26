@@ -35,8 +35,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link AdWordsSession}.
- *
- * @author Kevin Winter
  */
 @RunWith(JUnit4.class)
 public class AdWordsSessionTest {
@@ -316,5 +314,36 @@ public class AdWordsSessionTest {
     ReportingConfiguration sessionReportingConfig = adWordsSession.getReportingConfiguration();
     assertNotNull("reporting configuration should not be null when passed to the builder",
         sessionReportingConfig);
+  }
+  
+  /**
+   * Tests that the builder builds correctly with all available settings. 
+   */
+  @Test
+  public void testBuilder_allSettings() throws Exception {
+    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
+    ReportingConfiguration reportingConfiguration =
+        new ReportingConfiguration.Builder().skipReportHeader(true).skipReportSummary(true).build();
+
+    AdWordsSession adWordsSession = new AdWordsSession.Builder()
+        .withClientCustomerId("customer id")
+        .withDeveloperToken("developer token")
+        .withEndpoint("https://www.google.com")
+        .enablePartialFailure()
+        .enableValidateOnly()
+        .withOAuth2Credential(credential)
+        .withUserAgent("user agent")
+        .withReportingConfiguration(reportingConfiguration)
+        .build();
+
+    assertEquals("customer id", adWordsSession.getClientCustomerId());
+    assertEquals("developer token", adWordsSession.getDeveloperToken());
+    assertEquals("https://www.google.com", adWordsSession.getEndpoint());
+    assertTrue(adWordsSession.isPartialFailure());
+    assertTrue(adWordsSession.isValidateOnly());
+    assertSame(credential, adWordsSession.getOAuth2Credential());
+    assertEquals("user agent", adWordsSession.getUserAgent());
+    assertSame(reportingConfiguration, adWordsSession.getReportingConfiguration());
   }
 }

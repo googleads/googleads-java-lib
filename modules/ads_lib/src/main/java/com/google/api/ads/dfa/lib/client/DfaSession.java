@@ -35,14 +35,11 @@ import java.net.URL;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
  */
 public class DfaSession implements AdsSession, OAuth2Compatible {
 
   /**
    * Enum representing the endpoint server, aka environment.
-   * @author Kevin Winter
    */
   public static enum Environment implements Endpoint {
     PRODUCTION("https://advertisersapi.doubleclick.net"),

@@ -42,11 +42,6 @@ import java.util.Set;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: InventoryService.getAdUnitsByStatement
- * Tags: PlacementService.createPlacements
- *
-  * @author Adam Rogal
  */
 public class CreatePlacements {
 

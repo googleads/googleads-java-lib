@@ -22,9 +22,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * Guice module for DFP bindings.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class DfpModule extends AdsModule {
 

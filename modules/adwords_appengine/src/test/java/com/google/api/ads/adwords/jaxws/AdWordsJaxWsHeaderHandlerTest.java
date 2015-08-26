@@ -66,8 +66,6 @@ import javax.xml.ws.BindingProvider;
 
 /**
  * Tests for the {@link AdWordsJaxWsHeaderHandler} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(Parameterized.class)
 public class AdWordsJaxWsHeaderHandlerTest {

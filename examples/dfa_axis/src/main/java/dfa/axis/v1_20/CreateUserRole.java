@@ -32,10 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: userrole.saveUserRole
- *
- * @author Joseph DiLallo
  */
 public class CreateUserRole {
 

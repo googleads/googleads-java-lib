@@ -25,9 +25,6 @@ import com.google.inject.assistedinject.Assisted;
 /**
  * Wrapper of underlying SOAP client which allows access for setting
  * headers retrieved from the session.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class AdWordsServiceClient extends AdsServiceClient<AdWordsSession,
                                                            AdWordsServiceDescriptor> {

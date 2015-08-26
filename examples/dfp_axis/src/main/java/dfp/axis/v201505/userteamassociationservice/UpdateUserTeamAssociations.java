@@ -36,11 +36,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserTeamAssociationService.getUserTeamAssociationsByStatement
- * Tags: UserTeamAssociationService.updateUserTeamAssociations
- *
- * @author Adam Rogal
  */
 public class UpdateUserTeamAssociations {
 

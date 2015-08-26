@@ -16,8 +16,6 @@ package com.google.api.ads.dfa.axis.testing.mocks.v1_12;
 
 /**
  * Mock user profile. Used to test {@code LoginTokens}.
- *
- * @author Joseph DiLallo
  */
 public class UserProfile {
 

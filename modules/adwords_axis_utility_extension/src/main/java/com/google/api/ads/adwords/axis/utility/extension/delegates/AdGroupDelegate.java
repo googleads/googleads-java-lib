@@ -28,8 +28,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroup}.
- *
- * @author Julian Toledo
  */
 public final class AdGroupDelegate extends
     AbstractGetMutateDelegate<AdGroup, AdGroupOperation, AdGroupServiceInterface> {

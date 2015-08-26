@@ -64,7 +64,7 @@ public enum ProposalLineItemErrorReason {
 
     /**
      * 
-     *                 The proposal line item's type is not yet supported by xSM.
+     *                 The proposal line item's type is not yet supported by DFP Sales Manager.
      *               
      * 
      */

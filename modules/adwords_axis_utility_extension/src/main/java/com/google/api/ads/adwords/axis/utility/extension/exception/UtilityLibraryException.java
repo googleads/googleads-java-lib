@@ -23,8 +23,6 @@ import java.rmi.RemoteException;
 
 /**
  * Exception class for Utility library errors.
- *
- * @author Julian Toledo
  */
 public final class UtilityLibraryException extends RuntimeException {
 

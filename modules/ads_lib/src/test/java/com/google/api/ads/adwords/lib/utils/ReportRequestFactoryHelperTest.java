@@ -53,9 +53,6 @@ import java.util.Collection;
 
 /**
  * Tests functionality of the ReportRequestFactoryHelper.
- *
- * @author Kevin Winter
- * @author Joseph DiLallo
  */
 @RunWith(Parameterized.class)
 public class ReportRequestFactoryHelperTest {

@@ -26,8 +26,6 @@ import com.google.inject.Injector;
 
 /**
  * Factory which creates DFA service clients.
- *
- * @author Joseph DiLallo
  */
 public class DfaServiceClientFactory extends BaseAdsServiceClientFactory<DfaServiceClient,
                                                                          DfaSession,

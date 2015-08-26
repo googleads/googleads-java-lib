@@ -24,8 +24,6 @@ import java.util.HashMap;
 /**
  * Handler for {@code Authorization} headers that can be set on the SOAP
  * client.
- *
- * @author Adam Rogal
  */
 public class AuthorizationHeaderHandler {
 

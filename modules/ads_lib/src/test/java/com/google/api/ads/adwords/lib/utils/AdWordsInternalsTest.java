@@ -25,8 +25,6 @@ import org.junit.runners.JUnit4;
 /**
  * Ensures that all of the Guice bindings work correctly when
  * {@link AdWordsInternals} is used.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class AdWordsInternalsTest extends TestCase {

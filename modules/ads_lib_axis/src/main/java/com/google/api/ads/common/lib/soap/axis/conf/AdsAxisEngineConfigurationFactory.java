@@ -26,8 +26,6 @@ import org.apache.axis.configuration.FileProvider;
  * EngineConfigurationFactory implementation that configures Axis clients using a custom
  * configuration file if compression is enabled and no client customization has been specified
  * in the environment.
- *
- * @author Josh Radcliff
  */
 public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFactory {
 

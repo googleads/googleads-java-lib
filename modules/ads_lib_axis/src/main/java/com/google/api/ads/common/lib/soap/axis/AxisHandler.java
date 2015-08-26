@@ -45,8 +45,6 @@ import javax.xml.soap.SOAPException;
 
 /**
  * SOAP Client Handler implementation for use with Axis 1.x.
- *
- * @author Adam Rogal
  */
 public class AxisHandler extends SoapClientHandler<Stub> {
 

@@ -20,8 +20,6 @@ import com.google.inject.Guice;
 
 /**
  * Provides access to some internal guice-injected objects.
- *
- * @author Kevin Winter
  */
 public class DfaInternals {
 

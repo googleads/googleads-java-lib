@@ -79,13 +79,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.Label[] labels;
 
-    /* This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     public AdGroupAd() {
@@ -117,7 +110,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the adGroupId value for this AdGroupAd.
-     * 
+     *
      * @return adGroupId   * The id of the adgroup containing this ad.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -129,7 +122,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the adGroupId value for this AdGroupAd.
-     * 
+     *
      * @param adGroupId   * The id of the adgroup containing this ad.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -141,7 +134,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the ad value for this AdGroupAd.
-     * 
+     *
      * @return ad   * The contents of the ad itself.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -153,7 +146,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the ad value for this AdGroupAd.
-     * 
+     *
      * @param ad   * The contents of the ad itself.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -165,7 +158,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the experimentData value for this AdGroupAd.
-     * 
+     *
      * @return experimentData   * Experiment data associated with this {@link AdGroupAd}. It
      * is returned by
      *                 {@link AdGroupAdService#get get()} only if the experimentId
@@ -178,7 +171,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the experimentData value for this AdGroupAd.
-     * 
+     *
      * @param experimentData   * Experiment data associated with this {@link AdGroupAd}. It
      * is returned by
      *                 {@link AdGroupAdService#get get()} only if the experimentId
@@ -191,7 +184,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the status value for this AdGroupAd.
-     * 
+     *
      * @return status   * The status of the ad.
      *                 This field is required and should not be {@code null}
      * when it is contained within
@@ -204,7 +197,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the status value for this AdGroupAd.
-     * 
+     *
      * @param status   * The status of the ad.
      *                 This field is required and should not be {@code null}
      * when it is contained within
@@ -217,7 +210,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the approvalStatus value for this AdGroupAd.
-     * 
+     *
      * @return approvalStatus   * Approval status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -229,7 +222,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the approvalStatus value for this AdGroupAd.
-     * 
+     *
      * @param approvalStatus   * Approval status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -241,7 +234,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the trademarks value for this AdGroupAd.
-     * 
+     *
      * @return trademarks   * A list of strings that represents the specific trademarked
      * terms that were found in this ad.
      *                 The list returned is empty if the ad has no trademarked
@@ -256,7 +249,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the trademarks value for this AdGroupAd.
-     * 
+     *
      * @param trademarks   * A list of strings that represents the specific trademarked
      * terms that were found in this ad.
      *                 The list returned is empty if the ad has no trademarked
@@ -279,7 +272,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the disapprovalReasons value for this AdGroupAd.
-     * 
+     *
      * @return disapprovalReasons   * List of disapproval reasons.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -291,7 +284,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the disapprovalReasons value for this AdGroupAd.
-     * 
+     *
      * @param disapprovalReasons   * List of disapproval reasons.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -311,7 +304,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the trademarkDisapproved value for this AdGroupAd.
-     * 
+     *
      * @return trademarkDisapproved   * True if and only if this ad is not serving because it does
      * not meet
      *                 trademark policy.
@@ -328,7 +321,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the trademarkDisapproved value for this AdGroupAd.
-     * 
+     *
      * @param trademarkDisapproved   * True if and only if this ad is not serving because it does
      * not meet
      *                 trademark policy.
@@ -345,7 +338,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the labels value for this AdGroupAd.
-     * 
+     *
      * @return labels   * Labels that are attached to the AdGroupAd. To associate an
      * existing {@link Label} to an
      *                 existing {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel}
@@ -369,7 +362,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the labels value for this AdGroupAd.
-     * 
+     *
      * @param labels   * Labels that are attached to the AdGroupAd. To associate an
      * existing {@link Label} to an
      *                 existing {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel}
@@ -399,33 +392,11 @@ public class AdGroupAd  implements java.io.Serializable {
     }
 
 
-    /**
-     * Gets the forwardCompatibilityMap value for this AdGroupAd.
-     * 
-     * @return forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] getForwardCompatibilityMap() {
         return forwardCompatibilityMap;
     }
 
 
-    /**
-     * Sets the forwardCompatibilityMap value for this AdGroupAd.
-     * 
-     * @param forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public void setForwardCompatibilityMap(com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap) {
         this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
@@ -449,35 +420,35 @@ public class AdGroupAd  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.adGroupId==null && other.getAdGroupId()==null) || 
+        _equals = true &&
+            ((this.adGroupId==null && other.getAdGroupId()==null) ||
              (this.adGroupId!=null &&
               this.adGroupId.equals(other.getAdGroupId()))) &&
-            ((this.ad==null && other.getAd()==null) || 
+            ((this.ad==null && other.getAd()==null) ||
              (this.ad!=null &&
               this.ad.equals(other.getAd()))) &&
-            ((this.experimentData==null && other.getExperimentData()==null) || 
+            ((this.experimentData==null && other.getExperimentData()==null) ||
              (this.experimentData!=null &&
               this.experimentData.equals(other.getExperimentData()))) &&
-            ((this.status==null && other.getStatus()==null) || 
+            ((this.status==null && other.getStatus()==null) ||
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
-            ((this.approvalStatus==null && other.getApprovalStatus()==null) || 
+            ((this.approvalStatus==null && other.getApprovalStatus()==null) ||
              (this.approvalStatus!=null &&
               this.approvalStatus.equals(other.getApprovalStatus()))) &&
-            ((this.trademarks==null && other.getTrademarks()==null) || 
+            ((this.trademarks==null && other.getTrademarks()==null) ||
              (this.trademarks!=null &&
               java.util.Arrays.equals(this.trademarks, other.getTrademarks()))) &&
-            ((this.disapprovalReasons==null && other.getDisapprovalReasons()==null) || 
+            ((this.disapprovalReasons==null && other.getDisapprovalReasons()==null) ||
              (this.disapprovalReasons!=null &&
               java.util.Arrays.equals(this.disapprovalReasons, other.getDisapprovalReasons()))) &&
-            ((this.trademarkDisapproved==null && other.getTrademarkDisapproved()==null) || 
+            ((this.trademarkDisapproved==null && other.getTrademarkDisapproved()==null) ||
              (this.trademarkDisapproved!=null &&
               this.trademarkDisapproved.equals(other.getTrademarkDisapproved()))) &&
-            ((this.labels==null && other.getLabels()==null) || 
+            ((this.labels==null && other.getLabels()==null) ||
              (this.labels!=null &&
               java.util.Arrays.equals(this.labels, other.getLabels()))) &&
-            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) || 
+            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) ||
              (this.forwardCompatibilityMap!=null &&
               java.util.Arrays.equals(this.forwardCompatibilityMap, other.getForwardCompatibilityMap())));
         __equalsCalc = null;
@@ -650,10 +621,10 @@ public class AdGroupAd  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -662,10 +633,10 @@ public class AdGroupAd  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

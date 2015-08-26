@@ -34,9 +34,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Tests for {@link BaseAdsServiceClientFactoryHelper}.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class BaseAdsServiceClientFactoryHelperTest {

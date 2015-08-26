@@ -29,8 +29,6 @@ import java.util.TimeZone;
 
 /**
  * Test for {@link DateTimesHelper}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DateTimesHelperTest {

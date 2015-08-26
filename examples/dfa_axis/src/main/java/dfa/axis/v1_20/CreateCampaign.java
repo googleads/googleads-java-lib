@@ -32,10 +32,6 @@ import java.util.Calendar;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: campaign.saveCampaign
- *
- * @author Joseph DiLallo
  */
 public class CreateCampaign {
 

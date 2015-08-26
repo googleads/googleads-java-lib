@@ -53,8 +53,6 @@ import java.rmi.RemoteException;
  * Tests that a AdWords Axis SOAP call can be made end-to-end when SOAP compression is enabled.
  * This test should be run in its own JVM because it makes changes to system properties that could
  * cause issues with other integration tests.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {

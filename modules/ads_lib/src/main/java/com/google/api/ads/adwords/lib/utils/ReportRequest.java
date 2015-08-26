@@ -16,8 +16,6 @@ package com.google.api.ads.adwords.lib.utils;
 
 /**
  * Wrapper for AdWords API report requests.
- * 
- * @author Josh Radcliff
  */
 public interface ReportRequest {
 

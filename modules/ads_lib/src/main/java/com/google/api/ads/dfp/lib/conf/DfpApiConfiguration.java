@@ -22,8 +22,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration information for DFP library.
- *
- * @author Adam Rogal
  */
 public class DfpApiConfiguration extends AdsApiConfiguration {
 

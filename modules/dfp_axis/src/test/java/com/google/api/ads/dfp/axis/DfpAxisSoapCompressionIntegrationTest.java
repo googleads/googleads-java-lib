@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.axis.v201505.Company;
-import com.google.api.ads.dfp.axis.v201505.CompanyServiceInterface;
+import com.google.api.ads.dfp.axis.v201508.Company;
+import com.google.api.ads.dfp.axis.v201508.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -38,13 +38,11 @@ import org.junit.runners.JUnit4;
  * Tests that a DFP Axis SOAP call can be made end-to-end when SOAP compression is enabled.
  * This test should be run in its own JVM because it makes changes to system properties that could
  * cause issues with other integration tests.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class DfpAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201505";
+  private static final String API_VERSION = "v201508";
 
   @BeforeClass
   public static void setupClass() {

@@ -17,7 +17,5 @@ package com.google.api.ads.dfa.lib.testing.mocks.axis.v1_12;
 /**
  * Mock service remote, following current DFA naming protocols. Used to test
  * {@code DfaServiceDescriptor}.
- *
- * @author Joseph DiLallo
  */
 public class MockServiceRemote {}

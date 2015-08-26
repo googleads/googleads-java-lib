@@ -29,8 +29,6 @@ import java.util.Comparator;
 
 /**
  * Tests for {@link ProductPartitionNodeDiffer}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductPartitionNodeDifferTest {

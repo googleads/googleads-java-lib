@@ -21,8 +21,6 @@ import java.util.List;
 
 /**
  * Utility class for List operations/transformations.
- *
- * @author Julian Toledo
  */
 public final class ListUtil {
 

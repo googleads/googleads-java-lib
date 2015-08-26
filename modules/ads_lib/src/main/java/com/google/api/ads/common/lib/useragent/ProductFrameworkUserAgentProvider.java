@@ -19,8 +19,6 @@ import com.google.inject.Inject;
 
 /**
  * Provides product/framework user agent.
- *
- * @author Adam Rogal
  */
 public class ProductFrameworkUserAgentProvider implements UserAgentProvider {
 

@@ -1,0 +1,73 @@
+
+package com.google.api.ads.dfp.jaxws.v201508;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for ContentMetadataKeyHierarchyError.Reason.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ContentMetadataKeyHierarchyError.Reason">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="LEVEL_MISSING"/>
+ *     &lt;enumeration value="INVALID_DSM_HIERARCHY"/>
+ *     &lt;enumeration value="CANNOT_USE_BROWSE_BY_KEY_WITH_HIERARCHY_FEATURE_ENABLED"/>
+ *     &lt;enumeration value="UNKNOWN"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "ContentMetadataKeyHierarchyError.Reason")
+@XmlEnum
+public enum ContentMetadataKeyHierarchyErrorReason {
+
+
+    /**
+     * 
+     *                 One or more levels of the hierarchy are missing. For example, if the levels are {1, 2, 2}
+     *                 or {1, 3, 4}, this error will be thrown.
+     *               
+     * 
+     */
+    LEVEL_MISSING,
+
+    /**
+     * 
+     *                 DSM networks can only have one hierarchy per network and that hierarchy can only have
+     *                 one level.
+     *               
+     * 
+     */
+    INVALID_DSM_HIERARCHY,
+
+    /**
+     * 
+     *                 Cannot load or save the network browse by key when the content metadata key hierarchy
+     *                 feature is enabled.
+     *               
+     * 
+     */
+    CANNOT_USE_BROWSE_BY_KEY_WITH_HIERARCHY_FEATURE_ENABLED,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
+
+    public String value() {
+        return name();
+    }
+
+    public static ContentMetadataKeyHierarchyErrorReason fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

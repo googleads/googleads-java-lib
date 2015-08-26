@@ -70,14 +70,6 @@ import java.util.Set;
  * https://developers.google.com/adwords/api/docs/guides/extension-settings. To learn more about
  * migrating Feed based extensions to extension settings, see
  * https://developers.google.com/adwords/api/docs/guides/migrate-to-extension-settings.
- *
- * Tags: FeedService.query, FeedMappingService.query, FeedItemService.query 
- * Tags: CampaignExtensionSettingService.mutate, CampaignFeedService.query
- * Tags: CampaignFeedService.mutate
- *
- * Category: adx-exclude
- *
- * @author Josh Radcliff
  */
 public class MigrateToExtensionSettings {
 

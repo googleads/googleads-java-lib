@@ -52,8 +52,6 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 /**
  * Tests for the {@link JaxWsSoapContextHandler} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class JaxWsSoapContextHandlerTest {

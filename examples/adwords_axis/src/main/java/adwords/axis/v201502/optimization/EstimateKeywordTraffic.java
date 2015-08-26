@@ -41,12 +41,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: TrafficEstimatorService.get
- *
- * Category: adx-exclude
- *
- * @author Kevin Winter
  */
 public class EstimateKeywordTraffic {
 

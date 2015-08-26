@@ -29,8 +29,6 @@ import javax.xml.soap.SOAPHeaderElement;
  * that implements this interface.
  *
  * @param <T> the SOAP client type
- *
- * @author Adam Rogal
  */
 public interface SoapClientHandlerInterface<T> {
 

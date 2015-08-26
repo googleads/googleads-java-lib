@@ -45,9 +45,6 @@ import java.util.Map;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
- * @author Kevin Winter
  */
 public class ReportDownloader {
 

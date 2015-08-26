@@ -23,8 +23,6 @@ import javax.xml.rpc.ServiceException;
 
 /**
  * Mock of an Apache Axis locator class.
- *
- * @author Joseph DiLallo
  */
 public class FunRemoteServiceLocator extends Service {
 

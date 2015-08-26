@@ -35,8 +35,6 @@ import java.util.Set;
 
 /**
  * Tests for {@link ReportBodyProviderFactory}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ReportBodyProviderFactoryTest {

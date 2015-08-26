@@ -30,8 +30,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Module for SOAP client handler.
- *
- * @author Adam Rogal
  */
 public class AxisModule extends AbstractModule {
 

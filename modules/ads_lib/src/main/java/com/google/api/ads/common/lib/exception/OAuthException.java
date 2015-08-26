@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.exception;
 
 /**
  * An exception thrown when OAuth could not be used correctly.
- *
- * @author Adam Rogal
  */
 public class OAuthException extends AuthenticationException {
 

@@ -38,11 +38,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PremiumRateService.getPremiumRatesByStatement
- * Tags: PremiumRateService.updatePremiumRates
- *
- * @author Nicholas Chen
  */
 public class UpdatePremiumRates {
   

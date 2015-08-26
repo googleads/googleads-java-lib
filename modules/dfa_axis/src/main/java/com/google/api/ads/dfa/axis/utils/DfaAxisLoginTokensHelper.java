@@ -25,8 +25,6 @@ import java.lang.reflect.Method;
 
 /**
  * Implementation of {@link LoginTokensHelper} for Axis.
- *
- * @author Adam Rogal
  */
 public class DfaAxisLoginTokensHelper implements LoginTokensHelper {
 

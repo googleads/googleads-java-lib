@@ -36,8 +36,6 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  * Tests for {@link ReportDownloadResponse}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ReportDownloadResponseTest {

@@ -28,9 +28,6 @@ import java.net.URL;
 /**
  * {@code DfpServiceDescriptor} provides a class which defines a service
  * that can be instantiated through reflection.
- *
- * @author Adam Rogal
- * @author Jeff Sham
  */
 public class DfpServiceDescriptor implements AdsServiceDescriptor, AxisCompatible,
     JaxWsCompatible {

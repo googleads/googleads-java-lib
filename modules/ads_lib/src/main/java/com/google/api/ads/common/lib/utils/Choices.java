@@ -23,8 +23,6 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * A utility class for handling choice objects.
- *
- * @author Adam Rogal
  */
 public final class Choices {
 

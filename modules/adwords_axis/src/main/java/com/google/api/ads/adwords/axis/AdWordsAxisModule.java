@@ -29,10 +29,6 @@ import com.google.inject.multibindings.MapBinder;
 
 /**
  * Guice module to bind AdWord's library to an Axis-friendly implementation.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
- * @author Josh Radcliff
  */
 @AdWordsProductFrameworkModule
 public class AdWordsAxisModule extends ProductFrameworkModule {

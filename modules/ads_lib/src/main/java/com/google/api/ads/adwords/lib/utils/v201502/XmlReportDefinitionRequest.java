@@ -24,8 +24,6 @@ import javax.xml.namespace.QName;
 
 /**
  * ReportRequest for XML-based report definitions.
- * 
- * @author Josh Radcliff
  */
 class XmlReportDefinitionRequest implements ReportRequest {
 

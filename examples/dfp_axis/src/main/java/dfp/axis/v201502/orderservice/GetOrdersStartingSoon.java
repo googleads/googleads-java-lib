@@ -34,10 +34,6 @@ import org.joda.time.Instant;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: OrderService.getOrdersByStatement
- *
- * @author Adam Rogal
  */
 public class GetOrdersStartingSoon {
 

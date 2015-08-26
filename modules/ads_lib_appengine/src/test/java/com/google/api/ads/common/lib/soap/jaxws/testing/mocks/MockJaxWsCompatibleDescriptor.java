@@ -24,8 +24,6 @@ import java.net.MalformedURLException;
 /**
  * Mock {@link SoapServiceDescriptor} used to test
  * {@link JaxWsHandler#createSoapClient(SoapServiceDescriptor)}.
- *
- * @author Joseph DiLallo
  */
 public class MockJaxWsCompatibleDescriptor implements SoapServiceDescriptor, JaxWsCompatible{
 

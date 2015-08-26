@@ -44,8 +44,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Tests for {@link AdHocReportDownloadHelper}.
- *
- * @author Josh Radcliff
  */
 public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 

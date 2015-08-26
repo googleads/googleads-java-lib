@@ -23,8 +23,6 @@ import java.util.Map;
 
 /**
  * Handler used to set the HTTP headers on a SOAP client.
- *
- * @author Adam Rogal
  */
 public class DfpHttpHeaderHandler {
 

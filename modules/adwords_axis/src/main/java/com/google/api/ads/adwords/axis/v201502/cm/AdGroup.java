@@ -70,13 +70,6 @@ public class AdGroup  implements java.io.Serializable {
      * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.Label[] labels;
 
-    /* This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     /* Bidding configuration for this ad group. To set the bids on
@@ -97,7 +90,7 @@ public class AdGroup  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201502.cm.CriterionTypeGroup contentBidCriterionTypeGroup;
 
     /* URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field. */
     private java.lang.String trackingUrlTemplate;
@@ -142,7 +135,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the id value for this AdGroup.
-     * 
+     *
      * @return id   * ID of this ad group.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -158,7 +151,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the id value for this AdGroup.
-     * 
+     *
      * @param id   * ID of this ad group.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -174,7 +167,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the campaignId value for this AdGroup.
-     * 
+     *
      * @return campaignId   * ID of the campaign with which this ad group is associated.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
@@ -187,7 +180,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the campaignId value for this AdGroup.
-     * 
+     *
      * @param campaignId   * ID of the campaign with which this ad group is associated.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
@@ -200,7 +193,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the campaignName value for this AdGroup.
-     * 
+     *
      * @return campaignName   * Name of the campaign with which this ad group is associated.
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API.</span>
@@ -212,7 +205,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the campaignName value for this AdGroup.
-     * 
+     *
      * @param campaignName   * Name of the campaign with which this ad group is associated.
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API.</span>
@@ -224,7 +217,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the name value for this AdGroup.
-     * 
+     *
      * @return name   * Name of this ad group (at most 255 UTF-8 full-width characters).
      * This field is required and should not be {@code null} for ADD operations
      * from v201309 version.
@@ -240,7 +233,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the name value for this AdGroup.
-     * 
+     *
      * @param name   * Name of this ad group (at most 255 UTF-8 full-width characters).
      * This field is required and should not be {@code null} for ADD operations
      * from v201309 version.
@@ -256,7 +249,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the status value for this AdGroup.
-     * 
+     *
      * @return status   * Status of this ad group.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.AdGroupStatus getStatus() {
@@ -266,7 +259,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the status value for this AdGroup.
-     * 
+     *
      * @param status   * Status of this ad group.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201502.cm.AdGroupStatus status) {
@@ -276,7 +269,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the settings value for this AdGroup.
-     * 
+     *
      * @return settings   * List of settings for the AdGroup.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.Setting[] getSettings() {
@@ -286,7 +279,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the settings value for this AdGroup.
-     * 
+     *
      * @param settings   * List of settings for the AdGroup.
      */
     public void setSettings(com.google.api.ads.adwords.axis.v201502.cm.Setting[] settings) {
@@ -304,7 +297,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the experimentData value for this AdGroup.
-     * 
+     *
      * @return experimentData   * Data from a campaign bidding strategy experiment, returned
      * by
      *                 {@link AdGroupService#get get()} only if the experimentId
@@ -317,7 +310,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the experimentData value for this AdGroup.
-     * 
+     *
      * @param experimentData   * Data from a campaign bidding strategy experiment, returned
      * by
      *                 {@link AdGroupService#get get()} only if the experimentId
@@ -330,7 +323,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the labels value for this AdGroup.
-     * 
+     *
      * @return labels   * Labels that are attached to the {@link AdGroup}. To associate
      * an existing {@link Label} to an
      *                 existing {@link AdGroup}, use {@link AdGroupService#mutateLabel}
@@ -354,7 +347,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the labels value for this AdGroup.
-     * 
+     *
      * @param labels   * Labels that are attached to the {@link AdGroup}. To associate
      * an existing {@link Label} to an
      *                 existing {@link AdGroup}, use {@link AdGroupService#mutateLabel}
@@ -384,33 +377,11 @@ public class AdGroup  implements java.io.Serializable {
     }
 
 
-    /**
-     * Gets the forwardCompatibilityMap value for this AdGroup.
-     * 
-     * @return forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] getForwardCompatibilityMap() {
         return forwardCompatibilityMap;
     }
 
 
-    /**
-     * Sets the forwardCompatibilityMap value for this AdGroup.
-     * 
-     * @param forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public void setForwardCompatibilityMap(com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap) {
         this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
@@ -426,7 +397,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the biddingStrategyConfiguration value for this AdGroup.
-     * 
+     *
      * @return biddingStrategyConfiguration   * Bidding configuration for this ad group. To set the bids on
      * the ad groups use
      *                 {@link BiddingStrategyConfiguration#bids}. Multiple
@@ -444,7 +415,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the biddingStrategyConfiguration value for this AdGroup.
-     * 
+     *
      * @param biddingStrategyConfiguration   * Bidding configuration for this ad group. To set the bids on
      * the ad groups use
      *                 {@link BiddingStrategyConfiguration#bids}. Multiple
@@ -462,7 +433,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the contentBidCriterionTypeGroup value for this AdGroup.
-     * 
+     *
      * @return contentBidCriterionTypeGroup   * Allows advertisers to specify a criteria dimension on which
      * to place absolute bids.
      *                 This is only applicable for campaigns that target
@@ -475,7 +446,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the contentBidCriterionTypeGroup value for this AdGroup.
-     * 
+     *
      * @param contentBidCriterionTypeGroup   * Allows advertisers to specify a criteria dimension on which
      * to place absolute bids.
      *                 This is only applicable for campaigns that target
@@ -488,9 +459,9 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the trackingUrlTemplate value for this AdGroup.
-     * 
+     *
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
      */
@@ -501,9 +472,9 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the trackingUrlTemplate value for this AdGroup.
-     * 
+     *
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
      */
@@ -514,7 +485,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Gets the urlCustomParameters value for this AdGroup.
-     * 
+     *
      * @return urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
@@ -526,7 +497,7 @@ public class AdGroup  implements java.io.Serializable {
 
     /**
      * Sets the urlCustomParameters value for this AdGroup.
-     * 
+     *
      * @param urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
@@ -546,44 +517,44 @@ public class AdGroup  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.id==null && other.getId()==null) || 
+        _equals = true &&
+            ((this.id==null && other.getId()==null) ||
              (this.id!=null &&
               this.id.equals(other.getId()))) &&
-            ((this.campaignId==null && other.getCampaignId()==null) || 
+            ((this.campaignId==null && other.getCampaignId()==null) ||
              (this.campaignId!=null &&
               this.campaignId.equals(other.getCampaignId()))) &&
-            ((this.campaignName==null && other.getCampaignName()==null) || 
+            ((this.campaignName==null && other.getCampaignName()==null) ||
              (this.campaignName!=null &&
               this.campaignName.equals(other.getCampaignName()))) &&
-            ((this.name==null && other.getName()==null) || 
+            ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.status==null && other.getStatus()==null) || 
+            ((this.status==null && other.getStatus()==null) ||
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
-            ((this.settings==null && other.getSettings()==null) || 
+            ((this.settings==null && other.getSettings()==null) ||
              (this.settings!=null &&
               java.util.Arrays.equals(this.settings, other.getSettings()))) &&
-            ((this.experimentData==null && other.getExperimentData()==null) || 
+            ((this.experimentData==null && other.getExperimentData()==null) ||
              (this.experimentData!=null &&
               this.experimentData.equals(other.getExperimentData()))) &&
-            ((this.labels==null && other.getLabels()==null) || 
+            ((this.labels==null && other.getLabels()==null) ||
              (this.labels!=null &&
               java.util.Arrays.equals(this.labels, other.getLabels()))) &&
-            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) || 
+            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) ||
              (this.forwardCompatibilityMap!=null &&
               java.util.Arrays.equals(this.forwardCompatibilityMap, other.getForwardCompatibilityMap()))) &&
-            ((this.biddingStrategyConfiguration==null && other.getBiddingStrategyConfiguration()==null) || 
+            ((this.biddingStrategyConfiguration==null && other.getBiddingStrategyConfiguration()==null) ||
              (this.biddingStrategyConfiguration!=null &&
               this.biddingStrategyConfiguration.equals(other.getBiddingStrategyConfiguration()))) &&
-            ((this.contentBidCriterionTypeGroup==null && other.getContentBidCriterionTypeGroup()==null) || 
+            ((this.contentBidCriterionTypeGroup==null && other.getContentBidCriterionTypeGroup()==null) ||
              (this.contentBidCriterionTypeGroup!=null &&
               this.contentBidCriterionTypeGroup.equals(other.getContentBidCriterionTypeGroup()))) &&
-            ((this.trackingUrlTemplate==null && other.getTrackingUrlTemplate()==null) || 
+            ((this.trackingUrlTemplate==null && other.getTrackingUrlTemplate()==null) ||
              (this.trackingUrlTemplate!=null &&
               this.trackingUrlTemplate.equals(other.getTrackingUrlTemplate()))) &&
-            ((this.urlCustomParameters==null && other.getUrlCustomParameters()==null) || 
+            ((this.urlCustomParameters==null && other.getUrlCustomParameters()==null) ||
              (this.urlCustomParameters!=null &&
               this.urlCustomParameters.equals(other.getUrlCustomParameters())));
         __equalsCalc = null;
@@ -777,10 +748,10 @@ public class AdGroup  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -789,10 +760,10 @@ public class AdGroup  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

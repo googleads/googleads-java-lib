@@ -28,8 +28,6 @@ import javax.annotation.Nullable;
 /**
  * Authorization header provider that can delegate between different
  * authentication mechanisms depending on the {@link AdsSession}.
- *
- * @author Adam Rogal
  */
 public class AuthorizationHeaderProvider {
 

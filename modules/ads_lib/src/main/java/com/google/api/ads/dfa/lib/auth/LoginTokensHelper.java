@@ -21,8 +21,6 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * Helper class for {@link LoginTokens}.
- *
- * @author Adam Rogal
  */
 public interface LoginTokensHelper {
 

@@ -44,8 +44,6 @@ import java.util.List;
  * Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  * </p>
- *
- * @author Julian Toledo
  */
 public final class ManagedCustomerDelegate extends AbstractGetMutateDelegate
 <ManagedCustomer, ManagedCustomerOperation, ManagedCustomerServiceInterface> {

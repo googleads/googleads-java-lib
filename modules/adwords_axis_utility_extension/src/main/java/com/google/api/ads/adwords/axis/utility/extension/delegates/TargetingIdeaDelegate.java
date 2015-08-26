@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link TargetingIdeaServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class TargetingIdeaDelegate 
     extends AbstractBaseDelegate<TargetingIdeaServiceInterface> {

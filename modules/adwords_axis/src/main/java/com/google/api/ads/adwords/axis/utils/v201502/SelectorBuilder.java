@@ -37,8 +37,6 @@ import java.util.Set;
  * A builder for {@link Selector} objects.
  *
  * This builder is not thread safe.
- *
- * @author Gustavo Moreira
  */
 public class SelectorBuilder {
 

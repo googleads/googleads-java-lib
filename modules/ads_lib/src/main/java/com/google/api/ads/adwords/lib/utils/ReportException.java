@@ -17,8 +17,6 @@ package com.google.api.ads.adwords.lib.utils;
 /**
  * Exception thrown while downloading a report and was a transport-layer problem
  * with the request. Usually can be retried.
- *
- * @author Adam Rogal
  */
 public class ReportException extends Exception {
 

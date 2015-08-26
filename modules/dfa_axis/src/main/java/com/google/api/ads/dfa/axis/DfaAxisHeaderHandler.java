@@ -36,8 +36,6 @@ import javax.xml.soap.SOAPHeaderElement;
 
 /**
  * DFA implementation of {@link HeaderHandler}.
- *
- * @author Adam Rogal
  */
 public class DfaAxisHeaderHandler implements HeaderHandler<DfaSession, DfaServiceDescriptor> {
 

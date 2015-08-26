@@ -25,8 +25,6 @@ import java.io.IOException;
 
 /**
  * OAuth2 helper functions.
- *
- * @author Adam Rogal
  */
 public class OAuth2Helper {
 

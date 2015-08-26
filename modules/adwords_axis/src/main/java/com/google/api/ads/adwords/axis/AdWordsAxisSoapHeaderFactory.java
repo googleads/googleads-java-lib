@@ -26,8 +26,6 @@ import java.util.Map;
 
 /**
  * AdWords implementation of {@link AxisSoapHeaderFactory}.
- *
- * @author Josh Radcliff
  */
 public class AdWordsAxisSoapHeaderFactory
     implements AxisSoapHeaderFactory<AdWordsServiceDescriptor> {

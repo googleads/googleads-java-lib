@@ -47,10 +47,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: AdGroupCriterionService.mutate
- *
- * @author Josh Radcliff
  */
 public class AddProductPartitionTree {
   public static void main(String[] args) throws Exception {

@@ -29,8 +29,6 @@ import java.net.URL;
 /**
  * {@code AdWordsServiceDescriptor} provides a class which defines a service
  * that can be instantiated through reflection.
- *
- * @author Adam Rogal
  */
 public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompatible,
     JaxWsCompatible {

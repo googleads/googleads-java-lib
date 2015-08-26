@@ -51,12 +51,6 @@ import org.joda.time.DateTime;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CampaignService.mutate, BudgetService.mutate
- *
- * Category: adx-exclude
- *
- * @author Adam Rogal
  */
 public class AddCampaigns {
 

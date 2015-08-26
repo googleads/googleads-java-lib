@@ -49,7 +49,6 @@ import java.util.Map.Entry;
 /**
  * Test for {@link ConfigurationHelper}.
 
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class ConfigurationHelperTest {

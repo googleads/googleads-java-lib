@@ -29,8 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
 /**
  * This example demonstrates how to create a Credential and an DfaSession
  * object without using an ads.properties file.
- *
- * @author Ray Tsang
  */
 public class CreateDfaSessionWithoutPropertiesFile {
 

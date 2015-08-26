@@ -30,8 +30,6 @@ import com.google.inject.TypeLiteral;
  * @param <C> the subclass of {@link AdsServiceClient}
  * @param <D> the subclass of {@link AdsServiceDescriptor}
  * @param <S> the subclass of {@link AdsSession}
- *
- * @author Joseph DiLallo
  */
 public class AdsSoapModule <C extends AdsServiceClient<S, D>,
                             D extends AdsServiceDescriptor,

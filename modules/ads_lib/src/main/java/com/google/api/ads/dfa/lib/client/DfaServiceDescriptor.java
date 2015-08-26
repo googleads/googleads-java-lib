@@ -23,8 +23,6 @@ import com.google.inject.assistedinject.Assisted;
 /**
  * {@code DfaServiceDescriptor} provides a class which defines a service that
  * can be instantiated through reflection.
- *
- * @author Joseph DiLallo
  */
 public class DfaServiceDescriptor implements AdsServiceDescriptor, AxisCompatible {
 

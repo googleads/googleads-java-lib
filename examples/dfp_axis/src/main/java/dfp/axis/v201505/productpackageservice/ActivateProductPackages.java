@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductPackageService.getProductPackagesByStatement
- * Tags: ProductPackageService.performProductPackageAction
- *
- * @author Nicholas Chen
  */
 public class ActivateProductPackages {
   

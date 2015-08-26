@@ -44,9 +44,6 @@ import java.util.Set;
 
 /**
  * Test for the {@link AdsServiceClientFactory} class.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AdsServiceClientFactoryTest {

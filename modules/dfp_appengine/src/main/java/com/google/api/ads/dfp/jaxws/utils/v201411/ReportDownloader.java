@@ -52,8 +52,6 @@ import java.util.zip.GZIPInputStream;
  * {@link #whenReportReady(ReportCallback)} to wait for a scheduled report to
  * finish processing before taking an action on the report through the supplied
  * {@link ReportCallback}.
- *
- * @author Adam Rogal
  */
 public class ReportDownloader {
 

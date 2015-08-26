@@ -21,8 +21,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration of product/framework properties.
- *
- * @author Adam Rogal
  */
 public class ProductConfiguration extends BaseConfiguration {
 

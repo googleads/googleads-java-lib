@@ -31,8 +31,6 @@ import java.io.IOException;
 
 /**
  * Helper class that generates a configured HttpURLConnection for report downloads.
- *
- * @author Kevin Winter
  */
 public class ReportRequestFactoryHelper {
 

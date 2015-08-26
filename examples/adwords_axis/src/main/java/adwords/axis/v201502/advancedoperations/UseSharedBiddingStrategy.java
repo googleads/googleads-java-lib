@@ -47,10 +47,6 @@ import javax.xml.rpc.ServiceException;
 
 /**
  * This example adds a Shared Bidding Strategy and uses it to construct a campaign.
- *
- * Tags: BiddingStrategyService.mutate, BudgetService.mutate, CampaignService.mutate
- *
- * @author Takeshi Hagikura
  */
 public class UseSharedBiddingStrategy {
 

@@ -26,8 +26,6 @@ import javax.annotation.Nullable;
 /**
  * Utility which detects Apache Axis exceptions returned from the DFA API due to expired DFA
  * tokens.
- *
- * @author Joseph DiLallo
  */
 public class DfaAxisTokenExpirationDetector implements TokenExpirationDetector {
 

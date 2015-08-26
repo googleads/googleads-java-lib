@@ -1,3 +1,21 @@
+2.4.0 - 08/25/2015
+------------------
+AdWords:
+  - Set AdGroup settings. Fixes github issue
+    [49](https://github.com/googleads/googleads-java-lib/issues/49)
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201508.
+  - Added ReconciliationLineItemReportService.
+  - Removed support for v201405.
+  - Removed examples for v201408.
+
+Common:
+  - No changes.
+
 2.3.0 - 07/27/2015
 -------------------
 AdWords:

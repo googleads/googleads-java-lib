@@ -26,14 +26,12 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link UserAgentCombiner} with DFA and Axis.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (DfaApi-Java, Dfa-Axis/2.3.0, Common-Java/2.3.0, Axis/1.4, Java/"
+      "userAgent (DfaApi-Java, Dfa-Axis/2.4.0, Common-Java/2.4.0, Axis/1.4, Java/"
           + System.getProperty("java.version") + ", maven)";
 
   /**

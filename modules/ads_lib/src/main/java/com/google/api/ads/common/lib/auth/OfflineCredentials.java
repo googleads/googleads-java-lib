@@ -53,8 +53,6 @@ import javax.annotation.Nullable;
  *
  * This can be also used instead of service accounts. Generate a refresh token
  * once and place it in your ads.properties file to be read by this utility.
- *
- * @author Adam Rogal
  */
 public class OfflineCredentials {
 

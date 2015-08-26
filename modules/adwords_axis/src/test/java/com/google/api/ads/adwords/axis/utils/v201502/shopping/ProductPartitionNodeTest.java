@@ -51,8 +51,6 @@ import java.util.Set;
 
 /**
  * Tests for {@link ProductPartitionNode}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductPartitionNodeTest {

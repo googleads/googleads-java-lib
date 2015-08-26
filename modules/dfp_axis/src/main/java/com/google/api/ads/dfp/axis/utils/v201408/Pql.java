@@ -58,8 +58,6 @@ import java.util.Set;
  * CsvFiles.writeCsv(Pql.resultSetToStringArrayList(combinedResultSet), filePath);
  * </code>
  * </pre>
- *
- * @author Adam Rogal.
  */
 public final class Pql {
 

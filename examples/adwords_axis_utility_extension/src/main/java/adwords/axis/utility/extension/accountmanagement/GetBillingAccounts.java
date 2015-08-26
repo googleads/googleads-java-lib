@@ -21,10 +21,6 @@ import java.util.List;
 
 /**
  * This example gets all BillingAccount for an MCC account.
- *
- * Tags: BudgetOrderService.getBillingAccounts()
- *
- * @author Julian Toledo
  */
 public class GetBillingAccounts {
 

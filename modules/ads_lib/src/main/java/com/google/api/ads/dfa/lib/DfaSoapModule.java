@@ -26,8 +26,6 @@ import com.google.inject.TypeLiteral;
 
 /**
  * Guice module for DFA SOAP bindings.
- *
- * @author Joseph DiLallo
  */
 public class DfaSoapModule extends AdsSoapModule<DfaServiceClient,
                                                  DfaServiceDescriptor,

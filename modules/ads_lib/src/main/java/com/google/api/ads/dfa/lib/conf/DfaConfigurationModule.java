@@ -21,8 +21,6 @@ import java.net.URL;
 
 /**
  * Configuration for DFA configuration.
- *
- * @author Adam Rogal
  */
 public class DfaConfigurationModule extends ConfigurationModule {
 

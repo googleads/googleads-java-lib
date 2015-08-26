@@ -18,8 +18,6 @@ package com.google.api.ads.adwords.lib.utils;
  * Exception thrown while fetching a report response or downloading a report.
  * Usually, this exception is not recoverable, but the {@code cause} can be
  * checked if needed.
- *
- * @author Adam Rogal
  */
 public class ReportFailureException extends Exception {
 

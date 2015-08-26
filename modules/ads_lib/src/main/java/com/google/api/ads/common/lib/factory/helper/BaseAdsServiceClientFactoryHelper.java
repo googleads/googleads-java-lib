@@ -31,8 +31,6 @@ import java.net.MalformedURLException;
  * @param <C> the type of {@link AdsServiceClient}
  * @param <S> the type of {@link AdsSession}
  * @param <D> the type of {@link AdsServiceDescriptor}
- *
- * @author Adam Rogal
  */
 public abstract class BaseAdsServiceClientFactoryHelper<C extends AdsServiceClient<S, D>,
                                                         S extends AdsSession,

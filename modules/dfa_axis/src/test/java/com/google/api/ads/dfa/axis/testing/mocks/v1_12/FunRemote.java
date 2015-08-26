@@ -18,7 +18,5 @@ import java.rmi.Remote;
 
 /**
  * Mock of an Apache Axis Remote.
- *
- * @author Joseph DiLallo
  */
 public interface FunRemote extends Remote {}

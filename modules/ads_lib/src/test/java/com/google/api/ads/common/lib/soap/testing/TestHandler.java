@@ -26,8 +26,6 @@ import javax.xml.namespace.QName;
 
 /**
  * Test SOAP Client Handler implementation.
- *
- * @author Joseph DiLallo
  */
 public class TestHandler extends SoapClientHandler<Object> {
 

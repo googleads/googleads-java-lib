@@ -50,12 +50,6 @@ import java.rmi.RemoteException;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: CampaignExtensionSettingService.mutate
- *
- * Category: adx-exclude
- *
- * @author Josh Radcliff
  */
 public class AddSiteLinks {
 

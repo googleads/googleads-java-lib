@@ -29,10 +29,6 @@ import com.google.inject.multibindings.MapBinder;
 /**
  * Guice module to bind AdWord's SOAP header handler to a JAX-WS-friendly
  * implementation.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
- * @author Josh Radcliff
  */
 @AdWordsProductFrameworkModule
 public class AdWordsJaxWsModule extends ProductFrameworkModule {

@@ -43,13 +43,6 @@ public class AdGroupCriterion  implements java.io.Serializable {
      * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201506.cm.Label[] labels;
 
-    /* This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201506.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     /* Indicates that this instance is a subtype of AdGroupCriterion.
@@ -79,7 +72,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Gets the adGroupId value for this AdGroupCriterion.
-     * 
+     *
      * @return adGroupId   * The ad group this criterion is in.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -91,7 +84,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Sets the adGroupId value for this AdGroupCriterion.
-     * 
+     *
      * @param adGroupId   * The ad group this criterion is in.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -103,7 +96,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Gets the criterionUse value for this AdGroupCriterion.
-     * 
+     *
      * @return criterionUse   * <span class="constraint ReadOnly">This field is read only and
      * will be ignored when sent to the API.</span>
      */
@@ -114,7 +107,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Sets the criterionUse value for this AdGroupCriterion.
-     * 
+     *
      * @param criterionUse   * <span class="constraint ReadOnly">This field is read only and
      * will be ignored when sent to the API.</span>
      */
@@ -125,7 +118,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Gets the criterion value for this AdGroupCriterion.
-     * 
+     *
      * @return criterion   * The criterion part of the ad group criterion.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -137,7 +130,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Sets the criterion value for this AdGroupCriterion.
-     * 
+     *
      * @param criterion   * The criterion part of the ad group criterion.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -149,7 +142,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Gets the labels value for this AdGroupCriterion.
-     * 
+     *
      * @return labels   * Labels that are attached to the AdGroupCriterion. To associate
      * an existing {@link Label} to an
      *                 existing {@link AdGroupCriterion}, use {@link AdGroupCriterionService#mutateLabel}
@@ -173,7 +166,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Sets the labels value for this AdGroupCriterion.
-     * 
+     *
      * @param labels   * Labels that are attached to the AdGroupCriterion. To associate
      * an existing {@link Label} to an
      *                 existing {@link AdGroupCriterion}, use {@link AdGroupCriterionService#mutateLabel}
@@ -203,33 +196,11 @@ public class AdGroupCriterion  implements java.io.Serializable {
     }
 
 
-    /**
-     * Gets the forwardCompatibilityMap value for this AdGroupCriterion.
-     * 
-     * @return forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public com.google.api.ads.adwords.axis.v201506.cm.String_StringMapEntry[] getForwardCompatibilityMap() {
         return forwardCompatibilityMap;
     }
 
 
-    /**
-     * Sets the forwardCompatibilityMap value for this AdGroupCriterion.
-     * 
-     * @param forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public void setForwardCompatibilityMap(com.google.api.ads.adwords.axis.v201506.cm.String_StringMapEntry[] forwardCompatibilityMap) {
         this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
@@ -245,7 +216,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Gets the adGroupCriterionType value for this AdGroupCriterion.
-     * 
+     *
      * @return adGroupCriterionType   * Indicates that this instance is a subtype of AdGroupCriterion.
      * Although this field is returned in the response, it is ignored on
      * input
@@ -258,7 +229,7 @@ public class AdGroupCriterion  implements java.io.Serializable {
 
     /**
      * Sets the adGroupCriterionType value for this AdGroupCriterion.
-     * 
+     *
      * @param adGroupCriterionType   * Indicates that this instance is a subtype of AdGroupCriterion.
      * Although this field is returned in the response, it is ignored on
      * input
@@ -279,23 +250,23 @@ public class AdGroupCriterion  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.adGroupId==null && other.getAdGroupId()==null) || 
+        _equals = true &&
+            ((this.adGroupId==null && other.getAdGroupId()==null) ||
              (this.adGroupId!=null &&
               this.adGroupId.equals(other.getAdGroupId()))) &&
-            ((this.criterionUse==null && other.getCriterionUse()==null) || 
+            ((this.criterionUse==null && other.getCriterionUse()==null) ||
              (this.criterionUse!=null &&
               this.criterionUse.equals(other.getCriterionUse()))) &&
-            ((this.criterion==null && other.getCriterion()==null) || 
+            ((this.criterion==null && other.getCriterion()==null) ||
              (this.criterion!=null &&
               this.criterion.equals(other.getCriterion()))) &&
-            ((this.labels==null && other.getLabels()==null) || 
+            ((this.labels==null && other.getLabels()==null) ||
              (this.labels!=null &&
               java.util.Arrays.equals(this.labels, other.getLabels()))) &&
-            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) || 
+            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) ||
              (this.forwardCompatibilityMap!=null &&
               java.util.Arrays.equals(this.forwardCompatibilityMap, other.getForwardCompatibilityMap()))) &&
-            ((this.adGroupCriterionType==null && other.getAdGroupCriterionType()==null) || 
+            ((this.adGroupCriterionType==null && other.getAdGroupCriterionType()==null) ||
              (this.adGroupCriterionType!=null &&
               this.adGroupCriterionType.equals(other.getAdGroupCriterionType())));
         __equalsCalc = null;
@@ -410,10 +381,10 @@ public class AdGroupCriterion  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -422,10 +393,10 @@ public class AdGroupCriterion  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

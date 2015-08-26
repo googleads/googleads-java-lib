@@ -29,8 +29,6 @@ import java.util.Comparator;
 
 /**
  * Base class for ProductDimension comparator tests.
- *
- * @author Josh Radcliff
  */
 public abstract class BaseProductDimensionComparatorTest {
 

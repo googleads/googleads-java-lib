@@ -30,8 +30,6 @@ import javax.xml.ws.handler.Handler;
 /**
  * Mock of a JAX-WS web service interface implementation. Used to test
  * {@link JaxWsHandler#createSoapClient(com.google.api.ads.common.lib.soap.SoapServiceDescriptor)}.
- *
- * @author Joseph DiLallo
  */
 public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
 
@@ -94,7 +92,6 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    * {@link
    * JaxWsHandler#createSoapClient(com.google.api.ads.common.lib.soap.SoapServiceDescriptor)}.
    *
-   * @author Joseph DiLallo
    */
   private static class MyBinding implements Binding {
 

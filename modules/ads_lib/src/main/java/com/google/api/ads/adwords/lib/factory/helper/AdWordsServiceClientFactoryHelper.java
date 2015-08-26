@@ -30,8 +30,6 @@ import java.util.regex.Pattern;
 
 /**
  * Factory helper for AdWords.
- *
- * @author Adam Rogal
  */
 public class AdWordsServiceClientFactoryHelper extends
     BaseAdsServiceClientFactoryHelper<AdWordsServiceClient,

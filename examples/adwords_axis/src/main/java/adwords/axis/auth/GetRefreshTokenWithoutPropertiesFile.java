@@ -37,8 +37,6 @@ import java.io.InputStreamReader;
  *
  * This example is meant to be run from the command line and requires user
  * input. This example does not use a properties file.
- *
- * @author Ray Tsang
  */
 public class GetRefreshTokenWithoutPropertiesFile {
 

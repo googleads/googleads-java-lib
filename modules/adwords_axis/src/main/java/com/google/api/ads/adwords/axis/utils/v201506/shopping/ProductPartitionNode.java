@@ -40,8 +40,6 @@ import javax.annotation.Nullable;
 /**
  * A node in a tree of {@link ProductPartition}s. Used to construct {@link AdGroupCriterion} objects
  * for shopping campaigns.
- *
- * @author Josh Radcliff
  */
 public class ProductPartitionNode {
 

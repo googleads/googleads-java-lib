@@ -26,6 +26,7 @@ import com.google.api.ads.adwords.axis.v201506.cm.CpcBid;
 import com.google.api.ads.adwords.axis.v201506.cm.CriterionTypeGroup;
 import com.google.api.ads.adwords.axis.v201506.cm.Money;
 import com.google.api.ads.adwords.axis.v201506.cm.Operator;
+import com.google.api.ads.adwords.axis.v201506.cm.Setting;
 import com.google.api.ads.adwords.axis.v201506.cm.TargetingSetting;
 import com.google.api.ads.adwords.axis.v201506.cm.TargetingSettingDetail;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -39,12 +40,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: AdGroupService.mutate
- *
- * Category: adx-exclude
- *
- * @author Kevin Winter
  */
 public class AddAdGroups {
 
@@ -97,7 +92,8 @@ public class AddAdGroups {
     TargetingSettingDetail verticals = new TargetingSettingDetail();
     verticals.setCriterionTypeGroup(CriterionTypeGroup.VERTICAL);
     verticals.setTargetAll(Boolean.TRUE);
-    targeting.setDetails(new TargetingSettingDetail[]{placements, verticals});
+    targeting.setDetails(new TargetingSettingDetail[] {placements, verticals});
+    adGroup.setSettings(new Setting[] {targeting});
 
     // Create ad group bid.
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();

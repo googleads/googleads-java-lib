@@ -34,10 +34,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchies
- *
- * @author Chris Seeley
  */
 public class CreateContentMetadataKeyHierarchies {
   

@@ -26,8 +26,6 @@ import javax.annotation.Nullable;
 
 /**
  * Combines all user agents along with a user supplied string.
- *
- * @author Adam Rogal
  */
 public class UserAgentCombiner {
 

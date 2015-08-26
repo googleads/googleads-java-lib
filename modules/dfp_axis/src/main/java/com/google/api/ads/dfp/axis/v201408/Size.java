@@ -12,8 +12,8 @@ package com.google.api.ads.dfp.axis.v201408;
  * Represents the dimensions of an {@link AdUnit}, {@link LineItem}
  * or {@link Creative}.
  *             <p>
- *             For interstitial size (out-of-page) and native size, {@code
- * Size} must be 1x1.
+ *             For interstitial size (out-of-page), native, ignored and
+ * fluid size, {@code Size} must be 1x1.
  */
 public class Size  implements java.io.Serializable {
     /* The width of the {@link AdUnit}, {@link LineItem} or {@link

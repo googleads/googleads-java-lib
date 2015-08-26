@@ -15,8 +15,6 @@ import javax.xml.namespace.QName;
 /**
  * Tests the integration between JaxB generated code (ReportDefinitions) and our
  * serializer.
- *
- * @author Kevin Winter
  */
 @RunWith(JUnit4.class)
 public class JaxbSerializationTest {

@@ -43,8 +43,6 @@ import javax.annotation.Nullable;
  *
  * <p>Note that this factory only includes methods for subclasses of ProductDimension that are
  * supported by Shopping Campaigns.
- *
- * @author Josh Radcliff
  */
 public class ProductDimensions {
 

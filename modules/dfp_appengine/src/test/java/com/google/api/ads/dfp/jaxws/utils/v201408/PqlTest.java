@@ -44,8 +44,6 @@ import java.util.Set;
 
 /**
  * Test for {@link Pql}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class PqlTest {

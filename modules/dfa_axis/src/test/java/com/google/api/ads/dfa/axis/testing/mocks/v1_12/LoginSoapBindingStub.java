@@ -18,8 +18,6 @@ package com.google.api.ads.dfa.axis.testing.mocks.v1_12;
  * Mock login remote. Named similarly enough to be mistaken for the DFA API's
  * login service. Used to test {@code DfaServiceClient} and
  * {@code LoginTokens}.
- *
- * @author Joseph DiLallo
  */
 public class LoginSoapBindingStub implements LoginRemote {
 

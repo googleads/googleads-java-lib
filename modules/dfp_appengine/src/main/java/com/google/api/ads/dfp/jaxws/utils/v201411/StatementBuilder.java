@@ -43,8 +43,6 @@ import java.util.Map;
  * statementBuilder.increaseOffsetBy(20);
  * statement = statementBuilder.toStatement();
  * </pre>
- *
- * @author Adam Rogal
  */
 public final class StatementBuilder {
 

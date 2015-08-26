@@ -56,10 +56,6 @@ import javax.annotation.Nullable;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CampaignCriterionService.mutate
- *
- * @author Kevin Winter
  */
 public class AddCampaignTargetingCriteria {
 

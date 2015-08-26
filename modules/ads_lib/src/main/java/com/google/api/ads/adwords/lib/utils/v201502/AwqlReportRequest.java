@@ -20,8 +20,6 @@ import com.google.common.base.Preconditions;
 
 /**
  * ReportRequest for AWQL reports.
- * 
- * @author Josh Radcliff
  */
 class AwqlReportRequest implements ReportRequest {
 

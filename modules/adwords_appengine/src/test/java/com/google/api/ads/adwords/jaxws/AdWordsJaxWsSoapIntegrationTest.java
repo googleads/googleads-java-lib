@@ -42,8 +42,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests that a AdWords JAX-WS SOAP call can be made end-to-end.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {

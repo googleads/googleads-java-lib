@@ -22,8 +22,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for comparing {@link ProductCanonicalCondition} dimensions.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductChannelExclusivityComparatorTest extends BaseProductDimensionComparatorTest {

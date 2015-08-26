@@ -29,9 +29,6 @@ import com.google.inject.TypeLiteral;
 /**
  * Guice module to bind DFA's SOAP header handler to an Axis-friendly
  * implementation.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 @DfaProductFrameworkModule
 public class DfaAxisModule extends ProductFrameworkModule {

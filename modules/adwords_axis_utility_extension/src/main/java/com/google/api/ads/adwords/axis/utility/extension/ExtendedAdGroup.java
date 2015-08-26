@@ -34,8 +34,6 @@ import java.util.List;
 
 /**
  * ExtendedAdGroup, encapsulates the {@link AdGroup} level operations.
- * 
- * @author Julian Toledo
  */
 public final class ExtendedAdGroup {
 

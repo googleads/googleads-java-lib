@@ -21,8 +21,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration of lib properties.
- *
- * @author Adam Rogal
  */
 public class AdsBuildConfiguration extends BaseConfiguration {
 

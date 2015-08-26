@@ -25,10 +25,6 @@ import com.google.inject.TypeLiteral;
 /**
  * Guice module to bind Dfp's SOAP header handler to a JAX-WS-friendly
  * implementation.
- *
- * @author Joseph DiLallo
- * @author Jeff Sham
- * @author Adam Rogal
  */
 @DfpProductFrameworkModule
 public class DfpJaxWsModule extends ProductFrameworkModule {

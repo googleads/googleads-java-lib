@@ -43,8 +43,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for the {@link DfaServiceClient} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class DfaServiceClientTest {

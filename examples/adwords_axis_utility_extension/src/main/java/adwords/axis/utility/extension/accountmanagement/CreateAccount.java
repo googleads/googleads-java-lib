@@ -29,9 +29,6 @@ import org.joda.time.DateTime;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * @author Adam Rogal
- * @author Julian Toledo
  */
 public class CreateAccount {
 

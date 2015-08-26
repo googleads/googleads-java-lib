@@ -38,9 +38,6 @@ import javax.xml.soap.SOAPFactory;
 
 /**
  * AdWords implementation of {@link HeaderHandler} for JAX-WS.
- *
- * @author Joseph DiLallo
- * @author Josh Radcliff
  */
 public class AdWordsJaxWsHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {

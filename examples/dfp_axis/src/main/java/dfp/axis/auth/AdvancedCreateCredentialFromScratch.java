@@ -44,8 +44,6 @@ import java.io.InputStreamReader;
  * application that will not need to have multiple users log in, using
  * OfflineCredentials to generate a refreshable OAuth2
  * credential instead will be much easier.
- *
- * @author Adam Rogal
  */
 public class AdvancedCreateCredentialFromScratch {
 

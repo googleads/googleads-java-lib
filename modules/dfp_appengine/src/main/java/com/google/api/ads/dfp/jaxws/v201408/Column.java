@@ -1532,7 +1532,7 @@ public enum Column {
     /**
      * 
      *                 The gross rating points (GRP) calculated as {@link #GRP_AUDIENCE_REACH} *
-     *                 {@link #GRP_AUDIENCE_AVERAGE_FREQUENCY}.
+     *                 {@link #GRP_AUDIENCE_AVERAGE_FREQUENCY} * 100.
      *               
      * 
      */

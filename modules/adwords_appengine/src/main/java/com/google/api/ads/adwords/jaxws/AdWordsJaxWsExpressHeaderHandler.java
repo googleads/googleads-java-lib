@@ -29,8 +29,6 @@ import javax.xml.ws.BindingProvider;
 
 /**
  * AdWords Express-specific custom header handler.
- * 
- * @author Josh Radcliff
  */
 public class AdWordsJaxWsExpressHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {

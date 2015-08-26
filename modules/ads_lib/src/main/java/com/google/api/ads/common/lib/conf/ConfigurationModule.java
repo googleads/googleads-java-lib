@@ -28,8 +28,6 @@ import javax.annotation.Nullable;
 
 /**
  * Module for configuration.
- *
- * @author Adam Rogal
  */
 public abstract class ConfigurationModule extends AbstractModule {
 

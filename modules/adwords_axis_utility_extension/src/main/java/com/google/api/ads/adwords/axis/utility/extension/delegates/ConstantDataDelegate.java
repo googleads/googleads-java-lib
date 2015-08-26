@@ -36,8 +36,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link ConstantDataServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class ConstantDataDelegate
     extends AbstractBaseDelegate<ConstantDataServiceInterface> {

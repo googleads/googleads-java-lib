@@ -43,8 +43,6 @@ import javax.annotation.Nullable;
  *
  * <p>The {@link #compare(ProductDimension, ProductDimension)} method handles nulls, ordering nulls
  * last.
- *
- * @author Josh Radcliff
  */
 class ProductDimensionComparator implements Comparator<ProductDimension> {
 

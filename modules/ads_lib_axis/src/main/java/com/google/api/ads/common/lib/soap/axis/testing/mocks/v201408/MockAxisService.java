@@ -19,8 +19,6 @@ import javax.xml.rpc.Service;
 /**
  * Interface for mock Axis service that follows the pattern of the WSDL2Java-generated service
  * interfaces.
- * 
- * @author Josh Radcliff
  */
 public interface MockAxisService extends Service {
 

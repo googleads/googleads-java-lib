@@ -66,8 +66,6 @@ import javax.annotation.Nullable;
 /**
  * A ProductPartitionTree is a container for a root {@link ProductPartitionNode} that also handles
  * applying changes made to the tree under the root.
- *
- * @author Josh Radcliff
  */
 public class ProductPartitionTree {
 

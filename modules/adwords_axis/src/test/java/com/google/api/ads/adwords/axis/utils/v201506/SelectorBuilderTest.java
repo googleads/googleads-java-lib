@@ -37,8 +37,6 @@ import java.text.SimpleDateFormat;
 
 /**
  * Test case for the Axis implementation of the selector builder.
- *
- * @author Gustavo Moreira
  */
 @RunWith(JUnit4.class)
 public class SelectorBuilderTest {

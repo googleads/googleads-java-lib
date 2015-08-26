@@ -45,10 +45,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CampaignService.mutate
- *
- * @author Josh Radcliff
  */
 public class AddShoppingCampaign {
   public static void main(String[] args) throws Exception {

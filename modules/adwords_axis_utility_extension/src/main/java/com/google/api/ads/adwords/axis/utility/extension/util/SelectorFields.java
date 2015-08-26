@@ -25,8 +25,6 @@ import java.util.List;
  * can use.
  *
  * <p>https://developers.google.com/adwords/api/docs/appendix/selectorfields
- *
- * @author Julian Toledo
  */
 public final class SelectorFields {
 

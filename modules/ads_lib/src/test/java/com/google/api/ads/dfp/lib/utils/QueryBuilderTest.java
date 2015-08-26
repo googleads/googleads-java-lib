@@ -26,8 +26,6 @@ import java.util.Map;
 
 /**
  * Test for the {@link QueryBuilderTest} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class QueryBuilderTest {

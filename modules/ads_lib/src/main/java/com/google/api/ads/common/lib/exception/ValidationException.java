@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.exception;
 
 /**
  * Exception for validation errors.
- *
- * @author Adam Rogal
  */
 public class ValidationException extends Exception {
 

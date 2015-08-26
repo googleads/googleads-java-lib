@@ -19,8 +19,6 @@ import com.google.inject.Inject;
 
 /**
  * Provides the ads library user agent.
- *
- * @author Adam Rogal
  */
 public class AdsLibraryUserAgentProvider implements UserAgentProvider {
 

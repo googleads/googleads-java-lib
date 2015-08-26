@@ -31,8 +31,6 @@ import java.nio.charset.Charset;
  * Helper class that handles AdHoc report downloads. Requests will be logged (header and payload) to
  * INFO. Successful reports will be logged (headers and response code) to INFO. Failed reports will
  * be logged in their entirety to WARN.
- *
- * @author Kevin Winter
  */
 public class AdHocReportDownloadHelper {
 

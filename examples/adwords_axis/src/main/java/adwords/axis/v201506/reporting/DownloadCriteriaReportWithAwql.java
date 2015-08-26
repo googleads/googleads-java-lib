@@ -31,8 +31,6 @@ import java.io.File;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * @author Kevin Winter
  */
 public class DownloadCriteriaReportWithAwql {
 

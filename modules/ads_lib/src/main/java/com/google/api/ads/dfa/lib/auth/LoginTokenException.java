@@ -19,8 +19,6 @@ import com.google.api.ads.common.lib.exception.AuthenticationException;
 /**
  * Wrapper for an exception thrown while {@link LoginTokens} is
  * attempting to generate a token.
- *
- * @author Joseph DiLallo
  */
 public class LoginTokenException extends AuthenticationException {
 

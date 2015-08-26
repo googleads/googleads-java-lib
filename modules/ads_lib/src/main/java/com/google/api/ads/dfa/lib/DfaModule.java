@@ -22,9 +22,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * Guice module for DFA bindings.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 public class DfaModule extends AdsModule {
 

@@ -16,8 +16,6 @@ package com.google.api.ads.dfp.lib.factory.helper.testing.v201502;
 
 /**
  * Test class for DfpServiceClientFactoryHelper.
- *
- * @author Adam Rogal
  */
 public class TestService {
 

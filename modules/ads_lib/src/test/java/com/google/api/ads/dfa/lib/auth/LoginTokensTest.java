@@ -33,8 +33,6 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * Test for the {@link LoginTokens} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class LoginTokensTest {

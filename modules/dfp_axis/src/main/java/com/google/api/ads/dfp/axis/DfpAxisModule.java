@@ -25,8 +25,6 @@ import com.google.inject.TypeLiteral;
 /**
  * Guice module to bind DFP's SOAP header handler to an Axis-friendly
  * implementation.
- *
- * @author Joseph DiLallo
  */
 @DfpProductFrameworkModule
 public class DfpAxisModule extends ProductFrameworkModule {

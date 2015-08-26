@@ -37,8 +37,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for {@link AdWordsServiceClientFactoryHelper}.
- *
- * @author Kevin Winter
  */
 @RunWith(JUnit4.class)
 public class AdWordsServiceClientFactoryHelperTest {

@@ -39,8 +39,6 @@ import java.net.URL;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
  */
 public class DfpSession implements AdsSession, OAuth2Compatible {
 

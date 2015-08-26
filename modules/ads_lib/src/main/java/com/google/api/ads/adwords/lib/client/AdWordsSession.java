@@ -38,8 +38,6 @@ import javax.annotation.Nullable;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
  */
 public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
@@ -361,6 +359,14 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      */
     public Builder enablePartialFailure() {
       this.isPartialFailure = true;
+      return this;
+    }
+    
+    /**
+     * Enables validate only. Default is disabled.
+     */
+    public Builder enableValidateOnly() {
+      this.isValidateOnly = true;
       return this;
     }
 

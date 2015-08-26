@@ -25,8 +25,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link DfaInternals}
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfaInternalsTest {

@@ -42,12 +42,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: CampaignFeedService.mutate, FeedItemService.mutate, FeedMappingService.mutate
- * Tags: FeedService.mutate
- *
- * @author Kevin Winter
- * @author Julian Toledo
  */
 public class AddSiteLinks {
 

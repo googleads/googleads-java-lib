@@ -37,10 +37,6 @@ import java.util.Calendar;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: placement.savePlacement
- *
- * @author Joseph DiLallo
  */
 public class CreatePlacement {
 

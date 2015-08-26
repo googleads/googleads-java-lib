@@ -21,8 +21,6 @@ import com.google.inject.TypeLiteral;
 
 /**
  * Module for SOAP client handler.
- *
- * @author Joseph DiLallo
  */
 public class JaxWsModule extends AbstractModule {
 

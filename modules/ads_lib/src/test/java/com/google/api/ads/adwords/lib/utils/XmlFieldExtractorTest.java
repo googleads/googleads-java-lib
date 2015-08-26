@@ -28,8 +28,6 @@ import java.util.Map;
 
 /**
  * Test for {@link XmlFieldExtractor}.
- *
- * @author Kevin Winter
  */
 @RunWith(JUnit4.class)
 public class XmlFieldExtractorTest {

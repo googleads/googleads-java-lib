@@ -35,10 +35,6 @@ import org.joda.time.Instant;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemService.getLineItemsByStatement
- *
- * @author Adam Rogal
  */
 public class GetRecentlyUpdatedLineItems {
 

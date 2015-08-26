@@ -16,8 +16,6 @@ package com.google.api.ads.adwords.lib.selectorfields;
 
 /**
  * This is the base interface that all Enums used on constant fields must implement.
- *
- * @author Gustavo Moreira
  */
 public interface EntityField {
 

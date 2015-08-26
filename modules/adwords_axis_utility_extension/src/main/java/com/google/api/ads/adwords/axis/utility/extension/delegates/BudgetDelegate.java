@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link BudgetDelegate}.
- *
- * @author Julian Toledo
  */
 public final class BudgetDelegate extends
     AbstractGetMutateDelegate<Budget, BudgetOperation, BudgetServiceInterface> {

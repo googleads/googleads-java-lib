@@ -22,10 +22,6 @@ import java.util.List;
 
 /**
  * This example gets all budget orders.
- *
- * Tags: BudgetOrderService.getBillingAccounts()
- *
- * @author Julian Toledo
  */
 public class GetBudgetOrders {
 

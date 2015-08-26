@@ -26,8 +26,6 @@ import com.google.inject.Injector;
 
 /**
  * Factory which creates AdWords service clients.
- *
- * @author Adam Rogal
  */
 public class AdWordsServiceClientFactory
     extends BaseAdsServiceClientFactory<AdWordsServiceClient,

@@ -17,8 +17,6 @@ package com.google.api.ads.common.lib.soap.compatability;
 /**
  * Specifies that for the {@code AdsServiceClient} to be JAX-WS compatible, it
  * must be able to retrieve a service class.
- *
- * @author Joseph DiLallo
  */
 public interface JaxWsCompatible {
 

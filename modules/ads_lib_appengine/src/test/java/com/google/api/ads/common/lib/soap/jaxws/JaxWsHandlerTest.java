@@ -56,8 +56,6 @@ import javax.xml.ws.handler.MessageContext;
 
 /**
  * SOAP Client Handler implementation for use with JAX-WS.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class JaxWsHandlerTest {

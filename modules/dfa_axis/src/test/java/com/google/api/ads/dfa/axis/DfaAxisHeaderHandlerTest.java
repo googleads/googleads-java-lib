@@ -46,8 +46,6 @@ import javax.xml.soap.SOAPHeaderElement;
 
 /**
  * Test for the {@link DfaAxisHeaderHandler} class.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class DfaAxisHeaderHandlerTest {

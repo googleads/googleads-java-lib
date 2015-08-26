@@ -53,11 +53,6 @@ import org.joda.time.Instant;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ForecastService.getAvailabilityForecast
- * Tags: NetworkService.getCurrentNetwork
- *
- * @author Adam Rogal
  */
 public class GetAvailabilityForecast {
 

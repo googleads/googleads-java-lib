@@ -30,8 +30,6 @@ import com.google.inject.assistedinject.FactoryProvider;
  * @param <D> the subclass of {@link AdsServiceDescriptor}
  * @param <S> the subclass of {@link AdsSession}
  * @param <H> the subclass of {@link AdsServiceClientFactoryHelper}
- *
- * @author Adam Rogal
  */
 public class FactoryModule<C extends AdsServiceClient<S, D>,
                            D extends AdsServiceDescriptor,

@@ -51,8 +51,6 @@ import java.util.Collection;
 
 /**
  * Tests for {@link ReportDownloader}.
- *
- * @author Kevin Winter
  */
 @RunWith(Parameterized.class)
 public class ReportDownloaderTest {

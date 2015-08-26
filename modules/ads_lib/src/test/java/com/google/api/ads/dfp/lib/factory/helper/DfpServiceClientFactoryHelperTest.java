@@ -35,8 +35,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for {@link DfpServiceClientFactoryHelper}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfpServiceClientFactoryHelperTest {

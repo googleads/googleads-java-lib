@@ -54,8 +54,6 @@ import java.util.Map;
 
 /**
  * Tests for the {@link AdWordsAxisHeaderHandler} class.
- *
- * @author Josh Radcliff
  */
 @RunWith(Parameterized.class)
 public class AdWordsAxisHeaderHandlerTest {

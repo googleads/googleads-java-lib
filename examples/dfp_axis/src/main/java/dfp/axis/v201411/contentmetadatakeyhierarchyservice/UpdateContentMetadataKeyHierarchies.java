@@ -35,11 +35,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
- * Tags: ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchies
- *
- * @author Chris Seeley
  */
 public class UpdateContentMetadataKeyHierarchies {
   

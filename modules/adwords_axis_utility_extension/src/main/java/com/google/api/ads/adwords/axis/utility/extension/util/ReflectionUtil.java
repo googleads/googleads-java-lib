@@ -33,8 +33,6 @@ import java.util.HashMap;
 
 /**
  * Reflection utilities class.
- *
- * @author Julian Toledo
  */
 public class ReflectionUtil {
 

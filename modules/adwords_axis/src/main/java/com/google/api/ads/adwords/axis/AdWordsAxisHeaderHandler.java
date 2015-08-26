@@ -36,9 +36,6 @@ import java.util.Map;
 
 /**
  * AdWords implementation of {@link HeaderHandler} for Axis.
- *
- * @author Adam Rogal
- * @author Josh Radcliff
  */
 public class AdWordsAxisHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {

@@ -18,8 +18,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration of lib properties.
- *
- * @author Adam Rogal
  */
 public abstract class AdsLibConfiguration extends BaseConfiguration {
 

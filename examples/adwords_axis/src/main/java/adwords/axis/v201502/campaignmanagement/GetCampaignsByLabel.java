@@ -36,10 +36,6 @@ import com.google.common.collect.Lists;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CampaignService.get
- *
- * @author Josh Radcliff
  */
 public class GetCampaignsByLabel {
 

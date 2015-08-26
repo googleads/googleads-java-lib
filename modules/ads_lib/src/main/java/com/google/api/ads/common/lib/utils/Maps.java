@@ -27,8 +27,6 @@ import java.util.Map.Entry;
 
 /**
  * A utility class for managing maps as represented in the API.
- *
- * @author Adam Rogal
  */
 public final class Maps {
 

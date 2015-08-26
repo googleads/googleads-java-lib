@@ -22,8 +22,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Provides the Axis user agent.
- *
- * @author Adam Rogal
  */
 public class AxisFrameworkUserAgentProvider implements FrameworkUserAgentProvider {
 

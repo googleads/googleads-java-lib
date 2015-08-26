@@ -55,8 +55,6 @@ import java.util.Set;
 
 /**
  * Tests for {@link ProductDimensions}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductDimensionsTest {

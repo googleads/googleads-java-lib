@@ -26,14 +26,12 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link UserAgentCombiner} with AdWords and JAX-WS.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (AwApi-Java, AdWords-AppEngine/2.3.0, Common-Java/2.3.0,"
+      "userAgent (AwApi-Java, AdWords-AppEngine/2.4.0, Common-Java/2.4.0,"
           + " JAX-WS/Unknown, Java/" + System.getProperty("java.version") + ", maven)";
 
   /**

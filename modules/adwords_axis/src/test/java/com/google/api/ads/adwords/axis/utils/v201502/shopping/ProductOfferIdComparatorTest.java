@@ -24,8 +24,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for comparing {@link ProductOfferId} dimensions.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ProductOfferIdComparatorTest extends BaseProductDimensionComparatorTest {

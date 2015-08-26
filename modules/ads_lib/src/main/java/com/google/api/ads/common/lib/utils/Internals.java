@@ -23,8 +23,6 @@ import com.google.inject.Inject;
 
 /**
  * Provides access to internal utilities.
- *
- * @author Kevin Winter
  */
 public class Internals {
 

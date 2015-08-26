@@ -28,8 +28,6 @@ import org.junit.runners.JUnit4;
 /**
  * Ensures that all of the Guice bindings work correctly when a
  * {@link DfaAxisModule} is installed.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class DfaAxisModuleIntegrationTest extends TestCase {

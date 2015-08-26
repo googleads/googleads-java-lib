@@ -31,8 +31,6 @@ import javax.xml.transform.stream.StreamSource;
 
 /**
  * Test for the {@link PrettyPrinter} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class PrettyPrinterTest {

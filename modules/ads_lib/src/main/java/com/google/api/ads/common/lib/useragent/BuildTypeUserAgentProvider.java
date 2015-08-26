@@ -19,8 +19,6 @@ import com.google.inject.Inject;
 
 /**
  * Provides the build type user agent.
- *
- * @author Adam Rogal
  */
 public class BuildTypeUserAgentProvider implements UserAgentProvider {
 

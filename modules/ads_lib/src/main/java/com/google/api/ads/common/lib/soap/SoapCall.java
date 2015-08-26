@@ -23,8 +23,6 @@ import java.util.Arrays;
  * Represents a single call to the SOAP client.
  *
  * @param <T> the SOAP client type
- *
- * @author Adam Rogal
  */
 public class SoapCall<T> {
 

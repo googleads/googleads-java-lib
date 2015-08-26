@@ -39,10 +39,6 @@ import javax.annotation.Nullable;
 
 /**
  * Helper class that loads {@link Configuration} from various sources.
- *
- * @author Kevin Winter
- * @author Jeff Sham
- * @author Adam Rogal
  */
 public class ConfigurationHelper {
 

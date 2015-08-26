@@ -21,7 +21,7 @@ public class Campaign  implements java.io.Serializable {
     /* Name of this campaign.
      *                 This field is required and should not be {@code null}
      * for ADD operations.
-     *                 
+     *
      *                 For SET and REMOVE operations, this can be used to
      * address the campaign
      *                 by name when the campaign is ENABLED or PAUSED. Removed
@@ -125,17 +125,10 @@ public class Campaign  implements java.io.Serializable {
      *                 {@link Operator}s : ADD */
     private com.google.api.ads.adwords.axis.v201502.cm.BiddingStrategyConfiguration biddingStrategyConfiguration;
 
-    /* This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     /* URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field. */
     private java.lang.String trackingUrlTemplate;
@@ -192,7 +185,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the id value for this Campaign.
-     * 
+     *
      * @return id   * ID of this campaign.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -205,7 +198,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the id value for this Campaign.
-     * 
+     *
      * @param id   * ID of this campaign.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
@@ -218,11 +211,11 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the name value for this Campaign.
-     * 
+     *
      * @return name   * Name of this campaign.
      *                 This field is required and should not be {@code null}
      * for ADD operations.
-     *                 
+     *
      *                 For SET and REMOVE operations, this can be used to
      * address the campaign
      *                 by name when the campaign is ENABLED or PAUSED. Removed
@@ -244,11 +237,11 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the name value for this Campaign.
-     * 
+     *
      * @param name   * Name of this campaign.
      *                 This field is required and should not be {@code null}
      * for ADD operations.
-     *                 
+     *
      *                 For SET and REMOVE operations, this can be used to
      * address the campaign
      *                 by name when the campaign is ENABLED or PAUSED. Removed
@@ -270,7 +263,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the status value for this Campaign.
-     * 
+     *
      * @return status   * Status of this campaign. On add, defaults to {@code ENABLED}.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.CampaignStatus getStatus() {
@@ -280,7 +273,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the status value for this Campaign.
-     * 
+     *
      * @param status   * Status of this campaign. On add, defaults to {@code ENABLED}.
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201502.cm.CampaignStatus status) {
@@ -290,7 +283,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the servingStatus value for this Campaign.
-     * 
+     *
      * @return servingStatus   * Serving status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -302,7 +295,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the servingStatus value for this Campaign.
-     * 
+     *
      * @param servingStatus   * Serving status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -314,7 +307,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the startDate value for this Campaign.
-     * 
+     *
      * @return startDate   * Date the campaign begins. On add, defaults to the current day
      * in the parent account's local timezone. The date's format should be
      * YYYYMMDD.
@@ -326,7 +319,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the startDate value for this Campaign.
-     * 
+     *
      * @param startDate   * Date the campaign begins. On add, defaults to the current day
      * in the parent account's local timezone. The date's format should be
      * YYYYMMDD.
@@ -338,7 +331,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the endDate value for this Campaign.
-     * 
+     *
      * @return endDate   * Date the campaign ends. On add, defaults to <code>20371230</code>,
      * which means the
      *                 campaign will run indefinitely. To set an existing
@@ -353,7 +346,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the endDate value for this Campaign.
-     * 
+     *
      * @param endDate   * Date the campaign ends. On add, defaults to <code>20371230</code>,
      * which means the
      *                 campaign will run indefinitely. To set an existing
@@ -368,7 +361,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the budget value for this Campaign.
-     * 
+     *
      * @return budget   * Current base budget of campaign; default if no custom budgets
      * are enabled.
      */
@@ -379,7 +372,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the budget value for this Campaign.
-     * 
+     *
      * @param budget   * Current base budget of campaign; default if no custom budgets
      * are enabled.
      */
@@ -390,7 +383,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the conversionOptimizerEligibility value for this Campaign.
-     * 
+     *
      * @return conversionOptimizerEligibility   * <span class="constraint ReadOnly">This field is read only and
      * will be ignored when sent to the API.</span>
      */
@@ -401,7 +394,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the conversionOptimizerEligibility value for this Campaign.
-     * 
+     *
      * @param conversionOptimizerEligibility   * <span class="constraint ReadOnly">This field is read only and
      * will be ignored when sent to the API.</span>
      */
@@ -412,7 +405,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the adServingOptimizationStatus value for this Campaign.
-     * 
+     *
      * @return adServingOptimizationStatus   * Ad serving optimization status.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.AdServingOptimizationStatus getAdServingOptimizationStatus() {
@@ -422,7 +415,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the adServingOptimizationStatus value for this Campaign.
-     * 
+     *
      * @param adServingOptimizationStatus   * Ad serving optimization status.
      */
     public void setAdServingOptimizationStatus(com.google.api.ads.adwords.axis.v201502.cm.AdServingOptimizationStatus adServingOptimizationStatus) {
@@ -432,7 +425,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the frequencyCap value for this Campaign.
-     * 
+     *
      * @return frequencyCap   * Frequency cap for this campaign.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.FrequencyCap getFrequencyCap() {
@@ -442,7 +435,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the frequencyCap value for this Campaign.
-     * 
+     *
      * @param frequencyCap   * Frequency cap for this campaign.
      */
     public void setFrequencyCap(com.google.api.ads.adwords.axis.v201502.cm.FrequencyCap frequencyCap) {
@@ -452,7 +445,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the settings value for this Campaign.
-     * 
+     *
      * @return settings   * List of settings for the campaign.
      */
     public com.google.api.ads.adwords.axis.v201502.cm.Setting[] getSettings() {
@@ -462,7 +455,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the settings value for this Campaign.
-     * 
+     *
      * @param settings   * List of settings for the campaign.
      */
     public void setSettings(com.google.api.ads.adwords.axis.v201502.cm.Setting[] settings) {
@@ -480,7 +473,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the advertisingChannelType value for this Campaign.
-     * 
+     *
      * @return advertisingChannelType   * The primary serving target for ads within this campaign. The
      * targeting options can be refined
      *                 in NetworkSetting. May only be set for new campaigns.
@@ -498,7 +491,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the advertisingChannelType value for this Campaign.
-     * 
+     *
      * @param advertisingChannelType   * The primary serving target for ads within this campaign. The
      * targeting options can be refined
      *                 in NetworkSetting. May only be set for new campaigns.
@@ -516,7 +509,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the advertisingChannelSubType value for this Campaign.
-     * 
+     *
      * @return advertisingChannelSubType   * Optional refinement of advertisingChannelType. Must be a valid
      * sub-type of the parent channel
      *                 type. May only be set for new campaigns and cannot
@@ -532,7 +525,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the advertisingChannelSubType value for this Campaign.
-     * 
+     *
      * @param advertisingChannelSubType   * Optional refinement of advertisingChannelType. Must be a valid
      * sub-type of the parent channel
      *                 type. May only be set for new campaigns and cannot
@@ -548,7 +541,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the networkSetting value for this Campaign.
-     * 
+     *
      * @return networkSetting   * Network settings for the campaign indicating where the campaign
      * will serve.
      */
@@ -559,7 +552,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the networkSetting value for this Campaign.
-     * 
+     *
      * @param networkSetting   * Network settings for the campaign indicating where the campaign
      * will serve.
      */
@@ -570,7 +563,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the labels value for this Campaign.
-     * 
+     *
      * @return labels   * Labels that are attached to the campaign. To associate an existing
      * {@link Label} to an
      *                 existing {@link Campaign}, use {@link CampaignService#mutateLabel}
@@ -594,7 +587,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the labels value for this Campaign.
-     * 
+     *
      * @param labels   * Labels that are attached to the campaign. To associate an existing
      * {@link Label} to an
      *                 existing {@link Campaign}, use {@link CampaignService#mutateLabel}
@@ -626,7 +619,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the biddingStrategyConfiguration value for this Campaign.
-     * 
+     *
      * @return biddingStrategyConfiguration   * Bidding configuration for this campaign. To change an existing
      * campaign's
      *                 bidding strategy, set the {@link BiddingStrategyConfiguration#biddingStrategyType}
@@ -642,7 +635,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the biddingStrategyConfiguration value for this Campaign.
-     * 
+     *
      * @param biddingStrategyConfiguration   * Bidding configuration for this campaign. To change an existing
      * campaign's
      *                 bidding strategy, set the {@link BiddingStrategyConfiguration#biddingStrategyType}
@@ -656,33 +649,11 @@ public class Campaign  implements java.io.Serializable {
     }
 
 
-    /**
-     * Gets the forwardCompatibilityMap value for this Campaign.
-     * 
-     * @return forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] getForwardCompatibilityMap() {
         return forwardCompatibilityMap;
     }
 
 
-    /**
-     * Sets the forwardCompatibilityMap value for this Campaign.
-     * 
-     * @param forwardCompatibilityMap   * This Map provides a place to put new features and settings
-     * in older versions
-     *                 of the AdWords API in the rare instance we need to
-     * introduce a new feature in
-     *                 an older version.
-     *                 
-     *                 It is presently unused.  Do not set a value.
-     */
     public void setForwardCompatibilityMap(com.google.api.ads.adwords.axis.v201502.cm.String_StringMapEntry[] forwardCompatibilityMap) {
         this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
@@ -698,9 +669,9 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the trackingUrlTemplate value for this Campaign.
-     * 
+     *
      * @return trackingUrlTemplate   * URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
      */
@@ -711,9 +682,9 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the trackingUrlTemplate value for this Campaign.
-     * 
+     *
      * @param trackingUrlTemplate   * URL template for constructing a tracking URL.
-     *                 
+     *
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
      */
@@ -724,7 +695,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Gets the urlCustomParameters value for this Campaign.
-     * 
+     *
      * @return urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
@@ -736,7 +707,7 @@ public class Campaign  implements java.io.Serializable {
 
     /**
      * Sets the urlCustomParameters value for this Campaign.
-     * 
+     *
      * @param urlCustomParameters   * A list of mappings to be used for substituting URL custom parameter
      * tags in the
      *                 trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
@@ -756,62 +727,62 @@ public class Campaign  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.id==null && other.getId()==null) || 
+        _equals = true &&
+            ((this.id==null && other.getId()==null) ||
              (this.id!=null &&
               this.id.equals(other.getId()))) &&
-            ((this.name==null && other.getName()==null) || 
+            ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.status==null && other.getStatus()==null) || 
+            ((this.status==null && other.getStatus()==null) ||
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
-            ((this.servingStatus==null && other.getServingStatus()==null) || 
+            ((this.servingStatus==null && other.getServingStatus()==null) ||
              (this.servingStatus!=null &&
               this.servingStatus.equals(other.getServingStatus()))) &&
-            ((this.startDate==null && other.getStartDate()==null) || 
+            ((this.startDate==null && other.getStartDate()==null) ||
              (this.startDate!=null &&
               this.startDate.equals(other.getStartDate()))) &&
-            ((this.endDate==null && other.getEndDate()==null) || 
+            ((this.endDate==null && other.getEndDate()==null) ||
              (this.endDate!=null &&
               this.endDate.equals(other.getEndDate()))) &&
-            ((this.budget==null && other.getBudget()==null) || 
+            ((this.budget==null && other.getBudget()==null) ||
              (this.budget!=null &&
               this.budget.equals(other.getBudget()))) &&
-            ((this.conversionOptimizerEligibility==null && other.getConversionOptimizerEligibility()==null) || 
+            ((this.conversionOptimizerEligibility==null && other.getConversionOptimizerEligibility()==null) ||
              (this.conversionOptimizerEligibility!=null &&
               this.conversionOptimizerEligibility.equals(other.getConversionOptimizerEligibility()))) &&
-            ((this.adServingOptimizationStatus==null && other.getAdServingOptimizationStatus()==null) || 
+            ((this.adServingOptimizationStatus==null && other.getAdServingOptimizationStatus()==null) ||
              (this.adServingOptimizationStatus!=null &&
               this.adServingOptimizationStatus.equals(other.getAdServingOptimizationStatus()))) &&
-            ((this.frequencyCap==null && other.getFrequencyCap()==null) || 
+            ((this.frequencyCap==null && other.getFrequencyCap()==null) ||
              (this.frequencyCap!=null &&
               this.frequencyCap.equals(other.getFrequencyCap()))) &&
-            ((this.settings==null && other.getSettings()==null) || 
+            ((this.settings==null && other.getSettings()==null) ||
              (this.settings!=null &&
               java.util.Arrays.equals(this.settings, other.getSettings()))) &&
-            ((this.advertisingChannelType==null && other.getAdvertisingChannelType()==null) || 
+            ((this.advertisingChannelType==null && other.getAdvertisingChannelType()==null) ||
              (this.advertisingChannelType!=null &&
               this.advertisingChannelType.equals(other.getAdvertisingChannelType()))) &&
-            ((this.advertisingChannelSubType==null && other.getAdvertisingChannelSubType()==null) || 
+            ((this.advertisingChannelSubType==null && other.getAdvertisingChannelSubType()==null) ||
              (this.advertisingChannelSubType!=null &&
               this.advertisingChannelSubType.equals(other.getAdvertisingChannelSubType()))) &&
-            ((this.networkSetting==null && other.getNetworkSetting()==null) || 
+            ((this.networkSetting==null && other.getNetworkSetting()==null) ||
              (this.networkSetting!=null &&
               this.networkSetting.equals(other.getNetworkSetting()))) &&
-            ((this.labels==null && other.getLabels()==null) || 
+            ((this.labels==null && other.getLabels()==null) ||
              (this.labels!=null &&
               java.util.Arrays.equals(this.labels, other.getLabels()))) &&
-            ((this.biddingStrategyConfiguration==null && other.getBiddingStrategyConfiguration()==null) || 
+            ((this.biddingStrategyConfiguration==null && other.getBiddingStrategyConfiguration()==null) ||
              (this.biddingStrategyConfiguration!=null &&
               this.biddingStrategyConfiguration.equals(other.getBiddingStrategyConfiguration()))) &&
-            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) || 
+            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) ||
              (this.forwardCompatibilityMap!=null &&
               java.util.Arrays.equals(this.forwardCompatibilityMap, other.getForwardCompatibilityMap()))) &&
-            ((this.trackingUrlTemplate==null && other.getTrackingUrlTemplate()==null) || 
+            ((this.trackingUrlTemplate==null && other.getTrackingUrlTemplate()==null) ||
              (this.trackingUrlTemplate!=null &&
               this.trackingUrlTemplate.equals(other.getTrackingUrlTemplate()))) &&
-            ((this.urlCustomParameters==null && other.getUrlCustomParameters()==null) || 
+            ((this.urlCustomParameters==null && other.getUrlCustomParameters()==null) ||
              (this.urlCustomParameters!=null &&
               this.urlCustomParameters.equals(other.getUrlCustomParameters())));
         __equalsCalc = null;
@@ -1065,10 +1036,10 @@ public class Campaign  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -1077,10 +1048,10 @@ public class Campaign  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

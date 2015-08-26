@@ -24,9 +24,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * Guice module for AdWords bindings.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class AdWordsModule extends AdsModule {
 

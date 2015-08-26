@@ -17,8 +17,6 @@ package com.google.api.ads.common.lib.soap.compatability;
 /**
  * Specifies that for the {@code AdsServiceClient} to be Axis compatible, it
  * must be able to retrieve a locator class.
- *
- * @author Adam Rogal
  */
 public interface AxisCompatible {
   /**

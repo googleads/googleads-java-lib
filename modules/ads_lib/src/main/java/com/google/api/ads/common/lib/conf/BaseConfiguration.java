@@ -18,8 +18,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Base configuration class.
- *
- * @author api.arogal (Adam Rogal)
  */
 public abstract class BaseConfiguration {
 

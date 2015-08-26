@@ -26,8 +26,6 @@ import com.google.inject.Injector;
 
 /**
  * Factory which creates DFP service clients.
- *
- * @author Adam Rogal
  */
 public class DfpServiceClientFactory
     extends BaseAdsServiceClientFactory<DfpServiceClient,

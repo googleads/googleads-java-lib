@@ -34,8 +34,6 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * DFP implementation of {@link HeaderHandler}.
- *
- * @author Adam Rogal
  */
 public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServiceDescriptor> {
 

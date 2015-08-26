@@ -22,8 +22,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration information for AdWords library.
- *
- * @author Adam Rogal
  */
 public class AdWordsLibConfiguration extends AdsLibConfiguration {
 

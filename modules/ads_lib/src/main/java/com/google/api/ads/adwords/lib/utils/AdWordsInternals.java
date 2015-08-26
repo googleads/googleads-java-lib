@@ -27,8 +27,6 @@ import com.google.inject.Inject;
 
 /**
  * Provides access to some internal guice-injected objects.
- *
- * @author Kevin Winter
  */
 public class AdWordsInternals extends Internals {
 

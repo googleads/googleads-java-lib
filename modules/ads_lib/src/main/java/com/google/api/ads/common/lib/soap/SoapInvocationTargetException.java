@@ -18,8 +18,6 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * A {@link InvocationTargetException} that occurred in the SOAP layer.
- *
- * @author Adam Rogal
  */
 public class SoapInvocationTargetException extends InvocationTargetException {
   public SoapCallReturn soapCallReturn;

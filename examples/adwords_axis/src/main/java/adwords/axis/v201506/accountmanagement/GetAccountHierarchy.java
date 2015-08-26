@@ -42,12 +42,6 @@ import java.util.Map;
  *
  * Note: this code example won't work with test accounts. See
  * https://developers.google.com/adwords/api/docs/test-accounts
- *
- * Tags: ManagedCustomerService.get
- *
- * Category: adx-exclude
- *
- * @author Adam Rogal
  */
 public class GetAccountHierarchy {
 

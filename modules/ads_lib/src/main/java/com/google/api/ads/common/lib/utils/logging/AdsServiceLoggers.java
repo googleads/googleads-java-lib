@@ -26,9 +26,6 @@ import org.slf4j.LoggerFactory;
 /**
  * The class {@code AdsServiceLogger} allows logging of outgoing and
  * incoming SOAP XML messages as API calls are executed.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class AdsServiceLoggers {
 

@@ -30,8 +30,6 @@ import java.util.regex.Pattern;
 
 /**
  * Factory helper for DFA.
- *
- * @author Adam Rogal
  */
 public class DfaServiceClientFactoryHelper extends
     BaseAdsServiceClientFactoryHelper<DfaServiceClient,

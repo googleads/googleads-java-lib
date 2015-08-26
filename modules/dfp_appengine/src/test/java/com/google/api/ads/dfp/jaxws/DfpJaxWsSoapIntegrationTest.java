@@ -20,8 +20,8 @@ import static org.junit.Assert.assertFalse;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
 import com.google.api.ads.dfp.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.jaxws.v201502.Company;
-import com.google.api.ads.dfp.jaxws.v201502.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201508.Company;
+import com.google.api.ads.dfp.jaxws.v201508.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -39,13 +39,11 @@ import java.util.List;
 
 /**
  * Tests that a DFP JAX-WS SOAP call can be made end-to-end.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201502";  
+  private static final String API_VERSION = "v201508";  
   
   @BeforeClass
   public static void setupClass() {

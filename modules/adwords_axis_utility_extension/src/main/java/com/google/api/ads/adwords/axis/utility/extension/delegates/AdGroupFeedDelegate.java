@@ -27,8 +27,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupFeed}.
- *
- * @author Julian Toledo
  */
 public final class AdGroupFeedDelegate extends
     AbstractGetMutateDelegate<AdGroupFeed, AdGroupFeedOperation, AdGroupFeedServiceInterface> {
