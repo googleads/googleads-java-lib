@@ -25,8 +25,30 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum BidModifierSource {
 
+
+    /**
+     * 
+     *                 <span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>
+     *               
+     * 
+     */
     UNKNOWN,
+
+    /**
+     * 
+     *                 The bid modifier is specified at the campaign level, on the campaign level
+     *                 criterion.
+     *               
+     * 
+     */
     CAMPAIGN,
+
+    /**
+     * 
+     *                 The bid modifier is specified (overridden) at the ad group level.
+     *               
+     * 
+     */
     AD_GROUP;
 
     public String value() {

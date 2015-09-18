@@ -40,6 +40,8 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to NEGATIVE_KEYWORDS for campaign channel type SHOPPING.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * NEGATIVE_PLACEMENTS for campaign channel subtype DISPLAY_MOBILE_APP.</span>
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.SharedSetType sharedSetType;
@@ -170,6 +172,8 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to NEGATIVE_KEYWORDS for campaign channel type SHOPPING.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * NEGATIVE_PLACEMENTS for campaign channel subtype DISPLAY_MOBILE_APP.</span>
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API.</span>
      */
@@ -186,6 +190,8 @@ public class CampaignSharedSet  implements java.io.Serializable {
      * field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * only be set to NEGATIVE_KEYWORDS for campaign channel type SHOPPING.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * NEGATIVE_PLACEMENTS for campaign channel subtype DISPLAY_MOBILE_APP.</span>
      * <span class="constraint ReadOnly">This field is read only and will
      * be ignored when sent to the API.</span>
      */

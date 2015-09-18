@@ -24,14 +24,16 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201506.c
 
     /* First line of the description for the sitelink. To clear this
      * field, set its value to the empty
-     *                     string.
+     *                     string. If this value is set, sitelinkLine3 must
+     * also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span> */
     private java.lang.String sitelinkLine2;
 
     /* Second line of the description for the sitelink. To clear this
      * field, set its value to the
-     *                     empty string.
+     *                     empty string. If this value is set, sitelinkLine2
+     * must also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span> */
     private java.lang.String sitelinkLine3;
@@ -150,7 +152,8 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201506.c
      * 
      * @return sitelinkLine2   * First line of the description for the sitelink. To clear this
      * field, set its value to the empty
-     *                     string.
+     *                     string. If this value is set, sitelinkLine3 must
+     * also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span>
      */
@@ -164,7 +167,8 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201506.c
      * 
      * @param sitelinkLine2   * First line of the description for the sitelink. To clear this
      * field, set its value to the empty
-     *                     string.
+     *                     string. If this value is set, sitelinkLine3 must
+     * also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span>
      */
@@ -178,7 +182,8 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201506.c
      * 
      * @return sitelinkLine3   * Second line of the description for the sitelink. To clear this
      * field, set its value to the
-     *                     empty string.
+     *                     empty string. If this value is set, sitelinkLine2
+     * must also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span>
      */
@@ -192,7 +197,8 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201506.c
      * 
      * @param sitelinkLine3   * Second line of the description for the sitelink. To clear this
      * field, set its value to the
-     *                     empty string.
+     *                     empty string. If this value is set, sitelinkLine2
+     * must also be set.
      *                     <span class="constraint StringLength">The length
      * of this string should be between 0 and 35, inclusive.</span>
      */

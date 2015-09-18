@@ -14,9 +14,6 @@ package com.google.api.ads.adwords.axis.v201506.o;
  *             sets a keyword category that all search results should
  * belong to.
  *             Uses the newer "Products and Services" taxonomy.
- *             <p>This search parameter can be used in bulk keyword requests
- * through the {@link com.google.ads.api.services.targetingideas.TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)}
- * method.
  *             <p>This element is supported by following {@link IdeaType}s:
  * KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s:

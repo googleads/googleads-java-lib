@@ -22,18 +22,10 @@ import javax.xml.ws.ResponseWrapper;
  *       text ad contains a headline, two lines of text, and a destination URL.</dd>
  *       <dt>{@linkplain ImageAd Image Ad}</dt>
  *       <dd>A standard image ad.</dd>
- *       <dt>{@linkplain MobileAd Mobile Ad}</dt>
- *       <dd>A text ad specific to mobile devices. In addition, a mobile ad can
- *       contain a click-to-call phone number.</dd>
- *       <dt>{@linkplain TemplateAd Template Ad} <span class="deem">(AdWords
- *       Display Ad Builder)</span></dt>
- *       <dd>A flexible ad type that supports <a
- *       href="/adwords/api/docs/appendix/templateads#click_to_play">video
- *       ads</a>, <a
- *       href="/adwords/api/docs/appendix/templateads#promote_your_image">image
- *       search ads</a>, and more. For a list of available templates, see the <a
- *       href="/adwords/api/docs/appendix/templateads">Template Ad
- *       Formats</a> appendix.</dd>
+ *       <dt>{@linkplain TemplateAd Template Ad} (<span class="deem">AdWords
+ *       Display Ad Builder</span>)</dt>
+ *       <dd>A flexible ad type that supports various <a
+ *       href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
  *       </dl>
  *     
  * 

@@ -848,19 +848,19 @@ public class AdGroupAdServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "OrderBy");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "OperatorError");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201506.cm.OrderBy.class;
+            cls = com.google.api.ads.adwords.axis.v201506.cm.OperatorError.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "Page");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "OperatorError.Reason");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201506.cm.Page.class;
+            cls = com.google.api.ads.adwords.axis.v201506.cm.OperatorErrorReason.class;
             cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
     }
     private void addBindings1() {
@@ -877,6 +877,20 @@ public class AdGroupAdServiceSoapBindingStub extends org.apache.axis.client.Stub
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "OrderBy");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201506.cm.OrderBy.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "Page");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201506.cm.Page.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "Paging");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201506.cm.Paging.class;

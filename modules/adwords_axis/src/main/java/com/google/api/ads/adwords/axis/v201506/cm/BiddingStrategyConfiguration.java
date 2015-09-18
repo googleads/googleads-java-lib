@@ -33,7 +33,7 @@ package com.google.api.ads.adwords.axis.v201506.cm;
  *             bidding strategy will be used. Effective bidding strategy
  * is considered to be the directly
  *             attached strategy or inherited strategy from above level(s)
- * when there?s no directly attached
+ * when there is no directly attached
  *             strategy.
  *             
  *             <p>For more information on flexible bidding, visit the
@@ -57,7 +57,14 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String biddingStrategyName;
 
-    /* The type of the bidding strategy to be attached. */
+    /* The type of the bidding strategy to be attached.
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to NONE for campaign channel type DISPLAY with campaign
+     * channel subtype DISPLAY_MOBILE_APP.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED,
+     * TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign
+     * channel subtype SEARCH_MOBILE_APP.</span> */
     private com.google.api.ads.adwords.axis.v201506.cm.BiddingStrategyType biddingStrategyType;
 
     /* Indicates where the bidding strategy is associated i.e. campaign,
@@ -172,6 +179,13 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Gets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @return biddingStrategyType   * The type of the bidding strategy to be attached.
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to NONE for campaign channel type DISPLAY with campaign
+     * channel subtype DISPLAY_MOBILE_APP.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED,
+     * TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign
+     * channel subtype SEARCH_MOBILE_APP.</span>
      */
     public com.google.api.ads.adwords.axis.v201506.cm.BiddingStrategyType getBiddingStrategyType() {
         return biddingStrategyType;
@@ -182,6 +196,13 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Sets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @param biddingStrategyType   * The type of the bidding strategy to be attached.
+     *                 <span class="constraint CampaignType">This field may
+     * only be set to NONE for campaign channel type DISPLAY with campaign
+     * channel subtype DISPLAY_MOBILE_APP.</span>
+     * <span class="constraint CampaignType">This field may only be set to
+     * the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED,
+     * TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign
+     * channel subtype SEARCH_MOBILE_APP.</span>
      */
     public void setBiddingStrategyType(com.google.api.ads.adwords.axis.v201506.cm.BiddingStrategyType biddingStrategyType) {
         this.biddingStrategyType = biddingStrategyType;

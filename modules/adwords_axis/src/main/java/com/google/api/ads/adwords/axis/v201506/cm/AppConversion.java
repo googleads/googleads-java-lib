@@ -12,7 +12,11 @@ package com.google.api.ads.adwords.axis.v201506.cm;
  * A ConversionTracker for mobile apps.
  */
 public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.ConversionTracker  implements java.io.Serializable {
-    /* App id of the app conversion tracker.
+    /* App ID of the app conversion tracker. This field is required
+     * for certain
+     *                     conversion types, in particular, Android app install
+     * (first open) and
+     *                     Android app install (from Google Play).
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AppId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -115,7 +119,11 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.C
     /**
      * Gets the appId value for this AppConversion.
      * 
-     * @return appId   * App id of the app conversion tracker.
+     * @return appId   * App ID of the app conversion tracker. This field is required
+     * for certain
+     *                     conversion types, in particular, Android app install
+     * (first open) and
+     *                     Android app install (from Google Play).
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AppId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -128,7 +136,11 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.C
     /**
      * Sets the appId value for this AppConversion.
      * 
-     * @param appId   * App id of the app conversion tracker.
+     * @param appId   * App ID of the app conversion tracker. This field is required
+     * for certain
+     *                     conversion types, in particular, Android app install
+     * (first open) and
+     *                     Android app install (from Google Play).
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AppId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

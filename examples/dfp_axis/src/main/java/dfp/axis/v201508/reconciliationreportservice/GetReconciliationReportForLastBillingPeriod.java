@@ -18,6 +18,8 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201508.StatementBuilder;
+import com.google.api.ads.dfp.axis.v201508.Network;
+import com.google.api.ads.dfp.axis.v201508.NetworkServiceInterface;
 import com.google.api.ads.dfp.axis.v201508.ReconciliationReport;
 import com.google.api.ads.dfp.axis.v201508.ReconciliationReportPage;
 import com.google.api.ads.dfp.axis.v201508.ReconciliationReportServiceInterface;
@@ -26,6 +28,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 import java.util.Arrays;
 
@@ -41,9 +44,15 @@ public class GetReconciliationReportForLastBillingPeriod {
     // Get the ReconciliationReportService.
     ReconciliationReportServiceInterface reconciliationReportService =
         dfpServices.get(session, ReconciliationReportServiceInterface.class);
-
-    // Get the first day of last month.
-    DateTime lastMonth = new DateTime().minusMonths(1).dayOfMonth().withMinimumValue();
+    
+    // Get the NetworkService.
+    NetworkServiceInterface networkService = 
+        dfpServices.get(session, NetworkServiceInterface.class);
+    
+    // Get the first day of last month in your network's time zone.
+    Network network = networkService.getCurrentNetwork();
+    DateTime lastMonth = new DateTime(DateTimeZone.forID(network.getTimeZone()))
+        .minusMonths(1).dayOfMonth().withMinimumValue();
 
     // Create a statement to select the last month's reconciliation report.
     StatementBuilder statementBuilder = new StatementBuilder()

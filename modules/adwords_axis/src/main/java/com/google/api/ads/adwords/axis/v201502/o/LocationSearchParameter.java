@@ -21,11 +21,8 @@ package com.google.api.ads.adwords.axis.v201502.o;
  *             <p>The service allows up to 10 locations to be targeted
  * for KEYWORD requests and 50 locations
  *             for PLACEMENT requests.
- *             <p>This search parameter can be used in bulk keyword requests
- * through the {@link com.google.ads.api.services.targetingideas.TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)}
- * method. It must be single-valued when used in a call to that method.
- * <p>This element is supported by following {@link IdeaType}s: KEYWORD,
- * PLACEMENT.
+ *             <p>This element is supported by following {@link IdeaType}s:
+ * KEYWORD, PLACEMENT.
  *             <p>This element is supported by following {@link RequestType}s:
  * IDEAS, STATS.
  */

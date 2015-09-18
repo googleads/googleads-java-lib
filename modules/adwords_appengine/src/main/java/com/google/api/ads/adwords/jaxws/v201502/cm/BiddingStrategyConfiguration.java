@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *             <p>Bids can be set only on ad groups and ad group criteria. They cannot be set on campaigns.
  *             Multiple bids can be set at the same time. Only the bids that apply to the effective
  *             bidding strategy will be used. Effective bidding strategy is considered to be the directly
- *             attached strategy or inherited strategy from above level(s) when there?s no directly attached
+ *             attached strategy or inherited strategy from above level(s) when there is no directly attached
  *             strategy.
  *             
  *             <p>For more information on flexible bidding, visit the

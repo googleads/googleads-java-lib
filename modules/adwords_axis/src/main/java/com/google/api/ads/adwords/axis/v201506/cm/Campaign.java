@@ -69,7 +69,9 @@ public class Campaign  implements java.io.Serializable {
     /* Ad serving optimization status. */
     private com.google.api.ads.adwords.axis.v201506.cm.AdServingOptimizationStatus adServingOptimizationStatus;
 
-    /* Frequency cap for this campaign. */
+    /* Frequency cap for this campaign.
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel subtype SEARCH_MOBILE_APP.</span> */
     private com.google.api.ads.adwords.axis.v201506.cm.FrequencyCap frequencyCap;
 
     /* List of settings for the campaign. */
@@ -427,6 +429,8 @@ public class Campaign  implements java.io.Serializable {
      * Gets the frequencyCap value for this Campaign.
      *
      * @return frequencyCap   * Frequency cap for this campaign.
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel subtype SEARCH_MOBILE_APP.</span>
      */
     public com.google.api.ads.adwords.axis.v201506.cm.FrequencyCap getFrequencyCap() {
         return frequencyCap;
@@ -437,6 +441,8 @@ public class Campaign  implements java.io.Serializable {
      * Sets the frequencyCap value for this Campaign.
      *
      * @param frequencyCap   * Frequency cap for this campaign.
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel subtype SEARCH_MOBILE_APP.</span>
      */
     public void setFrequencyCap(com.google.api.ads.adwords.axis.v201506.cm.FrequencyCap frequencyCap) {
         this.frequencyCap = frequencyCap;

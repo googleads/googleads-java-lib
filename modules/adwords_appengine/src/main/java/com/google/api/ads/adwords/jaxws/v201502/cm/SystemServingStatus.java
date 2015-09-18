@@ -28,7 +28,6 @@ public enum SystemServingStatus {
     /**
      * 
      *                 Criterion is eligible to serve.
-     *                 Not rarely served and not inactive for search.
      *               
      * 
      */
@@ -36,7 +35,9 @@ public enum SystemServingStatus {
 
     /**
      * 
-     *                 Rarely served. Criteria.isRarelyServed is true.
+     *                 Indicates low search volume.
+     *                 <p>For more information, visit
+     *                 <a href="https://support.google.com/adwords/answer/2616014">Low Search Volume</a>.</p>
      *               
      * 
      */

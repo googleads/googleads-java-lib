@@ -55,9 +55,6 @@ public class AdGroupAd  implements java.io.Serializable {
     /* True if and only if this ad is not serving because it does
      * not meet
      *                 trademark policy.
-     *                 This field is only useful when {@link #approvalStatus
-     * approvalStatus} is an
-     *                 approved status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean trademarkDisapproved;
@@ -308,9 +305,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * @return trademarkDisapproved   * True if and only if this ad is not serving because it does
      * not meet
      *                 trademark policy.
-     *                 This field is only useful when {@link #approvalStatus
-     * approvalStatus} is an
-     *                 approved status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -325,9 +319,6 @@ public class AdGroupAd  implements java.io.Serializable {
      * @param trademarkDisapproved   * True if and only if this ad is not serving because it does
      * not meet
      *                 trademark policy.
-     *                 This field is only useful when {@link #approvalStatus
-     * approvalStatus} is an
-     *                 approved status.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

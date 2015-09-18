@@ -225,7 +225,7 @@ public class ProductPartitionTree {
           parentIdMap.put(partition.getParentCriterionId(), adGroupCriterion);
         }
         offset += adGroupCriterionPage.getEntries().length;
-        selectorBuilder.increaseOffsetBy(offset);
+        selectorBuilder.increaseOffsetBy(PAGE_SIZE);
       }
     } while (offset < adGroupCriterionPage.getTotalNumEntries());
 

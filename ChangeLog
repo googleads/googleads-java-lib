@@ -1,3 +1,18 @@
+2.4.1 - 09/18/2015
+------------------
+AdWords:
+  - Corrected the argument passed to `SelectorBuilder.increaseOffsetBy` in `ProductPartitionTree`
+    to fix [github issue #50](https://github.com/googleads/googleads-java-lib/issues/50).
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.4.0 - 08/25/2015
 ------------------
 AdWords:

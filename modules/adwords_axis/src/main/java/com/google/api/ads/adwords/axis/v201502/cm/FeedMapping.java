@@ -25,17 +25,17 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  * </a></p>
  */
 public class FeedMapping  implements java.io.Serializable {
-    /* Id of this FeedMapping.
-     *                 &lt;span class="constraint Required"&gt;
+    /* ID of this FeedMapping.
+     *                 <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
+     *                 {@link Operator}s : REMOVE.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
     private java.lang.Long feedMappingId;
 
-    /* Id of the Feed that is mapped by this mapping.
+    /* ID of the Feed that is mapped by this mapping.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -58,10 +58,10 @@ public class FeedMapping  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201502.cm.FeedMappingStatus status;
 
     /* The list of feed attributes to placeholder fields mappings.
-     * &lt;span class="constraint Required"&gt;
+     * <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 {@link Operator}s : ADD.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AttributeFieldMappings".</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.AttributeFieldMapping[] attributeFieldMappings;
@@ -94,11 +94,11 @@ public class FeedMapping  implements java.io.Serializable {
     /**
      * Gets the feedMappingId value for this FeedMapping.
      * 
-     * @return feedMappingId   * Id of this FeedMapping.
-     *                 &lt;span class="constraint Required"&gt;
+     * @return feedMappingId   * ID of this FeedMapping.
+     *                 <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
+     *                 {@link Operator}s : REMOVE.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -111,11 +111,11 @@ public class FeedMapping  implements java.io.Serializable {
     /**
      * Sets the feedMappingId value for this FeedMapping.
      * 
-     * @param feedMappingId   * Id of this FeedMapping.
-     *                 &lt;span class="constraint Required"&gt;
+     * @param feedMappingId   * ID of this FeedMapping.
+     *                 <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : REMOVE.&lt;/span&gt;
+     *                 {@link Operator}s : REMOVE.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedMappingId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -128,7 +128,7 @@ public class FeedMapping  implements java.io.Serializable {
     /**
      * Gets the feedId value for this FeedMapping.
      * 
-     * @return feedId   * Id of the Feed that is mapped by this mapping.
+     * @return feedId   * ID of the Feed that is mapped by this mapping.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -143,7 +143,7 @@ public class FeedMapping  implements java.io.Serializable {
     /**
      * Sets the feedId value for this FeedMapping.
      * 
-     * @param feedId   * Id of the Feed that is mapped by this mapping.
+     * @param feedId   * ID of the Feed that is mapped by this mapping.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "FeedId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -215,10 +215,10 @@ public class FeedMapping  implements java.io.Serializable {
      * Gets the attributeFieldMappings value for this FeedMapping.
      * 
      * @return attributeFieldMappings   * The list of feed attributes to placeholder fields mappings.
-     * &lt;span class="constraint Required"&gt;
+     * <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 {@link Operator}s : ADD.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AttributeFieldMappings".</span>
      */
@@ -231,10 +231,10 @@ public class FeedMapping  implements java.io.Serializable {
      * Sets the attributeFieldMappings value for this FeedMapping.
      * 
      * @param attributeFieldMappings   * The list of feed attributes to placeholder fields mappings.
-     * &lt;span class="constraint Required"&gt;
+     * <span class="constraint Required">
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : ADD.&lt;/span&gt;
+     *                 {@link Operator}s : ADD.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AttributeFieldMappings".</span>
      */

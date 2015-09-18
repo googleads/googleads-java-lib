@@ -855,9 +855,9 @@ public class AdGroupAdServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201502", "OrderBy");
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201502", "OperatorError");
             cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201502.cm.OrderBy.class;
+            cls = com.google.api.ads.adwords.axis.v201502.cm.OperatorError.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -877,6 +877,20 @@ public class AdGroupAdServiceSoapBindingStub extends org.apache.axis.client.Stub
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201502", "OperatorError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201502.cm.OperatorErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201502", "OrderBy");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201502.cm.OrderBy.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201502", "Page");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201502.cm.Page.class;

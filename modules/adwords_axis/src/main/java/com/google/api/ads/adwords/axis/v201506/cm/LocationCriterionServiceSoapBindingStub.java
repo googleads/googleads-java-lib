@@ -216,13 +216,6 @@ public class LocationCriterionServiceSoapBindingStub extends org.apache.axis.cli
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "Date");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201506.cm.Date.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201506", "DateError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201506.cm.DateError.class;
