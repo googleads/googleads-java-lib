@@ -32,7 +32,6 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * True if and only if this ad is not serving because it does not meet trademark policy.
-   * This field is only useful when {@link #approvalStatus approvalStatus} is an approved status.
    */
   AdGroupAdTrademarkDisapproved(false),
 

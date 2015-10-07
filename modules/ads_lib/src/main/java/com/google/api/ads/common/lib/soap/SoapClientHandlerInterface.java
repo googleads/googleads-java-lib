@@ -108,6 +108,14 @@ public interface SoapClientHandlerInterface<T> {
    * compression.
    */
   void setCompression(T soapClient, boolean compress);
+  
+  /**
+   * Sets the read timeout of the given SOAP client.
+   *
+   * @param soapClient the SOAP client to set the read timeout for
+   * @param timeout the timeout in milliseconds
+   */
+  void setRequestTimeout(T soapClient, int timeout);
 
   /**
    * Gets the method from the SOAP client that matches the supplied method.

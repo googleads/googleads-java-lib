@@ -27,6 +27,15 @@ public interface CustomerExtensionSettingServiceInterface extends java.rmi.Remot
     /**
      * Applies the list of mutate operations (add, remove, and set).
      * 
+     *         <p> Beginning in v201509, add and set operations are treated
+     * identically. Performing an add
+     *         operation when there is an existing ExtensionSetting will
+     * cause the operation to be
+     *         treated like a set operation. Performing a set operation when
+     * there is no existing
+     *         ExtensionSetting will cause the operation to be treated like
+     * an add operation.
+     *         
      *         
      * @param operations The operations to apply. The same {@link CustomerExtensionSetting}
      * cannot be

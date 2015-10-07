@@ -342,5 +342,10 @@ public class SoapClientHandlerTest {
     public void setCompression(Object soapClient, boolean compress) {
       throw new UnsupportedOperationException();
     }
+    
+    @Override
+    public void setRequestTimeout(Object soapClient, int timeout) {
+      throw new UnsupportedOperationException();
+    }
   }
 }

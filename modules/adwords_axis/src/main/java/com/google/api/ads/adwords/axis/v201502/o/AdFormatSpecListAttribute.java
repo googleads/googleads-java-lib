@@ -13,9 +13,9 @@ package com.google.api.ads.adwords.axis.v201502.o;
  * values.
  */
 public class AdFormatSpecListAttribute  extends com.google.api.ads.adwords.axis.v201502.o.Attribute  implements java.io.Serializable {
-    /* A list of {@link AdFormatSpec}s indicating the type of ad
-     *                     the network supports. For example, an ad of type
-     * {@link AdFormat#IMAGE}.
+    /* A list of {@link AdFormatSpec}s indicating the type of ad the
+     * network supports. For example,
+     *                     an ad of type {@code AdFormat#IMAGE}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201502.o.AdFormatSpec[] value;
@@ -35,9 +35,9 @@ public class AdFormatSpecListAttribute  extends com.google.api.ads.adwords.axis.
     /**
      * Gets the value value for this AdFormatSpecListAttribute.
      * 
-     * @return value   * A list of {@link AdFormatSpec}s indicating the type of ad
-     *                     the network supports. For example, an ad of type
-     * {@link AdFormat#IMAGE}.
+     * @return value   * A list of {@link AdFormatSpec}s indicating the type of ad the
+     * network supports. For example,
+     *                     an ad of type {@code AdFormat#IMAGE}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -49,9 +49,9 @@ public class AdFormatSpecListAttribute  extends com.google.api.ads.adwords.axis.
     /**
      * Sets the value value for this AdFormatSpecListAttribute.
      * 
-     * @param value   * A list of {@link AdFormatSpec}s indicating the type of ad
-     *                     the network supports. For example, an ad of type
-     * {@link AdFormat#IMAGE}.
+     * @param value   * A list of {@link AdFormatSpec}s indicating the type of ad the
+     * network supports. For example,
+     *                     an ad of type {@code AdFormat#IMAGE}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

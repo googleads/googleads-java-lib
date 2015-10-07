@@ -107,28 +107,19 @@ public class TestHandler extends SoapClientHandler<Object> {
     return null;
   }
 
-  /**
-   * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
-   * createSoapHeaderElement(javax.xml.namespace.QName)
-   */
   @Override
   public javax.xml.soap.SOAPHeaderElement createSoapHeaderElement(QName qName) {
     return null;
   }
 
-  /**
-   * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
-   * getEndpointAddress(java.lang.Object)
-   */
   @Override
   public String getEndpointAddress(Object soapClient) {
     return null;
   }
 
-  /**
-   * @see com.google.api.ads.common.lib.soap.SoapClientHandlerInterface#
-   * putAllHttpHeaders(java.lang.Object, java.util.Map)
-   */
   @Override
   public void putAllHttpHeaders(Object soapClient, Map<String, String> headersMap) {}
+
+  @Override
+  public void setRequestTimeout(Object soapClient, int timeout) {}
 }

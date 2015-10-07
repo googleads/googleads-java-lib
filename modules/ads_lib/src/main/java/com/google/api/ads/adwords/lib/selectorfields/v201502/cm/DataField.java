@@ -95,18 +95,21 @@ public enum DataField implements EntityField {
 
   /**
    * Estimated number of clicks at this bid.
+   * For mobile bid modifier landscapes, this is the estimated number of clicks for mobile only.
    */
   @Filterable
   LocalClicks(true),
 
   /**
    * Estimated cost at this bid.
+   * For mobile bid modifier landscapes, this is the estimated cost for mobile only.
    */
   @Filterable
   LocalCost(true),
 
   /**
    * Estimated number of impressions at this bid.
+   * For mobile bid modifier landscapes, this is the estimated number of impressions for mobile only.
    */
   @Filterable
   LocalImpressions(true),

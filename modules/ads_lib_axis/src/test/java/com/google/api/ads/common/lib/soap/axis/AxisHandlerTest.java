@@ -157,4 +157,10 @@ public class AxisHandlerTest {
     assertFalse((Boolean) stub._getProperty(HTTPConstants.MC_ACCEPT_GZIP));
     assertFalse((Boolean) stub._getProperty(HTTPConstants.MC_GZIP_REQUEST));
   }
+  
+  @Test
+  public void testSetRequestTimeout() {
+    axisHandler.setRequestTimeout(stub, 12345);
+    assertEquals(12345, stub.getTimeout());
+  }
 }

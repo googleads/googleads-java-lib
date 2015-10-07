@@ -22,19 +22,25 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.Money bid;
 
-    /* Estimated number of clicks at this bid.
+    /* Estimated number of clicks at this bid. For mobile bid modifier
+     * landscapes, this is the
+     *                 estimated number of clicks for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalClicks".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
     private java.lang.Long clicks;
 
-    /* Estimated cost at this bid.
+    /* Estimated cost at this bid. For mobile bid modifier landscapes,
+     * this is the estimated cost
+     *                 for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalCost".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.Money cost;
 
-    /* Estimated number of impressions at this bid.
+    /* Estimated number of impressions at this bid. For mobile bid
+     * modifier landscapes, this is the
+     *                 estimated number of impressions for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalImpressions".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -96,7 +102,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Gets the clicks value for this BidLandscapeLandscapePoint.
      * 
-     * @return clicks   * Estimated number of clicks at this bid.
+     * @return clicks   * Estimated number of clicks at this bid. For mobile bid modifier
+     * landscapes, this is the
+     *                 estimated number of clicks for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalClicks".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -109,7 +117,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Sets the clicks value for this BidLandscapeLandscapePoint.
      * 
-     * @param clicks   * Estimated number of clicks at this bid.
+     * @param clicks   * Estimated number of clicks at this bid. For mobile bid modifier
+     * landscapes, this is the
+     *                 estimated number of clicks for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalClicks".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -122,7 +132,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Gets the cost value for this BidLandscapeLandscapePoint.
      * 
-     * @return cost   * Estimated cost at this bid.
+     * @return cost   * Estimated cost at this bid. For mobile bid modifier landscapes,
+     * this is the estimated cost
+     *                 for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalCost".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -135,7 +147,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Sets the cost value for this BidLandscapeLandscapePoint.
      * 
-     * @param cost   * Estimated cost at this bid.
+     * @param cost   * Estimated cost at this bid. For mobile bid modifier landscapes,
+     * this is the estimated cost
+     *                 for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalCost".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -148,7 +162,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Gets the impressions value for this BidLandscapeLandscapePoint.
      * 
-     * @return impressions   * Estimated number of impressions at this bid.
+     * @return impressions   * Estimated number of impressions at this bid. For mobile bid
+     * modifier landscapes, this is the
+     *                 estimated number of impressions for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalImpressions".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -161,7 +177,9 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /**
      * Sets the impressions value for this BidLandscapeLandscapePoint.
      * 
-     * @param impressions   * Estimated number of impressions at this bid.
+     * @param impressions   * Estimated number of impressions at this bid. For mobile bid
+     * modifier landscapes, this is the
+     *                 estimated number of impressions for mobile only.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LocalImpressions".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

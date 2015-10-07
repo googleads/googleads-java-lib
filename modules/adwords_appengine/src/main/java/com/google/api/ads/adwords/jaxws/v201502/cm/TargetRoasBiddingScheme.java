@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
  *             Target Roas bidding strategy helps you maximize revenue while averaging a specific target
  *             Return On Average Spend (ROAS).
  *             
- *             For example: If TargetRoas is 1.5, the strategy will create as much revenue as possible while
+ *             <p>For example: If TargetRoas is 1.5, the strategy will create as much revenue as possible while
  *             ensuring that every $1.00 of clicks provides $1.50 in conversion value.
  *             
  *             <p>Note that campaigns must meet <a

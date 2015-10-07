@@ -57,4 +57,11 @@ public class AdWordsLibConfiguration extends AdsLibConfiguration {
   public boolean isCompressionEnabled() {
     return config.getBoolean(KEY_PREFIX + "." + USE_COMPRESSION_POSTFIX, false);
   }
+  
+  @Override
+  public int getSoapRequestTimeout() {
+    return config.getInt(
+        KEY_PREFIX + "." + SOAP_REQUEST_TIMEOUT_POSTFIX, DEFAULT_SOAP_REQUEST_TIMEOUT);
+  }
+  
 }

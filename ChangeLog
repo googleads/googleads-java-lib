@@ -1,3 +1,19 @@
+2.5.0 - 10/07/2015
+------------------
+AdWords:
+  - Added support and examples for v201509.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Added support for setting SOAP request read timeouts via ads.properties.
+  - Updated Joda Time dependency to 2.8.2.
+  - Updated Guice dependency to version 4.0.
+
 2.4.1 - 09/18/2015
 ------------------
 AdWords:

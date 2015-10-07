@@ -112,6 +112,8 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * The YouTube uploader channel id or the channel code of a YouTube content channel.
+   * <p>The uploader channel id can be obtained from the YouTube id-based URL.
+   * For example, in <code>https://www.youtube.com/channel/UCEN58iXQg82TXgsDCjWqIkg</code> the channel id is <code>UCEN58iXQg82TXgsDCjWqIkg</code> <p>For more information see: https://support.google.com/youtube/answer/6180214
    */
   ChannelId(false),
 
@@ -336,7 +338,8 @@ public enum AdGroupCriterionField implements EntityField {
   PlacementUrl(true),
 
   /**
-   * Keyword quality score that ranges from 1 to 10, 1 being the lowest, 10 the highest.
+   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
+   * This field may be returned as NULL if AdWords does not have enough information to determine an appropriate quality score value.
    */
   @Filterable
   QualityScore(true),

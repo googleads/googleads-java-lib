@@ -278,10 +278,37 @@ public enum CampaignField implements EntityField {
   TargetPartnerSearchNetwork(true),
 
   /**
+   * The desired revenue (based on conversion data) per unit of spend.
+   */
+  TargetRoas(false),
+
+  /**
+   * Maximum bid limit that applies to all keywords managed by the strategy.
+   */
+  TargetRoasBidCeiling(false),
+
+  /**
+   * Minimum bid limit that applies to all keywords managed by the strategy.
+   */
+  TargetRoasBidFloor(false),
+
+  /**
    * Ads will be served on partner sites in the Google Search Network (requires {@code GOOGLE_SEARCH}).
    */
   @Filterable
   TargetSearchNetwork(true),
+
+  /**
+   * The largest max CPC bid that can be set by the TargetSpend bidder.
+   */
+  TargetSpendBidCeiling(false),
+
+  /**
+   * A spend target under which to maximize clicks.
+   * The TargetSpend bidder will attempt to spend the smaller of this value or the natural throttling spend amount.
+   * If not specified, the budget is used as the spend target.
+   */
+  TargetSpendSpendTarget(false),
 
   /**
    * Unit of time the cap is defined at.

@@ -91,6 +91,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
     soapClientHandler.setHeader(
         soapClient, null, null, constructSoapHeader(headerData, dfpServiceDescriptor));
     soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
+    soapClientHandler.setRequestTimeout(soapClient, adsLibConfiguration.getSoapRequestTimeout());
   }
 
   /**

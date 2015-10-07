@@ -99,6 +99,7 @@ public class DfpAxisHeaderHandler implements HeaderHandler<DfpSession, DfpServic
               + dfpServiceDescriptor.getVersion();
       soapClientHandler.setHeader(soapClient, namespace, "RequestHeader", soapHeader);
       soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
+      soapClientHandler.setRequestTimeout(soapClient, adsLibConfiguration.getSoapRequestTimeout());
     } catch (InstantiationException e) {
       throw new ServiceException("Unexpected exception.", e);
     } catch (IllegalAccessException e) {

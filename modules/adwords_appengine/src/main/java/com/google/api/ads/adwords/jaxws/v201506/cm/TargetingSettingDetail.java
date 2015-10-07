@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlType;
  *             Specifies if criteria of this type group should be used to restrict
  *             targeting, or if ads can serve anywhere and criteria are only used in
  *             determining the bid.
+ *             <p>For more information, see
+ *             <a href="https://support.google.com/adwords/answer/6056342">Targeting Settings</a>.</p>
  *           
  * 
  * <p>Java class for TargetingSettingDetail complex type.

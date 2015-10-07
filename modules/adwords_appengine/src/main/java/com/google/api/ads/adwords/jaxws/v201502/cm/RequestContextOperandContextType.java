@@ -36,7 +36,7 @@ public enum RequestContextOperandContextType {
 
     /**
      * 
-     *                 The device's platform (possible values are 'Desktop' or 'Mobile'.
+     *                 The device's platform (possible values are 'Desktop' or 'Mobile').
      *               
      * 
      */

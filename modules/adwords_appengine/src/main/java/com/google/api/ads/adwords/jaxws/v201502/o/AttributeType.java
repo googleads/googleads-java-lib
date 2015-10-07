@@ -71,7 +71,7 @@ public enum AttributeType {
     /**
      * 
      *                 Represents a placement, depending on request type.
-     *                 <p>This element is supported by following {@link IdeaType}s: PLACEMENT.
+     *                 <p>This element is not supported directly by any {@link IdeaType}.
      *               
      * 
      */
@@ -95,7 +95,7 @@ public enum AttributeType {
      *                 
      *                 <p>Resulting attribute is
      *                 {@link com.google.ads.api.services.common.optimization.attributes.IdeaTypeAttribute}.
-     *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD, PLACEMENT.
+     *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
      */

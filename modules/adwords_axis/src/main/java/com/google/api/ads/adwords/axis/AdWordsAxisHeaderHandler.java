@@ -114,13 +114,14 @@ public class AdWordsAxisHeaderHandler implements
           adWordsSession.isPartialFailure());
 
       soapClientHandler.setCompression(stub, adsLibConfiguration.isCompressionEnabled());
+      soapClientHandler.setRequestTimeout(stub, adsLibConfiguration.getSoapRequestTimeout());
       
       HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
           subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());
 
       subProductHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
 
-      setAuthenticationHeaders(soapClient, soapHeader, adWordsSession);
+      setAuthenticationHeaders(soapClient, adWordsSession);
 
     } catch (InstantiationException e) {
       throw new ServiceException("Unexpected exception.", e);
@@ -137,15 +138,13 @@ public class AdWordsAxisHeaderHandler implements
    * Sets the authentication headers.
    *
    * @param soapClient the SOAP client
-   * @param soapHeader the SOAP header
    * @param adWordsSession the AdWords session
    * @throws IllegalAccessException if there was a problem setting the header
    * @throws InvocationTargetException if there was a problem setting the header
    * @throws AuthenticationException if there was a problem setting the header
    */
-  private void setAuthenticationHeaders(Object soapClient, Object soapHeader,
-      AdWordsSession adWordsSession) throws IllegalAccessException, InvocationTargetException,
-      AuthenticationException {
+  private void setAuthenticationHeaders(Object soapClient, AdWordsSession adWordsSession)
+      throws IllegalAccessException, InvocationTargetException, AuthenticationException {
     authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
   }
 }

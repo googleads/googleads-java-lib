@@ -26,7 +26,24 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AdWordsConversionTrackerTrackingCodeType {
 
+
+    /**
+     * 
+     *                 The snippet that is fired as a result of a website page loading.
+     *               
+     * 
+     */
     WEBPAGE,
+
+    /**
+     * 
+     *                 For embedding on a (mobile) webpage. The snippet contains a JavaScript function which fires
+     *                 the tag. This function is typically called from an onClick handler added to a link or button
+     *                 element on the page that also instructs a mobile device to dial the advertiser's phone
+     *                 number.
+     *               
+     * 
+     */
     CLICK_TO_CALL,
     ANDROID_REMARKETING,
     APPLE_IOS_REMARKETING;

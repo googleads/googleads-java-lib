@@ -125,6 +125,13 @@ public class TestHttpServer {
   }
 
   /**
+   * Sets the delay in milliseconds before the server responds.
+   */
+  public void setDelay(long delay) {
+    server.delay = delay;
+  }
+
+  /**
    * Gets the server URL with port.
    */
   public String getServerUrl() {
@@ -138,6 +145,7 @@ public class TestHttpServer {
 
     private int port;
     private int numInteractions = 0;
+    private long delay = 0;
     private List<String> requestBodies = Lists.newArrayList();
     private List<Boolean> requestBodiesCompressionStates = Lists.newArrayList();
     private List<String> authorizationHttpHeaders = Lists.newArrayList();
@@ -195,6 +203,9 @@ public class TestHttpServer {
           ByteSource.wrap(requestBytes).asCharSource(Charset.forName(UTF_8)).read());
       this.requestBodiesCompressionStates.add(isGzipFormat);
 
+      // Simulate a delay in processing.
+      simulateDelay();
+
       new ByteSink() {
         @Override
         public OutputStream openStream() {
@@ -203,6 +214,17 @@ public class TestHttpServer {
       }.asCharSink(Charset.forName(UTF_8)).write(mockResponseBodies.get(numInteractions++));
 
       return getContext(getServerUrl());
+    }
+
+    /**
+     * Simulates delays in processing requests.
+     */
+    private void simulateDelay() throws HttpException {
+      try {
+        Thread.sleep(this.delay);
+      } catch (InterruptedException e) {
+        throw new HttpException(500, e.getMessage());
+      }
     }
 
     /**

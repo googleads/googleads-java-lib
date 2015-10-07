@@ -65,6 +65,17 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   public void setEndpointAddress(Stub soapClient, String endpointAddress) {
     soapClient._setProperty(Stub.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
   }
+  
+  /**
+   * Sets the read timeout of the given SOAP client.
+   *
+   * @param soapClient the SOAP client to set the read timeout for
+   * @param timeout the timeout in milliseconds
+   */
+  @Override
+  public void setRequestTimeout(Stub soapClient, int timeout) {
+    soapClient.setTimeout(timeout);
+  }
 
   /**
    * Returns a SOAP header from the given SOAP client, if it exists.

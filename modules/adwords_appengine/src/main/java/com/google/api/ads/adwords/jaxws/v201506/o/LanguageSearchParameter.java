@@ -22,7 +22,7 @@ import com.google.api.ads.adwords.jaxws.v201506.cm.Language;
  *             {@code LanguageSearchParameter} or have unknown language will be filtered
  *             out in the response. To avoid filtering, do not include
  *             {@code LanguageSearchParameter} in the request.
- *             <p>This element is supported by following {@link IdeaType}s: KEYWORD, PLACEMENT.
+ *             <p>This element is supported by following {@link IdeaType}s: KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s: IDEAS, STATS.
  *           
  * 

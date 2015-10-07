@@ -54,13 +54,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SeedAdGroupIdSearchParameter}</li>
  * </ul><p>
- * <p><b>{@link IdeaType} PLACEMENT supports following {@link SearchParameter}s:</b><br/>
- * <ul>
- * <li>{@link LanguageSearchParameter}</li>
- * <li>{@link LocationSearchParameter}</li>
- * <li>{@link RelatedToQuerySearchParameter}</li>
- * <li>{@link RelatedToUrlSearchParameter}</li>
- * </ul><p>
  *           
  * 
  * <p>Java class for SearchParameter complex type.

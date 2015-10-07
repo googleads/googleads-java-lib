@@ -17,6 +17,10 @@ import javax.xml.ws.ResponseWrapper;
  *       your AdWords campaigns as asynchronous mutate jobs, and to retrieve the
  *       status, results or statistics of your recent jobs.
  *       
+ *       <p class="note"><b>Note:</b> {@code MutateJobService} is being replaced by
+ *       {@code BatchJobService}. New development should use {@code BatchJobService};
+ *       existing code should start moving to it.</p>
+ *       
  *       <p>Use this service when you wish to release your application from actively
  *       waiting on a synchronous response. Your application can do other things or
  *       even shutdown while we execute mutations asynchronously.</p>

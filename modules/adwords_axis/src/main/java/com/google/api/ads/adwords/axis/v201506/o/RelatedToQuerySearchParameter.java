@@ -11,7 +11,7 @@ package com.google.api.ads.adwords.axis.v201506.o;
 /**
  * A {@link SearchParameter} for a query of {@code String}s.
  *             <p>This element is supported by following {@link IdeaType}s:
- * KEYWORD, PLACEMENT.
+ * KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s:
  * IDEAS, STATS.
  */

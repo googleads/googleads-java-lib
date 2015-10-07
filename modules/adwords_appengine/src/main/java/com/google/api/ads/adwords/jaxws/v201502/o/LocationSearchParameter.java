@@ -21,7 +21,7 @@ import com.google.api.ads.adwords.jaxws.v201502.cm.Location;
  *             
  *             <p>The service allows up to 10 locations to be targeted for KEYWORD requests and 50 locations
  *             for PLACEMENT requests.
- *             <p>This element is supported by following {@link IdeaType}s: KEYWORD, PLACEMENT.
+ *             <p>This element is supported by following {@link IdeaType}s: KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s: IDEAS, STATS.
  *           
  * 

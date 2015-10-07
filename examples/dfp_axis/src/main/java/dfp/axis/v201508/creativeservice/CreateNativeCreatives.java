@@ -67,11 +67,8 @@ public class CreateNativeCreatives {
     nativeAppInstallCreative.setDestinationUrl(
         "https://play.google.com/store/apps/details?id=com.google.fpl.pie_noon");
     nativeAppInstallCreative.setCreativeTemplateId(nativeAppInstallTemplateId);
-    
-    // Set the size and specify that this is a native creative.
-    nativeAppInstallCreative.setIsNativeEligible(true);
     nativeAppInstallCreative.setSize(size);
-    
+
     List<BaseCreativeTemplateVariableValue> templateVariables = Lists.newArrayList();
     
     // Set the headline.
@@ -140,14 +137,6 @@ public class CreateNativeCreatives {
     deepLinkVariableValue.setUniqueName("DeeplinkclickactionURL");
     deepLinkVariableValue.setValue("market://details?id=com.google.fpl.pie_noon");
     templateVariables.add(deepLinkVariableValue);
-
-    // Set the fallback URL.
-    UrlCreativeTemplateVariableValue fallbackUrlVariableValue = 
-        new UrlCreativeTemplateVariableValue();
-    fallbackUrlVariableValue.setUniqueName("FallbackclickactionURL");
-    fallbackUrlVariableValue.setValue(
-        "https://play.google.com/store/apps/details?id=com.google.fpl.pie_noon");
-    templateVariables.add(fallbackUrlVariableValue);
     
     nativeAppInstallCreative.setCreativeTemplateVariableValues(
         templateVariables.toArray(new BaseCreativeTemplateVariableValue[templateVariables.size()]));

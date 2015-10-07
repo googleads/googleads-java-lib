@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+  <rval>
+    <result>
+      <Campaign>
+        <id>320548754</id>
+        <name>Batch Campaign -1484231751</name>
+        <status>PAUSED</status>
+        <servingStatus>SUSPENDED</servingStatus>
+        <startDate>20150911</startDate>
+        <endDate>20371230</endDate>
+        <budget>
+          <budgetId>275926514</budgetId>
+          <name>Shared Interplanetary Budget #fbf6e47e-b4d4-4b68-afdf-4a4ab675c4b3</name>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>2000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+          <isExplicitlyShared>true</isExplicitlyShared>
+          <status>ENABLED</status>
+        </budget>
+        <conversionOptimizerEligibility>
+          <eligible>false</eligible>
+          <rejectionReasons>NOT_ENOUGH_CONVERSIONS</rejectionReasons>
+        </conversionOptimizerEligibility>
+        <adServingOptimizationStatus>OPTIMIZE</adServingOptimizationStatus>
+        <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GeoTargetTypeSetting">
+          <Setting.Type>GeoTargetTypeSetting</Setting.Type>
+          <positiveGeoTargetType>DONT_CARE</positiveGeoTargetType>
+          <negativeGeoTargetType>DONT_CARE</negativeGeoTargetType>
+        </settings>
+        <advertisingChannelType>SEARCH</advertisingChannelType>
+        <networkSetting>
+          <targetGoogleSearch>true</targetGoogleSearch>
+          <targetSearchNetwork>true</targetSearchNetwork>
+          <targetContentNetwork>true</targetContentNetwork>
+          <targetPartnerSearchNetwork>false</targetPartnerSearchNetwork>
+        </networkSetting>
+        <biddingStrategyConfiguration>
+          <biddingStrategyType>MANUAL_CPC</biddingStrategyType>
+          <biddingScheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ManualCpcBiddingScheme">
+            <BiddingScheme.Type>ManualCpcBiddingScheme</BiddingScheme.Type>
+            <enhancedCpcEnabled>false</enhancedCpcEnabled>
+          </biddingScheme>
+        </biddingStrategyConfiguration>
+      </Campaign>
+    </result>
+    <index>0</index>
+  </rval>
+  <rval>
+    <result>
+      <AdGroup>
+        <id>22872262274</id>
+        <campaignId>320548754</campaignId>
+        <campaignName>Batch Campaign -1484231751</campaignName>
+        <name>Batch Ad Group # -828356521</name>
+        <status>ENABLED</status>
+        <biddingStrategyConfiguration>
+          <biddingStrategyType>MANUAL_CPC</biddingStrategyType>
+          <biddingStrategySource>CAMPAIGN</biddingStrategySource>
+          <biddingScheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ManualCpcBiddingScheme">
+            <BiddingScheme.Type>ManualCpcBiddingScheme</BiddingScheme.Type>
+            <enhancedCpcEnabled>false</enhancedCpcEnabled>
+          </biddingScheme>
+          <bids xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CpcBid">
+            <Bids.Type>CpcBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000000</microAmount>
+            </bid>
+            <cpcBidSource>ADGROUP</cpcBidSource>
+          </bids>
+          <bids xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CpmBid">
+            <Bids.Type>CpmBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000</microAmount>
+            </bid>
+            <cpmBidSource>ADGROUP</cpmBidSource>
+          </bids>
+        </biddingStrategyConfiguration>
+      </AdGroup>
+    </result>
+    <index>1</index>
+  </rval>
+  <rval>
+    <result>
+      <AdGroupCriterion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BiddableAdGroupCriterion">
+        <adGroupId>22872262274</adGroupId>
+        <criterion xsi:type="Keyword">
+          <id>16927179846</id>
+          <type>KEYWORD</type>
+          <Criterion.Type>Keyword</Criterion.Type>
+          <text>mars0</text>
+          <matchType>BROAD</matchType>
+        </criterion>
+        <AdGroupCriterion.Type>BiddableAdGroupCriterion</AdGroupCriterion.Type>
+        <userStatus>ENABLED</userStatus>
+        <systemServingStatus>ELIGIBLE</systemServingStatus>
+        <approvalStatus>PENDING_REVIEW</approvalStatus>
+        <biddingStrategyConfiguration>
+          <biddingStrategyType>MANUAL_CPC</biddingStrategyType>
+          <biddingStrategySource>CAMPAIGN</biddingStrategySource>
+          <biddingScheme xsi:type="ManualCpcBiddingScheme">
+            <BiddingScheme.Type>ManualCpcBiddingScheme</BiddingScheme.Type>
+            <enhancedCpcEnabled>false</enhancedCpcEnabled>
+          </biddingScheme>
+          <bids xsi:type="CpmBid">
+            <Bids.Type>CpmBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000</microAmount>
+            </bid>
+            <cpmBidSource>ADGROUP</cpmBidSource>
+          </bids>
+          <bids xsi:type="CpcBid">
+            <Bids.Type>CpcBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000000</microAmount>
+            </bid>
+            <cpcBidSource>ADGROUP</cpcBidSource>
+          </bids>
+        </biddingStrategyConfiguration>
+      </AdGroupCriterion>
+    </result>
+    <index>2</index>
+  </rval>
+  <rval>
+    <result>
+      <AdGroupCriterion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BiddableAdGroupCriterion">
+        <adGroupId>22872262274</adGroupId>
+        <criterion xsi:type="Keyword">
+          <id>117981277</id>
+          <type>KEYWORD</type>
+          <Criterion.Type>Keyword</Criterion.Type>
+          <text>mars1</text>
+          <matchType>BROAD</matchType>
+        </criterion>
+        <AdGroupCriterion.Type>BiddableAdGroupCriterion</AdGroupCriterion.Type>
+        <userStatus>ENABLED</userStatus>
+        <systemServingStatus>ELIGIBLE</systemServingStatus>
+        <approvalStatus>PENDING_REVIEW</approvalStatus>
+        <biddingStrategyConfiguration>
+          <biddingStrategyType>MANUAL_CPC</biddingStrategyType>
+          <biddingStrategySource>CAMPAIGN</biddingStrategySource>
+          <biddingScheme xsi:type="ManualCpcBiddingScheme">
+            <BiddingScheme.Type>ManualCpcBiddingScheme</BiddingScheme.Type>
+            <enhancedCpcEnabled>false</enhancedCpcEnabled>
+          </biddingScheme>
+          <bids xsi:type="CpmBid">
+            <Bids.Type>CpmBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000</microAmount>
+            </bid>
+            <cpmBidSource>ADGROUP</cpmBidSource>
+          </bids>
+          <bids xsi:type="CpcBid">
+            <Bids.Type>CpcBid</Bids.Type>
+            <bid>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>10000000</microAmount>
+            </bid>
+            <cpcBidSource>ADGROUP</cpcBidSource>
+          </bids>
+        </biddingStrategyConfiguration>
+      </AdGroupCriterion>
+    </result>
+    <index>3</index>
+  </rval>
+  <rval>
+    <errorList>
+      <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CriterionError">
+        <fieldPath>operations[4].operand.criterion.text</fieldPath>
+        <trigger>mars2!!!</trigger>
+        <errorString>CriterionError.KEYWORD_HAS_INVALID_CHARS</errorString>
+        <ApiError.Type>CriterionError</ApiError.Type>
+        <reason>KEYWORD_HAS_INVALID_CHARS</reason>
+      </errors>
+    </errorList>
+    <index>4</index>
+  </rval>
+  <rval>
+    <errorList>
+      <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CriterionError">
+        <fieldPath>operations[5].operand.criterion.text</fieldPath>
+        <trigger>mars3!!!</trigger>
+        <errorString>CriterionError.KEYWORD_HAS_INVALID_CHARS</errorString>
+        <ApiError.Type>CriterionError</ApiError.Type>
+        <reason>KEYWORD_HAS_INVALID_CHARS</reason>
+      </errors>
+    </errorList>
+    <index>5</index>
+  </rval>
+  <rval>
+    <errorList>
+      <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CriterionError">
+        <fieldPath>operations[6].operand.criterion.text</fieldPath>
+        <trigger>mars4!!!</trigger>
+        <errorString>CriterionError.KEYWORD_HAS_INVALID_CHARS</errorString>
+        <ApiError.Type>CriterionError</ApiError.Type>
+        <reason>KEYWORD_HAS_INVALID_CHARS</reason>
+      </errors>
+    </errorList>
+    <index>6</index>
+  </rval>
+</mutateResponse>

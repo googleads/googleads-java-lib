@@ -17,18 +17,19 @@ public class UrlErrorReason implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
-    public static final java.lang.String _INVALID_URL = "INVALID_URL";
-    public static final java.lang.String _INVALID_TAG_IN_URL = "INVALID_TAG_IN_URL";
-    public static final java.lang.String _MISSING_URL_TAG = "MISSING_URL_TAG";
     public static final java.lang.String _INVALID_TRACKING_URL_TEMPLATE = "INVALID_TRACKING_URL_TEMPLATE";
     public static final java.lang.String _INVALID_TAG_IN_TRACKING_URL_TEMPLATE = "INVALID_TAG_IN_TRACKING_URL_TEMPLATE";
     public static final java.lang.String _MISSING_TRACKING_URL_TEMPLATE_TAG = "MISSING_TRACKING_URL_TEMPLATE_TAG";
     public static final java.lang.String _INVALID_FINAL_URL = "INVALID_FINAL_URL";
     public static final java.lang.String _INVALID_TAG_IN_FINAL_URL = "INVALID_TAG_IN_FINAL_URL";
     public static final java.lang.String _INVALID_FINAL_MOBILE_URL = "INVALID_FINAL_MOBILE_URL";
-    public static final java.lang.String _INVALID_FINAL_APP_URL = "INVALID_FINAL_APP_URL";
     public static final java.lang.String _INVALID_TAG_IN_FINAL_MOBILE_URL = "INVALID_TAG_IN_FINAL_MOBILE_URL";
+    public static final java.lang.String _INVALID_FINAL_APP_URL = "INVALID_FINAL_APP_URL";
     public static final java.lang.String _INVALID_TAG_IN_FINAL_APP_URL = "INVALID_TAG_IN_FINAL_APP_URL";
+    public static final java.lang.String _MULTIPLE_APP_URLS_FOR_OSTYPE = "MULTIPLE_APP_URLS_FOR_OSTYPE";
+    public static final java.lang.String _INVALID_OSTYPE = "INVALID_OSTYPE";
+    public static final java.lang.String _INVALID_PROTOCOL_FOR_APP_URL = "INVALID_PROTOCOL_FOR_APP_URL";
+    public static final java.lang.String _INVALID_PACKAGE_ID_FOR_APP_URL = "INVALID_PACKAGE_ID_FOR_APP_URL";
     public static final java.lang.String _URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT = "URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT";
     public static final java.lang.String _URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE = "URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE";
     public static final java.lang.String _CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION = "CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION";
@@ -38,23 +39,23 @@ public class UrlErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE = "INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE";
     public static final java.lang.String _INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE = "INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE";
     public static final java.lang.String _MISSING_PROTOCOL = "MISSING_PROTOCOL";
-    public static final java.lang.String _MULTIPLE_APP_URLS_FOR_OSTYPE = "MULTIPLE_APP_URLS_FOR_OSTYPE";
-    public static final java.lang.String _INVALID_OSTYPE = "INVALID_OSTYPE";
-    public static final java.lang.String _INVALID_PROTOCOL_FOR_APP_URL = "INVALID_PROTOCOL_FOR_APP_URL";
-    public static final java.lang.String _INVALID_PACKAGE_ID_FOR_APP_URL = "INVALID_PACKAGE_ID_FOR_APP_URL";
+    public static final java.lang.String _INVALID_URL = "INVALID_URL";
+    public static final java.lang.String _INVALID_TAG_IN_URL = "INVALID_TAG_IN_URL";
+    public static final java.lang.String _MISSING_URL_TAG = "MISSING_URL_TAG";
     public static final java.lang.String _URL_ERROR = "URL_ERROR";
-    public static final UrlErrorReason INVALID_URL = new UrlErrorReason(_INVALID_URL);
-    public static final UrlErrorReason INVALID_TAG_IN_URL = new UrlErrorReason(_INVALID_TAG_IN_URL);
-    public static final UrlErrorReason MISSING_URL_TAG = new UrlErrorReason(_MISSING_URL_TAG);
     public static final UrlErrorReason INVALID_TRACKING_URL_TEMPLATE = new UrlErrorReason(_INVALID_TRACKING_URL_TEMPLATE);
     public static final UrlErrorReason INVALID_TAG_IN_TRACKING_URL_TEMPLATE = new UrlErrorReason(_INVALID_TAG_IN_TRACKING_URL_TEMPLATE);
     public static final UrlErrorReason MISSING_TRACKING_URL_TEMPLATE_TAG = new UrlErrorReason(_MISSING_TRACKING_URL_TEMPLATE_TAG);
     public static final UrlErrorReason INVALID_FINAL_URL = new UrlErrorReason(_INVALID_FINAL_URL);
     public static final UrlErrorReason INVALID_TAG_IN_FINAL_URL = new UrlErrorReason(_INVALID_TAG_IN_FINAL_URL);
     public static final UrlErrorReason INVALID_FINAL_MOBILE_URL = new UrlErrorReason(_INVALID_FINAL_MOBILE_URL);
-    public static final UrlErrorReason INVALID_FINAL_APP_URL = new UrlErrorReason(_INVALID_FINAL_APP_URL);
     public static final UrlErrorReason INVALID_TAG_IN_FINAL_MOBILE_URL = new UrlErrorReason(_INVALID_TAG_IN_FINAL_MOBILE_URL);
+    public static final UrlErrorReason INVALID_FINAL_APP_URL = new UrlErrorReason(_INVALID_FINAL_APP_URL);
     public static final UrlErrorReason INVALID_TAG_IN_FINAL_APP_URL = new UrlErrorReason(_INVALID_TAG_IN_FINAL_APP_URL);
+    public static final UrlErrorReason MULTIPLE_APP_URLS_FOR_OSTYPE = new UrlErrorReason(_MULTIPLE_APP_URLS_FOR_OSTYPE);
+    public static final UrlErrorReason INVALID_OSTYPE = new UrlErrorReason(_INVALID_OSTYPE);
+    public static final UrlErrorReason INVALID_PROTOCOL_FOR_APP_URL = new UrlErrorReason(_INVALID_PROTOCOL_FOR_APP_URL);
+    public static final UrlErrorReason INVALID_PACKAGE_ID_FOR_APP_URL = new UrlErrorReason(_INVALID_PACKAGE_ID_FOR_APP_URL);
     public static final UrlErrorReason URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT = new UrlErrorReason(_URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT);
     public static final UrlErrorReason URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE = new UrlErrorReason(_URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE);
     public static final UrlErrorReason CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION = new UrlErrorReason(_CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION);
@@ -64,10 +65,9 @@ public class UrlErrorReason implements java.io.Serializable {
     public static final UrlErrorReason INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE = new UrlErrorReason(_INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE);
     public static final UrlErrorReason INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE = new UrlErrorReason(_INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE);
     public static final UrlErrorReason MISSING_PROTOCOL = new UrlErrorReason(_MISSING_PROTOCOL);
-    public static final UrlErrorReason MULTIPLE_APP_URLS_FOR_OSTYPE = new UrlErrorReason(_MULTIPLE_APP_URLS_FOR_OSTYPE);
-    public static final UrlErrorReason INVALID_OSTYPE = new UrlErrorReason(_INVALID_OSTYPE);
-    public static final UrlErrorReason INVALID_PROTOCOL_FOR_APP_URL = new UrlErrorReason(_INVALID_PROTOCOL_FOR_APP_URL);
-    public static final UrlErrorReason INVALID_PACKAGE_ID_FOR_APP_URL = new UrlErrorReason(_INVALID_PACKAGE_ID_FOR_APP_URL);
+    public static final UrlErrorReason INVALID_URL = new UrlErrorReason(_INVALID_URL);
+    public static final UrlErrorReason INVALID_TAG_IN_URL = new UrlErrorReason(_INVALID_TAG_IN_URL);
+    public static final UrlErrorReason MISSING_URL_TAG = new UrlErrorReason(_MISSING_URL_TAG);
     public static final UrlErrorReason URL_ERROR = new UrlErrorReason(_URL_ERROR);
     public java.lang.String getValue() { return _value_;}
     public static UrlErrorReason fromValue(java.lang.String value)

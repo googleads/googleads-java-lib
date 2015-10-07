@@ -42,7 +42,8 @@ import com.google.api.ads.adwords.jaxws.v201506.rm.UserListPage;
 })
 @XmlSeeAlso({
     com.google.api.ads.adwords.jaxws.v201506.express.NoStatsPage.class,
-    BudgetOrderPage.class,
+    ManagedCustomerPage.class,
+    UserListPage.class,
     CampaignExtensionSettingPage.class,
     AdGroupExtensionSettingPage.class,
     AdCustomizerFeedPage.class,
@@ -60,8 +61,7 @@ import com.google.api.ads.adwords.jaxws.v201506.rm.UserListPage;
     com.google.api.ads.adwords.jaxws.v201506.cm.NoStatsPage.class,
     CampaignPage.class,
     BiddingStrategyPage.class,
-    UserListPage.class,
-    ManagedCustomerPage.class
+    BudgetOrderPage.class
 })
 public abstract class Page {
 

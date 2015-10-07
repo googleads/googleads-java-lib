@@ -50,8 +50,8 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.C
      *                     at the same time as AppPlatform. */
     private com.google.api.ads.adwords.axis.v201506.cm.AppConversionAppConversionType appConversionType;
 
-    /* The postback URL (for iOS conversions only). When the conversion
-     * type specifies a postback url,
+    /* The postback URL. When the conversion type specifies a postback
+     * url,
      *                     Google will send information about each conversion
      * event to that url as they happen.
      *                     Details, including formatting requirements for
@@ -251,8 +251,8 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.C
     /**
      * Gets the appPostbackUrl value for this AppConversion.
      * 
-     * @return appPostbackUrl   * The postback URL (for iOS conversions only). When the conversion
-     * type specifies a postback url,
+     * @return appPostbackUrl   * The postback URL. When the conversion type specifies a postback
+     * url,
      *                     Google will send information about each conversion
      * event to that url as they happen.
      *                     Details, including formatting requirements for
@@ -270,8 +270,8 @@ public class AppConversion  extends com.google.api.ads.adwords.axis.v201506.cm.C
     /**
      * Sets the appPostbackUrl value for this AppConversion.
      * 
-     * @param appPostbackUrl   * The postback URL (for iOS conversions only). When the conversion
-     * type specifies a postback url,
+     * @param appPostbackUrl   * The postback URL. When the conversion type specifies a postback
+     * url,
      *                     Google will send information about each conversion
      * event to that url as they happen.
      *                     Details, including formatting requirements for

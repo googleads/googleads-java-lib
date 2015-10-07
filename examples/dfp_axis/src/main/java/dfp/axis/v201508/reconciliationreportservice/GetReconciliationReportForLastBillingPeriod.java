@@ -44,11 +44,11 @@ public class GetReconciliationReportForLastBillingPeriod {
     // Get the ReconciliationReportService.
     ReconciliationReportServiceInterface reconciliationReportService =
         dfpServices.get(session, ReconciliationReportServiceInterface.class);
-    
+
     // Get the NetworkService.
-    NetworkServiceInterface networkService = 
+    NetworkServiceInterface networkService =
         dfpServices.get(session, NetworkServiceInterface.class);
-    
+
     // Get the first day of last month in your network's time zone.
     Network network = networkService.getCurrentNetwork();
     DateTime lastMonth = new DateTime(DateTimeZone.forID(network.getTimeZone()))

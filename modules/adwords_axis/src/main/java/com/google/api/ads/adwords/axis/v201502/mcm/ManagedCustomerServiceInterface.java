@@ -110,8 +110,8 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
      *         
      *         <ul>
      *         <li>SET + ACTIVE: manager moves client customers to new managers
-     * within the same MCC
-     *         hierarchy</li>
+     * within the same manager
+     *         account hierarchy</li>
      *         </ul>
      *         
      *         

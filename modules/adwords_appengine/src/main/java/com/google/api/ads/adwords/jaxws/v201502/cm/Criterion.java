@@ -46,6 +46,10 @@ import com.google.api.ads.adwords.jaxws.v201502.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
+    KeywordGroup.class,
+    KeywordSet.class,
+    NegativeCriterion.class,
+    ProductService.class,
     Gender.class,
     CriterionUserList.class,
     ContentLabel.class,
@@ -68,14 +72,10 @@ import com.google.api.ads.adwords.jaxws.v201502.express.ProductService;
     IpBlock.class,
     ProductScope.class,
     AppPaymentModel.class,
+    Keyword.class,
     YouTubeChannel.class,
     ProductPartition.class,
-    Webpage.class,
-    KeywordGroup.class,
-    KeywordSet.class,
-    NegativeCriterion.class,
-    Keyword.class,
-    ProductService.class
+    Webpage.class
 })
 public class Criterion {
 

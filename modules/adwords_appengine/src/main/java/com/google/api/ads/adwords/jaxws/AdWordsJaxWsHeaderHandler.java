@@ -94,6 +94,7 @@ public class AdWordsJaxWsHeaderHandler implements
     soapClientHandler.setHeader(soapClient, null, null,
         constructSoapHeader(headerData, adWordsServiceDescriptor));
     soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
+    soapClientHandler.setRequestTimeout(soapClient, adsLibConfiguration.getSoapRequestTimeout());
     
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
         subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());

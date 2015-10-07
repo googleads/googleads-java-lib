@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Uploads new media. Currently, you can only upload {@link Image} files.
+ *             Uploads new media. Currently, you can upload {@link Image} files and {@link MediaBundle}s.
  *             
  *             @param media A list of {@code Media} objects, each containing the data to
  *             be uploaded.

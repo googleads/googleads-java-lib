@@ -22,7 +22,7 @@ package com.google.api.ads.adwords.axis.v201502.o;
  * for KEYWORD requests and 50 locations
  *             for PLACEMENT requests.
  *             <p>This element is supported by following {@link IdeaType}s:
- * KEYWORD, PLACEMENT.
+ * KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s:
  * IDEAS, STATS.
  */

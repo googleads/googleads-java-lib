@@ -13,6 +13,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Applies the list of mutate operations (add, remove, and set).
  *             
+ *             <p> Beginning in v201509, add and set operations are treated identically. Performing an add
+ *             operation on an ad group with an existing ExtensionSetting will cause the operation to be
+ *             treated like a set operation. Performing a set operation on an ad group with no
+ *             ExtensionSetting will cause the operation to be treated like an add operation.
+ *             
  *             @param operations The operations to apply. The same {@link AdGroupExtensionSetting} cannot be
  *             specified in more than one operation.
  *             @return The changed {@link AdGroupExtensionSetting}s.

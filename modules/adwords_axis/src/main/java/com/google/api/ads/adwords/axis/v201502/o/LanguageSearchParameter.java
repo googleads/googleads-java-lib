@@ -26,7 +26,7 @@ package com.google.api.ads.adwords.axis.v201502.o;
  *             out in the response. To avoid filtering, do not include
  * {@code LanguageSearchParameter} in the request.
  *             <p>This element is supported by following {@link IdeaType}s:
- * KEYWORD, PLACEMENT.
+ * KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s:
  * IDEAS, STATS.
  */

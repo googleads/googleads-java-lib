@@ -18,8 +18,11 @@ public class QualityInfo  implements java.io.Serializable {
     /* Whether the landing page quality is acceptable. */
     private java.lang.Boolean isLandingPageQualityAcceptable;
 
-    /* Keyword quality score that ranges from 1 to 10, 1 being the
-     * lowest, 10 the highest. */
+    /* The keyword quality score ranges from 1 (lowest) to 10 (highest).
+     * This field may be returned as
+     *                 NULL if AdWords does not have enough information to
+     * determine an appropriate quality score
+     *                 value. */
     private java.lang.Integer qualityScore;
 
     public QualityInfo() {
@@ -78,8 +81,11 @@ public class QualityInfo  implements java.io.Serializable {
     /**
      * Gets the qualityScore value for this QualityInfo.
      * 
-     * @return qualityScore   * Keyword quality score that ranges from 1 to 10, 1 being the
-     * lowest, 10 the highest.
+     * @return qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
+     * This field may be returned as
+     *                 NULL if AdWords does not have enough information to
+     * determine an appropriate quality score
+     *                 value.
      */
     public java.lang.Integer getQualityScore() {
         return qualityScore;
@@ -89,8 +95,11 @@ public class QualityInfo  implements java.io.Serializable {
     /**
      * Sets the qualityScore value for this QualityInfo.
      * 
-     * @param qualityScore   * Keyword quality score that ranges from 1 to 10, 1 being the
-     * lowest, 10 the highest.
+     * @param qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
+     * This field may be returned as
+     *                 NULL if AdWords does not have enough information to
+     * determine an appropriate quality score
+     *                 value.
      */
     public void setQualityScore(java.lang.Integer qualityScore) {
         this.qualityScore = qualityScore;

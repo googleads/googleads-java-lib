@@ -33,7 +33,8 @@ public enum ConversionTrackerField implements EntityField {
   AlwaysUseDefaultRevenueValue(true),
 
   /**
-   * App id of the app conversion tracker.
+   * App ID of the app conversion tracker.
+   * This field is required for certain conversion types, in particular, Android app install (first open) and Android app install (from Google Play).
    */
   @Filterable
   AppId(true),
@@ -48,7 +49,7 @@ public enum ConversionTrackerField implements EntityField {
   AppPlatform(true),
 
   /**
-   * The postback URL (for iOS conversions only).
+   * The postback URL.
    * When the conversion type specifies a postback url, Google will send information about each conversion event to that url as they happen.
    * Details, including formatting requirements for this field: https://developers.google.com/app-conversion-tracking/docs/app-install-feedback
    */

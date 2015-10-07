@@ -182,8 +182,8 @@ public interface ManagedCustomerServiceInterface {
      *         Moves client customers to new managers (moving links). Only the following action is possible:
      *         
      *         <ul>
-     *         <li>SET + ACTIVE: manager moves client customers to new managers within the same MCC
-     *         hierarchy</li>
+     *         <li>SET + ACTIVE: manager moves client customers to new managers within the same manager
+     *         account hierarchy</li>
      *         </ul>
      *         
      *         @param operations List of unique operations.

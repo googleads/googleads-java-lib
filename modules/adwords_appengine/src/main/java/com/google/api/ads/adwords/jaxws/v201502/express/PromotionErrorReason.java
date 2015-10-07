@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_PHONE_NUMBER"/>
  *     &lt;enumeration value="PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED"/>
  *     &lt;enumeration value="NON_LOCAL_BUSINESS"/>
+ *     &lt;enumeration value="ALREADY_MIGRATED"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -122,7 +123,7 @@ public enum PromotionErrorReason {
 
     /**
      * 
-     *                 MCC account.
+     *                 The requested action is not supported for a manager account.
      *               
      * 
      */
@@ -167,6 +168,14 @@ public enum PromotionErrorReason {
      * 
      */
     NON_LOCAL_BUSINESS,
+
+    /**
+     * 
+     *                 Promotion is already migrated to AdWords.
+     *               
+     * 
+     */
+    ALREADY_MIGRATED,
 
     /**
      * 

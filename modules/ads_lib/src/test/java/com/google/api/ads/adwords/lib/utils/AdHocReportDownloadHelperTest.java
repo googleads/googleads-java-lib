@@ -35,6 +35,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -45,6 +47,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Tests for {@link AdHocReportDownloadHelper}.
  */
+@RunWith(JUnit4.class)
 public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
   private static final String VERSION = "v202012";

@@ -59,13 +59,6 @@ package com.google.api.ads.adwords.axis.v201506.o;
  * <li>{@link SearchVolumeSearchParameter}</li>
  * <li>{@link SeedAdGroupIdSearchParameter}</li>
  * </ul><p>
- * <p><b>{@link IdeaType} PLACEMENT supports following {@link SearchParameter}s:</b><br/>
- * <ul>
- * <li>{@link LanguageSearchParameter}</li>
- * <li>{@link LocationSearchParameter}</li>
- * <li>{@link RelatedToQuerySearchParameter}</li>
- * <li>{@link RelatedToUrlSearchParameter}</li>
- * </ul><p>
  */
 public abstract class SearchParameter  implements java.io.Serializable {
     /* Indicates that this instance is a subtype of SearchParameter.

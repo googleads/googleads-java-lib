@@ -37,8 +37,8 @@ public interface MediaServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201506.cm.MediaPage query(java.lang.String query) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201506.cm.ApiException;
 
     /**
-     * Uploads new media. Currently, you can only upload {@link Image}
-     * files.
+     * Uploads new media. Currently, you can upload {@link Image}
+     * files and {@link MediaBundle}s.
      *         
      *         
      * @param media A list of {@code Media} objects, each containing the

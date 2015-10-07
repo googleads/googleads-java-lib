@@ -14,9 +14,9 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  */
 public class SoapHeader  implements java.io.Serializable {
     /* The header identifies the customer id of the client of the
-     * MCC manager, if an MCC manager
-     *                 is acting on behalf of their client or the customer
-     * id of the advertiser managing their
+     * AdWords manager, if an AdWords
+     *                 manager is acting on behalf of their client or the
+     * customer id of the advertiser managing their
      *                 own account. */
     private java.lang.String clientCustomerId;
 
@@ -65,9 +65,9 @@ public class SoapHeader  implements java.io.Serializable {
      * Gets the clientCustomerId value for this SoapHeader.
      * 
      * @return clientCustomerId   * The header identifies the customer id of the client of the
-     * MCC manager, if an MCC manager
-     *                 is acting on behalf of their client or the customer
-     * id of the advertiser managing their
+     * AdWords manager, if an AdWords
+     *                 manager is acting on behalf of their client or the
+     * customer id of the advertiser managing their
      *                 own account.
      */
     public java.lang.String getClientCustomerId() {
@@ -79,9 +79,9 @@ public class SoapHeader  implements java.io.Serializable {
      * Sets the clientCustomerId value for this SoapHeader.
      * 
      * @param clientCustomerId   * The header identifies the customer id of the client of the
-     * MCC manager, if an MCC manager
-     *                 is acting on behalf of their client or the customer
-     * id of the advertiser managing their
+     * AdWords manager, if an AdWords
+     *                 manager is acting on behalf of their client or the
+     * customer id of the advertiser managing their
      *                 own account.
      */
     public void setClientCustomerId(java.lang.String clientCustomerId) {

@@ -13,6 +13,9 @@ package com.google.api.ads.adwords.axis.v201502.cm;
  * targeting, or if ads can serve anywhere and criteria are only used
  * in
  *             determining the bid.
+ *             <p>For more information, see
+ *             <a href="https://support.google.com/adwords/answer/6056342">Targeting
+ * Settings</a>.</p>
  */
 public class TargetingSettingDetail  implements java.io.Serializable {
     /* The criterion type group that these settings apply to.
@@ -20,9 +23,18 @@ public class TargetingSettingDetail  implements java.io.Serializable {
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201502.cm.CriterionTypeGroup criterionTypeGroup;
 
-    /* If true, do not use criteria of this type to restrict targeting.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span> */
+    /* If true, criteria of this type can be used to modify bidding
+     * but will not restrict targeting
+     *                 of ads. This is equivalent to "Bid only" in the AdWords
+     * user interface.
+     *                 If false, restricts your ads to showing only for the
+     * criteria you have selected for this
+     *                 CriterionTypeGroup. This is equivalent to "Target
+     * and Bid" in the AdWords user interface.
+     *                 The default setting for a CriterionTypeGroup is false
+     * ("Target and Bid").
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span> */
     private java.lang.Boolean targetAll;
 
     public TargetingSettingDetail() {
@@ -63,9 +75,18 @@ public class TargetingSettingDetail  implements java.io.Serializable {
     /**
      * Gets the targetAll value for this TargetingSettingDetail.
      * 
-     * @return targetAll   * If true, do not use criteria of this type to restrict targeting.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     * @return targetAll   * If true, criteria of this type can be used to modify bidding
+     * but will not restrict targeting
+     *                 of ads. This is equivalent to "Bid only" in the AdWords
+     * user interface.
+     *                 If false, restricts your ads to showing only for the
+     * criteria you have selected for this
+     *                 CriterionTypeGroup. This is equivalent to "Target
+     * and Bid" in the AdWords user interface.
+     *                 The default setting for a CriterionTypeGroup is false
+     * ("Target and Bid").
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public java.lang.Boolean getTargetAll() {
         return targetAll;
@@ -75,9 +96,18 @@ public class TargetingSettingDetail  implements java.io.Serializable {
     /**
      * Sets the targetAll value for this TargetingSettingDetail.
      * 
-     * @param targetAll   * If true, do not use criteria of this type to restrict targeting.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null}.</span>
+     * @param targetAll   * If true, criteria of this type can be used to modify bidding
+     * but will not restrict targeting
+     *                 of ads. This is equivalent to "Bid only" in the AdWords
+     * user interface.
+     *                 If false, restricts your ads to showing only for the
+     * criteria you have selected for this
+     *                 CriterionTypeGroup. This is equivalent to "Target
+     * and Bid" in the AdWords user interface.
+     *                 The default setting for a CriterionTypeGroup is false
+     * ("Target and Bid").
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null}.</span>
      */
     public void setTargetAll(java.lang.Boolean targetAll) {
         this.targetAll = targetAll;

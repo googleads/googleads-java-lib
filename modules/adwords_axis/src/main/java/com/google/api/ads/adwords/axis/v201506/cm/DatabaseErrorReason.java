@@ -19,12 +19,14 @@ public class DatabaseErrorReason implements java.io.Serializable {
 
     public static final java.lang.String _CONCURRENT_MODIFICATION = "CONCURRENT_MODIFICATION";
     public static final java.lang.String _PERMISSION_DENIED = "PERMISSION_DENIED";
+    public static final java.lang.String _ACCESS_PROHIBITED = "ACCESS_PROHIBITED";
     public static final java.lang.String _CAMPAIGN_PRODUCT_NOT_SUPPORTED = "CAMPAIGN_PRODUCT_NOT_SUPPORTED";
     public static final java.lang.String _DUPLICATE_KEY = "DUPLICATE_KEY";
     public static final java.lang.String _DATABASE_ERROR = "DATABASE_ERROR";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final DatabaseErrorReason CONCURRENT_MODIFICATION = new DatabaseErrorReason(_CONCURRENT_MODIFICATION);
     public static final DatabaseErrorReason PERMISSION_DENIED = new DatabaseErrorReason(_PERMISSION_DENIED);
+    public static final DatabaseErrorReason ACCESS_PROHIBITED = new DatabaseErrorReason(_ACCESS_PROHIBITED);
     public static final DatabaseErrorReason CAMPAIGN_PRODUCT_NOT_SUPPORTED = new DatabaseErrorReason(_CAMPAIGN_PRODUCT_NOT_SUPPORTED);
     public static final DatabaseErrorReason DUPLICATE_KEY = new DatabaseErrorReason(_DUPLICATE_KEY);
     public static final DatabaseErrorReason DATABASE_ERROR = new DatabaseErrorReason(_DATABASE_ERROR);
