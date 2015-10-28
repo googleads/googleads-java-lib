@@ -77,7 +77,7 @@ public class ReportDownloaderTest {
   @Mock private AdWordsSession adWordsSession;
   @Mock private AdHocReportDownloadHelper adHocDownloadHelper;
 
-  @Parameters
+  @Parameters(name="isUseAwql={0}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     parameters.add(new Object[] {Boolean.TRUE});

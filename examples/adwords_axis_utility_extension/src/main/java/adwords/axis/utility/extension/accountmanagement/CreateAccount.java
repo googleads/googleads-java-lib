@@ -23,11 +23,11 @@ import org.joda.time.DateTime;
 /**
  * This example creates a new account under an MCC account.
  *
- * Note: this example must be run using the credentials of an MCC account, and
+ * <p>Note: this example must be run using the credentials of an MCC account, and
  * by default the new account will only be accessible via the parent MCC
  * account.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class CreateAccount {

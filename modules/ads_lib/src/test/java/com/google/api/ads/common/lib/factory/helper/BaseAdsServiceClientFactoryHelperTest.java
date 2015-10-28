@@ -76,9 +76,6 @@ public class BaseAdsServiceClientFactoryHelperTest {
 
   @Test
   public void testCreateAdsServiceClient() {
-    String endpointServer = "testServer";
-    String endpointAddress = "testAddress";
-
     when(soapClientHandler.createSoapClient(adsServiceDescriptor)).thenReturn(soapClient);
     when(adsServiceClientFactory.create(soapClient, adsServiceDescriptor, adsSession))
         .thenReturn(adsServiceClient);

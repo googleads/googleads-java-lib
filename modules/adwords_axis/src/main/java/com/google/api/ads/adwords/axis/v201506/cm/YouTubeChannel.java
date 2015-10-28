@@ -16,7 +16,13 @@ package com.google.api.ads.adwords.axis.v201506.cm;
  */
 public class YouTubeChannel  extends com.google.api.ads.adwords.axis.v201506.cm.Criterion  implements java.io.Serializable {
     /* The YouTube uploader channel id or the channel code of a YouTube
-     * content channel. */
+     * content channel.
+     *                     <p>The uploader channel id can be obtained from
+     * the YouTube id-based URL. For example, in
+     *                     <code>https://www.youtube.com/channel/UCEN58iXQg82TXgsDCjWqIkg</code>
+     * the channel id is
+     *                     <code>UCEN58iXQg82TXgsDCjWqIkg</code>
+     *                     <p>For more information see: https://support.google.com/youtube/answer/6180214 */
     private java.lang.String channelId;
 
     /* The public name for a YouTube user channel.
@@ -47,6 +53,12 @@ public class YouTubeChannel  extends com.google.api.ads.adwords.axis.v201506.cm.
      * 
      * @return channelId   * The YouTube uploader channel id or the channel code of a YouTube
      * content channel.
+     *                     <p>The uploader channel id can be obtained from
+     * the YouTube id-based URL. For example, in
+     *                     <code>https://www.youtube.com/channel/UCEN58iXQg82TXgsDCjWqIkg</code>
+     * the channel id is
+     *                     <code>UCEN58iXQg82TXgsDCjWqIkg</code>
+     *                     <p>For more information see: https://support.google.com/youtube/answer/6180214
      */
     public java.lang.String getChannelId() {
         return channelId;
@@ -58,6 +70,12 @@ public class YouTubeChannel  extends com.google.api.ads.adwords.axis.v201506.cm.
      * 
      * @param channelId   * The YouTube uploader channel id or the channel code of a YouTube
      * content channel.
+     *                     <p>The uploader channel id can be obtained from
+     * the YouTube id-based URL. For example, in
+     *                     <code>https://www.youtube.com/channel/UCEN58iXQg82TXgsDCjWqIkg</code>
+     * the channel id is
+     *                     <code>UCEN58iXQg82TXgsDCjWqIkg</code>
+     *                     <p>For more information see: https://support.google.com/youtube/answer/6180214
      */
     public void setChannelId(java.lang.String channelId) {
         this.channelId = channelId;

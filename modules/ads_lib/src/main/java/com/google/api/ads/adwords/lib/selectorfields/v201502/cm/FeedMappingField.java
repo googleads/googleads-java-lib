@@ -69,6 +69,7 @@ public enum FeedMappingField implements EntityField {
     this.isFilterable = isFilterable;
   }
 
+  @Override
   public boolean isFilterable() {
     return this.isFilterable;
   }

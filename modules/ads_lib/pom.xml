@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version>
+    <version>2.6.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,12 +29,12 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>2.5.1-SNAPSHOT</version>
+  <version>2.6.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library</name>
   <description>
-    Java client library for accessing ads APIs including AdWords, DFA, and DFP.
+    Java client library for accessing ads APIs including AdWords and DFP.
     If you want to use this library, you must also include another Maven
     artifact to specify which framework you would like to use it with. For
     example, to use AdWords with Axis, you should include the "adwords-axis"
@@ -61,14 +61,6 @@
         <targetPath>com/google/api/ads/adwords/lib/conf/props</targetPath>
         <filtering>false</filtering>
         <directory>src/main/java/com/google/api/ads/adwords/lib/conf/props</directory>
-        <includes>
-          <include>*.properties</include>
-        </includes>
-      </resource>
-      <resource>
-        <targetPath>com/google/api/ads/dfa/lib/conf/props</targetPath>
-        <filtering>false</filtering>
-        <directory>src/main/java/com/google/api/ads/dfa/lib/conf/props</directory>
         <includes>
           <include>*.properties</include>
         </includes>
@@ -122,14 +114,6 @@
         <targetPath>com/google/api/ads/adwords/lib/soap/testing</targetPath>
         <filtering>false</filtering>
         <directory>src/test/java/com/google/api/ads/adwords/lib/soap/testing</directory>
-        <includes>
-          <include>*.xml</include>
-        </includes>
-      </testResource>
-      <testResource>
-        <targetPath>com/google/api/ads/dfa/lib/soap/testing</targetPath>
-        <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/dfa/lib/soap/testing</directory>
         <includes>
           <include>*.xml</include>
         </includes>
@@ -202,6 +186,12 @@
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client</artifactId>
       <version>1.20.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava-jdk5</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -213,7 +203,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>2.48.0</version>
+      <version>2.48.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>

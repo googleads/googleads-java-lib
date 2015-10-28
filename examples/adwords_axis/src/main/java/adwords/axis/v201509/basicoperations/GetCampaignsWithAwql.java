@@ -27,7 +27,7 @@ import com.google.api.client.auth.oauth2.Credential;
  * This example gets all campaigns with AWQL. To add a campaign, run
  * AddCampaign.java.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetCampaignsWithAwql {
@@ -35,8 +35,7 @@ public class GetCampaignsWithAwql {
   private static final int PAGE_SIZE = 100;
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()
@@ -64,7 +63,6 @@ public class GetCampaignsWithAwql {
 
     String query = "SELECT Id, Name, Status ORDER BY Name";
 
-
     CampaignPage page = null;
     do {
       String pageQuery = query + String.format(" LIMIT %d, %d", offset, PAGE_SIZE);
@@ -74,8 +72,8 @@ public class GetCampaignsWithAwql {
       // Display campaigns.
       if (page.getEntries() != null) {
         for (Campaign campaign : page.getEntries()) {
-          System.out.println("Campaign with name \"" + campaign.getName() + "\" and id \""
-              + campaign.getId() + "\" was found.");
+          System.out.printf("Campaign with name '%s' and ID %d was found.%n", campaign.getName(),
+              campaign.getId());
         }
       } else {
         System.out.println("No campaigns were found.");

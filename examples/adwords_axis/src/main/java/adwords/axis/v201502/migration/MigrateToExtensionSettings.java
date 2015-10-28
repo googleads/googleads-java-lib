@@ -90,7 +90,7 @@ public class MigrateToExtensionSettings {
   private static final int PLACEHOLDER_FIELD_TRACKING_URL_TEMPLATE = 7;
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
+    // Generate a refreshable OAuth2 credential.
     // that can be used in place of a service account.
     Credential oAuth2Credential = new OfflineCredentials.Builder().forApi(Api.ADWORDS).fromFile()
         .build().generateCredential();
@@ -472,7 +472,7 @@ public class MigrateToExtensionSettings {
 
   /**
    * Gets the set of feed item IDs from the function if it is of the form:
-   * {@code IN(FEED_ITEM_ID,{xxx,xxx})}. Otherwise, returns an empty set.
+   * <code>IN(FEED_ITEM_ID,{xxx,xxx})</code>. Otherwise, returns an empty set.
    */
   private static Set<Long> getFeedItemIdsFromArgument(Function function) {
     Set<Long> feedItemIds = Sets.newHashSet();

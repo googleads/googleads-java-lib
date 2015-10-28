@@ -14,7 +14,6 @@
 
 package com.google.api.ads.common.lib.conf;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
@@ -34,26 +33,7 @@ public abstract class ConfigurationModule extends AbstractModule {
   private static final String BUILD_PROPERTIES = "props/google-ads-api-java-build.properties";
   private static final String DEFAULT_ADS_PROPERTIES = "ads.properties";
   private static final String DEFAULT_BUILD_PROPERTIES = "google-ads-api-java-build.properties";
-
-  private final ConfigurationHelper configurationHelper;
-
-  /**
-   * Constructor.
-   */
-  public ConfigurationModule() {
-    configurationHelper = new ConfigurationHelper();
-  }
-
-  /**
-   * Constructor.
-   *
-   * @param configurationHelper the configuration helper.
-   */
-  @VisibleForTesting
-  ConfigurationModule(ConfigurationHelper configurationHelper) {
-    this.configurationHelper = configurationHelper;
-  }
-
+  
   @Override
   protected void configure() {}
 

@@ -34,14 +34,13 @@ import com.google.api.client.auth.oauth2.Credential;
  * uses only the final URL field when creating the Ad. To see more options,
  * see AddTextAdWithUpgradedUrls.java.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class AddTextAds {
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

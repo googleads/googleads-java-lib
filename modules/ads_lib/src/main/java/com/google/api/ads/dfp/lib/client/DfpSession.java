@@ -19,14 +19,11 @@ import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
-import com.google.api.ads.dfp.lib.utils.DfpInternals;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 
 import org.apache.commons.configuration.Configuration;
-import org.slf4j.Logger;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -48,7 +45,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
 
   private final String applicationName;
   private final String endpoint;
-  private final Logger libLogger;
 
   public static final String DEFAULT_ENDPOINT = "https://ads.google.com/";
 
@@ -64,7 +60,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
     this.endpoint = builder.endpoint;
     this.networkCode = builder.networkCode;
     this.oAuth2Credential = builder.oAuth2Credential;
-    this.libLogger = builder.libLogger;
   }
 
   /**
@@ -137,23 +132,16 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
     private Credential oAuth2Credential;
 
 
-    private final Logger libLogger;
     private final ConfigurationHelper configHelper;
 
     /**
      * Constructor.
      */
     public Builder() {
-      this(DfpInternals.getInstance().getAdsServiceLoggers().getLibLogger());
+      this(new ConfigurationHelper());
     }
 
-    @VisibleForTesting
-    Builder(Logger libLogger) {
-       this(libLogger, new ConfigurationHelper());
-    }
-
-    private Builder(Logger libLogger, ConfigurationHelper configHelper) {
-      this.libLogger = libLogger;
+    private Builder(ConfigurationHelper configHelper) {
       this.configHelper = configHelper;
     }
 

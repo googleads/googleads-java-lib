@@ -134,6 +134,7 @@ public enum DataField implements EntityField {
     this.isFilterable = isFilterable;
   }
 
+  @Override
   public boolean isFilterable() {
     return this.isFilterable;
   }

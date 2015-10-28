@@ -49,14 +49,13 @@ import org.joda.time.DateTime;
 /**
  * This example adds campaigns.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class AddCampaigns {
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()
@@ -127,7 +126,7 @@ public class AddCampaigns {
     campaign.setBudget(budget);
 
     campaign.setAdvertisingChannelType(AdvertisingChannelType.SEARCH);
-    
+
     // Set the campaign network options to Search and Search Network.
     NetworkSetting networkSetting = new NetworkSetting();
     networkSetting.setTargetGoogleSearch(true);
@@ -170,8 +169,8 @@ public class AddCampaigns {
 
     // Display campaigns.
     for (Campaign campaignResult : result.getValue()) {
-      System.out.println("Campaign with name \"" + campaignResult.getName() + "\" and id \""
-          + campaignResult.getId() + "\" was added.");
+      System.out.printf("Campaign with name '%s' and ID %d was added.%n", campaignResult.getName(),
+          campaignResult.getId());
     }
   }
 }

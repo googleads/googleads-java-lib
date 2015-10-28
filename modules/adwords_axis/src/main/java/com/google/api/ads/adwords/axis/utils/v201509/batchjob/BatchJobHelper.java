@@ -28,11 +28,13 @@ import com.google.api.ads.adwords.axis.v201509.cm.FeedItemServiceSoapBindingStub
 import com.google.api.ads.adwords.axis.v201509.cm.Operand;
 import com.google.api.ads.adwords.axis.v201509.cm.Operation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.common.collect.ImmutableList;
 
 import org.apache.axis.client.Call;
@@ -51,7 +53,8 @@ import javax.xml.rpc.ServiceException;
  */
 public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operand, ApiError,
     MutateResult, BatchJobMutateResponse> {
-  private BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
+  private final BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
+  private final BatchJobLogger batchJobLogger;
   private final QName resultQName;
   private final QName operandQName;
   
@@ -66,6 +69,7 @@ public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operan
   public BatchJobHelper(AdWordsSession session) {
     uploader =
         new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(session);
+    batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "MutateResult");
     operandQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "Operand");
   }
@@ -97,12 +101,15 @@ public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operan
       mutateResults = deserializer.deserializeBatchJobMutateResults(new URL(downloadUrl),
           getServiceTypeMappings(), MutateResult.class, resultQName, Operand.class, operandQName);
     } catch (Exception e) {
+      batchJobLogger.logDownload(downloadUrl, null, e);
       throw new BatchJobException(
           "Failed to download batch job mutate response from URL: " + downloadUrl, e);
     }
 
     BatchJobMutateResponse response = new BatchJobMutateResponse();
     response.setMutateResults(mutateResults.toArray(new MutateResult[mutateResults.size()]));
+    
+    batchJobLogger.logDownload(downloadUrl, response, null);
     return response;
   }
   
@@ -110,7 +117,7 @@ public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operan
    * Returns all of the service type mappings required to serialize/deserialize Axis
    * objects.
    */
-  private static List<TypeMapping> getServiceTypeMappings() {
+  static List<TypeMapping> getServiceTypeMappings() {
     
     // Lazily initialize the list of type mappings.
     if (SERVICE_TYPE_MAPPINGS_REF.get() == null) {

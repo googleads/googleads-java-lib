@@ -62,7 +62,6 @@ public class BaseAdsServiceClientFactoryTest {
 
   @Test
   public void testGetServiceClientAsInterface() {
-    String endpointServer = "http://google.com";
     MockSoapClientInterface soapClient = new MockSoapClient();
     when(adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class))
         .thenReturn(soapClient);

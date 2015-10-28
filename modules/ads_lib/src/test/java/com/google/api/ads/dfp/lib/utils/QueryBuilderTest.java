@@ -18,7 +18,10 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.Maps;
 
+import org.hamcrest.Matchers;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -29,6 +32,9 @@ import java.util.Map;
  */
 @RunWith(JUnit4.class)
 public class QueryBuilderTest {
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   public QueryBuilderTest() {}
 
@@ -49,50 +55,34 @@ public class QueryBuilderTest {
 
   @Test
   public void testSelect_null() {
-    try {
-      QueryBuilder<Object> builder = new QueryBuilder<Object>();
-      builder.select(null);
-    } catch (NullPointerException e) {
-      if (!e.getMessage().equals("SELECT clause cannot be null")) {
-        throw e;
-      }
-    }
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage(Matchers.equalTo("SELECT clause cannot be null"));
+    QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    builder.select(null);
   }
 
   @Test
   public void testFrom_null() {
-    try {
-      QueryBuilder<Object> builder = new QueryBuilder<Object>();
-      builder.from(null);
-    } catch (NullPointerException e) {
-      if (!e.getMessage().equals("FROM clause cannot be null")) {
-        throw e;
-      }
-    }
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage(Matchers.equalTo("FROM clause cannot be null"));
+    QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    builder.from(null);
   }
 
   @Test
   public void testWhere_null() {
-    try {
-      QueryBuilder<Object> builder = new QueryBuilder<Object>();
-      builder.where(null);
-    } catch (NullPointerException e) {
-      if (!e.getMessage().equals("WHERE clause cannot be null")) {
-        throw e;
-      }
-    }
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage(Matchers.equalTo("WHERE clause cannot be null"));
+    QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    builder.where(null);
   }
 
   @Test
   public void testOrderBy_null() {
-    try {
-      QueryBuilder<Object> builder = new QueryBuilder<Object>();
-      builder.orderBy(null);
-    } catch (NullPointerException e) {
-      if (!e.getMessage().equals("ORDER BY clause cannot be null")) {
-        throw e;
-      }
-    }
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage(Matchers.equalTo("ORDER BY clause cannot be null"));
+    QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    builder.orderBy(null);
   }
 
   @Test
@@ -183,15 +173,9 @@ public class QueryBuilderTest {
 
   @Test
   public void testBuildQuery_OffsetWithoutLimit() {
-    try {
-      String query = new QueryBuilder<Object>()
-          .offset(500)
-          .buildQuery();
-    } catch (IllegalStateException e) {
-      if (!e.getMessage().equals("OFFSET cannot be set if LIMIT is not set.")) {
-        throw e;
-      }
-    }
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage(Matchers.equalTo("OFFSET cannot be set if LIMIT is not set."));
+    new QueryBuilder<Object>().offset(500).buildQuery();
   }
 
   @Test

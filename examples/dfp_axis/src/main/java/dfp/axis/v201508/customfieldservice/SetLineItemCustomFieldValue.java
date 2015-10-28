@@ -121,6 +121,7 @@ public class SetLineItemCustomFieldValue {
       List<String> customFieldValueStrings = Lists.transform(
           Arrays.asList(updatedLineItem.getCustomFieldValues()),
           new Function<BaseCustomFieldValue, String>() {
+            @Override
             public String apply(BaseCustomFieldValue baseCustomFieldValue) {
               if (baseCustomFieldValue instanceof CustomFieldValue
                   && ((CustomFieldValue) baseCustomFieldValue).getValue() instanceof NumberValue) {

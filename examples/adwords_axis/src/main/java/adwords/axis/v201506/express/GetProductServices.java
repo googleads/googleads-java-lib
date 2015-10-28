@@ -32,16 +32,15 @@ import java.util.List;
  * This example shows how to retrieve AdWords Express product/service objects related
  * to specific criteria.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
- * README for more info.
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
+ * "ads.properties" file. See README for more info.
  */
 public class GetProductServices {
 
   private static final int PAGE_SIZE = 100;
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

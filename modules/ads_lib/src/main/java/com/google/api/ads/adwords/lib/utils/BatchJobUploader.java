@@ -15,12 +15,9 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.common.lib.soap.RequestInfo;
-import com.google.api.ads.common.lib.soap.ResponseInfo;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
+import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.Streams;
-import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -52,17 +49,16 @@ import java.nio.charset.Charset;
 public class BatchJobUploader<OperandT, ApiErrorT,
     ResultT extends BatchJobMutateResultInterface<OperandT, ApiErrorT>,
     ResponseT extends BatchJobMutateResponseInterface<OperandT, ApiErrorT, ResultT>> {
-  
   private final AdWordsSession session;
   private final HttpTransport httpTransport;
   private final UserAgentCombiner userAgentCombiner;
-  private final AdsServiceLoggers serviceLoggers;
+  private final BatchJobLogger batchJobLogger;
 
   /**
    * Charset for request contents.
    */
   private static final Charset REQUEST_CHARSET = Charsets.UTF_8;
-  
+
   /**
    * Constructor that stores the session for authentication.
    */
@@ -70,7 +66,8 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     this.session = session;
     this.httpTransport = AdWordsInternals.getInstance().getHttpTransport();
     this.userAgentCombiner = AdWordsInternals.getInstance().getUserAgentCombiner();
-    this.serviceLoggers = AdWordsInternals.getInstance().getAdsServiceLoggers();
+    this.batchJobLogger =
+        AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
   }
 
   private HttpHeaders createHttpHeaders() {
@@ -87,7 +84,6 @@ public class BatchJobUploader<OperandT, ApiErrorT,
       BatchJobMutateRequestInterface request, String uploadUrl) throws BatchJobException {
     Preconditions.checkNotNull(request, "Null request");
     String requestXml = null;
-    String responseMessage = null;
     Throwable exception = null;
     BatchJobUploadResponse batchJobUploadResponse = null;
     try {
@@ -103,33 +99,28 @@ public class BatchJobUploader<OperandT, ApiErrorT,
 
       // Non-incremental operations require a POST request.
       ByteArrayContent content = bodyProvider.getHttpContent(request, true, true);
-      HttpRequest httpRequest = requestFactory.buildPostRequest(
-          new GenericUrl(uploadUrl), content);
-      
+      HttpRequest httpRequest = requestFactory.buildPostRequest(new GenericUrl(uploadUrl), content);
+
       requestXml = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
       content.getInputStream().reset();
-      
+
       HttpResponse response = httpRequest.execute();
 
       batchJobUploadResponse =
           new BatchJobUploadResponse(response, httpRequest.getContent().getLength(), null);
 
-      responseMessage = String.format("%s: %s", response.getStatusCode(), 
-          response.getStatusMessage());
       return batchJobUploadResponse;
     } catch (IOException e) {
-      responseMessage = e.getClass().getSimpleName();
       exception = e;
       throw new BatchJobException("Problem sending data to batch upload URL.", e);
     } finally {
-      logRequestResponse(requestXml, responseMessage, uploadUrl, "uploadBatchJobOperations",
-          batchJobUploadResponse, exception);
+      logRequestResponse(requestXml, uploadUrl, batchJobUploadResponse, exception);
     }
   }
-  
+
   /**
    * Incrementally uploads a batch job's operations and returns the response.
-   *  
+   *
    * @param request the request to upload
    * @param isLastRequest if the request is the last request in the sequence of uploads for the job
    * @param batchJobUploadStatus the current upload status of the job
@@ -140,19 +131,18 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     Preconditions.checkNotNull(batchJobUploadStatus, "Null batch job upload status");
     Preconditions.checkNotNull(
         batchJobUploadStatus.getResumableUploadUri(), "No resumable session URI");
-  
+
     // The process below follows the Google Cloud Storage guidelines for resumable
     // uploads of unknown size:
     // https://cloud.google.com/storage/docs/concepts-techniques#unknownresumables
     ByteArrayContent content = request.createBatchJobUploadBodyProvider().getHttpContent(
         request, batchJobUploadStatus.getTotalContentLength() == 0, isLastRequest);
-    
+
     String requestXml = null;
-    String responseMessage = null;
     Throwable exception = null;
     BatchJobUploadResponse batchJobUploadResponse = null;
     final long contentLength = content.getLength();
-    
+
     try {
       HttpRequestFactory requestFactory =
           httpTransport.createRequestFactory(new HttpRequestInitializer() {
@@ -166,14 +156,14 @@ public class BatchJobUploader<OperandT, ApiErrorT,
               request.setLoggingEnabled(true);
             }
           });
-  
+
       // Incremental uploads require a PUT request.
       HttpRequest httpRequest = requestFactory.buildPutRequest(
           new GenericUrl(batchJobUploadStatus.getResumableUploadUri()), content);
-  
+
       requestXml = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
       content.getInputStream().reset();
-      
+
       HttpResponse response = httpRequest.execute();
       batchJobUploadResponse = new BatchJobUploadResponse(
           response,
@@ -189,50 +179,29 @@ public class BatchJobUploader<OperandT, ApiErrorT,
                 batchJobUploadStatus.getResumableUploadUri());
         return batchJobUploadResponse;
       }
-      responseMessage = e.getClass().getSimpleName();
       exception = e;
       throw new BatchJobException("Failed response status from batch upload URL.", e);
     } catch (IOException e) {
-      responseMessage = e.getClass().getSimpleName();
       exception = e;
       throw new BatchJobException("Problem sending data to batch upload URL.", e);
     } finally {
-      logRequestResponse(requestXml, responseMessage,
-          batchJobUploadStatus.getResumableUploadUri().toString(),
-          "uploadIncrementalBatchJobOperations", batchJobUploadResponse, exception);
+      logRequestResponse(requestXml, batchJobUploadStatus.getResumableUploadUri(),
+          batchJobUploadResponse, exception);
     }
   }
 
   /**
    * Logs a request and response based on the standard rules for the library.
+   *
+   * @param requestXml the request body XML.
+   * @param uploadUri the upload URL, either as a String or a URI.
+   * @param batchJobUploadResponse the response from the upload.
+   * @param exception the exception from the upload. Will be null if the upload was successful.
    */
-  private void logRequestResponse(String requestXml, String responseMessage, String url,
-      String methodName,
-      BatchJobUploadResponse batchJobUploadResponse,
-      Throwable exception){
-    RequestInfo requestInfo =
-        new RequestInfo.Builder()
-            .withServiceName(BatchJobUploader.class.getSimpleName())
-            .withMethodName(methodName)
-            .withSoapRequestXml(requestXml)
-            .withUrl(url)
-            .build();
-    // Construct a ResponseInfo with a dummy XML message, since the upload URL response will
-    // not contain XML.
-    ResponseInfo responseInfo =
-        new ResponseInfo.Builder()
-            .withSoapResponseXml(
-                String.format("<uploadResponse>%s</uploadResponse>", responseMessage))
-            .build();
-    SoapCallReturn soapCallReturn =
-        new SoapCallReturn.Builder()
-            .withRequestInfo(requestInfo)
-            .withResponseInfo(responseInfo)
-            .withException(exception)
-            .withReturnValue(batchJobUploadResponse)
-            .build();
-    serviceLoggers.logRequest(soapCallReturn);
-    serviceLoggers.logSoapXml(soapCallReturn);
+  private void logRequestResponse(String requestXml, Object uploadUri,
+      BatchJobUploadResponse batchJobUploadResponse, Throwable exception) {
+    // Log the request XML without padding.
+    batchJobLogger.logUpload(requestXml, uploadUri, batchJobUploadResponse, exception);
   }
 
   /**

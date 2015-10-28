@@ -31,14 +31,13 @@ import com.google.api.client.auth.oauth2.Credential;
  * This example removes an ad group criterion using the 'REMOVE' operator. To
  * get ad group criteria, run GetPlacements.java.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class RemovePlacement {
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

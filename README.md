@@ -1,7 +1,7 @@
 Google Ads API Java Client Library
 ==================================
 
-This project hosts the Java client library for the various SOAP-Based Ads APIs (AdWords, DFA, and DFP) at Google.
+This project hosts the Java client library for the various SOAP-Based Ads APIs (AdWords and DFP) at Google.
 
 ## Features
 
@@ -25,7 +25,6 @@ For API and client library updates and news, please follow our [Google+ Ads Deve
 If you have questions about the client library or the APIs, you can ask them on our forums:
   * [AdWords API Forum](https://groups.google.com/group/adwords-api)
   * [DoubleClick for Publishers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
-  * [DoubleClick for Advertisers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-advertisers-api)
   * [DoubleClick Ad Exchange Buyer API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-ad-exchange-buyer-api)
 
 ## Maven artifacts
@@ -43,19 +42,7 @@ If you have questions about the client library or the APIs, you can ask them on 
       <version>RELEASE</version>
     </dependency>
 ```
-### DFA
-```
-    <dependency>
-      <groupId>com.google.api-ads</groupId>
-      <artifactId>ads-lib</artifactId>
-      <version>RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api-ads</groupId>
-      <artifactId>dfa-axis</artifactId>
-      <version>RELEASE</version>
-    </dependency>
-```
+
 ### DFP
 ```
     <dependency>
@@ -258,8 +245,6 @@ First, add an entry to your `ads.properties` file for each API you plan to use.
     api.adwords.useCompression=true
     # DFP
     api.dfp.useCompression=true
-    # DFA
-    api.dfa.useCompression=true
 
 If using JaxWs, then no further steps are required.
 

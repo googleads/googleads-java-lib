@@ -100,26 +100,6 @@ public class OfflineCredentialsTest {
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
-  public void testReadPropertiesFromConfiguration_dfa() throws ValidationException {
-    PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfa.clientId", "clientId");
-    config.setProperty("api.dfa.clientSecret", "clientSecret");
-    config.setProperty("api.dfa.refreshToken", "refreshToken");
-
-    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFA)
-        .from(config)
-        .build();
-
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
-  }
-
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
-  @Test
   public void testReadPropertiesFromConfiguration_adwords() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.clientId", "clientId");

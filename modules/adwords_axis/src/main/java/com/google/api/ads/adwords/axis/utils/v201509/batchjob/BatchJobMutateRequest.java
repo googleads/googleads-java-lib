@@ -22,11 +22,16 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploadBodyProvider;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 import org.apache.axis.encoding.Deserializer;
 import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.TypeMapping;
 
 import java.util.List;
+import java.util.Set;
+
+import javax.xml.namespace.QName;
 
 /**
  * A request containing operations for a {@link BatchJob}.
@@ -57,7 +62,16 @@ public class BatchJobMutateRequest implements BatchJobMutateRequestInterface {
 
   @Override
   public BatchJobUploadBodyProvider createBatchJobUploadBodyProvider() {
-    return new AxisBatchJobUploadBodyProvider();
+    Set<String> namespaceUris = Sets.newHashSet();
+    for (TypeMapping typeMapping : BatchJobHelper.getServiceTypeMappings()) {
+      for (Class<?> clazz : typeMapping.getAllClasses()) {
+        QName qName = typeMapping.getTypeQName(clazz);
+        if (qName != null) {
+          namespaceUris.add(qName.getNamespaceURI());
+        }
+      }
+    }
+    return new AxisBatchJobUploadBodyProvider(namespaceUris);
   }
 
   public Operation[] getOperations() {

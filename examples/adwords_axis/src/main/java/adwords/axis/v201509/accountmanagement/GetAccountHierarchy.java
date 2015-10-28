@@ -37,17 +37,16 @@ import java.util.Map;
 /**
  * This example gets the account hierarchy under the current account.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  *
- * Note: this code example won't work with test accounts. See
+ * <p>Note: this code example won't work with test accounts. See
  * https://developers.google.com/adwords/api/docs/test-accounts
  */
 public class GetAccountHierarchy {
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

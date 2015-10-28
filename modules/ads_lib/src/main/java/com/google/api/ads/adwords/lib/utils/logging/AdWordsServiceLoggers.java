@@ -27,14 +27,17 @@ import org.slf4j.Logger;
 public class AdWordsServiceLoggers extends AdsServiceLoggers {
 
   private final ReportServiceLogger reportServiceLogger;
+  private final BatchJobLogger batchJobLogger;
   
   @Inject
   public AdWordsServiceLoggers(PrettyPrinterInterface prettyPrinter,
       @Named("soapXmlLogger") Logger soapXmlLogger,
       @Named("requestInfoLogger") Logger requestInfoLogger,
-      ReportServiceLogger reportServiceLogger) {
+      ReportServiceLogger reportServiceLogger,
+      BatchJobLogger batchJobLogger) {
     super(prettyPrinter, soapXmlLogger, requestInfoLogger);
     this.reportServiceLogger = reportServiceLogger;
+    this.batchJobLogger = batchJobLogger;
   }
 
   /**
@@ -42,5 +45,12 @@ public class AdWordsServiceLoggers extends AdsServiceLoggers {
    */
   public ReportServiceLogger getReportServiceLogger() {
     return reportServiceLogger;
+  }
+  
+  /**
+   * Return the logger for {@code BatchJobService} uploads and downloads.
+   */
+  public BatchJobLogger getBatchJobLogger() {
+    return batchJobLogger;
   }
 }

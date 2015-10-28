@@ -35,10 +35,10 @@ import java.io.InputStreamReader;
  * OfflineCredentials utility. Please copy the refresh token into your
  * ads.properites file after running.
  *
- * This example is meant to be run from the command line and requires user
+ * <p>This example is meant to be run from the command line and requires user
  * input.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetRefreshToken {

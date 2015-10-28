@@ -39,7 +39,6 @@ public class CustomerOrderLineErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_STATUS_CHANGE = "INVALID_STATUS_CHANGE";
     public static final java.lang.String _MORE_THAN_ONE_OPERATION_NOT_PERMITTED = "MORE_THAN_ONE_OPERATION_NOT_PERMITTED";
     public static final java.lang.String _INVALID_TIMEZONE_IN_DATE_RANGES = "INVALID_TIMEZONE_IN_DATE_RANGES";
-    public static final java.lang.String _INS_SERVICE_ID_MISMATCH = "INS_SERVICE_ID_MISMATCH";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final CustomerOrderLineErrorReason INVALID_ORDER_LINE_ID = new CustomerOrderLineErrorReason(_INVALID_ORDER_LINE_ID);
     public static final CustomerOrderLineErrorReason END_DATE_BEFORE_START_DATE = new CustomerOrderLineErrorReason(_END_DATE_BEFORE_START_DATE);
@@ -63,7 +62,6 @@ public class CustomerOrderLineErrorReason implements java.io.Serializable {
     public static final CustomerOrderLineErrorReason INVALID_STATUS_CHANGE = new CustomerOrderLineErrorReason(_INVALID_STATUS_CHANGE);
     public static final CustomerOrderLineErrorReason MORE_THAN_ONE_OPERATION_NOT_PERMITTED = new CustomerOrderLineErrorReason(_MORE_THAN_ONE_OPERATION_NOT_PERMITTED);
     public static final CustomerOrderLineErrorReason INVALID_TIMEZONE_IN_DATE_RANGES = new CustomerOrderLineErrorReason(_INVALID_TIMEZONE_IN_DATE_RANGES);
-    public static final CustomerOrderLineErrorReason INS_SERVICE_ID_MISMATCH = new CustomerOrderLineErrorReason(_INS_SERVICE_ID_MISMATCH);
     public static final CustomerOrderLineErrorReason UNKNOWN = new CustomerOrderLineErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static CustomerOrderLineErrorReason fromValue(java.lang.String value)

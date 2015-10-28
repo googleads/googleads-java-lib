@@ -48,15 +48,15 @@ import javax.annotation.Nullable;
  * This example adds a feed that syncs feed items from a Google
  * My Business (GMB) account and associates the feed with a customer.
  *
- * Credentials and properties in {@code fromFile()} are pulled from
+ * <p>Credentials and properties in {@code fromFile()} are pulled from
  * the "ads.properties" file. See README for more info.
  */
 public class AddGoogleMyBusinessLocationExtensions {
 
   /**
    * The placeholder type for location extensions.
-   * See the Placeholder reference page for a list of all the placeholder types and fields.
    *
+   * <p>See the Placeholder reference page for a list of all the placeholder types and fields.
    * https://developers.google.com/adwords/api/docs/appendix/placeholders
    */
   private static final int PLACEHOLDER_LOCATION = 7;
@@ -69,8 +69,7 @@ public class AddGoogleMyBusinessLocationExtensions {
 
   public static void main(String[] args) throws Exception {
 
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // that can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

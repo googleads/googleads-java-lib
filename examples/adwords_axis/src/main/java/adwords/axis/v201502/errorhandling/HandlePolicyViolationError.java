@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
 /**
  * This example demonstrates how to handle policy violation errors.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class HandlePolicyViolationError {
@@ -49,8 +49,7 @@ public class HandlePolicyViolationError {
   private static Pattern operationIndexPattern = Pattern.compile("^.*operations\\[(\\d+)\\].*$");
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()

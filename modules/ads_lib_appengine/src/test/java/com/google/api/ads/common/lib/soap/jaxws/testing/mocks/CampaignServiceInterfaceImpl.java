@@ -95,6 +95,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
    */
   private static class MyBinding implements Binding {
 
+    @SuppressWarnings("rawtypes")
     private List<Handler> chain = new LinkedList<Handler>();
 
     /**
@@ -107,6 +108,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
     /**
      * @see javax.xml.ws.Binding#getHandlerChain()
      */
+    @SuppressWarnings("rawtypes")
     @Override
     public List<Handler> getHandlerChain() {
       return chain;
@@ -116,6 +118,7 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
      * Unused in this mock.
      * @see javax.xml.ws.Binding#setHandlerChain(java.util.List)
      */
+    @SuppressWarnings("rawtypes")
     @Override
     public void setHandlerChain(List<Handler> chain) {
     }

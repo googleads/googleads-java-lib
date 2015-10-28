@@ -64,7 +64,7 @@ public class AdWordsAxisSoapHeaderFactoryTest {
     this.headerClassPartialName = headerClass.getName().replaceFirst("java.", "");
   }
 
-  @Parameters
+  @Parameters(name="subProduct={0}, interface={1}, headerClass={2}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
 

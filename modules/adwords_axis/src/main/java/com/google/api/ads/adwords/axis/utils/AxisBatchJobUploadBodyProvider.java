@@ -21,12 +21,14 @@ import com.google.api.client.http.ByteArrayContent;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableSortedSet;
 
 import org.apache.axis.encoding.SerializationContext;
 import org.xml.sax.Attributes;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.SortedSet;
 
 import javax.xml.namespace.QName;
 
@@ -34,12 +36,19 @@ import javax.xml.namespace.QName;
  * Implementation of {@link BatchJobUploadBodyProvider} for Axis requests.
  */
 public class AxisBatchJobUploadBodyProvider implements BatchJobUploadBodyProvider {
+  
+  private final SortedSet<String> namespaceUris;
+  
   /**
    * For incremental uploads, each request's contents must have a length
    * divisible by this size. 
    */
   private static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
 
+  public AxisBatchJobUploadBodyProvider(Iterable<String> namespaceUris) {
+    this.namespaceUris = ImmutableSortedSet.copyOf(namespaceUris);
+  }
+  
   @Override
   public ByteArrayContent getHttpContent(BatchJobMutateRequestInterface request,
       boolean isFirstRequest, boolean isLastRequest) throws BatchJobException {
@@ -60,6 +69,15 @@ public class AxisBatchJobUploadBodyProvider implements BatchJobUploadBodyProvide
     };
     context.setSendDecl(false);
     context.setPretty(true);
+    
+    // Pre-register namespaces using the *sorted* list of namespaces. This ensures that
+    // when performing an incremental upload, the same namespace prefix will be used
+    // for each namespace URI across all uploads.
+    int namespaceIndex = 0;
+    for(String namespaceUri : namespaceUris) {
+      context.registerPrefixForURI(String.format("ns%d", namespaceIndex++),
+          namespaceUri);
+    }
     
     AxisSerializer serializer = new AxisSerializer();
     serializer.serialize(request, context);

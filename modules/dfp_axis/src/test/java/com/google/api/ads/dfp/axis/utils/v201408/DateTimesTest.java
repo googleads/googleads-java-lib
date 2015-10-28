@@ -197,7 +197,6 @@ public class DateTimesTest {
 
   @Test
   public void testToDateTime_fromApiDateTimeToJoda() {
-    Object joda = DateTimes.toDateTime(apiDateTime3);
     assertEquals(jodaDateTime1, DateTimes.toDateTime(apiDateTime1));
     assertEquals(jodaDateTime2, DateTimes.toDateTime(apiDateTime2));
     assertEquals(jodaDateTime3, DateTimes.toDateTime(apiDateTime3));

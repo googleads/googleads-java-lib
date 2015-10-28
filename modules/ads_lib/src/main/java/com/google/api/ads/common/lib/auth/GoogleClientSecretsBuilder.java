@@ -36,7 +36,7 @@ public class GoogleClientSecretsBuilder {
    * Enum representing the API that GoogleClientSecretsBuilder can be used for.
    */
   public static enum Api {
-    ADWORDS("api.adwords."), DFA("api.dfa."), DFP("api.dfp.");
+    ADWORDS("api.adwords."), DFP("api.dfp.");
 
     private final String propKeyPrefix;
 

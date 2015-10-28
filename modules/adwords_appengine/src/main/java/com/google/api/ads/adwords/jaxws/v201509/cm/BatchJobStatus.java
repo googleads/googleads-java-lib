@@ -40,7 +40,7 @@ public enum BatchJobStatus {
     /**
      * 
      *                 Initial state of a BatchJob. While a job has this status, it is awaiting a file
-     *                 upload to BigStore.
+     *                 upload to Google Cloud Storage.
      *               
      * 
      */
@@ -58,7 +58,7 @@ public enum BatchJobStatus {
      * 
      *                 Indicates that a job is being canceled. It will remain in this status until any
      *                 partial results are written, and then will be marked CANCELED. This status is
-     *                 not currently supported.
+     *                 not supported in SET operations.
      *               
      * 
      */
@@ -67,7 +67,7 @@ public enum BatchJobStatus {
     /**
      * 
      *                 Indicates that a job has been canceled. It will be garbage-collected 30 days
-     *                 after cancellation. This status is not currently supported.
+     *                 after cancellation. This status is not currently supported in SET operations.
      *               
      * 
      */

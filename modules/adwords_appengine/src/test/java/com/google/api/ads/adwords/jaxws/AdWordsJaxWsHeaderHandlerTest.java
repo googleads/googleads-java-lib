@@ -113,7 +113,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
     this.subProduct = subProduct;
   }
 
-  @Parameters
+  @Parameters(name="interface={0}, namespace={1}, subProduct={2}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     // Test at least one standard interface for every subpackage of v201502

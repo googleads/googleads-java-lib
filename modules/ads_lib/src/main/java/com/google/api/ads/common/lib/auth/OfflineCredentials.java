@@ -20,7 +20,6 @@ import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Internals;
-import com.google.api.ads.dfa.lib.utils.DfaInternals;
 import com.google.api.ads.dfp.lib.utils.DfpInternals;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -61,7 +60,6 @@ public class OfflineCredentials {
    */
   public static enum Api {
     ADWORDS("api.adwords.", AdWordsInternals.getInstance()),
-    DFA("api.dfa.", DfaInternals.getInstance()),
     DFP("api.dfp.", DfpInternals.getInstance());
 
     private final String propKeyPrefix;

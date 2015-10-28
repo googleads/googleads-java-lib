@@ -35,7 +35,7 @@ import java.io.InputStreamReader;
  * This example will create an OAuth2 refresh token that can be used with the
  * OfflineCredentials utility.
  *
- * This example is meant to be run from the command line and requires user
+ * <p>This example is meant to be run from the command line and requires user
  * input. This example does not use a properties file.
  */
 public class GetRefreshTokenWithoutPropertiesFile {

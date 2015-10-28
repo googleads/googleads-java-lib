@@ -31,6 +31,7 @@ import org.apache.commons.configuration.tree.OverrideCombiner;
 import java.io.File;
 import java.net.URL;
 import java.security.AccessControlException;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
@@ -242,17 +243,17 @@ public class ConfigurationHelper {
   }
 
   /**
-   * Creates a list of configuration infos from the locations and if they are
+   * Creates a list of configuration infos from the single location and if they are
    * optional.
    *
    * @param <T> the type of location. Only {@code String} and {@code URL} are
    *            supported.
    */
-  public static <T> List<ConfigurationInfo<T>> newList(boolean isOptional, T... locations) {
-    if (locations == null) {
-      throw new IllegalArgumentException("locations cannot be null");
+  public static <T> List<ConfigurationInfo<T>> newList(boolean isOptional, T location) {
+    if (location == null) {
+      throw new IllegalArgumentException("location cannot be null");
     }
-    return newList(Lists.<T>newArrayList(locations), isOptional);
+    return newList(Collections.<T>singletonList(location), isOptional);
   }
 
   /**

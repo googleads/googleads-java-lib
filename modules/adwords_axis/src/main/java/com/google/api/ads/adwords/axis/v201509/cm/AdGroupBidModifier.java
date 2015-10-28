@@ -24,9 +24,11 @@ public class AdGroupBidModifier  implements java.io.Serializable {
 
     /* The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, only the HighEndMobile platform criterion
-     * (ID=30001) is
-     *                 supported.
+     *                 Currently, bid modifier overrides are supported only
+     * for HighEndMobile platform
+     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
+     * method returns
+     *                 all platform criteria.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201509.cm.Criterion criterion;
@@ -114,9 +116,11 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @return criterion   * The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, only the HighEndMobile platform criterion
-     * (ID=30001) is
-     *                 supported.
+     *                 Currently, bid modifier overrides are supported only
+     * for HighEndMobile platform
+     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
+     * method returns
+     *                 all platform criteria.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -130,9 +134,11 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @param criterion   * The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, only the HighEndMobile platform criterion
-     * (ID=30001) is
-     *                 supported.
+     *                 Currently, bid modifier overrides are supported only
+     * for HighEndMobile platform
+     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
+     * method returns
+     *                 all platform criteria.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

@@ -14,6 +14,9 @@
 
 package com.google.api.ads.adwords.lib.client.reporting;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 import javax.annotation.Nullable;
 
 /**
@@ -82,6 +85,16 @@ public class ReportingConfiguration {
    */
   public void validate(@Nullable String version) {
     // Currently there are no validations needed.
+  }
+  
+  @Override
+  public String toString() {
+    return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+        .append("isSkipReportHeader", isSkipReportHeader)
+        .append("isSkipColumnHeader", isSkipColumnHeader)
+        .append("isSkipReportSummary", isSkipReportSummary)
+        .append("isIncludeZeroImpressions", isIncludeZeroImpressions)
+        .toString();
   }
 
   /**

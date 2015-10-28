@@ -82,7 +82,7 @@ public class ReportRequestFactoryHelperTest {
   @Mock
   private ReportServiceLogger reportServiceLogger;
 
-  @Parameters
+  @Parameters(name="version={0}, reportingConfiguration={1}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     Boolean[] booleanValues = new Boolean[]{ true, false, null };

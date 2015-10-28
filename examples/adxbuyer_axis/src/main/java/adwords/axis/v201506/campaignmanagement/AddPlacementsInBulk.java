@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
  * This code sample illustrates how to perform asynchronous requests using the
  * MutateJobService.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class AddPlacementsInBulk {
@@ -63,8 +63,7 @@ public class AddPlacementsInBulk {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential similar to a ClientLogin token
-    // and can be used in place of a service account.
+    // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()
