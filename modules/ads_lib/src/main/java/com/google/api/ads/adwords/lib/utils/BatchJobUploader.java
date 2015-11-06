@@ -30,6 +30,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.util.Charsets;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -59,6 +60,12 @@ public class BatchJobUploader<OperandT, ApiErrorT,
    */
   private static final Charset REQUEST_CHARSET = Charsets.UTF_8;
 
+  /**
+   * For incremental uploads, each request's contents must have a length in bytes
+   * divisible by this size. 
+   */
+  private static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
+  
   /**
    * Constructor that stores the session for authentication.
    */
@@ -137,7 +144,13 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     // https://cloud.google.com/storage/docs/concepts-techniques#unknownresumables
     ByteArrayContent content = request.createBatchJobUploadBodyProvider().getHttpContent(
         request, batchJobUploadStatus.getTotalContentLength() == 0, isLastRequest);
-
+    try {
+      content = postProcessContent(
+          content, batchJobUploadStatus.getTotalContentLength() == 0L, isLastRequest);
+    } catch (IOException e) {
+      throw new BatchJobException("Failed to post-process the request content", e);
+    }
+    
     String requestXml = null;
     Throwable exception = null;
     BatchJobUploadResponse batchJobUploadResponse = null;
@@ -190,6 +203,66 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     }
   }
 
+  /**
+   * Post-processes the request content to conform to the requirements of Google Cloud Storage.
+   * 
+   * @param content the content produced by the {@link BatchJobUploadBodyProvider}.
+   * @param isFirstRequest if this is the first request for the batch job.
+   * @param isLastRequest if this is the last request for the batch job.
+   */
+  private ByteArrayContent postProcessContent(
+      ByteArrayContent content, boolean isFirstRequest, boolean isLastRequest) throws IOException {
+    if (isFirstRequest && isLastRequest) {
+      return content;
+    }
+
+    String serializedRequest = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
+
+    serializedRequest = trimStartEndElements(serializedRequest, isFirstRequest, isLastRequest);
+
+    // The request is part of a set of incremental uploads, so pad to the required content
+    // length. This is not necessary if all operations for the job are being uploaded in a
+    // single request.
+    int numBytes = serializedRequest.getBytes().length;
+    int remainder = numBytes % REQUIRED_CONTENT_LENGTH_INCREMENT;
+    if (remainder > 0) {
+      int pad = REQUIRED_CONTENT_LENGTH_INCREMENT - remainder;
+      serializedRequest = Strings.padEnd(serializedRequest, numBytes + pad, ' ');
+    }
+    return new ByteArrayContent(content.getType(), serializedRequest.getBytes());
+  }
+
+  /**
+   * Returns {@code serializedRequest} with the start or end {@code mutate} element removed,
+   * depending on whether the request is the first and/or last request.
+   * 
+   * <p>Callers should ensure that {@code serializedRequest} does <em>not</em> contain an XML
+   * declaration.
+   */
+  @VisibleForTesting
+  String trimStartEndElements(
+      String serializedRequest, boolean isFirstRequest, boolean isLastRequest) {
+    int beginIndex = 0;
+    int endIndex = serializedRequest.length();
+    if (!isFirstRequest) {
+      // Move the beginIndex (inclusive) to the character after the first opening tag, which
+      // should be a "<mutate>" tag, possibly with namespace declarations.
+      beginIndex = serializedRequest.indexOf('>') + 1;
+      Preconditions.checkArgument(serializedRequest.substring(0, beginIndex -1).contains("mutate"),
+          "Did not find an opening <mutate> element at the beginning of serialized request: %s",
+          serializedRequest);
+    }
+    if (!isLastRequest) {
+      // Move the endIndex (exclusive) to the beginning of the first closing tag, which
+      // should be a "</mutate>" tag.
+      endIndex = serializedRequest.lastIndexOf('<');
+      Preconditions.checkArgument(serializedRequest.substring(endIndex).contains("mutate"),
+          "Did not find a closing </mutate> element at the end of serialized request: %s",
+          serializedRequest);
+    }
+    return serializedRequest.substring(beginIndex, endIndex);
+  }
+  
   /**
    * Logs a request and response based on the standard rules for the library.
    *

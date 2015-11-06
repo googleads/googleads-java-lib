@@ -21,8 +21,11 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.AxisSerializer;
 import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionPage;
 import com.google.api.ads.adwords.axis.v201506.cm.BidSource;
 import com.google.api.ads.adwords.axis.v201506.cm.BiddableAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201506.cm.BiddingStrategyConfiguration;
@@ -36,27 +39,38 @@ import com.google.api.ads.adwords.axis.v201506.cm.ProductDimension;
 import com.google.api.ads.adwords.axis.v201506.cm.ProductPartition;
 import com.google.api.ads.adwords.axis.v201506.cm.ProductPartitionType;
 import com.google.api.ads.adwords.axis.v201506.cm.UserStatus;
+import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
+import com.google.api.client.auth.oauth2.BearerToken;
+import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
+import org.apache.axis.encoding.SerializationContext;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xml.sax.Attributes;
 
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import javax.xml.namespace.QName;
+
 /**
  * Tests for {@link ProductPartitionTree}.
  */
 @RunWith(JUnit4.class)
-public class ProductPartitionTreeTest {
+public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
 
   private final BiddingStrategyConfiguration biddingStrategyConfig =
       new BiddingStrategyConfiguration();
@@ -351,6 +365,144 @@ public class ProductPartitionTreeTest {
         ProductPartitionTree.createAdGroupTree(-1L, biddingStrategyConfig, criteria);
     assertFalse("Brand = google criteria had status removed, but it is in the tree",
         tree.getRoot().hasChild(brandGoogle));
+  }
+
+  /**
+   * Tests that the factory method that retrieves the tree using API services builds
+   * the correct tree and passes the correct paging arguments.
+   */
+  @Test
+  public void testCreateTreeUsingService() throws Exception {
+    AdWordsServices adWordsServices = new AdWordsServices();
+    AdWordsSession session =
+        new AdWordsSession.Builder()
+            .withClientCustomerId("123-456-7890")
+            .withOAuth2Credential(new Credential(BearerToken.authorizationHeaderAccessMethod()))
+            .withDeveloperToken("devtoken")
+            .withUserAgent("test")
+            // Use the test server's endpoint
+            .withEndpoint(testHttpServer.getServerUrl())
+            .build();
+
+    // Extract the API version from this test's package.
+    List<String> packageComponents =
+        Lists.newArrayList(Splitter.on('.').split(getClass().getPackage().getName()));
+    final String apiVersion = packageComponents.get(packageComponents.size() - 2);
+
+    final int pageSize = 100;
+    final int numberOfCriteria = (pageSize * 5) + 1;
+
+    // Construct a list of CriterionDescriptors that will build a tree of the form:
+    // root
+    //  OfferId = null EXCLUDED
+    //  OfferId = 1 BIDDABLE
+    //  OfferId = 2 BIDDABLE
+    //  ...
+    //  OfferId = numberOfCriteria BIDDABLE
+    List<CriterionDescriptor> descriptors = Lists.newArrayList();
+    long partitionId = 1L;
+    final long rootPartitionId = partitionId;
+    descriptors.add(new CriterionDescriptor(false, false, null, null, partitionId++, null));
+
+    descriptors.add(new CriterionDescriptor(
+        true, true, ProductDimensions.createOfferId(null), null, partitionId++, rootPartitionId));
+
+    for (int i = 1; i <= (numberOfCriteria - 2); i++) {
+      descriptors.add(
+          new CriterionDescriptor(true, false, ProductDimensions.createOfferId(Integer.toString(i)),
+              10000000L, partitionId++, rootPartitionId));
+    }
+
+    // Split the descriptor list into batches of size pageSize.
+    List<List<CriterionDescriptor>> descriptorBatches = Lists.partition(descriptors, pageSize);
+
+    List<String> responseBodies = Lists.newArrayList();
+    for (List<CriterionDescriptor> descriptorBatch : descriptorBatches) {
+      // For this batch of descriptors, manually construct the AdGroupCriterionPage
+      // to return. This is required because AdWordsServices is a final class, so this test
+      // cannot mock its behavior.
+      AdGroupCriterionPage mockPage = new AdGroupCriterionPage();
+      mockPage.setTotalNumEntries(numberOfCriteria);
+      mockPage.setEntries(new AdGroupCriterion[descriptorBatch.size()]);
+
+      int i = 0;
+      for (CriterionDescriptor descriptor : descriptorBatch) {
+        mockPage.setEntries(i++, descriptor.createCriterion());
+      }
+
+      // Serialize the page.
+      StringWriter writer = new StringWriter();
+      SerializationContext serializationContext = new SerializationContext(writer) {
+        /**
+         * Override the serialize method called by the Axis serializer and force it to
+         * pass {@code includeNull = false}.
+         */
+        @SuppressWarnings("rawtypes")
+        @Override
+        public void serialize(QName elemQName, Attributes attributes, Object value, QName xmlType,
+            Class javaType) throws IOException {
+          super.serialize(elemQName, attributes, value, xmlType, javaType, false, null);
+        }
+      };
+      serializationContext.setSendDecl(false);
+      new AxisSerializer().serialize(mockPage, serializationContext);
+
+      // Wrap the serialized page in a SOAP envelope.
+      StringBuilder response = new StringBuilder();
+      response.append("<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+          + "<soap:Header/><soap:Body>");
+      response.append(String.format(
+          "<getResponse xmlns=\"https://adwords.google.com/api/adwords/cm/%s\">", apiVersion));
+
+      // Replace the element name AdGroupCriterionPage with the expected name rval in the
+      // serialized page.
+      response.append(writer.toString().replaceAll("AdGroupCriterionPage", "rval"));
+
+      response.append("</getResponse></soap:Body></soap:Envelope>");
+
+      responseBodies.add(response.toString());
+    }
+
+    // Set the test server to return the response bodies constructed above.
+    testHttpServer.setMockResponseBodies(responseBodies);
+
+    // Build the tree.
+    ProductPartitionTree tree = ProductPartitionTree.createAdGroupTree(
+        adWordsServices, session, 9999L/* dummy ad group ID */);
+
+    // First, confirm that the paging elements were correct in each request's selector.
+    int requestNumber = 0;
+    for (String requestBody : testHttpServer.getAllRequestBodies()) {
+      int expectedOffset = requestNumber * pageSize;
+      assertThat("numberResults paging element is missing or incorrect in request", requestBody,
+          Matchers.containsString("numberResults>" + pageSize + "</"));
+      if (requestNumber == 0) {
+        assertThat("startIndex paging element unexpectedly found in the first request", requestBody,
+            Matchers.not(Matchers.containsString("startIndex>")));
+      } else {
+        assertThat("startIndex paging element is missing or incorrect in request", requestBody,
+            Matchers.containsString("startIndex>" + expectedOffset + "</"));
+      }
+      requestNumber++;
+    }
+
+    // Confirm that the tree returned by the factory method matches the expected tree.
+    descriptors.get(0).assertDescriptorEquals(new CriterionDescriptor(tree.getRoot()));
+
+    // Get a map of all of the child descriptors for the root node.
+    Map<Long, CriterionDescriptor> descriptorMap =
+        buildDescriptorMap(descriptors).get(rootPartitionId);
+
+    // Confirm each ProductPartitionNode under the root node has a matching entry in the descriptor
+    // map.
+    int childrenFound = 0;
+    for (ProductPartitionNode childNode : tree.getRoot().getChildren()) {
+      CriterionDescriptor nodeDescriptor = new CriterionDescriptor(childNode);
+      nodeDescriptor.assertDescriptorEquals(descriptorMap.get(nodeDescriptor.partitionId));
+      childrenFound++;
+    }
+    assertEquals("Did not find an entry in the response for every expected child node",
+        descriptorMap.size(), childrenFound);
   }
 
   /**

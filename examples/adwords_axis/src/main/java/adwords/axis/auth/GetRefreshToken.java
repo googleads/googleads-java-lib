@@ -29,6 +29,7 @@ import com.google.common.collect.Lists;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /**
  * This example will create an OAuth2 refresh token that can be used with the
@@ -46,7 +47,13 @@ public class GetRefreshToken {
   /**
    * The OAuth2 scope for the AdWords API.
    */
-  public static final String SCOPE = "https://www.googleapis.com/auth/adwords";
+  public static final String ADWORDS_API_SCOPE = "https://www.googleapis.com/auth/adwords";
+
+  /**
+   * Scopes to include in the authorization request. Add to this list any additional scopes you want
+   * to include.
+   */
+  private static final List<String> SCOPES = Lists.newArrayList(ADWORDS_API_SCOPE);
 
   // This callback URL will allow you to copy the token from the success screen.
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
@@ -57,7 +64,7 @@ public class GetRefreshToken {
         new NetHttpTransport(),
         new JacksonFactory(),
         clientSecrets,
-        Lists.newArrayList(SCOPE))
+        SCOPES)
         // Set the access type to offline so that the token can be refreshed.
         // By default, the library will automatically refresh tokens when it
         // can, but this can be turned off by setting

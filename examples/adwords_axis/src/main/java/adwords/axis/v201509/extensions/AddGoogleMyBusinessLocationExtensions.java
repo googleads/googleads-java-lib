@@ -130,7 +130,7 @@ public class AddGoogleMyBusinessLocationExtensions {
 
     OAuthInfo oAuthInfo = new OAuthInfo();
     oAuthInfo.setHttpMethod("GET");
-    oAuthInfo.setHttpRequestUrl(GetRefreshToken.SCOPE);
+    oAuthInfo.setHttpRequestUrl(GetRefreshToken.ADWORDS_API_SCOPE);
     oAuthInfo.setHttpAuthorizationHeader(String.format("Bearer %s", gmbAccessToken));
     
     feedData.setOAuthInfo(oAuthInfo);

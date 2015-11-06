@@ -19,13 +19,13 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.adwords.axis.v201502.cm.Budget;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetPeriod;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetOperation;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.Money;
-import com.google.api.ads.adwords.axis.v201502.cm.Operator;
+import com.google.api.ads.adwords.axis.v201509.cm.Budget;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetBudgetPeriod;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetOperation;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.cm.Money;
+import com.google.api.ads.adwords.axis.v201509.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -46,9 +46,9 @@ import org.junit.runners.JUnit4;
  */
 @RunWith(JUnit4.class)
 public class AdWordsAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
-  
-  private static final String API_VERSION = "v201502";  
-  
+
+  private static final String API_VERSION = "v201509";
+
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "true");
@@ -58,7 +58,7 @@ public class AdWordsAxisSoapCompressionIntegrationTest extends MockHttpIntegrati
    * Tests making an Axis AdWords API call with OAuth2 and compression enabled.
    */
   @Test
-  public void testGoldenSoap_oauth2_compressionEnabled() throws Exception {   
+  public void testGoldenSoap_oauth2_compressionEnabled() throws Exception {
     testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
   
     GoogleCredential credential = new GoogleCredential.Builder().setTransport(

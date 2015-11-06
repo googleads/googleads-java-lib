@@ -15,8 +15,8 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201502.mcm.Customer;
-import com.google.api.ads.adwords.axis.v201502.mcm.CustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.mcm.Customer;
+import com.google.api.ads.adwords.axis.v201509.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;

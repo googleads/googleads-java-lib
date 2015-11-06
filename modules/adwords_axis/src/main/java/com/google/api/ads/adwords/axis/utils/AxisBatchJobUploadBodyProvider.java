@@ -18,9 +18,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateRequestInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadBodyProvider;
 import com.google.api.client.http.ByteArrayContent;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSortedSet;
 
 import org.apache.axis.encoding.SerializationContext;
@@ -39,12 +37,6 @@ public class AxisBatchJobUploadBodyProvider implements BatchJobUploadBodyProvide
   
   private final SortedSet<String> namespaceUris;
   
-  /**
-   * For incremental uploads, each request's contents must have a length
-   * divisible by this size. 
-   */
-  private static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
-
   public AxisBatchJobUploadBodyProvider(Iterable<String> namespaceUris) {
     this.namespaceUris = ImmutableSortedSet.copyOf(namespaceUris);
   }
@@ -82,34 +74,7 @@ public class AxisBatchJobUploadBodyProvider implements BatchJobUploadBodyProvide
     AxisSerializer serializer = new AxisSerializer();
     serializer.serialize(request, context);
 
-    String serializedRequest =
-        trimStartEndElements(writer.toString(), isFirstRequest, isLastRequest);
-
-    // If the request is part of a set of incremental uploads, then pad to the required content
-    // length. This is not necessary if all operations for the job are being uploaded in this
-    // one single request.
-    if (!(isFirstRequest && isLastRequest)) {
-      int numBytes = serializedRequest.getBytes().length;
-      int remainder = numBytes % REQUIRED_CONTENT_LENGTH_INCREMENT;
-      if (remainder > 0) {
-        int pad = REQUIRED_CONTENT_LENGTH_INCREMENT - remainder;
-        serializedRequest = Strings.padEnd(serializedRequest, numBytes + pad, ' ');
-      }
-    }
-    return new ByteArrayContent("application/xml", serializedRequest.getBytes());
+    return new ByteArrayContent("application/xml", writer.toString().getBytes());
   }
 
-  @VisibleForTesting
-  String trimStartEndElements(
-      String serializedRequest, boolean isFirstRequest, boolean isLastRequest) {
-    int beginIndex = 0;
-    int endIndex = serializedRequest.length();
-    if (!isFirstRequest) {
-      beginIndex = serializedRequest.indexOf('>') + 1;
-    }
-    if (!isLastRequest) {
-      endIndex = serializedRequest.lastIndexOf('<');
-    }
-    return serializedRequest.substring(beginIndex, endIndex);
-  }
 }

@@ -141,10 +141,9 @@ public class ReportingConfigurationTest {
             .skipReportSummary(true)
             .includeZeroImpressions(true)
             .build();
-    config.validate("v201502");
-    assertTrue("Validation should succeed", true);
     config.validate("v201506");
     assertTrue("Validation should succeed", true);
     config.validate("v201509");
+    assertTrue("Validation should succeed", true);
   }
 }

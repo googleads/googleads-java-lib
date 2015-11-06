@@ -20,14 +20,14 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.adwords.axis.v201502.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201502.cm.Budget;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetBudgetPeriod;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetOperation;
-import com.google.api.ads.adwords.axis.v201502.cm.BudgetServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.Money;
-import com.google.api.ads.adwords.axis.v201502.cm.Operator;
+import com.google.api.ads.adwords.axis.v201509.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201509.cm.Budget;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetBudgetPeriod;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetOperation;
+import com.google.api.ads.adwords.axis.v201509.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.cm.Money;
+import com.google.api.ads.adwords.axis.v201509.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -56,21 +56,21 @@ import java.rmi.RemoteException;
  */
 @RunWith(JUnit4.class)
 public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
-  
-  private static final String API_VERSION = "v201502";  
+
+  private static final String API_VERSION = "v201509";
 
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "false");
   }
-  
+
   /**
    * Tests making an Axis AdWords API call with OAuth2 and compression enabled.
    */
   @Test
-  public void testGoldenSoap_oauth2() throws Exception {   
+  public void testGoldenSoap_oauth2() throws Exception {
     testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
-  
+
     GoogleCredential credential = new GoogleCredential.Builder()
         .setTransport(new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
@@ -84,7 +84,7 @@ public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
         .build();
 
     testBudgetServiceMutateRequest(session);
-    
+
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
 
@@ -94,7 +94,7 @@ public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
         AuthResponseProvider.getTestOAuthResponse("TEST_ACCESS_TOKEN_1", 1L, "newRefreshToken1"),
         AuthResponseProvider.getTestOAuthResponse("TEST_ACCESS_TOKEN_2", 3600L, "newRefreshToken2"),
         SoapResponseXmlProvider.getTestSoapResponse(API_VERSION)));
-    
+
     OfflineCredentials offlineCredentials =
         new OfflineCredentials.Builder()
             .forApi(OfflineCredentials.Api.ADWORDS)

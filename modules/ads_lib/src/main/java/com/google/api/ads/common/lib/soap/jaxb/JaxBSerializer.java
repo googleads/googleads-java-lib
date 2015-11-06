@@ -42,6 +42,7 @@ public class JaxBSerializer<T> {
    * @param clazz Class to serialize.
    * @param qname A QName representing the local name for the class - this will be used as the root
    *        tag name.
+   * @throws SerializationException if unable to construct the serializer.
    */
   public JaxBSerializer(Class<T> clazz, QName qname) {
     this.clazz = clazz;
@@ -49,7 +50,10 @@ public class JaxBSerializer<T> {
     try {
       this.jaxbContext = JAXBContext.newInstance(clazz);
     } catch (JAXBException e) {
-      throw new SerializationException("Could not serialize object.", e);
+      throw new SerializationException(
+          String.format(
+              "Could not construct a serializer for class %s and QName %s.", clazz, qname),
+          e);
     }
   }
 
@@ -59,15 +63,25 @@ public class JaxBSerializer<T> {
    * @throws SerializationException if we cannot serialize the object.
    */
   public String serialize(T object) {
+    return serialize(object, true);
+  }
+
+  /**
+   * Serializes the object with the option to include or exclude the XML declaration.
+   *
+   * @throws SerializationException if we cannot serialize the object.
+   */
+  public String serialize(T object, boolean includeXmlDeclaration) {
     try {
       Marshaller marshaller = jaxbContext.createMarshaller();
+      marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.valueOf(!includeXmlDeclaration));
       JAXBElement<T> element =
           new JAXBElement<T>(qname, clazz, object);
       StringWriter stringWriter = new StringWriter();
       marshaller.marshal(element, stringWriter);
       return stringWriter.toString();
     } catch (JAXBException e) {
-      throw new SerializationException("Could not serialize object.", e);
+      throw new SerializationException(String.format("Could not serialize object: %s.", object), e);
     }
   }
 }

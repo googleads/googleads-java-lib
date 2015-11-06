@@ -1,3 +1,24 @@
+2.7.0 - 11/06/2015
+------------------
+AdWords
+  - Fixed [issue 56](https://github.com/googleads/googleads-java-lib/issues/56)
+  and added a test to ensure this does not resurface.
+  - Removed support and examples for v201502. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Updated adwords.axis.auth.GetRefreshToken example to support generating a
+  refresh token that includes additional scopes.
+  - Added adwords.axis.v201509.reporting.StreamCriteriaReportResults example.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Updated dfp.axis.auth.GetRefreshToken example to support generating a
+  refresh token that includes additional scopes.
+
+Common:
+  - No changes.
+
 2.6.0 - 10/28/2015
 ------------------
 AdWords:
