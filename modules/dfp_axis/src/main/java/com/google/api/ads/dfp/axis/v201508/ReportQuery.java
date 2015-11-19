@@ -50,9 +50,8 @@ public class ReportQuery  implements java.io.Serializable {
      *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">{@link CustomFieldEntityType#entityType}</th>
-     * <th scope="col">{@link Dimension}</th>
-     *                 </tr>
+     *                 <th scope="col" colspan="2">{@link CustomFieldEntityType#entityType}</th>
+     * </tr>
      *                 <tr>
      *                 <td>{@link CustomFieldEntityType#LINE_ITEM}</td><td>{@link
      * Dimension#LINE_ITEM_NAME}</td>
@@ -353,9 +352,8 @@ public class ReportQuery  implements java.io.Serializable {
      *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">{@link CustomFieldEntityType#entityType}</th>
-     * <th scope="col">{@link Dimension}</th>
-     *                 </tr>
+     *                 <th scope="col" colspan="2">{@link CustomFieldEntityType#entityType}</th>
+     * </tr>
      *                 <tr>
      *                 <td>{@link CustomFieldEntityType#LINE_ITEM}</td><td>{@link
      * Dimension#LINE_ITEM_NAME}</td>
@@ -388,9 +386,8 @@ public class ReportQuery  implements java.io.Serializable {
      *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">{@link CustomFieldEntityType#entityType}</th>
-     * <th scope="col">{@link Dimension}</th>
-     *                 </tr>
+     *                 <th scope="col" colspan="2">{@link CustomFieldEntityType#entityType}</th>
+     * </tr>
      *                 <tr>
      *                 <td>{@link CustomFieldEntityType#LINE_ITEM}</td><td>{@link
      * Dimension#LINE_ITEM_NAME}</td>

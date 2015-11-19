@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.axis.v201508.Company;
-import com.google.api.ads.dfp.axis.v201508.CompanyServiceInterface;
+import com.google.api.ads.dfp.axis.v201511.Company;
+import com.google.api.ads.dfp.axis.v201511.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -42,7 +42,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfpAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201508";
+  private static final String API_VERSION = "v201511";
 
   @BeforeClass
   public static void setupClass() {

@@ -283,7 +283,7 @@ public enum Dimension {
      *                 <p>
      *                 If selected for a report, that report will include only SDK mediation ads and will not contain
      *                 non-SDK mediation ads.
-     *                 </p>
+     *                 
      *                 
      *                 <p>
      *                 SDK mediation ads are ads for mobile devices. They have a list of ad networks which can provide
@@ -291,7 +291,6 @@ public enum Dimension {
      *                 one-by-one until it finds an ad network with an ad to serve. The ad network that ends up
      *                 serving the ad will appear here. Note that this id does not correlate to anything in the
      *                 companies table and is not the same id as is served by {@link #ADVERTISER_ID}.
-     *                 </p>
      *               
      * 
      */
@@ -1043,8 +1042,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad size. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad size.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1052,8 +1053,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange platforms. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange platforms.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1061,9 +1064,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1071,8 +1075,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange tags. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange tags.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1080,8 +1086,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange URLs. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange URLs.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1089,8 +1097,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down data by Ad Exchange linked web properties. This experimental dimension only works
-     *                 with Ad Exchange web properties linked with an active status.
+     *                 Breaks down data by Ad Exchange linked web properties.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1098,9 +1108,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange creative size. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange creative size.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1108,8 +1119,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad types. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad types.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1117,8 +1130,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange channels. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange channels.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1126,8 +1141,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange products. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange products.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1135,8 +1152,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange sites. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange sites.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1144,9 +1163,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange request sources. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange request sources.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1154,9 +1174,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad transaction. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad transaction.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1165,8 +1186,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by the Ad Exchange advertiser name that bids
-     *                 on ads. This experimental dimension only works with Ad Exchange web properties linked with an
-     *                 active status.
+     *                 on ads.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1174,8 +1197,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange agency. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange agency.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1183,8 +1208,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange bid type. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange bid type.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1193,8 +1220,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange branding type. Examples:
-     *                 Branded, Anonymous. This experimental dimension only works with Ad Exchange web properties
-     *                 linked with an active status.
+     *                 Branded, Anonymous.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1203,8 +1232,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange ad network name. Example:
-     *                 Google Adwords. This experimental dimension only works with Ad Exchange web properties linked
-     *                 with an active status.
+     *                 Google Adwords.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1212,8 +1243,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange date. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange date.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1221,9 +1254,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal CPM cost. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal CPM cost.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1231,8 +1265,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal id. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal id.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1240,8 +1276,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal name. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1250,8 +1288,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange deal/transaction type. Example:
-     *                 Open auction. This experimental dimension only works with Ad Exchange web properties linked
-     *                 with an active status.
+     *                 Open auction.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1259,9 +1299,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange DSP buyer network name. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange DSP buyer network name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1269,9 +1310,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange expansion type. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange expansion type.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1279,8 +1321,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange country code. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange country code.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1288,8 +1332,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange country name. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange country name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1297,9 +1343,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange inventory ownership. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange inventory ownership.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1308,8 +1355,9 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange advertiser landing page domain.
-     *                 This experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1317,9 +1365,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile app name. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile app name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1327,9 +1376,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile carrier name. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile carrier name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1337,9 +1387,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile device name. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile device name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1347,9 +1398,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile inventory type. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange mobile inventory type.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1357,8 +1409,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange month. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange month.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1366,8 +1420,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange partner name. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange partner name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1375,9 +1431,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange operating system version. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange operating system version.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1385,9 +1442,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1395,8 +1453,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange tags. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange tags.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1404,9 +1464,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange targeting type. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange targeting type.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1415,8 +1476,9 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange third party buyer account name.
-     *                 This experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1425,8 +1487,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange third-party network tag
-     *                 currency. This experimental dimension only works with Ad Exchange web properties linked with
-     *                 an active status.
+     *                 currency.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1434,9 +1498,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange network tag name. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange network tag name.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1444,8 +1509,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange channel id. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange channel id.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1453,9 +1520,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange user bandwidth. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange user bandwidth.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1463,9 +1531,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange video ad duration. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange video ad duration.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1473,9 +1542,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange raw video ad duration. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange raw video ad duration.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1483,9 +1553,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange video ad type. This
-     *                 experimental dimension only works with Ad Exchange web properties linked with an active
-     *                 status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange video ad type.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */
@@ -1493,8 +1564,10 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange week. This experimental
-     *                 dimension only works with Ad Exchange web properties linked with an active status.
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange week.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
      *               
      * 
      */

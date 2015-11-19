@@ -234,7 +234,7 @@ public enum Dimension {
      *                 <p>
      *                 If selected for a report, that report will include only SDK mediation ads and will not contain
      *                 non-SDK mediation ads.
-     *                 </p>
+     *                 
      *                 
      *                 <p>
      *                 SDK mediation ads are ads for mobile devices. They have a list of ad networks which can provide
@@ -242,7 +242,6 @@ public enum Dimension {
      *                 one-by-one until it finds an ad network with an ad to serve. The ad network that ends up
      *                 serving the ad will appear here. Note that this id does not correlate to anything in the
      *                 companies table and is not the same id as is served by {@link #ADVERTISER_ID}.
-     *                 </p>
      *               
      * 
      */

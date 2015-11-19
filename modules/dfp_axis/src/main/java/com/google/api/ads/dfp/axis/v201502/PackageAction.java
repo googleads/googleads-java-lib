@@ -13,34 +13,7 @@ package com.google.api.ads.dfp.axis.v201502;
  * objects.
  */
 public abstract class PackageAction  implements java.io.Serializable {
-    private com.google.api.ads.dfp.axis.v201502.PackageOperator packageOperator;
-
     public PackageAction() {
-    }
-
-    public PackageAction(
-           com.google.api.ads.dfp.axis.v201502.PackageOperator packageOperator) {
-           this.packageOperator = packageOperator;
-    }
-
-
-    /**
-     * Gets the packageOperator value for this PackageAction.
-     * 
-     * @return packageOperator
-     */
-    public com.google.api.ads.dfp.axis.v201502.PackageOperator getPackageOperator() {
-        return packageOperator;
-    }
-
-
-    /**
-     * Sets the packageOperator value for this PackageAction.
-     * 
-     * @param packageOperator
-     */
-    public void setPackageOperator(com.google.api.ads.dfp.axis.v201502.PackageOperator packageOperator) {
-        this.packageOperator = packageOperator;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -54,10 +27,7 @@ public abstract class PackageAction  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.packageOperator==null && other.getPackageOperator()==null) || 
-             (this.packageOperator!=null &&
-              this.packageOperator.equals(other.getPackageOperator())));
+        _equals = true;
         __equalsCalc = null;
         return _equals;
     }
@@ -69,9 +39,6 @@ public abstract class PackageAction  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getPackageOperator() != null) {
-            _hashCode += getPackageOperator().hashCode();
-        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -82,13 +49,6 @@ public abstract class PackageAction  implements java.io.Serializable {
 
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "PackageAction"));
-        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("packageOperator");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "packageOperator"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201502", "PackageOperator"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
     }
 
     /**

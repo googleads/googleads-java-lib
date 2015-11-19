@@ -3,7 +3,6 @@ package com.google.api.ads.dfp.jaxws.v201508;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -22,7 +21,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="packageOperator" type="{https://www.google.com/apis/ads/publisher/v201508}PackageOperator" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,39 +30,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PackageAction", propOrder = {
-    "packageOperator"
-})
+@XmlType(name = "PackageAction")
 @XmlSeeAlso({
     CreateProposalLineItemsFromPackages.class
 })
 public abstract class PackageAction {
 
-    @XmlSchemaType(name = "string")
-    protected PackageOperator packageOperator;
-
-    /**
-     * Gets the value of the packageOperator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link PackageOperator }
-     *     
-     */
-    public PackageOperator getPackageOperator() {
-        return packageOperator;
-    }
-
-    /**
-     * Sets the value of the packageOperator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PackageOperator }
-     *     
-     */
-    public void setPackageOperator(PackageOperator value) {
-        this.packageOperator = value;
-    }
 
 }

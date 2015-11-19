@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="PLACEMENTS_NOT_ON_ORDER_TEAMS"/>
  *     &lt;enumeration value="MISSING_USERS_TEAM"/>
  *     &lt;enumeration value="ALL_TEAM_ASSOCIATION_NOT_ALLOWED"/>
+ *     &lt;enumeration value="ALL_TEAM_ACCESS_OVERRIDE_NOT_ALLOWED"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -31,7 +32,7 @@ public enum TeamErrorReason {
 
     /**
      * 
-     *                 User cannot use this entity because it not on any of the user's teams.
+     *                 User cannot use this entity because it is not on any of the user's teams.
      *               
      * 
      */
@@ -69,6 +70,14 @@ public enum TeamErrorReason {
      * 
      */
     ALL_TEAM_ASSOCIATION_NOT_ALLOWED,
+
+    /**
+     * 
+     *                 The all entities team access type cannot be overridden.
+     *               
+     * 
+     */
+    ALL_TEAM_ACCESS_OVERRIDE_NOT_ALLOWED,
 
     /**
      * 

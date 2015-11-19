@@ -14,6 +14,10 @@ package com.google.api.ads.dfp.axis.v201502;
  *             the publisher network. It doesn't contain a rule. Cookies
  * are usually added to this segment via
  *             cookie upload.
+ *             
+ *             <p>These segments are created by data management platforms
+ * or Google Analytics. They cannot be
+ *             created using the DFP API.
  */
 public class NonRuleBasedFirstPartyAudienceSegment  extends com.google.api.ads.dfp.axis.v201502.FirstPartyAudienceSegment  implements java.io.Serializable {
     public NonRuleBasedFirstPartyAudienceSegment() {

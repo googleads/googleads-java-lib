@@ -15,7 +15,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION"/>
  *     &lt;enumeration value="DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION"/>
- *     &lt;enumeration value="SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY"/>
  *     &lt;enumeration value="NO_PARTNER_CATCH_ALL"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
@@ -45,15 +44,6 @@ public enum InventoryUnitPartnerAssociationErrorReason {
      * 
      */
     DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION,
-
-    /**
-     * 
-     *                 Indicates the error that the partner intended to be associated has already
-     *                 been associated to another inventory unit in this network.
-     *               
-     * 
-     */
-    SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY,
 
     /**
      * 

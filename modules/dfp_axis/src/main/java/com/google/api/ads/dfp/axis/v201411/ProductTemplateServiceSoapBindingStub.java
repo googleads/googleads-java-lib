@@ -819,6 +819,20 @@ public class ProductTemplateServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ParseError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.ParseError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ParseError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.ParseErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PermissionError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.PermissionError.class;
@@ -832,20 +846,6 @@ public class ProductTemplateServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PlacementTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.PlacementTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ProductSegmentation");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201411.ProductSegmentation.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
 
     }
     private void addBindings1() {
@@ -862,6 +862,20 @@ public class ProductTemplateServiceSoapBindingStub extends org.apache.axis.clien
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "PlacementTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.PlacementTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ProductSegmentation");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201411.ProductSegmentation.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201411", "ProductTemplate");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201411.ProductTemplate.class;

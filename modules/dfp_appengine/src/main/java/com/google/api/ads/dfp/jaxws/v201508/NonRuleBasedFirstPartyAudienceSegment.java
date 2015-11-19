@@ -11,6 +11,9 @@ import javax.xml.bind.annotation.XmlType;
  *             A {@link NonRuleBasedFirstPartyAudienceSegment} is a {@link FirstPartyAudienceSegment} owned by
  *             the publisher network. It doesn't contain a rule. Cookies are usually added to this segment via
  *             cookie upload.
+ *             
+ *             <p>These segments are created by data management platforms or Google Analytics. They cannot be
+ *             created using the DFP API.
  *           
  * 
  * <p>Java class for NonRuleBasedFirstPartyAudienceSegment complex type.

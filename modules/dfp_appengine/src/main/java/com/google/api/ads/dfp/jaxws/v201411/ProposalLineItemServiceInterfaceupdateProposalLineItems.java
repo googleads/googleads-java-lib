@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Updates the specified {@link ProposalLineItem} objects.
+ *             Updates the specified {@link ProposalLineItem} objects. If free editing mode is enabled,
+ *             this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
  *             
  *             @param proposalLineItems the proposal line items to update
  *             @return the updated proposal line items

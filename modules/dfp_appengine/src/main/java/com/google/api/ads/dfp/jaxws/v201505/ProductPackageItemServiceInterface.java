@@ -15,7 +15,7 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Provides methods for creating and retrieving {@link ProductPackageItem} objects.
  *       <p>
- *       A {@link PackageProductItem} represents a product which will be associated with a
+ *       A {@link ProductPackageItem} represents a product which will be associated with a
  *       {@link ProductPackage}.
  *       
  *       <p>

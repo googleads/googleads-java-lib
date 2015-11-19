@@ -25,7 +25,7 @@ import javax.xml.ws.ResponseWrapper;
  *       The following tables are supported:
  *       </p>
  *       
- *       <h4>Geo_Target</h4>
+ *       <h2>Geo_Target</h2>
  *       <p>Use this table instead of the other Geo tables below (Country, Region, Metro, City,
  *       Postal_Code) which will eventually be removed.</p>
  *       <table>
@@ -91,7 +91,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Country</h4>
+ *       <h2>Country</h2>
  *       This table is deprecated. V201408 is the last version this table can be used in. Use
  *       <strong>Geo_Target</strong> instead.
  *       <table>
@@ -121,7 +121,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Region</h4>
+ *       <h2>Region</h2>
  *       This table is deprecated. V201408 is the last version this table can be used in. Use
  *       <strong>Geo_Target</strong> instead.
  *       <table>
@@ -155,7 +155,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Metro</h4>
+ *       <h2>Metro</h2>
  *       This table is deprecated. V201408 is the last version this table can be used in. Use
  *       <strong>Geo_Target</strong> instead.
  *       <table>
@@ -189,7 +189,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>City</h4>
+ *       <h2>City</h2>
  *       This table is deprecated. V201408 is the last version this table can be used in. Use
  *       <strong>Geo_Target</strong> instead.
  *       <table>
@@ -235,7 +235,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Postal_Code</h4>
+ *       <h2>Postal_Code</h2>
  *       This table is deprecated. V201408 is the last version this table can be used in. Use
  *       <strong>Geo_Target</strong> instead.
  *       <table>
@@ -261,7 +261,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Bandwidth_Group</h4>
+ *       <h2>Bandwidth_Group</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -277,7 +277,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Browser</h4>
+ *       <h2>Browser</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -301,7 +301,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Browser_Language</h4>
+ *       <h2>Browser_Language</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -317,7 +317,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Capability</h4>
+ *       <h2>Device_Capability</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -333,7 +333,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Category</h4>
+ *       <h2>Device_Category</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -349,7 +349,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Manufacturer</h4>
+ *       <h2>Device_Manufacturer</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -365,7 +365,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Carrier</h4>
+ *       <h2>Mobile_Carrier</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -385,7 +385,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Device</h4>
+ *       <h2>Mobile_Device</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -405,7 +405,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Device_Submodel</h4>
+ *       <h2>Mobile_Device_Submodel</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -425,7 +425,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Operating_System</h4>
+ *       <h2>Operating_System</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -441,7 +441,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Operating_System_Version</h4>
+ *       <h2>Operating_System_Version</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -469,7 +469,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Third_Party_Company</h4>
+ *       <h2>Third_Party_Company</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -493,7 +493,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Time_Zone</h4>
+ *       <h2>Time_Zone</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -514,7 +514,7 @@ import javax.xml.ws.ResponseWrapper;
  *       offsets from {@link Network#timeZone} are supported in reports.</td>
  *       </tr>
  *       </table>
- *       <h4 id="Line_Item">Line_Item</h4>
+ *       <h2 id="Line_Item">Line_Item</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>CostType</td><td><code>Text</code></td><td>The method used for billing this {@code LineItem}.</td></tr>
@@ -539,7 +539,7 @@ import javax.xml.ws.ResponseWrapper;
  * is no longer experimental.</b></td></tr>
  * <tr><td>UnitsBought</td><td><code>Number</code></td><td>The total number of impressions or clicks that will be reserved for the {@code LineItem}. If the line item is of type {@link LineItemType#SPONSORSHIP}, then it represents the percentage of available impressions reserved.</td></tr>
  * </table>
- * <h4 id="Ad_Unit">Ad_Unit</h4>
+ * <h2 id="Ad_Unit">Ad_Unit</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>AdUnitCode</td><td><code>Text</code></td><td>A string used to uniquely identify the ad unit for the purposes of serving the ad. This attribute is read-only and is assigned by Google when an ad unit is created.</td></tr>
@@ -549,7 +549,7 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the ad unit's parent. Every ad unit has a parent except for the root ad unit, which is created by Google.</td></tr>
  * <tr><td>PartnerId</td><td><code>Number</code></td><td>The unique ID of the {@link Company}, which is of type {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}, to which this ad unit belongs.</td></tr>
  * </table>
- * <h4 id="User">User</h4>
+ * <h2 id="User">User</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>Email</td><td><code>Text</code></td><td>The email or login of the user.</td></tr>
@@ -560,7 +560,7 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>RoleId</td><td><code>Number</code></td><td>The unique role ID of the user. {@link Role} objects that are created by Google will have negative IDs.</td></tr>
  * <tr><td>RoleName</td><td><code>Text</code></td><td>The name of the {@link Role} assigned to the user.</td></tr>
  * </table>
- * <h4 id="Exchange_Rate">Exchange_Rate</h4>
+ * <h2 id="Exchange_Rate">Exchange_Rate</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>CurrencyCode</td><td><code>Text</code></td><td>The currency code that the exchange rate is related to. The exchange rate is between this currency and {@link Network#currencyCode the network's currency}. This attribute is required for creation and then is readonly.</td></tr>
@@ -569,21 +569,21 @@ import javax.xml.ws.ResponseWrapper;
  * <tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ExchangeRate}. This attribute is readonly and is assigned by Google when an exchange rate is created.</td></tr>
  * <tr><td>RefreshRate</td><td><code>Text</code></td><td>The refresh rate at which the exchange rate is updated. Setting this attribute to {@link ExchangeRateRefreshRate#FIXED} without setting the exchange rate value will cause unknown exchange rate value returned in future queries.</td></tr>
  * </table>
- * <h4 id="Programmatic_Buyer">Programmatic_Buyer</h4>
+ * <h2 id="Programmatic_Buyer">Programmatic_Buyer</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>AdxBuyerNetworkId</td><td><code>Number</code></td><td>The ID used by Adx to bill the appropriate buyer network for a programmatic order.</td></tr>
  * <tr><td>BuyerId</td><td><code>Number</code></td><td>The ID used by the buyer for their billing reference. This may represent either an Advertiser or Partner ID.</td></tr>
  * <tr><td>Name</td><td><code>Text</code></td><td>Display name that references the buyer.</td></tr>
  * </table>
- * <h4 id="Audience_Segment_Category">Audience_Segment_Category</h4>
+ * <h2 id="Audience_Segment_Category">Audience_Segment_Category</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment category.</td></tr>
  * <tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment category.</td></tr>
  * <tr><td>ParentId</td><td><code>Number</code></td><td>The unique identifier of the audience segment category's parent.</td></tr>
  * </table>
- * <h4 id="Audience_Segment">Audience_Segment</h4>
+ * <h2 id="Audience_Segment">Audience_Segment</h2>
  * <table>
  * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
  * <tr><td>CategoryIds</td><td><code>Set of number</code></td><td>The ids of the categories that this audience segment belongs to.</td></tr>

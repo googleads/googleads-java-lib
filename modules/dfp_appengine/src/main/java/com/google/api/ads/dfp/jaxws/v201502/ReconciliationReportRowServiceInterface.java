@@ -54,6 +54,10 @@ public interface ReconciliationReportRowServiceInterface {
      *         <td>{@link ReconciliationReportRow#lineItemId}</td>
      *         </tr>
      *         <tr>
+     *         <td>{@code proposalLineItemId}</td>
+     *         <td>{@link ReconciliationReportRow#proposalLineItemId}</td>
+     *         </tr>
+     *         <tr>
      *         <td>{@code creativeId}</td>
      *         <td>{@link ReconciliationReportRow#creativeId}</td>
      *         </tr>

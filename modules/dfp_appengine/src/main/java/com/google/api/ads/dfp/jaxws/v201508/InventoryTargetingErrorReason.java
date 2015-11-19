@@ -24,9 +24,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="EXPLICITLY_TARGETED_INVENTORY_UNIT_CANNOT_BE_EXCLUDED"/>
  *     &lt;enumeration value="SELF_ONLY_INVENTORY_UNIT_NOT_ALLOWED"/>
  *     &lt;enumeration value="SELF_ONLY_INVENTORY_UNIT_WITHOUT_DESCENDANTS"/>
- *     &lt;enumeration value="INVENTORY_FROM_MULTIPLE_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY"/>
- *     &lt;enumeration value="INVENTORY_FROM_LOCAL_AND_DISTRIBUTOR_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY"/>
- *     &lt;enumeration value="SHARED_INVENTORY_CANNOT_BE_TARGETED_WITH_AUDIENCE_SEGMENTS_SIMULTANEOUSLY"/>
  *     &lt;enumeration value="YOUTUBE_AUDIENCE_SEGMENTS_CAN_ONLY_BE_TARGETED_WITH_YOUTUBE_SHARED_INVENTORY"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
@@ -133,32 +130,6 @@ public enum InventoryTargetingErrorReason {
      * 
      */
     SELF_ONLY_INVENTORY_UNIT_WITHOUT_DESCENDANTS,
-
-    /**
-     * 
-     *                 Shared inventory from one distributor network cannot be targeted along with
-     *                 inventory from another distributor.
-     *               
-     * 
-     */
-    INVENTORY_FROM_MULTIPLE_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY,
-
-    /**
-     * 
-     *                 Shared inventory from one distributor network cannot be targeted along with
-     *                 inventory in the local network.
-     *               
-     * 
-     */
-    INVENTORY_FROM_LOCAL_AND_DISTRIBUTOR_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY,
-
-    /**
-     * 
-     *                 Shared inventory cannot be targeted along with audience segments.
-     *               
-     * 
-     */
-    SHARED_INVENTORY_CANNOT_BE_TARGETED_WITH_AUDIENCE_SEGMENTS_SIMULTANEOUSLY,
 
     /**
      * 

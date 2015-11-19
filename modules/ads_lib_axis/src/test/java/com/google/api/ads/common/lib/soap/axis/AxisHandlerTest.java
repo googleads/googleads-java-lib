@@ -22,8 +22,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
-import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201408.MockAxisCompatibleServiceDescriptor;
-import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201408.MockAxisServiceInterface;
+import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisCompatibleServiceDescriptor;
+import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisServiceInterface;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 

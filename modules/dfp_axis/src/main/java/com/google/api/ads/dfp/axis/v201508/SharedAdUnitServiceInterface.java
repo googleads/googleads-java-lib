@@ -39,8 +39,11 @@ public interface SharedAdUnitServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.dfp.axis.v201508.SharedAdUnitPage getSharedAdUnitsByStatement(com.google.api.ads.dfp.axis.v201508.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201508.ApiException;
 
     /**
-     * Performs actions on shared ad unit objects that match the given
-     * {@link Statement#query}.
+     * <b>This method is deprecated and is a no-op.</b>
+     *         
+     *         <p>Performs actions on shared ad unit objects that match the
+     * given
+     *         {@link Statement#query}.
      *         
      *         
      * @param sharedAdUnitAction the action to perform

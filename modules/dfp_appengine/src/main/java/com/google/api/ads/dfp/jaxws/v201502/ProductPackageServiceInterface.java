@@ -15,7 +15,7 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Provides methods for updating and retrieving {@link ProductPackage} objects.
  *       <p>
- *       A {@link PackageProduct} represents a group of products which will be sold together.
+ *       A {@link ProductPackage} represents a group of products which will be sold together.
  *       
  *       <p>
  *       To use this service, you need to have the new sales management solution

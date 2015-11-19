@@ -69,17 +69,12 @@ public class Product  implements java.io.Serializable {
      *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201502.RateType rateType;
 
-    /* The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
+    /* The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page.
      *                 
-     *                 This attribute is read-only. */
+     *                 <p>This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201502.RoadblockingType roadblockingType;
 
     /* Details about the creatives that are expected to serve for
@@ -417,17 +412,12 @@ public class Product  implements java.io.Serializable {
     /**
      * Gets the roadblockingType value for this Product.
      * 
-     * @return roadblockingType   * The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
+     * @return roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201502.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -437,17 +427,12 @@ public class Product  implements java.io.Serializable {
     /**
      * Sets the roadblockingType value for this Product.
      * 
-     * @param roadblockingType   * The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
+     * @param roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
      */
     public void setRoadblockingType(com.google.api.ads.dfp.axis.v201502.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;

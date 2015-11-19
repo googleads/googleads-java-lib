@@ -68,7 +68,9 @@ public interface SharedAdUnitServiceInterface {
 
     /**
      * 
-     *         Performs actions on shared ad unit objects that match the given
+     *         <b>This method is deprecated and is a no-op.</b>
+     *         
+     *         <p>Performs actions on shared ad unit objects that match the given
      *         {@link Statement#query}.
      *         
      *         @param sharedAdUnitAction the action to perform

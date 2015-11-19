@@ -531,7 +531,7 @@ public enum LineItemErrorReason {
 
     /**
      * 
-     *                 Placeholders can only contain native creative templates.
+     *                 Placeholders can only have native creative templates.
      *               
      * 
      */
