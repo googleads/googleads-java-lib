@@ -56,7 +56,7 @@ public class CreateOrders {
     Order[] orders = orderService.createOrders(new Order[] {order});
 
     for (Order createdOrder : orders) {
-      System.out.printf("An order with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("An order with ID %d and name '%s' was created.%n",
           createdOrder.getId(), createdOrder.getName());
     }
   }

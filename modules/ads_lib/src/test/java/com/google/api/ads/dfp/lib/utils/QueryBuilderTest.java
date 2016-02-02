@@ -35,7 +35,7 @@ public class QueryBuilderTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
-
+  
   public QueryBuilderTest() {}
 
   @Test
@@ -63,25 +63,25 @@ public class QueryBuilderTest {
 
   @Test
   public void testFrom_null() {
-    thrown.expect(NullPointerException.class);
-    thrown.expectMessage(Matchers.equalTo("FROM clause cannot be null"));
     QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage("FROM clause cannot be null");
     builder.from(null);
   }
 
   @Test
   public void testWhere_null() {
-    thrown.expect(NullPointerException.class);
-    thrown.expectMessage(Matchers.equalTo("WHERE clause cannot be null"));
     QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage("WHERE clause cannot be null");
     builder.where(null);
   }
 
   @Test
   public void testOrderBy_null() {
-    thrown.expect(NullPointerException.class);
-    thrown.expectMessage(Matchers.equalTo("ORDER BY clause cannot be null"));
     QueryBuilder<Object> builder = new QueryBuilder<Object>();
+    thrown.expect(NullPointerException.class);
+    thrown.expectMessage("ORDER BY clause cannot be null");
     builder.orderBy(null);
   }
 
@@ -173,9 +173,10 @@ public class QueryBuilderTest {
 
   @Test
   public void testBuildQuery_OffsetWithoutLimit() {
+    QueryBuilder<Object> builder = new QueryBuilder<Object>().offset(500);
     thrown.expect(IllegalStateException.class);
-    thrown.expectMessage(Matchers.equalTo("OFFSET cannot be set if LIMIT is not set."));
-    new QueryBuilder<Object>().offset(500).buildQuery();
+    thrown.expectMessage("OFFSET cannot be set if LIMIT is not set.");
+    builder.buildQuery();
   }
 
   @Test

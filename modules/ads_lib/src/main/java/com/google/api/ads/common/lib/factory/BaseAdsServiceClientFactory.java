@@ -59,6 +59,11 @@ public abstract class BaseAdsServiceClientFactory<C extends AdsServiceClient<S, 
    *
    * @param injector the injector used for injection
    */
+  @SuppressWarnings("unchecked") /* Guice binding for AdsServiceClientFactory does not include
+                                  * type arguments because each subclass of
+                                  * BaseAdsServiceClientFactory is bound in the SOAP
+                                  * toolkit-agnostic AdsSoapModule module. Therefore,
+                                  * must use the raw type here. */
   protected BaseAdsServiceClientFactory(Injector injector) {
     this(injector.getInstance(Key.get(AdsServiceClientFactory.class)));
   }
@@ -71,7 +76,6 @@ public abstract class BaseAdsServiceClientFactory<C extends AdsServiceClient<S, 
    * @param interfaceClass the class type of the desired client
    * @return a client for the specified ads service
    */
-  @SuppressWarnings("unchecked") // Service client is a proxy to the interface.
   public <T> T getServiceClientAsInterface(S adsSession, Class<T> interfaceClass)
       throws ServiceException {
     return adsServiceClientFactory.getServiceClient(adsSession, interfaceClass);

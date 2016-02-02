@@ -63,7 +63,7 @@ public class CreateCustomFieldsAndOptions {
         new CustomField[] {numberCustomField, dropDownCustomField});
 
     for (CustomField createdCustomField : customFields) {
-      System.out.printf("A custom field with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A custom field with ID %d and name '%s' was created.%n",
           createdCustomField.getId(), createdCustomField.getName());
     }
 
@@ -86,7 +86,7 @@ public class CreateCustomFieldsAndOptions {
 
     for (CustomFieldOption createdCustomFieldOption : customFieldOptions) {
       System.out.printf(
-          "A custom field option with ID \"%d\" and display name \"%s\" was created.\n",
+          "A custom field option with ID %d and display name '%s' was created.%n",
           createdCustomFieldOption.getId(), createdCustomFieldOption.getDisplayName());
     }
   }

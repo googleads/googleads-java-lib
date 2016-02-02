@@ -65,7 +65,7 @@ public class UpdateUsers {
     User[] users = userService.updateUsers(new User[] {user});
 
     for (User updatedUser : users) {
-      System.out.printf("User with ID \"%d\" and name \"%s\" was updated.\n",
+      System.out.printf("User with ID %d and name '%s' was updated.%n",
           updatedUser.getId(), updatedUser.getName());
     }
   }

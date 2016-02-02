@@ -9,7 +9,9 @@ package com.google.api.ads.adwords.axis.v201506.billing;
 
 
 /**
- * Represents an BillingAccount.
+ * Represents an account to which invoices are sent in
+ *             <a href="https://support.google.com/adwords/answer/2375371">consolidated
+ * billing</a>.
  */
 public class BillingAccount  implements java.io.Serializable {
     /* <span class="constraint ReadOnly">This field is read only and

@@ -95,7 +95,7 @@ public class CreateAdUnits {
     AdUnit[] adUnits = inventoryService.createAdUnits(new AdUnit[] {webAdUnit, videoAdUnit});
 
     for (AdUnit adUnit : adUnits) {
-      System.out.printf("An ad unit with ID \"%s\", name \"%s\" was created.\n", adUnit.getId(),
+      System.out.printf("An ad unit with ID '%s', name '%s' was created.%n", adUnit.getId(),
           adUnit.getName());
     }
   }

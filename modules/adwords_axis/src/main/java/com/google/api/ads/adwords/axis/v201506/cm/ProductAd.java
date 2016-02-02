@@ -10,9 +10,11 @@ package com.google.api.ads.adwords.axis.v201506.cm;
 
 /**
  * Represents a product ad (known as a <a href=
- *             "//support.google.com/adwords/bin/answer.py?answer=2456103">product
- * listing ad</a> in the AdWords user interface). A product ad displays
- * product data (managed using the Google Merchant Center) that is
+ *             "//support.google.com/adwords/answer/2456103">product
+ *             listing ad</a> in the AdWords user interface). A product
+ * ad displays
+ *             product data (managed using the Google Merchant Center)
+ * that is
  *             pulled from the Google base product feed specified in
  * the parent campaign's
  *             {@linkplain ShoppingSetting shopping setting}.

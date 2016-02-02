@@ -82,7 +82,7 @@ public class UpdateContentMetadataKeyHierarchies {
 
     for (ContentMetadataKeyHierarchy updatedContentMetadataKeyHierarchy :
         contentMetadataKeyHierarchies) {
-      System.out.printf("Content metadata key hierarchy with ID \"%d\", name \"%s\" was updated.\n",
+      System.out.printf("Content metadata key hierarchy with ID %d, name '%s' was updated.%n",
           updatedContentMetadataKeyHierarchy.getId(), updatedContentMetadataKeyHierarchy.getName());
     }
   }

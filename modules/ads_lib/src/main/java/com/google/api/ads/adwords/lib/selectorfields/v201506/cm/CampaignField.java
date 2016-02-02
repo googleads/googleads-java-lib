@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ public enum CampaignField implements EntityField {
 
   /**
    * The enhanced CPC bidding option for the campaign, which enables bids to be enhanced based on conversion optimizer data.
-   * For more information about enhanced CPC, see the <a href="//support.google.com/adwords/bin/answer.py?answer=2464964" >AdWords Help Center</a>.
+   * For more information about enhanced CPC, see the <a href="//support.google.com/adwords/answer/2464964" >AdWords Help Center</a>.
    */
   @Filterable
   EnhancedCpcEnabled(true),

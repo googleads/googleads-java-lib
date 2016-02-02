@@ -63,7 +63,7 @@ public class ArchiveProposalLineItems {
         int i = page.getStartIndex();
         for (ProposalLineItem proposalLineItem : page.getResults()) {
           System.out.printf(
-              "%d) Proposal line item with ID \"%d\" will be archived.%n", i++,
+              "%d) Proposal line item with ID %d will be archived.%n", i++,
               proposalLineItem.getId());
         }
       }

@@ -80,8 +80,8 @@ public class UpdateReconciliationReportRows {
 
     for (ReconciliationReportRow updatedRow : updatedRows) {
       System.out.printf(
-          "Reconciliation report row for line item ID \"%d\" and creative ID \"%d\" was "
-              + "updated, with manual volume \"%d\".%n",
+          "Reconciliation report row for line item ID %d and creative ID %d was "
+              + "updated, with manual volume %d.%n",
           updatedRow.getLineItemId(),
           updatedRow.getCreativeId(),
           updatedRow.getManualVolume());

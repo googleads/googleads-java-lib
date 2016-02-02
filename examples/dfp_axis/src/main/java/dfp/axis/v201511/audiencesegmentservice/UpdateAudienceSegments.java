@@ -67,7 +67,7 @@ public class UpdateAudienceSegments {
 
     for (AudienceSegment updatedAudienceSegment : audienceSegments) {
       System.out.printf(
-          "Audience segment with ID \"%d\" and name \"%s\" was updated.\n",
+          "Audience segment with ID %d and name '%s' was updated.%n",
           updatedAudienceSegment.getId(), updatedAudienceSegment.getName());
     }
   }

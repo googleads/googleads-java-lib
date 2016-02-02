@@ -15,10 +15,11 @@
 package com.google.api.ads.adwords.lib.conf;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.apache.commons.configuration.Configuration;
+
+import javax.inject.Inject;
 
 /**
  * Configuration information for AdWords library.

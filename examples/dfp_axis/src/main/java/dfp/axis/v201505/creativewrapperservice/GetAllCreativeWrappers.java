@@ -56,7 +56,7 @@ public class GetAllCreativeWrappers {
         int i = page.getStartIndex();
         for (CreativeWrapper creativeWrapper : page.getResults()) {
           System.out.printf(
-              "%d) Creative wrapper with ID \"%d\" applying to label \"%d\" was found.\n", i++,
+              "%d) Creative wrapper with ID %d applying to label ID %d was found.%n", i++,
               creativeWrapper.getId(), creativeWrapper.getLabelId());
         }
       }
@@ -64,7 +64,7 @@ public class GetAllCreativeWrappers {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

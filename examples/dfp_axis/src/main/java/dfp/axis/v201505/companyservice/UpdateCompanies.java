@@ -66,7 +66,7 @@ public class UpdateCompanies {
 
     for (Company updatedCompany : companies) {
       System.out.printf(
-          "Company with ID \"%d\", name \"%s\", and comment \"%s\" was updated.\n",
+          "Company with ID %d, name '%s', and comment '%s' was updated.%n",
           updatedCompany.getId(), updatedCompany.getName(), updatedCompany.getComment());
     }
   }

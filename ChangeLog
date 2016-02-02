@@ -1,3 +1,26 @@
+2.9.0 - 02/02/2016
+------------------
+AdWords:
+  - Added support and examples for v201601.
+  - Fixed examples extensions/AddSiteLinks and errorhandling/HandlePolicyViolationError
+  to properly handle the latest validation rules enforced by the API.
+  - Modified the axis.v201506.accountmanagement.GetAccountHierarchy,
+  axis.v201509.accountmanagement.GetAccountHierarchy, and
+  axis.v201601.accountmanagement.GetAccountHierarchy examples to properly handle
+  the case where ManagedCustomerService.get returns multiple pages of results.
+  - Made BatchJobUploadStatus serializable for usage with resumable BatchJob
+  uploads.
+  - Removed all AdX Buyer examples and JAR files.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.8.0 - 11/19/2015
 ------------------
 AdWords

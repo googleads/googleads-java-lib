@@ -60,7 +60,7 @@ public class CreateCreativeWrappers {
 
     for (CreativeWrapper createdCreativeWrapper : creativeWrappers) {
       System.out.printf(
-          "Creative wrapper with ID \"%d\" applying to label \"%d\" was created.\n",
+          "Creative wrapper with ID %d applying to label ID %d was created.%n",
           createdCreativeWrapper.getId(), createdCreativeWrapper.getLabelId());
     }
   }

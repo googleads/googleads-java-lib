@@ -63,7 +63,7 @@ public class CreateActivityGroups {
         new ActivityGroup[] {shortTermActivityGroup, longTermActivityGroup});
 
     for (ActivityGroup createdActivityGroup : activityGroups) {
-      System.out.printf("An activity group with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("An activity group with ID %d and name '%s' was created.%n",
           createdActivityGroup.getId(), createdActivityGroup.getName());
     }
   }

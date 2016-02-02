@@ -71,7 +71,7 @@ public class UpdatePlacements {
     Placement[] placements = placementService.updatePlacements(new Placement[] {placement});
 
     for (Placement updatedPlacement : placements) {
-      System.out.printf("Placement with ID \"%d\" and name \"%s\" was updated.\n",
+      System.out.printf("Placement with ID %d and name '%s' was updated.%n",
           updatedPlacement.getId(), updatedPlacement.getName());
     }
   }

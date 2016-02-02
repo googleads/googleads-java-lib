@@ -66,8 +66,8 @@ public class GetProductPackageItemsForProductPackage {
         int i = page.getStartIndex();
         for (ProductPackageItem productPackageItem : page.getResults()) {
           System.out.printf(
-              "%d) Product package item with ID \"%d\" and product ID \"%d\" "
-              + "belonging to product package ID \"%s\" was found.%n", i++,
+              "%d) Product package item with ID %d and product ID %d "
+              + "belonging to product package ID %d was found.%n", i++,
               productPackageItem.getId(),
               productPackageItem.getProductId(),
               productPackageItem.getProductPackageId());

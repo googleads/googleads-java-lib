@@ -57,7 +57,7 @@ public class CreateTeams {
     Team[] teams = teamService.createTeams(new Team[] {readWriteTeam, readOnlyTeam});
 
     for (Team createdTeam : teams) {
-      System.out.printf("A team with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A team with ID %d and name '%s' was created.%n",
           createdTeam.getId(), createdTeam.getName());
     }
   }

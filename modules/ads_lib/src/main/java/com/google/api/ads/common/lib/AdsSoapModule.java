@@ -17,6 +17,7 @@ package com.google.api.ads.common.lib;
 import com.google.api.ads.common.lib.client.AdsServiceClient;
 import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 import com.google.api.ads.common.lib.client.AdsSession;
+import com.google.api.ads.common.lib.factory.BaseAdsServiceClientFactory;
 import com.google.api.ads.common.lib.factory.FactoryModule;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
@@ -44,6 +45,7 @@ public class AdsSoapModule <C extends AdsServiceClient<S, D>,
    * Configures the factories.
    *
    * @param <H> the subclass of {@link AdsServiceClientFactoryHelper}
+   * @param <F> the subclass of {@link BaseAdsServiceClientFactory}
    *
    * @param adsServiceClientFactoryTypeLiteral the factory type literal which
    *        contains a {@link AdsServiceClientFactoryInterface}
@@ -53,27 +55,26 @@ public class AdsSoapModule <C extends AdsServiceClient<S, D>,
    *        contains a {@link AdsServiceClient}
    * @param adsServiceDescriptorTypeLiteral the ads service descriptor literal
    *        which contains a {@link AdsServiceDescriptor}
-   * @param factoryHelperClass the factory helper class
-   * @param factoryClass the factory class
+   * @param adsServiceClientFactoryHelperClass the {@link AdsServiceClientFactoryHelper} class
+   * @param baseAdsServiceClientFactoryClass the {@link BaseAdsServiceClientFactory} class
    */
-  @SuppressWarnings("unchecked") // Guice lacks support for template type literals.
-  protected <H extends AdsServiceClientFactoryHelper<C, S, D>>
+  protected <H extends AdsServiceClientFactoryHelper<C, S, D>,
+          F extends BaseAdsServiceClientFactory<C, S, D>>
       void configureFactories(
-          @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-          TypeLiteral adsServiceClientFactoryTypeLiteral,
-          @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-          TypeLiteral adsServiceDescriptorFactoryTypeLiteral,
-          @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-          TypeLiteral adsServiceClientTypeLiteral,
-          @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-          TypeLiteral adsServiceDescriptorTypeLiteral,
-          Class<H> factoryHelperClass,
-          Class<?> factoryClass) {
-    install(new FactoryModule<C, D, S, H>(adsServiceClientFactoryTypeLiteral,
-                                          adsServiceDescriptorFactoryTypeLiteral,
-                                          adsServiceClientTypeLiteral,
-                                          adsServiceDescriptorTypeLiteral,
-                                          factoryHelperClass,
-                                          factoryClass));
+          TypeLiteral<AdsServiceClientFactoryInterface<C, S, D>> adsServiceClientFactoryTypeLiteral,
+          TypeLiteral<AdsServiceDescriptorFactoryInterface<D>>
+              adsServiceDescriptorFactoryTypeLiteral,
+          TypeLiteral<C> adsServiceClientTypeLiteral,
+          TypeLiteral<D> adsServiceDescriptorTypeLiteral,
+          Class<H> adsServiceClientFactoryHelperClass,
+          Class<F> baseAdsServiceClientFactoryClass) {
+    install(
+        new FactoryModule<C, D, S, H, F>(
+            adsServiceClientFactoryTypeLiteral,
+            adsServiceDescriptorFactoryTypeLiteral,
+            adsServiceClientTypeLiteral,
+            adsServiceDescriptorTypeLiteral,
+            adsServiceClientFactoryHelperClass,
+            baseAdsServiceClientFactoryClass));
   }
 }

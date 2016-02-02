@@ -110,8 +110,8 @@ public class AddTextAds {
 
     // Display ads.
     for (AdGroupAd adGroupAdResult : result.getValue()) {
-      System.out.println("Ad with id  \"" + adGroupAdResult.getAd().getId() + "\"" + " and type \""
-          + adGroupAdResult.getAd().getAdType() + "\" was added.");
+      System.out.printf("Ad with ID %d and type '%s' was added.%n",
+          adGroupAdResult.getAd().getId(), adGroupAdResult.getAd().getAdType());
     }
   }
 }

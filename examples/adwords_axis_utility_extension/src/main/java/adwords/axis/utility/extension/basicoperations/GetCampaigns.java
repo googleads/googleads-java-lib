@@ -39,7 +39,7 @@ public class GetCampaigns {
     List<Campaign> campaigns = extendedManagedCustomer.getCampaigns();
 
     for (Campaign campaign : campaigns) {
-      System.out.printf("Campaign with name '%s' and ID '%d' was found.\n",
+      System.out.printf("Campaign with name '%s' and ID %d was found.%n",
           campaign.getName(), campaign.getId());
     }
   }

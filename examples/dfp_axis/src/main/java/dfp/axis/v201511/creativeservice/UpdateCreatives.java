@@ -71,7 +71,7 @@ public class UpdateCreatives {
 
       for (Creative updatedCreative : creatives) {
         System.out.printf(
-            "Creative with ID \"%d\" and name \"%s\" was updated.\n",
+            "Creative with ID %d and name '%s' was updated.%n",
             updatedCreative.getId(), updatedCreative.getName());
       }
     } else {

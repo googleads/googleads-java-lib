@@ -16,10 +16,11 @@ package com.google.api.ads.adwords.lib.utils.logging;
 
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.ads.common.lib.utils.logging.PrettyPrinterInterface;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
+
+import javax.inject.Inject;
 
 /**
  * Service logger that also provides access to additional AdWords-specific loggers.

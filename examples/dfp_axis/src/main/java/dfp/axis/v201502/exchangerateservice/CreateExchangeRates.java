@@ -58,8 +58,8 @@ public class CreateExchangeRates {
         new ExchangeRate[] {exchangeRate});
     
     for (ExchangeRate createdExchangeRate : exchangeRates) {
-      System.out.printf("An exchange rate with ID \"%d,\" currency code \"%s,\""
-          + " direction \"%s,\" and exchange rate \"%.2f\" was created.%n",
+      System.out.printf("An exchange rate with ID %d, currency code '%s',"
+          + " direction '%s', and exchange rate %.2f was created.%n",
           createdExchangeRate.getId(), createdExchangeRate.getCurrencyCode(),
           createdExchangeRate.getDirection().getValue(),
           (createdExchangeRate.getExchangeRate() / 10000000000f));

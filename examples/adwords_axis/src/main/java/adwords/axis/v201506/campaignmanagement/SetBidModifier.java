@@ -84,8 +84,8 @@ public class SetBidModifier {
     CampaignCriterionReturnValue result =
         campaignCriterionService.mutate(new CampaignCriterionOperation[] {operation});
     for (CampaignCriterion campaignCriterionResult : result.getValue()) {
-      System.out.printf("Campaign criterion with campaign id '%s', criterion id '%s', "
-          + "and type '%s' was modified with bid %.2f.\n",
+      System.out.printf("Campaign criterion with campaign ID %d, criterion ID %d, "
+          + "and type '%s' was modified with bid %.4f.%n",
           campaignCriterionResult.getCampaignId(),
           campaignCriterionResult.getCriterion().getId(),
           campaignCriterionResult.getCriterion().getType(),

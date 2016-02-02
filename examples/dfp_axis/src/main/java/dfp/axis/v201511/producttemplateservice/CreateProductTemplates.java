@@ -144,7 +144,7 @@ public class CreateProductTemplates {
         productTemplateService.createProductTemplates(new ProductTemplate[] {productTemplate});
 
     for (ProductTemplate createdProductTemplate : productTemplates) {
-      System.out.printf("A product template with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A product template with ID %d and name '%s' was created.%n",
           createdProductTemplate.getId(), createdProductTemplate.getName());
     }
   }

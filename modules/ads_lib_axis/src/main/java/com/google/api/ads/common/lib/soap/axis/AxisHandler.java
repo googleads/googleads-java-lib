@@ -24,7 +24,6 @@ import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 
 import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
@@ -40,6 +39,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
 

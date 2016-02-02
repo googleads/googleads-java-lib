@@ -19,21 +19,22 @@ import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
-import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
+import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.conf.DfpApiConfiguration;
 import com.google.api.ads.dfp.lib.soap.DfpHttpHeaderHandler;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
-import com.google.inject.Inject;
 
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPFactory;
+import javax.xml.ws.BindingProvider;
 
 /**
  * DFP implementation of {@link HeaderHandler} for JAX-WS.
@@ -42,7 +43,7 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
 
   private static final String REQUEST_HEADER_LOCAL_PART = "RequestHeader";
 
-  private final SoapClientHandlerInterface<Object> soapClientHandler;
+  private final JaxWsHandler soapClientHandler;
   private final DfpApiConfiguration dfpApiConfiguration;
   private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
@@ -57,12 +58,9 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
    * @param authorizationHeaderHandler the authorization header handler
    * @param userAgentCombiner the full user agent provider
    */
-  @SuppressWarnings("unchecked") // All generics of SoapClientHandlerInterface
-                                 // extend Object.
   @Inject
   public DfpJaxWsHeaderHandler(
-      @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
-      SoapClientHandlerInterface soapClientHandler,
+      JaxWsHandler soapClientHandler,
       DfpApiConfiguration dfpApiConfiguration,
       AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
@@ -84,28 +82,34 @@ public class DfpJaxWsHeaderHandler implements HeaderHandler<DfpSession, DfpServi
   public void setHeaders(
       Object soapClient, DfpSession dfpSession, DfpServiceDescriptor dfpServiceDescriptor)
       throws AuthenticationException, ServiceException {
+    Preconditions.checkArgument(
+        soapClient instanceof BindingProvider,
+        "soapClient must be BindingProvider but was: %s",
+        soapClient);
+    BindingProvider bindingProvider = (BindingProvider) soapClient;
+
     dfpHttpHeaderHandler.setHttpHeaders(soapClient, dfpSession);
 
     Map<String, Object> headerData = readHeaderElements(dfpSession);
-    setAuthenticationHeaders(soapClient, headerData, dfpSession);
+    setAuthenticationHeaders(soapClient, dfpSession);
     soapClientHandler.setHeader(
-        soapClient, null, null, constructSoapHeader(headerData, dfpServiceDescriptor));
-    soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
-    soapClientHandler.setRequestTimeout(soapClient, adsLibConfiguration.getSoapRequestTimeout());
+        bindingProvider, null, null, constructSoapHeader(headerData, dfpServiceDescriptor));
+    soapClientHandler.setCompression(bindingProvider, adsLibConfiguration.isCompressionEnabled());
+    soapClientHandler.setRequestTimeout(
+        bindingProvider, adsLibConfiguration.getSoapRequestTimeout());
   }
 
   /**
    * Sets the authentication headers.
    *
    * @param soapClient the SOAP client
-   * @param headerElements the map housing header elements
    * @param dfpSession the DFP session
    * @throws AuthenticationException if there was a problem getting/setting the
    *         header
    */
-  @VisibleForTesting
-  void setAuthenticationHeaders(Object soapClient, Map<String, Object> headerElements,
-      DfpSession dfpSession) throws AuthenticationException {
+  private void setAuthenticationHeaders(
+      Object soapClient, DfpSession dfpSession)
+      throws AuthenticationException {
     authorizationHeaderHandler.setAuthorization(soapClient, dfpSession);
   }
 

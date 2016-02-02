@@ -34,7 +34,9 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      *                     <span class="constraint ContentsDistinct">This
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
-     * field must not contain {@code null} elements.</span> */
+     * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span> */
     private java.lang.String[] included;
 
     /* A set of strings specifying which ideas should be excluded
@@ -42,7 +44,9 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      *                     <span class="constraint ContentsDistinct">This
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
-     * field must not contain {@code null} elements.</span> */
+     * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span> */
     private java.lang.String[] excluded;
 
     public IdeaTextFilterSearchParameter() {
@@ -68,6 +72,8 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public java.lang.String[] getIncluded() {
         return included;
@@ -83,6 +89,8 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public void setIncluded(java.lang.String[] included) {
         this.included = included;
@@ -106,6 +114,8 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public java.lang.String[] getExcluded() {
         return excluded;
@@ -121,6 +131,8 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
+     *                     <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public void setExcluded(java.lang.String[] excluded) {
         this.excluded = excluded;

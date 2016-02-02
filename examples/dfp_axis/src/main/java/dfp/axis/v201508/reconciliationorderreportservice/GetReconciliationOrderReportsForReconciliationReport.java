@@ -62,7 +62,7 @@ public class GetReconciliationOrderReportsForReconciliationReport {
         int i = page.getStartIndex();
         for (ReconciliationOrderReport reconciliationOrderReport : page.getResults()) {
           System.out.printf(
-              "%d) Reconciliation order report with ID \"%d\" and status \"%s\" was found.%n",
+              "%d) Reconciliation order report with ID %d and status '%s' was found.%n",
               i++,
               reconciliationOrderReport.getId(),
               reconciliationOrderReport.getStatus());

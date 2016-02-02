@@ -56,7 +56,7 @@ public class GetAllLineItems {
         int i = page.getStartIndex();
         for (LineItem lineItem : page.getResults()) {
           System.out.printf(
-              "%d) Line item with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Line item with ID %d and name '%s' was found.%n", i++,
               lineItem.getId(), lineItem.getName());
         }
       }
@@ -64,7 +64,7 @@ public class GetAllLineItems {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

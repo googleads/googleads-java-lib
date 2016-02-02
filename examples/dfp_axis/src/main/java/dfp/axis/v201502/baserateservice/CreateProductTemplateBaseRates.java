@@ -66,7 +66,7 @@ public class CreateProductTemplateBaseRates {
         new BaseRate[] {productTemplateBaseRate});
     
     for (BaseRate createdBaseRate : baseRates) {
-      System.out.printf("A product template base rate with ID \"%d\" and rate \"%.2f\" %s "
+      System.out.printf("A product template base rate with ID %d and rate %.4f %s "
           + "was created.%n", createdBaseRate.getId(),
           (((ProductTemplateBaseRate) createdBaseRate).getRate().getMicroAmount() / 1000000f),
           ((ProductTemplateBaseRate) createdBaseRate).getRate().getCurrencyCode());

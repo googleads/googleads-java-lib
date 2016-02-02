@@ -37,7 +37,6 @@ public class AdWordsAxisModule extends ProductFrameworkModule {
 
   private static final String DEFAULT_HEADER_PARTIAL_NAME = "cm.SoapHeader";
 
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals. */
   @Override
   public void configure() {
     MapBinder<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
@@ -59,7 +58,8 @@ public class AdWordsAxisModule extends ProductFrameworkModule {
     bind(new TypeLiteral<AxisSoapHeaderFactory<AdWordsServiceDescriptor>>() {}).to(
         new TypeLiteral<AdWordsAxisSoapHeaderFactory>() {});
 
-    bind(new TypeLiteral<HeaderHandler>() {}).to(new TypeLiteral<AdWordsAxisHeaderHandler>() {});
+    bind(new TypeLiteral<HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {})
+        .to(new TypeLiteral<AdWordsAxisHeaderHandler>() {});
     install(new AxisModule());
     install(new AdWordsModule());
     install(new AdWordsSoapModule());

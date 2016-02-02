@@ -13,7 +13,7 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Service used to create and mutate Feeds that contain ad customizer data.
+ *       Service used to get and mutate Feeds that contain ad customizer data.
  *       
  *       <p>This service is a convenience for creating and modifying ad customizer Feeds, but such Feeds
  *       can also be managed using a combination of the Feed, FeedMapping, and CustomerFeed services.

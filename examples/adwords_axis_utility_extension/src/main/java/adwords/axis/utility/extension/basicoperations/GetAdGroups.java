@@ -43,7 +43,7 @@ public class GetAdGroups {
     List<AdGroup> adgroups = extendedManagedCustomer.getExtendedCampaign(campaignId).getAdGroups();
 
     for (AdGroup adGroup : adgroups) {
-      System.out.printf("AdGroup with name '%s' and ID '%d' was found.\n",
+      System.out.printf("AdGroup with name '%s' and ID %d was found.%n",
           adGroup.getName(), adGroup.getId());
     }
   }

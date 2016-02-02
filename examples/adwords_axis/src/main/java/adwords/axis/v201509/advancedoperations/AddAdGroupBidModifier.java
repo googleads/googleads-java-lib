@@ -85,7 +85,7 @@ public class AddAdGroupBidModifier {
         adGroupBidModifierService.mutate(new AdGroupBidModifierOperation[] {operation});
     for (AdGroupBidModifier bidModifierResult : result.getValue()) {
       System.out.printf(
-          "Campaign ID '%d', AdGroup ID '%d' was updated with ad group level modifier: %.2f\n",
+          "Campaign ID %d, ad group ID %d was updated with ad group level modifier: %.4f%n",
           bidModifierResult.getCampaignId(), bidModifierResult.getAdGroupId(),
           bidModifierResult.getBidModifier());
     }

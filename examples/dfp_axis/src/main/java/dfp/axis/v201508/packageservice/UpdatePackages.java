@@ -65,7 +65,7 @@ public class UpdatePackages {
     Package[] packages = packageService.updatePackages(new Package[] { pkg });
 
     for (Package updatedPackage : packages) {
-      System.out.printf("Package with ID \"%d\" and name \"%s\" was updated.%n",
+      System.out.printf("Package with ID %d and name '%s' was updated.%n",
           updatedPackage.getId(), updatedPackage.getName());
     }
   }

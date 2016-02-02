@@ -67,7 +67,7 @@ public class UpdateCustomFields {
 
     for (CustomField updatedCustomField : customFields) {
       System.out.printf(
-          "Custom field with ID \"%d\" and name \"%s\" was updated.\n",
+          "Custom field with ID %d and name '%s' was updated.%n",
           updatedCustomField.getId(), updatedCustomField.getName());
     }
   }

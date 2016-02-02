@@ -93,8 +93,8 @@ public class AddDemographicTargetingCriteria {
 
     // Display campaigns.
     for (AdGroupCriterion adGroupCriterion : result.getValue()) {
-      System.out.printf("AdGroup criterion with adGroup id '%s', criterion id '%s', "
-          + "and type '%s' was added.\n", adGroupCriterion.getAdGroupId(),
+      System.out.printf("AdGroup criterion with adGroup ID %d, criterion ID %d, "
+          + "and type '%s' was added.%n", adGroupCriterion.getAdGroupId(),
           adGroupCriterion.getCriterion().getId(),
           adGroupCriterion.getCriterion().getCriterionType());
     }

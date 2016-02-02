@@ -75,7 +75,7 @@ public class UpdateUserTeamAssociations {
 
     for (UserTeamAssociation updatedUserTeamAssociation : userTeamAssociations) {
       System.out.printf(
-          "User team association with user ID \"%d\" and team ID \"%d\" was updated.\n",
+          "User team association with user ID %d and team ID %d was updated.%n",
           updatedUserTeamAssociation.getUserId(), updatedUserTeamAssociation.getTeamId());
     }
   }

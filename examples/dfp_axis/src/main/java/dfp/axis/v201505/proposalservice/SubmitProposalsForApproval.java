@@ -61,7 +61,7 @@ public class SubmitProposalsForApproval {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Proposal proposal : page.getResults()) {
-          System.out.printf("%d) Proposal with ID \"%d\" and name \"%s\" will be approved.%n",
+          System.out.printf("%d) Proposal with ID %d and name '%s' will be approved.%n",
               i++, proposal.getId(), proposal.getName());
         }
       }

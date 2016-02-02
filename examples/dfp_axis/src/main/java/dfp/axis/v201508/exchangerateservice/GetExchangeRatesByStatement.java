@@ -60,8 +60,8 @@ public class GetExchangeRatesByStatement {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (ExchangeRate exchangeRate : page.getResults()) {
-          System.out.printf("%d) Exchange rate with ID \"%d,\" currency code \"%s,\""
-              + " direction \"%s,\" and exchange rate \"%.2f\" was found.%n", i++,
+          System.out.printf("%d) Exchange rate with ID %d, currency code '%s',"
+              + " direction '%s', and exchange rate %.2f was found.%n", i++,
               exchangeRate.getId(), exchangeRate.getCurrencyCode(),
               exchangeRate.getDirection().getValue(),
               (exchangeRate.getExchangeRate() / 10000000000f));

@@ -19,10 +19,11 @@ import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSub
 import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-import com.google.inject.Inject;
 
 import java.util.List;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 /**
  * AdWords implementation of {@link AxisSoapHeaderFactory}.

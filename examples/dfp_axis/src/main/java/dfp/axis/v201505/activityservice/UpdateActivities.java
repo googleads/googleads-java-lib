@@ -67,7 +67,7 @@ public class UpdateActivities {
 
     for (Activity updatedActivity : activities) {
       System.out.printf(
-          "Activity with ID \"%d\" and name \"%s\" was updated.\n",
+          "Activity with ID %d and name '%s' was updated.%n",
           updatedActivity.getId(), updatedActivity.getName());
     }
   }

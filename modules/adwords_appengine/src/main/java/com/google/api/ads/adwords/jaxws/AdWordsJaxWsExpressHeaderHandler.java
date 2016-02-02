@@ -23,8 +23,8 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import javax.xml.ws.BindingProvider;
 
 /**

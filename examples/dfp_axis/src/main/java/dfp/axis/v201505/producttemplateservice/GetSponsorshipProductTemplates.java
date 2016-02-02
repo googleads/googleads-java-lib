@@ -58,7 +58,7 @@ public class GetSponsorshipProductTemplates {
         int i = page.getStartIndex();
         for (ProductTemplate productTemplate : page.getResults()) {
           System.out.printf(
-              "%d) Product template with ID \"%d\" and name \"%s\" was found.%n", i++,
+              "%d) Product template with ID %d and name '%s' was found.%n", i++,
               productTemplate.getId(), productTemplate.getName());
         }
       }

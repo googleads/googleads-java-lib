@@ -78,11 +78,11 @@ public class UpdateTeams {
       Team[] teams = teamService.updateTeams(new Team[] {team});
 
       for (Team updatedTeam : teams) {
-        System.out.printf("Team with ID \"%d\" and name \"%s\" was updated.\n", updatedTeam.getId(),
+        System.out.printf("Team with ID %d and name '%s' was updated.%n", updatedTeam.getId(),
             updatedTeam.getName());
       }
     } else {
-      System.out.printf("No teams were updated.\n");
+      System.out.printf("No teams were updated.%n");
     }
   }
 

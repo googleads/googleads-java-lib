@@ -141,15 +141,15 @@ public class GetAvailabilityForecast {
     double availablePercent = (forecast.getAvailableUnits() / (matched * 1.0)) * 100;
     String unitType = forecast.getUnitType().toString().toLowerCase();
 
-    System.out.printf("%d %s matched.\n", matched, unitType);
-    System.out.printf("%.2f%% %s available.\n", availablePercent, unitType); 
+    System.out.printf("%d %s matched.%n", matched, unitType);
+    System.out.printf("%.2f%% %s available.%n", availablePercent, unitType); 
 
     if (forecast.getPossibleUnits() != null) {
       double possiblePercent = (forecast.getPossibleUnits() / (matched * 1.0)) * 100;
-      System.out.printf("%.2f%% %s possible.\n", possiblePercent, unitType);
+      System.out.printf("%.2f%% %s possible.%n", possiblePercent, unitType);
     }
 
-    System.out.printf("%d contending line items.\n",
+    System.out.printf("%d contending line items.%n",
         forecast.getContendingLineItems() == null ? 0 : forecast.getContendingLineItems().length);
   }
 

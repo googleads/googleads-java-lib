@@ -77,8 +77,8 @@ public class UpdateReconciliationLineItemReports {
 
     for (ReconciliationLineItemReport updatedLineItemReport : updatedLineItemReports) {
       System.out.printf(
-          "Reconciliation line item report with ID \"%d\" for line item ID \"%d\" was "
-              + "updated, with manual volume \"%d\".%n",
+          "Reconciliation line item report with ID %d for line item ID %d was "
+              + "updated, with manual volume %d.%n",
           updatedLineItemReport.getId(),
           updatedLineItemReport.getLineItemId(),
           updatedLineItemReport.getManualVolume());

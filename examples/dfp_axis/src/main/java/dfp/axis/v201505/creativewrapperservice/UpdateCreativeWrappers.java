@@ -69,7 +69,7 @@ public class UpdateCreativeWrappers {
 
     for (CreativeWrapper updatedCreativeWrapper : creativeWrappers) {
       System.out.printf(
-          "Creative wrapper with ID \"%d\" and wrapping order \"%s\" was updated.\n",
+          "Creative wrapper with ID %d and wrapping order '%s' was updated.%n",
           updatedCreativeWrapper.getId(), updatedCreativeWrapper.getOrdering());
     }
   }

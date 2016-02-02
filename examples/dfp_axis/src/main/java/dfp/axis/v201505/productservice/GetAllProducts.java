@@ -55,7 +55,7 @@ public class GetAllProducts {
         int i = page.getStartIndex();
         for (Product product : page.getResults()) {
           System.out.printf(
-              "%d) Product with ID \"%d\" and name \"%s\" was found.%n", i++,
+              "%d) Product with ID %d and name '%s' was found.%n", i++,
               product.getId(), product.getName());
         }
       }

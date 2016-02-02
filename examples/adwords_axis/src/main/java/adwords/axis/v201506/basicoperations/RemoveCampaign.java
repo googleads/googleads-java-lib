@@ -79,8 +79,8 @@ public class RemoveCampaign {
 
     // Display campaigns.
     for (Campaign campaignResult : result.getValue()) {
-      System.out.println("Campaign with name \"" + campaignResult.getName() + "\" and id \""
-          + campaignResult.getId() + "\" was removed.");
+      System.out.printf("Campaign with name '%s' and ID %d was removed.%n", 
+          campaignResult.getName(), campaignResult.getId());
     }
   }
 }

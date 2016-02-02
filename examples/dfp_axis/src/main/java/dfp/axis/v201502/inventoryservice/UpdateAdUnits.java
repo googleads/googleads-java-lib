@@ -88,7 +88,7 @@ public class UpdateAdUnits {
         adUnitSizeStrings.add(String.format("%dx%d", updatedAdUnitSize.getSize().getWidth(),
             updatedAdUnitSize.getSize().getHeight()));
       }
-      System.out.printf("Ad unit with ID \"%s\", name \"%s\", and sizes [%s] was updated.\n",
+      System.out.printf("Ad unit with ID '%s', name '%s', and sizes [%s] was updated.%n",
           updatedAdUnit.getId(), updatedAdUnit.getName(), Joiner.on(", ").join(adUnitSizeStrings));
     }
   }

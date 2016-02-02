@@ -164,7 +164,7 @@ public class CreateVideoLineItems {
     LineItem[] lineItems = lineItemService.createLineItems(new LineItem[] {lineItem});
 
     for (LineItem createdLineItem : lineItems) {
-      System.out.printf("A video line item with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A video line item with ID %d and name '%s' was created.%n",
           createdLineItem.getId(), createdLineItem.getName());
     }
   }

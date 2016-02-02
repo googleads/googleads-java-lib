@@ -57,7 +57,7 @@ public class CreateUsers {
     User[] users = userService.createUsers(new User[] {traffickerUser});
 
     for (User createdUser : users) {
-      System.out.printf("A user with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A user with ID %d and name '%s' was created.%n",
           createdUser.getId(), createdUser.getName());
     }
   }

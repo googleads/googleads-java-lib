@@ -67,8 +67,8 @@ public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operan
       new AtomicReference<ImmutableList<TypeMapping>>();
   
   public BatchJobHelper(AdWordsSession session) {
-    uploader =
-        new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(session);
+    uploader = new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
+        session, false);
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "MutateResult");
     operandQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "Operand");

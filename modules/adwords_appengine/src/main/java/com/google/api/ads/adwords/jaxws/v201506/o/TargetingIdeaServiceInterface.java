@@ -12,12 +12,12 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Use this service to generate new keyword and placement ideas based on the
+ *       Use this service to generate new keyword ideas based on the
  *       parameters specified in the selector. See the {@link TargetingIdeaSelector}
  *       documentation for more details.
  *       
- *       <p>You can also use this service to retrieve statistics for existing keywords
- *       and placements by setting the selector's {@code requestType} to
+ *       <p>You can also use this service to retrieve statistics for existing keyword
+ *       ideas by setting the selector's {@code requestType} to
  *       {@link com.google.ads.api.services.targetingideas.attributes.RequestType#STATS}
  *       and passing in the appropriate search parameters.</p>
  *     
@@ -45,7 +45,7 @@ public interface TargetingIdeaServiceInterface {
      *         paging {@code startIndex} value by {@code numberResults} with each call.</p>
      *         
      *         @param selector Query describing the types of results to return when
-     *         finding matches (similar keyword ideas/placement ideas).
+     *         finding matches (similar keyword ideas).
      *         @return A {@link TargetingIdeaPage} of results, that is a subset of the
      *         list of possible ideas meeting the criteria of the
      *         {@link TargetingIdeaSelector}.

@@ -50,7 +50,7 @@ public class CreateAccount {
     ExtendedManagedCustomer extendedManagedCustomer = extendedMcc.insertManagedCustomer(customer);
 
     // Display account.
-    System.out.printf("Account with customer ID '%d' was created.\n",
+    System.out.printf("Account with customer ID %d was created.%n",
         extendedManagedCustomer.getManagedCustomer().getCustomerId());
   }
 }

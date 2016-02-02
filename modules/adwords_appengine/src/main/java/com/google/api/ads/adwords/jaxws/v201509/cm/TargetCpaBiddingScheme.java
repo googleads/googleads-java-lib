@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *             average CPA target.
  *             
  *             <p>Note that campaigns must meet <a
- *             href="//support.google.com/adwords/bin/answer.py?answer=2471188">specific
+ *             href="//support.google.com/adwords/answer/2471188">specific
  *             eligibility requirements</a> before they can use the <code>TargetCpaBiddingScheme</code>
  *             bidding strategy.
  *             <span class="constraint AdxEnabled">This is disabled for AdX.</span>

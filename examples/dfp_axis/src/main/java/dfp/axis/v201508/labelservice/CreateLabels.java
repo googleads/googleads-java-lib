@@ -56,7 +56,7 @@ public class CreateLabels {
         labelService.createLabels(new Label[] {competitiveExclusionLabel, adUnitFrequencyCapLabel});
 
     for (Label createdLabel : labels) {
-      System.out.printf("A label with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A label with ID %d and name '%s' was created.%n",
           createdLabel.getId(), createdLabel.getName());
     }
   }

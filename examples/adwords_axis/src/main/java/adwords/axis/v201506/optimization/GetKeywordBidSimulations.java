@@ -86,18 +86,16 @@ public class GetKeywordBidSimulations {
     // Display bid landscapes.
     if (page.getEntries() != null) {
       for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
-        System.out.println("Criterion bid landscape with ad group id \""
-            + criterionBidLandscape.getAdGroupId() + "\", criterion id \""
-            + criterionBidLandscape.getCriterionId() + "\", start date \""
-            + criterionBidLandscape.getStartDate() + "\", end date \""
-            + criterionBidLandscape.getEndDate() + "\", with landscape points: ");
+        System.out.printf("Criterion bid landscape with ad group ID %d, criterion ID %d, "
+            + "start date %s, end date %s, with landscape points:%n",
+            criterionBidLandscape.getAdGroupId(), criterionBidLandscape.getCriterionId(), 
+            criterionBidLandscape.getStartDate(), criterionBidLandscape.getEndDate());
 
         for (BidLandscapeLandscapePoint bidLanscapePoint : criterionBidLandscape
             .getLandscapePoints()) {
-          System.out.println("\t{bid: " + bidLanscapePoint.getBid().getMicroAmount() + " clicks: "
-              + bidLanscapePoint.getClicks() + " cost: "
-              + bidLanscapePoint.getCost().getMicroAmount() + " impressions: "
-              + bidLanscapePoint.getImpressions() + "}");
+          System.out.printf("\t{bid: %d clicks: %d cost: %d impressions: %d}%n",
+              bidLanscapePoint.getBid().getMicroAmount(), bidLanscapePoint.getClicks(),
+              bidLanscapePoint.getCost().getMicroAmount(), bidLanscapePoint.getImpressions());
         }
         System.out.println(" was found.");
       }

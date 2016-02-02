@@ -86,8 +86,8 @@ public class GetTextAds {
       // Display ads.
       if (page.getEntries() != null && page.getEntries().length > 0) {
         for (AdGroupAd adGroupAd : page.getEntries()) {
-          System.out.println("Ad with id  \"" + adGroupAd.getAd().getId() + "\"" + " and type \""
-              + adGroupAd.getAd().getAdType() + "\" was found.");
+          System.out.printf("Ad with ID %d and type '%s' was found.%n",
+              adGroupAd.getAd().getId(), adGroupAd.getAd().getAdType());
         }
       } else {
         System.out.println("No ads were found.");

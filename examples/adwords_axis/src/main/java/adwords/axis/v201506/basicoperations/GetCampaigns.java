@@ -80,8 +80,8 @@ public class GetCampaigns {
       // Display campaigns.
       if (page.getEntries() != null) {
         for (Campaign campaign : page.getEntries()) {
-          System.out.println("Campaign with name \"" + campaign.getName() + "\" and id \""
-              + campaign.getId() + "\" was found.");
+          System.out.printf("Campaign with name '%s' and ID %d was found.%n", campaign.getName(),
+              campaign.getId());
         }
       } else {
         System.out.println("No campaigns were found.");

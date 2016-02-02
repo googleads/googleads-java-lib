@@ -121,7 +121,7 @@ public class UseSharedBiddingStrategy {
     SharedBiddingStrategy newBiddingStrategy = result.getValue(0);
 
     System.out.printf(
-        "Shared bidding strategy with name '%s' and ID %d of type %s was created.\n",
+        "Shared bidding strategy with name '%s' and ID %d of type '%s' was created.%n",
         newBiddingStrategy.getName(), newBiddingStrategy.getId(),
         newBiddingStrategy.getBiddingScheme().getBiddingSchemeType());
 
@@ -162,7 +162,7 @@ public class UseSharedBiddingStrategy {
     BudgetReturnValue result = budgetService.mutate(operations);
     Budget newBudget = result.getValue(0);
 
-    System.out.printf("Budget with name '%s', ID %d was created.\n", newBudget.getName(),
+    System.out.printf("Budget with name '%s', ID %d was created.%n", newBudget.getName(),
         newBudget.getBudgetId());
 
     return newBudget;
@@ -219,7 +219,7 @@ public class UseSharedBiddingStrategy {
     CampaignReturnValue result = campaignService.mutate(new CampaignOperation[] {operation});
     Campaign newCampaign = result.getValue(0);
 
-    System.out.printf("Campaign with name '%s', ID %d and bidding scheme ID %d was created.\n",
+    System.out.printf("Campaign with name '%s', ID %d and bidding scheme ID %d was created.%n",
         newCampaign.getName(), newCampaign.getId(),
         newCampaign.getBiddingStrategyConfiguration().getBiddingStrategyId());
 

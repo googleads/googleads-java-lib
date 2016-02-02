@@ -68,8 +68,8 @@ public class UpdateExchangeRates {
         new ExchangeRate[] {exchangeRate});
 
     for (ExchangeRate updatedExchangeRate : exchangeRates) {
-      System.out.printf("Exchange rate with ID \"%d,\" currency code \"%s,\""
-          + " direction \"%s,\" and exchange rate \"%.2f\" was updated.%n",
+      System.out.printf("Exchange rate with ID %d, currency code '%s',"
+          + " direction '%s', and exchange rate %.2f was updated.%n",
           updatedExchangeRate.getId(), updatedExchangeRate.getCurrencyCode(),
           updatedExchangeRate.getDirection().getValue(),
           (updatedExchangeRate.getExchangeRate() / 10000000000f));

@@ -14,7 +14,7 @@ package com.google.api.ads.adwords.axis.v201509.cm;
  *             their children at level 2, and so on. We currently support
  * up to 5 levels. The user must specify
  *             a dimension type that indicates the level of the category.
- * All cases of the the same subdivision
+ * All cases of the same subdivision
  *             must have the same dimension type (category level).
  */
 public class ProductBiddingCategory  extends com.google.api.ads.adwords.axis.v201509.cm.ProductDimension  implements java.io.Serializable {

@@ -27,12 +27,13 @@ import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 
 import org.apache.axis.client.Stub;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 /**
  * AdWords implementation of {@link HeaderHandler} for Axis.

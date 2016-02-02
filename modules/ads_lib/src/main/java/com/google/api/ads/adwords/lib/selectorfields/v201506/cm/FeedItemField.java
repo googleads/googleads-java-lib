@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ public enum FeedItemField implements EntityField {
    * This field may be null to indicate no end time restriction.
    * The special value "00000101 000000" may be used to clear an existing end time.
    */
-  EndTime(false),
+  @Filterable
+  EndTime(true),
 
   /**
    * ID of this feed item's feed
@@ -115,7 +116,8 @@ public enum FeedItemField implements EntityField {
    * This field may be null to indicate no start time restriction.
    * The special value "00000101 000000" may be used to clear an existing start time.
    */
-  StartTime(false),
+  @Filterable
+  StartTime(true),
 
   /**
    * Status of feed item

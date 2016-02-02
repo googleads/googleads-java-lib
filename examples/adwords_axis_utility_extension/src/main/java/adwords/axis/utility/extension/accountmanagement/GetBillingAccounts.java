@@ -36,7 +36,7 @@ public class GetBillingAccounts {
     List<BillingAccount> billingAccounts = extendedMcc.getBillingAccounts();
     for (BillingAccount billingAccount : billingAccounts) {
       System.out.printf(
-          "BillingAccount with Id '%s' and Name  '%s' was found.\n",
+          "BillingAccount with ID '%s' and name '%s' was found.%n",
           billingAccount.getId(),
           billingAccount.getName());
     }

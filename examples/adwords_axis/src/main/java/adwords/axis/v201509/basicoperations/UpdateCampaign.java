@@ -79,9 +79,9 @@ public class UpdateCampaign {
 
     // Display campaigns.
     for (Campaign campaignResult : result.getValue()) {
-      System.out.println("Campaign with name \"" + campaignResult.getName() + "\", id \""
-          + campaignResult.getId() + "\", and budget delivery method \""
-          + campaignResult.getBudget().getDeliveryMethod() + "\" was updated.");
+      System.out.printf("Campaign with name '%s', ID %d, and budget delivery method '%s' "
+          + "was updated.%n", campaignResult.getName(), campaignResult.getId(),
+          campaignResult.getBudget().getDeliveryMethod());
     }
   }
 }

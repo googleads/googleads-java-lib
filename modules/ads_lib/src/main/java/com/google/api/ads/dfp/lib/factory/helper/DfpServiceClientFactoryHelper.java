@@ -23,10 +23,11 @@ import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.dfp.lib.client.DfpServiceClient;
 import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
 import com.google.api.ads.dfp.lib.client.DfpSession;
-import com.google.inject.Inject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.inject.Inject;
 
 /**
  * Factory helper for Dfp.
@@ -48,15 +49,17 @@ public class DfpServiceClientFactoryHelper extends
    * @param soapClientHandler the SOAP client handler
    * @param adsLibConfiguration the lib configuration
    */
-  @SuppressWarnings("unchecked") // All generics of SoapClientHandlerInterface
-                                 // extend Object.
+  @SuppressWarnings("unchecked") /* See comments on soapClientHandler argument. */
   @Inject
   public DfpServiceClientFactoryHelper(
       AdsServiceClientFactoryInterface<DfpServiceClient,
                                        DfpSession,
                                        DfpServiceDescriptor> adsServiceClientFactory,
       AdsServiceDescriptorFactoryInterface<DfpServiceDescriptor> adsServiceDescriptorFactory,
-      @SuppressWarnings({"rawtypes", "unchecked"})  /* Due to problem with guice binding */
+      @SuppressWarnings("rawtypes") /* Guice binding for SoapClientHandlerInterface does not include
+                                     * the type argument T because it is bound in the SOAP
+                                     * toolkit-agnostic configuration module. Therefore, must use
+                                     * the raw type here. */
       SoapClientHandlerInterface soapClientHandler,
       AdsLibConfiguration adsLibConfiguration) {
     super(adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler);

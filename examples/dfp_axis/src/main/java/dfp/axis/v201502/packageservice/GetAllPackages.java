@@ -57,8 +57,7 @@ public class GetAllPackages {
         int i = page.getStartIndex();
         for (Package pkg : page.getResults()) {
           System.out.printf(
-              "%d) Package with ID \"%d\" and name \"%s\" for proposal ID"
-              + " \"%d\" was found.%n",
+              "%d) Package with ID %d and name '%s' for proposal ID %d was found.%n",
               i++, pkg.getId(), pkg.getName(), pkg.getProposalId());
         }
       }

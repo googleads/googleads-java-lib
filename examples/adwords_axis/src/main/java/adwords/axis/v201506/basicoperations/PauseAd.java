@@ -85,9 +85,9 @@ public class PauseAd {
 
     // Display ads.
     for (AdGroupAd adGroupAdResult : result.getValue()) {
-      System.out.println("Ad with id \"" + adGroupAdResult.getAd().getId() + "\", type \""
-          + adGroupAdResult.getAd().getAdType() + "\", and status \"" + adGroupAdResult.getStatus()
-          + "\" was updated.");
+      System.out.printf("Ad with ID %d, type '%s', and status '%s' was updated.%n",
+          adGroupAdResult.getAd().getId(), adGroupAdResult.getAd().getAdType(),
+          adGroupAdResult.getStatus());
     }
   }
 }

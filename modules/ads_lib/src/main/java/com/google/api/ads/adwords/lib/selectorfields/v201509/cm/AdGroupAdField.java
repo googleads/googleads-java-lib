@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -75,7 +75,8 @@ public enum AdGroupAdField implements EntityField {
    * Two letter country code for the ad.
    * Examples: 'US', 'GB'.
    */
-  CallOnlyAdCountryCode(false),
+  @Filterable
+  CallOnlyAdCountryCode(true),
 
   /**
    * First line of ad text.
@@ -101,12 +102,14 @@ public enum AdGroupAdField implements EntityField {
    * Phone number string for the ad.
    * Examples: '(800) 356-9377', "16502531234", "+442001234567"
    */
-  CallOnlyAdPhoneNumber(false),
+  @Filterable
+  CallOnlyAdPhoneNumber(true),
 
   /**
    * Url to be used for phone number verification.
    */
-  CallOnlyAdPhoneNumberVerificationUrl(false),
+  @Filterable
+  CallOnlyAdPhoneNumberVerificationUrl(true),
 
   /**
    * Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
@@ -234,6 +237,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * The name label for this ad.
+   * <span class="constraint Required"> This field is required and should not be {@code null}.</span>
    */
   @Filterable
   ImageCreativeName(true),

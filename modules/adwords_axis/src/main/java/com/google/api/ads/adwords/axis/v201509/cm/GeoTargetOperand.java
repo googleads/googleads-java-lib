@@ -11,7 +11,9 @@ package com.google.api.ads.adwords.axis.v201509.cm;
 /**
  * Represents an operand containing geo information, specifying the
  * scope of the
- *             geographical area.
+ *             geographical area. Currently, geo targets are restricted
+ * to a single
+ *             criterion id per operand.
  */
 public class GeoTargetOperand  extends com.google.api.ads.adwords.axis.v201509.cm.FunctionArgumentOperand  implements java.io.Serializable {
     /* CriterionId of locations deciding the geographical scope.

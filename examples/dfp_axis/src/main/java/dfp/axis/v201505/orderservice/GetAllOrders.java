@@ -55,7 +55,7 @@ public class GetAllOrders {
         int i = page.getStartIndex();
         for (Order order : page.getResults()) {
           System.out.printf(
-              "%d) Order with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Order with ID %d and name '%s' was found.%n", i++,
               order.getId(), order.getName());
         }
       }
@@ -63,7 +63,7 @@ public class GetAllOrders {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

@@ -146,8 +146,8 @@ public class CreateNativeCreatives {
         creativeService.createCreatives(new Creative[] {nativeAppInstallCreative});
 
     for (Creative createdCreative : creatives) {
-      System.out.printf("A native creative with ID \"%d\" and name \"%s\" was"
-          + " created and can be previewed at: %s\n", createdCreative.getId(),
+      System.out.printf("A native creative with ID %d and name '%s' was"
+          + " created and can be previewed at: %s%n", createdCreative.getId(),
           createdCreative.getName(), createdCreative.getPreviewUrl());
     }
   }

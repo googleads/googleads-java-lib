@@ -59,7 +59,7 @@ public class CreateLicas {
             new LineItemCreativeAssociation[] {lica});
 
     for (LineItemCreativeAssociation createdLica : licas) {
-      System.out.printf("A LICA with line item ID \"%d\" and creative ID \"%d\" was created.\n",
+      System.out.printf("A LICA with line item ID %d and creative ID %d was created.%n",
           createdLica.getLineItemId(), createdLica.getCreativeId());
     }
   }

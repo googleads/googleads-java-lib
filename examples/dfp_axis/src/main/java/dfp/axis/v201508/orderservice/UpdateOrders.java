@@ -65,7 +65,7 @@ public class UpdateOrders {
     Order[] orders = orderService.updateOrders(new Order[] {order});
 
     for (Order updatedOrder : orders) {
-      System.out.printf("Order with ID \"%d\" and name \"%s\" was updated.\n", updatedOrder.getId(),
+      System.out.printf("Order with ID %d and name '%s' was updated.%n", updatedOrder.getId(),
           updatedOrder.getName());
     }
   }

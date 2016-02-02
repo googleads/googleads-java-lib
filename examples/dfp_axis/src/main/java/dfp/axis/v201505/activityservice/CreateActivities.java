@@ -60,7 +60,7 @@ public class CreateActivities {
         activityService.createActivities(new Activity[] {dailyVisitsActivity, customActivity});
 
     for (Activity createdActivity : activities) {
-      System.out.printf("An activity with ID \"%d\", name \"%s\", and type \"%s\" was created.\n",
+      System.out.printf("An activity with ID %d, name '%s', and type '%s' was created.%n",
           createdActivity.getId(), createdActivity.getName(), createdActivity.getType());
     }
   }

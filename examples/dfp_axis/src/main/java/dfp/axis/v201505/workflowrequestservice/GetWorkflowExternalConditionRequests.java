@@ -60,9 +60,9 @@ public class GetWorkflowExternalConditionRequests {
         int i = page.getStartIndex();
         for (WorkflowRequest workflowRequest : page.getResults()) {
           System.out.printf(
-              "%d) Workflow external condition request with ID \"%d\""
-              + " for %s with ID \"%d\" was found.%n",
-              i++, workflowRequest.getId(), workflowRequest.getEntityType().toString(),
+              "%d) Workflow external condition request with ID %d "
+              + "for '%s' with ID %d was found.%n",
+              i++, workflowRequest.getId(), workflowRequest.getEntityType(),
               workflowRequest.getEntityId());
         }
       }

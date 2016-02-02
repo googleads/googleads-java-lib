@@ -91,10 +91,9 @@ public class SetAdParameters {
 
     // Display ad parameters.
     for (AdParam adParam : adParams) {
-      System.out.println("Ad parameter with ad group id \"" + adParam.getAdGroupId()
-          + "\", criterion id \"" + adParam.getCriterionId() + "\", insertion text \""
-          + adParam.getInsertionText() + "\", and parameter index \"" + adParam.getParamIndex()
-          + "\" was set.");
+      System.out.printf("Ad parameter with ad group ID %d, criterion ID %d, insertion text "
+          + "'%s', and parameter index %d was set.%n", adParam.getAdGroupId(), 
+          adParam.getCriterionId(), adParam.getInsertionText(), adParam.getParamIndex());
     }
   }
 }

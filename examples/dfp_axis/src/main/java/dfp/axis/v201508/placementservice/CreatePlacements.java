@@ -118,7 +118,7 @@ public class CreatePlacements {
 
       for (Placement createdPlacement : placements) {
         System.out.printf(
-            "A placement with ID \"%d\", name \"%s\", and containing ad units [%s] was created.\n",
+            "A placement with ID %d, name '%s', and containing ad units [%s] was created.%n",
             createdPlacement.getId(), createdPlacement.getName(),
             Joiner.on(", ").join(createdPlacement.getTargetedAdUnitIds()));
       }

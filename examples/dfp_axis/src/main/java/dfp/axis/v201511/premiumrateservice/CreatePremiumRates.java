@@ -82,8 +82,7 @@ public class CreatePremiumRates {
         premiumRateService.createPremiumRates(new PremiumRate[] {premiumRate});
 
     for (PremiumRate createdPremiumRate : createdPremiumRates) {
-      System.out.printf("A premium rate for \"%s\" was added to the rate card with "
-          + "ID of \"%d.\"%n",
+      System.out.printf("A premium rate for '%s' was added to the rate card with ID of %d.%n",
           createdPremiumRate.getPremiumFeature().getClass().getSimpleName(),
           createdPremiumRate.getRateCardId());
     }

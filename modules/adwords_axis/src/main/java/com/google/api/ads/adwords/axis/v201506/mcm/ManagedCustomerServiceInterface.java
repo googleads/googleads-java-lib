@@ -34,11 +34,10 @@ public interface ManagedCustomerServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201506.mcm.PendingInvitation[] getPendingInvitations(com.google.api.ads.adwords.axis.v201506.mcm.PendingInvitationSelector selector) throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201506.cm.ApiException;
 
     /**
-     * Adds managed customers.
+     * Modifies or creates new {@link ManagedCustomer}s.
      *         
-     *         <p class="note"><b>Note:</b> {@link ManagedCustomerOperation}
-     * only supports
-     *         {@code ADD} operator.</p>
+     *         <p class="note"><b>Note:</b> See {@link ManagedCustomerOperation}
+     * for available operators.</p>
      *         
      *         
      * @param operations List of unique operations.

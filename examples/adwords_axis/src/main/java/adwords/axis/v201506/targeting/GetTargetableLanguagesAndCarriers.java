@@ -62,7 +62,7 @@ public class GetTargetableLanguagesAndCarriers {
 
     // Display results.
     for (Carrier carrier : carriers) {
-      System.out.printf("Carrier with name '%s', ID '%d', and country code '%s' was found.\n",
+      System.out.printf("Carrier with name '%s', ID %d, and country code '%s' was found.%n",
           carrier.getName(), carrier.getId(), carrier.getCountryCode());
     }
 
@@ -71,7 +71,7 @@ public class GetTargetableLanguagesAndCarriers {
 
     // Display results.
     for (Language language : languages) {
-      System.out.printf("Language with name '%s' and ID '%d' was found.\n", language.getName(),
+      System.out.printf("Language with name '%s' and ID %d was found.%n", language.getName(),
           language.getId());
     }
   }

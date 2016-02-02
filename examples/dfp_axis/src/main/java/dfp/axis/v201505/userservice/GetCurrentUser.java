@@ -38,7 +38,7 @@ public class GetCurrentUser {
     User user = userService.getCurrentUser();
 
     System.out.printf(
-        "User with ID \"%d\", name \"%s\", email \"%s\", and role \"%s\" is the current user.\n",
+        "User with ID %d, name '%s', email '%s', and role '%s' is the current user.%n",
         user.getId(), user.getName(), user.getEmail(), user.getRoleName());
   }
 

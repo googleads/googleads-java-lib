@@ -65,12 +65,12 @@ public class DeactivateLicas {
         int i = page.getStartIndex();
         for (LineItemCreativeAssociation lica : page.getResults()) {
           if (lica.getCreativeSetId() != null) {
-            System.out.printf("%d) LICA with line item ID \"%d\" and creative "
-                + "set ID \"%d\" will be deactivated.\n", i++, lica.getLineItemId(),
+            System.out.printf("%d) LICA with line item ID %d and creative "
+                + "set ID %d will be deactivated.%n", i++, lica.getLineItemId(),
                 lica.getCreativeSetId());
           } else {
             System.out.printf(
-                "%d) LICA with line item ID \"%d\" and creative ID \"%d\" will be deactivated.\n",
+                "%d) LICA with line item ID %d and creative ID %d will be deactivated.%n",
                 i++, lica.getLineItemId(), lica.getCreativeId());
           }
         }
@@ -79,7 +79,7 @@ public class DeactivateLicas {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of LICAs to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of LICAs to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -93,7 +93,7 @@ public class DeactivateLicas {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of LICAs deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of LICAs deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No LICAs were deactivated.");
       }

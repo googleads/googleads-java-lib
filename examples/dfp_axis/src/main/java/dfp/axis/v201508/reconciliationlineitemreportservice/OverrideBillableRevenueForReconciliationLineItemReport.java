@@ -88,8 +88,8 @@ public class OverrideBillableRevenueForReconciliationLineItemReport {
 
     for (ReconciliationLineItemReport updatedLineItemReport : updatedLineItemReports) {
       System.out.printf(
-          "Reconciliation line item report for line item ID \"%d\" was "
-              + "updated, with net billable revenue \"%.2f\" and reconciled volume \"%d\".%n",
+          "Reconciliation line item report for line item ID %d was "
+              + "updated, with net billable revenue %.2f and reconciled volume %d.%n",
           updatedLineItemReport.getLineItemId(),
           updatedLineItemReport.getNetBillableRevenue().getMicroAmount() / 1000000f,
           updatedLineItemReport.getReconciledVolume());

@@ -73,7 +73,7 @@ public class UpdateProductPackageItems {
 
       for (ProductPackageItem updatedProductPackageItem : productPackageItems) {
         System.out.printf(
-            "Product package item with ID \"%d\" was updated.%n",
+            "Product package item with ID %d was updated.%n",
             updatedProductPackageItem.getId());
       }
     } else {

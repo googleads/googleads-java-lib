@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -192,7 +192,7 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * The enhanced CPC bidding option for the campaign, which enables bids to be enhanced based on conversion optimizer data.
-   * For more information about enhanced CPC, see the <a href="//support.google.com/adwords/bin/answer.py?answer=2464964" >AdWords Help Center</a>.
+   * For more information about enhanced CPC, see the <a href="//support.google.com/adwords/answer/2464964" >AdWords Help Center</a>.
    */
   @Filterable
   EnhancedCpcEnabled(true),
@@ -327,7 +327,7 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-   * This field may be returned as NULL if AdWords does not have enough information to determine an appropriate quality score value.
+   * For v201509 and later, this field may be returned as NULL if AdWords does not have enough information to determine an appropriate quality score value.
    */
   @Filterable
   QualityScore(true),

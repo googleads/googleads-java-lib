@@ -87,8 +87,8 @@ public class GetCampaignTargetingCriteria {
       if (page.getEntries() != null) {
         // Display campaigns.
         for (CampaignCriterion campaignCriterion : page.getEntries()) {
-          System.out.printf("Campaign criterion with campaign id '%s', criterion id '%s', "
-              + "and type '%s' was found.\n", campaignCriterion.getCampaignId(), campaignCriterion
+          System.out.printf("Campaign criterion with campaign ID %d, criterion ID %d, "
+              + "and type '%s' was found.%n", campaignCriterion.getCampaignId(), campaignCriterion
               .getCriterion().getId(), campaignCriterion.getCriterion().getCriterionType());
         }
         Thread.sleep(1000);

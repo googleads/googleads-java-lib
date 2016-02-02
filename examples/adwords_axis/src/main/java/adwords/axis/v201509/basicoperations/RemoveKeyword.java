@@ -85,10 +85,10 @@ public class RemoveKeyword {
 
     // Display ad group criteria.
     for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
-      System.out.println("Ad group criterion with ad group id \""
-          + adGroupCriterionResult.getAdGroupId() + "\", criterion id \""
-          + adGroupCriterionResult.getCriterion().getId() + "\", and type \""
-          + adGroupCriterionResult.getCriterion().getCriterionType() + "\" was removed.");
+      System.out.printf("Ad group criterion with ad group ID %d, criterion ID %d, and type "
+          + "'%s' was removed.%n", adGroupCriterionResult.getAdGroupId(),
+          adGroupCriterionResult.getCriterion().getId(),
+          adGroupCriterionResult.getCriterion().getCriterionType());
     }
   }
 }

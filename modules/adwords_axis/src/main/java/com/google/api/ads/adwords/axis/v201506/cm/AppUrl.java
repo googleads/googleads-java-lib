@@ -12,9 +12,7 @@ package com.google.api.ads.adwords.axis.v201506.cm;
  * A URL for deep linking into an app for the given operating system.
  */
 public class AppUrl  implements java.io.Serializable {
-    /* The app deep link url. E.g. "android-app://com.my.App"
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span> */
+    /* The app deep link url. E.g. "android-app://com.my.App" */
     private java.lang.String url;
 
     /* The operating system targeted by this url.
@@ -37,8 +35,6 @@ public class AppUrl  implements java.io.Serializable {
      * Gets the url value for this AppUrl.
      * 
      * @return url   * The app deep link url. E.g. "android-app://com.my.App"
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public java.lang.String getUrl() {
         return url;
@@ -49,8 +45,6 @@ public class AppUrl  implements java.io.Serializable {
      * Sets the url value for this AppUrl.
      * 
      * @param url   * The app deep link url. E.g. "android-app://com.my.App"
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public void setUrl(java.lang.String url) {
         this.url = url;

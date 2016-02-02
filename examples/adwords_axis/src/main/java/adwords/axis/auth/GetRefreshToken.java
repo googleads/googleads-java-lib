@@ -73,7 +73,7 @@ public class GetRefreshToken {
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
-    System.out.println("Paste this url in your browser: \n" + authorizeUrl + '\n');
+    System.out.printf("Paste this url in your browser:%n%s%n", authorizeUrl);
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
@@ -121,10 +121,10 @@ public class GetRefreshToken {
     // Get the OAuth2 credential.
     Credential credential = getOAuth2Credential(clientSecrets);
 
-    System.out.printf("Your refresh token is: %s\n", credential.getRefreshToken());
+    System.out.printf("Your refresh token is: %s%n", credential.getRefreshToken());
 
     // Enter the refresh token into your ads.properties file.
-    System.out.printf("In your ads.properties file, modify:\n\napi.adwords.refreshToken=%s\n",
+    System.out.printf("In your ads.properties file, modify:%n%napi.adwords.refreshToken=%s%n", 
         credential.getRefreshToken());
   }
 }

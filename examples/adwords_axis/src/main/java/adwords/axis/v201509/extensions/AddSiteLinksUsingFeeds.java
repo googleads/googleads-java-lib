@@ -135,7 +135,7 @@ public class AddSiteLinksUsingFeeds {
     siteLinksData.line2FeedAttributeId = savedAttributes[3].getId();
     System.out.printf("Feed with name '%s' and ID %d with linkTextAttributeId %d"
         + " and linkFinalUrlAttributeId %d and line1AttributeId %d"
-        + " and line2AttributeId %d was created.\n",
+        + " and line2AttributeId %d was created.%n",
         savedFeed.getName(),
         savedFeed.getId(),
         savedAttributes[0].getId(),
@@ -171,7 +171,7 @@ public class AddSiteLinksUsingFeeds {
 
     FeedItemReturnValue result = feedItemService.mutate(operations);
     for (FeedItem item : result.getValue()) {
-      System.out.printf("FeedItem with feedItemId %d was added.\n", item.getFeedItemId());
+      System.out.printf("FeedItem with feedItemId %d was added.%n", item.getFeedItemId());
       siteLinksData.siteLinkFeedItemIds.add(item.getFeedItemId());
     }
   }
@@ -224,7 +224,7 @@ public class AddSiteLinksUsingFeeds {
         feedMappingService.mutate(new FeedMappingOperation[] {operation});
     for (FeedMapping savedFeedMapping : result.getValue()) {
       System.out.printf(
-          "Feed mapping with ID %d and placeholderType %d was saved for feed with ID %d.\n",
+          "Feed mapping with ID %d and placeholderType %d was saved for feed with ID %d.%n",
           savedFeedMapping.getFeedMappingId(), savedFeedMapping.getPlaceholderType(),
           savedFeedMapping.getFeedId());
     }
@@ -262,7 +262,7 @@ public class AddSiteLinksUsingFeeds {
     CampaignFeedReturnValue result =
         campaignFeedService.mutate(new CampaignFeedOperation[] {operation});
     for (CampaignFeed savedCampaignFeed : result.getValue()) {
-      System.out.printf("Campaign with ID %d was associated with feed with ID %d.\n",
+      System.out.printf("Campaign with ID %d was associated with feed with ID %d.%n",
           savedCampaignFeed.getCampaignId(), savedCampaignFeed.getFeedId());
     }
   }

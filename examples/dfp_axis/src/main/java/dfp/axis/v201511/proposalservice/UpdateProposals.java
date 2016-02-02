@@ -65,7 +65,7 @@ public class UpdateProposals {
     Proposal[] proposals = proposalService.updateProposals(new Proposal[] {proposal});
 
     for (Proposal updatedProposal : proposals) {
-      System.out.printf("Proposal with ID \"%d\" and name \"%s\" was updated.%n",
+      System.out.printf("Proposal with ID %d and name '%s' was updated.%n",
           updatedProposal.getId(),
           updatedProposal.getName());
     }

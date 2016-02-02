@@ -50,7 +50,7 @@ import java.util.regex.Pattern;
  */
 public class AddKeywordsInBulk {
 
-  private static final long RETRY_INTERVAL = 5;
+  private static final long RETRY_INTERVAL_SECONDS = 5;
   private static final long RETRIES_COUNT = 12;
   private static final long KEYWORD_NUMBER = 100;
   private static final Pattern INDEX_REGEX = Pattern.compile("operations\\[(\\d+)\\].*");
@@ -130,7 +130,7 @@ public class AddKeywordsInBulk {
         mutateJobService.mutate(operations.toArray(new Operation[operations.size()]), policy);
 
     long jobId = response.getId();
-    System.out.printf("Job with ID %d was successfully created.\n", jobId);
+    System.out.printf("Job with ID %d was successfully created.%n", jobId);
 
     // Create selector to retrieve job status and wait for it to complete.
     BulkMutateJobSelector selector = new BulkMutateJobSelector();
@@ -147,9 +147,9 @@ public class AddKeywordsInBulk {
       if (status == BasicJobStatus.COMPLETED || status == BasicJobStatus.FAILED) {
         break;
       }
-      System.out.printf("[%d] Current status is '%s', waiting %d seconds to retry...\n", i,
-          status.toString(), RETRY_INTERVAL);
-      Thread.sleep(RETRY_INTERVAL * 1000);
+      System.out.printf("[%d] Current status is '%s', waiting %d seconds to retry...%n", i,
+          status.toString(), RETRY_INTERVAL_SECONDS);
+      Thread.sleep(RETRY_INTERVAL_SECONDS * 1000);
     }
 
     // Handle unsuccessful results.
@@ -159,7 +159,7 @@ public class AddKeywordsInBulk {
     }
     if (status == BasicJobStatus.PENDING || status == BasicJobStatus.PROCESSING) {
       throw new IllegalAccessException("Job did not complete within "
-          + ((RETRIES_COUNT - 1) * RETRY_INTERVAL) + " seconds.");
+          + ((RETRIES_COUNT - 1) * RETRY_INTERVAL_SECONDS) + " seconds.");
     }
 
     // Status must be COMPLETED.
@@ -170,14 +170,14 @@ public class AddKeywordsInBulk {
     int i = 0;
     for (Operand operand : result.getSimpleMutateResult().getResults()) {
       String outcome = operand.getPlaceHolder() == null ? "SUCCESS" : "FAILED";
-      System.out.printf("Operation [%d] - %s\n", i++, outcome);
+      System.out.printf("Operation [%d] - %s%n", i++, outcome);
     }
 
     // Output errors.
     for (ApiError error : result.getSimpleMutateResult().getErrors()) {
       int index = getOperationIndex(error.getFieldPath());
       String reason = error.getErrorString();
-      System.out.printf("ERROR - keyword '%s' failed due to '%s'\n",
+      System.out.printf("ERROR - keyword '%s' failed due to '%s'%n",
           ((Keyword) operations.get(index).getOperand().getCriterion()).getText(), reason);
     }
   }

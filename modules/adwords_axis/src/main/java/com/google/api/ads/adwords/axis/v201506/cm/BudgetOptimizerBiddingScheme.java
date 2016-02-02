@@ -33,7 +33,7 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
     /* The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EnhancedCpcEnabled".</span><span
@@ -84,7 +84,7 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
      * @return enhancedCpcEnabled   * The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EnhancedCpcEnabled".</span><span
@@ -101,7 +101,7 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
      * @param enhancedCpcEnabled   * The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "EnhancedCpcEnabled".</span><span

@@ -104,8 +104,8 @@ public class HandlePartialFailures {
     // Display results.
     for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
       if (adGroupCriterionResult.getCriterion() != null) {
-        System.out.printf("Ad group criterion with ad group id '%d', and criterion id '%d', "
-            + "and keyword '%s' was added.\n", adGroupCriterionResult.getAdGroupId(),
+        System.out.printf("Ad group criterion with ad group ID %d, and criterion ID %d, "
+            + "and keyword '%s' was added.%n", adGroupCriterionResult.getAdGroupId(),
             adGroupCriterionResult.getCriterion().getId(),
             ((Keyword) adGroupCriterionResult.getCriterion()).getText());
       }
@@ -116,12 +116,12 @@ public class HandlePartialFailures {
       if (matcher.matches()) {
         int operationIndex = Integer.parseInt(matcher.group(1));
         AdGroupCriterion adGroupCriterion = operations.get(operationIndex).getOperand();
-        System.out.printf("Ad group criterion with ad group id '%d' and keyword '%s' "
-            + "triggered a failure for the following reason: '%s'.\n",
+        System.out.printf("Ad group criterion with ad group ID %d and keyword '%s' "
+            + "triggered a failure for the following reason: %s.%n",
             adGroupCriterion.getAdGroupId(),
             ((Keyword) adGroupCriterion.getCriterion()).getText(), apiError.getErrorString());
       } else {
-        System.out.printf("A failure for the following reason: '%s' has occurred.\n",
+        System.out.printf("A failure has occurred for the following reason: %s%n", 
             apiError.getErrorString());
       }
     }

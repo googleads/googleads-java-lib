@@ -58,7 +58,7 @@ public class GetUserByEmailAddress {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (User user : page.getResults()) {
-          System.out.printf("%d) User with ID \"%d\" and name \"%s\" was found.\n", i++,
+          System.out.printf("%d) User with ID %d and name '%s' was found.%n", i++,
               user.getId(), user.getName());
         }
       }
@@ -66,7 +66,7 @@ public class GetUserByEmailAddress {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

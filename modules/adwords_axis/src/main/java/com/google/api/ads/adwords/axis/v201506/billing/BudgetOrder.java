@@ -9,8 +9,9 @@ package com.google.api.ads.adwords.axis.v201506.billing;
 
 
 /**
- * A {@link BudgetOrder} links an account wide budget with a {@link
- * BillingAccount}.
+ * A <a href="https://support.google.com/adwords/answer/2393037">budget
+ * order</a>
+ *             links an account-wide budget with a {@link BillingAccount}.
  */
 public class BudgetOrder  implements java.io.Serializable {
     /* This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".

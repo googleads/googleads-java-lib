@@ -104,36 +104,34 @@ public class GetAccountChanges {
 
     // Display changes.
     if (accountChanges != null && accountChanges.getChangedCampaigns() != null) {
-      System.out.println("Most recent change: "
-          + accountChanges.getLastChangeTimestamp() + "\n");
+      System.out.printf("Most recent change: %s%n", accountChanges.getLastChangeTimestamp());
       for (CampaignChangeData campaignChanges : accountChanges.getChangedCampaigns()) {
-        System.out.println("Campaign with id \"" + campaignChanges.getCampaignId()
-            + "\" was changed: ");
-        System.out.println("\tCampaign changed status: "
-            + campaignChanges.getCampaignChangeStatus());
+        System.out.printf("Campaign with ID %d was changed:%n", campaignChanges.getCampaignId());
+        System.out.printf("\tCampaign changed status: '%s'%n", 
+            campaignChanges.getCampaignChangeStatus());
         if (campaignChanges.getCampaignChangeStatus() != ChangeStatus.NEW) {
-          System.out.println("\tAdded ad extensions: "
-              + getFormattedList(campaignChanges.getAddedAdExtensions()));
-          System.out.println("\tAdded campaign criteria: "
-              + getFormattedList(campaignChanges.getAddedCampaignCriteria()));
-          System.out.println("\tRemoved ad extensions: "
-              + getFormattedList(campaignChanges.getRemovedAdExtensions()));
-          System.out.println("\tRemoved campaign criteria: "
-              + getFormattedList(campaignChanges.getRemovedCampaignCriteria()));
+          System.out.printf("\tAdded ad extensions: %s%n", 
+              getFormattedList(campaignChanges.getAddedAdExtensions()));
+          System.out.printf("\tAdded campaign criteria: %s%n",
+              getFormattedList(campaignChanges.getAddedCampaignCriteria()));
+          System.out.printf("\tRemoved ad extensions: %s%n",
+              getFormattedList(campaignChanges.getRemovedAdExtensions()));
+          System.out.printf("\tRemoved campaign criteria: %s%n",
+              getFormattedList(campaignChanges.getRemovedCampaignCriteria()));
 
           if (campaignChanges.getChangedAdGroups() != null) {
             for (AdGroupChangeData adGroupChanges : campaignChanges.getChangedAdGroups()) {
-              System.out.println("\tAd goup with id \"" + adGroupChanges.getAdGroupId()
-                  + "\" was changed: ");
-              System.out.println("\t\tAd goup changed status: "
-                  + adGroupChanges.getAdGroupChangeStatus());
+              System.out.printf("\tAd goup with ID %d was changed:%n",
+                  adGroupChanges.getAdGroupId());
+              System.out.printf("\t\tAd goup changed status: %s%n",
+                  adGroupChanges.getAdGroupChangeStatus());
               if (adGroupChanges.getAdGroupChangeStatus() != ChangeStatus.NEW) {
-                System.out.println("\t\tAds changed: "
-                    + getFormattedList(adGroupChanges.getChangedAds()));
-                System.out.println("\t\tCriteria changed: "
-                    + getFormattedList(adGroupChanges.getChangedCriteria()));
-                System.out.println("\t\tCriteria removed: "
-                    + getFormattedList(adGroupChanges.getRemovedCriteria()));
+                System.out.printf("\t\tAds changed: %s%n",
+                    getFormattedList(adGroupChanges.getChangedAds()));
+                System.out.printf("\t\tCriteria changed: %s%n",
+                    getFormattedList(adGroupChanges.getChangedCriteria()));
+                System.out.printf("\t\tCriteria removed: %s%n",
+                    getFormattedList(adGroupChanges.getRemovedCriteria()));
               }
             }
           }

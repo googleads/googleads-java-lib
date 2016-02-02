@@ -62,10 +62,9 @@ public class GetPremiumRatesByStatement {
         int i = page.getStartIndex();
         for (PremiumRate premiumRate : page.getResults()) {
           System.out.printf(
-              "%d) Premium rate with ID \"%d\" of type \"%s\" assigned to rate card "
-              + "with ID \"%d\" was found.%n", i++,
-              premiumRate.getId(),
-              premiumRate.getPremiumFeature().getClass().getSimpleName(),
+              "%d) Premium rate with ID %d of type '%s' assigned to rate card with ID %d "
+              + "was found.%n", i++, premiumRate.getId(),
+              premiumRate.getPremiumFeature().getClass().getSimpleName(), 
               premiumRate.getRateCardId());
         }
       }

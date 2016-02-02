@@ -68,7 +68,7 @@ public class GetAllBrowsers {
           ? resultSet
           : Pql.combineResultSets(combinedResultSet, resultSet);
 
-      System.out.printf("%d) %d criteria beginning at offset %d were found.\n", i++,
+      System.out.printf("%d) %d criteria beginning at offset %d were found.%n", i++,
           resultSet.getRows() == null ? 0 : resultSet.getRows().length,
           statementBuilder.getOffset());
 
@@ -81,7 +81,7 @@ public class GetAllBrowsers {
     // Write the result set to a CSV.
     CsvFiles.writeCsv(Pql.resultSetToStringArrayList(combinedResultSet), filePath);
 
-    System.out.printf("Browsers saved to %s\n", filePath);
+    System.out.printf("Browsers saved to: %s%n", filePath);
   }
 
   public static void main(String[] args) throws Exception {

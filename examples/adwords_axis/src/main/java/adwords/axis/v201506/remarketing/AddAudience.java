@@ -136,7 +136,7 @@ public class AddAudience {
 
     // Display user lists.
     for (UserList userListResult : result.getValue()) {
-      System.out.printf("User list with name '%s' and id '%d' was added.\n",
+      System.out.printf("User list with name '%s' and ID %d was added.%n",
           userListResult.getName(), userListResult.getId());
 
       // Display user list associated conversion code snippets.
@@ -144,7 +144,7 @@ public class AddAudience {
         BasicUserList remarketingUserList = (BasicUserList) userListResult;
         for (UserListConversionType userListConversionType : remarketingUserList
             .getConversionTypes()) {
-          System.out.printf("Conversion type code snippet associated to the list:\n%s\n",
+          System.out.printf("Conversion type code snippet associated to the list:%n%s%n",
               conversionTrackers.get(userListConversionType.getId()).getSnippet());
         }
       }

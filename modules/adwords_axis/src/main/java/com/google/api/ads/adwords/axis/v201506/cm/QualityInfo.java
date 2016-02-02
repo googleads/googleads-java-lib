@@ -19,10 +19,9 @@ public class QualityInfo  implements java.io.Serializable {
     private java.lang.Boolean isLandingPageQualityAcceptable;
 
     /* The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * This field may be returned as
-     *                 NULL if AdWords does not have enough information to
-     * determine an appropriate quality score
-     *                 value. */
+     * For v201509 and later, this field may be returned as NULL if AdWords
+     * does not have enough information to determine an appropriate quality
+     * score value. */
     private java.lang.Integer qualityScore;
 
     public QualityInfo() {
@@ -82,10 +81,9 @@ public class QualityInfo  implements java.io.Serializable {
      * Gets the qualityScore value for this QualityInfo.
      * 
      * @return qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * This field may be returned as
-     *                 NULL if AdWords does not have enough information to
-     * determine an appropriate quality score
-     *                 value.
+     * For v201509 and later, this field may be returned as NULL if AdWords
+     * does not have enough information to determine an appropriate quality
+     * score value.
      */
     public java.lang.Integer getQualityScore() {
         return qualityScore;
@@ -96,10 +94,9 @@ public class QualityInfo  implements java.io.Serializable {
      * Sets the qualityScore value for this QualityInfo.
      * 
      * @param qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * This field may be returned as
-     *                 NULL if AdWords does not have enough information to
-     * determine an appropriate quality score
-     *                 value.
+     * For v201509 and later, this field may be returned as NULL if AdWords
+     * does not have enough information to determine an appropriate quality
+     * score value.
      */
     public void setQualityScore(java.lang.Integer qualityScore) {
         this.qualityScore = qualityScore;

@@ -46,7 +46,7 @@ public class GetAllAdUnitSizes {
     if (adUnitSizes != null) {
       for (int i = 0; i < adUnitSizes.length; i++) {
         AdUnitSize adUnitSize = adUnitSizes[i];
-        System.out.printf("%d) Ad unit size of dimensions %s was found.\n", i,
+        System.out.printf("%d) Ad unit size of dimensions '%s' was found.%n", i,
             adUnitSize.getFullDisplayString());
       }
     } else {

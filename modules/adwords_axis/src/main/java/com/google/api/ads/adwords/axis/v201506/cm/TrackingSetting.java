@@ -14,8 +14,9 @@ package com.google.api.ads.adwords.axis.v201506.cm;
 public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201506.cm.Setting  implements java.io.Serializable {
     /* The url used for dynamic tracking.  For more information, see
      * the
-     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
-     * Specify "NONE" to clear existing url.
+     *                     article <a href="https://support.google.com/adwords/answer/2549100">
+     * Use dynamic tracking URLs</a>.
+     *                     Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String trackingUrl;
@@ -37,8 +38,9 @@ public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201506.cm
      * 
      * @return trackingUrl   * The url used for dynamic tracking.  For more information, see
      * the
-     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
-     * Specify "NONE" to clear existing url.
+     *                     article <a href="https://support.google.com/adwords/answer/2549100">
+     * Use dynamic tracking URLs</a>.
+     *                     Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -52,8 +54,9 @@ public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201506.cm
      * 
      * @param trackingUrl   * The url used for dynamic tracking.  For more information, see
      * the
-     *                     article <a href="https://support.google.com/adwords/answer/2549100?hl=en"/>
-     * Specify "NONE" to clear existing url.
+     *                     article <a href="https://support.google.com/adwords/answer/2549100">
+     * Use dynamic tracking URLs</a>.
+     *                     Specify "NONE" to clear existing url.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */

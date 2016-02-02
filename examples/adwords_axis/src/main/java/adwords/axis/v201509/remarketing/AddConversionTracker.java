@@ -94,14 +94,14 @@ public class AddConversionTracker {
       if (conversionTracker instanceof AdWordsConversionTracker) {
         AdWordsConversionTracker newAdWordsConversionTracker =
             (AdWordsConversionTracker) conversionTracker;
-        System.out.printf("Conversion with id \"%d\", name \"%s\", status \"%s\", "
-            + "category \"%s\" and snippet \"%s\" was added.\n",
+        System.out.printf("Conversion with ID %d, name '%s', status '%s', "
+            + "category '%s' and snippet '%s' was added.%n",
             newAdWordsConversionTracker.getId(), newAdWordsConversionTracker.getName(),
             newAdWordsConversionTracker.getStatus(), newAdWordsConversionTracker.getCategory(),
             newAdWordsConversionTracker.getSnippet());
       } else {
-        System.out.printf("Conversion with id \"%d\", name \"%s\", status \"%s\", "
-            + "category \"%s\" was added.\n", conversionTracker.getId(),
+        System.out.printf("Conversion with ID %d, name '%s', status '%s', "
+            + "category '%s' was added.%n", conversionTracker.getId(),
             conversionTracker.getName(), conversionTracker.getStatus(),
             conversionTracker.getCategory());
       }

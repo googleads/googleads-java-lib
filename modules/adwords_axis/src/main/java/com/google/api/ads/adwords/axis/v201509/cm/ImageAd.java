@@ -18,8 +18,9 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  imp
     private com.google.api.ads.adwords.axis.v201509.cm.Image image;
 
     /* The name label for this ad.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     *                     <span class="constraint Required">
+     *                     This field is required and should not be {@code
+     * null}.</span> */
     private java.lang.String name;
 
     /* For ADD operations only: use this field to specify an existing
@@ -90,8 +91,9 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  imp
      * Gets the name value for this ImageAd.
      * 
      * @return name   * The name label for this ad.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     *                     <span class="constraint Required">
+     *                     This field is required and should not be {@code
+     * null}.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -102,8 +104,9 @@ public class ImageAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  imp
      * Sets the name value for this ImageAd.
      * 
      * @param name   * The name label for this ad.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     *                     <span class="constraint Required">
+     *                     This field is required and should not be {@code
+     * null}.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

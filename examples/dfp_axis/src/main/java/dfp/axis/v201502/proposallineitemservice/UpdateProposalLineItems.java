@@ -67,7 +67,7 @@ public class UpdateProposalLineItems {
 
     for (ProposalLineItem updatedProposalLineItem : proposalLineItems) {
       System.out.printf(
-          "Proposal line item with ID \"%d\" and name \"%s\" was updated.%n",
+          "Proposal line item with ID %d and name '%s' was updated.%n",
           updatedProposalLineItem.getId(), updatedProposalLineItem.getName());
     }
   }

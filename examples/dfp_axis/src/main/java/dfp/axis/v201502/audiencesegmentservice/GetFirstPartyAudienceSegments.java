@@ -58,12 +58,8 @@ public class GetFirstPartyAudienceSegments {
         int i = page.getStartIndex();
         for (AudienceSegment audienceSegment : page.getResults()) {
           System.out.printf(
-              "%d) Audience segment with ID \"%d\" and name \"%s\" of size " 
-              + "\"%d\" was found.%n",
-              i++,
-              audienceSegment.getId(),
-              audienceSegment.getName(),
-              audienceSegment.getSize());
+              "%d) Audience segment with ID %d and name '%s' of size %d was found.%n", i++,
+              audienceSegment.getId(), audienceSegment.getName(), audienceSegment.getSize());
         }
       }
 

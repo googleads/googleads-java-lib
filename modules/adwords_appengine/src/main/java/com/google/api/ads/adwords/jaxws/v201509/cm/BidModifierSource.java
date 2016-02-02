@@ -55,6 +55,7 @@ public enum BidModifierSource {
     /**
      * 
      *                 There is no bid modifier specified at the campaign level or the ad group level.
+     *                 This value is not currently used.
      *               
      * 
      */

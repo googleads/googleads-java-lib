@@ -20,7 +20,14 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
     private java.lang.String name;
 
     /* Dimensions (height and width) of the ad.
-     *                     Required for standard third-party ads. */
+     *                     
+     *                     This field is optional for ThirdPartyRedirectAd.
+     * AdX Traditional
+     *                     Yield Management creatives do not specify the
+     * dimension on the
+     *                     ThirdPartyRedirectAd, instead the size is specified
+     * in the publisher
+     *                     front end when creating a mediation chain. */
     private com.google.api.ads.adwords.axis.v201506.cm.Dimensions dimensions;
 
     /* Snippet for this ad. Required for standard third-party ads.
@@ -128,7 +135,14 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
      * Gets the dimensions value for this RichMediaAd.
      * 
      * @return dimensions   * Dimensions (height and width) of the ad.
-     *                     Required for standard third-party ads.
+     *                     
+     *                     This field is optional for ThirdPartyRedirectAd.
+     * AdX Traditional
+     *                     Yield Management creatives do not specify the
+     * dimension on the
+     *                     ThirdPartyRedirectAd, instead the size is specified
+     * in the publisher
+     *                     front end when creating a mediation chain.
      */
     public com.google.api.ads.adwords.axis.v201506.cm.Dimensions getDimensions() {
         return dimensions;
@@ -139,7 +153,14 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
      * Sets the dimensions value for this RichMediaAd.
      * 
      * @param dimensions   * Dimensions (height and width) of the ad.
-     *                     Required for standard third-party ads.
+     *                     
+     *                     This field is optional for ThirdPartyRedirectAd.
+     * AdX Traditional
+     *                     Yield Management creatives do not specify the
+     * dimension on the
+     *                     ThirdPartyRedirectAd, instead the size is specified
+     * in the publisher
+     *                     front end when creating a mediation chain.
      */
     public void setDimensions(com.google.api.ads.adwords.axis.v201506.cm.Dimensions dimensions) {
         this.dimensions = dimensions;

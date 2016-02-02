@@ -62,7 +62,7 @@ public class GetUserTeamAssociationsForUser {
         int i = page.getStartIndex();
         for (UserTeamAssociation userTeamAssociation : page.getResults()) {
           System.out.printf(
-              "%d) User team association with user ID \"%d\" and team ID \"%d\" was found.\n", i++,
+              "%d) User team association with user ID %d and team ID %d was found.%n", i++,
               userTeamAssociation.getUserId(), userTeamAssociation.getTeamId());
         }
       }
@@ -70,7 +70,7 @@ public class GetUserTeamAssociationsForUser {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

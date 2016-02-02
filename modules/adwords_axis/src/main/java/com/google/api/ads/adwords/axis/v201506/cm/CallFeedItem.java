@@ -34,7 +34,10 @@ public class CallFeedItem  extends com.google.api.ads.adwords.axis.v201506.cm.Ex
 
     /* Call conversion type. To clear this field, set a CallConversionType
      * with a value of null in its
-     *                     conversionTypeId field. */
+     *                     conversionTypeId field. This value should not
+     * be set if
+     *                     {@linkPlain CallFeedItem#disableCallConversionTracking}
+     * is true. */
     private com.google.api.ads.adwords.axis.v201506.cm.CallConversionType callConversionType;
 
     public CallFeedItem() {
@@ -176,7 +179,10 @@ public class CallFeedItem  extends com.google.api.ads.adwords.axis.v201506.cm.Ex
      * 
      * @return callConversionType   * Call conversion type. To clear this field, set a CallConversionType
      * with a value of null in its
-     *                     conversionTypeId field.
+     *                     conversionTypeId field. This value should not
+     * be set if
+     *                     {@linkPlain CallFeedItem#disableCallConversionTracking}
+     * is true.
      */
     public com.google.api.ads.adwords.axis.v201506.cm.CallConversionType getCallConversionType() {
         return callConversionType;
@@ -188,7 +194,10 @@ public class CallFeedItem  extends com.google.api.ads.adwords.axis.v201506.cm.Ex
      * 
      * @param callConversionType   * Call conversion type. To clear this field, set a CallConversionType
      * with a value of null in its
-     *                     conversionTypeId field.
+     *                     conversionTypeId field. This value should not
+     * be set if
+     *                     {@linkPlain CallFeedItem#disableCallConversionTracking}
+     * is true.
      */
     public void setCallConversionType(com.google.api.ads.adwords.axis.v201506.cm.CallConversionType callConversionType) {
         this.callConversionType = callConversionType;

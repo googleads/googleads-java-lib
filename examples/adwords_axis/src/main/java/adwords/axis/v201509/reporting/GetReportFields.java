@@ -65,11 +65,11 @@ public class GetReportFields {
     System.out.println("Available fields for report:");
 
     for (ReportDefinitionField reportDefinitionField : reportDefinitionFields) {
-      System.out.print("\t" + reportDefinitionField.getFieldName() + "("
-          + reportDefinitionField.getFieldType() + ") := [");
+      System.out.printf("\t %s(%s) := [", reportDefinitionField.getFieldName(),
+          reportDefinitionField.getFieldType());
       if (reportDefinitionField.getEnumValues() != null) {
         for (String enumValue : reportDefinitionField.getEnumValues()) {
-          System.out.print(enumValue + ", ");
+          System.out.printf("%s, ", enumValue);
         }
       }
       System.out.println("]");

@@ -42,8 +42,8 @@ public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operan
   private final BatchJobLogger batchJobLogger;
 
   public BatchJobHelper(AdWordsSession session) {
-    uploader =
-        new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(session);
+    uploader = new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
+        session, false);
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
   }
 

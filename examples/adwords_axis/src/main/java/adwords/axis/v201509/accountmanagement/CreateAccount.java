@@ -82,8 +82,8 @@ public class CreateAccount {
 
     // Display accounts.
     for (ManagedCustomer customerResult : result.getValue()) {
-      System.out.println("Account with customer ID \"" + customerResult.getCustomerId()
-          + "\" was created.");
+      System.out.printf("Account with customer ID %d was created.%n",
+          customerResult.getCustomerId());
     }
   }
 }

@@ -169,7 +169,7 @@ public class ReportDownloader {
    * @throws ApiException_Exception if there was any problem making the SOAP
    *     call
    * @throws IllegalStateException if the report is not ready to be downloaded
-   * @deprecated use {@link #getReportAsByteSource(ReportDownloadOptions)}
+   * @deprecated use {@link #getDownloadUrl(ReportDownloadOptions)}
    */
   @Deprecated
   public void downloadReport(ExportFormat exportFormat, String fileName) throws IOException,
@@ -188,7 +188,7 @@ public class ReportDownloader {
    * @throws ApiException_Exception if there was any problem making the SOAP
    *     call
    * @throws IllegalStateException if the report is not ready to be downloaded
-   * @deprecated use {@link #getReportAsByteSource(ReportDownloadOptions)} 
+   * @deprecated use {@link #getReportAsCharSource(ReportDownloadOptions)} 
    */
   @Deprecated
   public void downloadReport(ExportFormat exportFormat, OutputStream outputStream)

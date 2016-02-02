@@ -68,7 +68,7 @@ public class UpdateLineItems {
 
       for (LineItem updatedLineItem : lineItems) {
         System.out.printf(
-            "Line item with ID \"%d\" and name \"%s\" was updated.\n",
+            "Line item with ID %d and name '%s' was updated.%n",
             updatedLineItem.getId(), updatedLineItem.getName());
       }
     } else {

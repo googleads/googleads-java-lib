@@ -60,7 +60,7 @@ public class CreateDfpSessionWithoutPropertiesFile {
     // Gets the current network.
     Network network = networkService.getCurrentNetwork();
 
-    System.out.printf("Current network has network code \"%s\" and display name \"%s\".\n",
+    System.out.printf("Current network has network code '%s' and display name '%s'.%n",
         network.getNetworkCode(), network.getDisplayName());
   }
 

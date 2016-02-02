@@ -9,7 +9,8 @@ import com.google.api.ads.adwords.jaxws.v201509.cm.Money;
 
 /**
  * 
- *             A {@link BudgetOrder} links an account wide budget with a {@link BillingAccount}.
+ *             A <a href="https://support.google.com/adwords/answer/2393037">budget order</a>
+ *             links an account-wide budget with a {@link BillingAccount}.
  *           
  * 
  * <p>Java class for BudgetOrder complex type.

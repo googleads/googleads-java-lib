@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a Carrier Criterion.
- *             <p>A criterion of this type can only be created using an ID. A criterion of this type is only targetable.
+ *             <p>A criterion of this type can only be created using an ID. A criterion of this type can be either targeted or excluded.
  *             <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  *           
  * 

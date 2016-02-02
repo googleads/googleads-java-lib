@@ -70,7 +70,7 @@ public class UpdateReconciliationReports {
 
     for (ReconciliationReport updatedReconciliationReport : updatedReconciliationReports) {
       System.out.printf(
-          "Reconciliation report with ID \"%d\" for month %s/%s was updated.%n",
+          "Reconciliation report with ID %d for month %d/%d was updated.%n",
           updatedReconciliationReport.getId(),
           updatedReconciliationReport.getStartDate().getMonth(),
           updatedReconciliationReport.getStartDate().getYear());

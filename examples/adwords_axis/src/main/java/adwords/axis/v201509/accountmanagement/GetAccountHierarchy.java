@@ -16,7 +16,6 @@ package adwords.axis.v201509.accountmanagement;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201509.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201509.cm.Selector;
 import com.google.api.ads.adwords.axis.v201509.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.axis.v201509.mcm.ManagedCustomerLink;
 import com.google.api.ads.adwords.axis.v201509.mcm.ManagedCustomerPage;
@@ -26,24 +25,25 @@ import com.google.api.ads.adwords.lib.selectorfields.v201509.cm.ManagedCustomerF
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.collect.Maps;
+import com.google.common.collect.SortedSetMultimap;
+import com.google.common.collect.TreeMultimap;
 
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * This example gets the account hierarchy under the current account.
  *
  * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * <p>Note: this code example won't work with test accounts. See
- * https://developers.google.com/adwords/api/docs/test-accounts
  */
 public class GetAccountHierarchy {
+  private static final int PAGE_SIZE = 500;
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -70,50 +70,64 @@ public class GetAccountHierarchy {
     ManagedCustomerServiceInterface managedCustomerService =
         adWordsServices.get(session, ManagedCustomerServiceInterface.class);
 
-    // Create selector.
-    Selector selector = new SelectorBuilder()
-        .fields(ManagedCustomerField.CustomerId, ManagedCustomerField.Name)
-        .build();
+    // Create selector builder.
+    int offset = 0;
+    SelectorBuilder selectorBuilder =
+        new SelectorBuilder()
+            .fields(ManagedCustomerField.CustomerId, ManagedCustomerField.Name)
+            .offset(offset)
+            .limit(PAGE_SIZE);
 
     // Get results.
-    ManagedCustomerPage page = managedCustomerService.get(selector);
+    ManagedCustomerPage page;
 
-    // Display serviced account graph.
-    if (page.getEntries() != null) {
-      // Create map from customerId to customer node.
-      Map<Long, ManagedCustomerTreeNode> customerIdToCustomerNode =
-          new HashMap<Long, ManagedCustomerTreeNode>();
+    // Map from customerId to customer node.
+    Map<Long, ManagedCustomerTreeNode> customerIdToCustomerNode = Maps.newHashMap();
 
-      // Create account tree nodes for each customer.
-      for (ManagedCustomer customer : page.getEntries()) {
-        ManagedCustomerTreeNode node = new ManagedCustomerTreeNode();
-        node.account = customer;
-        customerIdToCustomerNode.put(customer.getCustomerId(), node);
-      }
+    // Map from each parent customer ID to its set of linked child customer IDs.
+    SortedSetMultimap<Long, Long> parentIdToChildIds = TreeMultimap.create();
+    do {
+      page = managedCustomerService.get(selectorBuilder.build());
 
-      // For each link, connect nodes in tree.
-      if (page.getLinks() != null) {
-        for (ManagedCustomerLink link : page.getLinks()) {
-          ManagedCustomerTreeNode managerNode = customerIdToCustomerNode.get(
-              link.getManagerCustomerId());
-          ManagedCustomerTreeNode childNode = customerIdToCustomerNode.get(
-              link.getClientCustomerId());
-          childNode.parentNode = managerNode;
-          if (managerNode != null) {
-            managerNode.childAccounts.add(childNode);
+      if (page.getEntries() != null) {
+        // Create account tree nodes for each customer.
+        for (ManagedCustomer customer : page.getEntries()) {
+          ManagedCustomerTreeNode node = new ManagedCustomerTreeNode();
+          node.account = customer;
+          customerIdToCustomerNode.put(customer.getCustomerId(), node);
+        }
+        
+        // Update the map of parent customer ID to child customer IDs.
+        if (page.getLinks() != null) {
+          for (ManagedCustomerLink link : page.getLinks()) {
+            parentIdToChildIds.put(link.getManagerCustomerId(), link.getClientCustomerId());
           }
         }
       }
+      offset += PAGE_SIZE;
+      selectorBuilder.increaseOffsetBy(PAGE_SIZE);
+    } while (offset < page.getTotalNumEntries());
 
-      // Find the root account node in the tree.
-      ManagedCustomerTreeNode rootNode = null;
-      for (ManagedCustomer account : page.getEntries()) {
-        if (customerIdToCustomerNode.get(account.getCustomerId()).parentNode == null) {
-          rootNode = customerIdToCustomerNode.get(account.getCustomerId());
-          break;
-        }
+    // Update the parentNode of each child node, and add each child to the childAccounts
+    // of its parentNode.
+    for (Entry<Long, Long> parentIdEntry : parentIdToChildIds.entries()) {
+      ManagedCustomerTreeNode parentNode = customerIdToCustomerNode.get(parentIdEntry.getKey());
+      ManagedCustomerTreeNode childNode = customerIdToCustomerNode.get(parentIdEntry.getValue());
+      childNode.parentNode = parentNode;
+      parentNode.childAccounts.add(childNode);
+    }
+
+    // Find the root account node in the tree.
+    ManagedCustomerTreeNode rootNode = null;
+    for (ManagedCustomerTreeNode node : customerIdToCustomerNode.values()) {
+      if (node.parentNode == null) {
+        rootNode = node;
+        break;
       }
+    }
 
+    // Display serviced account graph.
+    if (rootNode != null) {
       // Display account tree.
       System.out.println("CustomerId, Name");
       System.out.println(rootNode.toTreeString(0, new StringBuffer()));
@@ -150,7 +164,7 @@ public class GetAccountHierarchy {
      * @return the tree string representation
      */
     public StringBuffer toTreeString(int depth, StringBuffer sb) {
-      sb.append(StringUtils.repeat("-", depth * 2)).append(this).append("\n");
+      sb.append(StringUtils.repeat("-", depth * 2)).append(this).append("%n");
       for (ManagedCustomerTreeNode childAccount : childAccounts) {
         childAccount.toTreeString(depth + 1, sb);
       }

@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents an BillingAccount.
+ *             Represents an account to which invoices are sent in
+ *             <a href="https://support.google.com/adwords/answer/2375371">consolidated billing</a>.
  *           
  * 
  * <p>Java class for BillingAccount complex type.

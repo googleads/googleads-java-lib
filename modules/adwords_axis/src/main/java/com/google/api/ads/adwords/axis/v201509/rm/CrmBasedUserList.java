@@ -13,10 +13,7 @@ package com.google.api.ads.adwords.axis.v201509.rm;
  */
 public class CrmBasedUserList  extends com.google.api.ads.adwords.axis.v201509.rm.UserList  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
-     * using the value "OptOutLink".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+     * using the value "OptOutLink".</span> */
     private java.lang.String optOutLink;
 
     public CrmBasedUserList() {
@@ -66,9 +63,6 @@ public class CrmBasedUserList  extends com.google.api.ads.adwords.axis.v201509.r
      * 
      * @return optOutLink   * <span class="constraint Selectable">This field can be selected
      * using the value "OptOutLink".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
      */
     public java.lang.String getOptOutLink() {
         return optOutLink;
@@ -80,9 +74,6 @@ public class CrmBasedUserList  extends com.google.api.ads.adwords.axis.v201509.r
      * 
      * @param optOutLink   * <span class="constraint Selectable">This field can be selected
      * using the value "OptOutLink".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
      */
     public void setOptOutLink(java.lang.String optOutLink) {
         this.optOutLink = optOutLink;

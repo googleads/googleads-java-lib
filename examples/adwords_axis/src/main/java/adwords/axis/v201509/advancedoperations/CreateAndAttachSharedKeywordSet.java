@@ -120,7 +120,7 @@ public class CreateAndAttachSharedKeywordSet {
             new SharedCriterionOperation[sharedCriterionOperations.size()]));
 
     for (SharedCriterion addedCriterion : sharedCriterionReturnValue.getValue()) {
-      System.out.printf("Added shared criterion ID %d '%s' to shared set with ID %d.%n",
+      System.out.printf("Added shared criterion ID %d with text '%s' to shared set with ID %d.%n",
           addedCriterion.getCriterion().getId(),
           ((Keyword) addedCriterion.getCriterion()).getText(), addedCriterion.getSharedSetId());
     }

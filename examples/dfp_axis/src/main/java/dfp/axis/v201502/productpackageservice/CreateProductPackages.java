@@ -55,9 +55,8 @@ public class CreateProductPackages {
             new ProductPackage[] {productPackage});
     
     for (ProductPackage createdProductPackage : productPackages) {
-      System.out.printf("A product package with ID \"%d\" and name \"%s\" "
-          + "was created.%n", createdProductPackage.getId(),
-          createdProductPackage.getName());
+      System.out.printf("A product package with ID %d and name '%s' was created.%n", 
+          createdProductPackage.getId(), createdProductPackage.getName());
     }
   }
 

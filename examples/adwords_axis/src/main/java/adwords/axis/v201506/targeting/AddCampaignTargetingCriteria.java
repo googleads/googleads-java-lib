@@ -186,8 +186,8 @@ public class AddCampaignTargetingCriteria {
 
     // Display campaigns.
     for (CampaignCriterion campaignCriterion : result.getValue()) {
-      System.out.printf("Campaign criterion with campaign ID '%s', criterion ID '%s', "
-          + "and type '%s' was added.\n", campaignCriterion.getCampaignId(), campaignCriterion
+      System.out.printf("Campaign criterion with campaign ID %d, criterion ID %d, "
+          + "and type '%s' was added.%n", campaignCriterion.getCampaignId(), campaignCriterion
           .getCriterion().getId(), campaignCriterion.getCriterion().getCriterionType());
     }
   }

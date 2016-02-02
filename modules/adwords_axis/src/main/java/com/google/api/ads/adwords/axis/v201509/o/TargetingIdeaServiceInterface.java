@@ -23,7 +23,7 @@ public interface TargetingIdeaServiceInterface extends java.rmi.Remote {
      *         
      *         
      * @param selector Query describing the types of results to return when
-     * finding matches (similar keyword ideas/placement ideas).
+     * finding matches (similar keyword ideas).
      *         
      * @return A {@link TargetingIdeaPage} of results, that is a subset of
      * the

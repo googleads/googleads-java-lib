@@ -78,8 +78,8 @@ public class UpdateCustomTargetingValues {
             customTargetingService.updateCustomTargetingValues(customTargetingValues);
 
         for (CustomTargetingValue updatedCustomTargetingValue : customTargetingValues) {
-          System.out.printf("Custom targeting value with ID \"%d\", name \"%s\", and display name "
-              + "\"%s\" was updated.\n", updatedCustomTargetingValue.getId(),
+          System.out.printf("Custom targeting value with ID %d, name '%s', and display name "
+              + "'%s' was updated.%n", updatedCustomTargetingValue.getId(),
               updatedCustomTargetingValue.getName(), updatedCustomTargetingValue.getDisplayName());
         }
       }

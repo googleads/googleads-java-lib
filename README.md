@@ -154,7 +154,7 @@ $ mvn -X compile
 
 This command runs the ``GetCampaigns`` example, but you can update the ``-Dexec.mainClass`` argument with the example of your choice.
 ```
-$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201509.basicoperations.GetCampaigns"
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201601.basicoperations.GetCampaigns"
 ```
 
 ## Basic usage
@@ -164,7 +164,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201509.*;
+import com.google.api.ads.adwords.axis.v201601.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;

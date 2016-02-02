@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *             paging {@code startIndex} value by {@code numberResults} with each call.</p>
  *             
  *             @param selector Query describing the types of results to return when
- *             finding matches (similar keyword ideas/placement ideas).
+ *             finding matches (similar keyword ideas).
  *             @return A {@link TargetingIdeaPage} of results, that is a subset of the
  *             list of possible ideas meeting the criteria of the
  *             {@link TargetingIdeaSelector}.

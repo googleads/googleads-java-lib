@@ -42,11 +42,9 @@ public class GetBudgetOrders {
     List<BudgetOrder> budgetOrders = extendedManagedCustomer.getBudgetOrders();
     for (BudgetOrder budgetOrder : budgetOrders) {
       System.out.printf(
-          "BudgetOrder '%s' '%s' '%d' '%d' was found.\n",
-          budgetOrder.getStartDateTime(),
-          budgetOrder.getEndDateTime(),
-          budgetOrder.getSpendingLimit().getMicroAmount() / 1000000,
-          budgetOrder.getId());
+          "BudgetOrder with ID %d, start date %s, end date %s, and spending limit %.4f was "
+          + "found.%n", budgetOrder.getId(), budgetOrder.getStartDateTime(), 
+          budgetOrder.getEndDateTime(), budgetOrder.getSpendingLimit().getMicroAmount() / 1000000d);
     }
   }
 }

@@ -54,7 +54,7 @@ public class GetAllLabels {
         int i = page.getStartIndex();
         for (Label label : page.getResults()) {
           System.out.printf(
-              "%d) Label with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Label with ID %d and name '%s' was found.%n", i++,
               label.getId(), label.getName());
         }
       }
@@ -62,7 +62,7 @@ public class GetAllLabels {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

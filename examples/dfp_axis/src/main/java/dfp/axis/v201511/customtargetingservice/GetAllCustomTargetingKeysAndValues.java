@@ -73,8 +73,8 @@ public class GetAllCustomTargetingKeysAndValues {
         if (page.getResults() != null) {
           totalResultSetSize = page.getTotalResultSetSize();
           for (CustomTargetingValue customTargetingValue : page.getResults()) {
-            System.out.printf("%d) Custom targeting value with ID \"%d\", belonging to key "
-                + "with ID \"%d\", name \"%s\" and display name \"%s\" was found.\n",
+            System.out.printf("%d) Custom targeting value with ID %d, belonging to key "
+                + "with ID %d, name '%s' and display name '%s' was found.%n",
                 totalResultsCounter++,
                 customTargetingValue.getId(),
                 customTargetingValue.getCustomTargetingKeyId(),
@@ -87,7 +87,7 @@ public class GetAllCustomTargetingKeysAndValues {
       } while (statementBuilder.getOffset() < totalResultSetSize);
     }
 
-    System.out.printf("Number of results found: %d\n", totalResultsCounter);
+    System.out.printf("Number of results found: %d%n", totalResultsCounter);
   }
 
   /**
@@ -118,8 +118,8 @@ public class GetAllCustomTargetingKeysAndValues {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CustomTargetingKey customTargetingKey : page.getResults()) {
-          System.out.printf("%d) Custom targeting key with ID \"%d\", name \"%s\", and "
-              + "display name \"%s\" was found.\n", i++, customTargetingKey.getId(),
+          System.out.printf("%d) Custom targeting key with ID %d, name '%s', and "
+              + "display name '%s' was found.%n", i++, customTargetingKey.getId(),
               customTargetingKey.getName(), customTargetingKey.getDisplayName());
           customTargetingKeyIds.add(customTargetingKey.getId());
         }

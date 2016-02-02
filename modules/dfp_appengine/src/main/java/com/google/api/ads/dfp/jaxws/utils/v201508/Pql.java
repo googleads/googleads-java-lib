@@ -421,11 +421,13 @@ public final class Pql {
    */
   public static List<String> getColumnLabels(ResultSet resultSet) {
     return Lists.transform(
-        Lists.newArrayList(resultSet.getColumnTypes()), new Function<ColumnType, String>() {
-      public String apply(ColumnType input) {
-        return input.getLabelName();
-      }
-    });
+        Lists.newArrayList(resultSet.getColumnTypes()),
+        new Function<ColumnType, String>() {
+          @Override
+          public String apply(ColumnType input) {
+            return input.getLabelName();
+          }
+        });
   }
 
   /**
@@ -436,11 +438,14 @@ public final class Pql {
    * @return the string list of the row values
    */
   public static List<String> getRowStringValues(Row row) {
-    return Lists.transform(Lists.newArrayList(row.getValues()), new Function<Value, String>() {
-      public String apply(Value input) {
-        return Pql.toString(input);
-      }
-    });
+    return Lists.transform(
+        Lists.newArrayList(row.getValues()),
+        new Function<Value, String>() {
+          @Override
+          public String apply(Value input) {
+            return Pql.toString(input);
+          }
+        });
   }
 
   /**
@@ -451,11 +456,13 @@ public final class Pql {
    *          don't match the second
    */
   public static ResultSet combineResultSets(ResultSet first, ResultSet second) {
-    Function<ColumnType, String> columnTypeToString = new Function<ColumnType, String>() {
-      public String apply(ColumnType input) {
-        return input.getLabelName();
-      }
-    };
+    Function<ColumnType, String> columnTypeToString =
+        new Function<ColumnType, String>() {
+          @Override
+          public String apply(ColumnType input) {
+            return input.getLabelName();
+          }
+        };
     List<String> firstColumns =
         Lists.transform(Lists.newArrayList(first.getColumnTypes()), columnTypeToString);
     List<String> secondColumns =

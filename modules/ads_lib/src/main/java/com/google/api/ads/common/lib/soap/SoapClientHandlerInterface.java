@@ -28,7 +28,8 @@ import javax.xml.soap.SOAPHeaderElement;
  * from different frameworks. There is separate handler for each framework
  * that implements this interface.
  *
- * @param <T> the SOAP client type
+ * @param <T> the client type for the SOAP toolkit, e.g., {@code Stub}
+ * for Axis, {@code BindingProvider} for JAX-WS, etc.
  */
 public interface SoapClientHandlerInterface<T> {
 

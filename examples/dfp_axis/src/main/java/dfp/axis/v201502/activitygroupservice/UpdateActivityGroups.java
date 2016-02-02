@@ -72,7 +72,7 @@ public class UpdateActivityGroups {
 
     for (ActivityGroup updatedActivityGroup : activityGroups) {
       System.out.printf(
-          "Activity group with ID \"%d\" and name \"%s\" was updated.\n",
+          "Activity group with ID %d and name '%s' was updated.%n",
           updatedActivityGroup.getId(), updatedActivityGroup.getName());
     }
   }

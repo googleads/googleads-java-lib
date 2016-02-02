@@ -79,8 +79,8 @@ public class RemoveAdGroup {
 
     // Display ad groups.
     for (AdGroup adGroupResult : result.getValue()) {
-      System.out.println("Ad group with name \"" + adGroupResult.getName() + "\" and id \""
-          + adGroupResult.getId() + "\" was removed.");
+      System.out.printf("Ad group with name '%s' and ID %d was removed.%n", adGroupResult.getName(),
+          adGroupResult.getId());
     }
   }
 }

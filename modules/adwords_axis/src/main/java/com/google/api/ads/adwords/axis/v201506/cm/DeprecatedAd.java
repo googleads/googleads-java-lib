@@ -18,12 +18,16 @@ package com.google.api.ads.adwords.axis.v201506.cm;
 public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201506.cm.Ad  implements java.io.Serializable {
     /* Name of the ad.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Name".</span> */
+     * can be selected using the value "Name".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
     /* Type of the creative.
      *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Type".</span> */
+     * can be selected using the value "Type".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201506.cm.DeprecatedAdType type;
 
     public DeprecatedAd() {
@@ -64,6 +68,8 @@ public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201506.cm.Ad
      * @return name   * Name of the ad.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Name".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -76,6 +82,8 @@ public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201506.cm.Ad
      * @param name   * Name of the ad.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Name".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -88,6 +96,8 @@ public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201506.cm.Ad
      * @return type   * Type of the creative.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Type".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201506.cm.DeprecatedAdType getType() {
         return type;
@@ -100,6 +110,8 @@ public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201506.cm.Ad
      * @param type   * Type of the creative.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "Type".</span>
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201506.cm.DeprecatedAdType type) {
         this.type = type;

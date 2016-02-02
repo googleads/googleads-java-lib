@@ -83,7 +83,7 @@ public class AdvancedCreateCredentialFromScratch {
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
-    System.out.println("Paste this url in your browser: \n" + authorizeUrl + '\n');
+    System.out.printf("Paste this url in your browser:%n%s%n", authorizeUrl);
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
@@ -129,7 +129,7 @@ public class AdvancedCreateCredentialFromScratch {
     // Gets the current network.
     Network network = networkService.getCurrentNetwork();
 
-    System.out.printf("Current network has network code \"%s\" and display name \"%s\".\n",
+    System.out.printf("Current network has network code '%s' and display name '%s'.%n",
         network.getNetworkCode(), network.getDisplayName());
   }
 

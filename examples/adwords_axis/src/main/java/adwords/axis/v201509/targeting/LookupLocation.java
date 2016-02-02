@@ -105,7 +105,7 @@ public class LookupLocation {
       String parentString =
           getParentLocationString(locationCriterion.getLocation().getParentLocations());
       System.out.printf("The search term '%s' returned the location '%s (%d)' of type '%s' "
-          + "with parent locations '%s' and reach '%d' (%s).\n", locationCriterion.getSearchTerm(),
+          + "with parent locations '%s' and reach %d (%s).%n", locationCriterion.getSearchTerm(),
           locationCriterion.getLocation().getLocationName(), locationCriterion.getLocation()
               .getId(), locationCriterion.getLocation().getDisplayType(), parentString,
           locationCriterion.getReach(), locationCriterion.getLocation().getTargetingStatus());

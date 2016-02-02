@@ -18,12 +18,12 @@ import com.google.api.ads.adwords.lib.utils.BatchJobMutateResponseInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
+import javax.inject.Inject;
 
 /**
  * Logger for batch job uploads/downloads.

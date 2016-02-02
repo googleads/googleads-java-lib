@@ -55,7 +55,7 @@ public class GetRateCardsByStatement {
         int i = page.getStartIndex();
         for (RateCard rateCard : page.getResults()) {
           System.out.printf(
-              "%d) Rate card with ID \"%d\", name \"%s\", and currency \"%s\" was found.%n", i++,
+              "%d) Rate card with ID %d, name '%s', and currency '%s' was found.%n", i++,
               rateCard.getId(), rateCard.getName(), rateCard.getCurrencyCode());
         }
       }

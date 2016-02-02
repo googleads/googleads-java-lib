@@ -54,7 +54,7 @@ public class GetAllCreativeTemplates {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CreativeTemplate creativeTemplate : page.getResults()) {
-          System.out.printf("%d) Creative template with ID \"%d\" and name \"%s\" was found.\n",
+          System.out.printf("%d) Creative template with ID %d and name '%s' was found.%n",
               i++, creativeTemplate.getId(), creativeTemplate.getName());
         }
       }
@@ -62,7 +62,7 @@ public class GetAllCreativeTemplates {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

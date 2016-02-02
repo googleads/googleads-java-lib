@@ -48,7 +48,7 @@ public enum AdGroupAdApprovalStatus {
 
     /**
      * 
-     *                 Approved - famiy safe
+     *                 Approved - family safe
      *               
      * 
      */

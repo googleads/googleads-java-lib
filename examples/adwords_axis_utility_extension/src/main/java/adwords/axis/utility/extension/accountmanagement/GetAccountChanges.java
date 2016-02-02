@@ -56,34 +56,34 @@ public class GetAccountChanges {
 
     // Display changes.
     for (CampaignChangeData campaignChanges : changedCampaigns) {
-      System.out.printf("Campaign with ID '%d' was changed.\n",
+      System.out.printf("Campaign with ID %d was changed.%n",
           campaignChanges.getCampaignId());
-      System.out.printf("\tCampaign changed status to '%s'.\n",
+      System.out.printf("\tCampaign changed status to '%s'.%n",
           campaignChanges.getCampaignChangeStatus().getValue());
 
       if (campaignChanges.getCampaignChangeStatus() != ChangeStatus.NEW) {        
-        System.out.printf("\tAdded Ad Extensions: '%s'.\n",
+        System.out.printf("\tAdded Ad Extensions: '%s'.%n",
             Arrays.toString(campaignChanges.getAddedAdExtensions()));
-        System.out.printf("\tAdded Campaign Criteria: '%s'.\n",
+        System.out.printf("\tAdded Campaign Criteria: '%s'.%n",
             Arrays.toString(campaignChanges.getAddedCampaignCriteria()));
-        System.out.printf("\tDeleted Ad Extensions: '%s'.\n",
+        System.out.printf("\tDeleted Ad Extensions: '%s'.%n",
             Arrays.toString(campaignChanges.getRemovedAdExtensions()));
-        System.out.printf("\tDeleted Campaign Criteria: '%s'.\n",
+        System.out.printf("\tDeleted Campaign Criteria: '%s'.%n",
             Arrays.toString(campaignChanges.getRemovedCampaignCriteria()));
 
         if (campaignChanges.getChangedAdGroups() != null) {
           for (AdGroupChangeData adGroupChanges : campaignChanges.getChangedAdGroups()) {
-            System.out.printf("tAdGroup with ID '%d' was changed.\n",
+            System.out.printf("tAdGroup with ID %d was changed.%n",
                 adGroupChanges.getAdGroupId());
-            System.out.printf("\tAdGroup changed status to '%s'.\n",
+            System.out.printf("\tAdGroup changed status to '%s'.%n",
                 adGroupChanges.getAdGroupChangeStatus().getValue());
 
             if (adGroupChanges.getAdGroupChangeStatus() != ChangeStatus.NEW) {
-              System.out.printf("\t\tAds changed: '%s'.\n",
+              System.out.printf("\t\tAds changed: '%s'.%n",
                   Arrays.toString(adGroupChanges.getChangedAds()));
-              System.out.printf("\t\tCriteria changed: '%s'.\n",
+              System.out.printf("\t\tCriteria changed: '%s'.%n",
                   Arrays.toString(adGroupChanges.getChangedCriteria()));
-              System.out.printf("\t\tCriteria deleted: '%s'.\n",
+              System.out.printf("\t\tCriteria deleted: '%s'.%n",
                   Arrays.toString(adGroupChanges.getRemovedCriteria()));
             }
           }

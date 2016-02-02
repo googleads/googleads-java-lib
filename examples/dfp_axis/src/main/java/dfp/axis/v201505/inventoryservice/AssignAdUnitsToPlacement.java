@@ -66,7 +66,7 @@ public class AssignAdUnitsToPlacement {
         int i = page.getStartIndex();
         for (AdUnit adUnit : page.getResults()) {
           System.out.printf(
-              "%d) Ad unit with ID \"%s\" and name \"%s\" will be added to placement.\n", i++,
+              "%d) Ad unit with ID '%s' and name '%s' will be added to placement.%n", i++,
               adUnit.getId(), adUnit.getName());
         }
       }
@@ -74,7 +74,7 @@ public class AssignAdUnitsToPlacement {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of ad units to be added to placement: %d\n", totalResultSetSize);
+    System.out.printf("Number of ad units to be added to placement: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -91,7 +91,7 @@ public class AssignAdUnitsToPlacement {
 
       if (result != null && result.getNumChanges() > 0) {
         System.out.printf(
-            "Number of ad units to be added to placement: %d\n", result.getNumChanges());
+            "Number of ad units to be added to placement: %d%n", result.getNumChanges());
       } else {
         System.out.println("No ad units were added to placement.");
       }

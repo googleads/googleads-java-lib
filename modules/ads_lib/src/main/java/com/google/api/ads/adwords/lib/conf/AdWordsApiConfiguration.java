@@ -17,10 +17,11 @@ package com.google.api.ads.adwords.lib.conf;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.common.collect.Lists;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.apache.commons.configuration.Configuration;
+
+import javax.inject.Inject;
 
 /**
  * Configuration information for AdWords library.

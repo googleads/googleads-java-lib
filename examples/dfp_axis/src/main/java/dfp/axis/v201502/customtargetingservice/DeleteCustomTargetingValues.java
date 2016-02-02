@@ -63,15 +63,15 @@ public class DeleteCustomTargetingValues {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CustomTargetingValue customTargetingValue : page.getResults()) {
-          System.out.printf("%d) Custom targeting value with ID \"%d\""
-              + " will be deleted.\n", i++, customTargetingValue.getId());
+          System.out.printf("%d) Custom targeting value with ID %d"
+              + " will be deleted.%n", i++, customTargetingValue.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of custom targeting values to be deleted: %d\n", totalResultSetSize);
+    System.out.printf("Number of custom targeting values to be deleted: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -87,7 +87,7 @@ public class DeleteCustomTargetingValues {
 
       if (result != null && result.getNumChanges() > 0) {
         System.out.printf(
-            "Number of custom targeting values deleted: %d\n", result.getNumChanges());
+            "Number of custom targeting values deleted: %d%n", result.getNumChanges());
       } else {
         System.out.println("No custom targeting values deleted.");
       }

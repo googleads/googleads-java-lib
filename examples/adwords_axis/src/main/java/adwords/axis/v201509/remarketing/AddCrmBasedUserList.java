@@ -92,10 +92,8 @@ public class AddCrmBasedUserList {
     // See limit here: https://support.google.com/adwords/answer/6276125#requirements.
     userList.setMembershipLifeSpan(30L);
 
-    // This field is required. It links to a service you created that allows members of this list
-    // to remove themselves. It will be shown in the "Why This Ad" pop-up as a courtesy to users
-    // and so it needs to be verified.
-    // Read more about "Why This Ad" here: https://support.google.com/ads/answer/2662850.
+    // This field is optional. It links to a service you created that allows members of this list
+    // to remove themselves.
     userList.setOptOutLink("http://endpoint1.example.com/optout");
 
     // Create operation.
@@ -108,7 +106,7 @@ public class AddCrmBasedUserList {
 
     // Display user list.
     UserList userListAdded = result.getValue(0);
-    System.out.printf("User list with name '%s' and ID '%d' was added.%n",
+    System.out.printf("User list with name '%s' and ID %d was added.%n",
         userListAdded.getName(), userListAdded.getId());
 
     // Get user list ID.
@@ -141,7 +139,7 @@ public class AddCrmBasedUserList {
     // Display results.
     // Reminder: it may take several hours for the list to be populated with members.
     for (UserList userListResult : mutateMembersResult.getUserLists()) {
-      System.out.printf("%d email addresses were uploaded to user list with name '%s' and ID '%d' "
+      System.out.printf("%d email addresses were uploaded to user list with name '%s' and ID %d "
           + "and are scheduled for review.%n",
           EMAILS.size(), userListResult.getName(), userListResult.getId());
     }

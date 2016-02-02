@@ -63,8 +63,8 @@ public class GetReconciliationLineItemReportsForReconciliationReport {
         int i = page.getStartIndex();
         for (ReconciliationLineItemReport reconciliationLineItemReport : page.getResults()) {
           System.out.printf(
-              "%d) Reconciliation line item report with ID \"%d\" was found, with line item ID "
-                  + "\"%d\", reconciliation source \"%s\" and reconciled volume \"%d\".%n",
+              "%d) Reconciliation line item report with ID %d was found, with line item ID "
+                  + "%d, reconciliation source '%s' and reconciled volume %d.%n",
               i++,
               reconciliationLineItemReport.getId(),
               reconciliationLineItemReport.getLineItemId(),

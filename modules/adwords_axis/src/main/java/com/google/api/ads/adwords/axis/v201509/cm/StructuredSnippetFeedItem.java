@@ -12,7 +12,10 @@ package com.google.api.ads.adwords.axis.v201509.cm;
  * Represents a structured snippet extension.
  */
 public class StructuredSnippetFeedItem  extends com.google.api.ads.adwords.axis.v201509.cm.ExtensionFeedItem  implements java.io.Serializable {
-    /* The header of the snippet.
+    /* The header of the snippet. See the
+     *                     <a href="https://developers.google.com/adwords/api/docs/appendix/structured-snippet-headers">
+     * structured snippets header translations</a> page for supported localized
+     * headers.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span> */
     private java.lang.String header;
@@ -62,7 +65,10 @@ public class StructuredSnippetFeedItem  extends com.google.api.ads.adwords.axis.
     /**
      * Gets the header value for this StructuredSnippetFeedItem.
      * 
-     * @return header   * The header of the snippet.
+     * @return header   * The header of the snippet. See the
+     *                     <a href="https://developers.google.com/adwords/api/docs/appendix/structured-snippet-headers">
+     * structured snippets header translations</a> page for supported localized
+     * headers.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */
@@ -74,7 +80,10 @@ public class StructuredSnippetFeedItem  extends com.google.api.ads.adwords.axis.
     /**
      * Sets the header value for this StructuredSnippetFeedItem.
      * 
-     * @param header   * The header of the snippet.
+     * @param header   * The header of the snippet. See the
+     *                     <a href="https://developers.google.com/adwords/api/docs/appendix/structured-snippet-headers">
+     * structured snippets header translations</a> page for supported localized
+     * headers.
      *                     <span class="constraint StringLength">This string
      * must not be empty.</span>
      */

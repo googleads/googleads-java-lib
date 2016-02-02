@@ -59,8 +59,8 @@ public class CreateRateCards {
     RateCard[] rateCards = rateCardService.createRateCards(new RateCard[] {rateCard});
 
     for (RateCard createdRateCard : rateCards) {
-      System.out.printf("A rate card with ID \"%d,\" name \"%s,\" and currency code "
-          + "\"%s\" was created.\n", createdRateCard.getId(), createdRateCard.getName(),
+      System.out.printf("A rate card with ID %d, name '%s', and currency code "
+          + "'%s' was created.%n", createdRateCard.getId(), createdRateCard.getName(),
           createdRateCard.getCurrencyCode());
     }
   }

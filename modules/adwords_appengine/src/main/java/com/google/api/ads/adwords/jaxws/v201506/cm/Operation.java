@@ -56,6 +56,7 @@ import com.google.api.ads.adwords.jaxws.v201506.rm.UserListOperation;
     MoveOperation.class,
     LinkOperation.class,
     ManagedCustomerOperation.class,
+    BudgetOrderOperation.class,
     UserListOperation.class,
     CustomerFeedOperation.class,
     AdParamOperation.class,
@@ -87,8 +88,7 @@ import com.google.api.ads.adwords.jaxws.v201506.rm.UserListOperation;
     LabelOperation.class,
     AdGroupAdLabelOperation.class,
     CampaignOperation.class,
-    CampaignFeedOperation.class,
-    BudgetOrderOperation.class
+    CampaignFeedOperation.class
 })
 public abstract class Operation {
 

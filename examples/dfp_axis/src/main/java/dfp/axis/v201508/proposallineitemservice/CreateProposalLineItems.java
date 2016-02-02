@@ -123,7 +123,7 @@ public class CreateProposalLineItems {
         new ProposalLineItem[] {proposalLineItem});
 
     for (ProposalLineItem createdProposalLineItem : proposalLineItems) {
-      System.out.printf("A proposal line item with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A proposal line item with ID %d and name '%s' was created.%n",
           createdProposalLineItem.getId(), createdProposalLineItem.getName());
     }
   }

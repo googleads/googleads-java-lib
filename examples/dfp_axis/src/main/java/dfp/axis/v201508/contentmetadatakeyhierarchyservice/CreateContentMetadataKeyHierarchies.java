@@ -75,8 +75,8 @@ public class CreateContentMetadataKeyHierarchies {
     
     for (ContentMetadataKeyHierarchy createdContentMetadataKeyHierarchy : 
         contentMetadataKeyHierarchies) {
-      System.out.printf("A content metadata key hierarchy with ID \"%d\", name \"%s\", and %d "
-          + "levels was created.\n", createdContentMetadataKeyHierarchy.getId(), 
+      System.out.printf("A content metadata key hierarchy with ID %d, name '%s', and %d "
+          + "levels was created.%n", createdContentMetadataKeyHierarchy.getId(), 
           createdContentMetadataKeyHierarchy.getName(),
           createdContentMetadataKeyHierarchy.getHierarchyLevels().length);
     }

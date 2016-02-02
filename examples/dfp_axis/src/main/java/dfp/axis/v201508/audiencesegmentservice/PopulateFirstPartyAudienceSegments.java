@@ -66,7 +66,7 @@ public class PopulateFirstPartyAudienceSegments {
         int i = page.getStartIndex();
         for (AudienceSegment audienceSegment : page.getResults()) {
           System.out.printf(
-              "%d) Audience segment with ID \"%d\" and name \"%s\" will be populated.\n", i++,
+              "%d) Audience segment with ID %d and name '%s' will be populated.%n", i++,
               audienceSegment.getId(), audienceSegment.getName());
         }
       }
@@ -74,7 +74,7 @@ public class PopulateFirstPartyAudienceSegments {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of audience segments to be populated: %d\n", totalResultSetSize);
+    System.out.printf("Number of audience segments to be populated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -88,7 +88,7 @@ public class PopulateFirstPartyAudienceSegments {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of audience segments populated: %d\n", result.getNumChanges());
+        System.out.printf("Number of audience segments populated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No audience segments were populated.");
       }

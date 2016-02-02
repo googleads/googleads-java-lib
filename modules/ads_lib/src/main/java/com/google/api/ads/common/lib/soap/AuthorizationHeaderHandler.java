@@ -17,9 +17,10 @@ package com.google.api.ads.common.lib.soap;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
-import com.google.inject.Inject;
 
 import java.util.HashMap;
+
+import javax.inject.Inject;
 
 /**
  * Handler for {@code Authorization} headers that can be set on the SOAP
@@ -27,7 +28,7 @@ import java.util.HashMap;
  */
 public class AuthorizationHeaderHandler {
 
-  @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
+  @SuppressWarnings("rawtypes") /* See constructor comments. */
   private final SoapClientHandlerInterface soapClientHandler;
   private final AuthorizationHeaderProvider authorizationHeaderProvider;
 
@@ -39,7 +40,10 @@ public class AuthorizationHeaderHandler {
    */
   @Inject
   public AuthorizationHeaderHandler(
-      @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
+      @SuppressWarnings("rawtypes") /* Guice binding for SoapClientHandlerInterface does not include
+                                     * the type argument T because it is bound in the SOAP
+                                     * toolkit-agnostic configuration module. Therefore, must use
+                                     * the raw type here. */
       SoapClientHandlerInterface soapClientHandler,
       AuthorizationHeaderProvider authorizationHeaderProvider) {
     this.soapClientHandler = soapClientHandler;
@@ -54,7 +58,7 @@ public class AuthorizationHeaderHandler {
    * @throws AuthenticationException if the authorization header could not be
    *         created
    */
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings("unchecked") /* See constructor comments. */
   public void setAuthorization(Object soapClient, AdsSession adsSession)
       throws AuthenticationException {
     final String authorizationHeader =

@@ -62,7 +62,7 @@ public class CreateContacts {
         contactService.createContacts(new Contact[] {advertiserContact, agencyContact});
 
     for (Contact createdContact : contacts) {
-      System.out.printf("A contact with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A contact with ID %d and name '%s' was created.%n",
           createdContact.getId(), createdContact.getName());
     }
   }

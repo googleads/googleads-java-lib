@@ -33,7 +33,6 @@ import com.google.inject.multibindings.MapBinder;
 @AdWordsProductFrameworkModule
 public class AdWordsJaxWsModule extends ProductFrameworkModule {
 
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
   @Override
   public void configure() {
     MapBinder<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
@@ -51,7 +50,8 @@ public class AdWordsJaxWsModule extends ProductFrameworkModule {
     subProductNamespaceMap.addBinding(AdWordsSubProduct.DEFAULT).toInstance("cm");
     subProductNamespaceMap.addBinding(AdWordsSubProduct.EXPRESS).toInstance("express");
 
-    bind(new TypeLiteral<HeaderHandler>() {}).to(new TypeLiteral<AdWordsJaxWsHeaderHandler>() {});
+    bind(new TypeLiteral<HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {})
+        .to(new TypeLiteral<AdWordsJaxWsHeaderHandler>() {});
 
     install(new JaxWsModule());
     install(new AdWordsModule());

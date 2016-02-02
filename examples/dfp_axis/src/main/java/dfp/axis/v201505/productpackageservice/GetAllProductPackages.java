@@ -59,7 +59,7 @@ public class GetAllProductPackages {
         int i = page.getStartIndex();
         for (ProductPackage productPackage : page.getResults()) {
           System.out.printf(
-              "%d) Product package with ID \"%d\" and name \"%s\" was found.%n",
+              "%d) Product package with ID %d and name '%s' was found.%n",
               i++, productPackage.getId(), productPackage.getName());
         }
       }

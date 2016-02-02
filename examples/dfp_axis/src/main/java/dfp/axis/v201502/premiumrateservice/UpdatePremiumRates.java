@@ -84,10 +84,8 @@ public class UpdatePremiumRates {
         new PremiumRate[] {premiumRate});
 
     for (PremiumRate updatedPremiumRate : premiumRates) {
-      System.out.printf("Premium rate with ID \"%d\" associated with rate card id "
-          + "\"%d\" was updated.%n",
-          updatedPremiumRate.getId(),
-          updatedPremiumRate.getRateCardId());
+      System.out.printf("Premium rate with ID %d associated with rate card id %d was updated.%n",
+          updatedPremiumRate.getId(), updatedPremiumRate.getRateCardId());
     }
   }
 

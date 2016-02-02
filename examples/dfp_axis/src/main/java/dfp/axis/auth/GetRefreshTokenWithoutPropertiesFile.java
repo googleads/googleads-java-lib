@@ -60,7 +60,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
-    System.out.println("Paste this url in your browser: \n" + authorizeUrl + '\n');
+    System.out.printf("Paste this url in your browser:%n%s%n", authorizeUrl);
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
@@ -120,6 +120,6 @@ public class GetRefreshTokenWithoutPropertiesFile {
     // Get the OAuth2 credential.
     Credential credential = getOAuth2Credential(clientSecrets);
 
-    System.out.printf("Your refresh token is: %s\n", credential.getRefreshToken());
+    System.out.printf("Your refresh token is: %s%n", credential.getRefreshToken());
   }
 }

@@ -76,9 +76,8 @@ public class UploadImage {
     // Display images.
     image = (Image) result[0];
     Map<MediaSize, Dimensions> dimensions = Maps.toMap(image.getDimensions());
-    System.out.println("Image with id '" + image.getMediaId() + "', dimensions '"
-        + dimensions.get(MediaSize.FULL).getWidth() + "x"
-        + dimensions.get(MediaSize.FULL).getHeight() + "', and MIME type '" + image.getMediaType()
-        + "' was uploaded.");
+    System.out.printf("Image with ID %d, dimensions %dx%d, and MIME type '%s' was "
+        + "uploaded.%n", image.getMediaId(), dimensions.get(MediaSize.FULL).getWidth(),
+        dimensions.get(MediaSize.FULL).getHeight(), image.getMediaType());
   }
 }

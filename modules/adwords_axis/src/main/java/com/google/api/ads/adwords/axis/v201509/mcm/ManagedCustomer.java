@@ -35,12 +35,14 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span> */
     private java.lang.Long customerId;
 
     /* Whether this account can manage clients.
-     *                 This field is read only for external clients and will
-     * be ignored when sent to the API.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only
+     *                 and will be ignored when sent to the API.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -196,7 +198,8 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public java.lang.Long getCustomerId() {
         return customerId;
@@ -211,7 +214,8 @@ public class ManagedCustomer  implements java.io.Serializable {
      * the value "CustomerId".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     * only and will be ignored when sent to the API for the following {@link
+     * Operator}s: ADD.</span>
      */
     public void setCustomerId(java.lang.Long customerId) {
         this.customerId = customerId;
@@ -222,8 +226,9 @@ public class ManagedCustomer  implements java.io.Serializable {
      * Gets the canManageClients value for this ManagedCustomer.
      * 
      * @return canManageClients   * Whether this account can manage clients.
-     *                 This field is read only for external clients and will
-     * be ignored when sent to the API.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only
+     *                 and will be ignored when sent to the API.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -237,8 +242,9 @@ public class ManagedCustomer  implements java.io.Serializable {
      * Sets the canManageClients value for this ManagedCustomer.
      * 
      * @param canManageClients   * Whether this account can manage clients.
-     *                 This field is read only for external clients and will
-     * be ignored when sent to the API.
+     *                 <span class="constraint ReadOnly">This field is read
+     * only
+     *                 and will be ignored when sent to the API.</span>
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "CanManageClients".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

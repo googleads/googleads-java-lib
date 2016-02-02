@@ -77,14 +77,12 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * group criteria.
      *                 Bids cannot be set on campaign.
      *                 
-     *                 Default CPC, CPM and CPA bid values will be set if
-     * they are not provided during
-     *                 {@linkplain AdGroup} creation. Default CPC, CPM and
-     * CPA bid values are minimal billable
-     *                 amounts in local currencies.
-     *                 For example, for US Dollars CPC, CPM and CPA default
-     * values are $0.01, $0.25 and $0.01,
-     *                 respectively. */
+     *                 Default CPC and CPM bid values will be set if they
+     * are not provided during {@linkplain AdGroup}
+     *                 creation. Default CPC and CPM values are minimal billable
+     * amounts in local currencies.
+     *                 For example, for US Dollars CPC and CPM default values
+     * are $0.01 and $0.01, respectively. */
     private com.google.api.ads.adwords.axis.v201506.cm.Bids[] bids;
 
     public BiddingStrategyConfiguration() {
@@ -249,14 +247,12 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * group criteria.
      *                 Bids cannot be set on campaign.
      *                 
-     *                 Default CPC, CPM and CPA bid values will be set if
-     * they are not provided during
-     *                 {@linkplain AdGroup} creation. Default CPC, CPM and
-     * CPA bid values are minimal billable
-     *                 amounts in local currencies.
-     *                 For example, for US Dollars CPC, CPM and CPA default
-     * values are $0.01, $0.25 and $0.01,
-     *                 respectively.
+     *                 Default CPC and CPM bid values will be set if they
+     * are not provided during {@linkplain AdGroup}
+     *                 creation. Default CPC and CPM values are minimal billable
+     * amounts in local currencies.
+     *                 For example, for US Dollars CPC and CPM default values
+     * are $0.01 and $0.01, respectively.
      */
     public com.google.api.ads.adwords.axis.v201506.cm.Bids[] getBids() {
         return bids;
@@ -270,14 +266,12 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * group criteria.
      *                 Bids cannot be set on campaign.
      *                 
-     *                 Default CPC, CPM and CPA bid values will be set if
-     * they are not provided during
-     *                 {@linkplain AdGroup} creation. Default CPC, CPM and
-     * CPA bid values are minimal billable
-     *                 amounts in local currencies.
-     *                 For example, for US Dollars CPC, CPM and CPA default
-     * values are $0.01, $0.25 and $0.01,
-     *                 respectively.
+     *                 Default CPC and CPM bid values will be set if they
+     * are not provided during {@linkplain AdGroup}
+     *                 creation. Default CPC and CPM values are minimal billable
+     * amounts in local currencies.
+     *                 For example, for US Dollars CPC and CPM default values
+     * are $0.01 and $0.01, respectively.
      */
     public void setBids(com.google.api.ads.adwords.axis.v201506.cm.Bids[] bids) {
         this.bids = bids;

@@ -125,9 +125,9 @@ public class GetKeywordIdeas {
         Long averageMonthlySearches =
             ((LongAttribute) data.get(AttributeType.SEARCH_VOLUME))
                 .getValue();
-        System.out.println("Keyword with text '" + keyword.getValue()
-            + "', and average monthly search volume '" + averageMonthlySearches
-            + "' was found with categories: " + categoriesString);
+        System.out.printf("Keyword with text '%s', and average monthly search volume %d "
+            + "was found with categories: %s%n", keyword.getValue(), averageMonthlySearches,
+            categoriesString);
       }
     } else {
       System.out.println("No related keywords were found.");

@@ -92,8 +92,13 @@ public class AddSiteLinks {
 
     // The time zone of the start and end date/times must match the time zone of the customer.
     DateTime startTime = new DateTime(DateTime.now().getYear(), 11, 20, 0, 0, 0, customerTimeZone);
+    if (startTime.isBeforeNow()) {
+      // Move the startTime to next year if the current date is past November 20th.
+      startTime = startTime.plusYears(1);
+    }
     sitelink2.setStartTime(startTime.toString("yyyyMMdd HHmmss ZZZ"));
-    DateTime endTime = new DateTime(DateTime.now().getYear(), 11, 27, 23, 59, 59, customerTimeZone);
+    // Use the same year as startTime when creating endTime.
+    DateTime endTime = new DateTime(startTime.getYear(), 11, 27, 23, 59, 59, customerTimeZone);
     sitelink2.setEndTime(endTime.toString("yyyyMMdd HHmmss ZZZ"));
 
     // Show the wifi details primarily for high end mobile users.
@@ -133,7 +138,7 @@ public class AddSiteLinks {
         campaignExtensionSettingService.mutate(new CampaignExtensionSettingOperation[] {operation});
     if (returnValue.getValue() != null && returnValue.getValue().length > 0) {
       CampaignExtensionSetting newExtensionSetting = returnValue.getValue(0);
-      System.out.printf("Extension setting with type = %s was added to campaign ID %d.%n",
+      System.out.printf("Extension setting with type '%s' was added to campaign ID %d.%n",
           newExtensionSetting.getExtensionType().getValue(), newExtensionSetting.getCampaignId());
     } else {
       System.out.println("No extension settings were created.");

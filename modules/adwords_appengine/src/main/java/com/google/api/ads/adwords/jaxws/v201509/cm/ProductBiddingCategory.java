@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             One element of a bidding category at a certain level. Top-level categories are at level 1,
  *             their children at level 2, and so on. We currently support up to 5 levels. The user must specify
- *             a dimension type that indicates the level of the category. All cases of the the same subdivision
+ *             a dimension type that indicates the level of the category. All cases of the same subdivision
  *             must have the same dimension type (category level).
  *           
  * 

@@ -56,7 +56,7 @@ public class GetAllReconciliationReports {
         int i = page.getStartIndex();
         for (ReconciliationReport reconciliationReport : page.getResults()) {
           System.out.printf(
-              "%d) Reconciliation report with ID \"%d\" for month %s/%s was found.%n",
+              "%d) Reconciliation report with ID %d for month %d/%d was found.%n",
               i++,
               reconciliationReport.getId(),
               reconciliationReport.getStartDate().getMonth(),

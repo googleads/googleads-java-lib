@@ -122,11 +122,11 @@ public class AddKeywords {
 
     // Display results.
     for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
-      System.out.println("Keyword ad group criterion with ad group id \""
-          + adGroupCriterionResult.getAdGroupId() + "\", criterion id \""
-          + adGroupCriterionResult.getCriterion().getId() + "\", text \""
-          + ((Keyword) adGroupCriterionResult.getCriterion()).getText() + "\" and match type \""
-          + ((Keyword) adGroupCriterionResult.getCriterion()).getMatchType() + "\" was added.");
+      System.out.printf("Keyword ad group criterion with ad group ID %d, criterion ID %d, text " 
+          + "'%s', and match type '%s' was added.%n",
+          adGroupCriterionResult.getAdGroupId(), adGroupCriterionResult.getCriterion().getId(),
+          ((Keyword) adGroupCriterionResult.getCriterion()).getText(),
+          ((Keyword) adGroupCriterionResult.getCriterion()).getMatchType());
     }
   }
 }

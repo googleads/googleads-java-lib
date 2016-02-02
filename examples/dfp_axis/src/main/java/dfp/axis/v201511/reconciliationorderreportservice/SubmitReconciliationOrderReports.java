@@ -64,7 +64,7 @@ public class SubmitReconciliationOrderReports {
         Iterables.getOnlyElement(Arrays.asList(page.getResults()));
 
     System.out.printf(
-        "Reconciliation order report with ID \"%d\" will be submitted.%n",
+        "Reconciliation order report with ID %d will be submitted.%n",
         reconciliationOrderReport.getId());
 
     // Remove limit and offset from statement.

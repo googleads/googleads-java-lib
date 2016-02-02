@@ -61,14 +61,14 @@ public class ApproveOrders {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Order order : page.getResults()) {
-          System.out.printf("%d) Order with ID \"%d\" will be approved.\n", i++, order.getId());
+          System.out.printf("%d) Order with ID %d will be approved.%n", i++, order.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of orders to be approved: %d\n", totalResultSetSize);
+    System.out.printf("Number of orders to be approved: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -83,7 +83,7 @@ public class ApproveOrders {
           orderService.performOrderAction(action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of orders approved: %d\n", result.getNumChanges());
+        System.out.printf("Number of orders approved: %d%n", result.getNumChanges());
       } else {
         System.out.println("No orders were approved.");
       }

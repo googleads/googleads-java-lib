@@ -69,10 +69,10 @@ public class GetAllDisapprovedAdsWithAwql {
     // Display ads.
     if (page.getEntries() != null && page.getEntries().length > 0) {
       for (AdGroupAd adGroupAd : page.getEntries()) {
-        System.out.println("Ad with id \"" + adGroupAd.getAd().getId() + "\"" + " and type \""
-            + adGroupAd.getAd().getAdType() + "\" was disapproved for the following reasons:");
+        System.out.printf("Ad with ID %d and type '%s' was disapproved for the following "
+            + "reasons:%n", adGroupAd.getAd().getId(), adGroupAd.getAd().getAdType());
         for (String reason : adGroupAd.getDisapprovalReasons()) {
-          System.out.println("  \"" + reason + "\"");
+          System.out.printf("  '%s'%n", reason);
         }
       }
     } else {

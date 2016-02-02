@@ -63,15 +63,15 @@ public class DeleteCustomTargetingKeys {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CustomTargetingKey customTargetingKey : page.getResults()) {
-          System.out.printf("%d) Custom targeting key with ID \"%d\""
-              + " will be deleted.\n", i++, customTargetingKey.getId());
+          System.out.printf("%d) Custom targeting key with ID %d"
+              + " will be deleted.%n", i++, customTargetingKey.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of custom targeting keys to be deleted: %d\n", totalResultSetSize);
+    System.out.printf("Number of custom targeting keys to be deleted: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -86,7 +86,7 @@ public class DeleteCustomTargetingKeys {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of custom targeting keys deleted: %d\n", result.getNumChanges());
+        System.out.printf("Number of custom targeting keys deleted: %d%n", result.getNumChanges());
       } else {
         System.out.println("No custom targeting keys were deleted.");
       }

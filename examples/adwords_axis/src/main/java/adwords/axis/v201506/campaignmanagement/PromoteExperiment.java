@@ -81,8 +81,8 @@ public class PromoteExperiment {
 
     // Display experiments.
     for (Experiment experimentResult : result.getValue()) {
-      System.out.println("Experiment with name \"" + experimentResult.getName() + "\" and id \""
-          + experimentResult.getId() + "\" was promoted.");
+      System.out.printf("Experiment with name '%s' and ID %d was promoted.%n",
+          experimentResult.getName(), experimentResult.getId());
     }
   }
 }

@@ -19,7 +19,8 @@ import com.google.api.ads.common.lib.auth.OAuth2Helper;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.client.http.HttpTransport;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 /**
  * Provides access to internal utilities.

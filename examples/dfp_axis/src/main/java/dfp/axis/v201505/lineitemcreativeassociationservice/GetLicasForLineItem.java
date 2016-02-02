@@ -63,11 +63,11 @@ public class GetLicasForLineItem {
         for (LineItemCreativeAssociation lica : page.getResults()) {
           if (lica.getCreativeSetId() != null) {
             System.out.printf(
-                "%d) LICA with line item ID \"%d\" and creative set ID \"%d\" was found.\n", i++,
+                "%d) LICA with line item ID %d and creative set ID %d was found.%n", i++,
                 lica.getLineItemId(), lica.getCreativeSetId());
           } else {
             System.out.printf(
-                "%d) LICA with line item ID \"%d\" and creative ID \"%d\" was found.\n", i++,
+                "%d) LICA with line item ID %d and creative ID %d was found.%n", i++,
                 lica.getLineItemId(), lica.getCreativeId());
           }
         }
@@ -76,7 +76,7 @@ public class GetLicasForLineItem {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

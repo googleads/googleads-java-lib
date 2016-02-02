@@ -85,8 +85,8 @@ public class RemoveAd {
 
     // Display ads.
     for (AdGroupAd adGroupAdResult : result.getValue()) {
-      System.out.println("Ad with id \"" + adGroupAdResult.getAd().getId() + "\" and type \""
-          + adGroupAdResult.getAd().getAdType() + "\" was removed.");
+      System.out.printf("Ad with ID %d and type '%s' was removed.%n",
+          adGroupAdResult.getAd().getId(), adGroupAdResult.getAd().getAdType());
     }
   }
 }

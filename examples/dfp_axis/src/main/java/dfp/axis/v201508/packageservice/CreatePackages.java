@@ -68,7 +68,7 @@ public class CreatePackages {
     Package[] packages = packageService.createPackages(new Package[] { pkg });
     
     for (Package createdPackage : packages) {
-      System.out.printf("A package with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A package with ID %d and name '%s' was created.%n",
           createdPackage.getId(), createdPackage.getName());
     }
   }

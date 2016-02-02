@@ -71,7 +71,7 @@ public class UpdateLicas {
         licaService.updateLineItemCreativeAssociations(new LineItemCreativeAssociation[] {lica});
 
     for (LineItemCreativeAssociation updatedLica : licas) {
-      System.out.printf("LICA with line item ID \"%d\" and creative ID \"%d\" was updated.\n",
+      System.out.printf("LICA with line item ID %d and creative ID %d was updated.%n",
           updatedLica.getLineItemId(), updatedLica.getCreativeId());
     }
   }

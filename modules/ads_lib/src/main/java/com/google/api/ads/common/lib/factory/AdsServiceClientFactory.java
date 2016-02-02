@@ -19,13 +19,12 @@ import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.inject.Inject;
+import com.google.common.collect.Sets;
 
 import java.lang.reflect.Proxy;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
+
+import javax.inject.Inject;
 
 /**
  * Factory which creates ads service clients.
@@ -45,10 +44,14 @@ public class AdsServiceClientFactory<C extends AdsServiceClient<S, D>,
    *
    * @param adsServiceClientFactoryHelper the ads service client factory helper.
    */
-  @SuppressWarnings("unchecked") // Guice lacks support for template type literals.
+  @SuppressWarnings("unchecked")  /* Guice binding for AdsServiceClientFactoryHelper does not
+                                   * include type arguments because AdsServiceClientFactoryHelper
+                                   * is bound in the SOAP toolkit-agnostic AdsSoapModule module.
+                                   * Therefore, must use the raw type here. */
   @Inject
   public AdsServiceClientFactory(
-      @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
+      @SuppressWarnings("rawtypes") /* See note above for an explanation of why suppressing
+                                     * this warning is necessary. */
       AdsServiceClientFactoryHelper adsServiceClientFactoryHelper) {
     this.adsServiceFactoryHelper = adsServiceClientFactoryHelper;
   }
@@ -71,23 +74,7 @@ public class AdsServiceClientFactory<C extends AdsServiceClient<S, D>,
         adsServiceFactoryHelper.createServiceDescriptor(interfaceClass, version);
     C adsServiceClient =
         adsServiceFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession);
-    return createServiceClientProxy(adsServiceDescriptor, adsServiceClient);
-  }
-
-  /**
-   * Creates a proxy around the given {@link AdsServiceClient}.
-   *
-   * @param <T> the service type
-   * @param adsServiceDescriptor descriptor with information on ads service
-   * @param adsServiceClient client to be wrapped in a proxy
-   * @return the proxy
-   */
-  @VisibleForTesting
-  protected <T> T createServiceClientProxy(D adsServiceDescriptor, C adsServiceClient) {
-    Set<Class<?>> interfaces = new HashSet<Class<?>>();
-    Collections.addAll(interfaces, adsServiceClient.getClass().getInterfaces());
-    interfaces.add(adsServiceDescriptor.getInterfaceClass());
-    return createProxy(adsServiceClient, interfaces);
+    return createProxy(interfaceClass, adsServiceClient);
   }
 
   /**
@@ -95,14 +82,14 @@ public class AdsServiceClientFactory<C extends AdsServiceClient<S, D>,
    *
    * @param <T> the service type
    * @param adsServiceClient the client to proxy
-   * @param interfaces the interfaces to proxy
    * @return the proxy
    */
-  <T> T createProxy(C adsServiceClient, Set<Class<?>> interfaces) {
-    // Suppressing warning about casting the returned Proxy to generic class T.
-    @SuppressWarnings("unchecked") T proxy = (T) Proxy.newProxyInstance(
+  <T> T createProxy(Class<T> interfaceClass, C adsServiceClient) {
+    Set<Class<?>> interfaces = Sets.newHashSet(adsServiceClient.getClass().getInterfaces());
+    interfaces.add(interfaceClass);
+    Object proxy = Proxy.newProxyInstance(
         adsServiceClient.getSoapClient().getClass().getClassLoader(),
         interfaces.toArray(new Class[] {}), adsServiceClient);
-    return proxy;
+    return interfaceClass.cast(proxy);
   }
 }

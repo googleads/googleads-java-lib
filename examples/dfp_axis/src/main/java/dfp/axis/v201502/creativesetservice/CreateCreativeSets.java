@@ -54,8 +54,8 @@ public class CreateCreativeSets {
     // Create the creative set on the server.
     CreativeSet createdCreativeSet = creativeSetService.createCreativeSet(creativeSet);
 
-    System.out.printf("A creative set with ID \"%d\", master creative ID \"%d\", "
-        + "and companion creative IDs [%s] was created.\n", createdCreativeSet.getId(),
+    System.out.printf("A creative set with ID %d, master creative ID %d, "
+        + "and companion creative IDs [%s] was created.%n", createdCreativeSet.getId(),
         createdCreativeSet.getMasterCreativeId(),
         Longs.join(",", createdCreativeSet.getCompanionCreativeIds()));
   }

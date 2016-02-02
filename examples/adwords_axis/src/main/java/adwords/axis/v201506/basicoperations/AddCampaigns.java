@@ -169,8 +169,8 @@ public class AddCampaigns {
 
     // Display campaigns.
     for (Campaign campaignResult : result.getValue()) {
-      System.out.println("Campaign with name \"" + campaignResult.getName() + "\" and id \""
-          + campaignResult.getId() + "\" was added.");
+      System.out.printf("Campaign with name '%s' and ID %d was added.%n", campaignResult.getName(),
+          campaignResult.getId());
     }
   }
 }

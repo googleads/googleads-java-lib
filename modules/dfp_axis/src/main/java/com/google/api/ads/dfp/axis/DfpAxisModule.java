@@ -20,6 +20,8 @@ import com.google.api.ads.common.lib.soap.axis.AxisModule;
 import com.google.api.ads.dfp.lib.DfpModule;
 import com.google.api.ads.dfp.lib.DfpProductFrameworkModule;
 import com.google.api.ads.dfp.lib.DfpSoapModule;
+import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
+import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.inject.TypeLiteral;
 
 /**
@@ -29,10 +31,10 @@ import com.google.inject.TypeLiteral;
 @DfpProductFrameworkModule
 public class DfpAxisModule extends ProductFrameworkModule {
 
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
   @Override
   public void configure() {
-    bind(new TypeLiteral<HeaderHandler>() {}).to(new TypeLiteral<DfpAxisHeaderHandler>() {});
+    bind(new TypeLiteral<HeaderHandler<DfpSession, DfpServiceDescriptor>>() {})
+        .to(new TypeLiteral<DfpAxisHeaderHandler>() {});
     install(new AxisModule());
     install(new DfpModule());
     install(new DfpSoapModule());

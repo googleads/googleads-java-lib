@@ -187,15 +187,15 @@ public abstract class ConversionTracker  implements java.io.Serializable {
     private java.lang.Boolean alwaysUseDefaultRevenueValue;
 
     /* Whether this conversion tracker should be excluded from the
-     * "Conv (opt.)" columns in reports.
+     * "Conversions" columns in reports.
      *                 <p>
      *                 If true, the conversion tracker will not be counted
-     * towards Conv (opt.).
-     *                 If false, it will be counted in Conv (opt.).  This
-     * is the default. </p>
+     * towards Conversions.
+     *                 If false, it will be counted in Conversions. This
+     * is the default.</p>
      *                 
      *                 Either way, conversions will still be counted in the
-     * "Conversions" columns in reports.
+     * "AllConversions" columns in reports.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExcludeFromBidding".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -793,15 +793,15 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * Gets the excludeFromBidding value for this ConversionTracker.
      * 
      * @return excludeFromBidding   * Whether this conversion tracker should be excluded from the
-     * "Conv (opt.)" columns in reports.
+     * "Conversions" columns in reports.
      *                 <p>
      *                 If true, the conversion tracker will not be counted
-     * towards Conv (opt.).
-     *                 If false, it will be counted in Conv (opt.).  This
-     * is the default. </p>
+     * towards Conversions.
+     *                 If false, it will be counted in Conversions. This
+     * is the default.</p>
      *                 
      *                 Either way, conversions will still be counted in the
-     * "Conversions" columns in reports.
+     * "AllConversions" columns in reports.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExcludeFromBidding".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -815,15 +815,15 @@ public abstract class ConversionTracker  implements java.io.Serializable {
      * Sets the excludeFromBidding value for this ConversionTracker.
      * 
      * @param excludeFromBidding   * Whether this conversion tracker should be excluded from the
-     * "Conv (opt.)" columns in reports.
+     * "Conversions" columns in reports.
      *                 <p>
      *                 If true, the conversion tracker will not be counted
-     * towards Conv (opt.).
-     *                 If false, it will be counted in Conv (opt.).  This
-     * is the default. </p>
+     * towards Conversions.
+     *                 If false, it will be counted in Conversions. This
+     * is the default.</p>
      *                 
      *                 Either way, conversions will still be counted in the
-     * "Conversions" columns in reports.
+     * "AllConversions" columns in reports.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ExcludeFromBidding".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

@@ -84,8 +84,8 @@ public class GetAdGroups {
       // Display ad groups.
       if (page.getEntries() != null) {
         for (AdGroup adGroup : page.getEntries()) {
-          System.out.println("Ad group with name \"" + adGroup.getName() + "\" and id \""
-              + adGroup.getId() + "\" was found.");
+          System.out.printf("Ad group with name '%s' and ID %d was found.%n", adGroup.getName(),
+              adGroup.getId());
         }
       } else {
         System.out.println("No ad groups were found.");

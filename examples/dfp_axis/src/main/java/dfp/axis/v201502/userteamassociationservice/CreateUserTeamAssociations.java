@@ -58,7 +58,7 @@ public class CreateUserTeamAssociations {
 
     for (UserTeamAssociation createdUserTeamAssociation : userTeamAssociations) {
       System.out.printf(
-          "A user team association with user ID \"%d\" and team ID \"%d\" was created.\n",
+          "A user team association with user ID %d and team ID %d was created.%n",
           createdUserTeamAssociation.getUserId(), createdUserTeamAssociation.getTeamId());
     }
   }

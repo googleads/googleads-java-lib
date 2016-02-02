@@ -70,7 +70,7 @@ public class ApproveWorkflowApprovalRequests {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (WorkflowRequest workflowRequest : page.getResults()) {
-          System.out.printf("%d) Workflow approval request with ID \"%d\" will be approved.%n",
+          System.out.printf("%d) Workflow approval request with ID %d will be approved.%n",
               i++, workflowRequest.getId());
         }
       }

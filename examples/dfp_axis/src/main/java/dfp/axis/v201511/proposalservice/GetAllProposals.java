@@ -55,7 +55,7 @@ public class GetAllProposals {
         int i = page.getStartIndex();
         for (Proposal proposal : page.getResults()) {
           System.out.printf(
-              "%d) Proposal with ID \"%d\" and name \"%s\" was found.%n", i++,
+              "%d) Proposal with ID %d and name '%s' was found.%n", i++,
               proposal.getId(), proposal.getName());
         }
       }

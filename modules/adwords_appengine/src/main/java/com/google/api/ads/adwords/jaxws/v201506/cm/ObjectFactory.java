@@ -54,6 +54,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Selector }
+     * 
+     */
+    public Selector createSelector() {
+        return new Selector();
+    }
+
+    /**
      * Create an instance of {@link DataError }
      * 
      */
@@ -1027,14 +1035,6 @@ public class ObjectFactory {
      */
     public SimpleMutateJob createSimpleMutateJob() {
         return new SimpleMutateJob();
-    }
-
-    /**
-     * Create an instance of {@link Selector }
-     * 
-     */
-    public Selector createSelector() {
-        return new Selector();
     }
 
     /**

@@ -19,6 +19,7 @@ import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.http.ByteArrayContent;
+import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
@@ -34,6 +35,7 @@ import com.google.common.base.Strings;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.charset.Charset;
 
 
@@ -54,6 +56,7 @@ public class BatchJobUploader<OperandT, ApiErrorT,
   private final HttpTransport httpTransport;
   private final UserAgentCombiner userAgentCombiner;
   private final BatchJobLogger batchJobLogger;
+  private final boolean isInitiateResumableUpload;
 
   /**
    * Charset for request contents.
@@ -68,13 +71,18 @@ public class BatchJobUploader<OperandT, ApiErrorT,
   
   /**
    * Constructor that stores the session for authentication.
+   *
+   * @param session the AdWords session to use for authentication.
+   * @param isInitiateResumableUpload if true, then the uploader will issue an additional request
+   * to initiate resumable uploads.
    */
-  public BatchJobUploader(AdWordsSession session) {
+  public BatchJobUploader(AdWordsSession session, boolean isInitiateResumableUpload) {
     this.session = session;
     this.httpTransport = AdWordsInternals.getInstance().getHttpTransport();
     this.userAgentCombiner = AdWordsInternals.getInstance().getUserAgentCombiner();
     this.batchJobLogger =
         AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
+    this.isInitiateResumableUpload = isInitiateResumableUpload;
   }
 
   private HttpHeaders createHttpHeaders() {
@@ -89,6 +97,10 @@ public class BatchJobUploader<OperandT, ApiErrorT,
    */
   public BatchJobUploadResponse uploadBatchJobOperations(
       BatchJobMutateRequestInterface request, String uploadUrl) throws BatchJobException {
+    Preconditions.checkState(
+        !isInitiateResumableUpload,
+        "uploadBatchJobOperations is not supported for uploaders configured to initiate "
+        + "resumable uploads. Use uploadIncrementalBatchJobOperations instead.");
     Preconditions.checkNotNull(request, "Null request");
     String requestXml = null;
     Throwable exception = null;
@@ -134,19 +146,30 @@ public class BatchJobUploader<OperandT, ApiErrorT,
    */
   public BatchJobUploadResponse uploadIncrementalBatchJobOperations(
       final BatchJobMutateRequestInterface request, final boolean isLastRequest,
-      final BatchJobUploadStatus batchJobUploadStatus) throws BatchJobException {
+      BatchJobUploadStatus batchJobUploadStatus) throws BatchJobException {
     Preconditions.checkNotNull(batchJobUploadStatus, "Null batch job upload status");
     Preconditions.checkNotNull(
         batchJobUploadStatus.getResumableUploadUri(), "No resumable session URI");
 
+    // This reference is final because it is referenced below within an anonymous class.
+    final BatchJobUploadStatus effectiveStatus;
+    if (isInitiateResumableUpload && batchJobUploadStatus.getTotalContentLength() == 0) {
+      // If this is the first upload and this uploader is configured to initiate resumable
+      // uploads, then issue a request to get the resumable session URI from Google Cloud Storage.
+      URI uploadUri = initiateResumableUpload(batchJobUploadStatus.getResumableUploadUri());
+      effectiveStatus = new BatchJobUploadStatus(0, uploadUri);
+    } else {
+      effectiveStatus = batchJobUploadStatus;
+    }
+    
     // The process below follows the Google Cloud Storage guidelines for resumable
     // uploads of unknown size:
     // https://cloud.google.com/storage/docs/concepts-techniques#unknownresumables
     ByteArrayContent content = request.createBatchJobUploadBodyProvider().getHttpContent(
-        request, batchJobUploadStatus.getTotalContentLength() == 0, isLastRequest);
+        request, effectiveStatus.getTotalContentLength() == 0, isLastRequest);
     try {
       content = postProcessContent(
-          content, batchJobUploadStatus.getTotalContentLength() == 0L, isLastRequest);
+          content, effectiveStatus.getTotalContentLength() == 0L, isLastRequest);
     } catch (IOException e) {
       throw new BatchJobException("Failed to post-process the request content", e);
     }
@@ -158,21 +181,24 @@ public class BatchJobUploader<OperandT, ApiErrorT,
 
     try {
       HttpRequestFactory requestFactory =
-          httpTransport.createRequestFactory(new HttpRequestInitializer() {
-            @Override
-            public void initialize(HttpRequest request) throws IOException {
-              HttpHeaders headers = createHttpHeaders();
-              headers.setContentLength(contentLength);
-              headers.setContentRange(constructContentRangeHeaderValue(
-                  contentLength, isLastRequest, batchJobUploadStatus));
-              request.setHeaders(headers);
-              request.setLoggingEnabled(true);
-            }
-          });
+          httpTransport.createRequestFactory(
+              new HttpRequestInitializer() {
+                @Override
+                public void initialize(HttpRequest request) throws IOException {
+                  HttpHeaders headers = createHttpHeaders();
+                  headers.setContentLength(contentLength);
+                  headers.setContentRange(
+                      constructContentRangeHeaderValue(
+                          contentLength, isLastRequest, effectiveStatus));
+                  request.setHeaders(headers);
+                  request.setLoggingEnabled(true);
+                }
+              });
 
       // Incremental uploads require a PUT request.
-      HttpRequest httpRequest = requestFactory.buildPutRequest(
-          new GenericUrl(batchJobUploadStatus.getResumableUploadUri()), content);
+      HttpRequest httpRequest =
+          requestFactory.buildPutRequest(
+              new GenericUrl(effectiveStatus.getResumableUploadUri()), content);
 
       requestXml = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
       content.getInputStream().reset();
@@ -180,16 +206,16 @@ public class BatchJobUploader<OperandT, ApiErrorT,
       HttpResponse response = httpRequest.execute();
       batchJobUploadResponse = new BatchJobUploadResponse(
           response,
-          batchJobUploadStatus.getTotalContentLength() + httpRequest.getContent().getLength(),
-          batchJobUploadStatus.getResumableUploadUri());
+          effectiveStatus.getTotalContentLength() + httpRequest.getContent().getLength(),
+          effectiveStatus.getResumableUploadUri());
       return batchJobUploadResponse;
     } catch (HttpResponseException e) {
       if (e.getStatusCode() == 308) {
         // 308 indicates that the upload succeeded.
         batchJobUploadResponse =
             new BatchJobUploadResponse(new ByteArrayInputStream(new byte[0]), e.getStatusCode(),
-                e.getStatusMessage(), batchJobUploadStatus.getTotalContentLength() + contentLength,
-                batchJobUploadStatus.getResumableUploadUri());
+                e.getStatusMessage(), effectiveStatus.getTotalContentLength() + contentLength,
+                effectiveStatus.getResumableUploadUri());
         return batchJobUploadResponse;
       }
       exception = e;
@@ -198,8 +224,43 @@ public class BatchJobUploader<OperandT, ApiErrorT,
       exception = e;
       throw new BatchJobException("Problem sending data to batch upload URL.", e);
     } finally {
-      logRequestResponse(requestXml, batchJobUploadStatus.getResumableUploadUri(),
+      logRequestResponse(requestXml, effectiveStatus.getResumableUploadUri(),
           batchJobUploadResponse, exception);
+    }
+  }
+
+  /**
+   * Initiates the resumable upload by sending a request to Google Cloud Storage.
+   *
+   * @param batchJobUploadUrl the {@code uploadUrl} of a {@code BatchJob}
+   * @return the URI for the initiated resumable upload
+   */
+  private URI initiateResumableUpload(URI batchJobUploadUrl) throws BatchJobException {
+    // This follows the Google Cloud Storage guidelines for initiating resumable uploads:
+    // https://cloud.google.com/storage/docs/resumable-uploads-xml
+    HttpRequestFactory requestFactory =
+        httpTransport.createRequestFactory(new HttpRequestInitializer() {
+          @Override
+          public void initialize(HttpRequest request) throws IOException {
+            HttpHeaders headers = createHttpHeaders();
+            headers.setContentLength(0L);
+            headers.set("x-goog-resumable", "start");
+            request.setHeaders(headers);
+            request.setLoggingEnabled(true);
+          }
+        });
+
+    try {
+      HttpRequest httpRequest =
+          requestFactory.buildPostRequest(new GenericUrl(batchJobUploadUrl), new EmptyContent());
+      HttpResponse response = httpRequest.execute();
+      if (response.getHeaders() == null || response.getHeaders().getLocation() == null) {
+        throw new BatchJobException(
+            "Initiate upload failed. Resumable upload URI was not in the response.");
+      }
+      return URI.create(response.getHeaders().getLocation());
+    } catch (IOException e) {
+      throw new BatchJobException("Failed to initiate upload", e);
     }
   }
 

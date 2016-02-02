@@ -63,7 +63,7 @@ public class ArchiveProductPackageItem {
     ProductPackageItem productPackageItemItem = Iterables.getOnlyElement(
         Arrays.asList(page.getResults()));
 
-    System.out.printf("Product package with ID \"%d\" will be archived.%n",
+    System.out.printf("Product package with ID %d will be archived.%n",
         productPackageItemItem.getId());
     
     // Remove limit and offset from statement.

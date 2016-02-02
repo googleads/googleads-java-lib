@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public enum ManagedCustomerField implements EntityField {
 
   /**
    * Whether this account can manage clients.
-   * This field is read only for external clients and will be ignored when sent to the API.
+   * <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>
    */
   @Filterable
   CanManageClients(true),

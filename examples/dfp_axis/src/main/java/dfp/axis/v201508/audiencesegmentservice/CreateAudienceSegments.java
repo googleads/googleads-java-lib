@@ -106,7 +106,7 @@ public class CreateAudienceSegments {
 
     for (AudienceSegment createdAudienceSegment : audienceSegments) {
       System.out.printf(
-          "An audience segment with ID \"%d\", name \"%s\", and type \"%s\" was created.\n",
+          "An audience segment with ID %d, name '%s', and type '%s' was created.%n",
           createdAudienceSegment.getId(), createdAudienceSegment.getName(),
           createdAudienceSegment.getType());
     }

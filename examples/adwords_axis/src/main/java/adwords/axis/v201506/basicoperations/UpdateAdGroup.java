@@ -79,9 +79,8 @@ public class UpdateAdGroup {
 
     // Display ad groups.
     for (AdGroup adGroupResult : result.getValue()) {
-      System.out.println("Ad group with name \"" + adGroupResult.getName() + "\", id \""
-          + adGroupResult.getId() + "\", and status \"" + adGroupResult.getStatus()
-          + "\" was updated.");
+      System.out.printf("Ad group with name '%s', ID %d, and status '%s' was updated.%n",
+          adGroupResult.getName(), adGroupResult.getId(), adGroupResult.getStatus());
     }
   }
 }

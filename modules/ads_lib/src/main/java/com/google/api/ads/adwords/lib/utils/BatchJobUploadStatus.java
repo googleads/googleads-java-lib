@@ -19,6 +19,7 @@ import com.google.common.base.Preconditions;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
+import java.io.Serializable;
 import java.net.URI;
 
 import javax.annotation.Nullable;
@@ -26,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Status of the upload process for a batch job.
  */
-public class BatchJobUploadStatus {
+public class BatchJobUploadStatus implements Serializable {
   private final long totalContentLength;
   private final URI resumableUploadUri;
 

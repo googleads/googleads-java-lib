@@ -17,7 +17,7 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /* The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>. */
     private java.lang.Boolean enhancedCpcEnabled;
 
@@ -39,7 +39,7 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      * @return enhancedCpcEnabled   * The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>.
      */
     public java.lang.Boolean getEnhancedCpcEnabled() {
@@ -53,7 +53,7 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
      * @param enhancedCpcEnabled   * The enhanced CPC bidding option for the campaign, which enables
      * bids to be enhanced based on conversion optimizer data. For more
      *                     information about enhanced CPC, see the
-     *                     <a href="//support.google.com/adwords/bin/answer.py?answer=2464964"
+     *                     <a href="//support.google.com/adwords/answer/2464964"
      * >AdWords Help Center</a>.
      */
     public void setEnhancedCpcEnabled(java.lang.Boolean enhancedCpcEnabled) {

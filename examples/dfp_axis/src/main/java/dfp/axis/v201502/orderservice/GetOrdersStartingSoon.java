@@ -63,7 +63,7 @@ public class GetOrdersStartingSoon {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Order order : page.getResults()) {
-          System.out.printf("%d) Order with ID \"%d\" and name \"%s\" was found.\n", i++,
+          System.out.printf("%d) Order with ID %d and name '%s' was found.%n", i++,
               order.getId(), order.getName());
         }
       }
@@ -71,7 +71,7 @@ public class GetOrdersStartingSoon {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

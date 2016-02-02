@@ -15,8 +15,7 @@ package com.google.api.ads.adwords.axis.v201509.o;
  * would be
  *             similar to content keywords found on the related URLs.
  * <p>This element is supported by following {@link IdeaType}s: KEYWORD.
- * <p>This element is supported by following {@link RequestType}s: IDEAS,
- * STATS.
+ * <p>This element is supported by following {@link RequestType}s: IDEAS.
  */
 public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axis.v201509.o.SearchParameter  implements java.io.Serializable {
     /* A set of URL strings to which search results should be related.

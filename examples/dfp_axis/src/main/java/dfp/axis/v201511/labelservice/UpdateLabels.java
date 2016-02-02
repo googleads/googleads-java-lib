@@ -66,7 +66,7 @@ public class UpdateLabels {
         labelService.updateLabels(new Label[] {label});
 
     for (Label updatedLabel : labels) {
-      System.out.printf("Label with ID \"%d\" and name \"%s\" was updated.\n", updatedLabel.getId(),
+      System.out.printf("Label with ID %d and name '%s' was updated.%n", updatedLabel.getId(),
           updatedLabel.getName());
     }
   }

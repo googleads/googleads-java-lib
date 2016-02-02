@@ -63,7 +63,7 @@ public class ActivateProductPackages {
     ProductPackage productPackage = Iterables.getOnlyElement(
         Arrays.asList(page.getResults()));
 
-    System.out.printf("Product package with ID \"%d\" will be activated.%n",
+    System.out.printf("Product package with ID %d will be activated.%n",
         productPackage.getId());
     
     // Remove limit and offset from statement.

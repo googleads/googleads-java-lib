@@ -72,9 +72,9 @@ public class TriggerWorkflowExternalConditionRequests {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (WorkflowRequest workflowRequest : page.getResults()) {
-          System.out.printf("%d) Workflow external condition request with ID \"%d\""
-              + " for %s with ID \"%d\" will be triggered.%n",
-              i++, workflowRequest.getId(), workflowRequest.getEntityType().toString(),
+          System.out.printf("%d) Workflow external condition request with ID %d"
+              + " for '%s' with ID %d will be triggered.%n",
+              i++, workflowRequest.getId(), workflowRequest.getEntityType(),
               workflowRequest.getEntityId());
         }
       }

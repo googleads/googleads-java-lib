@@ -59,7 +59,7 @@ public class GetCustomFieldsForLineItems {
         int i = page.getStartIndex();
         for (CustomField customField : page.getResults()) {
           System.out.printf(
-              "%d) Custom field with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Custom field with ID %d and name '%s' was found.%n", i++,
               customField.getId(), customField.getName());
         }
       }
@@ -67,7 +67,7 @@ public class GetCustomFieldsForLineItems {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

@@ -66,7 +66,7 @@ public class UpdateContacts {
 
     for (Contact updatedContact : contacts) {
       System.out.printf(
-          "Contact with ID \"%d\", name \"%s\", and address \"%s\" was updated.\n",
+          "Contact with ID %d, name '%s', and address '%s' was updated.%n",
           updatedContact.getId(), updatedContact.getName(), updatedContact.getAddress());
     }
   }

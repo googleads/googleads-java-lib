@@ -121,16 +121,17 @@ public class SetLineItemCustomFieldValue {
       List<String> customFieldValueStrings = Lists.transform(
           Arrays.asList(updatedLineItem.getCustomFieldValues()),
           new Function<BaseCustomFieldValue, String>() {
+            @Override
             public String apply(BaseCustomFieldValue baseCustomFieldValue) {
               if (baseCustomFieldValue instanceof CustomFieldValue
                   && ((CustomFieldValue) baseCustomFieldValue).getValue() instanceof NumberValue) {
-                return String.format("{ID: \"%d\", value: \"%.0f\"}",
+                return String.format("{ID: %d, value: %.0f}",
                     baseCustomFieldValue
                         .getCustomFieldId(),
                     Double.parseDouble(((NumberValue) ((CustomFieldValue) baseCustomFieldValue)
                         .getValue()).getValue()));
               } else if (baseCustomFieldValue instanceof DropDownCustomFieldValue) {
-                return String.format("{ID: \"%d\", customFieldOptionId: \"%d\"}",
+                return String.format("{ID: %d, customFieldOptionId: %d}",
                     baseCustomFieldValue.getCustomFieldId(),
                     ((DropDownCustomFieldValue) baseCustomFieldValue).getCustomFieldOptionId());
               } else {
@@ -139,7 +140,7 @@ public class SetLineItemCustomFieldValue {
             }
           });
 
-      System.out.printf("A line item with ID \"%d\" was updated with custom field values \"%s\"\n",
+      System.out.printf("A line item with ID %d was updated with custom field values '%s'%n",
           updatedLineItem.getId(), Joiner.on(",").join(customFieldValueStrings));
     }
   }

@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents an operand containing geo information, specifying the scope of the
- *             geographical area.
+ *             geographical area. Currently, geo targets are restricted to a single
+ *             criterion id per operand.
  *           
  * 
  * <p>Java class for GeoTargetOperand complex type.

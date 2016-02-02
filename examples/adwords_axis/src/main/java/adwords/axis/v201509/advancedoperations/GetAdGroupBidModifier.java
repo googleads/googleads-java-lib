@@ -79,8 +79,8 @@ public class GetAdGroupBidModifier {
             bidModifierResult.getBidModifier() != null
                 ? bidModifierResult.getBidModifier().toString()
                 : "unset";
-        System.out.printf("Campaign ID '%d', AdGroup ID '%d', Criterion ID '%d', "
-            + "has ad group level modifier: '%s'\n",
+        System.out.printf("Campaign ID %d, AdGroup ID %d, Criterion ID %d, "
+            + "has ad group level modifier: %s%n",
             bidModifierResult.getCampaignId(),
             bidModifierResult.getAdGroupId(),
             bidModifierResult.getCriterion().getId(),

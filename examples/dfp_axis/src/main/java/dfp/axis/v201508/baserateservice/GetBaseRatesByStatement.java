@@ -61,8 +61,8 @@ public class GetBaseRatesByStatement {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (BaseRate baseRate : page.getResults()) {
-          System.out.printf("%d) Base rate with ID \"%d\" and type \"%s,\""
-              + " belonging to rate card ID \"%d\" was found.%n", i++,
+          System.out.printf("%d) Base rate with ID %d and type '%s',"
+              + " belonging to rate card ID %d was found.%n", i++,
               baseRate.getId(), baseRate.getClass().getSimpleName(),
               baseRate.getRateCardId());
         }

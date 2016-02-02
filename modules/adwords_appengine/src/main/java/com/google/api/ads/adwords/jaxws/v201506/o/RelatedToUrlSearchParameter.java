@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  *             in some way be related too. For example, keyword results would be
  *             similar to content keywords found on the related URLs.
  *             <p>This element is supported by following {@link IdeaType}s: KEYWORD.
- *             <p>This element is supported by following {@link RequestType}s: IDEAS, STATS.
+ *             <p>This element is supported by following {@link RequestType}s: IDEAS.
  *           
  * 
  * <p>Java class for RelatedToUrlSearchParameter complex type.

@@ -50,7 +50,7 @@ public class BatchJobUploaderTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    uploader = new BatchJobUploader(adWordsSession);
+    uploader = new BatchJobUploader(adWordsSession, true);
   }
 
   @Test

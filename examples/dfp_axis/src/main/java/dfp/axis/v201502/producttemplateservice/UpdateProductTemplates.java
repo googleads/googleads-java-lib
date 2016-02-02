@@ -91,7 +91,7 @@ public class UpdateProductTemplates {
         productTemplateService.updateProductTemplates(new ProductTemplate[] {productTemplate});
 
     for (ProductTemplate updatedProductTemplate : productTemplates) {
-      System.out.printf("Product template with ID \"%d\" and name \"%s\" was updated.%n",
+      System.out.printf("Product template with ID %d and name '%s' was updated.%n",
           updatedProductTemplate.getId(),
           updatedProductTemplate.getName());
     }

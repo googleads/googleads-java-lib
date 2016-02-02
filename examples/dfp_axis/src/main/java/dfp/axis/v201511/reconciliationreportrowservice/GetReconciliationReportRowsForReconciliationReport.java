@@ -63,8 +63,8 @@ public class GetReconciliationReportRowsForReconciliationReport {
         int i = page.getStartIndex();
         for (ReconciliationReportRow reconciliationReportRow : page.getResults()) {
           System.out.printf(
-              "%d) Reconciliation report row with ID \"%d\" was found, with reconciliation "
-              + "source \"%s\" and reconciled volume \"%d\".%n",
+              "%d) Reconciliation report row with ID %d was found, with reconciliation "
+              + "source '%s' and reconciled volume %d.%n",
               i++,
               reconciliationReportRow.getId(),
               reconciliationReportRow.getReconciliationSource(),

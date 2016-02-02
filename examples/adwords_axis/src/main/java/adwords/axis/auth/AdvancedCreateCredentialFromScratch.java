@@ -95,7 +95,7 @@ public class AdvancedCreateCredentialFromScratch {
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
-    System.out.println("Paste this url in your browser: \n" + authorizeUrl + '\n');
+    System.out.printf("Paste this url in your browser:%n%s%n", authorizeUrl);
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
@@ -111,8 +111,7 @@ public class AdvancedCreateCredentialFromScratch {
     authorizationFlow.createAndStoreCredential(tokenResponse, userId);
   }
 
-  private static AdWordsSession createAdWordsSession(
-      DataStoreFactory dataStoreFactory, String userId)
+  private static AdWordsSession createAdWordsSession(String userId)
       throws IOException, ValidationException, ConfigurationLoadException {
     // Create a GoogleCredential with minimal information.
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
@@ -121,7 +120,7 @@ public class AdvancedCreateCredentialFromScratch {
         CLIENT_ID,
         CLIENT_SECRET,
         Lists.newArrayList(SCOPE))
-        .setDataStoreFactory(dataStoreFactory).build();
+        .build();
 
     // Load the credential.
     Credential credential = authorizationFlow.loadCredential(userId);
@@ -149,8 +148,8 @@ public class AdvancedCreateCredentialFromScratch {
     // Display campaigns.
     if (page.getEntries() != null) {
       for (Campaign campaign : page.getEntries()) {
-        System.out.println("Campaign with name \"" + campaign.getName() + "\" and id \""
-            + campaign.getId() + "\" was found.");
+        System.out.printf("Campaign with name '%s' and ID %d was found.%n", campaign.getName(),
+             campaign.getId());
       }
     } else {
       System.out.println("No campaigns were found.");
@@ -185,10 +184,10 @@ public class AdvancedCreateCredentialFromScratch {
       FileOutputStream fos = new FileOutputStream(new File(reportFile));
       Streams.copy(response.getInputStream(), fos);
       fos.close();
-      System.out.println("Report successfully downloaded: " + reportFile);
+      System.out.printf("Report successfully downloaded: %s%n", reportFile);
     } else {
-      System.out.println("Report was not downloaded. " + response.getHttpStatus() + ": "
-          + response.getHttpResponseMessage());
+      System.out.printf("Report was not downloaded. %d: %s%n", response.getHttpStatus(),
+          response.getHttpResponseMessage());
     }
   }
 
@@ -210,7 +209,7 @@ public class AdvancedCreateCredentialFromScratch {
     // Create a AdWordsSession from the credential store. You will typically do this
     // in a servlet interceptor for a web application or per separate thread
     // of your offline application.
-    AdWordsSession adWordsSession = createAdWordsSession(storeFactory, USER_ID);
+    AdWordsSession adWordsSession = createAdWordsSession(USER_ID);
 
     AdWordsServices adWordsServices = new AdWordsServices();
 

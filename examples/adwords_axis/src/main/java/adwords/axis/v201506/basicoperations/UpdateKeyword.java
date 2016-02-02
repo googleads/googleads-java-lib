@@ -98,14 +98,12 @@ public class UpdateKeyword {
     for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
       if (adGroupCriterionResult instanceof BiddableAdGroupCriterion) {
         biddableAdGroupCriterion = (BiddableAdGroupCriterion) adGroupCriterionResult;
-        System.out.println(
-            "Ad group criterion with ad group id \""
-                + biddableAdGroupCriterion.getAdGroupId() + "\", criterion id \""
-                + biddableAdGroupCriterion.getCriterion().getId() + "\", type \""
-                + biddableAdGroupCriterion.getCriterion().getCriterionType()
-                + "\", and bid \""
-                + ((CpcBid) biddableAdGroupCriterion.getBiddingStrategyConfiguration()
-                    .getBids()[0]).getBid().getMicroAmount() + "\" was updated.");
+        System.out.printf("Ad group criterion with ad group ID %d, criterion ID %d, type "
+            + "'%s', and bid %d was updated.%n", biddableAdGroupCriterion.getAdGroupId(),
+            biddableAdGroupCriterion.getCriterion().getId(),
+            biddableAdGroupCriterion.getCriterion().getCriterionType(),
+            ((CpcBid) biddableAdGroupCriterion.getBiddingStrategyConfiguration()
+                .getBids()[0]).getBid().getMicroAmount());
       }
     }
   }

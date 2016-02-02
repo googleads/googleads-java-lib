@@ -18,7 +18,10 @@ public class BatchJob  implements java.io.Serializable {
      * field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: ADD.</span> */
+     * Operator}s: ADD.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : SET.</span> */
     private java.lang.Long id;
 
     /* Status of this job.
@@ -42,13 +45,19 @@ public class BatchJob  implements java.io.Serializable {
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, make a POST request to
-     * the uploadUrl with the
-     *                 Content-Type header equal to "application/xml". The
-     * body of the request
-     *                 should contain the operations of the BatchJob in XML
-     * format. For the set of
-     *                 operations that BatchJobService supports, see
+     *                 operation. To upload a file, for versions equal to
+     * or older than V201509,
+     *                 make a PUT request to the uploadUrl with the Content-Type
+     * header equal to
+     *                 "application/xml". The body of the request should
+     * contain the operations of
+     *                 the BatchJob in XML format. For versions newer than
+     * V201509, make a POST
+     *                 request to the uploadUrl and retrieve the "Location"
+     * header from the response
+     *                 as the url to upload operations. For the set of operations
+     * that BatchJobService
+     *                 supports, see
      *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.
@@ -105,6 +114,9 @@ public class BatchJob  implements java.io.Serializable {
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : SET.</span>
      */
     public java.lang.Long getId() {
         return id;
@@ -121,6 +133,9 @@ public class BatchJob  implements java.io.Serializable {
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: ADD.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : SET.</span>
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -194,13 +209,19 @@ public class BatchJob  implements java.io.Serializable {
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, make a POST request to
-     * the uploadUrl with the
-     *                 Content-Type header equal to "application/xml". The
-     * body of the request
-     *                 should contain the operations of the BatchJob in XML
-     * format. For the set of
-     *                 operations that BatchJobService supports, see
+     *                 operation. To upload a file, for versions equal to
+     * or older than V201509,
+     *                 make a PUT request to the uploadUrl with the Content-Type
+     * header equal to
+     *                 "application/xml". The body of the request should
+     * contain the operations of
+     *                 the BatchJob in XML format. For versions newer than
+     * V201509, make a POST
+     *                 request to the uploadUrl and retrieve the "Location"
+     * header from the response
+     *                 as the url to upload operations. For the set of operations
+     * that BatchJobService
+     *                 supports, see
      *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.
@@ -221,13 +242,19 @@ public class BatchJob  implements java.io.Serializable {
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, make a POST request to
-     * the uploadUrl with the
-     *                 Content-Type header equal to "application/xml". The
-     * body of the request
-     *                 should contain the operations of the BatchJob in XML
-     * format. For the set of
-     *                 operations that BatchJobService supports, see
+     *                 operation. To upload a file, for versions equal to
+     * or older than V201509,
+     *                 make a PUT request to the uploadUrl with the Content-Type
+     * header equal to
+     *                 "application/xml". The body of the request should
+     * contain the operations of
+     *                 the BatchJob in XML format. For versions newer than
+     * V201509, make a POST
+     *                 request to the uploadUrl and retrieve the "Location"
+     * header from the response
+     *                 as the url to upload operations. For the set of operations
+     * that BatchJobService
+     *                 supports, see
      *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.

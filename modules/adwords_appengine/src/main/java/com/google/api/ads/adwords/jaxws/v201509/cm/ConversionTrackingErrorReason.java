@@ -160,7 +160,7 @@ public enum ConversionTrackingErrorReason {
 
     /**
      * 
-     *                 An error occurred while sending email.
+     *                 An error occurred while the server was sending the email.
      *               
      * 
      */

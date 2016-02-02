@@ -56,7 +56,7 @@ public class GetAllProposalLineItems {
         int i = page.getStartIndex();
         for (ProposalLineItem proposalLineItem : page.getResults()) {
           System.out.printf(
-              "%d) Proposal line item with ID \"%d\" and name \"%s\" was found.%n", i++,
+              "%d) Proposal line item with ID %d and name '%s' was found.%n", i++,
               proposalLineItem.getId(), proposalLineItem.getName());
         }
       }

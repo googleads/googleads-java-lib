@@ -111,8 +111,8 @@ public class AddExperiment {
         experimentService.mutate(new ExperimentOperation[] {experimentOperation});
 
     for (Experiment experimentResult : result.getValue()) {
-      System.out.println("Experiment with name \"" + experimentResult.getName() + "\" and id \""
-          + experimentResult.getId() + "\" was added.");
+      System.out.printf("Experiment with name '%s' and ID %d was added.%n",
+          experimentResult.getName(), experimentResult.getId());
     }
 
     Long experimentId = result.getValue()[0].getId();
@@ -142,8 +142,8 @@ public class AddExperiment {
     // Update ad group.
     adGroup = adGroupService.mutate(new AdGroupOperation[] {adGroupOperation}).getValue()[0];
 
-    System.out.println("Ad group with name \"" + adGroup.getName() + "\" and id \""
-        + adGroup.getId() + "\" was updated for the experiment.");
+    System.out.printf("Ad group with name '%s' and ID %d was updated for the experiment.%n",
+        adGroup.getName(), adGroup.getId());
 
     // Set ad group criterion for the experiment.
     BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
@@ -175,8 +175,8 @@ public class AddExperiment {
         (BiddableAdGroupCriterion) adGroupCriterionService.mutate(
             new AdGroupCriterionOperation[] {adGroupCriterionOperation}).getValue()[0];
 
-    System.out.println("Ad group criterion with ad group id \"" + adGroupCriterion.getAdGroupId()
-        + "\" and criterion id \"" + adGroupCriterion.getCriterion().getId()
-        + "\" was updated for the experiment.");
+    System.out.printf("Ad group criterion with ad group ID %d and criterion ID %d "
+        + "was updated for the experiment.%n", adGroupCriterion.getAdGroupId(),
+        adGroupCriterion.getCriterion().getId());
   }
 }

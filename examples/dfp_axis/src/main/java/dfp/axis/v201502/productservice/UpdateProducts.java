@@ -65,7 +65,7 @@ public class UpdateProducts {
     Product[] products = productService.updateProducts(new Product[] {product});
 
     for (Product updatedProduct : products) {
-      System.out.printf("Product with ID \"%d\" and name \"%s\" was updated.%n",
+      System.out.printf("Product with ID %d and name '%s' was updated.%n",
           updatedProduct.getId(),
           updatedProduct.getName());
     }

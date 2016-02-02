@@ -63,7 +63,7 @@ public class ActivateProductTemplates {
         int i = page.getStartIndex();
         for (ProductTemplate productTemplate : page.getResults()) {
           System.out.printf(
-              "%d) Product template with ID \"%d\" will be activated.%n", i++,
+              "%d) Product template with ID %d will be activated.%n", i++,
               productTemplate.getId());
         }
       }

@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -121,11 +121,10 @@ public enum ConversionTrackerField implements EntityField {
   DefaultRevenueValue(true),
 
   /**
-   * Whether this conversion tracker should be excluded from the "Conv (opt.)" columns in reports.
-   * <p> If true, the conversion tracker will not be counted towards Conv (opt.).
-   * If false, it will be counted in Conv (opt.).
-   * This is the default.
-   * </p> Either way, conversions will still be counted in the "Conversions" columns in reports.
+   * Whether this conversion tracker should be excluded from the "Conversions" columns in reports.
+   * <p> If true, the conversion tracker will not be counted towards Conversions.
+   * If false, it will be counted in Conversions.
+   * This is the default.</p> Either way, conversions will still be counted in the "AllConversions" columns in reports.
    */
   @Filterable
   ExcludeFromBidding(true),

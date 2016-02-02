@@ -58,7 +58,7 @@ public class GetActiveActivities {
         int i = page.getStartIndex();
         for (Activity activity : page.getResults()) {
           System.out.printf(
-              "%d) Activity with ID \"%d\", name \"%s\", and type \"%s\" was found.\n", i++,
+              "%d) Activity with ID %d, name '%s', and type '%s' was found.%n", i++,
               activity.getId(), activity.getName(), activity.getType());
         }
       }
@@ -66,7 +66,7 @@ public class GetActiveActivities {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

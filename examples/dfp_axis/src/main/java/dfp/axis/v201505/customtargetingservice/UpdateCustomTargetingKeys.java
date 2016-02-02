@@ -78,8 +78,8 @@ public class UpdateCustomTargetingKeys {
             customTargetingService.updateCustomTargetingKeys(customTargetingKeys);
 
         for (CustomTargetingKey updatedCustomTargetingKey : customTargetingKeys) {
-          System.out.printf("Custom targeting key with ID \"%d\", name \"%s\", and display name "
-              + "\"%s\" was updated.\n", updatedCustomTargetingKey.getId(),
+          System.out.printf("Custom targeting key with ID %d, name '%s', and display name "
+              + "'%s' was updated.%n", updatedCustomTargetingKey.getId(),
               updatedCustomTargetingKey.getName(), updatedCustomTargetingKey.getDisplayName());
         }
       }

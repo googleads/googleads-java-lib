@@ -23,18 +23,20 @@ import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
-import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
+import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
-import com.google.inject.Inject;
 
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPFactory;
+import javax.xml.ws.BindingProvider;
 
 /**
  * AdWords implementation of {@link HeaderHandler} for JAX-WS.
@@ -44,7 +46,7 @@ public class AdWordsJaxWsHeaderHandler implements
 
   static final String REQUEST_HEADER_LOCAL_PART = "RequestHeader";
 
-  private final SoapClientHandlerInterface<Object> soapClientHandler;
+  private final JaxWsHandler soapClientHandler;
   private final AdWordsApiConfiguration adWordsApiConfiguration;
   private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
@@ -60,18 +62,15 @@ public class AdWordsJaxWsHeaderHandler implements
    * @param authorizationHeaderHandler the authorization header handler
    * @param userAgentCombiner the full user agent provider
    */
-  @SuppressWarnings("unchecked") // All generics of SoapClientHandlerInterface
-                                 // extend Object.
   @Inject
   public AdWordsJaxWsHeaderHandler(
-      @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
-      SoapClientHandlerInterface soapClientHandler,
+      JaxWsHandler soapClientHandler,
       AdWordsApiConfiguration adWordsApiConfiguration,
       AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
       UserAgentCombiner userAgentCombiner,
-      Map<AdWordsSubProduct,
-          HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>> subProductHeaderHandlerMap) {
+      Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
+          subProductHeaderHandlerMap) {
     this.soapClientHandler = soapClientHandler;
     this.adWordsApiConfiguration = adWordsApiConfiguration;
     this.adsLibConfiguration = adsLibConfiguration;
@@ -89,12 +88,19 @@ public class AdWordsJaxWsHeaderHandler implements
   public void setHeaders(Object soapClient, AdWordsSession adWordsSession,
       AdWordsServiceDescriptor adWordsServiceDescriptor) throws AuthenticationException,
       ServiceException {
+    Preconditions.checkArgument(
+        soapClient instanceof BindingProvider,
+        "soapClient must be BindingProvider but was: %s",
+        soapClient);
+    BindingProvider bindingProvider = (BindingProvider) soapClient;
+
     Map<String, Object> headerData = readHeaderElements(adWordsSession);
     setAuthenticationHeaders(soapClient, headerData, adWordsSession);
-    soapClientHandler.setHeader(soapClient, null, null,
-        constructSoapHeader(headerData, adWordsServiceDescriptor));
-    soapClientHandler.setCompression(soapClient, adsLibConfiguration.isCompressionEnabled());
-    soapClientHandler.setRequestTimeout(soapClient, adsLibConfiguration.getSoapRequestTimeout());
+    soapClientHandler.setHeader(
+        bindingProvider, null, null, constructSoapHeader(headerData, adWordsServiceDescriptor));
+    soapClientHandler.setCompression(bindingProvider, adsLibConfiguration.isCompressionEnabled());
+    soapClientHandler.setRequestTimeout(
+        bindingProvider, adsLibConfiguration.getSoapRequestTimeout());
     
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
         subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());

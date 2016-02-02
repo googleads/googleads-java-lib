@@ -48,7 +48,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * start time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartTime".</span>
+     * be selected using the value "StartTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span> */
@@ -63,7 +64,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * end time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndTime".</span>
+     * be selected using the value "EndTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span> */
@@ -317,7 +319,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * start time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartTime".</span>
+     * be selected using the value "StartTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -339,7 +342,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * start time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "StartTime".</span>
+     * be selected using the value "StartTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -361,7 +365,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * end time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndTime".</span>
+     * be selected using the value "EndTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>
@@ -383,7 +388,8 @@ public class FeedItem  implements java.io.Serializable {
      * The special value "00000101 000000" may be used to clear an existing
      * end time.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "EndTime".</span>
+     * be selected using the value "EndTime".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE.</span>

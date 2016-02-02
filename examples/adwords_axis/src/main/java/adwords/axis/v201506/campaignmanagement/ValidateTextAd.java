@@ -97,7 +97,7 @@ public class ValidateTextAd {
     try {
       adGroupAdValidationService.mutate(operations);
     } catch (ApiException e) {
-      System.err.println("Validation failed for reason \"" + e.getMessage1() + "\".");
+      System.err.printf("Validation failed for the following reason: %s%n", e.getMessage());
     }
   }
 }

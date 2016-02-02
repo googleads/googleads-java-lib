@@ -95,7 +95,7 @@ public class UploadOfflineConversions {
     UploadConversion newUploadConversion =
         (UploadConversion) conversionTrackerReturnValue.getValue(0);
 
-    System.out.printf("New upload conversion type with name = '%s' and ID = %d was created.\n",
+    System.out.printf("New upload conversion type with name '%s' and ID %d was created.%n",
         newUploadConversion.getName(), newUploadConversion.getId());
 
     // Associate offline conversions with the upload conversion we created.
@@ -116,7 +116,7 @@ public class UploadOfflineConversions {
     OfflineConversionFeed newFeed = offlineConversionReturnValue.getValue(0);
 
     System.out.printf(
-        "Uploaded offline conversion value of '%s' for Google Click ID = '%s' to '%s'.\n",
+        "Uploaded offline conversion value of %.4f for Google Click ID '%s' to '%s'.%n",
         newFeed.getConversionValue(), newFeed.getGoogleClickId(), newFeed.getConversionName());
   }
 }
