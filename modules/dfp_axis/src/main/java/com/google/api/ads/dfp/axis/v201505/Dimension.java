@@ -109,6 +109,7 @@ public class Dimension implements java.io.Serializable {
     public static final java.lang.String _AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = "AUDIENCE_SEGMENT_DATA_PROVIDER_NAME";
     public static final java.lang.String _AD_EXCHANGE_AD_SIZE_NAME = "AD_EXCHANGE_AD_SIZE_NAME";
     public static final java.lang.String _AD_EXCHANGE_PLATFORM_TYPE_NAME = "AD_EXCHANGE_PLATFORM_TYPE_NAME";
+    public static final java.lang.String _AD_EXCHANGE_PRICING_RULE_ID = "AD_EXCHANGE_PRICING_RULE_ID";
     public static final java.lang.String _AD_EXCHANGE_PRICING_RULE_NAME = "AD_EXCHANGE_PRICING_RULE_NAME";
     public static final java.lang.String _AD_EXCHANGE_TAG_NAME = "AD_EXCHANGE_TAG_NAME";
     public static final java.lang.String _AD_EXCHANGE_URL_CHANNEL_NAME = "AD_EXCHANGE_URL_CHANNEL_NAME";
@@ -143,7 +144,6 @@ public class Dimension implements java.io.Serializable {
     public static final java.lang.String _AD_EXCHANGE_MONTH = "AD_EXCHANGE_MONTH";
     public static final java.lang.String _AD_EXCHANGE_NETWORK_PARTNER_NAME = "AD_EXCHANGE_NETWORK_PARTNER_NAME";
     public static final java.lang.String _AD_EXCHANGE_OS_VERSION_NAME = "AD_EXCHANGE_OS_VERSION_NAME";
-    public static final java.lang.String _AD_EXCHANGE_PRICING_RULE_ID = "AD_EXCHANGE_PRICING_RULE_ID";
     public static final java.lang.String _AD_EXCHANGE_TAG_CODE = "AD_EXCHANGE_TAG_CODE";
     public static final java.lang.String _AD_EXCHANGE_TARGETING_TYPE = "AD_EXCHANGE_TARGETING_TYPE";
     public static final java.lang.String _AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME = "AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME";
@@ -250,6 +250,7 @@ public class Dimension implements java.io.Serializable {
     public static final Dimension AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = new Dimension(_AUDIENCE_SEGMENT_DATA_PROVIDER_NAME);
     public static final Dimension AD_EXCHANGE_AD_SIZE_NAME = new Dimension(_AD_EXCHANGE_AD_SIZE_NAME);
     public static final Dimension AD_EXCHANGE_PLATFORM_TYPE_NAME = new Dimension(_AD_EXCHANGE_PLATFORM_TYPE_NAME);
+    public static final Dimension AD_EXCHANGE_PRICING_RULE_ID = new Dimension(_AD_EXCHANGE_PRICING_RULE_ID);
     public static final Dimension AD_EXCHANGE_PRICING_RULE_NAME = new Dimension(_AD_EXCHANGE_PRICING_RULE_NAME);
     public static final Dimension AD_EXCHANGE_TAG_NAME = new Dimension(_AD_EXCHANGE_TAG_NAME);
     public static final Dimension AD_EXCHANGE_URL_CHANNEL_NAME = new Dimension(_AD_EXCHANGE_URL_CHANNEL_NAME);
@@ -284,7 +285,6 @@ public class Dimension implements java.io.Serializable {
     public static final Dimension AD_EXCHANGE_MONTH = new Dimension(_AD_EXCHANGE_MONTH);
     public static final Dimension AD_EXCHANGE_NETWORK_PARTNER_NAME = new Dimension(_AD_EXCHANGE_NETWORK_PARTNER_NAME);
     public static final Dimension AD_EXCHANGE_OS_VERSION_NAME = new Dimension(_AD_EXCHANGE_OS_VERSION_NAME);
-    public static final Dimension AD_EXCHANGE_PRICING_RULE_ID = new Dimension(_AD_EXCHANGE_PRICING_RULE_ID);
     public static final Dimension AD_EXCHANGE_TAG_CODE = new Dimension(_AD_EXCHANGE_TAG_CODE);
     public static final Dimension AD_EXCHANGE_TARGETING_TYPE = new Dimension(_AD_EXCHANGE_TARGETING_TYPE);
     public static final Dimension AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME = new Dimension(_AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME);

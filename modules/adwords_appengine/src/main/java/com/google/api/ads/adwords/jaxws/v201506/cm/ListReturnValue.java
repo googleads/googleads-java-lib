@@ -38,8 +38,8 @@ import com.google.api.ads.adwords.jaxws.v201506.rm.UserListReturnValue;
     "listReturnValueType"
 })
 @XmlSeeAlso({
-    BudgetOrderReturnValue.class,
     UserListReturnValue.class,
+    BudgetOrderReturnValue.class,
     BudgetReturnValue.class,
     CampaignReturnValue.class,
     AdGroupLabelReturnValue.class,

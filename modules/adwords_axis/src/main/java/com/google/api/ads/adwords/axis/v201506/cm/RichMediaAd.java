@@ -22,10 +22,10 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
     /* Dimensions (height and width) of the ad.
      *                     
      *                     This field is optional for ThirdPartyRedirectAd.
-     * AdX Traditional
-     *                     Yield Management creatives do not specify the
+     * Ad Exchange traditional
+     *                     yield management creatives do not specify the
      * dimension on the
-     *                     ThirdPartyRedirectAd, instead the size is specified
+     *                     ThirdPartyRedirectAd; instead, the size is specified
      * in the publisher
      *                     front end when creating a mediation chain. */
     private com.google.api.ads.adwords.axis.v201506.cm.Dimensions dimensions;
@@ -137,10 +137,10 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
      * @return dimensions   * Dimensions (height and width) of the ad.
      *                     
      *                     This field is optional for ThirdPartyRedirectAd.
-     * AdX Traditional
-     *                     Yield Management creatives do not specify the
+     * Ad Exchange traditional
+     *                     yield management creatives do not specify the
      * dimension on the
-     *                     ThirdPartyRedirectAd, instead the size is specified
+     *                     ThirdPartyRedirectAd; instead, the size is specified
      * in the publisher
      *                     front end when creating a mediation chain.
      */
@@ -155,10 +155,10 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2015
      * @param dimensions   * Dimensions (height and width) of the ad.
      *                     
      *                     This field is optional for ThirdPartyRedirectAd.
-     * AdX Traditional
-     *                     Yield Management creatives do not specify the
+     * Ad Exchange traditional
+     *                     yield management creatives do not specify the
      * dimension on the
-     *                     ThirdPartyRedirectAd, instead the size is specified
+     *                     ThirdPartyRedirectAd; instead, the size is specified
      * in the publisher
      *                     front end when creating a mediation chain.
      */

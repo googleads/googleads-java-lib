@@ -170,6 +170,7 @@ import javax.xml.bind.annotation.XmlType;
     AdExclusionRuleError.class,
     VideoPositionTargetingError.class,
     BaseRateActionError.class,
+    CreativeTemplateOperationError.class,
     NetworkError.class,
     InventoryUnitRefreshRateError.class,
     RateCardActionError.class,

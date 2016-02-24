@@ -54,7 +54,8 @@ public enum ReservationStatus {
 
     /**
      * 
-     *                 This entity does not need inventory.
+     *                 The reservation status of the corresponding {@link LineItem} should be used
+     *                 for this {@link ProposalLineItem}.
      *               
      * 
      */

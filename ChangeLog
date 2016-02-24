@@ -1,3 +1,20 @@
+2.10.0 - 02/23/2016
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201602.
+  - Removed support for v201411.
+  - Removed deprecated ReportDownloader methods for v201602.
+  - Removed v201502 examples.
+
+Common:
+  - No changes.
+
 2.9.0 - 02/02/2016
 ------------------
 AdWords:

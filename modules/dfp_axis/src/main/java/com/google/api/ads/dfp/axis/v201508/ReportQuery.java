@@ -175,7 +175,9 @@ public class ReportQuery  implements java.io.Serializable {
      *                 {@code Time_Zone} PQL table with {@code SupportedInReports}
      * being {@code true}. Only time zones
      *                 that are full hour offsets from {@link Network#timeZone}
-     * are supported. */
+     * are supported.
+     *                 
+     *                 <p>This field has been deprecated and is a no-op. */
     private java.lang.String timeZone;
 
     public ReportQuery() {
@@ -704,6 +706,8 @@ public class ReportQuery  implements java.io.Serializable {
      * being {@code true}. Only time zones
      *                 that are full hour offsets from {@link Network#timeZone}
      * are supported.
+     *                 
+     *                 <p>This field has been deprecated and is a no-op.
      */
     public java.lang.String getTimeZone() {
         return timeZone;
@@ -723,6 +727,8 @@ public class ReportQuery  implements java.io.Serializable {
      * being {@code true}. Only time zones
      *                 that are full hour offsets from {@link Network#timeZone}
      * are supported.
+     *                 
+     *                 <p>This field has been deprecated and is a no-op.
      */
     public void setTimeZone(java.lang.String timeZone) {
         this.timeZone = timeZone;

@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
 import com.google.api.ads.dfp.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.jaxws.v201511.Company;
-import com.google.api.ads.dfp.jaxws.v201511.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201602.Company;
+import com.google.api.ads.dfp.jaxws.v201602.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -45,7 +45,7 @@ import java.util.List;
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201511";  
+  private static final String API_VERSION = "v201602";  
   
   @BeforeClass
   public static void setupClass() {

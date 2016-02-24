@@ -20,6 +20,13 @@ public interface CustomerServiceInterface extends java.rmi.Remote {
     /**
      * Returns details of all the customers directly accessible by
      * the user authenticating the call.
+     *         Callers are discouraged from setting the {@code clientCustomerId}
+     * header field in calls to
+     *         {@link CustomerService#getCustomers()}, as its value is ignored
+     * by this method, and its
+     *         presence will trigger an authorization error if the caller
+     * does not have access to the
+     *         customer with the included ID.
      */
     public com.google.api.ads.adwords.axis.v201601.mcm.Customer[] getCustomers() throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201601.cm.ApiException;
 

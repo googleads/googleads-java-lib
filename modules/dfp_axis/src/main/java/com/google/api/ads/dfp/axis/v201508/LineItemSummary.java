@@ -389,15 +389,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /* The set of labels applied directly to this line item. */
     private com.google.api.ads.dfp.axis.v201508.AppliedLabel[] appliedLabels;
 
-    /* Contains the set of labels applied directly to the line item
-     * as well as
-     *                 those inherited from the order that contains this
-     * line item and the
-     *                 advertiser that owns the order. If a label has been
-     * negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google. */
+    /* Contains the set of labels inherited from the order that contains
+     * this
+     *                 line item and the advertiser that owns the order.
+     * If a label has been
+     *                 negated, only the negated label is returned. This
+     * field is readonly
+     *                 and is assigned by Google. */
     private com.google.api.ads.dfp.axis.v201508.AppliedLabel[] effectiveAppliedLabels;
 
     /* If a line item has a series of competitive exclusions on it,
@@ -1987,15 +1985,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the effectiveAppliedLabels value for this LineItemSummary.
      * 
-     * @return effectiveAppliedLabels   * Contains the set of labels applied directly to the line item
-     * as well as
-     *                 those inherited from the order that contains this
-     * line item and the
-     *                 advertiser that owns the order. If a label has been
-     * negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google.
+     * @return effectiveAppliedLabels   * Contains the set of labels inherited from the order that contains
+     * this
+     *                 line item and the advertiser that owns the order.
+     * If a label has been
+     *                 negated, only the negated label is returned. This
+     * field is readonly
+     *                 and is assigned by Google.
      */
     public com.google.api.ads.dfp.axis.v201508.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -2005,15 +2001,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the effectiveAppliedLabels value for this LineItemSummary.
      * 
-     * @param effectiveAppliedLabels   * Contains the set of labels applied directly to the line item
-     * as well as
-     *                 those inherited from the order that contains this
-     * line item and the
-     *                 advertiser that owns the order. If a label has been
-     * negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google.
+     * @param effectiveAppliedLabels   * Contains the set of labels inherited from the order that contains
+     * this
+     *                 line item and the advertiser that owns the order.
+     * If a label has been
+     *                 negated, only the negated label is returned. This
+     * field is readonly
+     *                 and is assigned by Google.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.dfp.axis.v201508.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;

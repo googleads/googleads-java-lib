@@ -169,6 +169,7 @@ import javax.xml.bind.annotation.XmlType;
     PermissionError.class,
     AdExclusionRuleError.class,
     BaseRateActionError.class,
+    CreativeTemplateOperationError.class,
     NetworkError.class,
     InventoryUnitRefreshRateError.class,
     RateCardActionError.class,

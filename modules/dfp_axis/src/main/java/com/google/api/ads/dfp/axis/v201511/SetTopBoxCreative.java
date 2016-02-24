@@ -11,15 +11,15 @@ package com.google.api.ads.dfp.axis.v201511;
 /**
  * A {@code Creative} that will be served into cable set-top boxes.
  * There are no assets for this
- *             creative type, as they are hosted by Canoe.
+ *             creative type, as they are hosted by external cable systems.
  */
 public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201511.BaseVideoCreative  implements java.io.Serializable {
-    /* An external asset identifier that is used in the Canoe system.
+    /* An external asset identifier that is used in the cable system.
      * This attribute is read-only
      *                     after creation. */
     private java.lang.String externalAssetId;
 
-    /* An identifier for the provider in the Canoe system. This attribute
+    /* An identifier for the provider in the cable system. This attribute
      * is read-only after creation. */
     private java.lang.String providerId;
 
@@ -76,7 +76,7 @@ public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201511.Base
     /**
      * Gets the externalAssetId value for this SetTopBoxCreative.
      * 
-     * @return externalAssetId   * An external asset identifier that is used in the Canoe system.
+     * @return externalAssetId   * An external asset identifier that is used in the cable system.
      * This attribute is read-only
      *                     after creation.
      */
@@ -88,7 +88,7 @@ public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201511.Base
     /**
      * Sets the externalAssetId value for this SetTopBoxCreative.
      * 
-     * @param externalAssetId   * An external asset identifier that is used in the Canoe system.
+     * @param externalAssetId   * An external asset identifier that is used in the cable system.
      * This attribute is read-only
      *                     after creation.
      */
@@ -100,7 +100,7 @@ public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201511.Base
     /**
      * Gets the providerId value for this SetTopBoxCreative.
      * 
-     * @return providerId   * An identifier for the provider in the Canoe system. This attribute
+     * @return providerId   * An identifier for the provider in the cable system. This attribute
      * is read-only after creation.
      */
     public java.lang.String getProviderId() {
@@ -111,7 +111,7 @@ public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201511.Base
     /**
      * Sets the providerId value for this SetTopBoxCreative.
      * 
-     * @param providerId   * An identifier for the provider in the Canoe system. This attribute
+     * @param providerId   * An identifier for the provider in the cable system. This attribute
      * is read-only after creation.
      */
     public void setProviderId(java.lang.String providerId) {

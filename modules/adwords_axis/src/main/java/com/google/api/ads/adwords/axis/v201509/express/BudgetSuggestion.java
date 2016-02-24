@@ -59,8 +59,9 @@ public class BudgetSuggestion  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long impressions;
 
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* The suggested currency code to be used if not specified
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201509.express.CurrencyCode currencyCode;
 
     public BudgetSuggestion() {
@@ -321,8 +322,9 @@ public class BudgetSuggestion  implements java.io.Serializable {
     /**
      * Gets the currencyCode value for this BudgetSuggestion.
      * 
-     * @return currencyCode   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return currencyCode   * The suggested currency code to be used if not specified
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201509.express.CurrencyCode getCurrencyCode() {
         return currencyCode;
@@ -332,8 +334,9 @@ public class BudgetSuggestion  implements java.io.Serializable {
     /**
      * Sets the currencyCode value for this BudgetSuggestion.
      * 
-     * @param currencyCode   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param currencyCode   * The suggested currency code to be used if not specified
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setCurrencyCode(com.google.api.ads.adwords.axis.v201509.express.CurrencyCode currencyCode) {
         this.currencyCode = currencyCode;

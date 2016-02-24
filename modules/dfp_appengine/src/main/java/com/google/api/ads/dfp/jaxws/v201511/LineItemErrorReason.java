@@ -523,9 +523,9 @@ public enum LineItemErrorReason {
 
     /**
      * 
-     *                 Line items created from DFP Sales Manager cannot be used together with creative targeting
-     *                 expressions if changes to the targeting expression would result in overbooking of the
-     *                 line item.
+     *                 Line items cannot overbook inventory when applying creative-level targeting if the
+     *                 originating proposal line item did not overbook inventory. Remove creative-level targeting
+     *                 and try again.
      *               
      * 
      */

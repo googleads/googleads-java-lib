@@ -4124,6 +4124,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreativeTemplateOperationError }
+     * 
+     */
+    public CreativeTemplateOperationError createCreativeTemplateOperationError() {
+        return new CreativeTemplateOperationError();
+    }
+
+    /**
      * Create an instance of {@link ImageCreative }
      * 
      */

@@ -10,6 +10,10 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Returns details of all the customers directly accessible by the user authenticating the call.
+ *             Callers are discouraged from setting the {@code clientCustomerId} header field in calls to
+ *             {@link CustomerService#getCustomers()}, as its value is ignored by this method, and its
+ *             presence will trigger an authorization error if the caller does not have access to the
+ *             customer with the included ID.
  *           
  * 
  * <p>Java class for getCustomers element declaration.

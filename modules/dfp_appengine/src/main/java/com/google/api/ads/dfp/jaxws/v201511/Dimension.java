@@ -115,6 +115,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="AUDIENCE_SEGMENT_DATA_PROVIDER_NAME"/>
  *     &lt;enumeration value="AD_EXCHANGE_AD_SIZE_NAME"/>
  *     &lt;enumeration value="AD_EXCHANGE_PLATFORM_TYPE_NAME"/>
+ *     &lt;enumeration value="AD_EXCHANGE_PRICING_RULE_ID"/>
  *     &lt;enumeration value="AD_EXCHANGE_PRICING_RULE_NAME"/>
  *     &lt;enumeration value="AD_EXCHANGE_TAG_NAME"/>
  *     &lt;enumeration value="AD_EXCHANGE_URL_CHANNEL_NAME"/>
@@ -149,7 +150,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="AD_EXCHANGE_MONTH"/>
  *     &lt;enumeration value="AD_EXCHANGE_NETWORK_PARTNER_NAME"/>
  *     &lt;enumeration value="AD_EXCHANGE_OS_VERSION_NAME"/>
- *     &lt;enumeration value="AD_EXCHANGE_PRICING_RULE_ID"/>
  *     &lt;enumeration value="AD_EXCHANGE_TAG_CODE"/>
  *     &lt;enumeration value="AD_EXCHANGE_TARGETING_TYPE"/>
  *     &lt;enumeration value="AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME"/>
@@ -1165,6 +1165,17 @@ public enum Dimension {
 
     /**
      * 
+     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
+     *                 
+     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
+     *                 active status.</b>
+     *               
+     * 
+     */
+    AD_EXCHANGE_PRICING_RULE_ID,
+
+    /**
+     * 
      *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
      *                 
      *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
@@ -1540,17 +1551,6 @@ public enum Dimension {
      * 
      */
     AD_EXCHANGE_OS_VERSION_NAME,
-
-    /**
-     * 
-     *                 Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
-     *                 
-     *                 <p><b>This experimental dimension only works with Ad Exchange web properties linked with an
-     *                 active status.</b>
-     *               
-     * 
-     */
-    AD_EXCHANGE_PRICING_RULE_ID,
 
     /**
      * 
