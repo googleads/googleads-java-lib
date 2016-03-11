@@ -9,20 +9,22 @@ package com.google.api.ads.adwords.axis.v201601.cm;
 
 
 /**
- * Target Cpa bidding strategy helps you maximize your return on investment
- * (ROI) by automatically getting you the most possible conversions for
- * your budget.
+ * <a href="https://support.google.com/adwords/answer/6268632">Target
+ * CPA</a> is an automated bid
+ *             strategy that sets bids to help get as many conversions
+ * as possible at the target
+ *             cost-per-acquisition (CPA) you set.
  *             
- *             This is similar to the <code>ConversionOptimizerBiddingScheme<code>
- * but does not
- *             support user-entered AdGroup-level target CPA bids, but
- * rather a strategy-wide
- *             average CPA target.
+ *             <p>A {@linkplain #targetCpa target CPA} must be set for
+ * the strategy, but can also be optionally
+ *             set for individual ad groups in the strategy. Ad group
+ * targets, if set, will override strategy
+ *             targets.
  *             
- *             <p>Note that campaigns must meet <a
- *             href="//support.google.com/adwords/answer/2471188">specific
- * eligibility requirements</a> before they can use the <code>TargetCpaBiddingScheme</code>
- * bidding strategy.
+ *             <p>Note that campaigns must meet
+ *             <a href="https://support.google.com/adwords/answer/2471188">specific
+ * eligibility requirements</a>
+ *             before they can use the Target CPA bid strategy.
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX.</span>
  */

@@ -38,7 +38,7 @@ public enum ExportFormat {
 
     /**
      * 
-     *                 The report file is generated as a list of Comma Separated Values for Excel.
+     *                 The report file is generated as a list of tab-separated values for Excel.
      *               
      * 
      */

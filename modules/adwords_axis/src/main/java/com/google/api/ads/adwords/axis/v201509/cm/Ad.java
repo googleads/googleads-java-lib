@@ -77,7 +77,11 @@ public class Ad  implements java.io.Serializable {
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls */
     private com.google.api.ads.adwords.axis.v201509.cm.CustomParameters urlCustomParameters;
 
-    /* The device preference for the ad. */
+    /* The device preference for the ad. You can only specify a preference
+     * for
+     *                 mobile devices (CriterionId 30001). If unspecified
+     * (no device preference),
+     *                 all devices are targeted. */
     private java.lang.Long devicePreference;
 
     /* Indicates that this instance is a subtype of Ad.
@@ -352,7 +356,11 @@ public class Ad  implements java.io.Serializable {
     /**
      * Gets the devicePreference value for this Ad.
      * 
-     * @return devicePreference   * The device preference for the ad.
+     * @return devicePreference   * The device preference for the ad. You can only specify a preference
+     * for
+     *                 mobile devices (CriterionId 30001). If unspecified
+     * (no device preference),
+     *                 all devices are targeted.
      */
     public java.lang.Long getDevicePreference() {
         return devicePreference;
@@ -362,7 +370,11 @@ public class Ad  implements java.io.Serializable {
     /**
      * Sets the devicePreference value for this Ad.
      * 
-     * @param devicePreference   * The device preference for the ad.
+     * @param devicePreference   * The device preference for the ad. You can only specify a preference
+     * for
+     *                 mobile devices (CriterionId 30001). If unspecified
+     * (no device preference),
+     *                 all devices are targeted.
      */
     public void setDevicePreference(java.lang.Long devicePreference) {
         this.devicePreference = devicePreference;

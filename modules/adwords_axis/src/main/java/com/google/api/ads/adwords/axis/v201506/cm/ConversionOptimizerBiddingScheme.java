@@ -9,8 +9,15 @@ package com.google.api.ads.adwords.axis.v201506.cm;
 
 
 /**
- * Conversion optimizer bidding strategy helps you maximize your return
- * on investment
+ * This bidding strategy has been deprecated and replaced with
+ *             {@linkplain TargetCpaBiddingScheme TargetCpa}. After V201601,
+ * we no longer allow
+ *             advertisers to opt into this strategy--{@code ConversionOptimizerBiddingScheme}
+ * solely exists so that advertisers can access campaigns that had specified
+ * this strategy.</p>
+ *             
+ *             <p>Conversion optimizer bidding strategy helps you maximize
+ * your return on investment
  *             (ROI) by automatically getting you the most possible conversions
  * for your budget.
  *             
@@ -25,7 +32,7 @@ package com.google.api.ads.adwords.axis.v201506.cm;
  * 
  *             <p>For more information on conversion optimizer, visit
  * the
- *             <a href="https://support.google.com/adwords/answer/2471188"
+ *             <a href="https://support.google.com/adwords/answer/2390684"
  * >Conversion Optimizer help center</a>.</p>
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX.</span>

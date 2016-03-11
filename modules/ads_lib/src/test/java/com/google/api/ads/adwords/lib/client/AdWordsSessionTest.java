@@ -23,29 +23,94 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.ads.adwords.lib.client.AdWordsSession.Builder;
+import com.google.api.ads.adwords.lib.client.AdWordsSession.ImmutableAdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.collect.Lists;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.hamcrest.CustomTypeSafeMatcher;
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.List;
 
 /**
  * Tests for {@link AdWordsSession}.
  */
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public class AdWordsSessionTest {
+
+  /** Whether this test is testing immutable sessions. */
+  private final boolean isImmutable;
+  /** A Builder with all options explicitly set. */
+  private final Builder allSettingsBuilder;
+  /** A Credential suitable for use in this test. */
+  private final Credential credential;
+  /** A ReportingConfiguration suitable for use in this test. */
+  private final ReportingConfiguration reportingConfiguration;
+
+  @Rule public ExpectedException thrown = ExpectedException.none();
+
+  @Parameters(name = "{index}: isImmutable={0}")
+  public static List<Object[]> data() {
+    List<Object[]> data = Lists.newArrayList();
+    data.add(new Object[] {false});
+    data.add(new Object[] {true});
+    return data;
+  }
+
+  public AdWordsSessionTest(boolean isImmutable) {
+    this.isImmutable = isImmutable;
+    this.credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
+
+    this.reportingConfiguration =
+        new ReportingConfiguration.Builder().skipReportHeader(true).skipReportSummary(true).build();
+
+    this.allSettingsBuilder =
+        new AdWordsSession.Builder()
+            .withClientCustomerId("customer id")
+            .withDeveloperToken("developer token")
+            .withEndpoint("https://www.google.com")
+            .enablePartialFailure()
+            .enableValidateOnly()
+            .withOAuth2Credential(credential)
+            .withUserAgent("user agent")
+            .withReportingConfiguration(reportingConfiguration);
+  }
+
+  private AdWordsSession build(Builder builder) throws ValidationException {
+    if (isImmutable) {
+      return builder.buildImmutable();
+    }
+    return builder.build();
+  }
+
+  private Matcher<ValidationException> createTriggerMatcher(final Matcher<String> matcher) {
+    return new CustomTypeSafeMatcher<ValidationException>("Trigger") {
+      @Override
+      protected boolean matchesSafely(ValidationException ve) {
+        return matcher.matches(ve.getTrigger());
+      }
+    };
+  }
 
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
   public void testReadPropertiesFromConfiguration() throws ValidationException {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.clientCustomerId", "1234567890");
     config.setProperty("api.adwords.userAgent", "FooBar");
@@ -53,12 +118,13 @@ public class AdWordsSessionTest {
     config.setProperty("api.adwords.isPartialFailure", "false");
 
     AdWordsSession session =
-        new AdWordsSession.Builder().from(config).withOAuth2Credential(credential).build();
+        build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
     assertEquals("1234567890", session.getClientCustomerId());
     assertEquals("FooBar", session.getUserAgent());
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
     assertFalse(session.isPartialFailure());
-    assertNull("reporting configuration should be null if no reporting options are in the config",
+    assertNull(
+        "reporting configuration should be null if no reporting options are in the config",
         session.getReportingConfiguration());
   }
 
@@ -68,8 +134,6 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testReadPropertiesFromConfigurationWithReportingConfig() throws ValidationException {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.clientCustomerId", "1234567890");
     config.setProperty("api.adwords.userAgent", "FooBar");
@@ -80,7 +144,7 @@ public class AdWordsSessionTest {
     config.setProperty("api.adwords.reporting.skipSummary", "false");
 
     AdWordsSession session =
-        new AdWordsSession.Builder().from(config).withOAuth2Credential(credential).build();
+        build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
     assertEquals("1234567890", session.getClientCustomerId());
     assertEquals("FooBar", session.getUserAgent());
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
@@ -91,75 +155,62 @@ public class AdWordsSessionTest {
     assertTrue(session.getReportingConfiguration().isSkipReportHeader());
     assertTrue(session.getReportingConfiguration().isSkipColumnHeader());
     assertFalse(session.getReportingConfiguration().isSkipReportSummary());
-    assertNull("includeZeroImpressions is not settable from ads.properties, so should be null",
+    assertNull(
+        "includeZeroImpressions is not settable from ads.properties, so should be null",
         session.getReportingConfiguration().isIncludeZeroImpressions());
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
-  public void testReadPropertiesFromConfiguration_badEndpoint() {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
+  public void testReadPropertiesFromConfiguration_badEndpoint() throws ValidationException {
     String badEndpoint = "3efsdafasd";
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.clientCustomerId", "1234567890");
     config.setProperty("api.adwords.userAgent", "FooBar");
     config.setProperty("api.adwords.developerToken", "devTokendevTokendevTok");
     config.setProperty("api.adwords.isPartialFailure", "false");
-    config.setProperty("api.adwords.endpoint", "3efsdafasd");
+    config.setProperty("api.adwords.endpoint", badEndpoint);
 
-    try {
-      new AdWordsSession.Builder().from(config).withOAuth2Credential(credential).build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals("endpoint", e.getTrigger());
-      assertTrue(e.getMessage().contains(badEndpoint));
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expect(createTriggerMatcher(Matchers.<String>equalTo("endpoint")));
+    thrown.expectMessage(badEndpoint);
+    build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
-  public void testReadPropertiesFromConfiguration_noUserAgent() {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
-    PropertiesConfiguration config = new PropertiesConfiguration();    
+  public void testReadPropertiesFromConfiguration_noUserAgent() throws ValidationException {
+    PropertiesConfiguration config = new PropertiesConfiguration();
 
-    try {
-      new AdWordsSession.Builder()
-          .from(config)
-          .withDeveloperToken("devTokendevTokendevTok")
-          .withOAuth2Credential(credential)
-          .build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals("userAgent", e.getTrigger());      
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expect(createTriggerMatcher(Matchers.<String>equalTo("userAgent")));
+
+    build(
+        new AdWordsSession.Builder()
+            .from(config)
+            .withDeveloperToken("devTokendevTokendevTok")
+            .withOAuth2Credential(credential));
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
-  public void testReadPropertiesFromConfiguration_defaultUserAgent() {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
+  public void testReadPropertiesFromConfiguration_defaultUserAgent() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.userAgent", "INSERT_USERAGENT_HERE");
 
-    try {
-      new AdWordsSession.Builder()
-          .from(config)
-          .withDeveloperToken("devTokendevTokendevTok")
-          .withOAuth2Credential(credential)
-          .build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals("userAgent", e.getTrigger());      
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expect(createTriggerMatcher(Matchers.<String>equalTo("userAgent")));
+    build(
+        new AdWordsSession.Builder()
+            .from(config)
+            .withDeveloperToken("devTokendevTokendevTok")
+            .withOAuth2Credential(credential));
   }
 
   /**
@@ -167,13 +218,12 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testBuilder_defaultEndpoint() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .build();
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withUserAgent("FooBar")
+                .withOAuth2Credential(credential)
+                .withDeveloperToken("developerToken"));
 
     assertEquals("FooBar", adWordsSession.getUserAgent());
     assertSame(credential, adWordsSession.getOAuth2Credential());
@@ -186,14 +236,13 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testBuilder_oAuth2() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .build();
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withUserAgent("FooBar")
+                .withEndpoint("https://www.google.com")
+                .withOAuth2Credential(credential)
+                .withDeveloperToken("developerToken"));
 
     assertEquals("FooBar", adWordsSession.getUserAgent());
     assertSame(credential, adWordsSession.getOAuth2Credential());
@@ -207,14 +256,13 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testBuilder_returnsCopies() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    AdWordsSession.Builder builder = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withOAuth2Credential(credential)
-        .withEndpoint("https://www.google.com")
-        .withDeveloperToken("developerToken");
-    assertNotSame(builder.build(), builder.build());
+    AdWordsSession.Builder builder =
+        new AdWordsSession.Builder()
+            .withUserAgent("FooBar")
+            .withOAuth2Credential(credential)
+            .withEndpoint("https://www.google.com")
+            .withDeveloperToken("developerToken");
+    assertNotSame(build(builder), build(builder));
   }
 
   /**
@@ -222,56 +270,46 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testBuilder_noAuths() throws Exception {
-    try {
-      new AdWordsSession.Builder()
-          .withUserAgent("FooBar")
-          .withEndpoint("https://www.google.com")
-          .withDeveloperToken("developerToken").build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals("OAuth2 authentication must be used.", e.getMessage());
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(Matchers.<String>equalTo("OAuth2 authentication must be used."));
+    build(
+        new AdWordsSession.Builder()
+            .withUserAgent("FooBar")
+            .withEndpoint("https://www.google.com")
+            .withDeveloperToken("developerToken"));
   }
-  
+
   /**
    * Tests that the builder does not build with no user agent.
    */
   @Test
   public void testBuilder_noUserAgent() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
-    try {
-      new AdWordsSession.Builder()
-          .withOAuth2Credential(credential)
-          .withEndpoint("https://www.google.com")
-          .withDeveloperToken("developerToken").build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals(
-          "User agent must be set and not be the default [INSERT_USERAGENT_HERE]",
-          e.getMessage());
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(
+        Matchers.<String>equalTo(
+            "User agent must be set and not be the default [INSERT_USERAGENT_HERE]"));
+    build(
+        new AdWordsSession.Builder()
+            .withOAuth2Credential(credential)
+            .withEndpoint("https://www.google.com")
+            .withDeveloperToken("developerToken"));
   }
-  
+
   /**
    * Tests that the builder does not build with default user agent.
    */
   @Test
   public void testBuilder_defaultUserAgent() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
-    try {
-      new AdWordsSession.Builder()
-          .withOAuth2Credential(credential)
-          .withEndpoint("https://www.google.com")
-          .withUserAgent("INSERT_USERAGENT_HERE")
-          .withDeveloperToken("developerToken").build();
-      fail("Validation exception expected.");
-    } catch (ValidationException e) {
-      assertEquals(
-          "User agent must be set and not be the default [INSERT_USERAGENT_HERE]",
-          e.getMessage());
-    }
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(
+        Matchers.<String>equalTo(
+            "User agent must be set and not be the default [INSERT_USERAGENT_HERE]"));
+    build(
+        new AdWordsSession.Builder()
+            .withOAuth2Credential(credential)
+            .withEndpoint("https://www.google.com")
+            .withUserAgent("INSERT_USERAGENT_HERE")
+            .withDeveloperToken("developerToken"));
   }
 
   /**
@@ -279,63 +317,49 @@ public class AdWordsSessionTest {
    */
   @Test
   public void testSetAuthentication_null() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
-    AdWordsSession adWordsSession = new AdWordsSession.Builder().withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .build();
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withUserAgent("FooBar")
+                .withEndpoint("https://www.google.com")
+                .withOAuth2Credential(credential)
+                .withDeveloperToken("developerToken"));
 
-    try {
-      adWordsSession.setOAuth2Credential(null);
-      fail("NullPointerException expected");
-    } catch (NullPointerException e) {
-      assertTrue("Expected oAuth2Credential in error message",
-          e.getMessage().contains("oAuth2Credential"));
+    if (isImmutable) {
+      thrown.expect(UnsupportedOperationException.class);
+    } else {
+      thrown.expect(NullPointerException.class);
     }
+    thrown.expectMessage("oAuth2Credential");
+    adWordsSession.setOAuth2Credential(null);
   }
-  
+
   @Test
   public void testBuilder_withReportingConfiguration() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    
     ReportingConfiguration reportingConfiguration =
         new ReportingConfiguration.Builder().skipReportHeader(true).skipReportSummary(true).build();
-    
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withUserAgent("FooBar")
-        .withEndpoint("https://www.google.com")
-        .withOAuth2Credential(credential)
-        .withDeveloperToken("developerToken")
-        .withReportingConfiguration(reportingConfiguration)
-        .build();
-    
+
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withUserAgent("FooBar")
+                .withEndpoint("https://www.google.com")
+                .withOAuth2Credential(credential)
+                .withDeveloperToken("developerToken")
+                .withReportingConfiguration(reportingConfiguration));
+
     ReportingConfiguration sessionReportingConfig = adWordsSession.getReportingConfiguration();
-    assertNotNull("reporting configuration should not be null when passed to the builder",
+    assertNotNull(
+        "reporting configuration should not be null when passed to the builder",
         sessionReportingConfig);
   }
-  
+
   /**
-   * Tests that the builder builds correctly with all available settings. 
+   * Tests that the builder builds correctly with all available settings.
    */
   @Test
   public void testBuilder_allSettings() throws Exception {
-    Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-
-    ReportingConfiguration reportingConfiguration =
-        new ReportingConfiguration.Builder().skipReportHeader(true).skipReportSummary(true).build();
-
-    AdWordsSession adWordsSession = new AdWordsSession.Builder()
-        .withClientCustomerId("customer id")
-        .withDeveloperToken("developer token")
-        .withEndpoint("https://www.google.com")
-        .enablePartialFailure()
-        .enableValidateOnly()
-        .withOAuth2Credential(credential)
-        .withUserAgent("user agent")
-        .withReportingConfiguration(reportingConfiguration)
-        .build();
+    AdWordsSession adWordsSession = build(allSettingsBuilder);
 
     assertEquals("customer id", adWordsSession.getClientCustomerId());
     assertEquals("developer token", adWordsSession.getDeveloperToken());
@@ -345,5 +369,81 @@ public class AdWordsSessionTest {
     assertSame(credential, adWordsSession.getOAuth2Credential());
     assertEquals("user agent", adWordsSession.getUserAgent());
     assertSame(reportingConfiguration, adWordsSession.getReportingConfiguration());
+  }
+
+  /**
+   * Tests that copy builder copies all values correctly.
+   */
+  @Test
+  public void testImmutable_copyBuilder() throws Exception {
+    AdWordsSession adWordsSession = build(allSettingsBuilder);
+
+    AdWordsSession copy = build(adWordsSession.newBuilder());
+
+    assertNotSame(adWordsSession, copy);
+    for (Method method : ImmutableAdWordsSession.class.getMethods()) {
+      if (method.getName().startsWith("get") && method.getParameterTypes().length == 1) {
+        Object originalAttributeValue = method.invoke(adWordsSession);
+        Object copyAttributeValue = method.invoke(copy);
+        assertEquals(
+            "Copied session value does not match original for getter: " + method.getName(),
+            originalAttributeValue,
+            copyAttributeValue);
+      }
+    }
+
+    // The copy should point to the same OAuth2 credential and reporting configuration as
+    // the original.
+    assertSame(adWordsSession.getOAuth2Credential(), copy.getOAuth2Credential());
+    assertSame(adWordsSession.getReportingConfiguration(), copy.getReportingConfiguration());
+  }
+
+  /**
+   * Tests that copy constructor on {@link ImmutableAdWordsSession} copies all values correctly.
+   */
+  @Test
+  public void testImmutable_setters_fail() throws Exception {
+    if (!isImmutable) {
+      assertTrue("Skipping immutability test because !isImmutable", true);
+      return;
+    }
+
+    ImmutableAdWordsSession immutableAdWordsSession = allSettingsBuilder.buildImmutable();
+
+    // Find each setter method and confirm that the immutable session throws an exception when the
+    // method is invoked.
+    for (Method method : ImmutableAdWordsSession.class.getMethods()) {
+      if (method.getName().startsWith("set") && method.getParameterTypes().length == 1) {
+        Class<?> parameterType = method.getParameterTypes()[0];
+        String attributeName = method.getName().substring("set".length());
+        String getterPrefix = "get";
+        if (parameterType.equals(boolean.class) || parameterType.equals(Boolean.class)) {
+          getterPrefix = "is";
+        }
+
+        String getMethodName =
+            getterPrefix + attributeName.substring(0, 1).toUpperCase() + attributeName.substring(1);
+        Method getMethod = ImmutableAdWordsSession.class.getMethod(getMethodName);
+
+        // Get the attribute value from the original session to use in the setter method invocation
+        // below.
+        Object attributeValue = getMethod.invoke(immutableAdWordsSession);
+
+        // Attempt to invoke the setter on the original session and verify that this
+        // throws an UnsupportedOperationException.
+        try {
+          method.invoke(immutableAdWordsSession, attributeValue);
+          fail(
+              "Invocation of setter method "
+                  + method.getName()
+                  + " should have failed for an ImmutableAdWordsSession, but it succeeded");
+        } catch (InvocationTargetException e) {
+          assertEquals(
+              "UnsupportedOperationException is expected on set",
+              UnsupportedOperationException.class,
+              e.getCause().getClass());
+        }
+      }
+    }
   }
 }

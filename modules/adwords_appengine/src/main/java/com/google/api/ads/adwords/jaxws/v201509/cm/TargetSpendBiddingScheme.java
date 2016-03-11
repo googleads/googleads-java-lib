@@ -8,9 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Target Spend bidding scheme, in which Google automatically places
- *             bids for the user based on their daily/monthly budget or optional
- *             spend target.
+ *             <a href="https://support.google.com/adwords/answer/6268626">Target Spend</a> is an automated
+ *             bid strategy that sets your bids to help get as many clicks as possible within your budget.
  *             <span class="constraint AdxEnabled">This is disabled for AdX.</span>
  *           
  * 

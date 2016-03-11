@@ -24,13 +24,10 @@ public class MediaErrorReason implements java.io.Serializable {
     public static final java.lang.String _ENTITY_REFERENCED_IN_MULTIPLE_OPS = "ENTITY_REFERENCED_IN_MULTIPLE_OPS";
     public static final java.lang.String _FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE = "FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE";
     public static final java.lang.String _INVALID_MEDIA_ID = "INVALID_MEDIA_ID";
-    public static final java.lang.String _INVALID_MEDIA_TYPE = "INVALID_MEDIA_TYPE";
     public static final java.lang.String _INVALID_MEDIA_SUB_TYPE = "INVALID_MEDIA_SUB_TYPE";
+    public static final java.lang.String _INVALID_MEDIA_TYPE = "INVALID_MEDIA_TYPE";
     public static final java.lang.String _INVALID_REFERENCE_ID = "INVALID_REFERENCE_ID";
     public static final java.lang.String _INVALID_YOU_TUBE_ID = "INVALID_YOU_TUBE_ID";
-    public static final java.lang.String _YOU_TUBE_VIDEO_NOT_FOUND = "YOU_TUBE_VIDEO_NOT_FOUND";
-    public static final java.lang.String _YOU_TUBE_SERVICE_UNAVAILABLE = "YOU_TUBE_SERVICE_UNAVAILABLE";
-    public static final java.lang.String _YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION = "YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION";
     public static final java.lang.String _MEDIA_FAILED_TRANSCODING = "MEDIA_FAILED_TRANSCODING";
     public static final java.lang.String _MEDIA_NOT_TRANSCODED = "MEDIA_NOT_TRANSCODED";
     public static final java.lang.String _MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE = "MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE";
@@ -39,6 +36,9 @@ public class MediaErrorReason implements java.io.Serializable {
     public static final java.lang.String _TOO_LONG = "TOO_LONG";
     public static final java.lang.String _UNSUPPORTED_OPERATION = "UNSUPPORTED_OPERATION";
     public static final java.lang.String _UNSUPPORTED_TYPE = "UNSUPPORTED_TYPE";
+    public static final java.lang.String _YOU_TUBE_SERVICE_UNAVAILABLE = "YOU_TUBE_SERVICE_UNAVAILABLE";
+    public static final java.lang.String _YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION = "YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION";
+    public static final java.lang.String _YOU_TUBE_VIDEO_NOT_FOUND = "YOU_TUBE_VIDEO_NOT_FOUND";
     public static final MediaErrorReason CANNOT_ADD_STANDARD_ICON = new MediaErrorReason(_CANNOT_ADD_STANDARD_ICON);
     public static final MediaErrorReason CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES = new MediaErrorReason(_CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES);
     public static final MediaErrorReason DUPLICATE_MEDIA = new MediaErrorReason(_DUPLICATE_MEDIA);
@@ -46,13 +46,10 @@ public class MediaErrorReason implements java.io.Serializable {
     public static final MediaErrorReason ENTITY_REFERENCED_IN_MULTIPLE_OPS = new MediaErrorReason(_ENTITY_REFERENCED_IN_MULTIPLE_OPS);
     public static final MediaErrorReason FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE = new MediaErrorReason(_FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE);
     public static final MediaErrorReason INVALID_MEDIA_ID = new MediaErrorReason(_INVALID_MEDIA_ID);
-    public static final MediaErrorReason INVALID_MEDIA_TYPE = new MediaErrorReason(_INVALID_MEDIA_TYPE);
     public static final MediaErrorReason INVALID_MEDIA_SUB_TYPE = new MediaErrorReason(_INVALID_MEDIA_SUB_TYPE);
+    public static final MediaErrorReason INVALID_MEDIA_TYPE = new MediaErrorReason(_INVALID_MEDIA_TYPE);
     public static final MediaErrorReason INVALID_REFERENCE_ID = new MediaErrorReason(_INVALID_REFERENCE_ID);
     public static final MediaErrorReason INVALID_YOU_TUBE_ID = new MediaErrorReason(_INVALID_YOU_TUBE_ID);
-    public static final MediaErrorReason YOU_TUBE_VIDEO_NOT_FOUND = new MediaErrorReason(_YOU_TUBE_VIDEO_NOT_FOUND);
-    public static final MediaErrorReason YOU_TUBE_SERVICE_UNAVAILABLE = new MediaErrorReason(_YOU_TUBE_SERVICE_UNAVAILABLE);
-    public static final MediaErrorReason YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION = new MediaErrorReason(_YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION);
     public static final MediaErrorReason MEDIA_FAILED_TRANSCODING = new MediaErrorReason(_MEDIA_FAILED_TRANSCODING);
     public static final MediaErrorReason MEDIA_NOT_TRANSCODED = new MediaErrorReason(_MEDIA_NOT_TRANSCODED);
     public static final MediaErrorReason MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE = new MediaErrorReason(_MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE);
@@ -61,6 +58,9 @@ public class MediaErrorReason implements java.io.Serializable {
     public static final MediaErrorReason TOO_LONG = new MediaErrorReason(_TOO_LONG);
     public static final MediaErrorReason UNSUPPORTED_OPERATION = new MediaErrorReason(_UNSUPPORTED_OPERATION);
     public static final MediaErrorReason UNSUPPORTED_TYPE = new MediaErrorReason(_UNSUPPORTED_TYPE);
+    public static final MediaErrorReason YOU_TUBE_SERVICE_UNAVAILABLE = new MediaErrorReason(_YOU_TUBE_SERVICE_UNAVAILABLE);
+    public static final MediaErrorReason YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION = new MediaErrorReason(_YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION);
+    public static final MediaErrorReason YOU_TUBE_VIDEO_NOT_FOUND = new MediaErrorReason(_YOU_TUBE_VIDEO_NOT_FOUND);
     public java.lang.String getValue() { return _value_;}
     public static MediaErrorReason fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

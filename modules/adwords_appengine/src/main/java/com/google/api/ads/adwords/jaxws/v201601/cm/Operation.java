@@ -83,13 +83,13 @@ import com.google.api.ads.adwords.jaxws.v201601.rm.UserListOperation;
     CampaignOperation.class,
     CampaignFeedOperation.class,
     BudgetOrderOperation.class,
-    ExpressBusinessOperation.class,
-    PromotionOperation.class,
     ManagedCustomerLabelOperation.class,
     AccountLabelOperation.class,
     MoveOperation.class,
     LinkOperation.class,
     ManagedCustomerOperation.class,
+    ExpressBusinessOperation.class,
+    PromotionOperation.class,
     UserListOperation.class,
     MutateMembersOperation.class
 })

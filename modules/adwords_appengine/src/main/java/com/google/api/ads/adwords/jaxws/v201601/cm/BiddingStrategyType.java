@@ -42,6 +42,13 @@ public enum BiddingStrategyType {
      * 
      */
     BUDGET_OPTIMIZER,
+
+    /**
+     * 
+     *                 Replaced by TARGET_CPA. Kept only for legacy support.
+     *               
+     * 
+     */
     CONVERSION_OPTIMIZER,
     MANUAL_CPC,
     MANUAL_CPM,

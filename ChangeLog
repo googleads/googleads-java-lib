@@ -1,3 +1,27 @@
+2.11.0 - 03/11/2016
+-------------------
+AdWords:
+  - Fixed github issue #53 (https://github.com/googleads/googleads-java-lib/issues/53):
+    throw/get methods on the utility extension's UtilityLibraryException class should not
+    throw a ClassCastException when passed an AxisFault.
+  - Fixed github issue #58 (https://github.com/googleads/googleads-java-lib/issues/58):
+    Added ImmutableAdWordsSession to facilitate thread-safe cloning of an AdWordsSession.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added ImmutableDfpSession to facilitate thread-safe cloning of a DfpSession.
+
+Common:
+  - Upgraded commons-configuration:commons-configuration from 1.7 to 1.10 to
+    avoid a required dependency on commons-collections:commons-collections:3.2.1,
+    which has a high security vulnerability. See:
+    https://commons.apache.org/proper/commons-collections/security-reports.html#Fixed_in_Apache_Commons_Collections_3.2.24.1
+  - Explicitly added a dependency on commons-collections:commons-collections:3.2.2.
+  - Excluded commons-collections:commons-collections:3.2.1 from the
+    commons-beanutils:commons-beanutils:1.9.2 dependency.
+
 2.10.0 - 02/23/2016
 -------------------
 AdWords:

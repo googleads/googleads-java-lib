@@ -27,10 +27,45 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum ConstantDataServiceUserInterestTaxonomyType {
 
+
+    /**
+     * 
+     *                 The brand for this user interest.
+     *               
+     * 
+     */
     BRAND,
+
+    /**
+     * 
+     *                 The market for this user interest.
+     *               
+     * 
+     */
     IN_MARKET,
+
+    /**
+     * 
+     *                 Users known to have installed applications in the specified categories.
+     *               
+     * 
+     */
     MOBILE_APP_INSTALL_USER,
+
+    /**
+     * 
+     *                 The geographical location of the interest-based vertical.
+     *               
+     * 
+     */
     VERTICAL_GEO,
+
+    /**
+     * 
+     *                 User interest criteria for new smart phone users.
+     *               
+     * 
+     */
     NEW_SMART_PHONE_USER;
 
     public String value() {

@@ -60,8 +60,8 @@ import com.google.api.ads.adwords.jaxws.v201601.rm.UserListPage;
     CampaignPage.class,
     BiddingStrategyPage.class,
     BudgetOrderPage.class,
-    com.google.api.ads.adwords.jaxws.v201601.express.NoStatsPage.class,
     ManagedCustomerPage.class,
+    com.google.api.ads.adwords.jaxws.v201601.express.NoStatsPage.class,
     UserListPage.class
 })
 public abstract class Page {

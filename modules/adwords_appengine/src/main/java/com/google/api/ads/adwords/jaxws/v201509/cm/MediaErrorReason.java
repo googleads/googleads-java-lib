@@ -20,13 +20,10 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ENTITY_REFERENCED_IN_MULTIPLE_OPS"/>
  *     &lt;enumeration value="FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE"/>
  *     &lt;enumeration value="INVALID_MEDIA_ID"/>
- *     &lt;enumeration value="INVALID_MEDIA_TYPE"/>
  *     &lt;enumeration value="INVALID_MEDIA_SUB_TYPE"/>
+ *     &lt;enumeration value="INVALID_MEDIA_TYPE"/>
  *     &lt;enumeration value="INVALID_REFERENCE_ID"/>
  *     &lt;enumeration value="INVALID_YOU_TUBE_ID"/>
- *     &lt;enumeration value="YOU_TUBE_VIDEO_NOT_FOUND"/>
- *     &lt;enumeration value="YOU_TUBE_SERVICE_UNAVAILABLE"/>
- *     &lt;enumeration value="YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"/>
  *     &lt;enumeration value="MEDIA_FAILED_TRANSCODING"/>
  *     &lt;enumeration value="MEDIA_NOT_TRANSCODED"/>
  *     &lt;enumeration value="MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE"/>
@@ -35,6 +32,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="TOO_LONG"/>
  *     &lt;enumeration value="UNSUPPORTED_OPERATION"/>
  *     &lt;enumeration value="UNSUPPORTED_TYPE"/>
+ *     &lt;enumeration value="YOU_TUBE_SERVICE_UNAVAILABLE"/>
+ *     &lt;enumeration value="YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"/>
+ *     &lt;enumeration value="YOU_TUBE_VIDEO_NOT_FOUND"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -103,19 +103,19 @@ public enum MediaErrorReason {
 
     /**
      * 
-     *                 The media type is invalid
-     *               
-     * 
-     */
-    INVALID_MEDIA_TYPE,
-
-    /**
-     * 
      *                 The media subtype is invalid
      *               
      * 
      */
     INVALID_MEDIA_SUB_TYPE,
+
+    /**
+     * 
+     *                 The media type is invalid
+     *               
+     * 
+     */
+    INVALID_MEDIA_TYPE,
 
     /**
      * 
@@ -132,30 +132,6 @@ public enum MediaErrorReason {
      * 
      */
     INVALID_YOU_TUBE_ID,
-
-    /**
-     * 
-     *                 The YouTube video id is syntactically valid but the video was not found.
-     *               
-     * 
-     */
-    YOU_TUBE_VIDEO_NOT_FOUND,
-
-    /**
-     * 
-     *                 YouTube is unavailable for requesting video data.
-     *               
-     * 
-     */
-    YOU_TUBE_SERVICE_UNAVAILABLE,
-
-    /**
-     * 
-     *                 The YouTube video has a non positive duration.
-     *               
-     * 
-     */
-    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
 
     /**
      * 
@@ -213,7 +189,31 @@ public enum MediaErrorReason {
      * 
      */
     UNSUPPORTED_OPERATION,
-    UNSUPPORTED_TYPE;
+    UNSUPPORTED_TYPE,
+
+    /**
+     * 
+     *                 YouTube is unavailable for requesting video data.
+     *               
+     * 
+     */
+    YOU_TUBE_SERVICE_UNAVAILABLE,
+
+    /**
+     * 
+     *                 The YouTube video has a non positive duration.
+     *               
+     * 
+     */
+    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
+
+    /**
+     * 
+     *                 The YouTube video id is syntactically valid but the video was not found.
+     *               
+     * 
+     */
+    YOU_TUBE_VIDEO_NOT_FOUND;
 
     public String value() {
         return name();

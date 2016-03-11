@@ -13,7 +13,15 @@ package com.google.api.ads.adwords.axis.v201601.cm;
  */
 public class CpaBid  extends com.google.api.ads.adwords.axis.v201601.cm.Bids  implements java.io.Serializable {
     /* Target cost per acquisition/conversion. This is applicable
-     * only at the ad group level. */
+     * only at the ad group level.
+     *                     
+     *                     <p>If an ad group-level target is not set and
+     * the strategy type is TARGET_CPA,
+     *                     the strategy level target will be used. To set
+     * the strategy-level target,
+     *                     set the {@linkplain TargetCpaBiddingScheme#targetCpa}
+     * on the strategy's
+     *                     {@linkplain BiddingStrategyConfiguration#biddingScheme}. */
     private com.google.api.ads.adwords.axis.v201601.cm.Money bid;
 
     public CpaBid() {
@@ -33,6 +41,14 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201601.cm.Bids  im
      * 
      * @return bid   * Target cost per acquisition/conversion. This is applicable
      * only at the ad group level.
+     *                     
+     *                     <p>If an ad group-level target is not set and
+     * the strategy type is TARGET_CPA,
+     *                     the strategy level target will be used. To set
+     * the strategy-level target,
+     *                     set the {@linkplain TargetCpaBiddingScheme#targetCpa}
+     * on the strategy's
+     *                     {@linkplain BiddingStrategyConfiguration#biddingScheme}.
      */
     public com.google.api.ads.adwords.axis.v201601.cm.Money getBid() {
         return bid;
@@ -44,6 +60,14 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201601.cm.Bids  im
      * 
      * @param bid   * Target cost per acquisition/conversion. This is applicable
      * only at the ad group level.
+     *                     
+     *                     <p>If an ad group-level target is not set and
+     * the strategy type is TARGET_CPA,
+     *                     the strategy level target will be used. To set
+     * the strategy-level target,
+     *                     set the {@linkplain TargetCpaBiddingScheme#targetCpa}
+     * on the strategy's
+     *                     {@linkplain BiddingStrategyConfiguration#biddingScheme}.
      */
     public void setBid(com.google.api.ads.adwords.axis.v201601.cm.Money bid) {
         this.bid = bid;

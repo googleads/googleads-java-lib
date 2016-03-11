@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.axis.utility.extension.exception;
 
 import com.google.api.ads.adwords.axis.v201506.cm.ApiException;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -73,11 +74,12 @@ public final class UtilityLibraryException extends RuntimeException {
    */
   public static void throwUnwrapApiExceptions(Exception exception, String message)
       throws RemoteException {
-    Throwable throwable = Throwables.getRootCause(exception);
-    if (throwable.getClass().isAssignableFrom(ApiException.class)) {
+    Throwable throwable =
+        Throwables.getRootCause(Preconditions.checkNotNull(exception, "Null exception"));
+    if (ApiException.class.isAssignableFrom(throwable.getClass())) {
       throw (ApiException) throwable;
     }
-    if (throwable.getClass().isAssignableFrom(RemoteException.class)) {
+    if (RemoteException.class.isAssignableFrom(throwable.getClass())) {
       throw (RemoteException) throwable;
     }
     throw new UtilityLibraryException(message, exception);
@@ -91,13 +93,13 @@ public final class UtilityLibraryException extends RuntimeException {
    * @return the unwrapped RemoteException
    */
   public static RemoteException getUnwrapApiExceptions(Exception exception, String message) {
-    Throwable throwable = Throwables.getRootCause(exception);
+    Throwable throwable =
+        Throwables.getRootCause(Preconditions.checkNotNull(exception, "Null exception"));
 
-    if (throwable.getClass().isAssignableFrom(ApiException.class)
-        && !throwable.getClass().equals(RemoteException.class)) {
+    if (ApiException.class.isAssignableFrom(throwable.getClass())) {
       return (ApiException) throwable;
     }
-    if (throwable.getClass().isAssignableFrom(RemoteException.class)) {
+    if (RemoteException.class.isAssignableFrom(throwable.getClass())) {
       return (RemoteException) throwable;
     }
     return new RemoteException(message + " " + throwable.getMessage(), throwable);
