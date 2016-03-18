@@ -14,7 +14,7 @@
 # then merge the master into this branch (shade-plugin).
 #
 
-DEFAULT_VERSION=2.0.1-KINJA-SHADED
+DEFAULT_VERSION=2.11.0-KINJA-SHADED
 # you can override the default version number by setting the first CLI parameter
 VERSION=${1:-$DEFAULT_VERSION}
 
