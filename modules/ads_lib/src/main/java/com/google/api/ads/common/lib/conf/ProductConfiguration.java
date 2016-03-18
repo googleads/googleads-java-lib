@@ -14,15 +14,14 @@
 
 package com.google.api.ads.common.lib.conf;
 
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.apache.commons.configuration.Configuration;
 
+import javax.inject.Inject;
+
 /**
  * Configuration of product/framework properties.
- *
- * @author Adam Rogal
  */
 public class ProductConfiguration extends BaseConfiguration {
 

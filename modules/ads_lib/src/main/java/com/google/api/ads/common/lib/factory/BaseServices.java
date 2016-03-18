@@ -24,8 +24,6 @@ import com.google.api.ads.common.lib.client.AdsSession;
  * @param <C> the type of {@link AdsServiceClient}
  * @param <S> the type of {@link AdsSession}
  * @param <D> the type of {@link AdsServiceDescriptor}
- *
- * @author Joseph DiLallo
  */
 public abstract class BaseServices<C extends AdsServiceClient<S, D>,
                                    S extends AdsSession,

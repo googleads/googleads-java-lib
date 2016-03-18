@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201505;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -46,7 +47,9 @@ public class CustomTargetingKey {
     protected Long id;
     protected String name;
     protected String displayName;
+    @XmlSchemaType(name = "string")
     protected CustomTargetingKeyType type;
+    @XmlSchemaType(name = "string")
     protected CustomTargetingKeyStatus status;
 
     /**

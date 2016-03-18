@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "PlacementAction")
 @XmlSeeAlso({
     ActivatePlacements.class,
-    DeactivatePlacements.class,
-    ArchivePlacements.class
+    ArchivePlacements.class,
+    DeactivatePlacements.class
 })
 public abstract class PlacementAction {
 

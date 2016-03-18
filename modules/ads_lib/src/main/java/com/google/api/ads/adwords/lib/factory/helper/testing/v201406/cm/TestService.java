@@ -16,8 +16,6 @@ package com.google.api.ads.adwords.lib.factory.helper.testing.v201406.cm;
 
 /**
  * Test class for AdWordsServiceClientFactoryHelper.
- *
- * @author Adam Rogal
  */
 public class TestService {
 

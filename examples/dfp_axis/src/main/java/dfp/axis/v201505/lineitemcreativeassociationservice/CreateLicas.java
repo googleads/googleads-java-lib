@@ -32,10 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemCreativeService.createLineItemCreativeAssociations
- *
- * @author Adam Rogal
  */
 public class CreateLicas {
 
@@ -63,7 +59,7 @@ public class CreateLicas {
             new LineItemCreativeAssociation[] {lica});
 
     for (LineItemCreativeAssociation createdLica : licas) {
-      System.out.printf("A LICA with line item ID \"%d\" and creative ID \"%d\" was created.\n",
+      System.out.printf("A LICA with line item ID %d and creative ID %d was created.%n",
           createdLica.getLineItemId(), createdLica.getCreativeId());
     }
   }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -66,7 +67,9 @@ public class VpaidLinearRedirectCreative
     protected String flashUrl;
     protected Size flashAssetSize;
     protected String vastPreviewUrl;
+    @XmlSchemaType(name = "string")
     protected SslScanResult sslScanResult;
+    @XmlSchemaType(name = "string")
     protected SslManualOverride sslManualOverride;
 
     /**

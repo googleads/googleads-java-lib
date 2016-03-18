@@ -41,10 +41,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: AudienceSegmentService.createAudienceSegments
- *
- * @author Adam Rogal
  */
 public class CreateAudienceSegments {
 
@@ -110,7 +106,7 @@ public class CreateAudienceSegments {
 
     for (AudienceSegment createdAudienceSegment : audienceSegments) {
       System.out.printf(
-          "An audience segment with ID \"%d\", name \"%s\", and type \"%s\" was created.\n",
+          "An audience segment with ID %d, name '%s', and type '%s' was created.%n",
           createdAudienceSegment.getId(), createdAudienceSegment.getName(),
           createdAudienceSegment.getType());
     }

@@ -56,8 +56,6 @@ import javax.xml.ws.handler.MessageContext;
 
 /**
  * SOAP Client Handler implementation for use with JAX-WS.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class JaxWsHandlerTest {
@@ -327,5 +325,16 @@ public class JaxWsHandlerTest {
   public void testCreateSoapHeaderElement() {
     thrown.expect(UnsupportedOperationException.class);
     jaxWsHandler.createSoapHeaderElement(new QName("website", "name"));
+  }
+  
+  @Test
+  public void testSetRequestTimeout() {
+    int timeout = 12345;
+    when(mockSoapClient.getRequestContext()).thenReturn(mockRequestContext);
+
+    jaxWsHandler.setRequestTimeout(mockSoapClient, timeout);
+    
+    verify(mockRequestContext).put("com.sun.xml.ws.request.timeout", timeout);
+    verify(mockRequestContext).put("com.sun.xml.internal.ws.request.timeout", timeout);   
   }
 }

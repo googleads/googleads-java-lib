@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201505;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -40,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DayPart {
 
+    @XmlSchemaType(name = "string")
     protected DayOfWeek dayOfWeek;
     protected TimeOfDay startTime;
     protected TimeOfDay endTime;

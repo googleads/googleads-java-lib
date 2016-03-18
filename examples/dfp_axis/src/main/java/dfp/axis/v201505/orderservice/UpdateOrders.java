@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: OrderService.getOrdersByStatement
- * Tags: OrderService.updateOrders
- *
- * @author Adam Rogal
  */
 public class UpdateOrders {
 
@@ -70,7 +65,7 @@ public class UpdateOrders {
     Order[] orders = orderService.updateOrders(new Order[] {order});
 
     for (Order updatedOrder : orders) {
-      System.out.printf("Order with ID \"%d\" and name \"%s\" was updated.\n", updatedOrder.getId(),
+      System.out.printf("Order with ID %d and name '%s' was updated.%n", updatedOrder.getId(),
           updatedOrder.getName());
     }
   }

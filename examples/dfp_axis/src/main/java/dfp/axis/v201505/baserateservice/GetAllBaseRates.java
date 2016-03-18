@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  * To create product template base rates, run CreateProductTemplateBaseRates.java.
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: BaseRateService.getBaseRatesByStatement
- *
- * @author Nicholas Chen
  */
 public class GetAllBaseRates {
 
@@ -58,8 +54,8 @@ public class GetAllBaseRates {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (BaseRate baseRate : page.getResults()) {
-          System.out.printf("%d) Base rate with ID \"%d\" and type \"%s,\""
-              + " belonging to rate card ID \"%d\" was found.%n", i++,
+          System.out.printf("%d) Base rate with ID %d and type '%s',"
+              + " belonging to rate card ID %d was found.%n", i++,
               baseRate.getId(), baseRate.getClass().getSimpleName(),
               baseRate.getRateCardId());
         }

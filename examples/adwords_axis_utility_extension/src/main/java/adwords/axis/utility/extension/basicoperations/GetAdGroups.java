@@ -15,7 +15,7 @@
 package adwords.axis.utility.extension.basicoperations;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroup;
 
 import java.util.List;
 
@@ -25,10 +25,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: AdGroupService.get
- *
- * @author Julian Toledo
  */
 public class GetAdGroups {
 
@@ -47,7 +43,7 @@ public class GetAdGroups {
     List<AdGroup> adgroups = extendedManagedCustomer.getExtendedCampaign(campaignId).getAdGroups();
 
     for (AdGroup adGroup : adgroups) {
-      System.out.printf("AdGroup with name '%s' and ID '%d' was found.\n",
+      System.out.printf("AdGroup with name '%s' and ID %d was found.%n",
           adGroup.getName(), adGroup.getId());
     }
   }

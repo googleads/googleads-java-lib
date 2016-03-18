@@ -50,8 +50,6 @@ import java.util.Set;
 
 /**
  * Tests for {@link ReportServiceLogger}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ReportServiceLoggerTest {

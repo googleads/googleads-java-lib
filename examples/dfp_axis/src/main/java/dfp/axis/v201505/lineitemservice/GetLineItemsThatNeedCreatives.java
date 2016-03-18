@@ -31,10 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemService.getLineItemsByStatement
- *
- * @author Adam Rogal
  */
 public class GetLineItemsThatNeedCreatives {
 
@@ -63,7 +59,7 @@ public class GetLineItemsThatNeedCreatives {
         int i = page.getStartIndex();
         for (LineItem lineItem : page.getResults()) {
           System.out.printf(
-              "%d) Line item with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Line item with ID %d and name '%s' was found.%n", i++,
               lineItem.getId(), lineItem.getName());
         }
       }
@@ -71,7 +67,7 @@ public class GetLineItemsThatNeedCreatives {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

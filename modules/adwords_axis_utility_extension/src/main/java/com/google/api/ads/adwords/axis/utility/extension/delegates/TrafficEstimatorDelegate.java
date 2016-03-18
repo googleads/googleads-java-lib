@@ -14,9 +14,9 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
-import com.google.api.ads.adwords.axis.v201409.o.CampaignEstimate;
-import com.google.api.ads.adwords.axis.v201409.o.TrafficEstimatorSelector;
-import com.google.api.ads.adwords.axis.v201409.o.TrafficEstimatorServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.o.CampaignEstimate;
+import com.google.api.ads.adwords.axis.v201506.o.TrafficEstimatorSelector;
+import com.google.api.ads.adwords.axis.v201506.o.TrafficEstimatorServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link TrafficEstimatorServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class TrafficEstimatorDelegate
     extends AbstractBaseDelegate<TrafficEstimatorServiceInterface> {

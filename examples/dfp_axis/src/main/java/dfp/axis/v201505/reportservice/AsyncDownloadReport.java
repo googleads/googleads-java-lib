@@ -41,10 +41,6 @@ import java.net.URL;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ReportService.runReportJob
- *
- * @author Adam Rogal
  */
 public class AsyncDownloadReport {
 
@@ -73,6 +69,7 @@ public class AsyncDownloadReport {
         new ReportDownloader(reportService, reportJob.getId());
 
     reportDownloader.whenReportReady(new ReportCallback() {
+      @Override
       public void onSuccess() {
         try {
           // Change to your file location.
@@ -94,14 +91,17 @@ public class AsyncDownloadReport {
         }
       }
 
+      @Override
       public void onInterruption() {
         System.err.println("Report download interupted.");
       }
 
+      @Override
       public void onFailure() {
         System.err.println("Report download failed.");
       }
 
+      @Override
       public void onException(Exception e) {
         System.err.println("Report download failed.");
         e.printStackTrace();

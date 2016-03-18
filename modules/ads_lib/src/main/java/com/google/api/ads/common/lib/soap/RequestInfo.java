@@ -16,9 +16,6 @@ package com.google.api.ads.common.lib.soap;
 
 /**
  * Contains information about the request that was made.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class RequestInfo {
 
@@ -64,7 +61,6 @@ public class RequestInfo {
   /**
    * Builder for {@link RequestInfo} objects.
    *
-   * @author Adam Rogal
    */
   public static class Builder {
 

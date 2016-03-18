@@ -48,9 +48,14 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * This attribute is read-only. */
     private java.lang.Long proposalId;
 
-    /* Defines which source of volume to bill from.
-     *                 This attribute is optional and defaults to {@link
-     * BillFrom#DEFAULT}. */
+    /* Specifies which of {@link #dfpVolume}, {@link #thirdPartyVolume},
+     * or {@link #manualVolume}
+     *                 should be used as the {@link #reconciledVolume}.
+     *                 The value is optional. If this reconciliation data
+     * is for a {@link ProposalLineItem}
+     *                 then this will default to the proposal line item's
+     * {@link ProposalLineItem#billingSource}.
+     *                 Otherwise, this will default to {@link BillFrom#DFP}. */
     private com.google.api.ads.dfp.axis.v201505.BillFrom billFrom;
 
     /* {@link RateType} of the line item and proposal line item this
@@ -384,9 +389,14 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     /**
      * Gets the billFrom value for this ReconciliationReportRow.
      * 
-     * @return billFrom   * Defines which source of volume to bill from.
-     *                 This attribute is optional and defaults to {@link
-     * BillFrom#DEFAULT}.
+     * @return billFrom   * Specifies which of {@link #dfpVolume}, {@link #thirdPartyVolume},
+     * or {@link #manualVolume}
+     *                 should be used as the {@link #reconciledVolume}.
+     *                 The value is optional. If this reconciliation data
+     * is for a {@link ProposalLineItem}
+     *                 then this will default to the proposal line item's
+     * {@link ProposalLineItem#billingSource}.
+     *                 Otherwise, this will default to {@link BillFrom#DFP}.
      */
     public com.google.api.ads.dfp.axis.v201505.BillFrom getBillFrom() {
         return billFrom;
@@ -396,9 +406,14 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     /**
      * Sets the billFrom value for this ReconciliationReportRow.
      * 
-     * @param billFrom   * Defines which source of volume to bill from.
-     *                 This attribute is optional and defaults to {@link
-     * BillFrom#DEFAULT}.
+     * @param billFrom   * Specifies which of {@link #dfpVolume}, {@link #thirdPartyVolume},
+     * or {@link #manualVolume}
+     *                 should be used as the {@link #reconciledVolume}.
+     *                 The value is optional. If this reconciliation data
+     * is for a {@link ProposalLineItem}
+     *                 then this will default to the proposal line item's
+     * {@link ProposalLineItem#billingSource}.
+     *                 Otherwise, this will default to {@link BillFrom#DFP}.
      */
     public void setBillFrom(com.google.api.ads.dfp.axis.v201505.BillFrom billFrom) {
         this.billFrom = billFrom;

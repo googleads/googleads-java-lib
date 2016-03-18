@@ -30,11 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LabelService.getLabelsByStatement
- * Tags: LabelService.performLabelAction
- *
- * @author Adam Rogal
  */
 public class DeactivateLabels {
 
@@ -66,14 +61,14 @@ public class DeactivateLabels {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Label label : page.getResults()) {
-          System.out.printf("%d) Label with ID \"%d\" will be deactivated.\n", i++, label.getId());
+          System.out.printf("%d) Label with ID %d will be deactivated.%n", i++, label.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of labels to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of labels to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -88,7 +83,7 @@ public class DeactivateLabels {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of labels deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of labels deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No labels were deactivated.");
       }

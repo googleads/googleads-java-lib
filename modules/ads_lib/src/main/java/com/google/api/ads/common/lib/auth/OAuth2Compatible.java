@@ -18,8 +18,6 @@ import com.google.api.client.auth.oauth2.Credential;
 
 /**
  * Interface for a user to be compatible with OAuth2.
- *
- * @author Adam Rogal
  */
 public interface OAuth2Compatible {
 

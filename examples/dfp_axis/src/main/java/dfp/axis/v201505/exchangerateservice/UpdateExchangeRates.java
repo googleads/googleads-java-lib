@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ExchangeRateService.getExchangeRatesByStatement
- * Tags: ExchangeRateService.updateExchangeRates
- *
- * @author Nicholas Chen
  */
 public class UpdateExchangeRates {
   
@@ -73,8 +68,8 @@ public class UpdateExchangeRates {
         new ExchangeRate[] {exchangeRate});
 
     for (ExchangeRate updatedExchangeRate : exchangeRates) {
-      System.out.printf("Exchange rate with ID \"%d,\" currency code \"%s,\""
-          + " direction \"%s,\" and exchange rate \"%.2f\" was updated.%n",
+      System.out.printf("Exchange rate with ID %d, currency code '%s',"
+          + " direction '%s', and exchange rate %.2f was updated.%n",
           updatedExchangeRate.getId(), updatedExchangeRate.getCurrencyCode(),
           updatedExchangeRate.getDirection().getValue(),
           (updatedExchangeRate.getExchangeRate() / 10000000000f));

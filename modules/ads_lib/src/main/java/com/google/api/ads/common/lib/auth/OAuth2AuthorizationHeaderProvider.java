@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.auth;
 
 /**
  * OAuth2 authorization header provider.
- *
- * @author Adam Rogal
  */
 public class OAuth2AuthorizationHeaderProvider {
 

@@ -21,8 +21,6 @@ import java.net.MalformedURLException;
 
 /**
  * Interface for ads service descriptors.
- *
- * @author api.arogal(Adam Rogal)
  */
 public interface AdsServiceDescriptor extends SoapServiceDescriptor {
 

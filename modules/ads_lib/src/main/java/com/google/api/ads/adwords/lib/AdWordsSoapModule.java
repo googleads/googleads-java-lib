@@ -26,8 +26,6 @@ import com.google.inject.TypeLiteral;
 
 /**
  * Guice module for AdWords SOAP bindings.
- *
- * @author Joseph DiLallo
  */
 public class AdWordsSoapModule extends AdsSoapModule<AdWordsServiceClient,
                                                      AdWordsServiceDescriptor,

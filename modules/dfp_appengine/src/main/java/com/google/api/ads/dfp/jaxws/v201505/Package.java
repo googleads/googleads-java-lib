@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201505;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -59,6 +60,7 @@ public class Package {
     protected Long rateCardId;
     protected String name;
     protected String comments;
+    @XmlSchemaType(name = "string")
     protected PackageStatus status;
     protected DateTime startDateTime;
     protected DateTime endDateTime;

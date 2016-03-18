@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PlacementService.getPlacementsByStatement
- * Tags: PlacementService.updatePlacements
- *
- * @author Adam Rogal
  */
 public class UpdatePlacements {
 
@@ -76,7 +71,7 @@ public class UpdatePlacements {
     Placement[] placements = placementService.updatePlacements(new Placement[] {placement});
 
     for (Placement updatedPlacement : placements) {
-      System.out.printf("Placement with ID \"%d\" and name \"%s\" was updated.\n",
+      System.out.printf("Placement with ID %d and name '%s' was updated.%n",
           updatedPlacement.getId(), updatedPlacement.getName());
     }
   }

@@ -14,11 +14,11 @@
 
 package com.google.api.ads.dfp.axis;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-
-import junit.framework.TestCase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,14 +26,12 @@ import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link UserAgentCombiner} with DFP and Axis.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
-public class UserAgentCombinerTest extends TestCase {
+public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (DfpApi-Java, Dfp-Axis/2.0.0, Common-Java/2.0.0, Axis/1.4, Java/"
+      "userAgent (DfpApi-Java, Dfp-Axis/2.11.0, Common-Java/2.11.0, Axis/1.4, Java/"
           + System.getProperty("java.version") + ", maven)";
 
   /**

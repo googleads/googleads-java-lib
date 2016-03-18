@@ -36,10 +36,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: InventoryService.createAdUnits
- *
- * @author Adam Rogal
  */
 public class CreateAdUnits {
 
@@ -99,7 +95,7 @@ public class CreateAdUnits {
     AdUnit[] adUnits = inventoryService.createAdUnits(new AdUnit[] {webAdUnit, videoAdUnit});
 
     for (AdUnit adUnit : adUnits) {
-      System.out.printf("An ad unit with ID \"%s\", name \"%s\" was created.\n", adUnit.getId(),
+      System.out.printf("An ad unit with ID '%s', name '%s' was created.%n", adUnit.getId(),
           adUnit.getName());
     }
   }

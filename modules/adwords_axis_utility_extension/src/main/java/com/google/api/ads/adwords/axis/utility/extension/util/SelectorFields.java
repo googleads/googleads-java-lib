@@ -25,8 +25,6 @@ import java.util.List;
  * can use.
  *
  * <p>https://developers.google.com/adwords/api/docs/appendix/selectorfields
- *
- * @author Julian Toledo
  */
 public final class SelectorFields {
 
@@ -56,14 +54,16 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer}.
    */
   public enum ManagedCustomer
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer> {
+    ACCOUNT_LABELS("AccountLabels", true),
     CAN_MANAGE_CLIENTS("CanManageClients", true),
     COMPANY_NAME("CompanyName", true),
     CURRENCY_CODE("CurrencyCode", true),
     CUSTOMER_ID("CustomerId", true),
+    DATE_TIME_ZONE("DateTimeZone", true),
     NAME("Name", true),
     TEST_ACCOUNT("TestAccount", false);
 
@@ -95,18 +95,21 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Campaign}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Campaign}.
    */
-  public enum Campaign implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Campaign> {
+  public enum Campaign implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Campaign> {
+    ACTIVE_VIEW_CPM_ENABLED("ActiveViewCpmEnabled", true),
     AD_SERVING_OPTIMIZATION_STATUS("AdServingOptimizationStatus", false),
-    ADVERTISING_CHANNEL_TYPE("AdvertisingChannelType", true),
     ADVERTISING_CHANNEL_SUB_TYPE("AdvertisingChannelSubType", true),
+    ADVERTISING_CHANNEL_TYPE("AdvertisingChannelType", true),
     AMOUNT("Amount", true),
     BID_CEILING("BidCeiling", false),
     BID_TYPE("BidType", true),
+    BIDDING_STRATEGY_ID("BiddingStrategyId", true),
+    BIDDING_STRATEGY_NAME("BiddingStrategyName", true),
     BIDDING_STRATEGY_TYPE("BiddingStrategyType", true),
     BUDGET_ID("BudgetId", true),
-    BUDGET_NAME("BudgetName", true),
+    BUDGET_NAME("BudgetName", false),
     BUDGET_REFERENCE_COUNT("BudgetReferenceCount", false),
     BUDGET_STATUS("BudgetStatus", true),
     DELIVERY_METHOD("DeliveryMethod", false),
@@ -115,7 +118,7 @@ public final class SelectorFields {
     ENHANCED_CPC_ENABLED("EnhancedCpcEnabled", true),
     FREQUENCY_CAP_MAX_IMPRESSIONS("FrequencyCapMaxImpressions", true),
     ID("Id", true),
-    IS_BUDGET_EXPLICITLY_SHARED("IsBudgetExplicitlyShared", true),
+    IS_BUDGET_EXPLICITLY_SHARED("IsBudgetExplicitlyShared", false),
     LABELS("Labels", true),
     LEVEL("Level", true),
     NAME("Name", true),
@@ -127,10 +130,15 @@ public final class SelectorFields {
     START_DATE("StartDate", true),
     STATUS("Status", true),
     TARGET_CONTENT_NETWORK("TargetContentNetwork", true),
+    TARGET_CPA("TargetCpa", false),
+    TARGET_CPA_MAX_CPC_BID_CEILING("TargetCpaMaxCpcBidCeiling", true),
+    TARGET_CPA_MAX_CPC_BID_FLOOR("TargetCpaMaxCpcBidFloor", true),
     TARGET_GOOGLE_SEARCH("TargetGoogleSearch", true),
-    TARGET_PARTNER_SEARCH_NETWORK("TargetPartnerSearchNetwork", true),    
+    TARGET_PARTNER_SEARCH_NETWORK("TargetPartnerSearchNetwork", true),
     TARGET_SEARCH_NETWORK("TargetSearchNetwork", true),
-    TIME_UNIT("TimeUnit", true);
+    TIME_UNIT("TimeUnit", true),
+    TRACKING_URL_TEMPLATE("TrackingUrlTemplate", true),
+    URL_CUSTOM_PARAMETERS("UrlCustomParameters", false);
 
     private String field;
     private boolean filterable;
@@ -161,70 +169,82 @@ public final class SelectorFields {
 
   
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupAd}.
    */
   public enum AdGroupAd
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroupAd> {
-    ADGROUPAD_TRADEMARK_DISAPPROVED("AdGroupAdTrademarkDisapproved", false),
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroupAd> {
+    ADGROUP_AD_DISAPPROVAL_REASONS("AdGroupAdDisapprovalReasons", true),
+    ADGROUP_AD_TRADEMARK_DISAPPROVED("AdGroupAdTrademarkDisapproved", false),
     ADGROUP_CREATIVE_APPROVAL_STATUS("AdGroupCreativeApprovalStatus", true),
     ADGROUP_ID("AdGroupId", true),
-    ADVERTISING_ID("AdvertisingId", true),
-    CREATION_TIME("CreationTime", true),
-    DESCRIPTION1("Description1", true),
-    DESCRIPTION2("Description2", true),
+    ADVERTISING_ID("AdvertisingId", false),
+    CALL_ONLY_AD_BUSINESS_NAME("CallOnlyAdBusinessName", true),
+    CALL_ONLY_AD_CALL_TRACKED("CallOnlyAdCallTracked", false),
+    CALL_ONLY_AD_CONVERSION_TYPE_ID("CallOnlyAdConversionTypeId", false),
+    CALL_ONLY_AD_COUNTRY_CODE("CallOnlyAdCountryCode", false),
+    CALL_ONLY_AD_DESCRIPTION_1("CallOnlyAdDescription1", true),
+    CALL_ONLY_AD_DESCRIPTION_2("CallOnlyAdDescription2", true),
+    CALL_ONLY_AD_DISABLE_CALL_CONVERSION("CallOnlyAdDisableCallConversion", false),
+    CALL_ONLY_AD_PHONE_NUMBER("CallOnlyAdPhoneNumber", false),
+    CALL_ONLY_AD_PHONE_NUMBER_VERIFICATION_URL("CallOnlyAdPhoneNumberVerificationUrl", false),
+    CREATION_TIME("CreationTime", false),
+    CREATIVE_FINAL_APP_URLS("CreativeFinalAppUrls", true),
+    CREATIVE_FINAL_MOBILE_URLS("CreativeFinalMobileUrls", true),
+    CREATIVE_FINAL_URLS("CreativeFinalUrls", true),
+    CREATIVE_TRACKING_URL_TEMPLATE("CreativeTrackingUrlTemplate", true),
+    CREATIVE_URL_CUSTOM_PARAMETERS("CreativeUrlCustomParameters", true),
+    DESCRIPTION_1("Description1", true),
+    DESCRIPTION_2("Description2", true),
     DEVICE_PREFERENCE("DevicePreference", true),
     DIMENSIONS("Dimensions", false),
     DISPLAY_URL("DisplayUrl", true),
+    DURATION_MILLIS("DurationMillis", true),
     EXPANDING_DIRECTIONS("ExpandingDirections", false),
     EXPERIMENT_DATA_STATUS("ExperimentDataStatus", false),
     EXPERIMENT_DELTA_STATUS("ExperimentDeltaStatus", false),
     EXPERIMENT_ID("ExperimentId", true),
-    FILE_SIZE("FileSize", true),
+    FILE_SIZE("FileSize", false),
     HEADLINE("Headline", true),
-    HEIGHT("Height", true),
+    HEIGHT("Height", false),
     ID("Id", true),
     IMAGE_CREATIVE_NAME("ImageCreativeName", true),
-    INDUSTRY_STANDARD_COMMERCIAL_IDENTIFIER("IndustryStandardCommercialIdentifier", true),
+    INDUSTRY_STANDARD_COMMERCIAL_IDENTIFIER("IndustryStandardCommercialIdentifier", false),
     IS_COOKIE_TARGETED("IsCookieTargeted", false),
     IS_TAGGED("IsTagged", false),
     IS_USER_INTEREST_TARGETED("IsUserInterestTargeted", false),
     LABELS("Labels", true),
-    MEDIA_ID("MediaId", true),
-    MIME_TYPE("MimeType", true),
-    MOBILEAD_BUSINESS_NAME("MobileAdBusinessName", false),
-    MOBILEAD_COUNTRY_CODE("MobileAdCountryCode", false),
-    MOBILEAD_DESCRIPTION("MobileAdDescription", false),
-    MOBILEAD_HEADLINE("MobileAdHeadline", false),
-    MOBILEAD_MARKUP_LANGUAGES("MobileAdMarkupLanguages", false),
-    MOBILEAD_MOBILE_CARRIERS("MobileAdMobileCarriers", false),
-    MOBILEAD_PHONE_NUMBER("MobileAdPhoneNumber", false),
-    MOBILEIMAGEAD_MARKUP_LANGUAGES("MobileImageAdMarkupLanguages", false),
-    MOBILEIMAGEAD_MOBILE_CARRIERS("MobileImageAdMobileCarriers", false),
+    MEDIA_ID("MediaId", false),
+    MIME_TYPE("MimeType", false),
+    NAME("Name", false),
     PROMOTION_LINE("PromotionLine", true),
     READY_TO_PLAY_ON_THE_WEB("ReadyToPlayOnTheWeb", false),
-    REFERENCE_ID("ReferenceId", true),
-    RICHMEDIAAD_CERTIFIED_VENDOR_FORMAT_ID("RichMediaAdCertifiedVendorFormatId", false),
-    RICHMEDIAAD_DURATION("RichMediaAdDuration", false),
-    RICHMEDIAAD_IMPRESSION_BEACON_URL("RichMediaAdImpressionBeaconUrl", false),
-    RICHMEDIAAD_NAME("RichMediaAdName", false),
-    RICHMEDIAAD_SNIPPET("RichMediaAdSnippet", false),
-    RICHMEDIAAD_SOURCE_URL("RichMediaAdSourceUrl", false),
-    RICHMEDIAAD_TYPE("RichMediaAdType", false),
-    SOURCE_URL("SourceUrl", true),
+    REFERENCE_ID("ReferenceId", false),
+    RICH_MEDIA_AD_CERTIFIED_VENDOR_FORMAT_ID("RichMediaAdCertifiedVendorFormatId", false),
+    RICH_MEDIA_AD_DURATION("RichMediaAdDuration", false),
+    RICH_MEDIA_AD_IMPRESSION_BEACON_URL("RichMediaAdImpressionBeaconUrl", false),
+    RICH_MEDIA_AD_NAME("RichMediaAdName", false),
+    RICH_MEDIA_AD_SNIPPET("RichMediaAdSnippet", false),
+    RICH_MEDIA_AD_SOURCE_URL("RichMediaAdSourceUrl", false),
+    RICH_MEDIA_AD_TYPE("RichMediaAdType", false),
+    SOURCE_URL("SourceUrl", false),
     STATUS("Status", true),
-    TEMPLATEAD_DURATION("TemplateAdDuration", false),
-    TEMPLATEAD_NAME("TemplateAdName", false),
-    TEMPLATEAD_UNIONID("TemplateAdUnionId", false),
+    STREAMING_URL("StreamingUrl", false),
+    TEMPLATE_AD_DURATION("TemplateAdDuration", false),
+    TEMPLATE_AD_NAME("TemplateAdName", false),
+    TEMPLATE_AD_UNION_ID("TemplateAdUnionId", false),
     TEMPLATE_ELEMENT_FIELD_NAME("TemplateElementFieldName", false),
     TEMPLATE_ELEMENT_FIELD_TEXT("TemplateElementFieldText", false),
     TEMPLATE_ELEMENT_FIELD_TYPE("TemplateElementFieldType", false),
-    TEMPLATE_ID("TemplateId", false),
+    TEMPLATE_ID("TemplateId", true),
+    TEMPLATE_ORIGIN_AD_ID("TemplateOriginAdId", false),
+    TRADEMARKS("Trademarks", false),
+    TYPE("Type", false),
     UNIQUE_NAME("UniqueName", false),
     URL("Url", true),
     URLS("Urls", false),
     VIDEO_TYPES("VideoTypes", false),
-    WIDTH("Width", true),
-    YOUTUBEVIDEO_ID_STRING("YouTubeVideoIdString", true);
+    WIDTH("Width", false),
+    YOU_TUBE_VIDEO_ID_STRING("YouTubeVideoIdString", false);
 
     private String field;
     private boolean filterable;
@@ -254,16 +274,25 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion}.
    */
   public enum AdGroupCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion> {
+    ACTIVE_VIEW_CPM_ENABLED("ActiveViewCpmEnabled", true),
     ADGROUP_ID("AdGroupId", true),
     AGE_RANGE_TYPE("AgeRangeType", false),
+    APP_ID("AppId", true),
+    APP_PAYMENT_MODEL_TYPE("AppPaymentModelType", false),
     APPROVAL_STATUS("ApprovalStatus", true),
-    ARGUMENT("Argument", false),
+    BID_MODIFIER("BidModifier", true),
     BID_TYPE("BidType", true),
+    BIDDING_STRATEGY_ID("BiddingStrategyId", true),
+    BIDDING_STRATEGY_NAME("BiddingStrategyName", true),
+    BIDDING_STRATEGY_SOURCE("BiddingStrategySource", true),
     BIDDING_STRATEGY_TYPE("BiddingStrategyType", true),
+    CASE_VALUE("CaseValue", false),
+    CHANNEL_ID("ChannelId", false),
+    CHANNEL_NAME("ChannelName", false),
     CPC_BID("CpcBid", true),
     CPC_BID_SOURCE("CpcBidSource", true),
     CPM_BID("CpmBid", true),
@@ -273,40 +302,48 @@ public final class SelectorFields {
     CRITERIA_TYPE("CriteriaType", true),
     CRITERION_USE("CriterionUse", true),
     DESTINATION_URL("DestinationUrl", true),
+    DISAPPROVAL_REASONS("DisapprovalReasons", false),
     DISPLAY_NAME("DisplayName", true),
     ENHANCED_CPC_ENABLED("EnhancedCpcEnabled", true),
     EXPERIMENT_BID_MULTIPLIER("ExperimentBidMultiplier", true),
     EXPERIMENT_DATA_STATUS("ExperimentDataStatus", false),
     EXPERIMENT_DELTA_STATUS("ExperimentDeltaStatus", true),
     EXPERIMENT_ID("ExperimentId", true),
+    FINAL_APP_URLS("FinalAppUrls", true),
+    FINAL_MOBILE_URLS("FinalMobileUrls", true),
+    FINAL_URLS("FinalUrls", true),
     FIRST_PAGE_CPC("FirstPageCpc", true),
     GENDER_TYPE("GenderType", false),
     ID("Id", true),
     IS_KEYWORD_AD_RELEVANCE_ACCEPTABLE("IsKeywordAdRelevanceAcceptable", true),
-    IS_LANDING_PAGE_LATENCY_ACCEPTABLE("IsLandingPageLatencyAcceptable", true),
     IS_LANDING_PAGE_QUALITY_ACCEPTABLE("IsLandingPageQualityAcceptable", true),
     KEYWORD_MATCH_TYPE("KeywordMatchType", true),
     KEYWORD_TEXT("KeywordText", true),
     LABELS("Labels", true),
+    MAX_CPC_MULTIPLIER("MaxCpcMultiplier", true),
     MOBILE_APP_CATEGORY_ID("MobileAppCategoryId", false),
-    OPERAND("Operand", false),
-    PARAMETER("Parameter", true), // Beta
-    PATH("Path", true),
-    PERCENT_CPA_BID("PercentCpaBid", true),
-    PERCENT_CPA_BID_SOURCE("PercentCpaBidSource", true),
+    MULTIPLIER_SOURCE("MultiplierSource", false),
+    PARAMETER("Parameter", false),
+    PARENT_CRITERION_ID("ParentCriterionId", false),
+    PARTITION_TYPE("PartitionType", false),
+    PATH("Path", false),
     PLACEMENT_URL("PlacementUrl", true),
     QUALITY_SCORE("QualityScore", true),
     STATUS("Status", true),
     SYSTEM_SERVING_STATUS("SystemServingStatus", true),
-    TEXT("Text", false),
-    TOP_OF_PAGE_CPC("TopOfPageCpc", true), // Beta
+    TOP_OF_PAGE_CPC("TopOfPageCpc", true),
+    TRACKING_URL_TEMPLATE("TrackingUrlTemplate", true),
+    URL_CUSTOM_PARAMETERS("UrlCustomParameters", true),
     USER_INTEREST_ID("UserInterestId", false),
     USER_INTEREST_NAME("UserInterestName", false),
+    USER_INTEREST_PARENT_ID("UserInterestParentId", false),
     USER_LIST_ID("UserListId", false),
     USER_LIST_MEMBERSHIP_STATUS("UserListMembershipStatus", true),
     USER_LIST_NAME("UserListName", false),
     VERTICAL_ID("VerticalId", false),
-    VERTICAL_PARENT_ID("VerticalParentId", false);
+    VERTICAL_PARENT_ID("VerticalParentId", false),
+    VIDEO_ID("VideoId", false),
+    VIDEO_NAME("VideoName", false);
 
     private String field;
     private boolean filterable;
@@ -335,7 +372,6 @@ public final class SelectorFields {
             .add(ADGROUP_ID)
             .add(AGE_RANGE_TYPE)
             .add(APPROVAL_STATUS)
-            .add(ARGUMENT)
             .add(BID_TYPE)
             .add(BIDDING_STRATEGY_TYPE)
             .add(CPC_BID)
@@ -357,21 +393,16 @@ public final class SelectorFields {
             .add(GENDER_TYPE)
             .add(ID)
             .add(IS_KEYWORD_AD_RELEVANCE_ACCEPTABLE)
-            .add(IS_LANDING_PAGE_LATENCY_ACCEPTABLE)
             .add(IS_LANDING_PAGE_QUALITY_ACCEPTABLE)
             .add(KEYWORD_MATCH_TYPE)
             .add(KEYWORD_TEXT)
             .add(LABELS)
             .add(MOBILE_APP_CATEGORY_ID)
-            .add(OPERAND)
             .add(PATH)
-            .add(PERCENT_CPA_BID)
-            .add(PERCENT_CPA_BID_SOURCE)
             .add(PLACEMENT_URL)
             .add(QUALITY_SCORE)
             .add(STATUS)
             .add(SYSTEM_SERVING_STATUS)
-            .add(TEXT)
             .add(USER_INTEREST_ID)
             .add(USER_INTEREST_NAME)
             .add(USER_LIST_ID)
@@ -388,10 +419,14 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroup}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroup}.
    */
-  public enum AdGroup implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroup> {
+  public enum AdGroup implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroup> {
+    ACTIVE_VIEW_CPM_ENABLED("ActiveViewCpmEnabled", true),
     BID_TYPE("BidType", true),
+    BIDDING_STRATEGY_ID("BiddingStrategyId", true),
+    BIDDING_STRATEGY_NAME("BiddingStrategyName", true),
+    BIDDING_STRATEGY_SOURCE("BiddingStrategySource", true),
     BIDDING_STRATEGY_TYPE("BiddingStrategyType", true),
     CAMPAIGN_ID("CampaignId", true),
     CAMPAIGN_NAME("CampaignName", true),
@@ -399,6 +434,7 @@ public final class SelectorFields {
     CPC_BID("CpcBid", true),
     CPM_BID("CpmBid", true),
     ENHANCED_CPC_ENABLED("EnhancedCpcEnabled", true),
+    EXPERIMENT_DATA_STATUS("ExperimentDataStatus", false),
     EXPERIMENT_DELTA_STATUS("ExperimentDeltaStatus", false),
     EXPERIMENT_ID("ExperimentId", true),
     ID("Id", true),
@@ -407,10 +443,12 @@ public final class SelectorFields {
     MAX_CPC_MULTIPLIER("MaxCpcMultiplier", true),
     MAX_CPM_MULTIPLIER("MaxCpmMultiplier", true),
     NAME("Name", true),
-    PERCENT_CPA_BID("PercentCpaBid", true),
     SETTINGS("Settings", false),
     STATUS("Status", true),
-    TARGET_CPA_BID("TargetCpaBid", true);
+    TARGET_CPA("TargetCpa", true),
+    TARGET_CPA_BID("TargetCpaBid", true),
+    TRACKING_URL_TEMPLATE("TrackingUrlTemplate", true),
+    URL_CUSTOM_PARAMETERS("UrlCustomParameters", false);
 
     private String field;
     private boolean filterable;
@@ -440,10 +478,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeed}.
    */
   public enum AdGroupFeed
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeed> {
     ADGROUP_ID("AdGroupId", true),
     FEED_ID("FeedId", true),
     MATCHING_FUNCTION("MatchingFunction", false),
@@ -478,9 +516,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdParam}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdParam}.
    */
-  public enum AdParam implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdParam> {
+  public enum AdParam implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdParam> {
     ADGROUP_ID("AdGroupId", true),
     CRITERION_ID("CriterionId", true),
     INSERTION_TEXT("InsertionText", false),
@@ -514,17 +552,17 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Budget}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Budget}.
    */
-  public enum Budget implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Budget> {
+  public enum Budget implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Budget> {
     AMOUNT("Amount", true),
     BUDGET_ID("BudgetId", true),
     BUDGET_NAME("BudgetName", true),
     BUDGET_REFERENCE_COUNT("BudgetReferenceCount", false),
     BUDGET_STATUS("BudgetStatus", true),
     DELIVERY_METHOD("DeliveryMethod", false),
-    IS_BUDGET_EXPLICITLY_SHARED("IsBudgetExplicitlyShared", false),
-    PERIOD("Period", true);
+    IS_BUDGET_EXPLICITLY_SHARED("IsBudgetExplicitlyShared", true),
+    PERIOD("Period", false);
 
     private String field;
     private boolean filterable;
@@ -554,10 +592,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.billing.BudgetOrder}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.billing.BudgetOrder}.
    */
   public enum BudgetOrder
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.billing.BudgetOrder> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.billing.BudgetOrder> {
     BILLING_ACCOUNT_ID("BillingAccountId", true),
     BILLING_ACCOUNT_NAME("BillingAccountName", true), //New Billing
     BUDGET_ORDER_NAME("BudgetOrderName", true), //New Billing
@@ -603,119 +641,30 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtension}.
-   */
-  public enum CampaignAdExtension
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.CampaignAdExtension> {
-    AD_EXTENSION_ID("AdExtensionId", true),
-    ADDRESS("Address", false),
-    ADVERTISER_NAME("AdvertiserName", false),
-    APP_ID("AppId", false),
-    APP_STORE("AppStore", false),
-    APPROVAL_STATUS("ApprovalStatus", true),
-    ARGUMENT("Argument", false),
-    CAMPAIGN_ID("CampaignId", true),
-    COMPANY_NAME("CompanyName", false),
-    COUNTRY_CODE("CountryCode", false),
-    DESTINATION_URL("DestinationUrl", false),
-    DISPLAY_TEXT("DisplayText", false),
-    DOMAIN_NAME("DomainName", false),
-    EMAIL("Email", false),
-    ENCODED_LOCATION("EncodedLocation", false),
-    GEO_POINT("GeoPoint", false),
-    GOOGLE_BASE_CUSTOMER_ID("GoogleBaseCustomerId", false),
-    ICON_MEDIA_ID("IconMediaId", false),
-    IMAGE_MEDIA_ID("ImageMediaId", false),
-    IN_APP_LINK_TEXT("InAppLinkText", false),
-    IN_APP_LINK_URL("InAppLinkUrl", false),
-    IS_CALL_ONLY("IsCallOnly", false),
-    IS_CALL_TRACKING_ENABLED("IsCallTrackingEnabled", false), // Beta
-    LANGUAGE_CODE("LanguageCode", false),
-    LOCATION_EXTENSION_SOURCE("LocationExtensionSource", true),
-    OPERAND("Operand", false),
-    PHONE_NUMBER("PhoneNumber", false),
-    SHOULD_SYNC_URL("ShouldSyncUrl", false),
-    STATUS("Status", true);
-
-    private String field;
-    private boolean filterable;
-
-    private CampaignAdExtension(String field, boolean filterable) {
-      this.field = field;
-      this.filterable = filterable;
-    }
-
-    @Override
-    public String getField() {
-      return field;
-    }
-
-    @Override
-    public boolean getFilterable() {
-      return filterable;
-    }
-
-    // Returns all fields that are not marked as beta
-    public static ImmutableList<CampaignAdExtension> all(boolean includeBetaFields) {
-      if (includeBetaFields) {
-        return ImmutableList.copyOf(SelectorFields.CampaignAdExtension.values());
-      } else {
-        return ImmutableList.<CampaignAdExtension>builder()
-            .add(AD_EXTENSION_ID)
-            .add(ADDRESS)
-            .add(ADVERTISER_NAME)
-            .add(APP_ID)
-            .add(APP_STORE)
-            .add(APPROVAL_STATUS)
-            .add(ARGUMENT)
-            .add(CAMPAIGN_ID)
-            .add(DESTINATION_URL)
-            .add(DISPLAY_TEXT)
-            .add(DOMAIN_NAME)
-            .add(EMAIL)
-            .add(ENCODED_LOCATION)
-            .add(GEO_POINT)
-            .add(GOOGLE_BASE_CUSTOMER_ID)
-            .add(ICON_MEDIA_ID)
-            .add(IMAGE_MEDIA_ID)
-            .add(IN_APP_LINK_TEXT)
-            .add(IN_APP_LINK_URL)
-            .add(IS_CALL_ONLY)
-            .add(LANGUAGE_CODE)
-            .add(LOCATION_EXTENSION_SOURCE)
-            .add(OPERAND)
-            .add(PHONE_NUMBER)
-            .add(SHOULD_SYNC_URL)
-            .add(STATUS).build();
-      }
-    }
-
-    public static String[] allFields(boolean includeBetaFields) {
-      return getFields(all(includeBetaFields));
-    }
-  }
-
-  /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.CampaignCriterion}.
    */
   public enum CampaignCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.CampaignCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.CampaignCriterion> {
     ADDRESS("Address", false),
     AGE_RANGE_TYPE("AgeRangeType", false),
-    ARGUMENT("Argument", false),
+    APP_ID("AppId", true),
     BID_MODIFIER("BidModifier", true),
     CAMPAIGN_ID("CampaignId", true),
     CARRIER_COUNTRY_CODE("CarrierCountryCode", false),
     CARRIER_NAME("CarrierName", false),
+    CHANNEL_ID("ChannelId", false),
+    CHANNEL_NAME("ChannelName", false),
     CONTENT_LABEL_TYPE("ContentLabelType", true),
     CRITERIA_TYPE("CriteriaType", true),
     DAY_OF_WEEK("DayOfWeek", false),
     DEVICE_NAME("DeviceName", false),
     DEVICE_TYPE("DeviceType", false),
+    DIMENSIONS("Dimensions", false),
     DISPLAY_NAME("DisplayName", true),
     DISPLAY_TYPE("DisplayType", false),
     END_HOUR("EndHour", false),
     END_MINUTE("EndMinute", false),
+    FEED_ID("FeedId", false),
     GENDER_TYPE("GenderType", false),
     GEO_POINT("GeoPoint", false),
     ID("Id", true),
@@ -726,30 +675,32 @@ public final class SelectorFields {
     LANGUAGE_NAME("LanguageName", false),
     LOCATION_NAME("LocationName", true),
     MANUFACTURER_NAME("ManufacturerName", false),
+    MATCHING_FUNCTION("MatchingFunction", false),
     MOBILE_APP_CATEGORY_ID("MobileAppCategoryId", false),
-    OPERAND("Operand", false),
     OPERATING_SYSTEM_NAME("OperatingSystemName", false),
     OPERATOR_TYPE("OperatorType", false),
     OS_MAJOR_VERSION("OsMajorVersion", false),
     OS_MINOR_VERSION("OsMinorVersion", false),
+    PARAMETER("Parameter", false),
     PARENT_LOCATIONS("ParentLocations", false),
     PATH("Path", false),
-    PLACEMENT_URL("PlacementUrl", false),
+    PLACEMENT_URL("PlacementUrl", true),
     PLATFORM_NAME("PlatformName", false),
     RADIUS_DISTANCE_UNITS("RadiusDistanceUnits", false),
     RADIUS_IN_UNITS("RadiusInUnits", false),
     START_HOUR("StartHour", false),
     START_MINUTE("StartMinute", false),
     TARGETING_STATUS("TargetingStatus", false),
-    TEXT("Text", false),
     USER_INTEREST_ID("UserInterestId", false),
     USER_INTEREST_NAME("UserInterestName", false),
+    USER_INTEREST_PARENT_ID("UserInterestParentId", false),
     USER_LIST_ID("UserListId", false),
     USER_LIST_MEMBERSHIP_STATUS("UserListMembershipStatus", true),
     USER_LIST_NAME("UserListName", false),
     VERTICAL_ID("VerticalId", false),
     VERTICAL_PARENT_ID("VerticalParentId", false),
-    VERTICES("Vertices", false);
+    VIDEO_ID("VideoId", false),
+    VIDEO_NAME("VideoName", false);
 
     private String field;
     private boolean filterable;
@@ -775,10 +726,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.CampaignFeed}.
    */
   public enum CampaignFeed
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.CampaignFeed> {
     CAMPAIGN_ID("CampaignId", true),
     FEED_ID("FeedId", true),
     MATCHING_FUNCTION("MatchingFunction", false),
@@ -813,28 +764,36 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.ConversionTracker}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.ConversionTracker}.
    */
   public enum ConversionTracker
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.ConversionTracker> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.ConversionTracker> {
+    ALWAYS_USE_DEFAULT_REVENUE_VALUE("AlwaysUseDefaultRevenueValue", true),
     APP_ID("AppId", true),
     APP_PLATFORM("AppPlatform", true),
+    APP_POSTBACK_URL("AppPostbackUrl", true),
     BACKGROUND_COLOR("BackgroundColor", true),
     CATEGORY("Category", true),
     CONVERSION_PAGE_LANGUAGE("ConversionPageLanguage", true),
-    CONVERSION_VALUE("ConversionValue", true),
+    CONVERSION_TYPE_OWNER_CUSTOMER_ID("ConversionTypeOwnerCustomerId", true),
+    COUNTING_TYPE("CountingType", true),
+    CTC_LOOKBACK_WINDOW("CtcLookbackWindow", true),
+    DEFAULT_REVENUE_CURRENCY_CODE("DefaultRevenueCurrencyCode", true),
+    DEFAULT_REVENUE_VALUE("DefaultRevenueValue", true),
+    EXCLUDE_FROM_BIDDING("ExcludeFromBidding", true),
     ID("Id", true),
     IS_PRODUCT_ADS_CHARGEABLE("IsProductAdsChargeable", true),
     MARKUP_LANGUAGE("MarkupLanguage", true),
-    MOST_RECENT_CONVERSION_DATE("MostRecentConversionDate", true),
+    MOST_RECENT_CONVERSION_DATE("MostRecentConversionDate", false),
     NAME("Name", true),
-    NUM_CONVERSION_EVENTS("NumConversionEvents", true),
-    NUM_CONVERTED_CLICKS("NumConvertedClicks", true),
+    ORIGINAL_CONVERSION_TYPE_ID("OriginalConversionTypeId", true),
+    PHONE_CALL_DURATION("PhoneCallDuration", true),
     PRODUCT_ADS_CHARGEABLE_CONVERSION_WINDOW("ProductAdsChargeableConversionWindow", true),
     STATUS("Status", true),
     TEXT_FORMAT("TextFormat", true),
     TRACKING_CODE_TYPE("TrackingCodeType", true),
-    VIEWTHROUGH_LOOKBACK_WINDOW("ViewthroughLookbackWindow", true);
+    VIEWTHROUGH_LOOKBACK_WINDOW("ViewthroughLookbackWindow", true),
+    WEBSITE_PHONE_CALL_DURATION("WebsitePhoneCallDuration", false);
 
     private String field;
     private boolean filterable;
@@ -864,10 +823,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidLandscape}.
    */
   public enum AdGroupBidLandscape
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidLandscape> {
     ADGROUP_ID("AdGroupId", true),
     BID("Bid", true),
     CAMPAIGN_ID("CampaignId", true),
@@ -877,7 +836,6 @@ public final class SelectorFields {
     LOCAL_CLICKS("LocalClicks", true),
     LOCAL_COST("LocalCost", true),
     LOCAL_IMPRESSIONS("LocalImpressions", true),
-    MARGINAL_CPC("MarginalCpc", true),
     PROMOTED_IMPRESSIONS("PromotedImpressions", true),
     START_DATE("StartDate", false);
 
@@ -909,10 +867,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.CriterionBidLandscape}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.CriterionBidLandscape}.
    */
   public enum CriterionBidLandscape
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.CriterionBidLandscape> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.CriterionBidLandscape> {
     ADGROUP_ID("AdGroupId", true),
     BID("Bid", true),
     CAMPAIGN_ID("CampaignId", true),
@@ -921,7 +879,6 @@ public final class SelectorFields {
     LOCAL_CLICKS("LocalClicks", true),
     LOCAL_COST("LocalCost", true),
     LOCAL_IMPRESSIONS("LocalImpressions", true),
-    MARGINAL_CPC("MarginalCpc", true),
     PROMOTED_IMPRESSIONS("PromotedImpressions", true),
     START_DATE("StartDate", false);
 
@@ -953,10 +910,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Experiment}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Experiment}.
    */
   public enum Experiment
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Experiment> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Experiment> {
     ADGROUP_ADS_COUNT("AdGroupAdsCount", false),
     ADGROUP_CRITERIA_COUNT("AdGroupCriteriaCount", false),
     ADGROUPS_COUNT("AdGroupsCount", false),
@@ -999,14 +956,15 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Feed}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Feed}.
    */
-  public enum Feed implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Feed> {
+  public enum Feed implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Feed> {
     ATTRIBUTES("Attributes", false),
     FEED_STATUS("FeedStatus", true),
     ID("Id", true),
-    NAME("Name", false),
-    ORIGIN("Origin", true);
+    NAME("Name", true),
+    ORIGIN("Origin", true),
+    SYSTEM_FEED_GENERATION_DATA("SystemFeedGenerationData", false);
 
     private String field;
     private boolean filterable;
@@ -1036,17 +994,24 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.FeedItem}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.FeedItem}.
    */
-  public enum FeedItem implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.FeedItem> {
+  public enum FeedItem implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.FeedItem> {
     ATTRIBUTE_VALUES("AttributeValues", false),
     DEVICE_PREFERENCE("DevicePreference", true),
     END_TIME("EndTime", false),
     FEED_ID("FeedId", true),
     FEED_ITEM_ID("FeedItemId", true),
+    KEYWORD_MATCH_TYPE("KeywordMatchType", true),
+    KEYWORD_TARGETING_CRITERION_ID("KeywordTargetingCriterionId", true),
+    KEYWORD_TEXT("KeywordText", true),
+    POLICY_DATA("PolicyData", false),
+    SCHEDULING("Scheduling", false),
     START_TIME("StartTime", false),
     STATUS("Status", true),
-    VALIDATION_DETAILS("ValidationDetails", false);
+    TARGETING_AD_GROUP_ID("TargetingAdGroupId", true),
+    TARGETING_CAMPAIGN_ID("TargetingCampaignId", true),
+    URL_CUSTOM_PARAMETERS("UrlCustomParameters", false);
 
     private String field;
     private boolean filterable;
@@ -1076,13 +1041,15 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.FeedMapping}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.FeedMapping}.
    */
   public enum FeedMapping
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.FeedMapping> {
-    ATTRIBUTE_FIELD_MAPPINGS("AttributeFieldMappings", true),
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.FeedMapping> {
+    ATTRIBUTE_FIELD_MAPPINGS("AttributeFieldMappings", false),
+    CRITERION_TYPE("CriterionType", false),
     FEED_ID("FeedId", true),
     FEED_MAPPING_ID("FeedMappingId", true),
+    PLACEHOLDER_TYPE("PlaceholderType", true),
     STATUS("Status", true);
 
     private String field;
@@ -1113,10 +1080,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.LocationCriterion}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.LocationCriterion}.
    */
   public enum LocationCriterion
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.LocationCriterion> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.LocationCriterion> {
     CANONICAL_NAME("CanonicalName", false),
     CRITERIA_TYPE("CriteriaType", true),
     DISPLAY_TYPE("DisplayType", false),
@@ -1154,14 +1121,15 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Media}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Media}.
    */
-  public enum Media implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Media> {
+  public enum Media implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Media> {
     ADVERTISING_ID("AdvertisingId", true),
     CREATION_TIME("CreationTime", true),
     DIMENSIONS("Dimensions", false),
     DURATION_MILLIS("DurationMillis", true),
     FILE_SIZE("FileSize", true),
+    HEIGHT("Height", true),
     INDUSTRY_STANDARD_COMMERCIAL_IDENTIFIER("IndustryStandardCommercialIdentifier", true),
     MEDIA_ID("MediaId", true),
     MIME_TYPE("MimeType", true),
@@ -1172,7 +1140,8 @@ public final class SelectorFields {
     STREAMING_URL("StreamingUrl", false),
     TYPE("Type", true),
     URLS("Urls", false),
-    YOUTUBE_VIDEO_ID_STRING("YouTubeVideoIdString", true);
+    WIDTH("Width", true),
+    YOU_TUBE_VIDEO_ID_STRING("YouTubeVideoIdString", true);
 
     private String field;
     private boolean filterable;
@@ -1202,9 +1171,9 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.rm.UserList}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.rm.UserList}.
    */
-  public enum UserList implements FieldType<com.google.api.ads.adwords.axis.v201409.rm.UserList> {
+  public enum UserList implements FieldType<com.google.api.ads.adwords.axis.v201506.rm.UserList> {
     ACCESS_REASON("AccessReason", true),
     ACCOUNT_USER_LIST_STATUS("AccountUserListStatus", true),
     CONVERSION_TYPES("ConversionTypes", false),
@@ -1247,10 +1216,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidModifier}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidModifier}.
    */
   public enum AdGroupBidModifier
-      implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidModifier> {
+      implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidModifier> {
     ADGROUP_ID("AdGroupId", true),
     BID_MODIFIER("BidModifier", true),
     BID_MODIFIER_SORUCE("BidModifierSource", true),
@@ -1287,9 +1256,10 @@ public final class SelectorFields {
   }
 
   /**
-   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201409.cm.Label}.
+   * SelectorFields for {@link com.google.api.ads.adwords.axis.v201506.cm.Label}.
    */
-  public enum Label implements FieldType<com.google.api.ads.adwords.axis.v201409.cm.Label> {
+  public enum Label implements FieldType<com.google.api.ads.adwords.axis.v201506.cm.Label> {
+    ATTRIBUTE("LabelAttribute", false),
     ID("LabelId", true),
     NAME("LabelName", true),
     STATUS("LabelStatus", true);

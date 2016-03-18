@@ -29,7 +29,6 @@ import org.mockito.MockitoAnnotations;
 /**
  * Test for {@link UserAgentCombiner}.
 
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class UserAgentCombinerTest {

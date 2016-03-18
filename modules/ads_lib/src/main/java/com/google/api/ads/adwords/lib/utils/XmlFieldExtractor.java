@@ -38,8 +38,6 @@ import javax.xml.xpath.XPathFactory;
 
 /**
  * Utility class to extract fields from XML.
- *
- * @author Kevin Winter
  */
 public class XmlFieldExtractor {
 

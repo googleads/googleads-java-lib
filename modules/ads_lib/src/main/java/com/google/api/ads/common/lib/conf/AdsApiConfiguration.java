@@ -18,8 +18,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration which represents the API.
- *
- * @author Adam Rogal
  */
 public abstract class AdsApiConfiguration extends BaseConfiguration {
 

@@ -32,10 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PackageService.getPackagesByStatement
- *
- * @author Nicholas Chen
  */
 public class GetInProgressPackages {
 
@@ -64,8 +60,7 @@ public class GetInProgressPackages {
         int i = page.getStartIndex();
         for (Package pkg : page.getResults()) {
           System.out.printf(
-              "%d) Package with ID \"%d\" and name \"%s\" for proposal ID"
-              + " \"%d\" was found.%n",
+              "%d) Package with ID %d and name '%s' for proposal ID %d was found.%n",
               i++, pkg.getId(), pkg.getName(), pkg.getProposalId());
         }
       }

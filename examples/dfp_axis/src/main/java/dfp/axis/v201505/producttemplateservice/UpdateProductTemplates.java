@@ -38,11 +38,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductTemplateService.getProductTemplatesByStatement
- * Tags: ProductTemplateService.updateProductTemplates
- *
- * @author Nicholas Chen
  */
 public class UpdateProductTemplates {
   
@@ -96,7 +91,7 @@ public class UpdateProductTemplates {
         productTemplateService.updateProductTemplates(new ProductTemplate[] {productTemplate});
 
     for (ProductTemplate updatedProductTemplate : productTemplates) {
-      System.out.printf("Product template with ID \"%d\" and name \"%s\" was updated.%n",
+      System.out.printf("Product template with ID %d and name '%s' was updated.%n",
           updatedProductTemplate.getId(),
           updatedProductTemplate.getName());
     }

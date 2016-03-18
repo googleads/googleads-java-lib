@@ -17,19 +17,18 @@ package com.google.api.ads.dfp.lib.soap;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.common.collect.Maps;
-import com.google.inject.Inject;
 
 import java.util.Map;
 
+import javax.inject.Inject;
+
 /**
  * Handler used to set the HTTP headers on a SOAP client.
- *
- * @author Adam Rogal
  */
 public class DfpHttpHeaderHandler {
 
 
-  @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
+  @SuppressWarnings("rawtypes") /* See constructor comments. */
   private final SoapClientHandlerInterface soapClientHandler;
 
   /**
@@ -39,7 +38,10 @@ public class DfpHttpHeaderHandler {
    */
   @Inject
   public DfpHttpHeaderHandler(
-      @SuppressWarnings("rawtypes") /* Due to problem with guice binding */
+      @SuppressWarnings(
+          "rawtypes") /* Guice binding for SoapClientHandlerInterface does not include the type
+                       * argument T because it is bound in the SOAP toolkit-agnostic configuration
+                       * module. Therefore, must use the raw type here. */
       SoapClientHandlerInterface soapClientHandler) {
     this.soapClientHandler = soapClientHandler;
   }
@@ -47,7 +49,7 @@ public class DfpHttpHeaderHandler {
   /**
    * Sets the HTTP headers on the SOAP client.
    */
-  @SuppressWarnings("unchecked") /* Due to problem with guice binding */
+  @SuppressWarnings("unchecked") /* See constructor comments. */
   public void setHttpHeaders(Object soapClient, DfpSession dfpSession) {
     Map<String, String> headersMap = Maps.newHashMap();
     soapClientHandler.putAllHttpHeaders(soapClient, headersMap);

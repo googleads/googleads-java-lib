@@ -34,8 +34,6 @@ import java.util.Arrays;
 
 /**
  * Tests for {@link Streams}.
- * 
- * @author arogal@google.com
  */
 @RunWith(JUnit4.class)
 public class StreamsTest {

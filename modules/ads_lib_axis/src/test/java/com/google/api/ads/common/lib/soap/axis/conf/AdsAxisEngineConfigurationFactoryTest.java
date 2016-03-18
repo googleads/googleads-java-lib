@@ -51,8 +51,6 @@ import java.util.List;
  * <li>The AdsAxisEngineConfigurationFactory should never override the default server configuration.
  * </li>
  * </ol>
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AdsAxisEngineConfigurationFactoryTest {

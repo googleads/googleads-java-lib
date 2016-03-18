@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductPackageService.getProductPackagesByStatement
- * Tags: ProductPackageService.performProductPackageAction
- *
- * @author Nicholas Chen
  */
 public class ActivateProductPackages {
   
@@ -68,7 +63,7 @@ public class ActivateProductPackages {
     ProductPackage productPackage = Iterables.getOnlyElement(
         Arrays.asList(page.getResults()));
 
-    System.out.printf("Product package with ID \"%d\" will be activated.%n",
+    System.out.printf("Product package with ID %d will be activated.%n",
         productPackage.getId());
     
     // Remove limit and offset from statement.

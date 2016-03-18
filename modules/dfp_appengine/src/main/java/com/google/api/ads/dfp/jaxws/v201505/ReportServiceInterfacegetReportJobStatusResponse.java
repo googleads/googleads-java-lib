@@ -4,6 +4,7 @@ package com.google.api.ads.dfp.jaxws.v201505;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "getReportJobStatusResponse")
 public class ReportServiceInterfacegetReportJobStatusResponse {
 
+    @XmlSchemaType(name = "string")
     protected ReportJobStatus rval;
 
     /**

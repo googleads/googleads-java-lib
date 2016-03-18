@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -55,6 +56,7 @@ public class ProductPackage {
     protected Long id;
     protected String name;
     protected String notes;
+    @XmlSchemaType(name = "string")
     protected ProductPackageStatus status;
     protected Boolean isArchived;
     @XmlElement(type = Long.class)

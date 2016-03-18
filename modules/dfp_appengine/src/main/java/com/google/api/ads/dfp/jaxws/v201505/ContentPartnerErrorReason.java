@@ -29,7 +29,7 @@ public enum ContentPartnerErrorReason {
 
     /**
      * 
-     *                 Can not assign partner if financial term feature is not enabled.
+     *                 Cannot assign partner if financial term feature is not enabled.
      *               
      * 
      */

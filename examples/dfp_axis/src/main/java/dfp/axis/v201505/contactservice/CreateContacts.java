@@ -30,10 +30,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContactService.createContacts
- *
- * @author Adam Rogal
  */
 public class CreateContacts {
 
@@ -66,7 +62,7 @@ public class CreateContacts {
         contactService.createContacts(new Contact[] {advertiserContact, agencyContact});
 
     for (Contact createdContact : contacts) {
-      System.out.printf("A contact with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A contact with ID %d and name '%s' was created.%n",
           createdContact.getId(), createdContact.getName());
     }
   }

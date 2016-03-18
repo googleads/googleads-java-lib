@@ -21,18 +21,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 
-import java.io.StringReader;
-
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.stream.StreamSource;
 
 /**
  * Test for the {@link PrettyPrinter} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class PrettyPrinterTest {
@@ -47,7 +42,6 @@ public class PrettyPrinterTest {
     Transformer transformer = Mockito.mock(Transformer.class);
     String html =
         "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html><a></a></html>";
-    StreamSource source = new StreamSource(new StringReader(html));
     Mockito.doThrow(new ArrayIndexOutOfBoundsException())
         .when(transformer).transform((Source) Mockito.anyObject(), (Result) Mockito.anyObject());
 

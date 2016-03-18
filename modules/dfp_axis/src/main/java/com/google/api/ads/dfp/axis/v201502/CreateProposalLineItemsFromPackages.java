@@ -16,12 +16,6 @@ public class CreateProposalLineItemsFromPackages  extends com.google.api.ads.dfp
     public CreateProposalLineItemsFromPackages() {
     }
 
-    public CreateProposalLineItemsFromPackages(
-           com.google.api.ads.dfp.axis.v201502.PackageOperator packageOperator) {
-        super(
-            packageOperator);
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof CreateProposalLineItemsFromPackages)) return false;

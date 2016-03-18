@@ -57,10 +57,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemService.createLineItems
- *
- * @author Adam Rogal
  */
 public class CreateVideoLineItems {
 
@@ -168,7 +164,7 @@ public class CreateVideoLineItems {
     LineItem[] lineItems = lineItemService.createLineItems(new LineItem[] {lineItem});
 
     for (LineItem createdLineItem : lineItems) {
-      System.out.printf("A video line item with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A video line item with ID %d and name '%s' was created.%n",
           createdLineItem.getId(), createdLineItem.getName());
     }
   }

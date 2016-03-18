@@ -17,8 +17,6 @@ package com.google.api.ads.common.lib.exception;
 /**
  * Base exception for all authentication exceptions. Most exceptions extending
  * from this class can be recovered from.
- *
- * @author Adam Rogal
  */
 public abstract class AuthenticationException extends Exception {
 

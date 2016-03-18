@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PremiumRateService.getPremiumRatesByStatement
- *
- * @author Nicholas Chen
  */
 public class GetPremiumRatesByStatement {
   
@@ -66,10 +62,9 @@ public class GetPremiumRatesByStatement {
         int i = page.getStartIndex();
         for (PremiumRate premiumRate : page.getResults()) {
           System.out.printf(
-              "%d) Premium rate with ID \"%d\" of type \"%s\" assigned to rate card "
-              + "with ID \"%d\" was found.%n", i++,
-              premiumRate.getId(),
-              premiumRate.getPremiumFeature().getClass().getSimpleName(),
+              "%d) Premium rate with ID %d of type '%s' assigned to rate card with ID %d "
+              + "was found.%n", i++, premiumRate.getId(),
+              premiumRate.getPremiumFeature().getClass().getSimpleName(), 
               premiumRate.getRateCardId());
         }
       }

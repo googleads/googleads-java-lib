@@ -19,8 +19,6 @@ import com.google.common.base.Preconditions;
 /**
  * Factory that returns the appropriate instance of {@link ReportBodyProvider} for a given
  * {@link ReportRequest}.
- *
- * @author Josh Radcliff
  */
 class ReportBodyProviderFactory {
 

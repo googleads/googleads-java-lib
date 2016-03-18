@@ -18,8 +18,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration of lib properties.
- *
- * @author Adam Rogal
  */
 public abstract class AdsLibConfiguration extends BaseConfiguration {
 
@@ -32,6 +30,9 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
   public static final String VERSION_KEY = "com.google.api.ads.version";
   public static final String AUTO_REFRESH_OAUTH2_TOKEN_POSTFIX = "refreshOAuth2Token";
   public static final String USE_COMPRESSION_POSTFIX = "useCompression";
+  public static final String SOAP_REQUEST_TIMEOUT_POSTFIX = "soapRequestTimeout";
+  
+  public static final int DEFAULT_SOAP_REQUEST_TIMEOUT = 20 * 60 * 1000;
 
   /**
    * Constructor.
@@ -69,5 +70,12 @@ public abstract class AdsLibConfiguration extends BaseConfiguration {
    */
   public boolean isCompressionEnabled() {
     return false;
+  }
+  
+  /**
+   * Gets the request timeout in milliseconds.
+   */
+  public int getSoapRequestTimeout() {
+    return DEFAULT_SOAP_REQUEST_TIMEOUT;
   }
 }

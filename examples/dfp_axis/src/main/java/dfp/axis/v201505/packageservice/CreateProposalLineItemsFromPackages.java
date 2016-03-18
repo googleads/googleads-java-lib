@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PackageService.getPackagesByStatement
- * Tags: PackageService.performPackageAction
- *
- * @author Nicholas Chen
  */
 public class CreateProposalLineItemsFromPackages {
   
@@ -64,8 +59,8 @@ public class CreateProposalLineItemsFromPackages {
 
     Package pkg = Iterables.getOnlyElement(Arrays.asList(page.getResults()));
 
-    System.out.printf("Package with ID \"%d\" will create proposal line items using"
-        + " product package with ID \"%d\".%n", pkg.getId(), pkg.getProductPackageId());
+    System.out.printf("Package with ID %d will create proposal line items using"
+        + " product package with ID %d.%n", pkg.getId(), pkg.getProductPackageId());
     
     // Remove limit and offset from statement.
     statementBuilder.removeLimitAndOffset();

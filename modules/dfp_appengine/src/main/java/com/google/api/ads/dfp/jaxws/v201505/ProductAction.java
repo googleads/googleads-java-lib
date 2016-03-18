@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProductAction")
 @XmlSeeAlso({
-    DeactivateProducts.class,
     ArchiveProducts.class,
+    DeactivateProducts.class,
     ActivateProducts.class
 })
 public abstract class ProductAction {

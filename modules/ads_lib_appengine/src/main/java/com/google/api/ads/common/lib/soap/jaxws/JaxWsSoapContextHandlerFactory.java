@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.soap.jaxws;
 
 /**
  * Simple factory which creates SOAP Context Handlers for JAX-WS.
- *
- * @author Joseph DiLallo
  */
 public class JaxWsSoapContextHandlerFactory {
 

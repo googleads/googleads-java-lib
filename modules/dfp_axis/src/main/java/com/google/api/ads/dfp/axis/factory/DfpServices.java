@@ -38,8 +38,6 @@ import com.google.inject.Injector;
  * <p>
  * Implementation is thread-safe.
  * </p>
- *
- * @author Joseph DiLallo
  */
 public final class DfpServices extends BaseDfpServices {
 

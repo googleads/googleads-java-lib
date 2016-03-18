@@ -42,11 +42,6 @@ import java.util.Set;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: InventoryService.getAdUnitsByStatement
- * Tags: PlacementService.createPlacements
- *
-  * @author Adam Rogal
  */
 public class CreatePlacements {
 
@@ -123,7 +118,7 @@ public class CreatePlacements {
 
       for (Placement createdPlacement : placements) {
         System.out.printf(
-            "A placement with ID \"%d\", name \"%s\", and containing ad units [%s] was created.\n",
+            "A placement with ID %d, name '%s', and containing ad units [%s] was created.%n",
             createdPlacement.getId(), createdPlacement.getName(),
             Joiner.on(", ").join(createdPlacement.getTargetedAdUnitIds()));
       }

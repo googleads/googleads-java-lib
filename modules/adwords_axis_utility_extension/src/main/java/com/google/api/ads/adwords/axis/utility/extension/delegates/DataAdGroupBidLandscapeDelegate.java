@@ -15,8 +15,8 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201409.cm.DataServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201506.cm.DataServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -30,8 +30,6 @@ import java.util.List;
  * Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  * </p>
- *
- * @author Julian Toledo
  */
 public final class DataAdGroupBidLandscapeDelegate extends
     AbstractGetDelegate<AdGroupBidLandscape, DataServiceInterface> {

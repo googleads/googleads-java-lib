@@ -40,9 +40,6 @@ import java.io.IOException;
 
 /**
  * Tests for {@link OAuth2Helper}.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class OAuth2HelperTest {

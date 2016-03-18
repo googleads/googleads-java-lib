@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SharedAdUnitAction")
 @XmlSeeAlso({
-    RejectSharedAdUnits.class,
-    ApproveSharedAdUnits.class
+    ApproveSharedAdUnits.class,
+    RejectSharedAdUnits.class
 })
 public abstract class SharedAdUnitAction {
 

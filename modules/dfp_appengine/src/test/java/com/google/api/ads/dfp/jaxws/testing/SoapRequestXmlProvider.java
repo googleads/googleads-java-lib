@@ -25,8 +25,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides JAX-WS DFP API SOAP requests.
- * 
- * @author Adam Rogal
  */
 public class SoapRequestXmlProvider {
   

@@ -22,8 +22,6 @@ import com.google.inject.Injector;
 
 /**
  * Base for a utility class which creates DFP service clients.
- *
- * @author Joseph DiLallo
  */
 public abstract class BaseDfpServices extends BaseServices<DfpServiceClient,
                                                            DfpSession,

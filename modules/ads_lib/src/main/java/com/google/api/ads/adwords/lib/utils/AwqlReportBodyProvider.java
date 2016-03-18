@@ -24,8 +24,6 @@ import java.util.Map;
 
 /**
  * {@link ReportBodyProvider} that handles writing AWQL reports in the correct format.
- *
- * @author Kevin Winter
  */
 class AwqlReportBodyProvider implements ReportBodyProvider {
 

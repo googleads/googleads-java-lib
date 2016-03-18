@@ -19,19 +19,17 @@ import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
-import com.google.api.ads.dfp.lib.utils.DfpInternals;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 
 import org.apache.commons.configuration.Configuration;
-import org.slf4j.Logger;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * A {@code DfpSession} represents a single session of DFP use.
@@ -39,8 +37,6 @@ import java.net.URL;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
  */
 public class DfpSession implements AdsSession, OAuth2Compatible {
 
@@ -50,7 +46,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
 
   private final String applicationName;
   private final String endpoint;
-  private final Logger libLogger;
 
   public static final String DEFAULT_ENDPOINT = "https://ads.google.com/";
 
@@ -66,7 +61,6 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
     this.endpoint = builder.endpoint;
     this.networkCode = builder.networkCode;
     this.oAuth2Credential = builder.oAuth2Credential;
-    this.libLogger = builder.libLogger;
   }
 
   /**
@@ -125,6 +119,41 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
 
 
   /**
+   * Returns a new {@link Builder} with all settings copied from this session. This is <em>not</em>
+   * thread-safe unless this session is an {@link ImmutableDfpSession}.
+   */
+  public Builder newBuilder() {
+    return new Builder(this);
+  }
+
+  /**
+   * Immutable, thread-safe implementation of DfpSession.
+   */
+  @ThreadSafe
+  public static final class ImmutableDfpSession extends DfpSession {
+    private ImmutableDfpSession(Builder builder) {
+      super(builder);
+    }
+
+    private void throwUnsupportedOperationException(String attributeName) {
+      throw new UnsupportedOperationException(
+          String.format(
+              "Cannot set %s. ImmutableDfpSession is immutable.", attributeName));
+    }
+
+    @Override
+    public void setOAuth2Credential(Credential oAuth2Credential) {
+      throwUnsupportedOperationException("oAuth2Credential");
+    }
+
+    @Override
+    public void setNetworkCode(String networkCode) {
+      throwUnsupportedOperationException("networkCode");
+    }
+
+  }
+
+  /**
    * Builder for {@code DfpSession}.
    *
    * <p>
@@ -139,24 +168,22 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
     private Credential oAuth2Credential;
 
 
-    private final Logger libLogger;
     private final ConfigurationHelper configHelper;
 
     /**
-     * Constructor.
+     * Constructs an empty builder. To construct a builder initialized to the settings of
+     * an existing {@link DfpSession}, use {@link DfpSession#newBuilder()} instead.
      */
     public Builder() {
-      this(DfpInternals.getInstance().getAdsServiceLoggers().getLibLogger());
+      this.configHelper = new ConfigurationHelper();
     }
 
-    @VisibleForTesting
-    Builder(Logger libLogger) {
-       this(libLogger, new ConfigurationHelper());
-    }
-
-    private Builder(Logger libLogger, ConfigurationHelper configHelper) {
-      this.libLogger = libLogger;
-      this.configHelper = configHelper;
+    private Builder(DfpSession dfpSessionToClone) {
+      this();
+      this.applicationName = dfpSessionToClone.getApplicationName();
+      this.endpoint = dfpSessionToClone.getEndpoint();
+      this.networkCode = dfpSessionToClone.getNetworkCode();
+      this.oAuth2Credential = dfpSessionToClone.getOAuth2Credential();
     }
 
     @Override
@@ -254,6 +281,17 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
       defaultOptionals();
       validate();
       return new DfpSession(this);
+    }
+
+    /**
+     * Builds a thread-safe {@link ImmutableDfpSession}.
+     * @return the built {@code ImmutableDfpSession}
+     * @throws ValidationException if the attributes of this builder fail validation
+     */
+    public ImmutableDfpSession buildImmutable() throws ValidationException {
+      defaultOptionals();
+      validate();
+      return new ImmutableDfpSession(this);
     }
 
     /**

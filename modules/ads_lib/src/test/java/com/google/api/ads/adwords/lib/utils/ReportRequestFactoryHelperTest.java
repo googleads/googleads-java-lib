@@ -53,9 +53,6 @@ import java.util.Collection;
 
 /**
  * Tests functionality of the ReportRequestFactoryHelper.
- *
- * @author Kevin Winter
- * @author Joseph DiLallo
  */
 @RunWith(Parameterized.class)
 public class ReportRequestFactoryHelperTest {
@@ -85,27 +82,31 @@ public class ReportRequestFactoryHelperTest {
   @Mock
   private ReportServiceLogger reportServiceLogger;
 
-  @Parameters
+  @Parameters(name="version={0}, reportingConfiguration={1}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     Boolean[] booleanValues = new Boolean[]{ true, false, null };
     for (Boolean isSkipReportHeader : booleanValues) {
       for (Boolean isSkipColumnHeader : booleanValues) {
         for (Boolean isSkipReportSummary : booleanValues) {
-          ReportingConfiguration reportingConfig = null;
-          if (isSkipReportHeader != null || isSkipColumnHeader != null
-              || isSkipReportSummary != null) {
-            reportingConfig = new ReportingConfiguration.Builder()
-                .skipReportHeader(isSkipReportHeader)
-                .skipColumnHeader(isSkipColumnHeader)
-                .skipReportSummary(isSkipReportSummary)
-                .build();
+          for (Boolean isIncludeZeroImpressions : booleanValues) {
+            ReportingConfiguration reportingConfig = null;
+            if (isSkipReportHeader != null || isSkipColumnHeader != null
+                || isSkipReportSummary != null || isIncludeZeroImpressions != null) {
+              reportingConfig =
+                  new ReportingConfiguration.Builder()
+                      .skipReportHeader(isSkipReportHeader)
+                      .skipColumnHeader(isSkipColumnHeader)
+                      .skipReportSummary(isSkipReportSummary)
+                      .includeZeroImpressions(isIncludeZeroImpressions)
+                      .build();
+            }
+            parameters.add(new Object[] {"v201506", null});
+            parameters.add(new Object[] {"v201506", reportingConfig});
+            parameters.add(new Object[] {"v201509", null});
+            parameters.add(new Object[] {"v201509", reportingConfig});
+            parameters.add(new Object[] {null, reportingConfig});
           }
-          parameters.add(new Object[] {"v201409", null});
-          parameters.add(new Object[] {"v201409", reportingConfig});
-          parameters.add(new Object[] {"v201502", null});
-          parameters.add(new Object[] {"v201502", reportingConfig});
-          parameters.add(new Object[] {null, reportingConfig});
         }
       }
     }
@@ -187,23 +188,25 @@ public class ReportRequestFactoryHelperTest {
           headers.containsKey("skipReportSummary"));
     } else {
       String expectedSkipHeaderHeader =
-          reportingConfiguration.isSkipReportHeader() != null ? Boolean.toString(
-              reportingConfiguration.isSkipReportHeader())
-              : null;
+          reportingConfiguration.isSkipReportHeader() != null
+              ? Boolean.toString(reportingConfiguration.isSkipReportHeader()) : null;
       String expectedSkipColumnHeaderHeader =
-          reportingConfiguration.isSkipColumnHeader() != null ? Boolean.toString(
-              reportingConfiguration.isSkipColumnHeader())
-              : null;
+          reportingConfiguration.isSkipColumnHeader() != null
+              ? Boolean.toString(reportingConfiguration.isSkipColumnHeader()) : null;
       String expectedSkipSummaryHeader =
-          reportingConfiguration.isSkipReportSummary() != null ? Boolean.toString(
-              reportingConfiguration.isSkipReportSummary())
-              : null;
+          reportingConfiguration.isSkipReportSummary() != null
+              ? Boolean.toString(reportingConfiguration.isSkipReportSummary()) : null;
+      String expectedIncludeZeroImpressionsHeader =
+          reportingConfiguration.isIncludeZeroImpressions() != null
+              ? Boolean.toString(reportingConfiguration.isIncludeZeroImpressions()) : null;
       assertEquals("skipReportHeader not equal to the reporting config setting",
           expectedSkipHeaderHeader, headers.get("skipReportHeader"));
       assertEquals("skipColumnHeader not equal to the reporting config setting",
           expectedSkipColumnHeaderHeader, headers.get("skipColumnHeader"));
       assertEquals("skipReportSummary not equal to the reporting config setting",
           expectedSkipSummaryHeader, headers.get("skipReportSummary"));
+      assertEquals("includeZeroImpressions not equal to the reporting config setting",
+          expectedIncludeZeroImpressionsHeader, headers.get("includeZeroImpressions"));
     }
   }
 

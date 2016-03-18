@@ -14,13 +14,8 @@
 
 package com.google.api.ads.common.lib.factory;
 
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.doReturn;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.client.AdsServiceClient;
@@ -28,42 +23,46 @@ import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
+import com.google.api.ads.common.lib.soap.SoapServiceClient;
 import com.google.api.ads.common.lib.soap.testing.MockSoapClientInterface;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
-import java.util.Set;
 
 /**
  * Test for the {@link AdsServiceClientFactory} class.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AdsServiceClientFactoryTest {
+  private AdsServiceClientFactory<AdsServiceClient<AdsSession, AdsServiceDescriptor>, AdsSession,
+      AdsServiceDescriptor> adsServiceClientFactory;
 
-  private AdsServiceClientFactory<AdsServiceClient<AdsSession, AdsServiceDescriptor>,
-                                  AdsSession,
-                                  AdsServiceDescriptor> adsServiceClientFactory;
+  @Mock
+  private AdsServiceClient<AdsSession, AdsServiceDescriptor> adsServiceClient;
 
-  @Mock private AdsServiceClient<AdsSession, AdsServiceDescriptor> adsServiceClient;
-  @Mock private AdsServiceDescriptor adsServiceDescriptor;
-  @Mock private AdsServiceClientFactoryHelper<AdsServiceClient<AdsSession,
-                                                         AdsServiceDescriptor>,
-                                        AdsSession,
-                                        AdsServiceDescriptor> adsServiceClientFactoryHelper;
-  @Mock private AdsSession adsSession;
+  @Mock
+  private SoapServiceClient<Object> soapServiceClient;
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
+  @Mock
+  private AdsServiceDescriptor adsServiceDescriptor;
+
+  @Mock
+  private AdsServiceClientFactoryHelper<AdsServiceClient<AdsSession, AdsServiceDescriptor>,
+      AdsSession, AdsServiceDescriptor> adsServiceClientFactoryHelper;
+
+  @Mock
+  private AdsSession adsSession;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   public AdsServiceClientFactoryTest() {}
 
@@ -71,62 +70,62 @@ public class AdsServiceClientFactoryTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
-    adsServiceClientFactory = spy(new AdsServiceClientFactory<
-        AdsServiceClient<AdsSession, AdsServiceDescriptor>, AdsSession, AdsServiceDescriptor>(
-        adsServiceClientFactoryHelper));
+    adsServiceClientFactory =
+        new AdsServiceClientFactory<AdsServiceClient<AdsSession, AdsServiceDescriptor>, AdsSession,
+            AdsServiceDescriptor>(adsServiceClientFactoryHelper);
   }
 
+  /**
+   * Test that verifies that an object implementing the requested interface is returned from a
+   * valid call to getServiceClient.
+   */
   @Test
-  @SuppressWarnings({"unchecked", "rawtypes"})
   public void testGetServiceClient() {
     String version = "v1.1";
-    ArgumentCaptor<Set> setArg = ArgumentCaptor.forClass(Set.class);
 
     when(adsServiceClientFactoryHelper.determineVersion(MockSoapClientInterface.class))
         .thenReturn(version);
 
-    when(adsServiceClientFactoryHelper.createServiceDescriptor(
-        MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
     when(
-        adsServiceClientFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession))
+        adsServiceClientFactoryHelper.createServiceDescriptor(
+            MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
+    when(adsServiceClientFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession))
         .thenReturn(adsServiceClient);
-    when((Class<MockSoapClientInterface>) adsServiceDescriptor.getInterfaceClass())
+    Mockito.<Class<?>>when(adsServiceDescriptor.getInterfaceClass())
         .thenReturn(MockSoapClientInterface.class);
-    doReturn(null).when(adsServiceClientFactory).createProxy(any(AdsServiceClient.class),
-        any(Set.class));
+    when(adsServiceClient.getSoapClient()).thenReturn(soapServiceClient);
 
-    adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
-
-    verify(adsServiceClientFactory).createProxy(eq(adsServiceClient), setArg.capture());
-    assertTrue(setArg.getValue().contains(MockSoapClientInterface.class));
+    MockSoapClientInterface mockSoapClientInterface =
+        adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
+    assertNotNull("Null mock interface returned from getServiceClient", mockSoapClientInterface);
   }
 
+  /**
+   * Test to verify that a ServiceException is thrown if the preconditions check by the underlying
+   * AdsServiceClientFactoryHelper fails.
+   */
   @Test
-  @SuppressWarnings({"unchecked", "rawtypes"})
   public void testGetServiceClient_failPreconditions() {
     String version = "v1.1";
-    ArgumentCaptor<Set> setArg = ArgumentCaptor.forClass(Set.class);
 
-   doThrow(new ServiceException("")).when(adsServiceClientFactoryHelper)
-       .checkServiceClientPreconditions(adsSession, MockSoapClientInterface.class);
+    ServiceException serviceException = new ServiceException("A service exception");
+    doThrow(serviceException)
+        .when(adsServiceClientFactoryHelper)
+        .checkServiceClientPreconditions(adsSession, MockSoapClientInterface.class);
 
     when(adsServiceClientFactoryHelper.determineVersion(MockSoapClientInterface.class))
         .thenReturn(version);
 
-    when(adsServiceClientFactoryHelper.createServiceDescriptor(
-        MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
     when(
-        adsServiceClientFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession))
+        adsServiceClientFactoryHelper.createServiceDescriptor(
+            MockSoapClientInterface.class, version)).thenReturn(adsServiceDescriptor);
+    when(adsServiceClientFactoryHelper.createAdsServiceClient(adsServiceDescriptor, adsSession))
         .thenReturn(adsServiceClient);
-    when((Class<MockSoapClientInterface>) adsServiceDescriptor.getInterfaceClass())
+    Mockito.<Class<?>>when(adsServiceDescriptor.getInterfaceClass())
         .thenReturn(MockSoapClientInterface.class);
-    doReturn(null).when(adsServiceClientFactory).createProxy(any(AdsServiceClient.class),
-        any(Set.class));
+    when(adsServiceClient.getSoapClient()).thenReturn(soapServiceClient);
 
-    thrown.expect(ServiceException.class);
+    thrown.expect(Matchers.<Exception>is(serviceException));
     adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class);
-
-    verify(adsServiceClientFactory).createProxy(eq(adsServiceClient), setArg.capture());
-    assertTrue(setArg.getValue().contains(MockSoapClientInterface.class));
   }
 }

@@ -21,8 +21,6 @@ import java.net.URL;
 
 /**
  * Configuration for DFP configuration.
- *
- * @author Adam Rogal
  */
 public class DfpConfigurationModule extends ConfigurationModule {
 

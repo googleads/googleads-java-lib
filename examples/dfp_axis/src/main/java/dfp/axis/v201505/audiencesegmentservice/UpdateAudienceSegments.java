@@ -32,11 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: AudienceSegmentService.getAudienceSegmentsByStatement
- * Tags: AudienceSegmentService.updateAudienceSegments
- *
- * @author Adam Rogal
  */
 public class UpdateAudienceSegments {
 
@@ -72,7 +67,7 @@ public class UpdateAudienceSegments {
 
     for (AudienceSegment updatedAudienceSegment : audienceSegments) {
       System.out.printf(
-          "Audience segment with ID \"%d\" and name \"%s\" was updated.\n",
+          "Audience segment with ID %d and name '%s' was updated.%n",
           updatedAudienceSegment.getId(), updatedAudienceSegment.getName());
     }
   }

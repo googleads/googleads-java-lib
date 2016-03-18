@@ -26,8 +26,6 @@ import com.google.inject.TypeLiteral;
 
 /**
  * Guice module for DFP SOAP bindings.
- *
- * @author Joseph DiLallo
  */
 public class DfpSoapModule extends AdsSoapModule<DfpServiceClient,
                                                  DfpServiceDescriptor,

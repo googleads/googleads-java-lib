@@ -39,8 +39,6 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
  * This class is not thread-safe. Every SOAP client is expected to have its own
  * instance of this class and each SOAP call made by those clients has to be
  * atomic.
- *
- * @author Joseph DiLallo
  */
 public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> {
 

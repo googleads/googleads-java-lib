@@ -25,9 +25,7 @@ import javax.xml.ws.ResponseWrapper;
  *       The following tables are supported:
  *       </p>
  *       
- *       <h4>Geo_Target</h4>
- *       <p>Use this table instead of the other Geo tables below (Country, Region, Metro, City,
- *       Postal_Code) which will eventually be removed.</p>
+ *       <h2>Geo_Target</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -91,177 +89,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Country</h4>
- *       This table is deprecated. V201408 is the last version this table can be used in. Use
- *       <strong>Geo_Target</strong> instead.
- *       <table>
- *       <tr>
- *       <th scope = "col">Column Name</th>
- *       <th scope="col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the country</td>
- *       </tr>
- *       <tr>
- *       <td>CountryCode</td>
- *       <td>Country code as defined by ISO 3166-1 alpha-2</td>
- *       </tr>
- *       <tr>
- *       <td>CountryName</td>
- *       <td>The name of the country</td>
- *       </tr>
- *       <tr>
- *       <td>CurrencyCode</td>
- *       <td>Currency code as defined by ISO 4217</td>
- *       </tr>
- *       <tr>
- *       <td>Targetable</td>
- *       <td>Indicates whether geographical targeting is allowed</td>
- *       </tr>
- *       </table>
- *       
- *       <h4>Region</h4>
- *       This table is deprecated. V201408 is the last version this table can be used in. Use
- *       <strong>Geo_Target</strong> instead.
- *       <table>
- *       <tr>
- *       <th scope = "col">Column Name</th>
- *       <th scope="col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the region</td>
- *       </tr>
- *       <tr>
- *       <td>RegionCode</td>
- *       <td>Region code as defined by ISO 3166-2</td>
- *       </tr>
- *       <tr>
- *       <td>RegionName</td>
- *       <td>The name of the region</td>
- *       </tr>
- *       <tr>
- *       <td>CountryCode</td>
- *       <td>Country code as defined by ISO 3166-1 alpha-2</td>
- *       </tr>
- *       <tr>
- *       <td>CountryName</td>
- *       <td>The name of the country</td>
- *       </tr>
- *       <tr>
- *       <td>Targetable</td>
- *       <td>Indicates whether geographical targeting is allowed</td>
- *       </tr>
- *       </table>
- *       
- *       <h4>Metro</h4>
- *       This table is deprecated. V201408 is the last version this table can be used in. Use
- *       <strong>Geo_Target</strong> instead.
- *       <table>
- *       <tr>
- *       <th scope = "col">Column Name</th>
- *       <th scope="col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the metro</td>
- *       </tr>
- *       <tr>
- *       <td>MetroCode</td>
- *       <td>3 digit metro code required for metro targeting</td>
- *       </tr>
- *       <tr>
- *       <td>MetroName</td>
- *       <td>The name of the metro</td>
- *       </tr>
- *       <tr>
- *       <td>CountryCode</td>
- *       <td>Country code as defined by ISO 3166-1 alpha-2</td>
- *       </tr>
- *       <tr>
- *       <td>CountryName</td>
- *       <td>The name of the country</td>
- *       </tr>
- *       <tr>
- *       <td>Targetable</td>
- *       <td>Indicates whether geographical targeting is allowed</td>
- *       </tr>
- *       </table>
- *       
- *       <h4>City</h4>
- *       This table is deprecated. V201408 is the last version this table can be used in. Use
- *       <strong>Geo_Target</strong> instead.
- *       <table>
- *       <tr>
- *       <th scope = "col">Column Name</th>
- *       <th scope="col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the city</td>
- *       </tr>
- *       <tr>
- *       <td>CityName</td>
- *       <td>The city name</td>
- *       </tr>
- *       <tr>
- *       <td>MetroCode</td>
- *       <td>3 digit metro code that the city belongs to</td>
- *       </tr>
- *       <tr>
- *       <td>MetroName</td>
- *       <td>The name of the metro</td>
- *       </tr>
- *       <tr>
- *       <td>RegionCode</td>
- *       <td>Region code as defined by ISO 3166-2</td>
- *       </tr>
- *       <tr>
- *       <td>RegionName</td>
- *       <td>The name of the region</td>
- *       </tr>
- *       <tr>
- *       <td>CountryCode</td>
- *       <td>Country code as defined by ISO 3166-1 alpha-2</td>
- *       </tr>
- *       <tr>
- *       <td>CountryName</td>
- *       <td>The name of the country</td>
- *       </tr>
- *       <tr>
- *       <td>Targetable</td>
- *       <td>Indicates whether geographical targeting is allowed</td>
- *       </tr>
- *       </table>
- *       
- *       <h4>Postal_Code</h4>
- *       This table is deprecated. V201408 is the last version this table can be used in. Use
- *       <strong>Geo_Target</strong> instead.
- *       <table>
- *       <tr>
- *       <th scope = "col">Column Name</th>
- *       <th scope = "col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the postal code</td>
- *       </tr>
- *       <tr>
- *       <td>PostalCode</td>
- *       <td>Postal code</td>
- *       </tr>
- *       <tr>
- *       <td>CountryCode</td>
- *       <td>Country code as defined by ISO 3166-1 alpha-2</td>
- *       </tr>
- *       <tr>
- *       <td>Targetable</td>
- *       <td>Indicates whether geographical targeting is allowed</td>
- *       </tr>
- *       </table>
- *       
- *       <h4>Bandwidth_Group</h4>
+ *       <h2>Bandwidth_Group</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -277,7 +105,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Browser</h4>
+ *       <h2>Browser</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -301,7 +129,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Browser_Language</h4>
+ *       <h2>Browser_Language</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -317,7 +145,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Capability</h4>
+ *       <h2>Device_Capability</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -333,7 +161,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Category</h4>
+ *       <h2>Device_Category</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -349,7 +177,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Device_Manufacturer</h4>
+ *       <h2>Device_Manufacturer</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -365,7 +193,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Carrier</h4>
+ *       <h2>Mobile_Carrier</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -385,7 +213,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Device</h4>
+ *       <h2>Mobile_Device</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -405,7 +233,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Mobile_Device_Submodel</h4>
+ *       <h2>Mobile_Device_Submodel</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -425,7 +253,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Operating_System</h4>
+ *       <h2>Operating_System</h2>
  *       <table>
  *       <tr>
  *       <th scope = "col">Column Name</th>
@@ -441,7 +269,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Operating_System_Version</h4>
+ *       <h2>Operating_System_Version</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -469,7 +297,7 @@ import javax.xml.ws.ResponseWrapper;
  *       </tr>
  *       </table>
  *       
- *       <h4>Third_Party_Company</h4>
+ *       <h2>Third_Party_Company</h2>
  *       <table>
  *       <tr>
  *       <th scope="col">Column Name</th>
@@ -492,130 +320,17 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>The status of the third party company</td>
  *       </tr>
  *       </table>
- *       
- *       <h4>Time_Zone</h4>
- *       <table>
- *       <tr>
- *       <th scope="col">Column Name</th>
- *       <th scope="col">Description</th>
- *       </tr>
- *       <tr>
- *       <td>Id</td>
- *       <td>Unique identifier for the time zone in the form of {@code America/New_York}</td>
- *       </tr>
- *       <tr>
- *       <td>StandardGmtOffset</td>
- *       <td>The standard GMT offset of the time zone in the form of {@code GMT-05:00} for
- *       {@code America/New_York}</td>
- *       </tr>
- *       <tr>
- *       <td>SupportedInReports</td>
- *       <td>Indicates whether the time zone is supported in reports. Only time zones that are full hour
- *       offsets from {@link Network#timeZone} are supported in reports.</td>
- *       </tr>
- *       </table>
- *       <h4 id="Line_Item">Line_Item</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>CostType</td><td><code>Text</code></td><td>The method used for billing this {@code LineItem}.</td></tr>
- * <tr><td>CreationDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last created. This attribute may be null for  {@code LineItem}s created before this feature was introduced.</td></tr>
- * <tr><td>DeliveryRateType</td><td><code>Text</code></td><td>The strategy for delivering ads over the course of the {@code LineItem}'s duration. This attribute is optional and defaults to {@link DeliveryRateType#EVENLY}. Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED} if specifically configured to on the network.</td></tr>
- * <tr><td>EndDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} stops serving.</td></tr>
- * <tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the {@code LineItem} that is meaningful to the publisher.</td></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the {@code LineItem}. This attribute is read-only and is assigned by Google when a line item is created.</td></tr>
- * <tr><td>IsMissingCreatives</td><td><code>Boolean</code></td><td>Indicates if a {@code LineItem} is missing any {@link Creative creatives} for the {@code creativePlaceholders} specified.</td></tr>
- * <tr><td>IsSetTopBoxEnabled</td><td><code>Boolean</code></td><td>Whether or not this line item is set-top box enabled.</td></tr>
- * <tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last modified.</td></tr>
- * <tr><td>LineItemType</td><td><code>Text</code></td><td>Indicates the line item type of a {@code LineItem}.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the {@code LineItem}.</td></tr>
- * <tr><td>OrderId</td><td><code>Number</code></td><td>The ID of the {@link Order} to which the {@code LineItem} belongs.</td></tr>
- * <tr><td>StartDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} is enabled to begin serving.</td></tr>
- * <tr><td>Status</td><td><code>Text</code></td><td>The status of the {@code LineItem}.</td></tr>
- * <tr><td>Targeting</td><td><code>Targeting</code></td><td>The targeting criteria for the ad campaign.<p>
- * <b>This object is experimental!
- * <code>Targeting</code> is an experimental, innovative, and rapidly
+ *       <h2 id="Line_Item">Line_Item</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>CostType</td><td><code>Text</code></td><td>The method used for billing this {@code LineItem}.</td></tr><tr><td>CreationDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last created. This attribute may be null for  {@code LineItem}s created before this feature was introduced.</td></tr><tr><td>DeliveryRateType</td><td><code>Text</code></td><td>The strategy for delivering ads over the course of the {@code LineItem}&#39;s duration. This attribute is optional and defaults to {@link DeliveryRateType#EVENLY}. Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED} if specifically configured to on the network.</td></tr><tr><td>EndDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} stops serving.</td></tr><tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the {@code LineItem} that is meaningful to the publisher.</td></tr><tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the {@code LineItem}. This attribute is read-only and is assigned by Google when a line item is created.</td></tr><tr><td>IsMissingCreatives</td><td><code>Boolean</code></td><td>Indicates if a {@code LineItem} is missing any {@link Creative creatives} for the {@code creativePlaceholders} specified.</td></tr><tr><td>IsSetTopBoxEnabled</td><td><code>Boolean</code></td><td>Whether or not this line item is set-top box enabled.</td></tr><tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this {@code LineItem} was last modified.</td></tr><tr><td>LineItemType</td><td><code>Text</code></td><td>Indicates the line item type of a {@code LineItem}.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the {@code LineItem}.</td></tr><tr><td>OrderId</td><td><code>Number</code></td><td>The ID of the {@link Order} to which the {@code LineItem} belongs.</td></tr><tr><td>StartDateTime</td><td><code>Datetime</code></td><td>The date and time on which the {@code LineItem} is enabled to begin serving.</td></tr><tr><td>Status</td><td><code>Text</code></td><td>The status of the {@code LineItem}.</td></tr><tr><td>Targeting</td><td><code>Targeting</code></td><td>The targeting criteria for the ad campaign.&lt;p&gt;
+ * &lt;b&gt;This object is experimental!
+ * &lt;code&gt;Targeting&lt;/code&gt; is an experimental, innovative, and rapidly
  * changing new feature for DFP. Unfortunately, being on the bleeding edge means that we may make
  * backwards-incompatible changes to
- * <code>Targeting</code>. We will inform the community when this feature
- * is no longer experimental.</b></td></tr>
- * <tr><td>UnitsBought</td><td><code>Number</code></td><td>The total number of impressions or clicks that will be reserved for the {@code LineItem}. If the line item is of type {@link LineItemType#SPONSORSHIP}, then it represents the percentage of available impressions reserved.</td></tr>
- * </table>
- * <h4 id="Ad_Unit">Ad_Unit</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>AdUnitCode</td><td><code>Text</code></td><td>A string used to uniquely identify the ad unit for the purposes of serving the ad. This attribute is read-only and is assigned by Google when an ad unit is created.</td></tr>
- * <tr><td>ExternalSetTopBoxChannelId</td><td><code>Text</code></td><td>The channel ID for set-top box enabled {@link AdUnit ad units}.</td></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the ad unit. This value is read-only and is assigned by Google when an ad unit is created.</td></tr>
- * <tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this ad unit was last modified.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the ad unit.</td></tr>
- * <tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the ad unit's parent. Every ad unit has a parent except for the root ad unit, which is created by Google.</td></tr>
- * <tr><td>PartnerId</td><td><code>Number</code></td><td>The unique ID of the {@link Company}, which is of type {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}, to which this ad unit belongs.</td></tr>
- * </table>
- * <h4 id="User">User</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>Email</td><td><code>Text</code></td><td>The email or login of the user.</td></tr>
- * <tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the user that is meaningful to the publisher.</td></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>The unique ID of the user.</td></tr>
- * <tr><td>IsServiceAccount</td><td><code>Boolean</code></td><td>True if this user is an OAuth2 service account user, false otherwise.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the user.</td></tr>
- * <tr><td>RoleId</td><td><code>Number</code></td><td>The unique role ID of the user. {@link Role} objects that are created by Google will have negative IDs.</td></tr>
- * <tr><td>RoleName</td><td><code>Text</code></td><td>The name of the {@link Role} assigned to the user.</td></tr>
- * </table>
- * <h4 id="Exchange_Rate">Exchange_Rate</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>CurrencyCode</td><td><code>Text</code></td><td>The currency code that the exchange rate is related to. The exchange rate is between this currency and {@link Network#currencyCode the network's currency}. This attribute is required for creation and then is readonly.</td></tr>
- * <tr><td>Direction</td><td><code>Text</code></td><td>The direction that the exchange rate is in. It determines whether the exchange rate is from this currency to {@link Network#currencyCode the network's currency}, or from {@link Network#currencyCode the network's currency} to this currency. This attribute can be updated.</td></tr>
- * <tr><td>ExchangeRate</td><td><code>Number</code></td><td>The latest exchange rate at current refresh rate and in current direction. The value is stored as the exchange rate times 10,000,000,000 truncated to a long. Setting this attribute requires the refresh rate to be already set to {@link ExchangeRateRefreshRate#FIXED}. Otherwise an exception will be thrown.</td></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ExchangeRate}. This attribute is readonly and is assigned by Google when an exchange rate is created.</td></tr>
- * <tr><td>RefreshRate</td><td><code>Text</code></td><td>The refresh rate at which the exchange rate is updated. Setting this attribute to {@link ExchangeRateRefreshRate#FIXED} without setting the exchange rate value will cause unknown exchange rate value returned in future queries.</td></tr>
- * </table>
- * <h4 id="Programmatic_Buyer">Programmatic_Buyer</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>AdxBuyerNetworkId</td><td><code>Number</code></td><td>The ID used by Adx to bill the appropriate buyer network for a programmatic order.</td></tr>
- * <tr><td>BuyerId</td><td><code>Number</code></td><td>The ID used by the buyer for their billing reference. This may represent either an Advertiser or Partner ID.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>Display name that references the buyer.</td></tr>
- * <tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the programmatic buyer's parent. For advertisers, this field contains the advertiser's partner ID. For partners, this field is zero.</td></tr>
- * <tr><td>Type</td><td><code>Text</code></td><td>The type of a programmatic buyer.</td></tr>
- * </table>
- * <h4 id="Audience_Segment_Category">Audience_Segment_Category</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment category.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment category.</td></tr>
- * <tr><td>ParentId</td><td><code>Number</code></td><td>The unique identifier of the audience segment category's parent.</td></tr>
- * </table>
- * <h4 id="Audience_Segment">Audience_Segment</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>CategoryIds</td><td><code>Set of number</code></td><td>The ids of the categories that this audience segment belongs to.</td></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment.</td></tr>
- * <tr><td>OwnerAccountId</td><td><code>Number</code></td><td>The owner account id of the audience segment.</td></tr>
- * <tr><td>OwnerName</td><td><code>Text</code></td><td>The owner name of the audience segment.</td></tr>
- * <tr><td>SegmentType</td><td><code>Text</code></td><td>The type of the audience segment.</td></tr>
- * </table>
- * <h4 id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ProposalRetractionReason}. This attribute is readonly and is assigned by Google when a proposal retraction reason is created.</td></tr>
- * <tr><td>IsActive</td><td><code>Boolean</code></td><td>True if the {@code ProposalRetractionReason} is active.</td></tr>
- * <tr><td>Name</td><td><code>Text</code></td><td>The name of the {@code ProposalRetractionReason}.</td></tr>
- * </table>
- * <h4 id="Audience_Explorer">Audience_Explorer</h4>
- * <table>
- * <tr><th scope="col">Column name</th><th scope="col">Type</th><th scope="col">Description</th></tr>
- * <tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the audience segment.</td></tr>
- * <tr><td>ThirtyDayActiveSize</td><td><code>Number</code></td><td>The number of active unique cookies in this segment over the last 30 days.</td></tr>
- * <tr><td>ThirtyDayClicks</td><td><code>Number</code></td><td>The number of clicks for this segment over the last 30 days.</td></tr>
- * <tr><td>ThirtyDayImpressions</td><td><code>Number</code></td><td>The number of impressions for this segment over the last 30 days.</td></tr>
- * </table>
+ * &lt;code&gt;Targeting&lt;/code&gt;. We will inform the community when this feature
+ * is no longer experimental.&lt;/b&gt;</td></tr><tr><td>UnitsBought</td><td><code>Number</code></td><td>The total number of impressions or clicks that will be reserved for the {@code LineItem}. If the line item is of type {@link LineItemType#SPONSORSHIP}, then it represents the percentage of available impressions reserved.</td></tr></table><h2 id="Ad_Unit">Ad_Unit</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>AdUnitCode</td><td><code>Text</code></td><td>A string used to uniquely identify the ad unit for the purposes of serving the ad. This attribute is read-only and is assigned by Google when an ad unit is created.</td></tr><tr><td>ExternalSetTopBoxChannelId</td><td><code>Text</code></td><td>The channel ID for set-top box enabled {@link AdUnit ad units}.</td></tr><tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the ad unit. This value is read-only and is assigned by Google when an ad unit is created.</td></tr><tr><td>LastModifiedDateTime</td><td><code>Datetime</code></td><td>The date and time this ad unit was last modified.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the ad unit.</td></tr><tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the ad unit&#39;s parent. Every ad unit has a parent except for the root ad unit, which is created by Google.</td></tr><tr><td>PartnerId</td><td><code>Number</code></td><td>The unique ID of the {@link Company}, which is of type {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}, to which this ad unit belongs.</td></tr></table><h2 id="User">User</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>Email</td><td><code>Text</code></td><td>The email or login of the user.</td></tr><tr><td>ExternalId</td><td><code>Text</code></td><td>An identifier for the user that is meaningful to the publisher.</td></tr><tr><td>Id</td><td><code>Number</code></td><td>The unique ID of the user.</td></tr><tr><td>IsServiceAccount</td><td><code>Boolean</code></td><td>True if this user is an OAuth2 service account user, false otherwise.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the user.</td></tr><tr><td>RoleId</td><td><code>Number</code></td><td>The unique role ID of the user. {@link Role} objects that are created by Google will have negative IDs.</td></tr><tr><td>RoleName</td><td><code>Text</code></td><td>The name of the {@link Role} assigned to the user.</td></tr></table><h2 id="Exchange_Rate">Exchange_Rate</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>CurrencyCode</td><td><code>Text</code></td><td>The currency code that the exchange rate is related to. The exchange rate is between this currency and {@link Network#currencyCode the network&#39;s currency}. This attribute is required for creation and then is readonly.</td></tr><tr><td>Direction</td><td><code>Text</code></td><td>The direction that the exchange rate is in. It determines whether the exchange rate is from this currency to {@link Network#currencyCode the network&#39;s currency}, or from {@link Network#currencyCode the network&#39;s currency} to this currency. This attribute can be updated.</td></tr><tr><td>ExchangeRate</td><td><code>Number</code></td><td>The latest exchange rate at current refresh rate and in current direction. The value is stored as the exchange rate times 10,000,000,000 truncated to a long. Setting this attribute requires the refresh rate to be already set to {@link ExchangeRateRefreshRate#FIXED}. Otherwise an exception will be thrown.</td></tr><tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ExchangeRate}. This attribute is readonly and is assigned by Google when an exchange rate is created.</td></tr><tr><td>RefreshRate</td><td><code>Text</code></td><td>The refresh rate at which the exchange rate is updated. Setting this attribute to {@link ExchangeRateRefreshRate#FIXED} without setting the exchange rate value will cause unknown exchange rate value returned in future queries.</td></tr></table><h2 id="Programmatic_Buyer">Programmatic_Buyer</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>AdxBuyerNetworkId</td><td><code>Number</code></td><td>The ID used by Adx to bill the appropriate buyer network for a programmatic order.</td></tr><tr><td>BuyerId</td><td><code>Number</code></td><td>The ID used by the buyer for their billing reference. This may represent either an Advertiser or Partner ID.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>Display name that references the buyer.</td></tr><tr><td>ParentId</td><td><code>Number</code></td><td>The ID of the programmatic buyer&#39;s parent. For advertisers, this field contains the advertiser&#39;s partner ID. For partners, this field is zero.</td></tr><tr><td>Type</td><td><code>Text</code></td><td>The type of a programmatic buyer.</td></tr></table><h2 id="Audience_Segment_Category">Audience_Segment_Category</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment category.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment category.</td></tr><tr><td>ParentId</td><td><code>Number</code></td><td>The unique identifier of the audience segment category&#39;s parent.</td></tr></table><h2 id="Audience_Segment">Audience_Segment</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>CategoryIds</td><td><code>Set of number</code></td><td>The ids of the categories that this audience segment belongs to.</td></tr><tr><td>Id</td><td><code>Number</code></td><td>The unique identifier for the audience segment.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the audience segment.</td></tr><tr><td>OwnerAccountId</td><td><code>Number</code></td><td>The owner account id of the audience segment.</td></tr><tr><td>OwnerName</td><td><code>Text</code></td><td>The owner name of the audience segment.</td></tr><tr><td>SegmentType</td><td><code>Text</code></td><td>The type of the audience segment.</td></tr></table><h2 id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>Id</td><td><code>Number</code></td><td>The ID of the {@code ProposalRetractionReason}. This attribute is readonly and is assigned by Google when a proposal retraction reason is created.</td></tr><tr><td>IsActive</td><td><code>Boolean</code></td><td>True if the {@code ProposalRetractionReason} is active.</td></tr><tr><td>Name</td><td><code>Text</code></td><td>The name of the {@code ProposalRetractionReason}.</td></tr></table><h2 id="Audience_Explorer">Audience_Explorer</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>Id</td><td><code>Number</code></td><td>Uniquely identifies the audience segment.</td></tr><tr><td>ThirtyDayActiveSize</td><td><code>Number</code></td><td>The number of active unique cookies in this segment over the last 30 days.</td></tr><tr><td>ThirtyDayClicks</td><td><code>Number</code></td><td>The number of clicks for this segment over the last 30 days.</td></tr><tr><td>ThirtyDayImpressions</td><td><code>Number</code></td><td>The number of impressions for this segment over the last 30 days.</td></tr></table><h2 id="Time_Zone">Time_Zone</h2><table><tr><th>Column name</th><th>Type</th><th>Description</th></tr><tr><td>Id</td><td><code>Text</code></td><td>The id of time zone in the form of {@code America/New_York}.</td></tr><tr><td>StandardGmtOffset</td><td><code>Text</code></td><td>The standard GMT offset in current time in the form of {@code GMT-05:00} for {@code America/New_York}, excluding the Daylight Saving Time.</td></tr><tr><td>SupportedInReports</td><td><code>Boolean</code></td><td>Returns {@code true} if current time zone is supported in reports. Currently we only support time zones that are full hour offset from publisher time zone.</td></tr></table>
  *     
  * 
  * This class was generated by the JAX-WS RI.
- * JAX-WS RI 2.2.4-b01
+ * JAX-WS RI 2.2.9-b130926.1035
  * Generated source version: 2.1
  * 
  */

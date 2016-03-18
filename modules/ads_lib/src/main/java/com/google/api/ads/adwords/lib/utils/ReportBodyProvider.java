@@ -18,8 +18,6 @@ import com.google.api.client.http.HttpContent;
 
 /**
  * Allows different types of reports to be written to an output stream.
- *
- * @author Kevin Winter
  */
 interface ReportBodyProvider {
 

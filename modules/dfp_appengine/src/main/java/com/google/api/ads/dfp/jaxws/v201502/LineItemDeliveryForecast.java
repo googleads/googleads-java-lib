@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,6 +48,7 @@ public class LineItemDeliveryForecast {
 
     protected Long lineItemId;
     protected Long orderId;
+    @XmlSchemaType(name = "string")
     protected UnitType unitType;
     protected Long predictedDeliveryUnits;
     protected Long deliveredUnits;

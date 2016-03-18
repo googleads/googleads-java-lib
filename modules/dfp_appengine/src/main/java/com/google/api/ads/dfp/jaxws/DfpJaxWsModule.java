@@ -20,23 +20,21 @@ import com.google.api.ads.common.lib.soap.jaxws.JaxWsModule;
 import com.google.api.ads.dfp.lib.DfpModule;
 import com.google.api.ads.dfp.lib.DfpProductFrameworkModule;
 import com.google.api.ads.dfp.lib.DfpSoapModule;
+import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
+import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.inject.TypeLiteral;
 
 /**
  * Guice module to bind Dfp's SOAP header handler to a JAX-WS-friendly
  * implementation.
- *
- * @author Joseph DiLallo
- * @author Jeff Sham
- * @author Adam Rogal
  */
 @DfpProductFrameworkModule
 public class DfpJaxWsModule extends ProductFrameworkModule {
 
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
   @Override
   public void configure() {
-    bind(new TypeLiteral<HeaderHandler>() {}).to(new TypeLiteral<DfpJaxWsHeaderHandler>() {});
+    bind(new TypeLiteral<HeaderHandler<DfpSession, DfpServiceDescriptor>>() {})
+        .to(new TypeLiteral<DfpJaxWsHeaderHandler>() {});
     install(new JaxWsModule());
     install(new DfpModule());
     install(new DfpSoapModule());

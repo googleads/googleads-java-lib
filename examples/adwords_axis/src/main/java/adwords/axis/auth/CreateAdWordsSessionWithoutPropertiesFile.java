@@ -15,8 +15,8 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201502.mcm.Customer;
-import com.google.api.ads.adwords.axis.v201502.mcm.CustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.mcm.Customer;
+import com.google.api.ads.adwords.axis.v201509.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -27,8 +27,6 @@ import com.google.api.client.auth.oauth2.Credential;
 /**
  * This example demonstrates how to create a Credential and an AdWordsSession
  * object without using an ads.properties file.
- *
- * @author Ray Tsang
  */
 public class CreateAdWordsSessionWithoutPropertiesFile {
   

@@ -22,8 +22,6 @@ import com.google.inject.Injector;
 
 /**
  * Base for a utility class which creates AdWords service clients.
- *
- * @author Joseph DiLallo
  */
 public abstract class BaseAdWordsServices extends BaseServices<AdWordsServiceClient,
                                                                AdWordsSession,

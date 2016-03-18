@@ -15,19 +15,18 @@
 package com.google.api.ads.common.lib.soap.axis.conf;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.inject.Inject;
 
 import org.apache.axis.EngineConfiguration;
 import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.configuration.EngineConfigurationFactoryDefault;
 import org.apache.axis.configuration.FileProvider;
 
+import javax.inject.Inject;
+
 /**
  * EngineConfigurationFactory implementation that configures Axis clients using a custom
  * configuration file if compression is enabled and no client customization has been specified
  * in the environment.
- *
- * @author Josh Radcliff
  */
 public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFactory {
 

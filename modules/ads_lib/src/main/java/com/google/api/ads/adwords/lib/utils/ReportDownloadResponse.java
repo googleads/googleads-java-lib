@@ -29,8 +29,6 @@ import javax.annotation.Nullable;
 
 /**
  * Holder class for http status and response body for a <em>successful</em> request.
- *
- * @author Kevin Winter
  */
 public class ReportDownloadResponse {
 

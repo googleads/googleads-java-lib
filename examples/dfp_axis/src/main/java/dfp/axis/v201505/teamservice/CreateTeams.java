@@ -31,10 +31,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: TeamService.createTeams
- *
- * @author Adam Rogal
  */
 public class CreateTeams {
 
@@ -61,7 +57,7 @@ public class CreateTeams {
     Team[] teams = teamService.createTeams(new Team[] {readWriteTeam, readOnlyTeam});
 
     for (Team createdTeam : teams) {
-      System.out.printf("A team with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A team with ID %d and name '%s' was created.%n",
           createdTeam.getId(), createdTeam.getName());
     }
   }

@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserService.createUsers
- *
- * @author Adam Rogal
  */
 public class CreateUsers {
 
@@ -61,7 +57,7 @@ public class CreateUsers {
     User[] users = userService.createUsers(new User[] {traffickerUser});
 
     for (User createdUser : users) {
-      System.out.printf("A user with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A user with ID %d and name '%s' was created.%n",
           createdUser.getId(), createdUser.getName());
     }
   }

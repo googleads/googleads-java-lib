@@ -39,8 +39,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test case for {@link AdWordsAxisExpressHeaderHandler}.
- * 
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AdWordsAxisExpressHeaderHandlerTest {

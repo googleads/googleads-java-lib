@@ -16,27 +16,29 @@ package com.google.api.ads.adwords.lib.utils.logging;
 
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.ads.common.lib.utils.logging.PrettyPrinterInterface;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
 
+import javax.inject.Inject;
+
 /**
  * Service logger that also provides access to additional AdWords-specific loggers.
- *
- * @author Josh Radcliff
  */
 public class AdWordsServiceLoggers extends AdsServiceLoggers {
 
   private final ReportServiceLogger reportServiceLogger;
+  private final BatchJobLogger batchJobLogger;
   
   @Inject
   public AdWordsServiceLoggers(PrettyPrinterInterface prettyPrinter,
       @Named("soapXmlLogger") Logger soapXmlLogger,
       @Named("requestInfoLogger") Logger requestInfoLogger,
-      ReportServiceLogger reportServiceLogger) {
+      ReportServiceLogger reportServiceLogger,
+      BatchJobLogger batchJobLogger) {
     super(prettyPrinter, soapXmlLogger, requestInfoLogger);
     this.reportServiceLogger = reportServiceLogger;
+    this.batchJobLogger = batchJobLogger;
   }
 
   /**
@@ -44,5 +46,12 @@ public class AdWordsServiceLoggers extends AdsServiceLoggers {
    */
   public ReportServiceLogger getReportServiceLogger() {
     return reportServiceLogger;
+  }
+  
+  /**
+   * Return the logger for {@code BatchJobService} uploads and downloads.
+   */
+  public BatchJobLogger getBatchJobLogger() {
+    return batchJobLogger;
   }
 }

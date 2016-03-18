@@ -15,16 +15,12 @@
 package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedMcc;
-import com.google.api.ads.adwords.axis.v201409.billing.BillingAccount;
+import com.google.api.ads.adwords.axis.v201506.billing.BillingAccount;
 
 import java.util.List;
 
 /**
  * This example gets all BillingAccount for an MCC account.
- *
- * Tags: BudgetOrderService.getBillingAccounts()
- *
- * @author Julian Toledo
  */
 public class GetBillingAccounts {
 
@@ -40,7 +36,7 @@ public class GetBillingAccounts {
     List<BillingAccount> billingAccounts = extendedMcc.getBillingAccounts();
     for (BillingAccount billingAccount : billingAccounts) {
       System.out.printf(
-          "BillingAccount with Id '%s' and Name  '%s' was found.\n",
+          "BillingAccount with ID '%s' and name '%s' was found.%n",
           billingAccount.getId(),
           billingAccount.getName());
     }

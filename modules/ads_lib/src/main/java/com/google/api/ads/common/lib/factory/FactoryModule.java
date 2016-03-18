@@ -21,7 +21,7 @@ import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelpe
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.assistedinject.Assisted;
-import com.google.inject.assistedinject.FactoryProvider;
+import com.google.inject.assistedinject.FactoryModuleBuilder;
 
 /**
  * Module for factories.
@@ -30,25 +30,23 @@ import com.google.inject.assistedinject.FactoryProvider;
  * @param <D> the subclass of {@link AdsServiceDescriptor}
  * @param <S> the subclass of {@link AdsSession}
  * @param <H> the subclass of {@link AdsServiceClientFactoryHelper}
- *
- * @author Adam Rogal
+ * @param <F> the subclass of {@link BaseAdsServiceClientFactory}
  */
 public class FactoryModule<C extends AdsServiceClient<S, D>,
                            D extends AdsServiceDescriptor,
                            S extends AdsSession,
-                           H extends AdsServiceClientFactoryHelper<C, S, D>>
+                           H extends AdsServiceClientFactoryHelper<C, S, D>,
+                           F extends BaseAdsServiceClientFactory<C, S, D>>
     extends AbstractModule {
 
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-  private final TypeLiteral adsServiceClientFactoryTypeLiteral;
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-  private final TypeLiteral adsServiceDescriptorFactoryTypeLiteral;
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-  private final TypeLiteral adsServiceClientTypeLiteral;
-  @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-  private final TypeLiteral adsServiceDescriptorTypeLiteral;
+  private final TypeLiteral<AdsServiceClientFactoryInterface<C, S, D>>
+      adsServiceClientFactoryTypeLiteral;
+  private final TypeLiteral<AdsServiceDescriptorFactoryInterface<D>>
+      adsServiceDescriptorFactoryTypeLiteral;
+  private final TypeLiteral<C> adsServiceClientTypeLiteral;
+  private final TypeLiteral<D> adsServiceDescriptorTypeLiteral;
   private final Class<H> factoryHelperClass;
-  private final Class<?> factoryClass;
+  private final Class<F> factoryClass;
 
   /**
    * Constructor.
@@ -61,38 +59,37 @@ public class FactoryModule<C extends AdsServiceClient<S, D>,
    *     contains a {@link AdsServiceClient}
    * @param adsServiceDescriptorTypeLiteral the ads service descriptor literal
    *     which contains a {@link AdsServiceDescriptor}
-   * @param factoryHelperClass the factory helper class
-   * @param factoryClass the factory class
+   * @param adsServiceClientFactoryHelperClass the {@link AdsServiceClientFactoryHelper} class
+   * @param baseAdsServiceClientFactoryClass the {@link BaseAdsServiceClientFactory} class
    */
   public FactoryModule(
-      @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-      TypeLiteral adsServiceClientFactoryTypeLiteral,
-      @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-      TypeLiteral adsServiceDescriptorFactoryTypeLiteral,
-      @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-      TypeLiteral adsServiceClientTypeLiteral,
-      @SuppressWarnings("rawtypes") /* Guice lacks support for template type literals.*/
-      TypeLiteral adsServiceDescriptorTypeLiteral,
-      Class<H> factoryHelperClass,
-      Class<?> factoryClass) {
+      TypeLiteral<AdsServiceClientFactoryInterface<C, S, D>> adsServiceClientFactoryTypeLiteral,
+      TypeLiteral<AdsServiceDescriptorFactoryInterface<D>> adsServiceDescriptorFactoryTypeLiteral,
+      TypeLiteral<C> adsServiceClientTypeLiteral,
+      TypeLiteral<D> adsServiceDescriptorTypeLiteral,
+      Class<H> adsServiceClientFactoryHelperClass,
+      Class<F> baseAdsServiceClientFactoryClass) {
     this.adsServiceClientFactoryTypeLiteral = adsServiceClientFactoryTypeLiteral;
     this.adsServiceDescriptorFactoryTypeLiteral = adsServiceDescriptorFactoryTypeLiteral;
     this.adsServiceClientTypeLiteral = adsServiceClientTypeLiteral;
     this.adsServiceDescriptorTypeLiteral = adsServiceDescriptorTypeLiteral;
-    this.factoryHelperClass = factoryHelperClass;
-    this.factoryClass = factoryClass;
+    this.factoryHelperClass = adsServiceClientFactoryHelperClass;
+    this.factoryClass = baseAdsServiceClientFactoryClass;
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected void configure() {
     // Bind the base Guice factory interface to its typed one.
-    bind(adsServiceClientFactoryTypeLiteral).toProvider(
-      FactoryProvider.newFactory(adsServiceClientFactoryTypeLiteral,
-            adsServiceClientTypeLiteral));
-    bind(adsServiceDescriptorFactoryTypeLiteral).toProvider(
-        FactoryProvider.newFactory(adsServiceDescriptorFactoryTypeLiteral,
-            adsServiceDescriptorTypeLiteral));
+    install(
+        new FactoryModuleBuilder()
+            .implement(adsServiceClientTypeLiteral, adsServiceClientTypeLiteral)
+            .build(adsServiceClientFactoryTypeLiteral));
+
+    install(
+        new FactoryModuleBuilder()
+            .implement(adsServiceDescriptorTypeLiteral, adsServiceDescriptorTypeLiteral)
+            .build(adsServiceDescriptorFactoryTypeLiteral));
+    
     bind(AdsServiceClientFactoryHelper.class).to(factoryHelperClass);
     bind(factoryClass);
   }

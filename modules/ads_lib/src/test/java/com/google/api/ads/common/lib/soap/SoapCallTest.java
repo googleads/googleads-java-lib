@@ -26,8 +26,6 @@ import java.lang.reflect.Method;
 
 /**
  * Test for the {@link SoapCall} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class SoapCallTest {
@@ -69,7 +67,6 @@ public class SoapCallTest {
    * Helper class containing methods to be retrieved and passed into the
    * {@link SoapCall} constructor.
    *
-   * @author Joseph DiLallo
    */
   private static class MethodHolder {
 

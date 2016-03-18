@@ -32,8 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BaseDynamicAllocationCreative")
 @XmlSeeAlso({
-    HasHtmlSnippetDynamicAllocationCreative.class,
-    AdMobBackfillCreative.class
+    AdMobBackfillCreative.class,
+    HasHtmlSnippetDynamicAllocationCreative.class
 })
 public abstract class BaseDynamicAllocationCreative
     extends Creative

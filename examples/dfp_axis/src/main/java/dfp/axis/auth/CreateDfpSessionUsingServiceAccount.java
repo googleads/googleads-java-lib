@@ -32,8 +32,6 @@ import java.io.File;
  * <p>For more information on using service accounts with the DFP API, please see <a
  * href="https://developers.google.com/doubleclick-publishers/docs/service_accounts">using service
  * accounts with DFP</a>.
- *
- * @author Kevin Lei
  */
 public class CreateDfpSessionUsingServiceAccount {
 
@@ -49,7 +47,7 @@ public class CreateDfpSessionUsingServiceAccount {
     // Gets the current network.
     Network network = networkService.getCurrentNetwork();
 
-    System.out.printf("Current network has network code \"%s\" and display name \"%s\".%n",
+    System.out.printf("Current network has network code '%s' and display name '%s'.%n",
         network.getNetworkCode(), network.getDisplayName());
   }
 

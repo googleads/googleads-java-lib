@@ -15,23 +15,23 @@
 package adwords.axis.utility.extension.advancedoperations;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.cm.AttributeFieldMapping;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201409.cm.ConstantOperand;
-import com.google.api.ads.adwords.axis.v201409.cm.ConstantOperandConstantType;
-import com.google.api.ads.adwords.axis.v201409.cm.Feed;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedAttribute;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedAttributeType;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedItem;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedItemAttributeValue;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedMapping;
-import com.google.api.ads.adwords.axis.v201409.cm.FeedOrigin;
-import com.google.api.ads.adwords.axis.v201409.cm.Function;
-import com.google.api.ads.adwords.axis.v201409.cm.FunctionArgumentOperand;
-import com.google.api.ads.adwords.axis.v201409.cm.FunctionOperand;
-import com.google.api.ads.adwords.axis.v201409.cm.FunctionOperator;
-import com.google.api.ads.adwords.axis.v201409.cm.RequestContextOperand;
-import com.google.api.ads.adwords.axis.v201409.cm.RequestContextOperandContextType;
+import com.google.api.ads.adwords.axis.v201506.cm.AttributeFieldMapping;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201506.cm.ConstantOperand;
+import com.google.api.ads.adwords.axis.v201506.cm.ConstantOperandConstantType;
+import com.google.api.ads.adwords.axis.v201506.cm.Feed;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedAttribute;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedAttributeType;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedItem;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedItemAttributeValue;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedMapping;
+import com.google.api.ads.adwords.axis.v201506.cm.FeedOrigin;
+import com.google.api.ads.adwords.axis.v201506.cm.Function;
+import com.google.api.ads.adwords.axis.v201506.cm.FunctionArgumentOperand;
+import com.google.api.ads.adwords.axis.v201506.cm.FunctionOperand;
+import com.google.api.ads.adwords.axis.v201506.cm.FunctionOperator;
+import com.google.api.ads.adwords.axis.v201506.cm.RequestContextOperand;
+import com.google.api.ads.adwords.axis.v201506.cm.RequestContextOperandContextType;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
@@ -42,12 +42,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file. See
  * README for more info.
- *
- * Tags: CampaignFeedService.mutate, FeedItemService.mutate, FeedMappingService.mutate
- * Tags: FeedService.mutate
- *
- * @author Kevin Winter
- * @author Julian Toledo
  */
 public class AddSiteLinks {
 
@@ -93,8 +87,8 @@ public class AddSiteLinks {
     FeedAttribute[] savedAttributes = savedFeed.getAttributes();
     siteLinksData.linkTextFeedAttributeId = savedAttributes[0].getId();
     siteLinksData.linkUrlFeedAttributeId = savedAttributes[1].getId();
-    System.out.printf("Feed with name '%s' and ID '%d' with linkTextAttributeId '%d'"
-        + " and linkUrlAttributeId '%s' was created.\n", savedFeed.getName(), savedFeed.getId(),
+    System.out.printf("Feed with name '%s' and ID %d with linkTextAttributeId %d"
+        + " and linkUrlAttributeId %d was created.%n", savedFeed.getName(), savedFeed.getId(),
         savedAttributes[0].getId(), savedAttributes[1].getId());
   }
 
@@ -113,7 +107,7 @@ public class AddSiteLinks {
 
     List<FeedItem> savedFeedItems = extendedManagedCustomer.insertFeedItems(feedItems);
     for (FeedItem item : savedFeedItems) {
-      System.out.printf("FeedItem with feedItemId '%d' was added.\n", item.getFeedItemId());
+      System.out.printf("FeedItem with feedItemId %d was added.%n", item.getFeedItemId());
       siteLinksData.siteLinkFeedItemIds.add(item.getFeedItemId());
     }
   }
@@ -148,7 +142,7 @@ public class AddSiteLinks {
 
     FeedMapping savedFeedMapping = extendedManagedCustomer.insertFeedMapping(feedMapping);
     System.out.printf(
-        "Feed mapping with ID %d and placeholderType '%d' was saved for feed with ID %d.\n",
+        "Feed mapping with ID %d and placeholderType %d was saved for feed with ID %d.%n",
         savedFeedMapping.getFeedMappingId(), savedFeedMapping.getPlaceholderType(),
         savedFeedMapping.getFeedId());
   }
@@ -207,7 +201,7 @@ public class AddSiteLinks {
     campaignFeed.setPlaceholderTypes(new int[] {PLACEHOLDER_SITELINKS});
 
     CampaignFeed savedCampaignFeed = extendedManagedCustomer.insertCampaignFeed(campaignFeed);
-    System.out.printf("Campaign with ID '%d' was associated with feed with ID '%d'.\n",
+    System.out.printf("Campaign with ID %d was associated with feed with ID %d.%n",
         savedCampaignFeed.getCampaignId(), savedCampaignFeed.getFeedId());
   }
 

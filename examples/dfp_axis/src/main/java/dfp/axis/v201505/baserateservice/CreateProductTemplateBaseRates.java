@@ -30,35 +30,31 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: BaseRateService.createBaseRates
- *
- * @author Nicholas Chen
  */
 public class CreateProductTemplateBaseRates {
-  
+
   // Set the rate card ID to add the base rate to.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
-  
+
   // Set the product template to apply this base rate to.
   private static final String PRODUCT_TEMPLATE_ID = "INSERT_PRODUCT_TEMPLATE_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId,
       long productTemplateId)
       throws Exception {
     // Get the BaseRateService.
     BaseRateServiceInterface baseRateService =
         dfpServices.get(session, BaseRateServiceInterface.class);
-    
+
     // Create a base rate for a product template.
     ProductTemplateBaseRate productTemplateBaseRate = new ProductTemplateBaseRate();
-    
+
     // Set the rate card ID that the product template base rate belongs to.
     productTemplateBaseRate.setRateCardId(rateCardId);
 
     // Set the product template the base rate will be applied to.
     productTemplateBaseRate.setProductTemplateId(productTemplateId);
-    
+
     // Create a rate worth $2 and set that on the product template base rate.
     Money rate = new Money();
     rate.setCurrencyCode("USD");
@@ -68,9 +64,9 @@ public class CreateProductTemplateBaseRates {
     // Create the product template base rate on the server.
     BaseRate[] baseRates = baseRateService.createBaseRates(
         new BaseRate[] {productTemplateBaseRate});
-    
+
     for (BaseRate createdBaseRate : baseRates) {
-      System.out.printf("A product template base rate with ID \"%d\" and rate \"%.2f\" %s "
+      System.out.printf("A product template base rate with ID %d and rate %.4f %s "
           + "was created.%n", createdBaseRate.getId(),
           (((ProductTemplateBaseRate) createdBaseRate).getRate().getMicroAmount() / 1000000f),
           ((ProductTemplateBaseRate) createdBaseRate).getRate().getCurrencyCode());

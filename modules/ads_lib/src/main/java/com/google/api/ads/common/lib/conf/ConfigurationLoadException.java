@@ -4,8 +4,6 @@ package com.google.api.ads.common.lib.conf;
 
 /**
  * Exception thrown when configuration could not be loaded.
- *
- * @author Adam Rogal
  */
 public class ConfigurationLoadException extends Exception {
 

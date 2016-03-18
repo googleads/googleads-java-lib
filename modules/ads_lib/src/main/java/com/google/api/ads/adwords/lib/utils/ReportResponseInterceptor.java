@@ -23,8 +23,6 @@ import java.io.IOException;
 
 /**
  * Implementation of HttpResponseInterceptor for AdWords reporting responses.
- * 
- * @author Josh Radcliff
  */
 class ReportResponseInterceptor implements HttpResponseInterceptor {
 

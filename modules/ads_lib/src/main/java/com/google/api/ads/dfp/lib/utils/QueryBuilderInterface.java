@@ -20,8 +20,6 @@ import java.util.Map;
  * {@code QueryBuilderInterface} allows for queries to be constructed in parts.
  *
  * @param <V> the type of the API Value
- *
- * @author Adam Rogal
  */
 public interface QueryBuilderInterface<V> {
 

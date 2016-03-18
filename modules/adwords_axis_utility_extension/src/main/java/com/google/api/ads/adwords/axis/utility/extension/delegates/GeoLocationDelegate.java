@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibraryException;
-import com.google.api.ads.adwords.axis.v201409.cm.Address;
-import com.google.api.ads.adwords.axis.v201409.cm.GeoLocation;
-import com.google.api.ads.adwords.axis.v201409.cm.GeoLocationSelector;
-import com.google.api.ads.adwords.axis.v201409.cm.GeoLocationServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.Address;
+import com.google.api.ads.adwords.axis.v201506.cm.GeoLocation;
+import com.google.api.ads.adwords.axis.v201506.cm.GeoLocationSelector;
+import com.google.api.ads.adwords.axis.v201506.cm.GeoLocationServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -28,8 +28,6 @@ import java.util.List;
 
 /**
  * Specific AbstractBaseDelegate for {@link GeoLocationServiceInterface}.
- *
- * @author Julian Toledo
  */
 public final class GeoLocationDelegate extends AbstractBaseDelegate<GeoLocationServiceInterface> {
 

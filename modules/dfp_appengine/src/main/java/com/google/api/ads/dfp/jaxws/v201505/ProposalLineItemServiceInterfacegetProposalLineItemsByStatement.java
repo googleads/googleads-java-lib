@@ -30,6 +30,14 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ProposalLineItem#proposalId}</td>
  *             </tr>
  *             <tr>
+ *             <td>{@code startDateTime}</td>
+ *             <td>{@link ProposalLineItem#startDateTime}</td>
+ *             </tr>
+ *             <tr>
+ *             <td>{@code endDateTime}</td>
+ *             <td>{@link ProposalLineItem#endDateTime}</td>
+ *             </tr>
+ *             <tr>
  *             <td>{@code isArchived}</td>
  *             <td>{@link ProposalLineItem#isArchived}</td>
  *             </tr>

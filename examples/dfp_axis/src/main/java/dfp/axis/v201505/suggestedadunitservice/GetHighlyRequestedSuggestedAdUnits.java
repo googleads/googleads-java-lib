@@ -32,10 +32,6 @@ import com.google.common.base.Joiner;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: SuggestedAdUnitService.getSuggestedAdUnitsByStatement
- *
- * @author Adam Rogal
  */
 public class GetHighlyRequestedSuggestedAdUnits {
 
@@ -69,8 +65,8 @@ public class GetHighlyRequestedSuggestedAdUnits {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (SuggestedAdUnit suggestedAdUnit : page.getResults()) {
-          System.out.printf("%d) Suggested ad unit with ID \"%s\", path \"%s\", "
-              + "and number of requests \"%d\" was found.\n",
+          System.out.printf("%d) Suggested ad unit with ID '%s', path '%s', "
+              + "and number of requests %d was found.%n",
               i++, suggestedAdUnit.getId(), Joiner.on('/').join(suggestedAdUnit.getPath()),
               suggestedAdUnit.getNumRequests());
         }
@@ -79,7 +75,7 @@ public class GetHighlyRequestedSuggestedAdUnits {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

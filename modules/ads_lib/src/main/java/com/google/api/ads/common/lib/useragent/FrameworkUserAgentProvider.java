@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.useragent;
 
 /**
  * Provides the framework user agent.
- *
- * @author Adam Rogal
  */
 public interface FrameworkUserAgentProvider extends UserAgentProvider {
 }

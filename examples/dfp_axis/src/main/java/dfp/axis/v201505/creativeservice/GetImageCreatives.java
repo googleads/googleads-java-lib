@@ -31,10 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeService.getCreativesByStatement
- *
- * @author Adam Rogal
  */
 public class GetImageCreatives {
 
@@ -62,7 +58,7 @@ public class GetImageCreatives {
         int i = page.getStartIndex();
         for (Creative creative : page.getResults()) {
           System.out.printf(
-              "%d) Creative with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Creative with ID %d and name '%s' was found.%n", i++,
               creative.getId(), creative.getName());
         }
       }
@@ -70,7 +66,7 @@ public class GetImageCreatives {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

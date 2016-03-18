@@ -25,8 +25,6 @@ import java.net.URL;
 
 /**
  * Module for the product/framework.
- *
- * @author Adam Rogal
  */
 public class ProductFrameworkModule extends AbstractModule {
 

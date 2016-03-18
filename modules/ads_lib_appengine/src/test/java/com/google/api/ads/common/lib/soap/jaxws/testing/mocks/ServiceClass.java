@@ -20,7 +20,6 @@ import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 * Mock of a JAX-WS service locator class used to test
 * {@link JaxWsHandler#createSoapClient(com.google.api.ads.common.lib.soap.SoapServiceDescriptor)}.
 *
-* @author Joseph DiLallo
 */
 public class ServiceClass {
 

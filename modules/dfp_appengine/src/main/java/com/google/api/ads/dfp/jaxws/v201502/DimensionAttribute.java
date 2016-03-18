@@ -993,7 +993,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link ProposalLineItem#unitsBoughtBuffer} for
+     *                 Represents {@link ProposalLineItem#contractedQuantityBuffer} for
      *                 {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
      *               
      * 
@@ -1036,7 +1036,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link ProposalLineItem#unitsBought} for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}
+     *                 Represents {@link Goal#units} of {@link ProposalLineItem#goal}
+     *                 for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}
      *                 The attribute is available only if {@link ProposalLineItem#lineItemType} is of type
      *                 {@link LineItemType#SPONSORSHIP}, {@link LineItemType#HOUSE}, {@link LineItemType#NETWORK}, or
      *                 {@link LineItemType#BUMPER}.

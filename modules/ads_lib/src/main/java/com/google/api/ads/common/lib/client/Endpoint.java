@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.client;
 
 /**
  * Marker interface for Environments to implement.
- *
- * @author Kevin Winter
  */
 public interface Endpoint {
 

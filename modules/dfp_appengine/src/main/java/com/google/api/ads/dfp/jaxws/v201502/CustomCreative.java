@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -52,8 +53,11 @@ public class CustomCreative
     protected String htmlSnippet;
     protected List<CustomCreativeAsset> customCreativeAssets;
     protected Boolean isInterstitial;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
+    @XmlSchemaType(name = "string")
     protected SslScanResult sslScanResult;
+    @XmlSchemaType(name = "string")
     protected SslManualOverride sslManualOverride;
 
     /**

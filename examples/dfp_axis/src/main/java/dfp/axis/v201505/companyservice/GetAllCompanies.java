@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CompanyService.getCompaniesByStatement
- *
- * @author Adam Rogal
  */
 public class GetAllCompanies {
 
@@ -59,7 +55,7 @@ public class GetAllCompanies {
         int i = page.getStartIndex();
         for (Company company : page.getResults()) {
           System.out.printf(
-              "%d) Company with ID \"%d\", name \"%s\", and type \"%s\" was found.\n", i++,
+              "%d) Company with ID %d, name '%s', and type '%s' was found.%n", i++,
               company.getId(), company.getName(), company.getType());
         }
       }
@@ -67,7 +63,7 @@ public class GetAllCompanies {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

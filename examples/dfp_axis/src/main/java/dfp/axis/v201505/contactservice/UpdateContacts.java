@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContactService.getContactsByStatement
- * Tags: ContactService.updateContacts
- *
- * @author Adam Rogal
  */
 public class UpdateContacts {
 
@@ -71,7 +66,7 @@ public class UpdateContacts {
 
     for (Contact updatedContact : contacts) {
       System.out.printf(
-          "Contact with ID \"%d\", name \"%s\", and address \"%s\" was updated.\n",
+          "Contact with ID %d, name '%s', and address '%s' was updated.%n",
           updatedContact.getId(), updatedContact.getName(), updatedContact.getAddress());
     }
   }

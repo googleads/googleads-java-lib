@@ -18,8 +18,8 @@ import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201409.cm.Selector;
+import com.google.api.ads.adwords.axis.utils.v201506.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201506.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
@@ -39,8 +39,6 @@ import java.util.List;
  * Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  * </p>
- *
- * @author Julian Toledo
  */
 public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> {
 
@@ -138,10 +136,10 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * support Generic Selectors.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201409.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201506.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
-   * @return a list of <T>
+   * @return a list of {@code <T>}
    * @throws RemoteException for communication-related exceptions
    */
   public List<T> get(Selector selector) throws RemoteException {    
@@ -160,7 +158,7 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
    * calling getEntries.
    *
    * @param selector should be a Generic Selector
-   *        (com.google.api.adwords.v201409.cm.Selector) or a specific
+   *        (com.google.api.adwords.v201506.cm.Selector) or a specific
    *        Selector appropriate to the ServiceInterface used that does not
    *        support Generic Selectors
    * @return Object, because AdParamPage does not extend Page
@@ -214,9 +212,9 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all <T> objects using a Generic Selector without predicates.
+   * Gets all {@code <T>} objects using a Generic Selector without predicates.
    *
-   * @return all the <T> objects for the ManagedCustomer
+   * @return all the {@code <T>} objects for the ManagedCustomer
    * @throws RemoteException for communication-related exceptions
    */
   public List<T> get() throws RemoteException {
@@ -224,11 +222,11 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all <T> objects using a Generic Selector with Paging without predicates.
+   * Gets all {@code <T>} objects using a Generic Selector with Paging without predicates.
    *
    * @param startIndex index of the first result to retrieve
    * @param numberResults total number of result to retrieve
-   * @return all the <T> objects for the ManagedCustomer
+   * @return all the {@code <T>} objects for the ManagedCustomer
    * @throws RemoteException for communication-related exceptions
    */
   public List<T> get(int startIndex, int numberResults) throws RemoteException {
@@ -237,12 +235,12 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets a single <T> object using a Generic Selector with a predicate for one field value,
+   * Gets a single {@code <T>} object using a Generic Selector with a predicate for one field value,
    * null if the object does not exist and an exception if there are more than one matches.
    *
    * @param selectorField name of the field
    * @param fieldValue value for the field in the predicate
-   * @return the first <T> object matching the fieldValue
+   * @return the first {@code <T>} object matching the fieldValue
    * @throws RemoteException for communication-related exceptions
    */
   protected T getOneByField(FieldType<T> selectorField, Object fieldValue)
@@ -256,11 +254,11 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all the <T> objects using a Generic Selector with a predicate for one field value.
+   * Gets all the {@code <T>} objects using a Generic Selector with a predicate for one field value.
    *
    * @param selectorField name of the field
    * @param fieldValue value for the field in the predicate
-   * @return all the <T> objects matching the fieldValue
+   * @return all the {@code <T>} objects matching the fieldValue
    * @throws RemoteException for communication-related exceptions
    */
   protected List<T> getByField(FieldType<T> selectorField, Object fieldValue)
@@ -269,11 +267,12 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all the <T> objects using a Generic Selector with a predicate for a list of values.
+   * Gets all the {@code <T>} objects using a Generic Selector with a predicate for a list of
+   * values.
    *
    * @param selectorField name of the field
    * @param fieldValues list of values for the field in the predicate
-   * @return all the <T> objects matching the fieldValues
+   * @return all the {@code <T>} objects matching the fieldValues
    * @throws RemoteException for communication-related exceptions
    */
   protected List<T> getByField(FieldType<T> selectorField, List<Long> fieldValues)
@@ -282,14 +281,15 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all the <T> objects using a Generic Selector with a single predicate for a list of values
-   * using pagination.
+   * Gets all the {@code <T>} objects using a Generic Selector with a single predicate for a list of
+   * values using pagination.
    *
    * @param selectorField name of the field
    * @param fieldValue list of values for the field in the predicate
    * @param startIndex index of the first result
-   * @param numberResults number of results 
-   * @return all the <T> objects matching the fieldValues in the range (startIndex, numberResults)
+   * @param numberResults number of results
+   * @return all the {@code <T>} objects matching the fieldValues in the range (startIndex,
+   *         numberResults)
    * @throws RemoteException for communication-related exceptions
    */
   protected List<T> getByField(FieldType<T> selectorField, long fieldValue, int startIndex,
@@ -299,14 +299,15 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all the <T> objects using a Generic Selector with a predicate for a list of values
+   * Gets all the {@code <T>} objects using a Generic Selector with a predicate for a list of values
    * using pagination.
    *
    * @param selectorField name of the field
    * @param fieldValue list of values for the field in the predicate
    * @param startIndex index of the first result
-   * @param numberResults number of results 
-   * @return all the <T> objects matching the fieldValues in the range (startIndex, numberResults)
+   * @param numberResults number of results
+   * @return all the {@code <T>} objects matching the fieldValues in the range (startIndex,
+   *         numberResults)
    * @throws RemoteException for communication-related exceptions
    */
   protected List<T> getByField(FieldType<T> selectorField, String fieldValue, int startIndex,
@@ -316,12 +317,12 @@ public abstract class AbstractGetDelegate<T, S> extends AbstractBaseDelegate<S> 
   }
 
   /**
-   * Gets all the <T> objects using a Generic Selector with a containsAny predicate for a list of
-   * values.
+   * Gets all the {@code <T>} objects using a Generic Selector with a containsAny predicate for a
+   * list of values.
    *
    * @param selectorField name of the field
    * @param fieldValues list of values for the field in the predicate
-   * @return all the <T> objects matching the fieldValues
+   * @return all the {@code <T>} objects matching the fieldValues
    * @throws RemoteException for communication-related exceptions
    */
   protected List<T> getByFieldContainsAny(FieldType<T> selectorField, List<Long> fieldValues)

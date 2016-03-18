@@ -15,7 +15,7 @@
 package adwords.axis.utility.extension.basicoperations;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201506.cm.Campaign;
 
 import java.util.List;
 
@@ -24,10 +24,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CampaignService.get
- *
- * @author Julian Toledo
  */
 public class GetCampaigns {
 
@@ -43,7 +39,7 @@ public class GetCampaigns {
     List<Campaign> campaigns = extendedManagedCustomer.getCampaigns();
 
     for (Campaign campaign : campaigns) {
-      System.out.printf("Campaign with name '%s' and ID '%d' was found.\n",
+      System.out.printf("Campaign with name '%s' and ID %d was found.%n",
           campaign.getName(), campaign.getId());
     }
   }

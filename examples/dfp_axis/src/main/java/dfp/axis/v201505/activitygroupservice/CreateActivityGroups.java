@@ -30,10 +30,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ActivityGroupService.createActivityGroups
- *
- * @author Adam Rogal
  */
 public class CreateActivityGroups {
 
@@ -67,7 +63,7 @@ public class CreateActivityGroups {
         new ActivityGroup[] {shortTermActivityGroup, longTermActivityGroup});
 
     for (ActivityGroup createdActivityGroup : activityGroups) {
-      System.out.printf("An activity group with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("An activity group with ID %d and name '%s' was created.%n",
           createdActivityGroup.getId(), createdActivityGroup.getName());
     }
   }

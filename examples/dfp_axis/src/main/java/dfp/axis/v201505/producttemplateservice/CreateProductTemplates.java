@@ -43,11 +43,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductTemplateService.createProductTemplates
- * Tags: NetworkService.getCurrentNetwork
- *
- * @author Nicholas Chen
  */
 public class CreateProductTemplates {
 
@@ -137,7 +132,7 @@ public class CreateProductTemplates {
         productTemplateService.createProductTemplates(new ProductTemplate[] {productTemplate});
 
     for (ProductTemplate createdProductTemplate : productTemplates) {
-      System.out.printf("A product template with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A product template with ID %d and name '%s' was created.%n",
           createdProductTemplate.getId(), createdProductTemplate.getName());
     }
   }

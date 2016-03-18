@@ -21,8 +21,6 @@ import org.junit.runners.JUnit4;
 
 /**
  * Base for any test that needs a mock HTTP server.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public abstract class MockHttpIntegrationTest {

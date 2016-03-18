@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     ThirdPartyAudienceSegment.class,
-    FirstPartyAudienceSegment.class,
-    SharedAudienceSegment.class
+    SharedAudienceSegment.class,
+    FirstPartyAudienceSegment.class
 })
 public class AudienceSegment {
 
@@ -63,9 +64,11 @@ public class AudienceSegment {
     @XmlElement(type = Long.class)
     protected List<Long> categoryIds;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected AudienceSegmentStatus status;
     protected Long size;
     protected AudienceSegmentDataProvider dataProvider;
+    @XmlSchemaType(name = "string")
     protected AudienceSegmentAudienceSegmentType type;
 
     /**

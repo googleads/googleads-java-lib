@@ -20,8 +20,6 @@ import com.google.inject.TypeLiteral;
 
 /**
  * Mock module for SOAP client handler, for testing.
- *
- * @author Joseph DiLallo
  */
 public class MockSoapClientHandlerModule extends AbstractModule {
 

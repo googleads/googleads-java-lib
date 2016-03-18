@@ -24,7 +24,6 @@ import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 
 import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
@@ -40,13 +39,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
 
 /**
  * SOAP Client Handler implementation for use with Axis 1.x.
- *
- * @author Adam Rogal
  */
 public class AxisHandler extends SoapClientHandler<Stub> {
 
@@ -66,6 +64,17 @@ public class AxisHandler extends SoapClientHandler<Stub> {
   @Override
   public void setEndpointAddress(Stub soapClient, String endpointAddress) {
     soapClient._setProperty(Stub.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
+  }
+  
+  /**
+   * Sets the read timeout of the given SOAP client.
+   *
+   * @param soapClient the SOAP client to set the read timeout for
+   * @param timeout the timeout in milliseconds
+   */
+  @Override
+  public void setRequestTimeout(Stub soapClient, int timeout) {
+    soapClient.setTimeout(timeout);
   }
 
   /**

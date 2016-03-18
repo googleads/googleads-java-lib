@@ -25,8 +25,6 @@ import java.util.Map;
  * {@code QueryBuilder} allows for queries to be constructed in parts.
  *
  * @param <V> the type of the API Value
- *
- * @author Adam Rogal
  */
 public class QueryBuilder<V> implements QueryBuilderInterface<V> {
 

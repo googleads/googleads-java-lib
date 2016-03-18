@@ -25,8 +25,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides Axis DFP API SOAP requests.
- * 
- * @author Adam Rogal
  */
 public class SoapRequestXmlProvider {
   

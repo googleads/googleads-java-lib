@@ -35,8 +35,6 @@ import java.util.Map;
 
 /**
  * Tests for {@link AuthorizationHeaderHandler}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AuthorizationHeaderHandlerTest {

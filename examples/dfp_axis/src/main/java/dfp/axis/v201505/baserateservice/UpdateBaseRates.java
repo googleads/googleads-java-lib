@@ -36,11 +36,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: BaseRateService.getBaseRatesByStatement
- * Tags: BaseRateService.updateBaseRates
- *
- * @author Nicholas Chen
  */
 public class UpdateBaseRates {
   
@@ -82,8 +77,8 @@ public class UpdateBaseRates {
         new BaseRate[] {baseRate});
 
     for (BaseRate updatedBaseRate : baseRates) {
-      System.out.printf("Base rate with ID \"%d\" and type \"%s,\""
-          + " belonging to rate card ID \"%d\" was updated.%n",
+      System.out.printf("Base rate with ID %d and type '%s',"
+          + " belonging to rate card ID %d was updated.%n",
           updatedBaseRate.getId(), updatedBaseRate.getClass().getSimpleName(),
           updatedBaseRate.getRateCardId());
     }

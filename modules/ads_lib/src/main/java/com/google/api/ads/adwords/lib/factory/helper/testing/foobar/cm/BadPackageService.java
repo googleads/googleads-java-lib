@@ -16,8 +16,6 @@ package com.google.api.ads.adwords.lib.factory.helper.testing.foobar.cm;
 
 /**
  * Test class for AdWordsServiceClientFactoryHelper.
- * 
- * @author Kevin Winter
  */
 public class BadPackageService {
 

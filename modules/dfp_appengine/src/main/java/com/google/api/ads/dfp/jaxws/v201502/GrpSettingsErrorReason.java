@@ -38,7 +38,8 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Target age range is not valid.
+     *                 Age range for GRP audience is not valid. Please see
+     *                 https://support.google.com/dfp_premium/answer/6337075 for more information.
      *               
      * 
      */
@@ -54,7 +55,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Target age range doesn't support the given target gender.
+     *                 GRP audience gender cannot be specified for the selected age range.
      *               
      * 
      */
@@ -62,7 +63,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Minimum target age is invalid.
+     *                 Minimum age for GRP audience is not valid.
      *               
      * 
      */
@@ -70,7 +71,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Maximum target age is invalid.
+     *                 Maximum age for GRP audience is not valid.
      *               
      * 
      */
@@ -94,7 +95,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 GRP settings cannot be updated.
+     *                 GRP settings cannot be updated once the line item has started serving.
      *               
      * 
      */
@@ -102,7 +103,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Goal based on target demographic is not supported for the given line item.
+     *                 Impression goal based on GRP audience is not supported.
      *               
      * 
      */
@@ -110,7 +111,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Target demographic goal cannot be set.
+     *                 Impression goal based on GRP audience cannot be set once the line item has started serving.
      *               
      * 
      */
@@ -118,7 +119,8 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Target demographic goal cannot be removed.
+     *                 Impression goal based on GRP audience cannot be removed once the line item has started
+     *                 serving.
      *               
      * 
      */
@@ -126,7 +128,7 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Line item is targeting geographic locations not supported with target demographic goal.
+     *                 Unsupported geographic location targeted for line item with GRP audience goal.
      *               
      * 
      */

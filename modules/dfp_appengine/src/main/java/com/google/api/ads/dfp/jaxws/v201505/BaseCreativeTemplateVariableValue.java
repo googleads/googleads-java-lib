@@ -35,10 +35,10 @@ import javax.xml.bind.annotation.XmlType;
     "uniqueName"
 })
 @XmlSeeAlso({
-    AssetCreativeTemplateVariableValue.class,
-    UrlCreativeTemplateVariableValue.class,
     LongCreativeTemplateVariableValue.class,
-    StringCreativeTemplateVariableValue.class
+    UrlCreativeTemplateVariableValue.class,
+    StringCreativeTemplateVariableValue.class,
+    AssetCreativeTemplateVariableValue.class
 })
 public abstract class BaseCreativeTemplateVariableValue {
 

@@ -31,8 +31,6 @@ import java.io.IOException;
 
 /**
  * Helper class that generates a configured HttpURLConnection for report downloads.
- *
- * @author Kevin Winter
  */
 public class ReportRequestFactoryHelper {
 
@@ -146,6 +144,11 @@ public class ReportRequestFactoryHelper {
       if (reportingConfiguration.isSkipReportSummary() != null) {
         httpHeaders.set("skipReportSummary",
             Boolean.toString(reportingConfiguration.isSkipReportSummary()));
+      }
+      if (reportingConfiguration.isIncludeZeroImpressions() != null) {
+        httpHeaders.set(
+            "includeZeroImpressions",
+            Boolean.toString(reportingConfiguration.isIncludeZeroImpressions()));
       }
     }
     return httpHeaders;

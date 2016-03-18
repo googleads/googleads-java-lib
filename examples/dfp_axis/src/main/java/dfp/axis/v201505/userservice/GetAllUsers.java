@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserService.getUsersByStatement
- *
- * @author Adam Rogal
  */
 public class GetAllUsers {
 
@@ -56,7 +52,7 @@ public class GetAllUsers {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (User user : page.getResults()) {
-          System.out.printf("%d) User with ID \"%d\" and name \"%s\" was found.\n", i++,
+          System.out.printf("%d) User with ID %d and name '%s' was found.%n", i++,
               user.getId(), user.getName());
         }
       }
@@ -64,7 +60,7 @@ public class GetAllUsers {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

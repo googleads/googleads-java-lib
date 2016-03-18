@@ -20,8 +20,6 @@ import java.net.MalformedURLException;
 
 /**
  * Describes a SOAP service.
- *
- * @author Adam Rogal
  */
 public interface SoapServiceDescriptor {
 

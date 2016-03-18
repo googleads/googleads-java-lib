@@ -30,17 +30,13 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: RateCardService.createRateCards
- *
- * @author Nicholas Chen
  */
 public class CreateRateCards {
 
   // Set the IDs of the teams this rate card should be visible to. This is optional.
   private static final long[] TEAM_IDS = new long[] {
       Long.valueOf("INSERT_TEAM_ID_1_HERE"), Long.valueOf("INSERT_TEAM_ID_2_HERE")};
-  
+
   // Set the currency code to create the rate card with.
   private static final String CURRENCY_CODE = "INSERT_CURRENCY_CODE_HERE";
 
@@ -54,7 +50,7 @@ public class CreateRateCards {
     RateCard rateCard = new RateCard();
     rateCard.setName("RateCard #" + new Random().nextInt(Integer.MAX_VALUE));
     rateCard.setCurrencyCode(currencyCode);
-    
+
     if (teamIds.length != 0) {
       rateCard.setAppliedTeamIds(teamIds);
     }
@@ -63,8 +59,8 @@ public class CreateRateCards {
     RateCard[] rateCards = rateCardService.createRateCards(new RateCard[] {rateCard});
 
     for (RateCard createdRateCard : rateCards) {
-      System.out.printf("A rate card with ID \"%d,\" name \"%s,\" and currency code "
-          + "\"%s\" was created.\n", createdRateCard.getId(), createdRateCard.getName(),
+      System.out.printf("A rate card with ID %d, name '%s', and currency code "
+          + "'%s' was created.%n", createdRateCard.getId(), createdRateCard.getName(),
           createdRateCard.getCurrencyCode());
     }
   }

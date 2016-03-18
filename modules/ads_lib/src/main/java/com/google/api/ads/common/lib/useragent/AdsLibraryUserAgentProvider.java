@@ -15,12 +15,11 @@
 package com.google.api.ads.common.lib.useragent;
 
 import com.google.api.ads.common.lib.conf.AdsBuildConfiguration;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 /**
  * Provides the ads library user agent.
- *
- * @author Adam Rogal
  */
 public class AdsLibraryUserAgentProvider implements UserAgentProvider {
 

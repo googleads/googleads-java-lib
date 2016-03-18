@@ -37,10 +37,6 @@ import java.io.File;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PublisherQueryLanguageService.select
- *
- * @author Adam Rogal
  */
 public class GetGeoTargets {
 
@@ -77,7 +73,7 @@ public class GetGeoTargets {
           ? resultSet
           : Pql.combineResultSets(combinedResultSet, resultSet);
 
-      System.out.printf("%d) %d geo targets beginning at offset %d were found.\n", i++,
+      System.out.printf("%d) %d geo targets beginning at offset %d were found.%n", i++,
           resultSet.getRows() == null ? 0 : resultSet.getRows().length,
           statementBuilder.getOffset());
 
@@ -90,7 +86,7 @@ public class GetGeoTargets {
     // Write the result set to a CSV.
     CsvFiles.writeCsv(Pql.resultSetToStringArrayList(combinedResultSet), filePath);
 
-    System.out.printf("Geo targets saved to %s\n", filePath);
+    System.out.printf("Geo targets saved to: %s%n", filePath);
   }
 
   public static void main(String[] args) throws Exception {

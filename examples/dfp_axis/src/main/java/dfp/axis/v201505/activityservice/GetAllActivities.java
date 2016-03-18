@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ActivityService.getActivitiesByStatement
- *
- * @author Adam Rogal
  */
 public class GetAllActivities {
 
@@ -60,7 +56,7 @@ public class GetAllActivities {
         int i = page.getStartIndex();
         for (Activity activity : page.getResults()) {
           System.out.printf(
-              "%d) Activity with ID \"%d\", name \"%s\", and type \"%s\" was found.\n",
+              "%d) Activity with ID %d, name '%s', and type '%s' was found.%n",
               i++, activity.getId(), activity.getName(), activity.getType());
         }
       }
@@ -68,7 +64,7 @@ public class GetAllActivities {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

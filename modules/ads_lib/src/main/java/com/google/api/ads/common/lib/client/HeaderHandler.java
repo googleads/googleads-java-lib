@@ -19,8 +19,6 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 
 /**
  * Interface for handling headers.
- *
- * @author Adam Rogal
  */
 public interface HeaderHandler<S extends AdsSession, D extends AdsServiceDescriptor> {
 

@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductPackageService.getProductPackagesByStatement
- * Tags: ProductPackageService.updateProductPackages
- *
- * @author Nicholas Chen
  */
 public class UpdateProductPackages {
   
@@ -78,7 +73,7 @@ public class UpdateProductPackages {
 
     for (ProductPackage updatedProductPackage : productPackages) {
       System.out.printf(
-          "Product packages with ID \"%d\" and name \"%s\" was updated.%n",
+          "Product package with ID %d and name '%s' was updated.%n",
           updatedProductPackage.getId(),
           updatedProductPackage.getName());
     }

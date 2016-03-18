@@ -32,11 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemService.getLineItemsByStatement
- * Tags: LineItemService.performLineItemAction
- *
- * @author Adam Rogal
  */
 public class PauseLineItems {
 
@@ -68,14 +63,14 @@ public class PauseLineItems {
         int i = page.getStartIndex();
         for (LineItem lineItem : page.getResults()) {
           System.out.printf(
-              "%d) Line item with ID \"%d\" will be paused.\n", i++, lineItem.getId());
+              "%d) Line item with ID %d will be paused.%n", i++, lineItem.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of line items to be paused: %d\n", totalResultSetSize);
+    System.out.printf("Number of line items to be paused: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -90,7 +85,7 @@ public class PauseLineItems {
           lineItemService.performLineItemAction(action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of line items paused: %d\n", result.getNumChanges());
+        System.out.printf("Number of line items paused: %d%n", result.getNumChanges());
       } else {
         System.out.println("No line items were paused.");
       }

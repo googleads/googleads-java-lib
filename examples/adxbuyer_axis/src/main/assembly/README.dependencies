@@ -1,6 +1,0 @@
-This directory contains all of the dependencies that Maven will pull down when
-using the AdWords API with Apache Axis example project.
-
-Note that using these JARs is *not* the recommended approach - we recommend
-using Maven. Using these JARs will force you to manually update your project
-every time our library adds or upgrades dependencies.

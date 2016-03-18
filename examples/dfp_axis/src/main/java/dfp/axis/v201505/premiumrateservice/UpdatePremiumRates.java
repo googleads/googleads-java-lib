@@ -38,11 +38,6 @@ import java.util.List;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PremiumRateService.getPremiumRatesByStatement
- * Tags: PremiumRateService.updatePremiumRates
- *
- * @author Nicholas Chen
  */
 public class UpdatePremiumRates {
   
@@ -89,10 +84,8 @@ public class UpdatePremiumRates {
         new PremiumRate[] {premiumRate});
 
     for (PremiumRate updatedPremiumRate : premiumRates) {
-      System.out.printf("Premium rate with ID \"%d\" associated with rate card id "
-          + "\"%d\" was updated.%n",
-          updatedPremiumRate.getId(),
-          updatedPremiumRate.getRateCardId());
+      System.out.printf("Premium rate with ID %d associated with rate card id %d was updated.%n",
+          updatedPremiumRate.getId(), updatedPremiumRate.getRateCardId());
     }
   }
 

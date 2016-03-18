@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidModifier;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidModifierOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupBidModifierServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidModifier;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidModifierOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidModifierServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupBidModifier}.
- *
- * @author Julian Toledo
  */
 public final class AdGroupBidModifierDelegate extends AbstractGetMutateDelegate<AdGroupBidModifier,
     AdGroupBidModifierOperation, AdGroupBidModifierServiceInterface> {

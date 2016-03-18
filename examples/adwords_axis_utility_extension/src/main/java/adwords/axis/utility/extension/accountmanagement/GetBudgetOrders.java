@@ -16,16 +16,12 @@ package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedMcc;
-import com.google.api.ads.adwords.axis.v201409.billing.BudgetOrder;
+import com.google.api.ads.adwords.axis.v201506.billing.BudgetOrder;
 
 import java.util.List;
 
 /**
  * This example gets all budget orders.
- *
- * Tags: BudgetOrderService.getBillingAccounts()
- *
- * @author Julian Toledo
  */
 public class GetBudgetOrders {
 
@@ -46,11 +42,9 @@ public class GetBudgetOrders {
     List<BudgetOrder> budgetOrders = extendedManagedCustomer.getBudgetOrders();
     for (BudgetOrder budgetOrder : budgetOrders) {
       System.out.printf(
-          "BudgetOrder '%s' '%s' '%d' '%d' was found.\n",
-          budgetOrder.getStartDateTime(),
-          budgetOrder.getEndDateTime(),
-          budgetOrder.getSpendingLimit().getMicroAmount() / 1000000,
-          budgetOrder.getId());
+          "BudgetOrder with ID %d, start date %s, end date %s, and spending limit %.4f was "
+          + "found.%n", budgetOrder.getId(), budgetOrder.getStartDateTime(), 
+          budgetOrder.getEndDateTime(), budgetOrder.getSpendingLimit().getMicroAmount() / 1000000d);
     }
   }
 }

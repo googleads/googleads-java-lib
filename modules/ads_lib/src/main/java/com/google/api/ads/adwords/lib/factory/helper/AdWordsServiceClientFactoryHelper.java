@@ -23,15 +23,14 @@ import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorF
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
 import com.google.api.ads.common.lib.factory.helper.BaseAdsServiceClientFactoryHelper;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
-import com.google.inject.Inject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.inject.Inject;
+
 /**
  * Factory helper for AdWords.
- *
- * @author Adam Rogal
  */
 public class AdWordsServiceClientFactoryHelper extends
     BaseAdsServiceClientFactoryHelper<AdWordsServiceClient,
@@ -50,15 +49,17 @@ public class AdWordsServiceClientFactoryHelper extends
    * @param soapClientHandler the SOAP client handler
    * @param adsLibConfiguration the lib configuration
    */
-  @SuppressWarnings("unchecked") // All generics of SoapClientHandlerInterface
-                                 // extend Object.
+  @SuppressWarnings("unchecked") /* See comments on soapClientHandler argument. */
   @Inject
   public AdWordsServiceClientFactoryHelper(
       AdsServiceClientFactoryInterface<AdWordsServiceClient,
                                        AdWordsSession,
                                        AdWordsServiceDescriptor> adsServiceClientFactory,
       AdsServiceDescriptorFactoryInterface<AdWordsServiceDescriptor> adsServiceDescriptorFactory,
-      @SuppressWarnings({"rawtypes", "unchecked"})  /* Due to problem with guice binding */
+      @SuppressWarnings("rawtypes") /* Guice binding for SoapClientHandlerInterface does not include
+                                     * the type argument T because it is bound in the SOAP
+                                     * toolkit-agnostic configuration module. Therefore, must use
+                                     * the raw type here. */
       SoapClientHandlerInterface soapClientHandler,
       AdsLibConfiguration adsLibConfiguration) {
     super(adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler);

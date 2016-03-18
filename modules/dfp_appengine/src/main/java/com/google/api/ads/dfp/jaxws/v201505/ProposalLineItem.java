@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -143,19 +144,26 @@ public class ProposalLineItem {
     protected DateTime endDateTime;
     protected String timeZoneId;
     protected String notes;
+    @XmlSchemaType(name = "string")
     protected CostAdjustment costAdjustment;
     protected Boolean isArchived;
     protected Goal goal;
     protected Integer contractedQuantityBuffer;
     protected Long scheduledQuantity;
+    @XmlSchemaType(name = "string")
     protected DeliveryRateType deliveryRateType;
+    @XmlSchemaType(name = "string")
     protected RoadblockingType roadblockingType;
+    @XmlSchemaType(name = "string")
     protected CompanionDeliveryOption companionDeliveryOption;
+    @XmlSchemaType(name = "string")
     protected CreativeRotationType creativeRotationType;
     protected List<FrequencyCap> frequencyCaps;
     protected Long dfpLineItemId;
+    @XmlSchemaType(name = "string")
     protected LineItemType lineItemType;
     protected Integer lineItemPriority;
+    @XmlSchemaType(name = "string")
     protected RateType rateType;
     protected List<CreativePlaceholder> creativePlaceholders;
     protected Targeting targeting;
@@ -172,12 +180,18 @@ public class ProposalLineItem {
     protected Money cost;
     protected DeliveryIndicator deliveryIndicator;
     protected DeliveryData deliveryData;
+    @XmlSchemaType(name = "string")
     protected ComputedStatus computedStatus;
+    @XmlSchemaType(name = "string")
     protected BillingCap billingCap;
+    @XmlSchemaType(name = "string")
     protected BillingSchedule billingSchedule;
+    @XmlSchemaType(name = "string")
     protected BillingSource billingSource;
+    @XmlSchemaType(name = "string")
     protected BillingBase billingBase;
     protected DateTime lastModifiedDateTime;
+    @XmlSchemaType(name = "string")
     protected ReservationStatus reservationStatus;
     protected Boolean useThirdPartyAdServerFromProposal;
     protected Integer thirdPartyAdServerId;

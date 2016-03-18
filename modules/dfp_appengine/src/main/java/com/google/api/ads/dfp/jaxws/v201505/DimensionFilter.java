@@ -78,7 +78,8 @@ public enum DimensionFilter {
     /**
      * 
      *                 Filters the results to include only advertisers that do not belong to the
-     *                 publisher. That is {@link Company.Type} is {@link Company.Type#ADVERTISER}.
+     *                 publisher. That is {@link Company.Type} is {@link Company.Type#ADVERTISER}
+     *                 or {@link Company.Type#AD_NETWORK}.
      *               
      * 
      */

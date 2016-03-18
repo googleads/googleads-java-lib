@@ -52,8 +52,6 @@ import java.io.InputStream;
 
 /**
  * Test for {@link ReportResponseInterceptor}.
- *
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class ReportResponseInterceptorTest {

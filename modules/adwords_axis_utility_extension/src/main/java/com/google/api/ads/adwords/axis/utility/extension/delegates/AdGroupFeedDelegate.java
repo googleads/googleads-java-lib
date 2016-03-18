@@ -15,10 +15,10 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupFeedStatus;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeedOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeedServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeedStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -27,8 +27,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroupFeed}.
- *
- * @author Julian Toledo
  */
 public final class AdGroupFeedDelegate extends
     AbstractGetMutateDelegate<AdGroupFeed, AdGroupFeedOperation, AdGroupFeedServiceInterface> {

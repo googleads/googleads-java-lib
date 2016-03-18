@@ -36,10 +36,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProposalService.createProposals
- *
- * @author Nicholas Chen
  */
 public class CreateProposals {
 
@@ -106,7 +102,7 @@ public class CreateProposals {
     Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
 
     for (Proposal createdProposal : proposals) {
-      System.out.printf("A proposal with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A proposal with ID %d and name '%s' was created.%n",
           createdProposal.getId(), createdProposal.getName());
     }
   }

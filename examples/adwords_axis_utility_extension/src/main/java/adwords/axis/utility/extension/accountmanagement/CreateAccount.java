@@ -16,22 +16,19 @@ package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedMcc;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer;
 
 import org.joda.time.DateTime;
 
 /**
  * This example creates a new account under an MCC account.
  *
- * Note: this example must be run using the credentials of an MCC account, and
+ * <p>Note: this example must be run using the credentials of an MCC account, and
  * by default the new account will only be accessible via the parent MCC
  * account.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * @author Adam Rogal
- * @author Julian Toledo
  */
 public class CreateAccount {
 
@@ -53,7 +50,7 @@ public class CreateAccount {
     ExtendedManagedCustomer extendedManagedCustomer = extendedMcc.insertManagedCustomer(customer);
 
     // Display account.
-    System.out.printf("Account with customer ID '%d' was created.\n",
+    System.out.printf("Account with customer ID %d was created.%n",
         extendedManagedCustomer.getManagedCustomer().getCustomerId());
   }
 }

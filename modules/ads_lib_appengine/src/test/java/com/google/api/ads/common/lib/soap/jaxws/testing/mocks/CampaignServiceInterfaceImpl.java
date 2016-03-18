@@ -14,12 +14,15 @@
 
 package com.google.api.ads.common.lib.soap.jaxws.testing.mocks;
 
+import static org.mockito.Mockito.when;
+
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsSoapContextHandler;
+import com.google.common.collect.Lists;
+
+import org.mockito.Mockito;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.ws.Binding;
@@ -30,16 +33,22 @@ import javax.xml.ws.handler.Handler;
 /**
  * Mock of a JAX-WS web service interface implementation. Used to test
  * {@link JaxWsHandler#createSoapClient(com.google.api.ads.common.lib.soap.SoapServiceDescriptor)}.
- *
- * @author Joseph DiLallo
  */
 public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
 
   public static String endpointAddress = "http://abcdefg";
-  private Binding binding = new MyBinding();
+  
+  private Binding binding;
   private Map<String, Object> requestContext = new HashMap<String, Object>()
       {{ put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress); }};
 
+  @SuppressWarnings("rawtypes")
+  public CampaignServiceInterfaceImpl() {
+    binding = Mockito.mock(Binding.class);
+    when(binding.getHandlerChain())
+        .thenReturn(Lists.<Handler>newArrayList(new JaxWsSoapContextHandler()));
+  }
+  
   @Override
   public String getTestMessage() {
     return "Here!";
@@ -87,49 +96,5 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
   @Override
   public <T extends EndpointReference> T getEndpointReference(Class<T> clazz) {
     return null;
-  }
-
-  /**
-   * Mock of a {@link Binding} implementation. Used to test
-   * {@link
-   * JaxWsHandler#createSoapClient(com.google.api.ads.common.lib.soap.SoapServiceDescriptor)}.
-   *
-   * @author Joseph DiLallo
-   */
-  private static class MyBinding implements Binding {
-
-    private List<Handler> chain = new LinkedList<Handler>();
-
-    /**
-     * Constructor.
-     */
-    public MyBinding() {
-      chain.add(new JaxWsSoapContextHandler());
-    }
-
-    /**
-     * @see javax.xml.ws.Binding#getHandlerChain()
-     */
-    @Override
-    public List<Handler> getHandlerChain() {
-      return chain;
-    }
-
-    /**
-     * Unused in this mock.
-     * @see javax.xml.ws.Binding#setHandlerChain(java.util.List)
-     */
-    @Override
-    public void setHandlerChain(List<Handler> chain) {
-    }
-
-    /**
-     * Unused in this mock.
-     * @see javax.xml.ws.Binding#getBindingID()
-     */
-    @Override
-    public String getBindingID() {
-      return null;
-    }
   }
 }

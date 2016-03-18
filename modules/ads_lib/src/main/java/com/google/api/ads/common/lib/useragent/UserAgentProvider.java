@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.useragent;
 
 /**
  * Provides a user agent.
- *
- * @author Adam Rogal
  */
 public interface UserAgentProvider {
 

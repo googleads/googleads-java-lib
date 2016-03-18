@@ -52,8 +52,6 @@ import java.util.zip.GZIPInputStream;
  * {@link #whenReportReady(ReportCallback)} to wait for a scheduled report to
  * finish processing before taking an action on the report through the supplied
  * {@link ReportCallback}.
- *
- * @author Adam Rogal
  */
 public class ReportDownloader {
 
@@ -171,7 +169,7 @@ public class ReportDownloader {
    * @throws ApiException_Exception if there was any problem making the SOAP
    *     call
    * @throws IllegalStateException if the report is not ready to be downloaded
-   * @deprecated use {@link #getReportAsByteSource(ReportDownloadOptions)}
+   * @deprecated use {@link #getDownloadUrl(ReportDownloadOptions)}
    */
   @Deprecated
   public void downloadReport(ExportFormat exportFormat, String fileName) throws IOException,
@@ -190,7 +188,7 @@ public class ReportDownloader {
    * @throws ApiException_Exception if there was any problem making the SOAP
    *     call
    * @throws IllegalStateException if the report is not ready to be downloaded
-   * @deprecated use {@link #getReportAsByteSource(ReportDownloadOptions)} 
+   * @deprecated use {@link #getReportAsCharSource(ReportDownloadOptions)} 
    */
   @Deprecated
   public void downloadReport(ExportFormat exportFormat, OutputStream outputStream)

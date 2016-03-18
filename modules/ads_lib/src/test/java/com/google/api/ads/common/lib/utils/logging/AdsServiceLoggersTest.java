@@ -34,9 +34,6 @@ import org.slf4j.Logger;
 
 /**
  * Test for the {@link AdsServiceLoggers} class.
- *
- * @author Joseph DiLallo
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AdsServiceLoggersTest {

@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
- *
- * @author Adam Rogal
  */
 public class GetLicasForLineItem {
 
@@ -67,11 +63,11 @@ public class GetLicasForLineItem {
         for (LineItemCreativeAssociation lica : page.getResults()) {
           if (lica.getCreativeSetId() != null) {
             System.out.printf(
-                "%d) LICA with line item ID \"%d\" and creative set ID \"%d\" was found.\n", i++,
+                "%d) LICA with line item ID %d and creative set ID %d was found.%n", i++,
                 lica.getLineItemId(), lica.getCreativeSetId());
           } else {
             System.out.printf(
-                "%d) LICA with line item ID \"%d\" and creative ID \"%d\" was found.\n", i++,
+                "%d) LICA with line item ID %d and creative ID %d was found.%n", i++,
                 lica.getLineItemId(), lica.getCreativeId());
           }
         }
@@ -80,7 +76,7 @@ public class GetLicasForLineItem {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

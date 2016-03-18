@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -55,8 +56,11 @@ public class SharedAdUnit {
     protected String name;
     protected String distributorName;
     protected Long contentProviderAdUnitId;
+    @XmlSchemaType(name = "string")
     protected SharedAdUnitStatus status;
+    @XmlSchemaType(name = "string")
     protected TargetPlatform targetPlatform;
+    @XmlSchemaType(name = "string")
     protected AdUnitTargetWindow targetWindow;
     protected List<AdUnitSize> adUnitSizes;
 

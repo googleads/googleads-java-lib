@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,13 +54,16 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class VideoMetadata {
 
+    @XmlSchemaType(name = "string")
     protected ScalableType scalableType;
     protected Integer duration;
     protected Integer bitRate;
     protected Integer minimumBitRate;
     protected Integer maximumBitRate;
     protected Size size;
+    @XmlSchemaType(name = "string")
     protected MimeType mimeType;
+    @XmlSchemaType(name = "string")
     protected VideoDeliveryType deliveryType;
     protected List<String> codecs;
 

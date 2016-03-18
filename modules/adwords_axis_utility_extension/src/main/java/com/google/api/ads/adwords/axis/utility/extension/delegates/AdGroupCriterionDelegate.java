@@ -15,13 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.cm.CriterionType;
-import com.google.api.ads.adwords.axis.v201409.cm.CriterionUse;
+import com.google.api.ads.adwords.axis.utils.v201506.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.CriterionType;
+import com.google.api.ads.adwords.axis.v201506.cm.CriterionUse;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;
@@ -32,8 +32,6 @@ import java.util.List;
  *
  * <p> Implementation is not thread-safe, because AdWordsSession
  * and Apache Axis service objects are not thread-safe.</p>
- *
- * @author Julian Toledo
  */
 public final class AdGroupCriterionDelegate extends AbstractGetMutateDelegate<AdGroupCriterion,
     AdGroupCriterionOperation, AdGroupCriterionServiceInterface> {

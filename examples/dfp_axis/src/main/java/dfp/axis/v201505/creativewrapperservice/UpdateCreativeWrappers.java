@@ -35,11 +35,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeWrapperService.getCreativeWrappersByStatement
- * Tags: CreativeWrapperService.updateCreativeWrappers
- *
- * @author Adam Rogal
  */
 public class UpdateCreativeWrappers {
 
@@ -74,7 +69,7 @@ public class UpdateCreativeWrappers {
 
     for (CreativeWrapper updatedCreativeWrapper : creativeWrappers) {
       System.out.printf(
-          "Creative wrapper with ID \"%d\" and wrapping order \"%s\" was updated.\n",
+          "Creative wrapper with ID %d and wrapping order '%s' was updated.%n",
           updatedCreativeWrapper.getId(), updatedCreativeWrapper.getOrdering());
     }
   }

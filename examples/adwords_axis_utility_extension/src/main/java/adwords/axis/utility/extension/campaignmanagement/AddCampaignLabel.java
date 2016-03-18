@@ -15,8 +15,8 @@
 package adwords.axis.utility.extension.campaignmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.cm.CampaignLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.TextLabel;
+import com.google.api.ads.adwords.axis.v201506.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201506.cm.TextLabel;
 
 /**
  * This example creates a TextLabel and a Campaign Label.
@@ -25,9 +25,6 @@ import com.google.api.ads.adwords.axis.v201409.cm.TextLabel;
  * "ads.properties" file. See README for more info.</p>
  *
  * <p>Tags: LabelService.mutate</p>
- *
- * @category adx-exclude
- * @author Julian Toledo
  */
 public class AddCampaignLabel {
 
@@ -53,7 +50,7 @@ public class AddCampaignLabel {
       campaignId).insertCampaignLabel(newTextLabel.getId());
 
     // Display CampaignLabel.
-    System.out.printf("CampaignLabel with label id %d, campaign id %d, and name '%s' was "
+    System.out.printf("CampaignLabel with label ID %d, campaign ID %d, and name '%s' was "
         + "added to the Campaign.%n", campaignLabel.getLabelId(), campaignLabel.getCampaignId(),
         textLabel.getName());
   }

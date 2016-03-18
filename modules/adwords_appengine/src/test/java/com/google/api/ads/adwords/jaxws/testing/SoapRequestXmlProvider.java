@@ -25,8 +25,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides JAX-WS AdWords API SOAP requests.
- * 
- * @author Josh Radcliff
  */
 public class SoapRequestXmlProvider {
   

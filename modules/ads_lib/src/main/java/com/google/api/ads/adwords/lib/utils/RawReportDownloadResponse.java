@@ -19,8 +19,6 @@ import java.nio.charset.Charset;
 
 /**
  * Holder class for http status and response body.
- *
- * @author Kevin Winter
  */
 public class RawReportDownloadResponse {
 

@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserTeamService.createUserTeamAssociations
- *
- * @author Adam Rogal
  */
 public class CreateUserTeamAssociations {
 
@@ -62,7 +58,7 @@ public class CreateUserTeamAssociations {
 
     for (UserTeamAssociation createdUserTeamAssociation : userTeamAssociations) {
       System.out.printf(
-          "A user team association with user ID \"%d\" and team ID \"%d\" was created.\n",
+          "A user team association with user ID %d and team ID %d was created.%n",
           createdUserTeamAssociation.getUserId(), createdUserTeamAssociation.getTeamId());
     }
   }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -52,9 +53,9 @@ import javax.xml.bind.annotation.XmlType;
     "sslManualOverride"
 })
 @XmlSeeAlso({
+    VideoCreative.class,
     VideoRedirectCreative.class,
-    SetTopBoxCreative.class,
-    VideoCreative.class
+    SetTopBoxCreative.class
 })
 public abstract class BaseVideoCreative
     extends HasDestinationUrlCreative
@@ -67,7 +68,9 @@ public abstract class BaseVideoCreative
     protected List<Long> companionCreativeIds;
     protected String customParameters;
     protected String vastPreviewUrl;
+    @XmlSchemaType(name = "string")
     protected SslScanResult sslScanResult;
+    @XmlSchemaType(name = "string")
     protected SslManualOverride sslManualOverride;
 
     /**

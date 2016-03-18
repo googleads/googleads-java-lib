@@ -29,8 +29,6 @@ import java.net.URL;
 
 /**
  * A utility class for retrieving media data.
- *
- * @author Adam Rogal
  */
 public final class Media {
 

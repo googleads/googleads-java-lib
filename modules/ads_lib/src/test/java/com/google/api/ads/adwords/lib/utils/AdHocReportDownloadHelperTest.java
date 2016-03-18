@@ -23,18 +23,20 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.ReportRequest.RequestType;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
+import com.google.api.ads.common.lib.testing.TestPortFinder;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.net.UrlEscapers;
-import org.openqa.selenium.net.PortProber;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -44,9 +46,8 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Tests for {@link AdHocReportDownloadHelper}.
- *
- * @author Josh Radcliff
  */
+@RunWith(JUnit4.class)
 public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
   private static final String VERSION = "v202012";
@@ -110,7 +111,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
     int helperTimeout = internalsTimeout + 10;
     helper.setReportDownloadTimeout(helperTimeout);
-
+    
     assertEquals("Timeout on helper does not reflect changes made via setReportDownloadTimeout",
         helperTimeout, helper.getReportDownloadTimeout());
 
@@ -125,29 +126,31 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
    */
   @Test
   public void testBadEndpoint_fails() throws Throwable {
-    int port = PortProber.findFreePort();
+    int port = TestPortFinder.getInstance().checkOutUnusedPort();
 
-    // Construct the session to use an endpoint that is NOT in use on localhost.
-    AdWordsSession sessionWithBadEndpoint = new AdWordsSession.Builder()
-        .withUserAgent("TEST_APP")
-        .withOAuth2Credential(credential)
-        .withEndpoint("https://localhost:" + port)
-        .withDeveloperToken("TEST_DEVELOPER_TOKEN")
-        .withClientCustomerId("TEST_CLIENT_CUSTOMER_ID")
-        .build();
-    helper = new AdHocReportDownloadHelper(sessionWithBadEndpoint, VERSION);
-
-    // Set up the ReportRequest so it will pass basic validation.
-    when(reportRequest.getRequestType()).thenReturn(RequestType.AWQL);
-
-    String awqlString = "SELECT BadField1 FROM NOT_A_REPORT DURING NOT_A_TIME_PERIOD";
-    when(reportRequest.getReportRequestString()).thenReturn(awqlString);
-
-    // The cause should be a ConnectException (see expected annotation) since the endpoint
-    // port is not in use.
-    thrown.expect(ReportException.class);
-    thrown.expectCause(Matchers.<Exception>instanceOf(ConnectException.class));
-    helper.downloadReport(reportRequest);
+    try {
+      // Construct the session to use an endpoint that is NOT in use on localhost.
+      AdWordsSession sessionWithBadEndpoint =
+          new AdWordsSession.Builder()
+              .withUserAgent("TEST_APP")
+              .withOAuth2Credential(credential)
+              .withEndpoint("https://localhost:" + port)
+              .withDeveloperToken("TEST_DEVELOPER_TOKEN")
+              .withClientCustomerId("TEST_CLIENT_CUSTOMER_ID")
+              .build();
+      helper = new AdHocReportDownloadHelper(sessionWithBadEndpoint, VERSION);
+      // Set up the ReportRequest so it will pass basic validation.
+      when(reportRequest.getRequestType()).thenReturn(RequestType.AWQL);
+      String awqlString = "SELECT BadField1 FROM NOT_A_REPORT DURING NOT_A_TIME_PERIOD";
+      when(reportRequest.getReportRequestString()).thenReturn(awqlString);
+      // The cause should be a ConnectException (see expected annotation) since the endpoint
+      // port is not in use.
+      thrown.expect(ReportException.class);
+      thrown.expectCause(Matchers.<Exception>instanceOf(ConnectException.class));
+      helper.downloadReport(reportRequest); 
+    } finally {
+      TestPortFinder.getInstance().releaseUnusedPort(port);
+    }
   }
 
   /**
@@ -211,7 +214,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     when(reportRequest.getRequestType()).thenReturn(RequestType.XML);
 
     String xmlString =
-        "<reportDefinition xmlns=\"https://adwords.google.com/api/adwords/cm/v201409\">"
+        "<reportDefinition xmlns=\"https://adwords.google.com/api/adwords/cm/v201506\">"
         + "  <selector>                                        "
         + "    <fields>CampaignId</fields>                     "
         + "    <fields>CampaignName</fields>                   "

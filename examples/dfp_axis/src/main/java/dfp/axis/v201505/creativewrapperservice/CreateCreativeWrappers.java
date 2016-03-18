@@ -32,10 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeWrapperService.createCreativeWrappers
- *
- * @author Adam Rogal
  */
 public class CreateCreativeWrappers {
 
@@ -64,7 +60,7 @@ public class CreateCreativeWrappers {
 
     for (CreativeWrapper createdCreativeWrapper : creativeWrappers) {
       System.out.printf(
-          "Creative wrapper with ID \"%d\" applying to label \"%d\" was created.\n",
+          "Creative wrapper with ID %d applying to label ID %d was created.%n",
           createdCreativeWrapper.getId(), createdCreativeWrapper.getLabelId());
     }
   }
