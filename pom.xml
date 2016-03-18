@@ -206,6 +206,10 @@
                   <pattern>org.joda.time</pattern>
                   <shadedPattern>org.shaded.joda.time</shadedPattern>
                 </relocation>
+                <relocation>
+                  <pattern>com.fasterxml.jackson</pattern>
+                  <shadedPattern>com.shaded.fasterxml.jackson</shadedPattern>
+                </relocation>
               </relocations>
             </configuration>
           </execution>
