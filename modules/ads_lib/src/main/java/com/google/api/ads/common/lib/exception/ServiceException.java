@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.exception;
 
 /**
  * A runtime service exception that usually cannot be recovered from.
- *
- * @author Adam Rogal
  */
 public class ServiceException extends RuntimeException {
 

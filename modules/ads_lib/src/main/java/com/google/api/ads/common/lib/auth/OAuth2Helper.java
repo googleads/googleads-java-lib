@@ -16,17 +16,16 @@ package com.google.api.ads.common.lib.auth;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 /**
  * OAuth2 helper functions.
- *
- * @author Adam Rogal
  */
 public class OAuth2Helper {
 

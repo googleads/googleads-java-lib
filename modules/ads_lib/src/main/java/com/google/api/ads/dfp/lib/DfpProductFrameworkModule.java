@@ -22,8 +22,6 @@ import java.lang.annotation.Target;
 /**
  * A simple marker annotation used to specify a Guice module that can tie
  * the DFP library to a SOAP framework.
- *
- * @author Joseph DiLallo
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

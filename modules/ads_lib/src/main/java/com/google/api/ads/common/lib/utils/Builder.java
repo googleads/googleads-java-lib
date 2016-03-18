@@ -26,8 +26,6 @@ import java.net.URL;
  * Builder interface.
  *
  * @param <T> the builder type
- *
- * @author Adam Rogal
  */
 public interface Builder<T> {
 

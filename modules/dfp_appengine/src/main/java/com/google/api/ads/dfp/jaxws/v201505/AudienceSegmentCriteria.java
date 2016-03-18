@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -42,6 +43,7 @@ public class AudienceSegmentCriteria
     extends CustomCriteriaLeaf
 {
 
+    @XmlSchemaType(name = "string")
     protected AudienceSegmentCriteriaComparisonOperator operator;
     @XmlElement(type = Long.class)
     protected List<Long> audienceSegmentIds;

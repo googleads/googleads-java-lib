@@ -27,7 +27,6 @@ import java.util.List;
  *
  * @param <T> the SOAP client type
  *
- * @author Adam Rogal
  * @see SoapClientHandlerInterface
  */
 public abstract class SoapClientHandler<T> implements SoapClientHandlerInterface<T> {

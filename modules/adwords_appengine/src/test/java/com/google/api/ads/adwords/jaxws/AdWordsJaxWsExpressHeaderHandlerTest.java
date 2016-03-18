@@ -38,8 +38,6 @@ import javax.xml.ws.BindingProvider;
 
 /**
  * Tests for {@link AdWordsJaxWsExpressHeaderHandler}.
- *
- * @author Josh Radcliff (jradcliff@google.com)
  */
 @RunWith(JUnit4.class)
 public class AdWordsJaxWsExpressHeaderHandlerTest {

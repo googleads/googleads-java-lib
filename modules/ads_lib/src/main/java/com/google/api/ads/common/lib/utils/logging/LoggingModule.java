@@ -12,8 +12,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Module for logging.
- *
- * @author Adam Rogal
  */
 public class LoggingModule extends AbstractModule {
 

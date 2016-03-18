@@ -29,8 +29,6 @@ import java.util.TimeZone;
 
 /**
  * Test for {@link DateTimesHelper}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DateTimesHelperTest {
@@ -208,7 +206,6 @@ public class DateTimesHelperTest {
 
   @Test
   public void testToDateTime_fromApiDateTimeToJoda() {
-    Object joda = dateTimesHelper.toDateTime(apiDateTime3);
     assertEquals(jodaDateTime1, dateTimesHelper.toDateTime(apiDateTime1));
     assertEquals(jodaDateTime2, dateTimesHelper.toDateTime(apiDateTime2));
     assertEquals(jodaDateTime3, dateTimesHelper.toDateTime(apiDateTime3));

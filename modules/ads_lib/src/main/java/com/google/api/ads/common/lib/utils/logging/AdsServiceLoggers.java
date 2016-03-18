@@ -17,18 +17,16 @@ package com.google.api.ads.common.lib.utils.logging;
 import com.google.api.ads.common.lib.soap.RequestInfo;
 import com.google.api.ads.common.lib.soap.ResponseInfo;
 import com.google.api.ads.common.lib.soap.SoapCallReturn;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+
 /**
  * The class {@code AdsServiceLogger} allows logging of outgoing and
  * incoming SOAP XML messages as API calls are executed.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class AdsServiceLoggers {
 

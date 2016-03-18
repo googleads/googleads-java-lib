@@ -24,8 +24,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides AdWords API SOAP responses.
- * 
- * @author Josh Radcliff
  */
 public class SoapResponseXmlProvider {
   

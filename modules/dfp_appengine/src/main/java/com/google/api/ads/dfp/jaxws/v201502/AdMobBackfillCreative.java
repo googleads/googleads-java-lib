@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,6 +44,7 @@ public class AdMobBackfillCreative
 
     protected String additionalParameters;
     protected String publisherId;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
 
     /**

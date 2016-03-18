@@ -19,8 +19,6 @@ import java.io.OutputStream;
 
 /**
  * Allows different types of reports to be written to an output stream.
- *
- * @author Kevin Winter
  */
 interface ReportWriter {
 

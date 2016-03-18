@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,8 +59,11 @@ public class TemplateCreative
     protected Boolean isNativeEligible;
     protected String destinationUrl;
     protected List<BaseCreativeTemplateVariableValue> creativeTemplateVariableValues;
+    @XmlSchemaType(name = "string")
     protected SslScanResult sslScanResult;
+    @XmlSchemaType(name = "string")
     protected SslManualOverride sslManualOverride;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
 
     /**

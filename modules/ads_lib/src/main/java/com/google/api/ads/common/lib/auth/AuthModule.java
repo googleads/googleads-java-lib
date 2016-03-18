@@ -7,8 +7,6 @@ import com.google.inject.name.Names;
 
 /**
  * Module for authentication.
- *
- * @author Adam Rogal
  */
 public class AuthModule extends AbstractModule {
 

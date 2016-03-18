@@ -18,8 +18,6 @@ package com.google.api.ads.dfp.lib.utils;
  * {@code ReportCallback} is called on the completion of asynchronous report
  * downloads. It is either called with {@code ReportCallback#onSuccess} or with
  * {@code ReportCallback#onError(Exception))} if there was an exception.
- *
- * @author Adam Rogal
  */
 public interface ReportCallback {
   /**

@@ -27,8 +27,6 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
  * Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  * </p>
- *
- * @author Julian Toledo
  */
 public abstract class AbstractBaseDelegate<S> {
   

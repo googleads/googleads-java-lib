@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CustomFieldService.getCustomFieldsByStatement
- * Tags: CustomFieldService.performCustomFieldAction
- *
- * @author Adam Rogal
  */
 public class DeactivateCustomFields {
 
@@ -68,14 +63,14 @@ public class DeactivateCustomFields {
         int i = page.getStartIndex();
         for (CustomField customField : page.getResults()) {
           System.out.printf(
-              "%d) Custom field with ID \"%d\" will be deactivated.\n", i++, customField.getId());
+              "%d) Custom field with ID %d will be deactivated.%n", i++, customField.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of custom fields to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of custom fields to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -90,7 +85,7 @@ public class DeactivateCustomFields {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of custom fields deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of custom fields deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No custom fields were deactivated.");
       }

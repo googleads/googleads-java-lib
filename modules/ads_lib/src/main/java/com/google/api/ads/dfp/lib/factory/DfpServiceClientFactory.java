@@ -21,13 +21,12 @@ import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.AbstractModule;
-import com.google.inject.Inject;
 import com.google.inject.Injector;
+
+import javax.inject.Inject;
 
 /**
  * Factory which creates DFP service clients.
- *
- * @author Adam Rogal
  */
 public class DfpServiceClientFactory
     extends BaseAdsServiceClientFactory<DfpServiceClient,

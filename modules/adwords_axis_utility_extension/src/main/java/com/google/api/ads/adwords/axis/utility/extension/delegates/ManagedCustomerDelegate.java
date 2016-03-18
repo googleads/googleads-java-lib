@@ -16,20 +16,20 @@ package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201409.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201409.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201409.cm.Operator;
-import com.google.api.ads.adwords.axis.v201409.mcm.LinkOperation;
-import com.google.api.ads.adwords.axis.v201409.mcm.LinkStatus;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomer;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerLink;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerOperation;
-import com.google.api.ads.adwords.axis.v201409.mcm.ManagedCustomerServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.mcm.MoveOperation;
-import com.google.api.ads.adwords.axis.v201409.mcm.MutateLinkResults;
-import com.google.api.ads.adwords.axis.v201409.mcm.MutateManagerResults;
-import com.google.api.ads.adwords.axis.v201409.mcm.PendingInvitation;
-import com.google.api.ads.adwords.axis.v201409.mcm.PendingInvitationSelector;
+import com.google.api.ads.adwords.axis.utils.v201506.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201506.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201506.cm.Operator;
+import com.google.api.ads.adwords.axis.v201506.mcm.LinkOperation;
+import com.google.api.ads.adwords.axis.v201506.mcm.LinkStatus;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomerLink;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomerOperation;
+import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.mcm.MoveOperation;
+import com.google.api.ads.adwords.axis.v201506.mcm.MutateLinkResults;
+import com.google.api.ads.adwords.axis.v201506.mcm.MutateManagerResults;
+import com.google.api.ads.adwords.axis.v201506.mcm.PendingInvitation;
+import com.google.api.ads.adwords.axis.v201506.mcm.PendingInvitationSelector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -44,8 +44,6 @@ import java.util.List;
  * Implementation is not thread-safe,
  * because AdWordsSession and Apache Axis service objects are not thread-safe.
  * </p>
- *
- * @author Julian Toledo
  */
 public final class ManagedCustomerDelegate extends AbstractGetMutateDelegate
 <ManagedCustomer, ManagedCustomerOperation, ManagedCustomerServiceInterface> {

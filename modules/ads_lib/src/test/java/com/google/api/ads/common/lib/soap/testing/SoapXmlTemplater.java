@@ -18,8 +18,6 @@ import com.google.inject.AbstractModule;
 
 /**
  * Templates SOAP XML used for testing.
- *
- * @author Adam Roga
  */
 public class SoapXmlTemplater {
 

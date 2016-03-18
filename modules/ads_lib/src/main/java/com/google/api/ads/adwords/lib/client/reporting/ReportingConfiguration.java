@@ -14,30 +14,44 @@
 
 package com.google.api.ads.adwords.lib.client.reporting;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Additional AdWords report configuration options.
- * 
- * @author Josh Radcliff
  */
+@ThreadSafe
 public class ReportingConfiguration {
 
-  private Boolean isSkipReportHeader;
-  private Boolean isSkipColumnHeader;
-  private Boolean isSkipReportSummary;
+  private final Boolean isSkipReportHeader;
+  private final Boolean isSkipColumnHeader;
+  private final Boolean isSkipReportSummary;
+  private final Boolean isIncludeZeroImpressions;
   
-  private ReportingConfiguration(){
-    // Used by builder.
+  private ReportingConfiguration(
+      Boolean isSkipReportHeader,
+      Boolean isSkipColumnHeader,
+      Boolean isSkipReportSummary,
+      Boolean isIncludeZeroImpressions) {
+    this.isSkipReportHeader = isSkipReportHeader;
+    this.isSkipColumnHeader = isSkipColumnHeader;
+    this.isSkipReportSummary = isSkipReportSummary;
+    this.isIncludeZeroImpressions = isIncludeZeroImpressions;
   }
-  
+
+
   /**
    * Copy constructor.
    */
   private ReportingConfiguration(ReportingConfiguration configToClone) {
-    this.isSkipReportHeader = configToClone.isSkipReportHeader;
-    this.isSkipColumnHeader = configToClone.isSkipColumnHeader;
-    this.isSkipReportSummary = configToClone.isSkipReportSummary;
+    this(
+        configToClone.isSkipReportHeader,
+        configToClone.isSkipColumnHeader,
+        configToClone.isSkipReportSummary,
+        configToClone.isIncludeZeroImpressions);
   }
   
   /**
@@ -67,29 +81,50 @@ public class ReportingConfiguration {
   }
   
   /**
+   * Return if report responses should include zero impression rows.
+   */
+  @Nullable
+  public Boolean isIncludeZeroImpressions() {
+    return isIncludeZeroImpressions;
+  }
+  
+  /**
    * Validates this object for the specified version of the AdWords API.
-   * @param version the version of the API to validate against, e.g., {@code v201409}.
+   * @param version the version of the API to validate against, e.g., {@code v201509}.
    * 
    * @throws IllegalArgumentException if validation fails
    */
   public void validate(@Nullable String version) {
     // Currently there are no validations needed.
   }
+  
+  @Override
+  public String toString() {
+    return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+        .append("isSkipReportHeader", isSkipReportHeader)
+        .append("isSkipColumnHeader", isSkipColumnHeader)
+        .append("isSkipReportSummary", isSkipReportSummary)
+        .append("isIncludeZeroImpressions", isIncludeZeroImpressions)
+        .toString();
+  }
 
   /**
    * Builder for {@link ReportingConfiguration} objects.
    * 
-   * @author Josh Radcliff
    */
   public static class Builder {
-    private ReportingConfiguration reportingConfiguration = new ReportingConfiguration();
     
+    private Boolean isSkipReportHeader;
+    private Boolean isSkipColumnHeader;
+    private Boolean isSkipReportSummary;
+    private Boolean isIncludeZeroImpressions;
+
     /**
      * Sets if report responses should skip the header row containing the report name and date
      * range.
      */
     public Builder skipReportHeader(Boolean isSkipReportHeader) {
-      reportingConfiguration.isSkipReportHeader = isSkipReportHeader;
+      this.isSkipReportHeader = isSkipReportHeader;
       return this;
     }
 
@@ -97,7 +132,7 @@ public class ReportingConfiguration {
      * Sets if report responses should skip the header row containing the report column names.
      */
     public Builder skipColumnHeader(Boolean isSkipColumnHeader) {
-      reportingConfiguration.isSkipColumnHeader = isSkipColumnHeader;
+      this.isSkipColumnHeader = isSkipColumnHeader;
       return this;
     }
     
@@ -105,7 +140,15 @@ public class ReportingConfiguration {
      * Sets if report responses should skip the summary row containing totals.
      */
     public Builder skipReportSummary(Boolean isSkipReportSummary) {
-      reportingConfiguration.isSkipReportSummary = isSkipReportSummary;
+      this.isSkipReportSummary = isSkipReportSummary;
+      return this;
+    }
+    
+    /**
+     * Sets if report responses should include zero impression rows.
+     */
+    public Builder includeZeroImpressions(Boolean isIncludeZeroImpressions) {
+      this.isIncludeZeroImpressions = isIncludeZeroImpressions;
       return this;
     }
     
@@ -114,11 +157,8 @@ public class ReportingConfiguration {
      * of this builder.
      */
     public ReportingConfiguration build() {
-      // Clone the configuration so that subsequent changes to this builder will not
-      // affect the returned configuration.
-      ReportingConfiguration configToReturn = reportingConfiguration;
-      this.reportingConfiguration = new ReportingConfiguration(configToReturn);
-      return configToReturn;
+      return new ReportingConfiguration(
+          isSkipReportHeader, isSkipColumnHeader, isSkipReportSummary, isIncludeZeroImpressions);
     }
   }
 }

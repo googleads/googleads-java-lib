@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemService.getLineItemsByStatement
- * Tags: LineItemService.updateLineItems
- *
- * @author Adam Rogal
  */
 public class UpdateLineItems {
 
@@ -73,7 +68,7 @@ public class UpdateLineItems {
 
       for (LineItem updatedLineItem : lineItems) {
         System.out.printf(
-            "Line item with ID \"%d\" and name \"%s\" was updated.\n",
+            "Line item with ID %d and name '%s' was updated.%n",
             updatedLineItem.getId(), updatedLineItem.getName());
       }
     } else {

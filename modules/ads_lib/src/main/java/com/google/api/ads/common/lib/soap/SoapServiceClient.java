@@ -29,8 +29,6 @@ import java.lang.reflect.Method;
  * framework should be used.
  *
  * @param <T> the type of SOAP client
- *
- * @author Adam Rogal
  */
 public abstract class SoapServiceClient<T> implements InvocationHandler {
 

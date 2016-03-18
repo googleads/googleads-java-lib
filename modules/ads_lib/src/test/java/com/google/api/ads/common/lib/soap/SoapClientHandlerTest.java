@@ -41,9 +41,6 @@ import javax.xml.soap.SOAPHeaderElement;
 
 /**
  * Tests for {@link SoapClientHandler}.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class SoapClientHandlerTest {
@@ -290,7 +287,6 @@ public class SoapClientHandlerTest {
   /**
    * Bare-bones implementation of {@link SoapClientHandler} for testing.
    *
-   * @author Joseph DiLallo
    */
   private static class SoapClientHandlerImpl extends SoapClientHandler<Object> {
 
@@ -344,6 +340,11 @@ public class SoapClientHandlerTest {
 
     @Override
     public void setCompression(Object soapClient, boolean compress) {
+      throw new UnsupportedOperationException();
+    }
+    
+    @Override
+    public void setRequestTimeout(Object soapClient, int timeout) {
       throw new UnsupportedOperationException();
     }
   }

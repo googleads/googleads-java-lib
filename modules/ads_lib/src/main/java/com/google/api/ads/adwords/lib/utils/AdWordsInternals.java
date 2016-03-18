@@ -23,12 +23,11 @@ import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.Internals;
 import com.google.api.client.http.HttpTransport;
 import com.google.inject.Guice;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 /**
  * Provides access to some internal guice-injected objects.
- *
- * @author Kevin Winter
  */
 public class AdWordsInternals extends Internals {
 

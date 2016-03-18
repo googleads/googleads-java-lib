@@ -31,6 +31,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * A {@code AdWordsSession} represents a single session of AdWords use.
@@ -38,8 +39,6 @@ import javax.annotation.Nullable;
  * <p>
  * Implementation is not thread-safe.
  * </p>
- *
- * @author Adam Rogal
  */
 public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
@@ -56,7 +55,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   private final String endpoint;
 
   public static final String DEFAULT_ENDPOINT = "https://adwords.google.com/";
-  
+
   private static final String DEFAULT_USER_AGENT = "INSERT_USERAGENT_HERE";
 
   /**
@@ -99,7 +98,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
   /**
    * Sets the AdWords Express business ID used by AdWords Express PromotionService.
-   * 
+   *
    * <p>When using PromotionService, either set this value or the express plus page ID,
    * but not both.
    */
@@ -119,14 +118,14 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   /**
    * Sets the Google+ page ID for the Google My Business location used by AdWords Express
    * PromotionService.
-   * 
+   *
    * <p>When using PromotionService, either set this value or the express business ID,
    * but not both.
    */
   public void setExpressPlusPageId(String expressPlusPageId) {
     this.expressPlusPageId = expressPlusPageId;
   }
-  
+
   /**
    * Returns {@code true} if the session should only validate the request.
    */
@@ -220,6 +219,66 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   }
 
   /**
+   * Returns a new {@link Builder} with all settings copied from this session. This is <em>not</em>
+   * thread-safe unless this session is an {@link ImmutableAdWordsSession}.
+   */
+  public Builder newBuilder() {
+    return new Builder(this);
+  }
+
+  /**
+   * Immutable, thread-safe implementation of AdWordsSession.
+   */
+  @ThreadSafe
+  public static final class ImmutableAdWordsSession extends AdWordsSession {
+    private ImmutableAdWordsSession(Builder builder) {
+      super(builder);
+    }
+
+    private void throwUnsupportedOperationException(String attributeName) {
+      throw new UnsupportedOperationException(
+          String.format(
+              "Cannot set %s. ImmutableAdWordsSession is immutable.", attributeName));
+    }
+
+    @Override
+    public final void setClientCustomerId(String clientCustomerId) {
+      throwUnsupportedOperationException("clientCustomerId");
+    }
+
+    @Override
+    public final void setExpressBusinessId(@Nullable Long businessId) {
+      throwUnsupportedOperationException("businessId");
+    }
+
+    @Override
+    public final void setExpressPlusPageId(String expressPlusPageId) {
+      throwUnsupportedOperationException("expressPlusPageId");
+    }
+
+    @Override
+    public final void setValidateOnly(@Nullable Boolean isValidateOnly) {
+      throwUnsupportedOperationException("isValidateOnly");
+    }
+
+    @Override
+    public final void setPartialFailure(@Nullable Boolean isPartialFailure) {
+      throwUnsupportedOperationException("isPartialFailure");
+    }
+
+    @Override
+    public final void setOAuth2Credential(Credential oAuth2Credential) {
+      throwUnsupportedOperationException("oAuth2Credential");
+    }
+
+    @Override
+    public final void setReportingConfiguration(
+        @Nullable ReportingConfiguration reportingConfiguration) {
+      throwUnsupportedOperationException("reportingConfiguration");
+    }
+  }
+
+  /**
    * Builder for AdWordsSession.
    *
    * <p>
@@ -241,10 +300,23 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
     private final ConfigurationHelper configHelper;
 
     /**
-     * Constructor.
+     * Constructs an empty builder. To construct a builder initialized to the settings of
+     * an existing {@link AdWordsSession}, use {@link AdWordsSession#newBuilder()} instead.
      */
     public Builder() {
       this.configHelper = new ConfigurationHelper();
+    }
+
+    private Builder(AdWordsSession sessionToClone) {
+      this();
+      this.endpoint = sessionToClone.getEndpoint();
+      this.userAgent = sessionToClone.getUserAgent();
+      this.developerToken = sessionToClone.getDeveloperToken();
+      this.clientCustomerId = sessionToClone.getClientCustomerId();
+      this.isPartialFailure = sessionToClone.isPartialFailure();
+      this.isValidateOnly = sessionToClone.isValidateOnly();
+      this.oAuth2Credential = sessionToClone.getOAuth2Credential();
+      this.reportingConfiguration = sessionToClone.getReportingConfiguration();
     }
 
     @Override
@@ -291,7 +363,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       this.developerToken = config.getString("api.adwords.developerToken", null);
       this.isPartialFailure = config.getBoolean("api.adwords.isPartialFailure", null);
       this.endpoint = config.getString("api.adwords.endpoint", null);
-      
+
       // Only create a ReportConfiguration for this object if at least one reporting
       // configuration config value is present.
       Boolean isSkipReportHeader = config.getBoolean("api.adwords.reporting.skipHeader", null);
@@ -317,7 +389,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       this.oAuth2Credential = oAuth2Credential;
       return this;
     }
-    
+
     public Builder withReportingConfiguration(ReportingConfiguration reportingConfiguration) {
       this.reportingConfiguration = reportingConfiguration;
       return this;
@@ -365,6 +437,14 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
     }
 
     /**
+     * Enables validate only. Default is disabled.
+     */
+    public Builder enableValidateOnly() {
+      this.isValidateOnly = true;
+      return this;
+    }
+
+    /**
      * Clears all the authentication credentials from this session.
      */
     private void clearAuthentication() {
@@ -375,13 +455,24 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
      * Builds the {@code AdWordsSession}.
      *
      * @return the built {@code AdWordsSession}
-     * @throws ValidationException if the {@code AdWordsSession} did not validate
+     * @throws ValidationException if the attributes of this builder fail validation
      */
     @Override
     public AdWordsSession build() throws ValidationException {
       defaultOptionals();
       validate();
       return new AdWordsSession(this);
+    }
+
+    /**
+     * Builds a thread-safe {@link ImmutableAdWordsSession}.
+     * @return the built {@code ImmutableAdWordsSession}
+     * @throws ValidationException if the attributes of this builder fail validation
+     */
+    public ImmutableAdWordsSession buildImmutable() throws ValidationException {
+      defaultOptionals();
+      validate();
+      return new ImmutableAdWordsSession(this);
     }
 
     /**
@@ -406,7 +497,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       if (this.developerToken == null) {
         throw new ValidationException("A developer token must be set.", "developerToken");
       }
-      
+
       // Check that user agent is not empty or the default.
       if (Strings.isNullOrEmpty(userAgent)
           || userAgent.contains(DEFAULT_USER_AGENT)) {

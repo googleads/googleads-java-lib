@@ -54,8 +54,6 @@ import java.util.Map;
 
 /**
  * Tests for the {@link AdWordsAxisHeaderHandler} class.
- *
- * @author Josh Radcliff
  */
 @RunWith(Parameterized.class)
 public class AdWordsAxisHeaderHandlerTest {
@@ -102,7 +100,7 @@ public class AdWordsAxisHeaderHandlerTest {
    *         interface class and the second element is a boolean indicating if
    *         it is a standard (non-express) interface
    */
-  @Parameters
+  @Parameters(name="subProduct={0}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
 

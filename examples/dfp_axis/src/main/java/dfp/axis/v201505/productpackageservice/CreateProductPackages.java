@@ -31,10 +31,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductPackageService.createProductPackages
- *
- * @author Nicholas Chen
  */
 public class CreateProductPackages {
   
@@ -59,9 +55,8 @@ public class CreateProductPackages {
             new ProductPackage[] {productPackage});
     
     for (ProductPackage createdProductPackage : productPackages) {
-      System.out.printf("A product package with ID \"%d\" and name \"%s\" "
-          + "was created.%n", createdProductPackage.getId(),
-          createdProductPackage.getName());
+      System.out.printf("A product package with ID %d and name '%s' was created.%n", 
+          createdProductPackage.getId(), createdProductPackage.getName());
     }
   }
 

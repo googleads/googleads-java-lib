@@ -1,0 +1,142 @@
+/**
+ * ReportDefinitionServiceLocator.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ */
+
+package com.google.api.ads.adwords.axis.v201601.cm;
+
+public class ReportDefinitionServiceLocator extends org.apache.axis.client.Service implements com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionService {
+
+    public ReportDefinitionServiceLocator() {
+    }
+
+
+    public ReportDefinitionServiceLocator(org.apache.axis.EngineConfiguration config) {
+        super(config);
+    }
+
+    public ReportDefinitionServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+        super(wsdlLoc, sName);
+    }
+
+    // Use to get a proxy class for ReportDefinitionServiceInterfacePort
+    private java.lang.String ReportDefinitionServiceInterfacePort_address = "https://adwords.google.com/api/adwords/cm/v201601/ReportDefinitionService";
+
+    public java.lang.String getReportDefinitionServiceInterfacePortAddress() {
+        return ReportDefinitionServiceInterfacePort_address;
+    }
+
+    // The WSDD service name defaults to the port name.
+    private java.lang.String ReportDefinitionServiceInterfacePortWSDDServiceName = "ReportDefinitionServiceInterfacePort";
+
+    public java.lang.String getReportDefinitionServiceInterfacePortWSDDServiceName() {
+        return ReportDefinitionServiceInterfacePortWSDDServiceName;
+    }
+
+    public void setReportDefinitionServiceInterfacePortWSDDServiceName(java.lang.String name) {
+        ReportDefinitionServiceInterfacePortWSDDServiceName = name;
+    }
+
+    public com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceInterface getReportDefinitionServiceInterfacePort() throws javax.xml.rpc.ServiceException {
+       java.net.URL endpoint;
+        try {
+            endpoint = new java.net.URL(ReportDefinitionServiceInterfacePort_address);
+        }
+        catch (java.net.MalformedURLException e) {
+            throw new javax.xml.rpc.ServiceException(e);
+        }
+        return getReportDefinitionServiceInterfacePort(endpoint);
+    }
+
+    public com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceInterface getReportDefinitionServiceInterfacePort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+        try {
+            com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceSoapBindingStub _stub = new com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceSoapBindingStub(portAddress, this);
+            _stub.setPortName(getReportDefinitionServiceInterfacePortWSDDServiceName());
+            return _stub;
+        }
+        catch (org.apache.axis.AxisFault e) {
+            return null;
+        }
+    }
+
+    public void setReportDefinitionServiceInterfacePortEndpointAddress(java.lang.String address) {
+        ReportDefinitionServiceInterfacePort_address = address;
+    }
+
+    /**
+     * For the given interface, get the stub implementation.
+     * If this service has no port for the given interface,
+     * then ServiceException is thrown.
+     */
+    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+        try {
+            if (com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceInterface.class.isAssignableFrom(serviceEndpointInterface)) {
+                com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceSoapBindingStub _stub = new com.google.api.ads.adwords.axis.v201601.cm.ReportDefinitionServiceSoapBindingStub(new java.net.URL(ReportDefinitionServiceInterfacePort_address), this);
+                _stub.setPortName(getReportDefinitionServiceInterfacePortWSDDServiceName());
+                return _stub;
+            }
+        }
+        catch (java.lang.Throwable t) {
+            throw new javax.xml.rpc.ServiceException(t);
+        }
+        throw new javax.xml.rpc.ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndpointInterface.getName()));
+    }
+
+    /**
+     * For the given interface, get the stub implementation.
+     * If this service has no port for the given interface,
+     * then ServiceException is thrown.
+     */
+    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+        if (portName == null) {
+            return getPort(serviceEndpointInterface);
+        }
+        java.lang.String inputPortName = portName.getLocalPart();
+        if ("ReportDefinitionServiceInterfacePort".equals(inputPortName)) {
+            return getReportDefinitionServiceInterfacePort();
+        }
+        else  {
+            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
+            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
+            return _stub;
+        }
+    }
+
+    public javax.xml.namespace.QName getServiceName() {
+        return new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201601", "ReportDefinitionService");
+    }
+
+    private java.util.HashSet ports = null;
+
+    public java.util.Iterator getPorts() {
+        if (ports == null) {
+            ports = new java.util.HashSet();
+            ports.add(new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201601", "ReportDefinitionServiceInterfacePort"));
+        }
+        return ports.iterator();
+    }
+
+    /**
+    * Set the endpoint address for the specified port name.
+    */
+    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        
+if ("ReportDefinitionServiceInterfacePort".equals(portName)) {
+            setReportDefinitionServiceInterfacePortEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        }
+    }
+
+    /**
+    * Set the endpoint address for the specified port name.
+    */
+    public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        setEndpointAddress(portName.getLocalPart(), address);
+    }
+
+}

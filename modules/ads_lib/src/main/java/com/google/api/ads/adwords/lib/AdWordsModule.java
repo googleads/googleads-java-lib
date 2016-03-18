@@ -17,6 +17,7 @@ package com.google.api.ads.adwords.lib;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceClient;
 import com.google.api.ads.adwords.lib.conf.AdWordsConfigurationModule;
 import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
+import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.logging.AdWordsLoggingModule;
 import com.google.api.ads.common.lib.AdsModule;
 import com.google.api.client.http.HttpTransport;
@@ -24,9 +25,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * Guice module for AdWords bindings.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class AdWordsModule extends AdsModule {
 
@@ -42,8 +40,9 @@ public class AdWordsModule extends AdsModule {
 
   @Override
   protected void configureLogging(String loggerPrefix) {
-    install(new AdWordsLoggingModule(loggerPrefix,
-        AdHocReportDownloadHelper.class.getPackage().getName()));
+    install(new AdWordsLoggingModule(
+        loggerPrefix, AdHocReportDownloadHelper.class.getPackage().getName(),
+        BatchJobHelperInterface.class.getPackage().getName()));
   }
 
 }

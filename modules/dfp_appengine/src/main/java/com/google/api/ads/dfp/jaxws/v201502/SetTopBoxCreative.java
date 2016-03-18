@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code Creative} that will be served into cable set-top boxes. There are no assets for this
- *             creative type, as they are hosted by Canoe.
+ *             creative type, as they are hosted by external cable systems.
  *           
  * 
  * <p>Java class for SetTopBoxCreative complex type.

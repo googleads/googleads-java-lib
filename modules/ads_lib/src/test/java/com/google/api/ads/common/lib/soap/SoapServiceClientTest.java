@@ -37,9 +37,6 @@ import java.lang.reflect.Method;
 
 /**
  * Tests for {@link SoapServiceClient}.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class SoapServiceClientTest {

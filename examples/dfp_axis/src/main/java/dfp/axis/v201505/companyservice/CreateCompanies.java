@@ -31,10 +31,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CompanyService.createCompanies
- *
- * @author Adam Rogal
  */
 public class CreateCompanies {
 
@@ -57,7 +53,7 @@ public class CreateCompanies {
     Company[] companies = companyService.createCompanies(new Company[] {advertiser, agency});
 
     for (Company createdCompany : companies) {
-      System.out.printf("A company with ID \"%d\", name \"%s\", and type \"%s\" was created.\n",
+      System.out.printf("A company with ID %d, name '%s', and type '%s' was created.%n",
           createdCompany.getId(), createdCompany.getName(), createdCompany.getType());
     }
   }

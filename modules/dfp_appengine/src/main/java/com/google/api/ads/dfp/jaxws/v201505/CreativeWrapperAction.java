@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CreativeWrapperAction")
 @XmlSeeAlso({
-    ActivateCreativeWrappers.class,
-    DeactivateCreativeWrappers.class
+    DeactivateCreativeWrappers.class,
+    ActivateCreativeWrappers.class
 })
 public abstract class CreativeWrapperAction {
 

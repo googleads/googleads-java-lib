@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -64,14 +65,19 @@ public class LineItemTemplate {
     protected String name;
     protected Boolean isDefault;
     protected String lineItemName;
+    @XmlSchemaType(name = "string")
     protected TargetPlatform targetPlatform;
     protected Boolean enabledForSameAdvertiserException;
     protected String notes;
+    @XmlSchemaType(name = "string")
     protected LineItemType lineItemType;
     protected DateTime startTime;
     protected DateTime endTime;
+    @XmlSchemaType(name = "string")
     protected DeliveryRateType deliveryRateType;
+    @XmlSchemaType(name = "string")
     protected RoadblockingType roadblockingType;
+    @XmlSchemaType(name = "string")
     protected CreativeRotationType creativeRotationType;
 
     /**

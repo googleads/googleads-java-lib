@@ -35,11 +35,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CustomTargetingService.createCustomTargetingKeys
- * Tags: CustomTargetingService.createCustomTargetingValues
- *
- * @author Adam Rogal
  */
 public class CreateCustomTargetingKeysAndValues {
 
@@ -71,8 +66,8 @@ public class CreateCustomTargetingKeysAndValues {
         new CustomTargetingKey[] {genderKey, genreKey, carModelKey});
 
     for (CustomTargetingKey createdCustomTargetingKey : customTargetingKeys) {
-      System.out.printf("A custom targeting key with ID \"%d\", name \"%s\", and display name "
-          + "\"%s\" was created.\n", createdCustomTargetingKey.getId(),
+      System.out.printf("A custom targeting key with ID %d, name '%s', and display name "
+          + "'%s' was created.%n", createdCustomTargetingKey.getId(),
           createdCustomTargetingKey.getName(), createdCustomTargetingKey.getDisplayName());
     }
 
@@ -129,8 +124,8 @@ public class CreateCustomTargetingKeysAndValues {
             carModelHondaValue});
 
     for (CustomTargetingValue createdCustomTargetingValue : customTargetingValues) {
-      System.out.printf("A custom targeting value with ID \"%d\", belonging to key with ID \"%d\", "
-          + "with name \"%s\" and display name \"%s\" was created.\n",
+      System.out.printf("A custom targeting value with ID %d, belonging to key with ID %d, "
+          + "name '%s' and display name '%s' was created.%n",
           createdCustomTargetingValue.getId(),
           createdCustomTargetingValue.getCustomTargetingKeyId(),
           createdCustomTargetingValue.getName(), createdCustomTargetingValue.getDisplayName());

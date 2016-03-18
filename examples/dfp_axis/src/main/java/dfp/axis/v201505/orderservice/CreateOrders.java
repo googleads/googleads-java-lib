@@ -30,10 +30,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: OrderService.createOrders
- *
- * @author Adam Rogal
  */
 public class CreateOrders {
 
@@ -60,7 +56,7 @@ public class CreateOrders {
     Order[] orders = orderService.createOrders(new Order[] {order});
 
     for (Order createdOrder : orders) {
-      System.out.printf("An order with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("An order with ID %d and name '%s' was created.%n",
           createdOrder.getId(), createdOrder.getName());
     }
   }

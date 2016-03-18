@@ -22,14 +22,13 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 
 import org.apache.axis.client.Stub;
 
+import javax.inject.Inject;
+
 /**
  * AdWords Express-specific header handler.
- *
- * @author Josh Radcliff
  */
 public class AdWordsAxisExpressHeaderHandler implements
     HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> {

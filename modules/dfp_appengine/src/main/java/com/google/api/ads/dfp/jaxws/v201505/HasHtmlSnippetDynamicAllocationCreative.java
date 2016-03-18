@@ -35,8 +35,8 @@ import javax.xml.bind.annotation.XmlType;
     "codeSnippet"
 })
 @XmlSeeAlso({
-    AdExchangeCreative.class,
-    AdSenseCreative.class
+    AdSenseCreative.class,
+    AdExchangeCreative.class
 })
 public abstract class HasHtmlSnippetDynamicAllocationCreative
     extends BaseDynamicAllocationCreative

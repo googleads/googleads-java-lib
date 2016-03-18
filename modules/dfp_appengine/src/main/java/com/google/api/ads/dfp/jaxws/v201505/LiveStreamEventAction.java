@@ -33,10 +33,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LiveStreamEventAction")
 @XmlSeeAlso({
-    ActivateLiveStreamEvents.class,
-    ArchiveLiveStreamEvents.class,
     PauseLiveStreamEventAds.class,
-    PauseLiveStreamEvents.class
+    ArchiveLiveStreamEvents.class,
+    PauseLiveStreamEvents.class,
+    ActivateLiveStreamEvents.class
 })
 public abstract class LiveStreamEventAction {
 

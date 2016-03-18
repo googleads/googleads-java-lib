@@ -1,7 +1,7 @@
 Google Ads API Java Client Library
 ==================================
 
-This project hosts the Java client library for the various SOAP-Based Ads APIs (AdWords, DFA, and DFP) at Google.
+This project hosts the Java client library for the various SOAP-Based Ads APIs (AdWords and DFP) at Google.
 
 ## Features
 
@@ -25,7 +25,6 @@ For API and client library updates and news, please follow our [Google+ Ads Deve
 If you have questions about the client library or the APIs, you can ask them on our forums:
   * [AdWords API Forum](https://groups.google.com/group/adwords-api)
   * [DoubleClick for Publishers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
-  * [DoubleClick for Advertisers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-advertisers-api)
   * [DoubleClick Ad Exchange Buyer API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-ad-exchange-buyer-api)
 
 ## Maven artifacts
@@ -43,19 +42,7 @@ If you have questions about the client library or the APIs, you can ask them on 
       <version>RELEASE</version>
     </dependency>
 ```
-### DFA
-```
-    <dependency>
-      <groupId>com.google.api-ads</groupId>
-      <artifactId>ads-lib</artifactId>
-      <version>RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api-ads</groupId>
-      <artifactId>dfa-axis</artifactId>
-      <version>RELEASE</version>
-    </dependency>
-```
+
 ### DFP
 ```
     <dependency>
@@ -167,7 +154,7 @@ $ mvn -X compile
 
 This command runs the ``GetCampaigns`` example, but you can update the ``-Dexec.mainClass`` argument with the example of your choice.
 ```
-$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201502.basicoperations.GetCampaigns"
+$ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201601.basicoperations.GetCampaigns"
 ```
 
 ## Basic usage
@@ -177,7 +164,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201502.*;
+import com.google.api.ads.adwords.axis.v201601.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;
@@ -246,58 +233,9 @@ public static void main(String[] args) throws Exception {
 
 ## How do I enable logging?
 
-The client library uses SLF4J for all logging. If you want to turn logging on,
-you must include a plugin that bridges SLF4J with a concrete logging framework.
-To quickly get you started and to serve as an example of how to do this, this
-example distribution uses the log4j framework.
-
-There are the following loggers within the library:
-
-  - com.google.api.ads.adwords.lib.client.AdWordsServiceClient.soapXmlLogger
-    com.google.api.ads.dfa.lib.client.DfaServiceClient.soapXmlLogger
-    com.google.api.ads.dfp.lib.client.DfpServiceClient.soapXmlLogger
-
-    Logs incoming and outgoing SOAP requests/responses. SOAP requests and
-    responses are logged as WARN for exceptions and INFO for all other requests.
-    You can configure your logging framework to accept logs on these parameters.
-    See the example log4j.properties for more information.
-
-  - com.google.api.ads.adwords.lib.client.AdWordsServiceClient.requestInfoLogger
-    com.google.api.ads.dfa.lib.client.DfaServiceClient.requestInfoLogger
-    com.google.api.ads.dfp.lib.client.DfpServiceClient.requestInfoLogger
-
-    Logs all requests from the client library along with information such as the
-    timestamp, service, method, endpoint URL.
-
-Because the client library uses SLF4J, the behavior of these loggers is highly customizable. Please see the "log4j.properties" or "src/main/resources/log4j.properties" file for details on the default behavior in this example project.
-
-### If you are using jars
-
-To use a different framework than log4j, remove the slf4j-log4j12 jar from your classpath and fetch a different one here: http://www.slf4j.org/download.html
-
-### If you are using maven
-
-To bridge SLF4J for a logging framework, you must do the following:
-
-  1) Include the plugin and logging framework dependencies in the pom.xml file's
-     dependencies list.
-
-     <!-- Adds the log4j framework -->
-     <dependency>
-       <groupId>log4j</groupId>
-       <artifactId>log4j</artifactId>
-       <version>1.2.16</version>
-     </dependency>
-     <!-- Make SLF4J use log4j as the logging framework -->
-     <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-       <version>1.7.7</version>
-     </dependency>
-
-  2) If your logging framework requires a configuration file, you must place it
-     in the resources directory. This distribution includes an example
-     configuration for log4j named "log4j.properties".
+The client library uses SLF4J for all logging. Check out our
+[logging guide on github](https://github.com/googleads/googleads-java-lib/wiki/Logging)
+for more details.
 
 ## How do I enable compression?
 
@@ -307,8 +245,6 @@ First, add an entry to your `ads.properties` file for each API you plan to use.
     api.adwords.useCompression=true
     # DFP
     api.dfp.useCompression=true
-    # DFA
-    api.dfa.useCompression=true
 
 If using JaxWs, then no further steps are required.
 

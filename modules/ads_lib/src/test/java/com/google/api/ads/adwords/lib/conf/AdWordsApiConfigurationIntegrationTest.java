@@ -26,8 +26,6 @@ import org.junit.runners.JUnit4;
 /**
  * Verifies that we correctly wire in all properties files to our
  * {@link AdWordsApiConfiguration}.
- * 
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class AdWordsApiConfigurationIntegrationTest {

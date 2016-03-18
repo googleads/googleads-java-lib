@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CustomFieldService.getCustomFieldsByStatement
- *
- * @author Adam Rogal
  */
 public class GetAllCustomFields {
 
@@ -60,7 +56,7 @@ public class GetAllCustomFields {
         int i = page.getStartIndex();
         for (CustomField customField : page.getResults()) {
           System.out.printf(
-              "%d) Custom field with ID \"%d\" and name \"%s\" was found.\n", i++,
+              "%d) Custom field with ID %d and name '%s' was found.%n", i++,
               customField.getId(), customField.getName());
         }
       }
@@ -68,7 +64,7 @@ public class GetAllCustomFields {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

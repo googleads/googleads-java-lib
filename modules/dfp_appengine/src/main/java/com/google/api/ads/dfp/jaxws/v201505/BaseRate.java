@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.XmlType;
     "id"
 })
 @XmlSeeAlso({
-    ProductTemplateBaseRate.class,
     ProductPackageItemBaseRate.class,
-    ProductBaseRate.class,
-    UnknownBaseRate.class
+    ProductTemplateBaseRate.class,
+    UnknownBaseRate.class,
+    ProductBaseRate.class
 })
 public abstract class BaseRate {
 

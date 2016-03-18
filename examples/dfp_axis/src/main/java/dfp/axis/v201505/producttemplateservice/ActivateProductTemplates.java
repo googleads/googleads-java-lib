@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductTemplateService.getProductTemplatesByStatement
- * Tags: ProductTemplateService.performProductTemplateAction
- *
- * @author Nicholas Chen
  */
 public class ActivateProductTemplates {
 
@@ -68,7 +63,7 @@ public class ActivateProductTemplates {
         int i = page.getStartIndex();
         for (ProductTemplate productTemplate : page.getResults()) {
           System.out.printf(
-              "%d) Product template with ID \"%d\" will be activated.%n", i++,
+              "%d) Product template with ID %d will be activated.%n", i++,
               productTemplate.getId());
         }
       }

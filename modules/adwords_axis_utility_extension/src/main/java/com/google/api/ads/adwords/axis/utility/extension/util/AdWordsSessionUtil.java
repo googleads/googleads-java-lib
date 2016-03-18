@@ -29,8 +29,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Helper class to copy the {@link AdWordsSession}.
- *
- * @author Julian Toledo
  */
 public class AdWordsSessionUtil {
 
@@ -111,11 +109,14 @@ public class AdWordsSessionUtil {
       builder = builder.withOAuth2Credential(adWordsSession.getOAuth2Credential());
     }
     if (adWordsSession.getReportingConfiguration() != null) {
-      ReportingConfiguration reportingConfig = new ReportingConfiguration.Builder()
-          .skipReportHeader(adWordsSession.getReportingConfiguration().isSkipReportHeader())
-          .skipColumnHeader(adWordsSession.getReportingConfiguration().isSkipColumnHeader())
-          .skipReportSummary(adWordsSession.getReportingConfiguration().isSkipReportSummary())
-          .build();
+      ReportingConfiguration reportingConfig =
+          new ReportingConfiguration.Builder()
+              .skipReportHeader(adWordsSession.getReportingConfiguration().isSkipReportHeader())
+              .skipColumnHeader(adWordsSession.getReportingConfiguration().isSkipColumnHeader())
+              .skipReportSummary(adWordsSession.getReportingConfiguration().isSkipReportSummary())
+              .includeZeroImpressions(
+                  adWordsSession.getReportingConfiguration().isIncludeZeroImpressions())
+              .build();
       builder = builder.withReportingConfiguration(reportingConfig);
     }
 

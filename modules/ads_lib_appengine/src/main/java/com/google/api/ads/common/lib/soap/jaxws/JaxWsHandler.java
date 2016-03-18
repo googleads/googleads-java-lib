@@ -26,13 +26,13 @@ import com.google.api.ads.common.lib.soap.compatability.JaxWsCompatible;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.inject.Inject;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
@@ -43,15 +43,13 @@ import javax.xml.ws.handler.MessageContext;
 
 /**
  * SOAP Client Handler implementation for use with JAX-WS.
- *
- * @author Joseph DiLallo
  */
 public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
 
   /**
-   * Default request timeout for AppEngine.
+   * Default connect timeout.
    */
-  private static final int REQUEST_TIMEOUT = 10 * 60 * 1000;
+  private static final int CONNECT_TIMEOUT = 10 * 60 * 1000;
   private static final String PRODUCTION_REQUEST_TIMEOUT_KEY = "com.sun.xml.ws.request.timeout";
   private static final String PRODUCTION_CONNECT_TIMEOUT_KEY = "com.sun.xml.ws.connect.timeout";
   private static final String DEVEL_REQUEST_TIMEOUT_KEY = "com.sun.xml.internal.ws.request.timeout";
@@ -219,7 +217,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
             .getMethod("get" + interfaceClassName + "Port").invoke(portLocator);
 
         // Required for App Engine to avoid default 10s timeout for UrlFetch requests.
-        setTimeOut(soapClient);
+        setConnectTimeout(soapClient);
 
         @SuppressWarnings("rawtypes") // getHandlerChain returns a list of raw Handler.
         List<Handler> bindings = soapClient.getBinding().getHandlerChain();
@@ -249,13 +247,19 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   /**
    * Sets properties into the message context to alter the timeout on App Engine.
    */
-  private void setTimeOut(BindingProvider bindingProvider) {
+  @Override
+  public void setRequestTimeout(BindingProvider bindingProvider, int timeout) {
     // Production App Engine
-    bindingProvider.getRequestContext().put(PRODUCTION_REQUEST_TIMEOUT_KEY, REQUEST_TIMEOUT);
-    bindingProvider.getRequestContext().put(PRODUCTION_CONNECT_TIMEOUT_KEY, REQUEST_TIMEOUT);
+    bindingProvider.getRequestContext().put(PRODUCTION_REQUEST_TIMEOUT_KEY, timeout);
     // Dev App Engine
-    bindingProvider.getRequestContext().put(DEVEL_REQUEST_TIMEOUT_KEY, REQUEST_TIMEOUT);
-    bindingProvider.getRequestContext().put(DEVEL_CONNECT_TIMEOUT_KEY, REQUEST_TIMEOUT);
+    bindingProvider.getRequestContext().put(DEVEL_REQUEST_TIMEOUT_KEY, timeout);
+  }
+
+  private void setConnectTimeout(BindingProvider bindingProvider) {
+    // Production App Engine
+    bindingProvider.getRequestContext().put(PRODUCTION_CONNECT_TIMEOUT_KEY, CONNECT_TIMEOUT);
+    // Dev App Engine
+    bindingProvider.getRequestContext().put(DEVEL_CONNECT_TIMEOUT_KEY, CONNECT_TIMEOUT);
   }
 
   /**

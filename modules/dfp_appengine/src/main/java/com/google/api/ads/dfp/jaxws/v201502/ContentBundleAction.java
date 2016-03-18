@@ -33,9 +33,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ContentBundleAction")
 @XmlSeeAlso({
     ActivateContentBundles.class,
-    ExcludeContentFromContentBundle.class,
     DeactivateContentBundles.class,
-    IncludeContentInContentBundle.class
+    IncludeContentInContentBundle.class,
+    ExcludeContentFromContentBundle.class
 })
 public abstract class ContentBundleAction {
 

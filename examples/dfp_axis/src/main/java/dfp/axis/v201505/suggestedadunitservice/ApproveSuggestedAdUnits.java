@@ -32,11 +32,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: SuggestedAdUnitService.getSuggestedAdUnitsByStatement
- * Tags: SuggestedAdUnitService.performSuggestedAdUnitAction
- *
- * @author Adam Rogal
  */
 public class ApproveSuggestedAdUnits {
 
@@ -70,7 +65,7 @@ public class ApproveSuggestedAdUnits {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (SuggestedAdUnit suggestedAdUnit : page.getResults()) {
-          System.out.printf("%d) Suggsted ad unit with ID \"%s\" will be approved.\n", i++,
+          System.out.printf("%d) Suggested ad unit with ID '%s' will be approved.%n", i++,
               suggestedAdUnit.getId());
         }
       }
@@ -78,7 +73,7 @@ public class ApproveSuggestedAdUnits {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of suggested ad units to be approved: %d\n", totalResultSetSize);
+    System.out.printf("Number of suggested ad units to be approved: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -94,7 +89,7 @@ public class ApproveSuggestedAdUnits {
 
       if (result != null && result.getNumChanges() > 0) {
         System.out.printf(
-            "Number of new ad units created: %d\n", result.getNewAdUnitIds().length);
+            "Number of new ad units created: %d%n", result.getNewAdUnitIds().length);
       } else {
         System.out.println("No suggested ad units were approved.");
       }

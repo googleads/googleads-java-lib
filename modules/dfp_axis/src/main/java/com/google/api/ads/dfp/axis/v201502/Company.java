@@ -81,7 +81,7 @@ public class Company  implements java.io.Serializable {
 
     /* Specifies the ID of the Google-recognized canonicalized form
      * of this
-     *                 company.  This attribute is optional. */
+     *                 company. This attribute is optional. */
     private java.lang.Integer thirdPartyCompanyId;
 
     /* The date and time this company was last modified. */
@@ -457,7 +457,7 @@ public class Company  implements java.io.Serializable {
      * 
      * @return thirdPartyCompanyId   * Specifies the ID of the Google-recognized canonicalized form
      * of this
-     *                 company.  This attribute is optional.
+     *                 company. This attribute is optional.
      */
     public java.lang.Integer getThirdPartyCompanyId() {
         return thirdPartyCompanyId;
@@ -469,7 +469,7 @@ public class Company  implements java.io.Serializable {
      * 
      * @param thirdPartyCompanyId   * Specifies the ID of the Google-recognized canonicalized form
      * of this
-     *                 company.  This attribute is optional.
+     *                 company. This attribute is optional.
      */
     public void setThirdPartyCompanyId(java.lang.Integer thirdPartyCompanyId) {
         this.thirdPartyCompanyId = thirdPartyCompanyId;

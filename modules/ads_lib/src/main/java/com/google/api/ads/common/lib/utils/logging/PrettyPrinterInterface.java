@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.utils.logging;
 
 /**
  * Interface capable of pretty printing XML messages.
- *
- * @author Joseph DiLallo
  */
 public interface PrettyPrinterInterface {
 

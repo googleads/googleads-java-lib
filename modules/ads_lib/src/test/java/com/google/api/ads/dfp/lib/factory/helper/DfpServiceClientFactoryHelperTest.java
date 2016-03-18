@@ -35,8 +35,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for {@link DfpServiceClientFactoryHelper}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfpServiceClientFactoryHelperTest {
@@ -47,9 +45,8 @@ public class DfpServiceClientFactoryHelperTest {
   @Mock
   private AdsServiceDescriptorFactoryInterface<DfpServiceDescriptor>
       adsServiceDescriptorFactory;
-  @SuppressWarnings({"rawtypes", "unchecked"}) /* Due to problem with guice binding */
-  @Mock
-  private SoapClientHandlerInterface soapClientHandler;
+  @Mock /* The type argument for SoapClientHandlerInterface does not matter for this test. */
+  private SoapClientHandlerInterface<Object> soapClientHandler;
   @Mock
   private AdsLibConfiguration adsLibConfiguration;
 
@@ -63,8 +60,8 @@ public class DfpServiceClientFactoryHelperTest {
     DfpServiceClientFactoryHelper helper = new DfpServiceClientFactoryHelper(
         adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
         adsLibConfiguration);
-    assertEquals("v201502", helper.determineVersion(
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201502.TestService.class));
+    assertEquals("v201602", helper.determineVersion(
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201602.TestService.class));
   }
 
   @Test
@@ -83,6 +80,6 @@ public class DfpServiceClientFactoryHelperTest {
         .build();
 
     helper.checkServiceClientPreconditions(dfpSession,
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201502.TestService.class);
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201602.TestService.class);
   }
 }

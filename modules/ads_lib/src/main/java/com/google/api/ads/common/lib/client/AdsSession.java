@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.client;
 
 /**
  * Interface for an ads session.
- *
- * @author Adam Rogal
  */
 public interface AdsSession {
 

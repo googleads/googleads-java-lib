@@ -60,8 +60,6 @@ import java.util.Set;
  * CsvFiles.writeCsv(Pql.resultSetToStringArrayList(combinedResultSet), filePath);
  * </code>
  * </pre>
- *
- * @author Adam Rogal.
  */
 public final class Pql {
 
@@ -426,6 +424,7 @@ public final class Pql {
   public static List<String> getColumnLabels(ResultSet resultSet) {
     return Lists.transform(
         Lists.newArrayList(resultSet.getColumnTypes()), new Function<ColumnType, String>() {
+      @Override
       public String apply(ColumnType input) {
         return input.getLabelName();
       }
@@ -441,6 +440,7 @@ public final class Pql {
    */
   public static List<String> getRowStringValues(Row row) {
     return Lists.transform(Lists.newArrayList(row.getValues()), new Function<Value, String>() {
+      @Override
       public String apply(Value input) {
         return Pql.toString(input);
       }
@@ -456,6 +456,7 @@ public final class Pql {
    */
   public static ResultSet combineResultSets(ResultSet first, ResultSet second) {
     Function<ColumnType, String> columnTypeToString = new Function<ColumnType, String>() {
+      @Override
       public String apply(ColumnType input) {
         return input.getLabelName();
       }

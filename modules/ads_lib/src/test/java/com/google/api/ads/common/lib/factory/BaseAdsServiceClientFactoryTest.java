@@ -32,8 +32,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for the {@link AdsServiceClientFactory} class.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class BaseAdsServiceClientFactoryTest {
@@ -64,7 +62,6 @@ public class BaseAdsServiceClientFactoryTest {
 
   @Test
   public void testGetServiceClientAsInterface() {
-    String endpointServer = "http://google.com";
     MockSoapClientInterface soapClient = new MockSoapClient();
     when(adsServiceClientFactory.getServiceClient(adsSession, MockSoapClientInterface.class))
         .thenReturn(soapClient);

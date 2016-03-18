@@ -21,13 +21,12 @@ import com.google.api.ads.common.lib.factory.AdsServiceClientFactory;
 import com.google.api.ads.common.lib.factory.BaseAdsServiceClientFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.AbstractModule;
-import com.google.inject.Inject;
 import com.google.inject.Injector;
+
+import javax.inject.Inject;
 
 /**
  * Factory which creates AdWords service clients.
- *
- * @author Adam Rogal
  */
 public class AdWordsServiceClientFactory
     extends BaseAdsServiceClientFactory<AdWordsServiceClient,

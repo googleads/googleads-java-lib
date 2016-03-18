@@ -24,8 +24,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides DFP API SOAP responses.
- * 
- * @author Adam Rogal
  */
 public class SoapResponseXmlProvider {
   

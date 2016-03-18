@@ -15,17 +15,17 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201502.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignPage;
-import com.google.api.ads.adwords.axis.v201502.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201502.cm.Selector;
+import com.google.api.ads.adwords.axis.v201509.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201509.cm.CampaignPage;
+import com.google.api.ads.adwords.axis.v201509.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.adwords.lib.jaxb.v201502.DownloadFormat;
-import com.google.api.ads.adwords.lib.jaxb.v201502.ReportDefinition;
-import com.google.api.ads.adwords.lib.jaxb.v201502.ReportDefinitionDateRangeType;
-import com.google.api.ads.adwords.lib.jaxb.v201502.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.jaxb.v201509.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201509.ReportDefinition;
+import com.google.api.ads.adwords.lib.jaxb.v201509.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201509.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
-import com.google.api.ads.adwords.lib.utils.v201502.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.v201509.ReportDownloader;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -56,8 +56,6 @@ import java.net.HttpURLConnection;
  * application that will not need to have multiple users log in, using
  * OfflineCredentials to generate a refreshable OAuth2
  * credential instead will be much easier.
- *
- * @author Adam Rogal
  */
 public class AdvancedCreateCredentialFromScratch {
 
@@ -68,7 +66,7 @@ public class AdvancedCreateCredentialFromScratch {
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
 
   // If you do not have a client ID or secret, please create one in the
-  // API console: https://code.google.com/apis/console#access
+  // API console: https://console.developers.google.com/project
   private static final String CLIENT_ID = "INSERT_CLIENT_ID_HERE";
   private static final String CLIENT_SECRET = "INSERT_CLIENT_SECRET_HERE";
 
@@ -80,7 +78,7 @@ public class AdvancedCreateCredentialFromScratch {
   private static void authorize(DataStoreFactory storeFactory, String userId) throws Exception {
     // Depending on your application, there may be more appropriate ways of
     // performing the authorization flow (such as on a servlet), see
-    // https://code.google.com/p/google-api-java-client/wiki/OAuth2#Authorization_Code_Flow
+    // https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#authorization_code_flow
     // for more information.
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
         new NetHttpTransport(),
@@ -97,7 +95,7 @@ public class AdvancedCreateCredentialFromScratch {
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
-    System.out.println("Paste this url in your browser: \n" + authorizeUrl + '\n');
+    System.out.printf("Paste this url in your browser:%n%s%n", authorizeUrl);
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
@@ -113,8 +111,7 @@ public class AdvancedCreateCredentialFromScratch {
     authorizationFlow.createAndStoreCredential(tokenResponse, userId);
   }
 
-  private static AdWordsSession createAdWordsSession(
-      DataStoreFactory dataStoreFactory, String userId)
+  private static AdWordsSession createAdWordsSession(String userId)
       throws IOException, ValidationException, ConfigurationLoadException {
     // Create a GoogleCredential with minimal information.
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
@@ -122,7 +119,8 @@ public class AdvancedCreateCredentialFromScratch {
         new JacksonFactory(),
         CLIENT_ID,
         CLIENT_SECRET,
-        Lists.newArrayList(SCOPE)).build();
+        Lists.newArrayList(SCOPE))
+        .build();
 
     // Load the credential.
     Credential credential = authorizationFlow.loadCredential(userId);
@@ -150,16 +148,16 @@ public class AdvancedCreateCredentialFromScratch {
     // Display campaigns.
     if (page.getEntries() != null) {
       for (Campaign campaign : page.getEntries()) {
-        System.out.println("Campaign with name \"" + campaign.getName() + "\" and id \""
-            + campaign.getId() + "\" was found.");
+        System.out.printf("Campaign with name '%s' and ID %d was found.%n", campaign.getName(),
+             campaign.getId());
       }
     } else {
       System.out.println("No campaigns were found.");
     }
 
     // Create selector.
-    com.google.api.ads.adwords.lib.jaxb.v201502.Selector reportSelector =
-        new com.google.api.ads.adwords.lib.jaxb.v201502.Selector();
+    com.google.api.ads.adwords.lib.jaxb.v201509.Selector reportSelector =
+        new com.google.api.ads.adwords.lib.jaxb.v201509.Selector();
     reportSelector.getFields().addAll(Lists.newArrayList(
         "CampaignId",
         "AdGroupId",
@@ -186,10 +184,10 @@ public class AdvancedCreateCredentialFromScratch {
       FileOutputStream fos = new FileOutputStream(new File(reportFile));
       Streams.copy(response.getInputStream(), fos);
       fos.close();
-      System.out.println("Report successfully downloaded: " + reportFile);
+      System.out.printf("Report successfully downloaded: %s%n", reportFile);
     } else {
-      System.out.println("Report was not downloaded. " + response.getHttpStatus() + ": "
-          + response.getHttpResponseMessage());
+      System.out.printf("Report was not downloaded. %d: %s%n", response.getHttpStatus(),
+          response.getHttpResponseMessage());
     }
   }
 
@@ -197,12 +195,12 @@ public class AdvancedCreateCredentialFromScratch {
     if (CLIENT_ID.equals("INSERT_CLIENT_ID_HERE")
         || CLIENT_SECRET.equals("INSERT_CLIENT_SECRET_HERE")) {
       throw new IllegalArgumentException("Please input your client IDs or secret. "
-          + "See https://code.google.com/apis/console#access");
+          + "See https://console.developers.google.com/project");
     }
 
     // It is highly recommended that you use a credential store in your
     // application to store a per-user Credential.
-    // See: https://code.google.com/p/google-oauth-java-client/wiki/OAuth2
+    // See: https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#data_store
     DataStoreFactory storeFactory = new MemoryDataStoreFactory();
 
     // Authorize and store your credential.
@@ -211,7 +209,7 @@ public class AdvancedCreateCredentialFromScratch {
     // Create a AdWordsSession from the credential store. You will typically do this
     // in a servlet interceptor for a web application or per separate thread
     // of your offline application.
-    AdWordsSession adWordsSession = createAdWordsSession(storeFactory, USER_ID);
+    AdWordsSession adWordsSession = createAdWordsSession(USER_ID);
 
     AdWordsServices adWordsServices = new AdWordsServices();
 

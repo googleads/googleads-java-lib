@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CustomTargetingService.getCustomTargetingKeysByStatement
- * Tags: CustomTargetingService.updateCustomTargetingKeys
- *
- * @author Adam Rogal
  */
 public class UpdateCustomTargetingKeys {
 
@@ -83,8 +78,8 @@ public class UpdateCustomTargetingKeys {
             customTargetingService.updateCustomTargetingKeys(customTargetingKeys);
 
         for (CustomTargetingKey updatedCustomTargetingKey : customTargetingKeys) {
-          System.out.printf("Custom targeting key with ID \"%d\", name \"%s\", and display name "
-              + "\"%s\" was updated.\n", updatedCustomTargetingKey.getId(),
+          System.out.printf("Custom targeting key with ID %d, name '%s', and display name "
+              + "'%s' was updated.%n", updatedCustomTargetingKey.getId(),
               updatedCustomTargetingKey.getName(), updatedCustomTargetingKey.getDisplayName());
         }
       }

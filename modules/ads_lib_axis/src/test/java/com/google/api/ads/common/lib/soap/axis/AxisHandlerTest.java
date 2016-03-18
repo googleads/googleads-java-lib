@@ -22,8 +22,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
-import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201408.MockAxisCompatibleServiceDescriptor;
-import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201408.MockAxisServiceInterface;
+import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisCompatibleServiceDescriptor;
+import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisServiceInterface;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
@@ -45,8 +45,6 @@ import java.util.Map;
 
 /**
  * Tests for {@link AxisHandler}.
- * 
- * @author Josh Radcliff
  */
 @RunWith(JUnit4.class)
 public class AxisHandlerTest {
@@ -158,5 +156,11 @@ public class AxisHandlerTest {
     axisHandler.setCompression(stub, false);
     assertFalse((Boolean) stub._getProperty(HTTPConstants.MC_ACCEPT_GZIP));
     assertFalse((Boolean) stub._getProperty(HTTPConstants.MC_GZIP_REQUEST));
+  }
+  
+  @Test
+  public void testSetRequestTimeout() {
+    axisHandler.setRequestTimeout(stub, 12345);
+    assertEquals(12345, stub.getTimeout());
   }
 }

@@ -47,11 +47,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProposalLineItemService.createProposalLineItems
- * Tags: NetworkService.getCurrentNetwork
- *
- * @author Nicholas Chen
  */
 public class CreateProposalLineItems {
 
@@ -128,7 +123,7 @@ public class CreateProposalLineItems {
         new ProposalLineItem[] {proposalLineItem});
 
     for (ProposalLineItem createdProposalLineItem : proposalLineItems) {
-      System.out.printf("A proposal line item with ID \"%d\" and name \"%s\" was created.%n",
+      System.out.printf("A proposal line item with ID %d and name '%s' was created.%n",
           createdProposalLineItem.getId(), createdProposalLineItem.getName());
     }
   }

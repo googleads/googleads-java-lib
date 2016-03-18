@@ -53,6 +53,14 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
      *         <td>{@link ProposalLineItem#proposalId}</td>
      *         </tr>
      *         <tr>
+     *         <td>{@code startDateTime}</td>
+     *         <td>{@link ProposalLineItem#startDateTime}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code endDateTime}</td>
+     *         <td>{@link ProposalLineItem#endDateTime}</td>
+     *         </tr>
+     *         <tr>
      *         <td>{@code isArchived}</td>
      *         <td>{@link ProposalLineItem#isArchived}</td>
      *         </tr>
@@ -99,7 +107,10 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.dfp.axis.v201505.UpdateResult performProposalLineItemAction(com.google.api.ads.dfp.axis.v201505.ProposalLineItemAction proposalLineItemAction, com.google.api.ads.dfp.axis.v201505.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201505.ApiException;
 
     /**
-     * Updates the specified {@link ProposalLineItem} objects.
+     * Updates the specified {@link ProposalLineItem} objects. If
+     * free editing mode is enabled,
+     *         this will trigger inventory reservation and cause the proposal
+     * to be pushed to DFP again.
      *         
      *         
      * @param proposalLineItems the proposal line items to update

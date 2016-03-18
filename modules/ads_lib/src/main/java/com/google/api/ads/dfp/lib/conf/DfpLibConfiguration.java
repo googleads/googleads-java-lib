@@ -15,15 +15,14 @@
 package com.google.api.ads.dfp.lib.conf;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.apache.commons.configuration.Configuration;
 
+import javax.inject.Inject;
+
 /**
  * Configuration information for DFP library.
- *
- * @author Adam Rogal
  */
 public class DfpLibConfiguration extends AdsLibConfiguration {
 
@@ -51,5 +50,11 @@ public class DfpLibConfiguration extends AdsLibConfiguration {
   @Override
   public boolean isCompressionEnabled() {
     return config.getBoolean(KEY_PREFIX + "." + USE_COMPRESSION_POSTFIX, false);
+  }
+  
+  @Override
+  public int getSoapRequestTimeout() {
+    return config.getInt(
+        KEY_PREFIX + "." + SOAP_REQUEST_TIMEOUT_POSTFIX, DEFAULT_SOAP_REQUEST_TIMEOUT);
   }
 }

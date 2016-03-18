@@ -17,8 +17,6 @@ package com.google.api.ads.common.lib.soap;
 /**
  * Used to package a SOAP call's return. Contains the return value, the request
  * and response info, and the originating {@link SoapCall}.
- *
- * @author Adam Rogal
  */
 public class SoapCallReturn {
 
@@ -72,7 +70,6 @@ public class SoapCallReturn {
   /**
    * Builder for {@link SoapCallReturn} objects.
    *
-   * @author Adam Rogal
    */
   public static class Builder {
 

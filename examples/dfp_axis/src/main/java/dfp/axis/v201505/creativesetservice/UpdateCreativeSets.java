@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeSetService.getCreativeSetsByStatement
- * Tags: CreativeSetService.updateCreativeSet
- *
- * @author Adam Rogal
  */
 public class UpdateCreativeSets {
 
@@ -75,7 +70,7 @@ public class UpdateCreativeSets {
     // Update the creative set on the server.
     CreativeSet updatedCreativeSet = creativeSetService.updateCreativeSet(creativeSet);
 
-    System.out.printf("A creative set with ID \"%d\", master creative ID \"%d\", "
+    System.out.printf("A creative set with ID %d, master creative ID %d, "
         + "and companion creative IDs [%s] was updated.", updatedCreativeSet.getId(),
         updatedCreativeSet.getMasterCreativeId(),
         Longs.join(",", updatedCreativeSet.getCompanionCreativeIds()));

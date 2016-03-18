@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -48,6 +49,7 @@ public class ImageCreative
     protected String altText;
     protected String thirdPartyImpressionUrl;
     protected List<CreativeAsset> secondaryImageAssets;
+    @XmlSchemaType(name = "string")
     protected LockedOrientation lockedOrientation;
 
     /**

@@ -33,10 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CompanyService.updateCompanies
- *
- * @author Adam Rogal
  */
 public class UpdateCompanies {
 
@@ -70,7 +66,7 @@ public class UpdateCompanies {
 
     for (Company updatedCompany : companies) {
       System.out.printf(
-          "Company with ID \"%d\", name \"%s\", and comment \"%s\" was updated.\n",
+          "Company with ID %d, name '%s', and comment '%s' was updated.%n",
           updatedCompany.getId(), updatedCompany.getName(), updatedCompany.getComment());
     }
   }

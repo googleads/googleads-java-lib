@@ -162,19 +162,15 @@ public class ProductTemplate  implements java.io.Serializable {
      *                 This attribute is required. */
     private com.google.api.ads.dfp.axis.v201502.RateType rateType;
 
-    /* The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
-     *                 
-     *                 This attribute is optional and defaults to {@link
-     * RoadblockingType#ONE_OR_MORE}
-     *                 when {@link #productType} is {@link ProductType#DFP}. */
+    /* The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page. This
+     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}
+     * if
+     *                 {@link #productType} is {@link ProductType#DFP}, or
+     * {@link RoadblockingType#CREATIVE_SET}
+     *                 if there are companion sizes in {@link #creativePlaceholders}. */
     private com.google.api.ads.dfp.axis.v201502.RoadblockingType roadblockingType;
 
     /* Details about the creatives that are expected to serve for
@@ -768,19 +764,15 @@ public class ProductTemplate  implements java.io.Serializable {
     /**
      * Gets the roadblockingType value for this ProductTemplate.
      * 
-     * @return roadblockingType   * The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
-     *                 
-     *                 This attribute is optional and defaults to {@link
-     * RoadblockingType#ONE_OR_MORE}
-     *                 when {@link #productType} is {@link ProductType#DFP}.
+     * @return roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page. This
+     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}
+     * if
+     *                 {@link #productType} is {@link ProductType#DFP}, or
+     * {@link RoadblockingType#CREATIVE_SET}
+     *                 if there are companion sizes in {@link #creativePlaceholders}.
      */
     public com.google.api.ads.dfp.axis.v201502.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -790,19 +782,15 @@ public class ProductTemplate  implements java.io.Serializable {
     /**
      * Sets the roadblockingType value for this ProductTemplate.
      * 
-     * @param roadblockingType   * The strategy for serving roadblocked creatives (i.e. instances
-     * where multiple creatives
-     *                 must be served together on a single web page) for
-     * the created {@link ProposalLineItem}.
-     *                 Only {@link RoadblockingType#ONE_OR_MORE} and {@link
-     * RoadblockingType#CREATIVE_SET} are
-     *                 supported. {@link RoadblockingType#CREATIVE_SET} can
-     * be used to serve multiple creatives
-     *                 on a single web page.
-     *                 
-     *                 This attribute is optional and defaults to {@link
-     * RoadblockingType#ONE_OR_MORE}
-     *                 when {@link #productType} is {@link ProductType#DFP}.
+     * @param roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
+     * where
+     *                 multiple creatives must be served together on a single
+     * web page. This
+     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}
+     * if
+     *                 {@link #productType} is {@link ProductType#DFP}, or
+     * {@link RoadblockingType#CREATIVE_SET}
+     *                 if there are companion sizes in {@link #creativePlaceholders}.
      */
     public void setRoadblockingType(com.google.api.ads.dfp.axis.v201502.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;

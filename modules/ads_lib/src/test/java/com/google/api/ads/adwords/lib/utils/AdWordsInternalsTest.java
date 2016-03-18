@@ -14,9 +14,10 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
-import com.google.api.ads.common.lib.utils.Internals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import junit.framework.TestCase;
+import com.google.api.ads.common.lib.utils.Internals;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,11 +26,9 @@ import org.junit.runners.JUnit4;
 /**
  * Ensures that all of the Guice bindings work correctly when
  * {@link AdWordsInternals} is used.
- *
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
-public class AdWordsInternalsTest extends TestCase {
+public class AdWordsInternalsTest {
 
   public AdWordsInternalsTest() {}
 

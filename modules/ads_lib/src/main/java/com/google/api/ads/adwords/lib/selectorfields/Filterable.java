@@ -11,8 +11,6 @@ import java.lang.annotation.Target;
  *
  * The annotation is present to allow the creation of selectors automatically if the user decides
  * to do so.
- *
- * @author Gustavo Moreira
  */
 @Target({FIELD})
 @Retention(RUNTIME)

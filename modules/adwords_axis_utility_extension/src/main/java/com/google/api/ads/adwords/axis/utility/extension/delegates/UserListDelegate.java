@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.rm.AdwordsUserListServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.rm.UserList;
-import com.google.api.ads.adwords.axis.v201409.rm.UserListOperation;
+import com.google.api.ads.adwords.axis.v201506.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.rm.UserList;
+import com.google.api.ads.adwords.axis.v201506.rm.UserListOperation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link UserList}.
- *
- * @author Julian Toledo
  */
 public final class UserListDelegate extends
     AbstractGetMutateDelegate<UserList, UserListOperation, AdwordsUserListServiceInterface> {

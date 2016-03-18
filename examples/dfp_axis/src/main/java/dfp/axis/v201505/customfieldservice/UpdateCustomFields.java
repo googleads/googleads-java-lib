@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CustomFieldService.getCustomFieldsByStatement
- * Tags: CustomFieldService.updateCustomFields
- *
- * @author Adam Rogal
  */
 public class UpdateCustomFields {
 
@@ -72,7 +67,7 @@ public class UpdateCustomFields {
 
     for (CustomField updatedCustomField : customFields) {
       System.out.printf(
-          "Custom field with ID \"%d\" and name \"%s\" was updated.\n",
+          "Custom field with ID %d and name '%s' was updated.%n",
           updatedCustomField.getId(), updatedCustomField.getName());
     }
   }

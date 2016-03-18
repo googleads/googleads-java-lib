@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LabelService.getLabelsByStatement
- * Tags: LabelService.updateLabels
- *
- * @author Adam Rogal
  */
 public class UpdateLabels {
 
@@ -71,7 +66,7 @@ public class UpdateLabels {
         labelService.updateLabels(new Label[] {label});
 
     for (Label updatedLabel : labels) {
-      System.out.printf("Label with ID \"%d\" and name \"%s\" was updated.\n", updatedLabel.getId(),
+      System.out.printf("Label with ID %d and name '%s' was updated.%n", updatedLabel.getId(),
           updatedLabel.getName());
     }
   }

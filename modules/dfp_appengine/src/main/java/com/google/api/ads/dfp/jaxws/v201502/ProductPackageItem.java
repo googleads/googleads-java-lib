@@ -3,6 +3,7 @@ package com.google.api.ads.dfp.jaxws.v201502;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,6 +48,7 @@ public class ProductPackageItem {
     protected Long productId;
     protected Long productPackageId;
     protected Boolean isMandatory;
+    @XmlSchemaType(name = "string")
     protected ArchiveStatus archiveStatus;
 
     /**

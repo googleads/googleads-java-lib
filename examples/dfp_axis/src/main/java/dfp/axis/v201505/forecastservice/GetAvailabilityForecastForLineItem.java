@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ForecastService.getAvailabilityForecastById
- *
- * @author Adam Rogal
  */
 public class GetAvailabilityForecastForLineItem {
 
@@ -56,15 +52,15 @@ public class GetAvailabilityForecastForLineItem {
     double availablePercent = (forecast.getAvailableUnits() / (matched * 1.0)) * 100;
     String unitType = forecast.getUnitType().toString().toLowerCase();
 
-    System.out.printf("%d %s matched.\n", matched, unitType);
-    System.out.printf("%.2f%% %s available.\n", availablePercent, unitType);
+    System.out.printf("%d %s matched.%n", matched, unitType);
+    System.out.printf("%.2f%% %s available.%n", availablePercent, unitType);
 
     if (forecast.getPossibleUnits() != null) {
       double possiblePercent = (forecast.getPossibleUnits() / (matched * 1.0)) * 100;
-      System.out.printf("%.2f%% %s possible.\n", possiblePercent, unitType);
+      System.out.printf("%.2f%% %s possible.%n", possiblePercent, unitType);
     }
 
-    System.out.printf("%d contending line items.\n",
+    System.out.printf("%d contending line items.%n",
         forecast.getContendingLineItems() == null ? 0 : forecast.getContendingLineItems().length);
   }
 

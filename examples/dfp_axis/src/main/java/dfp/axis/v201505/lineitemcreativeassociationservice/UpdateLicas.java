@@ -33,11 +33,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
- * Tags: LineItemCreativeAssociationService.updateLineItemCreativeAssociations
- *
- * @author Adam Rogal
  */
 public class UpdateLicas {
 
@@ -76,7 +71,7 @@ public class UpdateLicas {
         licaService.updateLineItemCreativeAssociations(new LineItemCreativeAssociation[] {lica});
 
     for (LineItemCreativeAssociation updatedLica : licas) {
-      System.out.printf("LICA with line item ID \"%d\" and creative ID \"%d\" was updated.\n",
+      System.out.printf("LICA with line item ID %d and creative ID %d was updated.%n",
           updatedLica.getLineItemId(), updatedLica.getCreativeId());
     }
   }

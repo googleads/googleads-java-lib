@@ -34,9 +34,6 @@ import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
  *
  * @param <S> the type of {@link AdsSession}
  * @param <D> the type of {@link AdsServiceDescriptor}
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public abstract class AdsServiceClient<S extends AdsSession,
     D extends AdsServiceDescriptor> extends SoapServiceClient<Object> {

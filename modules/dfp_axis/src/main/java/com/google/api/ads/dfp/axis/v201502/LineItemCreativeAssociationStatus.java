@@ -21,10 +21,12 @@ public class LineItemCreativeAssociationStatus implements java.io.Serializable {
     public static final java.lang.String _NOT_SERVING = "NOT_SERVING";
     public static final java.lang.String _INACTIVE = "INACTIVE";
     public static final java.lang.String _DELETED = "DELETED";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final LineItemCreativeAssociationStatus ACTIVE = new LineItemCreativeAssociationStatus(_ACTIVE);
     public static final LineItemCreativeAssociationStatus NOT_SERVING = new LineItemCreativeAssociationStatus(_NOT_SERVING);
     public static final LineItemCreativeAssociationStatus INACTIVE = new LineItemCreativeAssociationStatus(_INACTIVE);
     public static final LineItemCreativeAssociationStatus DELETED = new LineItemCreativeAssociationStatus(_DELETED);
+    public static final LineItemCreativeAssociationStatus UNKNOWN = new LineItemCreativeAssociationStatus(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static LineItemCreativeAssociationStatus fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

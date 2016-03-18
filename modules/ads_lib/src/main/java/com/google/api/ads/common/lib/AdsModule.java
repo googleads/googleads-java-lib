@@ -20,8 +20,6 @@ import com.google.inject.AbstractModule;
 
 /**
  * Guice module for common bindings.
- *
- * @author Adam Rogal
  */
 public class AdsModule extends AbstractModule {
 

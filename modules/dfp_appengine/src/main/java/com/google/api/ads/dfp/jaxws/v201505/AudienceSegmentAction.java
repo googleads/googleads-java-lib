@@ -32,11 +32,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AudienceSegmentAction")
 @XmlSeeAlso({
-    RejectAudienceSegments.class,
+    PopulateAudienceSegments.class,
     DeactivateAudienceSegments.class,
+    RejectAudienceSegments.class,
     ApproveAudienceSegments.class,
-    ActivateAudienceSegments.class,
-    PopulateAudienceSegments.class
+    ActivateAudienceSegments.class
 })
 public abstract class AudienceSegmentAction {
 

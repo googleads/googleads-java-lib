@@ -19,14 +19,13 @@ import com.google.api.ads.common.lib.client.HeaderHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceClient;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
-import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+
+import javax.inject.Inject;
 
 /**
  * Wrapper of underlying SOAP client which allows access for setting
  * headers retrieved from the session.
- *
- * @author Adam Rogal
  */
 public class DfpServiceClient extends AdsServiceClient<DfpSession,
                                                        DfpServiceDescriptor> {
@@ -41,16 +40,18 @@ public class DfpServiceClient extends AdsServiceClient<DfpSession,
    * @param dfpHeaderHandler the DFP header handler
    * @param adsServiceLoggers the ads service loggers
    */
-  @SuppressWarnings("unchecked") // All generics of SoapClientHandlerInterface
-                                 // extend Object.
+  @SuppressWarnings("unchecked") /* See comments on soapClientHandler argument. */
   @Inject
-  public DfpServiceClient(@Assisted("soapClient") Object soapClient,
+  public DfpServiceClient(
+      @Assisted("soapClient") Object soapClient,
       @Assisted("adsServiceDescriptor") DfpServiceDescriptor dfpServiceDescriptor,
       @Assisted("adsSession") DfpSession dfpSession,
-      @SuppressWarnings({"rawtypes", "unchecked"})  /* Due to problem with guice binding */
+      @SuppressWarnings("rawtypes") /* Guice binding for SoapClientHandlerInterface does not include
+                                     * the type argument T because it is bound in the SOAP
+                                     * toolkit-agnostic configuration module. Therefore, must use
+                                     * the raw type here. */
       SoapClientHandlerInterface soapClientHandler,
-      @SuppressWarnings("rawtypes") /* Guice binding does not support template types */
-      HeaderHandler dfpHeaderHandler,
+      HeaderHandler<DfpSession, DfpServiceDescriptor> dfpHeaderHandler,
       AdsServiceLoggers adsServiceLoggers) {
     super(soapClient, dfpSession, dfpServiceDescriptor, soapClientHandler,
         dfpHeaderHandler, adsServiceLoggers);

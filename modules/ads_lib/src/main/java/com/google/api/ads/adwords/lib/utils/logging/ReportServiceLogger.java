@@ -21,7 +21,6 @@ import com.google.api.client.util.Data;
 import com.google.api.client.util.GenericData;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Sets;
-import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
@@ -32,14 +31,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.inject.Inject;
+
 /**
  * Logger that logs report requests and responses according to the following rules.<br/>
  * <ul>
  *   <li>Log successful requests (header and payload) and responses to INFO.</li>
  *   <li>Log failed requests (header and payload) and responses to WARN.</li>
  * </ul>
- * 
- * @author Josh Radcliff
  */
 public class ReportServiceLogger {
 

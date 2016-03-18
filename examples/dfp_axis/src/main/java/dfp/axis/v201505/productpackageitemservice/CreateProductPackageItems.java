@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProductPackageItemService.createProductPackageItems
- *
- * @author Nicholas Chen
  */
 public class CreateProductPackageItems {
   
@@ -66,9 +62,9 @@ public class CreateProductPackageItems {
             new ProductPackageItem[] {productPackageItem});
     
     for (ProductPackageItem createdProductPackageItem : productPackageItems) {
-      System.out.printf("A product package item with ID \"%d\" created from "
-          + "product ID \"%d\" belonging to "
-          + "product package with ID \"%d\" was created.%n",
+      System.out.printf("A product package item with ID %d created from "
+          + "product ID %d belonging to "
+          + "product package with ID %d was created.%n",
           createdProductPackageItem.getId(),
           createdProductPackageItem.getProductId(),
           createdProductPackageItem.getProductPackageId());

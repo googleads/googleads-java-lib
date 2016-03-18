@@ -31,10 +31,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: LabelService.createLabels
- *
- * @author Adam Rogal
  */
 public class CreateLabels {
 
@@ -60,7 +56,7 @@ public class CreateLabels {
         labelService.createLabels(new Label[] {competitiveExclusionLabel, adUnitFrequencyCapLabel});
 
     for (Label createdLabel : labels) {
-      System.out.printf("A label with ID \"%d\" and name \"%s\" was created.\n",
+      System.out.printf("A label with ID %d and name '%s' was created.%n",
           createdLabel.getId(), createdLabel.getName());
     }
   }

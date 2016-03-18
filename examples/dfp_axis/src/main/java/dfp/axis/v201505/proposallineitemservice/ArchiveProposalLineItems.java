@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ProposalLineItemService.getProposalLineItemsByStatement
- * Tags: ProposalLineItemService.performProposalLineItemAction
- *
- * @author Nicholas Chen
  */
 public class ArchiveProposalLineItems {
 
@@ -68,7 +63,7 @@ public class ArchiveProposalLineItems {
         int i = page.getStartIndex();
         for (ProposalLineItem proposalLineItem : page.getResults()) {
           System.out.printf(
-              "%d) Proposal line item with ID \"%d\" will be archived.%n", i++,
+              "%d) Proposal line item with ID %d will be archived.%n", i++,
               proposalLineItem.getId());
         }
       }

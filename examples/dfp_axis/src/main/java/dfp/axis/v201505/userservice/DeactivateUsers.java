@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserService.getUsersByStatement
- * Tags: UserService.performUserAction
- *
- * @author Adam Rogal
  */
 public class DeactivateUsers {
 
@@ -65,14 +60,14 @@ public class DeactivateUsers {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (User user : page.getResults()) {
-          System.out.printf("%d) User with ID \"%d\" will be deactivated.\n", i++, user.getId());
+          System.out.printf("%d) User with ID %d will be deactivated.%n", i++, user.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of users to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of users to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -87,7 +82,7 @@ public class DeactivateUsers {
           userService.performUserAction(action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of users deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of users deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No users were deactivated.");
       }

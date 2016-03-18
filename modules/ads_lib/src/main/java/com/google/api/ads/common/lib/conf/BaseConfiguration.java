@@ -18,8 +18,6 @@ import org.apache.commons.configuration.Configuration;
 
 /**
  * Base configuration class.
- *
- * @author api.arogal (Adam Rogal)
  */
 public abstract class BaseConfiguration {
 
@@ -50,5 +48,15 @@ public abstract class BaseConfiguration {
    */
   protected String getString(String property) {
     return config.getString(property);
+  }
+  
+  /**
+   *  Gets the integer property from the configuration.
+   *  @param property the property to fetch
+   *  
+   *  @return the integer property
+   */
+  protected int getInt(String property) {
+    return config.getInt(property);
   }
 }

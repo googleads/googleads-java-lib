@@ -38,10 +38,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: NetworkService.makeTestNetwork
- *
- * @author Adam Rogal
  */
 public class MakeTestNetwork {
 
@@ -54,8 +50,8 @@ public class MakeTestNetwork {
     Network network = networkService.makeTestNetwork();
 
     System.out.printf(
-        "Test network with network code \"%s\" and display name \"%s\" created.\n"
-        + "You may now sign in at https://www.google.com/dfp/main?networkCode=%s\n",
+        "Test network with network code '%s' and display name '%s' created.%n"
+        + "You may now sign in at https://www.google.com/dfp/main?networkCode=%s%n",
         network.getNetworkCode(), network.getDisplayName(), network.getNetworkCode());
   }
 

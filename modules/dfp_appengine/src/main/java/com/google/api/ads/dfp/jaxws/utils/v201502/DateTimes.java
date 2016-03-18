@@ -25,8 +25,6 @@ import java.util.Locale;
 
 /**
  * A utility class for handling {@link DateTime} objects.
- *
- * @author Adam Rogal
  */
 public final class DateTimes {
 

@@ -18,7 +18,5 @@ package com.google.api.ads.adwords.lib.testing.mocks.o;
  * Class used in testing {@code AdWordsJaxWsHeaderHandler}.
  *
  * Its package name looks like an AdWords service interface's package.
- *
- * @author Joseph DiLallo
  */
 public interface MockAdWordsService {}

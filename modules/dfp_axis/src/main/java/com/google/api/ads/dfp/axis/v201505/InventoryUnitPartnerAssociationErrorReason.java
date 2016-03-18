@@ -19,12 +19,10 @@ public class InventoryUnitPartnerAssociationErrorReason implements java.io.Seria
 
     public static final java.lang.String _ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION = "ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION";
     public static final java.lang.String _DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION = "DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION";
-    public static final java.lang.String _SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY = "SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY";
     public static final java.lang.String _NO_PARTNER_CATCH_ALL = "NO_PARTNER_CATCH_ALL";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final InventoryUnitPartnerAssociationErrorReason ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION = new InventoryUnitPartnerAssociationErrorReason(_ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION);
     public static final InventoryUnitPartnerAssociationErrorReason DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION = new InventoryUnitPartnerAssociationErrorReason(_DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION);
-    public static final InventoryUnitPartnerAssociationErrorReason SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY = new InventoryUnitPartnerAssociationErrorReason(_SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY);
     public static final InventoryUnitPartnerAssociationErrorReason NO_PARTNER_CATCH_ALL = new InventoryUnitPartnerAssociationErrorReason(_NO_PARTNER_CATCH_ALL);
     public static final InventoryUnitPartnerAssociationErrorReason UNKNOWN = new InventoryUnitPartnerAssociationErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}

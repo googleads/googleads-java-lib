@@ -16,8 +16,6 @@ package com.google.api.ads.common.lib.soap.testing;
 
 /**
  * Mock SOAP client with a few methods.
- *
- * @author Adam Rogal
  */
 public class MockSoapClient implements MockSoapClientInterface {
 

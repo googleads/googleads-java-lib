@@ -33,11 +33,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeWrapperService.getCreativeWrappersByStatement
- * Tags: CreativeWrapperService.performCreativeWrapperAction
- *
- * @author Adam Rogal
  */
 public class DeactivateCreativeWrappersForLabel {
 
@@ -71,8 +66,8 @@ public class DeactivateCreativeWrappersForLabel {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CreativeWrapper creativeWrapper : page.getResults()) {
-          System.out.printf("%d) Creative wrapper with ID \"%d\" applying to label"
-              + " \"%d\" will be deactivated.\n", i++, creativeWrapper.getId(),
+          System.out.printf("%d) Creative wrapper with ID %d applying to label ID"
+              + " %d will be deactivated.%n", i++, creativeWrapper.getId(),
               creativeWrapper.getLabelId());
         }
       }
@@ -80,7 +75,7 @@ public class DeactivateCreativeWrappersForLabel {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of creative wrappers to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of creative wrappers to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -94,7 +89,7 @@ public class DeactivateCreativeWrappersForLabel {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of creative wrappers deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of creative wrappers deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No creative wrappers were deactivated.");
       }

@@ -1,3 +1,221 @@
+2.11.0 - 03/11/2016
+-------------------
+AdWords:
+  - Fixed github issue #53 (https://github.com/googleads/googleads-java-lib/issues/53):
+    throw/get methods on the utility extension's UtilityLibraryException class should not
+    throw a ClassCastException when passed an AxisFault.
+  - Fixed github issue #58 (https://github.com/googleads/googleads-java-lib/issues/58):
+    Added ImmutableAdWordsSession to facilitate thread-safe cloning of an AdWordsSession.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added ImmutableDfpSession to facilitate thread-safe cloning of a DfpSession.
+
+Common:
+  - Upgraded commons-configuration:commons-configuration from 1.7 to 1.10 to
+    avoid a required dependency on commons-collections:commons-collections:3.2.1,
+    which has a high security vulnerability. See:
+    https://commons.apache.org/proper/commons-collections/security-reports.html#Fixed_in_Apache_Commons_Collections_3.2.24.1
+  - Explicitly added a dependency on commons-collections:commons-collections:3.2.2.
+  - Excluded commons-collections:commons-collections:3.2.1 from the
+    commons-beanutils:commons-beanutils:1.9.2 dependency.
+
+2.10.0 - 02/23/2016
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201602.
+  - Removed support for v201411.
+  - Removed deprecated ReportDownloader methods for v201602.
+  - Removed v201502 examples.
+
+Common:
+  - No changes.
+
+2.9.0 - 02/02/2016
+------------------
+AdWords:
+  - Added support and examples for v201601.
+  - Fixed examples extensions/AddSiteLinks and errorhandling/HandlePolicyViolationError
+  to properly handle the latest validation rules enforced by the API.
+  - Modified the axis.v201506.accountmanagement.GetAccountHierarchy,
+  axis.v201509.accountmanagement.GetAccountHierarchy, and
+  axis.v201601.accountmanagement.GetAccountHierarchy examples to properly handle
+  the case where ManagedCustomerService.get returns multiple pages of results.
+  - Made BatchJobUploadStatus serializable for usage with resumable BatchJob
+  uploads.
+  - Removed all AdX Buyer examples and JAR files.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+2.8.0 - 11/19/2015
+------------------
+AdWords
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201511.
+  - Removed support for v201408.
+  - Removed examples for v201411.
+
+Common:
+  - No changes.
+
+2.7.0 - 11/06/2015
+------------------
+AdWords
+  - Fixed [issue 56](https://github.com/googleads/googleads-java-lib/issues/56)
+  and added a test to ensure this does not resurface.
+  - Removed support and examples for v201502. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Updated adwords.axis.auth.GetRefreshToken example to support generating a
+  refresh token that includes additional scopes.
+  - Added adwords.axis.v201509.reporting.StreamCriteriaReportResults example.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Updated dfp.axis.auth.GetRefreshToken example to support generating a
+  refresh token that includes additional scopes.
+
+Common:
+  - No changes.
+
+2.6.0 - 10/28/2015
+------------------
+AdWords:
+  - Updated com.google.api.ads.adwords.lib.jaxb.v201509.ReportDefinitionReportType to include
+    the new VIDEO_PERFORMANCE_REPORT enum value. Fixes
+    [issue 52](https://github.com/googleads/googleads-java-lib/issues/52).
+  - Removed all references to ClientLogin from examples.
+  - Added missing <p> tags to Javadocs.
+  - Introduced a separate logger for BatchJob uploads and downloads. Upload
+  contents are logged to this logger using the FINE level since they can be
+  considerably larger than other requests.
+
+DFA:
+  - Removing support for the legacy DFA API.
+
+DFP:
+  - No changes.
+
+Common:
+  - Updated maven dependencies to exclude guava-jdk5. Fixes
+    [issue 54](https://github.com/googleads/googleads-java-lib/issues/54).
+
+2.5.0 - 10/07/2015
+------------------
+AdWords:
+  - Added support and examples for v201509.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Added support for setting SOAP request read timeouts via ads.properties.
+  - Updated Joda Time dependency to 2.8.2.
+  - Updated Guice dependency to version 4.0.
+
+2.4.1 - 09/18/2015
+------------------
+AdWords:
+  - Corrected the argument passed to `SelectorBuilder.increaseOffsetBy` in `ProductPartitionTree`
+    to fix [github issue #50](https://github.com/googleads/googleads-java-lib/issues/50).
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+2.4.0 - 08/25/2015
+------------------
+AdWords:
+  - Set AdGroup settings. Fixes github issue
+    [49](https://github.com/googleads/googleads-java-lib/issues/49)
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201508.
+  - Added ReconciliationLineItemReportService.
+  - Removed support for v201405.
+  - Removed examples for v201408.
+
+Common:
+  - No changes.
+
+2.3.0 - 07/27/2015
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201506.
+  - Removed support and examples for v201409. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+
+DFA:
+  - Removed support for v1.19.
+
+DFP:
+  - Removed support for v201403.
+
+Common:
+  - No changes.
+
+2.2.0 - 06/26/2015
+-------------------
+AdWords:
+  - Added support and examples for v201506.
+  - Fix to avoid ArrayStoreException in ProductPartitionTree.createAdGroupTree.
+  - Added support for the new includeZeroImpressions HTTP header for reporting.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+2.1.0 - 06/10/2015
+-------------------
+AdWords:
+  - Migrated AdWords Axis Utility Extension (beta) to v201502.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.0.0 - 05/19/2015
 -------------------
 AdWords:
@@ -26,7 +244,7 @@ AdWords:
   - Removed reference to `MarginalCpc` selector field in
     [GetKeywordBidSimulations](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/java/adwords/axis/v201502/optimization/GetKeywordBidSimulations.java).
     This field was removed from `DataService` in [v201502](https://developers.google.com/adwords/api/docs/guides/migration/v201502).
-  - Added Java enums that represent all the fields for all the entity services available on each API 
+  - Added Java enums that represent all the fields for all the entity services available on each API
     version.
   - Added support for the Java enums in the SelectorBuilder utility class.
   - Updated junit dependency to version 4.11.
@@ -40,7 +258,7 @@ DFP:
 
 Common:
   - Updated junit dependency to version 4.11.
-  - Updated hamcrest-all dependency to version 1.3.  
+  - Updated hamcrest-all dependency to version 1.3.
 
 1.38.0 - 03/12/2015
 -------------------
@@ -73,7 +291,7 @@ AdWords:
     group criteria in Shopping campaigns.
   - Improved targetAll settings and comments in AddAdGroups examples.
   - Updated multiple examples to use
-    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls). 
+    [upgraded URLs](https://developers.google.com/adwords/api/docs/guides/upgraded-urls).
   - Added UpgradeAdUrl example.
 
 DFA:

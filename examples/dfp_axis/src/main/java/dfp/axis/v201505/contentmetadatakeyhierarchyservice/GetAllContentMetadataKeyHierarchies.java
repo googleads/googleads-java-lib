@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
- *
- * @author Chris Seeley
  */
 public class GetAllContentMetadataKeyHierarchies {
 
@@ -58,8 +54,8 @@ public class GetAllContentMetadataKeyHierarchies {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (ContentMetadataKeyHierarchy contentMetadataKeyHierarchy : page.getResults()) {
-          System.out.printf("%d) Content metadata key hierarchy with ID \"%d\", and name \"%s\" was"
-              + " found.\n", i++, contentMetadataKeyHierarchy.getId(),
+          System.out.printf("%d) Content metadata key hierarchy with ID %d, and name '%s' was"
+              + " found.%n", i++, contentMetadataKeyHierarchy.getId(),
               contentMetadataKeyHierarchy.getName());
         }
       }
@@ -67,7 +63,7 @@ public class GetAllContentMetadataKeyHierarchies {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

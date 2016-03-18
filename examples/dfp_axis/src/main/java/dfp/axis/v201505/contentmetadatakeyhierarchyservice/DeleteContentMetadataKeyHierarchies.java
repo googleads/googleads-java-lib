@@ -35,11 +35,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
- * Tags: ContentMetadataKeyHierarchyService.performContentMetadataKeyHierarchyAction
- *
- * @author Chris Seeley
  */
 public class DeleteContentMetadataKeyHierarchies {
 
@@ -67,7 +62,7 @@ public class DeleteContentMetadataKeyHierarchies {
     ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = 
         Iterables.getOnlyElement(Arrays.asList(page.getResults()));
     
-    System.out.printf("Content metadata key hierarchy with ID \"%d\" will be deleted.\n",
+    System.out.printf("Content metadata key hierarchy with ID %d will be deleted.%n",
         contentMetadataKeyHierarchy.getId());
 
     statementBuilder.removeLimitAndOffset();
@@ -81,7 +76,7 @@ public class DeleteContentMetadataKeyHierarchies {
         .performContentMetadataKeyHierarchyAction(action, statementBuilder.toStatement());
 
     if (result != null && result.getNumChanges() > 0) {
-      System.out.printf("Number of content metadata key hierarchies deleted: %d\n",
+      System.out.printf("Number of content metadata key hierarchies deleted: %d%n",
           result.getNumChanges());
     } else {
       System.out.println("No content metadata key hierarchies were deleted.");

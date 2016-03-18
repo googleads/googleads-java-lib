@@ -18,12 +18,11 @@ import com.google.api.ads.common.lib.utils.logging.LoggingModule;
 
 /**
  * AdWords-specific logging module.
- *
- * @author Josh Radcliff
  */
 public class AdWordsLoggingModule extends LoggingModule {
 
   private final String reportLoggerPrefix;
+  private final String batchJobLoggerPrefix;
   
   /**
    * Name of the report logger to use for Guice bindings. 
@@ -31,12 +30,20 @@ public class AdWordsLoggingModule extends LoggingModule {
   static final String REPORT_LOGGER_NAME = "report_download";
   
   /**
-   * @param loggerPrefix Logger name prefix for general logging.
-   * @param reportLoggerPrefix Logger name prefix for report-specific logging. 
+   * Name of the batch job upload/download logger (for Guice bindings).
    */
-  public AdWordsLoggingModule(String loggerPrefix, String reportLoggerPrefix) {
+  static final String BATCH_JOB_LOGGER_NAME = "batch_job";
+  
+  /**
+   * @param loggerPrefix Logger name prefix for general logging.
+   * @param reportLoggerPrefix Logger name prefix for report-specific logging.
+   * @param batchJobLoggerPrefix Logger name prefix for batch job-specific logging.  
+   */
+  public AdWordsLoggingModule(String loggerPrefix, String reportLoggerPrefix,
+      String batchJobLoggerPrefix) {
     super(loggerPrefix);
     this.reportLoggerPrefix = reportLoggerPrefix;
+    this.batchJobLoggerPrefix = batchJobLoggerPrefix;
   }
 
   @Override
@@ -44,6 +51,7 @@ public class AdWordsLoggingModule extends LoggingModule {
     super.configure();
     bind(AdWordsServiceLoggers.class);
     configureLogger(reportLoggerPrefix, REPORT_LOGGER_NAME);
+    configureLogger(batchJobLoggerPrefix, BATCH_JOB_LOGGER_NAME);
     bind(ReportServiceLogger.class);
   }
 }

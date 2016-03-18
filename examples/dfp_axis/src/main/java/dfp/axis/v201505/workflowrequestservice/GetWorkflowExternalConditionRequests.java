@@ -31,10 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: WorkflowRequestService.getWorkflowRequestsByStatement
- *
- * @author Nicholas Chen
  */
 public class GetWorkflowExternalConditionRequests {
 
@@ -64,9 +60,9 @@ public class GetWorkflowExternalConditionRequests {
         int i = page.getStartIndex();
         for (WorkflowRequest workflowRequest : page.getResults()) {
           System.out.printf(
-              "%d) Workflow external condition request with ID \"%d\""
-              + " for %s with ID \"%d\" was found.%n",
-              i++, workflowRequest.getId(), workflowRequest.getEntityType().toString(),
+              "%d) Workflow external condition request with ID %d "
+              + "for '%s' with ID %d was found.%n",
+              i++, workflowRequest.getId(), workflowRequest.getEntityType(),
               workflowRequest.getEntityId());
         }
       }

@@ -34,8 +34,6 @@ import java.util.Map;
 
 /**
  * Tests for {@link DfpHttpHeaderHandler}.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfpHttpHeaderHandlerTest {

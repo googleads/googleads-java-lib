@@ -4,7 +4,7 @@
     <ns1:RequestHeader soapenv:mustUnderstand="0" xmlns:ns1="https://adwords.google.com/api/adwords/cm/#API_VERSION#">
         <ns1:clientCustomerId>TEST_CLIENT_CUSTOMER_ID</ns1:clientCustomerId>
         <ns1:developerToken>TEST_DEVELOPER_TOKEN</ns1:developerToken>
-        <ns1:userAgent>TEST_APP (AwApi-Java, AdWords-Axis/2.0.0, Common-Java/2.0.0, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns1:userAgent>
+        <ns1:userAgent>TEST_APP (AwApi-Java, AdWords-Axis/2.11.0, Common-Java/2.11.0, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns1:userAgent>
         <ns1:validateOnly>false</ns1:validateOnly>
         <ns1:partialFailure>false</ns1:partialFailure>
     </ns1:RequestHeader>

@@ -34,11 +34,6 @@ import java.util.Arrays;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeService.getCreativesByStatement
- * Tags: CreativeService.updateCreatives
- *
- * @author Adam Rogal
  */
 public class UpdateCreatives {
 
@@ -76,7 +71,7 @@ public class UpdateCreatives {
 
       for (Creative updatedCreative : creatives) {
         System.out.printf(
-            "Creative with ID \"%d\" and name \"%s\" was updated.\n",
+            "Creative with ID %d and name '%s' was updated.%n",
             updatedCreative.getId(), updatedCreative.getName());
       }
     } else {

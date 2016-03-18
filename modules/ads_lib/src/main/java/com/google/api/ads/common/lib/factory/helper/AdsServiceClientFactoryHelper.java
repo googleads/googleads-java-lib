@@ -22,7 +22,6 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 /**
  * Interface for helpers of factories which creates ads service clients.
  *
- * @author Adam Rogal
  *
  * @param <C> the subclass of {@link AdsServiceClient}
  * @param <S> the subclass of {@link AdsSession}

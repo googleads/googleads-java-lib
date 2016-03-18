@@ -19,7 +19,6 @@ import static org.apache.commons.lang.CharEncoding.UTF_8;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
-import org.openqa.selenium.net.PortProber;
 
 import org.mortbay.http.HttpContext;
 import org.mortbay.http.HttpException;
@@ -39,11 +38,9 @@ import java.util.zip.GZIPInputStream;
 
 /**
  * HTTP server used to verify requests and send mocked responses.
- *
- * @author Adam Rogal
  */
 public class TestHttpServer {
-
+  
   private InternalHttpServer server;
 
   /**
@@ -57,7 +54,7 @@ public class TestHttpServer {
    * @throws Exception an arbitrary exception may be thrown
    */
   public void start() throws Exception {
-    server = new InternalHttpServer();
+    server = new InternalHttpServer(TestPortFinder.getInstance().checkOutUnusedPort());
     server.start();
   }
 
@@ -70,6 +67,7 @@ public class TestHttpServer {
    */
   public void stop() throws InterruptedException {
     server.stop();
+    TestPortFinder.getInstance().releaseUnusedPort(server.port);
   }
 
   /**
@@ -86,7 +84,7 @@ public class TestHttpServer {
   public boolean wasLastRequestBodyCompressed() {
     return server.wasLastRequestBodyCompressed();
   }
-
+  
   /**
    * Gets the body of the all requests made to the server, in order from oldest
    * to newest.
@@ -125,6 +123,13 @@ public class TestHttpServer {
   public void setMockResponseBodies(List<String> mockResponseBodies) {
     server.mockResponseBodies = Lists.newArrayList(mockResponseBodies);
   }
+  
+  /**
+   * Sets the delay in milliseconds before the server responds.
+   */
+  public void setDelay(long delay) {
+    server.delay = delay;
+  }
 
   /**
    * Gets the server URL with port.
@@ -140,8 +145,9 @@ public class TestHttpServer {
 
     private int port;
     private int numInteractions = 0;
+    private long delay = 0;
     private List<String> requestBodies = Lists.newArrayList();
-    private List<Boolean> requestBodiesCompressionStates = Lists.newArrayList();
+    private List<Boolean> requestBodiesCompressionStates = Lists.newArrayList(); 
     private List<String> authorizationHttpHeaders = Lists.newArrayList();
     private List<String> mockResponseBodies = Lists.newArrayList();
 
@@ -150,9 +156,9 @@ public class TestHttpServer {
      *
      * @throws IOException if port could not be set
      */
-    public InternalHttpServer() throws IOException {
+    public InternalHttpServer(int port) throws IOException {
       super();
-      port = PortProber.findFreePort();
+      this.port = port;
       addListener(new InetAddrPort(port));
     }
 
@@ -168,7 +174,7 @@ public class TestHttpServer {
         throws IOException, HttpException {
       request.setState(HttpMessage.__MSG_EDITABLE);
       this.authorizationHttpHeaders.add(request.getHeader().get("Authorization"));
-
+      
       // Read the raw bytes from the request.
       final byte[] rawRequestBytes = new ByteSource() {
         @Override
@@ -176,10 +182,10 @@ public class TestHttpServer {
           return request.getInputStream();
         }
       }.read();
-
-      // Inflate the raw bytes if they are in gzip format.
+      
+      // Inflate the raw bytes if they are in gzip format. 
       boolean isGzipFormat = "gzip".equals(request.getHeader().get(HttpFields.__ContentEncoding));
-
+      
       byte[] requestBytes;
       if (isGzipFormat) {
         requestBytes = new ByteSource(){
@@ -191,12 +197,15 @@ public class TestHttpServer {
       } else {
         requestBytes = rawRequestBytes;
       }
-
+      
       // Convert the (possibly inflated) request bytes to a string.
       this.requestBodies.add(
           ByteSource.wrap(requestBytes).asCharSource(Charset.forName(UTF_8)).read());
-      this.requestBodiesCompressionStates.add(isGzipFormat);
-
+      this.requestBodiesCompressionStates.add(isGzipFormat); 
+      
+      // Simulate a delay in processing.
+      simulateDelay();  
+      
       new ByteSink() {
         @Override
         public OutputStream openStream() {
@@ -206,6 +215,17 @@ public class TestHttpServer {
 
       return getContext(getServerUrl());
     }
+    
+    /**
+     * Simulates delays in processing requests. 
+     */
+    private void simulateDelay() throws HttpException {
+      try {
+        Thread.sleep(this.delay);
+      } catch (InterruptedException e) {
+        throw new HttpException(500, e.getMessage());
+      }
+    }
 
     /**
      * Gets the body of the last request made to the server.
@@ -213,14 +233,14 @@ public class TestHttpServer {
     private String getLastRequestBody() {
       return requestBodies.get(requestBodies.size() - 1);
     }
-
+    
     /**
      * Returns if the last request body was compressed.
      */
     private boolean wasLastRequestBodyCompressed() {
       return requestBodiesCompressionStates.get(requestBodiesCompressionStates.size() - 1);
     }
-
+    
     /**
      * Gets the authorization header of the last request made to the server or
      * {@code null} if none.

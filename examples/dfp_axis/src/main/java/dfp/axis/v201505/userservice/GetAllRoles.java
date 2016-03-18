@@ -27,10 +27,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserService.getAllRoles
- *
- * @author Adam Rogal
  */
 public class GetAllRoles {
 
@@ -43,11 +39,11 @@ public class GetAllRoles {
 
     int i = 0;
     for (Role role : roles) {
-      System.out.printf("%d) Role with ID \"%d\" and name \"%s\" was found.\n", i++, role.getId(),
+      System.out.printf("%d) Role with ID %d and name '%s' was found.%n", i++, role.getId(),
           role.getName());
     }
 
-    System.out.printf("Number of results found: %d\n", roles.length);
+    System.out.printf("Number of results found: %d%n", roles.length);
   }
 
   public static void main(String[] args) throws Exception {

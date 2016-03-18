@@ -27,10 +27,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserService.getCurrentUser
- *
- * @author Adam Rogal
  */
 public class GetCurrentUser {
 
@@ -42,7 +38,7 @@ public class GetCurrentUser {
     User user = userService.getCurrentUser();
 
     System.out.printf(
-        "User with ID \"%d\", name \"%s\", email \"%s\", and role \"%s\" is the current user.\n",
+        "User with ID %d, name '%s', email '%s', and role '%s' is the current user.%n",
         user.getId(), user.getName(), user.getEmail(), user.getRoleName());
   }
 

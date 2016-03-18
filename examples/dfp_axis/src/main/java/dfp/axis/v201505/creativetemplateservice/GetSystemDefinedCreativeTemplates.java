@@ -30,10 +30,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeTemplateService.getCreativeTemplatesByStatement
- *
- * @author Adam Rogal
  */
 public class GetSystemDefinedCreativeTemplates {
 
@@ -61,7 +57,7 @@ public class GetSystemDefinedCreativeTemplates {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CreativeTemplate creativeTemplate : page.getResults()) {
-          System.out.printf("%d) Creative template with ID \"%d\" and name \"%s\" was found.\n",
+          System.out.printf("%d) Creative template with ID %d and name '%s' was found.%n",
               i++, creativeTemplate.getId(), creativeTemplate.getName());
         }
       }
@@ -69,7 +65,7 @@ public class GetSystemDefinedCreativeTemplates {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of results found: %d\n", totalResultSetSize);
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {

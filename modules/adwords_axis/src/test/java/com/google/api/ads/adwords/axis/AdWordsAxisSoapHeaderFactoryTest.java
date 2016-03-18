@@ -39,8 +39,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Tests for the {@link AdWordsAxisSoapHeaderFactory} class.
- *
- * @author Josh Radcliff
  */
 @RunWith(Parameterized.class)
 public class AdWordsAxisSoapHeaderFactoryTest {
@@ -66,7 +64,7 @@ public class AdWordsAxisSoapHeaderFactoryTest {
     this.headerClassPartialName = headerClass.getName().replaceFirst("java.", "");
   }
 
-  @Parameters
+  @Parameters(name="subProduct={0}, interface={1}, headerClass={2}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
 

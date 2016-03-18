@@ -16,9 +16,6 @@ package com.google.api.ads.common.lib.soap;
 
 /**
  * Contains information about the response from the request that was made.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 public class ResponseInfo {
 
@@ -39,7 +36,6 @@ public class ResponseInfo {
   /**
    * Builder for {@link ResponseInfo} objects.
    *
-   * @author Adam Rogal
    */
   public static class Builder {
 

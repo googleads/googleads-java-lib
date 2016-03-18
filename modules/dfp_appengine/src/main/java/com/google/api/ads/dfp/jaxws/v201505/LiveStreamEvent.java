@@ -5,13 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * 
- *             A {@code LiveStreamEvent} represents schedule, content and ad stitching
- *             information of a live stream event.
+ *             A {@code LiveStreamEvent} encapsulates all the information necessary
+ *             to enable DAI (Dynamic Ad Insertion) into a live video stream.
+ *             
+ *             <p>This includes information such as the start and expected end time of
+ *             the event, the URL of the actual content for DFP to pull and insert ads into,
+ *             as well as the metadata necessary to generate ad requests during the event.
  *           
  * 
  * <p>Java class for LiveStreamEvent complex type.
@@ -63,6 +68,7 @@ public class LiveStreamEvent {
     protected Long id;
     protected String name;
     protected String description;
+    @XmlSchemaType(name = "string")
     protected LiveStreamEventStatus status;
     protected DateTime creationDateTime;
     protected DateTime lastModifiedDateTime;

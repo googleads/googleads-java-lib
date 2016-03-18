@@ -34,9 +34,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Tests for {@link AuthorizationHeaderProvider}.
- *
- * @author Adam Rogal
- * @author Joseph DiLallo
  */
 @RunWith(JUnit4.class)
 public class AuthorizationHeaderProviderTest {

@@ -15,11 +15,11 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupLabel;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupOperation;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupServiceInterface;
-import com.google.api.ads.adwords.axis.v201409.cm.AdGroupStatus;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupLabel;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupOperation;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupServiceInterface;
+import com.google.api.ads.adwords.axis.v201506.cm.AdGroupStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -28,8 +28,6 @@ import java.util.List;
 
 /**
  * Specific AbstractGetMutateDelegate for {@link AdGroup}.
- *
- * @author Julian Toledo
  */
 public final class AdGroupDelegate extends
     AbstractGetMutateDelegate<AdGroup, AdGroupOperation, AdGroupServiceInterface> {
@@ -159,10 +157,11 @@ public final class AdGroupDelegate extends
   }
 
   /**
-   * Removes AdGroups. Removing it sets the ad groups' statuses to DELETED and performs a Set.
+   * Removes AdGroups. Removing it sets the ad groups' statuses to {@code REMOVED} and performs a
+   * Set.
    *
    * @param list the list of AdGroups to remove
-   * @return the AdGroups deleted
+   * @return the AdGroups removed
    * @throws RemoteException for communication-related exceptions
    */
   @Override
@@ -174,10 +173,10 @@ public final class AdGroupDelegate extends
   }
 
   /**
-   * Removes AdGroup. Removing it sets the ad group's status to DELETED and performs a Set.
+   * Removes AdGroup. Removing it sets the ad group's status to {@code REMOVED} and performs a Set.
    *
    * @param adGroup the AdGroup to remove
-   * @return the AdGroup deleted
+   * @return the AdGroup removed
    * @throws RemoteException for communication-related exceptions
    */
   @Override

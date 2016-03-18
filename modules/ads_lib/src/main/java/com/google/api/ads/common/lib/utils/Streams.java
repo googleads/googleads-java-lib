@@ -25,8 +25,6 @@ import java.nio.charset.Charset;
 
 /**
  * Helper class to perform stream operations.
- *
- * @author Kevin Winter
  */
 public final class Streams {
 

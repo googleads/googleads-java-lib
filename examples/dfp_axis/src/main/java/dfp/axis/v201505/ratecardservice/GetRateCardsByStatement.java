@@ -29,10 +29,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: RateCardService.getRateCardsByStatement
- *
- * @author Nicholas Chen
  */
 public class GetRateCardsByStatement {
 
@@ -59,7 +55,7 @@ public class GetRateCardsByStatement {
         int i = page.getStartIndex();
         for (RateCard rateCard : page.getResults()) {
           System.out.printf(
-              "%d) Rate card with ID \"%d\", name \"%s\", and currency \"%s\" was found.%n", i++,
+              "%d) Rate card with ID %d, name '%s', and currency '%s' was found.%n", i++,
               rateCard.getId(), rateCard.getName(), rateCard.getCurrencyCode());
         }
       }

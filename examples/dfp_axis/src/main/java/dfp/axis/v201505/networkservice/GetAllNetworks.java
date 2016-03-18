@@ -28,10 +28,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: NetworkService.getAllNetworks
- *
- * @author Adam Rogal
  */
 public class GetAllNetworks {
 
@@ -47,11 +43,11 @@ public class GetAllNetworks {
     int i = 0;
     for (Network network : networks) {
       System.out.printf(
-          "%d) Network with network code \"%s\" and display name \"%s\" was found.\n",
+          "%d) Network with network code '%s' and display name '%s' was found.%n",
           i++, network.getNetworkCode(), network.getDisplayName());
     }
 
-    System.out.printf("Number of networks found: %d\n", networks.length);
+    System.out.printf("Number of networks found: %d%n", networks.length);
   }
 
   public static void main(String[] args) throws Exception {

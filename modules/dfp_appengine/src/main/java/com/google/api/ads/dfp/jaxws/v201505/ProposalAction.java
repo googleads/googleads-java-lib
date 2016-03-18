@@ -32,11 +32,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProposalAction")
 @XmlSeeAlso({
-    ArchiveProposals.class,
+    UnarchiveProposals.class,
     RetractProposals.class,
-    SubmitProposalsForApproval.class,
     BypassProposalWorkflowRules.class,
-    UnarchiveProposals.class
+    SubmitProposalsForApproval.class,
+    ArchiveProposals.class
 })
 public abstract class ProposalAction {
 

@@ -37,8 +37,6 @@ import org.mockito.MockitoAnnotations;
 
 /**
  * Test for {@link AdWordsServiceClientFactoryHelper}.
- *
- * @author Kevin Winter
  */
 @RunWith(JUnit4.class)
 public class AdWordsServiceClientFactoryHelperTest {
@@ -49,9 +47,8 @@ public class AdWordsServiceClientFactoryHelperTest {
   @Mock
   private AdsServiceDescriptorFactoryInterface<AdWordsServiceDescriptor>
       adsServiceDescriptorFactory;
-  @SuppressWarnings({"rawtypes", "unchecked"}) /* Due to problem with guice binding */
-  @Mock
-  private SoapClientHandlerInterface soapClientHandler;
+  @Mock /* The type argument for SoapClientHandlerInterface does not matter for this test. */
+  private SoapClientHandlerInterface<Object> soapClientHandler;
   @Mock
   private AdsLibConfiguration adsLibConfiguration;
 

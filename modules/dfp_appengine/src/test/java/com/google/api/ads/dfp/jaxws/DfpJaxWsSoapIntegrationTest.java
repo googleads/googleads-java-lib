@@ -20,8 +20,8 @@ import static org.junit.Assert.assertFalse;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
 import com.google.api.ads.dfp.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.dfp.jaxws.v201502.Company;
-import com.google.api.ads.dfp.jaxws.v201502.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201602.Company;
+import com.google.api.ads.dfp.jaxws.v201602.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -31,27 +31,32 @@ import com.google.common.collect.Lists;
 
 import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import javax.xml.ws.WebServiceException;
+
 /**
  * Tests that a DFP JAX-WS SOAP call can be made end-to-end.
- *
- * @author Adam Rogal
  */
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201502";  
+  private static final String API_VERSION = "v201602";  
+
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none(); 
   
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "false");
   }
-
+  
   /**
    * Tests making a JAX-WS DFP API call with OAuth2.
    */
@@ -80,4 +85,33 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
         testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
+  
+  /**
+   * Tests that the request timeout in ads.properties is enforced.
+   */
+  @Test
+  public void testRequestTimeoutEnforced() throws Exception {
+    System.setProperty("api.dfp.soapRequestTimeout", "100");
+    
+    testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
+    testHttpServer.setDelay(200);
+    
+    GoogleCredential credential = new GoogleCredential.Builder().setTransport(
+        new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
+    credential.setAccessToken("TEST_ACCESS_TOKEN");
+
+    DfpSession session = new DfpSession.Builder().withApplicationName("TEST_APP")
+        .withOAuth2Credential(credential)
+        .withEndpoint(testHttpServer.getServerUrl())
+        .withNetworkCode("TEST_NETWORK_CODE")
+        .build();
+
+    CompanyServiceInterface companyService =
+        new DfpServices().get(session, CompanyServiceInterface.class);
+    
+    thrown.expect(WebServiceException.class);
+    thrown.expectMessage("Read timed out");
+    companyService.createCompanies(Lists.newArrayList(new Company()));
+  }
+  
 }

@@ -33,11 +33,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: UserTeamAssociationService.getUserTeamAssociationsByStatement
- * Tags: UserTeamAssociationService.performUserTeamAssociationAction
- *
- * @author Adam Rogal
  */
 public class DeleteUserTeamAssociations {
 
@@ -69,8 +64,8 @@ public class DeleteUserTeamAssociations {
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (UserTeamAssociation userTeamAssociation : page.getResults()) {
-          System.out.printf("%d) User team association with user ID \"%d\" and "
-              + "team ID \"%d\" will be deleted.\n", i++, userTeamAssociation.getUserId(),
+          System.out.printf("%d) User team association with user ID %d and "
+              + "team ID %d will be deleted.%n", i++, userTeamAssociation.getUserId(),
               userTeamAssociation.getTeamId());
         }
       }
@@ -78,7 +73,7 @@ public class DeleteUserTeamAssociations {
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of user team associations to be deleted: %d\n", totalResultSetSize);
+    System.out.printf("Number of user team associations to be deleted: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -93,7 +88,7 @@ public class DeleteUserTeamAssociations {
           action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of user team associations deleted: %d\n",
+        System.out.printf("Number of user team associations deleted: %d%n",
             result.getNumChanges());
       } else {
         System.out.println("No user team associations were deleted.");

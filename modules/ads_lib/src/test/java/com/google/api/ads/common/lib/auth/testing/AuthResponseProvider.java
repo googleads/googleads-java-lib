@@ -23,8 +23,6 @@ import java.nio.charset.Charset;
 
 /**
  * Provides standard auth responses useful for testing.
- * 
- * @author Josh Radcliff
  */
 public class AuthResponseProvider {
 

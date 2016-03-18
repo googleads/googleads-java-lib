@@ -31,11 +31,6 @@ import com.google.api.client.auth.oauth2.Credential;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: PlacementService.getPlacementsByStatement
- * Tags: PlacementService.performPlacementAction
- *
- * @author Adam Rogal
  */
 public class DeactivatePlacements {
 
@@ -68,14 +63,14 @@ public class DeactivatePlacements {
         int i = page.getStartIndex();
         for (Placement placement : page.getResults()) {
           System.out.printf(
-              "%d) Placement with ID \"%d\" will be deactivated.\n", i++, placement.getId());
+              "%d) Placement with ID %d will be deactivated.%n", i++, placement.getId());
         }
       }
 
       statementBuilder.increaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
     } while (statementBuilder.getOffset() < totalResultSetSize);
 
-    System.out.printf("Number of placements to be deactivated: %d\n", totalResultSetSize);
+    System.out.printf("Number of placements to be deactivated: %d%n", totalResultSetSize);
 
     if (totalResultSetSize > 0) {
       // Remove limit and offset from statement.
@@ -90,7 +85,7 @@ public class DeactivatePlacements {
           placementService.performPlacementAction(action, statementBuilder.toStatement());
 
       if (result != null && result.getNumChanges() > 0) {
-        System.out.printf("Number of placements deactivated: %d\n", result.getNumChanges());
+        System.out.printf("Number of placements deactivated: %d%n", result.getNumChanges());
       } else {
         System.out.println("No placements were deactivated.");
       }

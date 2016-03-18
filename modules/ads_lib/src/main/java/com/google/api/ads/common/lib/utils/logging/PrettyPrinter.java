@@ -31,8 +31,6 @@ import javax.xml.transform.stream.StreamSource;
 
 /**
  * A utility class that pretty prints XML messages.
- *
- * @author Joseph DiLallo
  */
 public final class PrettyPrinter implements PrettyPrinterInterface {
 

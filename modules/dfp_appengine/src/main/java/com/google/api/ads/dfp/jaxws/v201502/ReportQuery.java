@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -61,9 +62,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ReportQuery {
 
+    @XmlSchemaType(name = "string")
     protected List<Dimension> dimensions;
+    @XmlSchemaType(name = "string")
     protected ReportQueryAdUnitView adUnitView;
+    @XmlSchemaType(name = "string")
     protected List<Column> columns;
+    @XmlSchemaType(name = "string")
     protected List<DimensionAttribute> dimensionAttributes;
     @XmlElement(type = Long.class)
     protected List<Long> customFieldIds;
@@ -71,7 +76,9 @@ public class ReportQuery {
     protected List<Long> contentMetadataKeyHierarchyCustomTargetingKeyIds;
     protected Date startDate;
     protected Date endDate;
+    @XmlSchemaType(name = "string")
     protected DateRangeType dateRangeType;
+    @XmlSchemaType(name = "string")
     protected List<DimensionFilter> dimensionFilters;
     protected Statement statement;
     protected String timeZone;

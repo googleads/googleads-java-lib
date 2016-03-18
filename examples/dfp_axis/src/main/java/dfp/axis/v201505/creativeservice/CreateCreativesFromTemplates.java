@@ -39,10 +39,6 @@ import java.util.Random;
  *
  * Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
- *
- * Tags: CreativeService.createCreatives
- *
- * @author Adam Rogal
  */
 public class CreateCreativesFromTemplates {
 
@@ -118,8 +114,8 @@ public class CreateCreativesFromTemplates {
         creativeService.createCreatives(new Creative[] {templateCreative});
 
     for (Creative createdCreative : creatives) {
-      System.out.printf("A creative with ID \"%d\", name \"%s\", and type \"%s\""
-          + " was created and can be previewed at: %s\n", createdCreative.getId(),
+      System.out.printf("A creative with ID %d, name '%s', and type '%s'"
+          + " was created and can be previewed at: %s%n", createdCreative.getId(),
           createdCreative.getName(), createdCreative.getClass().getSimpleName(),
           createdCreative.getPreviewUrl());
     }
