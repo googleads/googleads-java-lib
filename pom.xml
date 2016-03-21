@@ -22,7 +22,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>client-libs-parent</artifactId>
-  <version>2.11.1-SNAPSHOT</version>
+  <version>2.11.0</version>
 
   <packaging>pom</packaging>
   <name>Google Ads APIs Java Client Libraries Parent</name>
@@ -135,7 +135,7 @@
         <version>3.3</version>
         <configuration>
           <source>1.6</source>
-          <target>1.6</target>
+          <target>1.8</target>
           <showWarnings>false</showWarnings>
         </configuration>
       </plugin>
@@ -173,6 +173,46 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.3</version>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <!-- put your configurations here -->
+          <shadedArtifactAttached>false</shadedArtifactAttached>
+          <createDependencyReducedPom>true</createDependencyReducedPom>
+          <createSourcesJar>false</createSourcesJar>
+          <shadeTestJar>true</shadeTestJar>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <relocations>
+                <relocation>
+                  <pattern>com.google.common</pattern>
+                  <shadedPattern>com.shaded.google.common</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.joda.time</pattern>
+                  <shadedPattern>org.shaded.joda.time</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>com.fasterxml.jackson</pattern>
+                  <shadedPattern>com.shaded.fasterxml.jackson</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.apache.commons</pattern>
+                  <shadedPattern>org.shaded.apache.commons</shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -186,6 +226,19 @@
     <module>modules/dfp_axis</module>
     <module>modules/adwords_axis_utility_extension</module>
   </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>kinja-nexus</id>
+      <name>Internal Releases</name>
+      <url>https://nexus.kinja-ops.com/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>kinja-nexus</id>
+      <name>Internal Releases</name>
+      <url>https://nexus.kinja-ops.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <profiles>
     <profile>
