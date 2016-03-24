@@ -142,7 +142,7 @@ public enum ConversionTrackingErrorReason {
 
     /**
      * 
-     *                 The user specified two identical app ids when attempting to create or rename a
+     *                 The user specified two identical app ids when attempting to create or modify a
      *                 conversion type.
      *               
      * 

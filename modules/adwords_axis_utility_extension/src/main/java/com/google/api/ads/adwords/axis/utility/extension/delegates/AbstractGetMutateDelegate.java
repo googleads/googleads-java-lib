@@ -18,10 +18,10 @@ import com.google.api.ads.adwords.axis.utility.extension.exception.UtilityLibrar
 import com.google.api.ads.adwords.axis.utility.extension.util.ListUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.ReflectionUtil;
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201506.cm.ListReturnValue;
-import com.google.api.ads.adwords.axis.v201506.cm.Operation;
-import com.google.api.ads.adwords.axis.v201506.cm.Operator;
-import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomerReturnValue;
+import com.google.api.ads.adwords.axis.v201603.cm.ListReturnValue;
+import com.google.api.ads.adwords.axis.v201603.cm.Operation;
+import com.google.api.ads.adwords.axis.v201603.cm.Operator;
+import com.google.api.ads.adwords.axis.v201603.mcm.ManagedCustomerReturnValue;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
@@ -36,7 +36,7 @@ import java.util.List;
  * Abstract class that encapsulates mutates and operations.
  *
  * @param <T> type of object that the Service works with, for example Campaign, AdGroup, etc.
- * @param <OperationT> type of the com.google.api.adwords.v201506.cm.Operation specific for
+ * @param <OperationT> type of the com.google.api.adwords.v201601.cm.Operation specific for
  *        the object T for example: CampaignOperation, AdGroupOperation, etc.
  * @param <S> the service interface class. This is a class representing a SOAP service.
  *
@@ -60,7 +60,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession, Class<T> classT,
@@ -76,7 +76,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    * @param mutateMethodName a custom mutate method name
    */
@@ -94,7 +94,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    */
   @VisibleForTesting
@@ -112,7 +112,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param adWordsSession the {@code adWordsSession} to use with the service
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    * @param mutateMethodName a custom mutate method name
    */
@@ -130,7 +130,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
@@ -148,7 +148,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param classS the service interface class for the SOAP service
    * @param mutateMethodName a custom mutate method name
    */
@@ -168,7 +168,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    */
   protected AbstractGetMutateDelegate(AdWordsSession adWordsSession,
@@ -186,7 +186,7 @@ public abstract class AbstractGetMutateDelegate<T, OperationT extends Operation,
    * @param selectorFields for the Generic Selectors using the SelectorField class
    * @param classT type of object that the Service works with, for example Campaign, AdGroup, etc.
    * @param classOperationT sub-class of the
-   *        com.google.api.adwords.v201506.cm.Operation specific for classT
+   *        com.google.api.adwords.v201601.cm.Operation specific for classT
    * @param service the custom service class for the SOAP service
    * @param mutateMethodName a custom mutate method name
    */

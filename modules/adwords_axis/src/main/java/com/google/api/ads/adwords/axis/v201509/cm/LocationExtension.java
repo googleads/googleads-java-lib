@@ -12,9 +12,7 @@ package com.google.api.ads.adwords.axis.v201509.cm;
  * Location based ad extension.
  */
 public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.cm.AdExtension  implements java.io.Serializable {
-    /* Address of the location (as is populated in GeoLocation by
-     *                     GeoLocationService). <b>Note:</b> When specifying
-     * both
+    /* Address of the location. <b>Note:</b> When specifying both
      *                     {@link Address#provinceCode provinceCode} and
      *                     {@link Address#provinceName provinceName}, only
      * provinceName is saved and
@@ -25,14 +23,10 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
      *                     ignored by the service. */
     private com.google.api.ads.adwords.axis.v201509.cm.Address address;
 
-    /* The lat/long point of the location (as is populated in GeoLocation
-     * by
-     *                     GeoLocationService). */
+    /* The lat/long point of the location. */
     private com.google.api.ads.adwords.axis.v201509.cm.GeoPoint geoPoint;
 
-    /* Byte data encoding address and geo point (as is populated in
-     * GeoLocation
-     *                     by GeoLocationService).
+    /* Byte data encoding address and geo point.
      *                     Input only. Required on location extension creation. */
     private byte[] encodedLocation;
 
@@ -84,9 +78,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Gets the address value for this LocationExtension.
      * 
-     * @return address   * Address of the location (as is populated in GeoLocation by
-     *                     GeoLocationService). <b>Note:</b> When specifying
-     * both
+     * @return address   * Address of the location. <b>Note:</b> When specifying both
      *                     {@link Address#provinceCode provinceCode} and
      *                     {@link Address#provinceName provinceName}, only
      * provinceName is saved and
@@ -104,9 +96,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Sets the address value for this LocationExtension.
      * 
-     * @param address   * Address of the location (as is populated in GeoLocation by
-     *                     GeoLocationService). <b>Note:</b> When specifying
-     * both
+     * @param address   * Address of the location. <b>Note:</b> When specifying both
      *                     {@link Address#provinceCode provinceCode} and
      *                     {@link Address#provinceName provinceName}, only
      * provinceName is saved and
@@ -124,9 +114,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Gets the geoPoint value for this LocationExtension.
      * 
-     * @return geoPoint   * The lat/long point of the location (as is populated in GeoLocation
-     * by
-     *                     GeoLocationService).
+     * @return geoPoint   * The lat/long point of the location.
      */
     public com.google.api.ads.adwords.axis.v201509.cm.GeoPoint getGeoPoint() {
         return geoPoint;
@@ -136,9 +124,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Sets the geoPoint value for this LocationExtension.
      * 
-     * @param geoPoint   * The lat/long point of the location (as is populated in GeoLocation
-     * by
-     *                     GeoLocationService).
+     * @param geoPoint   * The lat/long point of the location.
      */
     public void setGeoPoint(com.google.api.ads.adwords.axis.v201509.cm.GeoPoint geoPoint) {
         this.geoPoint = geoPoint;
@@ -148,9 +134,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Gets the encodedLocation value for this LocationExtension.
      * 
-     * @return encodedLocation   * Byte data encoding address and geo point (as is populated in
-     * GeoLocation
-     *                     by GeoLocationService).
+     * @return encodedLocation   * Byte data encoding address and geo point.
      *                     Input only. Required on location extension creation.
      */
     public byte[] getEncodedLocation() {
@@ -161,9 +145,7 @@ public class LocationExtension  extends com.google.api.ads.adwords.axis.v201509.
     /**
      * Sets the encodedLocation value for this LocationExtension.
      * 
-     * @param encodedLocation   * Byte data encoding address and geo point (as is populated in
-     * GeoLocation
-     *                     by GeoLocationService).
+     * @param encodedLocation   * Byte data encoding address and geo point.
      *                     Input only. Required on location extension creation.
      */
     public void setEncodedLocation(byte[] encodedLocation) {

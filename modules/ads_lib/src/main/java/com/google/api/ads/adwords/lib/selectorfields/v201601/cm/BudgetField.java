@@ -51,7 +51,8 @@ public enum BudgetField implements EntityField {
    * Number of campaigns actively using this budget.
    * This field is only populated for Get operations.
    */
-  BudgetReferenceCount(false),
+  @Filterable
+  BudgetReferenceCount(true),
 
   /**
    * 

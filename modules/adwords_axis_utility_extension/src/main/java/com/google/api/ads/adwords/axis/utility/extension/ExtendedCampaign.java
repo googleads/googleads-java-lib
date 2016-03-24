@@ -14,17 +14,17 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.v201506.ch.CampaignChangeData;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201506.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201506.cm.CampaignCriterion;
-import com.google.api.ads.adwords.axis.v201506.cm.CampaignFeed;
-import com.google.api.ads.adwords.axis.v201506.cm.CampaignLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.Criterion;
-import com.google.api.ads.adwords.axis.v201506.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201506.cm.Experiment;
-import com.google.api.ads.adwords.axis.v201506.cm.NegativeCampaignCriterion;
+import com.google.api.ads.adwords.axis.v201603.ch.CampaignChangeData;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201603.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201603.cm.CampaignCriterion;
+import com.google.api.ads.adwords.axis.v201603.cm.CampaignFeed;
+import com.google.api.ads.adwords.axis.v201603.cm.CampaignLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.Criterion;
+import com.google.api.ads.adwords.axis.v201603.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201603.cm.Experiment;
+import com.google.api.ads.adwords.axis.v201603.cm.NegativeCampaignCriterion;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
@@ -95,7 +95,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> remove is not supported,
    * instead, set its status to {@code REMOVED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.CampaignServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.CampaignServiceInterface}.</p>
    *
    * @return the updated ExtendedCampaign
    * @throws RemoteException for communication-related exceptions
@@ -329,7 +329,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code REMOVED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiments the list of Experiments to update
    * @return the updated list of Experiments
@@ -344,7 +344,7 @@ public final class ExtendedCampaign {
    *
    * <p class="note"><b>Note:</b> removeExperiments is not supported,
    * instead, set its status to {@code REMOVED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.ExperimentServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.ExperimentServiceInterface}.</p>
    *
    * @param experiment the Experiment to update
    * @return the updated Experiment

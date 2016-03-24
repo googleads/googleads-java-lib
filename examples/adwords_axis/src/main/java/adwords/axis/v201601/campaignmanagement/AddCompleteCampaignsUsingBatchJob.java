@@ -80,7 +80,8 @@ public class AddCompleteCampaignsUsingBatchJob {
   private static final long NUMBER_OF_KEYWORDS_TO_ADD = 5;
   private static final int MAX_POLL_ATTEMPTS = 5;
   private static final Set<BatchJobStatus> PENDING_STATUSES =
-      Sets.newHashSet(BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE);
+      Sets.newHashSet(
+          BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING);
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -200,6 +201,8 @@ public class AddCompleteCampaignsUsingBatchJob {
             processingError.getErrorString(), processingError.getFieldPath(),
             processingError.getReason());
       }
+    } else {
+      System.out.println("No processing errors found.");
     }
 
     if (batchJob.getDownloadUrl() != null && batchJob.getDownloadUrl().getUrl() != null) {
@@ -210,6 +213,8 @@ public class AddCompleteCampaignsUsingBatchJob {
         String outcome = mutateResult.getErrorList() == null ? "SUCCESS" : "FAILURE";
         System.out.printf("  Operation [%d] - %s%n", mutateResult.getIndex(), outcome);
       }
+    } else {
+      System.out.println("No results available for download.");
     }
   }
 

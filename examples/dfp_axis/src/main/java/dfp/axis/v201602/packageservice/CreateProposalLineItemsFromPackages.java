@@ -36,7 +36,7 @@ import java.util.Arrays;
  * "ads.properties" file. See README for more info.
  */
 public class CreateProposalLineItemsFromPackages {
-  
+
   // Set the ID of the package to create line items from.
   private static final String PACKAGE_ID = "INSERT_PACKAGE_ID_HERE";
 
@@ -53,7 +53,7 @@ public class CreateProposalLineItemsFromPackages {
         .orderBy("id ASC")
         .limit(1)
         .withBindVariableValue("id", packageId);
-    
+
     // Get the package.
     PackagePage page = packageService.getPackagesByStatement(statementBuilder.toStatement());
 
@@ -61,14 +61,14 @@ public class CreateProposalLineItemsFromPackages {
 
     System.out.printf("Package with ID %d will create proposal line items using"
         + " product package with ID %d.%n", pkg.getId(), pkg.getProductPackageId());
-    
+
     // Remove limit and offset from statement.
     statementBuilder.removeLimitAndOffset();
-    
+
     // Create action to activate packages.
-    com.google.api.ads.dfp.axis.v201602.CreateProposalLineItemsFromPackages action = 
+    com.google.api.ads.dfp.axis.v201602.CreateProposalLineItemsFromPackages action =
         new com.google.api.ads.dfp.axis.v201602.CreateProposalLineItemsFromPackages();
-    
+
     // Perform action.
     UpdateResult result = packageService.performPackageAction(
         action, statementBuilder.toStatement());

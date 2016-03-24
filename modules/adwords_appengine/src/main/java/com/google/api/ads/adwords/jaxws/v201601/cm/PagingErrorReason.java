@@ -25,7 +25,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PagingErrorReason {
 
+
+    /**
+     * 
+     *                 The start index value cannot be a negative number.
+     *               
+     * 
+     */
     START_INDEX_CANNOT_BE_NEGATIVE,
+
+    /**
+     * 
+     *                 The number of results cannot be a negative number.
+     *               
+     * 
+     */
     NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
 
     /**

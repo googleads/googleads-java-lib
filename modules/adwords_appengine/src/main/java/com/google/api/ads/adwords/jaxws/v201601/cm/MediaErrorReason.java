@@ -189,6 +189,13 @@ public enum MediaErrorReason {
      * 
      */
     UNSUPPORTED_OPERATION,
+
+    /**
+     * 
+     *                 The specified type is not supported.
+     *               
+     * 
+     */
     UNSUPPORTED_TYPE,
 
     /**

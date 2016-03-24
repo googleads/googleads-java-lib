@@ -33,40 +33,40 @@ import java.util.Random;
  * "ads.properties" file. See README for more info.
  */
 public class CreatePackages {
-  
+
   // Set the ID of the product package to create the package from.
   private static final String PRODUCT_PACKAGE_ID = "INSERT_PRODUCT_PACKAGE_ID";
-  
+
   // Set the ID of the proposal to create proposal line items under.
   private static final String PROPOSAL_ID = "INSERT_PROPOSAL_ID";
-  
+
   // Set the ID of the rate card the proposal line items belonging to the product package
   // are priced from.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long productPackageId, long proposalId, long rateCardId)
       throws Exception {
     // Get the PackageService.
     PackageServiceInterface packageService =
         dfpServices.get(session, PackageServiceInterface.class);
-    
+
     // Create a local package.
     Package pkg = new Package();
     pkg.setName("Package #" + new Random().nextInt(Integer.MAX_VALUE));
-    
+
     // Set the proposal ID for the package.
     pkg.setProposalId(proposalId);
-    
+
     // Set the product package ID to create the package from.
     pkg.setProductPackageId(productPackageId);
-    
+
     // Set the rate card ID the proposal line items are priced with.
     pkg.setRateCardId(rateCardId);
 
     // Create the package on the server.
     Package[] packages = packageService.createPackages(new Package[] { pkg });
-    
+
     for (Package createdPackage : packages) {
       System.out.printf("A package with ID %d and name '%s' was created.%n",
           createdPackage.getId(), createdPackage.getName());

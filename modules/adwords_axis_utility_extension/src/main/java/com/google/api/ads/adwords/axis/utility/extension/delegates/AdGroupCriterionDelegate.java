@@ -15,13 +15,13 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields;
-import com.google.api.ads.adwords.axis.utils.v201506.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionOperation;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionServiceInterface;
-import com.google.api.ads.adwords.axis.v201506.cm.CriterionType;
-import com.google.api.ads.adwords.axis.v201506.cm.CriterionUse;
+import com.google.api.ads.adwords.axis.utils.v201603.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionOperation;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201603.cm.CriterionType;
+import com.google.api.ads.adwords.axis.v201603.cm.CriterionUse;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 import java.rmi.RemoteException;

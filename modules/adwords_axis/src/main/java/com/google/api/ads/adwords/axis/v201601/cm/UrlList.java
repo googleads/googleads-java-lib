@@ -17,7 +17,9 @@ public class UrlList  implements java.io.Serializable {
     /* List of URLs.  On SET operation, empty list indicates to clear
      * the list.
      *                 <span class="constraint CollectionSize">The maximum
-     * size of this collection is 10.</span> */
+     * size of this collection is 10.</span>
+     *                 <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span> */
     private java.lang.String[] urls;
 
     public UrlList() {
@@ -36,6 +38,8 @@ public class UrlList  implements java.io.Serializable {
      * the list.
      *                 <span class="constraint CollectionSize">The maximum
      * size of this collection is 10.</span>
+     *                 <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public java.lang.String[] getUrls() {
         return urls;
@@ -49,6 +53,8 @@ public class UrlList  implements java.io.Serializable {
      * the list.
      *                 <span class="constraint CollectionSize">The maximum
      * size of this collection is 10.</span>
+     *                 <span class="constraint ContentsStringLength">Strings
+     * in this field must be non-empty (trimmed).</span>
      */
     public void setUrls(java.lang.String[] urls) {
         this.urls = urls;

@@ -26,9 +26,14 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 
      *                 Currently, bid modifier overrides are supported only
      * for HighEndMobile platform
-     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
-     * method returns
-     *                 all platform criteria.
+     *                 criterion (ID=30001) and preferred content criterion
+     * (ID = 400).
+     *                 The {@linkplain AdGroupBidModifierService#get} method
+     * returns all platform and
+     *                 preferred content criteria.
+     *                 
+     *                 Preferred Content Criteria is available in versions
+     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201601.cm.Criterion criterion;
@@ -118,9 +123,14 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 
      *                 Currently, bid modifier overrides are supported only
      * for HighEndMobile platform
-     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
-     * method returns
-     *                 all platform criteria.
+     *                 criterion (ID=30001) and preferred content criterion
+     * (ID = 400).
+     *                 The {@linkplain AdGroupBidModifierService#get} method
+     * returns all platform and
+     *                 preferred content criteria.
+     *                 
+     *                 Preferred Content Criteria is available in versions
+     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -136,9 +146,14 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 
      *                 Currently, bid modifier overrides are supported only
      * for HighEndMobile platform
-     *                 criterion (ID=30001). The {@linkplain AdGroupBidModifierService#get}
-     * method returns
-     *                 all platform criteria.
+     *                 criterion (ID=30001) and preferred content criterion
+     * (ID = 400).
+     *                 The {@linkplain AdGroupBidModifierService#get} method
+     * returns all platform and
+     *                 preferred content criteria.
+     *                 
+     *                 Preferred Content Criteria is available in versions
+     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

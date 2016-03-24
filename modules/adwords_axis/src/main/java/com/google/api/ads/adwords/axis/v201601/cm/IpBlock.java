@@ -14,9 +14,17 @@ package com.google.api.ads.adwords.axis.v201601.cm;
  *             <ul>
  *             <li>IPv4 and IPv6 addresses</li>
  *             <li>individual addresses (192.168.0.1)</li>
- *             <li>masks for individual addresses (192.168.0.1/32)</li>
- * <li>masks for Class C networks (192.168.0.1/24)</li>
- *             </ul>
+ *             <li>CIDR IP address blocks (e.g., 1.2.3.0/24, 2001:db8::/32).
+ * </ul>
+ *             
+ *             <p> Note that for a CIDR IP address block, the specified
+ * IP address portion must be properly
+ *             truncated (i.e. all the host bits must be zero) or the
+ * input is considered malformed.
+ *             For example, "1.2.3.0/24" is accepted but "1.2.3.4/24"
+ * is not.
+ *             Similarly, for IPv6, "2001:db8::/32" is accepted whereas
+ * "2001:db8::1/32" is not.
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX when it is contained within Operators: ADD, SET.</span>
  */

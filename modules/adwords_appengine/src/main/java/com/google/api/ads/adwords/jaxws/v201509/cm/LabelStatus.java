@@ -25,7 +25,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum LabelStatus {
 
+
+    /**
+     * 
+     *                 The label is enabled.
+     *               
+     * 
+     */
     ENABLED,
+
+    /**
+     * 
+     *                 The label has been removed.
+     *               
+     * 
+     */
     REMOVED,
 
     /**

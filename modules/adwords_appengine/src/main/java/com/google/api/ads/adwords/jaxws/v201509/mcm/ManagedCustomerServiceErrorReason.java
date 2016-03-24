@@ -50,7 +50,7 @@ public enum ManagedCustomerServiceErrorReason {
 
     /**
      * 
-     *                 The user is not authorized to perform the action
+     *                 The user is not authorized to perform the action.
      *               
      * 
      */

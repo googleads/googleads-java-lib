@@ -57,8 +57,9 @@ public enum BatchJobStatus {
     /**
      * 
      *                 Indicates that a job is being canceled. It will remain in this status until any
-     *                 partial results are written, and then will be marked CANCELED. This status is
-     *                 not supported in SET operations.
+     *                 partial results are written, and then will be marked CANCELED. Send this status
+     *                 in a SET operation to cancel a job that is in progress. This is the only status
+     *                 that can be explicitly set.
      *               
      * 
      */
@@ -67,7 +68,7 @@ public enum BatchJobStatus {
     /**
      * 
      *                 Indicates that a job has been canceled. It will be garbage-collected 30 days
-     *                 after cancellation. This status is not currently supported in SET operations.
+     *                 after cancellation.
      *               
      * 
      */

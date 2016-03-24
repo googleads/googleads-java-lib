@@ -14,7 +14,7 @@
 
 package com.google.api.ads.adwords.axis.utility.extension.exception;
 
-import com.google.api.ads.adwords.axis.v201506.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201603.cm.ApiException;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 

@@ -159,6 +159,12 @@ public enum CampaignCriterionField implements EntityField {
    * 
    */
   @Filterable
+  IpAddress(true),
+
+  /**
+   * 
+   */
+  @Filterable
   IsNegative(true),
 
   /**

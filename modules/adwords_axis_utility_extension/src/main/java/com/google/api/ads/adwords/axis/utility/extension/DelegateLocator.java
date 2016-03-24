@@ -34,7 +34,6 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.ExperimentDel
 import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedItemDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.FeedMappingDelegate;
-import com.google.api.ads.adwords.axis.utility.extension.delegates.GeoLocationDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.LabelDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.LocationCriterionDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.ManagedCustomerDelegate;
@@ -43,7 +42,7 @@ import com.google.api.ads.adwords.axis.utility.extension.delegates.TargetingIdea
 import com.google.api.ads.adwords.axis.utility.extension.delegates.TrafficEstimatorDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.delegates.UserListDelegate;
 import com.google.api.ads.adwords.axis.utility.extension.util.AdWordsSessionUtil;
-import com.google.api.ads.adwords.axis.v201506.mcm.ManagedCustomer;
+import com.google.api.ads.adwords.axis.v201603.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 
 /**
@@ -78,7 +77,6 @@ public final class DelegateLocator{
   private volatile FeedDelegate feedDelegate;
   private volatile FeedItemDelegate feedItemDelegate;
   private volatile FeedMappingDelegate feedMappingDelegate;
-  private volatile GeoLocationDelegate geoLocationDelegate;
   private volatile LocationCriterionDelegate locationCriterionDelegate;
   private volatile ManagedCustomerDelegate managedCustomerDelegate;
   private volatile MediaDelegate mediaDelegate;
@@ -155,7 +153,6 @@ public final class DelegateLocator{
       FeedDelegate feedDelegate,
       FeedItemDelegate feedItemDelegate,
       FeedMappingDelegate feedMappingDelegate,
-      GeoLocationDelegate geoLocationDelegate,
       LocationCriterionDelegate locationCriterionDelegate,
       MediaDelegate mediaDelegate,
       TargetingIdeaDelegate targetingIdeaDelegate,
@@ -184,7 +181,6 @@ public final class DelegateLocator{
     this.feedDelegate = feedDelegate;
     this.feedItemDelegate = feedItemDelegate;
     this.feedMappingDelegate = feedMappingDelegate;
-    this.geoLocationDelegate = geoLocationDelegate;
     this.locationCriterionDelegate = locationCriterionDelegate;
     this.mediaDelegate = mediaDelegate;
     this.targetingIdeaDelegate = targetingIdeaDelegate;
@@ -485,20 +481,6 @@ public final class DelegateLocator{
       }
     }
     return feedMappingDelegate;
-  }
-
-  /**
-   * Gets the GeoLocationDelegate associated with the{@code adWordsSession}.
-   */
-  public GeoLocationDelegate getGeoLocationDelegate() {
-    if (geoLocationDelegate == null) {
-      synchronized (this) {
-        if (geoLocationDelegate == null) {
-          geoLocationDelegate = new GeoLocationDelegate(adWordsSession);
-        }
-      }
-    }
-    return geoLocationDelegate;
   }
 
   /**

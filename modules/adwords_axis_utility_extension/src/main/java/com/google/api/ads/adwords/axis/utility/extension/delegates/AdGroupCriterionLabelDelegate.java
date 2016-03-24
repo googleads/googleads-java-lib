@@ -15,9 +15,9 @@
 package com.google.api.ads.adwords.axis.utility.extension.delegates;
 
 import com.google.api.ads.adwords.axis.utility.extension.util.SelectorFields.FieldType;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionLabelOperation;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionLabelOperation;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.common.annotations.VisibleForTesting;
 

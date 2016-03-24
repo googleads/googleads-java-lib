@@ -167,13 +167,6 @@ public class ExpressBusinessServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201601", "Date");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201601.cm.Date.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201601", "DateError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201601.cm.DateError.class;

@@ -14,18 +14,18 @@
 
 package com.google.api.ads.adwords.axis.utility.extension;
 
-import com.google.api.ads.adwords.axis.v201506.cm.Ad;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupAd;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupAdLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupBidLandscape;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupCriterionLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupFeed;
-import com.google.api.ads.adwords.axis.v201506.cm.AdGroupLabel;
-import com.google.api.ads.adwords.axis.v201506.cm.AdParam;
-import com.google.api.ads.adwords.axis.v201506.cm.CriterionBidLandscape;
-import com.google.api.ads.adwords.axis.v201506.cm.CriterionUse;
+import com.google.api.ads.adwords.axis.v201603.cm.Ad;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupAd;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupAdLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupBidLandscape;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupCriterionLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupFeed;
+import com.google.api.ads.adwords.axis.v201603.cm.AdGroupLabel;
+import com.google.api.ads.adwords.axis.v201603.cm.AdParam;
+import com.google.api.ads.adwords.axis.v201603.cm.CriterionBidLandscape;
+import com.google.api.ads.adwords.axis.v201603.cm.CriterionUse;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
@@ -95,7 +95,7 @@ public final class ExtendedAdGroup {
    *
    * <p class="note"><b>Note:</b> remove is not supported,
    * instead, set its status to {@code REMOVED} and then {@code update()}.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.AdGroupServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.AdGroupServiceInterface}.</p>
    *
    * @return the updated ExtendedAdGroup
    * @throws RemoteException for communication-related exceptions
@@ -337,7 +337,7 @@ public final class ExtendedAdGroup {
    * Updates the AdParams for the ExtendedAdGroup's AdGroup.
    *
    * <p class="note"><b>Note:</b> insertAdParams is not supported, use update for new AdParams.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.AdParamServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.AdParamServiceInterface}.</p>
    *
    * @param adParams the list of AdParams to update
    * @return the updated list of AdParams
@@ -351,7 +351,7 @@ public final class ExtendedAdGroup {
    * Updates the AdParam for the ExtendedAdGroup's AdGroup.
    *
    * <p class="note"><b>Note:</b> insertAdParams is not supported, use update for new AdParams.
-   * See {@link com.google.api.ads.adwords.axis.v201506.cm.AdParamServiceInterface}.</p>
+   * See {@link com.google.api.ads.adwords.axis.v201601.cm.AdParamServiceInterface}.</p>
    *
    * @param adParam the AdParam to update
    * @return the updated AdParam

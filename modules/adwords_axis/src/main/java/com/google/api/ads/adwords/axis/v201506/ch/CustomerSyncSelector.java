@@ -13,8 +13,10 @@ package com.google.api.ads.adwords.axis.v201506.ch;
  */
 public class CustomerSyncSelector  implements java.io.Serializable {
     /* Only return entities that have changed during the specified
-     * time range.  String Format: yyyyMMdd HHmmss zzz (e.g. 20100609 150223
-     * UTC)
+     * time range.  String Format: yyyyMMdd HHmmss <Timezone ID>
+     *                 (for example, 20100609 150223 America/New_York).
+     *                 See the <a href="https://developers.google.com/adwords/api/docs/appendix/timezones">
+     * Timezones</a> page for the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201506.cm.DateTimeRange dateTimeRange;
@@ -46,8 +48,10 @@ public class CustomerSyncSelector  implements java.io.Serializable {
      * Gets the dateTimeRange value for this CustomerSyncSelector.
      * 
      * @return dateTimeRange   * Only return entities that have changed during the specified
-     * time range.  String Format: yyyyMMdd HHmmss zzz (e.g. 20100609 150223
-     * UTC)
+     * time range.  String Format: yyyyMMdd HHmmss <Timezone ID>
+     *                 (for example, 20100609 150223 America/New_York).
+     *                 See the <a href="https://developers.google.com/adwords/api/docs/appendix/timezones">
+     * Timezones</a> page for the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -60,8 +64,10 @@ public class CustomerSyncSelector  implements java.io.Serializable {
      * Sets the dateTimeRange value for this CustomerSyncSelector.
      * 
      * @param dateTimeRange   * Only return entities that have changed during the specified
-     * time range.  String Format: yyyyMMdd HHmmss zzz (e.g. 20100609 150223
-     * UTC)
+     * time range.  String Format: yyyyMMdd HHmmss <Timezone ID>
+     *                 (for example, 20100609 150223 America/New_York).
+     *                 See the <a href="https://developers.google.com/adwords/api/docs/appendix/timezones">
+     * Timezones</a> page for the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

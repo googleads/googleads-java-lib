@@ -33,16 +33,16 @@ import java.util.Random;
  * "ads.properties" file. See README for more info.
  */
 public class CreateProductPackages {
-  
+
   // Set the ID of the rate card to associate the product package with.
   private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long rateCardId)
       throws Exception {
     ProductPackageServiceInterface productPackageService =
         dfpServices.get(session, ProductPackageServiceInterface.class);
-    
+
     // Create a local product package.
     ProductPackage productPackage = new ProductPackage();
     productPackage.setName(
@@ -53,9 +53,9 @@ public class CreateProductPackages {
     ProductPackage[] productPackages =
         productPackageService.createProductPackages(
             new ProductPackage[] {productPackage});
-    
+
     for (ProductPackage createdProductPackage : productPackages) {
-      System.out.printf("A product package with ID %d and name '%s' was created.%n", 
+      System.out.printf("A product package with ID %d and name '%s' was created.%n",
           createdProductPackage.getId(), createdProductPackage.getName());
     }
   }

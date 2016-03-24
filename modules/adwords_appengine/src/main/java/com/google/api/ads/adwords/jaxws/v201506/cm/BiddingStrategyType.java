@@ -50,13 +50,88 @@ public enum BiddingStrategyType {
      * 
      */
     CONVERSION_OPTIMIZER,
+
+    /**
+     * 
+     *                 Manual click based bidding where user pays per click. See
+     *                 {@linkplain ManualCpcBiddingScheme} for more details.
+     *               
+     * 
+     */
     MANUAL_CPC,
+
+    /**
+     * 
+     *                 Manual impression based bidding where user pays per thousand
+     *                 impressions. See {@linkplain ManualCpmBiddingScheme} for more
+     *                 details.
+     *               
+     * 
+     */
     MANUAL_CPM,
+
+    /**
+     * 
+     *                 Page-One Promoted is an automated bid strategy that sets max CPC bids
+     *                 to target impressions on page one or page one promoted slots on
+     *                 google.com. See {@linkplain PageOnePromotedBiddingScheme} for
+     *                 more details.
+     *               
+     * 
+     */
     PAGE_ONE_PROMOTED,
+
+    /**
+     * 
+     *                 Target Spend (Maximize Clicks) is an automated bid strategy that sets
+     *                 your bids to help get as many clicks as possible within your budget.
+     *                 See {@linkplain TargetSpendBiddingScheme} for more details.
+     *               
+     * 
+     */
     TARGET_SPEND,
+
+    /**
+     * 
+     *                 Enhanced CPC is a bidding strategy that raises your bids for clicks
+     *                 that seem more likely to lead to a conversion and lowers them for clicks
+     *                 where they seem less likely. See {@linkplain EnhancedCpcBiddingScheme}
+     *                 for more details.
+     *               
+     * 
+     */
     ENHANCED_CPC,
+
+    /**
+     * 
+     *                 Target CPA is an automated bid strategy that sets bids to help get
+     *                 as many conversions as possible at the target cost-per-acquisition
+     *                 (CPA) you set. See {@linkplain TargetCpaBiddingScheme}
+     *                 for more details.
+     *               
+     * 
+     */
     TARGET_CPA,
+
+    /**
+     * 
+     *                 Target ROAS is an automated bidding strategy that helps you maximize
+     *                 revenue while averaging a specific target Return On Average Spend (ROAS).
+     *                 See {@linkplain TargetRoasBiddingScheme} for more details.
+     *               
+     * 
+     */
     TARGET_ROAS,
+
+    /**
+     * 
+     *                 Target Outrank Share is an automated bidding strategy that sets bids
+     *                 based on the target fraction of auctions where the advertiser should
+     *                 outrank a specific competitor. See {@linkplain TargetOutrankShareBiddingScheme}
+     *                 for more details.
+     *               
+     * 
+     */
     TARGET_OUTRANK_SHARE,
 
     /**

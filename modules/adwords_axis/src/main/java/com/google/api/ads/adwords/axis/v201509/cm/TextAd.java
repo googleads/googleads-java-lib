@@ -14,13 +14,13 @@ package com.google.api.ads.adwords.axis.v201509.cm;
  * AdX when it is contained within Operators: ADD, SET.</span>
  */
 public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  implements java.io.Serializable {
-    /* The headline of the ad */
+    /* The headline of the ad. */
     private java.lang.String headline;
 
-    /* The first description line */
+    /* The first description line. */
     private java.lang.String description1;
 
-    /* The second description line */
+    /* The second description line. */
     private java.lang.String description2;
 
     public TextAd() {
@@ -60,7 +60,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Gets the headline value for this TextAd.
      * 
-     * @return headline   * The headline of the ad
+     * @return headline   * The headline of the ad.
      */
     public java.lang.String getHeadline() {
         return headline;
@@ -70,7 +70,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Sets the headline value for this TextAd.
      * 
-     * @param headline   * The headline of the ad
+     * @param headline   * The headline of the ad.
      */
     public void setHeadline(java.lang.String headline) {
         this.headline = headline;
@@ -80,7 +80,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Gets the description1 value for this TextAd.
      * 
-     * @return description1   * The first description line
+     * @return description1   * The first description line.
      */
     public java.lang.String getDescription1() {
         return description1;
@@ -90,7 +90,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Sets the description1 value for this TextAd.
      * 
-     * @param description1   * The first description line
+     * @param description1   * The first description line.
      */
     public void setDescription1(java.lang.String description1) {
         this.description1 = description1;
@@ -100,7 +100,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Gets the description2 value for this TextAd.
      * 
-     * @return description2   * The second description line
+     * @return description2   * The second description line.
      */
     public java.lang.String getDescription2() {
         return description2;
@@ -110,7 +110,7 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201509.cm.Ad  impl
     /**
      * Sets the description2 value for this TextAd.
      * 
-     * @param description2   * The second description line
+     * @param description2   * The second description line.
      */
     public void setDescription2(java.lang.String description2) {
         this.description2 = description2;

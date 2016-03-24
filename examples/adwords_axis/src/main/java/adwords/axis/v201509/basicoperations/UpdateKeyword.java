@@ -19,6 +19,7 @@ import com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterionOperation;
 import com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterionReturnValue;
 import com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterionServiceInterface;
+import com.google.api.ads.adwords.axis.v201509.cm.BidSource;
 import com.google.api.ads.adwords.axis.v201509.cm.BiddableAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201509.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201509.cm.Bids;
@@ -98,12 +99,24 @@ public class UpdateKeyword {
     for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
       if (adGroupCriterionResult instanceof BiddableAdGroupCriterion) {
         biddableAdGroupCriterion = (BiddableAdGroupCriterion) adGroupCriterionResult;
-        System.out.printf("Ad group criterion with ad group ID %d, criterion ID %d, type "
-                + "'%s', and bid %d was updated.%n", biddableAdGroupCriterion.getAdGroupId(),
-                biddableAdGroupCriterion.getCriterion().getId(),
-                biddableAdGroupCriterion.getCriterion().getCriterionType(),
-                ((CpcBid) biddableAdGroupCriterion.getBiddingStrategyConfiguration()
-                    .getBids()[0]).getBid().getMicroAmount());
+        CpcBid criterionCpcBid = null;
+        // Find the criterion-level CpcBid among the keyword's bids.
+        for (Bids bids : biddableAdGroupCriterion.getBiddingStrategyConfiguration().getBids()) {
+          if (bids instanceof CpcBid) {
+            CpcBid cpcBid = (CpcBid) bids;
+            if (BidSource.CRITERION.equals(cpcBid.getCpcBidSource())) {
+              criterionCpcBid = cpcBid;
+            }
+          }
+        }
+
+        System.out.printf(
+            "Ad group criterion with ad group ID %d, criterion ID %d, type "
+                + "'%s', and bid %d was updated.%n",
+            biddableAdGroupCriterion.getAdGroupId(),
+            biddableAdGroupCriterion.getCriterion().getId(),
+            biddableAdGroupCriterion.getCriterion().getCriterionType(),
+            criterionCpcBid.getBid().getMicroAmount());
       }
     }
   }

@@ -184,6 +184,8 @@ public enum AdGroupField implements EntityField {
   /**
    * Target cost per acquisition/conversion.
    * This is applicable only at the ad group level.
+   * <p>If an ad group-level target is not set and the strategy type is TARGET_CPA, the strategy level target will be used.
+   * To set the strategy-level target, set the {@linkplain TargetCpaBiddingScheme#targetCpa} on the strategy's {@linkplain BiddingStrategyConfiguration#biddingScheme}.
    */
   @Filterable
   TargetCpaBid(true),

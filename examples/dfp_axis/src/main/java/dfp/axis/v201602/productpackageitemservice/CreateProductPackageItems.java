@@ -31,28 +31,28 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class CreateProductPackageItems {
-  
+
   // Set the ID of the product package to add product package items to.
-  private static final String PRODUCT_PACKAGE_ID = 
+  private static final String PRODUCT_PACKAGE_ID =
       "INSERT_PRODUCT_PACKAGE_ID_HERE";
-  
+
   // Set the ID of the product to generate a product package item from.
   private static final String PRODUCT_ID = "INSERT_PRODUCT_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long productPackageId, long productId) throws Exception {
     ProductPackageItemServiceInterface productPackageItemService =
         dfpServices.get(session, ProductPackageItemServiceInterface.class);
-    
+
     // Create a local product package item.
     ProductPackageItem productPackageItem = new ProductPackageItem();
-    
+
     // Set the product from which the product package item is created.
     productPackageItem.setProductId(productId);
-    
+
     // Set the product package that the product package item belongs to.
     productPackageItem.setProductPackageId(productPackageId);
-    
+
     // Specify if the product package item is required for this product package.
     productPackageItem.setIsMandatory(true);
 
@@ -60,7 +60,7 @@ public class CreateProductPackageItems {
     ProductPackageItem[] productPackageItems =
         productPackageItemService.createProductPackageItems(
             new ProductPackageItem[] {productPackageItem});
-    
+
     for (ProductPackageItem createdProductPackageItem : productPackageItems) {
       System.out.printf("A product package item with ID %d created from "
           + "product ID %d belonging to "

@@ -1,3 +1,19 @@
+2.12.0 - 03/24/2016
+-------------------
+AdWords:
+  - Added support and examples for v201603.
+  - Migrated AdWords Axis Utility Extension (beta) to v201603. Fixes github issue #63
+    (https://github.com/googleads/googleads-java-lib/issues/63).
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.11.0 - 03/11/2016
 -------------------
 AdWords:

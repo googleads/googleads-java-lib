@@ -159,19 +159,21 @@ public enum AdGroupAdField implements EntityField {
   CreativeUrlCustomParameters(true),
 
   /**
-   * The first description line
+   * The first description line.
    */
   @Filterable
   Description1(true),
 
   /**
-   * The second description line
+   * The second description line.
    */
   @Filterable
   Description2(true),
 
   /**
    * The device preference for the ad.
+   * You can only specify a preference for mobile devices (CriterionId 30001).
+   * If unspecified (no device preference), all devices are targeted.
    */
   @Filterable
   DevicePreference(true),
@@ -224,7 +226,7 @@ public enum AdGroupAdField implements EntityField {
   FileSize(false),
 
   /**
-   * The headline of the ad
+   * The headline of the ad.
    */
   @Filterable
   Headline(true),
@@ -335,6 +337,7 @@ public enum AdGroupAdField implements EntityField {
   /**
    * Snippet for this ad.
    * Required for standard third-party ads.
+   * <p>The length of the string should be between 1 and 3072, inclusive.
    */
   RichMediaAdSnippet(false),
 

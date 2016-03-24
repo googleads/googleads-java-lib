@@ -16,6 +16,7 @@ package adwords.axis.v201509.optimization;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201509.cm.Language;
+import com.google.api.ads.adwords.axis.v201509.cm.NetworkSetting;
 import com.google.api.ads.adwords.axis.v201509.cm.Paging;
 import com.google.api.ads.adwords.axis.v201509.o.Attribute;
 import com.google.api.ads.adwords.axis.v201509.o.AttributeType;
@@ -23,6 +24,7 @@ import com.google.api.ads.adwords.axis.v201509.o.IdeaType;
 import com.google.api.ads.adwords.axis.v201509.o.IntegerSetAttribute;
 import com.google.api.ads.adwords.axis.v201509.o.LanguageSearchParameter;
 import com.google.api.ads.adwords.axis.v201509.o.LongAttribute;
+import com.google.api.ads.adwords.axis.v201509.o.NetworkSearchParameter;
 import com.google.api.ads.adwords.axis.v201509.o.RelatedToQuerySearchParameter;
 import com.google.api.ads.adwords.axis.v201509.o.RequestType;
 import com.google.api.ads.adwords.axis.v201509.o.SearchParameter;
@@ -103,9 +105,20 @@ public class GetKeywordIdeas {
     Language english = new Language();
     english.setId(1000L);
     languageParameter.setLanguages(new Language[] {english});
+    
+    // Create network search parameter (optional).
+    NetworkSetting networkSetting = new NetworkSetting();
+    networkSetting.setTargetGoogleSearch(true);
+    networkSetting.setTargetSearchNetwork(false);
+    networkSetting.setTargetContentNetwork(false);
+    networkSetting.setTargetPartnerSearchNetwork(false);
+
+    NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
+    networkSearchParameter.setNetworkSetting(networkSetting);
 
     selector.setSearchParameters(
-        new SearchParameter[] {relatedToQuerySearchParameter, languageParameter});
+        new SearchParameter[] {relatedToQuerySearchParameter, languageParameter,
+            networkSearchParameter});
 
     // Get related keywords.
     TargetingIdeaPage page = targetingIdeaService.get(selector);

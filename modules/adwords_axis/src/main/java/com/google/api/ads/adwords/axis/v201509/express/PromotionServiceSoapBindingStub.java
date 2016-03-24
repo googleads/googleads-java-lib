@@ -234,13 +234,6 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201509", "Date");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201509.cm.Date.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201509", "DateError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201509.cm.DateError.class;
@@ -808,6 +801,13 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201509", "PromotionPage");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201509.express.PromotionPage.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -823,13 +823,6 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201509", "PromotionPage");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201509.express.PromotionPage.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201509", "RegionCode");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201509.express.RegionCode.class;

@@ -16,7 +16,7 @@ package adwords.axis.utility.extension.accountmanagement;
 
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedManagedCustomer;
 import com.google.api.ads.adwords.axis.utility.extension.ExtendedMcc;
-import com.google.api.ads.adwords.axis.v201506.billing.BudgetOrder;
+import com.google.api.ads.adwords.axis.v201603.billing.BudgetOrder;
 
 import java.util.List;
 

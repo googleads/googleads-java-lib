@@ -61,10 +61,9 @@ public class ConversionTrackingSettings  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean usesCrossAccountConversionTracking;
 
-    /* True if customer has selected to include advanced conversions
-     * (such as cross-device
-     *                 conversions) in the "Conversions" column, which is
-     * used by any conversion-based bid
+    /* True if customer has selected to include cross-device conversions
+     * in the "Conversions" column, which is used by any conversion-based
+     * bid
      *                 strategies; false otherwise. */
     private java.lang.Boolean optimizeOnEstimatedConversions;
 
@@ -218,10 +217,9 @@ public class ConversionTrackingSettings  implements java.io.Serializable {
     /**
      * Gets the optimizeOnEstimatedConversions value for this ConversionTrackingSettings.
      * 
-     * @return optimizeOnEstimatedConversions   * True if customer has selected to include advanced conversions
-     * (such as cross-device
-     *                 conversions) in the "Conversions" column, which is
-     * used by any conversion-based bid
+     * @return optimizeOnEstimatedConversions   * True if customer has selected to include cross-device conversions
+     * in the "Conversions" column, which is used by any conversion-based
+     * bid
      *                 strategies; false otherwise.
      */
     public java.lang.Boolean getOptimizeOnEstimatedConversions() {
@@ -232,10 +230,9 @@ public class ConversionTrackingSettings  implements java.io.Serializable {
     /**
      * Sets the optimizeOnEstimatedConversions value for this ConversionTrackingSettings.
      * 
-     * @param optimizeOnEstimatedConversions   * True if customer has selected to include advanced conversions
-     * (such as cross-device
-     *                 conversions) in the "Conversions" column, which is
-     * used by any conversion-based bid
+     * @param optimizeOnEstimatedConversions   * True if customer has selected to include cross-device conversions
+     * in the "Conversions" column, which is used by any conversion-based
+     * bid
      *                 strategies; false otherwise.
      */
     public void setOptimizeOnEstimatedConversions(java.lang.Boolean optimizeOnEstimatedConversions) {
