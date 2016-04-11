@@ -63,7 +63,7 @@ public class BatchJobMutateRequest implements BatchJobMutateRequestInterface {
   @Override
   public BatchJobUploadBodyProvider createBatchJobUploadBodyProvider() {
     Set<String> namespaceUris = Sets.newHashSet();
-    for (TypeMapping typeMapping : BatchJobHelper.getServiceTypeMappings()) {
+    for (TypeMapping typeMapping : BatchJobHelperImpl.getServiceTypeMappings()) {
       for (Class<?> clazz : typeMapping.getAllClasses()) {
         QName qName = typeMapping.getTypeQName(clazz);
         if (qName != null) {

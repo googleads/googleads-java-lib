@@ -17,7 +17,6 @@ package com.google.api.ads.adwords.lib.client;
 import com.google.api.ads.common.lib.client.AdsServiceClient;
 import com.google.api.ads.common.lib.client.HeaderHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
-import com.google.api.ads.common.lib.soap.SoapServiceClient;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.inject.assistedinject.Assisted;
 
@@ -57,11 +56,4 @@ public class AdWordsServiceClient extends AdsServiceClient<AdWordsSession,
         adWordsHeaderHandler, adsServiceLoggers);
   }
 
-  /**
-   * @see SoapServiceClient#handleException
-   */
-  @Override
-  protected Throwable handleException(Throwable e) {
-    return super.handleException(e);
-  }
 }

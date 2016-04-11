@@ -14,7 +14,6 @@
 
 package com.google.api.ads.adwords.jaxws.utils;
 
-import com.google.api.ads.adwords.jaxws.utils.v201509.batchjob.BatchJobMutateRequest;
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateRequestInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadBodyProvider;
@@ -27,27 +26,30 @@ import javax.xml.namespace.QName;
 /**
  * Implementation of {@link BatchJobUploadBodyProvider} for JAX-WS.
  */
-public class JaxWsBatchJobUploadBodyProvider implements BatchJobUploadBodyProvider {
+public class JaxWsBatchJobUploadBodyProvider<RequestT extends BatchJobMutateRequestInterface>
+    implements BatchJobUploadBodyProvider {
   private static final String REQUEST_NAMESPACE_TEMPLATE =
       "https://adwords.google.com/api/adwords/cm/%s";
 
   private final QName requestQName;
+  private final Class<RequestT> requestClass;
 
-  public JaxWsBatchJobUploadBodyProvider(String apiVersion) {
+  public JaxWsBatchJobUploadBodyProvider(String apiVersion, Class<RequestT> requestClass) {
     this.requestQName = new QName(
         String.format(
             REQUEST_NAMESPACE_TEMPLATE, Preconditions.checkNotNull(apiVersion, "Null API version")),
         "mutate");
+    this.requestClass = requestClass;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public ByteArrayContent getHttpContent(BatchJobMutateRequestInterface request,
       boolean isFirstRequest, boolean isLastRequest) throws BatchJobException {
-    JaxBSerializer<BatchJobMutateRequest> serializer =
-        new JaxBSerializer<BatchJobMutateRequest>(BatchJobMutateRequest.class, requestQName);
+    JaxBSerializer<RequestT> serializer =
+        new JaxBSerializer<RequestT>(requestClass, requestQName);
 
-    String serializedRequest =
-        serializer.serialize((BatchJobMutateRequest) request, false);
+    String serializedRequest = serializer.serialize((RequestT) request, false);
 
     return new ByteArrayContent("application/xml", serializedRequest.getBytes());
   }

@@ -16,7 +16,6 @@ package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
-import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.EmptyContent;
@@ -54,7 +53,6 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     ResponseT extends BatchJobMutateResponseInterface<OperandT, ApiErrorT, ResultT>> {
   private final AdWordsSession session;
   private final HttpTransport httpTransport;
-  private final UserAgentCombiner userAgentCombiner;
   private final BatchJobLogger batchJobLogger;
   private final boolean isInitiateResumableUpload;
 
@@ -79,7 +77,6 @@ public class BatchJobUploader<OperandT, ApiErrorT,
   public BatchJobUploader(AdWordsSession session, boolean isInitiateResumableUpload) {
     this.session = session;
     this.httpTransport = AdWordsInternals.getInstance().getHttpTransport();
-    this.userAgentCombiner = AdWordsInternals.getInstance().getUserAgentCombiner();
     this.batchJobLogger =
         AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     this.isInitiateResumableUpload = isInitiateResumableUpload;
@@ -88,7 +85,7 @@ public class BatchJobUploader<OperandT, ApiErrorT,
   private HttpHeaders createHttpHeaders() {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType("application/xml");
-    headers.setUserAgent(userAgentCombiner.getUserAgent(session.getUserAgent()));
+    headers.setUserAgent(session.getUserAgent());
     return headers;
   }
 

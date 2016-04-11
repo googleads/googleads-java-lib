@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.jaxws.utils.v201509.batchjob;
 
 import com.google.api.ads.adwords.jaxws.v201509.cm.ApiError;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BatchJob;
 import com.google.api.ads.adwords.jaxws.v201509.cm.Operand;
 import com.google.api.ads.adwords.jaxws.v201509.cm.Operation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -24,67 +23,50 @@ import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
-import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
-import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
-import com.google.api.ads.common.lib.soap.jaxb.JaxBDeserializer;
+import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
+import com.google.common.reflect.Reflection;
 
-import java.io.IOException;
-import java.net.URL;
-
-import javax.xml.transform.stream.StreamSource;
+import java.lang.reflect.InvocationHandler;
 
 /**
- * Utility for uploading operations and downloading results for a {@link BatchJob}.
+ * Implementation of {@link BatchJobHelperInterface} for JAX-WS v201509.
  */
-public class BatchJobHelper implements BatchJobHelperInterface<Operation, Operand, ApiError,
-    MutateResult, BatchJobMutateResponse> {
-  private final BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
-  private final BatchJobLogger batchJobLogger;
+public class BatchJobHelper
+    implements BatchJobHelperInterface<
+        Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
 
+  private BatchJobHelperInterface<
+          Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
+      impl;
+
+  @SuppressWarnings("unchecked")
   public BatchJobHelper(AdWordsSession session) {
-    uploader = new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
-        session, false);
-    batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
+    InvocationHandler invocationHandler =
+        new AdsUtilityInvocationHandler(
+            new BatchJobHelperImpl(session),
+            AdWordsInternals.getInstance().getAdsUtilityRegistry());
+    this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler);
   }
 
   @Override
   public BatchJobUploadResponse uploadBatchJobOperations(
       Iterable<Operation> operations, String uploadUrl) throws BatchJobException {
-    BatchJobMutateRequest request = new BatchJobMutateRequest();
-    request.addOperations(operations);
-    return uploader.uploadBatchJobOperations(request, uploadUrl);
+    return impl.uploadBatchJobOperations(operations, uploadUrl);
+  }
+
+  @Override
+  public BatchJobUploadResponse uploadIncrementalBatchJobOperations(
+      Iterable<? extends Operation> operations,
+      boolean isLastRequest,
+      BatchJobUploadStatus batchJobUploadStatus)
+      throws BatchJobException {
+    return impl.uploadIncrementalBatchJobOperations(
+        operations, isLastRequest, batchJobUploadStatus);
   }
 
   @Override
   public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
       throws BatchJobException {
-    JaxBDeserializer<BatchJobMutateResponse> deserializer =
-        new JaxBDeserializer<BatchJobMutateResponse>(BatchJobMutateResponse.class);
-    MutateResult[] mutateResults;
-    try {
-      mutateResults =
-          deserializer.deserialize(new StreamSource(new URL(downloadUrl).openStream()))
-              .getMutateResults();
-    } catch (IOException e) {
-      batchJobLogger.logDownload(downloadUrl, null, e);
-      throw new BatchJobException(
-          "Failed to download batch job mutate response from URL: " + downloadUrl, e);
-    }
-
-    BatchJobMutateResponse response = new BatchJobMutateResponse();
-    response.setMutateResults(mutateResults);
-    
-    batchJobLogger.logDownload(downloadUrl, response, null);
-    return response;
-  }
-
-  @Override
-  public BatchJobUploadResponse uploadIncrementalBatchJobOperations(
-      Iterable<? extends Operation> operations, boolean isLastRequest,
-      BatchJobUploadStatus batchJobUploadStatus) throws BatchJobException {
-    BatchJobMutateRequest request = new BatchJobMutateRequest();
-    request.addOperations(operations);
-    return uploader.uploadIncrementalBatchJobOperations(
-        request, isLastRequest, batchJobUploadStatus);
+    return impl.downloadBatchJobMutateResponse(downloadUrl);
   }
 }

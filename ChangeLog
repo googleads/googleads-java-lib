@@ -1,3 +1,18 @@
+2.13.0 - 04/11/2016
+-------------------
+AdWords:
+  - Removed support and examples for v201506. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Added framework for including utility usage in the user agent header.
+
 2.12.0 - 03/24/2016
 -------------------
 AdWords:

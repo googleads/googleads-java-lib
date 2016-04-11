@@ -21,8 +21,7 @@ import com.google.inject.AbstractModule;
 /**
  * Guice module for common bindings.
  */
-public class AdsModule extends AbstractModule {
-
+public abstract class AdsModule extends AbstractModule {
   public AdsModule() {}
 
   /**

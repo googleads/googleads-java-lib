@@ -28,6 +28,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 
 import org.apache.commons.configuration.Configuration;
@@ -66,8 +67,9 @@ public class OfflineCredentials {
     private final Internals internals;
 
     private Api(String propKeyPrefix, Internals internals) {
-      this.propKeyPrefix = propKeyPrefix;
-      this.internals = internals;
+      this.propKeyPrefix =
+          Preconditions.checkNotNull(propKeyPrefix, "Null property key prefix for: %s", this);
+      this.internals = Preconditions.checkNotNull(internals, "Null internals for: %s", this);
     }
 
     /**

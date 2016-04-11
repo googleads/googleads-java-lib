@@ -99,7 +99,7 @@ public class AddKeywordsUsingIncrementalBatchJob {
     BatchJob batchJob = batchJobService.mutate(new BatchJobOperation[] {addOp}).getValue(0);
 
     System.out.printf("Created BatchJob with ID %d, status '%s' and upload URL %s.%n",
-        batchJob.getId(), batchJob.getStatus(), batchJob.getUploadUrl());
+        batchJob.getId(), batchJob.getStatus(), batchJob.getUploadUrl().getUrl());
     
     // Create a BatchJobHelper for uploading operations.
     BatchJobHelper batchJobHelper = new BatchJobHelper(session);

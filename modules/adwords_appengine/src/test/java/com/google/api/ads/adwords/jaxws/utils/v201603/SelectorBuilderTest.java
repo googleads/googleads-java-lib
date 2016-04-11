@@ -25,15 +25,22 @@ import com.google.api.ads.adwords.jaxws.v201603.cm.Predicate;
 import com.google.api.ads.adwords.jaxws.v201603.cm.PredicateOperator;
 import com.google.api.ads.adwords.jaxws.v201603.cm.Selector;
 import com.google.api.ads.adwords.jaxws.v201603.cm.SortOrder;
+import com.google.api.ads.adwords.lib.selectorfields.EntityField;
 import com.google.api.ads.adwords.lib.selectorfields.v201603.cm.CampaignField;
+import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
+import com.google.api.ads.common.lib.utils.AdsUtility;
+import com.google.common.collect.Sets;
 
 import org.joda.time.DateTime;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Set;
 
 /**
  * Test case for the JAXWS implementation of the selector builder.
@@ -42,12 +49,36 @@ import java.text.SimpleDateFormat;
 public class SelectorBuilderTest {
 
   /**
+   * Indicates if this test invokes any of the methods on SelectorBuilder with an
+   * {@link EntityField} argument.
+   */
+  private boolean isTestUsingFieldEnums;
+
+  @Before
+  public void setUp() {
+    isTestUsingFieldEnums = false;
+    AdWordsInternals.getInstance().getAdsUtilityRegistry().removeUtilities(
+        AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+  }
+
+  @After
+  public void tearDown() {
+    Set<AdsUtility> expectedUtilities = Sets.<AdsUtility>newTreeSet();
+    expectedUtilities.add(AdsUtility.SELECTOR_BUILDER);
+    if (isTestUsingFieldEnums) {
+      expectedUtilities.add(AdsUtility.SELECTOR_FIELD);
+    }
+    assertEquals(expectedUtilities,
+        AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+  }
+
+  /**
    * Tests the immutability of the selector
    */
   @Test
   @SuppressWarnings("unchecked")
   public void testSelectorBuilderImmutability() {
-    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilder.DEFAULT_DATE_FORMAT);
+    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilderImpl.DEFAULT_DATE_FORMAT);
 
     SelectorBuilder builder = new SelectorBuilder();
 
@@ -205,6 +236,7 @@ public class SelectorBuilderTest {
   @Test
   public void testOrderByBuild() {
     SelectorBuilder builder = new SelectorBuilder();
+    isTestUsingFieldEnums = true;
 
     builder = builder.orderAscBy(CampaignField.BidType);
     Selector selector = builder.build();
@@ -256,6 +288,7 @@ public class SelectorBuilderTest {
   @Test
   public void testOrderBySubstitution() {
     SelectorBuilder builder = new SelectorBuilder();
+    isTestUsingFieldEnums = true;
 
     builder = builder.orderAscBy(CampaignField.BidType).orderDescBy(CampaignField.Amount);
     Selector selector = builder.build();
@@ -285,7 +318,7 @@ public class SelectorBuilderTest {
    */
   @Test
   public void testDateRangeBuild() {
-    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilder.DEFAULT_DATE_FORMAT);
+    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilderImpl.DEFAULT_DATE_FORMAT);
 
     SelectorBuilder builder = new SelectorBuilder();
 
@@ -398,7 +431,7 @@ public class SelectorBuilderTest {
   @Test
   public void testUniqueInternalDateRangeState() {
     SelectorBuilder builder = new SelectorBuilder();
-    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilder.DEFAULT_DATE_FORMAT);
+    DateFormat dateFormat = new SimpleDateFormat(SelectorBuilderImpl.DEFAULT_DATE_FORMAT);
 
     DateTime startOne = new DateTime(2013, 1, 1, 0, 0, 0, 0);
     DateTime endOne = new DateTime(2013, 1, 31, 0, 0, 0, 0);

@@ -58,7 +58,8 @@ public class BatchJobMutateRequest implements BatchJobMutateRequestInterface {
 
   @Override
   public BatchJobUploadBodyProvider createBatchJobUploadBodyProvider() {
-    return new JaxWsBatchJobUploadBodyProvider("v201601");
+    return new JaxWsBatchJobUploadBodyProvider<BatchJobMutateRequest>("v201601",
+        BatchJobMutateRequest.class);
   }
 
 }

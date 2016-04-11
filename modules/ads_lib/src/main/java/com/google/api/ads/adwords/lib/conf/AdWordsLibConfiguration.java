@@ -64,5 +64,12 @@ public class AdWordsLibConfiguration extends AdsLibConfiguration {
     return config.getInt(
         KEY_PREFIX + "." + SOAP_REQUEST_TIMEOUT_POSTFIX, DEFAULT_SOAP_REQUEST_TIMEOUT);
   }
+
+  @Override
+  public boolean isIncludeAdsUtilitiesInUserAgent() {
+    Boolean isInclude = config.getBoolean(
+        KEY_PREFIX + "." + INCLUDE_UTILITIES_IN_USER_AGENT_POSTFIX, null);
+    return isInclude != null ? isInclude : super.isIncludeAdsUtilitiesInUserAgent();
+  }
   
 }

@@ -14,6 +14,9 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import com.google.api.ads.common.lib.utils.AdsUtility;
+import com.google.api.ads.common.lib.utils.UsesAdsUtilities;
+
 /**
  * Utility for uploading operations and downloading results for a {@code BatchJob}.
  * @param <OperationT> the operation type for the API version and SOAP toolkit.
@@ -27,19 +30,20 @@ public interface BatchJobHelperInterface<OperationT,
     ResultT extends BatchJobMutateResultInterface<OperandT, ErrorT>,
     ResponseT extends BatchJobMutateResponseInterface<OperandT, ErrorT, ResultT>> {
   /**
-   * Uploads the specified operations to the batch job. After this method returns successfully,
-   * the job will transition to the {@code ACTIVE} state.
+   * Uploads the specified operations to the batch job. After this method returns successfully, the
+   * job will transition to the {@code ACTIVE} state.
    *
-   * <p>Use this method if you want to upload all operations in a single request. To upload
-   * operations across multiple requests, use {@link #uploadIncrementalBatchJobOperations(Iterable,
-   * boolean, BatchJobUploadStatus)}
-   * instead.
+   * <p>
+   * Use this method if you want to upload all operations in a single request. To upload operations
+   * across multiple requests, use
+   * {@link #uploadIncrementalBatchJobOperations(Iterable, boolean, BatchJobUploadStatus)} instead.
    *
    * @param operations the operations to upload to the batch job
    * @param uploadUrl the {@code BatchJob#getUploadUrl()}
    * @return the response from the upload if the request succeeded
    * @throws BatchJobException if the request failed
    */
+  @UsesAdsUtilities({AdsUtility.BATCH_JOB_HELPER})
   BatchJobUploadResponse uploadBatchJobOperations(Iterable<OperationT> operations, String uploadUrl)
       throws BatchJobException;
 
@@ -60,6 +64,7 @@ public interface BatchJobHelperInterface<OperationT,
    * @return the response from the upload if the request succeeded
    * @throws BatchJobException if the request failed
    */
+  @UsesAdsUtilities({AdsUtility.BATCH_JOB_HELPER})
   BatchJobUploadResponse uploadIncrementalBatchJobOperations(
       Iterable<? extends OperationT> operations, boolean isLastRequest,
       BatchJobUploadStatus batchJobUploadStatus) throws BatchJobException;
@@ -69,5 +74,6 @@ public interface BatchJobHelperInterface<OperationT,
    *
    * @param downloadUrl the {@code BatchJob.getDownloadUrl()}
    */
+  @UsesAdsUtilities({AdsUtility.BATCH_JOB_HELPER})
   ResponseT downloadBatchJobMutateResponse(String downloadUrl) throws BatchJobException;
 }

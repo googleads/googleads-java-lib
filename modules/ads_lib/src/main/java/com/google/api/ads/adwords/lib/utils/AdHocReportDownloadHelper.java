@@ -15,45 +15,30 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.common.lib.exception.AuthenticationException;
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpResponse;
-import com.google.api.client.util.Charsets;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
+import com.google.common.reflect.Reflection;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.nio.charset.Charset;
+import java.lang.reflect.InvocationHandler;
 
 /**
  * Helper class that handles AdHoc report downloads. Requests will be logged (header and payload) to
  * INFO. Successful reports will be logged (headers and response code) to INFO. Failed reports will
  * be logged in their entirety to WARN.
  */
-public class AdHocReportDownloadHelper {
+public class AdHocReportDownloadHelper implements AdHocReportDownloadHelperInterface {
 
-  private final AdWordsSession session;
-  private final ReportRequestFactoryHelper reportRequestFactoryHelper;
-  private final ReportBodyProviderFactory reportBodyProviderFactory;
-  private final String version;
-
-  /**
-   * The default Charset for report request and response contents.
-   */
-  @VisibleForTesting
-  public static final Charset REPORT_CHARSET = Charsets.UTF_8;
+  private final AdHocReportDownloadHelperInterface impl;
   
   /**
    * Constructor that stores the session for authentication and uses the provided version to
    * determine the report endpoint.
    */
   public AdHocReportDownloadHelper(AdWordsSession session, String version) {
-    this.session = session;
-    this.version = version;
-    this.reportRequestFactoryHelper = new ReportRequestFactoryHelper(session);
-    this.reportBodyProviderFactory = new ReportBodyProviderFactory();
+    InvocationHandler invocationHandler =
+        new AdsUtilityInvocationHandler(
+            new AdHocReportDownloadHelperImpl(session, version),
+            AdWordsInternals.getInstance().getAdsUtilityRegistry());
+    this.impl = Reflection.newProxy(AdHocReportDownloadHelperInterface.class, invocationHandler);
   }
 
   /**
@@ -64,59 +49,25 @@ public class AdHocReportDownloadHelper {
    * @throws ReportException If there is any exceptions making HTTP request to
    *         the server.
    */
+  @Override
   public RawReportDownloadResponse downloadReport(ReportRequest reportRequest)
       throws ReportException {
-    try {
-      String downloadUrl = generateReportUrl(version);
-      HttpRequestFactory requestFactory =
-          reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl, version);
-      ReportBodyProvider reportBodyProvider =
-          reportBodyProviderFactory.getReportBodyProvider(reportRequest);
-      HttpRequest httpRequest = requestFactory
-          .buildPostRequest(new GenericUrl(downloadUrl), reportBodyProvider.getHttpContent());
-      HttpResponse response = httpRequest.execute();
-      
-      Charset charSet = REPORT_CHARSET;
-      // Unfortunately, HttpResponse.getContentCharset defaults to Charsets.ISO_8859_1 if the
-      // underlying MediaType is null or doesn't have a Charset parameter. Since we want to
-      // default to REPORT_CHARSET, we have to inspect the MediaType ourselves.
-      if (response.getMediaType() != null
-          && response.getMediaType().getCharsetParameter() != null) {
-        charSet = response.getMediaType().getCharsetParameter();
-      }
-
-      return new RawReportDownloadResponse(response.getStatusCode(), response.getContent(), charSet,
-          reportRequest.getDownloadFormat().name());
-    } catch (MalformedURLException e) {
-      throw new ReportException("Created invalid report download URL.", e);
-    } catch (IOException e) {
-      throw new ReportException("Problem sending data to report download server.", e);
-    } catch (AuthenticationException e) {
-      throw new ReportException("Problem with OAuth authorization.", e);
-    }
+    return impl.downloadReport(reportRequest);
   }
-
-  /**
-   * Creates the report download URL.
-   *
-   * @param version to download from.
-   * @return url to download a report from.
-   */
-  private String generateReportUrl(String version) {
-    return session.getEndpoint() + ReportRequestFactoryHelper.DOWNLOAD_SERVER_URI + '/' + version;
-  }
-
+  
   /**
    * Returns the reportDownloadTimeout in milliseconds
    */
+  @Override
   public int getReportDownloadTimeout() {
-    return reportRequestFactoryHelper.getReportDownloadTimeout();
+    return impl.getReportDownloadTimeout();
   }
 
   /**
    * Sets the reportDownloadTimeout (milliseconds).
    */
+  @Override
   public void setReportDownloadTimeout(int reportDownloadTimeout) {
-    reportRequestFactoryHelper.setReportDownloadTimeout(reportDownloadTimeout);
+    impl.setReportDownloadTimeout(reportDownloadTimeout);
   }
 }

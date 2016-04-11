@@ -17,11 +17,14 @@ package com.google.api.ads.adwords.lib;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceClient;
 import com.google.api.ads.adwords.lib.conf.AdWordsConfigurationModule;
 import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
+import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.logging.AdWordsLoggingModule;
 import com.google.api.ads.common.lib.AdsModule;
+import com.google.api.ads.common.lib.utils.Internals;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.inject.Provides;
 
 /**
  * Guice module for AdWords bindings.
@@ -37,7 +40,7 @@ public class AdWordsModule extends AdsModule {
     install(new AdWordsConfigurationModule());
     bind(HttpTransport.class).to(NetHttpTransport.class);
   }
-
+  
   @Override
   protected void configureLogging(String loggerPrefix) {
     install(new AdWordsLoggingModule(
@@ -45,4 +48,16 @@ public class AdWordsModule extends AdsModule {
         BatchJobHelperInterface.class.getPackage().getName()));
   }
 
+  /**
+   * Provider method required by Guice. Unlike with DFP and DFA, AdWords has its own subclass
+   * of Internals. This method and its Provides annotation tell Guice to bind the
+   * {@link Internals} type to the singleton of {@link AdWordsInternals}. Without this method
+   * and annotation, Guice would automatically construct an instance of {@link Internals} and
+   * bind it to the {@link Internals} type, and as a result, Guice injected objects would use
+   * a different Internals object from code that calls {@code AdWordsInternals.getInstance()}.  
+   */
+  @Provides
+  private Internals getInternals() {
+    return AdWordsInternals.getInstance();
+  }
 }

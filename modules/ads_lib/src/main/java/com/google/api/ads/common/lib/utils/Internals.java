@@ -32,6 +32,7 @@ public class Internals {
   private final HttpTransport httpTransport;
   private final AdsServiceLoggers adsServiceLoggers;
   private final OAuth2Helper oAuth2Helper;
+  private final AdsUtilityRegistry adsUtilityRegistry;
 
   /**
    * Constructor to be injected by guice.
@@ -39,12 +40,14 @@ public class Internals {
   @Inject
   public Internals(AuthorizationHeaderProvider authorizationHeaderProvider,
       UserAgentCombiner userAgentCombiner, HttpTransport httpTransport,
-      AdsServiceLoggers adsServiceLoggers, OAuth2Helper oAuth2Helper) {
+      AdsServiceLoggers adsServiceLoggers, OAuth2Helper oAuth2Helper,
+      AdsUtilityRegistry adsUtilityRegistry) {
     this.authorizationHeaderProvider = authorizationHeaderProvider;
     this.userAgentCombiner = userAgentCombiner;
     this.httpTransport = httpTransport;
     this.adsServiceLoggers = adsServiceLoggers;
     this.oAuth2Helper = oAuth2Helper;
+    this.adsUtilityRegistry = adsUtilityRegistry;
   }
 
   /**
@@ -80,5 +83,12 @@ public class Internals {
    */
   public OAuth2Helper getOAuth2Helper() {
     return oAuth2Helper;
+  }
+  
+  /**
+   * Gets the ads utility registry.
+   */
+  public AdsUtilityRegistry getAdsUtilityRegistry() {
+    return adsUtilityRegistry;
   }
 }

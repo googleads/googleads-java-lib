@@ -40,7 +40,9 @@ import com.google.api.ads.adwords.axis.v201509.cm.ProductPartition;
 import com.google.api.ads.adwords.axis.v201509.cm.ProductPartitionType;
 import com.google.api.ads.adwords.axis.v201509.cm.UserStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
+import com.google.api.ads.common.lib.utils.AdsUtility;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Preconditions;
@@ -48,9 +50,12 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 
 import org.apache.axis.encoding.SerializationContext;
 import org.hamcrest.Matchers;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -63,6 +68,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 import javax.xml.namespace.QName;
 
@@ -74,7 +80,25 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
 
   private final BiddingStrategyConfiguration biddingStrategyConfig =
       new BiddingStrategyConfiguration();
+  private boolean isUtilityRegistryExpected = true;
 
+  @Before
+  public void setUp() {
+    AdWordsInternals.getInstance().getAdsUtilityRegistry().removeUtilities(
+        AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+  }
+  
+  @After
+  public void tearDown() {
+    if (isUtilityRegistryExpected) {
+      Set<AdsUtility> expectedUtilities = Sets.<AdsUtility>newTreeSet();
+      expectedUtilities.add(AdsUtility.PRODUCT_PARTITION_TREE);
+      assertEquals(
+          expectedUtilities,
+          AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+    }
+  }
+  
   /**
    * Tests creating an empty ad group tree. In this case, all operations generated should be ADD
    * operations.
@@ -348,6 +372,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
    */
   @Test
   public void testRemovedCriteriaIgnored() {
+    isUtilityRegistryExpected = false;
     CriterionDescriptor rootDescriptor =
         new CriterionDescriptor(true, false, null, 1000000L, 1L, null);
     List<AdGroupCriterion> criteria = Lists.newArrayList();
@@ -373,6 +398,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
    */
   @Test
   public void testCreateTreeUsingService() throws Exception {
+    isUtilityRegistryExpected = false;
     AdWordsServices adWordsServices = new AdWordsServices();
     AdWordsSession session =
         new AdWordsSession.Builder()
