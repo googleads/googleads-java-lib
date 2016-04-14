@@ -185,6 +185,7 @@
     <module>modules/dfp_appengine</module>
     <module>modules/dfp_axis</module>
     <module>modules/adwords_axis_utility_extension</module>
+    <module>modules/ddp_axis</module>
   </modules>
 
   <profiles>
