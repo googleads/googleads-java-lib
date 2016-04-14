@@ -79,6 +79,14 @@
         </includes>
       </resource>
       <resource>
+        <targetPath>com/google/api/ads/ddp/lib/conf/props</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/java/com/google/api/ads/ddp/lib/conf/props</directory>
+        <includes>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+      <resource>
         <targetPath>com/google/api/ads/common/lib/conf/props</targetPath>
         <filtering>false</filtering>
         <directory>src/main/java/com/google/api/ads/common/lib/conf/props</directory>
