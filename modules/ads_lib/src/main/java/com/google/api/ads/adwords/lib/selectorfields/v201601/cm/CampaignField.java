@@ -41,7 +41,7 @@ public enum CampaignField implements EntityField {
    * The primary serving target for ads within this campaign.
    * The targeting options can be refined in NetworkSetting.
    * May only be set for new campaigns.
-   * This field is required and should not be {@code null} when it is contained within {@link Operator}s : ADD
+   * This field is required and should not be {@code null} when it is contained within {@code Operator}s : ADD
    */
   @Filterable
   AdvertisingChannelType(true),
@@ -163,9 +163,9 @@ public enum CampaignField implements EntityField {
 
   /**
    * Labels that are attached to the campaign.
-   * To associate an existing {@link Label} to an existing {@link Campaign}, use {@link CampaignService#mutateLabel} with the ADD operator.
-   * To remove an associated {@link Label} from the {@link Campaign}, use {@link CampaignService#mutateLabel} with the REMOVE operator.
-   * To filter on {@link Label}s, use one of {@link Predicate.Operator#CONTAINS_ALL}, {@link Predicate.Operator#CONTAINS_ANY}, {@link Predicate.Operator#CONTAINS_NONE} operators with a list of {@link Label} ids.
+   * To associate an existing {@code Label} to an existing {@code Campaign}, use {@code CampaignService#mutateLabel} with the ADD operator.
+   * To remove an associated {@code Label} from the {@code Campaign}, use {@code CampaignService#mutateLabel} with the REMOVE operator.
+   * To filter on {@code Label}s, use one of {@code Predicate.Operator#CONTAINS_ALL}, {@code Predicate.Operator#CONTAINS_ANY}, {@code Predicate.Operator#CONTAINS_NONE} operators with a list of {@code Label} ids.
    */
   @Filterable
   Labels(true),

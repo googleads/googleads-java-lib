@@ -35,6 +35,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 
 import org.apache.axis.client.Call;
@@ -43,7 +44,6 @@ import org.apache.axis.encoding.TypeMapping;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 import javax.xml.namespace.QName;
 import javax.xml.rpc.ServiceException;
@@ -58,22 +58,24 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
   private final QName resultQName;
   private final QName operandQName;
   
-  /**
-   * Atomic reference to the lazily initialized list of type mappings. Use {@link
-   * #getServiceTypeMappings()}
-   * to retrieve the initialized list in a thread safe manner.
-   */
-  private static final AtomicReference<ImmutableList<TypeMapping>> SERVICE_TYPE_MAPPINGS_REF =
-      new AtomicReference<ImmutableList<TypeMapping>>();
-  
   public BatchJobHelperImpl(AdWordsSession session) {
-    uploader = new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
-        session, false);
+    this(
+        new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
+            session, false));
+  }
+
+  /**
+   * Constructor for testing to allow mocking of the underlying uploader.
+   */
+  @VisibleForTesting
+  BatchJobHelperImpl(
+      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+    this.uploader = uploader;
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "MutateResult");
     operandQName = new QName("https://adwords.google.com/api/adwords/cm/v201509", "Operand");
   }
-  
+
   @Override
   public BatchJobUploadResponse uploadBatchJobOperations(Iterable<Operation> operations,
       String uploadUrl) throws BatchJobException {
@@ -114,114 +116,115 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
   }
   
   /**
-   * Returns all of the service type mappings required to serialize/deserialize Axis
-   * objects.
+   * Returns all of the service type mappings required to serialize/deserialize Axis objects.
    */
   static List<TypeMapping> getServiceTypeMappings() {
-    
-    // Lazily initialize the list of type mappings.
-    if (SERVICE_TYPE_MAPPINGS_REF.get() == null) {
-      // Build the list of type mappings based on the synchronous service of each Operation
-      // subclass supported by BatchJobService for this version of the API.
-      ImmutableList.Builder<TypeMapping> mappings = ImmutableList.builder();
-      
-      try {
-        mappings.add(new AdGroupAdServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+
+    // Build the list of type mappings based on the synchronous service of each Operation
+    // subclass supported by BatchJobService for this version of the API.
+    ImmutableList.Builder<TypeMapping> mappings = ImmutableList.builder();
+
+    try {
+      mappings.add(
+          new AdGroupAdServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new AdGroupBidModifierServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new AdGroupBidModifierServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new AdGroupCriterionServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new AdGroupCriterionServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new AdGroupServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new AdGroupServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new BudgetServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new BudgetServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new CampaignCriterionServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new CampaignCriterionServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new CampaignServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new CampaignServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-        
-        mappings.add(new FeedItemServiceSoapBindingStub() {
-          @Override
-          public Call _createCall() throws ServiceException {
-            try {
-              return super.createCall();
-            } catch (RemoteException e) {
-              throw new RuntimeException(e);
+          }._createCall().getTypeMapping());
+
+      mappings.add(
+          new FeedItemServiceSoapBindingStub() {
+            @Override
+            public Call _createCall() throws ServiceException {
+              try {
+                return super.createCall();
+              } catch (RemoteException e) {
+                throw new RuntimeException(e);
+              }
             }
-          }
-        }._createCall().getTypeMapping());
-      } catch (Exception e) {
-        throw new RuntimeException("Failed to initialize service type mappings", e);
-      }
-      
-      // Set the type mappings reference if another thread has not preempted this thread.
-      SERVICE_TYPE_MAPPINGS_REF.compareAndSet(null, mappings.build());
+          }._createCall().getTypeMapping());
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to initialize service type mappings", e);
     }
-    
-    return SERVICE_TYPE_MAPPINGS_REF.get();
+
+    return mappings.build();
   }
 }
 

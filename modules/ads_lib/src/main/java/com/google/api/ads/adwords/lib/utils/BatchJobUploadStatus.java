@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -64,5 +65,20 @@ public class BatchJobUploadStatus implements Serializable {
         .append("totalContentLength", totalContentLength)
         .append("resumableUploadUri", resumableUploadUri)
         .toString();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(totalContentLength, resumableUploadUri);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof BatchJobUploadStatus)) {
+      return false;
+    }
+    BatchJobUploadStatus other = (BatchJobUploadStatus) obj;
+    return Objects.equal(totalContentLength, other.totalContentLength)
+        && Objects.equal(resumableUploadUri, other.resumableUploadUri);
   }
 }

@@ -17,10 +17,13 @@ package com.google.api.ads.adwords.axis.utils.v201601.shopping;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.adwords.axis.v201601.cm.ProductOfferId;
+import com.google.common.collect.Lists;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductOfferId} dimensions.
@@ -33,11 +36,19 @@ public class ProductOfferIdComparatorTest extends BaseProductDimensionComparator
     return ProductDimensions.createOfferId(null);
   }
 
+  @Override
+  List<ProductOfferId> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createOfferId("A"), ProductDimensions.createOfferId("B"));
+  }
+
   @Test
   public void testCaseInsensitive() {
     ProductOfferId offerId1 = ProductDimensions.createOfferId("ABC");
     ProductOfferId offerId2 = ProductDimensions.createOfferId("AbC");
-    assertEquals("OfferIds that only differ in case should be equivalent", 0,
+    assertEquals(
+        "OfferIds that only differ in case should be equivalent",
+        0,
         comparator.compare(offerId1, offerId2));
   }
 }

@@ -23,7 +23,9 @@ import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
+import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.reflect.Reflection;
 
 import java.lang.reflect.InvocationHandler;
@@ -44,6 +46,20 @@ public class BatchJobHelper
     InvocationHandler invocationHandler =
         new AdsUtilityInvocationHandler(
             new BatchJobHelperImpl(session),
+            AdWordsInternals.getInstance().getAdsUtilityRegistry());
+    this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler);
+  }
+
+  /**
+   * Constructor for testing to allow mocking of the underlying uploader.
+   */
+  @SuppressWarnings("unchecked")
+  @VisibleForTesting
+  BatchJobHelper(
+      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+    InvocationHandler invocationHandler =
+        new AdsUtilityInvocationHandler(
+            new BatchJobHelperImpl(uploader),
             AdWordsInternals.getInstance().getAdsUtilityRegistry());
     this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler);
   }

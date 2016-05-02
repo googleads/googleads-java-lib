@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>adwords-axis-utility-extension-examples</artifactId>
-  <version>2.13.0-beta</version>
+  <version>2.13.1-beta</version>
 
   <packaging>jar</packaging>
   <name>Examples using AdWords Axis Utility Extension - Beta</name>
@@ -97,17 +97,17 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>2.13.0</version>
+      <version>2.13.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis</artifactId>
-      <version>2.13.0</version>
+      <version>2.13.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis-utility-extension</artifactId>
-      <version>2.13.0-beta</version>
+      <version>2.13.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>

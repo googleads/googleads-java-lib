@@ -25,7 +25,7 @@ public enum ConversionTrackerField implements EntityField {
   // Fields constants definitions
 
   /**
-   * Controls whether conversion event values and currency codes are taken from the tag snippet or from {@link ConversionTracker#defaultRevenueValue} and {@link ConversionTracker#defaultRevenueCurrencyCode}.
+   * Controls whether conversion event values and currency codes are taken from the tag snippet or from {@code ConversionTracker#defaultRevenueValue} and {@code ConversionTracker#defaultRevenueCurrencyCode}.
    * If alwaysUseDefaultRevenueValue is true, then conversion events will always use defaultRevenueValue and defaultRevenueCurrencyCode, even if the tag has supplied a value and/or code when reporting the conversion event.
    * If alwaysUseDefaultRevenueValue is false, then defaultRevenueValue and defaultRevenueCurrencyCode are only used if the tag does not supply a value, or the tag's value is unparseable.
    */
@@ -104,7 +104,7 @@ public enum ConversionTrackerField implements EntityField {
    * The currency code to use when the tag for this conversion tracker sends conversion events without currency codes.
    * This code is applied on the server side, and is applicable to all ConversionTracker subclasses.
    * It must be a valid ISO4217 3-character code, such as USD.
-   * <p> This code is used if the code in the tag is not supplied or is unsupported, or if {@link ConversionTracker#alwaysUseDefaultRevenueValue} is set to true.
+   * <p> This code is used if the code in the tag is not supplied or is unsupported, or if {@code ConversionTracker#alwaysUseDefaultRevenueValue} is set to true.
    * If this default code is not set the currency code of the account is used as the default code.
    * <p> Set the default code to XXX in order to specify that this conversion type does not have units of a currency (that is, it is unitless).
    * In this case no currency conversion will occur even if a currency code is set in the tag.
@@ -115,7 +115,7 @@ public enum ConversionTrackerField implements EntityField {
   /**
    * The value to use when the tag for this conversion tracker sends conversion events without values.
    * This value is applied on the server side, and is applicable to all ConversionTracker subclasses.
-   * <p> See also the corresponding {@link ConversionTracker#defaultRevenueCurrencyCode}, and see {@link ConversionTracker#alwaysUseDefaultRevenueValue} for details about when this value is used.
+   * <p> See also the corresponding {@code ConversionTracker#defaultRevenueCurrencyCode}, and see {@code ConversionTracker#alwaysUseDefaultRevenueValue} for details about when this value is used.
    */
   @Filterable
   DefaultRevenueValue(true),
@@ -132,7 +132,7 @@ public enum ConversionTrackerField implements EntityField {
   /**
    * ID of this conversion tracker, {@code null} when creating a new one.
    * <p>There are some system-defined conversion trackers that are available for all customers to use.
-   * See {@link ConversionTrackerService#mutate} for more information about how to modify these types.
+   * See {@code ConversionTrackerService#mutate} for more information about how to modify these types.
    * <ul> <li>179 - Calls from Ads</li> <li>214 - Android Downloads</li> <li>239 - Store Visits</li> </ul>
    */
   @Filterable

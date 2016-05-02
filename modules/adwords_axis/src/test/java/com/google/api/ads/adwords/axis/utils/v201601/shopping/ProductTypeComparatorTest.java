@@ -19,11 +19,14 @@ import static org.junit.Assert.assertThat;
 
 import com.google.api.ads.adwords.axis.v201601.cm.ProductDimensionType;
 import com.google.api.ads.adwords.axis.v201601.cm.ProductType;
+import com.google.common.collect.Lists;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductType} dimensions.
@@ -34,6 +37,13 @@ public class ProductTypeComparatorTest extends BaseProductDimensionComparatorTes
   @Override
   ProductType createOtherProductDimension() {
     return ProductDimensions.createType(ProductDimensionType.PRODUCT_TYPE_L1, null);
+  }
+
+  @Override
+  List<ProductType> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createType(ProductDimensionType.PRODUCT_TYPE_L1, "A"),
+        ProductDimensions.createType(ProductDimensionType.PRODUCT_TYPE_L1, "B"));
   }
 
   @Test

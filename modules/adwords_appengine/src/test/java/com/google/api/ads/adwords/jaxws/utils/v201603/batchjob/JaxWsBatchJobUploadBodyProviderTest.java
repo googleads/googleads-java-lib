@@ -12,26 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.api.ads.adwords.jaxws.utils.v201509;
+package com.google.api.ads.adwords.jaxws.utils.v201603.batchjob;
 
 import com.google.api.ads.adwords.jaxws.utils.JaxWsBatchJobUploadBodyProvider;
-import com.google.api.ads.adwords.jaxws.utils.v201509.batchjob.BatchJobMutateRequest;
-import com.google.api.ads.adwords.jaxws.v201509.cm.AdvertisingChannelType;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BiddingStrategyConfiguration;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BiddingStrategyType;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Budget;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetOperation;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Campaign;
-import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignCriterionOperation;
-import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignOperation;
-import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignStatus;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Keyword;
-import com.google.api.ads.adwords.jaxws.v201509.cm.KeywordMatchType;
-import com.google.api.ads.adwords.jaxws.v201509.cm.ManualCpcBiddingScheme;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Money;
-import com.google.api.ads.adwords.jaxws.v201509.cm.NegativeCampaignCriterion;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Operator;
+import com.google.api.ads.adwords.jaxws.v201603.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.jaxws.v201603.cm.BiddingStrategyConfiguration;
+import com.google.api.ads.adwords.jaxws.v201603.cm.BiddingStrategyType;
+import com.google.api.ads.adwords.jaxws.v201603.cm.Budget;
+import com.google.api.ads.adwords.jaxws.v201603.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.jaxws.v201603.cm.BudgetOperation;
+import com.google.api.ads.adwords.jaxws.v201603.cm.Campaign;
+import com.google.api.ads.adwords.jaxws.v201603.cm.CampaignCriterionOperation;
+import com.google.api.ads.adwords.jaxws.v201603.cm.CampaignOperation;
+import com.google.api.ads.adwords.jaxws.v201603.cm.CampaignStatus;
+import com.google.api.ads.adwords.jaxws.v201603.cm.Keyword;
+import com.google.api.ads.adwords.jaxws.v201603.cm.KeywordMatchType;
+import com.google.api.ads.adwords.jaxws.v201603.cm.ManualCpcBiddingScheme;
+import com.google.api.ads.adwords.jaxws.v201603.cm.Money;
+import com.google.api.ads.adwords.jaxws.v201603.cm.NegativeCampaignCriterion;
+import com.google.api.ads.adwords.jaxws.v201603.cm.Operator;
 import com.google.api.ads.adwords.lib.utils.testing.BatchJobUploadBodyProviderTest;
 
 import org.junit.runner.RunWith;
@@ -46,7 +45,7 @@ public class JaxWsBatchJobUploadBodyProviderTest
 
   @Override
   protected String getApiVersion() {
-    return "v201509";
+    return "v201603";
   }
 
   @Override

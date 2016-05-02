@@ -16,8 +16,10 @@ package com.google.api.ads.adwords.lib.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -62,6 +64,22 @@ public class BatchJobUploadStatusTest {
         status.getResumableUploadUri(), deserializedStatus.getResumableUploadUri());
     assertEquals("Deserialized status total content length does not match original",
         status.getTotalContentLength(), deserializedStatus.getTotalContentLength());
+  }
+  
+  @Test
+  public void testToString() {
+    Long totalContentLength = 500L;
+    String uploadUrl = "http://www.example.com/upload";
+    BatchJobUploadStatus status =
+        new BatchJobUploadStatus(totalContentLength, URI.create(uploadUrl));
+    assertThat(
+        "toString should contain the total content length",
+        status.toString(),
+        Matchers.containsString(totalContentLength.toString()));
+    assertThat(
+        "toString should contain the upload URL",
+        status.toString(),
+        Matchers.containsString(uploadUrl));
   }
 
   /**

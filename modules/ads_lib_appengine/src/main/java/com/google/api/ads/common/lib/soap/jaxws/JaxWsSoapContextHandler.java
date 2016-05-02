@@ -14,8 +14,15 @@
 
 package com.google.api.ads.common.lib.soap.jaxws;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.api.ads.common.lib.exception.ServiceException;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Splitter;
+import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
+
+import org.w3c.dom.Node;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -44,14 +51,27 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
 
   private String lastSoapRequest;
   private String lastSoapResponse;
+  private String lastRequestId;
   private String lastServiceCalled;
   private String lastOperationCalled;
   private Set<SOAPElement> soapHeaders = new HashSet<SOAPElement>();
+  private final NodeExtractor nodeExtractor;
+  private final ImmutableList<String> requestIdXPathComponents;
 
   /**
-   * Default constructor.
+   * @param nodeExtractor required; used to extract request ID from SOAP responses.
    */
-  public JaxWsSoapContextHandler() {}
+  public JaxWsSoapContextHandler(
+      NodeExtractor nodeExtractor, AdsApiConfiguration adsApiConfiguration) {
+    this.nodeExtractor = nodeExtractor;
+    String requestIdXPath = adsApiConfiguration.getRequestIdXPath();
+    if (!Strings.isNullOrEmpty(requestIdXPath)) {
+      requestIdXPathComponents = ImmutableList.<String>copyOf(
+          Splitter.on('/').split(requestIdXPath));
+    } else {
+      requestIdXPathComponents = ImmutableList.<String>of();
+    }
+  }
 
   /**
    * Captures pertinent information from SOAP messages exchanged by the SOAP
@@ -139,6 +159,15 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
       OutputStream outputStream = new ByteArrayOutputStream();
       message.writeTo(outputStream);
       soapXml = outputStream.toString();
+      SOAPHeader soapHeader = message.getSOAPHeader();
+      if ((!(Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
+          && soapHeader != null
+          && !requestIdXPathComponents.isEmpty()) {
+        Node requestIdNode = nodeExtractor.extractNode(soapHeader, requestIdXPathComponents);
+        if (requestIdNode != null) {
+          lastRequestId = requestIdNode.getFirstChild().getNodeValue();
+        }
+      }
     } catch (IOException e) {
       soapXml = "Exception logging SOAP message: " + e;
     } catch (SOAPException e) {
@@ -164,6 +193,13 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
    */
   public String getLastResponseXml() {
     return lastSoapResponse;
+  }
+  
+  /**
+   * Returns the request ID from the last SOAP response XML message handled by this object.
+   */
+  public String getLastRequestId() {
+    return lastRequestId;
   }
 
   /**

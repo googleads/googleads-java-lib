@@ -27,7 +27,7 @@ public enum BatchJobField implements EntityField {
   /**
    * The URL to use to download results for this job.
    * Results will be available for 30 days after job completion.
-   * This field is only returned once {@link #status} is either {@code DONE} or {@code CANCELED}.
+   * This field is only returned once {@code #status} is either {@code DONE} or {@code CANCELED}.
    */
   DownloadUrl(false),
 

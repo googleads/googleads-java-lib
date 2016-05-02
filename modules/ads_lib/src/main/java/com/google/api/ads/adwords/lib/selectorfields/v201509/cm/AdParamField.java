@@ -34,7 +34,7 @@ public enum AdParamField implements EntityField {
   /**
    * ID of the associated <code>Keyword</code> criterion.
    * The keyword must be in the same ad group as this <code>AdParam</code>.
-   * Text ads triggered by this keyword will have their <code>{param<var>N</var>:<var>default-value</var>}</code> snippet replaced by the contents of {@link #insertionText}.
+   * Text ads triggered by this keyword will have their <code>{param<var>N</var>:<var>default-value</var>}</code> snippet replaced by the contents of {@code #insertionText}.
    */
   @Filterable
   CriterionId(true),

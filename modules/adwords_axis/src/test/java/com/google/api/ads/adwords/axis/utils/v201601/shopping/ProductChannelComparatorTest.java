@@ -14,14 +14,17 @@
 
 package com.google.api.ads.adwords.axis.utils.v201601.shopping;
 
-import com.google.api.ads.adwords.axis.v201601.cm.ProductCanonicalCondition;
 import com.google.api.ads.adwords.axis.v201601.cm.ProductChannel;
+import com.google.api.ads.adwords.axis.v201601.cm.ShoppingProductChannel;
+import com.google.common.collect.Lists;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.List;
+
 /**
- * Tests for comparing {@link ProductCanonicalCondition} dimensions.
+ * Tests for comparing {@link ProductChannel} dimensions.
  */
 @RunWith(JUnit4.class)
 public class ProductChannelComparatorTest extends BaseProductDimensionComparatorTest {
@@ -30,5 +33,12 @@ public class ProductChannelComparatorTest extends BaseProductDimensionComparator
   ProductChannel createOtherProductDimension() {
     ProductChannel channel = new ProductChannel();
     return channel;
+  }
+  
+  @Override
+  List<ProductChannel> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createChannel(ShoppingProductChannel.LOCAL),
+        ProductDimensions.createChannel(ShoppingProductChannel.ONLINE));
   }
 }

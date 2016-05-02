@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.api.ads.adwords.axis.utils.v201603;
+package com.google.api.ads.adwords.axis.utils.v201603.batchjob;
 
 import com.google.api.ads.adwords.axis.utils.AxisBatchJobUploadBodyProvider;
-import com.google.api.ads.adwords.axis.utils.v201603.batchjob.BatchJobMutateRequest;
 import com.google.api.ads.adwords.axis.v201603.cm.AdvertisingChannelType;
 import com.google.api.ads.adwords.axis.v201603.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201603.cm.BiddingStrategyType;

@@ -19,11 +19,14 @@ import static org.junit.Assert.assertThat;
 
 import com.google.api.ads.adwords.axis.v201603.cm.ProductCustomAttribute;
 import com.google.api.ads.adwords.axis.v201603.cm.ProductDimensionType;
+import com.google.common.collect.Lists;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductCustomAttribute} dimensions.
@@ -36,13 +39,22 @@ public class ProductCustomAttributeComparatorTest extends BaseProductDimensionCo
     return ProductDimensions.createCustomAttribute(ProductDimensionType.CUSTOM_ATTRIBUTE_0, null);
   }
 
+  @Override
+  List<ProductCustomAttribute> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createCustomAttribute(ProductDimensionType.CUSTOM_ATTRIBUTE_0, "A"),
+        ProductDimensions.createCustomAttribute(ProductDimensionType.CUSTOM_ATTRIBUTE_0, "B"));
+  }
+
   @Test
   public void testCaseInsensitive() {
     ProductCustomAttribute attrib1 =
         ProductDimensions.createCustomAttribute(ProductDimensionType.PRODUCT_TYPE_L1, "ABC");
     ProductCustomAttribute attrib2 =
         ProductDimensions.createCustomAttribute(ProductDimensionType.PRODUCT_TYPE_L1, "AbC");
-    assertEquals("Attributes that only differ in case should be equivalent", 0,
+    assertEquals(
+        "Attributes that only differ in case should be equivalent",
+        0,
         comparator.compare(attrib1, attrib2));
   }
 
@@ -52,7 +64,9 @@ public class ProductCustomAttributeComparatorTest extends BaseProductDimensionCo
         ProductDimensions.createCustomAttribute(ProductDimensionType.PRODUCT_TYPE_L1, "ABC");
     ProductCustomAttribute attrib2 =
         ProductDimensions.createCustomAttribute(ProductDimensionType.PRODUCT_TYPE_L2, "AbC");
-    assertThat("Attributes that differ in level # should yield compareTo != 0",
-        comparator.compare(attrib1, attrib2), Matchers.not(0));
+    assertThat(
+        "Attributes that differ in level # should yield compareTo != 0",
+        comparator.compare(attrib1, attrib2),
+        Matchers.not(0));
   }
 }

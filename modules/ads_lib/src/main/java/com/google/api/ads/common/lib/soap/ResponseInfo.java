@@ -20,6 +20,7 @@ package com.google.api.ads.common.lib.soap;
 public class ResponseInfo {
 
   private String soapResponseXml;
+  private String requestId;
 
   /**
    * Constructor.
@@ -33,6 +34,13 @@ public class ResponseInfo {
     return soapResponseXml;
   }
 
+  /**
+   * Gets the SOAP response request ID.
+   */
+  public String getRequestId() {
+    return requestId;
+  }
+  
   /**
    * Builder for {@link ResponseInfo} objects.
    *
@@ -56,6 +64,16 @@ public class ResponseInfo {
      */
     public Builder withSoapResponseXml(String soapResponseXml) {
       responseInfo.soapResponseXml = soapResponseXml;
+      return this;
+    }
+
+    /**
+     * Adds the SOAP response request ID to the ResponseInfo under construction.
+     * 
+     * @return this builder
+     */
+    public Builder withRequestId(String requestId) {
+      responseInfo.requestId = requestId;
       return this;
     }
 

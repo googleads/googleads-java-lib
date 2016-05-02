@@ -96,7 +96,8 @@ public enum BudgetOrderField implements EntityField {
   SecondaryBillingId(true),
 
   /**
-   * To specify an unlimited budget, set spendingLimit to -1 (in micros), otherwise spendingLimit must be greater than 0.
+   * The spending limit in micros.
+   * To specify an unlimited budget, set spendingLimit to -1, otherwise spendingLimit must be greater than 0.
    */
   @Filterable
   SpendingLimit(true),

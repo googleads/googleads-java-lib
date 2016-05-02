@@ -12,10 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.api.ads.adwords.lib.utils;
+package com.google.api.ads.common.lib.utils;
 
-import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Supplier;
 import com.google.common.collect.Maps;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import org.slf4j.Logger;
 import org.w3c.dom.Document;
@@ -28,13 +30,10 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 
 /**
  * Utility class to extract fields from XML.
@@ -42,23 +41,17 @@ import javax.xml.xpath.XPathFactory;
 public class XmlFieldExtractor {
 
   private final Logger logger;
+  private final Supplier<DocumentBuilder> documentBuilderSupplier;
+  private final Supplier<XPath> xpathSupplier;
 
-  private DocumentBuilder builder;
-  private XPath xpath;
-
-  /**
-   * Constructor.
-   */
-  public XmlFieldExtractor() {
-    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-    try {
-      builder = factory.newDocumentBuilder();
-    } catch (ParserConfigurationException e) {
-      throw new IllegalStateException("Couldn't construct a DocumentBuilder", e);
-    }
-    xpath = XPathFactory.newInstance().newXPath();
-    logger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getReportServiceLogger()
-        .getLogger();
+  @Inject
+  public XmlFieldExtractor(
+      @Named("soapXmlLogger") Logger soapXmlLogger,
+      Supplier<DocumentBuilder> documentBuilderSupplier,
+      Supplier<XPath> xpathSupplier) {
+    this.documentBuilderSupplier = documentBuilderSupplier;
+    this.xpathSupplier = xpathSupplier;
+    this.logger = soapXmlLogger;
   }
 
   /**
@@ -76,7 +69,7 @@ public class XmlFieldExtractor {
   public Map<String, String> extract(InputStream xml, String[] fields) {
     Map<String, String> parsedFields = Maps.newHashMap();
     try {
-      Document doc = getDocument(xml);
+      Document doc = documentBuilderSupplier.get().parse(xml);
       for (String field : fields) {
         try {
           String value = extract(doc, field);
@@ -107,19 +100,11 @@ public class XmlFieldExtractor {
    */
   @Nullable
   private String extract(Document doc, String field) throws XPathExpressionException {
-    XPathExpression expr = xpath.compile("//" + field);
+    XPathExpression expr = xpathSupplier.get().compile("//" + field);
     NodeList nl = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
     if (nl.getLength() > 0) {
       return nl.item(0).getTextContent();
     }
     return null;
-  }
-
-  /**
-   * Parses the provided input stream into a document.
-   */
-  @VisibleForTesting
-  Document getDocument(InputStream is) throws SAXException, IOException {
-    return builder.parse(is);
   }
 }

@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.lib.utils.v201509;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.when;
@@ -31,6 +32,7 @@ import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.ReportRequest;
+import com.google.api.ads.adwords.lib.utils.v201509.DetailedReportDownloadResponseException.Builder;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -54,17 +56,6 @@ import java.util.Collection;
  */
 @RunWith(Parameterized.class)
 public class ReportDownloaderTest {
-
-  private static final String GOLDEN_ERROR_XML = "<?xml version=\"1.0\" "
-      + "encoding=\"UTF-8\" standalone=\"yes\"?><reportDownloadError>"
-      + "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>"
-      + "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError>"
-      + "</reportDownloadError>";
-
-  private static final String ERROR_XML = "<reportDownloadError>"
-      + "<ApiError><type>ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT</type>"
-      + "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError>"
-      + "</reportDownloadError>";
 
   private static final String AWQL_REQUEST = "SELECT CampaignId, CampaignName, Impressions "
       + "FROM CAMPAIGN_PERFORMANCE_REPORT DURING THIS_MONTH";
@@ -104,15 +95,30 @@ public class ReportDownloaderTest {
    * @param rawResponse the response to return from the mocked ad hoc helper
    */
   private ReportDownloadResponse downloadReport(DownloadFormat downloadFormat,
-      RawReportDownloadResponse rawResponse) throws ReportException,
+      RawReportDownloadResponse rawResponse, String expectedErrorText) throws ReportException,
       ReportDownloadResponseException {
-    when(adHocDownloadHelper.downloadReport(Matchers.<ReportRequest>any())).thenReturn(rawResponse);
+    if (rawResponse.getHttpStatus() == 200) {
+      // Response indicates success, so return a ReportDownloadResponse.
+      when(
+              adHocDownloadHelper.downloadReport(
+                  Matchers.any(ReportRequest.class), Matchers.any(Builder.class)))
+          .thenReturn(new ReportDownloadResponse(rawResponse));
+    } else {
+      // Response indicates failure, so throw an exception.
+      when(
+              adHocDownloadHelper.downloadReport(
+                  Matchers.any(ReportRequest.class), Matchers.any(Builder.class)))
+          .thenThrow(new Builder().build(rawResponse.getHttpStatus(), expectedErrorText));
+    }
+
     if (isUseAwql) {
       return reportDownloader.downloadReport(AWQL_REQUEST, downloadFormat);
     } else {
       ReportDefinition reportDefinition = new ReportDefinition();
       reportDefinition.setSelector(new Selector());
-      reportDefinition.getSelector().getFields()
+      reportDefinition
+          .getSelector()
+          .getFields()
           .addAll(Arrays.asList("CampaignId", "CampaignName", "Impressions"));
       reportDefinition.setDateRangeType(ReportDefinitionDateRangeType.LAST_7_DAYS);
       reportDefinition.setReportName("Custom report");
@@ -127,7 +133,7 @@ public class ReportDownloaderTest {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(200, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
             DownloadFormat.CSV.name());
-    ReportDownloadResponse response = downloadReport(DownloadFormat.CSV, rawResponse);
+    ReportDownloadResponse response = downloadReport(DownloadFormat.CSV, rawResponse, null);
     assertEquals(200, response.getHttpStatus());
     assertEquals(stream, response.getInputStream());
     assertEquals("SUCCESS", response.getHttpResponseMessage());
@@ -141,7 +147,7 @@ public class ReportDownloaderTest {
         new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
             DownloadFormat.CSV.name());
     try {
-      downloadReport(DownloadFormat.CSV, rawResponse);
+      downloadReport(DownloadFormat.CSV, rawResponse, null);
       fail("Should have thrown an exception");
     } catch (ReportDownloadResponseException e) {
       assertEquals(400, e.getHttpStatus());
@@ -149,51 +155,20 @@ public class ReportDownloaderTest {
   }
 
   @Test
-  public void testFailure_validXmlResponse() throws Exception {
-    InputStream stream = new ByteArrayInputStream(GOLDEN_ERROR_XML.getBytes());
-    RawReportDownloadResponse rawResponse =
-        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
-            DownloadFormat.XML.name());
-    try {
-      downloadReport(DownloadFormat.XML, rawResponse);
-      fail("Should have thrown an exception");
-    } catch (DetailedReportDownloadResponseException e) {
-      assertEquals(400, e.getHttpStatus());
-      assertEquals("ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT", e.getType());
-      assertEquals("AdFormatt", e.getTrigger());
-      assertEquals("foobar", e.getFieldPath());
-    }
-  }
-
-  @Test
-  public void testFailure_mostlyValidXmlResponse() throws Exception {
-    InputStream stream = new ByteArrayInputStream(ERROR_XML.getBytes());
-    RawReportDownloadResponse rawResponse =
-        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
-            DownloadFormat.XML.name());
-    try {
-      downloadReport(DownloadFormat.XML, rawResponse);
-      fail("Should have thrown an exception");
-    } catch (DetailedReportDownloadResponseException e) {
-      assertEquals(400, e.getHttpStatus());
-      assertEquals("ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT", e.getType());
-      assertEquals("AdFormatt", e.getTrigger());
-      assertEquals("foobar", e.getFieldPath());
-    }
-  }
-
-  @Test
-  public void testFailure_invalidXmlResponse() throws Exception {
+  public void testFailure_failedStatusCode() throws Exception {
     InputStream stream = new ByteArrayInputStream(ERROR_TEXT.getBytes());
+    int statusCode = 400;
     RawReportDownloadResponse rawResponse =
-        new RawReportDownloadResponse(400, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
+        new RawReportDownloadResponse(statusCode, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
             DownloadFormat.XML.name());
     try {
-      downloadReport(DownloadFormat.XML, rawResponse);
+      downloadReport(DownloadFormat.XML, rawResponse, ERROR_TEXT);
       fail("Should have thrown an exception");
     } catch (DetailedReportDownloadResponseException e) {
-      assertEquals(400, e.getHttpStatus());
+      assertEquals(statusCode, e.getHttpStatus());
       assertEquals(ERROR_TEXT, e.getErrorText());
+      assertThat(e.toString(), org.hamcrest.Matchers.containsString(String.valueOf(statusCode)));
+      assertThat(e.toString(), org.hamcrest.Matchers.containsString(ERROR_TEXT));
     }
   }
 

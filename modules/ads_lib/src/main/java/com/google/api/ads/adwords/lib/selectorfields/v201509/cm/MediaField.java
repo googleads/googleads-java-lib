@@ -110,7 +110,7 @@ public enum MediaField implements EntityField {
 
   /**
    * Type of this media object.
-   * Required when using {@link com.google.ads.api.services.campaignmgmt.media.MediaService#upload upload()} to upload a new media file.
+   * Required when using {@code com.google.ads.api.services.campaignmgmt.media.MediaService#upload upload()} to upload a new media file.
    */
   @Filterable
   Type(true),

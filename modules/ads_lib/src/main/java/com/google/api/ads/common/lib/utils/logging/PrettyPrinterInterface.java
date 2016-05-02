@@ -15,12 +15,16 @@
 package com.google.api.ads.common.lib.utils.logging;
 
 /**
- * Interface capable of pretty printing XML messages.
+ * Interface capable of pretty printing XML messages and extracting key fields from
+ * XML messages.
  */
 public interface PrettyPrinterInterface {
 
   /**
-   * Transforms XML into a pretty-printed format.
+   * Transforms the XML into a pretty-printed format with sensitive strings removed.
+   * If there is an error initializing formatting the XML message, the formatting
+   * step will be skipped and the unformatted XML with sensitive strings removed
+   * will be returned. 
    *
    * @param xml the XML message to be pretty printed
    * @return the given message in pretty-printed format

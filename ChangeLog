@@ -1,3 +1,25 @@
+2.13.1 - 05/02/2016
+-------------------
+AdWords:
+  - Modified logging of SOAP requests to replace the developer token with
+  `REDACTED`.
+  - Refactored ReportDownloader and AdHocReportDownloader to reduce duplicated code.
+  - Removed unused exceptions: ReportFailureException, SoapInvocationTargetException.
+  - Fixed Axis BatchJobHelper implementation to avoid concurrency issues with Apache
+    Axis TypeMapping objects. Fixes github issue #80:
+    https://github.com/googleads/googleads-java-lib/issues/80
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Added logging of request IDs for SOAP requests. Fixes github issue #4:
+    https://github.com/googleads/googleads-java-lib/issues/4
+  - Removed unused com.google.api.ads.common.lib.utils.Choices utility.
+
 2.13.0 - 04/11/2016
 -------------------
 AdWords:

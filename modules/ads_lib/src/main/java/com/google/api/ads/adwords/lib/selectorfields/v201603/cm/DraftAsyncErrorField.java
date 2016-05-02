@@ -36,6 +36,8 @@ public enum DraftAsyncErrorField implements EntityField {
 
   /**
    * The error occurred during promotion while updating this Campaign or an entity in this Campaign.
+   * This field can only be used with Predicate Operators EQUALS and IN.
+   * When using a Predicate with this field, also include a Predicate for the field DraftId.
    */
   @Filterable
   BaseCampaignId(true),
@@ -48,11 +50,12 @@ public enum DraftAsyncErrorField implements EntityField {
   /**
    * The draft Campaign that was attempted to be promoted.
    */
-  @Filterable
-  DraftCampaignId(true),
+  DraftCampaignId(false),
 
   /**
    * The draft that was attempted to be promoted.
+   * This field can only be used with Predicate Operators EQUALS and IN.
+   * When using a Predicate with this field, also include a Predicate for the field BaseCampaignId.
    */
   @Filterable
   DraftId(true),

@@ -33,6 +33,7 @@ public class Internals {
   private final AdsServiceLoggers adsServiceLoggers;
   private final OAuth2Helper oAuth2Helper;
   private final AdsUtilityRegistry adsUtilityRegistry;
+  private final XmlFieldExtractor xmlFieldExtractor;
 
   /**
    * Constructor to be injected by guice.
@@ -41,13 +42,15 @@ public class Internals {
   public Internals(AuthorizationHeaderProvider authorizationHeaderProvider,
       UserAgentCombiner userAgentCombiner, HttpTransport httpTransport,
       AdsServiceLoggers adsServiceLoggers, OAuth2Helper oAuth2Helper,
-      AdsUtilityRegistry adsUtilityRegistry) {
+      AdsUtilityRegistry adsUtilityRegistry,
+      XmlFieldExtractor xmlFieldExtractor) {
     this.authorizationHeaderProvider = authorizationHeaderProvider;
     this.userAgentCombiner = userAgentCombiner;
     this.httpTransport = httpTransport;
     this.adsServiceLoggers = adsServiceLoggers;
     this.oAuth2Helper = oAuth2Helper;
     this.adsUtilityRegistry = adsUtilityRegistry;
+    this.xmlFieldExtractor = xmlFieldExtractor;
   }
 
   /**
@@ -90,5 +93,9 @@ public class Internals {
    */
   public AdsUtilityRegistry getAdsUtilityRegistry() {
     return adsUtilityRegistry;
+  }
+
+  public XmlFieldExtractor getXmlFieldExtractor() {
+    return xmlFieldExtractor;
   }
 }

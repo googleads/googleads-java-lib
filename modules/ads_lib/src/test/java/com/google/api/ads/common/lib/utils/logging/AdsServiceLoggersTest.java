@@ -62,17 +62,20 @@ public class AdsServiceLoggersTest {
     String service = "test service";
     String method = "test method";
     String url = "http://www.example.com";
-
+    String requestId = "123456";
+    
     when(soapCallReturn.getRequestInfo()).thenReturn(requestInfo);
     when(requestInfo.getServiceName()).thenReturn(service);
     when(requestInfo.getMethodName()).thenReturn(method);
     when(requestInfo.getUrl()).thenReturn(url);
+    when(soapCallReturn.getResponseInfo()).thenReturn(responseInfo);
+    when(responseInfo.getRequestId()).thenReturn(requestId);
 
     adsServiceLoggers.logRequest(soapCallReturn);
 
     verify(requestInfoLogger).info(
-        eq("Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\""),
-        eq(service), eq(method), eq(url));
+        eq("Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\" Request ID: \"{}\""),
+        eq(service), eq(method), eq(url), eq(requestId));
   }
 
   @Test

@@ -21,6 +21,9 @@ import org.apache.commons.configuration.Configuration;
  */
 public abstract class AdsApiConfiguration extends BaseConfiguration {
 
+  protected static final String REQUEST_ID_XPATH_POSTFIX = "requestIdXPath";
+  protected static final String SENSITIVE_XPATHS_POSTFIX = "sensitiveXPaths";
+
   /**
    * Constructor.
    *
@@ -34,4 +37,12 @@ public abstract class AdsApiConfiguration extends BaseConfiguration {
    * Gets the namespace prefix.
    */
   public abstract String getNamespacePrefix();
+  
+  public String getRequestIdXPath() {
+    return null;
+  }
+  
+  public String[] getSensitiveXPaths() {
+    return new String[0];
+  }
 }

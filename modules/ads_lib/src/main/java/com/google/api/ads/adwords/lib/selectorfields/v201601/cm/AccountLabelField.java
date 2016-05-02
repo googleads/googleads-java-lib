@@ -27,7 +27,7 @@ public enum AccountLabelField implements EntityField {
   /**
    * ID of the label.
    * <p>This field is selectable/filterable in AccountLabelService.
-   * To select labels or filter by label ID in {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
+   * To select labels or filter by label ID in {@code com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
    */
   @Filterable
   LabelId(true),
@@ -35,7 +35,7 @@ public enum AccountLabelField implements EntityField {
   /**
    * Name of the label.
    * <p>This field is selectable in AccountLabelService.
-   * To select labels in {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
+   * To select labels in {@code com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
    */
   LabelName(false),
 

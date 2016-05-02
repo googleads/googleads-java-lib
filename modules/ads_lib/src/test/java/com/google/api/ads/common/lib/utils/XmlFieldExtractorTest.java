@@ -12,19 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.api.ads.adwords.lib.utils;
+package com.google.api.ads.common.lib.utils;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.w3c.dom.Document;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.slf4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathFactory;
 
 /**
  * Test for {@link XmlFieldExtractor}.
@@ -38,33 +48,37 @@ public class XmlFieldExtractorTest {
       + "<trigger>AdFormatt</trigger><fieldPath>foobar</fieldPath></ApiError>"
       + "</reportDownloadError>";
 
-
-  @Test
-  public void testGetDocument() throws Exception {
-    XmlFieldExtractor converter = new XmlFieldExtractor();
-    Document doc =
-        converter.getDocument(new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()));
-    assertNotNull(doc);
-    assertEquals("reportDownloadError", doc.getDocumentElement().getTagName());
+  @Mock private Logger logger;
+  private Supplier<DocumentBuilder> documentBuilderSupplier;
+  private Supplier<XPath> xpathSupplier;
+  private XmlFieldExtractor xmlFieldExtractor;
+  
+  @Before
+  public void setUp() throws Exception {
+    MockitoAnnotations.initMocks(this);
+    documentBuilderSupplier =
+        Suppliers.ofInstance(DocumentBuilderFactory.newInstance().newDocumentBuilder());
+    xpathSupplier = Suppliers.ofInstance(XPathFactory.newInstance().newXPath());
+    xmlFieldExtractor = new XmlFieldExtractor(logger, documentBuilderSupplier, xpathSupplier);
   }
 
   @Test
   public void testExtract() throws Exception {
-    Map<String, String> ret = new XmlFieldExtractor().extract(
+    Map<String, String> ret = xmlFieldExtractor.extract(
         new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"trigger"});
     assertEquals("AdFormatt", ret.get("trigger"));
   }
 
   @Test
   public void testExtract_fieldNotInXml() throws Exception {
-    Map<String, String> ret = new XmlFieldExtractor().extract(
+    Map<String, String> ret = xmlFieldExtractor.extract(
         new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"foo"});
     assertNull(ret.get("foo"));
   }
 
   @Test
   public void testExtract_multipleFields() throws Exception {
-    Map<String, String> ret = new XmlFieldExtractor().extract(
+    Map<String, String> ret = xmlFieldExtractor.extract(
         new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()),
         new String[] {"type", "trigger", "fieldPath"});
     assertEquals("ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT", ret.get("type"));
@@ -74,7 +88,7 @@ public class XmlFieldExtractorTest {
 
   @Test
   public void testConvert_fieldNotInXml() throws Exception {
-    Map<String, String> ret = new XmlFieldExtractor().extract(
+    Map<String, String> ret = xmlFieldExtractor.extract(
         new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"foo"});
     assertEquals(0, ret.size());
   }

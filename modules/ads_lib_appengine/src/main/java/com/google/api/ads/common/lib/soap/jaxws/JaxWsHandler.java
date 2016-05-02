@@ -55,7 +55,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
   private static final String DEVEL_REQUEST_TIMEOUT_KEY = "com.sun.xml.internal.ws.request.timeout";
   private static final String DEVEL_CONNECT_TIMEOUT_KEY = "com.sun.xml.internal.ws.connect.timeout";
 
-  private JaxWsSoapContextHandlerFactory contextHandlerFactory;
+  private final JaxWsSoapContextHandlerFactory contextHandlerFactory;
 
   /**
    * Constructor.
@@ -289,8 +289,11 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
             .withUrl((String) webService.getRequestContext().get(
                 BindingProvider.ENDPOINT_ADDRESS_PROPERTY))
             .build());
-        builder.withResponseInfo(new ResponseInfo.Builder().withSoapResponseXml(
-            contextHandler.getLastResponseXml()).build());
+        builder.withResponseInfo(
+            new ResponseInfo.Builder()
+                .withSoapResponseXml(contextHandler.getLastResponseXml())
+                .withRequestId(contextHandler.getLastRequestId())
+                .build());
       }
       return builder.withReturnValue(result).build();
     }

@@ -26,7 +26,7 @@ public enum FeedField implements EntityField {
 
   /**
    * The Feed's schema.
-   * In SET operations, these attributes will be considered new attributes and will be appended to the existing list of attributes unless this list is an exact copy of the existing list (as would be obtained via {@link FeedService#get}).
+   * In SET operations, these attributes will be considered new attributes and will be appended to the existing list of attributes unless this list is an exact copy of the existing list (as would be obtained via {@code FeedService#get}).
    * If an empty attributes list is provided, the existing list of attributes will not be changed.
    */
   Attributes(false),
@@ -50,7 +50,7 @@ public enum FeedField implements EntityField {
   Name(true),
 
   /**
-   * Specifies who manages the {@link FeedAttribute}s for the {@link Feed}.
+   * Specifies who manages the {@code FeedAttribute}s for the {@code Feed}.
    */
   @Filterable
   Origin(true),

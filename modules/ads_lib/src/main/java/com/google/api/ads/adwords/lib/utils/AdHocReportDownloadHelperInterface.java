@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException.Builder;
 import com.google.api.ads.common.lib.utils.AdsUtility;
 import com.google.api.ads.common.lib.utils.UsesAdsUtilities;
 import com.google.api.client.util.Charsets;
@@ -32,14 +33,43 @@ public interface AdHocReportDownloadHelperInterface {
   @VisibleForTesting Charset REPORT_CHARSET = Charsets.UTF_8;
 
   /**
+   * Convenience method that is equivalent to
+   * {@code handleResponse(downloadReport(reportRequest), exceptionBuilder)}
+   *
+   * @param reportRequest the report request.
+   * @param exceptionBuilder the version-specific exception builder a new
+   * {@link ReportDownloadResponse}.
+   * @throws ReportException if there is an exception while making the HTTP request to the server.
+   * @throws ReportDownloadResponseException if unable to read the raw response's input stream.
+   * @throws NullPointerException if any argument is {@code null}.
+   */
+  @UsesAdsUtilities({AdsUtility.REPORT_DOWNLOADER})
+  ReportDownloadResponse downloadReport(ReportRequest reportRequest, Builder exceptionBuilder)
+      throws ReportException, ReportDownloadResponseException;
+
+  /**
    * Downloads a report and returns a ReportDownloadResponse with the results.
    *
    * @param reportRequest the report request.
    * @return encapsulated http response body and status code.
-   * @throws ReportException If there is any exceptions making HTTP request to the server.
+   * @throws ReportException if there is an exception while making the HTTP request to the server.
    */
   @UsesAdsUtilities({AdsUtility.REPORT_DOWNLOADER})
   RawReportDownloadResponse downloadReport(ReportRequest reportRequest) throws ReportException;
+
+  /**
+   * Handles a raw report response and translates it into a ReportDownloadResponse.
+   *
+   * @param rawResponse the raw response from an API report download request.
+   * @param exceptionBuilder the version-specific exception builder.
+   * @return a new {@link ReportDownloadResponse}.
+   * @throws ReportDownloadResponseException if unable to read the raw response's input stream.
+   * @throws NullPointerException if any argument is {@code null}.
+   */
+  @UsesAdsUtilities({AdsUtility.REPORT_DOWNLOADER})
+  ReportDownloadResponse handleResponse(
+      RawReportDownloadResponse rawResponse, Builder exceptionBuilder)
+      throws ReportDownloadResponseException;
 
   /**
    * Returns the reportDownloadTimeout in milliseconds

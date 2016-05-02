@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException.Builder;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
 import com.google.common.reflect.Reflection;
 
@@ -41,31 +42,31 @@ public class AdHocReportDownloadHelper implements AdHocReportDownloadHelperInter
     this.impl = Reflection.newProxy(AdHocReportDownloadHelperInterface.class, invocationHandler);
   }
 
-  /**
-   * Downloads a report and returns a ReportDownloadResponse with the results.
-   *
-   * @param reportRequest the report request.
-   * @return encapsulated http response body and status code.
-   * @throws ReportException If there is any exceptions making HTTP request to
-   *         the server.
-   */
+  @Override
+  public ReportDownloadResponse downloadReport(
+      ReportRequest reportRequest, Builder exceptionBuilder)
+      throws ReportException, ReportDownloadResponseException {
+    return impl.downloadReport(reportRequest, exceptionBuilder);
+  }
+
   @Override
   public RawReportDownloadResponse downloadReport(ReportRequest reportRequest)
       throws ReportException {
     return impl.downloadReport(reportRequest);
   }
   
-  /**
-   * Returns the reportDownloadTimeout in milliseconds
-   */
+  @Override
+  public ReportDownloadResponse handleResponse(
+      RawReportDownloadResponse rawResponse, Builder exceptionBuilder)
+      throws ReportDownloadResponseException {
+    return impl.handleResponse(rawResponse, exceptionBuilder);
+  }
+
   @Override
   public int getReportDownloadTimeout() {
     return impl.getReportDownloadTimeout();
   }
 
-  /**
-   * Sets the reportDownloadTimeout (milliseconds).
-   */
   @Override
   public void setReportDownloadTimeout(int reportDownloadTimeout) {
     impl.setReportDownloadTimeout(reportDownloadTimeout);

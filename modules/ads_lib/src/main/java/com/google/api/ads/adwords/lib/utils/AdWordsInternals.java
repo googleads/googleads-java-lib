@@ -22,6 +22,7 @@ import com.google.api.ads.common.lib.auth.OAuth2Helper;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
 import com.google.api.ads.common.lib.utils.Internals;
+import com.google.api.ads.common.lib.utils.XmlFieldExtractor;
 import com.google.api.client.http.HttpTransport;
 import com.google.inject.Guice;
 
@@ -42,9 +43,10 @@ public class AdWordsInternals extends Internals {
       UserAgentCombiner userAgentCombiner, HttpTransport httpTransport,
       AdWordsLibConfiguration adWordsLibConfiguration,
       AdWordsServiceLoggers adWordsServiceLoggers, OAuth2Helper oAuth2Helper,
-      AdsUtilityRegistry adsUtilityRegistry) {
+      AdsUtilityRegistry adsUtilityRegistry,
+      XmlFieldExtractor xmlFieldExtractor) {
     super(authorizationHeaderProvider, userAgentCombiner, httpTransport, adWordsServiceLoggers,
-        oAuth2Helper, adsUtilityRegistry);
+        oAuth2Helper, adsUtilityRegistry, xmlFieldExtractor);
     this.adWordsLibConfiguration = adWordsLibConfiguration;
   }
 

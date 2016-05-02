@@ -14,81 +14,25 @@
 
 package com.google.api.ads.adwords.lib.utils.v201603;
 
-import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
-import com.google.common.base.Joiner;
-import com.google.common.collect.Lists;
-
-import org.apache.commons.lang.StringUtils;
-
-import java.util.List;
-
 /**
- * Exception wrapping the ReportDownloadError the server responded with. Will
- * populate the fieldPath, trigger and type fields if the XML can be parsed
- * successfully, otherwise errorText should have the HTTP response body.
+ * Exception wrapping the ReportDownloadError the server responded with. Will populate the
+ * fieldPath, trigger and type fields if the XML can be parsed successfully, otherwise errorText
+ * should have the HTTP response body.
  */
-public class DetailedReportDownloadResponseException extends ReportDownloadResponseException {
+public class DetailedReportDownloadResponseException
+    extends com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException {
 
-  private final String errorText;
-  private String fieldPath;
-  private String trigger;
-  private String type;
-
-  /**
-   * Constructor.
-   *
-   * @param httpStatus http status code
-   * @param errorText from the server
-   */
   public DetailedReportDownloadResponseException(int httpStatus, String errorText) {
-    super(httpStatus);
-    this.errorText = errorText;
+    super(httpStatus, errorText);
   }
 
-  public String getErrorText() {
-    return errorText;
-  }
-
-  @Override
-  public String toString() {
-    List<String> parts = Lists.newArrayList();
-    parts.add("HTTP Response Code: " + this.getHttpStatus());
-    if (!StringUtils.isEmpty(fieldPath)) {
-      parts.add("FieldPath: " + fieldPath);
+  static class Builder
+      implements com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException
+          .Builder {
+    @Override
+    public com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException build(
+        int httpStatus, String errorText) {
+      return new DetailedReportDownloadResponseException(httpStatus, errorText);
     }
-    if (!StringUtils.isEmpty(trigger)) {
-      parts.add("Trigger: " + trigger);
-    }
-    if (!StringUtils.isEmpty(type)) {
-      parts.add("Type: " + type);
-    }
-    if (parts.size() == 1 && !StringUtils.isEmpty(errorText)) {
-      parts.add("ErrorText: " + errorText);
-    }
-    return Joiner.on(", ").join(parts);
-  }
-
-  public String getFieldPath() {
-    return fieldPath;
-  }
-
-  public String getTrigger() {
-    return trigger;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setFieldPath(String fieldPath) {
-    this.fieldPath = fieldPath;
-  }
-
-  public void setTrigger(String trigger) {
-    this.trigger = trigger;
-  }
-
-  public void setType(String type) {
-    this.type = type;
   }
 }

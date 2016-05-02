@@ -15,15 +15,22 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException.Builder;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
+import com.google.api.ads.common.lib.utils.Streams;
+import com.google.api.ads.common.lib.utils.XmlFieldExtractor;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
+import com.google.common.base.Preconditions;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.nio.charset.Charset;
+import java.util.Map;
 
 /**
  * Actual implementation of download functionality.
@@ -39,6 +46,13 @@ class AdHocReportDownloadHelperImpl implements AdHocReportDownloadHelperInterfac
     this.version = version;
     this.reportRequestFactoryHelper = new ReportRequestFactoryHelper(session);
     this.reportBodyProviderFactory = new ReportBodyProviderFactory();
+  }
+
+  @Override
+  public ReportDownloadResponse downloadReport(
+      ReportRequest reportRequest, Builder exceptionBuilder)
+      throws ReportDownloadResponseException, ReportException {
+    return handleResponse(downloadReport(reportRequest), exceptionBuilder);
   }
 
   @Override
@@ -74,6 +88,38 @@ class AdHocReportDownloadHelperImpl implements AdHocReportDownloadHelperInterfac
     }
   }
 
+  @Override
+  public ReportDownloadResponse handleResponse(
+      RawReportDownloadResponse rawResponse, Builder exceptionBuilder)
+      throws ReportDownloadResponseException {
+    Preconditions.checkNotNull(rawResponse, "Null response");
+    Preconditions.checkNotNull(exceptionBuilder, "Null exception builder");
+    if (rawResponse.getHttpStatus() == HttpURLConnection.HTTP_OK) {
+      return new ReportDownloadResponse(rawResponse);
+    }
+    String responseText;
+    if (rawResponse.getInputStream() == null) {
+      responseText = "";
+    } else {
+      try {
+        responseText = Streams.readAll(rawResponse.getInputStream(), rawResponse.getCharset());
+      } catch (IOException e1) {
+        throw new ReportDownloadResponseException(rawResponse.getHttpStatus(), e1);
+      }
+    }
+    DetailedReportDownloadResponseException exception =
+        exceptionBuilder.build(rawResponse.getHttpStatus(), responseText);
+    XmlFieldExtractor extractor = AdWordsInternals.getInstance().getXmlFieldExtractor();
+    Map<String, String> fields =
+        extractor.extract(
+            new ByteArrayInputStream(responseText.getBytes()),
+            new String[] {"fieldPath", "trigger", "type"});
+    exception.setFieldPath(fields.get("fieldPath"));
+    exception.setTrigger(fields.get("trigger"));
+    exception.setType(fields.get("type"));
+    throw exception;
+  }
+  
   /**
    * Creates the report download URL.
    *

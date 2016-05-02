@@ -17,10 +17,13 @@ package com.google.api.ads.adwords.axis.utils.v201603.shopping;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.adwords.axis.v201603.cm.ProductBrand;
+import com.google.common.collect.Lists;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductBrand} dimensions.
@@ -33,11 +36,19 @@ public class ProductBrandComparatorTest extends BaseProductDimensionComparatorTe
     return ProductDimensions.createBrand(null);
   }
 
+  @Override
+  List<ProductBrand> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createBrand("A"), ProductDimensions.createBrand("B"));
+  }
+
   @Test
   public void testCaseInsensitive() {
     ProductBrand brand1 = ProductDimensions.createBrand("ABC");
     ProductBrand brand2 = ProductDimensions.createBrand("AbC");
-    assertEquals("Brands that only differ in case should be equivalent", 0,
+    assertEquals(
+        "Brands that only differ in case should be equivalent",
+        0,
         comparator.compare(brand1, brand2));
   }
 }

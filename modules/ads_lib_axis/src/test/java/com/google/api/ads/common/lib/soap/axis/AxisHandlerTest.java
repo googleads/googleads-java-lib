@@ -20,10 +20,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisCompatibleServiceDescriptor;
 import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201511.MockAxisServiceInterface;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
@@ -54,6 +56,10 @@ public class AxisHandlerTest {
   
   @Mock
   private EngineConfigurationFactory engineConfigurationFactory;
+  @Mock
+  private NodeExtractor nodeExtractor;
+  @Mock
+  private AdsApiConfiguration adsApiConfiguration;
   
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -61,7 +67,7 @@ public class AxisHandlerTest {
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-    axisHandler = new AxisHandler(engineConfigurationFactory);
+    axisHandler = new AxisHandler(engineConfigurationFactory, nodeExtractor, adsApiConfiguration);
     stub = axisHandler.createSoapClient(new MockAxisCompatibleServiceDescriptor());
   }
 

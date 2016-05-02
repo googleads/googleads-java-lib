@@ -18,11 +18,14 @@ import static org.junit.Assert.assertThat;
 
 import com.google.api.ads.adwords.axis.v201603.cm.ProductBiddingCategory;
 import com.google.api.ads.adwords.axis.v201603.cm.ProductDimensionType;
+import com.google.common.collect.Lists;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductBiddingCategory} dimensions.
@@ -33,6 +36,13 @@ public class ProductBiddingCategoryComparatorTest extends BaseProductDimensionCo
   @Override
   ProductBiddingCategory createOtherProductDimension() {
     return ProductDimensions.createBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1, null);
+  }
+
+  @Override
+  List<ProductBiddingCategory> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1, 123L),
+        ProductDimensions.createBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1, 456L));
   }
 
   @Test

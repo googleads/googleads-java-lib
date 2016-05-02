@@ -290,9 +290,9 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * Labels that are attached to the AdGroupAd.
-   * To associate an existing {@link Label} to an existing {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel} with ADD operator.
-   * To remove an associated {@link Label} from the {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel} with REMOVE operator.
-   * To filter on {@link Label}s, use one of {@link Predicate.Operator#CONTAINS_ALL}, {@link Predicate.Operator#CONTAINS_ANY}, {@link Predicate.Operator#CONTAINS_NONE} operators with a list of {@link Label} ids.
+   * To associate an existing {@code Label} to an existing {@code AdGroupAd}, use {@code AdGroupAdService#mutateLabel} with ADD operator.
+   * To remove an associated {@code Label} from the {@code AdGroupAd}, use {@code AdGroupAdService#mutateLabel} with REMOVE operator.
+   * To filter on {@code Label}s, use one of {@code Predicate.Operator#CONTAINS_ALL}, {@code Predicate.Operator#CONTAINS_ANY}, {@code Predicate.Operator#CONTAINS_NONE} operators with a list of {@code Label} ids.
    */
   @Filterable
   Labels(true),
@@ -376,7 +376,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * The status of the ad.
-   * This field is required and should not be {@code null} when it is contained within {@link Operator}s : SET.
+   * This field is required and should not be {@code null} when it is contained within {@code Operator}s : SET.
    */
   @Filterable
   Status(true),

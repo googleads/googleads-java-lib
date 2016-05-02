@@ -18,18 +18,10 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.jaxb.v201601.DownloadFormat;
 import com.google.api.ads.adwords.lib.jaxb.v201601.ReportDefinition;
 import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
-import com.google.api.ads.adwords.lib.utils.RawReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
-import com.google.api.ads.adwords.lib.utils.XmlFieldExtractor;
-import com.google.api.ads.common.lib.utils.Streams;
 import com.google.common.annotations.VisibleForTesting;
-
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.util.Map;
 
 /**
  * Reports are fetched synchronously like in the following code:
@@ -73,45 +65,13 @@ public class ReportDownloader {
    * @param reportDefinition to download a report for.
    * @return {@link ReportDownloadResponse} If the HTTP request completes successfully.
    * @throws ReportException If we don't receive a response from the server.
-   * @throws ReportDownloadResponseException If the server indicates a problem
-   *         with the request.
+   * @throws ReportDownloadResponseException If the server indicates a problem with the request.
    */
   public ReportDownloadResponse downloadReport(ReportDefinition reportDefinition)
       throws ReportException, ReportDownloadResponseException {
-    return handleResponse(adHocReportDownloadHelper.downloadReport(
-        new XmlReportDefinitionRequest(reportDefinition)));
-  }
-
-  /**
-   * Processes the raw response into one suitable for consumption. Will throw an
-   * exception if we receive an error response from the server.
-   *
-   * @param response raw response to process.
-   * @return ReportDownloadResponse on success, otherwise an exception.
-   * @throws ReportDownloadResponseException if the server indicated there was a
-   *         problem processing the report download request.
-   */
-  private ReportDownloadResponse handleResponse(RawReportDownloadResponse response)
-      throws ReportDownloadResponseException {
-    if (response.getHttpStatus() == HttpURLConnection.HTTP_OK) {
-      return new ReportDownloadResponse(response);
-    }
-    String responseText;
-    try {
-      responseText = Streams.readAll(response.getInputStream(), response.getCharset());
-    } catch (IOException e1) {
-      throw new ReportDownloadResponseException(response.getHttpStatus(), e1);
-    }
-    DetailedReportDownloadResponseException exception =
-        new DetailedReportDownloadResponseException(response.getHttpStatus(), responseText);
-    XmlFieldExtractor extractor = new XmlFieldExtractor();
-    Map<String, String> fields = extractor.extract(
-        new ByteArrayInputStream(responseText.getBytes()),
-        new String[] {"fieldPath", "trigger", "type"});
-    exception.setFieldPath(fields.get("fieldPath"));
-    exception.setTrigger(fields.get("trigger"));
-    exception.setType(fields.get("type"));
-    throw exception;
+    return adHocReportDownloadHelper.downloadReport(
+        new XmlReportDefinitionRequest(reportDefinition),
+        new DetailedReportDownloadResponseException.Builder());
   }
 
   /**
@@ -121,13 +81,13 @@ public class ReportDownloader {
    * @param format Format to download the report as. CSV,
    * @return {@link ReportDownloadResponse} If the HTTP request completes successfully.
    * @throws ReportException If there is any issue making HTTP request with server.
-   * @throws ReportDownloadResponseException If the server indicates a problem
-   *         with the request.
+   * @throws ReportDownloadResponseException If the server indicates a problem with the request.
    */
   public ReportDownloadResponse downloadReport(String reportQuery, DownloadFormat format)
       throws ReportException, ReportDownloadResponseException {
-    return handleResponse(adHocReportDownloadHelper.downloadReport(
-        new AwqlReportRequest(reportQuery, format)));
+    return adHocReportDownloadHelper.downloadReport(
+        new AwqlReportRequest(reportQuery, format),
+        new DetailedReportDownloadResponseException.Builder());
   }
 
   /**

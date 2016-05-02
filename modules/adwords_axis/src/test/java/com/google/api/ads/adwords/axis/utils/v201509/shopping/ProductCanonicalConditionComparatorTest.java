@@ -15,9 +15,13 @@
 package com.google.api.ads.adwords.axis.utils.v201509.shopping;
 
 import com.google.api.ads.adwords.axis.v201509.cm.ProductCanonicalCondition;
+import com.google.api.ads.adwords.axis.v201509.cm.ProductCanonicalConditionCondition;
+import com.google.common.collect.Lists;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for comparing {@link ProductCanonicalCondition} dimensions.
@@ -28,5 +32,12 @@ public class ProductCanonicalConditionComparatorTest extends BaseProductDimensio
   @Override
   ProductCanonicalCondition createOtherProductDimension() {
     return ProductDimensions.createCanonicalCondition(null);
+  }
+
+  @Override
+  List<ProductCanonicalCondition> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createCanonicalCondition(ProductCanonicalConditionCondition.NEW),
+        ProductDimensions.createCanonicalCondition(ProductCanonicalConditionCondition.USED));
   }
 }

@@ -15,15 +15,13 @@
 package dfp.axis.auth;
 
 import com.google.api.ads.dfp.axis.factory.DfpServices;
-import com.google.api.ads.dfp.axis.v201502.Network;
-import com.google.api.ads.dfp.axis.v201502.NetworkServiceInterface;
+import com.google.api.ads.dfp.axis.v201602.Network;
+import com.google.api.ads.dfp.axis.v201602.NetworkServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.gson.GsonFactory;
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
-import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * This example demonstrates how to create a Credential and a DfpSession object using a service
@@ -35,8 +33,7 @@ import java.io.File;
  */
 public class CreateDfpSessionUsingServiceAccount {
 
-  private static final String SERVICE_ACCOUNT_ID = "INSERT_SERVICE_ACCOUNT_ID_HERE";
-  private static final String P12_FILE_PATH = "/path/to/key/.p12";
+  private static final String JSON_FILE_PATH = "INSERT_PATH_TO_JSON_KEYPAIR_FILE_HERE";
   private static final String SCOPE = "https://www.googleapis.com/auth/dfp";
 
   public static void runExample(DfpServices dfpServices, DfpSession dfpSession) throws Exception {
@@ -53,13 +50,10 @@ public class CreateDfpSessionUsingServiceAccount {
 
   public static void main(String[] args) throws Exception {
     // Create service account credential.
-    GoogleCredential credential = new GoogleCredential.Builder()
-        .setTransport(new NetHttpTransport())
-        .setJsonFactory(new GsonFactory())
-        .setServiceAccountId(SERVICE_ACCOUNT_ID)
-        .setServiceAccountScopes(ImmutableList.of(SCOPE))
-        .setServiceAccountPrivateKeyFromP12File(new File(P12_FILE_PATH))
-        .build();
+    GoogleCredential credential = GoogleCredential
+        .fromStream(new FileInputStream(JSON_FILE_PATH))
+        .createScoped(Lists.newArrayList(SCOPE));
+        
     credential.refreshToken();
 
     // Construct a DfpSession.

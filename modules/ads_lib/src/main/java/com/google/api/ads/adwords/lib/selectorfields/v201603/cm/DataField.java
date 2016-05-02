@@ -154,25 +154,25 @@ public enum DataField implements EntityField {
   StartDate(false),
 
   /**
-   * Estimated total clicks for all devices in mobile bid modifier landscape
+   * Estimated total clicks for all devices in mobile bid modifier landscape.
    */
   @Filterable
   TotalLocalClicks(true),
 
   /**
-   * Estimated total cost for all devices in mobile bid modifier landscape
+   * Estimated total cost for all devices in mobile bid modifier landscape.
    */
   @Filterable
   TotalLocalCost(true),
 
   /**
-   * Estimated total impressions for all devices in mobile bid modifier landscape
+   * Estimated total impressions for all devices in mobile bid modifier landscape.
    */
   @Filterable
   TotalLocalImpressions(true),
 
   /**
-   * Estimated total promoted impressions for all devices in mobile bid modifier landscape
+   * Estimated total promoted impressions for all devices in mobile bid modifier landscape.
    */
   @Filterable
   TotalLocalPromotedImpressions(true),

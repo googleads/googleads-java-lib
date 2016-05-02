@@ -46,7 +46,7 @@ public enum CampaignCriterionField implements EntityField {
 
   /**
    * The modifier for bids when the criterion matches.
-   * <p>Allowable modifier values depend on the criterion: <ul> <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li> <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li> <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform} (mobile), {@code 0}: to opt out of mobile</li> </ul> Specify {@code -1.0} to clear existing bid modifier.
+   * <p>Allowable modifier values depend on the criterion: <ul> <li>{@code 0.1} - {@code 10.0}: {@code AdSchedule}</li> <li>{@code 0.1} - {@code 10.0}: {@code Location}</li> <li>{@code 0.1} - {@code 10.0}: {@code Proximity}</li> <li>{@code 0.1} - {@code 10.0}: {@code LocationGroups}</li> <li>{@code 0.1} - {@code 4.0}: {@code Platform} (mobile), {@code 0}: to opt out of mobile</li> </ul> Specify {@code -1.0} to clear existing bid modifier.
    */
   @Filterable
   BidModifier(true),
@@ -58,12 +58,13 @@ public enum CampaignCriterionField implements EntityField {
   CampaignId(true),
 
   /**
-   * 
+   * Country code of the carrier.
+   * Can be {@code null} if not applicable, e.g., for Carrier "Wifi".
    */
   CarrierCountryCode(false),
 
   /**
-   * 
+   * Name of the carrier.
    */
   CarrierName(false),
 
@@ -266,7 +267,8 @@ public enum CampaignCriterionField implements EntityField {
   /**
    * 
    */
-  PlatformName(false),
+  @Filterable
+  PlatformName(true),
 
   /**
    * Radius distance units.

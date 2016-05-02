@@ -14,14 +14,17 @@
 
 package com.google.api.ads.adwords.axis.utils.v201603.shopping;
 
-import com.google.api.ads.adwords.axis.v201603.cm.ProductCanonicalCondition;
 import com.google.api.ads.adwords.axis.v201603.cm.ProductChannelExclusivity;
+import com.google.api.ads.adwords.axis.v201603.cm.ShoppingProductChannelExclusivity;
+import com.google.common.collect.Lists;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.List;
+
 /**
- * Tests for comparing {@link ProductCanonicalCondition} dimensions.
+ * Tests for comparing {@link ProductChannelExclusivity} dimensions.
  */
 @RunWith(JUnit4.class)
 public class ProductChannelExclusivityComparatorTest extends BaseProductDimensionComparatorTest {
@@ -30,5 +33,13 @@ public class ProductChannelExclusivityComparatorTest extends BaseProductDimensio
   ProductChannelExclusivity createOtherProductDimension() {
     ProductChannelExclusivity exclusivity = new ProductChannelExclusivity();
     return exclusivity;
+  }
+
+  @Override
+  List<ProductChannelExclusivity> createNonOtherProductDimensions() {
+    return Lists.newArrayList(
+        ProductDimensions.createChannelExclusivity(ShoppingProductChannelExclusivity.MULTI_CHANNEL),
+        ProductDimensions.createChannelExclusivity(
+            ShoppingProductChannelExclusivity.SINGLE_CHANNEL));
   }
 }

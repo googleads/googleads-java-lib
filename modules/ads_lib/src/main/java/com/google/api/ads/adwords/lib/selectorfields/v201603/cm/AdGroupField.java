@@ -137,10 +137,10 @@ public enum AdGroupField implements EntityField {
   Id(true),
 
   /**
-   * Labels that are attached to the {@link AdGroup}.
-   * To associate an existing {@link Label} to an existing {@link AdGroup}, use {@link AdGroupService#mutateLabel} with ADD operator.
-   * To remove an associated {@link Label} from the {@link AdGroup}, use {@link AdGroupService#mutateLabel} with REMOVE operator.
-   * To filter on {@link Label}s, use one of {@link Predicate.Operator#CONTAINS_ALL}, {@link Predicate.Operator#CONTAINS_ANY}, {@link Predicate.Operator#CONTAINS_NONE} operators with a list of {@link Label} ids.
+   * Labels that are attached to the {@code AdGroup}.
+   * To associate an existing {@code Label} to an existing {@code AdGroup}, use {@code AdGroupService#mutateLabel} with ADD operator.
+   * To remove an associated {@code Label} from the {@code AdGroup}, use {@code AdGroupService#mutateLabel} with REMOVE operator.
+   * To filter on {@code Label}s, use one of {@code Predicate.Operator#CONTAINS_ALL}, {@code Predicate.Operator#CONTAINS_ANY}, {@code Predicate.Operator#CONTAINS_NONE} operators with a list of {@code Label} ids.
    */
   @Filterable
   Labels(true),
@@ -192,7 +192,7 @@ public enum AdGroupField implements EntityField {
    * Target cost per acquisition/conversion.
    * This is applicable only at the ad group level.
    * <p>If an ad group-level target is not set and the strategy type is TARGET_CPA, the strategy level target will be used.
-   * To set the strategy-level target, set the {@linkplain TargetCpaBiddingScheme#targetCpa} on the strategy's {@linkplain BiddingStrategyConfiguration#biddingScheme}.
+   * To set the strategy-level target, set the {@code TargetCpaBiddingScheme#targetCpa} on the strategy's {@code BiddingStrategyConfiguration#biddingScheme}.
    */
   @Filterable
   TargetCpaBid(true),

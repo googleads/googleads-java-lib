@@ -73,7 +73,8 @@ public enum AdGroupBidModifierField implements EntityField {
   /**
    * 
    */
-  PlatformName(false),
+  @Filterable
+  PlatformName(true),
 
   ;
 

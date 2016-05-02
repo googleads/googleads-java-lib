@@ -270,9 +270,9 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * Labels that are attached to the AdGroupCriterion.
-   * To associate an existing {@link Label} to an existing {@link AdGroupCriterion}, use {@link AdGroupCriterionService#mutateLabel} with ADD operator.
-   * To remove an associated {@link Label} from the {@link AdGroupCriterion}, use {@link AdGroupCriterionService#mutateLabel} with REMOVE operator.
-   * To filter on {@link Label}s, use one of {@link Predicate.Operator#CONTAINS_ALL}, {@link Predicate.Operator#CONTAINS_ANY}, {@link Predicate.Operator#CONTAINS_NONE} operators with a list of {@link Label} ids.
+   * To associate an existing {@code Label} to an existing {@code AdGroupCriterion}, use {@code AdGroupCriterionService#mutateLabel} with ADD operator.
+   * To remove an associated {@code Label} from the {@code AdGroupCriterion}, use {@code AdGroupCriterionService#mutateLabel} with REMOVE operator.
+   * To filter on {@code Label}s, use one of {@code Predicate.Operator#CONTAINS_ALL}, {@code Predicate.Operator#CONTAINS_ANY}, {@code Predicate.Operator#CONTAINS_NONE} operators with a list of {@code Label} ids.
    */
   @Filterable
   Labels(true),

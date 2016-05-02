@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.logging.AdWordsLoggingModule;
 import com.google.api.ads.common.lib.AdsModule;
 import com.google.api.ads.common.lib.utils.Internals;
+import com.google.api.ads.common.lib.utils.XmlFieldExtractor;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.inject.Provides;
@@ -39,6 +40,7 @@ public class AdWordsModule extends AdsModule {
     configureLogging(AdWordsServiceClient.class.getName());
     install(new AdWordsConfigurationModule());
     bind(HttpTransport.class).to(NetHttpTransport.class);
+    bind(XmlFieldExtractor.class);
   }
   
   @Override

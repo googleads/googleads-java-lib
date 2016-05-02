@@ -94,7 +94,18 @@ public class AdsServiceLoggers {
    */
   public void logRequest(SoapCallReturn soapCallReturn) {
     RequestInfo request = soapCallReturn.getRequestInfo();
-    requestInfoLogger.info("Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\"",
-        new Object[] {request.getServiceName(), request.getMethodName(), request.getUrl()});
+    ResponseInfo response = soapCallReturn.getResponseInfo();
+    Object[] logArgs = new Object[4];
+    if (request != null) {
+      logArgs[0] = request.getServiceName();
+      logArgs[1] = request.getMethodName();
+      logArgs[2] = request.getUrl();
+    }
+    if (response != null) {
+      logArgs[3] = response.getRequestId();
+    }
+    requestInfoLogger.info(
+        "Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\" Request ID: \"{}\"",
+        logArgs);
   }
 }

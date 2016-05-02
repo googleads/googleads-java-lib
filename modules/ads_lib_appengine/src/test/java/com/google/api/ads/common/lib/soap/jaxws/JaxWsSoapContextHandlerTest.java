@@ -21,6 +21,8 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.api.ads.common.lib.utils.Streams;
 
 import org.junit.Before;
@@ -66,7 +68,9 @@ public class JaxWsSoapContextHandlerTest {
   @Mock private SOAPHeader mockHeader;
   @Mock private SOAPBody mockSoapBody;
   @Mock private Node firstChild;
-
+  @Mock private NodeExtractor mockNodeExtractor;
+  @Mock private AdsApiConfiguration mockAdsApiConfiguration;
+  
   private static final String OPERATION_LOCAL_NAME = "saveAdvertiser";
 
   public JaxWsSoapContextHandlerTest() {}
@@ -76,7 +80,8 @@ public class JaxWsSoapContextHandlerTest {
     MockitoAnnotations.initMocks(this);
 
     wsdlService = new QName("http://www.example.com", "AdvertiserService");
-    jaxWsSoapContextHandler = new JaxWsSoapContextHandler();
+    jaxWsSoapContextHandler =
+        new JaxWsSoapContextHandler(mockNodeExtractor, mockAdsApiConfiguration);
   }
 
   @Test

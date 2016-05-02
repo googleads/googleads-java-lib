@@ -27,6 +27,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBDeserializer;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.io.IOException;
 import java.net.URI;
@@ -44,9 +45,18 @@ class BatchJobHelperImpl
   private final BatchJobLogger batchJobLogger;
 
   public BatchJobHelperImpl(AdWordsSession session) {
-    uploader =
+    this(
         new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
-            session, true);
+            session, true));
+  }
+
+  /**
+   * Constructor for testing to allow mocking of the underlying uploader.
+   */
+  @VisibleForTesting
+  BatchJobHelperImpl(
+      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+    this.uploader = uploader;
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
   }
 

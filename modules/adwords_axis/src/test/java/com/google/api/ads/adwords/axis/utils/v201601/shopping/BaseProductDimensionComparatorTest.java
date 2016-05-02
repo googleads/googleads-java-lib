@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Base class for ProductDimension comparator tests.
@@ -43,6 +44,12 @@ public abstract class BaseProductDimensionComparatorTest {
    * Returns an instance of D for the "other" case, a.k.a. the "everything else" case.
    */
   abstract ProductDimension createOtherProductDimension();
+  
+  /**
+   * Returns at least two instances of D that are <em>not</em> the "other" case. The list
+   * should be ordered.
+   */
+  abstract List<? extends ProductDimension> createNonOtherProductDimensions();
 
   @Test
   public void testIdentityComparison() {
@@ -63,6 +70,18 @@ public abstract class BaseProductDimensionComparatorTest {
         Matchers.greaterThan(0));
     assertThat("Non-null should be less than null", comparator.compare(dimension, null),
         Matchers.lessThan(0));
+  }
+  
+  @Test
+  public void testNeitherNull() {
+    ProductDimension otherDimension = createOtherProductDimension();
+    List<? extends ProductDimension> nonOtherDimensions = createNonOtherProductDimensions();
+    if (nonOtherDimensions == null) {
+      return;
+    }
+    int result = comparator.compare(otherDimension, nonOtherDimensions.get(0));
+    assertThat("The 'other' case should be > the non-other case", result,
+        Matchers.greaterThan(0));
   }
 
   @Test

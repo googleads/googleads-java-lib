@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.soap.axis;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.RequestInfo;
 import com.google.api.ads.common.lib.soap.ResponseInfo;
@@ -23,7 +24,11 @@ import com.google.api.ads.common.lib.soap.SoapClientHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Splitter;
+import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 
 import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
@@ -34,6 +39,7 @@ import org.apache.axis.client.Stub;
 import org.apache.axis.message.SOAPHeaderElement;
 import org.apache.axis.transport.http.HTTPConstants;
 import org.apache.commons.beanutils.BeanUtils;
+import org.w3c.dom.Node;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
@@ -49,10 +55,22 @@ import javax.xml.soap.SOAPException;
 public class AxisHandler extends SoapClientHandler<Stub> {
 
   private final EngineConfigurationFactory engineConfigurationFactory;
+  private final NodeExtractor nodeExtractor;
+  private final ImmutableList<String> requestIdXPathComponents;
   
   @Inject
-  public AxisHandler(EngineConfigurationFactory engineConfigurationFactory) {
+  public AxisHandler(EngineConfigurationFactory engineConfigurationFactory,
+      NodeExtractor nodeExtractor,
+      AdsApiConfiguration adsApiConfiguration) {
     this.engineConfigurationFactory = engineConfigurationFactory;
+    this.nodeExtractor = nodeExtractor;
+    String requestIdXPath = adsApiConfiguration.getRequestIdXPath();
+    if (!Strings.isNullOrEmpty(requestIdXPath)) {
+      requestIdXPathComponents = ImmutableList.<String>copyOf(
+          Splitter.on('/').split(requestIdXPath));
+    } else {
+      requestIdXPathComponents = ImmutableList.<String>of();
+    }
   }
   
   /**
@@ -244,9 +262,25 @@ public class AxisHandler extends SoapClientHandler<Stub> {
         } catch (AxisFault e) {
           builder.withException(e);
         }
+        String requestId = null;
         try {
-          builder.withResponseInfo(new ResponseInfo.Builder().withSoapResponseXml(
-              messageContext.getResponseMessage().getSOAPPartAsString()).build());
+          if (!requestIdXPathComponents.isEmpty()) {
+            Node requestIdNode =
+                nodeExtractor.extractNode(
+                    messageContext.getResponseMessage().getSOAPHeader(), requestIdXPathComponents);
+            if (requestIdNode != null) {
+              requestId = requestIdNode.getFirstChild().getNodeValue();
+            }
+          }
+        } catch (SOAPException e1) {
+          // Ignore, since capturing the requestId is not critical.
+        }
+        try {
+          builder.withResponseInfo(
+              new ResponseInfo.Builder()
+                  .withSoapResponseXml(messageContext.getResponseMessage().getSOAPPartAsString())
+                  .withRequestId(requestId)
+                  .build());
         } catch (AxisFault e) {
           builder.withException(e);
         }

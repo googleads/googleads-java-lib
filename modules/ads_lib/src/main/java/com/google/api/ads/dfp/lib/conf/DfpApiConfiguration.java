@@ -27,6 +27,7 @@ import javax.inject.Inject;
 public class DfpApiConfiguration extends AdsApiConfiguration {
 
   public static final String NAMESPACE_PREFIX_KEY = "api.dfp.namespace.prefix";
+  private static final String KEY_PREFIX = "api.dfp";
 
   /**
    * Constructor.
@@ -38,11 +39,14 @@ public class DfpApiConfiguration extends AdsApiConfiguration {
     super(config);
   }
 
-  /**
-   * @see AdsApiConfiguration#getNamespacePrefix()
-   */
   @Override
   public String getNamespacePrefix() {
     return getString(NAMESPACE_PREFIX_KEY);
   }
+  
+  @Override
+  public String getRequestIdXPath() {
+    return config.getString(String.format("%s.%s", KEY_PREFIX, REQUEST_ID_XPATH_POSTFIX));
+  }
+
 }

@@ -12,36 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.api.ads.adwords.axis.utils.v201509;
+package com.google.api.ads.adwords.jaxws.utils.v201509.batchjob;
 
-import com.google.api.ads.adwords.axis.utils.AxisBatchJobUploadBodyProvider;
-import com.google.api.ads.adwords.axis.utils.v201509.batchjob.BatchJobMutateRequest;
-import com.google.api.ads.adwords.axis.v201509.cm.AdvertisingChannelType;
-import com.google.api.ads.adwords.axis.v201509.cm.BiddingStrategyConfiguration;
-import com.google.api.ads.adwords.axis.v201509.cm.BiddingStrategyType;
-import com.google.api.ads.adwords.axis.v201509.cm.Budget;
-import com.google.api.ads.adwords.axis.v201509.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.axis.v201509.cm.BudgetOperation;
-import com.google.api.ads.adwords.axis.v201509.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201509.cm.CampaignCriterionOperation;
-import com.google.api.ads.adwords.axis.v201509.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201509.cm.CampaignStatus;
-import com.google.api.ads.adwords.axis.v201509.cm.Keyword;
-import com.google.api.ads.adwords.axis.v201509.cm.KeywordMatchType;
-import com.google.api.ads.adwords.axis.v201509.cm.ManualCpcBiddingScheme;
-import com.google.api.ads.adwords.axis.v201509.cm.Money;
-import com.google.api.ads.adwords.axis.v201509.cm.NegativeCampaignCriterion;
-import com.google.api.ads.adwords.axis.v201509.cm.Operator;
+import com.google.api.ads.adwords.jaxws.utils.JaxWsBatchJobUploadBodyProvider;
+import com.google.api.ads.adwords.jaxws.v201509.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.jaxws.v201509.cm.BiddingStrategyConfiguration;
+import com.google.api.ads.adwords.jaxws.v201509.cm.BiddingStrategyType;
+import com.google.api.ads.adwords.jaxws.v201509.cm.Budget;
+import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetOperation;
+import com.google.api.ads.adwords.jaxws.v201509.cm.Campaign;
+import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignCriterionOperation;
+import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignOperation;
+import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignStatus;
+import com.google.api.ads.adwords.jaxws.v201509.cm.Keyword;
+import com.google.api.ads.adwords.jaxws.v201509.cm.KeywordMatchType;
+import com.google.api.ads.adwords.jaxws.v201509.cm.ManualCpcBiddingScheme;
+import com.google.api.ads.adwords.jaxws.v201509.cm.Money;
+import com.google.api.ads.adwords.jaxws.v201509.cm.NegativeCampaignCriterion;
+import com.google.api.ads.adwords.jaxws.v201509.cm.Operator;
 import com.google.api.ads.adwords.lib.utils.testing.BatchJobUploadBodyProviderTest;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests for {@link AxisBatchJobUploadBodyProvider}.
+ * Tests for {@link JaxWsBatchJobUploadBodyProvider}.
  */
 @RunWith(JUnit4.class)
-public class AxisBatchJobUploadBodyProviderTest
+public class JaxWsBatchJobUploadBodyProviderTest
     extends BatchJobUploadBodyProviderTest<BatchJobMutateRequest> {
 
   @Override
@@ -67,7 +66,7 @@ public class AxisBatchJobUploadBodyProviderTest
     Money budgetAmount = new Money();
     budgetAmount.setMicroAmount(budgetAmountInMicros);
     budget.setAmount(budgetAmount);
-    budget.setDeliveryMethod(BudgetBudgetDeliveryMethod.fromString(deliveryMethod));
+    budget.setDeliveryMethod(BudgetBudgetDeliveryMethod.valueOf(deliveryMethod));
 
     BudgetOperation budgetOperation = new BudgetOperation();
     budgetOperation.setOperand(budget);
@@ -88,14 +87,14 @@ public class AxisBatchJobUploadBodyProviderTest
     Campaign campaign = new Campaign();
     campaign.setId(campaignId);
     campaign.setName(campaignName);
-    campaign.setStatus(CampaignStatus.fromString(status));
-    campaign.setAdvertisingChannelType(AdvertisingChannelType.fromString(advertisingChannelType));
+    campaign.setStatus(CampaignStatus.valueOf(status));
+    campaign.setAdvertisingChannelType(AdvertisingChannelType.valueOf(advertisingChannelType));
     Budget budget = new Budget();
     budget.setBudgetId(budgetId);
     campaign.setBudget(budget);
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();
     biddingStrategyConfiguration.setBiddingStrategyType(
-        BiddingStrategyType.fromString(biddingStrategyType));
+        BiddingStrategyType.valueOf(biddingStrategyType));
 
     ManualCpcBiddingScheme cpcBiddingScheme = new ManualCpcBiddingScheme();
     cpcBiddingScheme.setEnhancedCpcEnabled(enhancedCpcEnabled);
@@ -115,7 +114,7 @@ public class AxisBatchJobUploadBodyProviderTest
       BatchJobMutateRequest request, long campaignId, String keywordText, String keywordMatchType) {
     Keyword keyword = new Keyword();
     keyword.setText(keywordText);
-    keyword.setMatchType(KeywordMatchType.fromString(keywordMatchType));
+    keyword.setMatchType(KeywordMatchType.valueOf(keywordMatchType));
 
     NegativeCampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
     negativeCriterion.setCampaignId(campaignId);

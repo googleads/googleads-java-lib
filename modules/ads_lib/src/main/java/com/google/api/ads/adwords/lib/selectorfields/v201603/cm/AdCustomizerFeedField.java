@@ -26,7 +26,7 @@ public enum AdCustomizerFeedField implements EntityField {
 
   /**
    * The AdCustomizerFeed's schema.
-   * In SET operations, these attributes will be considered new attributes and will be appended to the existing list of attributes unless this list is an exact copy of the existing list (as would be obtained via {@link AdCustomizerFeedService#get}).
+   * In SET operations, these attributes will be considered new attributes and will be appended to the existing list of attributes unless this list is an exact copy of the existing list (as would be obtained via {@code AdCustomizerFeedService#get}).
    */
   FeedAttributes(false),
 

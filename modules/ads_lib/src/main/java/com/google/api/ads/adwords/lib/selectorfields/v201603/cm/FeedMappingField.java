@@ -26,7 +26,7 @@ public enum FeedMappingField implements EntityField {
 
   /**
    * The list of feed attributes to placeholder fields mappings.
-   * <span class="constraint Required"> This field is required and should not be {@code null} when it is contained within {@link Operator}s : ADD.</span>
+   * <span class="constraint Required"> This field is required and should not be {@code null} when it is contained within {@code Operator}s : ADD.</span>
    */
   AttributeFieldMappings(false),
 
@@ -44,7 +44,7 @@ public enum FeedMappingField implements EntityField {
 
   /**
    * ID of this FeedMapping.
-   * <span class="constraint Required"> This field is required and should not be {@code null} when it is contained within {@link Operator}s : REMOVE.</span>
+   * <span class="constraint Required"> This field is required and should not be {@code null} when it is contained within {@code Operator}s : REMOVE.</span>
    */
   @Filterable
   FeedMappingId(true),

@@ -14,12 +14,26 @@
 
 package com.google.api.ads.common.lib.soap.jaxws;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
+import com.google.inject.Inject;
+
 /**
  * Simple factory which creates SOAP Context Handlers for JAX-WS.
  */
 public class JaxWsSoapContextHandlerFactory {
 
+  private final NodeExtractor nodeExtractor;
+  private final AdsApiConfiguration adsApiConfiguration;
+
+  @Inject
+  public JaxWsSoapContextHandlerFactory(
+      NodeExtractor nodeExtractor, AdsApiConfiguration adsApiConfiguration) {
+    this.nodeExtractor = nodeExtractor;
+    this.adsApiConfiguration = adsApiConfiguration;
+  }
+
   public JaxWsSoapContextHandler getJaxWsSoapContextHandler() {
-    return new JaxWsSoapContextHandler();
+    return new JaxWsSoapContextHandler(nodeExtractor, adsApiConfiguration);
   }
 }

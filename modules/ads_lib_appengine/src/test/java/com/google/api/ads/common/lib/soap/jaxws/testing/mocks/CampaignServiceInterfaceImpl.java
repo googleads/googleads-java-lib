@@ -16,13 +16,16 @@ package com.google.api.ads.common.lib.soap.jaxws.testing.mocks;
 
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsSoapContextHandler;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.collect.Lists;
 
 import org.mockito.Mockito;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.ws.Binding;
@@ -45,8 +48,12 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
   @SuppressWarnings("rawtypes")
   public CampaignServiceInterfaceImpl() {
     binding = Mockito.mock(Binding.class);
-    when(binding.getHandlerChain())
-        .thenReturn(Lists.<Handler>newArrayList(new JaxWsSoapContextHandler()));
+    NodeExtractor nodeExtractor = Mockito.mock(NodeExtractor.class);
+    AdsApiConfiguration adsApiConfiguration = Mockito.mock(AdsApiConfiguration.class);
+    List<Handler> handlerList =
+        Lists.<Handler>newArrayList(
+            new JaxWsSoapContextHandler(nodeExtractor, adsApiConfiguration));
+    when(binding.getHandlerChain()).thenReturn(handlerList);
   }
   
   @Override

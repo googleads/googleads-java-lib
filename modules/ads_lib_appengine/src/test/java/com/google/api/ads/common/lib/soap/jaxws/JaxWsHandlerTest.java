@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.SoapCall;
 import com.google.api.ads.common.lib.soap.SoapCallReturn;
@@ -27,6 +28,7 @@ import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterface;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterfaceImpl;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.MockJaxWsCompatibleDescriptor;
+import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.collect.Lists;
 
 import org.junit.Before;
@@ -70,6 +72,8 @@ public class JaxWsHandlerTest {
   @Mock private BindingProvider mockSoapClient;
   @Mock private Binding mockBinding;
   @Mock private Map<String, Object> mockRequestContext;
+  @Mock private NodeExtractor mockNodeExtractor;
+  @Mock private AdsApiConfiguration mockAdsApiConfiguration;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
   
@@ -80,7 +84,7 @@ public class JaxWsHandlerTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
-    contextHandler = new JaxWsSoapContextHandler();
+    contextHandler = new JaxWsSoapContextHandler(mockNodeExtractor, mockAdsApiConfiguration);
     when(handlerFactory.getJaxWsSoapContextHandler()).thenReturn(contextHandler);
     handlerChain = new LinkedList<Handler>();
     handlerChain.add(contextHandler);

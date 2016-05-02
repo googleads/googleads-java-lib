@@ -29,6 +29,7 @@ import javax.inject.Inject;
 public class AdWordsApiConfiguration extends AdsApiConfiguration {
 
   public static final String NAMESPACE_PREFIX_KEY = "api.adwords.namespace.prefix";
+  private static final String KEY_PREFIX = "api.adwords";
 
   /**
    * Constructor.
@@ -72,5 +73,15 @@ public class AdWordsApiConfiguration extends AdsApiConfiguration {
     return subProductName != null
         ? Enum.valueOf(AdWordsSubProduct.class, subProductName.toUpperCase())
         : AdWordsSubProduct.DEFAULT;
+  }
+  
+  @Override
+  public String getRequestIdXPath() {
+    return config.getString(String.format("%s.%s", KEY_PREFIX, REQUEST_ID_XPATH_POSTFIX));
+  }
+  
+  @Override
+  public String[] getSensitiveXPaths() {
+    return config.getStringArray(String.format("%s.%s", KEY_PREFIX, SENSITIVE_XPATHS_POSTFIX));
   }
 }

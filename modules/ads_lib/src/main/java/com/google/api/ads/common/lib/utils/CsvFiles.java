@@ -221,10 +221,11 @@ public final class CsvFiles {
    * @param csvData the CSV data including the header
    * @param fileName the file to write the CSV data to
    * @throws IOException if there was an error writing to the file
-   * @throws IllegalArgumentException if {@code csvData == null}
+   * @throws NullPointerException if {@code csvData == null} or {@code fileName == null}
    */
   public static void writeCsv(List<String[]> csvData, String fileName) throws IOException {
-    Preconditions.checkNotNull(csvData, "Cannot write null CSV data to file.");
+    Preconditions.checkNotNull(csvData, "Null CSV data");
+    Preconditions.checkNotNull(fileName, "Null file name");
 
     CSVWriter writer = null;
     try {
