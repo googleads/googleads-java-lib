@@ -113,7 +113,7 @@
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.21.0</version>
+      <version>1.22.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

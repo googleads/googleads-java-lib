@@ -3,7 +3,7 @@
     <soapenv:Header>
         <ns1:RequestHeader soapenv:mustUnderstand="0" xmlns:ns1="https://www.google.com/apis/ads/publisher/#API_VERSION#">
             <ns1:networkCode>TEST_NETWORK_CODE</ns1:networkCode>
-            <ns1:applicationName>TEST_APP (DfpApi-Java, Dfp-Axis/2.13.1, Common-Java/2.13.1, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
+            <ns1:applicationName>TEST_APP (DfpApi-Java, Dfp-Axis/2.13.2, Common-Java/2.13.2, Axis/1.4, Java/#JAVA_VERSION#, maven)</ns1:applicationName>
         </ns1:RequestHeader>
     </soapenv:Header>
     <soapenv:Body>

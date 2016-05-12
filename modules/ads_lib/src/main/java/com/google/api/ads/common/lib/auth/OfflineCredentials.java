@@ -30,12 +30,15 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
+import com.google.common.io.Files;
 
 import org.apache.commons.configuration.Configuration;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 import javax.annotation.Nullable;
 
@@ -51,8 +54,8 @@ import javax.annotation.Nullable;
  *     .generateCredential();
  * </code></pre>
  *
- * This can be also used instead of service accounts. Generate a refresh token
- * once and place it in your ads.properties file to be read by this utility.
+ * Generate a refresh token or service account key file and place
+ * it in your ads.properties file to be read by this utility.
  */
 public class OfflineCredentials {
 
@@ -60,16 +63,19 @@ public class OfflineCredentials {
    * Enum representing the API that OfflineCredentials can be used for.
    */
   public static enum Api {
-    ADWORDS("api.adwords.", AdWordsInternals.getInstance()),
-    DFP("api.dfp.", DfpInternals.getInstance());
+    ADWORDS("api.adwords.", AdWordsInternals.getInstance(), 
+        "https://www.googleapis.com/auth/adwords"),
+    DFP("api.dfp.", DfpInternals.getInstance(), "https://www.googleapis.com/auth/dfp");
 
     private final String propKeyPrefix;
     private final Internals internals;
+    private final String scope;
 
-    private Api(String propKeyPrefix, Internals internals) {
+    private Api(String propKeyPrefix, Internals internals, String scope) {
       this.propKeyPrefix =
           Preconditions.checkNotNull(propKeyPrefix, "Null property key prefix for: %s", this);
       this.internals = Preconditions.checkNotNull(internals, "Null internals for: %s", this);
+      this.scope = Preconditions.checkNotNull(scope, "Null scope for: %s", this);
     }
 
     /**
@@ -93,6 +99,8 @@ public class OfflineCredentials {
   private final String clientSecret;
   private final OAuth2Helper oAuth2Helper;
   private final String tokenServerUrl;
+  private final String jsonKeyFilePath;
+  private final List<String> scopes;
 
   /**
    * Constructor.
@@ -106,22 +114,48 @@ public class OfflineCredentials {
     this.clientSecret = builder.clientSecret;
     this.oAuth2Helper = builder.oAuth2Helper;
     this.tokenServerUrl = builder.tokenServerUrl;
+    this.jsonKeyFilePath = builder.jsonKeyFilePath;
+    this.scopes = builder.scopes;
   }
 
+  /**
+   * Gets the {@link HttpTransport} that will be used when
+   * generating a {@link Credential}.
+   */
   public HttpTransport getHttpTransport() {
     return httpTransport;
   }
 
+  /**
+   * Gets the refresh token that will be used to
+   * generate a {@link Credential}.
+   */
   public String getRefreshToken() {
     return refreshToken;
   }
 
+  /**
+   * Gets the client ID that will be used to
+   * generate a {@link Credential}.
+   */
   public String getClientId() {
     return clientId;
   }
 
+  /**
+   * Gets the client secret that will be used to
+   * generate a {@link Credential}.
+   */
   public String getClientSecret() {
     return clientSecret;
+  }
+  
+  /**
+   * Gets the file path to a JSON key file that will be used to
+   * generate a service account {@link Credential}.
+   */
+  public String getJsonKeyFilePath() {
+    return jsonKeyFilePath;
   }
 
   /**
@@ -131,6 +165,35 @@ public class OfflineCredentials {
    * @throws OAuthException if the credential could not be refreshed.
    */
   public Credential generateCredential() throws OAuthException {
+    GoogleCredential credential = Strings.isNullOrEmpty(this.jsonKeyFilePath)
+        ? generateCredentialFromClientSecrets()
+        : generateCredentialFromKeyFile();
+    try {
+      if (!oAuth2Helper.callRefreshToken(credential)) {
+        throw new OAuthException(
+            "Credential could not be refreshed. A newly generated refresh token or "
+            + "secret key may be required.");
+      }
+    } catch (IOException e) {
+      throw new OAuthException("Credential could not be refreshed.", e);
+    }
+    return credential;
+  }
+  
+  private GoogleCredential generateCredentialFromKeyFile() throws OAuthException {
+    try {
+      File jsonKeyFile = new File(jsonKeyFilePath);
+      return GoogleCredential.fromStream(
+          Files.asByteSource(jsonKeyFile).openStream(),
+          httpTransport,
+          new JacksonFactory())
+          .createScoped(this.scopes);
+    } catch (IOException e) {
+      throw new OAuthException("Service account key file could not be loaded.", e);
+    }
+  }
+  
+  private GoogleCredential generateCredentialFromClientSecrets() {
     GoogleCredential credential = new GoogleCredential.Builder()
         .setTransport(httpTransport)
         .setJsonFactory(new JacksonFactory())
@@ -138,14 +201,6 @@ public class OfflineCredentials {
         .setTokenServerEncodedUrl(tokenServerUrl)
         .build();
     credential.setRefreshToken(refreshToken);
-    try {
-      if (!oAuth2Helper.callRefreshToken(credential)) {
-        throw new OAuthException(
-            "Credential could not be refreshed. A newly generated refresh token may be required.");
-      }
-    } catch (IOException e) {
-      throw new OAuthException("Credential could not be refreshed.", e);
-    }
     return credential;
   }
 
@@ -199,8 +254,10 @@ public class OfflineCredentials {
     private String refreshToken;
     private String clientId;
     private String clientSecret;
-    private String filePath;
+    private String configFilePath;
     private String tokenServerUrl;
+    private String jsonKeyFilePath;
+    private List<String> scopes;
 
     private final ConfigurationHelper configHelper;
     private final Api api;
@@ -252,6 +309,7 @@ public class OfflineCredentials {
      * <li>refreshToken</li>
      * <li>clientId</li>
      * <li>clientSecret</li>
+     * <li>jsonKeyFilePath</li>
      * </ul><br>
      * For example, the AdWords OAuth2 refresh token can be read from:
      * <code>api.adwords.refreshToken</code>
@@ -264,6 +322,7 @@ public class OfflineCredentials {
       this.refreshToken = config.getString(getPropertyKey("refreshToken"), null);
       this.clientId = config.getString(getPropertyKey("clientId"), null);
       this.clientSecret = config.getString(getPropertyKey("clientSecret"), null);
+      this.jsonKeyFilePath = config.getString(getPropertyKey("jsonKeyFilePath"), null);
       return this;
     }
 
@@ -276,6 +335,7 @@ public class OfflineCredentials {
      * <li>refreshToken</li>
      * <li>clientId</li>
      * <li>clientSecret</li>
+     * <li>jsonKeyFilePath</li>
      * </ul><br>
      * For example, the AdWords OAuth2 refresh token can be read from:
      * <code>api.adwords.refreshToken</code>
@@ -286,7 +346,7 @@ public class OfflineCredentials {
      */
     ForApiBuilder from(Configuration config, String filePath) {
       from(config);
-      this.filePath = filePath;
+      this.configFilePath = filePath;
       return this;
     }
 
@@ -309,7 +369,28 @@ public class OfflineCredentials {
       this.refreshToken = refreshToken;
       return this;
     }
-
+    
+    /**
+     * Sets the path to a JSON key file for authenticating with a service account.
+     * If you do not have one, please create it in the API console:
+     * https://console.developers.google.com/apis/credentials
+     */
+    public ForApiBuilder withJsonKeyFilePath(String jsonKeyFilePath) {
+      this.jsonKeyFilePath = jsonKeyFilePath;
+      return this;
+    }
+    
+    /**
+     * Optionally sets scopes for authenticating with a service account. By default,
+     * the scope will only be for the set {@link Api}. If you are using a refresh token,
+     * the scope is set at the time the refresh token is generated, and this function is
+     * a no-op.
+     */
+    public ForApiBuilder withScopes(List<String> scopes) {
+      this.scopes = scopes;
+      return this;
+    }
+    
     /**
      * Sets the {@link HttpTransport} to be used to make the request. By
      * default, {@link NetHttpTransport} will be used, but due to some
@@ -322,7 +403,8 @@ public class OfflineCredentials {
     }
 
     /**
-     * Sets the token server URL. Not required and defaults to
+     * Sets the token server URL. This is a no-op when using a service account key file.
+     * Set the token server URL in the key file instead. Not required and defaults to
      * https://accounts.google.com/o/oauth2/token
      */
     public ForApiBuilder withTokenUrlServer(String tokenServerUrl) {
@@ -336,11 +418,26 @@ public class OfflineCredentials {
      *          validate
      */
     private void validate() throws ValidationException {
+      if (!Strings.isNullOrEmpty(this.jsonKeyFilePath)) {
+        // Make sure only one OAuth format is specified.
+        boolean otherOAuthPropsSet =
+            !Strings.isNullOrEmpty(this.clientId)
+            || !Strings.isNullOrEmpty(this.clientSecret)
+            || !Strings.isNullOrEmpty(refreshToken);
+        if (otherOAuthPropsSet) {
+          throw new ValidationException("Multiple OAuth formats set. Please specify either "
+              + "a service account key file or a client ID and secret, not both.",
+              this.configFilePath != null ? generateFilePathWarning("jsonKeyFilePath") : ".");
+        }
+        // Key file has everything we need, so skip the remaining validation.
+        return;
+      }
+      
       if (Strings.isNullOrEmpty(this.clientId)) {
         throw new ValidationException(String.format("Client ID must be set%s\n"
             + "If you do not have a client ID or secret, please create one in the API console: "
             + "https://console.developers.google.com/project",
-            this.filePath != null ? generateFilePathWarning("clientId") : "."),
+            this.configFilePath != null ? generateFilePathWarning("clientId") : "."),
             "clientId");
       }
 
@@ -348,7 +445,7 @@ public class OfflineCredentials {
         throw new ValidationException(String.format("Client secret must be set%s\n"
             + "If you do not have a client ID or secret, please create one in the API console: "
             + "https://console.developers.google.com/project",
-            this.filePath != null ? generateFilePathWarning("clientSecret") : "."),
+            this.configFilePath != null ? generateFilePathWarning("clientSecret") : "."),
             "clientSecret");
       }
 
@@ -356,7 +453,7 @@ public class OfflineCredentials {
         throw new ValidationException(String.format("A refresh token must be set%s\n"
             + "It is required for offline credentials. If you need to create one, see the "
             + "GetRefreshToken example.",
-            this.filePath != null ? generateFilePathWarning("refreshToken") : "."),
+            this.configFilePath != null ? generateFilePathWarning("refreshToken") : "."),
             "refreshToken");
       }
     }
@@ -365,7 +462,7 @@ public class OfflineCredentials {
      * Generates a file path warning for the key.
      */
     private String generateFilePathWarning(String key) {
-      return String.format(" as %s in %s.", getPropertyKey(key), this.filePath);
+      return String.format(" as %s in %s.", getPropertyKey(key), this.configFilePath);
     }
 
     /**
@@ -378,6 +475,10 @@ public class OfflineCredentials {
 
       if (this.tokenServerUrl == null) {
         this.tokenServerUrl = GoogleOAuthConstants.TOKEN_SERVER_URL;
+      }
+      
+      if (this.scopes == null) {
+        this.scopes = Lists.newArrayList(this.api.scope);
       }
     }
 

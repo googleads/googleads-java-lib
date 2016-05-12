@@ -1,3 +1,21 @@
+2.13.2 - 05/12/2016
+-------------------
+AdWords:
+  - Modified AxisDeserializer to create a new TransformerFactory and
+  Transformer on each deserialization operation, since these objects
+  are *not* thread safe. Fixes github issue #85:
+  https://github.com/googleads/googleads-java-lib/issues/85
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - Added support for loading service account JSON key files from
+  ads.properties.
+
 2.13.1 - 05/02/2016
 -------------------
 AdWords:

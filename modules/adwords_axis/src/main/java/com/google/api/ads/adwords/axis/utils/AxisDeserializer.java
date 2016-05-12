@@ -40,16 +40,13 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 import javax.xml.namespace.QName;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
@@ -66,28 +63,7 @@ public class AxisDeserializer {
   private static final String SOAP_END_BODY = "</soapenv:Body></soapenv:Envelope>";
 
   private static final String INDENT_AMOUNT = "4";
-  private static final AtomicReference<Transformer> transformerRef =
-      new AtomicReference<Transformer>();
-
-  /**
-   * Returns the static Transformer instance of this class. Lazily constructs (in a thread-safe
-   * manner) the instance on the first invocation. This is not in a static initializer block because
-   * any errors need to be reported back to the caller.
-   */
-  private static Transformer getTransformer()
-      throws TransformerConfigurationException, TransformerFactoryConfigurationError {
-    if (transformerRef.get() == null) {
-      Transformer transformer = TransformerFactory.newInstance().newTransformer();
-      transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-      transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-      transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", INDENT_AMOUNT);
-      
-      // Set the atomic reference, discarding the new instance if another thread set it already.
-      transformerRef.compareAndSet(null, transformer);
-    }
-    return transformerRef.get();
-  }
-  
+ 
   /**
    * Downloads BatchJob results from a download URL and deserializes them into a list.
    *
@@ -146,9 +122,15 @@ public class AxisDeserializer {
   private InputStream buildWrappedInputStream(InputStream downloadInputStream)
       throws TransformerException, IOException {
 
-    // Pass the download input stream through a transformer that removes the XML
-    // declaration.
-    Transformer omitXmlDeclarationTransformer = getTransformer();
+    // Pass the download input stream through a Transformer that removes the XML
+    // declaration. Create a new TransformerFactory and Transformer on each invocation
+    // since these objects are <em>not</em> thread safe.
+    Transformer omitXmlDeclarationTransformer = TransformerFactory.newInstance().newTransformer();
+    omitXmlDeclarationTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
+    omitXmlDeclarationTransformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+    omitXmlDeclarationTransformer.setOutputProperty(
+        "{http://xml.apache.org/xslt}indent-amount", INDENT_AMOUNT);
+
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     StreamResult streamResult = new StreamResult(outputStream);
     Source xmlSource = new StreamSource(downloadInputStream);

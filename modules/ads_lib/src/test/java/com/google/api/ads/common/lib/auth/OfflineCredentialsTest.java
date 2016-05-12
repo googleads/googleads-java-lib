@@ -75,7 +75,20 @@ public class OfflineCredentialsTest {
     assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
     assertSame(offlineCredentials.getHttpTransport(), httpTransport);
   }
+  
+  /**
+   * Tests that the builder builds correctly using a service account key file.
+   */
+  @Test
+  public void testBuilder_serviceAccount() throws Exception {
+    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .withJsonKeyFilePath("jsonKeyFilePath")
+        .build();
 
+    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
+  }
+  
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
@@ -85,7 +98,7 @@ public class OfflineCredentialsTest {
     config.setProperty("api.dfp.clientId", "clientId");
     config.setProperty("api.dfp.clientSecret", "clientSecret");
     config.setProperty("api.dfp.refreshToken", "refreshToken");
-
+    
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
         .forApi(OfflineCredentials.Api.DFP)
         .from(config)
@@ -94,6 +107,22 @@ public class OfflineCredentialsTest {
     assertEquals(offlineCredentials.getClientId(), "clientId");
     assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
     assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
+  }
+  
+  /**
+   * Tests that the builder correctly reads properties from a configuration.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_dfpServiceAccount() throws ValidationException {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+    
+    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .build();
+
+    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
   }
 
   /**
@@ -114,6 +143,23 @@ public class OfflineCredentialsTest {
     assertEquals(offlineCredentials.getClientId(), "clientId");
     assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
     assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
+  }
+  
+  /**
+   * Tests that the builder correctly reads properties from a configuration.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_adWordsServiceAccount() 
+      throws ValidationException {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.adwords.jsonKeyFilePath", "jsonKeyFilePath");
+    
+    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.ADWORDS)
+        .from(config)
+        .build();
+
+    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
   }
 
   /**
@@ -137,6 +183,24 @@ public class OfflineCredentialsTest {
     assertEquals(offlineCredentials.getClientId(), "clientIdDfp");
     assertEquals(offlineCredentials.getClientSecret(), "clientSecretDfp");
     assertEquals(offlineCredentials.getRefreshToken(), "refreshTokenDfp");
+  }
+  
+  /**
+   * Tests that the builder correctly reads properties from a configuration.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_properPrefixServiceAccount()
+      throws ValidationException {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePathDfp");
+    config.setProperty("api.adwords.jsonKeyFilePath", "jsonKeyFilePathAdWords");
+
+    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .build();
+
+    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePathDfp");
   }
 
   /**
@@ -179,6 +243,36 @@ public class OfflineCredentialsTest {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.dfp.clientId", "clientId");
     config.setProperty("api.dfp.clientSecret", "clientSecret");
+
+    thrown.expect(ValidationException.class);
+    new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .build();
+  }
+  
+  /**
+   * Tests that the builder does not fail when missing everything but a service account key.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_onlyKeyFilePath() throws Exception {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+
+    new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .build();
+  }
+  
+  /**
+   * Tests that the builder correctly fails on a bad configuration.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_multipleOAuthTypes() throws Exception {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.clientSecret", "clientSecret");
+    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
@@ -422,7 +516,7 @@ public class OfflineCredentialsTest {
     thrown.expect(OAuthException.class);
     offlineCredentials.generateCredential();
   }
-
+ 
   /**
    * Tests generating OAuth2 credentials.
    */

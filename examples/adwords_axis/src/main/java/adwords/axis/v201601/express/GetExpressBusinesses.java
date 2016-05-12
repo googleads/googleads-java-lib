@@ -92,8 +92,7 @@ public class GetExpressBusinesses {
           System.out.printf("Express business found with name '%s' id %d website: %s.%n",
               business.getName(),
               business.getId(),
-              business.getWebsite(),
-              business.getStatus().getValue());
+              business.getWebsite());
           businesses.add(business);
         }
       } else {

@@ -122,8 +122,10 @@ public class DateTimesHelper<T, D> {
    */
   public String dateToString(D date) {
     try {
-      return String.format(DATE_PATTERN, PropertyUtils.getProperty(date, "year"),
-          PropertyUtils.getProperty(date, "month"), PropertyUtils.getProperty(date, "day"));
+      return String.format(DATE_PATTERN,
+          (Integer) PropertyUtils.getProperty(date, "year"),
+          (Integer) PropertyUtils.getProperty(date, "month"),
+          (Integer) PropertyUtils.getProperty(date, "day"));
     } catch (IllegalAccessException e) {
       throw new IllegalStateException("Could not access class.", e);
     } catch (InvocationTargetException e) {
