@@ -3577,7 +3577,7 @@ public enum Column {
 
     /**
      * 
-     *                 The discrepancy between DFP volume and third party volume.
+     *                 The discrepancy percentage between DFP volume and third party volume.
      *               
      * 
      */

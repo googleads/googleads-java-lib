@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Errors associated with programmatic line items
+ *             Errors associated with programmatic line items.
  *           
  * 
  * <p>Java class for ProgrammaticError complex type.

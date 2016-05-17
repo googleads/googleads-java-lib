@@ -15,6 +15,9 @@ package com.google.api.ads.dfp.axis.v201602;
 public class Product  implements java.io.Serializable {
     /* The name of the {@code Product}. This attribute is populated
      * by Google, but can be updated.
+     *                 To overwrite this, set the {@link #nameSource} to
+     * {@link ValueSourceType#DIRECTLY_SPECIFIED}
+     *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
      *                 
@@ -220,6 +223,9 @@ public class Product  implements java.io.Serializable {
      * 
      * @return name   * The name of the {@code Product}. This attribute is populated
      * by Google, but can be updated.
+     *                 To overwrite this, set the {@link #nameSource} to
+     * {@link ValueSourceType#DIRECTLY_SPECIFIED}
+     *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
      *                 
@@ -235,6 +241,9 @@ public class Product  implements java.io.Serializable {
      * 
      * @param name   * The name of the {@code Product}. This attribute is populated
      * by Google, but can be updated.
+     *                 To overwrite this, set the {@link #nameSource} to
+     * {@link ValueSourceType#DIRECTLY_SPECIFIED}
+     *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
      *                 

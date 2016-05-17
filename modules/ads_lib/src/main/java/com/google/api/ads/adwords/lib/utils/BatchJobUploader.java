@@ -63,10 +63,11 @@ public class BatchJobUploader<OperandT, ApiErrorT,
 
   /**
    * For incremental uploads, each request's contents must have a length in bytes
-   * divisible by this size. 
+   * divisible by this size.
    */
-  private static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
-  
+  @VisibleForTesting
+  static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
+
   /**
    * Constructor that stores the session for authentication.
    *
@@ -75,8 +76,14 @@ public class BatchJobUploader<OperandT, ApiErrorT,
    * to initiate resumable uploads.
    */
   public BatchJobUploader(AdWordsSession session, boolean isInitiateResumableUpload) {
+    this(session, AdWordsInternals.getInstance().getHttpTransport(), isInitiateResumableUpload);
+  }
+
+  @VisibleForTesting
+  BatchJobUploader(
+      AdWordsSession session, HttpTransport httpTransport, boolean isInitiateResumableUpload) {
     this.session = session;
-    this.httpTransport = AdWordsInternals.getInstance().getHttpTransport();
+    this.httpTransport = httpTransport;
     this.batchJobLogger =
         AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     this.isInitiateResumableUpload = isInitiateResumableUpload;

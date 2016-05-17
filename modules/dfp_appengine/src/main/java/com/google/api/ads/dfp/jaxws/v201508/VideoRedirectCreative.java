@@ -11,8 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code Creative} that contains externally hosted video ads and
- *             is served via VAST 2.0 XML. This creative is read-only in versions
- *             V201408 and lower.
+ *             is served via VAST 2.0 XML.
  *           
  * 
  * <p>Java class for VideoRedirectCreative complex type.

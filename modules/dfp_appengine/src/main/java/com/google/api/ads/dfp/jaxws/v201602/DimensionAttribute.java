@@ -260,7 +260,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#startDateTime} for {@link Dimension#ORDER_NAME}.
+     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}.
      *                 Can be used for filtering.
      *               
      * 
@@ -269,7 +269,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#endDateTime} for {@link Dimension#ORDER_NAME}.
+     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}.
      *                 Can be used for filtering.
      *               
      * 
@@ -418,7 +418,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#startDateTime} for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}.
      *                 Can be used for filtering.
      *               
      * 
@@ -427,7 +427,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#endDateTime} for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}.
      *                 Can be used for filtering.
      *               
      * 
@@ -665,7 +665,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#probabilityToClose} for {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents {@link Proposal#probabilityOfClose} for {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -1013,7 +1013,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the target rate (net) of {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
+     *                 Represents the listing rate (net) of {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
      *               
      * 
      */

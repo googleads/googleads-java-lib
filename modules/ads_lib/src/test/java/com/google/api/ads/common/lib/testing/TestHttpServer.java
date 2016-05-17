@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
+import java.util.Deque;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
 
@@ -114,14 +115,15 @@ public class TestHttpServer {
    * Sets the response body to return on the next request.
    */
   public void setMockResponseBody(String mockResponseBody) {
-    server.mockResponseBodies = Lists.newArrayList(mockResponseBody);
+    setMockResponseBodies(Lists.newArrayList(mockResponseBody));
   }
 
   /**
-   * Sets the response body to return on subsequent requests.
+   * Sets the response bodies to return on subsequent requests.
    */
   public void setMockResponseBodies(List<String> mockResponseBodies) {
-    server.mockResponseBodies = Lists.newArrayList(mockResponseBodies);
+    server.mockResponseBodies.clear();
+    server.mockResponseBodies.addAll(mockResponseBodies);
   }
   
   /**
@@ -143,13 +145,13 @@ public class TestHttpServer {
    */
   private class InternalHttpServer extends Server {
 
-    private int port;
+    private final int port;
     private int numInteractions = 0;
     private long delay = 0;
-    private List<String> requestBodies = Lists.newArrayList();
-    private List<Boolean> requestBodiesCompressionStates = Lists.newArrayList(); 
-    private List<String> authorizationHttpHeaders = Lists.newArrayList();
-    private List<String> mockResponseBodies = Lists.newArrayList();
+    private final Deque<String> requestBodies = Lists.newLinkedList();
+    private final Deque<Boolean> requestBodiesCompressionStates = Lists.newLinkedList();
+    private final Deque<String> authorizationHttpHeaders = Lists.newLinkedList();
+    private final List<String> mockResponseBodies = Lists.newArrayList();
 
     /**
      * Default constructor.
@@ -231,14 +233,14 @@ public class TestHttpServer {
      * Gets the body of the last request made to the server.
      */
     private String getLastRequestBody() {
-      return requestBodies.get(requestBodies.size() - 1);
+      return requestBodies.getLast();
     }
     
     /**
      * Returns if the last request body was compressed.
      */
     private boolean wasLastRequestBodyCompressed() {
-      return requestBodiesCompressionStates.get(requestBodiesCompressionStates.size() - 1);
+      return requestBodiesCompressionStates.getLast();
     }
     
     /**
@@ -246,7 +248,7 @@ public class TestHttpServer {
      * {@code null} if none.
      */
     private String getLastAuthorizationHttpHeader() {
-      return authorizationHttpHeaders.get(authorizationHttpHeaders.size() - 1);
+      return authorizationHttpHeaders.getLast();
     }
   }
 }

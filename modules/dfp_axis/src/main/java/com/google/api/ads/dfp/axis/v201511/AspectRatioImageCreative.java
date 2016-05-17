@@ -38,8 +38,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.dfp.axis.v2015
     private java.lang.String altText;
 
     /* An impression tracking URL to ping when this creative is displayed.
-     * This field is
-     *                     optional and has a maximum length of 1024 characters. */
+     * This field is optional has
+     *                     a maximum length of 1024 characters. */
     private java.lang.String thirdPartyImpressionUrl;
 
     /* Allows the actual image asset sizes to differ from the creative
@@ -163,8 +163,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.dfp.axis.v2015
      * Gets the thirdPartyImpressionUrl value for this AspectRatioImageCreative.
      * 
      * @return thirdPartyImpressionUrl   * An impression tracking URL to ping when this creative is displayed.
-     * This field is
-     *                     optional and has a maximum length of 1024 characters.
+     * This field is optional has
+     *                     a maximum length of 1024 characters.
      */
     public java.lang.String getThirdPartyImpressionUrl() {
         return thirdPartyImpressionUrl;
@@ -175,8 +175,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.dfp.axis.v2015
      * Sets the thirdPartyImpressionUrl value for this AspectRatioImageCreative.
      * 
      * @param thirdPartyImpressionUrl   * An impression tracking URL to ping when this creative is displayed.
-     * This field is
-     *                     optional and has a maximum length of 1024 characters.
+     * This field is optional has
+     *                     a maximum length of 1024 characters.
      */
     public void setThirdPartyImpressionUrl(java.lang.String thirdPartyImpressionUrl) {
         this.thirdPartyImpressionUrl = thirdPartyImpressionUrl;

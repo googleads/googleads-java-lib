@@ -9,7 +9,7 @@ package com.google.api.ads.dfp.axis.v201602;
 
 
 /**
- * Errors associated with programmatic line items
+ * Errors associated with programmatic line items.
  */
 public class ProgrammaticError  extends com.google.api.ads.dfp.axis.v201602.ApiError  implements java.io.Serializable {
     /* The error reason represented by an enum. */

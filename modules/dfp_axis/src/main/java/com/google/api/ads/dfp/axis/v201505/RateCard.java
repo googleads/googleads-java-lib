@@ -30,9 +30,10 @@ public class RateCard  implements java.io.Serializable {
      * This attribute is optional to create a {@code RateCard} and defaults
      * to the
      *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute becomes readonly once a {@link ProposalLineItem}
-     * has been created
-     *                 with this {@link RateCard}. */
+     *                 This attribute is read-only if either the {@code RateCard}
+     * is for Marketplace or once a
+     *                 {@link ProposalLineItem} has been created using this
+     * {@code RateCard}. */
     private java.lang.String currencyCode;
 
     /* The status of the {@code RateCard}.
@@ -127,9 +128,10 @@ public class RateCard  implements java.io.Serializable {
      * This attribute is optional to create a {@code RateCard} and defaults
      * to the
      *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute becomes readonly once a {@link ProposalLineItem}
-     * has been created
-     *                 with this {@link RateCard}.
+     *                 This attribute is read-only if either the {@code RateCard}
+     * is for Marketplace or once a
+     *                 {@link ProposalLineItem} has been created using this
+     * {@code RateCard}.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -143,9 +145,10 @@ public class RateCard  implements java.io.Serializable {
      * This attribute is optional to create a {@code RateCard} and defaults
      * to the
      *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute becomes readonly once a {@link ProposalLineItem}
-     * has been created
-     *                 with this {@link RateCard}.
+     *                 This attribute is read-only if either the {@code RateCard}
+     * is for Marketplace or once a
+     *                 {@link ProposalLineItem} has been created using this
+     * {@code RateCard}.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;

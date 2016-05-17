@@ -136,15 +136,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * and is readonly. */
     private java.lang.Long scheduledQuantity;
 
-    /* This attribute is only applicable for sponsorship proposal
-     * line item and
-     *                 acts as an "FYI" or note, which does not impact ad
-     * serving or other backend
-     *                 systems. This represents the minimum quantity, which
-     * is a lifetime
-     *                 impression volume goal for reporting purposes only.
-     * 
-     *                 <p>The attribute is optional and defaults to null. */
+    /* Represents the minimum lifetime impressions volume goal. It
+     * does not impact
+     *                 ad-serving and is for reporting purposes only.
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line items}. */
     private java.lang.Long contractedUnitsBought;
 
     /* The strategy for delivering ads over the course of the {@code
@@ -1076,15 +1072,11 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the contractedUnitsBought value for this ProposalLineItem.
      * 
-     * @return contractedUnitsBought   * This attribute is only applicable for sponsorship proposal
-     * line item and
-     *                 acts as an "FYI" or note, which does not impact ad
-     * serving or other backend
-     *                 systems. This represents the minimum quantity, which
-     * is a lifetime
-     *                 impression volume goal for reporting purposes only.
-     * 
-     *                 <p>The attribute is optional and defaults to null.
+     * @return contractedUnitsBought   * Represents the minimum lifetime impressions volume goal. It
+     * does not impact
+     *                 ad-serving and is for reporting purposes only.
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line items}.
      */
     public java.lang.Long getContractedUnitsBought() {
         return contractedUnitsBought;
@@ -1094,15 +1086,11 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the contractedUnitsBought value for this ProposalLineItem.
      * 
-     * @param contractedUnitsBought   * This attribute is only applicable for sponsorship proposal
-     * line item and
-     *                 acts as an "FYI" or note, which does not impact ad
-     * serving or other backend
-     *                 systems. This represents the minimum quantity, which
-     * is a lifetime
-     *                 impression volume goal for reporting purposes only.
-     * 
-     *                 <p>The attribute is optional and defaults to null.
+     * @param contractedUnitsBought   * Represents the minimum lifetime impressions volume goal. It
+     * does not impact
+     *                 ad-serving and is for reporting purposes only.
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line items}.
      */
     public void setContractedUnitsBought(java.lang.Long contractedUnitsBought) {
         this.contractedUnitsBought = contractedUnitsBought;

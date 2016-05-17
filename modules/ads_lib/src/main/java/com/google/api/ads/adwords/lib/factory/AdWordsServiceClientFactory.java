@@ -20,7 +20,6 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.factory.AdsServiceClientFactory;
 import com.google.api.ads.common.lib.factory.BaseAdsServiceClientFactory;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.inject.AbstractModule;
 import com.google.inject.Injector;
 
 import javax.inject.Inject;
@@ -40,17 +39,6 @@ public class AdWordsServiceClientFactory
    */
   public AdWordsServiceClientFactory(Injector injector) {
     super(injector);
-  }
-
-  /**
-   * Constructor.
-   *
-   * @param module the module used for binding.
-   * @deprecated use {@link AdWordsServiceClientFactory#AdWordsServiceClientFactory(Injector)}
-   */
-  @Deprecated
-  public AdWordsServiceClientFactory(AbstractModule module) {
-    super(module);
   }
 
   /**

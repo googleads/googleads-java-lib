@@ -71,6 +71,10 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         <td>{@code customThirdPartyAdServerName}</td>
      *         <td>{@link Proposal#customThirdPartyAdServerName}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code hasOfflineErrors}</td>
+     *         <td>{@link Proposal#hasOfflineErrors}</td>
+     *         </tr>
      *         </table>
      *         
      *         

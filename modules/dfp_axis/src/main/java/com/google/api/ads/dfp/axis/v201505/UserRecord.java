@@ -44,7 +44,7 @@ public class UserRecord  implements java.io.Serializable {
      * {@code User}.
      *                 The structure of the locale string should be [ISO
      * language
-     *                 code]_[ISO_country code]. This field is required. */
+     *                 code]_[ISO_country code]. */
     private java.lang.String preferredLocale;
 
     public UserRecord() {
@@ -195,7 +195,7 @@ public class UserRecord  implements java.io.Serializable {
      * {@code User}.
      *                 The structure of the locale string should be [ISO
      * language
-     *                 code]_[ISO_country code]. This field is required.
+     *                 code]_[ISO_country code].
      */
     public java.lang.String getPreferredLocale() {
         return preferredLocale;
@@ -209,7 +209,7 @@ public class UserRecord  implements java.io.Serializable {
      * {@code User}.
      *                 The structure of the locale string should be [ISO
      * language
-     *                 code]_[ISO_country code]. This field is required.
+     *                 code]_[ISO_country code].
      */
     public void setPreferredLocale(java.lang.String preferredLocale) {
         this.preferredLocale = preferredLocale;

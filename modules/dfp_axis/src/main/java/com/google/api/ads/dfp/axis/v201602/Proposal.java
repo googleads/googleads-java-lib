@@ -72,7 +72,7 @@ public class Proposal  implements java.io.Serializable {
      * #endDateTime} will be
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
-     *                 network?s time zone. */
+     *                 network's time zone. */
     private java.lang.String timeZoneId;
 
     /* The status of the {@code Proposal}. This attribute is readonly. */
@@ -714,7 +714,7 @@ public class Proposal  implements java.io.Serializable {
      * #endDateTime} will be
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
-     *                 network?s time zone.
+     *                 network's time zone.
      */
     public java.lang.String getTimeZoneId() {
         return timeZoneId;
@@ -730,7 +730,7 @@ public class Proposal  implements java.io.Serializable {
      * #endDateTime} will be
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
-     *                 network?s time zone.
+     *                 network's time zone.
      */
     public void setTimeZoneId(java.lang.String timeZoneId) {
         this.timeZoneId = timeZoneId;

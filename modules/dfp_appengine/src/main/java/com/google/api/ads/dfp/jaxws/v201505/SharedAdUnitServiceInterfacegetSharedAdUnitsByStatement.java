@@ -9,26 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@link SharedAdUnitPage} of {@link SharedAdUnit} objects that satisfy the given
- *             {@link Statement#query}. The following fields are supported for filtering:
- *             
- *             <table>
- *             <tr>
- *             <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
- *             </tr>
- *             <tr>
- *             <td>{@code id}</td>
- *             <td>{@link SharedAdUnit#id}</td>
- *             </tr>
- *             <tr>
- *             <td>{@code name}</td>
- *             <td>{@link SharedAdUnit#name}</td>
- *             </tr>
- *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of shared ad units
- *             @return the shared ad units that match the given filter
+ *             <b>This method is deprecated and returns null.
+ *             <p>Instead, use {@link InventoryUnitService#getAdUnitsByStatement} filtering on
+ *             {@code isSharedByDistributor = true}.
  *           
  * 
  * <p>Java class for getSharedAdUnitsByStatement element declaration.
