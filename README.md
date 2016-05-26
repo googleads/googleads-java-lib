@@ -124,21 +124,21 @@ are in the package `com.google.api.ads.adwords.{version}`.
     **If you're accessing an API using your own credentials...**
 
     *   [Using AdWords]
-        (https://github.com/googleads/vtsao-test/wiki/%5BJava%5D-API-access-using-own-credentials-(installed-application-flow))
+        (https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
     *   [Using DFP]
-        (https://github.com/googleads/vtsao-test/wiki/%5BJava%5D-API-access-using-own-credentials-(server-to-server-flow))
+        (https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
     **If you're accessing an API on behalf of clients...**
 
     *   [Developing a web application (AdWords or DFP)]
-        (https://github.com/googleads/vtsao-test/wiki/%5BJava%5D-API-access-on-behalf-of-your-clients-(web-flow))
+        (https://github.com/googleads/googleads-java-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 4.  Run an example.
 
     *   **If using Maven with Eclipse**
 
         Navigate in your project to any example (e.g.,
-        `src/main/java/adwords/axis/#ADWORDS_API_VERSION#/basicoperations/GetCampaigns.java`)
+        `src/main/java/adwords/axis/v201603/basicoperations/GetCampaigns.java`)
         and run the example.
 
     *   **If using Maven from the command line**
@@ -147,13 +147,13 @@ are in the package `com.google.api.ads.adwords.{version}`.
         ``-Dexec.mainClass`` argument with the example of your choice.
 
         ```
-        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.#ADWORDS_API_VERSION#.basicoperations.GetCampaigns"
+        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201603.basicoperations.GetCampaigns"
         ```
 
     *   **If using jars**
 
         Navigate in your project to any example (e.g.,
-        `src/adwords/axis/#ADWORDS_API_VERSION#/basicoperations/GetCampaigns.java`)
+        `src/adwords/axis/v201603/basicoperations/GetCampaigns.java`)
         and run the example.
 
 ## Basic usage
@@ -163,7 +163,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.#ADWORDS_API_VERSION#.*;
+import com.google.api.ads.adwords.axis.v201603.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;
