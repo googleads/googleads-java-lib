@@ -34,6 +34,7 @@ public class PromotionErrorReason implements java.io.Serializable {
     public static final java.lang.String _PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = "PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED";
     public static final java.lang.String _NON_LOCAL_BUSINESS = "NON_LOCAL_BUSINESS";
     public static final java.lang.String _ALREADY_MIGRATED = "ALREADY_MIGRATED";
+    public static final java.lang.String _BUSINESS_ACCESS_DENIED = "BUSINESS_ACCESS_DENIED";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final PromotionErrorReason MISSING_BUSINESS_NAME = new PromotionErrorReason(_MISSING_BUSINESS_NAME);
     public static final PromotionErrorReason BUSINESS_DELETED = new PromotionErrorReason(_BUSINESS_DELETED);
@@ -52,6 +53,7 @@ public class PromotionErrorReason implements java.io.Serializable {
     public static final PromotionErrorReason PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = new PromotionErrorReason(_PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED);
     public static final PromotionErrorReason NON_LOCAL_BUSINESS = new PromotionErrorReason(_NON_LOCAL_BUSINESS);
     public static final PromotionErrorReason ALREADY_MIGRATED = new PromotionErrorReason(_ALREADY_MIGRATED);
+    public static final PromotionErrorReason BUSINESS_ACCESS_DENIED = new PromotionErrorReason(_BUSINESS_ACCESS_DENIED);
     public static final PromotionErrorReason UNKNOWN = new PromotionErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static PromotionErrorReason fromValue(java.lang.String value)

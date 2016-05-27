@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import com.google.api.ads.adwords.jaxws.v201603.express.BusinessHour;
 import com.google.api.ads.adwords.jaxws.v201603.express.KeywordGroup;
 import com.google.api.ads.adwords.jaxws.v201603.express.KeywordSet;
 import com.google.api.ads.adwords.jaxws.v201603.express.NegativeCriterion;
@@ -74,6 +75,7 @@ import com.google.api.ads.adwords.jaxws.v201603.express.ProductService;
     ProductPartition.class,
     Webpage.class,
     KeywordGroup.class,
+    BusinessHour.class,
     KeywordSet.class,
     NegativeCriterion.class,
     Keyword.class,

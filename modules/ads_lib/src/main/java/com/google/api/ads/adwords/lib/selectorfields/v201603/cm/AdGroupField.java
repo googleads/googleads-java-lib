@@ -201,7 +201,8 @@ public enum AdGroupField implements EntityField {
    * The level (ad group, ad group strategy, or campaign strategy) at which the bid was set.
    * This is applicable only at the ad group level.
    */
-  TargetCpaBidSource(false),
+  @Filterable
+  TargetCpaBidSource(true),
 
   /**
    * URL template for constructing a tracking URL.

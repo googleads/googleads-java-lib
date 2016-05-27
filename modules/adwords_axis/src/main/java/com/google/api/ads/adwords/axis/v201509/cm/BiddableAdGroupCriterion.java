@@ -13,9 +13,10 @@ package com.google.api.ads.adwords.axis.v201509.cm;
  */
 public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterion  implements java.io.Serializable {
     /* Current user-set state of criterion.
-     *                     UserStatus may not be set to {@code REMOVED}.
-     * On add, defaults to
-     *                     {@code ENABLED} if unspecified. */
+     *                     UserStatus may not be set to {@code REMOVED} and
+     * is not supported for ProductPartition
+     *                     criterion. On add, defaults to {@code ENABLED}
+     * if unspecified. */
     private com.google.api.ads.adwords.axis.v201509.cm.UserStatus userStatus;
 
     /* Serving status.
@@ -161,9 +162,10 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Gets the userStatus value for this BiddableAdGroupCriterion.
      * 
      * @return userStatus   * Current user-set state of criterion.
-     *                     UserStatus may not be set to {@code REMOVED}.
-     * On add, defaults to
-     *                     {@code ENABLED} if unspecified.
+     *                     UserStatus may not be set to {@code REMOVED} and
+     * is not supported for ProductPartition
+     *                     criterion. On add, defaults to {@code ENABLED}
+     * if unspecified.
      */
     public com.google.api.ads.adwords.axis.v201509.cm.UserStatus getUserStatus() {
         return userStatus;
@@ -174,9 +176,10 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Sets the userStatus value for this BiddableAdGroupCriterion.
      * 
      * @param userStatus   * Current user-set state of criterion.
-     *                     UserStatus may not be set to {@code REMOVED}.
-     * On add, defaults to
-     *                     {@code ENABLED} if unspecified.
+     *                     UserStatus may not be set to {@code REMOVED} and
+     * is not supported for ProductPartition
+     *                     criterion. On add, defaults to {@code ENABLED}
+     * if unspecified.
      */
     public void setUserStatus(com.google.api.ads.adwords.axis.v201509.cm.UserStatus userStatus) {
         this.userStatus = userStatus;

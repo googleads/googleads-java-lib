@@ -47,6 +47,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BusinessHour }
+     * 
+     */
+    public BusinessHour createBusinessHour() {
+        return new BusinessHour();
+    }
+
+    /**
      * Create an instance of {@link ExpressBusinessError }
      * 
      */

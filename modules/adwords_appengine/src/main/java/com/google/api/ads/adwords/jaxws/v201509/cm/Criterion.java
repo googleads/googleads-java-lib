@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import com.google.api.ads.adwords.jaxws.v201509.express.BusinessHour;
 import com.google.api.ads.adwords.jaxws.v201509.express.KeywordGroup;
 import com.google.api.ads.adwords.jaxws.v201509.express.KeywordSet;
 import com.google.api.ads.adwords.jaxws.v201509.express.NegativeCriterion;
@@ -47,6 +48,7 @@ import com.google.api.ads.adwords.jaxws.v201509.express.ProductService;
 })
 @XmlSeeAlso({
     KeywordGroup.class,
+    BusinessHour.class,
     KeywordSet.class,
     NegativeCriterion.class,
     ProductService.class,

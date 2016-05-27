@@ -49,8 +49,8 @@ public class BudgetOrderRequest  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String budgetOrderName;
 
-    /* To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+    /* The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
@@ -235,8 +235,8 @@ public class BudgetOrderRequest  implements java.io.Serializable {
     /**
      * Gets the spendingLimit value for this BudgetOrderRequest.
      * 
-     * @return spendingLimit   * To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+     * @return spendingLimit   * The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
@@ -249,8 +249,8 @@ public class BudgetOrderRequest  implements java.io.Serializable {
     /**
      * Sets the spendingLimit value for this BudgetOrderRequest.
      * 
-     * @param spendingLimit   * To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+     * @param spendingLimit   * The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>

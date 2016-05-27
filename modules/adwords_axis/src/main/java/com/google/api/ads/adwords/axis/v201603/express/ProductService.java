@@ -19,9 +19,8 @@ package com.google.api.ads.adwords.axis.v201603.express;
 public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.Criterion  implements java.io.Serializable {
     /* Text of the product service.
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ProductServiceText".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
@@ -31,11 +30,9 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.
 
     /* Input locale of the product service text (e.g. "en_US").
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
-     *                     <p>This field is required for
-     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
+     *                     <p>This field is required for {@code ProductServiceService}.
      * <span class="constraint Filterable">This field can be filtered on
      * using the value "Locale".</span> */
     private java.lang.String locale;
@@ -63,9 +60,8 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @return text   * Text of the product service.
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ProductServiceText".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
@@ -82,9 +78,8 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @param text   * Text of the product service.
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ProductServiceText".</span><span
      * class="constraint Filterable">This field can be filtered on.</span>
@@ -101,11 +96,9 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @return locale   * Input locale of the product service text (e.g. "en_US").
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
-     *                     <p>This field is required for
-     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
+     *                     <p>This field is required for {@code ProductServiceService}.
      * <span class="constraint Filterable">This field can be filtered on
      * using the value "Locale".</span>
      */
@@ -119,11 +112,9 @@ public class ProductService  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @param locale   * Input locale of the product service text (e.g. "en_US").
      *                     
-     *                     <p>Please note that only {@link com.google.ads.api.services.common.selector.Operator.EQUALS}
-     * is
-     *                     supported.
-     *                     <p>This field is required for
-     *                     {@link com.google.ads.api.services.express.productservice.ProductServiceService}.
+     *                     <p>Please note that only {@code Operator.EQUALS}
+     * is supported.
+     *                     <p>This field is required for {@code ProductServiceService}.
      * <span class="constraint Filterable">This field can be filtered on
      * using the value "Locale".</span>
      */

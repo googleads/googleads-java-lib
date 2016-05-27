@@ -78,19 +78,17 @@ public class Promotion  implements java.io.Serializable {
     /* Targeting criteria of this promotion.  The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link AdSchedule}</li>
+     *                 <li>{@link BusinessHour}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
-     *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
-     * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 <p>Please note that {@link Address} is not supported
+     * in {@link Proximity}. Please use
+     *                 {@link GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -406,19 +404,17 @@ public class Promotion  implements java.io.Serializable {
      * @return criteria   * Targeting criteria of this promotion.  The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link AdSchedule}</li>
+     *                 <li>{@link BusinessHour}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
-     *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
-     * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 <p>Please note that {@link Address} is not supported
+     * in {@link Proximity}. Please use
+     *                 {@link GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -437,19 +433,17 @@ public class Promotion  implements java.io.Serializable {
      * @param criteria   * Targeting criteria of this promotion.  The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link AdSchedule}</li>
+     *                 <li>{@link BusinessHour}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
-     *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
-     * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 <p>Please note that {@link Address} is not supported
+     * in {@link Proximity}. Please use
+     *                 {@link GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field

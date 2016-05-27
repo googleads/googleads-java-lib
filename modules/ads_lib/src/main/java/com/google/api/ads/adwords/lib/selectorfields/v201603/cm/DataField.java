@@ -26,18 +26,21 @@ public enum DataField implements EntityField {
 
   /**
    * ID of the ad group that contains the criterion with which this bid landscape is associated.
+   * Only available for ad group bid landscapes and ad group criterion bid landscapes.
    */
   @Filterable
   AdGroupId(true),
 
   /**
    * The bid amount used to estimate this landscape point's data.
+   * Only available for ad group bid landscapes and ad group criterion bid landscapes.
    */
   @Filterable
   Bid(true),
 
   /**
    * The bid modifier value of this point.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   BidModifier(true),
@@ -98,7 +101,9 @@ public enum DataField implements EntityField {
   IsoLanguage(false),
 
   /**
-   * 
+   * Only applies to landscapes with {@code landscapeType == DEFAULT}.
+   * If true, then this bid landscape contains the set of ad group criteria that <em>currently</em> do not have criterion-level bid overrides.
+   * If false, then this bid landscape was derived from an earlier snapshot of ad group criteria, so it may contain criteria to which bid overrides were recently added, and may not contain criteria from which bid overrides were recently removed.
    */
   @Filterable
   LandscapeCurrent(true),
@@ -143,6 +148,7 @@ public enum DataField implements EntityField {
 
   /**
    * Required daily budget to achieve the predicted stats at this bid.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   RequiredBudget(true),
@@ -155,24 +161,28 @@ public enum DataField implements EntityField {
 
   /**
    * Estimated total clicks for all devices in mobile bid modifier landscape.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   TotalLocalClicks(true),
 
   /**
    * Estimated total cost for all devices in mobile bid modifier landscape.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   TotalLocalCost(true),
 
   /**
    * Estimated total impressions for all devices in mobile bid modifier landscape.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   TotalLocalImpressions(true),
 
   /**
    * Estimated total promoted impressions for all devices in mobile bid modifier landscape.
+   * Only available for campaign criterion bid landscapes (versions >= v201603).
    */
   @Filterable
   TotalLocalPromotedImpressions(true),

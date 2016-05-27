@@ -19,8 +19,18 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      * required and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201603.cm.AdGroupBidLandscapeType type;
 
-    /* <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
+    /* Only applies to landscapes with {@code landscapeType == DEFAULT}.
+     * If true, then this bid
+     *                     landscape contains the set of ad group criteria
+     * that <em>currently</em> do not have
+     *                     criterion-level bid overrides. If false, then
+     * this bid landscape was derived from an earlier
+     *                     snapshot of ad group criteria, so it may contain
+     * criteria to which bid overrides were recently
+     *                     added, and may not contain criteria from which
+     * bid overrides were recently removed.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LandscapeCurrent".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
@@ -81,8 +91,18 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the landscapeCurrent value for this AdGroupBidLandscape.
      * 
-     * @return landscapeCurrent   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
+     * @return landscapeCurrent   * Only applies to landscapes with {@code landscapeType == DEFAULT}.
+     * If true, then this bid
+     *                     landscape contains the set of ad group criteria
+     * that <em>currently</em> do not have
+     *                     criterion-level bid overrides. If false, then
+     * this bid landscape was derived from an earlier
+     *                     snapshot of ad group criteria, so it may contain
+     * criteria to which bid overrides were recently
+     *                     added, and may not contain criteria from which
+     * bid overrides were recently removed.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LandscapeCurrent".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
@@ -95,8 +115,18 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the landscapeCurrent value for this AdGroupBidLandscape.
      * 
-     * @param landscapeCurrent   * <span class="constraint Selectable">This field can be selected
-     * using the value "LandscapeCurrent".</span><span class="constraint
+     * @param landscapeCurrent   * Only applies to landscapes with {@code landscapeType == DEFAULT}.
+     * If true, then this bid
+     *                     landscape contains the set of ad group criteria
+     * that <em>currently</em> do not have
+     *                     criterion-level bid overrides. If false, then
+     * this bid landscape was derived from an earlier
+     *                     snapshot of ad group criteria, so it may contain
+     * criteria to which bid overrides were recently
+     *                     added, and may not contain criteria from which
+     * bid overrides were recently removed.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LandscapeCurrent".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>

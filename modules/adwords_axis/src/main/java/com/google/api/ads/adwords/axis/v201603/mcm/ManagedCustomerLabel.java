@@ -17,13 +17,11 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
      * and should not be {@code null}.</span> */
     private java.lang.Long labelId;
 
-    /* The 10-digit customer ID that identifies this account.  Note
-     * that this is a long (do not
-     *                 include hyphens in the middle), just like
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
-     * ManagedCustomer.customerId}.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span> */
+    /* The 10-digit customer ID that identifies this account. Note
+     * that this is a {@code long} (do not
+     *                 include hyphens in the middle), just like {@link ManagedCustomer#customerId}.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private java.lang.Long customerId;
 
     public ManagedCustomerLabel() {
@@ -64,13 +62,11 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
     /**
      * Gets the customerId value for this ManagedCustomerLabel.
      * 
-     * @return customerId   * The 10-digit customer ID that identifies this account.  Note
-     * that this is a long (do not
-     *                 include hyphens in the middle), just like
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
-     * ManagedCustomer.customerId}.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @return customerId   * The 10-digit customer ID that identifies this account. Note
+     * that this is a {@code long} (do not
+     *                 include hyphens in the middle), just like {@link ManagedCustomer#customerId}.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public java.lang.Long getCustomerId() {
         return customerId;
@@ -80,13 +76,11 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
     /**
      * Sets the customerId value for this ManagedCustomerLabel.
      * 
-     * @param customerId   * The 10-digit customer ID that identifies this account.  Note
-     * that this is a long (do not
-     *                 include hyphens in the middle), just like
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomer#customerId
-     * ManagedCustomer.customerId}.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
+     * @param customerId   * The 10-digit customer ID that identifies this account. Note
+     * that this is a {@code long} (do not
+     *                 include hyphens in the middle), just like {@link ManagedCustomer#customerId}.
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setCustomerId(java.lang.Long customerId) {
         this.customerId = customerId;

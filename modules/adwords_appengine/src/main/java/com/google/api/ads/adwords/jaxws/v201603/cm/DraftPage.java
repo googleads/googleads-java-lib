@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Contains a subset of drafts resulting from the filtering and paging of
- *             {@link com.google.ads.api.services.campaignmgmt.draft.DraftService#get} call.
+ *             {@link DraftService#get} call.
  *           
  * 
  * <p>Java class for DraftPage complex type.

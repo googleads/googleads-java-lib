@@ -17,8 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  *       documentation for more details.
  *       
  *       <p>You can also use this service to retrieve statistics for existing keyword
- *       ideas by setting the selector's {@code requestType} to
- *       {@link com.google.ads.api.services.targetingideas.attributes.RequestType#STATS}
+ *       ideas by setting the selector's {@code requestType} to {@link RequestType#STATS}
  *       and passing in the appropriate search parameters.</p>
  *     
  * 

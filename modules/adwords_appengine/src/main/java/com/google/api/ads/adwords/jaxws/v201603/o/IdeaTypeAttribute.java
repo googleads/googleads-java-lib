@@ -9,9 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@link Attribute} type that contains an {@link IdeaType} value. For example,
- *             if a {@link com.google.ads.api.services.targetingideas.TargetingIdea}
- *             represents a keyword idea, its {@link IdeaTypeAttribute} would contain a
+ *             {@link Attribute} type that contains an {@link IdeaType} value. For example, if a
+ *             {@link TargetingIdea} represents a keyword idea, its {@link IdeaTypeAttribute} would contain a
  *             {@code KEYWORD} {@link IdeaType}.
  *           
  * 

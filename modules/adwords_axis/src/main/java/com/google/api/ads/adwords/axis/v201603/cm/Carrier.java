@@ -16,12 +16,16 @@ package com.google.api.ads.adwords.axis.v201603.cm;
  * AdX.</span>
  */
 public class Carrier  extends com.google.api.ads.adwords.axis.v201603.cm.Criterion  implements java.io.Serializable {
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* Name of the carrier.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String name;
 
-    /* <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span> */
+    /* Country code of the carrier.
+     *                     Can be {@code null} if not applicable, e.g., for
+     * Carrier "Wifi".
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span> */
     private java.lang.String countryCode;
 
     public Carrier() {
@@ -45,8 +49,9 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201603.cm.Criteri
     /**
      * Gets the name value for this Carrier.
      * 
-     * @return name   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return name   * Name of the carrier.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -56,8 +61,9 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201603.cm.Criteri
     /**
      * Sets the name value for this Carrier.
      * 
-     * @param name   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param name   * Name of the carrier.
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -67,8 +73,11 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201603.cm.Criteri
     /**
      * Gets the countryCode value for this Carrier.
      * 
-     * @return countryCode   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @return countryCode   * Country code of the carrier.
+     *                     Can be {@code null} if not applicable, e.g., for
+     * Carrier "Wifi".
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getCountryCode() {
         return countryCode;
@@ -78,8 +87,11 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201603.cm.Criteri
     /**
      * Sets the countryCode value for this Carrier.
      * 
-     * @param countryCode   * <span class="constraint ReadOnly">This field is read only and
-     * will be ignored when sent to the API.</span>
+     * @param countryCode   * Country code of the carrier.
+     *                     Can be {@code null} if not applicable, e.g., for
+     * Carrier "Wifi".
+     *                     <span class="constraint ReadOnly">This field is
+     * read only and will be ignored when sent to the API.</span>
      */
     public void setCountryCode(java.lang.String countryCode) {
         this.countryCode = countryCode;

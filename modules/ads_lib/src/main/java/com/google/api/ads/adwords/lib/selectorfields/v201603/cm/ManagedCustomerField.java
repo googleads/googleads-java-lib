@@ -27,7 +27,7 @@ public enum ManagedCustomerField implements EntityField {
   /**
    * The list of account labels associated with this customer.
    * Only labels owned by the requesting manager will be returned.
-   * To change the list of labels applied to this customer, see {@code com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabels ManagedCustomerService.mutateLabels}.
+   * To change the list of labels applied to this customer, see {@code ManagedCustomerService#mutateLabels}.
    */
   @Filterable
   AccountLabels(true),
@@ -69,7 +69,7 @@ public enum ManagedCustomerField implements EntityField {
   /**
    * ID of the label.
    * <p>This field is selectable/filterable in AccountLabelService.
-   * To select labels or filter by label ID in {@code com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
+   * To select labels or filter by label ID in {@code ManagedCustomerService#get}, use the {@code AccountLabels} field instead.
    */
   @Filterable
   LabelId(true),
@@ -77,7 +77,7 @@ public enum ManagedCustomerField implements EntityField {
   /**
    * Name of the label.
    * <p>This field is selectable in AccountLabelService.
-   * To select labels in {@code com.google.ads.api.services.mcm.customer.ManagedCustomerService#get ManagedCustomerService}, use the {@code AccountLabels} field instead.
+   * To select labels in {@code ManagedCustomerService#get}, use the {@code AccountLabels} field instead.
    */
   LabelName(false),
 

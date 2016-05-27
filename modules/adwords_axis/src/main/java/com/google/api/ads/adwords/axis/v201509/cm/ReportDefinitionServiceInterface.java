@@ -11,7 +11,14 @@ public interface ReportDefinitionServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns the available report fields for a given report type.
-     * 
+     * When using this method the {@code clientCustomerId} header field is
+     * optional. Callers are discouraged from setting the clientCustomerId
+     * header field in calls to this method as its presence will trigger
+     * an
+     *         authorization error if the caller does not have access to
+     * the customer
+     *         with the included ID.
+     *         
      *         
      * @param reportType The type of report.
      *         

@@ -11,8 +11,7 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 /**
  * Contains a subset of {@link CriterionBidLandscapePage} objects
  * resulting from the
- *             filtering and paging of
- *             {@link com.google.ads.api.services.campaignmgmt.data.DataService#getCriterionBidLandscape}
+ *             filtering and paging of {@link DataService#getCriterionBidLandscape}
  * call.
  */
 public class CriterionBidLandscapePage  extends com.google.api.ads.adwords.axis.v201603.cm.NoStatsPage  implements java.io.Serializable {

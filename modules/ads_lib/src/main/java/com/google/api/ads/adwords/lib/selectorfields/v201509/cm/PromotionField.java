@@ -62,15 +62,15 @@ public enum PromotionField implements EntityField {
 
   /**
    * Text of the product service.
-   * <p>Please note that only {@code com.google.ads.api.services.common.selector.Operator.EQUALS} is supported.
+   * <p>Please note that only {@code Operator.EQUALS} is supported.
    */
   @Filterable
   ProductServiceText(true),
 
   /**
    * Targeting criteria of this promotion.
-   * The following criteria are supported: <ul> <li>{@code com.google.ads.api.services.express.common.criterion.ProductService}</li> <li>{@code com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li> <li>{@code com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li> <li>{@code com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li> </ul> <p>Please note that {@code com.google.ads.api.services.common.geo.Address} is not supported in {@code com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
-   * Please use {@code com.google.ads.api.services.common.geo.GeoPoint} instead.
+   * The following criteria are supported: <ul> <li>{@code ProductService}</li> <li>{@code AdSchedule}</li> <li>{@code BusinessHour}</li> <li>{@code Language}</li> <li>{@code Location}</li> <li>{@code Proximity}</li> </ul> <p>Please note that {@code Address} is not supported in {@code Proximity}.
+   * Please use {@code GeoPoint} instead.
    */
   PromotionCriteria(false),
 

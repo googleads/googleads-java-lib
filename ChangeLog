@@ -1,3 +1,20 @@
+2.15.0 - 05/27/2016
+-------------------
+AdWords:
+  - Added support and examples for v201605.
+  - Added new ParallelReportDownload example to demonstrate how to download an
+    Ad Hoc report for all accounts directly under a manager account in multiple
+    parallel threads.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.14.0 - 05/17/2016
 -------------------
 AdWords:

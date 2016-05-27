@@ -9,10 +9,9 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 
 
 /**
- * Contains a subset of adgroup resulting from the filtering and paging
- * of the
- *             {@link com.google.ads.api.services.campaignmgmt.adgroup.AdGroupService#get}
- * call
+ * Contains a subset of ad groups resulting from the filtering and
+ * paging of the
+ *             {@link AdGroupService#get} call.
  */
 public class AdGroupPage  extends com.google.api.ads.adwords.axis.v201603.cm.Page  implements java.io.Serializable {
     /* The result entries in this page. */

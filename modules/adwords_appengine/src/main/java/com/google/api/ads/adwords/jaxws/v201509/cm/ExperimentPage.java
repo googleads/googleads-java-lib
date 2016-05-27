@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Contains a subset of experiment resulting from the filtering and paging of the
- *             {@link com.google.ads.api.services.campaignmgmt.campaign.ExperimentService#get} call.
+ *             {@link ExperimentService#get} call.
  *           
  * 
  * <p>Java class for ExperimentPage complex type.

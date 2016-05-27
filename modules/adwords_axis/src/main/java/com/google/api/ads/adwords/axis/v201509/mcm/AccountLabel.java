@@ -21,10 +21,8 @@ public class AccountLabel  implements java.io.Serializable {
     /* ID of the label.
      *                 <p>This field is selectable/filterable in AccountLabelService.
      * To select labels or filter by
-     *                 label ID in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 label ID in {@link ManagedCustomerService#get}, use
+     * the {@code AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -39,9 +37,8 @@ public class AccountLabel  implements java.io.Serializable {
     /* Name of the label.
      *                 <p>This field is selectable in AccountLabelService.
      * To select labels in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 {@link ManagedCustomerService#get}, use the {@code
+     * AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelName".</span>
      *                 <span class="constraint Required">This field is required
@@ -66,10 +63,8 @@ public class AccountLabel  implements java.io.Serializable {
      * @return id   * ID of the label.
      *                 <p>This field is selectable/filterable in AccountLabelService.
      * To select labels or filter by
-     *                 label ID in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 label ID in {@link ManagedCustomerService#get}, use
+     * the {@code AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -91,10 +86,8 @@ public class AccountLabel  implements java.io.Serializable {
      * @param id   * ID of the label.
      *                 <p>This field is selectable/filterable in AccountLabelService.
      * To select labels or filter by
-     *                 label ID in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 label ID in {@link ManagedCustomerService#get}, use
+     * the {@code AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -116,9 +109,8 @@ public class AccountLabel  implements java.io.Serializable {
      * @return name   * Name of the label.
      *                 <p>This field is selectable in AccountLabelService.
      * To select labels in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 {@link ManagedCustomerService#get}, use the {@code
+     * AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelName".</span>
      *                 <span class="constraint Required">This field is required
@@ -136,9 +128,8 @@ public class AccountLabel  implements java.io.Serializable {
      * @param name   * Name of the label.
      *                 <p>This field is selectable in AccountLabelService.
      * To select labels in
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#get
-     * ManagedCustomerService},
-     *                 use the {@code AccountLabels} field instead.
+     *                 {@link ManagedCustomerService#get}, use the {@code
+     * AccountLabels} field instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "LabelName".</span>
      *                 <span class="constraint Required">This field is required

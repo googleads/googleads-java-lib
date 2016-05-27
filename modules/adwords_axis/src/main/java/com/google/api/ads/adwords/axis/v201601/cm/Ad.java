@@ -44,9 +44,7 @@ public class Ad  implements java.io.Serializable {
      * <p>This field is used for upgraded urls only, as described at:
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
-     * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span> */
+     * is 10.</span> */
     private java.lang.String[] finalUrls;
 
     /* A list of possible final mobile URLs after all cross domain
@@ -55,9 +53,7 @@ public class Ad  implements java.io.Serializable {
      * at:
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
-     * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span> */
+     * is 10.</span> */
     private java.lang.String[] finalMobileUrls;
 
     /* A list of final app URLs that will be used on mobile if the
@@ -202,8 +198,6 @@ public class Ad  implements java.io.Serializable {
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
      * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span>
      */
     public java.lang.String[] getFinalUrls() {
         return finalUrls;
@@ -218,8 +212,6 @@ public class Ad  implements java.io.Serializable {
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
      * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span>
      */
     public void setFinalUrls(java.lang.String[] finalUrls) {
         this.finalUrls = finalUrls;
@@ -244,8 +236,6 @@ public class Ad  implements java.io.Serializable {
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
      * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span>
      */
     public java.lang.String[] getFinalMobileUrls() {
         return finalMobileUrls;
@@ -262,8 +252,6 @@ public class Ad  implements java.io.Serializable {
      *                 https://developers.google.com/adwords/api/docs/guides/upgraded-urls
      * <span class="constraint CollectionSize">The maximum size of this collection
      * is 10.</span>
-     *                 <span class="constraint ContentsStringLength">Strings
-     * in this field must be non-empty (trimmed).</span>
      */
     public void setFinalMobileUrls(java.lang.String[] finalMobileUrls) {
         this.finalMobileUrls = finalMobileUrls;

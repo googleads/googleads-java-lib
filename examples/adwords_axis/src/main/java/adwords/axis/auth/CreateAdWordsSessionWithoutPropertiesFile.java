@@ -29,7 +29,7 @@ import com.google.api.client.auth.oauth2.Credential;
  * object without using an ads.properties file.
  */
 public class CreateAdWordsSessionWithoutPropertiesFile {
-  
+
   private static final String CLIENT_ID = "INSERT_CLIENT_ID_HERE";
   private static final String CLIENT_SECRET = "INSERT_CLIENT_SECRET_HERE";
   private static final String REFRESH_TOKEN = "INSERT_REFRESH_TOKEN_HERE";
@@ -39,7 +39,7 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
   private static AdWordsSession createAdWordsSession(String clientId, String clientSecret,
       String refreshToken, String developerToken, String userAgent) throws OAuthException,
       ValidationException {
-    // Create a valid OAuth 2.0 credential without using a properties file.
+    // Create a valid OAuth2 credential without using a properties file.
     Credential credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .withClientSecrets(clientId, clientSecret)

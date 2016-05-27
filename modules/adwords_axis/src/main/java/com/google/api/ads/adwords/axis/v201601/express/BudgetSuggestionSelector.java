@@ -15,28 +15,22 @@ public class BudgetSuggestionSelector  implements java.io.Serializable {
     /* Criteria for budget suggestion. The following criteria are
      * supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
      *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
+     *                 {@link Address} is not supported in {@link Proximity}.
      * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 {@link GeoPoint} instead.
      *                 
-     *                 {@link com.google.ads.api.services.express.common.criterion.ProductService},
-     * {@link com.google.ads.api.services.campaignmgmt.common.criterion.Language},
-     * and at least one of
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}
-     * and
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}
-     * must be given,
-     *                 otherwise default suggestion will be returned.
+     *                 {@link ProductService}, {@link Language}, and at least
+     * one of
+     *                 {@link Location} and {@link Proximity} must be given,
+     * otherwise default
+     *                 suggestion will be returned.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -64,28 +58,22 @@ public class BudgetSuggestionSelector  implements java.io.Serializable {
      * @return criteria   * Criteria for budget suggestion. The following criteria are
      * supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
      *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
+     *                 {@link Address} is not supported in {@link Proximity}.
      * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 {@link GeoPoint} instead.
      *                 
-     *                 {@link com.google.ads.api.services.express.common.criterion.ProductService},
-     * {@link com.google.ads.api.services.campaignmgmt.common.criterion.Language},
-     * and at least one of
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}
-     * and
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}
-     * must be given,
-     *                 otherwise default suggestion will be returned.
+     *                 {@link ProductService}, {@link Language}, and at least
+     * one of
+     *                 {@link Location} and {@link Proximity} must be given,
+     * otherwise default
+     *                 suggestion will be returned.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -102,28 +90,22 @@ public class BudgetSuggestionSelector  implements java.io.Serializable {
      * @param criteria   * Criteria for budget suggestion. The following criteria are
      * supported:
      *                 <ul>
-     *                 <li>{@link com.google.ads.api.services.express.common.criterion.ProductService}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Language}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}</li>
-     * <li>{@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}</li>
-     * </ul>
+     *                 <li>{@link ProductService}</li>
+     *                 <li>{@link Language}</li>
+     *                 <li>{@link Location}</li>
+     *                 <li>{@link Proximity}</li>
+     *                 </ul>
      *                 
      *                 <p>Please note that
-     *                 {@link com.google.ads.api.services.common.geo.Address}
-     * is not supported in
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}.
+     *                 {@link Address} is not supported in {@link Proximity}.
      * Please use
-     *                 {@link com.google.ads.api.services.common.geo.GeoPoint}
-     * instead.
+     *                 {@link GeoPoint} instead.
      *                 
-     *                 {@link com.google.ads.api.services.express.common.criterion.ProductService},
-     * {@link com.google.ads.api.services.campaignmgmt.common.criterion.Language},
-     * and at least one of
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Location}
-     * and
-     *                 {@link com.google.ads.api.services.campaignmgmt.common.criterion.Proximity}
-     * must be given,
-     *                 otherwise default suggestion will be returned.
+     *                 {@link ProductService}, {@link Language}, and at least
+     * one of
+     *                 {@link Location} and {@link Proximity} must be given,
+     * otherwise default
+     *                 suggestion will be returned.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field

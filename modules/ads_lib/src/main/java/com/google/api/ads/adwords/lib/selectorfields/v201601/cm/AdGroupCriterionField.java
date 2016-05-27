@@ -339,7 +339,7 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * Current user-set state of criterion.
-   * UserStatus may not be set to {@code REMOVED}.
+   * UserStatus may not be set to {@code REMOVED} and is not supported for ProductPartition criterion.
    * On add, defaults to {@code ENABLED} if unspecified.
    */
   @Filterable

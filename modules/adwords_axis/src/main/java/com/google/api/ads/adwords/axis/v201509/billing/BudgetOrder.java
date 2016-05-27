@@ -99,8 +99,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * this string should be between 0 and 14, inclusive, (trimmed).</span> */
     private java.lang.String secondaryBillingId;
 
-    /* To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+    /* The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint
@@ -454,8 +454,8 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Gets the spendingLimit value for this BudgetOrder.
      * 
-     * @return spendingLimit   * To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+     * @return spendingLimit   * The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint
@@ -472,8 +472,8 @@ public class BudgetOrder  implements java.io.Serializable {
     /**
      * Sets the spendingLimit value for this BudgetOrder.
      * 
-     * @param spendingLimit   * To specify an unlimited budget, set spendingLimit to -1 (in
-     * micros),
+     * @param spendingLimit   * The spending limit in micros. To specify an unlimited budget,
+     * set spendingLimit to -1,
      *                 otherwise spendingLimit must be greater than 0.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint

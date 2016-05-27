@@ -10,8 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains a subset of adgroup resulting from the filtering and paging of the
- *             {@link com.google.ads.api.services.campaignmgmt.adgroup.AdGroupService#get} call
+ *             Contains a subset of ad groups resulting from the filtering and paging of the
+ *             {@link AdGroupService#get} call.
  *           
  * 
  * <p>Java class for AdGroupPage complex type.

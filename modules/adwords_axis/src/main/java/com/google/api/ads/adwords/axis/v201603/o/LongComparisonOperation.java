@@ -11,11 +11,9 @@ package com.google.api.ads.adwords.axis.v201603.o;
 /**
  * Object representing integer comparison operations. This is usually
  * used within
- *             a particular
- *             {@link com.google.ads.api.services.targetingideas.search.SearchParameter}
- * to
- *             specify the valid values requested for the specific
- *             {@link com.google.ads.api.services.common.optimization.attributes.Attribute}.
+ *             a particular {@link SearchParameter} to specify the valid
+ * values requested for the specific
+ *             {@link Attribute}.
  */
 public class LongComparisonOperation  implements java.io.Serializable {
     /* The minimum value of elements returned by this operation (inclusive). */

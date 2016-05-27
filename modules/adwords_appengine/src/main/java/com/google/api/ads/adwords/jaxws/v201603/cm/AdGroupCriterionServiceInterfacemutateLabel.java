@@ -16,11 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  *             {@linkplain AdGroupCriterion ad group criterion}. The {@code adGroupId} and
  *             {@code criterionId}
  *             must reference an existing {@linkplain AdGroupCriterion ad group criterion}. The
- *             {@code labelId} must reference an existing
- *             {@linkplain com.google.ads.api.services.campaignmgmt.label.Label label}.
+ *             {@code labelId} must reference an existing {@linkplain Label label}.
  *             <p>Remove - Removes the link between the specified
- *             {@linkplain AdGroupCriterion ad group criterion} and
- *             {@linkplain com.google.ads.api.services.campaignmgmt.label.Label label}.</p>
+ *             {@linkplain AdGroupCriterion ad group criterion} and {@linkplain Label label}.</p>
  *             @param operations the operations to apply
  *             @return a list of AdGroupCriterionLabel where each entry in the list is the result of
  *             applying the operation in the input list with the same index. For an

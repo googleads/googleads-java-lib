@@ -18,10 +18,9 @@ public class Media  implements java.io.Serializable {
      * Operator}s : SET, REMOVE.</span> */
     private java.lang.Long mediaId;
 
-    /* Type of this media object. Required when using
-     *                 {@link com.google.ads.api.services.campaignmgmt.media.MediaService#upload
-     * upload()}
-     *                 to upload a new media file.
+    /* Type of media object. Required when using {@link MediaService#upload}
+     * to upload a new media
+     *                 file.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
@@ -138,10 +137,9 @@ public class Media  implements java.io.Serializable {
     /**
      * Gets the type value for this Media.
      * 
-     * @return type   * Type of this media object. Required when using
-     *                 {@link com.google.ads.api.services.campaignmgmt.media.MediaService#upload
-     * upload()}
-     *                 to upload a new media file.
+     * @return type   * Type of media object. Required when using {@link MediaService#upload}
+     * to upload a new media
+     *                 file.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -154,10 +152,9 @@ public class Media  implements java.io.Serializable {
     /**
      * Sets the type value for this Media.
      * 
-     * @param type   * Type of this media object. Required when using
-     *                 {@link com.google.ads.api.services.campaignmgmt.media.MediaService#upload
-     * upload()}
-     *                 to upload a new media file.
+     * @param type   * Type of media object. Required when using {@link MediaService#upload}
+     * to upload a new media
+     *                 file.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>

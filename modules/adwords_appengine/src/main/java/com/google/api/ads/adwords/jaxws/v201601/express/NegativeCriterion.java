@@ -10,8 +10,7 @@ import com.google.api.ads.adwords.jaxws.v201601.cm.Criterion;
 /**
  * 
  *             A negative criterion. It wraps a {@link Criterion} and will be associated with an ad group as a
- *             {@link com.google.ads.api.services.campaignmgmt.criterion.adgroupcriterion.NegativeAdGroupCriterion}
- *             .
+ *             {@code NegativeAdGroupCriterion}.
  *             <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
  *           
  * 

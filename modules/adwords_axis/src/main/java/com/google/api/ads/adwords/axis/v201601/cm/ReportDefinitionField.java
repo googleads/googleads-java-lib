@@ -47,9 +47,9 @@ public class ReportDefinitionField  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String fieldBehavior;
 
-    /* List of enum values for the corresponding field iff the field
-     * is an enum
-     *                 type.
+    /* List of enum values for the corresponding field if and only
+     * if the
+     *                 field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String[] enumValues;
@@ -259,9 +259,9 @@ public class ReportDefinitionField  implements java.io.Serializable {
     /**
      * Gets the enumValues value for this ReportDefinitionField.
      * 
-     * @return enumValues   * List of enum values for the corresponding field iff the field
-     * is an enum
-     *                 type.
+     * @return enumValues   * List of enum values for the corresponding field if and only
+     * if the
+     *                 field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -273,9 +273,9 @@ public class ReportDefinitionField  implements java.io.Serializable {
     /**
      * Sets the enumValues value for this ReportDefinitionField.
      * 
-     * @param enumValues   * List of enum values for the corresponding field iff the field
-     * is an enum
-     *                 type.
+     * @param enumValues   * List of enum values for the corresponding field if and only
+     * if the
+     *                 field is an enum type.
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

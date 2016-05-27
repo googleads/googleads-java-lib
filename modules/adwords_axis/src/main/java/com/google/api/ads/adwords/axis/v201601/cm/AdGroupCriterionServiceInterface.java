@@ -43,13 +43,11 @@ public interface AdGroupCriterionServiceInterface extends java.rmi.Remote {
      *         {@code criterionId}
      *         must reference an existing {@linkplain AdGroupCriterion ad
      * group criterion}. The
-     *         {@code labelId} must reference an existing
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
+     *         {@code labelId} must reference an existing {@linkplain Label
      * label}.
      *         <p>Remove - Removes the link between the specified
-     *         {@linkplain AdGroupCriterion ad group criterion} and
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
-     * label}.</p>
+     *         {@linkplain AdGroupCriterion ad group criterion} and {@linkplain
+     * Label label}.</p>
      *         
      * @param operations the operations to apply
      *         

@@ -9,11 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@link SearchParameter} that specifies the level of search volume expected in results,
- *             and it has a direct relationship to
- *             {@link com.google.ads.api.services.targetingideas.external.AttributeType#SEARCH_VOLUME}.
- *             Absence of a {@link SearchVolumeSearchParameter} in a
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector} is
- *             equivalent to having no constraint on search volume specified.
+ *             and it has a direct relationship to {@link AttributeType#SEARCH_VOLUME SEARCH_VOLUME}. Absence of
+ *             a {@link SearchVolumeSearchParameter} in a {@link TargetingIdeaSelector} is equivalent to having
+ *             no constraint on search volume specified.
  *             <p>This element is supported by following {@link IdeaType}s: KEYWORD.
  *             <p>This element is supported by following {@link RequestType}s: IDEAS, STATS.
  *           

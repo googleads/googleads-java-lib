@@ -10,8 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains a subset of campaign resulting from the filtering and paging of the
- *             {@link com.google.ads.api.services.campaignmgmt.campaign.CampaignService#get} call.
+ *             Contains a set of campaigns resulting from the filtering and paging of the
+ *             {@link CampaignService#get} call.
  *           
  * 
  * <p>Java class for CampaignPage complex type.

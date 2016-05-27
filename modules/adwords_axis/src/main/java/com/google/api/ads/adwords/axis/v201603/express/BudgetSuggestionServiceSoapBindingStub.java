@@ -198,6 +198,13 @@ public class BudgetSuggestionServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "DayOfWeek");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.DayOfWeek.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "DistinctError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.cm.DistinctError.class;
@@ -295,6 +302,13 @@ public class BudgetSuggestionServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "MinuteOfHour");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.MinuteOfHour.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "MobileAppCategory");
             cachedSerQNames.add(qName);
@@ -534,6 +548,13 @@ public class BudgetSuggestionServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "AdSchedule");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.express.AdSchedule.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "BudgetSuggestion");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.express.BudgetSuggestion.class;
@@ -544,6 +565,13 @@ public class BudgetSuggestionServiceSoapBindingStub extends org.apache.axis.clie
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "BudgetSuggestionSelector");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.express.BudgetSuggestionSelector.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "BusinessHour");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.express.BusinessHour.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

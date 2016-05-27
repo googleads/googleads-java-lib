@@ -23,6 +23,8 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
     /* ID of the ad group that contains the criterion with which this
      * bid
      *                     landscape is associated.
+     *                     Only available for ad group bid landscapes and
+     * ad group criterion bid landscapes.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -104,6 +106,8 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * @return adGroupId   * ID of the ad group that contains the criterion with which this
      * bid
      *                     landscape is associated.
+     *                     Only available for ad group bid landscapes and
+     * ad group criterion bid landscapes.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -119,6 +123,8 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
      * @param adGroupId   * ID of the ad group that contains the criterion with which this
      * bid
      *                     landscape is associated.
+     *                     Only available for ad group bid landscapes and
+     * ad group criterion bid landscapes.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "AdGroupId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

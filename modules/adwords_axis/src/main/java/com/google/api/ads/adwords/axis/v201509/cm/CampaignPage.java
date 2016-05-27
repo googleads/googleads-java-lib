@@ -9,10 +9,9 @@ package com.google.api.ads.adwords.axis.v201509.cm;
 
 
 /**
- * Contains a subset of campaign resulting from the filtering and
- * paging of the
- *             {@link com.google.ads.api.services.campaignmgmt.campaign.CampaignService#get}
- * call.
+ * Contains a set of campaigns resulting from the filtering and paging
+ * of the
+ *             {@link CampaignService#get} call.
  */
 public class CampaignPage  extends com.google.api.ads.adwords.axis.v201509.cm.Page  implements java.io.Serializable {
     /* The result entries in this page. */

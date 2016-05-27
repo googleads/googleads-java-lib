@@ -11,8 +11,7 @@ package com.google.api.ads.adwords.axis.v201603.express;
 /**
  * A negative criterion. It wraps a {@link Criterion} and will be
  * associated with an ad group as a
- *             {@link com.google.ads.api.services.campaignmgmt.criterion.adgroupcriterion.NegativeAdGroupCriterion}
- * .
+ *             {@code NegativeAdGroupCriterion}.
  *             <span class="constraint AdxEnabled">This is disabled for
  * AdX when it is contained within Operators: ADD, SET.</span>
  */

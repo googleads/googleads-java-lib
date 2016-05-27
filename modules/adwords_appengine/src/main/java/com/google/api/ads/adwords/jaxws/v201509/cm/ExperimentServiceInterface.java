@@ -31,6 +31,13 @@ import javax.xml.ws.ResponseWrapper;
  *       </ol>
  *       
  *       <p>
+ *       If you want to run an experiment for your Search Network or Search Network
+ *       with Display Select campaign, please use the DraftService and TrialService
+ *       introduced in v201603. These services offer greater flexibility than the
+ *       ExperimentService.
+ *       </p>
+ *       
+ *       <p>
  *       For more information on campaign experiments, including
  *       tracking the performance of an experiment, see the <a href=
  *       "//support.google.com/adwords/bin/topic.py?topic=1713979">AdWords Help Center</a>.

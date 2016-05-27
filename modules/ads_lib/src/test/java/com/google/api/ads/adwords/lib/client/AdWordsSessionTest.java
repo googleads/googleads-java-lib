@@ -142,6 +142,7 @@ public class AdWordsSessionTest {
     config.setProperty("api.adwords.reporting.skipHeader", "true");
     config.setProperty("api.adwords.reporting.skipColumnHeader", "true");
     config.setProperty("api.adwords.reporting.skipSummary", "false");
+    config.setProperty("api.adwords.reporting.useRawEnumValues", "false");
 
     AdWordsSession session =
         build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
@@ -155,6 +156,7 @@ public class AdWordsSessionTest {
     assertTrue(session.getReportingConfiguration().isSkipReportHeader());
     assertTrue(session.getReportingConfiguration().isSkipColumnHeader());
     assertFalse(session.getReportingConfiguration().isSkipReportSummary());
+    assertFalse(session.getReportingConfiguration().isUseRawEnumValues());
     assertNull(
         "includeZeroImpressions is not settable from ads.properties, so should be null",
         session.getReportingConfiguration().isIncludeZeroImpressions());

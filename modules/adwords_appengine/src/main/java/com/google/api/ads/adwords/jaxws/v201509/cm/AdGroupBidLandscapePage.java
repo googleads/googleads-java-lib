@@ -11,9 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Contains a subset of {@link AdGroupBidLandscape} objects resulting from the
- *             filtering and paging of
- *             {@link com.google.ads.api.services.campaignmgmt.data.DataService#getAdGroupBidLandscape}
- *             call.
+ *             filtering and paging of {@link DataService#getAdGroupBidLandscape} call.
  *           
  * 
  * <p>Java class for AdGroupBidLandscapePage complex type.

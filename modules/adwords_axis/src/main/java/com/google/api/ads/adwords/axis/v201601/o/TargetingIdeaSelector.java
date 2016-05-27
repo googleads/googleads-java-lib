@@ -41,10 +41,9 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
     /* Request {@link Attribute}s and associated data for this set
      * of {@link Type}s.
      *                 
-     *                 <p>An empty set indicates a request for
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.KeywordAttribute},
-     * {@link com.google.ads.api.services.common.optimization.attributes.PlacementAttribute},
-     * and {@link IdeaType}.
+     *                 <p>An empty set indicates a request for {@link KeywordAttribute},
+     * {@link PlacementAttribute},
+     *                 and {@link IdeaType}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -197,10 +196,9 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
      * @return requestedAttributeTypes   * Request {@link Attribute}s and associated data for this set
      * of {@link Type}s.
      *                 
-     *                 <p>An empty set indicates a request for
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.KeywordAttribute},
-     * {@link com.google.ads.api.services.common.optimization.attributes.PlacementAttribute},
-     * and {@link IdeaType}.
+     *                 <p>An empty set indicates a request for {@link KeywordAttribute},
+     * {@link PlacementAttribute},
+     *                 and {@link IdeaType}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -217,10 +215,9 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
      * @param requestedAttributeTypes   * Request {@link Attribute}s and associated data for this set
      * of {@link Type}s.
      *                 
-     *                 <p>An empty set indicates a request for
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.KeywordAttribute},
-     * {@link com.google.ads.api.services.common.optimization.attributes.PlacementAttribute},
-     * and {@link IdeaType}.
+     *                 <p>An empty set indicates a request for {@link KeywordAttribute},
+     * {@link PlacementAttribute},
+     *                 and {@link IdeaType}.
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field

@@ -39,11 +39,13 @@ public class ReportingConfigurationTest {
             .skipColumnHeader(true)
             .skipReportSummary(true)
             .includeZeroImpressions(true)
+            .useRawEnumValues(true)
             .build();
     assertTrue(reportingConfiguration.isSkipReportHeader());
     assertTrue(reportingConfiguration.isSkipColumnHeader());
     assertTrue(reportingConfiguration.isSkipReportSummary());
     assertTrue(reportingConfiguration.isIncludeZeroImpressions());
+    assertTrue(reportingConfiguration.isUseRawEnumValues());
   }
 
   @Test
@@ -54,11 +56,13 @@ public class ReportingConfigurationTest {
             .skipColumnHeader(true)
             .skipReportSummary(false)
             .includeZeroImpressions(false)
+            .useRawEnumValues(true)
             .build();
     assertTrue(reportingConfiguration.isSkipReportHeader());
     assertTrue(reportingConfiguration.isSkipColumnHeader());
     assertFalse(reportingConfiguration.isSkipReportSummary());
     assertFalse(reportingConfiguration.isIncludeZeroImpressions());
+    assertTrue(reportingConfiguration.isUseRawEnumValues());
   }
 
   @Test
@@ -68,11 +72,13 @@ public class ReportingConfigurationTest {
             .skipReportHeader(null)
             .skipReportSummary(null)
             .includeZeroImpressions(null)
+            .useRawEnumValues(null)
             .build();
     assertNull(reportingConfiguration.isSkipReportHeader());
     assertNull(reportingConfiguration.isSkipColumnHeader());
     assertNull(reportingConfiguration.isSkipReportSummary());
     assertNull(reportingConfiguration.isIncludeZeroImpressions());
+    assertNull(reportingConfiguration.isUseRawEnumValues());
   }
 
   @Test
@@ -82,6 +88,7 @@ public class ReportingConfigurationTest {
     assertNull(reportingConfiguration.isSkipColumnHeader());
     assertNull(reportingConfiguration.isSkipReportSummary());
     assertNull(reportingConfiguration.isIncludeZeroImpressions());
+    assertNull(reportingConfiguration.isUseRawEnumValues());
   }
 
   /**
@@ -95,13 +102,15 @@ public class ReportingConfigurationTest {
             .skipReportHeader(true)
             .skipColumnHeader(false)
             .skipReportSummary(true)
-            .includeZeroImpressions(false);
+            .includeZeroImpressions(false)
+            .useRawEnumValues(true);
 
     ReportingConfiguration config1 = builder.build();
     assertTrue(config1.isSkipReportHeader());
     assertFalse(config1.isSkipColumnHeader());
     assertTrue(config1.isSkipReportSummary());
     assertFalse(config1.isIncludeZeroImpressions());
+    assertTrue(config1.isUseRawEnumValues());
 
     assertNotSame("Build did not return a new instance on multiple invocations", config1,
         builder.build());
@@ -115,7 +124,7 @@ public class ReportingConfigurationTest {
     assertTrue("Changes to builder should not pass through to built instances",
         config1.isSkipReportHeader());
 
-    assertFalse("Lastest changes to builder should be reflected in each call to build",
+    assertFalse("Latest changes to builder should be reflected in each call to build",
         config2.isSkipReportHeader());
   }
 
@@ -127,6 +136,7 @@ public class ReportingConfigurationTest {
             .skipColumnHeader(true)
             .skipReportSummary(true)
             .includeZeroImpressions(true)
+            .useRawEnumValues(true)
             .build();
     config.validate(null);
     assertTrue("Validation should succeed", true);
@@ -140,12 +150,15 @@ public class ReportingConfigurationTest {
             .skipColumnHeader(true)
             .skipReportSummary(true)
             .includeZeroImpressions(true)
+            .useRawEnumValues(true)
             .build();
     config.validate("v201509");
-    assertTrue("Validation should succeed", true);
+    assertTrue("Validation should succeed for v201509", true);
     config.validate("v201601");
-    assertTrue("Validation should succeed", true);
+    assertTrue("Validation should succeed for v201601", true);
     config.validate("v201603");
-    assertTrue("Validation should succeed", true);
+    assertTrue("Validation should succeed for v201603", true);
+    config.validate("v201605");
+    assertTrue("Validation should succeed for v201605", true);
   }
 }

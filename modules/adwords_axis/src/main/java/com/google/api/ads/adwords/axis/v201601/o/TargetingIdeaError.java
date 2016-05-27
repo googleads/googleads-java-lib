@@ -9,8 +9,7 @@ package com.google.api.ads.adwords.axis.v201601.o;
 
 
 /**
- * Base error class for the
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaService}.
+ * Base error class for the {@link TargetingIdeaService}.
  */
 public class TargetingIdeaError  extends com.google.api.ads.adwords.axis.v201601.cm.ApiError  implements java.io.Serializable {
     /* The error reason represented by an enum. */

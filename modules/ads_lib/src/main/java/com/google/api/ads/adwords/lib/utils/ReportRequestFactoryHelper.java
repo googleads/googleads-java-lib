@@ -150,6 +150,11 @@ public class ReportRequestFactoryHelper {
             "includeZeroImpressions",
             Boolean.toString(reportingConfiguration.isIncludeZeroImpressions()));
       }
+      if (reportingConfiguration.isUseRawEnumValues() != null) {
+        httpHeaders.set(
+            "useRawEnumValues",
+            Boolean.toString(reportingConfiguration.isUseRawEnumValues()));
+      }
     }
     return httpHeaders;
   }

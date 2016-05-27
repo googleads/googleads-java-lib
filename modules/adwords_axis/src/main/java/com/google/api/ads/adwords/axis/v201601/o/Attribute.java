@@ -10,19 +10,16 @@ package com.google.api.ads.adwords.axis.v201601.o;
 
 /**
  * {@link Attribute}s encompass the core information about a particular
- * {@link com.google.ads.api.services.targetingideas.TargetingIdea}.
- * Some
+ * {@link TargetingIdea}. Some
  *             attributes are for {@code KEYWORD} {@link IdeaType}s,
- * some are for
- *             {@code PLACEMENT} {@link IdeaType}s, and some are for
- * both. Ultimately, an
- *             {@link Attribute} instance simply wraps an actual value
- * of interest. For
- *             example, {@link KeywordAttribute} wraps the keyword itself,
- * while a
- *             {@link BooleanAttribute} simply wraps a boolean describing
- * some information
- *             about the keyword idea.
+ * some are for {@code PLACEMENT}
+ *             {@link IdeaType}s, and some are for both. Ultimately,
+ * an {@link Attribute} instance simply wraps
+ *             an actual value of interest. For example, {@link KeywordAttribute}
+ * wraps the keyword itself,
+ *             while a {@link BooleanAttribute} simply wraps a boolean
+ * describing some information about the
+ *             keyword idea.
  */
 public abstract class Attribute  implements java.io.Serializable {
     /* Indicates that this instance is a subtype of Attribute.

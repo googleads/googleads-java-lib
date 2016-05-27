@@ -69,12 +69,10 @@ public interface AdGroupAdServiceInterface extends java.rmi.Remote {
      *         {@code adGroupId} and {@code adId} must reference an existing
      * {@linkplain AdGroupAd ad group ad}. The {@code labelId} must reference
      * an existing
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
-     * label}.
+     *         {@linkplain Label label}.
      *         <p>Remove - Removes the link between the specified {@linkplain
      * AdGroupAd ad group ad} and
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
-     * label}.</p>
+     *         {@linkplain Label label}.
      *         
      * @param operations The operations to apply.
      *         

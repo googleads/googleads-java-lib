@@ -10,10 +10,9 @@ package com.google.api.ads.adwords.axis.v201603.o;
 
 /**
  * {@link Attribute} type that contains an {@link IdeaType} value.
- * For example,
- *             if a {@link com.google.ads.api.services.targetingideas.TargetingIdea}
- * represents a keyword idea, its {@link IdeaTypeAttribute} would contain
- * a
+ * For example, if a
+ *             {@link TargetingIdea} represents a keyword idea, its {@link
+ * IdeaTypeAttribute} would contain a
  *             {@code KEYWORD} {@link IdeaType}.
  */
 public class IdeaTypeAttribute  extends com.google.api.ads.adwords.axis.v201603.o.Attribute  implements java.io.Serializable {

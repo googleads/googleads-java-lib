@@ -11,8 +11,7 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 /**
  * Contains a subset of drafts resulting from the filtering and paging
  * of
- *             {@link com.google.ads.api.services.campaignmgmt.draft.DraftService#get}
- * call.
+ *             {@link DraftService#get} call.
  */
 public class DraftPage  extends com.google.api.ads.adwords.axis.v201603.cm.NullStatsPage  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201603.cm.Draft[] entries;

@@ -81,13 +81,11 @@ public class ManagedCustomer  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Boolean testAccount;
 
-    /* The list of account labels associated with this customer.
-     *                 Only labels owned by the requesting manager will be
-     * returned.
-     *                 To change the list of labels applied to this customer,
-     * see
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabels
-     * ManagedCustomerService.mutateLabels}.
+    /* The list of account labels associated with this customer. Only
+     * labels owned by the requesting
+     *                 manager will be returned. To change the list of labels
+     * applied to this customer, see
+     *                 {@link ManagedCustomerService#mutateLabels}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AccountLabels".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -365,13 +363,11 @@ public class ManagedCustomer  implements java.io.Serializable {
     /**
      * Gets the accountLabels value for this ManagedCustomer.
      * 
-     * @return accountLabels   * The list of account labels associated with this customer.
-     *                 Only labels owned by the requesting manager will be
-     * returned.
-     *                 To change the list of labels applied to this customer,
-     * see
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabels
-     * ManagedCustomerService.mutateLabels}.
+     * @return accountLabels   * The list of account labels associated with this customer. Only
+     * labels owned by the requesting
+     *                 manager will be returned. To change the list of labels
+     * applied to this customer, see
+     *                 {@link ManagedCustomerService#mutateLabels}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AccountLabels".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -386,13 +382,11 @@ public class ManagedCustomer  implements java.io.Serializable {
     /**
      * Sets the accountLabels value for this ManagedCustomer.
      * 
-     * @param accountLabels   * The list of account labels associated with this customer.
-     *                 Only labels owned by the requesting manager will be
-     * returned.
-     *                 To change the list of labels applied to this customer,
-     * see
-     *                 {@link com.google.ads.api.services.mcm.customer.ManagedCustomerService#mutateLabels
-     * ManagedCustomerService.mutateLabels}.
+     * @param accountLabels   * The list of account labels associated with this customer. Only
+     * labels owned by the requesting
+     *                 manager will be returned. To change the list of labels
+     * applied to this customer, see
+     *                 {@link ManagedCustomerService#mutateLabels}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AccountLabels".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

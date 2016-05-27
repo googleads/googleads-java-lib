@@ -28,7 +28,9 @@ public enum AdGroupBidLandscapeType {
 
     /**
      * 
-     *                 Signifies that the default bid is applied to all criteria.
+     *                 Signifies that the bid of this ad group was applied to all criteria under the ad group.
+     *                 Criteria with bid overrides are <em>included</em>, but the overrides on these criteria
+     *                 were ignored when generating the landscape.
      *               
      * 
      */
@@ -36,7 +38,8 @@ public enum AdGroupBidLandscapeType {
 
     /**
      * 
-     *                 Signifies that the criterion bids override the default bid.
+     *                 Signifies that the bid of this ad group was only applied to the ad group itself.
+     *                 Criteria with bid overrides are <em>excluded</em>.
      *               
      * 
      */

@@ -36,11 +36,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When the request with {@code null} campaign ID in
-     *                 {@link com.google.ads.api.services.trafficestimator.CampaignEstimateRequest}
-     *                 contains an
-     *                 {@link com.google.ads.api.services.trafficestimator.AdGroupEstimateRequest}
-     *                 with an ID.
+     *                 When the request with {@code null} campaign ID in {@link CampaignEstimateRequest} contains an
+     *                 {@link AdGroupEstimateRequest} with an ID.
      *               
      * 
      */
@@ -48,11 +45,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When the request with {@code null} adgroup ID in
-     *                 {@link com.google.ads.api.services.trafficestimator.AdGroupEstimateRequest}
-     *                 contains a
-     *                 {@link com.google.ads.api.services.trafficestimator.KeywordEstimateRequest}
-     *                 with an ID.
+     *                 When the request with {@code null} adgroup ID in {@link AdGroupEstimateRequest} contains a
+     *                 {@link KeywordEstimateRequest} with an ID.
      *               
      * 
      */
@@ -60,9 +54,7 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 All
-     *                 {@link com.google.ads.api.services.trafficestimator.KeywordEstimateRequest}
-     *                 items should have maxCpc associated with them.
+     *                 All {@link KeywordEstimateRequest} items should have maxCpc associated with them.
      *               
      * 
      */
@@ -70,9 +62,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When there are more
-     *                 {@link com.google.ads.api.services.trafficestimator.KeywordEstimateRequest}s
-     *                 in the request than TrafficEstimatorService allows.
+     *                 When there are more {@link KeywordEstimateRequest}s in the request than
+     *                 TrafficEstimatorService allows.
      *               
      * 
      */
@@ -80,9 +71,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When there are more
-     *                 {@link com.google.ads.api.services.trafficestimator.CampaignEstimateRequest}s
-     *                 in the request than TrafficEstimatorService allows.
+     *                 When there are more {@link CampaignEstimateRequest}s in the request than
+     *                 TrafficEstimatorService allows.
      *               
      * 
      */
@@ -90,9 +80,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When there are more
-     *                 {@link com.google.ads.api.services.trafficestimator.AdGroupEstimateRequest}s
-     *                 in the request than TrafficEstimatorService allows.
+     *                 When there are more {@link AdGroupEstimateRequest}s in the request than
+     *                 TrafficEstimatorService allows.
      *               
      * 
      */
@@ -100,10 +89,8 @@ public enum TrafficEstimatorErrorReason {
 
     /**
      * 
-     *                 When there are more targets
-     *                 in the request than TrafficEstimatorService allows. See documentation
-     *                 on {@link com.google.ads.api.services.trafficestimator.CampaignEstimateRequest}
-     *                 for more information about this error.
+     *                 When there are more targets in the request than TrafficEstimatorService allows. See
+     *                 documentation on {@link CampaignEstimateRequest} for more information about this error.
      *               
      * 
      */

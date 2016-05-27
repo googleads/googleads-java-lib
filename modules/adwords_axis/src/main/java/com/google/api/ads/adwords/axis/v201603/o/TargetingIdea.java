@@ -16,10 +16,9 @@ package com.google.api.ads.adwords.axis.v201603.o;
  *             that are similar to those the user inputs.
  */
 public class TargetingIdea  implements java.io.Serializable {
-    /* Map of
-     *                 {@link com.google.ads.api.services.targetingideas.external.AttributeType}
-     * to {@link Attribute}. Stores all data retrieved for each key {@code
-     * AttributeType}.
+    /* Map of {@link AttributeType} to {@link Attribute}. Stores all
+     * data retrieved for each key
+     *                 {@code AttributeType}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201603.o.Type_AttributeMapEntry[] data;
@@ -36,10 +35,9 @@ public class TargetingIdea  implements java.io.Serializable {
     /**
      * Gets the data value for this TargetingIdea.
      * 
-     * @return data   * Map of
-     *                 {@link com.google.ads.api.services.targetingideas.external.AttributeType}
-     * to {@link Attribute}. Stores all data retrieved for each key {@code
-     * AttributeType}.
+     * @return data   * Map of {@link AttributeType} to {@link Attribute}. Stores all
+     * data retrieved for each key
+     *                 {@code AttributeType}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -51,10 +49,9 @@ public class TargetingIdea  implements java.io.Serializable {
     /**
      * Sets the data value for this TargetingIdea.
      * 
-     * @param data   * Map of
-     *                 {@link com.google.ads.api.services.targetingideas.external.AttributeType}
-     * to {@link Attribute}. Stores all data retrieved for each key {@code
-     * AttributeType}.
+     * @param data   * Map of {@link AttributeType} to {@link Attribute}. Stores all
+     * data retrieved for each key
+     *                 {@code AttributeType}.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

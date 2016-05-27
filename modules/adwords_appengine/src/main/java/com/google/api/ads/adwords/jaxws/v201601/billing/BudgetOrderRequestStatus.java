@@ -27,9 +27,37 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum BudgetOrderRequestStatus {
 
+
+    /**
+     * 
+     *                 The budget request is under review.
+     *               
+     * 
+     */
     UNDER_REVIEW,
+
+    /**
+     * 
+     *                 The budget request has been approved.
+     *               
+     * 
+     */
     APPROVED,
+
+    /**
+     * 
+     *                 The budget request has been rejected.
+     *               
+     * 
+     */
     REJECTED,
+
+    /**
+     * 
+     *                 The budget request has been cancelled.
+     *               
+     * 
+     */
     CANCELLED,
 
     /**

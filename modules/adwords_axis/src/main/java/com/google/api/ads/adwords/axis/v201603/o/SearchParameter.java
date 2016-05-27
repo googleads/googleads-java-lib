@@ -9,11 +9,11 @@ package com.google.api.ads.adwords.axis.v201603.o;
 
 
 /**
- * A set of {@link SearchParameter}s is supplied to the
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
- * to specify how the user wants to filter the set of all possible
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdea}s.
- * 
+ * A set of {@link SearchParameter}s is supplied to the {@link TargetingIdeaSelector}
+ * to specify how
+ *             the user wants to filter the set of all possible {@link
+ * TargetingIdea}s.
+ *             
  *             <p>There is a {@link SearchParameter} for each type of
  * input.
  *             {@link SearchParameter}s can conceptually be broken down
@@ -24,12 +24,11 @@ package com.google.api.ads.adwords.axis.v201603.o;
  * from which
  *             ideas or stats are to be generated (e.g., {@link RelatedToQuerySearchParameter},
  * {@link RelatedToUrlSearchParameter}, etc.). This type of {@link SearchParameters}
- * is required in requests.</li>
+ * is required in requests.
  *             <li>Filter {@link SearchParameter}s (e.g., {@link CompetitionSearchParameter},
  * etc.)
- *             are used to trim down the results based on
- *             {@link com.google.ads.api.services.targetingideas.attributes.Attribute}-related
- * information.</li>
+ *             are used to trim down the results based on {@link Attribute}-related
+ * information.
  *             </ul>
  *             
  *             <p>A request should only contain one instance of each

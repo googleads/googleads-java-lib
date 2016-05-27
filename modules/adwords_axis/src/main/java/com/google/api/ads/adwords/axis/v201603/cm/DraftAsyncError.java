@@ -15,6 +15,10 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 public class DraftAsyncError  implements java.io.Serializable {
     /* The error occurred during promotion while updating this Campaign
      * or an entity in this Campaign.
+     *                 This field can only be used with Predicate Operators
+     * EQUALS and IN. When using a Predicate
+     *                 with this field, also include a Predicate for the
+     * field DraftId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BaseCampaignId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -22,7 +26,11 @@ public class DraftAsyncError  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long baseCampaignId;
 
-    /* The draft that was attempted to be promoted.
+    /* The draft that was attempted to be promoted.  This field can
+     * only be used with Predicate
+     *                 Operators EQUALS and IN. When using a Predicate with
+     * this field, also include a Predicate for
+     *                 the field BaseCampaignId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DraftId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -32,8 +40,7 @@ public class DraftAsyncError  implements java.io.Serializable {
 
     /* The draft Campaign that was attempted to be promoted.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DraftCampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * be selected using the value "DraftCampaignId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long draftCampaignId;
@@ -84,6 +91,10 @@ public class DraftAsyncError  implements java.io.Serializable {
      * 
      * @return baseCampaignId   * The error occurred during promotion while updating this Campaign
      * or an entity in this Campaign.
+     *                 This field can only be used with Predicate Operators
+     * EQUALS and IN. When using a Predicate
+     *                 with this field, also include a Predicate for the
+     * field DraftId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BaseCampaignId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -100,6 +111,10 @@ public class DraftAsyncError  implements java.io.Serializable {
      * 
      * @param baseCampaignId   * The error occurred during promotion while updating this Campaign
      * or an entity in this Campaign.
+     *                 This field can only be used with Predicate Operators
+     * EQUALS and IN. When using a Predicate
+     *                 with this field, also include a Predicate for the
+     * field DraftId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "BaseCampaignId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -114,7 +129,11 @@ public class DraftAsyncError  implements java.io.Serializable {
     /**
      * Gets the draftId value for this DraftAsyncError.
      * 
-     * @return draftId   * The draft that was attempted to be promoted.
+     * @return draftId   * The draft that was attempted to be promoted.  This field can
+     * only be used with Predicate
+     *                 Operators EQUALS and IN. When using a Predicate with
+     * this field, also include a Predicate for
+     *                 the field BaseCampaignId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DraftId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -129,7 +148,11 @@ public class DraftAsyncError  implements java.io.Serializable {
     /**
      * Sets the draftId value for this DraftAsyncError.
      * 
-     * @param draftId   * The draft that was attempted to be promoted.
+     * @param draftId   * The draft that was attempted to be promoted.  This field can
+     * only be used with Predicate
+     *                 Operators EQUALS and IN. When using a Predicate with
+     * this field, also include a Predicate for
+     *                 the field BaseCampaignId.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "DraftId".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -146,8 +169,7 @@ public class DraftAsyncError  implements java.io.Serializable {
      * 
      * @return draftCampaignId   * The draft Campaign that was attempted to be promoted.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DraftCampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * be selected using the value "DraftCampaignId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -161,8 +183,7 @@ public class DraftAsyncError  implements java.io.Serializable {
      * 
      * @param draftCampaignId   * The draft Campaign that was attempted to be promoted.
      *                 <span class="constraint Selectable">This field can
-     * be selected using the value "DraftCampaignId".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * be selected using the value "DraftCampaignId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

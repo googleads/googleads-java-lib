@@ -26,7 +26,7 @@ public enum BudgetSuggestionField implements EntityField {
 
   /**
    * Text of the product service.
-   * <p>Please note that only {@code com.google.ads.api.services.common.selector.Operator.EQUALS} is supported.
+   * <p>Please note that only {@code Operator.EQUALS} is supported.
    */
   @Filterable
   ProductServiceText(true),

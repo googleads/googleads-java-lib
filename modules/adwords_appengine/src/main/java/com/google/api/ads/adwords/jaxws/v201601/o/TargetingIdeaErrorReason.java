@@ -36,8 +36,7 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when there are multiple instance of same type of
-     *                 {@link com.google.ads.api.services.targetingideas.search.SearchParameter}s.
+     *                 Error returned when there are multiple instance of same type of {@link SearchParameter}s.
      *               
      * 
      */
@@ -45,11 +44,8 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
-     *                 doesn't have enough
-     *                 {@link com.google.ads.api.services.targetingideas.search.SearchParameter}s
-     *                 to execute request.
+     *                 Error returned when the {@link TargetingIdeaSelector} doesn't have enough
+     *                 {@link SearchParameter}s to execute request.
      *               
      * 
      */
@@ -57,14 +53,9 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when an
-     *                 {@link com.google.ads.api.services.targetingideas.external.AttributeType}
-     *                 doesn't match the
-     *                 {@link com.google.ads.api.services.targetingideas.attributes.IdeaType}
-     *                 specified in the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}.
-     *                 For example, if the {@code KEYWORD} {@code IDEAS} selector contains
-     *                 an {@code STATS} only AttributeType, this error will be returned.
+     *                 Error returned when an {@link AttributeType} doesn't match the {@link IdeaType} specified in
+     *                 the {@link TargetingIdeaSelector}. For example, if the {@code KEYWORD} {@code IDEAS} selector
+     *                 contains an {@code STATS} only AttributeType, this error will be returned.
      *               
      * 
      */
@@ -72,14 +63,9 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when a
-     *                 {@link com.google.ads.api.services.targetingideas.search.SearchParameter}
-     *                 doesn't match the
-     *                 {@link com.google.ads.api.services.targetingideas.attributes.IdeaType}
-     *                 specified in the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
-     *                 or is otherwise invalid.  Error trigger usually contains the parameter
-     *                 name, and error details contain a more detailed explanation.
+     *                 Error returned when a {@link SearchParameter} doesn't match the {@link IdeaType} specified in
+     *                 the {@link TargetingIdeaSelector} or is otherwise invalid.  Error trigger usually contains
+     *                 the parameter name, and error details contain a more detailed explanation.
      *               
      * 
      */
@@ -87,11 +73,8 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
-     *                 contains a
-     *                 {@link com.google.ads.api.services.targetingideas.search.DomainSuffixSearchParameter}s
-     *                 that contains an invalid domain suffix.
+     *                 Error returned when the {@link TargetingIdeaSelector} contains a
+     *                 {@link DomainSuffixSearchParameter}s that contains an invalid domain suffix.
      *               
      * 
      */
@@ -107,9 +90,7 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaService}
-     *                 is not available.
+     *                 Error returned when the {@link TargetingIdeaService} is not available.
      *               
      * 
      */
@@ -117,10 +98,8 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the URL value specified in the
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}, such as
-     *                 {@link com.google.ads.api.services.targetingideas.search.RelatedToUrlSearchParameter},
-     *                 is not a valid URL.
+     *                 Error returned when the URL value specified in the {@link TargetingIdeaSelector}, such as
+     *                 {@link RelatedToUrlSearchParameter}, is not a valid URL.
      *               
      * 
      */
@@ -128,10 +107,8 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the requested number of entries in
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}'s
-     *                 {@link com.google.ads.api.services.common.pagination.Paging} is greater
-     *                 than the maximum allowed.
+     *                 Error returned when the requested number of entries in {@link TargetingIdeaSelector}'s
+     *                 {@link Paging} is greater than the maximum allowed.
      *               
      * 
      */
@@ -139,11 +116,8 @@ public enum TargetingIdeaErrorReason {
 
     /**
      * 
-     *                 Error returned when the requested
-     *                 {@link com.google.ads.api.services.common.pagination.Paging} is
-     *                 missing from
-     *                 {@link com.google.ads.api.services.targetingideas.TargetingIdeaSelector}
-     *                 when required.
+     *                 Error returned when the requested {@link Paging} is missing from the
+     *                 {@link TargetingIdeaSelector} when required.
      *               
      * 
      */
@@ -152,11 +126,8 @@ public enum TargetingIdeaErrorReason {
     /**
      * 
      *                 Error returned when included keywords and excluded keywords in
-     *                 {@link com.google.ads.api.services.targetingideas.search.IdeaTextFilterSearchParameter},
-     *                 {@link com.google.ads.api.services.targetingideas.search.IdeaTextMatchesSearchParameter}
-     *                 or
-     *                 {@link com.google.ads.api.services.targetingideas.search.ExcludedKeywordSearchParameter}
-     *                 are overlapped.
+     *                 {@link IdeaTextFilterSearchParameter}, {@link IdeaTextMatchesSearchParameter}
+     *                 or {@link ExcludedKeywordSearchParameter} are overlapped.
      *               
      * 
      */

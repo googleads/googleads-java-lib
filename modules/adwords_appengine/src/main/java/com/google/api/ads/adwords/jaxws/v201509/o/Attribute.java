@@ -10,14 +10,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@link Attribute}s encompass the core information about a particular
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdea}. Some
- *             attributes are for {@code KEYWORD} {@link IdeaType}s, some are for
- *             {@code PLACEMENT} {@link IdeaType}s, and some are for both. Ultimately, an
- *             {@link Attribute} instance simply wraps an actual value of interest. For
- *             example, {@link KeywordAttribute} wraps the keyword itself, while a
- *             {@link BooleanAttribute} simply wraps a boolean describing some information
- *             about the keyword idea.
+ *             {@link Attribute}s encompass the core information about a particular {@link TargetingIdea}. Some
+ *             attributes are for {@code KEYWORD} {@link IdeaType}s, some are for {@code PLACEMENT}
+ *             {@link IdeaType}s, and some are for both. Ultimately, an {@link Attribute} instance simply wraps
+ *             an actual value of interest. For example, {@link KeywordAttribute} wraps the keyword itself,
+ *             while a {@link BooleanAttribute} simply wraps a boolean describing some information about the
+ *             keyword idea.
  *           
  * 
  * <p>Java class for Attribute complex type.

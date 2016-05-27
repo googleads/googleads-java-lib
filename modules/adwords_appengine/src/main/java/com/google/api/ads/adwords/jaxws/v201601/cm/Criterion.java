@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import com.google.api.ads.adwords.jaxws.v201601.express.BusinessHour;
 import com.google.api.ads.adwords.jaxws.v201601.express.KeywordGroup;
 import com.google.api.ads.adwords.jaxws.v201601.express.KeywordSet;
 import com.google.api.ads.adwords.jaxws.v201601.express.NegativeCriterion;
@@ -46,10 +47,6 @@ import com.google.api.ads.adwords.jaxws.v201601.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
-    KeywordGroup.class,
-    KeywordSet.class,
-    NegativeCriterion.class,
-    ProductService.class,
     Gender.class,
     CriterionUserList.class,
     ContentLabel.class,
@@ -73,10 +70,15 @@ import com.google.api.ads.adwords.jaxws.v201601.express.ProductService;
     IpBlock.class,
     ProductScope.class,
     AppPaymentModel.class,
-    Keyword.class,
     YouTubeChannel.class,
     ProductPartition.class,
-    Webpage.class
+    Webpage.class,
+    KeywordGroup.class,
+    BusinessHour.class,
+    KeywordSet.class,
+    NegativeCriterion.class,
+    Keyword.class,
+    ProductService.class
 })
 public class Criterion {
 

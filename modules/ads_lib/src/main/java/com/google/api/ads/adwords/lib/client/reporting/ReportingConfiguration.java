@@ -30,16 +30,19 @@ public class ReportingConfiguration {
   private final Boolean isSkipColumnHeader;
   private final Boolean isSkipReportSummary;
   private final Boolean isIncludeZeroImpressions;
+  private final Boolean isUseRawEnumValues;
   
   private ReportingConfiguration(
       Boolean isSkipReportHeader,
       Boolean isSkipColumnHeader,
       Boolean isSkipReportSummary,
-      Boolean isIncludeZeroImpressions) {
+      Boolean isIncludeZeroImpressions,
+      Boolean isUseRawEnumValues) {
     this.isSkipReportHeader = isSkipReportHeader;
     this.isSkipColumnHeader = isSkipColumnHeader;
     this.isSkipReportSummary = isSkipReportSummary;
     this.isIncludeZeroImpressions = isIncludeZeroImpressions;
+    this.isUseRawEnumValues = isUseRawEnumValues;
   }
 
 
@@ -51,7 +54,8 @@ public class ReportingConfiguration {
         configToClone.isSkipReportHeader,
         configToClone.isSkipColumnHeader,
         configToClone.isSkipReportSummary,
-        configToClone.isIncludeZeroImpressions);
+        configToClone.isIncludeZeroImpressions,
+        configToClone.isUseRawEnumValues);
   }
   
   /**
@@ -89,6 +93,15 @@ public class ReportingConfiguration {
   }
   
   /**
+   * Return if report responses should return enum values instead of
+   * enum display values.
+   */
+  @Nullable
+  public Boolean isUseRawEnumValues() {
+    return isUseRawEnumValues;
+  }
+  
+  /**
    * Validates this object for the specified version of the AdWords API.
    * @param version the version of the API to validate against, e.g., {@code v201509}.
    * 
@@ -105,6 +118,7 @@ public class ReportingConfiguration {
         .append("isSkipColumnHeader", isSkipColumnHeader)
         .append("isSkipReportSummary", isSkipReportSummary)
         .append("isIncludeZeroImpressions", isIncludeZeroImpressions)
+        .append("isUseRawEnumValues", isUseRawEnumValues)
         .toString();
   }
 
@@ -118,7 +132,8 @@ public class ReportingConfiguration {
     private Boolean isSkipColumnHeader;
     private Boolean isSkipReportSummary;
     private Boolean isIncludeZeroImpressions;
-
+    private Boolean isUseRawEnumValues;
+    
     /**
      * Sets if report responses should skip the header row containing the report name and date
      * range.
@@ -153,12 +168,24 @@ public class ReportingConfiguration {
     }
     
     /**
+     * Sets if report responses should return enum values instead of enum display values.
+     */
+    public Builder useRawEnumValues(Boolean isUseRawEnumValues) {
+      this.isUseRawEnumValues = isUseRawEnumValues;
+      return this;
+    }
+    
+    /**
      * Returns a new instance of {@link ReportingConfiguration} based on the attributes
      * of this builder.
      */
     public ReportingConfiguration build() {
       return new ReportingConfiguration(
-          isSkipReportHeader, isSkipColumnHeader, isSkipReportSummary, isIncludeZeroImpressions);
+          isSkipReportHeader,
+          isSkipColumnHeader,
+          isSkipReportSummary,
+          isIncludeZeroImpressions,
+          isUseRawEnumValues);
     }
   }
 }

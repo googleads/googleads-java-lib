@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED"/>
  *     &lt;enumeration value="NON_LOCAL_BUSINESS"/>
  *     &lt;enumeration value="ALREADY_MIGRATED"/>
+ *     &lt;enumeration value="BUSINESS_ACCESS_DENIED"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -176,6 +177,14 @@ public enum PromotionErrorReason {
      * 
      */
     ALREADY_MIGRATED,
+
+    /**
+     * 
+     *                 Account is no longer linked to Google My Business account.
+     *               
+     * 
+     */
+    BUSINESS_ACCESS_DENIED,
 
     /**
      * 

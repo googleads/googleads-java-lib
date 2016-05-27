@@ -11,8 +11,7 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 /**
  * Contains a subset of {@link AdGroupBidLandscape} objects resulting
  * from the
- *             filtering and paging of
- *             {@link com.google.ads.api.services.campaignmgmt.data.DataService#getAdGroupBidLandscape}
+ *             filtering and paging of {@link DataService#getAdGroupBidLandscape}
  * call.
  */
 public class AdGroupBidLandscapePage  extends com.google.api.ads.adwords.axis.v201603.cm.NoStatsPage  implements java.io.Serializable {

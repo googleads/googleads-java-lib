@@ -144,7 +144,6 @@ public enum ManagedCustomerServiceErrorReason {
     /**
      * 
      *                 Attempt to exceed the maximum hierarchy depth.
-     *                 See {@link com.google.ads.common.domain.blogic.AbstractNewInvitation}.
      *               
      * 
      */

@@ -11,9 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Contains a subset of {@link CriterionBidLandscapePage} objects resulting from the
- *             filtering and paging of
- *             {@link com.google.ads.api.services.campaignmgmt.data.DataService#getCriterionBidLandscape}
- *             call.
+ *             filtering and paging of {@link DataService#getCriterionBidLandscape} call.
  *           
  * 
  * <p>Java class for CriterionBidLandscapePage complex type.

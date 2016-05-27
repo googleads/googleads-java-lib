@@ -15,9 +15,11 @@ package com.google.api.ads.adwords.axis.v201601.cm;
  */
 public class BidLandscapeLandscapePoint  implements java.io.Serializable {
     /* The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Bid".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+     * Only available for ad group bid landscapes and ad group criterion
+     * bid landscapes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Bid".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201601.cm.Money bid;
@@ -73,9 +75,11 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Gets the bid value for this BidLandscapeLandscapePoint.
      * 
      * @return bid   * The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Bid".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+     * Only available for ad group bid landscapes and ad group criterion
+     * bid landscapes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Bid".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -88,9 +92,11 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
      * Sets the bid value for this BidLandscapeLandscapePoint.
      * 
      * @param bid   * The bid amount used to estimate this landscape point's data.
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Bid".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+     * Only available for ad group bid landscapes and ad group criterion
+     * bid landscapes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Bid".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

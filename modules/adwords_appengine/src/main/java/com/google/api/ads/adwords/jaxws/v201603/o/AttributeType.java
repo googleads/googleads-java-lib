@@ -46,8 +46,7 @@ public enum AttributeType {
      * 
      *                 Represents a category ID in the "Products and Services" taxonomy.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.IntegerSetAttribute}.
+     *                 <p>Resulting attribute is {@link IntegerSetAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -59,8 +58,7 @@ public enum AttributeType {
      *                 Represents the relative amount of competition associated with the given keyword idea,
      *                 relative to other keywords. This value will be between 0 and 1 (inclusive).
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.DoubleAttribute}.
+     *                 <p>Resulting attribute is {@link DoubleAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -71,8 +69,7 @@ public enum AttributeType {
      * 
      *                 Represents the webpage from which this keyword idea was extracted (if applicable.)
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.WebpageDescriptorAttribute}.
+     *                 <p>Resulting attribute is {@link WebpageDescriptorAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -83,8 +80,7 @@ public enum AttributeType {
      * 
      *                 Represents the type of the given idea.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.IdeaTypeAttribute}.
+     *                 <p>Resulting attribute is {@link IdeaTypeAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -95,8 +91,7 @@ public enum AttributeType {
      * 
      *                 Represents the keyword text for the given keyword idea.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.StringAttribute}.
+     *                 <p>Resulting attribute is {@link StringAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -108,8 +103,7 @@ public enum AttributeType {
      *                 Represents either the (approximate) number of searches for the given keyword idea on google.com
      *                 or google.com and partners, depending on the user's targeting.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.LongAttribute}.
+     *                 <p>Resulting attribute is {@link LongAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -120,8 +114,7 @@ public enum AttributeType {
      * 
      *                 Represents the average cost per click historically paid for the keyword.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.MoneyAttribute}.
+     *                 <p>Resulting attribute is {@link MoneyAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 
@@ -133,8 +126,7 @@ public enum AttributeType {
      *                 Represents the (approximated) number of searches on this keyword idea (as available for the
      *                 past twelve months), targeted to the specified geographies.
      *                 
-     *                 <p>Resulting attribute is
-     *                 {@link com.google.ads.api.services.common.optimization.attributes.MonthlySearchVolumeAttribute}.
+     *                 <p>Resulting attribute is {@link MonthlySearchVolumeAttribute}.
      *                 <p>This element is supported by following {@link IdeaType}s: KEYWORD.
      *               
      * 

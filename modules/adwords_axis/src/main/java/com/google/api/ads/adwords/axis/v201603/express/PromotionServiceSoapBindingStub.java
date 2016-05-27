@@ -255,6 +255,13 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "DayOfWeek");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.DayOfWeek.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "DistinctError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.cm.DistinctError.class;
@@ -275,6 +282,20 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "EntityNotFound");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.EntityNotFound.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "EntityNotFound.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.EntityNotFoundReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "GeoPoint");
             cachedSerQNames.add(qName);
@@ -352,6 +373,13 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "MinuteOfHour");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.cm.MinuteOfHour.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201603", "MobileAppCategory");
             cachedSerQNames.add(qName);
@@ -682,6 +710,20 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "AdSchedule");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.express.AdSchedule.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "BusinessHour");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201603.express.BusinessHour.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "Creative");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.express.Creative.class;
@@ -766,6 +808,21 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings1() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "Promotion");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.express.Promotion.class;
@@ -808,21 +865,6 @@ public class PromotionServiceSoapBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings1() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/express/v201603", "RegionCode");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201603.express.RegionCode.class;

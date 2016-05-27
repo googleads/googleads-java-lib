@@ -85,11 +85,12 @@ public class UserList  implements java.io.Serializable {
 
     /* Number of days a user's cookie stays on your list since its
      * most recent addition to the list.
+     *                 This field must be between 0 and 540 inclusive. However,
+     * for CRM based userlists, this field
+     *                 can be set to 10000 which means no expiration.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint InRange">This field must be
-     * between 0 and 540, inclusive.</span> */
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long membershipLifeSpan;
 
     /* Estimated number of users in this user list, on the Google
@@ -459,11 +460,12 @@ public class UserList  implements java.io.Serializable {
      * 
      * @return membershipLifeSpan   * Number of days a user's cookie stays on your list since its
      * most recent addition to the list.
+     *                 This field must be between 0 and 540 inclusive. However,
+     * for CRM based userlists, this field
+     *                 can be set to 10000 which means no expiration.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint InRange">This field must be
-     * between 0 and 540, inclusive.</span>
      */
     public java.lang.Long getMembershipLifeSpan() {
         return membershipLifeSpan;
@@ -475,11 +477,12 @@ public class UserList  implements java.io.Serializable {
      * 
      * @param membershipLifeSpan   * Number of days a user's cookie stays on your list since its
      * most recent addition to the list.
+     *                 This field must be between 0 and 540 inclusive. However,
+     * for CRM based userlists, this field
+     *                 can be set to 10000 which means no expiration.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                 <span class="constraint InRange">This field must be
-     * between 0 and 540, inclusive.</span>
      */
     public void setMembershipLifeSpan(java.lang.Long membershipLifeSpan) {
         this.membershipLifeSpan = membershipLifeSpan;

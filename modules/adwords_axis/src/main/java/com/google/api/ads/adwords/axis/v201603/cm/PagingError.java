@@ -10,7 +10,6 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 
 /**
  * Error codes for pagination.
- *             See {@link com.google.ads.api.services.common.pagination.Paging}.
  */
 public class PagingError  extends com.google.api.ads.adwords.axis.v201603.cm.ApiError  implements java.io.Serializable {
     /* The error reason represented by an enum. */

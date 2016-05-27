@@ -90,24 +90,30 @@ public class ReportRequestFactoryHelperTest {
       for (Boolean isSkipColumnHeader : booleanValues) {
         for (Boolean isSkipReportSummary : booleanValues) {
           for (Boolean isIncludeZeroImpressions : booleanValues) {
-            ReportingConfiguration reportingConfig = null;
-            if (isSkipReportHeader != null || isSkipColumnHeader != null
-                || isSkipReportSummary != null || isIncludeZeroImpressions != null) {
-              reportingConfig =
-                  new ReportingConfiguration.Builder()
-                      .skipReportHeader(isSkipReportHeader)
-                      .skipColumnHeader(isSkipColumnHeader)
-                      .skipReportSummary(isSkipReportSummary)
-                      .includeZeroImpressions(isIncludeZeroImpressions)
-                      .build();
+            for (Boolean isUseRawEnumValues : booleanValues) {
+              ReportingConfiguration reportingConfig = null;
+              if (isSkipReportHeader != null
+                  || isSkipColumnHeader != null
+                  || isSkipReportSummary != null
+                  || isIncludeZeroImpressions != null
+                  || isUseRawEnumValues != null) {
+                reportingConfig =
+                    new ReportingConfiguration.Builder()
+                        .skipReportHeader(isSkipReportHeader)
+                        .skipColumnHeader(isSkipColumnHeader)
+                        .skipReportSummary(isSkipReportSummary)
+                        .includeZeroImpressions(isIncludeZeroImpressions)
+                        .useRawEnumValues(isUseRawEnumValues)
+                        .build();
+              }
+              parameters.add(new Object[] {"v201509", null});
+              parameters.add(new Object[] {"v201509", reportingConfig});
+              parameters.add(new Object[] {"v201601", null});
+              parameters.add(new Object[] {"v201601", reportingConfig});
+              parameters.add(new Object[] {"v201603", null});
+              parameters.add(new Object[] {"v201603", reportingConfig});
+              parameters.add(new Object[] {null, reportingConfig});
             }
-            parameters.add(new Object[] {"v201509", null});
-            parameters.add(new Object[] {"v201509", reportingConfig});
-            parameters.add(new Object[] {"v201601", null});
-            parameters.add(new Object[] {"v201601", reportingConfig});
-            parameters.add(new Object[] {"v201603", null});
-            parameters.add(new Object[] {"v201603", reportingConfig});
-            parameters.add(new Object[] {null, reportingConfig});
           }
         }
       }
@@ -201,6 +207,9 @@ public class ReportRequestFactoryHelperTest {
       String expectedIncludeZeroImpressionsHeader =
           reportingConfiguration.isIncludeZeroImpressions() != null
               ? Boolean.toString(reportingConfiguration.isIncludeZeroImpressions()) : null;
+      String expectedUseRawEnumValuesHeader =
+          reportingConfiguration.isUseRawEnumValues() != null
+              ? Boolean.toString(reportingConfiguration.isUseRawEnumValues()) : null;
       assertEquals("skipReportHeader not equal to the reporting config setting",
           expectedSkipHeaderHeader, headers.get("skipReportHeader"));
       assertEquals("skipColumnHeader not equal to the reporting config setting",
@@ -209,6 +218,8 @@ public class ReportRequestFactoryHelperTest {
           expectedSkipSummaryHeader, headers.get("skipReportSummary"));
       assertEquals("includeZeroImpressions not equal to the reporting config setting",
           expectedIncludeZeroImpressionsHeader, headers.get("includeZeroImpressions"));
+      assertEquals("useRawEnumValues not equal to the reporting config setting",
+          expectedUseRawEnumValuesHeader, headers.get("useRawEnumValues"));
     }
   }
 

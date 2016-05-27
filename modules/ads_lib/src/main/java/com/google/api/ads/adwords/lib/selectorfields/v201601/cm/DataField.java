@@ -26,12 +26,14 @@ public enum DataField implements EntityField {
 
   /**
    * ID of the ad group that contains the criterion with which this bid landscape is associated.
+   * Only available for ad group bid landscapes and ad group criterion bid landscapes.
    */
   @Filterable
   AdGroupId(true),
 
   /**
    * The bid amount used to estimate this landscape point's data.
+   * Only available for ad group bid landscapes and ad group criterion bid landscapes.
    */
   @Filterable
   Bid(true),
@@ -92,7 +94,9 @@ public enum DataField implements EntityField {
   IsoLanguage(false),
 
   /**
-   * 
+   * Only applies to landscapes with {@code landscapeType == DEFAULT}.
+   * If true, then this bid landscape contains the set of ad group criteria that <em>currently</em> do not have criterion-level bid overrides.
+   * If false, then this bid landscape was derived from an earlier snapshot of ad group criteria, so it may contain criteria to which bid overrides were recently added, and may not contain criteria from which bid overrides were recently removed.
    */
   @Filterable
   LandscapeCurrent(true),

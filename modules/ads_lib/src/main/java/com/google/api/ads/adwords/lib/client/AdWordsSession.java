@@ -370,12 +370,19 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       Boolean isSkipColumnHeader =
           config.getBoolean("api.adwords.reporting.skipColumnHeader", null);
       Boolean isSkipReportSummary = config.getBoolean("api.adwords.reporting.skipSummary", null);
-      if (isSkipReportHeader != null || isSkipColumnHeader != null || isSkipReportSummary != null) {
-        this.reportingConfiguration = new ReportingConfiguration.Builder()
-            .skipReportHeader(isSkipReportHeader)
-            .skipColumnHeader(isSkipColumnHeader)
-            .skipReportSummary(isSkipReportSummary)
-            .build();
+      Boolean isUseRawEnumValues =
+          config.getBoolean("api.adwords.reporting.useRawEnumValues", null);
+      if (isSkipReportHeader != null
+          || isSkipColumnHeader != null
+          || isSkipReportSummary != null
+          || isUseRawEnumValues != null) {
+        this.reportingConfiguration =
+            new ReportingConfiguration.Builder()
+                .skipReportHeader(isSkipReportHeader)
+                .skipColumnHeader(isSkipColumnHeader)
+                .skipReportSummary(isSkipReportSummary)
+                .useRawEnumValues(isUseRawEnumValues)
+                .build();
       }
 
       return this;

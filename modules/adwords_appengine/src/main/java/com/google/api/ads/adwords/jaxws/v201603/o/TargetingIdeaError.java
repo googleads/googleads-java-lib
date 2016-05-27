@@ -10,8 +10,7 @@ import com.google.api.ads.adwords.jaxws.v201603.cm.ApiError;
 
 /**
  * 
- *             Base error class for the
- *             {@link com.google.ads.api.services.targetingideas.TargetingIdeaService}.
+ *             Base error class for the {@link TargetingIdeaService}.
  *           
  * 
  * <p>Java class for TargetingIdeaError complex type.

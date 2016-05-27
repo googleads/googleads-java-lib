@@ -10,8 +10,7 @@ import com.google.api.ads.adwords.jaxws.v201509.cm.ApiError;
 
 /**
  * 
- *             Base error class for
- *             {@link com.google.ads.api.services.trafficestimator.TrafficEstimatorService}.
+ *             Base error class for {@link TrafficEstimatorService}.
  *           
  * 
  * <p>Java class for TrafficEstimatorError complex type.

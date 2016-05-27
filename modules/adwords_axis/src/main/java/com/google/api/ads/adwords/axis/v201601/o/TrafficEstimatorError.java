@@ -9,8 +9,7 @@ package com.google.api.ads.adwords.axis.v201601.o;
 
 
 /**
- * Base error class for
- *             {@link com.google.ads.api.services.trafficestimator.TrafficEstimatorService}.
+ * Base error class for {@link TrafficEstimatorService}.
  */
 public class TrafficEstimatorError  extends com.google.api.ads.adwords.axis.v201601.cm.ApiError  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201601.o.TrafficEstimatorErrorReason reason;

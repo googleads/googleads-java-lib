@@ -44,20 +44,17 @@ public interface CampaignServiceInterface extends java.rmi.Remote {
 
     /**
      * Adds labels to the {@linkplain Campaign campaign} or removes
-     * {@linkplain com.google.ads.api.services.campaignmgmt.label.Label label}s
-     * from the
+     * {@linkplain Label label}s from the
      *         {@linkplain Campaign campaign}.
-     *         <p>Add - Apply an existing label to an existing
-     *         {@linkplain Campaign campaign}. The {@code campaignId} must
-     * reference an existing
-     *         {@linkplain Campaign}. The {@code labelId} must reference
-     * an existing
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
-     * label}.</p>
-     *         <p>Remove - Removes the link between the specified
-     *         {@linkplain Campaign campaign} and
-     *         {@linkplain com.google.ads.api.services.campaignmgmt.label.Label
-     * label}.</p>
+     *         <p>Add - Apply an existing label to an existing {@linkplain
+     * Campaign campaign}. The
+     *         {@code campaignId} must reference an existing {@linkplain
+     * Campaign}. The {@code labelId} must
+     *         reference an existing {@linkplain Label label}.
+     *         <p>Remove - Removes the link between the specified {@linkplain
+     * Campaign campaign} and
+     *         {@linkplain Label label}.
+     *         
      *         
      * @param operations the operations to apply.
      *         

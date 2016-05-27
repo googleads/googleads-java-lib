@@ -11,8 +11,7 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 /**
  * Contains a subset of experiment resulting from the filtering and
  * paging of the
- *             {@link com.google.ads.api.services.campaignmgmt.campaign.ExperimentService#get}
- * call.
+ *             {@link ExperimentService#get} call.
  */
 public class ExperimentPage  extends com.google.api.ads.adwords.axis.v201603.cm.Page  implements java.io.Serializable {
     /* The result entries in this page. */
