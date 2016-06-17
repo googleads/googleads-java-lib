@@ -18,14 +18,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.api.ads.adwords.axis.utils.v201509.batchjob.BatchJobMutateResponse;
-import com.google.api.ads.adwords.axis.utils.v201509.batchjob.MutateResult;
-import com.google.api.ads.adwords.axis.v201509.cm.AdGroupCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201509.cm.AdGroupServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201509.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201509.cm.CampaignServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201509.cm.CriterionError;
-import com.google.api.ads.adwords.axis.v201509.cm.Operand;
+import com.google.api.ads.adwords.axis.v201605.cm.AdGroupCriterionServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201605.cm.AdGroupServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201605.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201605.cm.CampaignServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201605.cm.CriterionError;
+import com.google.api.ads.adwords.axis.v201605.cm.MutateResult;
 import com.google.common.collect.Lists;
 
 import org.apache.axis.client.Call;
@@ -60,30 +58,30 @@ public class AxisDeserializerTest {
    */
   @Test
   public void testDeserializeBatchJobResponseWithErrors() throws Exception {
-    BatchJobMutateResponse response = testDeserializeBatchJobResponse(
+    List<MutateResult> mutateResults = testDeserializeBatchJobResponse(
         AxisDeserializerTest.class.getResource("resources/BatchJobMutate.responseWithErrors.xml"));
-    assertNotNull(response);
+    assertNotNull(mutateResults);
     // Expect: Campaign, AdGroup, BiddableAdGroupCriterion, BiddableAdGroupCriterion,
     // CriterionError, CriterionError, CriterionError
-    assertEquals(7, response.getMutateResults().length);
-    assertNotNull(response.getMutateResults()[0].getOperand().getCampaign());
-    assertNotNull(response.getMutateResults()[1].getOperand().getAdGroup());
-    assertNotNull(response.getMutateResults()[2].getOperand().getAdGroupCriterion());
+    assertEquals(7, mutateResults.size());
+    assertNotNull(mutateResults.get(0).getResult().getCampaign());
+    assertNotNull(mutateResults.get(1).getResult().getAdGroup());
+    assertNotNull(mutateResults.get(2).getResult().getAdGroupCriterion());
     assertThat(
-        response.getMutateResults()[2].getOperand().getAdGroupCriterion(),
+        mutateResults.get(2).getResult().getAdGroupCriterion(),
         Matchers.instanceOf(BiddableAdGroupCriterion.class));
-    assertNotNull(response.getMutateResults()[3].getOperand().getAdGroupCriterion());
+    assertNotNull(mutateResults.get(3).getResult().getAdGroupCriterion());
     assertThat(
-        response.getMutateResults()[3].getOperand().getAdGroupCriterion(),
+        mutateResults.get(3).getResult().getAdGroupCriterion(),
         Matchers.instanceOf(BiddableAdGroupCriterion.class));
     assertThat(
-        response.getMutateResults()[4].getErrorList().getErrors()[0],
+        mutateResults.get(4).getErrorList().getErrors()[0],
         Matchers.instanceOf(CriterionError.class));
     assertThat(
-        response.getMutateResults()[5].getErrorList().getErrors()[0],
+        mutateResults.get(5).getErrorList().getErrors()[0],
         Matchers.instanceOf(CriterionError.class));
     assertThat(
-        response.getMutateResults()[6].getErrorList().getErrors()[0],
+        mutateResults.get(6).getErrorList().getErrors()[0],
         Matchers.instanceOf(CriterionError.class));
   }
 
@@ -92,21 +90,21 @@ public class AxisDeserializerTest {
    */
   @Test
   public void testDeserializeBatchJobResponseWithoutErrors() throws Exception {
-    BatchJobMutateResponse response =
+    List<MutateResult> mutateResults =
         testDeserializeBatchJobResponse(AxisDeserializerTest.class.getResource(
             "resources/BatchJobMutate.responseWithoutErrors.xml"));
-    assertNotNull(response);
+    assertNotNull(mutateResults);
     // Expect: Campaign, AdGroup, BiddableAdGroupCriterion, BiddableAdGroupCriterion
-    assertEquals(4, response.getMutateResults().length);
-    assertNotNull(response.getMutateResults()[0].getOperand().getCampaign());
-    assertNotNull(response.getMutateResults()[1].getOperand().getAdGroup());
-    assertNotNull(response.getMutateResults()[2].getOperand().getAdGroupCriterion());
+    assertEquals(4, mutateResults.size());
+    assertNotNull(mutateResults.get(0).getResult().getCampaign());
+    assertNotNull(mutateResults.get(1).getResult().getAdGroup());
+    assertNotNull(mutateResults.get(2).getResult().getAdGroupCriterion());
     assertThat(
-        response.getMutateResults()[3].getOperand().getAdGroupCriterion(),
+        mutateResults.get(3).getResult().getAdGroupCriterion(),
         Matchers.instanceOf(BiddableAdGroupCriterion.class));
-    assertNotNull(response.getMutateResults()[3].getOperand().getAdGroupCriterion());
+    assertNotNull(mutateResults.get(3).getResult().getAdGroupCriterion());
     assertThat(
-        response.getMutateResults()[3].getOperand().getAdGroupCriterion(),
+        mutateResults.get(3).getResult().getAdGroupCriterion(),
         Matchers.instanceOf(BiddableAdGroupCriterion.class));
   }
 
@@ -121,11 +119,10 @@ public class AxisDeserializerTest {
     testDeserializeBatchJobResponse(emptyFile.toURI().toURL());
   }
 
-  private BatchJobMutateResponse testDeserializeBatchJobResponse(URL responseXmlUrl)
+  private List<MutateResult> testDeserializeBatchJobResponse(URL responseXmlUrl)
       throws Exception {
-    QName operandQname = new QName("https://adwords.google.com/api/adwords/cm/v201509", "Operand");
     QName mutateResultQName =
-        new QName("https://adwords.google.com/api/adwords/cm/v201509", "MutateResult");
+        new QName("https://adwords.google.com/api/adwords/cm/v201605", "MutateResult");
 
     TypeMapping agcMapping = new AdGroupCriterionServiceSoapBindingStub() {
       @Override
@@ -163,11 +160,9 @@ public class AxisDeserializerTest {
     List<TypeMapping> typeMappings = 
         Lists.newArrayList(campaignMapping, agcMapping, adGroupMapping);
 
-    BatchJobMutateResponse response = new BatchJobMutateResponse();
     List<MutateResult> mutateResults =
         new AxisDeserializer().deserializeBatchJobMutateResults(responseXmlUrl, typeMappings,
-            MutateResult.class, mutateResultQName, Operand.class, operandQname);
-    response.setMutateResults(mutateResults.toArray(new MutateResult[0]));
-    return response;
+            MutateResult.class, mutateResultQName);
+    return mutateResults;
   }
 }

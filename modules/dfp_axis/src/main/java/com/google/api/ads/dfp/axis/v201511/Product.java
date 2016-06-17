@@ -20,25 +20,22 @@ public class Product  implements java.io.Serializable {
      *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
-     *                 
      *                 This attribute is required. */
     private java.lang.String name;
 
     /* The status of the {@code Product}.
-     *                 
      *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.ProductStatus status;
 
-    /* The type of {@code Product}.
-     *                 
-     *                 The attribute is read-only. */
+    /* The type of {@code Product}. This will always be {@link ProductType#DFP}
+     * for programmatic
+     *                 guaranteed products.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.ProductType productType;
 
     /* The ID of the {@code ProductTemplate} from which this product
      * is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created. */
+     *                 This attribute is read-only. */
     private java.lang.Long productTemplateId;
 
     /* Unique identifier of the {@code Product}.
@@ -56,9 +53,7 @@ public class Product  implements java.io.Serializable {
 
     /* The description of the {@code ProductTemplate} from which this
      * product is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created. */
+     *                 This attribute is read-only. */
     private java.lang.String productTemplateDescription;
 
     /* The date and time this product was last modified.
@@ -68,34 +63,29 @@ public class Product  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201511.DateTime lastModifiedDateTime;
 
     /* The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only. */
+     * This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.RateType rateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
      * where
      *                 multiple creatives must be served together on a single
      * web page.
-     *                 
-     *                 <p>This attribute is read-only. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.RoadblockingType roadblockingType;
 
     /* The strategy for delivering ads over the course of the line
      * item's duration.
-     *                 
-     *                 <p>This attribute is read-only. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.DeliveryRateType deliveryRateType;
 
     /* The strategy used for displaying multiple {@link Creative}
      * objects that are
      *                 associated with the created {@code ProposalLineItem}.
-     * 
-     *                 <p>This attribute is read-only. */
+     * This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.CreativeRotationType creativeRotationType;
 
     /* The delivery option for companions.
-     *                 
-     *                 <p>This attribute is read-only. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.CompanionDeliveryOption companionDeliveryOption;
 
     /* Details about the creatives that are expected to serve for
@@ -105,42 +95,37 @@ public class Product  implements java.io.Serializable {
      * all
      *                 creative placeholders must have a master and at least
      * one companion size.
-     *                 
      *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.CreativePlaceholder[] creativePlaceholders;
 
     /* Indicates the line item type for the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only. */
+     * This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.LineItemType lineItemType;
 
     /* The priority for the created {@link ProposalLineItem}. The
      * priority is a value
      *                 between 1 and 16.
-     *                 
      *                 This attribute is read-only. */
     private java.lang.Integer priority;
 
     /* The set of frequency capping units for the created {@link ProposalLineItem}.
      * Each frequency cap in the list must have unique {@link TimeUnit}.
-     *                 
      *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.FrequencyCap[] frequencyCaps;
 
-    /* The targeting for the created {@link ProposalLineItem}. It's
-     * a combination of
-     *                 {@link ProductTemplate#productSegmentation} and
+    /* The targeting for the created {@link ProposalLineItem}. For
+     * those scenarios using sales
+     *                 management, it's a combination of {@link ProductTemplate#productSegmentation}
+     * and
      *                 {@link ProductTemplate#builtInTargeting}. See details
      * in {@link ProductTemplate}.
-     *                 
-     *                 <p>This attribute is read-only. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.Targeting builtInTargeting;
 
     /* Specifies what targeting or attributes for the created {@link
      * ProposalLineItem}
      *                 are customizable.
-     *                 
-     *                 <p>This attribute is read-only. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201511.CustomizableAttributes customizableAttributes;
 
     /* The values of the custom fields associated with this {@code
@@ -151,7 +136,8 @@ public class Product  implements java.io.Serializable {
 
     /* The max duration of a video creative associated with this {@code
      * Product} in milliseconds.
-     *                 This value is only meaningful if this is a video product. */
+     *                 This value is only meaningful if this is a video product.
+     * This attribute is read-only. */
     private java.lang.Long videoMaxDuration;
 
     public Product() {
@@ -213,7 +199,6 @@ public class Product  implements java.io.Serializable {
      *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
-     *                 
      *                 This attribute is required.
      */
     public java.lang.String getName() {
@@ -231,7 +216,6 @@ public class Product  implements java.io.Serializable {
      *                 when setting the value of this field.
      *                 It has maximum length of 255 characters if overridden
      * via update.
-     *                 
      *                 This attribute is required.
      */
     public void setName(java.lang.String name) {
@@ -243,7 +227,6 @@ public class Product  implements java.io.Serializable {
      * Gets the status value for this Product.
      * 
      * @return status   * The status of the {@code Product}.
-     *                 
      *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.ProductStatus getStatus() {
@@ -255,7 +238,6 @@ public class Product  implements java.io.Serializable {
      * Sets the status value for this Product.
      * 
      * @param status   * The status of the {@code Product}.
-     *                 
      *                 This attribute is read-only.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201511.ProductStatus status) {
@@ -266,9 +248,10 @@ public class Product  implements java.io.Serializable {
     /**
      * Gets the productType value for this Product.
      * 
-     * @return productType   * The type of {@code Product}.
-     *                 
-     *                 The attribute is read-only.
+     * @return productType   * The type of {@code Product}. This will always be {@link ProductType#DFP}
+     * for programmatic
+     *                 guaranteed products.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.ProductType getProductType() {
         return productType;
@@ -278,9 +261,10 @@ public class Product  implements java.io.Serializable {
     /**
      * Sets the productType value for this Product.
      * 
-     * @param productType   * The type of {@code Product}.
-     *                 
-     *                 The attribute is read-only.
+     * @param productType   * The type of {@code Product}. This will always be {@link ProductType#DFP}
+     * for programmatic
+     *                 guaranteed products.
+     *                 This attribute is read-only.
      */
     public void setProductType(com.google.api.ads.dfp.axis.v201511.ProductType productType) {
         this.productType = productType;
@@ -292,9 +276,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @return productTemplateId   * The ID of the {@code ProductTemplate} from which this product
      * is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getProductTemplateId() {
         return productTemplateId;
@@ -306,9 +288,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @param productTemplateId   * The ID of the {@code ProductTemplate} from which this product
      * is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created.
+     *                 This attribute is read-only.
      */
     public void setProductTemplateId(java.lang.Long productTemplateId) {
         this.productTemplateId = productTemplateId;
@@ -374,9 +354,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @return productTemplateDescription   * The description of the {@code ProductTemplate} from which this
      * product is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created.
+     *                 This attribute is read-only.
      */
     public java.lang.String getProductTemplateDescription() {
         return productTemplateDescription;
@@ -388,9 +366,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @param productTemplateDescription   * The description of the {@code ProductTemplate} from which this
      * product is generated.
-     *                 
-     *                 This attribute is read-only and is assigned by Google
-     * when a product is created.
+     *                 This attribute is read-only.
      */
     public void setProductTemplateDescription(java.lang.String productTemplateDescription) {
         this.productTemplateDescription = productTemplateDescription;
@@ -427,8 +403,7 @@ public class Product  implements java.io.Serializable {
      * Gets the rateType value for this Product.
      * 
      * @return rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only.
+     * This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.RateType getRateType() {
         return rateType;
@@ -439,8 +414,7 @@ public class Product  implements java.io.Serializable {
      * Sets the rateType value for this Product.
      * 
      * @param rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only.
+     * This attribute is read-only.
      */
     public void setRateType(com.google.api.ads.dfp.axis.v201511.RateType rateType) {
         this.rateType = rateType;
@@ -454,8 +428,7 @@ public class Product  implements java.io.Serializable {
      * where
      *                 multiple creatives must be served together on a single
      * web page.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -469,8 +442,7 @@ public class Product  implements java.io.Serializable {
      * where
      *                 multiple creatives must be served together on a single
      * web page.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setRoadblockingType(com.google.api.ads.dfp.axis.v201511.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -482,8 +454,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @return deliveryRateType   * The strategy for delivering ads over the course of the line
      * item's duration.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -495,8 +466,7 @@ public class Product  implements java.io.Serializable {
      * 
      * @param deliveryRateType   * The strategy for delivering ads over the course of the line
      * item's duration.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setDeliveryRateType(com.google.api.ads.dfp.axis.v201511.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -509,8 +479,7 @@ public class Product  implements java.io.Serializable {
      * @return creativeRotationType   * The strategy used for displaying multiple {@link Creative}
      * objects that are
      *                 associated with the created {@code ProposalLineItem}.
-     * 
-     *                 <p>This attribute is read-only.
+     * This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.CreativeRotationType getCreativeRotationType() {
         return creativeRotationType;
@@ -523,8 +492,7 @@ public class Product  implements java.io.Serializable {
      * @param creativeRotationType   * The strategy used for displaying multiple {@link Creative}
      * objects that are
      *                 associated with the created {@code ProposalLineItem}.
-     * 
-     *                 <p>This attribute is read-only.
+     * This attribute is read-only.
      */
     public void setCreativeRotationType(com.google.api.ads.dfp.axis.v201511.CreativeRotationType creativeRotationType) {
         this.creativeRotationType = creativeRotationType;
@@ -535,8 +503,7 @@ public class Product  implements java.io.Serializable {
      * Gets the companionDeliveryOption value for this Product.
      * 
      * @return companionDeliveryOption   * The delivery option for companions.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.CompanionDeliveryOption getCompanionDeliveryOption() {
         return companionDeliveryOption;
@@ -547,8 +514,7 @@ public class Product  implements java.io.Serializable {
      * Sets the companionDeliveryOption value for this Product.
      * 
      * @param companionDeliveryOption   * The delivery option for companions.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setCompanionDeliveryOption(com.google.api.ads.dfp.axis.v201511.CompanionDeliveryOption companionDeliveryOption) {
         this.companionDeliveryOption = companionDeliveryOption;
@@ -565,7 +531,6 @@ public class Product  implements java.io.Serializable {
      * all
      *                 creative placeholders must have a master and at least
      * one companion size.
-     *                 
      *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.CreativePlaceholder[] getCreativePlaceholders() {
@@ -583,7 +548,6 @@ public class Product  implements java.io.Serializable {
      * all
      *                 creative placeholders must have a master and at least
      * one companion size.
-     *                 
      *                 This attribute is read-only.
      */
     public void setCreativePlaceholders(com.google.api.ads.dfp.axis.v201511.CreativePlaceholder[] creativePlaceholders) {
@@ -603,8 +567,7 @@ public class Product  implements java.io.Serializable {
      * Gets the lineItemType value for this Product.
      * 
      * @return lineItemType   * Indicates the line item type for the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only.
+     * This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.LineItemType getLineItemType() {
         return lineItemType;
@@ -615,8 +578,7 @@ public class Product  implements java.io.Serializable {
      * Sets the lineItemType value for this Product.
      * 
      * @param lineItemType   * Indicates the line item type for the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is read-only.
+     * This attribute is read-only.
      */
     public void setLineItemType(com.google.api.ads.dfp.axis.v201511.LineItemType lineItemType) {
         this.lineItemType = lineItemType;
@@ -629,7 +591,6 @@ public class Product  implements java.io.Serializable {
      * @return priority   * The priority for the created {@link ProposalLineItem}. The
      * priority is a value
      *                 between 1 and 16.
-     *                 
      *                 This attribute is read-only.
      */
     public java.lang.Integer getPriority() {
@@ -643,7 +604,6 @@ public class Product  implements java.io.Serializable {
      * @param priority   * The priority for the created {@link ProposalLineItem}. The
      * priority is a value
      *                 between 1 and 16.
-     *                 
      *                 This attribute is read-only.
      */
     public void setPriority(java.lang.Integer priority) {
@@ -656,7 +616,6 @@ public class Product  implements java.io.Serializable {
      * 
      * @return frequencyCaps   * The set of frequency capping units for the created {@link ProposalLineItem}.
      * Each frequency cap in the list must have unique {@link TimeUnit}.
-     *                 
      *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.FrequencyCap[] getFrequencyCaps() {
@@ -669,7 +628,6 @@ public class Product  implements java.io.Serializable {
      * 
      * @param frequencyCaps   * The set of frequency capping units for the created {@link ProposalLineItem}.
      * Each frequency cap in the list must have unique {@link TimeUnit}.
-     *                 
      *                 This attribute is read-only.
      */
     public void setFrequencyCaps(com.google.api.ads.dfp.axis.v201511.FrequencyCap[] frequencyCaps) {
@@ -688,13 +646,13 @@ public class Product  implements java.io.Serializable {
     /**
      * Gets the builtInTargeting value for this Product.
      * 
-     * @return builtInTargeting   * The targeting for the created {@link ProposalLineItem}. It's
-     * a combination of
-     *                 {@link ProductTemplate#productSegmentation} and
+     * @return builtInTargeting   * The targeting for the created {@link ProposalLineItem}. For
+     * those scenarios using sales
+     *                 management, it's a combination of {@link ProductTemplate#productSegmentation}
+     * and
      *                 {@link ProductTemplate#builtInTargeting}. See details
      * in {@link ProductTemplate}.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.Targeting getBuiltInTargeting() {
         return builtInTargeting;
@@ -704,13 +662,13 @@ public class Product  implements java.io.Serializable {
     /**
      * Sets the builtInTargeting value for this Product.
      * 
-     * @param builtInTargeting   * The targeting for the created {@link ProposalLineItem}. It's
-     * a combination of
-     *                 {@link ProductTemplate#productSegmentation} and
+     * @param builtInTargeting   * The targeting for the created {@link ProposalLineItem}. For
+     * those scenarios using sales
+     *                 management, it's a combination of {@link ProductTemplate#productSegmentation}
+     * and
      *                 {@link ProductTemplate#builtInTargeting}. See details
      * in {@link ProductTemplate}.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setBuiltInTargeting(com.google.api.ads.dfp.axis.v201511.Targeting builtInTargeting) {
         this.builtInTargeting = builtInTargeting;
@@ -723,8 +681,7 @@ public class Product  implements java.io.Serializable {
      * @return customizableAttributes   * Specifies what targeting or attributes for the created {@link
      * ProposalLineItem}
      *                 are customizable.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201511.CustomizableAttributes getCustomizableAttributes() {
         return customizableAttributes;
@@ -737,8 +694,7 @@ public class Product  implements java.io.Serializable {
      * @param customizableAttributes   * Specifies what targeting or attributes for the created {@link
      * ProposalLineItem}
      *                 are customizable.
-     *                 
-     *                 <p>This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setCustomizableAttributes(com.google.api.ads.dfp.axis.v201511.CustomizableAttributes customizableAttributes) {
         this.customizableAttributes = customizableAttributes;
@@ -785,6 +741,7 @@ public class Product  implements java.io.Serializable {
      * @return videoMaxDuration   * The max duration of a video creative associated with this {@code
      * Product} in milliseconds.
      *                 This value is only meaningful if this is a video product.
+     * This attribute is read-only.
      */
     public java.lang.Long getVideoMaxDuration() {
         return videoMaxDuration;
@@ -797,6 +754,7 @@ public class Product  implements java.io.Serializable {
      * @param videoMaxDuration   * The max duration of a video creative associated with this {@code
      * Product} in milliseconds.
      *                 This value is only meaningful if this is a video product.
+     * This attribute is read-only.
      */
     public void setVideoMaxDuration(java.lang.Long videoMaxDuration) {
         this.videoMaxDuration = videoMaxDuration;

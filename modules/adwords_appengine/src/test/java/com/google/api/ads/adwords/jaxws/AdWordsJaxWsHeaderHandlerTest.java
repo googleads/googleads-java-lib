@@ -22,14 +22,14 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.ads.adwords.jaxws.v201509.billing.BudgetOrderServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.ch.CustomerSyncServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.express.ExpressBusinessServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.express.PromotionServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.mcm.ManagedCustomerServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.o.TargetingIdeaServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.billing.BudgetOrderServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.ch.CustomerSyncServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.express.ExpressBusinessServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.express.PromotionServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.mcm.ManagedCustomerServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.o.TargetingIdeaServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.rm.AdwordsUserListServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -116,7 +116,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
   @Parameters(name="interface={0}, namespace={1}, subProduct={2}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
-    // Test at least one standard interface for every subpackage of v201509
+    // Test at least one standard interface for every subpackage of v201605
     parameters.add(
         new Object[] {BudgetOrderServiceInterface.class, "billing", AdWordsSubProduct.DEFAULT});
     parameters.add(

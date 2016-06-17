@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+<mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201605">
   <rval>
     <result>
       <Campaign>
@@ -12,7 +12,6 @@
         <budget>
           <budgetId>275926514</budgetId>
           <name>Shared Interplanetary Budget #fbf6e47e-b4d4-4b68-afdf-4a4ab675c4b3</name>
-          <period>DAILY</period>
           <amount>
             <ComparableValue.Type>Money</ComparableValue.Type>
             <microAmount>2000000</microAmount>

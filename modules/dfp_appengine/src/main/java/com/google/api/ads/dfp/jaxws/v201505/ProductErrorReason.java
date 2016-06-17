@@ -40,7 +40,7 @@ public enum ProductErrorReason {
 
     /**
      * 
-     *                 The productId is not correctly formed.
+     *                 The product ID is not correctly formed.
      *               
      * 
      */
@@ -48,7 +48,7 @@ public enum ProductErrorReason {
 
     /**
      * 
-     *                 The productId does not match the expanded features configured in its product template.
+     *                 The product ID does not match the expanded features configured in its product template.
      *               
      * 
      */
@@ -56,8 +56,8 @@ public enum ProductErrorReason {
 
     /**
      * 
-     *                 The template id specified in the parameters does not match the template id implied in the
-     *                 productId.
+     *                 The product template ID specified in the parameters does not match the product template ID
+     *                 implied in the product ID.
      *               
      * 
      */

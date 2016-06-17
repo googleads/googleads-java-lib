@@ -106,8 +106,6 @@ public class ReportRequestFactoryHelperTest {
                         .useRawEnumValues(isUseRawEnumValues)
                         .build();
               }
-              parameters.add(new Object[] {"v201509", null});
-              parameters.add(new Object[] {"v201509", reportingConfig});
               parameters.add(new Object[] {"v201601", null});
               parameters.add(new Object[] {"v201601", reportingConfig});
               parameters.add(new Object[] {"v201603", null});

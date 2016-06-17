@@ -9,8 +9,8 @@ package com.google.api.ads.dfp.axis.v201508;
 
 
 /**
- * An error lists all error reasons associated with performing action
- * on {@link Product} objects.
+ * Lists all error reasons associated with performing actions on {@link
+ * Product products}.
  */
 public class ProductActionError  extends com.google.api.ads.dfp.axis.v201508.ApiError  implements java.io.Serializable {
     /* The error reason represented by an enum. */

@@ -15,16 +15,9 @@
 package com.google.api.ads.adwords.axis.utils.v201601.batchjob;
 
 import com.google.api.ads.adwords.axis.utils.AxisDeserializer;
-import com.google.api.ads.adwords.axis.v201601.cm.AdGroupAdServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.AdGroupBidModifierServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.AdGroupCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.AdGroupServiceSoapBindingStub;
 import com.google.api.ads.adwords.axis.v201601.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201601.cm.BatchJob;
-import com.google.api.ads.adwords.axis.v201601.cm.BudgetServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.CampaignCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.CampaignServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201601.cm.FeedItemServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201601.cm.BatchJobOpsServiceSoapBindingStub;
 import com.google.api.ads.adwords.axis.v201601.cm.Operand;
 import com.google.api.ads.adwords.axis.v201601.cm.Operation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -37,6 +30,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 import org.apache.axis.client.Call;
 import org.apache.axis.encoding.TypeMapping;
@@ -57,7 +51,6 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
   private final BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
   private final BatchJobLogger batchJobLogger;
   private final QName resultQName;
-  private final QName operandQName;
   
   public BatchJobHelperImpl(AdWordsSession session) {
     this(
@@ -74,7 +67,6 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
     this.uploader = uploader;
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201601", "MutateResult");
-    operandQName = new QName("https://adwords.google.com/api/adwords/cm/v201601", "Operand");
   }
 
   @Override
@@ -99,119 +91,62 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
   public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
       throws BatchJobException {
     AxisDeserializer deserializer = new AxisDeserializer();
-    List<MutateResult> mutateResults;
+    /*
+     * Deserialize using the generated cm.MutateResult class instead of the batchjob.MutateResult
+     * class. The MutateResult and ErrorList types in the batchjob package have properties defined
+     * in the BatchJobMutateResultInterface and BatchJobErrorListInterface interfaces, respectively.
+     * On some Hotspot JVMs, if java.beans.Introspector (used by Axis) encounters a property
+     * defined via an implemented interface, it will return a PropertyDescriptor where
+     * getPropertType() returns the interface class instead of the type declared in the
+     * implementing class (e.g., BatchJobErrorListInterface instead of ErrorList). This causes
+     * problems during Axis deserialization because Axis relies on the presence of a static
+     * getTypeDesc method on each property it encounters.
+     */
+    List<com.google.api.ads.adwords.axis.v201601.cm.MutateResult> cmMutateResults;
     try {
-      mutateResults = deserializer.deserializeBatchJobMutateResults(new URL(downloadUrl),
-          getServiceTypeMappings(), MutateResult.class, resultQName, Operand.class, operandQName);
+      cmMutateResults =
+          deserializer.deserializeBatchJobMutateResults(
+              new URL(downloadUrl),
+              getServiceTypeMappings(),
+              com.google.api.ads.adwords.axis.v201601.cm.MutateResult.class,
+              resultQName);
     } catch (Exception e) {
       batchJobLogger.logDownload(downloadUrl, null, e);
       throw new BatchJobException(
           "Failed to download batch job mutate response from URL: " + downloadUrl, e);
     }
 
+    // Translate the cm.MutateResults into batchjob.MutateResults.
     BatchJobMutateResponse response = new BatchJobMutateResponse();
+    List<MutateResult> mutateResults = Lists.newArrayList();
+    for (com.google.api.ads.adwords.axis.v201601.cm.MutateResult cmMutateResult : cmMutateResults) {
+      MutateResult mutateResult = new MutateResult();
+      mutateResult.setIndex(cmMutateResult.getIndex());
+      mutateResult.setOperand(cmMutateResult.getResult());
+      if (cmMutateResult.getErrorList() != null) {
+        mutateResult.setErrorList(new ErrorList());
+        if (cmMutateResult.getErrorList().getErrors() != null) {
+          mutateResult.getErrorList().setErrors(cmMutateResult.getErrorList().getErrors());
+        }
+      }
+      mutateResults.add(mutateResult);
+    }
     response.setMutateResults(mutateResults.toArray(new MutateResult[mutateResults.size()]));
-    
+
     batchJobLogger.logDownload(downloadUrl, response, null);
     return response;
   }
-  
+
   /**
-   * Returns all of the service type mappings required to serialize/deserialize Axis
-   * objects.
+   * Returns all of the service type mappings required to serialize/deserialize Axis objects.
    */
   static List<TypeMapping> getServiceTypeMappings() {
-    // Build the list of type mappings based on the synchronous service of each Operation
-    // subclass supported by BatchJobService for this version of the API.
+    // Build the list of type mappings based on BatchJobOpsService for this version of the API.
     ImmutableList.Builder<TypeMapping> mappings = ImmutableList.builder();
 
     try {
       mappings.add(
-          new AdGroupAdServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new AdGroupBidModifierServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new AdGroupCriterionServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new AdGroupServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new BudgetServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new CampaignCriterionServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new CampaignServiceSoapBindingStub() {
-            @Override
-            public Call _createCall() throws ServiceException {
-              try {
-                return super.createCall();
-              } catch (RemoteException e) {
-                throw new RuntimeException(e);
-              }
-            }
-          }._createCall().getTypeMapping());
-
-      mappings.add(
-          new FeedItemServiceSoapBindingStub() {
+          new BatchJobOpsServiceSoapBindingStub() {
             @Override
             public Call _createCall() throws ServiceException {
               try {

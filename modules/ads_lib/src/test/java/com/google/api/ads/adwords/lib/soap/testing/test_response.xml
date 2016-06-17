@@ -15,7 +15,6 @@
                 <value>
                     <budgetId>251877074</budgetId>
                     <name>Test Budget Name</name>
-                    <period>DAILY</period>
                     <amount>
                         <ComparableValue.Type>Money</ComparableValue.Type>
                         <microAmount>50000000</microAmount>

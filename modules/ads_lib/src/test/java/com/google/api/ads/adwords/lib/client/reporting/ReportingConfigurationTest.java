@@ -152,8 +152,6 @@ public class ReportingConfigurationTest {
             .includeZeroImpressions(true)
             .useRawEnumValues(true)
             .build();
-    config.validate("v201509");
-    assertTrue("Validation should succeed for v201509", true);
     config.validate("v201601");
     assertTrue("Validation should succeed for v201601", true);
     config.validate("v201603");

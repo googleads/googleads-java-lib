@@ -16,14 +16,14 @@ package com.google.api.ads.adwords.axis.utils;
 
 import static org.junit.Assert.assertNotNull;
 
-import com.google.api.ads.adwords.axis.utils.v201509.batchjob.BatchJobMutateRequest;
-import com.google.api.ads.adwords.axis.v201509.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201509.cm.AdGroupOperation;
-import com.google.api.ads.adwords.axis.v201509.cm.AdvertisingChannelType;
-import com.google.api.ads.adwords.axis.v201509.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201509.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201509.cm.Operation;
-import com.google.api.ads.adwords.axis.v201509.cm.Operator;
+import com.google.api.ads.adwords.axis.utils.v201605.batchjob.BatchJobMutateRequest;
+import com.google.api.ads.adwords.axis.v201605.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201605.cm.AdGroupOperation;
+import com.google.api.ads.adwords.axis.v201605.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.axis.v201605.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201605.cm.CampaignOperation;
+import com.google.api.ads.adwords.axis.v201605.cm.Operation;
+import com.google.api.ads.adwords.axis.v201605.cm.Operator;
 import com.google.common.collect.Lists;
 import com.google.common.io.CharStreams;
 

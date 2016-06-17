@@ -17,6 +17,7 @@ public class ConversionEvent implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final java.lang.String _CREATIVE_VIEW = "CREATIVE_VIEW";
     public static final java.lang.String _START = "START";
     public static final java.lang.String _SKIP_SHOWN = "SKIP_SHOWN";
@@ -39,6 +40,7 @@ public class ConversionEvent implements java.io.Serializable {
     public static final java.lang.String _CLICK_TRACKING = "CLICK_TRACKING";
     public static final java.lang.String _SURVEY = "SURVEY";
     public static final java.lang.String _CUSTOM_CLICK = "CUSTOM_CLICK";
+    public static final ConversionEvent UNKNOWN = new ConversionEvent(_UNKNOWN);
     public static final ConversionEvent CREATIVE_VIEW = new ConversionEvent(_CREATIVE_VIEW);
     public static final ConversionEvent START = new ConversionEvent(_START);
     public static final ConversionEvent SKIP_SHOWN = new ConversionEvent(_SKIP_SHOWN);

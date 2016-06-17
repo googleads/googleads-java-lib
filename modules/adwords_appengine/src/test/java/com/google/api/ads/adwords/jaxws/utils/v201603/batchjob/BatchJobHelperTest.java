@@ -70,4 +70,9 @@ public class BatchJobHelperTest
   protected String getVersion() {
     return "v201603";
   }
+
+  @Override
+  protected boolean expectNullResultsForEmptyResponse() {
+    return true;
+  }
 }

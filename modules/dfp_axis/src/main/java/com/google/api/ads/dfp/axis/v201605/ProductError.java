@@ -9,8 +9,7 @@ package com.google.api.ads.dfp.axis.v201605;
 
 
 /**
- * A catch-all error that lists all generic errors associated with
- * Product.
+ * Lists all error reasons associated with {@link Product products}.
  */
 public class ProductError  extends com.google.api.ads.dfp.axis.v201605.ApiError  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201605.ProductErrorReason reason;

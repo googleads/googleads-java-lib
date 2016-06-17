@@ -17,6 +17,7 @@ package com.google.api.ads.adwords.lib.utils;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.common.lib.utils.Streams;
+import com.google.common.base.Charsets;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,7 +32,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.nio.charset.StandardCharsets;
 import java.util.zip.GZIPOutputStream;
 
 /**
@@ -52,9 +52,9 @@ public class ReportDownloadResponseTest {
     String expectedContents = "a,b,c\nd,e,f\n";
     InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, StandardCharsets.UTF_8, "CSV");
+        inputStream, Charsets.UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
-    String actualContents = Streams.readAll(response.getInputStream(), StandardCharsets.UTF_8);
+    String actualContents = Streams.readAll(response.getInputStream(), Charsets.UTF_8);
     assertEquals("input stream contents are incorrect", expectedContents, actualContents);
   }
 
@@ -67,7 +67,7 @@ public class ReportDownloadResponseTest {
     String expectedContents = "a,b,c\nd,e,f\n";
     InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, StandardCharsets.UTF_8, "CSV");
+        inputStream, Charsets.UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     assertEquals("contents as string are incorrect", expectedContents, response.getAsString());
   }
@@ -86,7 +86,7 @@ public class ReportDownloadResponseTest {
         new GZIPOutputStream(zippedBytesOut));
 
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        new ByteArrayInputStream(zippedBytesOut.toByteArray()), StandardCharsets.UTF_8,
+        new ByteArrayInputStream(zippedBytesOut.toByteArray()), Charsets.UTF_8,
         "GZIPPED_CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     assertEquals("contents as string are incorrect for gzipped format", expectedContents,
@@ -103,19 +103,19 @@ public class ReportDownloadResponseTest {
     String expectedContents = "a,b,c\nd,e,f\n";
     InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, StandardCharsets.UTF_8, "CSV");
+        inputStream, Charsets.UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     response.saveToFile(outputFile.getPath());
 
     assertEquals("contents saved to file are incorrect", expectedContents,
-        Streams.readAll(new FileInputStream(outputFile), StandardCharsets.UTF_8));
+        Streams.readAll(new FileInputStream(outputFile), Charsets.UTF_8));
   }
 
   @Test
   public void testFailedResponse_fails() {
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(
         HttpURLConnection.HTTP_BAD_REQUEST, new ByteArrayInputStream("failed".getBytes()),
-        StandardCharsets.UTF_8, "CSV");
+        Charsets.UTF_8, "CSV");
     thrown.expect(IllegalArgumentException.class);
     new ReportDownloadResponse(rawResponse);
   }

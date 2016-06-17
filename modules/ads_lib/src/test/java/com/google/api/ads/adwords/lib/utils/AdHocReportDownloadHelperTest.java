@@ -48,7 +48,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.io.InputStream;
 import java.net.ConnectException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -296,7 +295,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
       assertNotNull("Null response", response);
       assertEquals("Response status code not success", 200, response.getHttpStatus());
-      assertEquals("Response charset incorrect", StandardCharsets.UTF_8, response.getCharset());
+      assertEquals(
+          "Response charset incorrect",
+          AdHocReportDownloadHelper.REPORT_CHARSET,
+          response.getCharset());
       assertEquals(
           "Response contents incorrect",
           "test",
@@ -337,7 +339,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
 
       assertNotNull("Null response", response);
       assertEquals("Response status code not success", 200, response.getHttpStatus());
-      assertEquals("Response charset incorrect", StandardCharsets.UTF_8, response.getCharset());
+      assertEquals(
+          "Response charset incorrect",
+          AdHocReportDownloadHelper.REPORT_CHARSET,
+          response.getCharset());
       assertEquals(
           "Response contents incorrect",
           "test",
@@ -368,7 +373,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
         new RawReportDownloadResponse(
             200,
             ByteSource.wrap(responseBody.getBytes()).openStream(),
-            StandardCharsets.UTF_8,
+            AdHocReportDownloadHelper.REPORT_CHARSET,
             "CSV");
     ReportDownloadResponse reportResponse = helper.handleResponse(rawResponse, exceptionBuilder);
     String actualResponseBody =
@@ -380,7 +385,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
   public void testHandleErrorResponse_fails() throws Exception {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
-            500, ByteSource.wrap(ERROR_XML.getBytes()).openStream(), StandardCharsets.UTF_8, "CSV");
+            500,
+            ByteSource.wrap(ERROR_XML.getBytes()).openStream(),
+            AdHocReportDownloadHelper.REPORT_CHARSET,
+            "CSV");
     thrown.expect(DetailedReportDownloadResponseException.class);
     thrown.expect(Matchers.hasProperty("fieldPath", Matchers.equalTo("foobar")));
     thrown.expect(Matchers.hasProperty("trigger", Matchers.equalTo("AdFormatt")));
@@ -393,7 +401,8 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
   @Test
   public void testHandleResponseWithNullInputStream_fails() throws Exception {
     RawReportDownloadResponse rawResponse =
-        new RawReportDownloadResponse(500, (InputStream) null, StandardCharsets.UTF_8, "CSV");
+        new RawReportDownloadResponse(
+            500, (InputStream) null, AdHocReportDownloadHelper.REPORT_CHARSET, "CSV");
     thrown.expect(DetailedReportDownloadResponseException.class);
     helper.handleResponse(rawResponse, exceptionBuilder);
   }
@@ -402,7 +411,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
   public void testHandleResponseWithEmptyInputStream_fails() throws Exception {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
-            500, ByteSource.empty().openStream(), StandardCharsets.UTF_8, "CSV");
+            500, ByteSource.empty().openStream(), AdHocReportDownloadHelper.REPORT_CHARSET, "CSV");
     thrown.expect(DetailedReportDownloadResponseException.class);
     thrown.expect(Matchers.hasProperty("fieldPath", Matchers.nullValue()));
     thrown.expect(Matchers.hasProperty("trigger", Matchers.nullValue()));
@@ -421,7 +430,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
   public void testHandleResponseNullExceptionBuilder_fails() throws Exception {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
-            200, ByteSource.wrap("a,b,c".getBytes()).openStream(), StandardCharsets.UTF_8, "CSV");
+            200,
+            ByteSource.wrap("a,b,c".getBytes()).openStream(),
+            AdHocReportDownloadHelper.REPORT_CHARSET,
+            "CSV");
     thrown.expect(NullPointerException.class);
     thrown.expectMessage("Null exception builder");
     helper.handleResponse(rawResponse, null);

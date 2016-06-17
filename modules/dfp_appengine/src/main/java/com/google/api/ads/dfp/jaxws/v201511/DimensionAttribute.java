@@ -1195,7 +1195,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Product#notes} for {@Link Dimension#PRODUCT_NAME}.
+     *                 Represents {@link Product#notes} for {@link Dimension#PRODUCT_NAME}.
      *               
      * 
      */

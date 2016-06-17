@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="USE_START_DATE_TIME"/>
  *     &lt;enumeration value="IMMEDIATELY"/>
  *     &lt;enumeration value="ONE_HOUR_FROM_NOW"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -54,7 +55,15 @@ public enum StartDateTimeType {
      *               
      * 
      */
-    ONE_HOUR_FROM_NOW;
+    ONE_HOUR_FROM_NOW,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

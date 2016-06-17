@@ -157,7 +157,10 @@ public class Order  implements java.io.Serializable {
      *                 value is optional and defaults to false. */
     private java.lang.Boolean isProgrammatic;
 
-    /* The programmatic settings associated with this order. */
+    /* The programmatic settings associated with this order.
+     *                 
+     *                 <p>This field has been deprecated and will return
+     * {@code null}. */
     private com.google.api.ads.dfp.axis.v201511.ProgrammaticSettings programmaticSettings;
 
     /* The IDs of all teams that this order is on directly. */
@@ -956,6 +959,9 @@ public class Order  implements java.io.Serializable {
      * Gets the programmaticSettings value for this Order.
      * 
      * @return programmaticSettings   * The programmatic settings associated with this order.
+     *                 
+     *                 <p>This field has been deprecated and will return
+     * {@code null}.
      */
     public com.google.api.ads.dfp.axis.v201511.ProgrammaticSettings getProgrammaticSettings() {
         return programmaticSettings;
@@ -966,6 +972,9 @@ public class Order  implements java.io.Serializable {
      * Sets the programmaticSettings value for this Order.
      * 
      * @param programmaticSettings   * The programmatic settings associated with this order.
+     *                 
+     *                 <p>This field has been deprecated and will return
+     * {@code null}.
      */
     public void setProgrammaticSettings(com.google.api.ads.dfp.axis.v201511.ProgrammaticSettings programmaticSettings) {
         this.programmaticSettings = programmaticSettings;

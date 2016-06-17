@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An error lists all error reasons associated with performing action on {@link Product} objects.
+ *             Lists all error reasons associated with performing actions on {@link Product products}.
  *           
  * 
  * <p>Java class for ProductActionError complex type.

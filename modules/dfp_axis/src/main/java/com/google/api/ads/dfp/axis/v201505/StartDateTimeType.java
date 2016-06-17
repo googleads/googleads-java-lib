@@ -20,9 +20,11 @@ public class StartDateTimeType implements java.io.Serializable {
     public static final java.lang.String _USE_START_DATE_TIME = "USE_START_DATE_TIME";
     public static final java.lang.String _IMMEDIATELY = "IMMEDIATELY";
     public static final java.lang.String _ONE_HOUR_FROM_NOW = "ONE_HOUR_FROM_NOW";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final StartDateTimeType USE_START_DATE_TIME = new StartDateTimeType(_USE_START_DATE_TIME);
     public static final StartDateTimeType IMMEDIATELY = new StartDateTimeType(_IMMEDIATELY);
     public static final StartDateTimeType ONE_HOUR_FROM_NOW = new StartDateTimeType(_ONE_HOUR_FROM_NOW);
+    public static final StartDateTimeType UNKNOWN = new StartDateTimeType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static StartDateTimeType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

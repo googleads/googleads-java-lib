@@ -1197,7 +1197,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Product#notes} for {@Link Dimension#PRODUCT_NAME}.
+     *                 Represents {@link Product#notes} for {@link Dimension#PRODUCT_NAME}.
      *               
      * 
      */
@@ -1205,7 +1205,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@Link Dimension#PRODUCT_NAME}'s rate in a {@link Dimension#RATE_CARD_NAME}.
+     *                 Represents the {@link Dimension#PRODUCT_NAME}'s rate in a {@link Dimension#RATE_CARD_NAME}.
      *               
      * 
      */
@@ -1213,7 +1213,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@Link Dimension#PRODUCT_NAME}'s rate in a {@link Dimension#RATE_CARD_NAME}
+     *                 Represents the {@link Dimension#PRODUCT_NAME}'s rate in a {@link Dimension#RATE_CARD_NAME}
      *                 and {@link Dimension#PRODUCT_PACKAGE_NAME}.
      *               
      * 

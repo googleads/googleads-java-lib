@@ -14,8 +14,6 @@
 
 package com.google.api.ads.adwords.axis.utils;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import org.apache.axis.description.TypeDesc;
 import org.apache.axis.encoding.SerializationContext;
 import org.apache.axis.encoding.Serializer;
@@ -45,8 +43,7 @@ public class AxisSerializer {
   /**
    * Uses reflection to get an Axis Serializer.
    */
-  @VisibleForTesting
-  <T extends Serializable> Serializer getSerializer(QName xmlType, Class<T> clazz)
+  private <T extends Serializable> Serializer getSerializer(QName xmlType, Class<T> clazz)
       throws SecurityException,
       NoSuchMethodException,
       IllegalArgumentException,
@@ -59,8 +56,7 @@ public class AxisSerializer {
   /**
    * Uses reflection to get the QName XmlType.
    */
-  @VisibleForTesting
-  <T extends Serializable> QName getXmlType(Class<T> clazz)
+  private <T extends Serializable> QName getXmlType(Class<T> clazz)
       throws IllegalArgumentException,
       IllegalAccessException,
       InvocationTargetException,

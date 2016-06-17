@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A catch-all error that lists all generic errors associated with Product.
+ *             Lists all error reasons associated with {@link Product products}.
  *           
  * 
  * <p>Java class for ProductError complex type.

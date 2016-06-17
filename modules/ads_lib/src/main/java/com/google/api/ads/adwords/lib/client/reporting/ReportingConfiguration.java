@@ -103,7 +103,7 @@ public class ReportingConfiguration {
   
   /**
    * Validates this object for the specified version of the AdWords API.
-   * @param version the version of the API to validate against, e.g., {@code v201509}.
+   * @param version the {@code v20YYMM} version of the API to validate against.
    * 
    * @throws IllegalArgumentException if validation fails
    */

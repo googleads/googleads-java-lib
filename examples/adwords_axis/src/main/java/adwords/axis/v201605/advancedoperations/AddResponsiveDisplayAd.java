@@ -81,7 +81,14 @@ public class AddResponsiveDisplayAd {
 
     // Create a responsive display ad.
     ResponsiveDisplayAd responsiveDisplayAd = new ResponsiveDisplayAd();
-    responsiveDisplayAd.setMarketingImage(image);
+
+    // This ad format does not allow the creation of an image using the
+    // Image.data field. An image must first be created using the MediaService,
+    // and Image.mediaId must be populated when creating the ad.
+    Image marketingImage = new Image();
+    marketingImage.setMediaId(image.getMediaId());
+    responsiveDisplayAd.setMarketingImage(marketingImage);
+
     responsiveDisplayAd.setShortHeadline("Travel");
     responsiveDisplayAd.setLongHeadline("Travel the World");
     responsiveDisplayAd.setDescription("Take to the air!");

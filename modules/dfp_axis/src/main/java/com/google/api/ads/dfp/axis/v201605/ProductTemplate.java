@@ -30,8 +30,8 @@ public class ProductTemplate  implements java.io.Serializable {
 
     /* The name of the {@code ProductTemplate}.
      *                 
-     *                 This attribute is required and has maximum length
-     * of 255 characters. */
+     *                 This attribute has maximum length of 255 characters.
+     * This attribute is required. */
     private java.lang.String name;
 
     /* The creation time of the {@code ProductTemplate}.
@@ -134,8 +134,7 @@ public class ProductTemplate  implements java.io.Serializable {
     private java.lang.String nameMacro;
 
     /* The status of the {@code ProductTemplate}.
-     *                 
-     *                 This attribute is read-only and is assigned by Google. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201605.ProductTemplateStatus status;
 
     /* The type of generated {@code Product}.
@@ -148,7 +147,6 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 
      *                 This attribute is required. */
     private com.google.api.ads.dfp.axis.v201605.ProductType productType;
 
@@ -158,8 +156,7 @@ public class ProductTemplate  implements java.io.Serializable {
     private java.lang.Long creatorId;
 
     /* The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is required. */
+     * This attribute is required. */
     private com.google.api.ads.dfp.axis.v201605.RateType rateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
@@ -426,8 +423,8 @@ public class ProductTemplate  implements java.io.Serializable {
      * 
      * @return name   * The name of the {@code ProductTemplate}.
      *                 
-     *                 This attribute is required and has maximum length
-     * of 255 characters.
+     *                 This attribute has maximum length of 255 characters.
+     * This attribute is required.
      */
     public java.lang.String getName() {
         return name;
@@ -439,8 +436,8 @@ public class ProductTemplate  implements java.io.Serializable {
      * 
      * @param name   * The name of the {@code ProductTemplate}.
      *                 
-     *                 This attribute is required and has maximum length
-     * of 255 characters.
+     *                 This attribute has maximum length of 255 characters.
+     * This attribute is required.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -705,8 +702,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Gets the status value for this ProductTemplate.
      * 
      * @return status   * The status of the {@code ProductTemplate}.
-     *                 
-     *                 This attribute is read-only and is assigned by Google.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201605.ProductTemplateStatus getStatus() {
         return status;
@@ -717,8 +713,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Sets the status value for this ProductTemplate.
      * 
      * @param status   * The status of the {@code ProductTemplate}.
-     *                 
-     *                 This attribute is read-only and is assigned by Google.
+     *                 This attribute is read-only.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201605.ProductTemplateStatus status) {
         this.status = status;
@@ -738,7 +733,6 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 
      *                 This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201605.ProductType getProductType() {
@@ -759,7 +753,6 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 
      *                 This attribute is required.
      */
     public void setProductType(com.google.api.ads.dfp.axis.v201605.ProductType productType) {
@@ -795,8 +788,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Gets the rateType value for this ProductTemplate.
      * 
      * @return rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is required.
+     * This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201605.RateType getRateType() {
         return rateType;
@@ -807,8 +799,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Sets the rateType value for this ProductTemplate.
      * 
      * @param rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * 
-     *                 This attribute is required.
+     * This attribute is required.
      */
     public void setRateType(com.google.api.ads.dfp.axis.v201605.RateType rateType) {
         this.rateType = rateType;

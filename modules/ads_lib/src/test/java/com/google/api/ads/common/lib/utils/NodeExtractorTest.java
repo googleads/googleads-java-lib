@@ -18,6 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import com.google.common.base.Charsets;
 import com.google.common.collect.Lists;
 
 import org.junit.Rule;
@@ -27,8 +28,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-
-import java.nio.charset.StandardCharsets;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -61,7 +60,7 @@ public class NodeExtractorTest {
     Document document =
         DocumentBuilderFactory.newInstance()
             .newDocumentBuilder()
-            .parse(Streams.wrapString(xml, StandardCharsets.UTF_8));
+            .parse(Streams.wrapString(xml, Charsets.UTF_8));
     Node node = nodeExtractor.extractNode(document, Lists.newArrayList("Header", "requestId"));
     assertEquals(
         "Given an xpath in the XML, should return its node",
@@ -75,7 +74,7 @@ public class NodeExtractorTest {
     Document document =
         DocumentBuilderFactory.newInstance()
             .newDocumentBuilder()
-            .parse(Streams.wrapString(xml, StandardCharsets.UTF_8));
+            .parse(Streams.wrapString(xml, Charsets.UTF_8));
     Node node = nodeExtractor.extractNode(document, Lists.newArrayList("Header", "requestId"));
     assertEquals(
         "Given an xpath in the XML, should return its node",
@@ -103,7 +102,7 @@ public class NodeExtractorTest {
     Document document =
         documentBuilderFactory
             .newDocumentBuilder()
-            .parse(Streams.wrapString(xml, StandardCharsets.UTF_8));
+            .parse(Streams.wrapString(xml, Charsets.UTF_8));
     Node node =
         nodeExtractor.extractNode(
             document, Lists.newArrayList("Envelope", "Header", "ResponseHeader", "requestId"));
@@ -120,7 +119,7 @@ public class NodeExtractorTest {
     Document document =
         DocumentBuilderFactory.newInstance()
             .newDocumentBuilder()
-            .parse(Streams.wrapString(xml, StandardCharsets.UTF_8));
+            .parse(Streams.wrapString(xml, Charsets.UTF_8));
     Node node = nodeExtractor.extractNode(document, Lists.newArrayList("Foo"));
     assertNull("Given an xpath not in the XML, should return null", node);
   }

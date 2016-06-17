@@ -27,7 +27,7 @@ public enum ProductActionErrorReason {
 
     /**
      * 
-     *                 The operation is not applicable to the current status.
+     *                 The operation is not applicable for a {@like Product product's} current status.
      *               
      * 
      */

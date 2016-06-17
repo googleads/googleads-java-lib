@@ -19,13 +19,12 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.adwords.jaxws.factory.AdWordsServices;
 import com.google.api.ads.adwords.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Budget;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetBudgetPeriod;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetOperation;
-import com.google.api.ads.adwords.jaxws.v201509.cm.BudgetServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Money;
-import com.google.api.ads.adwords.jaxws.v201509.cm.Operator;
+import com.google.api.ads.adwords.jaxws.v201605.cm.Budget;
+import com.google.api.ads.adwords.jaxws.v201605.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.jaxws.v201605.cm.BudgetOperation;
+import com.google.api.ads.adwords.jaxws.v201605.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201605.cm.Money;
+import com.google.api.ads.adwords.jaxws.v201605.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -50,7 +49,7 @@ import javax.xml.ws.WebServiceException;
 @RunWith(JUnit4.class)
 public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201509";
+  private static final String API_VERSION = "v201605";
   
   @Rule
   public final ExpectedException thrown = ExpectedException.none(); 
@@ -84,7 +83,6 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     
     Budget budget = new Budget();
     budget.setName("Test Budget Name");
-    budget.setPeriod(BudgetBudgetPeriod.DAILY);
     Money money = new Money();
     money.setMicroAmount(50000000L);
     budget.setAmount(money);
@@ -98,7 +96,6 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
 
     assertEquals("Budget ID does not match", 251877074L, responseBudget.getBudgetId().longValue());
     assertEquals("Budget name does not match", budget.getName(), responseBudget.getName());
-    assertEquals("Budget period does not match", budget.getPeriod(), responseBudget.getPeriod());
     assertEquals("Budget amount does not match", budget.getAmount().getMicroAmount(),
         responseBudget.getAmount().getMicroAmount());
     assertEquals("Budget delivery method does not match", budget.getDeliveryMethod(),
@@ -138,7 +135,6 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     
     Budget budget = new Budget();
     budget.setName("Test Budget Name");
-    budget.setPeriod(BudgetBudgetPeriod.DAILY);
     Money money = new Money();
     money.setMicroAmount(50000000L);
     budget.setAmount(money);

@@ -4,7 +4,7 @@
     <RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">
         <clientCustomerId xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_CLIENT_CUSTOMER_ID</clientCustomerId>
         <developerToken xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_DEVELOPER_TOKEN</developerToken>
-        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/2.15.0, Common-Java/2.15.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
+        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/2.16.0, Common-Java/2.16.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
     </RequestHeader>
   </S:Header>
   <S:Body>
@@ -13,7 +13,6 @@
         <operator>ADD</operator>
         <operand>
           <name>Test Budget Name</name>
-          <period>DAILY</period>
           <amount>
             <microAmount>50000000</microAmount>
           </amount>

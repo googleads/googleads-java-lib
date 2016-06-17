@@ -12,8 +12,10 @@ public interface ProductServiceInterface extends java.rmi.Remote {
     /**
      * Gets a {@link ProductPage} of {@link Product} objects that
      * satisfy the criteria specified by
-     *         given {@link Statement#query}. The following fields are supported
-     * for filtering and/or sorting:
+     *         given {@link Statement#query}.
+     *         <p>
+     *         When using sales management, the following fields are supported
+     * for filtering and/or sorting.
      *         
      *         <table>
      *         <tr>
@@ -40,6 +42,7 @@ public interface ProductServiceInterface extends java.rmi.Remote {
      *         <td>Yes</td>
      *         <td>Yes</td>
      *         </tr>
+     *         <tr>
      *         <td>{@code productType}</td>
      *         <td>{@link Product#productType}</td>
      *         <td>Yes</td>
@@ -68,6 +71,48 @@ public interface ProductServiceInterface extends java.rmi.Remote {
      *         <td>{@link Product#description}</td>
      *         <td>Yes</td>
      *         <td>No</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code id}</td>
+     *         <td>{@link Product#id}</td>
+     *         <td>Yes</td>
+     *         <td>Yes</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code lastModifiedDateTime}</td>
+     *         <td>{@link Product#lastModifiedDateTime}</td>
+     *         <td>Yes</td>
+     *         <td>Yes</td>
+     *         </tr>
+     *         </table>
+     *         
+     *         When using programmatic guaranteed and not sales management,
+     * the following fields are supported for filtering and/or sorting.
+     *         
+     *         <table>
+     *         <tr>
+     *         <th scope="col">PQL Property</th>
+     *         <th scope="col">Object Property</th>
+     *         <th scope="col">Filterable</th>
+     *         <th scope="col">Sortable</th>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link Product#status}</td>
+     *         <td>Yes</td>
+     *         <td>Yes</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code rateType}</td>
+     *         <td>{@link Product#rateType}</td>
+     *         <td>Yes</td>
+     *         <td>Yes</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code name}</td>
+     *         <td>{@link Product#name}</td>
+     *         <td>Yes</td>
+     *         <td>Yes</td>
      *         </tr>
      *         <tr>
      *         <td>{@code id}</td>

@@ -300,7 +300,8 @@ public final class CsvFiles {
 
     /**
      * Performs the {@link CsvWorker#processLine(String[], String[], int)}
-     * method of the {@code worker} parameter for each link in the CSV.
+     * method of the {@code worker} parameter for each link in the CSV,
+     * and closes the underlying {@link CSVReader}.
      *
      * @param worker the {@code CsvWorker} that performs work on each line
      * @throws IOException if the CSV file cannot be read

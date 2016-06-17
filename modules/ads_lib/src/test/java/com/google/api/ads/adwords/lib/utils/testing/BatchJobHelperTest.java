@@ -14,6 +14,9 @@
 
 package com.google.api.ads.adwords.lib.utils.testing;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.verify;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -25,6 +28,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.common.lib.utils.Streams;
+import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Before;
@@ -42,7 +46,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
-import java.nio.charset.StandardCharsets;
 
 /**
  * Base class for tests of {@link BatchJobHelperInterface} implementations.
@@ -78,27 +81,50 @@ public abstract class BatchJobHelperTest<
   public void testDownloadBatchJobMutateResponse() throws BatchJobException, IOException {
     File tempFile = tempFolder.newFile();
     OutputStream responseOutputStream = new FileOutputStream(tempFile);
-    Streams.write(getResponseString(), responseOutputStream, StandardCharsets.UTF_8);
+    Streams.write(getResponseString(), responseOutputStream, Charsets.UTF_8);
     ResponseT downloadResponse =
         batchJobHelper.downloadBatchJobMutateResponse(tempFile.toURI().toURL().toString());
     assertDownloadResponse(downloadResponse);
+  }
+  
+  /**
+   * Verifies that the helper handles the case where the response does not contain any results.
+   */
+  @Test
+  public void testDownloadBatchJobMutateResponse_emptyResponse()
+      throws BatchJobException, IOException {
+    String noResultsResponse = String.format("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        + "<mutateResponse xmlns=\"https://adwords.google.com/api/adwords/cm/%s\">"
+        + "</mutateResponse>", getVersion());
+    File tempFile = tempFolder.newFile();
+    OutputStream responseOutputStream = new FileOutputStream(tempFile);
+    Streams.write(noResultsResponse, responseOutputStream, Charsets.UTF_8);
+    ResponseT downloadResponse =
+        batchJobHelper.downloadBatchJobMutateResponse(tempFile.toURI().toURL().toString());
+    assertNotNull("Download response is null", downloadResponse);
+    if (expectNullResultsForEmptyResponse()) {
+      assertNull(
+          "Mutate results of download response should be null",
+          downloadResponse.getMutateResults());
+    } else {
+      assertNotNull(
+          "Mutate results of download response is null", downloadResponse.getMutateResults());
+      assertEquals(
+          "Size of mutate results of an empty download response != 0",
+          0,
+          downloadResponse.getMutateResults().length);
+    }
   }
 
   @Test
   public void testUploadBatchJobOperations() throws BatchJobException {
     BatchJobUploadStatus status = new BatchJobUploadStatus(0L, URI.create(UPLOAD_URL));
     batchJobHelper.uploadBatchJobOperations(operations, UPLOAD_URL);
-    if ("v201509".equals(getVersion())) {
-      verify(uploader)
-          .uploadBatchJobOperations(
-              Matchers.<BatchJobMutateRequestInterface>any(), Matchers.eq(UPLOAD_URL));
-    } else {
-      verify(uploader)
-          .uploadIncrementalBatchJobOperations(
-              Matchers.<BatchJobMutateRequestInterface>any(),
-              Matchers.eq(true),
-              Matchers.eq(status));
-    }
+    verify(uploader)
+        .uploadIncrementalBatchJobOperations(
+            Matchers.<BatchJobMutateRequestInterface>any(),
+            Matchers.eq(true),
+            Matchers.eq(status));
   }
 
   @Test
@@ -139,6 +165,12 @@ public abstract class BatchJobHelperTest<
    */
   protected abstract void assertDownloadResponse(ResponseT downloadResponse);
 
+  /**
+   * Returns if the framework is expected to return a response with a {@code null}
+   * {@code ResultT} collection if the XML does not contain any result elements.
+   */
+  protected abstract boolean expectNullResultsForEmptyResponse();
+  
   /**
    * Returns the AdWords API version being tested.
    */

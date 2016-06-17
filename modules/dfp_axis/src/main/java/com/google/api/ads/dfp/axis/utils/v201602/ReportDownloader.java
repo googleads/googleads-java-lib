@@ -21,6 +21,8 @@ import com.google.api.ads.dfp.axis.v201602.ReportDownloadOptions;
 import com.google.api.ads.dfp.axis.v201602.ReportJobStatus;
 import com.google.api.ads.dfp.axis.v201602.ReportServiceInterface;
 import com.google.api.ads.dfp.lib.utils.ReportCallback;
+import com.google.api.client.util.Sleeper;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteSource;
@@ -60,6 +62,7 @@ public class ReportDownloader {
 
   private final ReportServiceInterface reportService;
   private final long reportJobId;
+  private final Sleeper sleeper;
   
   private static final Set<ExportFormat> SUPPORTED_CHARSOURCE_EXPORT_FORMATS =
       ImmutableSet.of(ExportFormat.CSV_DUMP, ExportFormat.TSV, ExportFormat.XML);
@@ -87,8 +90,15 @@ public class ReportDownloader {
    * @param reportJobId the report job ID
    */
   public ReportDownloader(ReportServiceInterface reportService, long reportJobId) {
+    this(reportService, reportJobId, Sleeper.DEFAULT);
+  }
+  
+  @VisibleForTesting
+  ReportDownloader(ReportServiceInterface reportService, long reportJobId,
+      Sleeper sleeper) {
     this.reportJobId = reportJobId;
     this.reportService = reportService;
+    this.sleeper = sleeper;
   }
 
   /**
@@ -150,7 +160,7 @@ public class ReportDownloader {
   public boolean waitForReportReady() throws RemoteException, InterruptedException {
     ReportJobStatus status = reportService.getReportJobStatus(reportJobId);
     while (status == ReportJobStatus.IN_PROGRESS) {
-      Thread.sleep(SLEEP_TIMER);
+      sleeper.sleep(SLEEP_TIMER);
       status = reportService.getReportJobStatus(reportJobId);
     }
 

@@ -99,7 +99,7 @@ public class AddKeywordsInBulk {
       String text = String.format("mars%d", i);
 
       // Make 10% of keywords invalid to demonstrate error handling.
-      if (r.nextInt() % 10 == 0) {
+      if (r.nextInt(10) == 0) {
         text = text + "!!!";
       }
       Keyword keyword = new Keyword();

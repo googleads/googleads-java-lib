@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<Report>
+  <HeaderData />
+  <ReportData>
+    <ColumnHeaders>
+      <ColumnHeader name='adSlotID0' localizedName='Ad unit ID 1' />
+      <ColumnHeader name='adSlotName0' localizedName='Ad unit 1' />
+      <ColumnHeader name='reservationImpressionsDelivered' localizedName='Ad server impressions' />
+    </ColumnHeaders>
+    <DataSet>
+      <Total rowNum='1'>
+        <Column name='adSlotID0'>
+          <Val />
+        </Column>
+        <Column name='adSlotName0'>
+          <Val />
+        </Column>
+        <Column name='reservationImpressionsDelivered'>
+          <Val>0</Val>
+        </Column>
+      </Total>
+    </DataSet>
+  </ReportData>
+</Report>

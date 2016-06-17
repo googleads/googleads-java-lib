@@ -1,3 +1,21 @@
+2.16.0 - 06/17/2016
+-------------------
+AdWords:
+  - Removed support and examples for v201509. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Fixed 'No deserializer for ...' issue during batch job downloads:
+    https://github.com/googleads/googleads-java-lib/issues/89
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added tests for StatementBuilder and ReportDownloader utilities.
+  - Fixed https://github.com/googleads/googleads-java-lib/issues/88.
+
+Common:
+  - No changes.
+
 2.15.0 - 05/27/2016
 -------------------
 AdWords:

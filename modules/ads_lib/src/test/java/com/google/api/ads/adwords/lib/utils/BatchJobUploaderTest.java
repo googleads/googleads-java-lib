@@ -337,7 +337,7 @@ public class BatchJobUploaderTest {
     List<String> testData = Lists.newArrayList();
     testData.add("<mutate><foo></foo></mutate>");
     testData.add(
-        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</ns1:mutate>");
     testData.add("<mutate></mutate>");
 
@@ -353,7 +353,7 @@ public class BatchJobUploaderTest {
     List<List<String>> testData = Lists.newArrayList();
     testData.add(Lists.newArrayList("<mutate><foo></foo></mutate>", "<foo></foo></mutate>"));
     testData.add(Lists.newArrayList(
-        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</ns1:mutate>",
         "<foo></foo></ns1:mutate>"));
     testData.add(Lists.newArrayList("<mutate></mutate>", "</mutate>"));
@@ -371,9 +371,9 @@ public class BatchJobUploaderTest {
     List<List<String>> testData = Lists.newArrayList();
     testData.add(Lists.newArrayList("<mutate><foo></foo></mutate>", "<mutate><foo></foo>"));
     testData.add(Lists.newArrayList(
-        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</ns1:mutate>",
-        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"));
+        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"));
     testData.add(Lists.newArrayList("<mutate></mutate>", "<mutate>"));
 
     for (List<String> testPair : testData) {
@@ -389,7 +389,7 @@ public class BatchJobUploaderTest {
     List<List<String>> testData = Lists.newArrayList();
     testData.add(Lists.newArrayList("<mutate><foo></foo></mutate>", "<foo></foo>"));
     testData.add(Lists.newArrayList(
-        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<ns1:mutate xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</ns1:mutate>",
         "<foo></foo>"));
     testData.add(Lists.newArrayList("<mutate></mutate>", ""));
@@ -412,10 +412,10 @@ public class BatchJobUploaderTest {
     List<String> testData = Lists.newArrayList();
     testData.add("<bar><foo></foo></bar>");
     testData.add(
-        "<ns1:operation xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<ns1:operation xmlns:ns1=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</ns1:operation>");
     testData.add(
-        "<operation xmlns=\"https://adwords.google.com/api/adwords/cm/v201509\"><foo></foo>"
+        "<operation xmlns=\"https://adwords.google.com/api/adwords/cm/v209912\"><foo></foo>"
         + "</operation>");
 
     for (String requestXml : testData) {
