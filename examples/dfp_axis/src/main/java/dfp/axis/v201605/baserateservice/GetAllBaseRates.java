@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,39 +25,41 @@ import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example gets all base rates. To create product base rates, run CreateProductBaseRates.java.
- * To create product template base rates, run CreateProductTemplateBaseRates.java.
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * This example gets all base rates.
+ *
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetAllBaseRates {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the BaseRateService.
     BaseRateServiceInterface baseRateService =
         dfpServices.get(session, BaseRateServiceInterface.class);
 
-    // Create a statement to select all base rates.
+    // Create a statement to select base rates.
     StatementBuilder statementBuilder = new StatementBuilder()
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-    // Default for total result set size.
+    // Retreive a small amount of base rates at a time, paging through
+    // until all base rates have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get base rates by statement.
       BaseRatePage page =
           baseRateService.getBaseRatesByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each base rate.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (BaseRate baseRate : page.getResults()) {
-          System.out.printf("%d) Base rate with ID %d and type '%s',"
-              + " belonging to rate card ID %d was found.%n", i++,
-              baseRate.getId(), baseRate.getClass().getSimpleName(),
-              baseRate.getRateCardId());
+          System.out.printf(
+              "%d) Base rate with ID \"%d\", type \"%s\", and rate card ID \"%d\" was found.%n",
+              i++,
+              baseRate.getId(),
+              baseRate.getClass().getSimpleName(),
+              baseRate.getRateCardId()
+          );
         }
       }
 
@@ -68,14 +70,15 @@ public class GetAllBaseRates {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

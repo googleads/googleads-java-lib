@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,35 +27,38 @@ import com.google.api.client.auth.oauth2.Credential;
 /**
  * This example gets all creative templates.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetAllCreativeTemplates {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the CreativeTemplateService.
     CreativeTemplateServiceInterface creativeTemplateService =
         dfpServices.get(session, CreativeTemplateServiceInterface.class);
 
-    // Create a statement to get all creative templates.
+    // Create a statement to select creative templates.
     StatementBuilder statementBuilder = new StatementBuilder()
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-    // Default for total result set size.
+    // Retreive a small amount of creative templates at a time, paging through
+    // until all creative templates have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get creative templates by statement.
       CreativeTemplatePage page =
           creativeTemplateService.getCreativeTemplatesByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each creative template.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (CreativeTemplate creativeTemplate : page.getResults()) {
-          System.out.printf("%d) Creative template with ID %d and name '%s' was found.%n",
-              i++, creativeTemplate.getId(), creativeTemplate.getName());
+          System.out.printf(
+              "%d) Creative template with ID \"%d\" and name \"%s\" was found.%n",
+              i++,
+              creativeTemplate.getId(),
+              creativeTemplate.getName()
+          );
         }
       }
 
@@ -66,14 +69,15 @@ public class GetAllCreativeTemplates {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

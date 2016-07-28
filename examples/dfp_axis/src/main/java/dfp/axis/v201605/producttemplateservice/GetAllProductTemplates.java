@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,39 +25,40 @@ import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example gets all product templates. To create product templates, run
- * CreateProductTemplates.java.
+ * This example gets all product templates.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetAllProductTemplates {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the ProductTemplateService.
     ProductTemplateServiceInterface productTemplateService =
         dfpServices.get(session, ProductTemplateServiceInterface.class);
 
-    // Create a statement to select all product templates.
+    // Create a statement to select product templates.
     StatementBuilder statementBuilder = new StatementBuilder()
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-    // Default for total result set size.
+    // Retreive a small amount of product templates at a time, paging through
+    // until all product templates have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get product templates by statement.
       ProductTemplatePage page =
           productTemplateService.getProductTemplatesByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each product template.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (ProductTemplate productTemplate : page.getResults()) {
           System.out.printf(
-              "%d) Product template with ID %d and name '%s' was found.%n", i++,
-              productTemplate.getId(), productTemplate.getName());
+              "%d) Product template with ID \"%d\" and name \"%s\" was found.%n",
+              i++,
+              productTemplate.getId(),
+              productTemplate.getName()
+          );
         }
       }
 
@@ -68,14 +69,15 @@ public class GetAllProductTemplates {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

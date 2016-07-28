@@ -22,6 +22,7 @@ import com.google.api.ads.adwords.lib.utils.v201603.ReportDownloader;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.util.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
@@ -95,7 +96,7 @@ public class StreamCriteriaReportResults {
           new ReportDownloader(session).downloadReport(query, DownloadFormat.CSV);
       
       // Read the response as a BufferedReader.
-      reader = new BufferedReader(new InputStreamReader(response.getInputStream()));
+      reader = new BufferedReader(new InputStreamReader(response.getInputStream(), Charsets.UTF_8));
 
       // Map to store total impressions by ad network type 1.
       Map<String, Long> impressionsByAdNetworkType1 = Maps.newTreeMap();

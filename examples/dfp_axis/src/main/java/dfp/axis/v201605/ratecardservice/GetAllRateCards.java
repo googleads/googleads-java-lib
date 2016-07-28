@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,35 +27,39 @@ import com.google.api.client.auth.oauth2.Credential;
 /**
  * This example gets all rate cards.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetAllRateCards {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the RateCardService.
     RateCardServiceInterface rateCardService =
         dfpServices.get(session, RateCardServiceInterface.class);
 
-    // Create a statement to get all rate cards.
+    // Create a statement to select rate cards.
     StatementBuilder statementBuilder = new StatementBuilder()
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-    // Default for total result set size.
+    // Retreive a small amount of rate cards at a time, paging through
+    // until all rate cards have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get rate cards by statement.
-      RateCardPage page = rateCardService.getRateCardsByStatement(statementBuilder.toStatement());
+      RateCardPage page =
+          rateCardService.getRateCardsByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each rate card.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (RateCard rateCard : page.getResults()) {
           System.out.printf(
-              "%d) Rate card with ID %d, name '%s', and currency '%s' was found.%n", i++,
-              rateCard.getId(), rateCard.getName(), rateCard.getCurrencyCode());
+              "%d) Rate card with ID \"%d\", name \"%s\", and currency code \"%s\" was found.%n",
+              i++,
+              rateCard.getId(),
+              rateCard.getName(),
+              rateCard.getCurrencyCode()
+          );
         }
       }
 
@@ -66,14 +70,15 @@ public class GetAllRateCards {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

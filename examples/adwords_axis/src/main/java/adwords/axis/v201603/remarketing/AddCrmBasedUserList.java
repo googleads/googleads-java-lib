@@ -38,8 +38,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
- * This example adds a remarketing user list (a.k.a. audience) and uploads hashed email addresses
- * to populate the list.
+ * This example adds a user list (a.k.a. audience) and uploads hashed email addresses to populate
+ * the list.
  *
  * <p>
  * <em>Note:</em> It may take up to several hours for the list to be populated with members.
@@ -84,7 +84,7 @@ public class AddCrmBasedUserList {
     AdwordsUserListServiceInterface userListService =
         adWordsServices.get(session, AdwordsUserListServiceInterface.class);
 
-    // Create remarketing user list.
+    // Create a user list.
     CrmBasedUserList userList = new CrmBasedUserList();
     userList.setName("Customer relationship management list #" + System.currentTimeMillis());
     userList.setDescription("A list of customers that originated from email addresses");

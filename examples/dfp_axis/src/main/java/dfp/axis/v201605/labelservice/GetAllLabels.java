@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,37 +25,40 @@ import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example gets all labels. To create labels, run CreateLabels.java.
+ * This example gets all labels.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetAllLabels {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the LabelService.
     LabelServiceInterface labelService =
         dfpServices.get(session, LabelServiceInterface.class);
 
-    // Create a statement to select all labels.
+    // Create a statement to select labels.
     StatementBuilder statementBuilder = new StatementBuilder()
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-    // Default for total result set size.
+    // Retreive a small amount of labels at a time, paging through
+    // until all labels have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get labels by statement.
-      LabelPage page = labelService.getLabelsByStatement(statementBuilder.toStatement());
+      LabelPage page =
+          labelService.getLabelsByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each label.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Label label : page.getResults()) {
           System.out.printf(
-              "%d) Label with ID %d and name '%s' was found.%n", i++,
-              label.getId(), label.getName());
+              "%d) Label with ID \"%d\" and name \"%s\" was found.%n",
+              i++,
+              label.getId(),
+              label.getName()
+          );
         }
       }
 
@@ -66,14 +69,15 @@ public class GetAllLabels {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

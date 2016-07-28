@@ -109,7 +109,7 @@ public class GetAccountChanges {
         System.out.printf("Campaign with ID %d was changed:%n", campaignChanges.getCampaignId());
         System.out.printf("\tCampaign changed status: '%s'%n", 
             campaignChanges.getCampaignChangeStatus());
-        if (campaignChanges.getCampaignChangeStatus() != ChangeStatus.NEW) {
+        if (!ChangeStatus.NEW.equals(campaignChanges.getCampaignChangeStatus())) {
           System.out.printf("\tAdded ad extensions: %s%n", 
               getFormattedList(campaignChanges.getAddedAdExtensions()));
           System.out.printf("\tAdded campaign criteria: %s%n",
@@ -125,7 +125,7 @@ public class GetAccountChanges {
                   adGroupChanges.getAdGroupId());
               System.out.printf("\t\tAd goup changed status: %s%n",
                   adGroupChanges.getAdGroupChangeStatus());
-              if (adGroupChanges.getAdGroupChangeStatus() != ChangeStatus.NEW) {
+              if (!ChangeStatus.NEW.equals(adGroupChanges.getAdGroupChangeStatus())) {
                 System.out.printf("\t\tAds changed: %s%n",
                     getFormattedList(adGroupChanges.getChangedAds()));
                 System.out.printf("\t\tCriteria changed: %s%n",

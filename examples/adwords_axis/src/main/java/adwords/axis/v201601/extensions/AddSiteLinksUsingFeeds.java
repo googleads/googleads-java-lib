@@ -62,7 +62,6 @@ public class AddSiteLinksUsingFeeds {
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
-    // that can be used in place of a service account.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.ADWORDS)
         .fromFile()
