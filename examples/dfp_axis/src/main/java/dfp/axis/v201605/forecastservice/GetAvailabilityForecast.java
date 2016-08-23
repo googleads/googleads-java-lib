@@ -59,7 +59,7 @@ public class GetAvailabilityForecast {
   // Set the ID of the advertiser (company) to forecast for. Setting an advertiser
   // will cause the forecast to apply the appropriate unified blocking rules.
   private static final String ADVERTISER_ID = "INSERT_ADVERTISER_COMPANY_ID_HERE";
-  
+
   public static void runExample(DfpServices dfpServices, DfpSession session, long advertiserId)
       throws Exception {
     // Get the ForecastService.
@@ -134,7 +134,7 @@ public class GetAvailabilityForecast {
     options.setIncludeContendingLineItems(true);
     options.setIncludeTargetingCriteriaBreakdown(true);
 
-    AvailabilityForecast forecast = 
+    AvailabilityForecast forecast =
         forecastService.getAvailabilityForecast(prospectiveLineItem, options);
 
     long matched = forecast.getMatchedUnits();
@@ -142,7 +142,7 @@ public class GetAvailabilityForecast {
     String unitType = forecast.getUnitType().toString().toLowerCase();
 
     System.out.printf("%d %s matched.%n", matched, unitType);
-    System.out.printf("%.2f%% %s available.%n", availablePercent, unitType); 
+    System.out.printf("%.2f%% %s available.%n", availablePercent, unitType);
 
     if (forecast.getPossibleUnits() != null) {
       double possiblePercent = (forecast.getPossibleUnits() / (matched * 1.0)) * 100;

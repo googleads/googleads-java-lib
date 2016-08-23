@@ -1,3 +1,19 @@
+2.18.0 - 08/23/2016
+-------------------
+AdWords:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201608.
+  - Removed support for v201505.
+  - Removed v201508 and v201511 examples.
+
+Common:
+  - No changes.
+
 2.17.0 - 07/28/2016
 -------------------
 AdWords:

@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ReviewFeedItem.java
  *
@@ -14,17 +28,17 @@ package com.google.api.ads.adwords.axis.v201603.cm;
 public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.ExtensionFeedItem  implements java.io.Serializable {
     /* An exact quote or paraphrase from a third-party source.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     * must not be empty, (trimmed).</span> */
     private java.lang.String reviewText;
 
     /* Name of the third-party publisher of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     * must not be empty, (trimmed).</span> */
     private java.lang.String reviewSourceName;
 
     /* Landing page of the third-party website of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span> */
+     * must not be empty, (trimmed).</span> */
     private java.lang.String reviewSourceUrl;
 
     /* Indicates if your review is formatted as an exact quote. Use
@@ -82,7 +96,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @return reviewText   * An exact quote or paraphrase from a third-party source.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public java.lang.String getReviewText() {
         return reviewText;
@@ -94,7 +108,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @param reviewText   * An exact quote or paraphrase from a third-party source.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public void setReviewText(java.lang.String reviewText) {
         this.reviewText = reviewText;
@@ -106,7 +120,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @return reviewSourceName   * Name of the third-party publisher of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public java.lang.String getReviewSourceName() {
         return reviewSourceName;
@@ -118,7 +132,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @param reviewSourceName   * Name of the third-party publisher of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public void setReviewSourceName(java.lang.String reviewSourceName) {
         this.reviewSourceName = reviewSourceName;
@@ -130,7 +144,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @return reviewSourceUrl   * Landing page of the third-party website of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public java.lang.String getReviewSourceUrl() {
         return reviewSourceUrl;
@@ -142,7 +156,7 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201603.cm.
      * 
      * @param reviewSourceUrl   * Landing page of the third-party website of the review.
      *                     <span class="constraint StringLength">This string
-     * must not be empty.</span>
+     * must not be empty, (trimmed).</span>
      */
     public void setReviewSourceUrl(java.lang.String reviewSourceUrl) {
         this.reviewSourceUrl = reviewSourceUrl;

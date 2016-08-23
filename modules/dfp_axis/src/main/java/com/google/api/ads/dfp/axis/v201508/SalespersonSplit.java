@@ -1,3 +1,17 @@
+// Copyright 2015 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * SalespersonSplit.java
  *
@@ -15,14 +29,15 @@ package com.google.api.ads.dfp.axis.v201508;
 public class SalespersonSplit  implements java.io.Serializable {
     /* The unique ID of the {@link User} responsible for the sales
      * of the
-     *                 {@link Proposal}. This attribute is required. */
+     *                 {@link Proposal}.
+     *                 This attribute is required. */
     private java.lang.Long userId;
 
     /* The split can be attributed to the salesperson.
      *                 The percentage value is stored as millipercents, and
      * must be multiples of 10
-     *                 with the range from 0 to 100000. This attribute is
-     * optional and default value is 0. */
+     *                 with the range from 0 to 100000. The default value
+     * is 0. */
     private java.lang.Integer split;
 
     public SalespersonSplit() {
@@ -41,7 +56,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * 
      * @return userId   * The unique ID of the {@link User} responsible for the sales
      * of the
-     *                 {@link Proposal}. This attribute is required.
+     *                 {@link Proposal}.
+     *                 This attribute is required.
      */
     public java.lang.Long getUserId() {
         return userId;
@@ -53,7 +69,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * 
      * @param userId   * The unique ID of the {@link User} responsible for the sales
      * of the
-     *                 {@link Proposal}. This attribute is required.
+     *                 {@link Proposal}.
+     *                 This attribute is required.
      */
     public void setUserId(java.lang.Long userId) {
         this.userId = userId;
@@ -66,8 +83,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * @return split   * The split can be attributed to the salesperson.
      *                 The percentage value is stored as millipercents, and
      * must be multiples of 10
-     *                 with the range from 0 to 100000. This attribute is
-     * optional and default value is 0.
+     *                 with the range from 0 to 100000. The default value
+     * is 0.
      */
     public java.lang.Integer getSplit() {
         return split;
@@ -80,8 +97,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * @param split   * The split can be attributed to the salesperson.
      *                 The percentage value is stored as millipercents, and
      * must be multiples of 10
-     *                 with the range from 0 to 100000. This attribute is
-     * optional and default value is 0.
+     *                 with the range from 0 to 100000. The default value
+     * is 0.
      */
     public void setSplit(java.lang.Integer split) {
         this.split = split;

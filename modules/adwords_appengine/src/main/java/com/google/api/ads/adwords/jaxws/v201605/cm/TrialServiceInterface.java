@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.adwords.jaxws.v201605.cm;
 
@@ -21,10 +35,6 @@ import javax.xml.ws.ResponseWrapper;
  *       - at the same time, directing a fixed share of traffic to each trial arm. A trial is created from
  *       a draft of the base campaign and will be a snapshot of changes in the draft at the time of
  *       creation.
- *       
- *       <p>Changes to entities of the base campaign after creating the trial will be applied to the trial
- *       asynchronously, unless the changed fields were overridden in the draft. Changes to the draft have
- *       no effect on a trial once it has been created.
  *       
  *       <h3>Constraints</h3>
  *       
@@ -60,11 +70,8 @@ import javax.xml.ws.ResponseWrapper;
  *       
  *       <p>To promote changes in an {@link TrialStatus#ACTIVE ACTIVE} trial back to the base campaign,
  *       set the trial status to {@link TrialStatus#PROMOTING PROMOTING}. The promotion itself will occur
- *       asynchronously. If it fails with recoverable errors, the status will change to {@link
- *       TrialStatus#PROMOTE_ERROR PROMOTE_ERROR}. In this case, no change has been promoted to the base
- *       campaign and clients can set the status to {@link TrialStatus#PROMOTING PROMOTING} to try again.
- *       If the promotion operation fails after some of the base campaign has already been updated, the
- *       status will change to {@link TrialStatus#PROMOTE_FAILED PROMOTE_FAILED}.
+ *       asynchronously. If the promotion operation fails after some of the base campaign has already been
+ *       updated, the status will change to {@link TrialStatus#PROMOTE_FAILED PROMOTE_FAILED}.
  *       
  *       <p>To graduate an {@link TrialStatus#ACTIVE ACTIVE} trial, which will allow its associated
  *       campaign to act independently of the trial and free it of restrictions from the trial, set the

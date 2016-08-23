@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.adwords.jaxws.v201605.cm;
 
@@ -58,20 +72,6 @@ import com.google.api.ads.adwords.jaxws.v201605.rm.UserListError;
     "apiErrorType"
 })
 @XmlSeeAlso({
-    UserListError.class,
-    MutateMembersError.class,
-    com.google.api.ads.adwords.jaxws.v201605.rm.CollectionSizeError.class,
-    CustomerError.class,
-    LabelServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201605.mcm.CollectionSizeError.class,
-    ManagedCustomerServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201605.mcm.CurrencyCodeError.class,
-    TargetingIdeaError.class,
-    TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201605.o.CurrencyCodeError.class,
-    CustomerSyncError.class,
-    ExpressBusinessError.class,
-    PromotionError.class,
     DataError.class,
     OfflineConversionError.class,
     ReportDefinitionError.class,
@@ -158,8 +158,22 @@ import com.google.api.ads.adwords.jaxws.v201605.rm.UserListError;
     AdParamError.class,
     RangeError.class,
     DatabaseError.class,
+    TargetingIdeaError.class,
+    TrafficEstimatorError.class,
+    com.google.api.ads.adwords.jaxws.v201605.o.CurrencyCodeError.class,
+    UserListError.class,
+    MutateMembersError.class,
+    com.google.api.ads.adwords.jaxws.v201605.rm.CollectionSizeError.class,
     BudgetOrderError.class,
-    CustomerOrderLineError.class
+    CustomerOrderLineError.class,
+    CustomerSyncError.class,
+    ExpressBusinessError.class,
+    PromotionError.class,
+    CustomerError.class,
+    LabelServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201605.mcm.CollectionSizeError.class,
+    ManagedCustomerServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201605.mcm.CurrencyCodeError.class
 })
 public abstract class ApiError {
 

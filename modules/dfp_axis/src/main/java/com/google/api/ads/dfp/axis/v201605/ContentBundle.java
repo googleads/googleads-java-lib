@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ContentBundle.java
  *
@@ -28,8 +42,8 @@ public class ContentBundle  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The description of the {@code ContentBundle}. This attribute
-     * is required and has a maximum
-     *                 length of 65,535 characters. */
+     * is deprecated. Setting it is a
+     *                 no-op and it will always return null. */
     private java.lang.String description;
 
     /* The {@link ContentBundleStatus} of the {@code ContentBundle}.
@@ -104,8 +118,8 @@ public class ContentBundle  implements java.io.Serializable {
      * Gets the description value for this ContentBundle.
      * 
      * @return description   * The description of the {@code ContentBundle}. This attribute
-     * is required and has a maximum
-     *                 length of 65,535 characters.
+     * is deprecated. Setting it is a
+     *                 no-op and it will always return null.
      */
     public java.lang.String getDescription() {
         return description;
@@ -116,8 +130,8 @@ public class ContentBundle  implements java.io.Serializable {
      * Sets the description value for this ContentBundle.
      * 
      * @param description   * The description of the {@code ContentBundle}. This attribute
-     * is required and has a maximum
-     *                 length of 65,535 characters.
+     * is deprecated. Setting it is a
+     *                 no-op and it will always return null.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ResponsiveDisplayAd.java
  *
@@ -27,7 +41,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}.
+     *                     a {@link "ResponsiveDisplayAd"}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -38,7 +52,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}. */
+     *                     a {@link "ResponsiveDisplayAd"}. */
     private com.google.api.ads.adwords.axis.v201605.cm.Image logoImage;
 
     /* Short format of the headline of the ad.
@@ -119,7 +133,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}.
+     *                     a {@link "ResponsiveDisplayAd"}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -137,7 +151,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}.
+     *                     a {@link "ResponsiveDisplayAd"}.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -155,7 +169,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}.
+     *                     a {@link "ResponsiveDisplayAd"}.
      */
     public com.google.api.ads.adwords.axis.v201605.cm.Image getLogoImage() {
         return logoImage;
@@ -170,7 +184,7 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
      * an image using the Image.data field. An image
      *                     must first be created using the MediaService,
      * and Image.mediaId must be populated when creating
-     *                     an {@link "EnhancedDisplayAd"}.
+     *                     a {@link "ResponsiveDisplayAd"}.
      */
     public void setLogoImage(com.google.api.ads.adwords.axis.v201605.cm.Image logoImage) {
         this.logoImage = logoImage;

@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * Proposal.java
  *
@@ -14,56 +28,56 @@ package com.google.api.ads.dfp.axis.v201602;
  *             advertising campaign.
  */
 public class Proposal  implements java.io.Serializable {
-    /* The unique ID of the {@code Proposal}. This attribute is readonly
-     * and is
-     *                 assigned by Google. */
+    /* The unique ID of the {@code Proposal}.
+     *                 This attribute is read-only. */
     private java.lang.Long id;
 
-    /* The unique ID of corresponding {@link Order}. This attribute
-     * is readonly.
+    /* The unique ID of corresponding {@link Order}.
      *                 This will be {@code null} if the {@code Proposal}
-     * has not been pushed to DFP. */
+     * has not been pushed to DFP.
+     *                 This attribute is read-only. */
     private java.lang.Long dfpOrderId;
 
-    /* The name of the {@code Proposal}. This value is required to
-     * create a
-     *                 proposal and has a maximum length of 255 characters.
-     * This attribute is
-     *                 copied to {@link Order#name} when the proposal turns
-     * into an order.
+    /* The name of the {@code Proposal}. This value has a maximum
+     * length of 255 characters. This value
+     *                 is copied to {@link Order#name} when the proposal
+     * turns into an order.
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 This attribute is required. */
     private java.lang.String name;
 
     /* The option to specify whether the {@code Proposal} uses the
      * Net or Gross pricing model.
-     *                 This field is optional and defaults to {@link PricingModel#NET}. */
+     *                 This field is optional and defaults to {@link PricingModel#NET}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.PricingModel pricingModel;
 
     /* The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute is readonly and
+     * This attribute
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
      *                 {@link ProposalLineItem#startDateTime}. This attribute
      * will be null,
      *                 if this proposal has no related line items, or none
-     * of its line items have a start time. */
+     * of its line items have a start time.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201602.DateTime startDateTime;
 
     /* The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} stop being served. This attribute
-     * is readonly and
-     *                 is derived from the proposal line item of the proposal
-     * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}. This
-     * attribute will be null,
+     * is derived from the proposal line item of the proposal which has the
+     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
+     * null,
      *                 if this proposal has no related line items, or none
-     * of its line items have an end time. */
+     * of its line items have an end time.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201602.DateTime endDateTime;
 
     /* The time zone ID in tz database format (e.g. "America/Los_Angeles")
@@ -72,14 +86,18 @@ public class Proposal  implements java.io.Serializable {
      * #endDateTime} will be
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
-     *                 network's time zone. */
+     *                 network's time zone.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private java.lang.String timeZoneId;
 
-    /* The status of the {@code Proposal}. This attribute is readonly. */
+    /* The status of the {@code Proposal}.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201602.ProposalStatus status;
 
-    /* The archival status of the {@code Proposal}. This attribute
-     * is readonly. */
+    /* The archival status of the {@code Proposal}.
+     *                 This attribute is read-only. */
     private java.lang.Boolean isArchived;
 
     /* The advertiser, to which this {@code Proposal} belongs, and
@@ -112,7 +130,10 @@ public class Proposal  implements java.io.Serializable {
      *                 agency exists, its {@link ProposalCompanyAssociation#companyId}
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
-     * an order. */
+     * an order.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.ProposalCompanyAssociation[] agencies;
 
     /* The probability to close this {@code Proposal}. This percentage
@@ -121,7 +142,14 @@ public class Proposal  implements java.io.Serializable {
      * 10 with the range from 0 to
      *                 100000. This attribute is required and will be used
      * to calculate the revenue
-     *                 in reporting. */
+     *                 in reporting.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span> */
     private java.lang.Long probabilityOfClose;
 
     /* The billing cap of this {@code Proposal}. This attribute is
@@ -133,7 +161,10 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.BillingCap billingCap;
 
     /* The billing schedule of this {@code Proposal}. This attribute
@@ -145,7 +176,10 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.BillingSchedule billingSchedule;
 
     /* The billing source of this {@code Proposal}. This attribute
@@ -159,7 +193,10 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.BillingSource billingSource;
 
     /* The billing base of this {@code Proposal}. For example, for
@@ -172,7 +209,10 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.BillingBase billingBase;
 
     /* User defined purchase order number for the {@code Proposal}.
@@ -184,7 +224,11 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private java.lang.String poNumber;
 
     /* Provides any additional notes that may annotate the {@code
@@ -205,7 +249,11 @@ public class Proposal  implements java.io.Serializable {
      * must be
      *                 multiples of 10000. This attribute is optional and
      * default value is 0.
-     *                 The {@link Money#currencyCode} is readonly. */
+     *                 The {@link Money#currencyCode} is readonly.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.Money budget;
 
     /* The primary salesperson who brokered the transaction with the
@@ -228,7 +276,11 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.SalespersonSplit[] secondarySalespeople;
 
     /* List of unique IDs of {@link User} objects who are the sales
@@ -264,7 +316,11 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private long[] secondaryTraffickerIds;
 
     /* The IDs of all teams that the {@code Proposal} is on directly.
@@ -292,8 +348,8 @@ public class Proposal  implements java.io.Serializable {
      * as well as those
      *                 inherited ones. If a label has been negated, only
      * the negated label
-     *                 is returned. This field is readonly and is assigned
-     * by Google. */
+     *                 is returned.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201602.AppliedLabel[] effectiveAppliedLabels;
 
     /* The discount applied to the {@code Proposal} according to the
@@ -301,7 +357,11 @@ public class Proposal  implements java.io.Serializable {
      *                 The percentage value is stored as millipercents, and
      * must be multiples of 10
      *                 with the range from 0 to 99990. This attribute is
-     * optional and default value is 0. */
+     * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private java.lang.Long advertiserDiscount;
 
     /* The proposal discount, which will be applied to all
@@ -309,7 +369,11 @@ public class Proposal  implements java.io.Serializable {
      * The percentage value is stored as millipercents, and must be multiples
      * of 10
      *                 with the range from 0 to 99990. This attribute is
-     * optional and default value is 0. */
+     * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private java.lang.Long proposalDiscount;
 
     /* The currency code of this {@code Proposal}. This attribute
@@ -321,10 +385,11 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link Network#currencyCode network's currency}. The
      * value is stored as the exchange rate times
      *                 10,000,000,000 truncated to a long. This attribute
-     * is readonly and is assigned by Google when
+     * is assigned by Google when
      *                 first created or updated with {@link #refreshExchangeRate}
      * set to {@code true}. This attribute
-     *                 is ignored if the feature is not enabled. */
+     *                 is ignored if the feature is not enabled.
+     *                 This attribute is read-only. */
     private java.lang.Long exchangeRate;
 
     /* Set this field to {@code true} to update the {@link #exchangeRate}
@@ -338,7 +403,10 @@ public class Proposal  implements java.io.Serializable {
      * The percentage value is stored as millipercents, and must be multiples
      * of 10
      *                 with the range from 0 to 99990. This attribute is
-     * optional and default value is 0. */
+     * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private java.lang.Long agencyCommission;
 
     /* The value added tax (VAT) applied on final cost of the {@code
@@ -346,26 +414,34 @@ public class Proposal  implements java.io.Serializable {
      *                 The percentage value is stored as millipercents, and
      * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
-     * optional and default value is 0. */
+     * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private java.lang.Long valueAddedTax;
 
     /* Indicates whether the proposal has been sold, i.e., corresponds
      * to whether the status of an
      *                 {@link Order} is {@link OrderStatus#APPROVED} or {@link
-     * OrderStatus#PAUSED}. This attribute
-     *                 is readonly. */
+     * OrderStatus#PAUSED}.
+     *                 This attribute is read-only. */
     private java.lang.Boolean isSold;
 
     /* The approval status of the {@code Proposal} for the active
      * user or {@code null} if the active
-     *                 user has no action needed. This attribute is readonly
-     * and is assigned by Google. */
+     *                 user has no action needed.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.ProposalApprovalStatus approvalStatus;
 
     /* The date and time this {@code Proposal} was last modified.
-     *                 
-     *                 This attribute is readonly and is assigned by Google
-     * when a {@code Proposal} is updated. */
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201602.DateTime lastModifiedDateTime;
 
     /* The list of resources on this {@code Proposal}. This attribute
@@ -373,19 +449,34 @@ public class Proposal  implements java.io.Serializable {
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.ProposalLink[] resources;
 
     /* The actual date and time at which the inventory reserved by
      * the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google. */
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.DateTime actualExpiryTime;
 
     /* The expected date and time at which the inventory reserved
      * by the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google. */
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.DateTime expectedExpiryTime;
 
     /* A predefined third party ad server, which will be used to fill
@@ -400,7 +491,10 @@ public class Proposal  implements java.io.Serializable {
      *                 Third party ad server is optional. By default, this
      * field is 0, and {@code
      *                 customThirdPartyAdServerName} is null which means
-     * no third party ad server is specified. */
+     * no third party ad server is specified.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private java.lang.Integer thirdPartyAdServerId;
 
     /* When actual third party ad server is not in the predefined
@@ -408,16 +502,28 @@ public class Proposal  implements java.io.Serializable {
      *                 is set to 0, and actual third party ad server name
      * is set here.
      *                 When {@code thirdPartyAdServerId} is not 0, this field
-     * is ignored. */
+     * is ignored.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private java.lang.String customThirdPartyAdServerName;
 
     /* A list of terms and conditions for this {@code Proposal}. This
-     * field is optional. */
+     * field is optional.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.ProposalTermsAndConditions[] termsAndConditions;
 
-    /* Details describing the most recent proposal retraction. This
-     * field is readonly and assigned by
-     *                 Google. */
+    /* Details describing the most recent proposal retraction.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201602.RetractionDetails lastRetractionDetails;
 
     public Proposal() {
@@ -520,9 +626,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the id value for this Proposal.
      * 
-     * @return id   * The unique ID of the {@code Proposal}. This attribute is readonly
-     * and is
-     *                 assigned by Google.
+     * @return id   * The unique ID of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getId() {
         return id;
@@ -532,9 +637,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the id value for this Proposal.
      * 
-     * @param id   * The unique ID of the {@code Proposal}. This attribute is readonly
-     * and is
-     *                 assigned by Google.
+     * @param id   * The unique ID of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -544,10 +648,10 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the dfpOrderId value for this Proposal.
      * 
-     * @return dfpOrderId   * The unique ID of corresponding {@link Order}. This attribute
-     * is readonly.
+     * @return dfpOrderId   * The unique ID of corresponding {@link Order}.
      *                 This will be {@code null} if the {@code Proposal}
      * has not been pushed to DFP.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getDfpOrderId() {
         return dfpOrderId;
@@ -557,10 +661,10 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the dfpOrderId value for this Proposal.
      * 
-     * @param dfpOrderId   * The unique ID of corresponding {@link Order}. This attribute
-     * is readonly.
+     * @param dfpOrderId   * The unique ID of corresponding {@link Order}.
      *                 This will be {@code null} if the {@code Proposal}
      * has not been pushed to DFP.
+     *                 This attribute is read-only.
      */
     public void setDfpOrderId(java.lang.Long dfpOrderId) {
         this.dfpOrderId = dfpOrderId;
@@ -570,16 +674,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the name value for this Proposal.
      * 
-     * @return name   * The name of the {@code Proposal}. This value is required to
-     * create a
-     *                 proposal and has a maximum length of 255 characters.
-     * This attribute is
-     *                 copied to {@link Order#name} when the proposal turns
-     * into an order.
+     * @return name   * The name of the {@code Proposal}. This value has a maximum
+     * length of 255 characters. This value
+     *                 is copied to {@link Order#name} when the proposal
+     * turns into an order.
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 This attribute is required.
      */
     public java.lang.String getName() {
         return name;
@@ -589,16 +692,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the name value for this Proposal.
      * 
-     * @param name   * The name of the {@code Proposal}. This value is required to
-     * create a
-     *                 proposal and has a maximum length of 255 characters.
-     * This attribute is
-     *                 copied to {@link Order#name} when the proposal turns
-     * into an order.
+     * @param name   * The name of the {@code Proposal}. This value has a maximum
+     * length of 255 characters. This value
+     *                 is copied to {@link Order#name} when the proposal
+     * turns into an order.
      *                 This attribute can be configured as editable after
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 This attribute is required.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -611,6 +713,8 @@ public class Proposal  implements java.io.Serializable {
      * @return pricingModel   * The option to specify whether the {@code Proposal} uses the
      * Net or Gross pricing model.
      *                 This field is optional and defaults to {@link PricingModel#NET}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.PricingModel getPricingModel() {
         return pricingModel;
@@ -623,6 +727,8 @@ public class Proposal  implements java.io.Serializable {
      * @param pricingModel   * The option to specify whether the {@code Proposal} uses the
      * Net or Gross pricing model.
      *                 This field is optional and defaults to {@link PricingModel#NET}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public void setPricingModel(com.google.api.ads.dfp.axis.v201602.PricingModel pricingModel) {
         this.pricingModel = pricingModel;
@@ -635,13 +741,14 @@ public class Proposal  implements java.io.Serializable {
      * @return startDateTime   * The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute is readonly and
+     * This attribute
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
      *                 {@link ProposalLineItem#startDateTime}. This attribute
      * will be null,
      *                 if this proposal has no related line items, or none
      * of its line items have a start time.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201602.DateTime getStartDateTime() {
         return startDateTime;
@@ -654,13 +761,14 @@ public class Proposal  implements java.io.Serializable {
      * @param startDateTime   * The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute is readonly and
+     * This attribute
      *                 is derived from the proposal line item of the proposal
      * which has the earliest
      *                 {@link ProposalLineItem#startDateTime}. This attribute
      * will be null,
      *                 if this proposal has no related line items, or none
      * of its line items have a start time.
+     *                 This attribute is read-only.
      */
     public void setStartDateTime(com.google.api.ads.dfp.axis.v201602.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -673,13 +781,12 @@ public class Proposal  implements java.io.Serializable {
      * @return endDateTime   * The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} stop being served. This attribute
-     * is readonly and
-     *                 is derived from the proposal line item of the proposal
-     * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}. This
-     * attribute will be null,
+     * is derived from the proposal line item of the proposal which has the
+     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
+     * null,
      *                 if this proposal has no related line items, or none
      * of its line items have an end time.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201602.DateTime getEndDateTime() {
         return endDateTime;
@@ -692,13 +799,12 @@ public class Proposal  implements java.io.Serializable {
      * @param endDateTime   * The date and time at which the order and line items associated
      * with
      *                 the {@code Proposal} stop being served. This attribute
-     * is readonly and
-     *                 is derived from the proposal line item of the proposal
-     * which has the
-     *                 latest {@link ProposalLineItem#endDateTime}. This
-     * attribute will be null,
+     * is derived from the proposal line item of the proposal which has the
+     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
+     * null,
      *                 if this proposal has no related line items, or none
      * of its line items have an end time.
+     *                 This attribute is read-only.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201602.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -715,6 +821,9 @@ public class Proposal  implements java.io.Serializable {
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
      *                 network's time zone.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public java.lang.String getTimeZoneId() {
         return timeZoneId;
@@ -731,6 +840,9 @@ public class Proposal  implements java.io.Serializable {
      *                 returned in this time zone. This attribute is optional
      * and defaults to the
      *                 network's time zone.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setTimeZoneId(java.lang.String timeZoneId) {
         this.timeZoneId = timeZoneId;
@@ -740,7 +852,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the status value for this Proposal.
      * 
-     * @return status   * The status of the {@code Proposal}. This attribute is readonly.
+     * @return status   * The status of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201602.ProposalStatus getStatus() {
         return status;
@@ -750,7 +863,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the status value for this Proposal.
      * 
-     * @param status   * The status of the {@code Proposal}. This attribute is readonly.
+     * @param status   * The status of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201602.ProposalStatus status) {
         this.status = status;
@@ -760,8 +874,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the isArchived value for this Proposal.
      * 
-     * @return isArchived   * The archival status of the {@code Proposal}. This attribute
-     * is readonly.
+     * @return isArchived   * The archival status of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public java.lang.Boolean getIsArchived() {
         return isArchived;
@@ -771,8 +885,8 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the isArchived value for this Proposal.
      * 
-     * @param isArchived   * The archival status of the {@code Proposal}. This attribute
-     * is readonly.
+     * @param isArchived   * The archival status of the {@code Proposal}.
+     *                 This attribute is read-only.
      */
     public void setIsArchived(java.lang.Boolean isArchived) {
         this.isArchived = isArchived;
@@ -844,6 +958,9 @@ public class Proposal  implements java.io.Serializable {
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
      * an order.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.ProposalCompanyAssociation[] getAgencies() {
         return agencies;
@@ -867,6 +984,9 @@ public class Proposal  implements java.io.Serializable {
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
      * an order.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setAgencies(com.google.api.ads.dfp.axis.v201602.ProposalCompanyAssociation[] agencies) {
         this.agencies = agencies;
@@ -891,6 +1011,13 @@ public class Proposal  implements java.io.Serializable {
      *                 100000. This attribute is required and will be used
      * to calculate the revenue
      *                 in reporting.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public java.lang.Long getProbabilityOfClose() {
         return probabilityOfClose;
@@ -907,6 +1034,13 @@ public class Proposal  implements java.io.Serializable {
      *                 100000. This attribute is required and will be used
      * to calculate the revenue
      *                 in reporting.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public void setProbabilityOfClose(java.lang.Long probabilityOfClose) {
         this.probabilityOfClose = probabilityOfClose;
@@ -926,6 +1060,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.BillingCap getBillingCap() {
         return billingCap;
@@ -945,6 +1082,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setBillingCap(com.google.api.ads.dfp.axis.v201602.BillingCap billingCap) {
         this.billingCap = billingCap;
@@ -964,6 +1104,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.BillingSchedule getBillingSchedule() {
         return billingSchedule;
@@ -983,6 +1126,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setBillingSchedule(com.google.api.ads.dfp.axis.v201602.BillingSchedule billingSchedule) {
         this.billingSchedule = billingSchedule;
@@ -1004,6 +1150,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.BillingSource getBillingSource() {
         return billingSource;
@@ -1025,6 +1174,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setBillingSource(com.google.api.ads.dfp.axis.v201602.BillingSource billingSource) {
         this.billingSource = billingSource;
@@ -1045,6 +1197,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.BillingBase getBillingBase() {
         return billingBase;
@@ -1065,6 +1220,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setBillingBase(com.google.api.ads.dfp.axis.v201602.BillingBase billingBase) {
         this.billingBase = billingBase;
@@ -1084,6 +1242,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public java.lang.String getPoNumber() {
         return poNumber;
@@ -1103,6 +1265,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setPoNumber(java.lang.String poNumber) {
         this.poNumber = poNumber;
@@ -1155,6 +1321,10 @@ public class Proposal  implements java.io.Serializable {
      *                 multiples of 10000. This attribute is optional and
      * default value is 0.
      *                 The {@link Money#currencyCode} is readonly.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.Money getBudget() {
         return budget;
@@ -1173,6 +1343,10 @@ public class Proposal  implements java.io.Serializable {
      *                 multiples of 10000. This attribute is optional and
      * default value is 0.
      *                 The {@link Money#currencyCode} is readonly.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setBudget(com.google.api.ads.dfp.axis.v201602.Money budget) {
         this.budget = budget;
@@ -1227,6 +1401,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.SalespersonSplit[] getSecondarySalespeople() {
         return secondarySalespeople;
@@ -1247,6 +1425,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setSecondarySalespeople(com.google.api.ads.dfp.axis.v201602.SalespersonSplit[] secondarySalespeople) {
         this.secondarySalespeople = secondarySalespeople;
@@ -1357,6 +1539,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public long[] getSecondaryTraffickerIds() {
         return secondaryTraffickerIds;
@@ -1377,6 +1563,10 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setSecondaryTraffickerIds(long[] secondaryTraffickerIds) {
         this.secondaryTraffickerIds = secondaryTraffickerIds;
@@ -1506,8 +1696,8 @@ public class Proposal  implements java.io.Serializable {
      * as well as those
      *                 inherited ones. If a label has been negated, only
      * the negated label
-     *                 is returned. This field is readonly and is assigned
-     * by Google.
+     *                 is returned.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201602.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -1521,8 +1711,8 @@ public class Proposal  implements java.io.Serializable {
      * as well as those
      *                 inherited ones. If a label has been negated, only
      * the negated label
-     *                 is returned. This field is readonly and is assigned
-     * by Google.
+     *                 is returned.
+     *                 This attribute is read-only.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.dfp.axis.v201602.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;
@@ -1546,6 +1736,10 @@ public class Proposal  implements java.io.Serializable {
      * must be multiples of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public java.lang.Long getAdvertiserDiscount() {
         return advertiserDiscount;
@@ -1561,6 +1755,10 @@ public class Proposal  implements java.io.Serializable {
      * must be multiples of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setAdvertiserDiscount(java.lang.Long advertiserDiscount) {
         this.advertiserDiscount = advertiserDiscount;
@@ -1576,6 +1774,10 @@ public class Proposal  implements java.io.Serializable {
      * of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public java.lang.Long getProposalDiscount() {
         return proposalDiscount;
@@ -1591,6 +1793,10 @@ public class Proposal  implements java.io.Serializable {
      * of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setProposalDiscount(java.lang.Long proposalDiscount) {
         this.proposalDiscount = proposalDiscount;
@@ -1628,10 +1834,11 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link Network#currencyCode network's currency}. The
      * value is stored as the exchange rate times
      *                 10,000,000,000 truncated to a long. This attribute
-     * is readonly and is assigned by Google when
+     * is assigned by Google when
      *                 first created or updated with {@link #refreshExchangeRate}
      * set to {@code true}. This attribute
      *                 is ignored if the feature is not enabled.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getExchangeRate() {
         return exchangeRate;
@@ -1645,10 +1852,11 @@ public class Proposal  implements java.io.Serializable {
      *                 {@link Network#currencyCode network's currency}. The
      * value is stored as the exchange rate times
      *                 10,000,000,000 truncated to a long. This attribute
-     * is readonly and is assigned by Google when
+     * is assigned by Google when
      *                 first created or updated with {@link #refreshExchangeRate}
      * set to {@code true}. This attribute
      *                 is ignored if the feature is not enabled.
+     *                 This attribute is read-only.
      */
     public void setExchangeRate(java.lang.Long exchangeRate) {
         this.exchangeRate = exchangeRate;
@@ -1691,6 +1899,9 @@ public class Proposal  implements java.io.Serializable {
      * of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public java.lang.Long getAgencyCommission() {
         return agencyCommission;
@@ -1705,6 +1916,9 @@ public class Proposal  implements java.io.Serializable {
      * of 10
      *                 with the range from 0 to 99990. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setAgencyCommission(java.lang.Long agencyCommission) {
         this.agencyCommission = agencyCommission;
@@ -1720,6 +1934,9 @@ public class Proposal  implements java.io.Serializable {
      * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public java.lang.Long getValueAddedTax() {
         return valueAddedTax;
@@ -1735,6 +1952,9 @@ public class Proposal  implements java.io.Serializable {
      * must be multiples of 10
      *                 with the range from 0 to 100000. This attribute is
      * optional and default value is 0.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setValueAddedTax(java.lang.Long valueAddedTax) {
         this.valueAddedTax = valueAddedTax;
@@ -1747,8 +1967,8 @@ public class Proposal  implements java.io.Serializable {
      * @return isSold   * Indicates whether the proposal has been sold, i.e., corresponds
      * to whether the status of an
      *                 {@link Order} is {@link OrderStatus#APPROVED} or {@link
-     * OrderStatus#PAUSED}. This attribute
-     *                 is readonly.
+     * OrderStatus#PAUSED}.
+     *                 This attribute is read-only.
      */
     public java.lang.Boolean getIsSold() {
         return isSold;
@@ -1761,8 +1981,8 @@ public class Proposal  implements java.io.Serializable {
      * @param isSold   * Indicates whether the proposal has been sold, i.e., corresponds
      * to whether the status of an
      *                 {@link Order} is {@link OrderStatus#APPROVED} or {@link
-     * OrderStatus#PAUSED}. This attribute
-     *                 is readonly.
+     * OrderStatus#PAUSED}.
+     *                 This attribute is read-only.
      */
     public void setIsSold(java.lang.Boolean isSold) {
         this.isSold = isSold;
@@ -1774,8 +1994,15 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return approvalStatus   * The approval status of the {@code Proposal} for the active
      * user or {@code null} if the active
-     *                 user has no action needed. This attribute is readonly
-     * and is assigned by Google.
+     *                 user has no action needed.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.ProposalApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -1787,8 +2014,15 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param approvalStatus   * The approval status of the {@code Proposal} for the active
      * user or {@code null} if the active
-     *                 user has no action needed. This attribute is readonly
-     * and is assigned by Google.
+     *                 user has no action needed.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setApprovalStatus(com.google.api.ads.dfp.axis.v201602.ProposalApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -1799,9 +2033,7 @@ public class Proposal  implements java.io.Serializable {
      * Gets the lastModifiedDateTime value for this Proposal.
      * 
      * @return lastModifiedDateTime   * The date and time this {@code Proposal} was last modified.
-     *                 
-     *                 This attribute is readonly and is assigned by Google
-     * when a {@code Proposal} is updated.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201602.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -1812,9 +2044,7 @@ public class Proposal  implements java.io.Serializable {
      * Sets the lastModifiedDateTime value for this Proposal.
      * 
      * @param lastModifiedDateTime   * The date and time this {@code Proposal} was last modified.
-     *                 
-     *                 This attribute is readonly and is assigned by Google
-     * when a {@code Proposal} is updated.
+     *                 This attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.dfp.axis.v201602.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -1830,6 +2060,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.ProposalLink[] getResources() {
         return resources;
@@ -1845,6 +2078,9 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setResources(com.google.api.ads.dfp.axis.v201602.ProposalLink[] resources) {
         this.resources = resources;
@@ -1864,8 +2100,14 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return actualExpiryTime   * The actual date and time at which the inventory reserved by
      * the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.DateTime getActualExpiryTime() {
         return actualExpiryTime;
@@ -1877,8 +2119,14 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param actualExpiryTime   * The actual date and time at which the inventory reserved by
      * the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setActualExpiryTime(com.google.api.ads.dfp.axis.v201602.DateTime actualExpiryTime) {
         this.actualExpiryTime = actualExpiryTime;
@@ -1890,8 +2138,14 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return expectedExpiryTime   * The expected date and time at which the inventory reserved
      * by the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.DateTime getExpectedExpiryTime() {
         return expectedExpiryTime;
@@ -1903,8 +2157,14 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param expectedExpiryTime   * The expected date and time at which the inventory reserved
      * by the {@link Proposal} will expire.
-     *                 
-     *                 <p>This field is read-only / assigned by Google.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setExpectedExpiryTime(com.google.api.ads.dfp.axis.v201602.DateTime expectedExpiryTime) {
         this.expectedExpiryTime = expectedExpiryTime;
@@ -1927,6 +2187,9 @@ public class Proposal  implements java.io.Serializable {
      * field is 0, and {@code
      *                 customThirdPartyAdServerName} is null which means
      * no third party ad server is specified.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public java.lang.Integer getThirdPartyAdServerId() {
         return thirdPartyAdServerId;
@@ -1949,6 +2212,9 @@ public class Proposal  implements java.io.Serializable {
      * field is 0, and {@code
      *                 customThirdPartyAdServerName} is null which means
      * no third party ad server is specified.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setThirdPartyAdServerId(java.lang.Integer thirdPartyAdServerId) {
         this.thirdPartyAdServerId = thirdPartyAdServerId;
@@ -1964,6 +2230,9 @@ public class Proposal  implements java.io.Serializable {
      * is set here.
      *                 When {@code thirdPartyAdServerId} is not 0, this field
      * is ignored.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public java.lang.String getCustomThirdPartyAdServerName() {
         return customThirdPartyAdServerName;
@@ -1979,6 +2248,9 @@ public class Proposal  implements java.io.Serializable {
      * is set here.
      *                 When {@code thirdPartyAdServerId} is not 0, this field
      * is ignored.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setCustomThirdPartyAdServerName(java.lang.String customThirdPartyAdServerName) {
         this.customThirdPartyAdServerName = customThirdPartyAdServerName;
@@ -1990,6 +2262,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return termsAndConditions   * A list of terms and conditions for this {@code Proposal}. This
      * field is optional.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.ProposalTermsAndConditions[] getTermsAndConditions() {
         return termsAndConditions;
@@ -2001,6 +2276,9 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param termsAndConditions   * A list of terms and conditions for this {@code Proposal}. This
      * field is optional.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>not using programmatic guaranteed, using
+     * sales management.</li></ul></span>
      */
     public void setTermsAndConditions(com.google.api.ads.dfp.axis.v201602.ProposalTermsAndConditions[] termsAndConditions) {
         this.termsAndConditions = termsAndConditions;
@@ -2018,9 +2296,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the lastRetractionDetails value for this Proposal.
      * 
-     * @return lastRetractionDetails   * Details describing the most recent proposal retraction. This
-     * field is readonly and assigned by
-     *                 Google.
+     * @return lastRetractionDetails   * Details describing the most recent proposal retraction.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201602.RetractionDetails getLastRetractionDetails() {
         return lastRetractionDetails;
@@ -2030,9 +2314,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the lastRetractionDetails value for this Proposal.
      * 
-     * @param lastRetractionDetails   * Details describing the most recent proposal retraction. This
-     * field is readonly and assigned by
-     *                 Google.
+     * @param lastRetractionDetails   * Details describing the most recent proposal retraction.
+     *                 <span class="constraint Applicable">This attribute
+     * is applicable when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>using programmatic guaranteed, using sales
+     * management.</li><li>not using programmatic guaranteed, using sales
+     * management.</li></ul></span>
      */
     public void setLastRetractionDetails(com.google.api.ads.dfp.axis.v201602.RetractionDetails lastRetractionDetails) {
         this.lastRetractionDetails = lastRetractionDetails;

@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * AdGroupBidModifier.java
  *
@@ -24,15 +38,15 @@ public class AdGroupBidModifier  implements java.io.Serializable {
 
     /* The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, bid modifier overrides are supported only
-     * for HighEndMobile platform
-     *                 criterion (ID=30001) and preferred content criterion
+     *                 <p>Currently, bid modifier overrides are supported
+     * only for platform criterion
+     *                 (ID=30000, 30001, 30002) and preferred content criterion
      * (ID = 400).
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
      *                 
-     *                 Preferred Content Criteria is available in versions
+     *                 <p>Preferred Content Criteria is available in versions
      * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
@@ -40,11 +54,9 @@ public class AdGroupBidModifier  implements java.io.Serializable {
 
     /* The modifier for bids when the criterion matches.
      *                 
-     *                 Valid modifier values for the mobile platform criterion
-     * range from
-     *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
-     * for opting out
-     *                 of mobile.
+     *                 <p>Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of a platform.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span> */
@@ -121,15 +133,15 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @return criterion   * The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, bid modifier overrides are supported only
-     * for HighEndMobile platform
-     *                 criterion (ID=30001) and preferred content criterion
+     *                 <p>Currently, bid modifier overrides are supported
+     * only for platform criterion
+     *                 (ID=30000, 30001, 30002) and preferred content criterion
      * (ID = 400).
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
      *                 
-     *                 Preferred Content Criteria is available in versions
+     *                 <p>Preferred Content Criteria is available in versions
      * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -144,15 +156,15 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @param criterion   * The criterion whose bid value is being overridden.
      *                 
-     *                 Currently, bid modifier overrides are supported only
-     * for HighEndMobile platform
-     *                 criterion (ID=30001) and preferred content criterion
+     *                 <p>Currently, bid modifier overrides are supported
+     * only for platform criterion
+     *                 (ID=30000, 30001, 30002) and preferred content criterion
      * (ID = 400).
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
      *                 
-     *                 Preferred Content Criteria is available in versions
+     *                 <p>Preferred Content Criteria is available in versions
      * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -167,11 +179,9 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @return bidModifier   * The modifier for bids when the criterion matches.
      *                 
-     *                 Valid modifier values for the mobile platform criterion
-     * range from
-     *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
-     * for opting out
-     *                 of mobile.
+     *                 <p>Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of a platform.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span>
@@ -186,11 +196,9 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      * 
      * @param bidModifier   * The modifier for bids when the criterion matches.
      *                 
-     *                 Valid modifier values for the mobile platform criterion
-     * range from
-     *                 {@code 0.1} to {@code 4.0}, with {@code 0} reserved
-     * for opting out
-     *                 of mobile.
+     *                 <p>Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of a platform.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD, SET.</span>

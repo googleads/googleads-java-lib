@@ -41,7 +41,7 @@ public enum AdGroupBidModifierField implements EntityField {
 
   /**
    * The modifier for bids when the criterion matches.
-   * Valid modifier values for the mobile platform criterion range from {@code 0.1} to {@code 4.0}, with {@code 0} reserved for opting out of mobile.
+   * <p>Valid modifier values range from {@code 0.1} to {@code 10.0}, with {@code 0.0} reserved for opting out of a platform.
    */
   @Filterable
   BidModifier(true),

@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * LineItemSummary.java
  *
@@ -32,7 +46,7 @@ public class LineItemSummary  implements java.io.Serializable {
     /* An identifier for the {@code LineItem} that is meaningful to
      * the publisher.
      *                 This attribute is optional and has a maximum length
-     * of 63 characters. */
+     * of 255 characters. */
     private java.lang.String externalId;
 
     /* The name of the {@link Order}. This value is read-only. */
@@ -693,7 +707,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * @return externalId   * An identifier for the {@code LineItem} that is meaningful to
      * the publisher.
      *                 This attribute is optional and has a maximum length
-     * of 63 characters.
+     * of 255 characters.
      */
     public java.lang.String getExternalId() {
         return externalId;
@@ -706,7 +720,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * @param externalId   * An identifier for the {@code LineItem} that is meaningful to
      * the publisher.
      *                 This attribute is optional and has a maximum length
-     * of 63 characters.
+     * of 255 characters.
      */
     public void setExternalId(java.lang.String externalId) {
         this.externalId = externalId;

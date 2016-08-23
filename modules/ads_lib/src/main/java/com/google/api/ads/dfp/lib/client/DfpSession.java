@@ -314,7 +314,7 @@ public class DfpSession implements AdsSession, OAuth2Compatible {
       }
 
       // Check that application name is not empty or the default.
-      if (Strings.isNullOrEmpty(applicationName)
+      if (Strings.nullToEmpty(applicationName).trim().isEmpty()
           || applicationName.contains(DEFAULT_APPLICATION_NAME)) {
         throw new ValidationException(String.format(
             "Application name must be set and not be the default [%s]", DEFAULT_APPLICATION_NAME),

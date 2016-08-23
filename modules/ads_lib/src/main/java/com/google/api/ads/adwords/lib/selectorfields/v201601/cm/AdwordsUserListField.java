@@ -121,6 +121,7 @@ public enum AdwordsUserListField implements EntityField {
    * Number of days a user's cookie stays on your list since its most recent addition to the list.
    * This field must be between 0 and 540 inclusive.
    * However, for CRM based userlists, this field can be set to 10000 which means no expiration.
+   * <p>It'll be ignored for {@code LogicalUserList}.
    */
   @Filterable
   MembershipLifeSpan(true),

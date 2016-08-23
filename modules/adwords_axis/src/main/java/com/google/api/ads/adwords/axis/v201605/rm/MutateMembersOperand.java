@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * MutateMembersOperand.java
  *
@@ -25,16 +39,15 @@ public class MutateMembersOperand  implements java.io.Serializable {
 
     /* A list of members to be added or removed.
      *                 
+     *                 <p>This field is required and there must be at least
+     * one member.
      *                 <p>Each element in members list should be in format
      * according to the specified
      *                 {@code dataType}.
-     *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1. The maximum size of this collection
-     * is 10000.</span>
+     *                 <span class="constraint CollectionSize">The maximum
+     * size of this collection is 1000000.</span>
      *                 <span class="constraint ContentsNotNull">This field
-     * must not contain {@code null} elements.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span> */
+     * must not contain {@code null} elements.</span> */
     private java.lang.String[] members;
 
     public MutateMembersOperand() {
@@ -105,16 +118,15 @@ public class MutateMembersOperand  implements java.io.Serializable {
      * 
      * @return members   * A list of members to be added or removed.
      *                 
+     *                 <p>This field is required and there must be at least
+     * one member.
      *                 <p>Each element in members list should be in format
      * according to the specified
      *                 {@code dataType}.
-     *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1. The maximum size of this collection
-     * is 10000.</span>
+     *                 <span class="constraint CollectionSize">The maximum
+     * size of this collection is 1000000.</span>
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public java.lang.String[] getMembers() {
         return members;
@@ -126,16 +138,15 @@ public class MutateMembersOperand  implements java.io.Serializable {
      * 
      * @param members   * A list of members to be added or removed.
      *                 
+     *                 <p>This field is required and there must be at least
+     * one member.
      *                 <p>Each element in members list should be in format
      * according to the specified
      *                 {@code dataType}.
-     *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1. The maximum size of this collection
-     * is 10000.</span>
+     *                 <span class="constraint CollectionSize">The maximum
+     * size of this collection is 1000000.</span>
      *                 <span class="constraint ContentsNotNull">This field
      * must not contain {@code null} elements.</span>
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null}.</span>
      */
     public void setMembers(java.lang.String[] members) {
         this.members = members;

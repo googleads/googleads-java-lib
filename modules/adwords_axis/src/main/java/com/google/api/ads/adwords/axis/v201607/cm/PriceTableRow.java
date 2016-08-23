@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * PriceTableRow.java
  *
@@ -14,12 +28,12 @@ package com.google.api.ads.adwords.axis.v201607.cm;
 public class PriceTableRow  implements java.io.Serializable {
     /* Header text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span> */
+     * this string should be between 1 and 25, inclusive, (trimmed).</span> */
     private java.lang.String header;
 
     /* Description text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span> */
+     * this string should be between 1 and 25, inclusive, (trimmed).</span> */
     private java.lang.String description;
 
     /* A list of possible final URLs after all cross domain redirects.
@@ -54,7 +68,7 @@ public class PriceTableRow  implements java.io.Serializable {
      * 
      * @return header   * Header text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
+     * this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public java.lang.String getHeader() {
         return header;
@@ -66,7 +80,7 @@ public class PriceTableRow  implements java.io.Serializable {
      * 
      * @param header   * Header text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
+     * this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public void setHeader(java.lang.String header) {
         this.header = header;
@@ -78,7 +92,7 @@ public class PriceTableRow  implements java.io.Serializable {
      * 
      * @return description   * Description text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
+     * this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public java.lang.String getDescription() {
         return description;
@@ -90,7 +104,7 @@ public class PriceTableRow  implements java.io.Serializable {
      * 
      * @param description   * Description text of this row. Required.
      *                 <span class="constraint StringLength">The length of
-     * this string should be between 1 and 25, inclusive.</span>
+     * this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

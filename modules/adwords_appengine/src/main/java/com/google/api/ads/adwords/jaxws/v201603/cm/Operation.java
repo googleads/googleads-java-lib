@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.adwords.jaxws.v201603.cm;
 
@@ -50,6 +64,15 @@ import com.google.api.ads.adwords.jaxws.v201603.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
+    UserListOperation.class,
+    MutateMembersOperation.class,
+    ManagedCustomerLabelOperation.class,
+    AccountLabelOperation.class,
+    MoveOperation.class,
+    LinkOperation.class,
+    ManagedCustomerOperation.class,
+    ExpressBusinessOperation.class,
+    PromotionOperation.class,
     CustomerFeedOperation.class,
     AdParamOperation.class,
     TrialOperation.class,
@@ -83,16 +106,7 @@ import com.google.api.ads.adwords.jaxws.v201603.rm.UserListOperation;
     AdGroupAdLabelOperation.class,
     CampaignOperation.class,
     CampaignFeedOperation.class,
-    ManagedCustomerLabelOperation.class,
-    AccountLabelOperation.class,
-    MoveOperation.class,
-    LinkOperation.class,
-    ManagedCustomerOperation.class,
-    ExpressBusinessOperation.class,
-    PromotionOperation.class,
-    BudgetOrderOperation.class,
-    UserListOperation.class,
-    MutateMembersOperation.class
+    BudgetOrderOperation.class
 })
 public abstract class Operation {
 

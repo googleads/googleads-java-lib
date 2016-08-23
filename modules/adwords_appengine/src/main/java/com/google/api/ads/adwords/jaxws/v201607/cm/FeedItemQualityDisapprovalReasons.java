@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.adwords.jaxws.v201607.cm;
 
@@ -42,7 +56,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table contains repetitive headers
+     *                 Price contains repetitive headers
      *               
      * 
      */
@@ -50,7 +64,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table contains repetitive description
+     *                 Price contains repetitive description
      *               
      * 
      */
@@ -58,7 +72,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table contains inconsistent rows
+     *                 Price contains inconsistent items
      *               
      * 
      */
@@ -66,7 +80,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row header is not relevant to the table type
+     *                 Price item header is not relevant to the price type
      *               
      * 
      */
@@ -74,7 +88,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row header has promotional text
+     *                 Price item header has promotional text
      *               
      * 
      */
@@ -82,7 +96,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row description is not relevant to the row header
+     *                 Price item description is not relevant to the item header
      *               
      * 
      */
@@ -90,7 +104,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row description contains promotional text
+     *                 Price item description contains promotional text
      *               
      * 
      */
@@ -98,7 +112,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row header and description are repetitive
+     *                 Price item header and description are repetitive
      *               
      * 
      */
@@ -106,7 +120,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row is in a foreign language, nonsense, or can't be rated
+     *                 Price item is in a foreign language, nonsense, or can't be rated
      *               
      * 
      */
@@ -114,7 +128,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row price is invalid or inaccurate
+     *                 Price item price is invalid or inaccurate
      *               
      * 
      */
@@ -122,7 +136,7 @@ public enum FeedItemQualityDisapprovalReasons {
 
     /**
      * 
-     *                 Table row url is invalid or irrelevant
+     *                 Price item url is invalid or irrelevant
      *               
      * 
      */

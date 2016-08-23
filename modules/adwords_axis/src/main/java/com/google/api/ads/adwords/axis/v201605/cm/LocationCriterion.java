@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * LocationCriterion.java
  *
@@ -30,7 +44,9 @@ public class LocationCriterion  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long reach;
 
-    /* Locale of the name, as specified in the request. <b>Note:</b>
+    /* Preferred locale to be used as a hint for determining the list
+     * of locations to return.
+     *                 This is also used for language translation. <b>Note:</b>
      * If the specified locale filter
      *                 is invalid, or not supported, en_US will be used by
      * default.
@@ -161,7 +177,9 @@ public class LocationCriterion  implements java.io.Serializable {
     /**
      * Gets the locale value for this LocationCriterion.
      * 
-     * @return locale   * Locale of the name, as specified in the request. <b>Note:</b>
+     * @return locale   * Preferred locale to be used as a hint for determining the list
+     * of locations to return.
+     *                 This is also used for language translation. <b>Note:</b>
      * If the specified locale filter
      *                 is invalid, or not supported, en_US will be used by
      * default.
@@ -178,7 +196,9 @@ public class LocationCriterion  implements java.io.Serializable {
     /**
      * Sets the locale value for this LocationCriterion.
      * 
-     * @param locale   * Locale of the name, as specified in the request. <b>Note:</b>
+     * @param locale   * Preferred locale to be used as a hint for determining the list
+     * of locations to return.
+     *                 This is also used for language translation. <b>Note:</b>
      * If the specified locale filter
      *                 is invalid, or not supported, en_US will be used by
      * default.

@@ -1,3 +1,17 @@
+// Copyright 2015 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.dfp.jaxws.v201508;
 
@@ -3483,9 +3497,12 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline net revenue of the {@link ProposalLineItem}. It is calculated by multiplying
-     *                 probability to close by the contracted revenue for those unsold {@link ProposalLineItem}s.
-     *                 There is no revenue for those sold {@link ProposalLineItem}s.
+     *                 The pipeline net revenue of the {@link ProposalLineItem}. There is no revenue for sold
+     *                 {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the contracted revenue when inventory is not reserved;
+     *                 otherwise it is calcualted by multiplying {@link Proposal#probabilityOfClose} by the forecasted
+     *                 revenue.
      *               
      * 
      */
@@ -3493,9 +3510,12 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline net revenue in the local currency of the {@link ProposalLineItem}. It is
-     *                 calculated by multiplying probability to close by the contracted revenue for those unsold
-     *                 {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
+     *                 The pipeline net revenue in the local currency of the {@link ProposalLineItem}. There is no
+     *                 revenue for sold {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the contracted revenue when inventory is not reserved;
+     *                 otherwise it is calcualted by multiplying {@link Proposal#probabilityOfClose} by the forecasted
+     *                 revenue.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE}
      *               
@@ -3505,9 +3525,12 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline gross revenue of the {@link ProposalLineItem}. It is calculated by multiplying
-     *                 probability to close by the contracted revenue including agency commission for those
-     *                 unsold {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
+     *                 The pipeline gross revenue of the {@link ProposalLineItem}. There is no revenue for sold
+     *                 {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the contracted revenue including agency commission when
+     *                 inventory is not reserved; otherwise it is calcualted by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
      *               
      * 
      */
@@ -3515,10 +3538,12 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline gross revenue in the local currency of the {@link ProposalLineItem}. It is
-     *                 calculated by multiplying probability to close by the contracted revenue including agency
-     *                 commission for those unsold {@link ProposalLineItem}s. There is no revenue for those sold
-     *                 {@link ProposalLineItem}s.
+     *                 The pipeline gross revenue in the local currency of the {@link ProposalLineItem}. There is no
+     *                 revenue for sold {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the contracted revenue including agency commission when
+     *                 inventory is not reserved; otherwise it is calcualted by multiplying
+     *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_GROSS_REVENUE}
      *               
@@ -3528,9 +3553,9 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline agency commission of the {@link ProposalLineItem}. It is calculated by multiplying
-     *                 probability to close by the contracted agency commission for those unsold
-     *                 {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
+     *                 The pipeline agency commission of the {@link ProposalLineItem}. There is no revenue for sold
+     *                 {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated against gross pipeline revenue.
      *               
      * 
      */
@@ -3538,9 +3563,10 @@ public enum Column {
 
     /**
      * 
-     *                 The pipeline agency commission in the local currency of the {@link ProposalLineItem}. It is
-     *                 calculated by multiplying probability to close by the contracted agency commission for those
-     *                 unsold {@link ProposalLineItem}s. There is no revenue for those sold {@link ProposalLineItem}s.
+     *                 The pipeline agency commission in the local currency of the {@link ProposalLineItem}. There is
+     *                 no revenue for sold {@link ProposalLineItem proposal line items}. For unsold
+     *                 {@link ProposalLineItem proposal line items}, it is calculated against gross pipeline revenue
+     *                 in local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION}
      *               

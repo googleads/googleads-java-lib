@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * SitelinkFeedItem.java
  *
@@ -14,12 +28,12 @@ package com.google.api.ads.adwords.axis.v201607.cm;
 public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.ExtensionFeedItem  implements java.io.Serializable {
     /* URL display text for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 1 and 25, inclusive.</span> */
+     * of this string should be between 1 and 25, inclusive, (trimmed).</span> */
     private java.lang.String sitelinkText;
 
     /* Destination URL for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 2076, inclusive.</span> */
+     * of this string should be between 0 and 2076, inclusive, (trimmed).</span> */
     private java.lang.String sitelinkUrl;
 
     /* First line of the description for the sitelink. To clear this
@@ -27,7 +41,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     string. If this value is set, sitelinkLine3 must
      * also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span> */
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span> */
     private java.lang.String sitelinkLine2;
 
     /* Second line of the description for the sitelink. To clear this
@@ -35,7 +49,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     empty string. If this value is set, sitelinkLine2
      * must also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span> */
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span> */
     private java.lang.String sitelinkLine3;
 
     /* A list of possible final URLs after all cross domain redirects. */
@@ -114,7 +128,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      * 
      * @return sitelinkText   * URL display text for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 1 and 25, inclusive.</span>
+     * of this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public java.lang.String getSitelinkText() {
         return sitelinkText;
@@ -126,7 +140,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      * 
      * @param sitelinkText   * URL display text for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 1 and 25, inclusive.</span>
+     * of this string should be between 1 and 25, inclusive, (trimmed).</span>
      */
     public void setSitelinkText(java.lang.String sitelinkText) {
         this.sitelinkText = sitelinkText;
@@ -138,7 +152,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      * 
      * @return sitelinkUrl   * Destination URL for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 2076, inclusive.</span>
+     * of this string should be between 0 and 2076, inclusive, (trimmed).</span>
      */
     public java.lang.String getSitelinkUrl() {
         return sitelinkUrl;
@@ -150,7 +164,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      * 
      * @param sitelinkUrl   * Destination URL for the sitelink.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 2076, inclusive.</span>
+     * of this string should be between 0 and 2076, inclusive, (trimmed).</span>
      */
     public void setSitelinkUrl(java.lang.String sitelinkUrl) {
         this.sitelinkUrl = sitelinkUrl;
@@ -165,7 +179,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     string. If this value is set, sitelinkLine3 must
      * also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span>
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span>
      */
     public java.lang.String getSitelinkLine2() {
         return sitelinkLine2;
@@ -180,7 +194,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     string. If this value is set, sitelinkLine3 must
      * also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span>
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span>
      */
     public void setSitelinkLine2(java.lang.String sitelinkLine2) {
         this.sitelinkLine2 = sitelinkLine2;
@@ -195,7 +209,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     empty string. If this value is set, sitelinkLine2
      * must also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span>
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span>
      */
     public java.lang.String getSitelinkLine3() {
         return sitelinkLine3;
@@ -210,7 +224,7 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201607.c
      *                     empty string. If this value is set, sitelinkLine2
      * must also be set.
      *                     <span class="constraint StringLength">The length
-     * of this string should be between 0 and 35, inclusive.</span>
+     * of this string should be between 0 and 35, inclusive, (trimmed).</span>
      */
     public void setSitelinkLine3(java.lang.String sitelinkLine3) {
         this.sitelinkLine3 = sitelinkLine3;

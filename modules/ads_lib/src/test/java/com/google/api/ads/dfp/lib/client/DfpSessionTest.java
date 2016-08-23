@@ -254,6 +254,23 @@ public class DfpSessionTest {
   }
 
   /**
+   * Tests that the builder does not build with a whitespace application name.
+   */
+  @Test
+  public void testBuilder_whitespaceApplicationName() throws Exception {
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage(
+        Matchers.<String>equalTo(
+            "Application name must be set and not be the default [INSERT_APPLICATION_NAME_HERE]"));
+    build(
+        new DfpSession.Builder()
+            .withEndpoint("https://ads.google.com")
+            .withNetworkCode("networkCode")
+            .withOAuth2Credential(credential)
+            .withApplicationName("      "));
+  }
+
+  /**
    * Tests that setting authentication to null errors.
    */
   @Test

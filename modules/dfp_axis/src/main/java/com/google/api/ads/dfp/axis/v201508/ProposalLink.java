@@ -1,3 +1,17 @@
+// Copyright 2015 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ProposalLink.java
  *
@@ -12,23 +26,23 @@ package com.google.api.ads.dfp.axis.v201508;
  * A link that can be added as a resource to a {@link Proposal}.
  */
 public class ProposalLink  implements java.io.Serializable {
-    /* The unique ID of the {@code ProposalLink}. This attribute is
-     * readonly and is
-     *                 assigned by Google. */
+    /* The unique ID of the {@code ProposalLink}.
+     *                 This attribute is read-only. */
     private java.lang.Long id;
 
     /* The name of the {@code ProposalLink}. Must be unique under
      * the same
-     *                 {@link Proposal}. This attribute is required and has
-     * a maximum length of 255 characters. */
+     *                 {@link Proposal}. This attribute has a maximum length
+     * of 255 characters.
+     *                 This attribute is required. */
     private java.lang.String name;
 
     /* The unique ID of the {@link User} who created the {@code ProposalLink}.
-     * This attribute is readonly and is assigned by Google. */
+     * This attribute is read-only. */
     private java.lang.Long creatorId;
 
-    /* The link to the {@code ProposalLink} resource. This attribute
-     * is required. */
+    /* The link to the {@code ProposalLink} resource.
+     *                 This attribute is required. */
     private java.lang.String url;
 
     /* The description for the {@code ProposalLink}. This attribute
@@ -37,9 +51,8 @@ public class ProposalLink  implements java.io.Serializable {
     private java.lang.String description;
 
     /* The creation time of the {@code ProposalLink}. This attribute
-     * is readonly
-     *                 and is assigned by Google when the {@code ProposalLink}
-     * is created. */
+     * is assigned by Google when the {@code ProposalLink} is created.
+     *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201508.DateTime creationDateTime;
 
     public ProposalLink() {
@@ -64,9 +77,8 @@ public class ProposalLink  implements java.io.Serializable {
     /**
      * Gets the id value for this ProposalLink.
      * 
-     * @return id   * The unique ID of the {@code ProposalLink}. This attribute is
-     * readonly and is
-     *                 assigned by Google.
+     * @return id   * The unique ID of the {@code ProposalLink}.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getId() {
         return id;
@@ -76,9 +88,8 @@ public class ProposalLink  implements java.io.Serializable {
     /**
      * Sets the id value for this ProposalLink.
      * 
-     * @param id   * The unique ID of the {@code ProposalLink}. This attribute is
-     * readonly and is
-     *                 assigned by Google.
+     * @param id   * The unique ID of the {@code ProposalLink}.
+     *                 This attribute is read-only.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -90,8 +101,9 @@ public class ProposalLink  implements java.io.Serializable {
      * 
      * @return name   * The name of the {@code ProposalLink}. Must be unique under
      * the same
-     *                 {@link Proposal}. This attribute is required and has
-     * a maximum length of 255 characters.
+     *                 {@link Proposal}. This attribute has a maximum length
+     * of 255 characters.
+     *                 This attribute is required.
      */
     public java.lang.String getName() {
         return name;
@@ -103,8 +115,9 @@ public class ProposalLink  implements java.io.Serializable {
      * 
      * @param name   * The name of the {@code ProposalLink}. Must be unique under
      * the same
-     *                 {@link Proposal}. This attribute is required and has
-     * a maximum length of 255 characters.
+     *                 {@link Proposal}. This attribute has a maximum length
+     * of 255 characters.
+     *                 This attribute is required.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -115,7 +128,7 @@ public class ProposalLink  implements java.io.Serializable {
      * Gets the creatorId value for this ProposalLink.
      * 
      * @return creatorId   * The unique ID of the {@link User} who created the {@code ProposalLink}.
-     * This attribute is readonly and is assigned by Google.
+     * This attribute is read-only.
      */
     public java.lang.Long getCreatorId() {
         return creatorId;
@@ -126,7 +139,7 @@ public class ProposalLink  implements java.io.Serializable {
      * Sets the creatorId value for this ProposalLink.
      * 
      * @param creatorId   * The unique ID of the {@link User} who created the {@code ProposalLink}.
-     * This attribute is readonly and is assigned by Google.
+     * This attribute is read-only.
      */
     public void setCreatorId(java.lang.Long creatorId) {
         this.creatorId = creatorId;
@@ -136,8 +149,8 @@ public class ProposalLink  implements java.io.Serializable {
     /**
      * Gets the url value for this ProposalLink.
      * 
-     * @return url   * The link to the {@code ProposalLink} resource. This attribute
-     * is required.
+     * @return url   * The link to the {@code ProposalLink} resource.
+     *                 This attribute is required.
      */
     public java.lang.String getUrl() {
         return url;
@@ -147,8 +160,8 @@ public class ProposalLink  implements java.io.Serializable {
     /**
      * Sets the url value for this ProposalLink.
      * 
-     * @param url   * The link to the {@code ProposalLink} resource. This attribute
-     * is required.
+     * @param url   * The link to the {@code ProposalLink} resource.
+     *                 This attribute is required.
      */
     public void setUrl(java.lang.String url) {
         this.url = url;
@@ -183,9 +196,8 @@ public class ProposalLink  implements java.io.Serializable {
      * Gets the creationDateTime value for this ProposalLink.
      * 
      * @return creationDateTime   * The creation time of the {@code ProposalLink}. This attribute
-     * is readonly
-     *                 and is assigned by Google when the {@code ProposalLink}
-     * is created.
+     * is assigned by Google when the {@code ProposalLink} is created.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.dfp.axis.v201508.DateTime getCreationDateTime() {
         return creationDateTime;
@@ -196,9 +208,8 @@ public class ProposalLink  implements java.io.Serializable {
      * Sets the creationDateTime value for this ProposalLink.
      * 
      * @param creationDateTime   * The creation time of the {@code ProposalLink}. This attribute
-     * is readonly
-     *                 and is assigned by Google when the {@code ProposalLink}
-     * is created.
+     * is assigned by Google when the {@code ProposalLink} is created.
+     *                 This attribute is read-only.
      */
     public void setCreationDateTime(com.google.api.ads.dfp.axis.v201508.DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;

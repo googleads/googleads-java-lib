@@ -30,6 +30,7 @@ import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.SystemUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,7 +165,7 @@ public class GetAccountHierarchy {
      * @return the tree string representation
      */
     public StringBuffer toTreeString(int depth, StringBuffer sb) {
-      sb.append(StringUtils.repeat("-", depth * 2)).append(this).append("%n");
+      sb.append(StringUtils.repeat("-", depth * 2)).append(this).append(SystemUtils.LINE_SEPARATOR);
       for (ManagedCustomerTreeNode childAccount : childAccounts) {
         childAccount.toTreeString(depth + 1, sb);
       }

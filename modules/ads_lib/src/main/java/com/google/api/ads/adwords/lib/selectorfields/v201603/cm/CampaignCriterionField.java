@@ -53,7 +53,8 @@ public enum CampaignCriterionField implements EntityField {
 
   /**
    * The modifier for bids when the criterion matches.
-   * <p>Allowable modifier values depend on the criterion: <ul> <li>{@code 0.1} - {@code 10.0}: {@code AdSchedule}</li> <li>{@code 0.1} - {@code 10.0}: {@code Location}</li> <li>{@code 0.1} - {@code 10.0}: {@code Proximity}</li> <li>{@code 0.1} - {@code 10.0}: {@code LocationGroups}</li> <li>{@code 0.1} - {@code 4.0}: {@code Platform} (mobile), {@code 0}: to opt out of mobile</li> </ul> Specify {@code -1.0} to clear existing bid modifier.
+   * <p> Valid modifier values range from {@code 0.1} to {@code 10.0}, with {@code 0.0} reserved for opting out of platform criterion.
+   * <p>Specify {@code -1.0} to clear existing bid modifier.
    */
   @Filterable
   BidModifier(true),

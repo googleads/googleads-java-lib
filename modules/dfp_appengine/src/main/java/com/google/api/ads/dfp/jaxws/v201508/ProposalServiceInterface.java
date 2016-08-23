@@ -1,3 +1,17 @@
+// Copyright 2015 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 package com.google.api.ads.dfp.jaxws.v201508;
 
@@ -92,7 +106,10 @@ public interface ProposalServiceInterface {
      *         <td>{@link Proposal#isArchived}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code approvalStatus}</td>
+     *         <td>
+     *         {@code approvalStatus}
+     *         <div class="constraint">Only applicable for proposals using sales management</div>
+     *         </td>
      *         <td>{@link Proposal#approvalStatus}</td>
      *         </tr>
      *         <tr>
@@ -100,16 +117,37 @@ public interface ProposalServiceInterface {
      *         <td>{@link Proposal#lastModifiedDateTime}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code thirdPartyAdServerId}</td>
+     *         <td>
+     *         {@code thirdPartyAdServerId}
+     *         <div class="constraint">
+     *         Only applicable for non-programmatic proposals using sales management
+     *         </div>
+     *         </td>
      *         <td>{@link Proposal#thirdPartyAdServerId}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code customThirdPartyAdServerName}</td>
+     *         <td>
+     *         {@code customThirdPartyAdServerName}
+     *         <div class="constraint">
+     *         Only applicable for non-programmatic proposals using sales management
+     *         </div>
+     *         </td>
      *         <td>{@link Proposal#customThirdPartyAdServerName}</td>
      *         </tr>
      *         <tr>
      *         <td>{@code hasOfflineErrors}</td>
      *         <td>{@link Proposal#hasOfflineErrors}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code isProgrammatic}</td>
+     *         <td>{@link Proposal#isProgrammatic}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>
+     *         {@code negotiationStatus}
+     *         <div class="constraint">Only applicable for programmatic proposals</div>
+     *         </td>
+     *         <td>{@link ProposalMarketplaceInfo#negotiationStatus}</td>
      *         </tr>
      *         </table>
      *         

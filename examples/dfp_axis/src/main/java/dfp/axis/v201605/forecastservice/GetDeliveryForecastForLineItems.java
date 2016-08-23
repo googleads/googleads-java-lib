@@ -32,7 +32,7 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class GetDeliveryForecastForLineItems {
-  
+
   //Set the IDs of the line items to get a forecast for.
   private static final String LINE_ITEM_ID_1 = "INSERT_LINE_ITEM_ID_HERE";
   private static final String LINE_ITEM_ID_2 = "INSERT_LINE_ITEM_ID_HERE";
@@ -44,7 +44,7 @@ public class GetDeliveryForecastForLineItems {
         dfpServices.get(session, ForecastServiceInterface.class);
 
     DeliveryForecastOptions options = new DeliveryForecastOptions();
-        
+
     DeliveryForecast forecast = forecastService.getDeliveryForecastByIds(
         new long[] {lineItemId1, lineItemId2}, options);
 

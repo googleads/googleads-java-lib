@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ProposalTermsAndConditions.java
  *
@@ -13,27 +27,24 @@ package com.google.api.ads.dfp.axis.v201605;
  * Proposal}.
  */
 public class ProposalTermsAndConditions  implements java.io.Serializable {
-    /* The ID of the terms and conditions added to the proposal. This
-     * attribute is required
-     *                 and read-only after creation. */
+    /* The ID of the terms and conditions added to the proposal.
+     *                 This attribute is required. */
     private java.lang.Long termsAndConditionsId;
 
     /* The name of the terms and conditions at the time it was added
      * to the proposal.
      *                 This is a snapshot of the terms and conditions' name.
      * It will not be updated
-     *                 if the terms and conditions name is updated. This
-     * attribute is read-only and
-     *                 populated by Google. */
+     *                 if the terms and conditions name is updated.
+     *                 This attribute is read-only. */
     private java.lang.String name;
 
     /* The content of the terms and conditions at the time it was
      * added to the proposal.
      *                 This is a snapshot of the terms and conditions' content.
      * It will not be updated
-     *                 if the terms and conditions content is updated. This
-     * attribute is read-only and
-     *                 populated by Google. */
+     *                 if the terms and conditions content is updated.
+     *                 This attribute is read-only. */
     private java.lang.String content;
 
     public ProposalTermsAndConditions() {
@@ -52,9 +63,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
     /**
      * Gets the termsAndConditionsId value for this ProposalTermsAndConditions.
      * 
-     * @return termsAndConditionsId   * The ID of the terms and conditions added to the proposal. This
-     * attribute is required
-     *                 and read-only after creation.
+     * @return termsAndConditionsId   * The ID of the terms and conditions added to the proposal.
+     *                 This attribute is required.
      */
     public java.lang.Long getTermsAndConditionsId() {
         return termsAndConditionsId;
@@ -64,9 +74,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
     /**
      * Sets the termsAndConditionsId value for this ProposalTermsAndConditions.
      * 
-     * @param termsAndConditionsId   * The ID of the terms and conditions added to the proposal. This
-     * attribute is required
-     *                 and read-only after creation.
+     * @param termsAndConditionsId   * The ID of the terms and conditions added to the proposal.
+     *                 This attribute is required.
      */
     public void setTermsAndConditionsId(java.lang.Long termsAndConditionsId) {
         this.termsAndConditionsId = termsAndConditionsId;
@@ -80,9 +89,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * to the proposal.
      *                 This is a snapshot of the terms and conditions' name.
      * It will not be updated
-     *                 if the terms and conditions name is updated. This
-     * attribute is read-only and
-     *                 populated by Google.
+     *                 if the terms and conditions name is updated.
+     *                 This attribute is read-only.
      */
     public java.lang.String getName() {
         return name;
@@ -96,9 +104,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * to the proposal.
      *                 This is a snapshot of the terms and conditions' name.
      * It will not be updated
-     *                 if the terms and conditions name is updated. This
-     * attribute is read-only and
-     *                 populated by Google.
+     *                 if the terms and conditions name is updated.
+     *                 This attribute is read-only.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -112,9 +119,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * added to the proposal.
      *                 This is a snapshot of the terms and conditions' content.
      * It will not be updated
-     *                 if the terms and conditions content is updated. This
-     * attribute is read-only and
-     *                 populated by Google.
+     *                 if the terms and conditions content is updated.
+     *                 This attribute is read-only.
      */
     public java.lang.String getContent() {
         return content;
@@ -128,9 +134,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * added to the proposal.
      *                 This is a snapshot of the terms and conditions' content.
      * It will not be updated
-     *                 if the terms and conditions content is updated. This
-     * attribute is read-only and
-     *                 populated by Google.
+     *                 if the terms and conditions content is updated.
+     *                 This attribute is read-only.
      */
     public void setContent(java.lang.String content) {
         this.content = content;

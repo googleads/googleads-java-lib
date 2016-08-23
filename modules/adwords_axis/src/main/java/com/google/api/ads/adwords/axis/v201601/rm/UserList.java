@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * UserList.java
  *
@@ -88,6 +102,8 @@ public class UserList  implements java.io.Serializable {
      *                 This field must be between 0 and 540 inclusive. However,
      * for CRM based userlists, this field
      *                 can be set to 10000 which means no expiration.
+     *                 
+     *                 <p>It'll be ignored for {@link LogicalUserList}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -452,6 +468,8 @@ public class UserList  implements java.io.Serializable {
      *                 This field must be between 0 and 540 inclusive. However,
      * for CRM based userlists, this field
      *                 can be set to 10000 which means no expiration.
+     *                 
+     *                 <p>It'll be ignored for {@link LogicalUserList}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -469,6 +487,8 @@ public class UserList  implements java.io.Serializable {
      *                 This field must be between 0 and 540 inclusive. However,
      * for CRM based userlists, this field
      *                 can be set to 10000 which means no expiration.
+     *                 
+     *                 <p>It'll be ignored for {@link LogicalUserList}.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "MembershipLifeSpan".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

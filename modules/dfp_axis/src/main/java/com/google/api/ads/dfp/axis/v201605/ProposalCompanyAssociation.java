@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ProposalCompanyAssociation.java
  *
@@ -25,8 +39,7 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201605.ProposalCompanyAssociationType type;
 
     /* List of unique IDs for {@link Contact} objects of the {@link
-     * Company}.
-     *                 This attribute is optional. */
+     * Company}. */
     private long[] contactIds;
 
     public ProposalCompanyAssociation() {
@@ -93,7 +106,6 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * 
      * @return contactIds   * List of unique IDs for {@link Contact} objects of the {@link
      * Company}.
-     *                 This attribute is optional.
      */
     public long[] getContactIds() {
         return contactIds;
@@ -105,7 +117,6 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * 
      * @param contactIds   * List of unique IDs for {@link Contact} objects of the {@link
      * Company}.
-     *                 This attribute is optional.
      */
     public void setContactIds(long[] contactIds) {
         this.contactIds = contactIds;

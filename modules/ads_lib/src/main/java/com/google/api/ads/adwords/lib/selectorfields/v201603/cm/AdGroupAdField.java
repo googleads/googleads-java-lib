@@ -393,6 +393,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * Name of this ad.
+   * <span class="constraint Required"> This field is required and should not be {@code null}.</span>
    */
   TemplateAdName(false),
 

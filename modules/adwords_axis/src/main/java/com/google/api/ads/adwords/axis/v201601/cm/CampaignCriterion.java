@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * CampaignCriterion.java
  *
@@ -28,18 +42,10 @@ public class CampaignCriterion  implements java.io.Serializable {
 
     /* The modifier for bids when the criterion matches.
      *
-     *                 <p>Allowable modifier values depend on the criterion:
-     * <ul>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
-     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
-     * (mobile),
-     *                 {@code 0}: to opt out of mobile</li>
-     *                 </ul>
-     *
-     *                 Specify {@code -1.0} to clear existing bid modifier. */
+     *                 <p> Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of platform criterion.
+     *                 <p>Specify {@code -1.0} to clear existing bid modifier. */
     private java.lang.Double bidModifier;
 
     private com.google.api.ads.adwords.axis.v201601.cm.String_StringMapEntry[] forwardCompatibilityMap;
@@ -144,18 +150,10 @@ public class CampaignCriterion  implements java.io.Serializable {
      *
      * @return bidModifier   * The modifier for bids when the criterion matches.
      *
-     *                 <p>Allowable modifier values depend on the criterion:
-     * <ul>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
-     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
-     * (mobile),
-     *                 {@code 0}: to opt out of mobile</li>
-     *                 </ul>
-     *
-     *                 Specify {@code -1.0} to clear existing bid modifier.
+     *                 <p> Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of platform criterion.
+     *                 <p>Specify {@code -1.0} to clear existing bid modifier.
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -167,18 +165,10 @@ public class CampaignCriterion  implements java.io.Serializable {
      *
      * @param bidModifier   * The modifier for bids when the criterion matches.
      *
-     *                 <p>Allowable modifier values depend on the criterion:
-     * <ul>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain AdSchedule}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain Location}</li>
-     *                 <li>{@code 0.1} - {@code 10.0}: {@linkplain Proximity}</li>
-     * <li>{@code 0.1} - {@code 10.0}: {@linkplain LocationGroups}</li>
-     *                 <li>{@code 0.1} - {@code 4.0}: {@linkplain Platform}
-     * (mobile),
-     *                 {@code 0}: to opt out of mobile</li>
-     *                 </ul>
-     *
-     *                 Specify {@code -1.0} to clear existing bid modifier.
+     *                 <p> Valid modifier values range from {@code 0.1} to
+     * {@code 10.0}, with {@code 0.0} reserved
+     *                 for opting out of platform criterion.
+     *                 <p>Specify {@code -1.0} to clear existing bid modifier.
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

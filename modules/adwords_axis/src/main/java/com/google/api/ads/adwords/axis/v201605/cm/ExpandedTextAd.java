@@ -1,3 +1,17 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
  * ExpandedTextAd.java
  *
@@ -24,17 +38,20 @@ package com.google.api.ads.adwords.axis.v201605.cm;
 public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.Ad  implements java.io.Serializable {
     /* First part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private java.lang.String headlinePart1;
 
     /* Second part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private java.lang.String headlinePart2;
 
     /* The descriptive text of the ad.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span> */
     private java.lang.String description;
 
     /* Text that appears in the ad with the displayed URL. */
@@ -89,7 +106,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @return headlinePart1   * First part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public java.lang.String getHeadlinePart1() {
         return headlinePart1;
@@ -101,7 +119,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @param headlinePart1   * First part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setHeadlinePart1(java.lang.String headlinePart1) {
         this.headlinePart1 = headlinePart1;
@@ -113,7 +132,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @return headlinePart2   * Second part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public java.lang.String getHeadlinePart2() {
         return headlinePart2;
@@ -125,7 +145,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @param headlinePart2   * Second part of the headline.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setHeadlinePart2(java.lang.String headlinePart2) {
         this.headlinePart2 = headlinePart2;
@@ -137,7 +158,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @return description   * The descriptive text of the ad.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public java.lang.String getDescription() {
         return description;
@@ -149,7 +171,8 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201605.cm.
      * 
      * @param description   * The descriptive text of the ad.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     * required and should not be {@code null} when it is contained within
+     * {@link Operator}s : ADD.</span>
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
