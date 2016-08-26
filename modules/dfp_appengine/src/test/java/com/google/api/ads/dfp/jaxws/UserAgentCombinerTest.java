@@ -31,7 +31,7 @@ import org.junit.runners.JUnit4;
 public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (DfpApi-Java, Dfp-AppEngine/2.18.0, Common-Java/2.18.0,"
+      "userAgent (DfpApi-Java, Dfp-AppEngine/2.19.0, Common-Java/2.19.0,"
           + " JAX-WS/Unknown, Java/" + System.getProperty("java.version") + ", maven)";
 
   /**

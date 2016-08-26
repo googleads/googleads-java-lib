@@ -63,7 +63,7 @@ class BatchJobHelperImpl
   @Override
   public BatchJobUploadResponse uploadBatchJobOperations(
       Iterable<Operation> operations, String uploadUrl) throws BatchJobException {
-    // Starting with v201601, all uploads must go through the incremental upload workflow.
+    // All uploads must go through the incremental upload workflow.
     return uploadIncrementalBatchJobOperations(
         operations, true, new BatchJobUploadStatus(0, URI.create(uploadUrl)));
   }

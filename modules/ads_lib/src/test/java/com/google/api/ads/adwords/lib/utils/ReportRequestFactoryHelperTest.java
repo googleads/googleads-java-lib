@@ -106,10 +106,12 @@ public class ReportRequestFactoryHelperTest {
                         .useRawEnumValues(isUseRawEnumValues)
                         .build();
               }
-              parameters.add(new Object[] {"v201601", null});
-              parameters.add(new Object[] {"v201601", reportingConfig});
               parameters.add(new Object[] {"v201603", null});
               parameters.add(new Object[] {"v201603", reportingConfig});
+              parameters.add(new Object[] {"v201605", null});
+              parameters.add(new Object[] {"v201605", reportingConfig});
+              parameters.add(new Object[] {"v201607", null});
+              parameters.add(new Object[] {"v201607", reportingConfig});
               parameters.add(new Object[] {null, reportingConfig});
             }
           }
@@ -119,7 +121,7 @@ public class ReportRequestFactoryHelperTest {
 
     return parameters;
   }
-  
+
   /**
    * Values for these arguments are supplied by the {@link #data()} method.
    *
@@ -130,11 +132,11 @@ public class ReportRequestFactoryHelperTest {
     this.version = version;
     this.reportingConfiguration = reportingConfiguration;
   }
-  
+
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    
+
     // Sets up mock behavior common to all tests.
     when(internals.getAuthorizationHeaderProvider()).thenReturn(authorizationHeaderProvider);
     when(internals.getUserAgentCombiner()).thenReturn(userAgentCombiner);
@@ -186,7 +188,7 @@ public class ReportRequestFactoryHelperTest {
     assertEquals("fooauthheader", headers.getAuthorization());
     assertEquals("fooclientcustomerid", headers.get("clientCustomerId"));
     assertTrue((headers.getUserAgent()).contains("foouseragent"));
-    
+
     if (reportingConfiguration == null) {
       assertFalse("skipReportHeader should not be in the header if no reporting config is set",
           headers.containsKey("skipReportHeader"));

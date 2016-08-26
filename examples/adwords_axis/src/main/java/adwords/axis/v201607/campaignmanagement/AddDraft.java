@@ -64,6 +64,7 @@ public class AddDraft {
   public static void runExample(
       AdWordsServices adWordsServices, AdWordsSession session, long baseCampaignId)
       throws Exception {
+
     // Get the DraftService.
     DraftServiceInterface draftService = adWordsServices.get(session, DraftServiceInterface.class);
     Draft draft = new Draft();
@@ -78,9 +79,7 @@ public class AddDraft {
 
     System.out.printf(
         "Draft with ID %d and base campaign ID %d and draft campaign ID %d created.%n",
-        draft.getDraftId(),
-        draft.getBaseCampaignId(),
-        draft.getDraftCampaignId());
+        draft.getDraftId(), draft.getBaseCampaignId(), draft.getDraftCampaignId());
 
     // Once the draft is created, you can modify the draft campaign as if it
     // were a real campaign. For example, you may add criteria, adjust bids,
@@ -105,7 +104,7 @@ public class AddDraft {
             .mutate(new CampaignCriterionOperation[] {criterionOperation})
             .getValue(0);
 
-    System.out.printf("Draft updated to include criteria in draft campaign ID %d.%n",
-        draft.getDraftCampaignId());
+    System.out.printf(
+        "Draft updated to include criteria in draft campaign ID %d.%n", draft.getDraftCampaignId());
   }
 }

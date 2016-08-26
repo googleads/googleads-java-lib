@@ -46,9 +46,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-/**
- * Tests for {@link AdWordsSession}.
- */
+/** Tests for {@link AdWordsSession}. */
 @RunWith(Parameterized.class)
 public class AdWordsSessionTest {
 
@@ -106,9 +104,7 @@ public class AdWordsSessionTest {
     };
   }
 
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
+  /** Tests that the builder correctly reads properties from a configuration. */
   @Test
   public void testReadPropertiesFromConfiguration() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
@@ -129,8 +125,8 @@ public class AdWordsSessionTest {
   }
 
   /**
-   * Tests that the builder correctly reads properties from a configuration when reporting
-   * options are included in the configuration.
+   * Tests that the builder correctly reads properties from a configuration when reporting options
+   * are included in the configuration.
    */
   @Test
   public void testReadPropertiesFromConfigurationWithReportingConfig() throws ValidationException {
@@ -162,9 +158,7 @@ public class AdWordsSessionTest {
         session.getReportingConfiguration().isIncludeZeroImpressions());
   }
 
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
+  /** Tests that the builder correctly reads properties from a configuration. */
   @Test
   public void testReadPropertiesFromConfiguration_badEndpoint() throws ValidationException {
     String badEndpoint = "3efsdafasd";
@@ -181,43 +175,35 @@ public class AdWordsSessionTest {
     build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
   }
 
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
+  /** Tests that the builder correctly reads properties from a configuration. */
   @Test
   public void testReadPropertiesFromConfiguration_noUserAgent() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
 
-    thrown.expect(ValidationException.class);
-    thrown.expect(createTriggerMatcher(Matchers.<String>equalTo("userAgent")));
-
-    build(
-        new AdWordsSession.Builder()
-            .from(config)
-            .withDeveloperToken("devTokendevTokendevTok")
-            .withOAuth2Credential(credential));
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .from(config)
+                .withDeveloperToken("devTokendevTokendevTok")
+                .withOAuth2Credential(credential));
+    assertEquals(AdWordsSession.UNKNOWN_USER_AGENT, adWordsSession.getUserAgent());
   }
 
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
+  /** Tests that the builder correctly reads properties from a configuration. */
   @Test
   public void testReadPropertiesFromConfiguration_defaultUserAgent() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.adwords.userAgent", "INSERT_USERAGENT_HERE");
-
-    thrown.expect(ValidationException.class);
-    thrown.expect(createTriggerMatcher(Matchers.<String>equalTo("userAgent")));
-    build(
-        new AdWordsSession.Builder()
-            .from(config)
-            .withDeveloperToken("devTokendevTokendevTok")
-            .withOAuth2Credential(credential));
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .from(config)
+                .withDeveloperToken("devTokendevTokendevTok")
+                .withOAuth2Credential(credential));
+    assertEquals(AdWordsSession.UNKNOWN_USER_AGENT, adWordsSession.getUserAgent());
   }
 
-  /**
-   * Tests that the builder builds correctly with a default endpoint.
-   */
+  /** Tests that the builder builds correctly with a default endpoint. */
   @Test
   public void testBuilder_defaultEndpoint() throws Exception {
     AdWordsSession adWordsSession =
@@ -233,9 +219,7 @@ public class AdWordsSessionTest {
     assertEquals("developerToken", adWordsSession.getDeveloperToken());
   }
 
-  /**
-   * Tests that the builder builds correctly for OAuth2.
-   */
+  /** Tests that the builder builds correctly for OAuth2. */
   @Test
   public void testBuilder_oAuth2() throws Exception {
     AdWordsSession adWordsSession =
@@ -253,8 +237,8 @@ public class AdWordsSessionTest {
   }
 
   /**
-   * Makes sure the builder returns a copy so that making (un-validated) changes
-   * in the builder doesn't mutate previously built objects.
+   * Makes sure the builder returns a copy so that making (un-validated) changes in the builder
+   * doesn't mutate previously built objects.
    */
   @Test
   public void testBuilder_returnsCopies() throws Exception {
@@ -267,13 +251,11 @@ public class AdWordsSessionTest {
     assertNotSame(build(builder), build(builder));
   }
 
-  /**
-   * Tests that the builder does not build for no auths.
-   */
+  /** Tests that the builder does not build for no auths. */
   @Test
   public void testBuilder_noAuths() throws Exception {
     thrown.expect(ValidationException.class);
-    thrown.expectMessage(Matchers.<String>equalTo("OAuth2 authentication must be used."));
+    thrown.expectMessage("OAuth2");
     build(
         new AdWordsSession.Builder()
             .withUserAgent("FooBar")
@@ -281,42 +263,51 @@ public class AdWordsSessionTest {
             .withDeveloperToken("developerToken"));
   }
 
-  /**
-   * Tests that the builder does not build with no user agent.
-   */
+  /** Tests that the builder builds with the 'unknown' user agent if none specified. */
   @Test
   public void testBuilder_noUserAgent() throws Exception {
-    thrown.expect(ValidationException.class);
-    thrown.expectMessage(
-        Matchers.<String>equalTo(
-            "User agent must be set and not be the default [INSERT_USERAGENT_HERE]"));
-    build(
-        new AdWordsSession.Builder()
-            .withOAuth2Credential(credential)
-            .withEndpoint("https://www.google.com")
-            .withDeveloperToken("developerToken"));
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withOAuth2Credential(credential)
+                .withEndpoint("https://www.google.com")
+                .withDeveloperToken("developerToken"));
+    assertEquals(AdWordsSession.UNKNOWN_USER_AGENT, adWordsSession.getUserAgent());
   }
 
   /**
-   * Tests that the builder does not build with default user agent.
+   * Tests that the builder builds with the 'unknown' user agent if the default user agent is
+   * specified.
    */
   @Test
   public void testBuilder_defaultUserAgent() throws Exception {
+    AdWordsSession adWordsSession =
+        build(
+            new AdWordsSession.Builder()
+                .withOAuth2Credential(credential)
+                .withEndpoint("https://www.google.com")
+                .withUserAgent("INSERT_USERAGENT_HERE")
+                .withDeveloperToken("developerToken"));
+    assertEquals(AdWordsSession.UNKNOWN_USER_AGENT, adWordsSession.getUserAgent());
+  }
+
+  /** Tests that using a non-ASCII user agent will fail. */
+  @Test
+  public void testBuilder_nonAsciiUserAgent() throws Exception {
+    String nonAsciiUserAgent = "スーパー";
     thrown.expect(ValidationException.class);
-    thrown.expectMessage(
-        Matchers.<String>equalTo(
-            "User agent must be set and not be the default [INSERT_USERAGENT_HERE]"));
+    thrown.expectMessage("User agent");
+    thrown.expectMessage("ASCII");
+    thrown.expectMessage(nonAsciiUserAgent);
     build(
         new AdWordsSession.Builder()
             .withOAuth2Credential(credential)
+            .withUserAgent(nonAsciiUserAgent)
             .withEndpoint("https://www.google.com")
-            .withUserAgent("INSERT_USERAGENT_HERE")
             .withDeveloperToken("developerToken"));
   }
 
-  /**
-   * Tests that setting authentication to null errors.
-   */
+  /** Tests that setting authentication to null errors. */
   @Test
   public void testSetAuthentication_null() throws Exception {
     AdWordsSession adWordsSession =
@@ -356,9 +347,7 @@ public class AdWordsSessionTest {
         sessionReportingConfig);
   }
 
-  /**
-   * Tests that the builder builds correctly with all available settings.
-   */
+  /** Tests that the builder builds correctly with all available settings. */
   @Test
   public void testBuilder_allSettings() throws Exception {
     AdWordsSession adWordsSession = build(allSettingsBuilder);
@@ -373,9 +362,7 @@ public class AdWordsSessionTest {
     assertSame(reportingConfiguration, adWordsSession.getReportingConfiguration());
   }
 
-  /**
-   * Tests that copy builder copies all values correctly.
-   */
+  /** Tests that copy builder copies all values correctly. */
   @Test
   public void testImmutable_copyBuilder() throws Exception {
     AdWordsSession adWordsSession = build(allSettingsBuilder);
@@ -400,9 +387,7 @@ public class AdWordsSessionTest {
     assertSame(adWordsSession.getReportingConfiguration(), copy.getReportingConfiguration());
   }
 
-  /**
-   * Tests that copy constructor on {@link ImmutableAdWordsSession} copies all values correctly.
-   */
+  /** Tests that copy constructor on {@link ImmutableAdWordsSession} copies all values correctly. */
   @Test
   public void testImmutable_setters_fail() throws Exception {
     if (!isImmutable) {

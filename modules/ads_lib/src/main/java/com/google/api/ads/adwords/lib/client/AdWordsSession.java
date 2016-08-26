@@ -21,6 +21,8 @@ import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 
@@ -57,6 +59,10 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
   public static final String DEFAULT_ENDPOINT = "https://adwords.google.com/";
 
   private static final String DEFAULT_USER_AGENT = "INSERT_USERAGENT_HERE";
+  
+  /** The user agent to use if one is not specified. */
+  @VisibleForTesting
+  static final String UNKNOWN_USER_AGENT = "unknown";
 
   /**
    * Private constructor.
@@ -508,8 +514,10 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       // Check that user agent is not empty or the default.
       if (Strings.isNullOrEmpty(userAgent)
           || userAgent.contains(DEFAULT_USER_AGENT)) {
-        throw new ValidationException(String.format(
-            "User agent must be set and not be the default [%s]", DEFAULT_USER_AGENT),
+        this.userAgent = UNKNOWN_USER_AGENT;
+      } else if (!CharMatcher.ascii().matchesAllOf(userAgent)) {
+        throw new ValidationException(
+            String.format("User agent [%s] contains non-ASCII characters.", userAgent),
             "userAgent");
       }
 

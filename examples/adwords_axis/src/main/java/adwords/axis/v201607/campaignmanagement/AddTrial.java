@@ -35,7 +35,7 @@ import com.google.api.client.auth.oauth2.Credential;
 
 /**
  * This example illustrates how to create a trial and wait for it to complete.
- * 
+ *
  * <p>See the Campaign Drafts and Experiments guide for more information:
  * https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
  *
@@ -44,12 +44,12 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class AddTrial {
 
-  /** 
+  /**
    * Maximum number of {@code TrialService.get} calls to make to query the progress of trial
    * creation.
    */
   private static final int MAX_POLL_ATTEMPTS = 6;
-  
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()

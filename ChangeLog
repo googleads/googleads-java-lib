@@ -1,3 +1,23 @@
+2.19.0 - 08/26/2016
+-------------------
+AdWords:
+  - Removed support and examples for v201601. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - User agent is now optional. If no user agent is specified for an
+    AdWordsSession or the default value is specified, 'unknown' will
+    be passed instead.
+  - If user agent is specified, it must contain only ASCII characters.
+    Otherwise, a ValidationException will be thrown.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.18.0 - 08/23/2016
 -------------------
 AdWords:
