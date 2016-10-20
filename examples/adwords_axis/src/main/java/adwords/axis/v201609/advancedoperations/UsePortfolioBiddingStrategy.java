@@ -30,6 +30,7 @@ import com.google.api.ads.adwords.axis.v201609.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignOperation;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignReturnValue;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201609.cm.CampaignStatus;
 import com.google.api.ads.adwords.axis.v201609.cm.Money;
 import com.google.api.ads.adwords.axis.v201609.cm.NetworkSetting;
 import com.google.api.ads.adwords.axis.v201609.cm.Operator;
@@ -186,6 +187,11 @@ public class UsePortfolioBiddingStrategy {
     // Create campaign.
     Campaign campaign = new Campaign();
     campaign.setName("Interplanetary Cruise #" + System.currentTimeMillis());
+
+    // Recommendation: Set the campaign to PAUSED when creating it to prevent
+    // the ads from immediately serving. Set to ENABLED once you've added
+    // targeting and the ads are ready to serve.
+    campaign.setStatus(CampaignStatus.PAUSED);
 
     // Set the budget.
     Budget budget = new Budget();

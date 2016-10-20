@@ -35,8 +35,8 @@ public class GetMarketplaceComments {
 
   private static final String PROPOSAL_ID = "INSERT_PROPOSAL_ID_HERE";
 
-  public static void runExample(
-      DfpServices dfpServices, DfpSession session, long proposalId) throws Exception {
+  public static void runExample(DfpServices dfpServices, DfpSession session, long proposalId)
+      throws Exception {
     ProposalServiceInterface proposalService =
         dfpServices.get(session, ProposalServiceInterface.class);
 
@@ -58,7 +58,7 @@ public class GetMarketplaceComments {
         int i = page.getStartIndex();
         for (MarketplaceComment marketplaceComment : page.getResults()) {
           System.out.printf(
-              "%d) Marketplace comment with creation time \"%s\" and comment \"%s\" was found.%n",
+              "%d) Marketplace comment with creation time '%s' and comment '%s' was found.%n",
               i++,
               DateTimes.toString(marketplaceComment.getCreationTime()),
               marketplaceComment.getComment()

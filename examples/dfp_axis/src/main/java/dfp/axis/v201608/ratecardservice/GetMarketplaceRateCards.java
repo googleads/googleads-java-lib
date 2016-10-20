@@ -21,7 +21,6 @@ import com.google.api.ads.dfp.axis.utils.v201608.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201608.RateCard;
 import com.google.api.ads.dfp.axis.v201608.RateCardPage;
 import com.google.api.ads.dfp.axis.v201608.RateCardServiceInterface;
-
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
@@ -44,7 +43,7 @@ public class GetMarketplaceRateCards {
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
         .withBindVariableValue("forMarketplace", true);
 
-    // Retreive a small amount of rate cards at a time, paging through
+    // Retrieve a small amount of rate cards at a time, paging through
     // until all rate cards have been retrieved.
     int totalResultSetSize = 0;
     do {
@@ -57,7 +56,7 @@ public class GetMarketplaceRateCards {
         int i = page.getStartIndex();
         for (RateCard rateCard : page.getResults()) {
           System.out.printf(
-              "%d) Rate card with ID \"%d\", name \"%s\", and currency code \"%s\" was found.%n",
+              "%d) Rate card with ID %d, name '%s', and currency code '%s' was found.%n",
               i++,
               rateCard.getId(),
               rateCard.getName(),

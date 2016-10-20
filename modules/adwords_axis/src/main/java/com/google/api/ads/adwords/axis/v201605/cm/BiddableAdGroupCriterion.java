@@ -57,7 +57,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
     private java.lang.String destinationUrl;
 
     /* The campaign bidding strategy specific experiment data for
-     *                     this criterion. */
+     * this criterion. */
     private com.google.api.ads.adwords.axis.v201605.cm.BiddableAdGroupCriterionExperimentData experimentData;
 
     /* First page Cpc for this criterion.
@@ -330,7 +330,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Gets the experimentData value for this BiddableAdGroupCriterion.
      * 
      * @return experimentData   * The campaign bidding strategy specific experiment data for
-     *                     this criterion.
+     * this criterion.
      */
     public com.google.api.ads.adwords.axis.v201605.cm.BiddableAdGroupCriterionExperimentData getExperimentData() {
         return experimentData;
@@ -341,7 +341,7 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
      * Sets the experimentData value for this BiddableAdGroupCriterion.
      * 
      * @param experimentData   * The campaign bidding strategy specific experiment data for
-     *                     this criterion.
+     * this criterion.
      */
     public void setExperimentData(com.google.api.ads.adwords.axis.v201605.cm.BiddableAdGroupCriterionExperimentData experimentData) {
         this.experimentData = experimentData;

@@ -62,9 +62,8 @@ public class AdGroup  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201605.cm.Setting[] settings;
 
     /* Data from a campaign bidding strategy experiment, returned
-     * by
-     *                 {@link AdGroupService#get get()} only if the experimentId
-     * is supplied. */
+     * by {@link AdGroupService#get get()}
+     *                 only if the experimentId is supplied. */
     private com.google.api.ads.adwords.axis.v201605.cm.AdGroupExperimentData experimentData;
 
     /* Labels that are attached to the {@link AdGroup}. To associate
@@ -333,9 +332,8 @@ public class AdGroup  implements java.io.Serializable {
      * Gets the experimentData value for this AdGroup.
      *
      * @return experimentData   * Data from a campaign bidding strategy experiment, returned
-     * by
-     *                 {@link AdGroupService#get get()} only if the experimentId
-     * is supplied.
+     * by {@link AdGroupService#get get()}
+     *                 only if the experimentId is supplied.
      */
     public com.google.api.ads.adwords.axis.v201605.cm.AdGroupExperimentData getExperimentData() {
         return experimentData;
@@ -346,9 +344,8 @@ public class AdGroup  implements java.io.Serializable {
      * Sets the experimentData value for this AdGroup.
      *
      * @param experimentData   * Data from a campaign bidding strategy experiment, returned
-     * by
-     *                 {@link AdGroupService#get get()} only if the experimentId
-     * is supplied.
+     * by {@link AdGroupService#get get()}
+     *                 only if the experimentId is supplied.
      */
     public void setExperimentData(com.google.api.ads.adwords.axis.v201605.cm.AdGroupExperimentData experimentData) {
         this.experimentData = experimentData;

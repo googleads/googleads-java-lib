@@ -29,10 +29,10 @@ package com.google.api.ads.adwords.axis.v201609.cm;
 public class OfflineCallConversionFeed  implements java.io.Serializable {
     /* The caller id from which this call was placed.
      *                 
-     *                 <p>Caller ids in E.164 format with preceding ?+? sign.
-     * (e.g., ?+16502531234?, +443308182000),
+     *                 <p>Caller ids in E.164 format with preceding '+' sign.
+     * (e.g., "+16502531234", +443308182000),
      *                 National numbers which are treated as US numbers in
-     * formats like ?6502531234?,
+     * formats like "6502531234",
      *                 and International Numbers with accompanying country
      * code and preceding '+' like +64 3-331 6005
      *                 <span class="constraint Required">This field is required
@@ -54,6 +54,13 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      *                 ignored and reported as successes, to indicate that
      * a conversion
      *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.String callStartTime;
@@ -85,7 +92,14 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      * are
      *                 ignored and reported as successes, to indicate that
      * a conversion
-     *                 for this combination has been recorded. */
+     *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs. */
     private java.lang.String conversionTime;
 
     /* This conversions value for the advertiser.
@@ -124,10 +138,10 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      * 
      * @return callerId   * The caller id from which this call was placed.
      *                 
-     *                 <p>Caller ids in E.164 format with preceding ?+? sign.
-     * (e.g., ?+16502531234?, +443308182000),
+     *                 <p>Caller ids in E.164 format with preceding '+' sign.
+     * (e.g., "+16502531234", +443308182000),
      *                 National numbers which are treated as US numbers in
-     * formats like ?6502531234?,
+     * formats like "6502531234",
      *                 and International Numbers with accompanying country
      * code and preceding '+' like +64 3-331 6005
      *                 <span class="constraint Required">This field is required
@@ -145,10 +159,10 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      * 
      * @param callerId   * The caller id from which this call was placed.
      *                 
-     *                 <p>Caller ids in E.164 format with preceding ?+? sign.
-     * (e.g., ?+16502531234?, +443308182000),
+     *                 <p>Caller ids in E.164 format with preceding '+' sign.
+     * (e.g., "+16502531234", +443308182000),
      *                 National numbers which are treated as US numbers in
-     * formats like ?6502531234?,
+     * formats like "6502531234",
      *                 and International Numbers with accompanying country
      * code and preceding '+' like +64 3-331 6005
      *                 <span class="constraint Required">This field is required
@@ -177,6 +191,13 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      *                 ignored and reported as successes, to indicate that
      * a conversion
      *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -201,6 +222,13 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      *                 ignored and reported as successes, to indicate that
      * a conversion
      *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -268,6 +296,13 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      *                 ignored and reported as successes, to indicate that
      * a conversion
      *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs.
      */
     public java.lang.String getConversionTime() {
         return conversionTime;
@@ -291,6 +326,13 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
      *                 ignored and reported as successes, to indicate that
      * a conversion
      *                 for this combination has been recorded.
+     *                 
+     *                 <p>String Format: yyyyMMdd HHmmss <Timezone ID> (for
+     * example, 20100609 150223
+     *                 America/New_York). See the <a
+     *                 href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+     * page for
+     *                 the complete list of Timezone IDs.
      */
     public void setConversionTime(java.lang.String conversionTime) {
         this.conversionTime = conversionTime;

@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,49 +26,51 @@ import com.google.api.client.auth.oauth2.Credential;
 
 /**
  * This example gets all line item creative associations for a given line item.
- * To create LICAs, run CreateLicas.java.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetLicasForLineItem {
 
-  // Set the ID of the line item to fetch all LICAs for.
   private static final String LINE_ITEM_ID = "INSERT_LINE_ITEM_ID_HERE";
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long lineItemId)
       throws Exception {
-    // Get the LineItemCreativeAssociationService.
-    LineItemCreativeAssociationServiceInterface licaService =
+    LineItemCreativeAssociationServiceInterface lineItemCreativeAssociationService =
         dfpServices.get(session, LineItemCreativeAssociationServiceInterface.class);
 
-    // Create a statement to all LICAs for a line item.
+    // Create a statement to select line item creative associations.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("WHERE lineItemId = :lineItemId ")
+        .where("lineItemId = :lineItemId")
         .orderBy("lineItemId ASC, creativeId ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
         .withBindVariableValue("lineItemId", lineItemId);
 
-    // Default for total result set size.
+    // Retrieve a small amount of line item creative associations at a time, paging through
+    // until all line item creative associations have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get LICAs by statement.
       LineItemCreativeAssociationPage page =
-          licaService.getLineItemCreativeAssociationsByStatement(statementBuilder.toStatement());
+          lineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement(
+          statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each line item creative association.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (LineItemCreativeAssociation lica : page.getResults()) {
           if (lica.getCreativeSetId() != null) {
             System.out.printf(
-                "%d) LICA with line item ID %d and creative set ID %d was found.%n", i++,
-                lica.getLineItemId(), lica.getCreativeSetId());
+                "%d) LICA with line item ID %d and creative set ID %d was found.%n",
+                i++,
+                lica.getLineItemId(),
+                lica.getCreativeSetId());
           } else {
             System.out.printf(
-                "%d) LICA with line item ID %d and creative ID %d was found.%n", i++,
-                lica.getLineItemId(), lica.getCreativeId());
+                "%d) LICA with line item ID %d and creative ID %d was found.%n",
+                i++,
+                lica.getLineItemId(),
+                lica.getCreativeId());
           }
         }
       }
@@ -80,14 +82,15 @@ public class GetLicasForLineItem {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

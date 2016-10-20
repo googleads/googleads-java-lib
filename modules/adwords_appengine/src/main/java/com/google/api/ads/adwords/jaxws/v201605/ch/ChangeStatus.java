@@ -58,9 +58,9 @@ public enum ChangeStatus {
 
     /**
      * 
-     *                 This entity was created during the time frame we're looking at.  We will not enumerate
-     *                 all of the individual changes to this entity and its children.  Instead it should be loaded
-     *                 from the appropriate service.
+     *                 This entity was created during the time frame we're looking at. We will not enumerate all of
+     *                 the individual changes to this entity and its children. Instead it should be loaded from the
+     *                 appropriate service.
      *               
      * 
      */

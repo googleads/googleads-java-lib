@@ -115,7 +115,15 @@ public class BudgetOrder  implements java.io.Serializable {
 
     /* The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0.
+     *                 otherwise spendingLimit must be greater than 0. Note,
+     * that for get requests the spending limit
+     *                 includes any adjustments that have been applied to
+     * the budget order. For mutate,
+     *                 the spending limit represents the maximum allowed
+     * spend prior to considering any adjustments.
+     *                 When making mutate requests, make sure to account
+     * for any adjustments that may be reported
+     *                 in the get value of the spending limit.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -470,7 +478,15 @@ public class BudgetOrder  implements java.io.Serializable {
      * 
      * @return spendingLimit   * The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0.
+     *                 otherwise spendingLimit must be greater than 0. Note,
+     * that for get requests the spending limit
+     *                 includes any adjustments that have been applied to
+     * the budget order. For mutate,
+     *                 the spending limit represents the maximum allowed
+     * spend prior to considering any adjustments.
+     *                 When making mutate requests, make sure to account
+     * for any adjustments that may be reported
+     *                 in the get value of the spending limit.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -488,7 +504,15 @@ public class BudgetOrder  implements java.io.Serializable {
      * 
      * @param spendingLimit   * The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0.
+     *                 otherwise spendingLimit must be greater than 0. Note,
+     * that for get requests the spending limit
+     *                 includes any adjustments that have been applied to
+     * the budget order. For mutate,
+     *                 the spending limit represents the maximum allowed
+     * spend prior to considering any adjustments.
+     *                 When making mutate requests, make sure to account
+     * for any adjustments that may be reported
+     *                 in the get value of the spending limit.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "SpendingLimit".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

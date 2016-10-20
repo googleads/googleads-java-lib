@@ -78,6 +78,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="BUK"/>
  *     &lt;enumeration value="BWP"/>
  *     &lt;enumeration value="BYB"/>
+ *     &lt;enumeration value="BYN"/>
  *     &lt;enumeration value="BYR"/>
  *     &lt;enumeration value="BZD"/>
  *     &lt;enumeration value="CAD"/>
@@ -712,6 +713,14 @@ public enum CurrencyCode {
     /**
      * 
      *                 Belarusian Ruble
+     *               
+     * 
+     */
+    BYN,
+
+    /**
+     * 
+     *                 Belarusian Ruble (1999-2016)
      *               
      * 
      */

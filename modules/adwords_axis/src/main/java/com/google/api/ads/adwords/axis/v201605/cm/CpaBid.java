@@ -26,8 +26,8 @@ package com.google.api.ads.adwords.axis.v201605.cm;
  * CPA Bids.
  */
 public class CpaBid  extends com.google.api.ads.adwords.axis.v201605.cm.Bids  implements java.io.Serializable {
-    /* Target cost per acquisition/conversion. This is applicable
-     * only at the ad group level.
+    /* Target cost per acquisition (CPA). This is applicable only
+     * at the ad group level.
      *                     
      *                     <p>If an ad group-level target is not set and
      * the strategy type is TARGET_CPA,
@@ -62,8 +62,8 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201605.cm.Bids  im
     /**
      * Gets the bid value for this CpaBid.
      * 
-     * @return bid   * Target cost per acquisition/conversion. This is applicable
-     * only at the ad group level.
+     * @return bid   * Target cost per acquisition (CPA). This is applicable only
+     * at the ad group level.
      *                     
      *                     <p>If an ad group-level target is not set and
      * the strategy type is TARGET_CPA,
@@ -81,8 +81,8 @@ public class CpaBid  extends com.google.api.ads.adwords.axis.v201605.cm.Bids  im
     /**
      * Sets the bid value for this CpaBid.
      * 
-     * @param bid   * Target cost per acquisition/conversion. This is applicable
-     * only at the ad group level.
+     * @param bid   * Target cost per acquisition (CPA). This is applicable only
+     * at the ad group level.
      *                     
      *                     <p>If an ad group-level target is not set and
      * the strategy type is TARGET_CPA,

@@ -30,13 +30,13 @@ public class AdGroupChangeData  implements java.io.Serializable {
     private java.lang.Long adGroupId;
 
     /* Whether or not the fields of this adgroup have changed, for
-     * example the AdGroup name.
-     *                 Changes to the Ads and Criteria are enumerated in
-     * their respective lists and will not
-     *                 be reflected in this status. */
+     * example the AdGroup name. Changes
+     *                 to the Ads and Criteria are enumerated in their respective
+     * lists and will not be reflected in
+     *                 this status. */
     private com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus adGroupChangeStatus;
 
-    /* The IDs of any changed ads of this ad group.  This includes
+    /* The IDs of any changed ads of this ad group. This includes
      * ads that have been deleted. */
     private long[] changedAds;
 
@@ -47,27 +47,24 @@ public class AdGroupChangeData  implements java.io.Serializable {
     private long[] removedCriteria;
 
     /* A list of feed IDs for AdGroupFeeds that have been changed
-     * in this ad group.
-     *                 If an AdGroupFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list. */
+     * in this ad group. If an AdGroupFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list. */
     private long[] changedFeeds;
 
     /* A list of feed IDs for AdGroupFeeds that have been removed
-     * from the ad
-     *                 group. */
+     * from the ad group. */
     private long[] removedFeeds;
 
     /* Set of campaign criterion that have a bid modifier override
-     * at ad group level.
-     *                 If the associated bid modifier override is deleted
-     * after a modification, it will
-     *                 not be included in this list. */
+     * at ad group level. If the
+     *                 associated bid modifier override is deleted after
+     * a modification, it will not be included in
+     *                 this list. */
     private long[] changedAdGroupBidModifierCriteria;
 
     /* Set of campaign criterion whose bid modifier override at ad
-     * group level
-     *                 has been removed. */
+     * group level has been removed. */
     private long[] removedAdGroupBidModifierCriteria;
 
     public AdGroupChangeData() {
@@ -119,10 +116,10 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Gets the adGroupChangeStatus value for this AdGroupChangeData.
      * 
      * @return adGroupChangeStatus   * Whether or not the fields of this adgroup have changed, for
-     * example the AdGroup name.
-     *                 Changes to the Ads and Criteria are enumerated in
-     * their respective lists and will not
-     *                 be reflected in this status.
+     * example the AdGroup name. Changes
+     *                 to the Ads and Criteria are enumerated in their respective
+     * lists and will not be reflected in
+     *                 this status.
      */
     public com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus getAdGroupChangeStatus() {
         return adGroupChangeStatus;
@@ -133,10 +130,10 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Sets the adGroupChangeStatus value for this AdGroupChangeData.
      * 
      * @param adGroupChangeStatus   * Whether or not the fields of this adgroup have changed, for
-     * example the AdGroup name.
-     *                 Changes to the Ads and Criteria are enumerated in
-     * their respective lists and will not
-     *                 be reflected in this status.
+     * example the AdGroup name. Changes
+     *                 to the Ads and Criteria are enumerated in their respective
+     * lists and will not be reflected in
+     *                 this status.
      */
     public void setAdGroupChangeStatus(com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus adGroupChangeStatus) {
         this.adGroupChangeStatus = adGroupChangeStatus;
@@ -146,7 +143,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
     /**
      * Gets the changedAds value for this AdGroupChangeData.
      * 
-     * @return changedAds   * The IDs of any changed ads of this ad group.  This includes
+     * @return changedAds   * The IDs of any changed ads of this ad group. This includes
      * ads that have been deleted.
      */
     public long[] getChangedAds() {
@@ -157,7 +154,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
     /**
      * Sets the changedAds value for this AdGroupChangeData.
      * 
-     * @param changedAds   * The IDs of any changed ads of this ad group.  This includes
+     * @param changedAds   * The IDs of any changed ads of this ad group. This includes
      * ads that have been deleted.
      */
     public void setChangedAds(long[] changedAds) {
@@ -233,10 +230,9 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Gets the changedFeeds value for this AdGroupChangeData.
      * 
      * @return changedFeeds   * A list of feed IDs for AdGroupFeeds that have been changed
-     * in this ad group.
-     *                 If an AdGroupFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list.
+     * in this ad group. If an AdGroupFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list.
      */
     public long[] getChangedFeeds() {
         return changedFeeds;
@@ -247,10 +243,9 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Sets the changedFeeds value for this AdGroupChangeData.
      * 
      * @param changedFeeds   * A list of feed IDs for AdGroupFeeds that have been changed
-     * in this ad group.
-     *                 If an AdGroupFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list.
+     * in this ad group. If an AdGroupFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list.
      */
     public void setChangedFeeds(long[] changedFeeds) {
         this.changedFeeds = changedFeeds;
@@ -269,8 +264,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Gets the removedFeeds value for this AdGroupChangeData.
      * 
      * @return removedFeeds   * A list of feed IDs for AdGroupFeeds that have been removed
-     * from the ad
-     *                 group.
+     * from the ad group.
      */
     public long[] getRemovedFeeds() {
         return removedFeeds;
@@ -281,8 +275,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Sets the removedFeeds value for this AdGroupChangeData.
      * 
      * @param removedFeeds   * A list of feed IDs for AdGroupFeeds that have been removed
-     * from the ad
-     *                 group.
+     * from the ad group.
      */
     public void setRemovedFeeds(long[] removedFeeds) {
         this.removedFeeds = removedFeeds;
@@ -301,10 +294,10 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Gets the changedAdGroupBidModifierCriteria value for this AdGroupChangeData.
      * 
      * @return changedAdGroupBidModifierCriteria   * Set of campaign criterion that have a bid modifier override
-     * at ad group level.
-     *                 If the associated bid modifier override is deleted
-     * after a modification, it will
-     *                 not be included in this list.
+     * at ad group level. If the
+     *                 associated bid modifier override is deleted after
+     * a modification, it will not be included in
+     *                 this list.
      */
     public long[] getChangedAdGroupBidModifierCriteria() {
         return changedAdGroupBidModifierCriteria;
@@ -315,10 +308,10 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Sets the changedAdGroupBidModifierCriteria value for this AdGroupChangeData.
      * 
      * @param changedAdGroupBidModifierCriteria   * Set of campaign criterion that have a bid modifier override
-     * at ad group level.
-     *                 If the associated bid modifier override is deleted
-     * after a modification, it will
-     *                 not be included in this list.
+     * at ad group level. If the
+     *                 associated bid modifier override is deleted after
+     * a modification, it will not be included in
+     *                 this list.
      */
     public void setChangedAdGroupBidModifierCriteria(long[] changedAdGroupBidModifierCriteria) {
         this.changedAdGroupBidModifierCriteria = changedAdGroupBidModifierCriteria;
@@ -337,8 +330,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Gets the removedAdGroupBidModifierCriteria value for this AdGroupChangeData.
      * 
      * @return removedAdGroupBidModifierCriteria   * Set of campaign criterion whose bid modifier override at ad
-     * group level
-     *                 has been removed.
+     * group level has been removed.
      */
     public long[] getRemovedAdGroupBidModifierCriteria() {
         return removedAdGroupBidModifierCriteria;
@@ -349,8 +341,7 @@ public class AdGroupChangeData  implements java.io.Serializable {
      * Sets the removedAdGroupBidModifierCriteria value for this AdGroupChangeData.
      * 
      * @param removedAdGroupBidModifierCriteria   * Set of campaign criterion whose bid modifier override at ad
-     * group level
-     *                 has been removed.
+     * group level has been removed.
      */
     public void setRemovedAdGroupBidModifierCriteria(long[] removedAdGroupBidModifierCriteria) {
         this.removedAdGroupBidModifierCriteria = removedAdGroupBidModifierCriteria;

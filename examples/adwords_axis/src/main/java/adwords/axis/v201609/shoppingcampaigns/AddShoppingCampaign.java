@@ -31,6 +31,7 @@ import com.google.api.ads.adwords.axis.v201609.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignOperation;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignReturnValue;
 import com.google.api.ads.adwords.axis.v201609.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201609.cm.CampaignStatus;
 import com.google.api.ads.adwords.axis.v201609.cm.Operator;
 import com.google.api.ads.adwords.axis.v201609.cm.ProductAd;
 import com.google.api.ads.adwords.axis.v201609.cm.Setting;
@@ -80,6 +81,11 @@ public class AddShoppingCampaign {
     campaign.setName("Shopping campaign #" + System.currentTimeMillis());
     // The advertisingChannelType is what makes this a Shopping campaign
     campaign.setAdvertisingChannelType(AdvertisingChannelType.SHOPPING);
+
+    // Recommendation: Set the campaign to PAUSED when creating it to prevent
+    // the ads from immediately serving. Set to ENABLED once you've added
+    // targeting and the ads are ready to serve.
+    campaign.setStatus(CampaignStatus.PAUSED);
 
     // Set shared budget (required).
     Budget budget = new Budget();

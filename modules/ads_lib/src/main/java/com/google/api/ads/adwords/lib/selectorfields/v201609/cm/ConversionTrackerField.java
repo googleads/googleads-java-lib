@@ -57,7 +57,8 @@ public enum ConversionTrackerField implements EntityField {
   AppPostbackUrl(true),
 
   /**
-   * The active search attribution model type.
+   * Attribution models describing how to distribute credit for a particular conversion across potentially many prior interactions.
+   * See https://support.google.com/adwords/answer/6259715 for more information about attribution modeling in AdWords.
    */
   AttributionModelType(false),
 

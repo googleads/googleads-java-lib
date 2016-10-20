@@ -97,7 +97,7 @@ public enum BiddingStrategyField implements EntityField {
   SystemStatus(true),
 
   /**
-   * Average CPA target.
+   * Average cost per acquisition (CPA) target.
    * This target should be greater than or equal to minimum billable unit based on the currency for the account.
    */
   TargetCpa(false),

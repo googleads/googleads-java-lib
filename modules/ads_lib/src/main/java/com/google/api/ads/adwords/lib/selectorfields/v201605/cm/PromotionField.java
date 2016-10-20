@@ -69,7 +69,7 @@ public enum PromotionField implements EntityField {
 
   /**
    * Targeting criteria of this promotion.
-   * The following criteria are supported: <ul> <li>{@code ProductService}</li> <li>{@code AdSchedule}</li> <li>{@code BusinessHour}</li> <li>{@code Language}</li> <li>{@code Location}</li> <li>{@code Proximity}</li> </ul> <p>Please note that {@code Address} is not supported in {@code Proximity}.
+   * The following criteria are supported: <ul> <li>{@code AdSchedule}</li> <li>{@code BusinessHour}</li> <li>{@code Language}</li> <li>{@code Location}</li> <li>{@code ProductService}</li> <li>{@code Proximity}</li> </ul> <p>Please note that {@code Address} is not supported in {@code Proximity}.
    * Please use {@code GeoPoint} instead.
    */
   PromotionCriteria(false),

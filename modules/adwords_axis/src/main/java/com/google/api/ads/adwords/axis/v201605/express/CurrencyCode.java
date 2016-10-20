@@ -82,6 +82,7 @@ public class CurrencyCode implements java.io.Serializable {
     public static final java.lang.String _BUK = "BUK";
     public static final java.lang.String _BWP = "BWP";
     public static final java.lang.String _BYB = "BYB";
+    public static final java.lang.String _BYN = "BYN";
     public static final java.lang.String _BYR = "BYR";
     public static final java.lang.String _BZD = "BZD";
     public static final java.lang.String _CAD = "CAD";
@@ -346,6 +347,7 @@ public class CurrencyCode implements java.io.Serializable {
     public static final CurrencyCode BUK = new CurrencyCode(_BUK);
     public static final CurrencyCode BWP = new CurrencyCode(_BWP);
     public static final CurrencyCode BYB = new CurrencyCode(_BYB);
+    public static final CurrencyCode BYN = new CurrencyCode(_BYN);
     public static final CurrencyCode BYR = new CurrencyCode(_BYR);
     public static final CurrencyCode BZD = new CurrencyCode(_BZD);
     public static final CurrencyCode CAD = new CurrencyCode(_CAD);

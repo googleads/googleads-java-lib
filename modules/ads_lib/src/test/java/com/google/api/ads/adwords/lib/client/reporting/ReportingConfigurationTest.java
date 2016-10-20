@@ -152,11 +152,11 @@ public class ReportingConfigurationTest {
             .includeZeroImpressions(true)
             .useRawEnumValues(true)
             .build();
-    config.validate("v201603");
-    assertTrue("Validation should succeed for v201603", true);
     config.validate("v201605");
     assertTrue("Validation should succeed for v201605", true);
     config.validate("v201607");
     assertTrue("Validation should succeed for v201607", true);
+    config.validate("v201609");
+    assertTrue("Validation should succeed for v201609", true);
   }
 }

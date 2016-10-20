@@ -98,6 +98,9 @@ public enum BudgetOrderField implements EntityField {
   /**
    * The spending limit in micros.
    * To specify an unlimited budget, set spendingLimit to -1, otherwise spendingLimit must be greater than 0.
+   * Note, that for get requests the spending limit includes any adjustments that have been applied to the budget order.
+   * For mutate, the spending limit represents the maximum allowed spend prior to considering any adjustments.
+   * When making mutate requests, make sure to account for any adjustments that may be reported in the get value of the spending limit.
    */
   @Filterable
   SpendingLimit(true),

@@ -100,7 +100,12 @@ public class AddCampaigns {
     // Create campaign.
     Campaign campaign = new Campaign();
     campaign.setName("Interplanetary Cruise #" + System.currentTimeMillis());
+
+    // Recommendation: Set the campaign to PAUSED when creating it to prevent
+    // the ads from immediately serving. Set to ENABLED once you've added
+    // targeting and the ads are ready to serve.
     campaign.setStatus(CampaignStatus.PAUSED);
+
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();
     biddingStrategyConfiguration.setBiddingStrategyType(BiddingStrategyType.MANUAL_CPC);
 

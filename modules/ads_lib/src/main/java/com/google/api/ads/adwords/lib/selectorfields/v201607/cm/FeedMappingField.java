@@ -33,7 +33,8 @@ public enum FeedMappingField implements EntityField {
    * The criterion type for this mapping.
    * This field is mutually exclusive with placeholderType.
    */
-  CriterionType(false),
+  @Filterable
+  CriterionType(true),
 
   /**
    * ID of the Feed that is mapped by this mapping.

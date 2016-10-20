@@ -26,8 +26,8 @@ package com.google.api.ads.adwords.axis.v201607.cm;
  * <a href="https://support.google.com/adwords/answer/6268632">Target
  * CPA</a> is an automated bid
  *             strategy that sets bids to help get as many conversions
- * as possible at the target
- *             cost-per-acquisition (CPA) you set.
+ * as possible at the target cost per
+ *             acquisition (CPA) you set.
  *             
  *             <p>A {@linkplain #targetCpa target CPA} must be set for
  * the strategy, but can also be optionally
@@ -43,9 +43,10 @@ package com.google.api.ads.adwords.axis.v201607.cm;
  * AdX.</span>
  */
 public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v201607.cm.BiddingScheme  implements java.io.Serializable {
-    /* Average CPA target. This target should be greater than or equal
-     * to minimum billable unit based
-     *                     on the currency for the account. */
+    /* Average cost per acquisition (CPA) target. This target should
+     * be greater than or equal to
+     *                     minimum billable unit based on the currency for
+     * the account. */
     private com.google.api.ads.adwords.axis.v201607.cm.Money targetCpa;
 
     /* Maximum cpc bid limit that applies to all keywords managed
@@ -79,9 +80,10 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Gets the targetCpa value for this TargetCpaBiddingScheme.
      * 
-     * @return targetCpa   * Average CPA target. This target should be greater than or equal
-     * to minimum billable unit based
-     *                     on the currency for the account.
+     * @return targetCpa   * Average cost per acquisition (CPA) target. This target should
+     * be greater than or equal to
+     *                     minimum billable unit based on the currency for
+     * the account.
      */
     public com.google.api.ads.adwords.axis.v201607.cm.Money getTargetCpa() {
         return targetCpa;
@@ -91,9 +93,10 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
     /**
      * Sets the targetCpa value for this TargetCpaBiddingScheme.
      * 
-     * @param targetCpa   * Average CPA target. This target should be greater than or equal
-     * to minimum billable unit based
-     *                     on the currency for the account.
+     * @param targetCpa   * Average cost per acquisition (CPA) target. This target should
+     * be greater than or equal to
+     *                     minimum billable unit based on the currency for
+     * the account.
      */
     public void setTargetCpa(com.google.api.ads.adwords.axis.v201607.cm.Money targetCpa) {
         this.targetCpa = targetCpa;

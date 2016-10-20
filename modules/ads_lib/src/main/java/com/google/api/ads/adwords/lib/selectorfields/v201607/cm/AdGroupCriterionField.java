@@ -109,6 +109,8 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * The type of the bidding strategy to be attached.
+   * <p>For details on portfolio vs.
+   * standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.
    */
   @Filterable
   BiddingStrategyType(true),

@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,41 +26,42 @@ import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example gets all active activity groups. To create activity groups,
- * run CreateActivityGroups.java.
+ * This example gets all active activity groups.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetActiveActivityGroups {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the ActivityGroupService.
     ActivityGroupServiceInterface activityGroupService =
         dfpServices.get(session, ActivityGroupServiceInterface.class);
 
-    // Create a statement to only select active activity groups.
+    // Create a statement to select activity groups.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("status = :status")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
         .withBindVariableValue("status", ActivityGroupStatus.ACTIVE.toString());
 
-    // Default for total result set size.
+    // Retrieve a small amount of activity groups at a time, paging through
+    // until all activity groups have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get activity groups by statement.
       ActivityGroupPage page =
           activityGroupService.getActivityGroupsByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each activity group.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (ActivityGroup activityGroup : page.getResults()) {
           System.out.printf(
-              "%d) Activity group with ID %d and name '%s' was found.%n", i++,
-              activityGroup.getId(), activityGroup.getName());
+              "%d) Activity group with ID %d and name '%s' was found.%n",
+              i++,
+              activityGroup.getId(),
+              activityGroup.getName()
+          );
         }
       }
 
@@ -71,14 +72,15 @@ public class GetActiveActivityGroups {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

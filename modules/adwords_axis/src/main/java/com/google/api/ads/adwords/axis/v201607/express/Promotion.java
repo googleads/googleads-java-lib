@@ -89,20 +89,20 @@ public class Promotion  implements java.io.Serializable {
      * greater than or equal to 1.</span> */
     private com.google.api.ads.adwords.axis.v201607.cm.Money budget;
 
-    /* Targeting criteria of this promotion.  The following criteria
+    /* Targeting criteria of this promotion. The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link ProductService}</li>
-     *                 <li>{@link AdSchedule}</li>
-     *                 <li>{@link BusinessHour}</li>
-     *                 <li>{@link Language}</li>
-     *                 <li>{@link Location}</li>
-     *                 <li>{@link Proximity}</li>
+     *                 <li>{@code AdSchedule}</li>
+     *                 <li>{@code BusinessHour}</li>
+     *                 <li>{@code Language}</li>
+     *                 <li>{@code Location}</li>
+     *                 <li>{@code ProductService}</li>
+     *                 <li>{@code Proximity}</li>
      *                 </ul>
      *                 
-     *                 <p>Please note that {@link Address} is not supported
-     * in {@link Proximity}. Please use
-     *                 {@link GeoPoint} instead.
+     *                 <p>Please note that {@code Address} is not supported
+     * in {@code Proximity}. Please use
+     *                 {@code GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -415,20 +415,20 @@ public class Promotion  implements java.io.Serializable {
     /**
      * Gets the criteria value for this Promotion.
      * 
-     * @return criteria   * Targeting criteria of this promotion.  The following criteria
+     * @return criteria   * Targeting criteria of this promotion. The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link ProductService}</li>
-     *                 <li>{@link AdSchedule}</li>
-     *                 <li>{@link BusinessHour}</li>
-     *                 <li>{@link Language}</li>
-     *                 <li>{@link Location}</li>
-     *                 <li>{@link Proximity}</li>
+     *                 <li>{@code AdSchedule}</li>
+     *                 <li>{@code BusinessHour}</li>
+     *                 <li>{@code Language}</li>
+     *                 <li>{@code Location}</li>
+     *                 <li>{@code ProductService}</li>
+     *                 <li>{@code Proximity}</li>
      *                 </ul>
      *                 
-     *                 <p>Please note that {@link Address} is not supported
-     * in {@link Proximity}. Please use
-     *                 {@link GeoPoint} instead.
+     *                 <p>Please note that {@code Address} is not supported
+     * in {@code Proximity}. Please use
+     *                 {@code GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -444,20 +444,20 @@ public class Promotion  implements java.io.Serializable {
     /**
      * Sets the criteria value for this Promotion.
      * 
-     * @param criteria   * Targeting criteria of this promotion.  The following criteria
+     * @param criteria   * Targeting criteria of this promotion. The following criteria
      * are supported:
      *                 <ul>
-     *                 <li>{@link ProductService}</li>
-     *                 <li>{@link AdSchedule}</li>
-     *                 <li>{@link BusinessHour}</li>
-     *                 <li>{@link Language}</li>
-     *                 <li>{@link Location}</li>
-     *                 <li>{@link Proximity}</li>
+     *                 <li>{@code AdSchedule}</li>
+     *                 <li>{@code BusinessHour}</li>
+     *                 <li>{@code Language}</li>
+     *                 <li>{@code Location}</li>
+     *                 <li>{@code ProductService}</li>
+     *                 <li>{@code Proximity}</li>
      *                 </ul>
      *                 
-     *                 <p>Please note that {@link Address} is not supported
-     * in {@link Proximity}. Please use
-     *                 {@link GeoPoint} instead.
+     *                 <p>Please note that {@code Address} is not supported
+     * in {@code Proximity}. Please use
+     *                 {@code GeoPoint} instead.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PromotionCriteria".</span>
      *                 <span class="constraint ContentsDistinct">This field

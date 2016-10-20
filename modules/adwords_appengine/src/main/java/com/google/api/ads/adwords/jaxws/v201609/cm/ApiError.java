@@ -72,6 +72,9 @@ import com.google.api.ads.adwords.jaxws.v201609.rm.UserListError;
     "apiErrorType"
 })
 @XmlSeeAlso({
+    CustomerSyncError.class,
+    ExpressBusinessError.class,
+    PromotionError.class,
     DataError.class,
     OfflineConversionError.class,
     ReportDefinitionError.class,
@@ -160,9 +163,9 @@ import com.google.api.ads.adwords.jaxws.v201609.rm.UserListError;
     DatabaseError.class,
     BudgetOrderError.class,
     CustomerOrderLineError.class,
-    CustomerSyncError.class,
-    ExpressBusinessError.class,
-    PromotionError.class,
+    UserListError.class,
+    MutateMembersError.class,
+    com.google.api.ads.adwords.jaxws.v201609.rm.CollectionSizeError.class,
     CustomerError.class,
     LabelServiceError.class,
     com.google.api.ads.adwords.jaxws.v201609.mcm.CollectionSizeError.class,
@@ -170,10 +173,7 @@ import com.google.api.ads.adwords.jaxws.v201609.rm.UserListError;
     com.google.api.ads.adwords.jaxws.v201609.mcm.CurrencyCodeError.class,
     TargetingIdeaError.class,
     TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201609.o.CurrencyCodeError.class,
-    UserListError.class,
-    MutateMembersError.class,
-    com.google.api.ads.adwords.jaxws.v201609.rm.CollectionSizeError.class
+    com.google.api.ads.adwords.jaxws.v201609.o.CurrencyCodeError.class
 })
 public abstract class ApiError {
 

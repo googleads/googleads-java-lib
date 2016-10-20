@@ -43,8 +43,8 @@ public enum CustomerSyncErrorReason {
 
     /**
      * 
-     *                 The request attempted to access a campaign that either does not
-     *                 exist or belongs to a different account.
+     *                 The request attempted to access a campaign that either does not exist or belongs to a
+     *                 different account.
      *               
      * 
      */
@@ -52,8 +52,8 @@ public enum CustomerSyncErrorReason {
 
     /**
      * 
-     *                 The request attempted to access a feed that either does not
-     *                 exist or belongs to a different account.
+     *                 The request attempted to access a feed that either does not exist or belongs to a different
+     *                 account.
      *               
      * 
      */
@@ -69,10 +69,9 @@ public enum CustomerSyncErrorReason {
 
     /**
      * 
-     *                 There have been too many changes to sync the campaign over the requested
-     *                 date/time range.  To avoid this error, try specifying a smaller date/time range.
-     *                 If this does not work, you should assume that everything has changed and
-     *                 retrieve the objects using their respective services.
+     *                 There have been too many changes to sync the campaign over the requested date/time range. To
+     *                 avoid this error, try specifying a smaller date/time range. If this does not work, you should
+     *                 assume that everything has changed and retrieve the objects using their respective services.
      *               
      * 
      */

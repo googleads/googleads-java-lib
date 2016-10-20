@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,48 +22,52 @@ import com.google.api.ads.dfp.axis.utils.v201608.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201608.Order;
 import com.google.api.ads.dfp.axis.v201608.OrderPage;
 import com.google.api.ads.dfp.axis.v201608.OrderServiceInterface;
+import com.google.api.ads.dfp.axis.v201608.OrderStatus;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
 
 /**
- * This example gets all orders that are starting soon. To create orders, run
- * CreateOrders.java.
+ * This example gets all orders that are starting soon.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetOrdersStartingSoon {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the OrderService.
     OrderServiceInterface orderService =
         dfpServices.get(session, OrderServiceInterface.class);
 
-    // Create a statement to only select orders that are starting soon.
+    // Create a statement to select orders.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("status = 'APPROVED' and startDateTime >= :now and startDateTime <= :soon")
-        .orderBy("name ASC")
+        .where("status = :status and startDateTime >= :now and startDateTime <= :soon")
+        .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+        .withBindVariableValue("status", OrderStatus.APPROVED.toString())
         .withBindVariableValue("now", DateTimes.toDateTime(Instant.now(), "America/New_York"))
-        .withBindVariableValue("soon",
-            DateTimes.toDateTime(Instant.now().plus(Duration.standardDays(5L)),
-                "America/New_York"));
+        .withBindVariableValue("soon", DateTimes.toDateTime(Instant.now().plus(
+            Duration.standardDays(5L)), "America/New_York"));
 
-    // Default for total result set size.
+    // Retrieve a small amount of orders at a time, paging through
+    // until all orders have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get orders by statement.
-      OrderPage page = orderService.getOrdersByStatement(statementBuilder.toStatement());
+      OrderPage page =
+          orderService.getOrdersByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each order.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Order order : page.getResults()) {
-          System.out.printf("%d) Order with ID %d and name '%s' was found.%n", i++,
-              order.getId(), order.getName());
+          System.out.printf(
+              "%d) Order with ID %d and name '%s' was found.%n",
+              i++,
+              order.getId(),
+              order.getName()
+          );
         }
       }
 
@@ -74,14 +78,15 @@ public class GetOrdersStartingSoon {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

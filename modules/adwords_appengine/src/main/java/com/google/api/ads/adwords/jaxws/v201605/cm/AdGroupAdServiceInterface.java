@@ -27,19 +27,19 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Use this service to manage ads. Available ad types are subclasses of the base
- *       {@link Ad} type and are shown in the {@link AdGroupAd#ad AdGroupAd.ad}
- *       documentation.  Here are some of the commonly used ad types:
+ *       Use this service to manage ads. Available ad types are subclasses of the base {@link Ad} type and
+ *       are shown in the {@link AdGroupAd#ad AdGroupAd.ad} documentation. Here are some of the commonly
+ *       used ad types:
+ *       
  *       <dl>
- *       <dt>{@linkplain TextAd Text Ad}</dt>
- *       <dd>The primary ad type used on both the search and display networks. A
- *       text ad contains a headline, two lines of text, and a destination URL.</dd>
- *       <dt>{@linkplain ImageAd Image Ad}</dt>
- *       <dd>A standard image ad.</dd>
- *       <dt>{@linkplain TemplateAd Template Ad} (<span class="deem">AdWords
- *       Display Ad Builder</span>)</dt>
+ *       <dt>{@linkplain ExpandedTextAd Expanded Text Ad}
+ *       <dd>The primary ad type used on the search network. An expanded text ad contains two headlines,
+ *       a single description line, a final url, and optional path fields.
+ *       <dt>{@linkplain ImageAd Image Ad}
+ *       <dd>A standard image ad.
+ *       <dt>{@linkplain TemplateAd Template Ad} (<span class="deem">AdWords Display Ad Builder</span>)
  *       <dd>A flexible ad type that supports various <a
- *       href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
+ *       href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.
  *       </dl>
  *     
  * 

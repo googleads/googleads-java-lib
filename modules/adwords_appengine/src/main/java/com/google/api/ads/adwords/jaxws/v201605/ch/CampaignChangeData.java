@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Holds information about a changed campaign and any ad groups under
- *             that have changed.
+ *             Holds information about a changed campaign and any ad groups under that have changed.
  *           
  * 
  * <p>Java class for CampaignChangeData complex type.

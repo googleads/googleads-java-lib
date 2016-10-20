@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,21 +27,19 @@ import com.google.api.client.auth.oauth2.Credential;
 /**
  * This example gets a reconciliation report's data for line items that served through DFP.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetReconciliationLineItemReportsForReconciliationReport {
 
-  // Set the ID of the reconciliation report to retrieve line item reports for.
   private static final String RECONCILIATION_REPORT_ID = "INSERT_RECONCILIATION_REPORT_ID_HERE";
 
-  public static void runExample(
-      DfpServices dfpServices, DfpSession session, long reconciliationReportId) throws Exception {
-    // Get the ReconciliationLineItemReportService.
+  public static void runExample(DfpServices dfpServices, DfpSession session,
+      long reconciliationReportId) throws Exception {
     ReconciliationLineItemReportServiceInterface reconciliationLineItemReportService =
         dfpServices.get(session, ReconciliationLineItemReportServiceInterface.class);
 
-    // Create a statement to select reconciliation line item reports for DFP line items.
+    // Create a statement to select reconciliation line item reports.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("reconciliationReportId = :reconciliationReportId AND lineItemId != :lineItemId")
         .orderBy("lineItemId ASC")
@@ -49,27 +47,28 @@ public class GetReconciliationLineItemReportsForReconciliationReport {
         .withBindVariableValue("reconciliationReportId", reconciliationReportId)
         .withBindVariableValue("lineItemId", 0);
 
-    // Default for total result set size.
+    // Retrieve a small amount of reconciliation line item reports at a time, paging through
+    // until all reconciliation line item reports have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get reconciliation line item reports by statement.
       ReconciliationLineItemReportPage page =
           reconciliationLineItemReportService.getReconciliationLineItemReportsByStatement(
               statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each reconciliation line item report.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (ReconciliationLineItemReport reconciliationLineItemReport : page.getResults()) {
           System.out.printf(
-              "%d) Reconciliation line item report with ID %d was found, with line item ID "
-                  + "%d, reconciliation source '%s' and reconciled volume %d.%n",
+              "%d) Reconciliation line item report with ID %d, line item ID %d, "
+              + "reconciliation source '%s', and reconciled volume %d was found.%n",
               i++,
               reconciliationLineItemReport.getId(),
               reconciliationLineItemReport.getLineItemId(),
               reconciliationLineItemReport.getReconciliationSource(),
-              reconciliationLineItemReport.getReconciledVolume());
+              reconciliationLineItemReport.getReconciledVolume()
+          );
         }
       }
 
@@ -80,14 +79,15 @@ public class GetReconciliationLineItemReportsForReconciliationReport {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

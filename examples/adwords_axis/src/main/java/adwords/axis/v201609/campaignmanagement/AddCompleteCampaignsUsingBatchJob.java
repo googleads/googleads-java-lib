@@ -336,7 +336,12 @@ public class AddCompleteCampaignsUsingBatchJob {
     for (int i = 0; i < NUMBER_OF_CAMPAIGNS_TO_ADD; i++) {
       Campaign campaign = new Campaign();
       campaign.setName(String.format("Batch Campaign %s.%s", namePrefix, i));
+
+      // Recommendation: Set the campaign to PAUSED when creating it to prevent
+      // the ads from immediately serving. Set to ENABLED once you've added
+      // targeting and the ads are ready to serve.
       campaign.setStatus(CampaignStatus.PAUSED);
+
       campaign.setId(tempIdGenerator.next());
       campaign.setAdvertisingChannelType(AdvertisingChannelType.SEARCH);
       Budget budget = new Budget();

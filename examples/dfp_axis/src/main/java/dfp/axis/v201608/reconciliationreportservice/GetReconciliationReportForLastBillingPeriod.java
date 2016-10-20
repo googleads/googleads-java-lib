@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,21 +25,18 @@ import com.google.api.ads.dfp.axis.v201608.ReconciliationReportPage;
 import com.google.api.ads.dfp.axis.v201608.ReconciliationReportServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Iterables;
-import java.util.Arrays;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
 /**
  * This example gets the previous billing period's reconciliation report.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetReconciliationReportForLastBillingPeriod {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the ReconciliationReportService.
     ReconciliationReportServiceInterface reconciliationReportService =
         dfpServices.get(session, ReconciliationReportServiceInterface.class);
 
@@ -52,7 +49,7 @@ public class GetReconciliationReportForLastBillingPeriod {
     DateTime lastMonth = new DateTime(DateTimeZone.forID(network.getTimeZone()))
         .minusMonths(1).dayOfMonth().withMinimumValue();
 
-    // Create a statement to select the last month's reconciliation report.
+    // Create a statement to select reconciliation reports.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("startDate = :startDate")
         .orderBy("id ASC")
@@ -64,25 +61,34 @@ public class GetReconciliationReportForLastBillingPeriod {
         reconciliationReportService.getReconciliationReportsByStatement(
             statementBuilder.toStatement());
 
-    ReconciliationReport reconciliationReport =
-        Iterables.getOnlyElement(Arrays.asList(page.getResults()));
+    int totalResultSetSize = 0;
+    if (page.getResults() != null) {
+      // Print out some information for each reconciliation report.
+      totalResultSetSize = page.getTotalResultSetSize();
+      int i = page.getStartIndex();
+      for (ReconciliationReport reconciliationReport : page.getResults()) {
+        System.out.printf(
+            "%d) Reconciliation report with ID %d and start date '%s' was found.%n",
+            i++,
+            reconciliationReport.getId(),
+            reconciliationReport.getStartDate()
+        );
+      }
+    }
 
-    System.out.printf(
-        "Reconciliation report with ID %d for month %d/%d was found.%n",
-        reconciliationReport.getId(),
-        reconciliationReport.getStartDate().getMonth(),
-        reconciliationReport.getStartDate().getYear());
+    System.out.printf("Number of results found: %d%n", totalResultSetSize);
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

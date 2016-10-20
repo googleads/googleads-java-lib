@@ -1,3 +1,22 @@
+2.21.0 - 10/20/2016
+-------------------
+AdWords:
+  - Removed support and examples for v201603. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Added example for accepting a service link between a Google Merchant
+    Center account and an AdWords account.
+  - Updated examples that create campaigns to set the campaign's status
+    to PAUSED to prevent ads from immediately serving.
+
+DFA:
+  - No changes.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 2.20.0 - 10/03/2016
 -------------------
 AdWords:

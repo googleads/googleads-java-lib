@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,25 +31,21 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 /**
- * This example gets predefined custom targeting keys and values. To create
- * custom targeting keys and values, run
- * CreateCustomTargetingKeysAndValues.java.
+ * This example gets predefined custom targeting keys and values.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetPredefinedCustomTargetingKeysAndValues {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the CustomTargetingService.
     CustomTargetingServiceInterface customTargetingService =
         dfpServices.get(session, CustomTargetingServiceInterface.class);
 
     // Get all predefined custom targeting keys.
     List<Long> customTargetingKeyIds = getPredefinedCustomTargetingKeyIds(dfpServices, session);
 
-    // Create a statement to get all custom targeting values for a custom
-    // targeting key.
+    // Create a statement to select custom targeting values.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("customTargetingKeyId = :customTargetingKeyId")
         .orderBy("id ASC")
@@ -61,25 +57,28 @@ public class GetPredefinedCustomTargetingKeysAndValues {
       // Set the custom targeting key ID to select from.
       statementBuilder.withBindVariableValue("customTargetingKeyId", customTargetingKeyId);
 
-      // Default for total result set size and offset.
+      // Retrieve a small amount of custom targeting values at a time, paging through
+      // until all custom targeting values have been retrieved.
       int totalResultSetSize = 0;
       statementBuilder.offset(0);
-
       do {
-        // Get custom targeting values by statement.
-        CustomTargetingValuePage page = customTargetingService.getCustomTargetingValuesByStatement(
-            statementBuilder.toStatement());
+        CustomTargetingValuePage page =
+            customTargetingService
+                .getCustomTargetingValuesByStatement(statementBuilder.toStatement());
 
         if (page.getResults() != null) {
+          // Print out some information for each custom targeting value.
           totalResultSetSize = page.getTotalResultSetSize();
           for (CustomTargetingValue customTargetingValue : page.getResults()) {
-            System.out.printf("%d) Custom targeting value with ID %d, belonging to key "
-                + "with ID %d, name '%s' and display name '%s' was found.%n",
+            System.out.printf(
+                "%d) Custom targeting value with ID %d, name '%s', display name '%s', "
+                + "and custom targeting key ID %d was found.%n",
                 totalResultsCounter++,
                 customTargetingValue.getId(),
-                customTargetingValue.getCustomTargetingKeyId(),
                 customTargetingValue.getName(),
-                customTargetingValue.getDisplayName());
+                customTargetingValue.getDisplayName(),
+                customTargetingValue.getCustomTargetingKeyId()
+            );
           }
         }
 
@@ -90,14 +89,10 @@ public class GetPredefinedCustomTargetingKeysAndValues {
     System.out.printf("Number of results found: %d%n", totalResultsCounter);
   }
 
-  /**
-   * Gets predefined custom targeting key IDs.
-   */
-  private static List<Long> getPredefinedCustomTargetingKeyIds(
-      DfpServices dfpServices, DfpSession session) throws RemoteException {
+  public static List<Long> getPredefinedCustomTargetingKeyIds(DfpServices dfpServices,
+      DfpSession session) throws RemoteException {
     List<Long> customTargetingKeyIds = Lists.newArrayList();
 
-    // Get the CustomTargetingService.
     CustomTargetingServiceInterface customTargetingService =
         dfpServices.get(session, CustomTargetingServiceInterface.class);
 
@@ -121,7 +116,7 @@ public class GetPredefinedCustomTargetingKeysAndValues {
         int i = page.getStartIndex();
         for (CustomTargetingKey customTargetingKey : page.getResults()) {
           System.out.printf("%d) Custom targeting key with ID %d, name '%s', and "
-              + "display name '%s' was found.%n", i++, customTargetingKey.getId(),
+                  + "display name '%s' was found.%n", i++, customTargetingKey.getId(),
               customTargetingKey.getName(), customTargetingKey.getDisplayName());
           customTargetingKeyIds.add(customTargetingKey.getId());
         }
@@ -134,14 +129,15 @@ public class GetPredefinedCustomTargetingKeysAndValues {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

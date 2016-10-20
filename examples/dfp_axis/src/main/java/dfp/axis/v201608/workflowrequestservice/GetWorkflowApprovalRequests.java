@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,41 +29,41 @@ import com.google.api.client.auth.oauth2.Credential;
  * This example gets workflow approval requests. Workflow approval requests must
  * be approved or rejected for a workflow to finish.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetWorkflowApprovalRequests {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the WorkflowRequestService.
-    WorkflowRequestServiceInterface workflowRequestService = dfpServices.get(
-        session, WorkflowRequestServiceInterface.class);
+    WorkflowRequestServiceInterface workflowRequestService =
+        dfpServices.get(session, WorkflowRequestServiceInterface.class);
 
-    // Create a statement to select workflow approval requests.
+    // Create a statement to select workflow requests.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("type = :type")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-        .withBindVariableValue("type",
-            WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.toString());
+        .withBindVariableValue("type", WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.toString());
 
-    // Default for total result set size.
+    // Retrieve a small amount of workflow requests at a time, paging through
+    // until all workflow requests have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get workflow requests by statement.
       WorkflowRequestPage page =
           workflowRequestService.getWorkflowRequestsByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each workflow request.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (WorkflowRequest workflowRequest : page.getResults()) {
           System.out.printf(
-              "%d) Workflow approval request with ID %d "
-              + "for '%s' with ID %d was found.%n",
-              i++, workflowRequest.getId(), workflowRequest.getEntityType(),
-              workflowRequest.getEntityId());
+              "%d) Workflow request with ID %d, entity type '%s', and entity ID %d was found.%n",
+              i++,
+              workflowRequest.getId(),
+              workflowRequest.getEntityType(),
+              workflowRequest.getEntityId()
+          );
         }
       }
 
@@ -74,14 +74,15 @@ public class GetWorkflowApprovalRequests {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

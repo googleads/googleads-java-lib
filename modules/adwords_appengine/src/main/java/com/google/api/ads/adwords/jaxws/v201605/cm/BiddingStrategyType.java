@@ -119,7 +119,7 @@ public enum BiddingStrategyType {
     /**
      * 
      *                 Target CPA is an automated bid strategy that sets bids to help get
-     *                 as many conversions as possible at the target cost-per-acquisition
+     *                 as many conversions as possible at the target cost per acquisition
      *                 (CPA) you set. See {@linkplain TargetCpaBiddingScheme}
      *                 for more details.
      *               

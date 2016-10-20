@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             @param selector Specifies the filter for selecting changehistory events for a customer.
  *             @return A Customer->Campaign->AdGroup hierarchy containing information about the objects
- *             changed at each level.  All Campaigns that are requested in the selector will be returned,
+ *             changed at each level. All Campaigns that are requested in the selector will be returned,
  *             regardless of whether or not they have changed, but unchanged AdGroups will be ignored.
  *           
  * 

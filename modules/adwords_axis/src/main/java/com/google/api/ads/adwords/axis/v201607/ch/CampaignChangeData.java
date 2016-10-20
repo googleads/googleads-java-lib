@@ -30,12 +30,11 @@ public class CampaignChangeData  implements java.io.Serializable {
     /* The campaign ID. */
     private java.lang.Long campaignId;
 
-    /* Whether or not the fields of this campaign have changed.  Changes
-     * to
-     *                 campaign level criteria and ad extensions are enumerated
-     * in their
-     *                 respective lists and will not be reflected in this
-     * status. */
+    /* Whether or not the fields of this campaign have changed. Changes
+     * to campaign level criteria and
+     *                 ad extensions are enumerated in their respective lists
+     * and will not be reflected in this
+     *                 status. */
     private com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus campaignChangeStatus;
 
     /* A list of change information for all changed adgroups belonging
@@ -43,29 +42,23 @@ public class CampaignChangeData  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201607.ch.AdGroupChangeData[] changedAdGroups;
 
     /* A list of criteria IDs that have been added as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService. */
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService. */
     private long[] addedCampaignCriteria;
 
     /* A list of criteria IDs that have been deleted as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService. */
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService. */
     private long[] removedCampaignCriteria;
 
     /* A list of feed IDs for CampaignFeeds that have been changed
-     * in this campaign.
-     *                 If a CampaignFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list. */
+     * in this campaign. If a CampaignFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list. */
     private long[] changedFeeds;
 
     /* A list of feed IDs for CampaignFeeds that have been removed
-     * from the
-     *                 campaign. */
+     * from the campaign. */
     private long[] removedFeeds;
 
     public CampaignChangeData() {
@@ -112,12 +105,11 @@ public class CampaignChangeData  implements java.io.Serializable {
     /**
      * Gets the campaignChangeStatus value for this CampaignChangeData.
      * 
-     * @return campaignChangeStatus   * Whether or not the fields of this campaign have changed.  Changes
-     * to
-     *                 campaign level criteria and ad extensions are enumerated
-     * in their
-     *                 respective lists and will not be reflected in this
-     * status.
+     * @return campaignChangeStatus   * Whether or not the fields of this campaign have changed. Changes
+     * to campaign level criteria and
+     *                 ad extensions are enumerated in their respective lists
+     * and will not be reflected in this
+     *                 status.
      */
     public com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus getCampaignChangeStatus() {
         return campaignChangeStatus;
@@ -127,12 +119,11 @@ public class CampaignChangeData  implements java.io.Serializable {
     /**
      * Sets the campaignChangeStatus value for this CampaignChangeData.
      * 
-     * @param campaignChangeStatus   * Whether or not the fields of this campaign have changed.  Changes
-     * to
-     *                 campaign level criteria and ad extensions are enumerated
-     * in their
-     *                 respective lists and will not be reflected in this
-     * status.
+     * @param campaignChangeStatus   * Whether or not the fields of this campaign have changed. Changes
+     * to campaign level criteria and
+     *                 ad extensions are enumerated in their respective lists
+     * and will not be reflected in this
+     *                 status.
      */
     public void setCampaignChangeStatus(com.google.api.ads.adwords.axis.v201607.ch.ChangeStatus campaignChangeStatus) {
         this.campaignChangeStatus = campaignChangeStatus;
@@ -173,10 +164,8 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Gets the addedCampaignCriteria value for this CampaignChangeData.
      * 
      * @return addedCampaignCriteria   * A list of criteria IDs that have been added as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService.
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService.
      */
     public long[] getAddedCampaignCriteria() {
         return addedCampaignCriteria;
@@ -187,10 +176,8 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Sets the addedCampaignCriteria value for this CampaignChangeData.
      * 
      * @param addedCampaignCriteria   * A list of criteria IDs that have been added as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService.
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService.
      */
     public void setAddedCampaignCriteria(long[] addedCampaignCriteria) {
         this.addedCampaignCriteria = addedCampaignCriteria;
@@ -209,10 +196,8 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Gets the removedCampaignCriteria value for this CampaignChangeData.
      * 
      * @return removedCampaignCriteria   * A list of criteria IDs that have been deleted as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService.
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService.
      */
     public long[] getRemovedCampaignCriteria() {
         return removedCampaignCriteria;
@@ -223,10 +208,8 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Sets the removedCampaignCriteria value for this CampaignChangeData.
      * 
      * @param removedCampaignCriteria   * A list of criteria IDs that have been deleted as campaign criteria.
-     * This
-     *                 list includes any criteria that can be downloaded
-     * using
-     *                 CampaignCriterionService.
+     * This list includes any
+     *                 criteria that can be downloaded using CampaignCriterionService.
      */
     public void setRemovedCampaignCriteria(long[] removedCampaignCriteria) {
         this.removedCampaignCriteria = removedCampaignCriteria;
@@ -245,10 +228,9 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Gets the changedFeeds value for this CampaignChangeData.
      * 
      * @return changedFeeds   * A list of feed IDs for CampaignFeeds that have been changed
-     * in this campaign.
-     *                 If a CampaignFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list.
+     * in this campaign. If a CampaignFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list.
      */
     public long[] getChangedFeeds() {
         return changedFeeds;
@@ -259,10 +241,9 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Sets the changedFeeds value for this CampaignChangeData.
      * 
      * @param changedFeeds   * A list of feed IDs for CampaignFeeds that have been changed
-     * in this campaign.
-     *                 If a CampaignFeed is deleted after a modification,
-     * it will not be included
-     *                 in this list.
+     * in this campaign. If a CampaignFeed
+     *                 is deleted after a modification, it will not be included
+     * in this list.
      */
     public void setChangedFeeds(long[] changedFeeds) {
         this.changedFeeds = changedFeeds;
@@ -281,8 +262,7 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Gets the removedFeeds value for this CampaignChangeData.
      * 
      * @return removedFeeds   * A list of feed IDs for CampaignFeeds that have been removed
-     * from the
-     *                 campaign.
+     * from the campaign.
      */
     public long[] getRemovedFeeds() {
         return removedFeeds;
@@ -293,8 +273,7 @@ public class CampaignChangeData  implements java.io.Serializable {
      * Sets the removedFeeds value for this CampaignChangeData.
      * 
      * @param removedFeeds   * A list of feed IDs for CampaignFeeds that have been removed
-     * from the
-     *                 campaign.
+     * from the campaign.
      */
     public void setRemovedFeeds(long[] removedFeeds) {
         this.removedFeeds = removedFeeds;

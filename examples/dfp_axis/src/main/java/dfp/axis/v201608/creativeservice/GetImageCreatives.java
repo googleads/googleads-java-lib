@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,45 +21,46 @@ import com.google.api.ads.dfp.axis.utils.v201608.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201608.Creative;
 import com.google.api.ads.dfp.axis.v201608.CreativePage;
 import com.google.api.ads.dfp.axis.v201608.CreativeServiceInterface;
-import com.google.api.ads.dfp.axis.v201608.ImageCreative;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
- * This example gets all image creatives. To create creatives, run
- * CreateCreatives.java.
+ * This example gets all image creatives.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
  */
 public class GetImageCreatives {
 
   public static void runExample(DfpServices dfpServices, DfpSession session) throws Exception {
-    // Get the CreativeService.
     CreativeServiceInterface creativeService =
         dfpServices.get(session, CreativeServiceInterface.class);
 
-    // Create a statement to only select image creatives.
+    // Create a statement to select creatives.
     StatementBuilder statementBuilder = new StatementBuilder()
         .where("creativeType = :creativeType")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-        .withBindVariableValue("creativeType", ImageCreative.class.getSimpleName());
+        .withBindVariableValue("creativeType", "ImageCreative");
 
-    // Default for total result set size.
+    // Retrieve a small amount of creatives at a time, paging through
+    // until all creatives have been retrieved.
     int totalResultSetSize = 0;
-
     do {
-      // Get creatives by statement.
-      CreativePage page = creativeService.getCreativesByStatement(statementBuilder.toStatement());
+      CreativePage page =
+          creativeService.getCreativesByStatement(statementBuilder.toStatement());
 
       if (page.getResults() != null) {
+        // Print out some information for each creative.
         totalResultSetSize = page.getTotalResultSetSize();
         int i = page.getStartIndex();
         for (Creative creative : page.getResults()) {
           System.out.printf(
-              "%d) Creative with ID %d and name '%s' was found.%n", i++,
-              creative.getId(), creative.getName());
+              "%d) Creative with ID %d and name '%s' was found.%n",
+              i++,
+              creative.getId(),
+              creative.getName()
+          );
         }
       }
 
@@ -70,14 +71,15 @@ public class GetImageCreatives {
   }
 
   public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
+    // Generate a refreshable OAuth2 credential for authentication.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
         .forApi(Api.DFP)
         .fromFile()
         .build()
         .generateCredential();
 
-    // Construct a DfpSession.
+    // Construct an API session configured from a properties file and the OAuth2
+    // credentials above.
     DfpSession session = new DfpSession.Builder()
         .fromFile()
         .withOAuth2Credential(oAuth2Credential)

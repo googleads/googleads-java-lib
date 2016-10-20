@@ -37,8 +37,8 @@ public class AdGroupAd  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201605.cm.Ad ad;
 
     /* Experiment data associated with this {@link AdGroupAd}. It
-     * is returned by
-     *                 {@link AdGroupAdService#get get()} only if the experimentId
+     * is returned by {@link
+     *                 AdGroupAdService#get get()} only if the experimentId
      * is supplied. */
     private com.google.api.ads.adwords.axis.v201605.cm.AdGroupAdExperimentData experimentData;
 
@@ -193,8 +193,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the experimentData value for this AdGroupAd.
      *
      * @return experimentData   * Experiment data associated with this {@link AdGroupAd}. It
-     * is returned by
-     *                 {@link AdGroupAdService#get get()} only if the experimentId
+     * is returned by {@link
+     *                 AdGroupAdService#get get()} only if the experimentId
      * is supplied.
      */
     public com.google.api.ads.adwords.axis.v201605.cm.AdGroupAdExperimentData getExperimentData() {
@@ -206,8 +206,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the experimentData value for this AdGroupAd.
      *
      * @param experimentData   * Experiment data associated with this {@link AdGroupAd}. It
-     * is returned by
-     *                 {@link AdGroupAdService#get get()} only if the experimentId
+     * is returned by {@link
+     *                 AdGroupAdService#get get()} only if the experimentId
      * is supplied.
      */
     public void setExperimentData(com.google.api.ads.adwords.axis.v201605.cm.AdGroupAdExperimentData experimentData) {

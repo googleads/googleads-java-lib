@@ -27,35 +27,28 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Use this service to set up campaign experiments which let you accurately
- *       test and measure changes to your keywords, bids, ad groups and placements.
- *       Creating and running a campaign experiment involves the following steps:
+ *       Use this service to set up campaign experiments which let you accurately test and measure changes
+ *       to your keywords, bids, ad groups and placements. Creating and running a campaign experiment
+ *       involves the following steps:
  *       
  *       <ol>
- *       <li>Creating an {@link Experiment} object that describes the experiment
- *       itself, including the experiment ID, date range, and the percentage of
- *       traffic that will be directed to the experiment.</li>
- *       
- *       <li>Setting up control and experimental campaign entities by setting the
- *       {@code experimentData} field on {@link AdGroup} and {@link
- *       BiddableAdGroupCriterion} objects. Use the {@link
- *       AdGroup#experimentDataStatus experimentDataStatus} field to choose if the
- *       entity should be part of a control group, part of the experiment group, or
- *       if the entity should handle both control and experimental traffic.</li>
+ *       <li>Creating an {@link Experiment} object that describes the experiment itself, including the
+ *       experiment ID, date range, and the percentage of traffic that will be directed to the
+ *       experiment.
+ *       <li>Setting up control and experimental campaign entities by setting the {@code experimentData}
+ *       field on {@link AdGroup} and {@link BiddableAdGroupCriterion} objects. Use the {@link
+ *       AdGroup#experimentDataStatus experimentDataStatus} field to choose if the entity should be
+ *       part of a control group, part of the experiment group, or if the entity should handle both
+ *       control and experimental traffic.
  *       </ol>
  *       
- *       <p>
- *       If you want to run an experiment for your Search Network or Search Network
- *       with Display Select campaign, please use the DraftService and TrialService
- *       introduced in v201603. These services offer greater flexibility than the
- *       ExperimentService.
- *       </p>
+ *       <p>If you want to run an experiment for your Search Network or Search Network with Display Select
+ *       campaign, please use the DraftService and TrialService introduced in v201603. These services
+ *       offer greater flexibility than the ExperimentService.
  *       
- *       <p>
- *       For more information on campaign experiments, including
- *       tracking the performance of an experiment, see the <a href=
- *       "//support.google.com/adwords/bin/topic.py?topic=1713979">AdWords Help Center</a>.
- *       </p>
+ *       <p>For more information on campaign experiments, including tracking the performance of an
+ *       experiment, see the <a href= "//support.google.com/adwords/bin/topic.py?topic=1713979">AdWords
+ *       Help Center</a>.
  *       <span class="constraint AdxEnabled">This is disabled for AdX.</span>
  *     
  * 

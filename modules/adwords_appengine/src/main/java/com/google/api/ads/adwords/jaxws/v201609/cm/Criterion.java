@@ -58,6 +58,8 @@ import com.google.api.ads.adwords.jaxws.v201609.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
+    BusinessHour.class,
+    ProductService.class,
     Gender.class,
     CriterionUserList.class,
     ContentLabel.class,
@@ -85,9 +87,7 @@ import com.google.api.ads.adwords.jaxws.v201609.express.ProductService;
     Keyword.class,
     YouTubeChannel.class,
     ProductPartition.class,
-    Webpage.class,
-    BusinessHour.class,
-    ProductService.class
+    Webpage.class
 })
 public class Criterion {
 

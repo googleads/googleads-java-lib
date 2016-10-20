@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201605">
+<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201609">
  <operations xsi:type="ns1:CampaignOperation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <operator xsi:type="ns1:Operator">ADD</operator>
   <Operation.Type xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ADD</Operation.Type>
@@ -22,6 +22,7 @@
    <trackingUrlTemplate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:string" xsi:nil="true"/>
    <urlCustomParameters xsi:type="ns1:CustomParameters" xsi:nil="true"/>
    <vanityPharma xsi:type="ns1:VanityPharma" xsi:nil="true"/>
+   <selectiveOptimization xsi:type="ns1:SelectiveOptimization" xsi:nil="true"/>
   </operand>
  </operations>
  <operations xsi:type="ns1:AdGroupOperation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -33,7 +34,6 @@
    <campaignName xsi:type="xsd:string" xsi:nil="true" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
    <name xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">Test ad group</name>
    <status xsi:type="ns1:AdGroup.Status" xsi:nil="true"/>
-   <experimentData xsi:type="ns1:AdGroupExperimentData" xsi:nil="true"/>
    <biddingStrategyConfiguration xsi:type="ns1:BiddingStrategyConfiguration" xsi:nil="true"/>
    <contentBidCriterionTypeGroup xsi:type="ns1:CriterionTypeGroup" xsi:nil="true"/>
    <baseCampaignId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>

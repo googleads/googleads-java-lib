@@ -69,6 +69,8 @@ public enum AdGroupField implements EntityField {
 
   /**
    * The type of the bidding strategy to be attached.
+   * <p>For details on portfolio vs.
+   * standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.
    */
   @Filterable
   BiddingStrategyType(true),
@@ -182,14 +184,14 @@ public enum AdGroupField implements EntityField {
   Status(true),
 
   /**
-   * Average CPA target.
+   * Average cost per acquisition (CPA) target.
    * This target should be greater than or equal to minimum billable unit based on the currency for the account.
    */
   @Filterable
   TargetCpa(true),
 
   /**
-   * Target cost per acquisition/conversion.
+   * Target cost per acquisition (CPA).
    * This is applicable only at the ad group level.
    * <p>If an ad group-level target is not set and the strategy type is TARGET_CPA, the strategy level target will be used.
    * To set the strategy-level target, set the {@code TargetCpaBiddingScheme#targetCpa} on the strategy's {@code BiddingStrategyConfiguration#biddingScheme}.

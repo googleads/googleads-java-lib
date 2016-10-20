@@ -71,7 +71,12 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.String biddingStrategyName;
 
-    /* The type of the bidding strategy to be attached. */
+    /* The type of the bidding strategy to be attached.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>. */
     private com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType biddingStrategyType;
 
     /* Indicates where the bidding strategy is associated i.e. campaign,
@@ -84,7 +89,12 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
     /* The bidding strategy metadata. Bidding strategy can be associated
      * using the
      *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
-     * or the bidding scheme. */
+     * or the bidding scheme.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>. */
     private com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme biddingScheme;
 
     /* Specifies the bids. Bids can be set only on ad groups and ad
@@ -184,6 +194,11 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Gets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @return biddingStrategyType   * The type of the bidding strategy to be attached.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
      */
     public com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType getBiddingStrategyType() {
         return biddingStrategyType;
@@ -194,6 +209,11 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Sets the biddingStrategyType value for this BiddingStrategyConfiguration.
      * 
      * @param biddingStrategyType   * The type of the bidding strategy to be attached.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
      */
     public void setBiddingStrategyType(com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType biddingStrategyType) {
         this.biddingStrategyType = biddingStrategyType;
@@ -235,6 +255,11 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * using the
      *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
      * or the bidding scheme.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
      */
     public com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme getBiddingScheme() {
         return biddingScheme;
@@ -248,6 +273,11 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * using the
      *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
      * or the bidding scheme.
+     *                 
+     *                 <p>For details on portfolio vs. standard availability,
+     * see the
+     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
      */
     public void setBiddingScheme(com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme biddingScheme) {
         this.biddingScheme = biddingScheme;

@@ -89,6 +89,8 @@ public enum CampaignField implements EntityField {
 
   /**
    * The type of the bidding strategy to be attached.
+   * <p>For details on portfolio vs.
+   * standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.
    */
   @Filterable
   BiddingStrategyType(true),
@@ -248,7 +250,7 @@ public enum CampaignField implements EntityField {
   TargetContentNetwork(true),
 
   /**
-   * Average CPA target.
+   * Average cost per acquisition (CPA) target.
    * This target should be greater than or equal to minimum billable unit based on the currency for the account.
    */
   TargetCpa(false),
@@ -333,12 +335,14 @@ public enum CampaignField implements EntityField {
   /**
    * The display mode for vanity pharma URLs.
    */
-  VanityPharmaDisplayUrlMode(false),
+  @Filterable
+  VanityPharmaDisplayUrlMode(true),
 
   /**
    * The text that will be displayed in display URL of the text ad when website description is the selected display mode for vanity pharma URLs.
    */
-  VanityPharmaText(false),
+  @Filterable
+  VanityPharmaText(true),
 
   ;
 

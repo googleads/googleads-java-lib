@@ -33,7 +33,7 @@ public interface CustomerSyncServiceInterface extends java.rmi.Remote {
      *         
      * @return A Customer->Campaign->AdGroup hierarchy containing information
      * about the objects
-     *         changed at each level.  All Campaigns that are requested in
+     *         changed at each level. All Campaigns that are requested in
      * the selector will be returned,
      *         regardless of whether or not they have changed, but unchanged
      * AdGroups will be ignored.
