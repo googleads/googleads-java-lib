@@ -28,27 +28,21 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Service for retrieving {@link Content}.
  *       
- *       {@code Content} entities can be targeted in video {@link LineItem}s.
+ *       <p>{@code Content} entities can be targeted in video {@link LineItem}s.
  *       
- *       You can query for content that belongs to a particular category or has
- *       assigned metadata.
- *       Categories and metadata for {@code Content} are stored in DFP as
- *       {@link CustomCriteria}.
- *       <p>
- *       For example, to find all {@code Content} that is "genre=comedy", you would:
+ *       <p>You can query for content that belongs to a particular category or has assigned metadata.
+ *       Categories and metadata for {@code Content} are stored in DFP as {@link CustomCriteria}.
+ *       
+ *       <p>For example, to find all {@code Content} that is "genre=comedy", you would:
  *       
  *       <ul>
- *       <li>Retrieve the custom targeting key corresponding to "genre" using
- *       {@link CustomTargetingService#getCustomTargetingKeysByStatement}</li>
- *       <li>Using the
- *       {@link CustomTargetingService#getCustomTargetingValuesByStatement}
- *       method and a filter like
- *       "WHERE customTargetingKeyId = :genreKeyId
- *       and name = 'comedy'", retrieve the ID for the "comedy"
- *       custom targeting value.</li>
- *       <li>Call {@link #getContentByStatementAndCustomTargetingValue} with a
- *       filter like "WHERE status = 'ACTIVE'" and the ID of the custom targeting
- *       value from step 2.</li>
+ *       <li>Retrieve the custom targeting key corresponding to "genre" using {@link
+ *       CustomTargetingService#getCustomTargetingKeysByStatement}
+ *       <li>Using the {@link CustomTargetingService#getCustomTargetingValuesByStatement} method and a
+ *       filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'", retrieve the ID
+ *       for the "comedy" custom targeting value.
+ *       <li>Call {@link #getContentByStatementAndCustomTargetingValue} with a filter like "WHERE status =
+ *       'ACTIVE'" and the ID of the custom targeting value from step 2.
  *       </ul>
  *     
  * 

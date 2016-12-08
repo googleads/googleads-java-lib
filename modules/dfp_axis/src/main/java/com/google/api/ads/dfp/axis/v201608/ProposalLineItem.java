@@ -214,8 +214,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is optional during creation and defaults to the
      *                 {@link Product#roadblockingType product's roadblocking
      * type},
-     *                 or {@link RoadblockingType#ONLY_ONE} if the product
-     * does not have one. */
+     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
+     * by the product. */
     private com.google.api.ads.dfp.axis.v201608.RoadblockingType roadblockingType;
 
     /* The delivery option for companions. This is only valid if the
@@ -280,8 +280,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * to the
      *                 {@link Product#priority product's priority}, or a
      * default value assigned by Google.
-     *                 See <a href="https://support.google.com/dfp_premium/topic/4397182">
-     * this chart</a> for help. */
+     *                 See {@link LineItem#priority} for more information. */
     private java.lang.Integer lineItemPriority;
 
     /* The method used for billing the {@code ProposalLineItem}.
@@ -299,7 +298,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@code ProposalLineItem}. This attribute is optional
      * during creation and defaults to the
      *                 {@link Product#creativePlaceholders product's creative
-     * placeholders}. */
+     * placeholders}.
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, not using sales
+     * management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201608.CreativePlaceholder[] creativePlaceholders;
 
     /* Contains the targeting criteria for the {@code ProposalLineItem}.
@@ -1405,8 +1407,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is optional during creation and defaults to the
      *                 {@link Product#roadblockingType product's roadblocking
      * type},
-     *                 or {@link RoadblockingType#ONLY_ONE} if the product
-     * does not have one.
+     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
+     * by the product.
      */
     public com.google.api.ads.dfp.axis.v201608.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -1423,8 +1425,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is optional during creation and defaults to the
      *                 {@link Product#roadblockingType product's roadblocking
      * type},
-     *                 or {@link RoadblockingType#ONLY_ONE} if the product
-     * does not have one.
+     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
+     * by the product.
      */
     public void setRoadblockingType(com.google.api.ads.dfp.axis.v201608.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -1644,8 +1646,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * to the
      *                 {@link Product#priority product's priority}, or a
      * default value assigned by Google.
-     *                 See <a href="https://support.google.com/dfp_premium/topic/4397182">
-     * this chart</a> for help.
+     *                 See {@link LineItem#priority} for more information.
      */
     public java.lang.Integer getLineItemPriority() {
         return lineItemPriority;
@@ -1661,8 +1662,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * to the
      *                 {@link Product#priority product's priority}, or a
      * default value assigned by Google.
-     *                 See <a href="https://support.google.com/dfp_premium/topic/4397182">
-     * this chart</a> for help.
+     *                 See {@link LineItem#priority} for more information.
      */
     public void setLineItemPriority(java.lang.Integer lineItemPriority) {
         this.lineItemPriority = lineItemPriority;
@@ -1712,6 +1712,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * during creation and defaults to the
      *                 {@link Product#creativePlaceholders product's creative
      * placeholders}.
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, not using sales
+     * management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201608.CreativePlaceholder[] getCreativePlaceholders() {
         return creativePlaceholders;
@@ -1727,6 +1730,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * during creation and defaults to the
      *                 {@link Product#creativePlaceholders product's creative
      * placeholders}.
+     *                 <span class="constraint Required">This attribute is
+     * required when:<ul><li>using programmatic guaranteed, not using sales
+     * management.</li></ul></span>
      */
     public void setCreativePlaceholders(com.google.api.ads.dfp.axis.v201608.CreativePlaceholder[] creativePlaceholders) {
         this.creativePlaceholders = creativePlaceholders;

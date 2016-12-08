@@ -122,61 +122,64 @@ public class LineItemSummary  implements java.io.Serializable {
      * is required. */
     private com.google.api.ads.dfp.axis.v201602.LineItemType lineItemType;
 
-    /* The priority for the line item. The priority is a value
-     *                 between 1 and 16. If not specified, the default priority
+    /* The priority for the line item. Valid values range from 1 to
+     * 16. This
+     *                 field is optional and defaults to the default priority
      * of the
-     *                 {@link LineItemType} will be assigned. The following
-     * default, minimum and
-     *                 maximum priority values is allowed for each line item
-     * type:
+     *                 {@link LineItemType}.
+     *                 
+     *                 <p>The following table shows the default, minimum,
+     * and maximum priority
+     *                 values are for each line item type:
+     *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">LineItemType</th> <th scope="col">Default
-     * Priority</th>
-     *                 <th scope="col">Minimum Priority</th> <th scope="col">Maximum
-     * priority</th>
+     *                 <th colspan="2" scope="col">
+     *                 LineItemType - default priority (minimum priority,
+     * maximum priority)
+     *                 </th>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#SPONSORSHIP}</td>
-     *                 <td>4</td><td>2</td><td>5</td>
+     *                 <td>4 (2, 5)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#STANDARD}</td>
-     *                 <td>8</td><td>6</td><td>10</td>
+     *                 <td>8 (6, 10)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#NETWORK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#BULK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#CLICK_TRACKING}</td>
-     *                 <td>16</td><td>1</td><td>16</td>
+     *                 <td>16 (1, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#AD_EXCHANGE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#ADSENSE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#BUMPER}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 </table>
      *                 
-     *                 This field can only be edited by certain networks,
+     *                 <p>This field can only be edited by certain networks,
      * otherwise a
      *                 {@link PermissionError} will occur. */
     private java.lang.Integer priority;
@@ -1038,61 +1041,64 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the priority value for this LineItemSummary.
      * 
-     * @return priority   * The priority for the line item. The priority is a value
-     *                 between 1 and 16. If not specified, the default priority
+     * @return priority   * The priority for the line item. Valid values range from 1 to
+     * 16. This
+     *                 field is optional and defaults to the default priority
      * of the
-     *                 {@link LineItemType} will be assigned. The following
-     * default, minimum and
-     *                 maximum priority values is allowed for each line item
-     * type:
+     *                 {@link LineItemType}.
+     *                 
+     *                 <p>The following table shows the default, minimum,
+     * and maximum priority
+     *                 values are for each line item type:
+     *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">LineItemType</th> <th scope="col">Default
-     * Priority</th>
-     *                 <th scope="col">Minimum Priority</th> <th scope="col">Maximum
-     * priority</th>
+     *                 <th colspan="2" scope="col">
+     *                 LineItemType - default priority (minimum priority,
+     * maximum priority)
+     *                 </th>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#SPONSORSHIP}</td>
-     *                 <td>4</td><td>2</td><td>5</td>
+     *                 <td>4 (2, 5)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#STANDARD}</td>
-     *                 <td>8</td><td>6</td><td>10</td>
+     *                 <td>8 (6, 10)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#NETWORK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#BULK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#CLICK_TRACKING}</td>
-     *                 <td>16</td><td>1</td><td>16</td>
+     *                 <td>16 (1, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#AD_EXCHANGE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#ADSENSE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#BUMPER}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 </table>
      *                 
-     *                 This field can only be edited by certain networks,
+     *                 <p>This field can only be edited by certain networks,
      * otherwise a
      *                 {@link PermissionError} will occur.
      */
@@ -1104,61 +1110,64 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the priority value for this LineItemSummary.
      * 
-     * @param priority   * The priority for the line item. The priority is a value
-     *                 between 1 and 16. If not specified, the default priority
+     * @param priority   * The priority for the line item. Valid values range from 1 to
+     * 16. This
+     *                 field is optional and defaults to the default priority
      * of the
-     *                 {@link LineItemType} will be assigned. The following
-     * default, minimum and
-     *                 maximum priority values is allowed for each line item
-     * type:
+     *                 {@link LineItemType}.
+     *                 
+     *                 <p>The following table shows the default, minimum,
+     * and maximum priority
+     *                 values are for each line item type:
+     *                 
      *                 <table>
      *                 <tr>
-     *                 <th scope="col">LineItemType</th> <th scope="col">Default
-     * Priority</th>
-     *                 <th scope="col">Minimum Priority</th> <th scope="col">Maximum
-     * priority</th>
+     *                 <th colspan="2" scope="col">
+     *                 LineItemType - default priority (minimum priority,
+     * maximum priority)
+     *                 </th>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#SPONSORSHIP}</td>
-     *                 <td>4</td><td>2</td><td>5</td>
+     *                 <td>4 (2, 5)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#STANDARD}</td>
-     *                 <td>8</td><td>6</td><td>10</td>
+     *                 <td>8 (6, 10)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#NETWORK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#BULK}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#PRICE_PRIORITY}</td>
-     *                 <td>12</td><td>11</td><td>14</td>
+     *                 <td>12 (11, 14)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#HOUSE}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#CLICK_TRACKING}</td>
-     *                 <td>16</td><td>1</td><td>16</td>
+     *                 <td>16 (1, 16)</td>
      *                 </tr>
      *                 <tr>
      *                 <td>{@link LineItemType#AD_EXCHANGE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#ADSENSE}</td>
-     *                 <td>12</td><td>1</td><td>16</td>
+     *                 <td>12 (1, 16)</td>
      *                 </tr>
      *                 <td>{@link LineItemType#BUMPER}</td>
-     *                 <td>16</td><td>15</td><td>16</td>
+     *                 <td>16 (15, 16)</td>
      *                 </tr>
      *                 </table>
      *                 
-     *                 This field can only be edited by certain networks,
+     *                 <p>This field can only be edited by certain networks,
      * otherwise a
      *                 {@link PermissionError} will occur.
      */

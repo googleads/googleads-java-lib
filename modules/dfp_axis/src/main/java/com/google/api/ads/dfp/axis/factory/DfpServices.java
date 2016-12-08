@@ -29,10 +29,10 @@ import com.google.inject.Injector;
  * DfpSession session = new DfpSession.Builder()...build();
  * InventoryServiceInterface inventoryService =
  *    new  DfpServices().get(session, InventoryServiceInterface.class);
- * campaignService.makeRequest(...);
+ * inventoryService.makeRequest(...);
  * ...
  * session.setNetworkCode(...);
- * campaignService.makeRequest(...);
+ * inventoryService.makeRequest(...);
  * </code></pre>
  *
  * <p>

@@ -45,7 +45,7 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>
      *                 If this is an association between a line item and
      * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId]
+     *                 line item creative association, the {@link #creativeId}
      * will be the creative's ID.
      *                 <br>
      *                 If this is an association between a line item and
@@ -208,7 +208,7 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>
      *                 If this is an association between a line item and
      * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId]
+     *                 line item creative association, the {@link #creativeId}
      * will be the creative's ID.
      *                 <br>
      *                 If this is an association between a line item and
@@ -236,7 +236,7 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>
      *                 If this is an association between a line item and
      * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId]
+     *                 line item creative association, the {@link #creativeId}
      * will be the creative's ID.
      *                 <br>
      *                 If this is an association between a line item and

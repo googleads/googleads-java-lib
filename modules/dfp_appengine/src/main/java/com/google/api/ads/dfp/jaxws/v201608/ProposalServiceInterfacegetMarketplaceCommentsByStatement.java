@@ -23,10 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@link MarketplaceCommentPage} of {@link MarketplaceComment} objects that satisfy
- *             the given {@link Statement#query}. This method only returns comments already sent to
- *             Marketplace, local draft {@link ProposalMarketplaceInfo#marketplaceComment} are not included.
- *             The following fields are supported for filtering:
+ *             Gets a {@link MarketplaceCommentPage} of {@link MarketplaceComment} objects that satisfy the
+ *             given {@link Statement#query}. This method only returns comments already sent to Marketplace,
+ *             local draft {@link ProposalMarketplaceInfo#marketplaceComment} are not included. The following
+ *             fields are supported for filtering:
  *             
  *             <table>
  *             <tr>
@@ -39,17 +39,18 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             </table>
  *             
- *             The query must specify the {@code proposalId}, and only supports a subset of PQL syntax:<br>
+ *             The query must specify a {@code proposalId}, and only supports a subset of PQL syntax:<br>
  *             <code>[WHERE <condition> {AND <condition> ...}]</code><br>
- *             <p>
- *             <code><condition></code><br>
- *             &nbsp;&nbsp;&nbsp;&nbsp;
- *             <code>:= <property> = <value></code><br>
- *             <code><condition> := <property> IN <list></code><br>
- *             </p>
+ *             <code>[ORDER BY <property> [ASC | DESC]]</code><br>
+ *             <code>[LIMIT {[<offset>,] <count>} | {<count> OFFSET <offset>}]</code><br>
  *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of marketplace comments
+ *             <p><code><condition></code><br>
+ *             &nbsp;&nbsp;&nbsp;&nbsp; <code>:= <property> = <value></code><br>
+ *             <code><condition> := <property> IN <list></code><br>
+ *             Only supports {@code ORDER BY} {@link MarketplaceComment#creationTime}.
+ *             
+ *             @param filterStatement a Publisher Query Language statement used to filter a set of marketplace
+ *             comments
  *             @return the marketplace comments that match the given filter
  *           
  * 

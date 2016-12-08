@@ -133,7 +133,7 @@ public enum ReservationDetailsErrorReason {
     /**
      * 
      *                 Remnant line items from the Google Ad Manager cannot be changed to other
-     *                 line item types once delivery begins. This restricition does not apply
+     *                 line item types once delivery begins. This restriction does not apply
      *                 for new line items created in Doubleclick For Publishers.
      *               
      * 

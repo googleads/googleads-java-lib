@@ -135,10 +135,7 @@ public class Proposal  implements java.io.Serializable {
      *                 agency exists, its {@link ProposalCompanyAssociation#companyId}
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
-     * an order.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * an order. */
     private com.google.api.ads.dfp.axis.v201608.ProposalCompanyAssociation[] agencies;
 
     /* The probability to close this {@code Proposal}. This percentage
@@ -1039,9 +1036,6 @@ public class Proposal  implements java.io.Serializable {
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
      * an order.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201608.ProposalCompanyAssociation[] getAgencies() {
         return agencies;
@@ -1065,9 +1059,6 @@ public class Proposal  implements java.io.Serializable {
      * will be copied to
      *                 {@link Order#agencyId} when the proposal turns into
      * an order.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
      */
     public void setAgencies(com.google.api.ads.dfp.axis.v201608.ProposalCompanyAssociation[] agencies) {
         this.agencies = agencies;

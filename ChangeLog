@@ -1,3 +1,17 @@
+2.22.0 - 12/07/2016
+-------------------
+AdWords:
+  - Refactored the HandlePolicyViolationError examples to make them easier
+    to read and understand.
+
+DFP:
+  - Added support for v201611.
+  - Removed support for v201508 and v201511.
+  - Removed examples for v201602.
+
+Common:
+  - No changes.
+
 2.21.0 - 10/20/2016
 -------------------
 AdWords:
