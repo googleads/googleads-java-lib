@@ -81,7 +81,8 @@ public enum OrderStatus {
 
     /**
      * 
-     *                 Indicates that an approved {@link Order} has been paused from serving.
+     *                 This is a legacy state.  Paused status should be checked on {@link LineItems}s within the
+     *                 order.
      *               
      * 
      */

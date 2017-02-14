@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets an {@link AdRulePage} of {@link AdRule} objects that satisfy the given
- *             {@link Statement#query}. The following fields are supported for filtering:
+ *             Gets an {@link AdRulePage} of {@link AdRule} objects that satisfy the given {@link
+ *             Statement#query}. The following fields are supported for filtering:
  *             
  *             <table>
  *             <tr>
@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             <tr>
  *             <td>{@code id}</td>
- *             <td>{@link AdRule#id}</td>
+ *             <td>{@link AdRule#id} ({@link AdRule#adRuleId} beginning in v201702)</td>
  *             </tr>
  *             <tr>
  *             <td>{@code name}</td>
@@ -47,11 +47,9 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link AdRule#status}</td>
  *             </table>
  *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of ad rules
+ *             @param filterStatement a Publisher Query Language statement used to filter a set of ad rules
  *             @return the ad rules that match the given filter
- *             @throws ApiException if the ID of the active network does not exist or
- *             there is a backend error
+ *             @throws ApiException if the ID of the active network does not exist or there is a backend error
  *           
  * 
  * <p>Java class for getAdRulesByStatement element declaration.

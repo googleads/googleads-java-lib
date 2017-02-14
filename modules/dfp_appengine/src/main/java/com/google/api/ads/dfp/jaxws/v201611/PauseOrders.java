@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for pausing {@link Order} objects. All {@link LineItem}
- *             objects within the order will be paused as well.
+ *             The action used for pausing all {@link LineItem} objects within an order.
  *           
  * 
  * <p>Java class for PauseOrders complex type.

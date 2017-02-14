@@ -32,6 +32,7 @@ import com.google.api.ads.adwords.lib.selectorfields.v201609.cm.ManagedCustomerF
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.v201609.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.v201609.ReportDownloaderInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
@@ -297,7 +298,7 @@ public class ParallelReportDownload {
           // Set the property api.adwords.reportDownloadTimeout or call
           // ReportDownloader.setReportDownloadTimeout to set a timeout (in milliseconds)
           // for CONNECT and READ in report downloads.
-          ReportDownloader reportDownloader = new ReportDownloader(session);
+          ReportDownloaderInterface reportDownloader = new ReportDownloader(session);
           ReportDownloadResponse response = reportDownloader.downloadReport(reportDefinition);
           response.saveToFile(reportOutputFile.getPath());
 

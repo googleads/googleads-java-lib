@@ -53,7 +53,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ObjectValue")
 @XmlSeeAlso({
-    ChangeHistoryValue.class,
     TargetingValue.class
 })
 public abstract class ObjectValue

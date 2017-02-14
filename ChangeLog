@@ -1,3 +1,26 @@
+3.0.0 - 2/14/2017
+-------------------
+AdWords:
+  - Introduced ReportDownloaderInterface for each version of AdWords API
+    to allow extensions to more easily wrap ReportDownloader objects.
+  - Added HttpHandler for Axis and removed the dependency on
+    commons-httpclient 3.1. Fixes github issue #31:
+    https://github.com/googleads/googleads-java-lib/issues/31
+  - Added a getUtility method to AdWordsServices for improved dependency
+    management. This also makes it easier for extension frameworks to
+    proxy utility objects.
+
+DFP:
+  - Added support for v201702.
+  - Removed support for v201602 (sunset).
+  - Removed examples for v201605 (deprecated).
+
+Common:
+  - Introduced AdsServicesInterface and sub interfaces
+    AdWordsServicesInterface and DfpServicesInterface to allow extensions
+    to provide customized implementations.
+  - Changed minimum JRE version to 1.7.
+
 2.22.0 - 12/07/2016
 -------------------
 AdWords:

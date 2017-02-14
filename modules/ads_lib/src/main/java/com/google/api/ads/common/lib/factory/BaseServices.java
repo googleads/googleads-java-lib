@@ -25,9 +25,9 @@ import com.google.api.ads.common.lib.client.AdsSession;
  * @param <S> the type of {@link AdsSession}
  * @param <D> the type of {@link AdsServiceDescriptor}
  */
-public abstract class BaseServices<C extends AdsServiceClient<S, D>,
-                                   S extends AdsSession,
-                                   D extends AdsServiceDescriptor> {
+public abstract class BaseServices<
+        C extends AdsServiceClient<S, D>, S extends AdsSession, D extends AdsServiceDescriptor>
+    implements AdsServicesInterface<S> {
 
   private final BaseAdsServiceClientFactory<C, S, D> factory;
 
@@ -40,20 +40,7 @@ public abstract class BaseServices<C extends AdsServiceClient<S, D>,
     this.factory = factory;
   }
 
-  /**
-   * Gets a client for the service represented by the interface with a reference
-   * to the session.
-   *
-   * <p>
-   * The objects returned by this method are not thread-safe.
-   * </p>
-   *
-   * @param <T> the service type
-   * @param session your current session
-   * @param interfaceClass the service interface class. This is a class
-   *        representing a SOAP service
-   * @return the client for the service
-   */
+  @Override
   public <T> T get(S session, Class<T> interfaceClass) {
     return factory.getServiceClientAsInterface(session, interfaceClass);
   }

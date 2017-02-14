@@ -25,11 +25,9 @@ public interface ContentServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link ContentPage} of {@link Content} objects that
-     * satisfy the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -50,12 +48,19 @@ public interface ContentServiceInterface extends java.rmi.Remote {
      *         <td>{@code lastModifiedDateTime}</td>
      *         <td>{@link Content#lastModifiedDateTime}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code lastDaiIngestDateTime}</td>
+     *         <td>{@link Content#lastDaiIngestDateTime}</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code daiIngestStatus}</td>
+     *         <td>{@link Content#daiIngestStatus}</td>
+     *         </tr>
      *         </table>
      *         
      *         
-     * @params filterStatement a Publisher Query Language statement used
-     * to
-     *         filter a set of content
+     * @param statement a Publisher Query Language statement used to filter
+     * a set of content
      *         
      * @return the content that matches the given filter
      */

@@ -45,14 +45,14 @@ import org.apache.axis.encoding.TypeMapping;
  */
 class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, ApiError,
     MutateResult, BatchJobMutateResponse> {
-  private final BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
+  private final BatchJobUploader uploader;
   private final BatchJobLogger batchJobLogger;
   private final QName resultQName;
   
   public BatchJobHelperImpl(AdWordsSession session) {
     this(
-        new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
-            session, true));
+        new BatchJobUploader(
+            session));
   }
 
   /**
@@ -60,7 +60,7 @@ class BatchJobHelperImpl implements BatchJobHelperInterface<Operation, Operand, 
    */
   @VisibleForTesting
   BatchJobHelperImpl(
-      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+      BatchJobUploader uploader) {
     this.uploader = uploader;
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201609", "MutateResult");

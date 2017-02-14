@@ -28,8 +28,8 @@ package com.google.api.ads.dfp.axis.v201605;
  */
 public class AdRule  implements java.io.Serializable {
     /* The unique ID of the {@link AdRule}. This value is readonly
-     * and is assigned
-     *                 by Google. */
+     * and is assigned by Google. Renamed
+     *                 to {@code adRuleId} beginning in V201702. */
     private java.lang.Integer id;
 
     /* The unique name of the {@link AdRule}. This attribute is required
@@ -151,8 +151,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the id value for this AdRule.
      * 
      * @return id   * The unique ID of the {@link AdRule}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google. Renamed
+     *                 to {@code adRuleId} beginning in V201702.
      */
     public java.lang.Integer getId() {
         return id;
@@ -163,8 +163,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the id value for this AdRule.
      * 
      * @param id   * The unique ID of the {@link AdRule}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google. Renamed
+     *                 to {@code adRuleId} beginning in V201702.
      */
     public void setId(java.lang.Integer id) {
         this.id = id;

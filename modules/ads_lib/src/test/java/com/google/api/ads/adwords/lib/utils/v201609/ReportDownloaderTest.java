@@ -15,12 +15,14 @@
 package com.google.api.ads.adwords.lib.utils.v201609;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.jaxb.v201609.DownloadFormat;
 import com.google.api.ads.adwords.lib.jaxb.v201609.ReportDefinition;
 import com.google.api.ads.adwords.lib.jaxb.v201609.ReportDefinitionDateRangeType;
@@ -32,6 +34,7 @@ import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.ReportRequest;
+import com.google.api.ads.adwords.lib.utils.testing.GenericAdWordsServices;
 import com.google.api.ads.adwords.lib.utils.v201609.DetailedReportDownloadResponseException.Builder;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -126,8 +129,17 @@ public class ReportDownloaderTest {
   }
 
   @Test
+  public void testGetFromAdWordsServices() throws Exception {
+    AdWordsServicesInterface adWordsServices = new GenericAdWordsServices();
+    ReportDownloaderInterface downloader =
+        adWordsServices.getUtility(adWordsSession, ReportDownloaderInterface.class);
+    assertNotNull("Null downloader from AdWordsServices", downloader);
+  }
+
+  @Test
   public void testSuccess() throws Exception {
-    ByteArrayInputStream stream = new ByteArrayInputStream("Report data".getBytes());
+    ByteArrayInputStream stream =
+        new ByteArrayInputStream("Report data".getBytes(AdHocReportDownloadHelper.REPORT_CHARSET));
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(200, stream, AdHocReportDownloadHelper.REPORT_CHARSET,
             DownloadFormat.CSV.name());
@@ -154,7 +166,8 @@ public class ReportDownloaderTest {
 
   @Test
   public void testFailure_failedStatusCode() throws Exception {
-    InputStream stream = new ByteArrayInputStream(ERROR_TEXT.getBytes());
+    InputStream stream =
+        new ByteArrayInputStream(ERROR_TEXT.getBytes(AdHocReportDownloadHelper.REPORT_CHARSET));
     int statusCode = 400;
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(statusCode, stream, AdHocReportDownloadHelper.REPORT_CHARSET,

@@ -31,7 +31,6 @@ import com.google.api.client.util.Charsets;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URI;
@@ -41,20 +40,11 @@ import java.nio.charset.Charset;
 /**
  * Utility for uploading operations to a BatchJob and downloading results from
  * a completed BatchJob.
- *
- * @param <OperandT> Operand for the SOAP framework and AdWords API version.
- * @param <ApiErrorT> ApiError for the SOAP framework and AdWords API version.
- * @param <ResultT> MutateResult for the SOAP framework and AdWords API version.
- * @param <ResponseT> BatchJobMutateResponseInterface type for the SOAP framework and AdWords API
- * version.
  */
-public class BatchJobUploader<OperandT, ApiErrorT,
-    ResultT extends BatchJobMutateResultInterface<OperandT, ApiErrorT>,
-    ResponseT extends BatchJobMutateResponseInterface<OperandT, ApiErrorT, ResultT>> {
+public class BatchJobUploader {
   private final AdWordsSession session;
   private final HttpTransport httpTransport;
   private final BatchJobLogger batchJobLogger;
-  private final boolean isInitiateResumableUpload;
 
   /**
    * Charset for request contents.
@@ -72,21 +62,17 @@ public class BatchJobUploader<OperandT, ApiErrorT,
    * Constructor that stores the session for authentication.
    *
    * @param session the AdWords session to use for authentication.
-   * @param isInitiateResumableUpload if true, then the uploader will issue an additional request
-   * to initiate resumable uploads.
    */
-  public BatchJobUploader(AdWordsSession session, boolean isInitiateResumableUpload) {
-    this(session, AdWordsInternals.getInstance().getHttpTransport(), isInitiateResumableUpload);
+  public BatchJobUploader(AdWordsSession session) {
+    this(session, AdWordsInternals.getInstance().getHttpTransport());
   }
 
   @VisibleForTesting
-  BatchJobUploader(
-      AdWordsSession session, HttpTransport httpTransport, boolean isInitiateResumableUpload) {
+  BatchJobUploader(AdWordsSession session, HttpTransport httpTransport) {
     this.session = session;
     this.httpTransport = httpTransport;
     this.batchJobLogger =
         AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
-    this.isInitiateResumableUpload = isInitiateResumableUpload;
   }
 
   private HttpHeaders createHttpHeaders() {
@@ -94,51 +80,6 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     headers.setContentType("application/xml");
     headers.setUserAgent(session.getUserAgent());
     return headers;
-  }
-
-  /**
-   * Uploads a batch job's operations and returns the response.
-   */
-  public BatchJobUploadResponse uploadBatchJobOperations(
-      BatchJobMutateRequestInterface request, String uploadUrl) throws BatchJobException {
-    Preconditions.checkState(
-        !isInitiateResumableUpload,
-        "uploadBatchJobOperations is not supported for uploaders configured to initiate "
-        + "resumable uploads. Use uploadIncrementalBatchJobOperations instead.");
-    Preconditions.checkNotNull(request, "Null request");
-    String requestXml = null;
-    Throwable exception = null;
-    BatchJobUploadResponse batchJobUploadResponse = null;
-    try {
-      HttpRequestFactory requestFactory =
-          httpTransport.createRequestFactory(new HttpRequestInitializer() {
-            @Override
-            public void initialize(HttpRequest request) throws IOException {
-              request.setHeaders(createHttpHeaders());
-              request.setLoggingEnabled(true);
-            }
-          });
-      BatchJobUploadBodyProvider bodyProvider = request.createBatchJobUploadBodyProvider();
-
-      // Non-incremental operations require a POST request.
-      ByteArrayContent content = bodyProvider.getHttpContent(request, true, true);
-      HttpRequest httpRequest = requestFactory.buildPostRequest(new GenericUrl(uploadUrl), content);
-
-      requestXml = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
-      content.getInputStream().reset();
-
-      HttpResponse response = httpRequest.execute();
-
-      batchJobUploadResponse =
-          new BatchJobUploadResponse(response, httpRequest.getContent().getLength(), null);
-
-      return batchJobUploadResponse;
-    } catch (IOException e) {
-      exception = e;
-      throw new BatchJobException("Problem sending data to batch upload URL.", e);
-    } finally {
-      logRequestResponse(requestXml, uploadUrl, batchJobUploadResponse, exception);
-    }
   }
 
   /**
@@ -157,9 +98,9 @@ public class BatchJobUploader<OperandT, ApiErrorT,
 
     // This reference is final because it is referenced below within an anonymous class.
     final BatchJobUploadStatus effectiveStatus;
-    if (isInitiateResumableUpload && batchJobUploadStatus.getTotalContentLength() == 0) {
-      // If this is the first upload and this uploader is configured to initiate resumable
-      // uploads, then issue a request to get the resumable session URI from Google Cloud Storage.
+    if (batchJobUploadStatus.getTotalContentLength() == 0) {
+      // If this is the first upload, then issue a request to get the resumable session URI from
+      // Google Cloud Storage.
       URI uploadUri = initiateResumableUpload(batchJobUploadStatus.getResumableUploadUri());
       effectiveStatus = new BatchJobUploadStatus(0, uploadUri);
     } else {
@@ -288,13 +229,13 @@ public class BatchJobUploader<OperandT, ApiErrorT,
     // The request is part of a set of incremental uploads, so pad to the required content
     // length. This is not necessary if all operations for the job are being uploaded in a
     // single request.
-    int numBytes = serializedRequest.getBytes().length;
+    int numBytes = serializedRequest.getBytes(REQUEST_CHARSET).length;
     int remainder = numBytes % REQUIRED_CONTENT_LENGTH_INCREMENT;
     if (remainder > 0) {
       int pad = REQUIRED_CONTENT_LENGTH_INCREMENT - remainder;
       serializedRequest = Strings.padEnd(serializedRequest, numBytes + pad, ' ');
     }
-    return new ByteArrayContent(content.getType(), serializedRequest.getBytes());
+    return new ByteArrayContent(content.getType(), serializedRequest.getBytes(REQUEST_CHARSET));
   }
 
   /**
@@ -313,7 +254,8 @@ public class BatchJobUploader<OperandT, ApiErrorT,
       // Move the beginIndex (inclusive) to the character after the first opening tag, which
       // should be a "<mutate>" tag, possibly with namespace declarations.
       beginIndex = serializedRequest.indexOf('>') + 1;
-      Preconditions.checkArgument(serializedRequest.substring(0, beginIndex -1).contains("mutate"),
+      Preconditions.checkArgument(
+          serializedRequest.substring(0, beginIndex - 1).contains("mutate"),
           "Did not find an opening <mutate> element at the beginning of serialized request: %s",
           serializedRequest);
     }

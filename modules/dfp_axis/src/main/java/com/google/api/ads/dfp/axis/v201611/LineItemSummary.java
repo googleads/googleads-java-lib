@@ -98,12 +98,11 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201611.CreativeRotationType creativeRotationType;
 
     /* The strategy for delivering ads over the course of the line
-     * item's
-     *                 duration. This attribute is optional and defaults
-     * to
-     *                 {@link DeliveryRateType#EVENLY}.
-     *                 Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED}
-     * if specifically configured to on the network. */
+     * item's duration. This attribute is
+     *                 optional and defaults to {@link DeliveryRateType#EVENLY}
+     * or
+     *                 {@link DeliveryRateType#FRONTLOADED} depending on
+     * the network's configuration. */
     private com.google.api.ads.dfp.axis.v201611.DeliveryRateType deliveryRateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
@@ -928,12 +927,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the deliveryRateType value for this LineItemSummary.
      * 
      * @return deliveryRateType   * The strategy for delivering ads over the course of the line
-     * item's
-     *                 duration. This attribute is optional and defaults
-     * to
-     *                 {@link DeliveryRateType#EVENLY}.
-     *                 Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED}
-     * if specifically configured to on the network.
+     * item's duration. This attribute is
+     *                 optional and defaults to {@link DeliveryRateType#EVENLY}
+     * or
+     *                 {@link DeliveryRateType#FRONTLOADED} depending on
+     * the network's configuration.
      */
     public com.google.api.ads.dfp.axis.v201611.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -944,12 +942,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the deliveryRateType value for this LineItemSummary.
      * 
      * @param deliveryRateType   * The strategy for delivering ads over the course of the line
-     * item's
-     *                 duration. This attribute is optional and defaults
-     * to
-     *                 {@link DeliveryRateType#EVENLY}.
-     *                 Starting in v201306, it may default to {@link DeliveryRateType#FRONTLOADED}
-     * if specifically configured to on the network.
+     * item's duration. This attribute is
+     *                 optional and defaults to {@link DeliveryRateType#EVENLY}
+     * or
+     *                 {@link DeliveryRateType#FRONTLOADED} depending on
+     * the network's configuration.
      */
     public void setDeliveryRateType(com.google.api.ads.dfp.axis.v201611.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;

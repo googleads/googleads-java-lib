@@ -722,8 +722,10 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#status} for {@link Dimension#PROPOSAL_NAME}, including those
-     *                 post-sold status, e.g. DRAFT(SOLD). Can be used for filtering.
+     *                 Represents {@link Proposal#status} for {@link Dimension#PROPOSAL_NAME}.
+     *                 This attribute includes post-sold statuses, e.g. DRAFT(SOLD) until v201611.
+     *                 Starting from v201702, it will not include post-sold statuses.
+     *                 Can be used for filtering.
      *               
      * 
      */

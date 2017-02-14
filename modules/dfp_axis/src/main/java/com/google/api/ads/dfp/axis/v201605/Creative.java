@@ -43,7 +43,9 @@ public abstract class Creative  implements java.io.Serializable {
      *                 length of 255 characters. */
     private java.lang.String name;
 
-    /* The {@link Size} of the creative. This attribute is required. */
+    /* The {@link Size} of the creative. This attribute is required
+     * for creation
+     *                 and then is read-only. */
     private com.google.api.ads.dfp.axis.v201605.Size size;
 
     /* The URL of the creative for previewing the media. This attribute
@@ -169,7 +171,9 @@ public abstract class Creative  implements java.io.Serializable {
     /**
      * Gets the size value for this Creative.
      * 
-     * @return size   * The {@link Size} of the creative. This attribute is required.
+     * @return size   * The {@link Size} of the creative. This attribute is required
+     * for creation
+     *                 and then is read-only.
      */
     public com.google.api.ads.dfp.axis.v201605.Size getSize() {
         return size;
@@ -179,7 +183,9 @@ public abstract class Creative  implements java.io.Serializable {
     /**
      * Sets the size value for this Creative.
      * 
-     * @param size   * The {@link Size} of the creative. This attribute is required.
+     * @param size   * The {@link Size} of the creative. This attribute is required
+     * for creation
+     *                 and then is read-only.
      */
     public void setSize(com.google.api.ads.dfp.axis.v201605.Size size) {
         this.size = size;

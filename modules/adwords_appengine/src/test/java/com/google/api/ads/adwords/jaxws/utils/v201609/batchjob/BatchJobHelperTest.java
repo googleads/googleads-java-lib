@@ -15,7 +15,9 @@
 package com.google.api.ads.adwords.jaxws.utils.v201609.batchjob;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
+import com.google.api.ads.adwords.jaxws.factory.AdWordsServices;
 import com.google.api.ads.adwords.jaxws.v201609.cm.ApiError;
 import com.google.api.ads.adwords.jaxws.v201609.cm.Campaign;
 import com.google.api.ads.adwords.jaxws.v201609.cm.CampaignOperation;
@@ -25,6 +27,7 @@ import com.google.api.ads.adwords.jaxws.v201609.cm.Operation;
 import com.google.api.ads.adwords.jaxws.v201609.cm.Operator;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -35,12 +38,18 @@ import org.junit.runners.JUnit4;
 public class BatchJobHelperTest
     extends com.google.api.ads.adwords.lib.utils.testing.BatchJobHelperTest<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
-
+  
+  @Test
+  public void testGetFromAdWordsServices() {
+    BatchJobHelper helper = new AdWordsServices().getUtility(session, BatchJobHelper.class);
+    assertNotNull("Helper is null", helper);
+  }
+  
   @Override
   protected BatchJobHelperInterface<
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
       createBatchJobHelper(
-          BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+          BatchJobUploader uploader) {
     return new BatchJobHelper(uploader);
   }
 

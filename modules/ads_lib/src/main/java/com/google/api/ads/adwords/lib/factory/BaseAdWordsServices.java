@@ -20,19 +20,30 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.factory.BaseServices;
 import com.google.inject.Injector;
 
-/**
- * Base for a utility class which creates AdWords service clients.
- */
-public abstract class BaseAdWordsServices extends BaseServices<AdWordsServiceClient,
-                                                               AdWordsSession,
-                                                               AdWordsServiceDescriptor> {
+/** Base for a utility class which creates AdWords service clients. */
+public abstract class BaseAdWordsServices
+    extends BaseServices<AdWordsServiceClient, AdWordsSession, AdWordsServiceDescriptor>
+    implements AdWordsServicesInterface {
+
+  private final Injector injector;
 
   /**
-   * Constructor.
-   *
    * @param injector an injector which binds all the necessary classes
    */
   protected BaseAdWordsServices(Injector injector) {
     super(new AdWordsServiceClientFactory(injector));
+    this.injector = injector;
+  }
+
+  /**
+   * Returns a new instance of the specified utility type, bound to the provided session.
+   *
+   * @param session an AdWords session
+   * @param utilityClass a utility class annotated.
+   */
+  @Override
+  public <UtilityT> UtilityT getUtility(AdWordsSession session, Class<UtilityT> utilityClass) {
+    Injector childInjector = injector.createChildInjector(new AdWordsSessionModule(session));
+    return childInjector.getInstance(utilityClass);
   }
 }

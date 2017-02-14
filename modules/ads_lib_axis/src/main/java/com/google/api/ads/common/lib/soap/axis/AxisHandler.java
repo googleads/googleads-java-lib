@@ -29,10 +29,16 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
-
+import java.lang.reflect.InvocationTargetException;
+import java.util.Hashtable;
+import java.util.Map;
+import javax.inject.Inject;
+import javax.xml.namespace.QName;
+import javax.xml.soap.SOAPException;
 import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
 import org.apache.axis.EngineConfigurationFactory;
+import org.apache.axis.Message;
 import org.apache.axis.MessageContext;
 import org.apache.axis.client.Service;
 import org.apache.axis.client.Stub;
@@ -40,14 +46,6 @@ import org.apache.axis.message.SOAPHeaderElement;
 import org.apache.axis.transport.http.HTTPConstants;
 import org.apache.commons.beanutils.BeanUtils;
 import org.w3c.dom.Node;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Hashtable;
-import java.util.Map;
-
-import javax.inject.Inject;
-import javax.xml.namespace.QName;
-import javax.xml.soap.SOAPException;
 
 /**
  * SOAP Client Handler implementation for use with Axis 1.x.
@@ -213,8 +211,8 @@ public class AxisHandler extends SoapClientHandler<Stub> {
         return (Stub) locator.getClass().getMethod("getPort", Class.class)
             .invoke(locator, soapServiceDescriptor.getInterfaceClass());
       }
-      throw new ServiceException("Service [" + soapServiceDescriptor +
-          "] not compatible with Axis", null);
+      throw new ServiceException(
+          "Service [" + soapServiceDescriptor + "] not compatible with Axis", null);
     } catch (SecurityException e) {
       throw new ServiceException("Unexpected Exception.", e);
     } catch (NoSuchMethodException e) {
@@ -263,22 +261,24 @@ public class AxisHandler extends SoapClientHandler<Stub> {
           builder.withException(e);
         }
         String requestId = null;
+        Message responseMessage = messageContext.getResponseMessage();
         try {
-          if (!requestIdXPathComponents.isEmpty()) {
+          if (!requestIdXPathComponents.isEmpty() && responseMessage != null) {
             Node requestIdNode =
                 nodeExtractor.extractNode(
-                    messageContext.getResponseMessage().getSOAPHeader(), requestIdXPathComponents);
+                    responseMessage.getSOAPHeader(), requestIdXPathComponents);
             if (requestIdNode != null) {
               requestId = requestIdNode.getFirstChild().getNodeValue();
             }
           }
-        } catch (SOAPException e1) {
+        } catch (SOAPException e) {
           // Ignore, since capturing the requestId is not critical.
         }
         try {
           builder.withResponseInfo(
               new ResponseInfo.Builder()
-                  .withSoapResponseXml(messageContext.getResponseMessage().getSOAPPartAsString())
+                  .withSoapResponseXml(
+                      responseMessage == null ? null : responseMessage.getSOAPPartAsString())
                   .withRequestId(requestId)
                   .build());
         } catch (AxisFault e) {

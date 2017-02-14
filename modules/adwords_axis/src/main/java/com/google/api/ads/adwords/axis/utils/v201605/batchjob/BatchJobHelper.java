@@ -27,7 +27,7 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.reflect.Reflection;
-
+import com.google.inject.Inject;
 import java.lang.reflect.InvocationHandler;
 
 /**
@@ -42,6 +42,7 @@ public class BatchJobHelper
       impl;
 
   @SuppressWarnings("unchecked")
+  @Inject
   public BatchJobHelper(AdWordsSession session) {
     InvocationHandler invocationHandler =
         new AdsUtilityInvocationHandler(
@@ -56,7 +57,7 @@ public class BatchJobHelper
   @SuppressWarnings("unchecked")
   @VisibleForTesting
   BatchJobHelper(
-      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+      BatchJobUploader uploader) {
     InvocationHandler invocationHandler =
         new AdsUtilityInvocationHandler(
             new BatchJobHelperImpl(uploader),

@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.testing;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -25,16 +26,14 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.common.collect.Lists;
-
+import java.io.IOException;
+import java.net.ConnectException;
+import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.IOException;
-import java.net.ConnectException;
-import java.util.List;
 
 /**
  * Tests for {@link MockHttpServer}.
@@ -53,7 +52,7 @@ public class MockHttpServerTest {
             .getHttpTransport()
             .createRequestFactory()
             .buildGetRequest(new GenericUrl(mockHttpServer.getServerUrl()));
-    request.setContent(new ByteArrayContent("text", "test content".getBytes()));
+    request.setContent(new ByteArrayContent("text", "test content".getBytes(UTF_8)));
     thrown.expect(HttpResponseException.class);
     thrown.expectMessage("No mock response");
     request.execute();
@@ -71,8 +70,8 @@ public class MockHttpServerTest {
             .createRequestFactory()
             .buildGetRequest(
                 new GenericUrl("http://www.example.com/does_not_match_mock_http_server_url"));
-    request.setContent(new ByteArrayContent("text", "test content".getBytes()));
-    mockHttpServer.setMockResponseBodies(Lists.newArrayList("test response"));
+    request.setContent(new ByteArrayContent("text", "test content".getBytes(UTF_8)));
+    mockHttpServer.setMockResponse(new MockResponse("test response"));
     thrown.expect(ConnectException.class);
     request.execute();
   }
@@ -82,29 +81,27 @@ public class MockHttpServerTest {
    */
   @Test
   public void testUrlMismatch_verifyDisabled() throws IOException {
-    mockHttpServer.setValidateUrlMatches(false);
+    MockResponse mockResponse = new MockResponse("test response");
+    mockResponse.setValidateUrlMatches(false);
     HttpRequest request =
         mockHttpServer
             .getHttpTransport()
             .createRequestFactory()
             .buildGetRequest(
                 new GenericUrl("http://www.example.com/does_not_match_mock_http_server_url"));
-    request.setContent(new ByteArrayContent("text", "test content".getBytes()));
+    request.setContent(new ByteArrayContent("text", "test content".getBytes(UTF_8)));
     HttpHeaders headers = new HttpHeaders();
     headers.set("one", "1");
     headers.set("two", "2");
     request.setHeaders(headers);
-    mockHttpServer.setMockResponseBodies(Lists.newArrayList("test response"));
+    mockHttpServer.setMockResponse(mockResponse);
     HttpResponse response = request.execute();
+    ActualResponse actualResponse = mockHttpServer.getLastResponse();
     assertEquals("Incorrect response code", 200, response.getStatusCode());
     assertEquals(
-        "Request header 'one' incorrect",
-        "1",
-        mockHttpServer.getLastRequestHeaders().get("one").get(0));
+        "Request header 'one' incorrect", "1", actualResponse.getRequestHeader("one").get(0));
     assertEquals(
-        "Request header 'two' incorrect",
-        "2",
-        mockHttpServer.getLastRequestHeaders().get("two").get(0));
+        "Request header 'two' incorrect", "2", actualResponse.getRequestHeader("two").get(0));
   }
 
   /**
@@ -118,17 +115,20 @@ public class MockHttpServerTest {
             .createRequestFactory()
             .buildGetRequest(new GenericUrl(mockHttpServer.getServerUrl()));
     String requestContent = "test request";
-    request.setContent(new ByteArrayContent("text", requestContent.getBytes()));
+    request.setContent(new ByteArrayContent("text", requestContent.getBytes(UTF_8)));
 
-    List<String> expectedResponses = Lists.newArrayList("test response 1", "test response 2");
-    mockHttpServer.setMockResponseBodies(expectedResponses);
+    List<MockResponse> expectedResponses =
+        Lists.newArrayList(
+            new MockResponse("test response 1"), new MockResponse("test response 2"));
+    mockHttpServer.setMockResponses(expectedResponses);
 
     for (int i = 0; i < expectedResponses.size(); i++) {
       HttpResponse response = request.execute();
+      ActualResponse actualResponse = mockHttpServer.getAllResponses().get(i);
       assertEquals(200, response.getStatusCode());
       assertEquals(
           "Response contents incorrect",
-          expectedResponses.get(i),
+          expectedResponses.get(i).getBody(),
           Streams.readAll(response.getContent(), response.getContentCharset()));
       assertEquals(
           "Location header incorrect on response",
@@ -136,11 +136,9 @@ public class MockHttpServerTest {
           response.getHeaders().getLocation());
       assertFalse(
           "No gzip header passed, but request was compressed",
-          mockHttpServer.wasLastRequestBodyCompressed());
-      assertEquals(
-          "Incorrect request contents", requestContent, mockHttpServer.getLastRequestBody());
-      assertEquals(
-          "Incorrect response contents", i + 1, mockHttpServer.getAllRequestBodies().size());
+          actualResponse.wasRequestBodyCompressed());
+      assertEquals("Incorrect request contents", requestContent, actualResponse.getRequestBody());
+      assertEquals("Incorrect response contents", i + 1, mockHttpServer.getAllResponses().size());
     }
   }
 }

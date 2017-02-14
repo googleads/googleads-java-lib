@@ -27,8 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *             reports the maximum number of available units that the line item can book, and the total
  *             number of units matching the line item's targeting.
  *             
- *             <p>Note: Beginning in v201502, this replaces the previous getForecast method.
- *             
  *             @param lineItem the prospective line item (new or existing) to be forecasted for availability
  *             @param forecastOptions options controlling the forecast
  *           

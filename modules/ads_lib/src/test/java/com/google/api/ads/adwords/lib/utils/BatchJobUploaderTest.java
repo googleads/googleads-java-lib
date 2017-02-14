@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -23,13 +24,16 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.testing.MockHttpServer;
+import com.google.api.ads.common.lib.testing.MockResponse;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-
+import java.io.IOException;
+import java.net.URI;
+import java.util.List;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
@@ -39,10 +43,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.io.IOException;
-import java.net.URI;
-import java.util.List;
 
 /**
  * Tests for {@link BatchJobUploader}.
@@ -67,7 +67,7 @@ public class BatchJobUploaderTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
     mockHttpServer = new MockHttpServer();
-    uploader = new BatchJobUploader(adWordsSession, mockHttpServer.getHttpTransport(), true);
+    uploader = new BatchJobUploader(adWordsSession, mockHttpServer.getHttpTransport());
     when(request.createBatchJobUploadBodyProvider()).thenReturn(uploadBodyProvider);
   }
 
@@ -78,8 +78,7 @@ public class BatchJobUploaderTest {
   @SuppressWarnings("rawtypes")
   @Test
   public void testPublicConstructor() {
-    assertNotNull(new BatchJobUploader(adWordsSession, true));
-    assertNotNull(new BatchJobUploader(adWordsSession, false));    
+    assertNotNull(new BatchJobUploader(adWordsSession));
   }
   
   /**
@@ -95,14 +94,16 @@ public class BatchJobUploaderTest {
         throw ioException;
       }
     };
-    when(uploadBodyProvider.getHttpContent(request, true, true)).thenReturn(
-        new ByteArrayContent(null, "foo".getBytes()));
+    when(uploadBodyProvider.getHttpContent(request, true, true))
+        .thenReturn(new ByteArrayContent(null, "foo".getBytes(UTF_8)));
     MockHttpTransport transport = new MockHttpTransport.Builder()
         .setLowLevelHttpRequest(lowLevelHttpRequest).build();
-    uploader = new BatchJobUploader(adWordsSession, transport, false);
+    uploader = new BatchJobUploader(adWordsSession, transport);
     thrown.expect(BatchJobException.class);
     thrown.expectCause(Matchers.sameInstance(ioException));
-    uploader.uploadBatchJobOperations(request, "http://www.example.com");
+    BatchJobUploadStatus uploadStatus =
+        new BatchJobUploadStatus(0, URI.create("http://www.example.com"));
+    uploader.uploadIncrementalBatchJobOperations(request, true, uploadStatus);
   }
   
   /**
@@ -118,49 +119,16 @@ public class BatchJobUploaderTest {
         throw ioException;
       }
     };
-    when(uploadBodyProvider.getHttpContent(request, true, true)).thenReturn(
-        new ByteArrayContent(null, "foo".getBytes()));
+    when(uploadBodyProvider.getHttpContent(request, true, true))
+        .thenReturn(new ByteArrayContent(null, "foo".getBytes(UTF_8)));
     MockHttpTransport transport = new MockHttpTransport.Builder()
         .setLowLevelHttpRequest(lowLevelHttpRequest).build();
-    uploader = new BatchJobUploader(adWordsSession, transport, true);
+    uploader = new BatchJobUploader(adWordsSession, transport);
     thrown.expect(BatchJobException.class);
     thrown.expectCause(Matchers.sameInstance(ioException));
     thrown.expectMessage("initiate upload");
     uploader.uploadIncrementalBatchJobOperations(request, true, new BatchJobUploadStatus(
         0, URI.create("http://www.example.com")));
-  }
-  
-  /**
-   * Tests that a call to
-   * {@link BatchJobUploader#uploadBatchJobOperations(BatchJobMutateRequestInterface, String)} fails
-   * if {@code initiateResumableUploads} is true.
-   */
-  @Test
-  public void testUploadBatchJobOperations_initiateTrue_fails() throws Exception {
-    thrown.expect(IllegalStateException.class);
-    uploader.uploadBatchJobOperations(request, mockHttpServer.getServerUrl());
-  }
-  
-  /**
-   * Tests that a call to
-   * {@link BatchJobUploader#uploadBatchJobOperations(BatchJobMutateRequestInterface, String)}
-   * succeeds if {@code initiateResumableUploads} is false.
-   */
-  @SuppressWarnings("rawtypes")
-  @Test
-  public void testUploadBatchJobOperations_initiateFalse() throws Exception {
-    uploader = new BatchJobUploader(adWordsSession, mockHttpServer.getHttpTransport(), false);
-    String uploadRequestBody = "<mutate>testUpload</mutate>";
-    when(uploadBodyProvider.getHttpContent(request, true, true))
-        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes()));
-    mockHttpServer.setMockResponseBodies(Lists.newArrayList("testUploadResponse"));
-    
-    BatchJobUploadResponse response =
-        uploader.uploadBatchJobOperations(request, mockHttpServer.getServerUrl());
-    assertEquals("Should have made one request", 1, mockHttpServer.getAllRequestBodies().size());
-    assertEquals(
-        "Request body is incorrect", uploadRequestBody, mockHttpServer.getLastRequestBody());
-    assertEquals("Request should have succeeded", 200, response.getHttpStatus());
   }
   
   @Test
@@ -169,16 +137,16 @@ public class BatchJobUploaderTest {
         new BatchJobUploadStatus(10, URI.create(mockHttpServer.getServerUrl()));
     String uploadRequestBody = "<mutate>testUpload</mutate>";
     when(uploadBodyProvider.getHttpContent(request, false, true))
-        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes()));
-    mockHttpServer.setMockResponseBodies(Lists.newArrayList("testUploadResponse"));
+        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes(UTF_8)));
+    mockHttpServer.setMockResponse(new MockResponse("testUploadResponse"));
 
     // Invoked the incremental upload method.
     BatchJobUploadResponse response =
         uploader.uploadIncrementalBatchJobOperations(request, true, status);
-    assertEquals("Should have made one request", 1, mockHttpServer.getAllRequestBodies().size());
+    assertEquals("Should have made one request", 1, mockHttpServer.getAllResponses().size());
 
     // Check the request.
-    String firstRequest = mockHttpServer.getLastRequestBody();
+    String firstRequest = mockHttpServer.getLastResponse().getRequestBody();
     String expectedBody = "testUpload</mutate>";
     expectedBody =
         Strings.padEnd(expectedBody, BatchJobUploader.REQUIRED_CONTENT_LENGTH_INCREMENT, ' ');
@@ -189,7 +157,7 @@ public class BatchJobUploaderTest {
     // Check the BatchJobUploadStatus.
     BatchJobUploadStatus expectedStatus =
         new BatchJobUploadStatus(
-            status.getTotalContentLength() + expectedBody.getBytes().length,
+            status.getTotalContentLength() + expectedBody.getBytes(UTF_8).length,
             URI.create(mockHttpServer.getServerUrl()));
     BatchJobUploadStatus actualStatus = response.getBatchJobUploadStatus();
     assertEquals(
@@ -208,16 +176,16 @@ public class BatchJobUploaderTest {
         new BatchJobUploadStatus(10, URI.create(mockHttpServer.getServerUrl()));
     String uploadRequestBody = "<mutate>testUpload</mutate>";
     when(uploadBodyProvider.getHttpContent(request, false, false))
-        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes()));
-    mockHttpServer.setMockResponseBodies(Lists.newArrayList("testUploadResponse"));
+        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes(UTF_8)));
+    mockHttpServer.setMockResponse(new MockResponse("testUploadResponse"));
 
     // Invoked the incremental upload method.
     BatchJobUploadResponse response =
         uploader.uploadIncrementalBatchJobOperations(request, false, status);
-    assertEquals("Should have made one request", 1, mockHttpServer.getAllRequestBodies().size());
+    assertEquals("Should have made one request", 1, mockHttpServer.getAllResponses().size());
 
     // Check the request.
-    String firstRequest = mockHttpServer.getLastRequestBody();
+    String firstRequest = mockHttpServer.getLastResponse().getRequestBody();
     String expectedBody = "testUpload";
     expectedBody =
         Strings.padEnd(expectedBody, BatchJobUploader.REQUIRED_CONTENT_LENGTH_INCREMENT, ' ');
@@ -228,7 +196,7 @@ public class BatchJobUploaderTest {
     // Check the BatchJobUploadStatus.
     BatchJobUploadStatus expectedStatus =
         new BatchJobUploadStatus(
-            status.getTotalContentLength() + expectedBody.getBytes().length,
+            status.getTotalContentLength() + expectedBody.getBytes(UTF_8).length,
             URI.create(mockHttpServer.getServerUrl()));
     BatchJobUploadStatus actualStatus = response.getBatchJobUploadStatus();
     assertEquals(
@@ -247,32 +215,35 @@ public class BatchJobUploaderTest {
         new BatchJobUploadStatus(0, URI.create(mockHttpServer.getServerUrl()));
     String uploadRequestBody = "testUpload";
     when(uploadBodyProvider.getHttpContent(request, true, true))
-        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes()));
-    List<String> expectedResponseBodies = Lists.newArrayList("ignore", "testUploadResponse");
-    mockHttpServer.setMockResponseBodies(expectedResponseBodies);
+        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes(UTF_8)));
+    List<MockResponse> expectedResponses =
+        Lists.newArrayList(new MockResponse("ignore"), new MockResponse("testUploadResponse"));
+    mockHttpServer.setMockResponses(expectedResponses);
 
     // Invoked the incremental upload method.
     BatchJobUploadResponse response =
         uploader.uploadIncrementalBatchJobOperations(request, true, status);
-    assertEquals("Should have made two requests", 2, mockHttpServer.getAllRequestBodies().size());
+    assertEquals("Should have made two requests", 2, mockHttpServer.getAllResponses().size());
 
     // Check the first request.
-    String firstRequest = mockHttpServer.getAllRequestBodies().get(0);
+    String firstRequest = mockHttpServer.getAllResponses().get(0).getRequestBody();
     assertEquals("First request should have an empty body", "", firstRequest);
     assertEquals(
         "First request should include resumable header",
         "start",
-        mockHttpServer.getAllRequestHeaders().get(0).get("x-goog-resumable").get(0));
+        mockHttpServer.getAllResponses().get(0).getRequestHeader("x-goog-resumable").get(0));
 
     // Check the second request.
     assertEquals(
-        "Second request body is incorrect", uploadRequestBody, mockHttpServer.getLastRequestBody());
+        "Second request body is incorrect",
+        uploadRequestBody,
+        mockHttpServer.getLastResponse().getRequestBody());
     assertEquals("Last request should have succeeded", 200, response.getHttpStatus());
 
     // Check the BatchJobUploadStatus.
     BatchJobUploadStatus expectedStatus =
         new BatchJobUploadStatus(
-            uploadRequestBody.getBytes().length, URI.create(mockHttpServer.getServerUrl()));
+            uploadRequestBody.getBytes(UTF_8).length, URI.create(mockHttpServer.getServerUrl()));
     BatchJobUploadStatus actualStatus = response.getBatchJobUploadStatus();
     assertEquals(
         "Status total content length is incorrect",

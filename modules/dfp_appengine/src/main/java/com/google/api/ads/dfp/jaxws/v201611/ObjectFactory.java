@@ -2762,14 +2762,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ChangeHistoryValue }
-     * 
-     */
-    public ChangeHistoryValue createChangeHistoryValue() {
-        return new ChangeHistoryValue();
-    }
-
-    /**
      * Create an instance of {@link CreativeWrapperHtmlSnippet }
      * 
      */

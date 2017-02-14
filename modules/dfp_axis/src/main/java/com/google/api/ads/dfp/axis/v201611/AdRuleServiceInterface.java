@@ -35,17 +35,17 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets an {@link AdRulePage} of {@link AdRule} objects that satisfy
-     * the given
-     *         {@link Statement#query}. The following fields are supported
-     * for filtering:
-     *         
+     * the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
      * </tr>
      *         <tr>
      *         <td>{@code id}</td>
-     *         <td>{@link AdRule#id}</td>
+     *         <td>{@link AdRule#id} ({@link AdRule#adRuleId} beginning in
+     * v201702)</td>
      *         </tr>
      *         <tr>
      *         <td>{@code name}</td>
@@ -62,14 +62,12 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
      *         
      *         
      * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of ad rules
+     * filter a set of ad rules
      *         
      * @return the ad rules that match the given filter
      *         
      * @throws ApiException if the ID of the active network does not exist
-     * or
-     *         there is a backend error
+     * or there is a backend error
      */
     public com.google.api.ads.dfp.axis.v201611.AdRulePage getAdRulesByStatement(com.google.api.ads.dfp.axis.v201611.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.dfp.axis.v201611.ApiException;
 

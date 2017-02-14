@@ -60,11 +60,8 @@ public class AdUnit  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201605.AdUnitParent[] parentPath;
 
     /* The name of the ad unit. This attribute is required and its
-     * maximum length
-     *                 is 255 characters. This attribute must also be case-insensitive
-     * unique.
-     *                 Beginning in V201311, this attribute can be updated.
-     * In versions before v201311, this attribute is read-only after creation. */
+     * maximum length is 255 characters.
+     *                 This attribute must also be case-insensitive unique. */
     private java.lang.String name;
 
     /* A description of the ad unit. This value is optional and its
@@ -86,16 +83,13 @@ public class AdUnit  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201605.InventoryStatus status;
 
     /* A string used to uniquely identify the ad unit for the purposes
-     * of serving
-     *                 the ad.
-     *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation. If it
-     *                 is not provided, it will be assigned by Google based
-     * off of the inventory unit ID.
-     *                 Before V201311, this attribute is read-only and assigned
-     * by Google.
-     *                 Once an ad unit is created, its {@code adUnitCode}
-     * cannot be changed. */
+     * of serving the ad. This
+     *                 attribute is optional and can be set during ad unit
+     * creation. If it is not
+     *                 provided, it will be assigned by Google based off
+     * of the inventory unit ID. Once an ad
+     *                 unit is created, its {@code adUnitCode} cannot be
+     * changed. */
     private java.lang.String adUnitCode;
 
     /* The permissible creative sizes that can be served inside this
@@ -393,11 +387,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the name value for this AdUnit.
      * 
      * @return name   * The name of the ad unit. This attribute is required and its
-     * maximum length
-     *                 is 255 characters. This attribute must also be case-insensitive
-     * unique.
-     *                 Beginning in V201311, this attribute can be updated.
-     * In versions before v201311, this attribute is read-only after creation.
+     * maximum length is 255 characters.
+     *                 This attribute must also be case-insensitive unique.
      */
     public java.lang.String getName() {
         return name;
@@ -408,11 +399,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the name value for this AdUnit.
      * 
      * @param name   * The name of the ad unit. This attribute is required and its
-     * maximum length
-     *                 is 255 characters. This attribute must also be case-insensitive
-     * unique.
-     *                 Beginning in V201311, this attribute can be updated.
-     * In versions before v201311, this attribute is read-only after creation.
+     * maximum length is 255 characters.
+     *                 This attribute must also be case-insensitive unique.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -501,16 +489,13 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the adUnitCode value for this AdUnit.
      * 
      * @return adUnitCode   * A string used to uniquely identify the ad unit for the purposes
-     * of serving
-     *                 the ad.
-     *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation. If it
-     *                 is not provided, it will be assigned by Google based
-     * off of the inventory unit ID.
-     *                 Before V201311, this attribute is read-only and assigned
-     * by Google.
-     *                 Once an ad unit is created, its {@code adUnitCode}
-     * cannot be changed.
+     * of serving the ad. This
+     *                 attribute is optional and can be set during ad unit
+     * creation. If it is not
+     *                 provided, it will be assigned by Google based off
+     * of the inventory unit ID. Once an ad
+     *                 unit is created, its {@code adUnitCode} cannot be
+     * changed.
      */
     public java.lang.String getAdUnitCode() {
         return adUnitCode;
@@ -521,16 +506,13 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the adUnitCode value for this AdUnit.
      * 
      * @param adUnitCode   * A string used to uniquely identify the ad unit for the purposes
-     * of serving
-     *                 the ad.
-     *                 Beginning in V201311, this attribute is optional and
-     * can be set during ad unit creation. If it
-     *                 is not provided, it will be assigned by Google based
-     * off of the inventory unit ID.
-     *                 Before V201311, this attribute is read-only and assigned
-     * by Google.
-     *                 Once an ad unit is created, its {@code adUnitCode}
-     * cannot be changed.
+     * of serving the ad. This
+     *                 attribute is optional and can be set during ad unit
+     * creation. If it is not
+     *                 provided, it will be assigned by Google based off
+     * of the inventory unit ID. Once an ad
+     *                 unit is created, its {@code adUnitCode} cannot be
+     * changed.
      */
     public void setAdUnitCode(java.lang.String adUnitCode) {
         this.adUnitCode = adUnitCode;

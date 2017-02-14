@@ -16,7 +16,7 @@ This project hosts the Java client library for the various SOAP-Based Ads APIs
 
 ## Requirements
 
-  * Java 1.6+
+  * Java 1.7+
   * Maven 3.0+ not required, but recommended
 
 ## Announcements and updates

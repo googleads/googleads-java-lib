@@ -21,8 +21,9 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
+import com.google.api.ads.common.lib.soap.axis.HttpHandler;
 import com.google.common.collect.Lists;
-
+import java.util.List;
 import org.apache.axis.AxisEngine;
 import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
@@ -39,8 +40,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.util.List;
 
 /**
  * Tests for {@link AdsAxisEngineConfigurationFactory}. The key behavior to test is:
@@ -115,8 +114,7 @@ public class AdsAxisEngineConfigurationFactoryTest {
 
     AxisClient axisClient = new AxisClient(clientEngineConfig);
 
-    assertEquals(org.apache.axis.transport.http.CommonsHTTPSender.class,
-        getTransport(axisClient, "http").getPivotHandler().getClass());
+    assertEquals(HttpHandler.class, getTransport(axisClient, "http").getPivotHandler().getClass());
 
     assertEquals(org.apache.axis.transport.local.LocalSender.class,
         getTransport(axisClient, "local").getPivotHandler().getClass());

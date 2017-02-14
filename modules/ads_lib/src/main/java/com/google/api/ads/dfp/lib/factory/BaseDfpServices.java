@@ -20,12 +20,10 @@ import com.google.api.ads.dfp.lib.client.DfpServiceDescriptor;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.inject.Injector;
 
-/**
- * Base for a utility class which creates DFP service clients.
- */
-public abstract class BaseDfpServices extends BaseServices<DfpServiceClient,
-                                                           DfpSession,
-                                                           DfpServiceDescriptor> {
+/** Base for a utility class which creates DFP service clients. */
+public abstract class BaseDfpServices
+    extends BaseServices<DfpServiceClient, DfpSession, DfpServiceDescriptor>
+    implements DfpServicesInterface {
 
   /**
    * Constructor.

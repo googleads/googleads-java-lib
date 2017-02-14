@@ -41,13 +41,13 @@ import javax.xml.transform.stream.StreamSource;
 class BatchJobHelperImpl
     implements BatchJobHelperInterface<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
-  private final BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader;
+  private final BatchJobUploader uploader;
   private final BatchJobLogger batchJobLogger;
 
   public BatchJobHelperImpl(AdWordsSession session) {
     this(
-        new BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse>(
-            session, true));
+        new BatchJobUploader(
+            session));
   }
 
   /**
@@ -55,7 +55,7 @@ class BatchJobHelperImpl
    */
   @VisibleForTesting
   BatchJobHelperImpl(
-      BatchJobUploader<Operand, ApiError, MutateResult, BatchJobMutateResponse> uploader) {
+      BatchJobUploader uploader) {
     this.uploader = uploader;
     batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
   }

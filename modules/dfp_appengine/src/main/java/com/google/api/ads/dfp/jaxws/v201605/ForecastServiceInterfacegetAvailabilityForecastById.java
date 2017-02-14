@@ -31,8 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *             {@link LineItemType#STANDARD} are valid. Other types will result in
  *             {@link ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
  *             
- *             <p>Note: Beginning in v201502, this replaces the previous getForecastById method.
- *             
  *             @param lineItemId the ID of a {@link LineItem} to run the forecast on.
  *             @param forecastOptions options controlling the forecast
  *           

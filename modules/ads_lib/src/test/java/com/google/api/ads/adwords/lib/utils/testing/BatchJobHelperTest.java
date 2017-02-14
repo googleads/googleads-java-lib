@@ -28,9 +28,13 @@ import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.common.lib.utils.Streams;
-import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -40,12 +44,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URI;
 
 /**
  * Base class for tests of {@link BatchJobHelperInterface} implementations.
@@ -61,8 +59,8 @@ public abstract class BatchJobHelperTest<
 
   @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
 
-  @Mock private AdWordsSession session;
-  @Mock private BatchJobUploader<OperandT, ErrorT, ResultT, ResponseT> uploader;
+  @Mock protected AdWordsSession session;
+  @Mock private BatchJobUploader uploader;
 
   private BatchJobHelperInterface<OperationT, OperandT, ErrorT, ResultT, ResponseT> batchJobHelper;
   private ImmutableList<OperationT> operations;
@@ -81,7 +79,7 @@ public abstract class BatchJobHelperTest<
   public void testDownloadBatchJobMutateResponse() throws BatchJobException, IOException {
     File tempFile = tempFolder.newFile();
     OutputStream responseOutputStream = new FileOutputStream(tempFile);
-    Streams.write(getResponseString(), responseOutputStream, Charsets.UTF_8);
+    Streams.write(getResponseString(), responseOutputStream, StandardCharsets.UTF_8);
     ResponseT downloadResponse =
         batchJobHelper.downloadBatchJobMutateResponse(tempFile.toURI().toURL().toString());
     assertDownloadResponse(downloadResponse);
@@ -98,7 +96,7 @@ public abstract class BatchJobHelperTest<
         + "</mutateResponse>", getVersion());
     File tempFile = tempFolder.newFile();
     OutputStream responseOutputStream = new FileOutputStream(tempFile);
-    Streams.write(noResultsResponse, responseOutputStream, Charsets.UTF_8);
+    Streams.write(noResultsResponse, responseOutputStream, StandardCharsets.UTF_8);
     ResponseT downloadResponse =
         batchJobHelper.downloadBatchJobMutateResponse(tempFile.toURI().toURL().toString());
     assertNotNull("Download response is null", downloadResponse);
@@ -151,7 +149,7 @@ public abstract class BatchJobHelperTest<
    * Returns the {@link BatchJobHelperInterface} for this test's version and SOAP toolkit.
    */
   protected abstract BatchJobHelperInterface<OperationT, OperandT, ErrorT, ResultT, ResponseT>
-      createBatchJobHelper(BatchJobUploader<OperandT, ErrorT, ResultT, ResponseT> uploader);
+      createBatchJobHelper(BatchJobUploader uploader);
 
   /**
    * Returns a {@code CampaignOperation} that sets the status to {@code PAUSED} for the campaign
