@@ -14,11 +14,11 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
-import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException.Builder;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
+import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
 import com.google.common.reflect.Reflection;
-
+import com.google.inject.Inject;
 import java.lang.reflect.InvocationHandler;
 
 /**
@@ -29,19 +29,16 @@ import java.lang.reflect.InvocationHandler;
 public class AdHocReportDownloadHelper implements AdHocReportDownloadHelperInterface {
 
   private final AdHocReportDownloadHelperInterface impl;
-  
-  /**
-   * Constructor that stores the session for authentication and uses the provided version to
-   * determine the report endpoint.
-   */
-  public AdHocReportDownloadHelper(AdWordsSession session, String version) {
+
+  /** Constructor used by Guice. */
+  @Inject
+  AdHocReportDownloadHelper(
+      AdHocReportDownloadHelperImpl helperImpl, AdsUtilityRegistry adsUtilityRegistry) {
     InvocationHandler invocationHandler =
-        new AdsUtilityInvocationHandler(
-            new AdHocReportDownloadHelperImpl(session, version),
-            AdWordsInternals.getInstance().getAdsUtilityRegistry());
+        new AdsUtilityInvocationHandler(helperImpl, adsUtilityRegistry);
     this.impl = Reflection.newProxy(AdHocReportDownloadHelperInterface.class, invocationHandler);
   }
-
+  
   @Override
   public ReportDownloadResponse downloadReport(
       ReportRequest reportRequest, Builder exceptionBuilder)

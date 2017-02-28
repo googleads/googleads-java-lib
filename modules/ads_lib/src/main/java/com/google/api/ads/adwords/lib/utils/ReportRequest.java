@@ -35,6 +35,11 @@ public interface ReportRequest {
   public RequestType getRequestType();
   
   /**
+   * Return the version of the AdWords API ({@code vYYYYMM}).
+   */
+  public String getApiVersion();
+  
+  /**
    * Enumeration of the different types of report requests supported by the AdWords API.
    */
   public enum RequestType {

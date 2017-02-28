@@ -24,7 +24,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.common.base.Preconditions;
-
+import com.google.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -39,13 +39,18 @@ class AdHocReportDownloadHelperImpl implements AdHocReportDownloadHelperInterfac
   private final AdWordsSession session;
   private final ReportRequestFactoryHelper reportRequestFactoryHelper;
   private final ReportBodyProviderFactory reportBodyProviderFactory;
-  private final String version;
+  private final XmlFieldExtractor xmlFieldExtractor;
 
-  AdHocReportDownloadHelperImpl(AdWordsSession session, String version) {
+  /** Constructor used by Guice. */
+  @Inject
+  AdHocReportDownloadHelperImpl(AdWordsSession session,
+      ReportRequestFactoryHelper reportRequestFactoryHelper,
+      ReportBodyProviderFactory reportBodyProviderFactory,
+      XmlFieldExtractor xmlFieldExtractor) {
     this.session = session;
-    this.version = version;
-    this.reportRequestFactoryHelper = new ReportRequestFactoryHelper(session);
-    this.reportBodyProviderFactory = new ReportBodyProviderFactory();
+    this.reportRequestFactoryHelper = reportRequestFactoryHelper;
+    this.reportBodyProviderFactory = reportBodyProviderFactory;
+    this.xmlFieldExtractor = xmlFieldExtractor;
   }
 
   @Override
@@ -59,9 +64,10 @@ class AdHocReportDownloadHelperImpl implements AdHocReportDownloadHelperInterfac
   public RawReportDownloadResponse downloadReport(ReportRequest reportRequest)
       throws ReportException {
     try {
-      String downloadUrl = generateReportUrl(version);
+      String apiVersion = reportRequest.getApiVersion();
+      String downloadUrl = generateReportUrl(apiVersion);
       HttpRequestFactory requestFactory =
-          reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl, version);
+          reportRequestFactoryHelper.getHttpRequestFactory(downloadUrl, apiVersion);
       ReportBodyProvider reportBodyProvider =
           reportBodyProviderFactory.getReportBodyProvider(reportRequest);
       HttpRequest httpRequest = requestFactory
@@ -109,10 +115,9 @@ class AdHocReportDownloadHelperImpl implements AdHocReportDownloadHelperInterfac
     }
     DetailedReportDownloadResponseException exception =
         exceptionBuilder.build(rawResponse.getHttpStatus(), responseText);
-    XmlFieldExtractor extractor = AdWordsInternals.getInstance().getXmlFieldExtractor();
     Map<String, String> fields =
-        extractor.extract(
-            new ByteArrayInputStream(responseText.getBytes()),
+        xmlFieldExtractor.extract(
+            new ByteArrayInputStream(responseText.getBytes(rawResponse.getCharset())),
             new String[] {"fieldPath", "trigger", "type"});
     exception.setFieldPath(fields.get("fieldPath"));
     exception.setTrigger(fields.get("trigger"));

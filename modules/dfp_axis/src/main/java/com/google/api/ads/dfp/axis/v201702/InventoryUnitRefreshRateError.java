@@ -33,11 +33,13 @@ public class InventoryUnitRefreshRateError  extends com.google.api.ads.dfp.axis.
 
     public InventoryUnitRefreshRateError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.InventoryUnitRefreshRateErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

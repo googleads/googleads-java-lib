@@ -14,25 +14,24 @@
 
 package com.google.api.ads.adwords.axis.utils.v201607.batchjob;
 
+import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201607.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201607.cm.Operand;
 import com.google.api.ads.adwords.axis.v201607.cm.Operation;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
-import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import com.google.api.ads.adwords.lib.utils.SessionUtility;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
 import com.google.common.reflect.Reflection;
 import com.google.inject.Inject;
 import java.lang.reflect.InvocationHandler;
 
-/**
- * Implementation of {@link BatchJobHelperInterface} for Axis v201607.
- */
+/** Implementation of {@link BatchJobHelperInterface} for Axis v201607. */
+@SessionUtility
 public class BatchJobHelper
     implements BatchJobHelperInterface<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
@@ -41,28 +40,19 @@ public class BatchJobHelper
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
       impl;
 
-  @SuppressWarnings("unchecked")
-  @Inject
   public BatchJobHelper(AdWordsSession session) {
-    InvocationHandler invocationHandler =
-        new AdsUtilityInvocationHandler(
-            new BatchJobHelperImpl(session),
-            AdWordsInternals.getInstance().getAdsUtilityRegistry());
-    this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler);
+    this(
+        AdWordsServices.getBootstrapper().getInstanceOf(session, BatchJobHelperImpl.class),
+        AdWordsServices.getBootstrapper().getInstanceOf(session, AdsUtilityRegistry.class));
   }
 
-  /**
-   * Constructor for testing to allow mocking of the underlying uploader.
-   */
+  /** Constructor for Guice. */
   @SuppressWarnings("unchecked")
-  @VisibleForTesting
-  BatchJobHelper(
-      BatchJobUploader uploader) {
+  @Inject
+  BatchJobHelper(BatchJobHelperImpl helperImpl, AdsUtilityRegistry adsUtilityRegistry) {
     InvocationHandler invocationHandler =
-        new AdsUtilityInvocationHandler(
-            new BatchJobHelperImpl(uploader),
-            AdWordsInternals.getInstance().getAdsUtilityRegistry());
-    this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler); 
+        new AdsUtilityInvocationHandler(helperImpl, adsUtilityRegistry);
+    this.impl = Reflection.newProxy(BatchJobHelperInterface.class, invocationHandler);
   }
 
   @Override

@@ -39,11 +39,13 @@ public class WorkflowValidationError  extends com.google.api.ads.dfp.axis.v20170
 
     public WorkflowValidationError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.WorkflowValidationErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

@@ -665,6 +665,13 @@ public class LiveStreamEventServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201608", "UniqueError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201608.UniqueError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201608", "UpdateResult");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201608.UpdateResult.class;

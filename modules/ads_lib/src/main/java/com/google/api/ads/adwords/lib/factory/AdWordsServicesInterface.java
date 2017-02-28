@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.lib.factory;
 
+import com.google.api.ads.adwords.lib.AdWordsPluginModule;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.factory.AdsServicesInterface;
 
@@ -32,6 +33,9 @@ public interface AdWordsServicesInterface extends AdsServicesInterface<AdWordsSe
    *
    * b) Indicate that an AdsServicesInterface for AdWords also is capable of returning instances
    * of utilities.
+   *
+   * c) Provide a hook for extensions and apps to get a new instance of this type, configured via
+   * an AdWordsPluginModule.
    */
 
   /**
@@ -39,6 +43,17 @@ public interface AdWordsServicesInterface extends AdsServicesInterface<AdWordsSe
    *
    * @param session an AdWords session
    * @param utilityClass a utility class annotated.
+   * @throws IllegalArgumentException if {@code utilityClass} is not annotated with {@link
+   *     com.google.api.ads.adwords.lib.utils.SessionUtility}.
    */
   <T> T getUtility(AdWordsSession session, Class<T> utilityClass);
+  
+  /**
+   * Factory method for extensions and apps to get a new instance of this type, configured
+   * with an {@link AdWordsPluginModule}.
+   *
+   * @return a <em>new</em> instance of {@link AdWordsServicesInterface}, configured with
+   * the provided plugin module.
+   */
+  AdWordsServicesInterface withPluginModule(AdWordsPluginModule pluginModule);
 }

@@ -81,8 +81,8 @@ public interface ProductPackageServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link ProductPackage} objects that match
-     * the given
-     *         {@link Statement#query}.
+     * the given {@link
+     *         Statement#query}.
      *         
      *         
      * @param action the action to perform

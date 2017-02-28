@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.useragent;
 
+import com.google.api.ads.adwords.lib.AdWordsPluginModule;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -23,9 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
-
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 /**
@@ -47,6 +46,7 @@ public class UserAgentCombiner {
    * @param frameworkProviderHolder holder for the framework user agent provider
    * @param runtimeUserAgentProvider the runtime user agent provider
    * @param buildTypeUserAgentProvider the build type user agent provider
+   * @param extensionProviderHolder holder for the extension user agent provider
    */
   @Inject
   public UserAgentCombiner(ProductUserAgentProvider productUserAgentProvider,
@@ -55,10 +55,18 @@ public class UserAgentCombiner {
       FrameworkProviderHolder frameworkProviderHolder,
       RuntimeUserAgentProvider runtimeUserAgentProvider,
       BuildTypeUserAgentProvider buildTypeUserAgentProvider,
-      AdsUtilitiesUserAgentProvider adsUtilitiesUserAgentProvider) {
-    this(Lists.newArrayList(productUserAgentProvider, productFrameworkProviderHolder.value,
-        adsLibraryUserAgentProvider, frameworkProviderHolder.value, runtimeUserAgentProvider,
-        buildTypeUserAgentProvider, adsUtilitiesUserAgentProvider));
+      AdsUtilitiesUserAgentProvider adsUtilitiesUserAgentProvider,
+      ExtensionProviderHolder extensionProviderHolder) {
+    this(
+        Lists.newArrayList(
+            productUserAgentProvider,
+            productFrameworkProviderHolder.value,
+            adsLibraryUserAgentProvider,
+            frameworkProviderHolder.value,
+            runtimeUserAgentProvider,
+            buildTypeUserAgentProvider,
+            adsUtilitiesUserAgentProvider,
+            extensionProviderHolder.value));
   }
 
   /**
@@ -110,5 +118,15 @@ public class UserAgentCombiner {
    */
   static class FrameworkProviderHolder {
     @Inject(optional = true) FrameworkUserAgentProvider value;
+  }
+  
+  /**
+   * Holder that allows for <em>optional</em> injection of a {@link ExtensionUserAgentProvider}.
+   * This is necessary because the {@link ExtensionUserAgentProvider} type will only be bound if an
+   * extension or application provided an {@link AdWordsPluginModule} to the Guice injector.
+   * Otherwise, the {@code value} will be null.
+   */
+  static class ExtensionProviderHolder {
+    @Inject(optional = true) ExtensionUserAgentProvider value;
   }
 }

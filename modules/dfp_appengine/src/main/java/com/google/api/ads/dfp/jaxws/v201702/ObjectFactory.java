@@ -3682,6 +3682,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FieldPathElement }
+     * 
+     */
+    public FieldPathElement createFieldPathElement() {
+        return new FieldPathElement();
+    }
+
+    /**
      * Create an instance of {@link UserDomainTargeting }
      * 
      */

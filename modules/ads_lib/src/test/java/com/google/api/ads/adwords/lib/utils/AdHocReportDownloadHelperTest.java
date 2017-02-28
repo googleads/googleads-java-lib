@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import static com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelperInterface.REPORT_CHARSET;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -23,6 +24,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException.Builder;
 import com.google.api.ads.adwords.lib.utils.ReportRequest.RequestType;
+import com.google.api.ads.adwords.lib.utils.testing.GenericAdWordsServices;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.common.lib.testing.TestPortFinder;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -33,7 +35,9 @@ import com.google.common.collect.Lists;
 import com.google.common.io.ByteSource;
 import com.google.common.io.ByteStreams;
 import com.google.common.net.UrlEscapers;
-
+import java.io.InputStream;
+import java.net.ConnectException;
+import java.util.List;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
@@ -46,17 +50,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.io.InputStream;
-import java.net.ConnectException;
-import java.util.List;
-
 /**
  * Tests for {@link AdHocReportDownloadHelper}.
  */
 @RunWith(Parameterized.class)
 public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
-
-  private static final String VERSION = "v202012";
 
   /**
    * Error XML for an invalid field name of "AdFormatt" (instead of "AdFormat").
@@ -116,7 +114,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
         .withClientCustomerId("TEST_CLIENT_CUSTOMER_ID")
         .build();
 
-    helper = new AdHocReportDownloadHelper(session, VERSION);
+    helper =
+        new GenericAdWordsServices()
+            .getBootstrapper()
+            .getInstanceOf(session, AdHocReportDownloadHelper.class);
     exceptionBuilder =
         new DetailedReportDownloadResponseException.Builder() {
           @Override
@@ -193,7 +194,10 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
               .withDeveloperToken("TEST_DEVELOPER_TOKEN")
               .withClientCustomerId("TEST_CLIENT_CUSTOMER_ID")
               .build();
-      helper = new AdHocReportDownloadHelper(sessionWithBadEndpoint, VERSION);
+      helper =
+          new GenericAdWordsServices()
+              .getBootstrapper()
+              .getInstanceOf(sessionWithBadEndpoint, AdHocReportDownloadHelper.class);
       // Set up the ReportRequest so it will pass basic validation.
       when(reportRequest.getRequestType()).thenReturn(RequestType.AWQL);
       String awqlString = "SELECT BadField1 FROM NOT_A_REPORT DURING NOT_A_TIME_PERIOD";
@@ -297,7 +301,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
       assertEquals("Response status code not success", 200, response.getHttpStatus());
       assertEquals(
           "Response charset incorrect",
-          AdHocReportDownloadHelper.REPORT_CHARSET,
+          REPORT_CHARSET,
           response.getCharset());
       assertEquals(
           "Response contents incorrect",
@@ -310,7 +314,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
       assertEquals(
           "Response contents incorrect",
           "test",
-          Streams.readAll(response.getInputStream(), AdHocReportDownloadHelper.REPORT_CHARSET));
+          Streams.readAll(response.getInputStream(), REPORT_CHARSET));
     }
 
     String lastRequestBody = testHttpServer.getLastRequestBody();
@@ -341,7 +345,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
       assertEquals("Response status code not success", 200, response.getHttpStatus());
       assertEquals(
           "Response charset incorrect",
-          AdHocReportDownloadHelper.REPORT_CHARSET,
+          REPORT_CHARSET,
           response.getCharset());
       assertEquals(
           "Response contents incorrect",
@@ -354,7 +358,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
       assertEquals(
           "Response contents incorrect",
           "test",
-          Streams.readAll(response.getInputStream(), AdHocReportDownloadHelper.REPORT_CHARSET));
+          Streams.readAll(response.getInputStream(), REPORT_CHARSET));
     }
 
     String lastRequestBody = testHttpServer.getLastRequestBody();
@@ -372,12 +376,12 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
             200,
-            ByteSource.wrap(responseBody.getBytes()).openStream(),
-            AdHocReportDownloadHelper.REPORT_CHARSET,
+            ByteSource.wrap(responseBody.getBytes(REPORT_CHARSET)).openStream(),
+            REPORT_CHARSET,
             "CSV");
     ReportDownloadResponse reportResponse = helper.handleResponse(rawResponse, exceptionBuilder);
     String actualResponseBody =
-        new String(ByteStreams.toByteArray(reportResponse.getInputStream()));
+        new String(ByteStreams.toByteArray(reportResponse.getInputStream()), REPORT_CHARSET);
     assertEquals("Response body not expected value", responseBody, actualResponseBody);
   }
 
@@ -386,8 +390,8 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
             500,
-            ByteSource.wrap(ERROR_XML.getBytes()).openStream(),
-            AdHocReportDownloadHelper.REPORT_CHARSET,
+            ByteSource.wrap(ERROR_XML.getBytes(REPORT_CHARSET)).openStream(),
+            REPORT_CHARSET,
             "CSV");
     thrown.expect(DetailedReportDownloadResponseException.class);
     thrown.expect(Matchers.hasProperty("fieldPath", Matchers.equalTo("foobar")));
@@ -411,7 +415,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
   public void testHandleResponseWithEmptyInputStream_fails() throws Exception {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
-            500, ByteSource.empty().openStream(), AdHocReportDownloadHelper.REPORT_CHARSET, "CSV");
+            500, ByteSource.empty().openStream(), REPORT_CHARSET, "CSV");
     thrown.expect(DetailedReportDownloadResponseException.class);
     thrown.expect(Matchers.hasProperty("fieldPath", Matchers.nullValue()));
     thrown.expect(Matchers.hasProperty("trigger", Matchers.nullValue()));
@@ -431,8 +435,8 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     RawReportDownloadResponse rawResponse =
         new RawReportDownloadResponse(
             200,
-            ByteSource.wrap("a,b,c".getBytes()).openStream(),
-            AdHocReportDownloadHelper.REPORT_CHARSET,
+            ByteSource.wrap("a,b,c".getBytes(REPORT_CHARSET)).openStream(),
+            REPORT_CHARSET,
             "CSV");
     thrown.expect(NullPointerException.class);
     thrown.expectMessage("Null exception builder");

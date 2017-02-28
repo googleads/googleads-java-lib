@@ -19,10 +19,12 @@ import com.google.api.ads.adwords.lib.jaxb.v201609.ReportDefinition;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
+import com.google.api.ads.adwords.lib.utils.SessionUtility;
 import com.google.inject.ImplementedBy;
 
 /** Utility for downloading AdWords API reports. */
 @ImplementedBy(ReportDownloader.class)
+@SessionUtility
 public interface ReportDownloaderInterface {
   /**
    * Downloads a report and returns a ReportDownloadResponse with the results.

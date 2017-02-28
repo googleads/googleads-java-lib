@@ -14,17 +14,10 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.ads.common.lib.utils.Streams;
-import com.google.common.base.Charsets;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -33,6 +26,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.zip.GZIPOutputStream;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * Tests for {@link ReportDownloadResponse}.
@@ -50,11 +48,11 @@ public class ReportDownloadResponseTest {
   @Test
   public void testGetInputStream() throws IOException {
     String expectedContents = "a,b,c\nd,e,f\n";
-    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
+    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes(UTF_8));
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, Charsets.UTF_8, "CSV");
+        inputStream, UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
-    String actualContents = Streams.readAll(response.getInputStream(), Charsets.UTF_8);
+    String actualContents = Streams.readAll(response.getInputStream(), UTF_8);
     assertEquals("input stream contents are incorrect", expectedContents, actualContents);
   }
 
@@ -65,9 +63,9 @@ public class ReportDownloadResponseTest {
   @Test
   public void testGetAsString() throws IOException {
     String expectedContents = "a,b,c\nd,e,f\n";
-    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
+    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes(UTF_8));
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, Charsets.UTF_8, "CSV");
+        inputStream, UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     assertEquals("contents as string are incorrect", expectedContents, response.getAsString());
   }
@@ -82,11 +80,11 @@ public class ReportDownloadResponseTest {
     String expectedContents = "a,b,c\nd,e,f\n";
 
     ByteArrayOutputStream zippedBytesOut = new ByteArrayOutputStream();
-    Streams.copy(new ByteArrayInputStream(expectedContents.getBytes()),
+    Streams.copy(new ByteArrayInputStream(expectedContents.getBytes(UTF_8)),
         new GZIPOutputStream(zippedBytesOut));
 
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        new ByteArrayInputStream(zippedBytesOut.toByteArray()), Charsets.UTF_8,
+        new ByteArrayInputStream(zippedBytesOut.toByteArray()), UTF_8,
         "GZIPPED_CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     assertEquals("contents as string are incorrect for gzipped format", expectedContents,
@@ -101,21 +99,21 @@ public class ReportDownloadResponseTest {
   public void testSaveToFile() throws IOException {
     File outputFile = File.createTempFile("ReportOutput", ".csv");
     String expectedContents = "a,b,c\nd,e,f\n";
-    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes());
+    InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes(UTF_8));
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,
-        inputStream, Charsets.UTF_8, "CSV");
+        inputStream, UTF_8, "CSV");
     ReportDownloadResponse response = new ReportDownloadResponse(rawResponse);
     response.saveToFile(outputFile.getPath());
 
     assertEquals("contents saved to file are incorrect", expectedContents,
-        Streams.readAll(new FileInputStream(outputFile), Charsets.UTF_8));
+        Streams.readAll(new FileInputStream(outputFile), UTF_8));
   }
 
   @Test
   public void testFailedResponse_fails() {
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(
-        HttpURLConnection.HTTP_BAD_REQUEST, new ByteArrayInputStream("failed".getBytes()),
-        Charsets.UTF_8, "CSV");
+        HttpURLConnection.HTTP_BAD_REQUEST, new ByteArrayInputStream("failed".getBytes(UTF_8)),
+        UTF_8, "CSV");
     thrown.expect(IllegalArgumentException.class);
     new ReportDownloadResponse(rawResponse);
   }

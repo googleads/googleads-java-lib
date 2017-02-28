@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.axis.v201605.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201605.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
+import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.jaxb.v201605.DownloadFormat;
 import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinition;
 import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinitionDateRangeType;
@@ -100,6 +101,7 @@ public class AdvancedCreateCredentialFromScratch {
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
+    @SuppressWarnings("DefaultCharset") // Reading from stdin, so default charset is appropriate.
     String authorizationCode = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
     // Authorize the OAuth2 token.
@@ -134,7 +136,8 @@ public class AdvancedCreateCredentialFromScratch {
   }
 
   public static void runExample(
-      AdWordsServices adWordsServices, AdWordsSession session, String reportFile) throws Exception {
+      AdWordsServicesInterface adWordsServices, AdWordsSession session, String reportFile)
+      throws Exception {
     // Get the CampaignService.
     CampaignServiceInterface campaignService =
         adWordsServices.get(session, CampaignServiceInterface.class);
@@ -219,7 +222,7 @@ public class AdvancedCreateCredentialFromScratch {
     // of your offline application.
     AdWordsSession adWordsSession = createAdWordsSession(USER_ID);
 
-    AdWordsServices adWordsServices = new AdWordsServices();
+    AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
     // Location to download report to.
     String reportFile = System.getProperty("user.home") + File.separatorChar + "report.csv";

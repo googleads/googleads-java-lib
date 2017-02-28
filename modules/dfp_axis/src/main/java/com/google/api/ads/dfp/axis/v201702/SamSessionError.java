@@ -33,11 +33,13 @@ public class SamSessionError  extends com.google.api.ads.dfp.axis.v201702.ApiErr
 
     public SamSessionError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.SamSessionErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

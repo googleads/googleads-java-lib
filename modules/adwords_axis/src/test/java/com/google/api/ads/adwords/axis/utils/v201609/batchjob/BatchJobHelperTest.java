@@ -41,16 +41,23 @@ public class BatchJobHelperTest
 
   @Test
   public void testGetFromAdWordsServices() {
-    BatchJobHelper helper = new AdWordsServices().getUtility(session, BatchJobHelper.class);
-    assertNotNull("Helper is null", helper);
+    BatchJobHelper helper = AdWordsServices.getInstance().getUtility(session, BatchJobHelper.class);
+    assertNotNull("Helper from AdWordsServices is null", helper);
   }
 
+  @Test
+  public void testSessionBasedConstructor() {
+    BatchJobHelper helper = new BatchJobHelper(session);
+    assertNotNull("Helper from session-based constructor is null", helper);
+  }
+  
   @Override
   protected BatchJobHelperInterface<
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
       createBatchJobHelper(
           BatchJobUploader uploader) {
-    return new BatchJobHelper(uploader);
+    return new BatchJobHelper(new BatchJobHelperImpl(uploader, batchJobLogger),
+        adsUtilityRegistry);
   }
 
   @Override

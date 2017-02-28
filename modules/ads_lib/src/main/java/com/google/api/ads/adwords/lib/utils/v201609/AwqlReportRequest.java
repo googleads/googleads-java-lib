@@ -40,6 +40,11 @@ class AwqlReportRequest implements ReportRequest {
   public DownloadFormat getDownloadFormat() {
     return downloadFormat;
   }
+  
+  @Override
+  public String getApiVersion() {
+    return "v201609";
+  }
 
   @Override
   public RequestType getRequestType() {

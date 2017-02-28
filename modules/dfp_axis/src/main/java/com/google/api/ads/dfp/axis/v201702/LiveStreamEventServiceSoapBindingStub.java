@@ -315,6 +315,13 @@ public class LiveStreamEventServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "FieldPathElement");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201702.FieldPathElement.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "InternalApiError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201702.InternalApiError.class;
@@ -661,6 +668,13 @@ public class LiveStreamEventServiceSoapBindingStub extends org.apache.axis.clien
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "TextValue");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201702.TextValue.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "UniqueError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201702.UniqueError.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

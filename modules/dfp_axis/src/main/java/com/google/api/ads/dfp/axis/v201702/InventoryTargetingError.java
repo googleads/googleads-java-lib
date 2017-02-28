@@ -36,11 +36,13 @@ public class InventoryTargetingError  extends com.google.api.ads.dfp.axis.v20170
 
     public InventoryTargetingError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.InventoryTargetingErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

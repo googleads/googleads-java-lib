@@ -1,3 +1,21 @@
+3.1.0 - 2/28/2017
+-------------------
+AdWords:
+  - Added support and examples for v201702.
+  - Introduced AdWordsServicesInterface to allow for easier proxying of AdWordsServices objects.
+  - Added getInstance() to all implementations of AdWordsServicesInterface. This is preferred over
+    using each implementation's constructor, as reflected in all of the v201702 examples.
+  - Added a getUtility() method to all implementations of AdWordsServicesInterface. This is
+    preferred over calling utility constructors. The utilities supported by this method are
+    ReportDownloaderInterface and BatchJobHelper in all versions.
+
+DFP:
+  - Regenerated DFP service stubs to fix potential unmarshalling error in
+  v201702.
+
+Common:
+  - No changes.
+
 3.0.0 - 2/14/2017
 -------------------
 AdWords:

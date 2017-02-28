@@ -17,23 +17,19 @@ package com.google.api.ads.common.lib.useragent;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.utils.AdsUtility;
 import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
-import com.google.api.ads.common.lib.utils.Internals;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
-import com.google.inject.Provider;
-
 import java.util.Set;
-
 import javax.annotation.Nullable;
 
 /**
  * Provides the ads utilities user agent.
  */
 public class AdsUtilitiesUserAgentProvider implements UserAgentProvider {
-  private final Provider<Internals> internalsProvider;
+  private final AdsUtilityRegistry adsUtilityRegistry;
   private final AdsLibConfiguration adsLibConfiguration;
 
   private static final Function<AdsUtility, String> ADS_UTILITY_FUNCTION =
@@ -47,14 +43,13 @@ public class AdsUtilitiesUserAgentProvider implements UserAgentProvider {
 
   @Inject
   public AdsUtilitiesUserAgentProvider(
-      Provider<Internals> internals, AdsLibConfiguration adsLibConfiguration) {
-    this.internalsProvider = internals;
+      AdsUtilityRegistry adsUtilityRegistry, AdsLibConfiguration adsLibConfiguration) {
+    this.adsUtilityRegistry = adsUtilityRegistry;
     this.adsLibConfiguration = adsLibConfiguration;
   }
 
   @Override
   public String getUserAgent() {
-    AdsUtilityRegistry adsUtilityRegistry = internalsProvider.get().getAdsUtilityRegistry();
     Set<AdsUtility> adsUtilities = adsUtilityRegistry.getRegisteredUtilities();
     
     // Always clear the registry, even if utilities will not be included in the user agent.

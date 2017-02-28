@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Performs actions on {@link ProductPackage} objects that match the given
- *             {@link Statement#query}.
+ *             Performs actions on {@link ProductPackage} objects that match the given {@link
+ *             Statement#query}.
  *             
  *             @param action the action to perform
  *             @param statement a Publisher Query Language statement used to filter a set of product packages

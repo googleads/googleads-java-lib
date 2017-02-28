@@ -35,11 +35,13 @@ public class ProgrammaticProductError  extends com.google.api.ads.dfp.axis.v2017
 
     public ProgrammaticProductError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.ProgrammaticProductErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

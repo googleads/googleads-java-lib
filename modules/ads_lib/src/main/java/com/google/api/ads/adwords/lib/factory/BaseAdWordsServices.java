@@ -17,7 +17,9 @@ package com.google.api.ads.adwords.lib.factory;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceClient;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.utils.SessionUtility;
 import com.google.api.ads.common.lib.factory.BaseServices;
+import com.google.common.base.Preconditions;
 import com.google.inject.Injector;
 
 /** Base for a utility class which creates AdWords service clients. */
@@ -25,25 +27,28 @@ public abstract class BaseAdWordsServices
     extends BaseServices<AdWordsServiceClient, AdWordsSession, AdWordsServiceDescriptor>
     implements AdWordsServicesInterface {
 
-  private final Injector injector;
+  final Injector injector;
 
-  /**
-   * @param injector an injector which binds all the necessary classes
-   */
+  /** @param injector an injector which binds all the necessary classes */
   protected BaseAdWordsServices(Injector injector) {
     super(new AdWordsServiceClientFactory(injector));
     this.injector = injector;
   }
 
-  /**
-   * Returns a new instance of the specified utility type, bound to the provided session.
-   *
-   * @param session an AdWords session
-   * @param utilityClass a utility class annotated.
-   */
   @Override
   public <UtilityT> UtilityT getUtility(AdWordsSession session, Class<UtilityT> utilityClass) {
+    Preconditions.checkNotNull(session, "Null session");
+    Preconditions.checkNotNull(utilityClass, "Null utility class");
+    if (utilityClass.getAnnotation(SessionUtility.class) == null) {
+      throw new IllegalArgumentException(
+          utilityClass + " is not annotated with " + SessionUtility.class);
+    }
     Injector childInjector = injector.createChildInjector(new AdWordsSessionModule(session));
     return childInjector.getInstance(utilityClass);
+  }
+
+  /** Returns a new {@link DependencyBootstrapper} bound to this object's injector. */
+  protected DependencyBootstrapper createBootstrapper() {
+    return injector.getInstance(DependencyBootstrapper.class);
   }
 }

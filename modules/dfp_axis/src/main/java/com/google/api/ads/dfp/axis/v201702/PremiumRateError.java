@@ -33,11 +33,13 @@ public class PremiumRateError  extends com.google.api.ads.dfp.axis.v201702.ApiEr
 
     public PremiumRateError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.PremiumRateErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

@@ -34,11 +34,13 @@ public class HtmlBundleProcessorError  extends com.google.api.ads.dfp.axis.v2017
 
     public HtmlBundleProcessorError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.HtmlBundleProcessorErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

@@ -31,6 +31,7 @@ import com.google.api.client.util.Charsets;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URI;
@@ -58,21 +59,12 @@ public class BatchJobUploader {
   @VisibleForTesting
   static final int REQUIRED_CONTENT_LENGTH_INCREMENT = 262144;
 
-  /**
-   * Constructor that stores the session for authentication.
-   *
-   * @param session the AdWords session to use for authentication.
-   */
-  public BatchJobUploader(AdWordsSession session) {
-    this(session, AdWordsInternals.getInstance().getHttpTransport());
-  }
-
-  @VisibleForTesting
-  BatchJobUploader(AdWordsSession session, HttpTransport httpTransport) {
+  @Inject
+  BatchJobUploader(
+      AdWordsSession session, HttpTransport httpTransport, BatchJobLogger batchJobLogger) {
     this.session = session;
     this.httpTransport = httpTransport;
-    this.batchJobLogger =
-        AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
+    this.batchJobLogger = batchJobLogger;
   }
 
   private HttpHeaders createHttpHeaders() {

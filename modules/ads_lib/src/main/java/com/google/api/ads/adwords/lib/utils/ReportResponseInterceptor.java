@@ -18,7 +18,7 @@ import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseInterceptor;
-
+import com.google.inject.Inject;
 import java.io.IOException;
 
 /**
@@ -29,9 +29,12 @@ class ReportResponseInterceptor implements HttpResponseInterceptor {
   private final ReportServiceLogger reportServiceLogger;
 
   /**
+   * Constructor used by Guice.
+   *
    * @param reportServiceLogger the logger for reporting interactions.
    */
-  public ReportResponseInterceptor(ReportServiceLogger reportServiceLogger) {
+  @Inject
+  ReportResponseInterceptor(ReportServiceLogger reportServiceLogger) {
     this.reportServiceLogger = reportServiceLogger;
   }
 

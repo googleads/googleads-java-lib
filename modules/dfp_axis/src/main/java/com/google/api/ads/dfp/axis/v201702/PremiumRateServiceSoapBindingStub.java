@@ -339,6 +339,13 @@ public class PremiumRateServiceSoapBindingStub extends org.apache.axis.client.St
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "FieldPathElement");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201702.FieldPathElement.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "FrequencyCapPremiumFeature");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201702.FrequencyCapPremiumFeature.class;

@@ -47,6 +47,11 @@ class XmlReportDefinitionRequest implements ReportRequest {
   }
 
   @Override
+  public String getApiVersion() {
+    return "v201609";
+  }
+  
+  @Override
   public RequestType getRequestType() {
     return RequestType.XML;
   }

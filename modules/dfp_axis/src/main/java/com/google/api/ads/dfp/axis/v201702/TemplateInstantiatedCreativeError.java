@@ -34,11 +34,13 @@ public class TemplateInstantiatedCreativeError  extends com.google.api.ads.dfp.a
 
     public TemplateInstantiatedCreativeError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.TemplateInstantiatedCreativeErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

@@ -23,6 +23,7 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
+import com.google.api.ads.adwords.lib.utils.testing.GenericAdWordsServices;
 import com.google.api.ads.common.lib.testing.MockHttpServer;
 import com.google.api.ads.common.lib.testing.MockResponse;
 import com.google.api.client.http.ByteArrayContent;
@@ -67,7 +68,8 @@ public class BatchJobUploaderTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
     mockHttpServer = new MockHttpServer();
-    uploader = new BatchJobUploader(adWordsSession, mockHttpServer.getHttpTransport());
+    uploader =
+        new BatchJobUploader(adWordsSession, mockHttpServer.getHttpTransport(), batchJobLogger);
     when(request.createBatchJobUploadBodyProvider()).thenReturn(uploadBodyProvider);
   }
 
@@ -75,10 +77,13 @@ public class BatchJobUploaderTest {
    * Sanity check that the public constructor works properly. All other tests use the
    * package private constructor, but users of the utility will use the public one.
    */
-  @SuppressWarnings("rawtypes")
   @Test
-  public void testPublicConstructor() {
-    assertNotNull(new BatchJobUploader(adWordsSession));
+  public void testGetFromAdWordsServices() {
+    assertNotNull(
+        "Uploader from AdWordsServices is null",
+        new GenericAdWordsServices()
+            .getBootstrapper()
+            .getInstanceOf(adWordsSession, BatchJobUploader.class));
   }
   
   /**
@@ -98,11 +103,11 @@ public class BatchJobUploaderTest {
         .thenReturn(new ByteArrayContent(null, "foo".getBytes(UTF_8)));
     MockHttpTransport transport = new MockHttpTransport.Builder()
         .setLowLevelHttpRequest(lowLevelHttpRequest).build();
-    uploader = new BatchJobUploader(adWordsSession, transport);
-    thrown.expect(BatchJobException.class);
-    thrown.expectCause(Matchers.sameInstance(ioException));
+    uploader = new BatchJobUploader(adWordsSession, transport, batchJobLogger);
     BatchJobUploadStatus uploadStatus =
         new BatchJobUploadStatus(0, URI.create("http://www.example.com"));
+    thrown.expect(BatchJobException.class);
+    thrown.expectCause(Matchers.sameInstance(ioException));
     uploader.uploadIncrementalBatchJobOperations(request, true, uploadStatus);
   }
   
@@ -123,7 +128,7 @@ public class BatchJobUploaderTest {
         .thenReturn(new ByteArrayContent(null, "foo".getBytes(UTF_8)));
     MockHttpTransport transport = new MockHttpTransport.Builder()
         .setLowLevelHttpRequest(lowLevelHttpRequest).build();
-    uploader = new BatchJobUploader(adWordsSession, transport);
+    uploader = new BatchJobUploader(adWordsSession, transport, batchJobLogger);
     thrown.expect(BatchJobException.class);
     thrown.expectCause(Matchers.sameInstance(ioException));
     thrown.expectMessage("initiate upload");

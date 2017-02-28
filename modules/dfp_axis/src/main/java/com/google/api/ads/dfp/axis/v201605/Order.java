@@ -144,7 +144,10 @@ public class Order  implements java.io.Serializable {
 
     /* Total viewable impressions delivered for all line items of
      * this {@code Order}.
-     *                 This value is read-only and is assigned by Google. */
+     *                 This value is read-only and is assigned by Google.
+     * Starting in v201705, this will be {@code null} when the order does
+     * not have line items
+     *                 trafficked against a viewable impressions goal. */
     private java.lang.Long totalViewableImpressionsDelivered;
 
     /* Total budget for all line items of this {@code Order}. This
@@ -838,6 +841,9 @@ public class Order  implements java.io.Serializable {
      * @return totalViewableImpressionsDelivered   * Total viewable impressions delivered for all line items of
      * this {@code Order}.
      *                 This value is read-only and is assigned by Google.
+     * Starting in v201705, this will be {@code null} when the order does
+     * not have line items
+     *                 trafficked against a viewable impressions goal.
      */
     public java.lang.Long getTotalViewableImpressionsDelivered() {
         return totalViewableImpressionsDelivered;
@@ -850,6 +856,9 @@ public class Order  implements java.io.Serializable {
      * @param totalViewableImpressionsDelivered   * Total viewable impressions delivered for all line items of
      * this {@code Order}.
      *                 This value is read-only and is assigned by Google.
+     * Starting in v201705, this will be {@code null} when the order does
+     * not have line items
+     *                 trafficked against a viewable impressions goal.
      */
     public void setTotalViewableImpressionsDelivered(java.lang.Long totalViewableImpressionsDelivered) {
         this.totalViewableImpressionsDelivered = totalViewableImpressionsDelivered;

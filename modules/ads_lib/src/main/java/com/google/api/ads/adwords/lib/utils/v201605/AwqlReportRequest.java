@@ -42,6 +42,11 @@ class AwqlReportRequest implements ReportRequest {
   }
 
   @Override
+  public String getApiVersion() {
+    return "v201605";
+  }
+  
+  @Override
   public RequestType getRequestType() {
     return RequestType.AWQL;
   }

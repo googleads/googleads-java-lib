@@ -31,26 +31,29 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link BatchJobHelper}.
- */
+/** Tests for {@link BatchJobHelper}. */
 @RunWith(JUnit4.class)
 public class BatchJobHelperTest
     extends com.google.api.ads.adwords.lib.utils.testing.BatchJobHelperTest<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
-  
+
   @Test
   public void testGetFromAdWordsServices() {
-    BatchJobHelper helper = new AdWordsServices().getUtility(session, BatchJobHelper.class);
-    assertNotNull("Helper is null", helper);
+    BatchJobHelper helper = AdWordsServices.getInstance().getUtility(session, BatchJobHelper.class);
+    assertNotNull("Helper from AdWordsServices is null", helper);
   }
-  
+
+  @Test
+  public void testSessionBasedConstructor() {
+    BatchJobHelper helper = new BatchJobHelper(session);
+    assertNotNull("Helper from session-based constructor is null", helper);
+  }
+
   @Override
   protected BatchJobHelperInterface<
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
-      createBatchJobHelper(
-          BatchJobUploader uploader) {
-    return new BatchJobHelper(uploader);
+      createBatchJobHelper(BatchJobUploader uploader) {
+    return new BatchJobHelper(new BatchJobHelperImpl(uploader, batchJobLogger), adsUtilityRegistry);
   }
 
   @Override

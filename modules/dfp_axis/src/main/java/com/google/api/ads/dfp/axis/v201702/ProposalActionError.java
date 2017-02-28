@@ -35,11 +35,13 @@ public class ProposalActionError  extends com.google.api.ads.dfp.axis.v201702.Ap
 
     public ProposalActionError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.ProposalActionErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

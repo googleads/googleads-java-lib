@@ -16,16 +16,15 @@ package com.google.api.ads.adwords.lib.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration;
-import com.google.api.ads.adwords.lib.utils.logging.AdWordsServiceLoggers;
-import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
+import com.google.api.ads.adwords.lib.utils.testing.GenericAdWordsServices;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -37,19 +36,16 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
-
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Tests functionality of the ReportRequestFactoryHelper.
@@ -65,6 +61,8 @@ public class ReportRequestFactoryHelperTest {
   /** The reporting configuration to use for the test. */
   private ReportingConfiguration reportingConfiguration;
 
+  private HttpTransport transport;
+
   @Mock
   private AuthorizationHeaderProvider authorizationHeaderProvider;
   @Mock
@@ -72,17 +70,15 @@ public class ReportRequestFactoryHelperTest {
   @Mock
   private UserAgentCombiner userAgentCombiner;
   @Mock
-  private AdWordsInternals internals;
-  @Mock
   private AdWordsSession adWordsSession;
   @Mock
   private AdWordsLibConfiguration adWordsLibConfiguration;
   @Mock
-  private AdWordsServiceLoggers adWordsServiceLoggers;
+  private LowLevelHttpRequest lowLevelRequest;
   @Mock
-  private ReportServiceLogger reportServiceLogger;
+  private ReportResponseInterceptor reportResponseInterceptor;
 
-  @Parameters(name="version={0}, reportingConfiguration={1}")
+  @Parameters(name = "version={0}, reportingConfiguration={1}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     Boolean[] booleanValues = new Boolean[]{ true, false, null };
@@ -138,22 +134,17 @@ public class ReportRequestFactoryHelperTest {
     MockitoAnnotations.initMocks(this);
 
     // Sets up mock behavior common to all tests.
-    when(internals.getAuthorizationHeaderProvider()).thenReturn(authorizationHeaderProvider);
-    when(internals.getUserAgentCombiner()).thenReturn(userAgentCombiner);
-    when(internals.getAdWordsLibConfiguration()).thenReturn(adWordsLibConfiguration);
-    when(internals.getAdWordsServiceLoggers()).thenReturn(adWordsServiceLoggers);
-    when(adWordsServiceLoggers.getReportServiceLogger()).thenReturn(reportServiceLogger);
+    transport = createTransport(lowLevelRequest);
   }
 
-  /**
-   * Verifies the constructor pulls fields out of Internals.
-   */
+  /** Verifies an instance can be obtained from AdWordsServices. */
   @Test
-  public void testConstructor() throws Exception {
-    new ReportRequestFactoryHelper(adWordsSession, internals);
-
-    verify(internals).getAuthorizationHeaderProvider();
-    verify(internals).getUserAgentCombiner();
+  public void testGetFromAdWordsServices() throws Exception {
+    ReportRequestFactoryHelper helper =
+        new GenericAdWordsServices()
+            .getBootstrapper()
+            .getInstanceOf(adWordsSession, ReportRequestFactoryHelper.class);
+    assertNotNull("Helper from AdWordsServices is null", helper);
   }
 
   /**
@@ -162,9 +153,6 @@ public class ReportRequestFactoryHelperTest {
   @Test
   public void testGetHttpRequestFactory()
       throws ValidationException, AuthenticationException, IOException {
-    LowLevelHttpRequest lowLevelRequest = Mockito.mock(LowLevelHttpRequest.class);
-    HttpTransport transport = createTransport(lowLevelRequest);
-    when(internals.getHttpTransport()).thenReturn(transport);
     when(adWordsLibConfiguration.getReportDownloadTimeout()).thenReturn(42);
     AdWordsSession session = new AdWordsSession.Builder()
         .withDeveloperToken("foodevtoken")
@@ -176,7 +164,14 @@ public class ReportRequestFactoryHelperTest {
     when(authorizationHeaderProvider.getAuthorizationHeader(session, ENDPOINT_URL.build()))
         .thenReturn("fooauthheader");
     when(userAgentCombiner.getUserAgent(anyString())).thenReturn("foouseragent");
-    ReportRequestFactoryHelper helper = new ReportRequestFactoryHelper(session, internals);
+    ReportRequestFactoryHelper helper =
+        new ReportRequestFactoryHelper(
+            session,
+            authorizationHeaderProvider,
+            userAgentCombiner,
+            transport,
+            adWordsLibConfiguration,
+            reportResponseInterceptor);
     HttpRequestFactory requestFactory = helper.getHttpRequestFactory(ENDPOINT_URL.build(), version);
 
     HttpRequest request = requestFactory.buildPostRequest(

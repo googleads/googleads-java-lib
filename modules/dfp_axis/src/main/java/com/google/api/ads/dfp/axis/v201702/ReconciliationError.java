@@ -34,11 +34,13 @@ public class ReconciliationError  extends com.google.api.ads.dfp.axis.v201702.Ap
 
     public ReconciliationError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString,
            com.google.api.ads.dfp.axis.v201702.ReconciliationErrorReason reason) {
         super(
             fieldPath,
+            fieldPathElements,
             trigger,
             errorString);
         this.reason = reason;

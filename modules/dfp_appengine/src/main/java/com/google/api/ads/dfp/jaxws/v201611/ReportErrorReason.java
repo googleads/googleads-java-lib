@@ -112,7 +112,7 @@ public enum ReportErrorReason {
     /**
      * 
      *                 The user has exceeded the limit on the number of reports that can be run
-     *                 concurrently. The current limit is 20 per user.
+     *                 concurrently. The current limit is 30 per user.
      *               
      * 
      */

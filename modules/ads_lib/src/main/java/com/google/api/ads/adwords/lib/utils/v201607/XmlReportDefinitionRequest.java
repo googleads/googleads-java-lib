@@ -19,7 +19,6 @@ import com.google.api.ads.adwords.lib.jaxb.v201607.ReportDefinition;
 import com.google.api.ads.adwords.lib.utils.ReportRequest;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
 import com.google.common.base.Preconditions;
-
 import javax.xml.namespace.QName;
 
 /**
@@ -45,6 +44,11 @@ class XmlReportDefinitionRequest implements ReportRequest {
   @Override
   public DownloadFormat getDownloadFormat() {
     return reportDefinition.getDownloadFormat();
+  }
+  
+  @Override
+  public String getApiVersion() {
+    return "v201607";
   }
 
   @Override

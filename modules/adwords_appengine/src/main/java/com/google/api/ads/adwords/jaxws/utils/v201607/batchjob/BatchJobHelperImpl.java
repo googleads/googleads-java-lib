@@ -18,8 +18,6 @@ import com.google.api.ads.adwords.jaxws.v201607.cm.ApiError;
 import com.google.api.ads.adwords.jaxws.v201607.cm.BatchJob;
 import com.google.api.ads.adwords.jaxws.v201607.cm.Operand;
 import com.google.api.ads.adwords.jaxws.v201607.cm.Operation;
-import com.google.api.ads.adwords.lib.client.AdWordsSession;
-import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
@@ -27,37 +25,23 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBDeserializer;
-import com.google.common.annotations.VisibleForTesting;
-
+import com.google.inject.Inject;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-
 import javax.xml.transform.stream.StreamSource;
 
-/**
- * Utility for uploading operations and downloading results for a {@link BatchJob}.
- */
+/** Utility for uploading operations and downloading results for a {@link BatchJob}. */
 class BatchJobHelperImpl
     implements BatchJobHelperInterface<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
   private final BatchJobUploader uploader;
   private final BatchJobLogger batchJobLogger;
 
-  public BatchJobHelperImpl(AdWordsSession session) {
-    this(
-        new BatchJobUploader(
-            session));
-  }
-
-  /**
-   * Constructor for testing to allow mocking of the underlying uploader.
-   */
-  @VisibleForTesting
-  BatchJobHelperImpl(
-      BatchJobUploader uploader) {
+  @Inject
+  BatchJobHelperImpl(BatchJobUploader uploader, BatchJobLogger batchJobLogger) {
     this.uploader = uploader;
-    batchJobLogger = AdWordsInternals.getInstance().getAdWordsServiceLoggers().getBatchJobLogger();
+    this.batchJobLogger = batchJobLogger;
   }
 
   @Override

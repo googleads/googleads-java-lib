@@ -18,6 +18,7 @@ import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201605.mcm.Customer;
 import com.google.api.ads.adwords.axis.v201605.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
+import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.exception.OAuthException;
@@ -55,7 +56,7 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
         .build();
   }
 
-  public static void runExample(AdWordsServices adWordsServices, AdWordsSession session)
+  public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session)
       throws Exception {
     CustomerServiceInterface customerService =
         adWordsServices.get(session, CustomerServiceInterface.class);
@@ -86,7 +87,7 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
     // Create an AdWordsSession without using a properties file.
     AdWordsSession adWordsSession = createAdWordsSession(CLIENT_ID, CLIENT_SECRET,
         REFRESH_TOKEN, DEVELOPER_TOKEN, USER_AGENT);
-    AdWordsServices adWordsServices = new AdWordsServices();
+    AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
     runExample(adWordsServices, adWordsSession);
   }

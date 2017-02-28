@@ -35,6 +35,13 @@ public abstract class ApiError  implements java.io.Serializable {
     /* The OGNL field path to identify cause of error. */
     private java.lang.String fieldPath;
 
+    /* A parsed copy of the field path. For example, the field path
+     * "operations[1].operand"
+     *                 corresponds to this list: {FieldPathElement(field
+     * = "operations", index = 1),
+     *                 FieldPathElement(field = "operand", index = null)}. */
+    private com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements;
+
     /* The data that caused the error. */
     private java.lang.String trigger;
 
@@ -46,9 +53,11 @@ public abstract class ApiError  implements java.io.Serializable {
 
     public ApiError(
            java.lang.String fieldPath,
+           com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements,
            java.lang.String trigger,
            java.lang.String errorString) {
            this.fieldPath = fieldPath;
+           this.fieldPathElements = fieldPathElements;
            this.trigger = trigger;
            this.errorString = errorString;
     }
@@ -71,6 +80,42 @@ public abstract class ApiError  implements java.io.Serializable {
      */
     public void setFieldPath(java.lang.String fieldPath) {
         this.fieldPath = fieldPath;
+    }
+
+
+    /**
+     * Gets the fieldPathElements value for this ApiError.
+     * 
+     * @return fieldPathElements   * A parsed copy of the field path. For example, the field path
+     * "operations[1].operand"
+     *                 corresponds to this list: {FieldPathElement(field
+     * = "operations", index = 1),
+     *                 FieldPathElement(field = "operand", index = null)}.
+     */
+    public com.google.api.ads.dfp.axis.v201702.FieldPathElement[] getFieldPathElements() {
+        return fieldPathElements;
+    }
+
+
+    /**
+     * Sets the fieldPathElements value for this ApiError.
+     * 
+     * @param fieldPathElements   * A parsed copy of the field path. For example, the field path
+     * "operations[1].operand"
+     *                 corresponds to this list: {FieldPathElement(field
+     * = "operations", index = 1),
+     *                 FieldPathElement(field = "operand", index = null)}.
+     */
+    public void setFieldPathElements(com.google.api.ads.dfp.axis.v201702.FieldPathElement[] fieldPathElements) {
+        this.fieldPathElements = fieldPathElements;
+    }
+
+    public com.google.api.ads.dfp.axis.v201702.FieldPathElement getFieldPathElements(int i) {
+        return this.fieldPathElements[i];
+    }
+
+    public void setFieldPathElements(int i, com.google.api.ads.dfp.axis.v201702.FieldPathElement _value) {
+        this.fieldPathElements[i] = _value;
     }
 
 
@@ -128,6 +173,9 @@ public abstract class ApiError  implements java.io.Serializable {
             ((this.fieldPath==null && other.getFieldPath()==null) || 
              (this.fieldPath!=null &&
               this.fieldPath.equals(other.getFieldPath()))) &&
+            ((this.fieldPathElements==null && other.getFieldPathElements()==null) || 
+             (this.fieldPathElements!=null &&
+              java.util.Arrays.equals(this.fieldPathElements, other.getFieldPathElements()))) &&
             ((this.trigger==null && other.getTrigger()==null) || 
              (this.trigger!=null &&
               this.trigger.equals(other.getTrigger()))) &&
@@ -147,6 +195,17 @@ public abstract class ApiError  implements java.io.Serializable {
         int _hashCode = 1;
         if (getFieldPath() != null) {
             _hashCode += getFieldPath().hashCode();
+        }
+        if (getFieldPathElements() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFieldPathElements());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFieldPathElements(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
         }
         if (getTrigger() != null) {
             _hashCode += getTrigger().hashCode();
@@ -170,6 +229,14 @@ public abstract class ApiError  implements java.io.Serializable {
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fieldPathElements");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "fieldPathElements"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201702", "FieldPathElement"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("trigger");

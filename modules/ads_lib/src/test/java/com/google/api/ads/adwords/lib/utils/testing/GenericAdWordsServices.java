@@ -1,11 +1,13 @@
 package com.google.api.ads.adwords.lib.utils.testing;
 
 import com.google.api.ads.adwords.lib.AdWordsModule;
+import com.google.api.ads.adwords.lib.AdWordsPluginModule;
+import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.factory.BaseAdWordsServices;
+import com.google.api.ads.adwords.lib.factory.DependencyBootstrapper;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
-import com.google.inject.Injector;
 import org.mockito.Mockito;
 
 /**
@@ -14,22 +16,36 @@ import org.mockito.Mockito;
  */
 public class GenericAdWordsServices extends BaseAdWordsServices {
 
+  /** Constructs an instance without an {@link AdWordsPluginModule}. */
   public GenericAdWordsServices() {
-    super(createInjector());
+    super(Guice.createInjector(new GenericAdWordsModule()));
   }
 
-  private static Injector createInjector() {
-    // Create a mock factory helper. This is required for setting up the injector, but isn't
-    // actually used when obtaining non-SOAP utilities.
-    @SuppressWarnings("rawtypes")
-    final AdsServiceClientFactoryHelper mockFactoryHelper =
-        Mockito.mock(AdsServiceClientFactoryHelper.class);
-    return Guice.createInjector(new AdWordsModule(),
-        new AbstractModule() {
-          @Override
-          protected void configure() {
-            bind(AdsServiceClientFactoryHelper.class).toInstance(mockFactoryHelper);
-          }
-        });
+  /** Constructs an instance with an {@link AdWordsPluginModule}. */
+  private GenericAdWordsServices(AdWordsPluginModule pluginModule) {
+    super(Guice.createInjector(new GenericAdWordsModule(), pluginModule));
+  }
+
+  @Override
+  public AdWordsServicesInterface withPluginModule(AdWordsPluginModule pluginModule) {
+    return new GenericAdWordsServices(pluginModule);
+  }
+
+  public DependencyBootstrapper getBootstrapper() {
+    return createBootstrapper();
+  }
+  
+  private static class GenericAdWordsModule extends AbstractModule {
+
+    @Override
+    protected void configure() {
+      // Create a mock factory helper. This is required for setting up the injector, but isn't
+      // actually used when obtaining non-SOAP utilities.
+      @SuppressWarnings("rawtypes")
+      final AdsServiceClientFactoryHelper mockFactoryHelper =
+          Mockito.mock(AdsServiceClientFactoryHelper.class);
+      bind(AdsServiceClientFactoryHelper.class).toInstance(mockFactoryHelper);
+      install(new AdWordsModule());
+    }
   }
 }

@@ -24,7 +24,7 @@ package com.google.api.ads.dfp.axis.v201605;
 
 /**
  * A {@code Creative} that contains externally hosted video ads and
- * is served via VAST 2.0 XML.
+ * is served via VAST XML.
  */
 public class VideoRedirectCreative  extends com.google.api.ads.dfp.axis.v201605.BaseVideoCreative  implements java.io.Serializable {
     /* The video creative assets. */

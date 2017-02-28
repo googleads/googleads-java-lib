@@ -18,10 +18,10 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.jaxb.v201605.DownloadFormat;
 import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinition;
 import com.google.api.ads.adwords.lib.utils.AdHocReportDownloadHelper;
+import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Inject;
 
 /**
@@ -41,9 +41,6 @@ import com.google.inject.Inject;
  */
 public class ReportDownloader implements ReportDownloaderInterface {
 
-  /** The version to append to url for Ad Hoc report downloads. */
-  private static final String VERSION = "v201605";
-
   private final AdHocReportDownloadHelper adHocReportDownloadHelper;
 
   /**
@@ -51,12 +48,13 @@ public class ReportDownloader implements ReportDownloaderInterface {
    *
    * @param session AdWordsSession to use to make report download requests.
    */
-  @Inject
   public ReportDownloader(AdWordsSession session) {
-    this(new AdHocReportDownloadHelper(session, VERSION));
+    this(
+        AdWordsInternals.getBootstrapper().getInstanceOf(session, AdHocReportDownloadHelper.class));
   }
 
-  @VisibleForTesting
+  /** Constructor used by Guice. */
+  @Inject
   ReportDownloader(AdHocReportDownloadHelper adHocReportDownloadHelper) {
     this.adHocReportDownloadHelper = adHocReportDownloadHelper;
   }

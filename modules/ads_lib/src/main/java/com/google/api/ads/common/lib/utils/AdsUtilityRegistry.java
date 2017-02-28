@@ -17,26 +17,32 @@ package com.google.api.ads.common.lib.utils;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import com.google.inject.Singleton;
-
 import java.util.Collection;
 import java.util.Set;
-
 import javax.annotation.concurrent.ThreadSafe;
 
-/**
- * A thread-safe registry for usage of {@link AdsUtility ads utilities}.
- */
+/** A thread-safe registry for usage of {@link AdsUtility ads utilities}. */
 @ThreadSafe
 @Singleton
-public class AdsUtilityRegistry {
+public final class AdsUtilityRegistry {
 
   private final Set<AdsUtility> adsUtilities = Sets.newConcurrentHashSet();
+
+  private static final AdsUtilityRegistry INSTANCE = new AdsUtilityRegistry();
+
+  /** Returns the singleton of this class. */
+  public static AdsUtilityRegistry getInstance() {
+    return INSTANCE;
+  }
+
+  private AdsUtilityRegistry() {
+    // Private constructor to enforce singleton behavior.
+  }
 
   /**
    * Adds the specified utility to the registry.
    *
-   * <p>
-   * Add is performed on a <em>best efforts</em> basis. It is possible that another thread will
+   * <p>Add is performed on a <em>best efforts</em> basis. It is possible that another thread will
    * subsequently remove the utility immediately after the add.
    *
    * @throws NullPointerException if {@code adsUtility == null}
@@ -45,9 +51,7 @@ public class AdsUtilityRegistry {
     adsUtilities.add(Preconditions.checkNotNull(adsUtility, "Null ads utility"));
   }
 
-  /**
-   * Returns all utilities in the registry.
-   */
+  /** Returns all utilities in the registry. */
   public Set<AdsUtility> getRegisteredUtilities() {
     return Sets.<AdsUtility>newHashSet(adsUtilities);
   }
@@ -55,9 +59,8 @@ public class AdsUtilityRegistry {
   /**
    * Removes the specified utilities from the registry.
    *
-   * <p>
-   * Removal is performed on a <em>best efforts</em> basis. It is possible that another thread will
-   * subsequently add one or more of the utilities immediately after the remove.
+   * <p>Removal is performed on a <em>best efforts</em> basis. It is possible that another thread
+   * will subsequently add one or more of the utilities immediately after the remove.
    *
    * @throws NullPointerException if {@code utilities == null}
    */

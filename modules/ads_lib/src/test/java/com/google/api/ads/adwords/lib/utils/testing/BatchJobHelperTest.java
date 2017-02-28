@@ -27,6 +27,8 @@ import com.google.api.ads.adwords.lib.utils.BatchJobMutateResponseInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
+import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.common.collect.ImmutableList;
 import java.io.File;
@@ -60,6 +62,8 @@ public abstract class BatchJobHelperTest<
   @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
 
   @Mock protected AdWordsSession session;
+  protected AdsUtilityRegistry adsUtilityRegistry;
+  @Mock protected BatchJobLogger batchJobLogger;
   @Mock private BatchJobUploader uploader;
 
   private BatchJobHelperInterface<OperationT, OperandT, ErrorT, ResultT, ResponseT> batchJobHelper;
@@ -71,6 +75,7 @@ public abstract class BatchJobHelperTest<
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
+    adsUtilityRegistry = AdsUtilityRegistry.getInstance();
     batchJobHelper = createBatchJobHelper(uploader);
     operations = ImmutableList.<OperationT>of(getPauseCampaignOperation(TEST_CAMPAIGN_ID));
   }
