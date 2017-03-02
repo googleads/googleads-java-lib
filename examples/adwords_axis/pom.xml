@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>adwords-axis-examples</artifactId>
-  <version>3.1.0</version>
+  <version>3.1.1</version>
 
   <packaging>jar</packaging>
 
@@ -41,17 +41,6 @@
 
   <build>
     <plugins>
-     <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>versions-maven-plugin</artifactId>
-        <version>1.3.1</version>
-        <configuration>
-          <generateBackupPoms>false</generateBackupPoms>
-          <includes>
-            <include>com.google.http-client:*</include>
-          </includes>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -121,12 +110,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.1.0</version>
+      <version>3.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-axis</artifactId>
-      <version>3.1.0</version>
+      <version>3.1.1</version>
     </dependency>
 
     <!-- Third party dependencies -->
