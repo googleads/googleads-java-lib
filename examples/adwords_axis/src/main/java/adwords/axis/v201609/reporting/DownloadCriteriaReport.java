@@ -14,7 +14,6 @@
 
 package adwords.axis.v201609.reporting;
 
-import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.jaxb.v201609.DownloadFormat;
@@ -56,13 +55,10 @@ public class DownloadCriteriaReport {
     // Location to download report to.
     String reportFile = System.getProperty("user.home") + File.separatorChar + "report.csv";
 
-    AdWordsServices adWordsServices = new AdWordsServices();
-    
-    runExample(adWordsServices, session, reportFile);
+    runExample(session, reportFile);
   }
 
-  public static void runExample(
-      AdWordsServices adWordsServices, AdWordsSession session, String reportFile) throws Exception {
+  public static void runExample(AdWordsSession session, String reportFile) throws Exception {
     // Create selector.
     Selector selector = new Selector();
     selector.getFields().addAll(Lists.newArrayList("CampaignId",
@@ -99,14 +95,12 @@ public class DownloadCriteriaReport {
 
     reportDefinition.setSelector(selector);
 
-    // Get an instance of ReportDownloader.
-    ReportDownloader reportDownloader = adWordsServices.getUtility(session, ReportDownloader.class);
-
     try {
       // Set the property api.adwords.reportDownloadTimeout or call
       // ReportDownloader.setReportDownloadTimeout to set a timeout (in milliseconds)
       // for CONNECT and READ in report downloads.
-      ReportDownloadResponse response = reportDownloader.downloadReport(reportDefinition);
+      ReportDownloadResponse response =
+          new ReportDownloader(session).downloadReport(reportDefinition);
       response.saveToFile(reportFile);
 
       System.out.printf("Report successfully downloaded to: %s%n", reportFile);

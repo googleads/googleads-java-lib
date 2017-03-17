@@ -15,19 +15,19 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201605.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201605.cm.CampaignPage;
-import com.google.api.ads.adwords.axis.v201605.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201605.cm.Selector;
+import com.google.api.ads.adwords.axis.v201702.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201702.cm.CampaignPage;
+import com.google.api.ads.adwords.axis.v201702.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201702.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
-import com.google.api.ads.adwords.lib.jaxb.v201605.DownloadFormat;
-import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinition;
-import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinitionDateRangeType;
-import com.google.api.ads.adwords.lib.jaxb.v201605.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.jaxb.v201702.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinition;
+import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
-import com.google.api.ads.adwords.lib.utils.v201605.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.v201702.ReportDownloader;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -160,8 +160,8 @@ public class AdvancedCreateCredentialFromScratch {
     }
 
     // Create selector.
-    com.google.api.ads.adwords.lib.jaxb.v201605.Selector reportSelector =
-        new com.google.api.ads.adwords.lib.jaxb.v201605.Selector();
+    com.google.api.ads.adwords.lib.jaxb.v201702.Selector reportSelector =
+        new com.google.api.ads.adwords.lib.jaxb.v201702.Selector();
     reportSelector.getFields().addAll(Lists.newArrayList(
         "CampaignId",
         "AdGroupId",

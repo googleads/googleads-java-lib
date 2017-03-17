@@ -17,13 +17,10 @@ package com.google.api.ads.common.lib.conf;
 import com.google.common.collect.Lists;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-
-import org.apache.commons.configuration.Configuration;
-
 import java.net.URL;
 import java.util.List;
-
 import javax.annotation.Nullable;
+import org.apache.commons.configuration.Configuration;
 
 /**
  * Module for configuration.
@@ -32,7 +29,6 @@ public abstract class ConfigurationModule extends AbstractModule {
 
   private static final String BUILD_PROPERTIES = "props/google-ads-api-java-build.properties";
   private static final String DEFAULT_ADS_PROPERTIES = "ads.properties";
-  private static final String DEFAULT_BUILD_PROPERTIES = "google-ads-api-java-build.properties";
   
   @Override
   protected void configure() {}
@@ -65,7 +61,7 @@ public abstract class ConfigurationModule extends AbstractModule {
     bind(Configuration.class).annotatedWith(Names.named("build")).toProvider(
         new ConfigurationProvider(ConfigurationHelper.newList(
             Lists.newArrayList(ConfigurationModule.class.getResource(BUILD_PROPERTIES)), false),
-            getFilePathConfigurationListWithDefault(null, DEFAULT_BUILD_PROPERTIES)));
+            null));
     bind(Configuration.class).annotatedWith(Names.named("product")).toProvider(
         new ConfigurationProvider(ConfigurationHelper.newList(productPropertyUrls, false), null));
   }

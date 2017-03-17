@@ -1,3 +1,33 @@
+3.2.0 - 3/17/2017
+-------------------
+AdWords:
+  - Removed support and examples for v201605. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Fixed creation of the ReportDownloader object in the v201609
+    DownloadCriteriaReport example for Axis.
+  - Updated AddSiteLinksUsingFeeds examples to use field and
+    constant names that are consistent with the field names
+    of SitelinkFeedItem.
+  - Moved log4j.properties and ads.properties to the `src` directory in
+    non-maven example archive adwords-axis-jars-and-examples.tar.gz so
+    log4j will function properly and the ads.properties in the user's
+    home directory will take precedence over the sample in the archive.
+
+DFP:
+  - Moved log4j.properties and ads.properties to the `src` directory in
+    non-maven example archive dfp-axis-jars-and-examples.tar.gz so
+    log4j will function properly and the ads.properties in the user's
+    home directory will take precedence over the sample in the archive.
+
+Common:
+  - Upgraded to version 2.6 of commons-lang in the ads_lib module.
+  - Modified configuration loading to only look for
+    google-ads-api-java-build.properties in the classpath, since there's no
+    need to override this via a local file. In addition, modified the log
+    message to something less alarming when an optional configuration file
+    cannot be loaded. Fixes github issue:
+    https://github.com/googleads/googleads-java-lib/issues/90
+
 3.1.1 - 3/02/2017
 -------------------
 AdWords:

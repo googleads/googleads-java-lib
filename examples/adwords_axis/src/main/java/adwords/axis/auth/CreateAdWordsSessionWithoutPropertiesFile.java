@@ -15,8 +15,8 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201605.mcm.Customer;
-import com.google.api.ads.adwords.axis.v201605.mcm.CustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201702.mcm.Customer;
+import com.google.api.ads.adwords.axis.v201702.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -60,8 +60,10 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
       throws Exception {
     CustomerServiceInterface customerService =
         adWordsServices.get(session, CustomerServiceInterface.class);
-    Customer customer = customerService.get();
-    System.out.printf("You are logged in as customer: %s", customer.getCustomerId());
+    System.out.println("You are logged in as a user with access to the following customers:");
+    for (Customer customer : customerService.getCustomers()) {
+      System.out.printf("  %s%n", customer.getCustomerId());
+    }
   }
 
   public static void main(String[] args) throws Exception {

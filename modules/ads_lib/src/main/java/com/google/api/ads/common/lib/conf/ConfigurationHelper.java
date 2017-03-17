@@ -17,17 +17,9 @@ package com.google.api.ads.common.lib.conf;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
-
-import org.apache.commons.configuration.AbstractConfiguration;
-import org.apache.commons.configuration.CombinedConfiguration;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.MapConfiguration;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.configuration.tree.OverrideCombiner;
-
 import java.io.File;
 import java.net.URL;
 import java.security.AccessControlException;
@@ -35,8 +27,14 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
-
 import javax.annotation.Nullable;
+import org.apache.commons.configuration.AbstractConfiguration;
+import org.apache.commons.configuration.CombinedConfiguration;
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.MapConfiguration;
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.tree.OverrideCombiner;
 
 /**
  * Helper class that loads {@link Configuration} from various sources.
@@ -153,8 +151,12 @@ public class ConfigurationHelper {
             if (!path.isOptional) {
               throw e;
             } else {
-              AdsServiceLoggers.ADS_API_LIB_LOG.debug("Did not load optional configuration "
-                  + path.getLocation() + ":", e);
+              // Intentionally exclude the exception details from this log message because:
+              // a) The path is optional, so it's not unusual for the resource to be missing.
+              // b) Logging the exception details was needlessly alarming users. See github issue:
+              //    https://github.com/googleads/googleads-java-lib/issues/90
+              AdsServiceLoggers.ADS_API_LIB_LOG.debug(
+                  "Could not load optional configuration: " + path);
             }
           }
         }
@@ -304,6 +306,14 @@ public class ConfigurationHelper {
 
     public boolean isOptional() {
       return isOptional;
+    }
+    
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(getClass())
+          .add("location", location)
+          .add("isOptional", isOptional)
+          .toString();
     }
   }
 }

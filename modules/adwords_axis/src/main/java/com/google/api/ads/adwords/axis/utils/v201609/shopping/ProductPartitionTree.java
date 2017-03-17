@@ -46,18 +46,19 @@ public class ProductPartitionTree
    * Required fields for any {@link Selector} used to fetch {@link AdGroupCriterion} objects used by
    * an instance of this class.
    */
-  public static final List<AdGroupCriterionField> REQUIRED_SELECTOR_FIELD_ENUMS = 
+  public static final ImmutableList<AdGroupCriterionField> REQUIRED_SELECTOR_FIELD_ENUMS =
       ProductPartitionTreeImpl.REQUIRED_SELECTOR_FIELD_ENUMS;
 
   /**
    * Required fields for any {@link Selector} used to fetch {@link AdGroupCriterion} objects used by
    * an instance of this class.
-   * 
+   *
    * @deprecated Use the {@code REQUIRED_SELECTOR_FIELD_ENUMS} instead.
    */
   @Deprecated
-  public static final List<String> REQUIRED_SELECTOR_FIELDS = ImmutableList.copyOf(
-      Collections2.transform(REQUIRED_SELECTOR_FIELD_ENUMS, Functions.toStringFunction()));
+  public static final ImmutableList<String> REQUIRED_SELECTOR_FIELDS =
+      ImmutableList.copyOf(
+          Collections2.transform(REQUIRED_SELECTOR_FIELD_ENUMS, Functions.toStringFunction()));
 
   @SuppressWarnings("unchecked")
   private ProductPartitionTree(final ProductPartitionTreeImpl impl) {
