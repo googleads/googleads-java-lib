@@ -4,7 +4,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>adwords-extension-ratelimiter</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library Rate Limiter extension.</name>
