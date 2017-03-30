@@ -32,7 +32,7 @@ and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/).
 If you have questions about the client library extensions, you can ask them in
 the [issue tracker](https://github.com/googleads/googleads-java-lib/issues).
 
-## Maven artifact
+## Maven artifact - _coming soon_
 
 ```
     <dependency>
