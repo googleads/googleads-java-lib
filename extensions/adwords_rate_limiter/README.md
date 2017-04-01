@@ -32,12 +32,12 @@ and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/).
 If you have questions about the client library extensions, you can ask them in
 the [issue tracker](https://github.com/googleads/googleads-java-lib/issues).
 
-## Maven artifact - _coming soon_
+## Maven artifact
 
 ```
     <dependency>
       <groupId>com.google.api-ads</groupId>
-      <artifactId>adwords-axis-extension-ratelimiter</artifactId>
+      <artifactId>adwords-extension-ratelimiter</artifactId>
       <version>0.1.0</version>
     </dependency>
 ```
