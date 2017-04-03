@@ -1,4 +1,4 @@
-# AdWords API Extension: RateLimiter (Beta)
+# AdWords API Extension: RateLimiter
 
 RateLimiter is an AdWords API Java client library extension that automatically
 [handles rate limit errors](https://developers.google.com/adwords/api/docs/guides/rate-limits)
