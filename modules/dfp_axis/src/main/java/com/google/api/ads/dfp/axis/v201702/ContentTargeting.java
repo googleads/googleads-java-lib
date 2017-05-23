@@ -34,11 +34,13 @@ public class ContentTargeting  implements java.io.Serializable {
     private long[] excludedContentIds;
 
     /* A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being targeted by the {@code LineItem}. */
+     * IDs, that are being
+     *                 targeted by the {@code LineItem}. */
     private long[] targetedVideoContentBundleIds;
 
     /* A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being excluded by the {@code LineItem}. */
+     * IDs, that are being
+     *                 excluded by the {@code LineItem}. */
     private long[] excludedVideoContentBundleIds;
 
     /* A list of content metadata within hierarchies that are being
@@ -67,6 +69,18 @@ public class ContentTargeting  implements java.io.Serializable {
            this.excludedContentMetadata = excludedContentMetadata;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedContentIds", getExcludedContentIds())
+            .add("excludedContentMetadata", getExcludedContentMetadata())
+            .add("excludedVideoContentBundleIds", getExcludedVideoContentBundleIds())
+            .add("targetedContentIds", getTargetedContentIds())
+            .add("targetedContentMetadata", getTargetedContentMetadata())
+            .add("targetedVideoContentBundleIds", getTargetedVideoContentBundleIds())
+            .toString();
+    }
 
     /**
      * Gets the targetedContentIds value for this ContentTargeting.
@@ -128,7 +142,8 @@ public class ContentTargeting  implements java.io.Serializable {
      * Gets the targetedVideoContentBundleIds value for this ContentTargeting.
      * 
      * @return targetedVideoContentBundleIds   * A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being targeted by the {@code LineItem}.
+     * IDs, that are being
+     *                 targeted by the {@code LineItem}.
      */
     public long[] getTargetedVideoContentBundleIds() {
         return targetedVideoContentBundleIds;
@@ -139,7 +154,8 @@ public class ContentTargeting  implements java.io.Serializable {
      * Sets the targetedVideoContentBundleIds value for this ContentTargeting.
      * 
      * @param targetedVideoContentBundleIds   * A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being targeted by the {@code LineItem}.
+     * IDs, that are being
+     *                 targeted by the {@code LineItem}.
      */
     public void setTargetedVideoContentBundleIds(long[] targetedVideoContentBundleIds) {
         this.targetedVideoContentBundleIds = targetedVideoContentBundleIds;
@@ -158,7 +174,8 @@ public class ContentTargeting  implements java.io.Serializable {
      * Gets the excludedVideoContentBundleIds value for this ContentTargeting.
      * 
      * @return excludedVideoContentBundleIds   * A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being excluded by the {@code LineItem}.
+     * IDs, that are being
+     *                 excluded by the {@code LineItem}.
      */
     public long[] getExcludedVideoContentBundleIds() {
         return excludedVideoContentBundleIds;
@@ -169,7 +186,8 @@ public class ContentTargeting  implements java.io.Serializable {
      * Sets the excludedVideoContentBundleIds value for this ContentTargeting.
      * 
      * @param excludedVideoContentBundleIds   * A list of video content bundles, represented by {@link ContentBundle}
-     * IDs, that are being excluded by the {@code LineItem}.
+     * IDs, that are being
+     *                 excluded by the {@code LineItem}.
      */
     public void setExcludedVideoContentBundleIds(long[] excludedVideoContentBundleIds) {
         this.excludedVideoContentBundleIds = excludedVideoContentBundleIds;

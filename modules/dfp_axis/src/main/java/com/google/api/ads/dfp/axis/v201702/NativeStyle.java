@@ -88,6 +88,20 @@ public class NativeStyle  implements java.io.Serializable {
            this.size = size;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("creativeTemplateId", getCreativeTemplateId())
+            .add("cssSnippet", getCssSnippet())
+            .add("htmlSnippet", getHtmlSnippet())
+            .add("id", getId())
+            .add("isFluid", getIsFluid())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("targeting", getTargeting())
+            .toString();
+    }
 
     /**
      * Gets the id value for this NativeStyle.

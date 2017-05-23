@@ -23,12 +23,11 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} hosted by either DoubleClick for Advertisers (DFA) or DART
- *             for Publishers.
- *             <p>
- *             Similar to third-party creatives, a DoubleClick tag is used to retrieve a
- *             creative asset. However, DoubleClick tags are not sent to the user's browser.
- *             Instead, they are processed internally within the DoubleClick system..
+ *             A {@code Creative} hosted by DoubleClick for Advertisers (DFA).
+ *             
+ *             <p>Similar to third-party creatives, a DoubleClick tag is used to retrieve a creative asset.
+ *             However, DoubleClick tags are not sent to the user's browser. Instead, they are processed
+ *             internally within the DoubleClick system..
  *           
  * 
  * <p>Java class for InternalRedirectCreative complex type.

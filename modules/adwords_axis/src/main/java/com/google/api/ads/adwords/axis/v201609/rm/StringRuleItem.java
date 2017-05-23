@@ -60,6 +60,15 @@ public class StringRuleItem  implements java.io.Serializable {
            this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("key", getKey())
+            .add("op", getOp())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the key value for this StringRuleItem.

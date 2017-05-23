@@ -83,6 +83,19 @@ public class CampaignCriterion  implements java.io.Serializable {
            this.campaignCriterionType = campaignCriterionType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("bidModifier", getBidModifier())
+            .add("campaignCriterionType", getCampaignCriterionType())
+            .add("campaignId", getCampaignId())
+            .add("criterion", getCriterion())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("isNegative", getIsNegative())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignCriterion.

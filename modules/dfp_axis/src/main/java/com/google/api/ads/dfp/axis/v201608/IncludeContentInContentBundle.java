@@ -46,6 +46,13 @@ public class IncludeContentInContentBundle  extends com.google.api.ads.dfp.axis.
         this.contentStatement = contentStatement;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("contentStatement", getContentStatement())
+            .toString();
+    }
 
     /**
      * Gets the contentStatement value for this IncludeContentInContentBundle.

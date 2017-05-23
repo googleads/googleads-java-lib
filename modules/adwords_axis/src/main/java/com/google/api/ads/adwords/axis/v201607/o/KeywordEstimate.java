@@ -60,6 +60,16 @@ public class KeywordEstimate  extends com.google.api.ads.adwords.axis.v201607.o.
         this.max = max;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionId", getCriterionId())
+            .add("estimateType", getEstimateType())
+            .add("max", getMax())
+            .add("min", getMin())
+            .toString();
+    }
 
     /**
      * Gets the criterionId value for this KeywordEstimate.

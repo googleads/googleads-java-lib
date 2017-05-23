@@ -24,8 +24,7 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * A premium of a {@link RateCard} which could be applied to the line
- * item
- *             and charges extra.
+ * item and charges extra.
  */
 public class PremiumRateValue  implements java.io.Serializable {
     /* The ID of the {@link PremiumRate} object to which this premium
@@ -80,6 +79,17 @@ public class PremiumRateValue  implements java.io.Serializable {
            this.adjustmentSize = adjustmentSize;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adjustmentSize", getAdjustmentSize())
+            .add("adjustmentType", getAdjustmentType())
+            .add("premiumFeature", getPremiumFeature())
+            .add("premiumRateId", getPremiumRateId())
+            .add("rateType", getRateType())
+            .toString();
+    }
 
     /**
      * Gets the premiumRateId value for this PremiumRateValue.

@@ -55,8 +55,8 @@ public class Network  implements java.io.Serializable {
     private java.lang.String currencyCode;
 
     /* Currencies that can be used as an alternative to the {@link
-     * Network#currencyCode}
-     *                 for trafficking  {@link LineItem line items}. */
+     * Network#currencyCode} for
+     *                 trafficking {@link LineItem line items}. */
     private java.lang.String[] secondaryCurrencyCodes;
 
     /* The {@link AdUnit#id} of the top most ad unit to which descendant
@@ -93,6 +93,21 @@ public class Network  implements java.io.Serializable {
            this.isTest = isTest;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("displayName", getDisplayName())
+            .add("effectiveRootAdUnitId", getEffectiveRootAdUnitId())
+            .add("id", getId())
+            .add("isTest", getIsTest())
+            .add("networkCode", getNetworkCode())
+            .add("propertyCode", getPropertyCode())
+            .add("secondaryCurrencyCodes", getSecondaryCurrencyCodes())
+            .add("timeZone", getTimeZone())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Network.
@@ -238,8 +253,8 @@ public class Network  implements java.io.Serializable {
      * Gets the secondaryCurrencyCodes value for this Network.
      * 
      * @return secondaryCurrencyCodes   * Currencies that can be used as an alternative to the {@link
-     * Network#currencyCode}
-     *                 for trafficking  {@link LineItem line items}.
+     * Network#currencyCode} for
+     *                 trafficking {@link LineItem line items}.
      */
     public java.lang.String[] getSecondaryCurrencyCodes() {
         return secondaryCurrencyCodes;
@@ -250,8 +265,8 @@ public class Network  implements java.io.Serializable {
      * Sets the secondaryCurrencyCodes value for this Network.
      * 
      * @param secondaryCurrencyCodes   * Currencies that can be used as an alternative to the {@link
-     * Network#currencyCode}
-     *                 for trafficking  {@link LineItem line items}.
+     * Network#currencyCode} for
+     *                 trafficking {@link LineItem line items}.
      */
     public void setSecondaryCurrencyCodes(java.lang.String[] secondaryCurrencyCodes) {
         this.secondaryCurrencyCodes = secondaryCurrencyCodes;

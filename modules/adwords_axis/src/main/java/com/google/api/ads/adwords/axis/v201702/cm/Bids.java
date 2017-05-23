@@ -40,6 +40,13 @@ public abstract class Bids  implements java.io.Serializable {
            this.bidsType = bidsType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidsType", getBidsType())
+            .toString();
+    }
 
     /**
      * Gets the bidsType value for this Bids.

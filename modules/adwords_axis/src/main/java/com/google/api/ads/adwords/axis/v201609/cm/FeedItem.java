@@ -210,6 +210,27 @@ public class FeedItem  implements java.io.Serializable {
            this.urlCustomParameters = urlCustomParameters;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("attributeValues", getAttributeValues())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("policyData", getPolicyData())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this FeedItem.

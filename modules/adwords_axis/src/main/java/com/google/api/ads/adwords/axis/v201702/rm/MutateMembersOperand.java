@@ -74,6 +74,16 @@ public class MutateMembersOperand  implements java.io.Serializable {
            this.members = members;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataType", getDataType())
+            .add("members", getMembers())
+            .add("removeAll", getRemoveAll())
+            .add("userListId", getUserListId())
+            .toString();
+    }
 
     /**
      * Gets the userListId value for this MutateMembersOperand.

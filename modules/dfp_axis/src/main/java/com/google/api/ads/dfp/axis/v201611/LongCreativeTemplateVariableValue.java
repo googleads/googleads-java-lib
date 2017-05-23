@@ -40,6 +40,14 @@ public class LongCreativeTemplateVariableValue  extends com.google.api.ads.dfp.a
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("uniqueName", getUniqueName())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this LongCreativeTemplateVariableValue.

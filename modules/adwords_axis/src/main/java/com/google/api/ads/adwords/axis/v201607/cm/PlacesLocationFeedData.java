@@ -98,6 +98,19 @@ public class PlacesLocationFeedData  extends com.google.api.ads.adwords.axis.v20
         this.labelFilters = labelFilters;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("businessAccountIdentifier", getBusinessAccountIdentifier())
+            .add("businessNameFilter", getBusinessNameFilter())
+            .add("categoryFilters", getCategoryFilters())
+            .add("emailAddress", getEmailAddress())
+            .add("labelFilters", getLabelFilters())
+            .add("oAuthInfo", getOAuthInfo())
+            .add("systemFeedGenerationDataType", getSystemFeedGenerationDataType())
+            .toString();
+    }
 
     /**
      * Gets the oAuthInfo value for this PlacesLocationFeedData.

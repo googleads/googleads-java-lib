@@ -54,6 +54,16 @@ public class MarketplaceComment  implements java.io.Serializable {
            this.createdBySeller = createdBySeller;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comment", getComment())
+            .add("createdBySeller", getCreatedBySeller())
+            .add("creationTime", getCreationTime())
+            .add("proposalId", getProposalId())
+            .toString();
+    }
 
     /**
      * Gets the proposalId value for this MarketplaceComment.

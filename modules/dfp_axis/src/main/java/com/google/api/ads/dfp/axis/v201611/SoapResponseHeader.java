@@ -40,6 +40,14 @@ public class SoapResponseHeader  implements java.io.Serializable {
            this.responseTime = responseTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("requestId", getRequestId())
+            .add("responseTime", getResponseTime())
+            .toString();
+    }
 
     /**
      * Gets the requestId value for this SoapResponseHeader.

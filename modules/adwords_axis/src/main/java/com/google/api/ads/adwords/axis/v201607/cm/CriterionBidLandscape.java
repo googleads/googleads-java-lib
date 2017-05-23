@@ -55,6 +55,19 @@ public class CriterionBidLandscape  extends com.google.api.ads.adwords.axis.v201
         this.criterionId = criterionId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("campaignId", getCampaignId())
+            .add("criterionId", getCriterionId())
+            .add("dataEntryType", getDataEntryType())
+            .add("endDate", getEndDate())
+            .add("landscapePoints", getLandscapePoints())
+            .add("startDate", getStartDate())
+            .toString();
+    }
 
     /**
      * Gets the criterionId value for this CriterionBidLandscape.

@@ -41,6 +41,13 @@ public class RelativeDate  implements java.io.Serializable {
            this.offsetInDays = offsetInDays;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("offsetInDays", getOffsetInDays())
+            .toString();
+    }
 
     /**
      * Gets the offsetInDays value for this RelativeDate.

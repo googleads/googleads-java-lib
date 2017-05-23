@@ -47,6 +47,14 @@ public class AdUnionId  implements java.io.Serializable {
            this.adUnionIdType = adUnionIdType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnionIdType", getAdUnionIdType())
+            .add("id", getId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdUnionId.

@@ -23,13 +23,11 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Contains a {@link Targeting} value.
- *             <p>
- *             <b>This object is experimental!
- *             <code>TargetingValue</code> is an experimental, innovative, and rapidly
- *             changing new feature for DFP. Unfortunately, being on the bleeding edge means that we may make
- *             backwards-incompatible changes to
- *             <code>TargetingValue</code>. We will inform the community when this feature
- *             is no longer experimental.</b>
+ *             
+ *             <p><b>This object is experimental! <code>TargetingValue</code> is an experimental, innovative,
+ *             and rapidly changing new feature for DFP. Unfortunately, being on the bleeding edge means that we
+ *             may make backwards-incompatible changes to <code>TargetingValue</code>. We will inform the
+ *             community when this feature is no longer experimental.</b>
  *           
  * 
  * <p>Java class for TargetingValue complex type.

@@ -33,10 +33,7 @@ public class CustomerExtensionSetting  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201609.cm.FeedType extensionType;
 
     /* The extension setting specifying which extensions to serve
-     * for all of the customer's campaigns.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, SET.</span> */
+     * for all of the customer's campaigns. */
     private com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting extensionSetting;
 
     public CustomerExtensionSetting() {
@@ -49,6 +46,14 @@ public class CustomerExtensionSetting  implements java.io.Serializable {
            this.extensionSetting = extensionSetting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("extensionSetting", getExtensionSetting())
+            .add("extensionType", getExtensionType())
+            .toString();
+    }
 
     /**
      * Gets the extensionType value for this CustomerExtensionSetting.
@@ -79,9 +84,6 @@ public class CustomerExtensionSetting  implements java.io.Serializable {
      * 
      * @return extensionSetting   * The extension setting specifying which extensions to serve
      * for all of the customer's campaigns.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting getExtensionSetting() {
         return extensionSetting;
@@ -93,9 +95,6 @@ public class CustomerExtensionSetting  implements java.io.Serializable {
      * 
      * @param extensionSetting   * The extension setting specifying which extensions to serve
      * for all of the customer's campaigns.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD, SET.</span>
      */
     public void setExtensionSetting(com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting extensionSetting) {
         this.extensionSetting = extensionSetting;

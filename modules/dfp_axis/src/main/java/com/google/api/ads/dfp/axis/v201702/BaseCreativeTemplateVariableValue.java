@@ -37,6 +37,13 @@ public abstract class BaseCreativeTemplateVariableValue  implements java.io.Seri
            this.uniqueName = uniqueName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the uniqueName value for this BaseCreativeTemplateVariableValue.

@@ -41,13 +41,13 @@ public class RateCard  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The ISO currency code for the currency used by the {@code RateCard}.
-     * This attribute is optional to create a {@code RateCard} and defaults
-     * to the
-     *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute is read-only if either the {@code RateCard}
-     * is for Marketplace or once a
-     *                 {@link ProposalLineItem} has been created using this
-     * {@code RateCard}. */
+     * This attribute is optional
+     *                 to create a {@code RateCard} and defaults to the {@link
+     * Network#currencyCode network's
+     *                 currency}. This attribute is read-only if either the
+     * {@code RateCard} is for Marketplace or
+     *                 once a {@link ProposalLineItem} has been created using
+     * this {@code RateCard}. */
     private java.lang.String currencyCode;
 
     /* The status of the {@code RateCard}.
@@ -75,7 +75,7 @@ public class RateCard  implements java.io.Serializable {
 
     /* The date and time this {@code RateCard} was last modified.
      *                 
-     *                 This attribute is readonly and is assigned by Google
+     *                 <p>This attribute is readonly and is assigned by Google
      * when a {@code RateCard} is updated. */
     private com.google.api.ads.dfp.axis.v201611.DateTime lastModifiedDateTime;
 
@@ -101,6 +101,20 @@ public class RateCard  implements java.io.Serializable {
            this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appliedTeamIds", getAppliedTeamIds())
+            .add("currencyCode", getCurrencyCode())
+            .add("forMarketplace", getForMarketplace())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("pricingModel", getPricingModel())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this RateCard.
@@ -156,13 +170,13 @@ public class RateCard  implements java.io.Serializable {
      * Gets the currencyCode value for this RateCard.
      * 
      * @return currencyCode   * The ISO currency code for the currency used by the {@code RateCard}.
-     * This attribute is optional to create a {@code RateCard} and defaults
-     * to the
-     *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute is read-only if either the {@code RateCard}
-     * is for Marketplace or once a
-     *                 {@link ProposalLineItem} has been created using this
-     * {@code RateCard}.
+     * This attribute is optional
+     *                 to create a {@code RateCard} and defaults to the {@link
+     * Network#currencyCode network's
+     *                 currency}. This attribute is read-only if either the
+     * {@code RateCard} is for Marketplace or
+     *                 once a {@link ProposalLineItem} has been created using
+     * this {@code RateCard}.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -173,13 +187,13 @@ public class RateCard  implements java.io.Serializable {
      * Sets the currencyCode value for this RateCard.
      * 
      * @param currencyCode   * The ISO currency code for the currency used by the {@code RateCard}.
-     * This attribute is optional to create a {@code RateCard} and defaults
-     * to the
-     *                 {@link Network#currencyCode network's currency}.
-     *                 This attribute is read-only if either the {@code RateCard}
-     * is for Marketplace or once a
-     *                 {@link ProposalLineItem} has been created using this
-     * {@code RateCard}.
+     * This attribute is optional
+     *                 to create a {@code RateCard} and defaults to the {@link
+     * Network#currencyCode network's
+     *                 currency}. This attribute is read-only if either the
+     * {@code RateCard} is for Marketplace or
+     *                 once a {@link ProposalLineItem} has been created using
+     * this {@code RateCard}.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;
@@ -301,7 +315,7 @@ public class RateCard  implements java.io.Serializable {
      * 
      * @return lastModifiedDateTime   * The date and time this {@code RateCard} was last modified.
      *                 
-     *                 This attribute is readonly and is assigned by Google
+     *                 <p>This attribute is readonly and is assigned by Google
      * when a {@code RateCard} is updated.
      */
     public com.google.api.ads.dfp.axis.v201611.DateTime getLastModifiedDateTime() {
@@ -314,7 +328,7 @@ public class RateCard  implements java.io.Serializable {
      * 
      * @param lastModifiedDateTime   * The date and time this {@code RateCard} was last modified.
      *                 
-     *                 This attribute is readonly and is assigned by Google
+     *                 <p>This attribute is readonly and is assigned by Google
      * when a {@code RateCard} is updated.
      */
     public void setLastModifiedDateTime(com.google.api.ads.dfp.axis.v201611.DateTime lastModifiedDateTime) {

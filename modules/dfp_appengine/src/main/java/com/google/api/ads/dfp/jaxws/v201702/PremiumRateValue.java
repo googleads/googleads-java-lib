@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A premium of a {@link RateCard} which could be applied to the line item
- *             and charges extra.
+ *             A premium of a {@link RateCard} which could be applied to the line item and charges extra.
  *           
  * 
  * <p>Java class for PremiumRateValue complex type.

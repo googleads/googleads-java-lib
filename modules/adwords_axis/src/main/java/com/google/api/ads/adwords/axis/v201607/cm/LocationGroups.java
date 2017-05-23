@@ -63,8 +63,9 @@ package com.google.api.ads.adwords.axis.v201607.cm;
  *             
  *             <p>NOTE: Starting v201607 places of interest targeting
  * is read only.</p>
- *             <span class="constraint AdxEnabled">This is disabled for
- * AdX when it is contained within Operators: ADD, SET.</span>
+ *             <p>NOTE: Starting v201702 income targeting is read only.</p>
+ * <span class="constraint AdxEnabled">This is disabled for AdX when
+ * it is contained within Operators: ADD, SET.</span>
  */
 public class LocationGroups  extends com.google.api.ads.adwords.axis.v201607.cm.Criterion  implements java.io.Serializable {
     /* Feed to be used for targeting around locations. This is required
@@ -97,6 +98,17 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201607.cm.
         this.matchingFunction = matchingFunction;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("feedId", getFeedId())
+            .add("id", getId())
+            .add("matchingFunction", getMatchingFunction())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this LocationGroups.

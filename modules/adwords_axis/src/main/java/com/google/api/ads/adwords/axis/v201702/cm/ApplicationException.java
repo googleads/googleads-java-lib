@@ -45,6 +45,14 @@ public class ApplicationException  extends org.apache.axis.AxisFault  implements
         this.applicationExceptionType = applicationExceptionType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("applicationExceptionType", getApplicationExceptionType())
+            .add("message", getMessage())
+            .toString();
+    }
 
     /**
      * Gets the message1 value for this ApplicationException.

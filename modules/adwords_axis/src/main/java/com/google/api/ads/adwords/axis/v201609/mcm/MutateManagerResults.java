@@ -39,6 +39,13 @@ public class MutateManagerResults  implements java.io.Serializable {
            this.links = links;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("links", getLinks())
+            .toString();
+    }
 
     /**
      * Gets the links value for this MutateManagerResults.

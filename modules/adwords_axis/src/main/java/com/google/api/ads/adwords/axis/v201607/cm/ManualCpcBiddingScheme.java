@@ -46,6 +46,14 @@ public class ManualCpcBiddingScheme  extends com.google.api.ads.adwords.axis.v20
         this.enhancedCpcEnabled = enhancedCpcEnabled;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("enhancedCpcEnabled", getEnhancedCpcEnabled())
+            .toString();
+    }
 
     /**
      * Gets the enhancedCpcEnabled value for this ManualCpcBiddingScheme.

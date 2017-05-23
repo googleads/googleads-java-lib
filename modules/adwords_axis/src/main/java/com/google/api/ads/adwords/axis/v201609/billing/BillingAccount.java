@@ -41,17 +41,11 @@ public class BillingAccount  implements java.io.Serializable {
     private java.lang.String currencyCode;
 
     /* A 12 digit billing id assigned to the user by Google.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span> */
-    private java.lang.String primaryBillingId;
-
-    /* An optional secondary billing id assigned to the user by Google.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
+    private java.lang.String primaryBillingId;
+
+    /* An optional secondary billing id assigned to the user by Google. */
     private java.lang.String secondaryBillingId;
 
     public BillingAccount() {
@@ -70,6 +64,17 @@ public class BillingAccount  implements java.io.Serializable {
            this.secondaryBillingId = secondaryBillingId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("id", getId())
+            .add("name", getName())
+            .add("primaryBillingId", getPrimaryBillingId())
+            .add("secondaryBillingId", getSecondaryBillingId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this BillingAccount.
@@ -141,10 +146,8 @@ public class BillingAccount  implements java.io.Serializable {
      * Gets the primaryBillingId value for this BillingAccount.
      * 
      * @return primaryBillingId   * A 12 digit billing id assigned to the user by Google.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getPrimaryBillingId() {
         return primaryBillingId;
@@ -155,10 +158,8 @@ public class BillingAccount  implements java.io.Serializable {
      * Sets the primaryBillingId value for this BillingAccount.
      * 
      * @param primaryBillingId   * A 12 digit billing id assigned to the user by Google.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint ReadOnly">This field is read only and will
-     * be ignored when sent to the API.</span>
+     *                 <span class="constraint ReadOnly">This field is read
+     * only and will be ignored when sent to the API.</span>
      */
     public void setPrimaryBillingId(java.lang.String primaryBillingId) {
         this.primaryBillingId = primaryBillingId;
@@ -169,10 +170,6 @@ public class BillingAccount  implements java.io.Serializable {
      * Gets the secondaryBillingId value for this BillingAccount.
      * 
      * @return secondaryBillingId   * An optional secondary billing id assigned to the user by Google.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
      */
     public java.lang.String getSecondaryBillingId() {
         return secondaryBillingId;
@@ -183,10 +180,6 @@ public class BillingAccount  implements java.io.Serializable {
      * Sets the secondaryBillingId value for this BillingAccount.
      * 
      * @param secondaryBillingId   * An optional secondary billing id assigned to the user by Google.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
      */
     public void setSecondaryBillingId(java.lang.String secondaryBillingId) {
         this.secondaryBillingId = secondaryBillingId;

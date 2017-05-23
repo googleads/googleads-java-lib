@@ -63,6 +63,17 @@ public class MobileAppCategory  extends com.google.api.ads.adwords.axis.v201702.
         this.displayName = displayName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .add("mobileAppCategoryId", getMobileAppCategoryId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the mobileAppCategoryId value for this MobileAppCategory.

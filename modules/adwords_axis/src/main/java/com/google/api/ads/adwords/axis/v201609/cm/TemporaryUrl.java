@@ -46,6 +46,14 @@ public class TemporaryUrl  implements java.io.Serializable {
            this.expiration = expiration;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("expiration", getExpiration())
+            .add("url", getUrl())
+            .toString();
+    }
 
     /**
      * Gets the url value for this TemporaryUrl.

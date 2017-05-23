@@ -67,6 +67,16 @@ public class ServiceLink  implements java.io.Serializable {
            this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("linkStatus", getLinkStatus())
+            .add("name", getName())
+            .add("serviceLinkId", getServiceLinkId())
+            .add("serviceType", getServiceType())
+            .toString();
+    }
 
     /**
      * Gets the serviceType value for this ServiceLink.

@@ -352,6 +352,37 @@ public class Product  implements java.io.Serializable {
            this.videoMaxDuration = videoMaxDuration;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("builtInTargeting", getBuiltInTargeting())
+            .add("companionDeliveryOption", getCompanionDeliveryOption())
+            .add("creativePlaceholders", getCreativePlaceholders())
+            .add("creativeRotationType", getCreativeRotationType())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customizableAttributes", getCustomizableAttributes())
+            .add("deliveryRateType", getDeliveryRateType())
+            .add("environmentType", getEnvironmentType())
+            .add("frequencyCaps", getFrequencyCaps())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lineItemType", getLineItemType())
+            .add("name", getName())
+            .add("nameSource", getNameSource())
+            .add("notes", getNotes())
+            .add("priority", getPriority())
+            .add("productMarketplaceInfo", getProductMarketplaceInfo())
+            .add("productTemplateDescription", getProductTemplateDescription())
+            .add("productTemplateId", getProductTemplateId())
+            .add("productType", getProductType())
+            .add("rate", getRate())
+            .add("rateType", getRateType())
+            .add("roadblockingType", getRoadblockingType())
+            .add("status", getStatus())
+            .add("videoMaxDuration", getVideoMaxDuration())
+            .toString();
+    }
 
     /**
      * Gets the name value for this Product.

@@ -47,6 +47,13 @@ public class FeedItemScheduling  implements java.io.Serializable {
            this.feedItemSchedules = feedItemSchedules;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("feedItemSchedules", getFeedItemSchedules())
+            .toString();
+    }
 
     /**
      * Gets the feedItemSchedules value for this FeedItemScheduling.

@@ -25,7 +25,7 @@ package com.google.api.ads.adwords.axis.v201609.mcm;
 /**
  * Return result of {@link ManagedCustomerService}
  */
-public class ManagedCustomerPage  extends com.google.api.ads.adwords.axis.v201609.cm.Page  implements java.io.Serializable {
+public class ManagedCustomerPage  extends com.google.api.ads.adwords.axis.v201609.cm.Page  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomer>{
     /* Subset of the managed customers' information that are being
      * retrieved. */
     private com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomer[] entries;
@@ -48,6 +48,17 @@ public class ManagedCustomerPage  extends com.google.api.ads.adwords.axis.v20160
         this.links = links;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("links", getLinks())
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this ManagedCustomerPage.
@@ -104,6 +115,23 @@ public class ManagedCustomerPage  extends com.google.api.ads.adwords.axis.v20160
 
     public void setLinks(int i, com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomerLink _value) {
         this.links[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomer> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomer>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201609.mcm.ManagedCustomer>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

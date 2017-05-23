@@ -22,8 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Encapsulation of data describing a distributor network that has shared an ad unit with a
- *             content provider network.
+ *             Encapsulation of data describing a distributor network that has shared an ad unit with a content
+ *             provider network.
+ *             <p>
+ *             This class is deprecated.
  *           
  * 
  * <p>Java class for CrossSellingDistributor complex type.

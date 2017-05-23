@@ -50,6 +50,15 @@ public class LocationExtensionOperand  extends com.google.api.ads.adwords.axis.v
         this.locationId = locationId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .add("locationId", getLocationId())
+            .add("radius", getRadius())
+            .toString();
+    }
 
     /**
      * Gets the radius value for this LocationExtensionOperand.

@@ -97,6 +97,21 @@ public class Content  implements java.io.Serializable {
            this.cmsSources = cmsSources;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("cmsSources", getCmsSources())
+            .add("id", getId())
+            .add("importDateTime", getImportDateTime())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("mappingRuleDefinedCustomTargetingValueIds", getMappingRuleDefinedCustomTargetingValueIds())
+            .add("name", getName())
+            .add("status", getStatus())
+            .add("statusDefinedBy", getStatusDefinedBy())
+            .add("userDefinedCustomTargetingValueIds", getUserDefinedCustomTargetingValueIds())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Content.

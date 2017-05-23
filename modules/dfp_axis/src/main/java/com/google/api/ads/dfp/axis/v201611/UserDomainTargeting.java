@@ -50,6 +50,14 @@ public class UserDomainTargeting  implements java.io.Serializable {
            this.targeted = targeted;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("domains", getDomains())
+            .add("targeted", getTargeted())
+            .toString();
+    }
 
     /**
      * Gets the domains value for this UserDomainTargeting.

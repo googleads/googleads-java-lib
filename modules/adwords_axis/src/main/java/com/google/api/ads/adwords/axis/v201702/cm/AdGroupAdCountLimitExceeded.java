@@ -53,6 +53,22 @@ public class AdGroupAdCountLimitExceeded  extends com.google.api.ads.adwords.axi
             existingCount);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accountLimitType", getAccountLimitType())
+            .add("apiErrorType", getApiErrorType())
+            .add("enclosingId", getEnclosingId())
+            .add("errorString", getErrorString())
+            .add("existingCount", getExistingCount())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("limit", getLimit())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof AdGroupAdCountLimitExceeded)) return false;

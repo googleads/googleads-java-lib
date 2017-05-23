@@ -117,6 +117,20 @@ public class CreativePlaceholder  implements java.io.Serializable {
            this.targetingName = targetingName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appliedLabels", getAppliedLabels())
+            .add("companions", getCompanions())
+            .add("creativeSizeType", getCreativeSizeType())
+            .add("creativeTemplateId", getCreativeTemplateId())
+            .add("effectiveAppliedLabels", getEffectiveAppliedLabels())
+            .add("expectedCreativeCount", getExpectedCreativeCount())
+            .add("size", getSize())
+            .add("targetingName", getTargetingName())
+            .toString();
+    }
 
     /**
      * Gets the size value for this CreativePlaceholder.

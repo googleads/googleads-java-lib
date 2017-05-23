@@ -30,7 +30,7 @@ public enum SharedSetField implements EntityField {
   MemberCount(false),
 
   /**
-   * Shared Sets must have names that are case-insensitive unique across all other shared sets in the account (active and deleted).
+   * Shared Sets must have names that are unique among active shared sets of the same type.
    */
   @Filterable
   Name(true),

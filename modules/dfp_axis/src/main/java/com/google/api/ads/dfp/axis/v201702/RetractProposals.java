@@ -38,6 +38,13 @@ public class RetractProposals  extends com.google.api.ads.dfp.axis.v201702.Propo
         this.retractionDetails = retractionDetails;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("retractionDetails", getRetractionDetails())
+            .toString();
+    }
 
     /**
      * Gets the retractionDetails value for this RetractProposals.

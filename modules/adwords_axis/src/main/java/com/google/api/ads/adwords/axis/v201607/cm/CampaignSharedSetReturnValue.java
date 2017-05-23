@@ -40,6 +40,14 @@ public class CampaignSharedSetReturnValue  extends com.google.api.ads.adwords.ax
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("listReturnValueType", getListReturnValueType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this CampaignSharedSetReturnValue.

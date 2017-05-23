@@ -92,6 +92,18 @@ public class ActivityGroup  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clicksLookback", getClicksLookback())
+            .add("companyIds", getCompanyIds())
+            .add("id", getId())
+            .add("impressionsLookback", getImpressionsLookback())
+            .add("name", getName())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ActivityGroup.

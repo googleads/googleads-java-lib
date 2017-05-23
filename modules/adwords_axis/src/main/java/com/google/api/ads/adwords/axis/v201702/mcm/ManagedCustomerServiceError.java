@@ -52,6 +52,19 @@ public class ManagedCustomerServiceError  extends com.google.api.ads.adwords.axi
         this.customerIds = customerIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("customerIds", getCustomerIds())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this ManagedCustomerServiceError.

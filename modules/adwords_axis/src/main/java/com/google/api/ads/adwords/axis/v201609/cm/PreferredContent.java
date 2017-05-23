@@ -44,6 +44,15 @@ public class PreferredContent  extends com.google.api.ads.adwords.axis.v201609.c
             criterionType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof PreferredContent)) return false;

@@ -132,6 +132,21 @@ public class DomainCategory  extends com.google.api.ads.adwords.axis.v201607.cm.
         this.categoryRank = categoryRank;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("category", getCategory())
+            .add("categoryRank", getCategoryRank())
+            .add("coverage", getCoverage())
+            .add("dataEntryType", getDataEntryType())
+            .add("domainName", getDomainName())
+            .add("hasChild", getHasChild())
+            .add("isoLanguage", getIsoLanguage())
+            .add("levelOfDetail", getLevelOfDetail())
+            .add("recommendedCpc", getRecommendedCpc())
+            .toString();
+    }
 
     /**
      * Gets the category value for this DomainCategory.

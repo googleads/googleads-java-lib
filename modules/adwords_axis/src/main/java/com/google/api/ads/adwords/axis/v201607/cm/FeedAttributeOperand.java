@@ -49,6 +49,15 @@ public class FeedAttributeOperand  extends com.google.api.ads.adwords.axis.v2016
         this.feedAttributeId = feedAttributeId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("feedAttributeId", getFeedAttributeId())
+            .add("feedId", getFeedId())
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this FeedAttributeOperand.

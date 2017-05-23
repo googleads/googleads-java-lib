@@ -30,11 +30,10 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -117,7 +116,7 @@ public class AddCrmBasedUserList {
     operand.setDataType(MutateMembersOperandDataType.EMAIL_SHA256);
 
     // Hash normalized email addresses based on SHA-256 hashing algorithm.
-    List<String> emailHashes = Lists.newArrayListWithCapacity(EMAILS.size());
+    List<String> emailHashes = new ArrayList<>(EMAILS.size());
     for (String email : EMAILS) {
       String normalizedEmail = toNormalizedEmail(email);
       emailHashes.add(toSHA256String(normalizedEmail));

@@ -79,6 +79,15 @@ public class ConversionOptimizerBiddingScheme  extends com.google.api.ads.adword
         this.bidType = bidType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidType", getBidType())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("pricingMode", getPricingMode())
+            .toString();
+    }
 
     /**
      * Gets the pricingMode value for this ConversionOptimizerBiddingScheme.

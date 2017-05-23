@@ -35,10 +35,9 @@ public class AdUnitParent  implements java.io.Serializable {
     private java.lang.String name;
 
     /* A string used to uniquely identify the ad unit for the purposes
-     * of
-     *                 serving the ad. This attribute is read-only and is
-     * assigned by Google
-     *                 when an ad unit is created. */
+     * of serving the ad. This
+     *                 attribute is read-only and is assigned by Google when
+     * an ad unit is created. */
     private java.lang.String adUnitCode;
 
     public AdUnitParent() {
@@ -53,6 +52,15 @@ public class AdUnitParent  implements java.io.Serializable {
            this.adUnitCode = adUnitCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnitCode", getAdUnitCode())
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdUnitParent.
@@ -102,10 +110,9 @@ public class AdUnitParent  implements java.io.Serializable {
      * Gets the adUnitCode value for this AdUnitParent.
      * 
      * @return adUnitCode   * A string used to uniquely identify the ad unit for the purposes
-     * of
-     *                 serving the ad. This attribute is read-only and is
-     * assigned by Google
-     *                 when an ad unit is created.
+     * of serving the ad. This
+     *                 attribute is read-only and is assigned by Google when
+     * an ad unit is created.
      */
     public java.lang.String getAdUnitCode() {
         return adUnitCode;
@@ -116,10 +123,9 @@ public class AdUnitParent  implements java.io.Serializable {
      * Sets the adUnitCode value for this AdUnitParent.
      * 
      * @param adUnitCode   * A string used to uniquely identify the ad unit for the purposes
-     * of
-     *                 serving the ad. This attribute is read-only and is
-     * assigned by Google
-     *                 when an ad unit is created.
+     * of serving the ad. This
+     *                 attribute is read-only and is assigned by Google when
+     * an ad unit is created.
      */
     public void setAdUnitCode(java.lang.String adUnitCode) {
         this.adUnitCode = adUnitCode;

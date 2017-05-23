@@ -64,6 +64,17 @@ public class BillingAccount  implements java.io.Serializable {
            this.secondaryBillingId = secondaryBillingId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("id", getId())
+            .add("name", getName())
+            .add("primaryBillingId", getPrimaryBillingId())
+            .add("secondaryBillingId", getSecondaryBillingId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this BillingAccount.

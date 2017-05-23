@@ -35,6 +35,13 @@ public abstract class NumberValue  extends com.google.api.ads.adwords.axis.v2016
             comparableValueType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comparableValueType", getComparableValueType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof NumberValue)) return false;

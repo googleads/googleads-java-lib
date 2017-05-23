@@ -46,6 +46,14 @@ public class CustomerExtensionSetting  implements java.io.Serializable {
            this.extensionSetting = extensionSetting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("extensionSetting", getExtensionSetting())
+            .add("extensionType", getExtensionType())
+            .toString();
+    }
 
     /**
      * Gets the extensionType value for this CustomerExtensionSetting.

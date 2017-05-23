@@ -54,6 +54,14 @@ public class ProspectiveLineItem  implements java.io.Serializable {
            this.advertiserId = advertiserId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("lineItem", getLineItem())
+            .toString();
+    }
 
     /**
      * Gets the lineItem value for this ProspectiveLineItem.

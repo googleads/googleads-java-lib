@@ -94,8 +94,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private java.lang.String[] adTags;
 
     /* This code is used in constructing a live stream event master
-     * playlist URL.
-     *                 This attribute is read-only and is assigned by Google. */
+     * playlist URL. This attribute is
+     *                 read-only and is assigned by Google. */
     private java.lang.String liveStreamEventCode;
 
     /* The authentication service used to validate credientials and
@@ -161,6 +161,28 @@ public class LiveStreamEvent  implements java.io.Serializable {
            this.adBreakFillType = adBreakFillType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adBreakFillType", getAdBreakFillType())
+            .add("adTags", getAdTags())
+            .add("authenticationKey", getAuthenticationKey())
+            .add("authenticationService", getAuthenticationService())
+            .add("contentUrls", getContentUrls())
+            .add("creationDateTime", getCreationDateTime())
+            .add("description", getDescription())
+            .add("dvrWindowSeconds", getDvrWindowSeconds())
+            .add("endDateTime", getEndDateTime())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("liveStreamEventCode", getLiveStreamEventCode())
+            .add("name", getName())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .add("totalEstimatedConcurrentUsers", getTotalEstimatedConcurrentUsers())
+            .toString();
+    }
 
     /**
      * Gets the id value for this LiveStreamEvent.
@@ -454,8 +476,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the liveStreamEventCode value for this LiveStreamEvent.
      * 
      * @return liveStreamEventCode   * This code is used in constructing a live stream event master
-     * playlist URL.
-     *                 This attribute is read-only and is assigned by Google.
+     * playlist URL. This attribute is
+     *                 read-only and is assigned by Google.
      */
     public java.lang.String getLiveStreamEventCode() {
         return liveStreamEventCode;
@@ -466,8 +488,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the liveStreamEventCode value for this LiveStreamEvent.
      * 
      * @param liveStreamEventCode   * This code is used in constructing a live stream event master
-     * playlist URL.
-     *                 This attribute is read-only and is assigned by Google.
+     * playlist URL. This attribute is
+     *                 read-only and is assigned by Google.
      */
     public void setLiveStreamEventCode(java.lang.String liveStreamEventCode) {
         this.liveStreamEventCode = liveStreamEventCode;

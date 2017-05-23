@@ -68,6 +68,18 @@ public class StatsEstimate  implements java.io.Serializable {
            this.totalCost = totalCost;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("averageCpc", getAverageCpc())
+            .add("averagePosition", getAveragePosition())
+            .add("clickThroughRate", getClickThroughRate())
+            .add("clicksPerDay", getClicksPerDay())
+            .add("impressionsPerDay", getImpressionsPerDay())
+            .add("totalCost", getTotalCost())
+            .toString();
+    }
 
     /**
      * Gets the averageCpc value for this StatsEstimate.

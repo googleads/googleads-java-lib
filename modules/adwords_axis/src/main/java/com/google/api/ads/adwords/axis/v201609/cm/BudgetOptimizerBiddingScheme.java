@@ -67,6 +67,15 @@ public class BudgetOptimizerBiddingScheme  extends com.google.api.ads.adwords.ax
         this.enhancedCpcEnabled = enhancedCpcEnabled;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("enhancedCpcEnabled", getEnhancedCpcEnabled())
+            .toString();
+    }
 
     /**
      * Gets the bidCeiling value for this BudgetOptimizerBiddingScheme.

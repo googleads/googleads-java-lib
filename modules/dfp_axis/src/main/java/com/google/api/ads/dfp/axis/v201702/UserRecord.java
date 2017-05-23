@@ -70,6 +70,17 @@ public class UserRecord  implements java.io.Serializable {
            this.roleName = roleName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("email", getEmail())
+            .add("id", getId())
+            .add("name", getName())
+            .add("roleId", getRoleId())
+            .add("roleName", getRoleName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this UserRecord.

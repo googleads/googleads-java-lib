@@ -44,6 +44,14 @@ public class ContendingLineItem  implements java.io.Serializable {
            this.contendingImpressions = contendingImpressions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("contendingImpressions", getContendingImpressions())
+            .add("lineItemId", getLineItemId())
+            .toString();
+    }
 
     /**
      * Gets the lineItemId value for this ContendingLineItem.

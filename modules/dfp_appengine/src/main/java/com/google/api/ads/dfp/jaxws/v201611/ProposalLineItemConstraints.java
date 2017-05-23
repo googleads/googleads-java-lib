@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code PropoalLineItemConstraints} represents all the constraints set for a
- *             {@link ProposalLineItem} and is always readonly. It comes from the {@link Product},
- *             based on which the proposal line item is created.
+ *             A {@code PropoalLineItemConstraints} represents all the constraints set for a {@link
+ *             ProposalLineItem} and is always readonly. It comes from the {@link Product}, based on which the
+ *             proposal line item is created.
  *           
  * 
  * <p>Java class for ProposalLineItemConstraints complex type.

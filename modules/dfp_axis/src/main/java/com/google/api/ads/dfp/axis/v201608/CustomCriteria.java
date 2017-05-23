@@ -58,6 +58,15 @@ public class CustomCriteria  extends com.google.api.ads.dfp.axis.v201608.CustomC
         this.operator = operator;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("keyId", getKeyId())
+            .add("operator", getOperator())
+            .add("valueIds", getValueIds())
+            .toString();
+    }
 
     /**
      * Gets the keyId value for this CustomCriteria.

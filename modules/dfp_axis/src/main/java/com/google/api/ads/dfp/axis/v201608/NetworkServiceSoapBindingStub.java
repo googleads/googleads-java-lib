@@ -383,6 +383,20 @@ public class NetworkServiceSoapBindingStub extends org.apache.axis.client.Stub i
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201608", "RequestError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201608.RequestError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201608", "RequestError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201608.RequestErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201608", "RequiredCollectionError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201608.RequiredCollectionError.class;

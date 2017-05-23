@@ -77,6 +77,25 @@ public class DeprecatedAd  extends com.google.api.ads.adwords.axis.v201607.cm.Ad
         this.deprecatedAdType = deprecatedAdType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("deprecatedAdType", getDeprecatedAdType())
+            .add("devicePreference", getDevicePreference())
+            .add("displayUrl", getDisplayUrl())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("id", getId())
+            .add("name", getName())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .toString();
+    }
 
     /**
      * Gets the name value for this DeprecatedAd.

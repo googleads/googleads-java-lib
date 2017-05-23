@@ -61,6 +61,14 @@ public class TargetingSettingDetail  implements java.io.Serializable {
            this.targetAll = targetAll;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionTypeGroup", getCriterionTypeGroup())
+            .add("targetAll", getTargetAll())
+            .toString();
+    }
 
     /**
      * Gets the criterionTypeGroup value for this TargetingSettingDetail.

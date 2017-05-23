@@ -26,12 +26,13 @@ public interface ContentMetadataKeyHierarchyServiceInterface extends java.rmi.Re
     /**
      * Creates new {@link ContentMetadataKeyHierarchy} objects.
      *         
-     *         The following fields are required:
+     *         <p>The following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link ContentMetadataKeyHierarchy#id}</li>
-     *         <li>{@link ContentMetadataKeyHierarchy#name}</li>
-     *         <li>{@link ContentMetadataKeyHierarchy#hierarchyLevels}</li>
-     * </ul>
+     *         <li>{@link ContentMetadataKeyHierarchy#id}
+     *         <li>{@link ContentMetadataKeyHierarchy#name}
+     *         <li>{@link ContentMetadataKeyHierarchy#hierarchyLevels}
+     *         </ul>
      *         
      *         
      * @param contentMetadataKeyHierarchies the hierarchies to create
@@ -80,15 +81,14 @@ public interface ContentMetadataKeyHierarchyServiceInterface extends java.rmi.Re
 
     /**
      * Performs actions on {@link ContentMetadataKeyHierarchy} objects
-     * that match the given
-     *         {@link Statement#query}.
+     * that match the given {@link
+     *         Statement#query}.
      *         
      *         
      * @param contentMetadataKeyHierarchyAction the action to perform
      *         
      * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of hierarchies
+     * filter a set of hierarchies
      *         
      * @return the result of the action performed
      */

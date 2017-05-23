@@ -24,9 +24,8 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * Represents one or more {@link CustomTargetingValue custom targeting
- * values} from different
- *             {@link CustomTargetingKey custom targeting keys} ANDed
- * together.
+ * values} from different {@link
+ *             CustomTargetingKey custom targeting keys} ANDed together.
  */
 public class ContentMetadataKeyHierarchyTargeting  implements java.io.Serializable {
     /* The list of IDs of the targeted {@link CustomTargetingValue}
@@ -46,6 +45,13 @@ public class ContentMetadataKeyHierarchyTargeting  implements java.io.Serializab
            this.customTargetingValueIds = customTargetingValueIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customTargetingValueIds", getCustomTargetingValueIds())
+            .toString();
+    }
 
     /**
      * Gets the customTargetingValueIds value for this ContentMetadataKeyHierarchyTargeting.

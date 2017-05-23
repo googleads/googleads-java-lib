@@ -49,6 +49,15 @@ public class PlatformCampaignEstimate  implements java.io.Serializable {
            this.maxEstimate = maxEstimate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("maxEstimate", getMaxEstimate())
+            .add("minEstimate", getMinEstimate())
+            .add("platform", getPlatform())
+            .toString();
+    }
 
     /**
      * Gets the platform value for this PlatformCampaignEstimate.

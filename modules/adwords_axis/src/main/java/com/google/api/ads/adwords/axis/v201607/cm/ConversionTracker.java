@@ -286,6 +286,28 @@ public abstract class ConversionTracker  implements java.io.Serializable {
            this.conversionTrackerType = conversionTrackerType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("alwaysUseDefaultRevenueValue", getAlwaysUseDefaultRevenueValue())
+            .add("category", getCategory())
+            .add("conversionTrackerType", getConversionTrackerType())
+            .add("conversionTypeOwnerCustomerId", getConversionTypeOwnerCustomerId())
+            .add("countingType", getCountingType())
+            .add("ctcLookbackWindow", getCtcLookbackWindow())
+            .add("defaultRevenueCurrencyCode", getDefaultRevenueCurrencyCode())
+            .add("defaultRevenueValue", getDefaultRevenueValue())
+            .add("excludeFromBidding", getExcludeFromBidding())
+            .add("id", getId())
+            .add("lastReceivedRequestTime", getLastReceivedRequestTime())
+            .add("mostRecentConversionDate", getMostRecentConversionDate())
+            .add("name", getName())
+            .add("originalConversionTypeId", getOriginalConversionTypeId())
+            .add("status", getStatus())
+            .add("viewthroughLookbackWindow", getViewthroughLookbackWindow())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ConversionTracker.

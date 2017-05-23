@@ -332,14 +332,12 @@ public class ProductTemplate  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.BaseCustomFieldValue[] customFieldValues;
 
     /* The environment that the created {@link ProposalLineItem} is
-     * targeting. The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then the {@link
-     * ProposalLineItem} can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}. */
+     * targeting. The default value is
+     *                 {@link EnvironmentType#BROWSER}. If this value is
+     * {@link EnvironmentType#VIDEO_PLAYER}, then
+     *                 the {@link ProposalLineItem} can only target {@code
+     * AdUnits} that have {@code AdUnitSizes}
+     *                 whose {@code environmentType} is also {@code VIDEO_PLAYER}. */
     private com.google.api.ads.dfp.axis.v201702.EnvironmentType environmentType;
 
     /* The max duration of a video creative associated with this {@code
@@ -413,6 +411,37 @@ public class ProductTemplate  implements java.io.Serializable {
            this.productTemplateMarketplaceInfo = productTemplateMarketplaceInfo;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("builtInTargeting", getBuiltInTargeting())
+            .add("companionDeliveryOption", getCompanionDeliveryOption())
+            .add("creationDateTime", getCreationDateTime())
+            .add("creativePlaceholders", getCreativePlaceholders())
+            .add("creativeRotationType", getCreativeRotationType())
+            .add("creatorId", getCreatorId())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customizableAttributes", getCustomizableAttributes())
+            .add("deliveryRateType", getDeliveryRateType())
+            .add("description", getDescription())
+            .add("environmentType", getEnvironmentType())
+            .add("frequencyCaps", getFrequencyCaps())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lineItemType", getLineItemType())
+            .add("name", getName())
+            .add("nameMacro", getNameMacro())
+            .add("priority", getPriority())
+            .add("productSegmentation", getProductSegmentation())
+            .add("productTemplateMarketplaceInfo", getProductTemplateMarketplaceInfo())
+            .add("productType", getProductType())
+            .add("rateType", getRateType())
+            .add("roadblockingType", getRoadblockingType())
+            .add("status", getStatus())
+            .add("videoMaxDuration", getVideoMaxDuration())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ProductTemplate.
@@ -1342,14 +1371,12 @@ public class ProductTemplate  implements java.io.Serializable {
      * Gets the environmentType value for this ProductTemplate.
      * 
      * @return environmentType   * The environment that the created {@link ProposalLineItem} is
-     * targeting. The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then the {@link
-     * ProposalLineItem} can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}.
+     * targeting. The default value is
+     *                 {@link EnvironmentType#BROWSER}. If this value is
+     * {@link EnvironmentType#VIDEO_PLAYER}, then
+     *                 the {@link ProposalLineItem} can only target {@code
+     * AdUnits} that have {@code AdUnitSizes}
+     *                 whose {@code environmentType} is also {@code VIDEO_PLAYER}.
      */
     public com.google.api.ads.dfp.axis.v201702.EnvironmentType getEnvironmentType() {
         return environmentType;
@@ -1360,14 +1387,12 @@ public class ProductTemplate  implements java.io.Serializable {
      * Sets the environmentType value for this ProductTemplate.
      * 
      * @param environmentType   * The environment that the created {@link ProposalLineItem} is
-     * targeting. The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then the {@link
-     * ProposalLineItem} can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}.
+     * targeting. The default value is
+     *                 {@link EnvironmentType#BROWSER}. If this value is
+     * {@link EnvironmentType#VIDEO_PLAYER}, then
+     *                 the {@link ProposalLineItem} can only target {@code
+     * AdUnits} that have {@code AdUnitSizes}
+     *                 whose {@code environmentType} is also {@code VIDEO_PLAYER}.
      */
     public void setEnvironmentType(com.google.api.ads.dfp.axis.v201702.EnvironmentType environmentType) {
         this.environmentType = environmentType;

@@ -50,6 +50,14 @@ public class CustomCreativeAsset  implements java.io.Serializable {
            this.asset = asset;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("asset", getAsset())
+            .add("macroName", getMacroName())
+            .toString();
+    }
 
     /**
      * Gets the macroName value for this CustomCreativeAsset.

@@ -56,6 +56,16 @@ public class AdUrlUpgrade  implements java.io.Serializable {
            this.trackingUrlTemplate = trackingUrlTemplate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adId", getAdId())
+            .add("finalMobileUrl", getFinalMobileUrl())
+            .add("finalUrl", getFinalUrl())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .toString();
+    }
 
     /**
      * Gets the adId value for this AdUrlUpgrade.

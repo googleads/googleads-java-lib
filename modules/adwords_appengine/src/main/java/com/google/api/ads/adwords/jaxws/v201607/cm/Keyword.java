@@ -18,9 +18,7 @@ package com.google.api.ads.adwords.jaxws.v201607.cm;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201607.express.NegativeKeyword;
 
 
 /**
@@ -52,9 +50,6 @@ import com.google.api.ads.adwords.jaxws.v201607.express.NegativeKeyword;
 @XmlType(name = "Keyword", propOrder = {
     "text",
     "matchType"
-})
-@XmlSeeAlso({
-    NegativeKeyword.class
 })
 public class Keyword
     extends Criterion

@@ -106,6 +106,30 @@ public class ImageRedirectOverlayCreative  extends com.google.api.ads.dfp.axis.v
         this.vastPreviewUrl = vastPreviewUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("assetSize", getAssetSize())
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customParameters", getCustomParameters())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("duration", getDuration())
+            .add("id", getId())
+            .add("imageUrl", getImageUrl())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("trackingUrls", getTrackingUrls())
+            .add("vastPreviewUrl", getVastPreviewUrl())
+            .toString();
+    }
 
     /**
      * Gets the assetSize value for this ImageRedirectOverlayCreative.

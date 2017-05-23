@@ -26,16 +26,13 @@ package com.google.api.ads.adwords.axis.v201607.mcm;
  * Represents an AdWords manager-client link.
  */
 public class ManagedCustomerLink  implements java.io.Serializable {
-    /* The manager customer id in this link. */
+    /* The manager customer ID in this link. */
     private java.lang.Long managerCustomerId;
 
-    /* The client customer id in this link. */
+    /* The client customer ID in this link. */
     private java.lang.Long clientCustomerId;
 
-    /* The status of the link.  For get operations, this will always
-     * be ACTIVE.  For mutates,
-     *                 this is the field used to modify links (PENDING, ACTIVE,
-     * INACTIVE, CANCELLED, REFUSED). */
+    /* The status of the link. */
     private com.google.api.ads.adwords.axis.v201607.mcm.LinkStatus linkStatus;
 
     /* The pending descriptive name of the client for link invitations. */
@@ -43,9 +40,9 @@ public class ManagedCustomerLink  implements java.io.Serializable {
 
     /* Whether the link is hidden.
      *                 
-     *                 <p> Hiding accounts removes them from your manager
+     *                 <p>Hiding accounts removes them from your manager
      * account views without unlinking them
-     *                 in the Adwords UI. Ads in those accounts will continue
+     *                 in the AdWords UI. Ads in those accounts will continue
      * running normally. */
     private java.lang.Boolean isHidden;
 
@@ -65,11 +62,22 @@ public class ManagedCustomerLink  implements java.io.Serializable {
            this.isHidden = isHidden;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clientCustomerId", getClientCustomerId())
+            .add("isHidden", getIsHidden())
+            .add("linkStatus", getLinkStatus())
+            .add("managerCustomerId", getManagerCustomerId())
+            .add("pendingDescriptiveName", getPendingDescriptiveName())
+            .toString();
+    }
 
     /**
      * Gets the managerCustomerId value for this ManagedCustomerLink.
      * 
-     * @return managerCustomerId   * The manager customer id in this link.
+     * @return managerCustomerId   * The manager customer ID in this link.
      */
     public java.lang.Long getManagerCustomerId() {
         return managerCustomerId;
@@ -79,7 +87,7 @@ public class ManagedCustomerLink  implements java.io.Serializable {
     /**
      * Sets the managerCustomerId value for this ManagedCustomerLink.
      * 
-     * @param managerCustomerId   * The manager customer id in this link.
+     * @param managerCustomerId   * The manager customer ID in this link.
      */
     public void setManagerCustomerId(java.lang.Long managerCustomerId) {
         this.managerCustomerId = managerCustomerId;
@@ -89,7 +97,7 @@ public class ManagedCustomerLink  implements java.io.Serializable {
     /**
      * Gets the clientCustomerId value for this ManagedCustomerLink.
      * 
-     * @return clientCustomerId   * The client customer id in this link.
+     * @return clientCustomerId   * The client customer ID in this link.
      */
     public java.lang.Long getClientCustomerId() {
         return clientCustomerId;
@@ -99,7 +107,7 @@ public class ManagedCustomerLink  implements java.io.Serializable {
     /**
      * Sets the clientCustomerId value for this ManagedCustomerLink.
      * 
-     * @param clientCustomerId   * The client customer id in this link.
+     * @param clientCustomerId   * The client customer ID in this link.
      */
     public void setClientCustomerId(java.lang.Long clientCustomerId) {
         this.clientCustomerId = clientCustomerId;
@@ -109,10 +117,7 @@ public class ManagedCustomerLink  implements java.io.Serializable {
     /**
      * Gets the linkStatus value for this ManagedCustomerLink.
      * 
-     * @return linkStatus   * The status of the link.  For get operations, this will always
-     * be ACTIVE.  For mutates,
-     *                 this is the field used to modify links (PENDING, ACTIVE,
-     * INACTIVE, CANCELLED, REFUSED).
+     * @return linkStatus   * The status of the link.
      */
     public com.google.api.ads.adwords.axis.v201607.mcm.LinkStatus getLinkStatus() {
         return linkStatus;
@@ -122,10 +127,7 @@ public class ManagedCustomerLink  implements java.io.Serializable {
     /**
      * Sets the linkStatus value for this ManagedCustomerLink.
      * 
-     * @param linkStatus   * The status of the link.  For get operations, this will always
-     * be ACTIVE.  For mutates,
-     *                 this is the field used to modify links (PENDING, ACTIVE,
-     * INACTIVE, CANCELLED, REFUSED).
+     * @param linkStatus   * The status of the link.
      */
     public void setLinkStatus(com.google.api.ads.adwords.axis.v201607.mcm.LinkStatus linkStatus) {
         this.linkStatus = linkStatus;
@@ -157,9 +159,9 @@ public class ManagedCustomerLink  implements java.io.Serializable {
      * 
      * @return isHidden   * Whether the link is hidden.
      *                 
-     *                 <p> Hiding accounts removes them from your manager
+     *                 <p>Hiding accounts removes them from your manager
      * account views without unlinking them
-     *                 in the Adwords UI. Ads in those accounts will continue
+     *                 in the AdWords UI. Ads in those accounts will continue
      * running normally.
      */
     public java.lang.Boolean getIsHidden() {
@@ -172,9 +174,9 @@ public class ManagedCustomerLink  implements java.io.Serializable {
      * 
      * @param isHidden   * Whether the link is hidden.
      *                 
-     *                 <p> Hiding accounts removes them from your manager
+     *                 <p>Hiding accounts removes them from your manager
      * account views without unlinking them
-     *                 in the Adwords UI. Ads in those accounts will continue
+     *                 in the AdWords UI. Ads in those accounts will continue
      * running normally.
      */
     public void setIsHidden(java.lang.Boolean isHidden) {

@@ -66,6 +66,17 @@ public class CreativeSet  implements java.io.Serializable {
            this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("masterCreativeId", getMasterCreativeId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CreativeSet.

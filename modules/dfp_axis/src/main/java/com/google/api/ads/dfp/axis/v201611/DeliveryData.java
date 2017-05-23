@@ -40,6 +40,13 @@ public class DeliveryData  implements java.io.Serializable {
            this.units = units;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("units", getUnits())
+            .toString();
+    }
 
     /**
      * Gets the units value for this DeliveryData.

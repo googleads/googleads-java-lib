@@ -53,26 +53,20 @@ public class BatchJob  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201609.cm.ProgressStats progressStats;
 
-    /* The URL to use to upload operations for this job. The URL is
+    /* The URL to use in upload operations for this job. The URL is
      * unique to this
-     *                 job, and will expire 1 week after the job is created.
+     *                 job and will expire one week after the job was created.
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, for versions equal to
-     * or older than V201509,
-     *                 make a PUT request to the uploadUrl with the Content-Type
-     * header equal to
-     *                 "application/xml". The body of the request should
-     * contain the operations of
-     *                 the BatchJob in XML format. For versions newer than
-     * V201509, make a POST
-     *                 request to the uploadUrl and retrieve the "Location"
-     * header from the response
-     *                 as the url to upload operations. For the set of operations
-     * that BatchJobService
-     *                 supports, see
-     *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
+     *                 operation.
+     *                 
+     *                 <p>To upload a file, make a POST request to {@code
+     * uploadUrl} and retrieve
+     *                 the "Location" header from the response as the URL
+     * to upload operations.
+     *                 For the set of supported operations, look up
+     *                 {@code https://adwords.google.com/api/adwords/cm/xsd/<version>/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.
      * <span class="constraint ReadOnly">This field is read only and will
@@ -128,6 +122,19 @@ public class BatchJob  implements java.io.Serializable {
            this.diskUsageQuotaBalance = diskUsageQuotaBalance;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("diskUsageQuotaBalance", getDiskUsageQuotaBalance())
+            .add("downloadUrl", getDownloadUrl())
+            .add("id", getId())
+            .add("processingErrors", getProcessingErrors())
+            .add("progressStats", getProgressStats())
+            .add("status", getStatus())
+            .add("uploadUrl", getUploadUrl())
+            .toString();
+    }
 
     /**
      * Gets the id value for this BatchJob.
@@ -228,26 +235,20 @@ public class BatchJob  implements java.io.Serializable {
     /**
      * Gets the uploadUrl value for this BatchJob.
      * 
-     * @return uploadUrl   * The URL to use to upload operations for this job. The URL is
+     * @return uploadUrl   * The URL to use in upload operations for this job. The URL is
      * unique to this
-     *                 job, and will expire 1 week after the job is created.
+     *                 job and will expire one week after the job was created.
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, for versions equal to
-     * or older than V201509,
-     *                 make a PUT request to the uploadUrl with the Content-Type
-     * header equal to
-     *                 "application/xml". The body of the request should
-     * contain the operations of
-     *                 the BatchJob in XML format. For versions newer than
-     * V201509, make a POST
-     *                 request to the uploadUrl and retrieve the "Location"
-     * header from the response
-     *                 as the url to upload operations. For the set of operations
-     * that BatchJobService
-     *                 supports, see
-     *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
+     *                 operation.
+     *                 
+     *                 <p>To upload a file, make a POST request to {@code
+     * uploadUrl} and retrieve
+     *                 the "Location" header from the response as the URL
+     * to upload operations.
+     *                 For the set of supported operations, look up
+     *                 {@code https://adwords.google.com/api/adwords/cm/xsd/<version>/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.
      * <span class="constraint ReadOnly">This field is read only and will
@@ -261,26 +262,20 @@ public class BatchJob  implements java.io.Serializable {
     /**
      * Sets the uploadUrl value for this BatchJob.
      * 
-     * @param uploadUrl   * The URL to use to upload operations for this job. The URL is
+     * @param uploadUrl   * The URL to use in upload operations for this job. The URL is
      * unique to this
-     *                 job, and will expire 1 week after the job is created.
+     *                 job and will expire one week after the job was created.
      * This field is only
      *                 returned when calling {@link BatchJobService#mutate}
      * with an {@code ADD}
-     *                 operation. To upload a file, for versions equal to
-     * or older than V201509,
-     *                 make a PUT request to the uploadUrl with the Content-Type
-     * header equal to
-     *                 "application/xml". The body of the request should
-     * contain the operations of
-     *                 the BatchJob in XML format. For versions newer than
-     * V201509, make a POST
-     *                 request to the uploadUrl and retrieve the "Location"
-     * header from the response
-     *                 as the url to upload operations. For the set of operations
-     * that BatchJobService
-     *                 supports, see
-     *                 {@link https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd}.
+     *                 operation.
+     *                 
+     *                 <p>To upload a file, make a POST request to {@code
+     * uploadUrl} and retrieve
+     *                 the "Location" header from the response as the URL
+     * to upload operations.
+     *                 For the set of supported operations, look up
+     *                 {@code https://adwords.google.com/api/adwords/cm/xsd/<version>/BatchJobOps.xsd}.
      * For more information about how to upload files, see
      *                 {@link https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload}.
      * <span class="constraint ReadOnly">This field is read only and will

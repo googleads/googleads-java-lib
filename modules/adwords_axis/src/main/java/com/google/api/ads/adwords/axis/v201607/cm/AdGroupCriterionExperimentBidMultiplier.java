@@ -43,6 +43,13 @@ public abstract class AdGroupCriterionExperimentBidMultiplier  implements java.i
            this.adGroupCriterionExperimentBidMultiplierType = adGroupCriterionExperimentBidMultiplierType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupCriterionExperimentBidMultiplierType", getAdGroupCriterionExperimentBidMultiplierType())
+            .toString();
+    }
 
     /**
      * Gets the adGroupCriterionExperimentBidMultiplierType value for this AdGroupCriterionExperimentBidMultiplier.

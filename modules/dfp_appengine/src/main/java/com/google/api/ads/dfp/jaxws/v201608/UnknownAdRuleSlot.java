@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The {@link BaseAdRuleSlot} subtype returned if the actual type is not exposed by the
- *             requested API version.
+ *             The {@link BaseAdRuleSlot} subtype returned if the actual type is not exposed by the requested
+ *             API version.
  *           
  * 
  * <p>Java class for UnknownAdRuleSlot complex type.

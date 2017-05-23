@@ -157,6 +157,23 @@ public class Experiment  implements java.io.Serializable {
            this.experimentSummaryStats = experimentSummaryStats;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .add("controlId", getControlId())
+            .add("endDateTime", getEndDateTime())
+            .add("experimentSummaryStats", getExperimentSummaryStats())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("queryPercentage", getQueryPercentage())
+            .add("servingStatus", getServingStatus())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Experiment.

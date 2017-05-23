@@ -46,6 +46,14 @@ public class TimeOfDay  implements java.io.Serializable {
            this.minute = minute;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("hour", getHour())
+            .add("minute", getMinute())
+            .toString();
+    }
 
     /**
      * Gets the hour value for this TimeOfDay.

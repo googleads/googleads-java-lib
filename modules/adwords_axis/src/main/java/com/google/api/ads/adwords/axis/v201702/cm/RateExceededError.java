@@ -64,6 +64,21 @@ public class RateExceededError  extends com.google.api.ads.adwords.axis.v201702.
         this.retryAfterSeconds = retryAfterSeconds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("rateName", getRateName())
+            .add("rateScope", getRateScope())
+            .add("reason", getReason())
+            .add("retryAfterSeconds", getRetryAfterSeconds())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this RateExceededError.

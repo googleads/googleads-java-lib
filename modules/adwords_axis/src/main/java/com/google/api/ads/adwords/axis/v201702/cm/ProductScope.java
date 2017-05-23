@@ -62,6 +62,16 @@ public class ProductScope  extends com.google.api.ads.adwords.axis.v201702.cm.Cr
         this.dimensions = dimensions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("dimensions", getDimensions())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the dimensions value for this ProductScope.

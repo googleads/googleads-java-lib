@@ -210,6 +210,24 @@ public class BudgetOrder  implements java.io.Serializable {
            this.lastRequest = lastRequest;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billingAccountId", getBillingAccountId())
+            .add("billingAccountName", getBillingAccountName())
+            .add("budgetOrderName", getBudgetOrderName())
+            .add("endDateTime", getEndDateTime())
+            .add("id", getId())
+            .add("lastRequest", getLastRequest())
+            .add("poNumber", getPoNumber())
+            .add("primaryBillingId", getPrimaryBillingId())
+            .add("secondaryBillingId", getSecondaryBillingId())
+            .add("spendingLimit", getSpendingLimit())
+            .add("startDateTime", getStartDateTime())
+            .add("totalAdjustments", getTotalAdjustments())
+            .toString();
+    }
 
     /**
      * Gets the billingAccountId value for this BudgetOrder.

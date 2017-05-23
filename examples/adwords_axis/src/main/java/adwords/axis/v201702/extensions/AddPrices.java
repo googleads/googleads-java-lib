@@ -43,8 +43,8 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -105,7 +105,7 @@ public class AddPrices {
             }));
 
     // To create a price extension, at least three table rows are needed.
-    List<PriceTableRow> priceTableRows = Lists.newArrayList();
+    List<PriceTableRow> priceTableRows = new ArrayList<>();
     String currencyCode = "USD";
     priceTableRows.add(
         createPriceTableRow(

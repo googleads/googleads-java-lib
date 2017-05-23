@@ -62,6 +62,17 @@ public class GrpDemographicBreakdown  implements java.io.Serializable {
            this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("age", getAge())
+            .add("availableUnits", getAvailableUnits())
+            .add("gender", getGender())
+            .add("matchedUnits", getMatchedUnits())
+            .add("unitType", getUnitType())
+            .toString();
+    }
 
     /**
      * Gets the availableUnits value for this GrpDemographicBreakdown.

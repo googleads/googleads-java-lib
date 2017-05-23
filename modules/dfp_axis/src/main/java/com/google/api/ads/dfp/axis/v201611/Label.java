@@ -65,6 +65,17 @@ public class Label  implements java.io.Serializable {
            this.types = types;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("isActive", getIsActive())
+            .add("name", getName())
+            .add("types", getTypes())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Label.

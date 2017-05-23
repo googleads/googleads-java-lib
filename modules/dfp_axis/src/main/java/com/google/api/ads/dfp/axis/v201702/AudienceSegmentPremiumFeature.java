@@ -40,6 +40,13 @@ public class AudienceSegmentPremiumFeature  extends com.google.api.ads.dfp.axis.
         this.audienceSegmentId = audienceSegmentId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("audienceSegmentId", getAudienceSegmentId())
+            .toString();
+    }
 
     /**
      * Gets the audienceSegmentId value for this AudienceSegmentPremiumFeature.

@@ -49,6 +49,16 @@ public class Parent  extends com.google.api.ads.adwords.axis.v201702.cm.Criterio
         this.parentType = parentType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("parentType", getParentType())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the parentType value for this Parent.

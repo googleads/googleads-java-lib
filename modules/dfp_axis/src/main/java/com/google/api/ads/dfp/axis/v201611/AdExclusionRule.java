@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201611;
 
 /**
  * Represents an inventory blocking rule, which prevents certain ads
- * from being
- *             served to specified ad units.
+ * from being served to specified
+ *             ad units.
  */
 public class AdExclusionRule  implements java.io.Serializable {
     /* The unique ID of the {@code AdExclusionRule}. This attribute
@@ -100,6 +100,20 @@ public class AdExclusionRule  implements java.io.Serializable {
            this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("allowedLabelIds", getAllowedLabelIds())
+            .add("blockedLabelIds", getBlockedLabelIds())
+            .add("id", getId())
+            .add("inventoryTargeting", getInventoryTargeting())
+            .add("isActive", getIsActive())
+            .add("isBlockAll", getIsBlockAll())
+            .add("name", getName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdExclusionRule.

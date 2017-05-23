@@ -29,7 +29,7 @@ import com.google.api.ads.dfp.axis.v201702.TemplateCreative;
 import com.google.api.ads.dfp.axis.v201702.UrlCreativeTemplateVariableValue;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -69,7 +69,7 @@ public class CreateNativeCreatives {
     nativeAppInstallCreative.setCreativeTemplateId(nativeAppInstallTemplateId);
     nativeAppInstallCreative.setSize(size);
 
-    List<BaseCreativeTemplateVariableValue> templateVariables = Lists.newArrayList();
+    List<BaseCreativeTemplateVariableValue> templateVariables = new ArrayList<>();
     
     // Set the headline.
     StringCreativeTemplateVariableValue headlineVariableValue =

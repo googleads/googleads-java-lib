@@ -143,6 +143,24 @@ public class UniversalAppCampaignSetting  extends com.google.api.ads.adwords.axi
         this.adsPolicyDecisions = adsPolicyDecisions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adsPolicyDecisions", getAdsPolicyDecisions())
+            .add("appId", getAppId())
+            .add("description1", getDescription1())
+            .add("description2", getDescription2())
+            .add("description3", getDescription3())
+            .add("description4", getDescription4())
+            .add("imageMediaIds", getImageMediaIds())
+            .add("imageMediaIdsOps", getImageMediaIdsOps())
+            .add("settingType", getSettingType())
+            .add("universalAppBiddingStrategyGoalType", getUniversalAppBiddingStrategyGoalType())
+            .add("youtubeVideoMediaIds", getYoutubeVideoMediaIds())
+            .add("youtubeVideoMediaIdsOps", getYoutubeVideoMediaIdsOps())
+            .toString();
+    }
 
     /**
      * Gets the appId value for this UniversalAppCampaignSetting.

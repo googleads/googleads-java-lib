@@ -54,6 +54,15 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
            this.contactIds = contactIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("companyId", getCompanyId())
+            .add("contactIds", getContactIds())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the companyId value for this ProposalCompanyAssociation.

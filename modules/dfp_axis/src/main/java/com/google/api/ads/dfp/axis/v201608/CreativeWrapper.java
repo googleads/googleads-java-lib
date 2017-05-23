@@ -78,6 +78,18 @@ public class CreativeWrapper  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("footer", getFooter())
+            .add("header", getHeader())
+            .add("id", getId())
+            .add("labelId", getLabelId())
+            .add("ordering", getOrdering())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CreativeWrapper.

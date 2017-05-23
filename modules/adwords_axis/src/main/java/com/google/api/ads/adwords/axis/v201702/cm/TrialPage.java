@@ -24,10 +24,10 @@ package com.google.api.ads.adwords.axis.v201702.cm;
 
 /**
  * Contains a filtered and paged subset of campaign trials as returned
- * by {@link
- *             TrialService#get(com.google.ads.api.services.common.selector.Selector)}.
+ * by
+ *             {@link TrialService#get}.
  */
-public class TrialPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page  implements java.io.Serializable {
+public class TrialPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201702.cm.Trial>{
     private com.google.api.ads.adwords.axis.v201702.cm.Trial[] entries;
 
     public TrialPage() {
@@ -43,6 +43,16 @@ public class TrialPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page 
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this TrialPage.
@@ -69,6 +79,23 @@ public class TrialPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page 
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201702.cm.Trial _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201702.cm.Trial> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201702.cm.Trial>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201702.cm.Trial>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

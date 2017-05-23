@@ -88,6 +88,13 @@ public abstract class SearchParameter  implements java.io.Serializable {
            this.searchParameterType = searchParameterType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the searchParameterType value for this SearchParameter.

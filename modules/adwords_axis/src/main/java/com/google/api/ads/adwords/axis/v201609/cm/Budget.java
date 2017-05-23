@@ -119,6 +119,19 @@ public class Budget  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("amount", getAmount())
+            .add("budgetId", getBudgetId())
+            .add("deliveryMethod", getDeliveryMethod())
+            .add("isExplicitlyShared", getIsExplicitlyShared())
+            .add("name", getName())
+            .add("referenceCount", getReferenceCount())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the budgetId value for this Budget.

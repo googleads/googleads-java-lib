@@ -302,8 +302,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents name and email address in the form of name(email) of primary contact for
-     *                 {@link Dimension#ADVERTISER_NAME}.
+     *                 Represents name and email address in the form of name(email) of primary contact for {@link
+     *                 Dimension#ADVERTISER_NAME}.
      *               
      * 
      */
@@ -707,8 +707,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#isSold} for {@link Dimension#PROPOSAL_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Proposal#isSold} for {@link Dimension#PROPOSAL_NAME}. Can be used for
+     *                 filtering.
      *               
      * 
      */
@@ -735,8 +735,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#isArchived} for {@link Dimension#PROPOSAL_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Proposal#isArchived} for {@link Dimension#PROPOSAL_NAME}. Can be used for
+     *                 filtering.
      *               
      * 
      */
@@ -850,8 +850,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents name and email address in the form of name(email) of creator for
-     *                 {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents name and email address in the form of name(email) of creator for {@link
+     *                 Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -859,9 +859,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents name and email addresses in the form of name(email) of
-     *                 {@link Proposal#salesPlannerIds} as a comma separated list string for
-     *                 {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents name and email addresses in the form of name(email) of {@link
+     *                 Proposal#salesPlannerIds} as a comma separated list string for {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -901,8 +900,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#appliedTeamIds} as a comma separated list of
-     *                 {@link Team#name}s for {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents {@link Proposal#appliedTeamIds} as a comma separated list of {@link Team#name}s for
+     *                 {@link Dimension#PROPOSAL_NAME}.
      *               
      * 
      */
@@ -1109,11 +1108,10 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Goal#units} of {@link ProposalLineItem#goal}
-     *                 for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}
-     *                 The attribute is available only if {@link ProposalLineItem#lineItemType} is of type
-     *                 {@link LineItemType#SPONSORSHIP}, {@link LineItemType#HOUSE}, {@link LineItemType#NETWORK}, or
-     *                 {@link LineItemType#BUMPER}.
+     *                 Represents {@link Goal#units} of {@link ProposalLineItem#goal} for {@link
+     *                 Dimension#PROPOSAL_LINE_ITEM_NAME} The attribute is available only if {@link
+     *                 ProposalLineItem#lineItemType} is of type {@link LineItemType#SPONSORSHIP}, {@link
+     *                 LineItemType#HOUSE}, {@link LineItemType#NETWORK}, or {@link LineItemType#BUMPER}.
      *               
      * 
      */
@@ -1121,8 +1119,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link ProposalLineItem#costAdjustment} for
-     *                 {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
+     *                 Represents {@link ProposalLineItem#costAdjustment} for {@link
+     *                 Dimension#PROPOSAL_LINE_ITEM_NAME}.
      *               
      * 
      */
@@ -1130,8 +1128,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link ProposalLineItem#notes comments} for
-     *                 {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
+     *                 Represents the {@link ProposalLineItem#notes comments} for {@link
+     *                 Dimension#PROPOSAL_LINE_ITEM_NAME}.
      *               
      * 
      */
@@ -1322,10 +1320,9 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link Dimension#ALL_SALESPEOPLE_NAME}'s contribution to a
-     *                 {@link Dimension#PROPOSAL_NAME}. This is different from
-     *                 {@link #SALESPERSON_PROPOSAL_CONTRIBUTION} as this will include both primary and
-     *                 secondary salespeople.
+     *                 Represents the {@link Dimension#ALL_SALESPEOPLE_NAME}'s contribution to a {@link
+     *                 Dimension#PROPOSAL_NAME}. This is different from {@link #SALESPERSON_PROPOSAL_CONTRIBUTION} as
+     *                 this will include both primary and secondary salespeople.
      *               
      * 
      */
@@ -1333,10 +1330,10 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link Dimension#SALESPERSON_NAME}'s contribution to a
-     *                 {@link Dimension#PROPOSAL_NAME}.
+     *                 Represents the {@link Dimension#SALESPERSON_NAME}'s contribution to a {@link
+     *                 Dimension#PROPOSAL_NAME}.
      *                 
-     *                 See {@link #SALESPERSON_PROPOSAL_CONTRIBUTION}.
+     *                 <p>See {@link #SALESPERSON_PROPOSAL_CONTRIBUTION}.
      *               
      * 
      */

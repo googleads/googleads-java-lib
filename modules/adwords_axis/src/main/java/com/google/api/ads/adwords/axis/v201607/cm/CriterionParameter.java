@@ -40,6 +40,13 @@ public abstract class CriterionParameter  implements java.io.Serializable {
            this.criterionParameterType = criterionParameterType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionParameterType", getCriterionParameterType())
+            .toString();
+    }
 
     /**
      * Gets the criterionParameterType value for this CriterionParameter.

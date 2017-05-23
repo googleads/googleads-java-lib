@@ -58,6 +58,15 @@ public class ContentBundle  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ContentBundle.

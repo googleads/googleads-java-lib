@@ -30,6 +30,12 @@ public abstract class ReconciliationOrderReportAction  implements java.io.Serial
     public ReconciliationOrderReportAction() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ReconciliationOrderReportAction)) return false;

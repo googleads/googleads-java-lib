@@ -48,6 +48,14 @@ public class BandwidthGroupTargeting  implements java.io.Serializable {
            this.bandwidthGroups = bandwidthGroups;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bandwidthGroups", getBandwidthGroups())
+            .add("isTargeted", getIsTargeted())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this BandwidthGroupTargeting.

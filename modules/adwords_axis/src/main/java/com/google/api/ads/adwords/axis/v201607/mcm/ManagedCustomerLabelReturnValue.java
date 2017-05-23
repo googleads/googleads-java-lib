@@ -43,6 +43,13 @@ public class ManagedCustomerLabelReturnValue  implements java.io.Serializable {
            this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this ManagedCustomerLabelReturnValue.

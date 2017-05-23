@@ -48,6 +48,14 @@ public class VideoPosition  implements java.io.Serializable {
            this.midrollIndex = midrollIndex;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("midrollIndex", getMidrollIndex())
+            .add("positionType", getPositionType())
+            .toString();
+    }
 
     /**
      * Gets the positionType value for this VideoPosition.

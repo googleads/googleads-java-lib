@@ -51,6 +51,15 @@ public class AdGroupEstimate  extends com.google.api.ads.adwords.axis.v201607.o.
         this.keywordEstimates = keywordEstimates;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("estimateType", getEstimateType())
+            .add("keywordEstimates", getKeywordEstimates())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdGroupEstimate.

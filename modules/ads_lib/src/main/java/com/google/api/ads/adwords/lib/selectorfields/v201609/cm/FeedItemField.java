@@ -66,6 +66,7 @@ public enum FeedItemField implements EntityField {
   /**
    * Name of the location criterion.
    * <b> Note:</b> This field is filterable only in LocationCriterionService.
+   * If used as a filter, a location name cannot be greater than 300 characters.
    */
   GeoTargetingLocationName(false),
 

@@ -63,8 +63,8 @@ public class CustomTargetingValue  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201608.CustomTargetingValueMatchType matchType;
 
     /* Status of the {@code CustomTargetingValue}. This field is read-only.
-     * A value can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingValueAction}. */
+     * A value can be activated
+     *                 and deactivated by calling {@link CustomTargetingService#performCustomTargetingValueAction}. */
     private com.google.api.ads.dfp.axis.v201608.CustomTargetingValueStatus status;
 
     public CustomTargetingValue() {
@@ -85,6 +85,18 @@ public class CustomTargetingValue  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customTargetingKeyId", getCustomTargetingKeyId())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .add("matchType", getMatchType())
+            .add("name", getName())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the customTargetingKeyId value for this CustomTargetingValue.
@@ -230,8 +242,8 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Gets the status value for this CustomTargetingValue.
      * 
      * @return status   * Status of the {@code CustomTargetingValue}. This field is read-only.
-     * A value can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingValueAction}.
+     * A value can be activated
+     *                 and deactivated by calling {@link CustomTargetingService#performCustomTargetingValueAction}.
      */
     public com.google.api.ads.dfp.axis.v201608.CustomTargetingValueStatus getStatus() {
         return status;
@@ -242,8 +254,8 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Sets the status value for this CustomTargetingValue.
      * 
      * @param status   * Status of the {@code CustomTargetingValue}. This field is read-only.
-     * A value can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingValueAction}.
+     * A value can be activated
+     *                 and deactivated by calling {@link CustomTargetingService#performCustomTargetingValueAction}.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201608.CustomTargetingValueStatus status) {
         this.status = status;

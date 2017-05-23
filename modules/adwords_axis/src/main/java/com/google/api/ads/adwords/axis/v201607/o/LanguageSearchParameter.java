@@ -68,6 +68,14 @@ public class LanguageSearchParameter  extends com.google.api.ads.adwords.axis.v2
         this.languages = languages;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("languages", getLanguages())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the languages value for this LanguageSearchParameter.

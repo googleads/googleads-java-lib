@@ -102,6 +102,29 @@ public class ExpandedTextAd  extends com.google.api.ads.adwords.axis.v201702.cm.
         this.path2 = path2;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("description", getDescription())
+            .add("devicePreference", getDevicePreference())
+            .add("displayUrl", getDisplayUrl())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("headlinePart1", getHeadlinePart1())
+            .add("headlinePart2", getHeadlinePart2())
+            .add("id", getId())
+            .add("path1", getPath1())
+            .add("path2", getPath2())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("urlData", getUrlData())
+            .toString();
+    }
 
     /**
      * Gets the headlinePart1 value for this ExpandedTextAd.

@@ -14,6 +14,7 @@
 
 package adwords.axis.v201607.extensions;
 
+import adwords.axis.v201607.basicoperations.AddCampaigns;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201607.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting;
@@ -41,11 +42,8 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
-
-import adwords.axis.v201607.basicoperations.AddCampaigns;
-
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -106,7 +104,7 @@ public class AddPrices {
             }));
 
     // To create a price extension, at least three table rows are needed.
-    List<PriceTableRow> priceTableRows = Lists.newArrayList();
+    List<PriceTableRow> priceTableRows = new ArrayList<>();
     String currencyCode = "USD";
     priceTableRows.add(
         createPriceTableRow(

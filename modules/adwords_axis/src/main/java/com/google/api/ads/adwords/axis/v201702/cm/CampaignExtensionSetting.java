@@ -57,6 +57,15 @@ public class CampaignExtensionSetting  implements java.io.Serializable {
            this.extensionSetting = extensionSetting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .add("extensionSetting", getExtensionSetting())
+            .add("extensionType", getExtensionType())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignExtensionSetting.

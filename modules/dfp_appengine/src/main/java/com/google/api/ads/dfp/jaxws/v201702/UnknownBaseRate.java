@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The {@link BaseRate} returned if the actual base rate type is not exposed by
- *             the requested API version.
+ *             The {@link BaseRate} returned if the actual base rate type is not exposed by the requested API
+ *             version.
  *           
  * 
  * <p>Java class for UnknownBaseRate complex type.

@@ -36,6 +36,14 @@ public class ChangeHistoryValue  extends com.google.api.ads.dfp.axis.v201702.Obj
         this.operation = operation;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("entityType", getEntityType())
+            .add("operation", getOperation())
+            .toString();
+    }
 
     /**
      * Gets the entityType value for this ChangeHistoryValue.

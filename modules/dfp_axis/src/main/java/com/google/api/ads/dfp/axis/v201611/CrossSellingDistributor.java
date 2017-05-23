@@ -24,8 +24,10 @@ package com.google.api.ads.dfp.axis.v201611;
 
 /**
  * Encapsulation of data describing a distributor network that has
- * shared an ad unit with a
- *             content provider network.
+ * shared an ad unit with a content
+ *             provider network.
+ *             <p>
+ *             This class is deprecated.
  */
 public class CrossSellingDistributor  implements java.io.Serializable {
     /* The name of the distributor network sharing its ad unit with
@@ -41,6 +43,13 @@ public class CrossSellingDistributor  implements java.io.Serializable {
            this.networkName = networkName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("networkName", getNetworkName())
+            .toString();
+    }
 
     /**
      * Gets the networkName value for this CrossSellingDistributor.

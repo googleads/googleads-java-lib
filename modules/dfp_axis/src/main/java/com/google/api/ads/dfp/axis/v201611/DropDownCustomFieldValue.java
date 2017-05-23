@@ -44,6 +44,14 @@ public class DropDownCustomFieldValue  extends com.google.api.ads.dfp.axis.v2016
         this.customFieldOptionId = customFieldOptionId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldId", getCustomFieldId())
+            .add("customFieldOptionId", getCustomFieldOptionId())
+            .toString();
+    }
 
     /**
      * Gets the customFieldOptionId value for this DropDownCustomFieldValue.

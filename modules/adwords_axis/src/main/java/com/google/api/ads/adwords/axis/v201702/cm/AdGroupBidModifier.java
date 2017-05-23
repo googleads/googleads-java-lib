@@ -96,6 +96,18 @@ public class AdGroupBidModifier  implements java.io.Serializable {
            this.bidModifierSource = bidModifierSource;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("bidModifier", getBidModifier())
+            .add("bidModifierSource", getBidModifierSource())
+            .add("campaignId", getCampaignId())
+            .add("criterion", getCriterion())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this AdGroupBidModifier.

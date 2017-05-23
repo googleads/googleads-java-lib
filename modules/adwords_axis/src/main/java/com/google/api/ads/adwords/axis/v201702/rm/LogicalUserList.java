@@ -32,12 +32,9 @@ public class LogicalUserList  extends com.google.api.ads.adwords.axis.v201702.rm
      * defined as
      *                     logical operator (ALL/ANY/NONE) and a list of
      * user lists. All the rules are
-     *                     anded for the evaluation.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Rules".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+     *                     anded for the evaluation. Required for ADD operation.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Rules".</span> */
     private com.google.api.ads.adwords.axis.v201702.rm.UserListLogicalRule[] rules;
 
     public LogicalUserList() {
@@ -85,6 +82,31 @@ public class LogicalUserList  extends com.google.api.ads.adwords.axis.v201702.rm
         this.rules = rules;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accessReason", getAccessReason())
+            .add("accountUserListStatus", getAccountUserListStatus())
+            .add("closingReason", getClosingReason())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("integrationCode", getIntegrationCode())
+            .add("isEligibleForDisplay", getIsEligibleForDisplay())
+            .add("isEligibleForSearch", getIsEligibleForSearch())
+            .add("isReadOnly", getIsReadOnly())
+            .add("listType", getListType())
+            .add("membershipLifeSpan", getMembershipLifeSpan())
+            .add("name", getName())
+            .add("rules", getRules())
+            .add("size", getSize())
+            .add("sizeForSearch", getSizeForSearch())
+            .add("sizeRange", getSizeRange())
+            .add("sizeRangeForSearch", getSizeRangeForSearch())
+            .add("status", getStatus())
+            .add("userListType", getUserListType())
+            .toString();
+    }
 
     /**
      * Gets the rules value for this LogicalUserList.
@@ -93,12 +115,9 @@ public class LogicalUserList  extends com.google.api.ads.adwords.axis.v201702.rm
      * defined as
      *                     logical operator (ALL/ANY/NONE) and a list of
      * user lists. All the rules are
-     *                     anded for the evaluation.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Rules".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     anded for the evaluation. Required for ADD operation.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Rules".</span>
      */
     public com.google.api.ads.adwords.axis.v201702.rm.UserListLogicalRule[] getRules() {
         return rules;
@@ -112,12 +131,9 @@ public class LogicalUserList  extends com.google.api.ads.adwords.axis.v201702.rm
      * defined as
      *                     logical operator (ALL/ANY/NONE) and a list of
      * user lists. All the rules are
-     *                     anded for the evaluation.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Rules".</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     anded for the evaluation. Required for ADD operation.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Rules".</span>
      */
     public void setRules(com.google.api.ads.adwords.axis.v201702.rm.UserListLogicalRule[] rules) {
         this.rules = rules;

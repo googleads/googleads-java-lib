@@ -52,6 +52,16 @@ public class AdGroupAdPolicySummary  implements java.io.Serializable {
            this.combinedApprovalStatus = combinedApprovalStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("combinedApprovalStatus", getCombinedApprovalStatus())
+            .add("denormalizedStatus", getDenormalizedStatus())
+            .add("policyTopicEntries", getPolicyTopicEntries())
+            .add("reviewState", getReviewState())
+            .toString();
+    }
 
     /**
      * Gets the policyTopicEntries value for this AdGroupAdPolicySummary.

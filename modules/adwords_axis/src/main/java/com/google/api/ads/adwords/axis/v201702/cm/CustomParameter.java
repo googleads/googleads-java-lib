@@ -58,6 +58,15 @@ public class CustomParameter  implements java.io.Serializable {
            this.isRemove = isRemove;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("isRemove", getIsRemove())
+            .add("key", getKey())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the key value for this CustomParameter.

@@ -69,6 +69,24 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201608.
         this.lockedOrientation = lockedOrientation;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("additionalParameters", getAdditionalParameters())
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lockedOrientation", getLockedOrientation())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("publisherId", getPublisherId())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the additionalParameters value for this AdMobBackfillCreative.

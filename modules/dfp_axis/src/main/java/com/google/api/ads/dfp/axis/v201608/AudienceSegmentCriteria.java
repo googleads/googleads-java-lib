@@ -45,6 +45,14 @@ public class AudienceSegmentCriteria  extends com.google.api.ads.dfp.axis.v20160
         this.audienceSegmentIds = audienceSegmentIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("audienceSegmentIds", getAudienceSegmentIds())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operator value for this AudienceSegmentCriteria.

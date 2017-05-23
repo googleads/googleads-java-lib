@@ -86,6 +86,20 @@ public class AudienceSegment  implements java.io.Serializable {
            this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("categoryIds", getCategoryIds())
+            .add("dataProvider", getDataProvider())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AudienceSegment.

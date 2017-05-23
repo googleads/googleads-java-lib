@@ -53,6 +53,15 @@ public class Size  implements java.io.Serializable {
            this.isAspectRatio = isAspectRatio;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("height", getHeight())
+            .add("isAspectRatio", getIsAspectRatio())
+            .add("width", getWidth())
+            .toString();
+    }
 
     /**
      * Gets the width value for this Size.

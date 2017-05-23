@@ -76,6 +76,15 @@ public class IdeaTextFilterSearchParameter  extends com.google.api.ads.adwords.a
         this.excluded = excluded;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excluded", getExcluded())
+            .add("included", getIncluded())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the included value for this IdeaTextFilterSearchParameter.

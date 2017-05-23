@@ -45,6 +45,14 @@ public class SelectiveOptimization  implements java.io.Serializable {
            this.conversionTypeIdsOps = conversionTypeIdsOps;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("conversionTypeIds", getConversionTypeIds())
+            .add("conversionTypeIdsOps", getConversionTypeIdsOps())
+            .toString();
+    }
 
     /**
      * Gets the conversionTypeIds value for this SelectiveOptimization.

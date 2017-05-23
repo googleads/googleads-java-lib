@@ -63,6 +63,14 @@ public class GeoTargeting  implements java.io.Serializable {
            this.excludedLocations = excludedLocations;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedLocations", getExcludedLocations())
+            .add("targetedLocations", getTargetedLocations())
+            .toString();
+    }
 
     /**
      * Gets the targetedLocations value for this GeoTargeting.

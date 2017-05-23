@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201702;
 
 /**
  * The {@link BaseRate} returned if the actual base rate type is not
- * exposed by
- *             the requested API version.
+ * exposed by the requested API
+ *             version.
  */
 public class UnknownBaseRate  extends com.google.api.ads.dfp.axis.v201702.BaseRate  implements java.io.Serializable {
     public UnknownBaseRate() {
@@ -39,6 +39,14 @@ public class UnknownBaseRate  extends com.google.api.ads.dfp.axis.v201702.BaseRa
             id);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("rateCardId", getRateCardId())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof UnknownBaseRate)) return false;

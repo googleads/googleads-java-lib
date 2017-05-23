@@ -38,6 +38,13 @@ public class DisapprovalReason  implements java.io.Serializable {
            this.shortName = shortName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("shortName", getShortName())
+            .toString();
+    }
 
     /**
      * Gets the shortName value for this DisapprovalReason.

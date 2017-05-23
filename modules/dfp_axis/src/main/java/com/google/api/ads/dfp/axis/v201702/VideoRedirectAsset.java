@@ -26,7 +26,7 @@ package com.google.api.ads.dfp.axis.v201702;
  * An externally-hosted video asset.
  */
 public class VideoRedirectAsset  extends com.google.api.ads.dfp.axis.v201702.RedirectAsset  implements java.io.Serializable {
-    /* Metadata related to the asset.  This attribute is required. */
+    /* Metadata related to the asset. This attribute is required. */
     private com.google.api.ads.dfp.axis.v201702.VideoMetadata metadata;
 
     public VideoRedirectAsset() {
@@ -40,11 +40,19 @@ public class VideoRedirectAsset  extends com.google.api.ads.dfp.axis.v201702.Red
         this.metadata = metadata;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("metadata", getMetadata())
+            .add("redirectUrl", getRedirectUrl())
+            .toString();
+    }
 
     /**
      * Gets the metadata value for this VideoRedirectAsset.
      * 
-     * @return metadata   * Metadata related to the asset.  This attribute is required.
+     * @return metadata   * Metadata related to the asset. This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201702.VideoMetadata getMetadata() {
         return metadata;
@@ -54,7 +62,7 @@ public class VideoRedirectAsset  extends com.google.api.ads.dfp.axis.v201702.Red
     /**
      * Sets the metadata value for this VideoRedirectAsset.
      * 
-     * @param metadata   * Metadata related to the asset.  This attribute is required.
+     * @param metadata   * Metadata related to the asset. This attribute is required.
      */
     public void setMetadata(com.google.api.ads.dfp.axis.v201702.VideoMetadata metadata) {
         this.metadata = metadata;

@@ -49,6 +49,16 @@ public class Gender  extends com.google.api.ads.adwords.axis.v201609.cm.Criterio
         this.genderType = genderType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("genderType", getGenderType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the genderType value for this Gender.

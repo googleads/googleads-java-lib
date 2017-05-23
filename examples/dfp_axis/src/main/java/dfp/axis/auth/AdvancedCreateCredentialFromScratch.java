@@ -17,8 +17,8 @@ package dfp.axis.auth;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
-import com.google.api.ads.dfp.axis.v201605.Network;
-import com.google.api.ads.dfp.axis.v201605.NetworkServiceInterface;
+import com.google.api.ads.dfp.axis.v201702.Network;
+import com.google.api.ads.dfp.axis.v201702.NetworkServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
@@ -28,11 +28,11 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
-import com.google.common.collect.Lists;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  * This example demonstrates how to create a Credential object from scratch.<br>
@@ -73,7 +73,7 @@ public class AdvancedCreateCredentialFromScratch {
         new JacksonFactory(),
         CLIENT_ID,
         CLIENT_SECRET,
-        Lists.newArrayList(SCOPE))
+        Arrays.asList(SCOPE))
         .setDataStoreFactory(storeFactory)
         // Set the access type to offline so that the token can be refreshed.
         // By default, the library will automatically refresh tokens when it
@@ -87,6 +87,7 @@ public class AdvancedCreateCredentialFromScratch {
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
+    @SuppressWarnings("DefaultCharset") // Reading from stdin, so default charset is appropriate.
     String authorizationCode = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
     // Authorize the OAuth2 token.
@@ -108,7 +109,7 @@ public class AdvancedCreateCredentialFromScratch {
         new JacksonFactory(),
         CLIENT_ID,
         CLIENT_SECRET,
-        Lists.newArrayList(SCOPE))
+        Arrays.asList(SCOPE))
         .setDataStoreFactory(storeFactory).build();
 
     // Load the credential.

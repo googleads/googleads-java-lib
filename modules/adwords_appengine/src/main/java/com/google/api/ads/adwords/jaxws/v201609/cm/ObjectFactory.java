@@ -44,30 +44,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SoapResponseHeader }
-     * 
-     */
-    public SoapResponseHeader createSoapResponseHeader() {
-        return new SoapResponseHeader();
-    }
-
-    /**
-     * Create an instance of {@link SoapHeader }
-     * 
-     */
-    public SoapHeader createSoapHeader() {
-        return new SoapHeader();
-    }
-
-    /**
-     * Create an instance of {@link ApiException }
-     * 
-     */
-    public ApiException createApiException() {
-        return new ApiException();
-    }
-
-    /**
      * Create an instance of {@link DataError }
      * 
      */
@@ -1084,6 +1060,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SoapResponseHeader }
+     * 
+     */
+    public SoapResponseHeader createSoapResponseHeader() {
+        return new SoapResponseHeader();
+    }
+
+    /**
      * Create an instance of {@link SharedCriterionReturnValue }
      * 
      */
@@ -1169,6 +1153,14 @@ public class ObjectFactory {
      */
     public CustomerFeedReturnValue createCustomerFeedReturnValue() {
         return new CustomerFeedReturnValue();
+    }
+
+    /**
+     * Create an instance of {@link SoapHeader }
+     * 
+     */
+    public SoapHeader createSoapHeader() {
+        return new SoapHeader();
     }
 
     /**
@@ -1345,6 +1337,14 @@ public class ObjectFactory {
      */
     public TrialAsyncError createTrialAsyncError() {
         return new TrialAsyncError();
+    }
+
+    /**
+     * Create an instance of {@link ApiException }
+     * 
+     */
+    public ApiException createApiException() {
+        return new ApiException();
     }
 
     /**

@@ -26,7 +26,7 @@ package com.google.api.ads.adwords.axis.v201609.o;
  * Contains a subset of {@link TargetingIdea}s from the search criteria
  * specified by a {@link TargetingIdeaSelector}.
  */
-public class TargetingIdeaPage  implements java.io.Serializable {
+public class TargetingIdeaPage  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201609.o.TargetingIdea>{
     /* Total number of entries that can be retrieved using the get
      * method. */
     private java.lang.Integer totalNumEntries;
@@ -44,6 +44,15 @@ public class TargetingIdeaPage  implements java.io.Serializable {
            this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the totalNumEntries value for this TargetingIdeaPage.
@@ -92,6 +101,23 @@ public class TargetingIdeaPage  implements java.io.Serializable {
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201609.o.TargetingIdea _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201609.o.TargetingIdea> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201609.o.TargetingIdea>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201609.o.TargetingIdea>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

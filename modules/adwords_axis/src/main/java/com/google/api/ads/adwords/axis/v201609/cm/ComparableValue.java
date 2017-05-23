@@ -40,6 +40,13 @@ public abstract class ComparableValue  implements java.io.Serializable {
            this.comparableValueType = comparableValueType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comparableValueType", getComparableValueType())
+            .toString();
+    }
 
     /**
      * Gets the comparableValueType value for this ComparableValue.

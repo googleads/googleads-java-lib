@@ -48,6 +48,14 @@ public class LabelFrequencyCap  implements java.io.Serializable {
            this.labelId = labelId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("frequencyCap", getFrequencyCap())
+            .add("labelId", getLabelId())
+            .toString();
+    }
 
     /**
      * Gets the frequencyCap value for this LabelFrequencyCap.

@@ -279,6 +279,33 @@ public class ReconciliationLineItemReport  implements java.io.Serializable {
            this.billableRevenueOverrides = billableRevenueOverrides;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billableRevenueOverrides", getBillableRevenueOverrides())
+            .add("billableVolume", getBillableVolume())
+            .add("capVolume", getCapVolume())
+            .add("dfpVolume", getDfpVolume())
+            .add("grossBillableRevenue", getGrossBillableRevenue())
+            .add("grossRate", getGrossRate())
+            .add("id", getId())
+            .add("lineItemId", getLineItemId())
+            .add("manualVolume", getManualVolume())
+            .add("netBillableRevenue", getNetBillableRevenue())
+            .add("netRate", getNetRate())
+            .add("orderId", getOrderId())
+            .add("pricingModel", getPricingModel())
+            .add("proposalId", getProposalId())
+            .add("proposalLineItemId", getProposalLineItemId())
+            .add("rateType", getRateType())
+            .add("reconciledVolume", getReconciledVolume())
+            .add("reconciliationReportId", getReconciliationReportId())
+            .add("reconciliationSource", getReconciliationSource())
+            .add("rolloverVolume", getRolloverVolume())
+            .add("thirdPartyVolume", getThirdPartyVolume())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ReconciliationLineItemReport.

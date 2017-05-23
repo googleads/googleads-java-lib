@@ -66,8 +66,10 @@ public enum ExportFormat {
      *                 <ul>
      *                 <li>There is no pretty printing for the output, and no total row.</li>
      *                 <li>Column headers are the qualified name e.g. "Dimension.ORDER_NAME".</li>
-     *                 <li>Monetary amounts are represented as micros in the
+     *                 <li>Network currency Monetary amounts are represented as micros in the
      *                 {@link Network#currencyCode currency of the network}.</li>
+     *                 <li>Starting from v201705, local currency Monetary amounts are represented
+     *                 as currency symbol + ' ' + micros. </li>
      *                 <li>Dates are formatted according to the ISO 8601 standard YYYY-MM-DD</li>
      *                 <li>DateTimes are formatted according to the ISO 8601 standard
      *                 YYYY-MM-DDThh:mm:ss[+-]hh:mm</li>

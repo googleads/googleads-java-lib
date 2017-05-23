@@ -40,6 +40,13 @@ public abstract class Setting  implements java.io.Serializable {
            this.settingType = settingType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the settingType value for this Setting.

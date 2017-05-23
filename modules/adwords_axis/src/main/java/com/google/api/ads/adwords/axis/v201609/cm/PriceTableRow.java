@@ -62,6 +62,17 @@ public class PriceTableRow  implements java.io.Serializable {
            this.priceUnit = priceUnit;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("finalUrls", getFinalUrls())
+            .add("header", getHeader())
+            .add("price", getPrice())
+            .add("priceUnit", getPriceUnit())
+            .toString();
+    }
 
     /**
      * Gets the header value for this PriceTableRow.

@@ -55,6 +55,22 @@ public class AdGroupCriterionLimitExceeded  extends com.google.api.ads.adwords.a
         this.limitType = limitType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accountLimitType", getAccountLimitType())
+            .add("apiErrorType", getApiErrorType())
+            .add("enclosingId", getEnclosingId())
+            .add("errorString", getErrorString())
+            .add("existingCount", getExistingCount())
+            .add("fieldPath", getFieldPath())
+            .add("limit", getLimit())
+            .add("limitType", getLimitType())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the limitType value for this AdGroupCriterionLimitExceeded.

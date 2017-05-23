@@ -107,6 +107,18 @@ public class CompanySettings  implements java.io.Serializable {
            this.agencyCommission = agencyCommission;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserDiscount", getAdvertiserDiscount())
+            .add("agencyCommission", getAgencyCommission())
+            .add("billingCap", getBillingCap())
+            .add("billingSchedule", getBillingSchedule())
+            .add("billingSource", getBillingSource())
+            .add("valueAddedTax", getValueAddedTax())
+            .toString();
+    }
 
     /**
      * Gets the billingCap value for this CompanySettings.

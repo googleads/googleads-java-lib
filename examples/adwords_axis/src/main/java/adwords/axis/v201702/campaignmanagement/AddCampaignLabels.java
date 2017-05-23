@@ -24,7 +24,8 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -49,7 +50,7 @@ public class AddCampaignLabels {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    List<Long> campaignIds = Lists.newArrayList( 
+    List<Long> campaignIds = Arrays.asList( 
         Long.valueOf("INSERT_CAMPAIGN_ID_1_HERE"),
         Long.valueOf("INSERT_CAMPAIGN_ID_2_HERE"));
     Long labelId = Long.valueOf("INSERT_LABEL_ID_HERE");
@@ -66,7 +67,7 @@ public class AddCampaignLabels {
         adWordsServices.get(session, CampaignServiceInterface.class);
 
     // Create label operations.
-    List<CampaignLabelOperation> operations = Lists.newArrayListWithCapacity(
+    List<CampaignLabelOperation> operations = new ArrayList<>(
         campaignIds.size());
     for (Long campaignId : campaignIds) {
       CampaignLabel campaignLabel = new CampaignLabel();

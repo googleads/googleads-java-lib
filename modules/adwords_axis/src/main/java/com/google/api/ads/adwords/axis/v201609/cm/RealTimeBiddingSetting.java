@@ -41,6 +41,14 @@ public class RealTimeBiddingSetting  extends com.google.api.ads.adwords.axis.v20
         this.optIn = optIn;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("optIn", getOptIn())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the optIn value for this RealTimeBiddingSetting.

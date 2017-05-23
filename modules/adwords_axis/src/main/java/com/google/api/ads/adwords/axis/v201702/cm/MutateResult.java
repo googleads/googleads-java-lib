@@ -49,6 +49,15 @@ public class MutateResult  implements java.io.Serializable {
            this.index = index;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorList", getErrorList())
+            .add("index", getIndex())
+            .add("result", getResult())
+            .toString();
+    }
 
     /**
      * Gets the result value for this MutateResult.

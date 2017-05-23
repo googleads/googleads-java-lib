@@ -47,6 +47,16 @@ public class MobileDeviceSubmodel  extends com.google.api.ads.dfp.axis.v201702.T
         this.deviceManufacturerCriterionId = deviceManufacturerCriterionId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("deviceManufacturerCriterionId", getDeviceManufacturerCriterionId())
+            .add("id", getId())
+            .add("mobileDeviceCriterionId", getMobileDeviceCriterionId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the mobileDeviceCriterionId value for this MobileDeviceSubmodel.

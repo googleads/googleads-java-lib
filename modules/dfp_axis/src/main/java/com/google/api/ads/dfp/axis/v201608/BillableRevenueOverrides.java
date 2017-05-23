@@ -74,6 +74,15 @@ public class BillableRevenueOverrides  implements java.io.Serializable {
            this.billableRevenueOverride = billableRevenueOverride;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billableRevenueOverride", getBillableRevenueOverride())
+            .add("grossBillableRevenueOverride", getGrossBillableRevenueOverride())
+            .add("netBillableRevenueOverride", getNetBillableRevenueOverride())
+            .toString();
+    }
 
     /**
      * Gets the netBillableRevenueOverride value for this BillableRevenueOverrides.

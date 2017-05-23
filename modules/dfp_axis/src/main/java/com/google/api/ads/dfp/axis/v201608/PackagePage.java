@@ -25,7 +25,7 @@ package com.google.api.ads.dfp.axis.v201608;
 /**
  * Captures a page of {@link Package} objects.
  */
-public class PackagePage  implements java.io.Serializable {
+public class PackagePage  implements java.io.Serializable , Iterable<com.google.api.ads.dfp.axis.v201608.Package>{
     /* The collection of packages contained within this page. */
     private com.google.api.ads.dfp.axis.v201608.Package[] results;
 
@@ -48,6 +48,16 @@ public class PackagePage  implements java.io.Serializable {
            this.totalResultSetSize = totalResultSetSize;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of results to avoid overly verbose output
+            .add("results.length", getResults() == null ? 0 : getResults().length)
+            .add("startIndex", getStartIndex())
+            .add("totalResultSetSize", getTotalResultSetSize())
+            .toString();
+    }
 
     /**
      * Gets the results value for this PackagePage.
@@ -116,6 +126,23 @@ public class PackagePage  implements java.io.Serializable {
      */
     public void setTotalResultSetSize(java.lang.Integer totalResultSetSize) {
         this.totalResultSetSize = totalResultSetSize;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code results} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.dfp.axis.v201608.Package> iterator() {
+        if (results == null) {
+            return java.util.Collections.<com.google.api.ads.dfp.axis.v201608.Package>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.dfp.axis.v201608.Package>asList(results).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

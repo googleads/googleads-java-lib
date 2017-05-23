@@ -35,12 +35,11 @@ public class SharedSet  implements java.io.Serializable {
      * Operator}s : SET, REMOVE.</span> */
     private java.lang.Long sharedSetId;
 
-    /* Shared Sets must have names that are case-insensitive unique
-     * across all
-     *                 other shared sets in the account (active and deleted).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+    /* Shared Sets must have names that are unique among active shared
+     * sets of the same type.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -100,6 +99,18 @@ public class SharedSet  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("memberCount", getMemberCount())
+            .add("name", getName())
+            .add("referenceCount", getReferenceCount())
+            .add("sharedSetId", getSharedSetId())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the sharedSetId value for this SharedSet.
@@ -134,12 +145,11 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Gets the name value for this SharedSet.
      * 
-     * @return name   * Shared Sets must have names that are case-insensitive unique
-     * across all
-     *                 other shared sets in the account (active and deleted).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+     * @return name   * Shared Sets must have names that are unique among active shared
+     * sets of the same type.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>
@@ -155,12 +165,11 @@ public class SharedSet  implements java.io.Serializable {
     /**
      * Sets the name value for this SharedSet.
      * 
-     * @param name   * Shared Sets must have names that are case-insensitive unique
-     * across all
-     *                 other shared sets in the account (active and deleted).
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "Name".</span><span class="constraint Filterable">This field
-     * can be filtered on.</span>
+     * @param name   * Shared Sets must have names that are unique among active shared
+     * sets of the same type.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : ADD.</span>

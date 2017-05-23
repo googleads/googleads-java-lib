@@ -85,6 +85,18 @@ public class ProductPartition  extends com.google.api.ads.adwords.axis.v201702.c
         this.caseValue = caseValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("caseValue", getCaseValue())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("parentCriterionId", getParentCriterionId())
+            .add("partitionType", getPartitionType())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the partitionType value for this ProductPartition.

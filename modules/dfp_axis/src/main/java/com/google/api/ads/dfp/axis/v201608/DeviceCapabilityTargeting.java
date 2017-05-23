@@ -43,6 +43,14 @@ public class DeviceCapabilityTargeting  implements java.io.Serializable {
            this.excludedDeviceCapabilities = excludedDeviceCapabilities;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedDeviceCapabilities", getExcludedDeviceCapabilities())
+            .add("targetedDeviceCapabilities", getTargetedDeviceCapabilities())
+            .toString();
+    }
 
     /**
      * Gets the targetedDeviceCapabilities value for this DeviceCapabilityTargeting.

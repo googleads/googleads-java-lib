@@ -56,6 +56,14 @@ public class TrafficEstimatorSelector  implements java.io.Serializable {
            this.platformEstimateRequested = platformEstimateRequested;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignEstimateRequests", getCampaignEstimateRequests())
+            .add("platformEstimateRequested", getPlatformEstimateRequested())
+            .toString();
+    }
 
     /**
      * Gets the campaignEstimateRequests value for this TrafficEstimatorSelector.

@@ -49,6 +49,15 @@ public class OAuthInfo  implements java.io.Serializable {
            this.httpAuthorizationHeader = httpAuthorizationHeader;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Exclude httpAuthorizationHeader since it contains sensitive information
+            .add("httpMethod", getHttpMethod())
+            .add("httpRequestUrl", getHttpRequestUrl())
+            .toString();
+    }
 
     /**
      * Gets the httpMethod value for this OAuthInfo.

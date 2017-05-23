@@ -50,6 +50,18 @@ public class WorkflowApprovalRequest  extends com.google.api.ads.dfp.axis.v20170
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("entityId", getEntityId())
+            .add("entityType", getEntityType())
+            .add("id", getId())
+            .add("status", getStatus())
+            .add("type", getType())
+            .add("workflowRuleName", getWorkflowRuleName())
+            .toString();
+    }
 
     /**
      * Gets the status value for this WorkflowApprovalRequest.

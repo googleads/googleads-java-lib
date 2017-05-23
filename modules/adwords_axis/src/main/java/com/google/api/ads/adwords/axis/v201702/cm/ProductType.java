@@ -60,6 +60,15 @@ public class ProductType  extends com.google.api.ads.adwords.axis.v201702.cm.Pro
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("productDimensionType", getProductDimensionType())
+            .add("type", getType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the type value for this ProductType.

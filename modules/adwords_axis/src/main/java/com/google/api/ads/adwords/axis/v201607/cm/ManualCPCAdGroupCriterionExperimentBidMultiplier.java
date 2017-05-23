@@ -50,6 +50,15 @@ public class ManualCPCAdGroupCriterionExperimentBidMultiplier  extends com.googl
         this.multiplierSource = multiplierSource;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupCriterionExperimentBidMultiplierType", getAdGroupCriterionExperimentBidMultiplierType())
+            .add("maxCpcMultiplier", getMaxCpcMultiplier())
+            .add("multiplierSource", getMultiplierSource())
+            .toString();
+    }
 
     /**
      * Gets the maxCpcMultiplier value for this ManualCPCAdGroupCriterionExperimentBidMultiplier.

@@ -42,6 +42,14 @@ public abstract class ProgressAction  implements java.io.Serializable {
            this.evaluationStatus = evaluationStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("evaluationTime", getEvaluationTime())
+            .toString();
+    }
 
     /**
      * Gets the evaluationTime value for this ProgressAction.

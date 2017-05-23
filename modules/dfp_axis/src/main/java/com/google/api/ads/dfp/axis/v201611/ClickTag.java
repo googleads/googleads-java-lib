@@ -48,6 +48,14 @@ public class ClickTag  implements java.io.Serializable {
            this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("name", getName())
+            .add("url", getUrl())
+            .toString();
+    }
 
     /**
      * Gets the name value for this ClickTag.

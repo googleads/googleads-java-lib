@@ -57,6 +57,23 @@ public class SharedAudienceSegment  extends com.google.api.ads.dfp.axis.v201702.
             type);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adIdSize", getAdIdSize())
+            .add("categoryIds", getCategoryIds())
+            .add("dataProvider", getDataProvider())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("idfaSize", getIdfaSize())
+            .add("mobileWebSize", getMobileWebSize())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof SharedAudienceSegment)) return false;

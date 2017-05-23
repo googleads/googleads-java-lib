@@ -46,6 +46,13 @@ public class VideoPositionTargeting  implements java.io.Serializable {
            this.targetedPositions = targetedPositions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetedPositions", getTargetedPositions())
+            .toString();
+    }
 
     /**
      * Gets the targetedPositions value for this VideoPositionTargeting.

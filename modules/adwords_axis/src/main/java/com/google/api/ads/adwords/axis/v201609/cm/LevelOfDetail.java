@@ -41,6 +41,13 @@ public class LevelOfDetail  implements java.io.Serializable {
            this.campaignId = campaignId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this LevelOfDetail.

@@ -45,8 +45,6 @@ public class AdWordsAxisModule extends ProductFrameworkModule {
         new TypeLiteral<HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {});
     subProductHandlerMapBinder.addBinding(AdWordsSubProduct.DEFAULT).to(new TypeLiteral<
         HeaderHandler.NoOpHeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {});
-    subProductHandlerMapBinder.addBinding(AdWordsSubProduct.EXPRESS).to(
-        AdWordsAxisExpressHeaderHandler.class);
 
     MapBinder<AdWordsSubProduct, String> subProductHeaderNameBinder =
         MapBinder.newMapBinder(binder(), AdWordsSubProduct.class, String.class);

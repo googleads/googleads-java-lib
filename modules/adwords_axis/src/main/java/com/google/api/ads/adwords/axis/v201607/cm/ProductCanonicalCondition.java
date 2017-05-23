@@ -40,6 +40,14 @@ public class ProductCanonicalCondition  extends com.google.api.ads.adwords.axis.
         this.condition = condition;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("condition", getCondition())
+            .add("productDimensionType", getProductDimensionType())
+            .toString();
+    }
 
     /**
      * Gets the condition value for this ProductCanonicalCondition.

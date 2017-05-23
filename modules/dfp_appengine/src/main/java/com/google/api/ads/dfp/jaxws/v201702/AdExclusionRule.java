@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents an inventory blocking rule, which prevents certain ads from being
- *             served to specified ad units.
+ *             Represents an inventory blocking rule, which prevents certain ads from being served to specified
+ *             ad units.
  *           
  * 
  * <p>Java class for AdExclusionRule complex type.

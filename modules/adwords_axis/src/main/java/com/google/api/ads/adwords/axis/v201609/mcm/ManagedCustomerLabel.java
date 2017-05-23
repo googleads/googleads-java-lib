@@ -48,6 +48,14 @@ public class ManagedCustomerLabel  implements java.io.Serializable {
            this.customerId = customerId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customerId", getCustomerId())
+            .add("labelId", getLabelId())
+            .toString();
+    }
 
     /**
      * Gets the labelId value for this ManagedCustomerLabel.

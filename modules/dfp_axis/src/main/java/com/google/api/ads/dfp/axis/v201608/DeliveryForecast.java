@@ -39,6 +39,13 @@ public class DeliveryForecast  implements java.io.Serializable {
            this.lineItemDeliveryForecasts = lineItemDeliveryForecasts;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("lineItemDeliveryForecasts", getLineItemDeliveryForecasts())
+            .toString();
+    }
 
     /**
      * Gets the lineItemDeliveryForecasts value for this DeliveryForecast.

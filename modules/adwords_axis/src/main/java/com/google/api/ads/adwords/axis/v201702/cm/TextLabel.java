@@ -43,6 +43,17 @@ public class TextLabel  extends com.google.api.ads.adwords.axis.v201702.cm.Label
             labelType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("attribute", getAttribute())
+            .add("id", getId())
+            .add("labelType", getLabelType())
+            .add("name", getName())
+            .add("status", getStatus())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof TextLabel)) return false;

@@ -52,6 +52,20 @@ public class DropDownCustomField  extends com.google.api.ads.dfp.axis.v201702.Cu
         this.options = options;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataType", getDataType())
+            .add("description", getDescription())
+            .add("entityType", getEntityType())
+            .add("id", getId())
+            .add("isActive", getIsActive())
+            .add("name", getName())
+            .add("options", getOptions())
+            .add("visibility", getVisibility())
+            .toString();
+    }
 
     /**
      * Gets the options value for this DropDownCustomField.

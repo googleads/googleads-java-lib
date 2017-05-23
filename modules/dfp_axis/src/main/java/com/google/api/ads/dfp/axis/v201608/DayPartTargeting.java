@@ -55,6 +55,14 @@ public class DayPartTargeting  implements java.io.Serializable {
            this.timeZone = timeZone;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dayParts", getDayParts())
+            .add("timeZone", getTimeZone())
+            .toString();
+    }
 
     /**
      * Gets the dayParts value for this DayPartTargeting.

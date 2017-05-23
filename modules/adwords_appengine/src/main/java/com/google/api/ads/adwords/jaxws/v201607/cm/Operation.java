@@ -22,8 +22,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201607.billing.BudgetOrderOperation;
-import com.google.api.ads.adwords.jaxws.v201607.express.ExpressBusinessOperation;
-import com.google.api.ads.adwords.jaxws.v201607.express.PromotionOperation;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.AccountLabelOperation;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.LinkOperation;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.ManagedCustomerLabelOperation;
@@ -64,6 +62,13 @@ import com.google.api.ads.adwords.jaxws.v201607.rm.UserListOperation;
     "operationType"
 })
 @XmlSeeAlso({
+    ManagedCustomerLabelOperation.class,
+    AccountLabelOperation.class,
+    MoveOperation.class,
+    LinkOperation.class,
+    ManagedCustomerOperation.class,
+    UserListOperation.class,
+    MutateMembersOperation.class,
     CustomerFeedOperation.class,
     AdParamOperation.class,
     TrialOperation.class,
@@ -97,15 +102,6 @@ import com.google.api.ads.adwords.jaxws.v201607.rm.UserListOperation;
     AdGroupAdLabelOperation.class,
     CampaignOperation.class,
     CampaignFeedOperation.class,
-    UserListOperation.class,
-    MutateMembersOperation.class,
-    ManagedCustomerLabelOperation.class,
-    AccountLabelOperation.class,
-    MoveOperation.class,
-    LinkOperation.class,
-    ManagedCustomerOperation.class,
-    ExpressBusinessOperation.class,
-    PromotionOperation.class,
     BudgetOrderOperation.class
 })
 public abstract class Operation {

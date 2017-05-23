@@ -116,6 +116,17 @@ public class OfflineConversionFeed  implements java.io.Serializable {
            this.conversionCurrencyCode = conversionCurrencyCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("conversionCurrencyCode", getConversionCurrencyCode())
+            .add("conversionName", getConversionName())
+            .add("conversionTime", getConversionTime())
+            .add("conversionValue", getConversionValue())
+            .add("googleClickId", getGoogleClickId())
+            .toString();
+    }
 
     /**
      * Gets the googleClickId value for this OfflineConversionFeed.

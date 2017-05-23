@@ -167,6 +167,27 @@ public class AdGroup  implements java.io.Serializable {
            this.adGroupType = adGroupType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupType", getAdGroupType())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("biddingStrategyConfiguration", getBiddingStrategyConfiguration())
+            .add("campaignId", getCampaignId())
+            .add("campaignName", getCampaignName())
+            .add("contentBidCriterionTypeGroup", getContentBidCriterionTypeGroup())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("id", getId())
+            .add("labels", getLabels())
+            .add("name", getName())
+            .add("settings", getSettings())
+            .add("status", getStatus())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdGroup.

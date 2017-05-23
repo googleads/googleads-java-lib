@@ -42,6 +42,14 @@ public class ProgressStep  implements java.io.Serializable {
            this.evaluationStatus = evaluationStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("rules", getRules())
+            .toString();
+    }
 
     /**
      * Gets the rules value for this ProgressStep.

@@ -25,8 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Returns details of all the customers directly accessible by the user authenticating the call.
  *             <p>
- *             Following V201605, if {@code clientCustomerId} is specified in the request header,
- *             only details of that customer will be returned.
+ *             Starting with v201607, if {@code clientCustomerId} is specified in the request header,
+ *             only details of that customer will be returned. To do this for prior versions, use the
+ *             {@code get()} method instead.
  *           
  * 
  * <p>Java class for getCustomers element declaration.

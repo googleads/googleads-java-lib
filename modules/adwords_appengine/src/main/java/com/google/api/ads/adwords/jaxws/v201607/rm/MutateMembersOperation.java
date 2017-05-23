@@ -24,6 +24,8 @@ import com.google.api.ads.adwords.jaxws.v201607.cm.Operation;
 /**
  * 
  *             Operation representing a request to add or remove members from a user list.
+ *             The following {@link Operator}s are supported: ADD and REMOVE. The SET operator
+ *             is not supported.
  *           
  * 
  * <p>Java class for MutateMembersOperation complex type.

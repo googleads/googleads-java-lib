@@ -42,6 +42,13 @@ public class AppUrlList  implements java.io.Serializable {
            this.appUrls = appUrls;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appUrls", getAppUrls())
+            .toString();
+    }
 
     /**
      * Gets the appUrls value for this AppUrlList.

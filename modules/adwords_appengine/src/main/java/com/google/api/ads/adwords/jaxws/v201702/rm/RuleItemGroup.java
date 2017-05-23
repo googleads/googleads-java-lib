@@ -24,7 +24,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A group of rule items that are ANDed together.
+ *             A group of rule items that are ANDed together before version V201705.
+ *             Starting from version V201705, rule item groups will be grouped together based on
+ *             {@link Rule#getRuleType()}.
  *           
  * 
  * <p>Java class for RuleItemGroup complex type.

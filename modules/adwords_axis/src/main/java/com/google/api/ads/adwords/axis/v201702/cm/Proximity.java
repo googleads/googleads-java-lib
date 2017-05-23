@@ -76,6 +76,19 @@ public class Proximity  extends com.google.api.ads.adwords.axis.v201702.cm.Crite
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("address", getAddress())
+            .add("criterionType", getCriterionType())
+            .add("geoPoint", getGeoPoint())
+            .add("id", getId())
+            .add("radiusDistanceUnits", getRadiusDistanceUnits())
+            .add("radiusInUnits", getRadiusInUnits())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the geoPoint value for this Proximity.

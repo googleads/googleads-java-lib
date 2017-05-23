@@ -59,6 +59,16 @@ public class UrlData  implements java.io.Serializable {
            this.trackingUrlTemplate = trackingUrlTemplate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("urlId", getUrlId())
+            .toString();
+    }
 
     /**
      * Gets the urlId value for this UrlData.

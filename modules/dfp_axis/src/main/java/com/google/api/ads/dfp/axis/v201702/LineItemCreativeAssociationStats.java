@@ -55,6 +55,15 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
            this.costInOrderCurrency = costInOrderCurrency;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("costInOrderCurrency", getCostInOrderCurrency())
+            .add("creativeSetStats", getCreativeSetStats())
+            .add("stats", getStats())
+            .toString();
+    }
 
     /**
      * Gets the stats value for this LineItemCreativeAssociationStats.

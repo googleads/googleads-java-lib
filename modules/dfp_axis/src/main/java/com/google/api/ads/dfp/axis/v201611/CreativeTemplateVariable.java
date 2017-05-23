@@ -66,6 +66,16 @@ public abstract class CreativeTemplateVariable  implements java.io.Serializable 
            this.isRequired = isRequired;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("label", getLabel())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the label value for this CreativeTemplateVariable.

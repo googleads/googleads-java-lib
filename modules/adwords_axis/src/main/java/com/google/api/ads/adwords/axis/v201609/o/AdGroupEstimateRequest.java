@@ -78,6 +78,16 @@ public class AdGroupEstimateRequest  extends com.google.api.ads.adwords.axis.v20
         this.maxCpc = maxCpc;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("estimateRequestType", getEstimateRequestType())
+            .add("keywordEstimateRequests", getKeywordEstimateRequests())
+            .add("maxCpc", getMaxCpc())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdGroupEstimateRequest.

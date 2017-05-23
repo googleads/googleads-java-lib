@@ -22,7 +22,7 @@ import com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyLevel;
 import com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -49,7 +49,7 @@ public class CreateContentMetadataKeyHierarchies {
     ContentMetadataKeyHierarchyServiceInterface contentMetadataKeyHierarchyService =
         dfpServices.get(session, ContentMetadataKeyHierarchyServiceInterface.class);
 
-    List<ContentMetadataKeyHierarchyLevel> hierarchyLevels = Lists.newArrayList();
+    List<ContentMetadataKeyHierarchyLevel> hierarchyLevels = new ArrayList<>();
     
     ContentMetadataKeyHierarchyLevel hierarchyLevel1 = new ContentMetadataKeyHierarchyLevel();
     hierarchyLevel1.setCustomTargetingKeyId(customTargetingKeyId1);

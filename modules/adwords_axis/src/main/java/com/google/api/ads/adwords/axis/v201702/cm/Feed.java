@@ -106,6 +106,18 @@ public class Feed  implements java.io.Serializable {
            this.systemFeedGenerationData = systemFeedGenerationData;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("attributes", getAttributes())
+            .add("id", getId())
+            .add("name", getName())
+            .add("origin", getOrigin())
+            .add("status", getStatus())
+            .add("systemFeedGenerationData", getSystemFeedGenerationData())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Feed.

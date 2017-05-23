@@ -46,8 +46,8 @@ public class ContentMetadataKeyHierarchy  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyLevel[] hierarchyLevels;
 
     /* The {@link ContentMetadataKeyHierarchyStatus} of the hierarchy.
-     * This attribute is read-only
-     *                 and defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}. */
+     * This attribute is read-only and
+     *                 defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}. */
     private com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyStatus status;
 
     public ContentMetadataKeyHierarchy() {
@@ -64,6 +64,16 @@ public class ContentMetadataKeyHierarchy  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("hierarchyLevels", getHierarchyLevels())
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ContentMetadataKeyHierarchy.
@@ -153,8 +163,8 @@ public class ContentMetadataKeyHierarchy  implements java.io.Serializable {
      * Gets the status value for this ContentMetadataKeyHierarchy.
      * 
      * @return status   * The {@link ContentMetadataKeyHierarchyStatus} of the hierarchy.
-     * This attribute is read-only
-     *                 and defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}.
+     * This attribute is read-only and
+     *                 defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}.
      */
     public com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyStatus getStatus() {
         return status;
@@ -165,8 +175,8 @@ public class ContentMetadataKeyHierarchy  implements java.io.Serializable {
      * Sets the status value for this ContentMetadataKeyHierarchy.
      * 
      * @param status   * The {@link ContentMetadataKeyHierarchyStatus} of the hierarchy.
-     * This attribute is read-only
-     *                 and defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}.
+     * This attribute is read-only and
+     *                 defaults to {@link ContentMetadataKeyHierarchyStatus#ACTIVE}.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201702.ContentMetadataKeyHierarchyStatus status) {
         this.status = status;

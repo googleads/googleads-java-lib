@@ -87,6 +87,31 @@ public class RuleBasedUserList  extends com.google.api.ads.adwords.axis.v201702.
         this.prepopulationStatus = prepopulationStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accessReason", getAccessReason())
+            .add("accountUserListStatus", getAccountUserListStatus())
+            .add("closingReason", getClosingReason())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("integrationCode", getIntegrationCode())
+            .add("isEligibleForDisplay", getIsEligibleForDisplay())
+            .add("isEligibleForSearch", getIsEligibleForSearch())
+            .add("isReadOnly", getIsReadOnly())
+            .add("listType", getListType())
+            .add("membershipLifeSpan", getMembershipLifeSpan())
+            .add("name", getName())
+            .add("prepopulationStatus", getPrepopulationStatus())
+            .add("size", getSize())
+            .add("sizeForSearch", getSizeForSearch())
+            .add("sizeRange", getSizeRange())
+            .add("sizeRangeForSearch", getSizeRangeForSearch())
+            .add("status", getStatus())
+            .add("userListType", getUserListType())
+            .toString();
+    }
 
     /**
      * Gets the prepopulationStatus value for this RuleBasedUserList.

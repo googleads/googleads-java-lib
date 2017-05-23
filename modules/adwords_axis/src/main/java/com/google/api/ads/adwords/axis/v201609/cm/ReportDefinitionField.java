@@ -141,6 +141,25 @@ public class ReportDefinitionField  implements java.io.Serializable {
            this.exclusiveFields = exclusiveFields;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("canFilter", getCanFilter())
+            .add("canSelect", getCanSelect())
+            .add("displayFieldName", getDisplayFieldName())
+            .add("enumValuePairs", getEnumValuePairs())
+            .add("enumValues", getEnumValues())
+            .add("exclusiveFields", getExclusiveFields())
+            .add("fieldBehavior", getFieldBehavior())
+            .add("fieldName", getFieldName())
+            .add("fieldType", getFieldType())
+            .add("isBeta", getIsBeta())
+            .add("isEnumType", getIsEnumType())
+            .add("isZeroRowCompatible", getIsZeroRowCompatible())
+            .add("xmlAttributeName", getXmlAttributeName())
+            .toString();
+    }
 
     /**
      * Gets the fieldName value for this ReportDefinitionField.

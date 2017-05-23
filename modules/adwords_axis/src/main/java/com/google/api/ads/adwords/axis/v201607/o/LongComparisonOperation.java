@@ -46,6 +46,14 @@ public class LongComparisonOperation  implements java.io.Serializable {
            this.maximum = maximum;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("maximum", getMaximum())
+            .add("minimum", getMinimum())
+            .toString();
+    }
 
     /**
      * Gets the minimum value for this LongComparisonOperation.

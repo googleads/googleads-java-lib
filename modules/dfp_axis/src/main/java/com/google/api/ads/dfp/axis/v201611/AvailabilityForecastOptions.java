@@ -46,6 +46,14 @@ public class AvailabilityForecastOptions  implements java.io.Serializable {
            this.includeContendingLineItems = includeContendingLineItems;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("includeContendingLineItems", getIncludeContendingLineItems())
+            .add("includeTargetingCriteriaBreakdown", getIncludeTargetingCriteriaBreakdown())
+            .toString();
+    }
 
     /**
      * Gets the includeTargetingCriteriaBreakdown value for this AvailabilityForecastOptions.

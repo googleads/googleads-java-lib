@@ -25,6 +25,10 @@ package com.google.api.ads.dfp.axis.v201702;
 /**
  * Errors relating to the association of partner companies with inventory
  * units.
+ *             <p>
+ *             This class is deprecated. All companies of type
+ *             {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER} were
+ * changed to {@link Company.Type#PARTNER}.
  */
 public class InventoryUnitPartnerAssociationError  extends com.google.api.ads.dfp.axis.v201702.ApiError  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.InventoryUnitPartnerAssociationErrorReason reason;
@@ -46,6 +50,17 @@ public class InventoryUnitPartnerAssociationError  extends com.google.api.ads.df
         this.reason = reason;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this InventoryUnitPartnerAssociationError.

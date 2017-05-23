@@ -76,6 +76,15 @@ public class ConversionTrackingSettings  implements java.io.Serializable {
            this.optimizeOnEstimatedConversions = optimizeOnEstimatedConversions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("effectiveConversionTrackingId", getEffectiveConversionTrackingId())
+            .add("optimizeOnEstimatedConversions", getOptimizeOnEstimatedConversions())
+            .add("usesCrossAccountConversionTracking", getUsesCrossAccountConversionTracking())
+            .toString();
+    }
 
     /**
      * Gets the effectiveConversionTrackingId value for this ConversionTrackingSettings.

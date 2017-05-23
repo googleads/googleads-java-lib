@@ -27,16 +27,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Describes predicted inventory availability for a {@link ProspectiveLineItem}.
  *             
- *             <p>Inventory has three threshold values along a line of possible inventory.
- *             From least to most, these are:
+ *             <p>Inventory has three threshold values along a line of possible inventory. From least to most,
+ *             these are:
  *             
  *             <dl>
  *             <li>Available units -- How many units can be booked without affecting any other line items.
  *             Booking more than this number can cause lower and same priority line items to underdeliver.
  *             <li>Possible units -- How many units can be booked without affecting any higher priority line
  *             items. Booking more than this number can cause the line item to underdeliver.
- *             <li>Matched (forecast) units -- How many units satisfy all specified
- *             criteria.
+ *             <li>Matched (forecast) units -- How many units satisfy all specified criteria.
  *             </dl>
  *             
  *             <p>Underdelivery is caused by overbooking. However, if more impressions are served than are

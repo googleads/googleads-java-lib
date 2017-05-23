@@ -54,6 +54,15 @@ public class CmsContent  implements java.io.Serializable {
            this.cmsContentId = cmsContentId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("cmsContentId", getCmsContentId())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CmsContent.

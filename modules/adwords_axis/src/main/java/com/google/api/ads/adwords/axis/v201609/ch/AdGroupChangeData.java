@@ -91,6 +91,21 @@ public class AdGroupChangeData  implements java.io.Serializable {
            this.removedAdGroupBidModifierCriteria = removedAdGroupBidModifierCriteria;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupChangeStatus", getAdGroupChangeStatus())
+            .add("adGroupId", getAdGroupId())
+            .add("changedAdGroupBidModifierCriteria", getChangedAdGroupBidModifierCriteria())
+            .add("changedAds", getChangedAds())
+            .add("changedCriteria", getChangedCriteria())
+            .add("changedFeeds", getChangedFeeds())
+            .add("removedAdGroupBidModifierCriteria", getRemovedAdGroupBidModifierCriteria())
+            .add("removedCriteria", getRemovedCriteria())
+            .add("removedFeeds", getRemovedFeeds())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdGroupChangeData.

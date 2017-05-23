@@ -46,6 +46,14 @@ public class BrowserTargeting  implements java.io.Serializable {
            this.browsers = browsers;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("browsers", getBrowsers())
+            .add("isTargeted", getIsTargeted())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this BrowserTargeting.

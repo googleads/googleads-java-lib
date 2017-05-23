@@ -58,6 +58,16 @@ public class ReconciliationReport  implements java.io.Serializable {
            this.notes = notes;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("notes", getNotes())
+            .add("startDate", getStartDate())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ReconciliationReport.

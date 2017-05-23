@@ -47,6 +47,15 @@ public class FeedMappingOperation  extends com.google.api.ads.adwords.axis.v2017
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this FeedMappingOperation.

@@ -42,6 +42,14 @@ public class SoapRequestHeader  implements java.io.Serializable {
            this.applicationName = applicationName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("applicationName", getApplicationName())
+            .add("networkCode", getNetworkCode())
+            .toString();
+    }
 
     /**
      * Gets the networkCode value for this SoapRequestHeader.

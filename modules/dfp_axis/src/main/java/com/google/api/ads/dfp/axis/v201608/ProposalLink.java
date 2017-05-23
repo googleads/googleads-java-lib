@@ -73,6 +73,18 @@ public class ProposalLink  implements java.io.Serializable {
            this.creationDateTime = creationDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("creationDateTime", getCreationDateTime())
+            .add("creatorId", getCreatorId())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("name", getName())
+            .add("url", getUrl())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ProposalLink.

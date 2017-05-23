@@ -79,6 +79,18 @@ public class Vertical  extends com.google.api.ads.adwords.axis.v201609.cm.Criter
         this.path = path;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("path", getPath())
+            .add("type", getType())
+            .add("verticalId", getVerticalId())
+            .add("verticalParentId", getVerticalParentId())
+            .toString();
+    }
 
     /**
      * Gets the verticalId value for this Vertical.

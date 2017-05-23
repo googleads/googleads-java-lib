@@ -23,7 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Operation for uploading {@link OfflineConversionFeed}.
- *             See {@link OfflineConversionFeedService#mutate}
+ *             See {@link OfflineConversionFeedService#mutate}.
+ *             
+ *             <p><b>Note:</b> Only the {@code ADD} operator is supported.
  *           
  * 
  * <p>Java class for OfflineConversionFeedOperation complex type.

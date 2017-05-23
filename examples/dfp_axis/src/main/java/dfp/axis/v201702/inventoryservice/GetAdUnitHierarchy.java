@@ -25,7 +25,6 @@ import com.google.api.ads.dfp.axis.v201702.NetworkServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,7 +78,7 @@ public class GetAdUnitHierarchy {
    */
   private static List<AdUnit> getAllAdUnits(DfpServices dfpServices, DfpSession session)
       throws RemoteException {
-    List<AdUnit> adUnits = Lists.newArrayList();
+    List<AdUnit> adUnits = new ArrayList<>();
 
     // Get the InventoryService.
     InventoryServiceInterface inventoryService =

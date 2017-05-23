@@ -44,6 +44,15 @@ public class ManualCPCAdGroupExperimentBidMultipliers  extends com.google.api.ad
         this.maxContentCpcMultiplier = maxContentCpcMultiplier;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupExperimentBidMultipliersType", getAdGroupExperimentBidMultipliersType())
+            .add("maxContentCpcMultiplier", getMaxContentCpcMultiplier())
+            .add("maxCpcMultiplier", getMaxCpcMultiplier())
+            .toString();
+    }
 
     /**
      * Gets the maxCpcMultiplier value for this ManualCPCAdGroupExperimentBidMultipliers.

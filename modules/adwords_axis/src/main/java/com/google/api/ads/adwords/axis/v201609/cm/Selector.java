@@ -85,6 +85,17 @@ public class Selector  implements java.io.Serializable {
            this.paging = paging;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dateRange", getDateRange())
+            .add("fields", getFields())
+            .add("ordering", getOrdering())
+            .add("paging", getPaging())
+            .add("predicates", getPredicates())
+            .toString();
+    }
 
     /**
      * Gets the fields value for this Selector.

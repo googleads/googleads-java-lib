@@ -103,6 +103,18 @@ public class Draft  implements java.io.Serializable {
            this.hasRunningTrial = hasRunningTrial;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("draftCampaignId", getDraftCampaignId())
+            .add("draftId", getDraftId())
+            .add("draftName", getDraftName())
+            .add("draftStatus", getDraftStatus())
+            .add("hasRunningTrial", getHasRunningTrial())
+            .toString();
+    }
 
     /**
      * Gets the draftId value for this Draft.

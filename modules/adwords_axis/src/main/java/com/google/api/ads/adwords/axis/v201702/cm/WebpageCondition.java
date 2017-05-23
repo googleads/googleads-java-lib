@@ -55,6 +55,14 @@ public class WebpageCondition  implements java.io.Serializable {
            this.argument = argument;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("argument", getArgument())
+            .add("operand", getOperand())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this WebpageCondition.

@@ -42,6 +42,15 @@ public class ApiException  extends com.google.api.ads.adwords.axis.v201607.cm.Ap
         this.errors = errors;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("applicationExceptionType", getApplicationExceptionType())
+            .add("errors", getErrors())
+            .add("message", getMessage())
+            .toString();
+    }
 
     /**
      * Gets the errors value for this ApiException.

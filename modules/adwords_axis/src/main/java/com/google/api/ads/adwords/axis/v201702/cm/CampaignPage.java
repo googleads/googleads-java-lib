@@ -27,7 +27,7 @@ package com.google.api.ads.adwords.axis.v201702.cm;
  * of the
  *             {@link CampaignService#get} call.
  */
-public class CampaignPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page  implements java.io.Serializable {
+public class CampaignPage  extends com.google.api.ads.adwords.axis.v201702.cm.Page  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201702.cm.Campaign>{
     /* The result entries in this page. */
     private com.google.api.ads.adwords.axis.v201702.cm.Campaign[] entries;
 
@@ -44,6 +44,16 @@ public class CampaignPage  extends com.google.api.ads.adwords.axis.v201702.cm.Pa
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this CampaignPage.
@@ -70,6 +80,23 @@ public class CampaignPage  extends com.google.api.ads.adwords.axis.v201702.cm.Pa
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201702.cm.Campaign _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201702.cm.Campaign> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201702.cm.Campaign>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201702.cm.Campaign>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

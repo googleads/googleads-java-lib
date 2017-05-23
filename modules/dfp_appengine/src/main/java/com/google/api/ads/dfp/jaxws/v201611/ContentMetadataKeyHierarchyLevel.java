@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code ContentMetadataKeyHierarchyLevel} represents one level in a
- *             {@link ContentMetadataKeyHierarchy}. The level consists of a {@link CustomTargetingKey}
- *             and an integer that represents the level's position in the hierarchy.
+ *             A {@code ContentMetadataKeyHierarchyLevel} represents one level in a {@link
+ *             ContentMetadataKeyHierarchy}. The level consists of a {@link CustomTargetingKey} and an integer
+ *             that represents the level's position in the hierarchy.
  *           
  * 
  * <p>Java class for ContentMetadataKeyHierarchyLevel complex type.

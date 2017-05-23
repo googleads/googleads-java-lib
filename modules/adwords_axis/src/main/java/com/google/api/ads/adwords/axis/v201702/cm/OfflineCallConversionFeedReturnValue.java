@@ -44,6 +44,15 @@ public class OfflineCallConversionFeedReturnValue  extends com.google.api.ads.ad
         this.partialFailureErrors = partialFailureErrors;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("listReturnValueType", getListReturnValueType())
+            .add("partialFailureErrors", getPartialFailureErrors())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this OfflineCallConversionFeedReturnValue.

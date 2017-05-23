@@ -47,6 +47,16 @@ public class UserTeamAssociation  extends com.google.api.ads.dfp.axis.v201702.Us
         this.userId = userId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("defaultTeamAccessType", getDefaultTeamAccessType())
+            .add("overriddenTeamAccessType", getOverriddenTeamAccessType())
+            .add("teamId", getTeamId())
+            .add("userId", getUserId())
+            .toString();
+    }
 
     /**
      * Gets the userId value for this UserTeamAssociation.

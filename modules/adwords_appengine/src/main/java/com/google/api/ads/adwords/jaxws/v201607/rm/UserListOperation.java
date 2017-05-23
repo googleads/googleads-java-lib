@@ -24,6 +24,8 @@ import com.google.api.ads.adwords.jaxws.v201607.cm.Operation;
 /**
  * 
  *             UserList operations for adding/updating UserList entities.
+ *             The following {@link Operator}s are supported: ADD and SET.
+ *             The REMOVE operator is not supported.
  *           
  * 
  * <p>Java class for UserListOperation complex type.

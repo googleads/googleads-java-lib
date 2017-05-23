@@ -122,6 +122,19 @@ public class BatchJob  implements java.io.Serializable {
            this.diskUsageQuotaBalance = diskUsageQuotaBalance;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("diskUsageQuotaBalance", getDiskUsageQuotaBalance())
+            .add("downloadUrl", getDownloadUrl())
+            .add("id", getId())
+            .add("processingErrors", getProcessingErrors())
+            .add("progressStats", getProgressStats())
+            .add("status", getStatus())
+            .add("uploadUrl", getUploadUrl())
+            .toString();
+    }
 
     /**
      * Gets the id value for this BatchJob.

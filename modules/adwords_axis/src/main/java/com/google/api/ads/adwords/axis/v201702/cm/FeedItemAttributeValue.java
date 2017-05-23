@@ -123,6 +123,22 @@ public class FeedItemAttributeValue  implements java.io.Serializable {
            this.moneyWithCurrencyValue = moneyWithCurrencyValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("booleanValue", getBooleanValue())
+            .add("booleanValues", getBooleanValues())
+            .add("doubleValue", getDoubleValue())
+            .add("doubleValues", getDoubleValues())
+            .add("feedAttributeId", getFeedAttributeId())
+            .add("integerValue", getIntegerValue())
+            .add("integerValues", getIntegerValues())
+            .add("moneyWithCurrencyValue", getMoneyWithCurrencyValue())
+            .add("stringValue", getStringValue())
+            .add("stringValues", getStringValues())
+            .toString();
+    }
 
     /**
      * Gets the feedAttributeId value for this FeedItemAttributeValue.

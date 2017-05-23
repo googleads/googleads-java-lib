@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * A premium rate holding a set of {@link PremiumRateValue} objects
- * with the
- *             same {@link PremiumFeature}.
+ * with the same {@link
+ *             PremiumFeature}.
  */
 public class PremiumRate  implements java.io.Serializable {
     /* Uniquely identifies the {@code PremiumRate} object.
@@ -74,6 +74,17 @@ public class PremiumRate  implements java.io.Serializable {
            this.premiumRateValues = premiumRateValues;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("premiumFeature", getPremiumFeature())
+            .add("premiumRateValues", getPremiumRateValues())
+            .add("pricingMethod", getPricingMethod())
+            .add("rateCardId", getRateCardId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this PremiumRate.

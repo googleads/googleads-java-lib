@@ -39,6 +39,15 @@ public class UniqueError  extends com.google.api.ads.dfp.axis.v201611.ApiError  
             errorString);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("trigger", getTrigger())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof UniqueError)) return false;

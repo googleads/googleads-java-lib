@@ -132,6 +132,18 @@ public class OfflineCallConversionFeed  implements java.io.Serializable {
            this.conversionCurrencyCode = conversionCurrencyCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("callStartTime", getCallStartTime())
+            .add("callerId", getCallerId())
+            .add("conversionCurrencyCode", getConversionCurrencyCode())
+            .add("conversionName", getConversionName())
+            .add("conversionTime", getConversionTime())
+            .add("conversionValue", getConversionValue())
+            .toString();
+    }
 
     /**
      * Gets the callerId value for this OfflineCallConversionFeed.

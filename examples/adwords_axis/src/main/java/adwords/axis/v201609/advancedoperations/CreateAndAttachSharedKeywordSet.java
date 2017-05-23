@@ -33,7 +33,7 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -92,7 +92,7 @@ public class CreateAndAttachSharedKeywordSet {
         sharedSet.getSharedSetId(), sharedSet.getName());
 
     // Add negative keywords to the shared set.
-    List<SharedCriterionOperation> sharedCriterionOperations = Lists.newArrayList();
+    List<SharedCriterionOperation> sharedCriterionOperations = new ArrayList<>();
     for (String keyword : keywords) {
       Keyword keywordCriterion = new Keyword();
       keywordCriterion.setText(keyword);

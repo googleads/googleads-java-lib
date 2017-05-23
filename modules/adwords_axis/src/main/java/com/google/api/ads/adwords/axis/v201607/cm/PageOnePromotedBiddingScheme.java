@@ -91,6 +91,19 @@ public class PageOnePromotedBiddingScheme  extends com.google.api.ads.adwords.ax
         this.raiseBidWhenLowQualityScore = raiseBidWhenLowQualityScore;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("bidChangesForRaisesOnly", getBidChangesForRaisesOnly())
+            .add("bidModifier", getBidModifier())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("raiseBidWhenBudgetConstrained", getRaiseBidWhenBudgetConstrained())
+            .add("raiseBidWhenLowQualityScore", getRaiseBidWhenLowQualityScore())
+            .add("strategyGoal", getStrategyGoal())
+            .toString();
+    }
 
     /**
      * Gets the strategyGoal value for this PageOnePromotedBiddingScheme.

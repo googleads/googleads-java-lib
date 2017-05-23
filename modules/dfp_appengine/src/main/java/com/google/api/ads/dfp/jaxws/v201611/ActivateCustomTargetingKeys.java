@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for activating inactive (i.e. deleted)
- *             {@link CustomTargetingKey} objects.
+ *             The action used for activating inactive (i.e. deleted) {@link CustomTargetingKey} objects.
  *           
  * 
  * <p>Java class for ActivateCustomTargetingKeys complex type.

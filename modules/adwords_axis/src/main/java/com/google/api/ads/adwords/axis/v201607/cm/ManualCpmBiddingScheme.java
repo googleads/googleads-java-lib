@@ -36,6 +36,13 @@ public class ManualCpmBiddingScheme  extends com.google.api.ads.adwords.axis.v20
             biddingSchemeType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ManualCpmBiddingScheme)) return false;

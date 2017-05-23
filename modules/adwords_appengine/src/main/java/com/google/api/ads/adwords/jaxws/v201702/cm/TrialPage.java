@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains a filtered and paged subset of campaign trials as returned by {@link
- *             TrialService#get(com.google.ads.api.services.common.selector.Selector)}.
+ *             Contains a filtered and paged subset of campaign trials as returned by
+ *             {@link TrialService#get}.
  *           
  * 
  * <p>Java class for TrialPage complex type.

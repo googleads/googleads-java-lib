@@ -24,16 +24,14 @@ package com.google.api.ads.dfp.axis.v201611;
 
 /**
  * Contains a {@link Targeting} value.
- *             <p>
- *             <b>This object is experimental!
- *             <code>TargetingValue</code> is an experimental, innovative,
- * and rapidly
- *             changing new feature for DFP. Unfortunately, being on
- * the bleeding edge means that we may make
- *             backwards-incompatible changes to
- *             <code>TargetingValue</code>. We will inform the community
- * when this feature
- *             is no longer experimental.</b>
+ *             
+ *             <p><b>This object is experimental! <code>TargetingValue</code>
+ * is an experimental, innovative,
+ *             and rapidly changing new feature for DFP. Unfortunately,
+ * being on the bleeding edge means that we
+ *             may make backwards-incompatible changes to <code>TargetingValue</code>.
+ * We will inform the
+ *             community when this feature is no longer experimental.</b>
  */
 public class TargetingValue  extends com.google.api.ads.dfp.axis.v201611.ObjectValue  implements java.io.Serializable {
     /* The {@code Targeting} value. */
@@ -47,6 +45,13 @@ public class TargetingValue  extends com.google.api.ads.dfp.axis.v201611.ObjectV
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this TargetingValue.

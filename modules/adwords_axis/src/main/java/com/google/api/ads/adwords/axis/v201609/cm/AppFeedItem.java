@@ -115,6 +115,35 @@ public class AppFeedItem  extends com.google.api.ads.adwords.axis.v201609.cm.Ext
         this.appUrlCustomParameters = appUrlCustomParameters;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("appFinalMobileUrls", getAppFinalMobileUrls())
+            .add("appFinalUrls", getAppFinalUrls())
+            .add("appId", getAppId())
+            .add("appLinkText", getAppLinkText())
+            .add("appStore", getAppStore())
+            .add("appTrackingUrlTemplate", getAppTrackingUrlTemplate())
+            .add("appUrl", getAppUrl())
+            .add("appUrlCustomParameters", getAppUrlCustomParameters())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("policyData", getPolicyData())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the appStore value for this AppFeedItem.

@@ -63,6 +63,18 @@ public class RichMediaStudioChildAssetProperty  implements java.io.Serializable 
            this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("height", getHeight())
+            .add("name", getName())
+            .add("totalFileSize", getTotalFileSize())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("width", getWidth())
+            .toString();
+    }
 
     /**
      * Gets the name value for this RichMediaStudioChildAssetProperty.

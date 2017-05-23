@@ -41,6 +41,13 @@ public class ResumeOrders  extends com.google.api.ads.dfp.axis.v201611.OrderActi
         this.skipInventoryCheck = skipInventoryCheck;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("skipInventoryCheck", getSkipInventoryCheck())
+            .toString();
+    }
 
     /**
      * Gets the skipInventoryCheck value for this ResumeOrders.

@@ -44,8 +44,8 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
 
     /* If this reconciliation data is for a {@link Proposal}, then
      * this contains that proposal's ID.
-     *                 Otherwise, this field will have a value of 0.
-     *                 This value is read-only. */
+     *                 Otherwise, this field will have a value of 0. This
+     * value is read-only. */
     private java.lang.Long proposalId;
 
     /* The status of this {@code ReconciliationOrderReport}.
@@ -98,6 +98,21 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
            this.proposalGrossBillableRevenueManualAdjustment = proposalGrossBillableRevenueManualAdjustment;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("orderId", getOrderId())
+            .add("proposalGrossBillableRevenueManualAdjustment", getProposalGrossBillableRevenueManualAdjustment())
+            .add("proposalId", getProposalId())
+            .add("proposalNetBillableRevenueManualAdjustment", getProposalNetBillableRevenueManualAdjustment())
+            .add("reconciliationReportId", getReconciliationReportId())
+            .add("status", getStatus())
+            .add("submissionDateTime", getSubmissionDateTime())
+            .add("submitterId", getSubmitterId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ReconciliationOrderReport.
@@ -176,8 +191,8 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * 
      * @return proposalId   * If this reconciliation data is for a {@link Proposal}, then
      * this contains that proposal's ID.
-     *                 Otherwise, this field will have a value of 0.
-     *                 This value is read-only.
+     *                 Otherwise, this field will have a value of 0. This
+     * value is read-only.
      */
     public java.lang.Long getProposalId() {
         return proposalId;
@@ -189,8 +204,8 @@ public class ReconciliationOrderReport  implements java.io.Serializable {
      * 
      * @param proposalId   * If this reconciliation data is for a {@link Proposal}, then
      * this contains that proposal's ID.
-     *                 Otherwise, this field will have a value of 0.
-     *                 This value is read-only.
+     *                 Otherwise, this field will have a value of 0. This
+     * value is read-only.
      */
     public void setProposalId(java.lang.Long proposalId) {
         this.proposalId = proposalId;

@@ -74,6 +74,17 @@ public class SoapHeader  implements java.io.Serializable {
            this.partialFailure = partialFailure;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clientCustomerId", getClientCustomerId())
+            // Exclude developerToken since it contains sensitive information
+            .add("partialFailure", getPartialFailure())
+            .add("userAgent", getUserAgent())
+            .add("validateOnly", getValidateOnly())
+            .toString();
+    }
 
     /**
      * Gets the clientCustomerId value for this SoapHeader.

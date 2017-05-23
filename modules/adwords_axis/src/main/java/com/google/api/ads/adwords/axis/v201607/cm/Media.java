@@ -121,6 +121,23 @@ public class Media  implements java.io.Serializable {
            this.mediaType = mediaType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("creationTime", getCreationTime())
+            .add("dimensions", getDimensions())
+            .add("fileSize", getFileSize())
+            .add("mediaId", getMediaId())
+            .add("mediaType", getMediaType())
+            .add("mimeType", getMimeType())
+            .add("name", getName())
+            .add("referenceId", getReferenceId())
+            .add("sourceUrl", getSourceUrl())
+            .add("type", getType())
+            .add("urls", getUrls())
+            .toString();
+    }
 
     /**
      * Gets the mediaId value for this Media.

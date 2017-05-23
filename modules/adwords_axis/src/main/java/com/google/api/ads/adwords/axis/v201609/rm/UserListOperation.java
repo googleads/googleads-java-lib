@@ -24,6 +24,9 @@ package com.google.api.ads.adwords.axis.v201609.rm;
 
 /**
  * UserList operations for adding/updating UserList entities.
+ *             The following {@link Operator}s are supported: ADD and
+ * SET.
+ *             The REMOVE operator is not supported.
  */
 public class UserListOperation  extends com.google.api.ads.adwords.axis.v201609.cm.Operation  implements java.io.Serializable {
     /* UserList to operate on
@@ -44,6 +47,15 @@ public class UserListOperation  extends com.google.api.ads.adwords.axis.v201609.
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this UserListOperation.

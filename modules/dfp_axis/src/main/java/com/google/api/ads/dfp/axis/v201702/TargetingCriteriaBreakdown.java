@@ -62,6 +62,18 @@ public class TargetingCriteriaBreakdown  implements java.io.Serializable {
            this.matchedUnits = matchedUnits;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("availableUnits", getAvailableUnits())
+            .add("excluded", getExcluded())
+            .add("matchedUnits", getMatchedUnits())
+            .add("targetingCriteriaId", getTargetingCriteriaId())
+            .add("targetingCriteriaName", getTargetingCriteriaName())
+            .add("targetingDimension", getTargetingDimension())
+            .toString();
+    }
 
     /**
      * Gets the targetingDimension value for this TargetingCriteriaBreakdown.

@@ -74,6 +74,27 @@ public class TextAd  extends com.google.api.ads.adwords.axis.v201702.cm.Ad  impl
         this.description2 = description2;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("description1", getDescription1())
+            .add("description2", getDescription2())
+            .add("devicePreference", getDevicePreference())
+            .add("displayUrl", getDisplayUrl())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("headline", getHeadline())
+            .add("id", getId())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("urlData", getUrlData())
+            .toString();
+    }
 
     /**
      * Gets the headline value for this TextAd.

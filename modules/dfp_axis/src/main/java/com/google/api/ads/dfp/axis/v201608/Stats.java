@@ -59,6 +59,17 @@ public class Stats  implements java.io.Serializable {
            this.viewableImpressionsDelivered = viewableImpressionsDelivered;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clicksDelivered", getClicksDelivered())
+            .add("impressionsDelivered", getImpressionsDelivered())
+            .add("videoCompletionsDelivered", getVideoCompletionsDelivered())
+            .add("videoStartsDelivered", getVideoStartsDelivered())
+            .add("viewableImpressionsDelivered", getViewableImpressionsDelivered())
+            .toString();
+    }
 
     /**
      * Gets the impressionsDelivered value for this Stats.

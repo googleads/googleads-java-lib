@@ -56,6 +56,20 @@ public class FunctionParsingError  extends com.google.api.ads.adwords.axis.v2017
         this.offendingTextIndex = offendingTextIndex;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("offendingText", getOffendingText())
+            .add("offendingTextIndex", getOffendingTextIndex())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this FunctionParsingError.

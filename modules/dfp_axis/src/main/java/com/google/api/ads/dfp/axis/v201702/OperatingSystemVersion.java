@@ -52,6 +52,17 @@ public class OperatingSystemVersion  extends com.google.api.ads.dfp.axis.v201702
         this.microVersion = microVersion;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("majorVersion", getMajorVersion())
+            .add("microVersion", getMicroVersion())
+            .add("minorVersion", getMinorVersion())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the majorVersion value for this OperatingSystemVersion.

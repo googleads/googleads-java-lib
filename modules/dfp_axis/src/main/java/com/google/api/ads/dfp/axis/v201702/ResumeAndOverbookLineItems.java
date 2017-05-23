@@ -35,6 +35,13 @@ public class ResumeAndOverbookLineItems  extends com.google.api.ads.dfp.axis.v20
             skipInventoryCheck);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("skipInventoryCheck", getSkipInventoryCheck())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ResumeAndOverbookLineItems)) return false;

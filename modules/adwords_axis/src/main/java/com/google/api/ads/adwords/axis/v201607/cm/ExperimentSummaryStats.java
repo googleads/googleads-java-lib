@@ -55,6 +55,15 @@ public class ExperimentSummaryStats  implements java.io.Serializable {
            this.adGroupAdsCount = adGroupAdsCount;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupAdsCount", getAdGroupAdsCount())
+            .add("adGroupCriteriaCount", getAdGroupCriteriaCount())
+            .add("adGroupsCount", getAdGroupsCount())
+            .toString();
+    }
 
     /**
      * Gets the adGroupsCount value for this ExperimentSummaryStats.

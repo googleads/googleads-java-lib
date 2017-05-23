@@ -99,6 +99,18 @@ public class DraftAsyncError  implements java.io.Serializable {
            this.draftAdGroupId = draftAdGroupId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("asyncError", getAsyncError())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("draftAdGroupId", getDraftAdGroupId())
+            .add("draftCampaignId", getDraftCampaignId())
+            .add("draftId", getDraftId())
+            .toString();
+    }
 
     /**
      * Gets the baseCampaignId value for this DraftAsyncError.

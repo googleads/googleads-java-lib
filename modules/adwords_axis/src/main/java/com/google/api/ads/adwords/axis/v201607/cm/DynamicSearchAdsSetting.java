@@ -56,6 +56,15 @@ public class DynamicSearchAdsSetting  extends com.google.api.ads.adwords.axis.v2
         this.languageCode = languageCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("domainName", getDomainName())
+            .add("languageCode", getLanguageCode())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the domainName value for this DynamicSearchAdsSetting.

@@ -129,6 +129,20 @@ public class ManagedCustomer  implements java.io.Serializable {
            this.excludeHiddenAccounts = excludeHiddenAccounts;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accountLabels", getAccountLabels())
+            .add("canManageClients", getCanManageClients())
+            .add("currencyCode", getCurrencyCode())
+            .add("customerId", getCustomerId())
+            .add("dateTimeZone", getDateTimeZone())
+            .add("excludeHiddenAccounts", getExcludeHiddenAccounts())
+            .add("name", getName())
+            .add("testAccount", getTestAccount())
+            .toString();
+    }
 
     /**
      * Gets the name value for this ManagedCustomer.

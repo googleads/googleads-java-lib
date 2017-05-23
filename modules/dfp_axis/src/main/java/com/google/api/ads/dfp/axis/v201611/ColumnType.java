@@ -37,6 +37,13 @@ public class ColumnType  implements java.io.Serializable {
            this.labelName = labelName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("labelName", getLabelName())
+            .toString();
+    }
 
     /**
      * Gets the labelName value for this ColumnType.

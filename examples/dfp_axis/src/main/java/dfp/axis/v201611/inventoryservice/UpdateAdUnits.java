@@ -28,7 +28,7 @@ import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,7 +63,7 @@ public class UpdateAdUnits {
 
     AdUnit adUnit = Iterables.getOnlyElement(Arrays.asList(page.getResults()));
 
-    List<AdUnitSize> adUnitSizes = Lists.<AdUnitSize>newArrayList(adUnit.getAdUnitSizes());
+    List<AdUnitSize> adUnitSizes = new ArrayList<>(Arrays.asList(adUnit.getAdUnitSizes()));
 
     // Create a 480x60 web ad unit size.
     Size size = new Size();
@@ -82,7 +82,7 @@ public class UpdateAdUnits {
     AdUnit[] adUnits = inventoryService.updateAdUnits(new AdUnit[] {adUnit});
 
     for (AdUnit updatedAdUnit : adUnits) {
-      List<String> adUnitSizeStrings = Lists.newArrayList();
+      List<String> adUnitSizeStrings = new ArrayList<>();
       for (AdUnitSize updatedAdUnitSize : updatedAdUnit.getAdUnitSizes()) {
         adUnitSizeStrings.add(String.format("%dx%d", updatedAdUnitSize.getSize().getWidth(),
             updatedAdUnitSize.getSize().getHeight()));

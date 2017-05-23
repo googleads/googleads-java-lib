@@ -30,6 +30,9 @@ import javax.xml.bind.annotation.XmlType;
  *             This bulk operation does not have any transactional guarantees. Some operations can succeed
  *             while others fail.
  *             
+ *             <p><b>Note:</b> {@link OfflineConversionFeedOperation} supports only the
+ *             {@code ADD} operator. ({@code SET} and {@code REMOVE} are not supported.)
+ *             
  *             @param operations A list of offline conversion feed operations.
  *             @return The list of offline conversion feed results (in the same order as the operations).
  *             @throws {@link ApiException} if problems occurred while applying offline conversions.

@@ -25,8 +25,6 @@ import static org.mockito.Mockito.when;
 import com.google.api.ads.adwords.jaxws.v201609.billing.BudgetOrderServiceInterface;
 import com.google.api.ads.adwords.jaxws.v201609.ch.CustomerSyncServiceInterface;
 import com.google.api.ads.adwords.jaxws.v201609.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201609.express.ExpressBusinessServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201609.express.PromotionServiceInterface;
 import com.google.api.ads.adwords.jaxws.v201609.mcm.ManagedCustomerServiceInterface;
 import com.google.api.ads.adwords.jaxws.v201609.o.TargetingIdeaServiceInterface;
 import com.google.api.ads.adwords.jaxws.v201609.rm.AdwordsUserListServiceInterface;
@@ -45,7 +43,13 @@ import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
+import java.rmi.Remote;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import javax.xml.soap.SOAPElement;
+import javax.xml.ws.BindingProvider;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,15 +58,6 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.rmi.Remote;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.xml.soap.SOAPElement;
-import javax.xml.ws.BindingProvider;
 
 /**
  * Tests for the {@link AdWordsJaxWsHeaderHandler} class.
@@ -113,7 +108,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
     this.subProduct = subProduct;
   }
 
-  @Parameters(name="interface={0}, namespace={1}, subProduct={2}")
+  @Parameters(name = "interface={0}, namespace={1}, subProduct={2}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     // Test at least one standard interface for every subpackage of v201609
@@ -128,10 +123,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
         new Object[] {TargetingIdeaServiceInterface.class, "o", AdWordsSubProduct.DEFAULT});
     parameters.add(
         new Object[] {AdwordsUserListServiceInterface.class, "rm", AdWordsSubProduct.DEFAULT});
-    parameters.add(
-        new Object[] {ExpressBusinessServiceInterface.class, "express", AdWordsSubProduct.EXPRESS});
-    parameters.add(
-        new Object[] {PromotionServiceInterface.class, "express", AdWordsSubProduct.EXPRESS});
    return parameters;
   }
 
@@ -144,8 +135,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
         subProductHandlerMap = Maps.newHashMap();
     subProductHandlerMap.put(AdWordsSubProduct.DEFAULT,
         new HeaderHandler.NoOpHeaderHandler<AdWordsSession, AdWordsServiceDescriptor>());
-    subProductHandlerMap.put(AdWordsSubProduct.EXPRESS,
-        new AdWordsJaxWsExpressHeaderHandler(soapClientHandler, adWordsApiConfiguration));
     
     headerHandler = new AdWordsJaxWsHeaderHandler(soapClientHandler,
         adWordsApiConfiguration,

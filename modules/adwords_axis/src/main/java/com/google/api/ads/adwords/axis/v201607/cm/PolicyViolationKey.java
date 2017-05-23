@@ -54,6 +54,14 @@ public class PolicyViolationKey  implements java.io.Serializable {
            this.violatingText = violatingText;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("policyName", getPolicyName())
+            .add("violatingText", getViolatingText())
+            .toString();
+    }
 
     /**
      * Gets the policyName value for this PolicyViolationKey.

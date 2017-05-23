@@ -57,6 +57,16 @@ public class PolicyTopicEntry  implements java.io.Serializable {
            this.policyTopicName = policyTopicName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("policyTopicEntryType", getPolicyTopicEntryType())
+            .add("policyTopicEvidences", getPolicyTopicEvidences())
+            .add("policyTopicId", getPolicyTopicId())
+            .add("policyTopicName", getPolicyTopicName())
+            .toString();
+    }
 
     /**
      * Gets the policyTopicEntryType value for this PolicyTopicEntry.

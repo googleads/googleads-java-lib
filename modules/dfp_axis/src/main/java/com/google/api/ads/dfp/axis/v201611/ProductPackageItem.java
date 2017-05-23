@@ -79,6 +79,17 @@ public class ProductPackageItem  implements java.io.Serializable {
            this.archiveStatus = archiveStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("archiveStatus", getArchiveStatus())
+            .add("id", getId())
+            .add("isMandatory", getIsMandatory())
+            .add("productId", getProductId())
+            .add("productPackageId", getProductPackageId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ProductPackageItem.

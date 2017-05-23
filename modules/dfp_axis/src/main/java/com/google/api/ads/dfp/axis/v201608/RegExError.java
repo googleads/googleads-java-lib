@@ -46,6 +46,16 @@ public class RegExError  extends com.google.api.ads.dfp.axis.v201608.ApiError  i
         this.reason = reason;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this RegExError.

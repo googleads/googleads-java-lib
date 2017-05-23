@@ -94,12 +94,12 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 Used for 'ends with' matching when the last characters in the ad request
-     *                 match all of the characters in the targeted value. The targeting value
-     *                 {@code car=honda} will match with ad requests {@code car=honda} or {@code
-     *                 car=I want a honda} but not to {@code car=hondas for sale}.
+     *                 Used for 'ends with' matching when the last characters in the ad request match all of the
+     *                 characters in the targeted value. The targeting value {@code car=honda} will match with ad
+     *                 requests {@code car=honda} or {@code car=I want a honda} but not to {@code car=hondas for
+     *                 sale}.
      *                 
-     *                 <p>This match type can not be used within line item targeting.</p>
+     *                 <p>This match type can not be used within line item targeting.
      *               
      * 
      */
@@ -107,13 +107,12 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 Used for 'within' matching when the string in the ad request contains the
-     *                 string in the targeted value. The targeting value {@code car=honda} will
-     *                 match with ad requests {@code car=honda}, {@code car=I want a honda}, and
-     *                 also with {@code car=hondas for sale}, but not with {@code car=misspelled
-     *                 hond a}.
+     *                 Used for 'within' matching when the string in the ad request contains the string in the
+     *                 targeted value. The targeting value {@code car=honda} will match with ad requests {@code
+     *                 car=honda}, {@code car=I want a honda}, and also with {@code car=hondas for sale}, but not
+     *                 with {@code car=misspelled hond a}.
      *                 
-     *                 <p>This match type can not be used within line item targeting.</p>
+     *                 <p>This match type can not be used within line item targeting.
      *               
      * 
      */

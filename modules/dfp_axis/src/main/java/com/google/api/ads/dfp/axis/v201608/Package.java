@@ -140,6 +140,22 @@ public class Package  implements java.io.Serializable {
            this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comments", getComments())
+            .add("endDateTime", getEndDateTime())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("productPackageId", getProductPackageId())
+            .add("proposalId", getProposalId())
+            .add("rateCardId", getRateCardId())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Package.

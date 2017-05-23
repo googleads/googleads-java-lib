@@ -39,6 +39,13 @@ public class UpdateResult  implements java.io.Serializable {
            this.numChanges = numChanges;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("numChanges", getNumChanges())
+            .toString();
+    }
 
     /**
      * Gets the numChanges value for this UpdateResult.

@@ -51,6 +51,13 @@ public class VideoPositionWithinPod  implements java.io.Serializable {
            this.index = index;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("index", getIndex())
+            .toString();
+    }
 
     /**
      * Gets the index value for this VideoPositionWithinPod.

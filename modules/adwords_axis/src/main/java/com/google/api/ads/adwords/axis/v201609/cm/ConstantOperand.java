@@ -67,6 +67,19 @@ public class ConstantOperand  extends com.google.api.ads.adwords.axis.v201609.cm
         this.stringValue = stringValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("booleanValue", getBooleanValue())
+            .add("doubleValue", getDoubleValue())
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .add("longValue", getLongValue())
+            .add("stringValue", getStringValue())
+            .add("type", getType())
+            .add("unit", getUnit())
+            .toString();
+    }
 
     /**
      * Gets the type value for this ConstantOperand.

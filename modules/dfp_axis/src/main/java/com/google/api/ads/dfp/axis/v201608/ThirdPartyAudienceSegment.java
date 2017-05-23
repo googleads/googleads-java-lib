@@ -88,6 +88,25 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.dfp.axis.v201
         this.endDateTime = endDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("approvalStatus", getApprovalStatus())
+            .add("categoryIds", getCategoryIds())
+            .add("cost", getCost())
+            .add("dataProvider", getDataProvider())
+            .add("description", getDescription())
+            .add("endDateTime", getEndDateTime())
+            .add("id", getId())
+            .add("licenseType", getLicenseType())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the approvalStatus value for this ThirdPartyAudienceSegment.

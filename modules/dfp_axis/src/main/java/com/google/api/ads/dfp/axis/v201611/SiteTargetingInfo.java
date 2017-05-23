@@ -60,6 +60,15 @@ public class SiteTargetingInfo  implements java.io.Serializable {
            this.targetingAdLocation = targetingAdLocation;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetingAdLocation", getTargetingAdLocation())
+            .add("targetingDescription", getTargetingDescription())
+            .add("targetingSiteName", getTargetingSiteName())
+            .toString();
+    }
 
     /**
      * Gets the targetingDescription value for this SiteTargetingInfo.

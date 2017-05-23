@@ -78,6 +78,17 @@ public class FeedItemSchedule  implements java.io.Serializable {
            this.endMinute = endMinute;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dayOfWeek", getDayOfWeek())
+            .add("endHour", getEndHour())
+            .add("endMinute", getEndMinute())
+            .add("startHour", getStartHour())
+            .add("startMinute", getStartMinute())
+            .toString();
+    }
 
     /**
      * Gets the dayOfWeek value for this FeedItemSchedule.

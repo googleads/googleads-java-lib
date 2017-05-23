@@ -29,6 +29,12 @@ public class DeactivateProductTemplates  extends com.google.api.ads.dfp.axis.v20
     public DeactivateProductTemplates() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DeactivateProductTemplates)) return false;

@@ -77,6 +77,19 @@ public class OperatingSystemVersion  extends com.google.api.ads.adwords.axis.v20
         this.operatorType = operatorType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("name", getName())
+            .add("operatorType", getOperatorType())
+            .add("osMajorVersion", getOsMajorVersion())
+            .add("osMinorVersion", getOsMinorVersion())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the name value for this OperatingSystemVersion.

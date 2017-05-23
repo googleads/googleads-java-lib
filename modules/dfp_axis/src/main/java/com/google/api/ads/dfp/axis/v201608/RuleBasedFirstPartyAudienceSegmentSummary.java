@@ -84,6 +84,23 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
         this.membershipExpirationDays = membershipExpirationDays;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("categoryIds", getCategoryIds())
+            .add("dataProvider", getDataProvider())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("membershipExpirationDays", getMembershipExpirationDays())
+            .add("name", getName())
+            .add("pageViews", getPageViews())
+            .add("recencyDays", getRecencyDays())
+            .add("size", getSize())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the pageViews value for this RuleBasedFirstPartyAudienceSegmentSummary.

@@ -27,9 +27,8 @@ import com.google.api.ads.adwords.lib.utils.v201607.ReportDownloader;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
-
 import java.io.File;
+import java.util.Arrays;
 
 /**
  * This example downloads a criteria performance report.
@@ -62,7 +61,7 @@ public class DownloadCriteriaReport {
   public static void runExample(AdWordsSession session, String reportFile) throws Exception {
     // Create selector.
     Selector selector = new Selector();
-    selector.getFields().addAll(Lists.newArrayList("CampaignId",
+    selector.getFields().addAll(Arrays.asList("CampaignId",
         "AdGroupId",
         "Id",
         "CriteriaType",

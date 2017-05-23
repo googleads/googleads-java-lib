@@ -44,8 +44,9 @@ package com.google.api.ads.adwords.axis.v201609.o;
  * IDEAS, STATS.
  */
 public class LocationSearchParameter  extends com.google.api.ads.adwords.axis.v201609.o.SearchParameter  implements java.io.Serializable {
-    /* A list of {@link Location}s indicating the desired countries
-     * being targeted in the results.
+    /* A list of {@link Location}s indicating the desired locations
+     * (e.g countries) being targeted
+     *                     in the results.
      *                     <span class="constraint ContentsDistinct">This
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
@@ -67,12 +68,21 @@ public class LocationSearchParameter  extends com.google.api.ads.adwords.axis.v2
         this.locations = locations;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("locations", getLocations())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the locations value for this LocationSearchParameter.
      * 
-     * @return locations   * A list of {@link Location}s indicating the desired countries
-     * being targeted in the results.
+     * @return locations   * A list of {@link Location}s indicating the desired locations
+     * (e.g countries) being targeted
+     *                     in the results.
      *                     <span class="constraint ContentsDistinct">This
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
@@ -90,8 +100,9 @@ public class LocationSearchParameter  extends com.google.api.ads.adwords.axis.v2
     /**
      * Sets the locations value for this LocationSearchParameter.
      * 
-     * @param locations   * A list of {@link Location}s indicating the desired countries
-     * being targeted in the results.
+     * @param locations   * A list of {@link Location}s indicating the desired locations
+     * (e.g countries) being targeted
+     *                     in the results.
      *                     <span class="constraint ContentsDistinct">This
      * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This

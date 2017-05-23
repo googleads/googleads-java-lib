@@ -45,6 +45,13 @@ public class IncludeAdultContentSearchParameter  extends com.google.api.ads.adwo
             searchParameterType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof IncludeAdultContentSearchParameter)) return false;

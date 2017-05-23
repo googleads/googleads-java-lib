@@ -58,6 +58,14 @@ public class CompetitionSearchParameter  extends com.google.api.ads.adwords.axis
         this.levels = levels;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("levels", getLevels())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the levels value for this CompetitionSearchParameter.

@@ -38,6 +38,13 @@ public class MutateMembersReturnValue  implements java.io.Serializable {
            this.userLists = userLists;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("userLists", getUserLists())
+            .toString();
+    }
 
     /**
      * Gets the userLists value for this MutateMembersReturnValue.

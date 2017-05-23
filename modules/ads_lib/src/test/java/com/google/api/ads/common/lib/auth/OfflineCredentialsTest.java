@@ -26,7 +26,7 @@ import com.google.api.client.auth.oauth2.ClientParametersAuthentication;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-
+import java.io.IOException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Before;
 import org.junit.Rule;
@@ -37,8 +37,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
-import java.io.IOException;
 
 /**
  * Tests for {@link OfflineCredentials}.
@@ -70,10 +68,10 @@ public class OfflineCredentialsTest {
         .withHttpTransport(httpTransport)
         .build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
-    assertSame(offlineCredentials.getHttpTransport(), httpTransport);
+    assertEquals("clientId", offlineCredentials.getClientId());
+    assertEquals("clientSecret", offlineCredentials.getClientSecret());
+    assertEquals("refreshToken", offlineCredentials.getRefreshToken());
+    assertSame(httpTransport, offlineCredentials.getHttpTransport());
   }
   
   /**
@@ -86,7 +84,7 @@ public class OfflineCredentialsTest {
         .withJsonKeyFilePath("jsonKeyFilePath")
         .build();
 
-    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
+    assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
   }
   
   /**
@@ -104,9 +102,9 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
+    assertEquals("clientId", offlineCredentials.getClientId());
+    assertEquals("clientSecret", offlineCredentials.getClientSecret());
+    assertEquals("refreshToken", offlineCredentials.getRefreshToken());
   }
   
   /**
@@ -122,7 +120,7 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
+    assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
   }
 
   /**
@@ -140,9 +138,9 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
+    assertEquals("clientId", offlineCredentials.getClientId());
+    assertEquals("clientSecret", offlineCredentials.getClientSecret());
+    assertEquals("refreshToken", offlineCredentials.getRefreshToken());
   }
   
   /**
@@ -159,7 +157,7 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePath");
+    assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
   }
 
   /**
@@ -180,9 +178,9 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientIdDfp");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecretDfp");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshTokenDfp");
+    assertEquals("clientIdDfp", offlineCredentials.getClientId());
+    assertEquals("clientSecretDfp", offlineCredentials.getClientSecret());
+    assertEquals("refreshTokenDfp", offlineCredentials.getRefreshToken());
   }
   
   /**
@@ -200,7 +198,7 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
 
-    assertEquals(offlineCredentials.getJsonKeyFilePath(), "jsonKeyFilePathDfp");
+    assertEquals("jsonKeyFilePathDfp", offlineCredentials.getJsonKeyFilePath());
   }
 
   /**
@@ -298,9 +296,9 @@ public class OfflineCredentialsTest {
 
     OfflineCredentials offlineCredentials = builder.fromFile("path").build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "refreshToken");
+    assertEquals("clientId", offlineCredentials.getClientId());
+    assertEquals("clientSecret", offlineCredentials.getClientSecret());
+    assertEquals("refreshToken", offlineCredentials.getRefreshToken());
   }
 
   /**
@@ -321,9 +319,9 @@ public class OfflineCredentialsTest {
     OfflineCredentials offlineCredentials =
         builder.fromFile("path").withRefreshToken("overrideRefreshToken").build();
 
-    assertEquals(offlineCredentials.getClientId(), "clientId");
-    assertEquals(offlineCredentials.getClientSecret(), "clientSecret");
-    assertEquals(offlineCredentials.getRefreshToken(), "overrideRefreshToken");
+    assertEquals("clientId", offlineCredentials.getClientId());
+    assertEquals("clientSecret", offlineCredentials.getClientSecret());
+    assertEquals("overrideRefreshToken", offlineCredentials.getRefreshToken());
   }
 
   /**
@@ -465,13 +463,13 @@ public class OfflineCredentialsTest {
     Credential credential = offlineCredentials.generateCredential();
 
     assertEquals(
-        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientId(),
-        "clientId");
+        "clientId",
+        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientId());
     assertEquals(
-        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientSecret(),
-        "clientSecret");
-    assertEquals(credential.getRefreshToken(), "refreshToken");
-    assertSame(credential.getTransport(), httpTransport);
+        "clientSecret",
+        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientSecret());
+    assertEquals("refreshToken", credential.getRefreshToken());
+    assertSame(httpTransport, credential.getTransport());
   }
 
   /**
@@ -490,13 +488,13 @@ public class OfflineCredentialsTest {
     Credential credential = offlineCredentials.generateCredential();
 
     assertEquals(
-        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientId(),
-        "clientId");
+        "clientId",
+        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientId());
     assertEquals(
-        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientSecret(),
-        "clientSecret");
-    assertEquals(credential.getRefreshToken(), "refreshToken");
-    assertSame(credential.getTransport(), ForApiBuilder.DEFAULT_HTTP_TRANSPORT);
+        "clientSecret",
+        ((ClientParametersAuthentication) credential.getClientAuthentication()).getClientSecret());
+    assertEquals("refreshToken", credential.getRefreshToken());
+    assertSame(ForApiBuilder.DEFAULT_HTTP_TRANSPORT, credential.getTransport());
   }
 
   /**

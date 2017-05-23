@@ -46,8 +46,8 @@ public class CreativeTemplate  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201611.CreativeTemplateVariable[] variables;
 
     /* The snippet of the creative template, with placeholders for
-     * the
-     *                 associated variables. This attribute is required. */
+     * the associated variables. This
+     *                 attribute is required. */
     private java.lang.String snippet;
 
     /* The status of the {@code CreativeTemplate}. This attribute
@@ -101,6 +101,22 @@ public class CreativeTemplate  implements java.io.Serializable {
            this.isSafeFrameCompatible = isSafeFrameCompatible;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("isInterstitial", getIsInterstitial())
+            .add("isNativeEligible", getIsNativeEligible())
+            .add("isSafeFrameCompatible", getIsSafeFrameCompatible())
+            .add("name", getName())
+            .add("snippet", getSnippet())
+            .add("status", getStatus())
+            .add("type", getType())
+            .add("variables", getVariables())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CreativeTemplate.
@@ -208,8 +224,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Gets the snippet value for this CreativeTemplate.
      * 
      * @return snippet   * The snippet of the creative template, with placeholders for
-     * the
-     *                 associated variables. This attribute is required.
+     * the associated variables. This
+     *                 attribute is required.
      */
     public java.lang.String getSnippet() {
         return snippet;
@@ -220,8 +236,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Sets the snippet value for this CreativeTemplate.
      * 
      * @param snippet   * The snippet of the creative template, with placeholders for
-     * the
-     *                 associated variables. This attribute is required.
+     * the associated variables. This
+     *                 attribute is required.
      */
     public void setSnippet(java.lang.String snippet) {
         this.snippet = snippet;

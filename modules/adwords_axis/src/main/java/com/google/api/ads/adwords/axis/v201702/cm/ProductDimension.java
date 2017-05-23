@@ -40,6 +40,13 @@ public abstract class ProductDimension  implements java.io.Serializable {
            this.productDimensionType = productDimensionType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("productDimensionType", getProductDimensionType())
+            .toString();
+    }
 
     /**
      * Gets the productDimensionType value for this ProductDimension.

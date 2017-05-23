@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * The {@link BaseAdRuleSlot} subtype returned if the actual type
- * is not exposed by the
- *             requested API version.
+ * is not exposed by the requested
+ *             API version.
  */
 public class UnknownAdRuleSlot  extends com.google.api.ads.dfp.axis.v201608.BaseAdRuleSlot  implements java.io.Serializable {
     public UnknownAdRuleSlot() {
@@ -55,6 +55,22 @@ public class UnknownAdRuleSlot  extends com.google.api.ads.dfp.axis.v201608.Base
             maxAdsInPod);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bumper", getBumper())
+            .add("maxAdsInPod", getMaxAdsInPod())
+            .add("maxBumperDuration", getMaxBumperDuration())
+            .add("maxPodDuration", getMaxPodDuration())
+            .add("maxVideoAdDuration", getMaxVideoAdDuration())
+            .add("minPodDuration", getMinPodDuration())
+            .add("minVideoAdDuration", getMinVideoAdDuration())
+            .add("slotBehavior", getSlotBehavior())
+            .add("videoMidrollFrequency", getVideoMidrollFrequency())
+            .add("videoMidrollFrequencyType", getVideoMidrollFrequencyType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof UnknownAdRuleSlot)) return false;

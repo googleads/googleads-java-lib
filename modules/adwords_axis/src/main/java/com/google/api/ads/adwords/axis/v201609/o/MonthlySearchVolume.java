@@ -54,6 +54,15 @@ public class MonthlySearchVolume  implements java.io.Serializable {
            this.count = count;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("count", getCount())
+            .add("month", getMonth())
+            .add("year", getYear())
+            .toString();
+    }
 
     /**
      * Gets the year value for this MonthlySearchVolume.

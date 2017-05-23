@@ -48,6 +48,14 @@ public class DeviceManufacturerTargeting  implements java.io.Serializable {
            this.deviceManufacturers = deviceManufacturers;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("deviceManufacturers", getDeviceManufacturers())
+            .add("isTargeted", getIsTargeted())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this DeviceManufacturerTargeting.

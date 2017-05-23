@@ -44,6 +44,15 @@ public class RuleItem  implements java.io.Serializable {
            this.stringRuleItem = stringRuleItem;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dateRuleItem", getDateRuleItem())
+            .add("numberRuleItem", getNumberRuleItem())
+            .add("stringRuleItem", getStringRuleItem())
+            .toString();
+    }
 
     /**
      * Gets the dateRuleItem value for this RuleItem.

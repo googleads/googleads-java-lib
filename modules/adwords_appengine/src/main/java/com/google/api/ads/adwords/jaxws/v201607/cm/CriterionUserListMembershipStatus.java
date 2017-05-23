@@ -49,7 +49,8 @@ public enum CriterionUserListMembershipStatus {
 
     /**
      * 
-     *                 Closed status - No new members being added. Can not be used for targeting.
+     *                 Closed status - No new members being added. Can not be used for targeting a new campaign.
+     *                 Existing campaigns can still work as long as the list is not removed as a targeting criteria.
      *               
      * 
      */

@@ -24,11 +24,10 @@ package com.google.api.ads.dfp.axis.v201702;
 
 /**
  * A {@code ContentMetadataKeyHierarchyLevel} represents one level
- * in a
- *             {@link ContentMetadataKeyHierarchy}. The level consists
- * of a {@link CustomTargetingKey}
- *             and an integer that represents the level's position in
- * the hierarchy.
+ * in a {@link
+ *             ContentMetadataKeyHierarchy}. The level consists of a
+ * {@link CustomTargetingKey} and an integer
+ *             that represents the level's position in the hierarchy.
  */
 public class ContentMetadataKeyHierarchyLevel  implements java.io.Serializable {
     /* The ID of the {@link CustomTargetingKey} associated with this
@@ -52,6 +51,14 @@ public class ContentMetadataKeyHierarchyLevel  implements java.io.Serializable {
            this.hierarchyLevel = hierarchyLevel;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customTargetingKeyId", getCustomTargetingKeyId())
+            .add("hierarchyLevel", getHierarchyLevel())
+            .toString();
+    }
 
     /**
      * Gets the customTargetingKeyId value for this ContentMetadataKeyHierarchyLevel.

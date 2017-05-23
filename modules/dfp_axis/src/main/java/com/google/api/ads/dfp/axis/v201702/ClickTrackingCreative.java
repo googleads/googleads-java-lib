@@ -61,6 +61,22 @@ public class ClickTrackingCreative  extends com.google.api.ads.dfp.axis.v201702.
         this.clickTrackingUrl = clickTrackingUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("clickTrackingUrl", getClickTrackingUrl())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the clickTrackingUrl value for this ClickTrackingCreative.

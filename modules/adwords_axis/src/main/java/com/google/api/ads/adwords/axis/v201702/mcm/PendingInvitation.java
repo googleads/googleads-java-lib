@@ -48,6 +48,16 @@ public class PendingInvitation  implements java.io.Serializable {
            this.expirationDate = expirationDate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("client", getClient())
+            .add("creationDate", getCreationDate())
+            .add("expirationDate", getExpirationDate())
+            .add("manager", getManager())
+            .toString();
+    }
 
     /**
      * Gets the manager value for this PendingInvitation.

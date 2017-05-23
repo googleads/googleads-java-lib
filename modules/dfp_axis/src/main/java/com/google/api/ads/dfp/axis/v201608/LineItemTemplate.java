@@ -24,8 +24,7 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * Represents the template that populates the fields of a new line
- * item being
- *             created.
+ * item being created.
  */
 public class LineItemTemplate  implements java.io.Serializable {
     /* Uniquely identifies the {@code LineItemTemplate}. This attribute
@@ -128,6 +127,24 @@ public class LineItemTemplate  implements java.io.Serializable {
            this.creativeRotationType = creativeRotationType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("creativeRotationType", getCreativeRotationType())
+            .add("deliveryRateType", getDeliveryRateType())
+            .add("enabledForSameAdvertiserException", getEnabledForSameAdvertiserException())
+            .add("endTime", getEndTime())
+            .add("id", getId())
+            .add("isDefault", getIsDefault())
+            .add("lineItemName", getLineItemName())
+            .add("lineItemType", getLineItemType())
+            .add("name", getName())
+            .add("notes", getNotes())
+            .add("roadblockingType", getRoadblockingType())
+            .add("startTime", getStartTime())
+            .toString();
+    }
 
     /**
      * Gets the id value for this LineItemTemplate.

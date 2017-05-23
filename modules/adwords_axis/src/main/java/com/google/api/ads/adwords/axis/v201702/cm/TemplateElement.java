@@ -49,6 +49,14 @@ public class TemplateElement  implements java.io.Serializable {
            this.fields = fields;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("fields", getFields())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the uniqueName value for this TemplateElement.

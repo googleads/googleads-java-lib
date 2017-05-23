@@ -104,6 +104,15 @@ public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v2016
         this.negativeGeoTargetType = negativeGeoTargetType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("negativeGeoTargetType", getNegativeGeoTargetType())
+            .add("positiveGeoTargetType", getPositiveGeoTargetType())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the positiveGeoTargetType value for this GeoTargetTypeSetting.

@@ -43,6 +43,14 @@ public class ProductChannelExclusivity  extends com.google.api.ads.adwords.axis.
         this.channelExclusivity = channelExclusivity;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("channelExclusivity", getChannelExclusivity())
+            .add("productDimensionType", getProductDimensionType())
+            .toString();
+    }
 
     /**
      * Gets the channelExclusivity value for this ProductChannelExclusivity.

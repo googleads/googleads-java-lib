@@ -99,6 +99,18 @@ public class SharedSet  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("memberCount", getMemberCount())
+            .add("name", getName())
+            .add("referenceCount", getReferenceCount())
+            .add("sharedSetId", getSharedSetId())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the sharedSetId value for this SharedSet.

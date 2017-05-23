@@ -36,6 +36,14 @@ public class DateTimeRange  implements java.io.Serializable {
            this.max = max;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("max", getMax())
+            .add("min", getMin())
+            .toString();
+    }
 
     /**
      * Gets the min value for this DateTimeRange.

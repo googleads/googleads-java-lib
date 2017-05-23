@@ -37,8 +37,8 @@ public class MutateMembersOperand  implements java.io.Serializable {
      *                 {@link DataType#EMAIL_SHA256}. */
     private com.google.api.ads.adwords.axis.v201609.rm.MutateMembersOperandDataType dataType;
 
-    /* Set to indicate a purge operation which will remove all members
-     * from the user list.
+    /* Set to indicate a remove-all operation which will remove all
+     * members from the user list.
      *                 Can only be set with {@code Operator#REMOVE} and
      *                 when set to true {@link #members} must be null or
      * empty. */
@@ -74,6 +74,16 @@ public class MutateMembersOperand  implements java.io.Serializable {
            this.members = members;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataType", getDataType())
+            .add("members", getMembers())
+            .add("removeAll", getRemoveAll())
+            .add("userListId", getUserListId())
+            .toString();
+    }
 
     /**
      * Gets the userListId value for this MutateMembersOperand.
@@ -128,8 +138,8 @@ public class MutateMembersOperand  implements java.io.Serializable {
     /**
      * Gets the removeAll value for this MutateMembersOperand.
      * 
-     * @return removeAll   * Set to indicate a purge operation which will remove all members
-     * from the user list.
+     * @return removeAll   * Set to indicate a remove-all operation which will remove all
+     * members from the user list.
      *                 Can only be set with {@code Operator#REMOVE} and
      *                 when set to true {@link #members} must be null or
      * empty.
@@ -142,8 +152,8 @@ public class MutateMembersOperand  implements java.io.Serializable {
     /**
      * Sets the removeAll value for this MutateMembersOperand.
      * 
-     * @param removeAll   * Set to indicate a purge operation which will remove all members
-     * from the user list.
+     * @param removeAll   * Set to indicate a remove-all operation which will remove all
+     * members from the user list.
      *                 Can only be set with {@code Operator#REMOVE} and
      *                 when set to true {@link #members} must be null or
      * empty.

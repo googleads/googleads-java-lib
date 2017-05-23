@@ -62,6 +62,24 @@ public class Image  extends com.google.api.ads.adwords.axis.v201702.cm.Media  im
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("creationTime", getCreationTime())
+            .add("data", getData())
+            .add("dimensions", getDimensions())
+            .add("fileSize", getFileSize())
+            .add("mediaId", getMediaId())
+            .add("mediaType", getMediaType())
+            .add("mimeType", getMimeType())
+            .add("name", getName())
+            .add("referenceId", getReferenceId())
+            .add("sourceUrl", getSourceUrl())
+            .add("type", getType())
+            .add("urls", getUrls())
+            .toString();
+    }
 
     /**
      * Gets the data value for this Image.

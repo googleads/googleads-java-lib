@@ -37,6 +37,13 @@ public class ApplicationException  extends org.apache.axis.AxisFault  implements
         this.message1 = message1;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("message", getMessage())
+            .toString();
+    }
 
     /**
      * Gets the message1 value for this ApplicationException.

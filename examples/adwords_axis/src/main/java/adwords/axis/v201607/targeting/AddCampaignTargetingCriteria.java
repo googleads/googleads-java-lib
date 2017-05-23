@@ -41,11 +41,9 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 /**
@@ -120,8 +118,8 @@ public class AddCampaignTargetingCriteria {
     });
     locationGroupTier3.setMatchingFunction(tier3MatchingFunction);
 
-    List<Criterion> criteria = Lists.newArrayList(
-        california, mexico, english, spanish, locationGroupTier3);
+    List<Criterion> criteria = new ArrayList<>(Arrays.asList(
+        california, mexico, english, spanish, locationGroupTier3));
     
     // Distance targeting. Area of 10 miles around the locations in the location feed.
     if (locationFeedId != null) {

@@ -109,6 +109,16 @@ public class Function  implements java.io.Serializable {
            this.functionString = functionString;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("functionString", getFunctionString())
+            .add("lhsOperand", getLhsOperand())
+            .add("operator", getOperator())
+            .add("rhsOperand", getRhsOperand())
+            .toString();
+    }
 
     /**
      * Gets the operator value for this Function.

@@ -44,6 +44,13 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
            this.adExchangeEnvironment = adExchangeEnvironment;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adExchangeEnvironment", getAdExchangeEnvironment())
+            .toString();
+    }
 
     /**
      * Gets the adExchangeEnvironment value for this ProposalLineItemMarketplaceInfo.

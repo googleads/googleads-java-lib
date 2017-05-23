@@ -53,6 +53,22 @@ public class AdSenseCreative  extends com.google.api.ads.dfp.axis.v201611.HasHtm
             codeSnippet);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("codeSnippet", getCodeSnippet())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof AdSenseCreative)) return false;

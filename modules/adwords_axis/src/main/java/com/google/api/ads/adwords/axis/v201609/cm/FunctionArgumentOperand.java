@@ -40,6 +40,13 @@ public abstract class FunctionArgumentOperand  implements java.io.Serializable {
            this.functionArgumentOperandType = functionArgumentOperandType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .toString();
+    }
 
     /**
      * Gets the functionArgumentOperandType value for this FunctionArgumentOperand.

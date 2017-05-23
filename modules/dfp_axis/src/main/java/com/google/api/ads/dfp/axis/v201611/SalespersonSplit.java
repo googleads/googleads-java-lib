@@ -50,6 +50,14 @@ public class SalespersonSplit  implements java.io.Serializable {
            this.split = split;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("split", getSplit())
+            .add("userId", getUserId())
+            .toString();
+    }
 
     /**
      * Gets the userId value for this SalespersonSplit.

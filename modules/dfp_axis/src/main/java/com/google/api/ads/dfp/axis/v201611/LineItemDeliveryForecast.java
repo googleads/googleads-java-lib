@@ -81,6 +81,18 @@ public class LineItemDeliveryForecast  implements java.io.Serializable {
            this.matchedUnits = matchedUnits;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("deliveredUnits", getDeliveredUnits())
+            .add("lineItemId", getLineItemId())
+            .add("matchedUnits", getMatchedUnits())
+            .add("orderId", getOrderId())
+            .add("predictedDeliveryUnits", getPredictedDeliveryUnits())
+            .add("unitType", getUnitType())
+            .toString();
+    }
 
     /**
      * Gets the lineItemId value for this LineItemDeliveryForecast.

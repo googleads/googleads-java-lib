@@ -49,6 +49,18 @@ public class CustomerSyncError  extends com.google.api.ads.adwords.axis.v201607.
         this.campaignId = campaignId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("campaignId", getCampaignId())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this CustomerSyncError.

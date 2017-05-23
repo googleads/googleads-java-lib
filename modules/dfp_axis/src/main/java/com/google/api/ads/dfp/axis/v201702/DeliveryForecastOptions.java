@@ -37,6 +37,13 @@ public class DeliveryForecastOptions  implements java.io.Serializable {
            this.ignoredLineItemIds = ignoredLineItemIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("ignoredLineItemIds", getIgnoredLineItemIds())
+            .toString();
+    }
 
     /**
      * Gets the ignoredLineItemIds value for this DeliveryForecastOptions.

@@ -24,6 +24,10 @@ package com.google.api.ads.dfp.axis.v201702;
 
 /**
  * The content partner related validation errors.
+ *             <p>
+ *             This class is deprecated. All companies of type
+ *             {@link Company.Type#CONTENT_PARTNER} were changed to {@link
+ * Company.Type#PARTNER}.
  */
 public class ContentPartnerError  extends com.google.api.ads.dfp.axis.v201702.ApiError  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.ContentPartnerErrorReason reason;
@@ -45,6 +49,17 @@ public class ContentPartnerError  extends com.google.api.ads.dfp.axis.v201702.Ap
         this.reason = reason;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this ContentPartnerError.

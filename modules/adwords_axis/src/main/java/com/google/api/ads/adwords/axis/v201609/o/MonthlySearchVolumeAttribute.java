@@ -51,6 +51,14 @@ public class MonthlySearchVolumeAttribute  extends com.google.api.ads.adwords.ax
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("attributeType", getAttributeType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this MonthlySearchVolumeAttribute.

@@ -96,6 +96,20 @@ public class CreativeAsset  implements java.io.Serializable {
            this.imageDensity = imageDensity;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("assetByteArray", getAssetByteArray())
+            .add("assetId", getAssetId())
+            .add("assetUrl", getAssetUrl())
+            .add("clickTags", getClickTags())
+            .add("fileName", getFileName())
+            .add("fileSize", getFileSize())
+            .add("imageDensity", getImageDensity())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the assetId value for this CreativeAsset.

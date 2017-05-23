@@ -52,6 +52,17 @@ public class DateTime  implements java.io.Serializable {
            this.timeZoneID = timeZoneID;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("date", getDate())
+            .add("hour", getHour())
+            .add("minute", getMinute())
+            .add("second", getSecond())
+            .add("timeZoneID", getTimeZoneID())
+            .toString();
+    }
 
     /**
      * Gets the date value for this DateTime.

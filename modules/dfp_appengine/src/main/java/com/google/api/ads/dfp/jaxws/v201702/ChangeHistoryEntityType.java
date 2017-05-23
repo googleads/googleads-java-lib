@@ -32,6 +32,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CONTACT"/>
  *     &lt;enumeration value="CREATIVE"/>
  *     &lt;enumeration value="CREATIVE_SET"/>
+ *     &lt;enumeration value="CUSTOM_FIELD"/>
+ *     &lt;enumeration value="CUSTOM_KEY"/>
+ *     &lt;enumeration value="CUSTOM_VALUE"/>
  *     &lt;enumeration value="PLACEMENT"/>
  *     &lt;enumeration value="AD_UNIT"/>
  *     &lt;enumeration value="LABEL"/>
@@ -62,6 +65,9 @@ public enum ChangeHistoryEntityType {
     CONTACT,
     CREATIVE,
     CREATIVE_SET,
+    CUSTOM_FIELD,
+    CUSTOM_KEY,
+    CUSTOM_VALUE,
     PLACEMENT,
     AD_UNIT,
     LABEL,

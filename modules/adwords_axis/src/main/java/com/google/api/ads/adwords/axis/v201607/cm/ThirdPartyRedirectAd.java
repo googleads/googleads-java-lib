@@ -113,6 +113,37 @@ public class ThirdPartyRedirectAd  extends com.google.api.ads.adwords.axis.v2016
         this.expandingDirections = expandingDirections;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adAttributes", getAdAttributes())
+            .add("adDuration", getAdDuration())
+            .add("adType", getAdType())
+            .add("certifiedVendorFormatId", getCertifiedVendorFormatId())
+            .add("devicePreference", getDevicePreference())
+            .add("dimensions", getDimensions())
+            .add("displayUrl", getDisplayUrl())
+            .add("expandingDirections", getExpandingDirections())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("id", getId())
+            .add("impressionBeaconUrl", getImpressionBeaconUrl())
+            .add("isCookieTargeted", getIsCookieTargeted())
+            .add("isTagged", getIsTagged())
+            .add("isUserInterestTargeted", getIsUserInterestTargeted())
+            .add("name", getName())
+            .add("richMediaAdType", getRichMediaAdType())
+            .add("snippet", getSnippet())
+            .add("sourceUrl", getSourceUrl())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("videoTypes", getVideoTypes())
+            .toString();
+    }
 
     /**
      * Gets the isCookieTargeted value for this ThirdPartyRedirectAd.

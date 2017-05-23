@@ -69,6 +69,22 @@ public class EntityCountLimitExceeded  extends com.google.api.ads.adwords.axis.v
         this.existingCount = existingCount;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accountLimitType", getAccountLimitType())
+            .add("apiErrorType", getApiErrorType())
+            .add("enclosingId", getEnclosingId())
+            .add("errorString", getErrorString())
+            .add("existingCount", getExistingCount())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("limit", getLimit())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this EntityCountLimitExceeded.

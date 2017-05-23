@@ -24,12 +24,14 @@ package com.google.api.ads.adwords.axis.v201607.rm;
 
 /**
  * A client defined rule based on custom parameters sent by web sites.
- * It consists of rule item groups that are connected by OR.
  */
 public class Rule  implements java.io.Serializable {
-    /* Lists of rule item groups that defines this rule. The rule
-     * item groups
-     *                 are ORed together for evaluation.
+    /* List of rule item groups that defines this rule.
+     *                 Rule item groups are ORed together for evaluation
+     * before version V201705.
+     *                 Starting from version V201705, rule item groups are
+     * grouped together based on
+     *                 {@link #getRuleType()} for evaluation.
      *                 <span class="constraint CollectionSize">The minimum
      * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -48,13 +50,23 @@ public class Rule  implements java.io.Serializable {
            this.groups = groups;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("groups", getGroups())
+            .toString();
+    }
 
     /**
      * Gets the groups value for this Rule.
      * 
-     * @return groups   * Lists of rule item groups that defines this rule. The rule
-     * item groups
-     *                 are ORed together for evaluation.
+     * @return groups   * List of rule item groups that defines this rule.
+     *                 Rule item groups are ORed together for evaluation
+     * before version V201705.
+     *                 Starting from version V201705, rule item groups are
+     * grouped together based on
+     *                 {@link #getRuleType()} for evaluation.
      *                 <span class="constraint CollectionSize">The minimum
      * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field
@@ -72,9 +84,12 @@ public class Rule  implements java.io.Serializable {
     /**
      * Sets the groups value for this Rule.
      * 
-     * @param groups   * Lists of rule item groups that defines this rule. The rule
-     * item groups
-     *                 are ORed together for evaluation.
+     * @param groups   * List of rule item groups that defines this rule.
+     *                 Rule item groups are ORed together for evaluation
+     * before version V201705.
+     *                 Starting from version V201705, rule item groups are
+     * grouped together based on
+     *                 {@link #getRuleType()} for evaluation.
      *                 <span class="constraint CollectionSize">The minimum
      * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field

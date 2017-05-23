@@ -49,6 +49,14 @@ public class DataUploadResult  implements java.io.Serializable {
            this.removeAllStatus = removeAllStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("removeAllStatus", getRemoveAllStatus())
+            .add("uploadStatus", getUploadStatus())
+            .toString();
+    }
 
     /**
      * Gets the uploadStatus value for this DataUploadResult.

@@ -45,6 +45,13 @@ public class FeedItemAdGroupTargeting  implements java.io.Serializable {
            this.targetingAdGroupId = targetingAdGroupId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetingAdGroupId", getTargetingAdGroupId())
+            .toString();
+    }
 
     /**
      * Gets the targetingAdGroupId value for this FeedItemAdGroupTargeting.

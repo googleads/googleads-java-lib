@@ -49,6 +49,15 @@ public class CustomCriteriaSet  extends com.google.api.ads.dfp.axis.v201608.Cust
         this.children = children;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of children to avoid overly verbose output
+            .add("children.length", getChildren() == null ? 0 : getChildren().length)
+            .add("logicalOperator", getLogicalOperator())
+            .toString();
+    }
 
     /**
      * Gets the logicalOperator value for this CustomCriteriaSet.

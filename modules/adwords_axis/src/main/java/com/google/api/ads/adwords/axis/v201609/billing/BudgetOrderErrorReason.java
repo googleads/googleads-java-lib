@@ -33,12 +33,10 @@ public class BudgetOrderErrorReason implements java.io.Serializable {
 
     public static final java.lang.String _BUDGET_APPROVAL_IN_PROGRESS = "BUDGET_APPROVAL_IN_PROGRESS";
     public static final java.lang.String _SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE";
-    public static final java.lang.String _FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING = "FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING";
     public static final java.lang.String _INVALID_BILLING_ACCOUNT = "INVALID_BILLING_ACCOUNT";
     public static final java.lang.String _GENERIC_BILLING_ERROR = "GENERIC_BILLING_ERROR";
     public static final java.lang.String _INVALID_BILLING_ACCOUNT_ID_FORMAT = "INVALID_BILLING_ACCOUNT_ID_FORMAT";
     public static final java.lang.String _INVALID_BUDGET_DATE_RANGE = "INVALID_BUDGET_DATE_RANGE";
-    public static final java.lang.String _INCOMPATIBLE_CURRENCY = "INCOMPATIBLE_CURRENCY";
     public static final java.lang.String _BUDGET_UPDATE_DENIED = "BUDGET_UPDATE_DENIED";
     public static final java.lang.String _BUDGET_ALREADY_STARTED = "BUDGET_ALREADY_STARTED";
     public static final java.lang.String _BUDGET_ALREADY_ENDED = "BUDGET_ALREADY_ENDED";
@@ -53,12 +51,10 @@ public class BudgetOrderErrorReason implements java.io.Serializable {
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final BudgetOrderErrorReason BUDGET_APPROVAL_IN_PROGRESS = new BudgetOrderErrorReason(_BUDGET_APPROVAL_IN_PROGRESS);
     public static final BudgetOrderErrorReason SERVICE_UNAVAILABLE = new BudgetOrderErrorReason(_SERVICE_UNAVAILABLE);
-    public static final BudgetOrderErrorReason FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING = new BudgetOrderErrorReason(_FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING);
     public static final BudgetOrderErrorReason INVALID_BILLING_ACCOUNT = new BudgetOrderErrorReason(_INVALID_BILLING_ACCOUNT);
     public static final BudgetOrderErrorReason GENERIC_BILLING_ERROR = new BudgetOrderErrorReason(_GENERIC_BILLING_ERROR);
     public static final BudgetOrderErrorReason INVALID_BILLING_ACCOUNT_ID_FORMAT = new BudgetOrderErrorReason(_INVALID_BILLING_ACCOUNT_ID_FORMAT);
     public static final BudgetOrderErrorReason INVALID_BUDGET_DATE_RANGE = new BudgetOrderErrorReason(_INVALID_BUDGET_DATE_RANGE);
-    public static final BudgetOrderErrorReason INCOMPATIBLE_CURRENCY = new BudgetOrderErrorReason(_INCOMPATIBLE_CURRENCY);
     public static final BudgetOrderErrorReason BUDGET_UPDATE_DENIED = new BudgetOrderErrorReason(_BUDGET_UPDATE_DENIED);
     public static final BudgetOrderErrorReason BUDGET_ALREADY_STARTED = new BudgetOrderErrorReason(_BUDGET_ALREADY_STARTED);
     public static final BudgetOrderErrorReason BUDGET_ALREADY_ENDED = new BudgetOrderErrorReason(_BUDGET_ALREADY_ENDED);

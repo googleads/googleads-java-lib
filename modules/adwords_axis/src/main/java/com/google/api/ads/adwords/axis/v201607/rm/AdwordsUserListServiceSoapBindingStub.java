@@ -494,6 +494,20 @@ public class AdwordsUserListServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201607", "RequestError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201607.cm.RequestError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201607", "RequestError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201607.cm.RequestErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/cm/v201607", "RequiredError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201607.cm.RequiredError.class;
@@ -844,20 +858,6 @@ public class AdwordsUserListServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/rm/v201607", "UserListLogicalRule");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201607.rm.UserListLogicalRule.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/rm/v201607", "UserListLogicalRule.Operator");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.adwords.axis.v201607.rm.UserListLogicalRuleOperator.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -873,6 +873,20 @@ public class AdwordsUserListServiceSoapBindingStub extends org.apache.axis.clien
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/rm/v201607", "UserListLogicalRule");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201607.rm.UserListLogicalRule.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/rm/v201607", "UserListLogicalRule.Operator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.adwords.axis.v201607.rm.UserListLogicalRuleOperator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://adwords.google.com/api/adwords/rm/v201607", "UserListMembershipStatus");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.adwords.axis.v201607.rm.UserListMembershipStatus.class;

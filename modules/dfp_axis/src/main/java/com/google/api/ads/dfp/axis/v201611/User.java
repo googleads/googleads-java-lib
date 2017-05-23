@@ -49,15 +49,13 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
     private java.lang.Boolean isEmailNotificationAllowed;
 
     /* An identifier for the {@code User} that is meaningful to the
-     * publisher.
-     *                     This attribute is optional and has a maximum length
-     * of 255 characters. */
+     * publisher. This attribute is
+     *                     optional and has a maximum length of 255 characters. */
     private java.lang.String externalId;
 
     /* Whether the user is an OAuth2 service account user. This attribute
-     * is
-     *                     read-only. Service account users can only be added
-     * through the UI. */
+     * is read-only. Service
+     *                     account users can only be added through the UI. */
     private java.lang.Boolean isServiceAccount;
 
     /* The long format timezone id (e.g. "America/Los_Angeles") used
@@ -105,6 +103,23 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
         this.customFieldValues = customFieldValues;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldValues", getCustomFieldValues())
+            .add("email", getEmail())
+            .add("externalId", getExternalId())
+            .add("id", getId())
+            .add("isActive", getIsActive())
+            .add("isEmailNotificationAllowed", getIsEmailNotificationAllowed())
+            .add("isServiceAccount", getIsServiceAccount())
+            .add("name", getName())
+            .add("ordersUiLocalTimeZoneId", getOrdersUiLocalTimeZoneId())
+            .add("roleId", getRoleId())
+            .add("roleName", getRoleName())
+            .toString();
+    }
 
     /**
      * Gets the isActive value for this User.
@@ -168,9 +183,8 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
      * Gets the externalId value for this User.
      * 
      * @return externalId   * An identifier for the {@code User} that is meaningful to the
-     * publisher.
-     *                     This attribute is optional and has a maximum length
-     * of 255 characters.
+     * publisher. This attribute is
+     *                     optional and has a maximum length of 255 characters.
      */
     public java.lang.String getExternalId() {
         return externalId;
@@ -181,9 +195,8 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
      * Sets the externalId value for this User.
      * 
      * @param externalId   * An identifier for the {@code User} that is meaningful to the
-     * publisher.
-     *                     This attribute is optional and has a maximum length
-     * of 255 characters.
+     * publisher. This attribute is
+     *                     optional and has a maximum length of 255 characters.
      */
     public void setExternalId(java.lang.String externalId) {
         this.externalId = externalId;
@@ -194,9 +207,8 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
      * Gets the isServiceAccount value for this User.
      * 
      * @return isServiceAccount   * Whether the user is an OAuth2 service account user. This attribute
-     * is
-     *                     read-only. Service account users can only be added
-     * through the UI.
+     * is read-only. Service
+     *                     account users can only be added through the UI.
      */
     public java.lang.Boolean getIsServiceAccount() {
         return isServiceAccount;
@@ -207,9 +219,8 @@ public class User  extends com.google.api.ads.dfp.axis.v201611.UserRecord  imple
      * Sets the isServiceAccount value for this User.
      * 
      * @param isServiceAccount   * Whether the user is an OAuth2 service account user. This attribute
-     * is
-     *                     read-only. Service account users can only be added
-     * through the UI.
+     * is read-only. Service
+     *                     account users can only be added through the UI.
      */
     public void setIsServiceAccount(java.lang.Boolean isServiceAccount) {
         this.isServiceAccount = isServiceAccount;

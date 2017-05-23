@@ -81,5 +81,10 @@ public class SoapCallTest {
     public boolean equals(Object obj) {
       return this == obj;
     }
+
+    @Override
+    public int hashCode() {
+      return System.identityHashCode(this);
+    }
   }
 }

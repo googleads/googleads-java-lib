@@ -53,6 +53,19 @@ public class AdSharingError  extends com.google.api.ads.adwords.axis.v201702.cm.
         this.sharedAdError = sharedAdError;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("reason", getReason())
+            .add("sharedAdError", getSharedAdError())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this AdSharingError.

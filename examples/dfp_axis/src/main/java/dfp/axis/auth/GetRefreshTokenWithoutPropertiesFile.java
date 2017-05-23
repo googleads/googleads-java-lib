@@ -14,6 +14,8 @@
 
 package dfp.axis.auth;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder;
 import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder.Api;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -26,10 +28,9 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.base.Strings;
-import com.google.common.collect.Lists;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  * This example will create an OAuth2 refresh token that can be used with the
@@ -51,7 +52,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
         new NetHttpTransport(),
         new JacksonFactory(),
         clientSecrets,
-        Lists.newArrayList(SCOPE))
+        Arrays.asList(SCOPE))
         // Set the access type to offline so that the token can be refreshed.
         // By default, the library will automatically refresh tokens when it
         // can, but this can be turned off by setting
@@ -64,6 +65,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
+    @SuppressWarnings("DefaultCharset") // Reading from stdin, so default charset is appropriate.
     String authorizationCode = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
     // Authorize the OAuth2 token.
@@ -86,7 +88,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
   }
 
   public static void main(String[] args) throws Exception {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, UTF_8));
     System.out.println("Please input your client ID and secret. "
           + "If you do not have a client ID or secret, please create one in "
           + "the API console: https://console.developers.google.com");

@@ -27,12 +27,13 @@ package com.google.api.ads.dfp.axis.v201608;
  * via VAST
  *             2.0 XML. Overlays cover part of the video content they
  * are displayed on
- *             top of. This creative is read only.
+ *             top of. This creative is read only prior to v201705.
  */
 public class ImageOverlayCreative  extends com.google.api.ads.dfp.axis.v201608.BaseImageCreative  implements java.io.Serializable {
     /* The IDs of the companion creatives that are associated with
      * this creative.
-     *                     This attribute is optional. */
+     *                     This attribute is optional. This attribute is
+     * read-only. */
     private long[] companionCreativeIds;
 
     /* A map from {@code ConversionEvent} to a list of URLs that will
@@ -104,13 +105,39 @@ public class ImageOverlayCreative  extends com.google.api.ads.dfp.axis.v201608.B
         this.vastPreviewUrl = vastPreviewUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customParameters", getCustomParameters())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("duration", getDuration())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lockedOrientation", getLockedOrientation())
+            .add("name", getName())
+            .add("overrideSize", getOverrideSize())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("primaryImageAsset", getPrimaryImageAsset())
+            .add("size", getSize())
+            .add("trackingUrls", getTrackingUrls())
+            .add("vastPreviewUrl", getVastPreviewUrl())
+            .toString();
+    }
 
     /**
      * Gets the companionCreativeIds value for this ImageOverlayCreative.
      * 
      * @return companionCreativeIds   * The IDs of the companion creatives that are associated with
      * this creative.
-     *                     This attribute is optional.
+     *                     This attribute is optional. This attribute is
+     * read-only.
      */
     public long[] getCompanionCreativeIds() {
         return companionCreativeIds;
@@ -122,7 +149,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.dfp.axis.v201608.B
      * 
      * @param companionCreativeIds   * The IDs of the companion creatives that are associated with
      * this creative.
-     *                     This attribute is optional.
+     *                     This attribute is optional. This attribute is
+     * read-only.
      */
     public void setCompanionCreativeIds(long[] companionCreativeIds) {
         this.companionCreativeIds = companionCreativeIds;

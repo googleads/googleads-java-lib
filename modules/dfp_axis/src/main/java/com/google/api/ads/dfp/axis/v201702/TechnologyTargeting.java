@@ -89,6 +89,23 @@ public class TechnologyTargeting  implements java.io.Serializable {
            this.operatingSystemVersionTargeting = operatingSystemVersionTargeting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bandwidthGroupTargeting", getBandwidthGroupTargeting())
+            .add("browserLanguageTargeting", getBrowserLanguageTargeting())
+            .add("browserTargeting", getBrowserTargeting())
+            .add("deviceCapabilityTargeting", getDeviceCapabilityTargeting())
+            .add("deviceCategoryTargeting", getDeviceCategoryTargeting())
+            .add("deviceManufacturerTargeting", getDeviceManufacturerTargeting())
+            .add("mobileCarrierTargeting", getMobileCarrierTargeting())
+            .add("mobileDeviceSubmodelTargeting", getMobileDeviceSubmodelTargeting())
+            .add("mobileDeviceTargeting", getMobileDeviceTargeting())
+            .add("operatingSystemTargeting", getOperatingSystemTargeting())
+            .add("operatingSystemVersionTargeting", getOperatingSystemVersionTargeting())
+            .toString();
+    }
 
     /**
      * Gets the bandwidthGroupTargeting value for this TechnologyTargeting.

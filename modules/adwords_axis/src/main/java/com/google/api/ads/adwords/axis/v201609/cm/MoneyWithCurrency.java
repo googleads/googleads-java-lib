@@ -49,6 +49,15 @@ public class MoneyWithCurrency  extends com.google.api.ads.adwords.axis.v201609.
         this.currencyCode = currencyCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comparableValueType", getComparableValueType())
+            .add("currencyCode", getCurrencyCode())
+            .add("money", getMoney())
+            .toString();
+    }
 
     /**
      * Gets the money value for this MoneyWithCurrency.

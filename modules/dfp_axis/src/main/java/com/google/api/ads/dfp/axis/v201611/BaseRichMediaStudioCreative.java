@@ -167,6 +167,38 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.df
         this.sslManualOverride = sslManualOverride;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adTagKeys", getAdTagKeys())
+            .add("advertiserId", getAdvertiserId())
+            .add("allImpressionsUrl", getAllImpressionsUrl())
+            .add("appliedLabels", getAppliedLabels())
+            .add("artworkType", getArtworkType())
+            .add("backupImageImpressionsUrl", getBackupImageImpressionsUrl())
+            .add("billingAttribute", getBillingAttribute())
+            .add("creativeFormat", getCreativeFormat())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customKeyValues", getCustomKeyValues())
+            .add("duration", getDuration())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("overrideCss", getOverrideCss())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("requiredFlashPluginVersion", getRequiredFlashPluginVersion())
+            .add("richMediaImpressionsUrl", getRichMediaImpressionsUrl())
+            .add("richMediaStudioChildAssetProperties", getRichMediaStudioChildAssetProperties())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .add("studioCreativeId", getStudioCreativeId())
+            .add("surveyUrl", getSurveyUrl())
+            .add("totalFileSize", getTotalFileSize())
+            .toString();
+    }
 
     /**
      * Gets the studioCreativeId value for this BaseRichMediaStudioCreative.

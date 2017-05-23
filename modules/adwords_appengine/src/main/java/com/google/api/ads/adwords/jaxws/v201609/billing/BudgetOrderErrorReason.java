@@ -29,12 +29,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="BUDGET_APPROVAL_IN_PROGRESS"/>
  *     &lt;enumeration value="SERVICE_UNAVAILABLE"/>
- *     &lt;enumeration value="FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING"/>
  *     &lt;enumeration value="INVALID_BILLING_ACCOUNT"/>
  *     &lt;enumeration value="GENERIC_BILLING_ERROR"/>
  *     &lt;enumeration value="INVALID_BILLING_ACCOUNT_ID_FORMAT"/>
  *     &lt;enumeration value="INVALID_BUDGET_DATE_RANGE"/>
- *     &lt;enumeration value="INCOMPATIBLE_CURRENCY"/>
  *     &lt;enumeration value="BUDGET_UPDATE_DENIED"/>
  *     &lt;enumeration value="BUDGET_ALREADY_STARTED"/>
  *     &lt;enumeration value="BUDGET_ALREADY_ENDED"/>
@@ -75,15 +73,6 @@ public enum BudgetOrderErrorReason {
 
     /**
      * 
-     *                 The request contains a field that is only available if the manager account
-     *                 is whitelisted for new billing backend.
-     *               
-     * 
-     */
-    FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING,
-
-    /**
-     * 
      *                 The billing account was invalid.
      *               
      * 
@@ -113,14 +102,6 @@ public enum BudgetOrderErrorReason {
      * 
      */
     INVALID_BUDGET_DATE_RANGE,
-
-    /**
-     * 
-     *                 Customer's currency is different from what is in the billing system.
-     *               
-     * 
-     */
-    INCOMPATIBLE_CURRENCY,
 
     /**
      * 

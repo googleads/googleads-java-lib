@@ -46,6 +46,14 @@ public class TrackingSetting  extends com.google.api.ads.adwords.axis.v201609.cm
         this.trackingUrl = trackingUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("settingType", getSettingType())
+            .add("trackingUrl", getTrackingUrl())
+            .toString();
+    }
 
     /**
      * Gets the trackingUrl value for this TrackingSetting.

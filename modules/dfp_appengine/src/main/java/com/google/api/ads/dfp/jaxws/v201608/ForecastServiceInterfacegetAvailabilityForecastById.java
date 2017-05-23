@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets an {@link AvailabilityForecast} for an existing {@link LineItem} object.
- *             An availability forecast reports the maximum number of available units that the line item can
- *             be booked with, and also the total number of units matching the line item's targeting.
+ *             Gets an {@link AvailabilityForecast} for an existing {@link LineItem} object. An availability
+ *             forecast reports the maximum number of available units that the line item can be booked with,
+ *             and also the total number of units matching the line item's targeting.
  *             
- *             <p>Only line items having type {@link LineItemType#SPONSORSHIP} or
- *             {@link LineItemType#STANDARD} are valid. Other types will result in
- *             {@link ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
+ *             <p>Only line items having type {@link LineItemType#SPONSORSHIP} or {@link
+ *             LineItemType#STANDARD} are valid. Other types will result in {@link
+ *             ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
  *             
  *             @param lineItemId the ID of a {@link LineItem} to run the forecast on.
  *             @param forecastOptions options controlling the forecast

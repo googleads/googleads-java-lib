@@ -40,6 +40,13 @@ public abstract class EstimateRequest  implements java.io.Serializable {
            this.estimateRequestType = estimateRequestType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("estimateRequestType", getEstimateRequestType())
+            .toString();
+    }
 
     /**
      * Gets the estimateRequestType value for this EstimateRequest.

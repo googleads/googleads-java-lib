@@ -143,6 +143,28 @@ public class Company  implements java.io.Serializable {
            this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("address", getAddress())
+            .add("appliedLabels", getAppliedLabels())
+            .add("appliedTeamIds", getAppliedTeamIds())
+            .add("comment", getComment())
+            .add("creditStatus", getCreditStatus())
+            .add("email", getEmail())
+            .add("externalId", getExternalId())
+            .add("faxPhone", getFaxPhone())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("primaryContactId", getPrimaryContactId())
+            .add("primaryPhone", getPrimaryPhone())
+            .add("settings", getSettings())
+            .add("thirdPartyCompanyId", getThirdPartyCompanyId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Company.

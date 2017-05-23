@@ -77,7 +77,8 @@ public enum AdvertisingChannelType {
 
     /**
      * 
-     *                 Campaigns that target multiple channels across search, display, youtube, etc.
+     *                 Universal app campaigns that target multiple channels across search, display,
+     *                 youtube, etc.
      *               
      * 
      */

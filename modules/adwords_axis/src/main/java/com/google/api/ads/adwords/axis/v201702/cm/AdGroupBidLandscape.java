@@ -70,6 +70,20 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20170
         this.landscapeCurrent = landscapeCurrent;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("campaignId", getCampaignId())
+            .add("dataEntryType", getDataEntryType())
+            .add("endDate", getEndDate())
+            .add("landscapeCurrent", getLandscapeCurrent())
+            .add("landscapePoints", getLandscapePoints())
+            .add("startDate", getStartDate())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the type value for this AdGroupBidLandscape.

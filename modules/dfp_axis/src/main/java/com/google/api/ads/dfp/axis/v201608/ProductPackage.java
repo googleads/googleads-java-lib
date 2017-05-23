@@ -99,6 +99,20 @@ public class ProductPackage  implements java.io.Serializable {
            this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("isArchived", getIsArchived())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("notes", getNotes())
+            .add("rateCardIds", getRateCardIds())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ProductPackage.

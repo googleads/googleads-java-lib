@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains data used to display information synchronized with Canoe for set-top box enabled
- *             {@link LineItem line items}.
+ *             Contains data used to display information synchronized with Canoe for set-top box enabled {@link
+ *             LineItem line items}.
  *           
  * 
  * <p>Java class for SetTopBoxInfo complex type.

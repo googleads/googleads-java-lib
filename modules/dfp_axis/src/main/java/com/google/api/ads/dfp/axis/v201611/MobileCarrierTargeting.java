@@ -46,6 +46,14 @@ public class MobileCarrierTargeting  implements java.io.Serializable {
            this.mobileCarriers = mobileCarriers;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("isTargeted", getIsTargeted())
+            .add("mobileCarriers", getMobileCarriers())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this MobileCarrierTargeting.

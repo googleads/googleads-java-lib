@@ -52,6 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  *             </code></pre>
  *             
  *             <p>NOTE: Starting v201607 places of interest targeting is read only.</p>
+ *             <p>NOTE: Starting v201702 income targeting is read only.</p>
  *             <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
  *           
  * 

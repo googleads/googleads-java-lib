@@ -55,6 +55,16 @@ public class OfflineError  implements java.io.Serializable {
            this.reason = reason;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorTime", getErrorTime())
+            .add("fieldPath", getFieldPath())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the fieldPath value for this OfflineError.

@@ -25,7 +25,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
 /**
  * Data used for authorization using OAuth.
  *             For more information about OAuth, see:
- *             {@link "https://developers.google.com/accounts/docs/OAuth2"}
+ *             {@link "https://developers.google.com/identity/protocols/OAuth2"}
  */
 public class OAuthInfo  implements java.io.Serializable {
     /* The HTTP method used to obtain authorization. */
@@ -49,6 +49,15 @@ public class OAuthInfo  implements java.io.Serializable {
            this.httpAuthorizationHeader = httpAuthorizationHeader;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Exclude httpAuthorizationHeader since it contains sensitive information
+            .add("httpMethod", getHttpMethod())
+            .add("httpRequestUrl", getHttpRequestUrl())
+            .toString();
+    }
 
     /**
      * Gets the httpMethod value for this OAuthInfo.

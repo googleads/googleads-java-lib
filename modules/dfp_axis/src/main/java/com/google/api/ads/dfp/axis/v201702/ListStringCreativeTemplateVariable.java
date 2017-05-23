@@ -67,6 +67,19 @@ public class ListStringCreativeTemplateVariable  extends com.google.api.ads.dfp.
         this.allowOtherChoice = allowOtherChoice;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("allowOtherChoice", getAllowOtherChoice())
+            .add("choices", getChoices())
+            .add("defaultValue", getDefaultValue())
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("label", getLabel())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the choices value for this ListStringCreativeTemplateVariable.

@@ -27,7 +27,7 @@ import com.google.api.ads.dfp.axis.v201702.RateType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -71,8 +71,8 @@ public class UpdatePremiumRates {
     
     // Update the premium rate's premiumRateValues to include a flat fee premium rate.
     List<PremiumRateValue> existingPremiumRateValues = ((premiumRate.getPremiumRateValues() != null)
-        ? Lists.<PremiumRateValue>newArrayList(premiumRate.getPremiumRateValues())
-        : Lists.<PremiumRateValue>newArrayList());
+        ? new ArrayList<>(Arrays.asList(premiumRate.getPremiumRateValues()))
+        : new ArrayList<PremiumRateValue>());
     
     existingPremiumRateValues.add(flatFeePremiumRateValue);
     premiumRate.setPremiumRateValues(

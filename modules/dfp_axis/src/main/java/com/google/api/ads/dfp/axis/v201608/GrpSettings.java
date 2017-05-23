@@ -24,10 +24,10 @@ package com.google.api.ads.dfp.axis.v201608;
 
 /**
  * {@code GrpSettings} contains information for a line item that will
- * have a target demographic
- *             when serving. This information will be used to set up
- * tracking and enable reporting on the
- *             demographic information.
+ * have a target demographic when
+ *             serving. This information will be used to set up tracking
+ * and enable reporting on the demographic
+ *             information.
  */
 public class GrpSettings  implements java.io.Serializable {
     /* Specifies the minimum target age (in years) of the {@link LineItem}.
@@ -73,6 +73,17 @@ public class GrpSettings  implements java.io.Serializable {
            this.targetImpressionGoal = targetImpressionGoal;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("maxTargetAge", getMaxTargetAge())
+            .add("minTargetAge", getMinTargetAge())
+            .add("provider", getProvider())
+            .add("targetGender", getTargetGender())
+            .add("targetImpressionGoal", getTargetImpressionGoal())
+            .toString();
+    }
 
     /**
      * Gets the minTargetAge value for this GrpSettings.

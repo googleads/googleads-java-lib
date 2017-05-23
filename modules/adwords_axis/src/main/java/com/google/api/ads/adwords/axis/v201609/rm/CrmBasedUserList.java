@@ -67,6 +67,29 @@ public class CrmBasedUserList  extends com.google.api.ads.adwords.axis.v201609.r
             userListType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accessReason", getAccessReason())
+            .add("accountUserListStatus", getAccountUserListStatus())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("integrationCode", getIntegrationCode())
+            .add("isEligibleForDisplay", getIsEligibleForDisplay())
+            .add("isEligibleForSearch", getIsEligibleForSearch())
+            .add("isReadOnly", getIsReadOnly())
+            .add("listType", getListType())
+            .add("membershipLifeSpan", getMembershipLifeSpan())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("sizeForSearch", getSizeForSearch())
+            .add("sizeRange", getSizeRange())
+            .add("sizeRangeForSearch", getSizeRangeForSearch())
+            .add("status", getStatus())
+            .add("userListType", getUserListType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof CrmBasedUserList)) return false;

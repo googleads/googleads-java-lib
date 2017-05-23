@@ -50,6 +50,14 @@ public class SeedAdGroupIdSearchParameter  extends com.google.api.ads.adwords.ax
         this.adGroupId = adGroupId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this SeedAdGroupIdSearchParameter.

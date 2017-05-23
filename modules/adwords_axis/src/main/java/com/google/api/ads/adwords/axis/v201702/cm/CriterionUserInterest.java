@@ -65,6 +65,18 @@ public class CriterionUserInterest  extends com.google.api.ads.adwords.axis.v201
         this.userInterestName = userInterestName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .add("userInterestId", getUserInterestId())
+            .add("userInterestName", getUserInterestName())
+            .add("userInterestParentId", getUserInterestParentId())
+            .toString();
+    }
 
     /**
      * Gets the userInterestId value for this CriterionUserInterest.

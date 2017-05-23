@@ -70,6 +70,15 @@ public class Goal  implements java.io.Serializable {
            this.units = units;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("goalType", getGoalType())
+            .add("unitType", getUnitType())
+            .add("units", getUnits())
+            .toString();
+    }
 
     /**
      * Gets the goalType value for this Goal.

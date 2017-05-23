@@ -45,6 +45,14 @@ public class PolicyData  implements java.io.Serializable {
            this.policyDataType = policyDataType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("disapprovalReasons", getDisapprovalReasons())
+            .add("policyDataType", getPolicyDataType())
+            .toString();
+    }
 
     /**
      * Gets the disapprovalReasons value for this PolicyData.

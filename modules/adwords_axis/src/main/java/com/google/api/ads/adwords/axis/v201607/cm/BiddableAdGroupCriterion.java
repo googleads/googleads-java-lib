@@ -187,6 +187,37 @@ public class BiddableAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
         this.urlCustomParameters = urlCustomParameters;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupCriterionType", getAdGroupCriterionType())
+            .add("adGroupId", getAdGroupId())
+            .add("approvalStatus", getApprovalStatus())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("bidModifier", getBidModifier())
+            .add("biddingStrategyConfiguration", getBiddingStrategyConfiguration())
+            .add("criterion", getCriterion())
+            .add("criterionUse", getCriterionUse())
+            .add("destinationUrl", getDestinationUrl())
+            .add("disapprovalReasons", getDisapprovalReasons())
+            .add("experimentData", getExperimentData())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("firstPageCpc", getFirstPageCpc())
+            .add("firstPositionCpc", getFirstPositionCpc())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("labels", getLabels())
+            .add("qualityInfo", getQualityInfo())
+            .add("systemServingStatus", getSystemServingStatus())
+            .add("topOfPageCpc", getTopOfPageCpc())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("userStatus", getUserStatus())
+            .toString();
+    }
 
     /**
      * Gets the userStatus value for this BiddableAdGroupCriterion.

@@ -80,6 +80,16 @@ public class CustomerFeed  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("feedId", getFeedId())
+            .add("matchingFunction", getMatchingFunction())
+            .add("placeholderTypes", getPlaceholderTypes())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this CustomerFeed.

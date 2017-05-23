@@ -26,8 +26,8 @@ package com.google.api.ads.dfp.axis.v201611;
  * Describes predicted inventory availability for a {@link ProspectiveLineItem}.
  * 
  *             <p>Inventory has three threshold values along a line of
- * possible inventory.
- *             From least to most, these are:
+ * possible inventory. From least to most,
+ *             these are:
  *             
  *             <dl>
  *             <li>Available units -- How many units can be booked without
@@ -39,8 +39,7 @@ package com.google.api.ads.dfp.axis.v201611;
  *             items. Booking more than this number can cause the line
  * item to underdeliver.
  *             <li>Matched (forecast) units -- How many units satisfy
- * all specified
- *             criteria.
+ * all specified criteria.
  *             </dl>
  *             
  *             <p>Underdelivery is caused by overbooking. However, if
@@ -149,6 +148,24 @@ public class AvailabilityForecast  implements java.io.Serializable {
            this.demographicBreakdowns = demographicBreakdowns;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("alternativeUnitTypeForecasts", getAlternativeUnitTypeForecasts())
+            .add("availableUnits", getAvailableUnits())
+            .add("contendingLineItems", getContendingLineItems())
+            .add("deliveredUnits", getDeliveredUnits())
+            .add("demographicBreakdowns", getDemographicBreakdowns())
+            .add("lineItemId", getLineItemId())
+            .add("matchedUnits", getMatchedUnits())
+            .add("orderId", getOrderId())
+            .add("possibleUnits", getPossibleUnits())
+            .add("reservedUnits", getReservedUnits())
+            .add("targetingCriteriaBreakdowns", getTargetingCriteriaBreakdowns())
+            .add("unitType", getUnitType())
+            .toString();
+    }
 
     /**
      * Gets the lineItemId value for this AvailabilityForecast.

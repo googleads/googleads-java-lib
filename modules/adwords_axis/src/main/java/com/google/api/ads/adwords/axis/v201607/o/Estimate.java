@@ -40,6 +40,13 @@ public class Estimate  implements java.io.Serializable {
            this.estimateType = estimateType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("estimateType", getEstimateType())
+            .toString();
+    }
 
     /**
      * Gets the estimateType value for this Estimate.

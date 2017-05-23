@@ -102,6 +102,18 @@ public class CampaignFeed  implements java.io.Serializable {
            this.baseCampaignId = baseCampaignId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("campaignId", getCampaignId())
+            .add("feedId", getFeedId())
+            .add("matchingFunction", getMatchingFunction())
+            .add("placeholderTypes", getPlaceholderTypes())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this CampaignFeed.

@@ -54,6 +54,17 @@ public class AssetCreativeTemplateVariable  extends com.google.api.ads.dfp.axis.
         this.mimeTypes = mimeTypes;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("label", getLabel())
+            .add("mimeTypes", getMimeTypes())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the mimeTypes value for this AssetCreativeTemplateVariable.

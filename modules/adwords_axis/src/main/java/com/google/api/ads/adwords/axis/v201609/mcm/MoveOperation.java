@@ -46,6 +46,16 @@ public class MoveOperation  extends com.google.api.ads.adwords.axis.v201609.cm.O
         this.oldManagerCustomerId = oldManagerCustomerId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("oldManagerCustomerId", getOldManagerCustomerId())
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this MoveOperation.

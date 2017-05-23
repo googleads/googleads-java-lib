@@ -103,6 +103,19 @@ public class TargetingIdeaSelector  implements java.io.Serializable {
            this.currencyCode = currencyCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("ideaType", getIdeaType())
+            .add("localeCode", getLocaleCode())
+            .add("paging", getPaging())
+            .add("requestType", getRequestType())
+            .add("requestedAttributeTypes", getRequestedAttributeTypes())
+            .add("searchParameters", getSearchParameters())
+            .toString();
+    }
 
     /**
      * Gets the searchParameters value for this TargetingIdeaSelector.

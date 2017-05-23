@@ -46,6 +46,13 @@ public class FeedItemCampaignTargeting  implements java.io.Serializable {
            this.targetingCampaignId = targetingCampaignId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetingCampaignId", getTargetingCampaignId())
+            .toString();
+    }
 
     /**
      * Gets the targetingCampaignId value for this FeedItemCampaignTargeting.

@@ -17,15 +17,13 @@ package com.google.api.ads.dfp.lib.utils;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.Maps;
-
+import java.util.Map;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.util.Map;
 
 /**
  * Test for the {@link QueryBuilderTest} class.
@@ -40,24 +38,24 @@ public class QueryBuilderTest {
 
   @Test
   public void testRemoveKeyword_matches() {
-    assertEquals(QueryBuilder.removeKeyword("FROM table", "FROM"), "table");
-    assertEquals(QueryBuilder.removeKeyword("from table", "FROM"), "table");
-    assertEquals(QueryBuilder.removeKeyword("fRom table", "FROM"), "table");
-    assertEquals(QueryBuilder.removeKeyword("FROM ", "FROM"), "");
-    assertEquals(QueryBuilder.removeKeyword("FROM  ", "FROM"), " ");
+    assertEquals("table", QueryBuilder.removeKeyword("FROM table", "FROM"));
+    assertEquals("table", QueryBuilder.removeKeyword("from table", "FROM"));
+    assertEquals("table", QueryBuilder.removeKeyword("fRom table", "FROM"));
+    assertEquals("", QueryBuilder.removeKeyword("FROM ", "FROM"));
+    assertEquals(" ", QueryBuilder.removeKeyword("FROM  ", "FROM"));
   }
 
   @Test
   public void testRemoveKeyword_doesntMatch() {
-    assertEquals(QueryBuilder.removeKeyword("FROM table", "SELECT"), "FROM table");
-    assertEquals(QueryBuilder.removeKeyword("table", "FROM"), "table");
+    assertEquals("FROM table", QueryBuilder.removeKeyword("FROM table", "SELECT"));
+    assertEquals("table", QueryBuilder.removeKeyword("table", "FROM"));
   }
 
   @Test
   public void testSelect_null() {
+    QueryBuilder<Object> builder = new QueryBuilder<Object>();
     thrown.expect(NullPointerException.class);
     thrown.expectMessage(Matchers.equalTo("SELECT clause cannot be null"));
-    QueryBuilder<Object> builder = new QueryBuilder<Object>();
     builder.select(null);
   }
 

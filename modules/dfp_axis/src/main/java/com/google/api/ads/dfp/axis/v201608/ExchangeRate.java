@@ -80,6 +80,17 @@ public class ExchangeRate  implements java.io.Serializable {
            this.exchangeRate = exchangeRate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("direction", getDirection())
+            .add("exchangeRate", getExchangeRate())
+            .add("id", getId())
+            .add("refreshRate", getRefreshRate())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ExchangeRate.

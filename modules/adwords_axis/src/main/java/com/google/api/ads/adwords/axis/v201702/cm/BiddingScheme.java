@@ -42,6 +42,13 @@ public abstract class BiddingScheme  implements java.io.Serializable {
            this.biddingSchemeType = biddingSchemeType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .toString();
+    }
 
     /**
      * Gets the biddingSchemeType value for this BiddingScheme.

@@ -83,6 +83,18 @@ public abstract class BidLandscape  extends com.google.api.ads.adwords.axis.v201
         this.landscapePoints = landscapePoints;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("campaignId", getCampaignId())
+            .add("dataEntryType", getDataEntryType())
+            .add("endDate", getEndDate())
+            .add("landscapePoints", getLandscapePoints())
+            .add("startDate", getStartDate())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this BidLandscape.

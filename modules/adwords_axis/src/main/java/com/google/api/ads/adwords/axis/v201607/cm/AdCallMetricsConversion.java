@@ -24,12 +24,14 @@ package com.google.api.ads.adwords.axis.v201607.cm;
 
 /**
  * A ConversionTracker for phone calls from conversion-tracked call
- * extensions.
- *             A call made from the call extension is reported as a conversion
- * if it lasts longer
+ * extensions and
+ *             call-only ads.
+ *             
+ *             <p>A call made from the call extension is reported as
+ * a conversion if it lasts longer
  *             than N seconds. This duration is 60 seconds by default.
  * Each call extension can
- *             specify the desired conversion configuration.
+ *             specify the desired conversion configuration.</p>
  */
 public class AdCallMetricsConversion  extends com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker  implements java.io.Serializable {
     /* The phone-call duration (in seconds) after which a conversion
@@ -83,6 +85,29 @@ public class AdCallMetricsConversion  extends com.google.api.ads.adwords.axis.v2
         this.phoneCallDuration = phoneCallDuration;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("alwaysUseDefaultRevenueValue", getAlwaysUseDefaultRevenueValue())
+            .add("category", getCategory())
+            .add("conversionTrackerType", getConversionTrackerType())
+            .add("conversionTypeOwnerCustomerId", getConversionTypeOwnerCustomerId())
+            .add("countingType", getCountingType())
+            .add("ctcLookbackWindow", getCtcLookbackWindow())
+            .add("defaultRevenueCurrencyCode", getDefaultRevenueCurrencyCode())
+            .add("defaultRevenueValue", getDefaultRevenueValue())
+            .add("excludeFromBidding", getExcludeFromBidding())
+            .add("id", getId())
+            .add("lastReceivedRequestTime", getLastReceivedRequestTime())
+            .add("mostRecentConversionDate", getMostRecentConversionDate())
+            .add("name", getName())
+            .add("originalConversionTypeId", getOriginalConversionTypeId())
+            .add("phoneCallDuration", getPhoneCallDuration())
+            .add("status", getStatus())
+            .add("viewthroughLookbackWindow", getViewthroughLookbackWindow())
+            .toString();
+    }
 
     /**
      * Gets the phoneCallDuration value for this AdCallMetricsConversion.

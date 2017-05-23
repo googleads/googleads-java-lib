@@ -109,6 +109,32 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201702.cm.E
         this.tableRows = tableRows;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("language", getLanguage())
+            .add("policyData", getPolicyData())
+            .add("priceExtensionType", getPriceExtensionType())
+            .add("priceQualifier", getPriceQualifier())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .add("tableRows", getTableRows())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .toString();
+    }
 
     /**
      * Gets the priceExtensionType value for this PriceFeedItem.

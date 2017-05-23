@@ -43,6 +43,14 @@ public class DeviceCategoryTargeting  implements java.io.Serializable {
            this.excludedDeviceCategories = excludedDeviceCategories;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedDeviceCategories", getExcludedDeviceCategories())
+            .add("targetedDeviceCategories", getTargetedDeviceCategories())
+            .toString();
+    }
 
     /**
      * Gets the targetedDeviceCategories value for this DeviceCategoryTargeting.

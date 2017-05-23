@@ -1,3 +1,33 @@
+3.3.0 - 5/23/2017
+-------------------
+AdWords:
+  - Removed all artifacts for the AdWords Express API, which is no longer
+    available.
+  - Updated generated Axis objects to include a meaningful `toString`
+    implementation. Fixes github issue:
+    https://github.com/googleads/googleads-java-lib/issues/98
+  - Updated generated Axis Page objects to implement Iterable<T>, where
+    T is the type of page entry.
+    Fixes github issues:
+    https://github.com/googleads/googleads-java-lib/issues/109
+    https://github.com/googleads/googleads-java-lib/issues/96
+
+DFP:
+  - Added support for v201705.
+  - Removed support for v201605.
+  - Removed examples for v201608.
+  - Updated generated Axis objects to include a meaningful `toString`
+    implementation. Fixes github issue:
+    https://github.com/googleads/googleads-java-lib/issues/98
+  - Updated generated Axis Page objects to implement Iterable<T>, where
+    T is the type of page results.
+    Fixes github issues:
+    https://github.com/googleads/googleads-java-lib/issues/109
+    https://github.com/googleads/googleads-java-lib/issues/96
+
+Common:
+  - No changes.
+
 3.2.0 - 3/17/2017
 -------------------
 AdWords:

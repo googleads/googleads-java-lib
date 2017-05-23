@@ -126,6 +126,20 @@ public class Targeting  implements java.io.Serializable {
            this.videoPositionTargeting = videoPositionTargeting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("contentTargeting", getContentTargeting())
+            .add("customTargeting", getCustomTargeting())
+            .add("dayPartTargeting", getDayPartTargeting())
+            .add("geoTargeting", getGeoTargeting())
+            .add("inventoryTargeting", getInventoryTargeting())
+            .add("technologyTargeting", getTechnologyTargeting())
+            .add("userDomainTargeting", getUserDomainTargeting())
+            .add("videoPositionTargeting", getVideoPositionTargeting())
+            .toString();
+    }
 
     /**
      * Gets the geoTargeting value for this Targeting.

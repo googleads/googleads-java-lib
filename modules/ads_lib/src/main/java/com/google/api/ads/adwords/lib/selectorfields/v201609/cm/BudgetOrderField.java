@@ -34,7 +34,6 @@ public enum BudgetOrderField implements EntityField {
   /**
    * Enables user to specify meaningful name for a billing account to aid in reconciling monthly invoices.
    * This name will be printed in the monthly invoices.
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   @Filterable
   BillingAccountName(true),
@@ -43,7 +42,6 @@ public enum BudgetOrderField implements EntityField {
    * Enables user to specify meaningful name for referencing this budget order.
    * A default name will be provided if none is specified.
    * This name will be printed in the monthly invoices.
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   @Filterable
   BudgetOrderName(true),
@@ -63,14 +61,12 @@ public enum BudgetOrderField implements EntityField {
 
   /**
    * Contains fields that provide information on the last set of values that were passed in through the parent BudgetOrder for mutate.add and mutate.set.
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   LastRequest(false),
 
   /**
    * Enables user to enter a value that helps them reference this budget order in their monthly invoices.
    * This number will be printed in the monthly invoices.
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   @Filterable
   PoNumber(true),
@@ -80,7 +76,6 @@ public enum BudgetOrderField implements EntityField {
    * This must be passed in as a string with dashes, e.g.
    * "1234-5678-9012".
    * For mutate.add, this field is required if billingAccountId is not specified.
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   @Filterable
   PrimaryBillingId(true),
@@ -90,7 +85,6 @@ public enum BudgetOrderField implements EntityField {
    * If this requirement was not communicated to the user, the user may ignore this parameter.
    * If specified, this must be passed in as a string with dashes, e.g.
    * "1234-5678-9012".
-   * <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
    */
   @Filterable
   SecondaryBillingId(true),
@@ -98,7 +92,7 @@ public enum BudgetOrderField implements EntityField {
   /**
    * The spending limit in micros.
    * To specify an unlimited budget, set spendingLimit to -1, otherwise spendingLimit must be greater than 0.
-   * Note, that for get requests the spending limit includes any adjustments that have been applied to the budget order.
+   * Note that for get requests, the spending limit includes any adjustments that have been applied to the budget order.
    * For mutate, the spending limit represents the maximum allowed spend prior to considering any adjustments.
    * When making mutate requests, make sure to account for any adjustments that may be reported in the get value of the spending limit.
    */
@@ -115,6 +109,7 @@ public enum BudgetOrderField implements EntityField {
   /**
    * The adjustments amount in micros.
    * Adjustments from Google come in the form of credits or debits to your budget order.
+   * This amount is the net sum of adjustments since the creation of the budget order.
    * You can use the adjustments amount to compute your current base spendingLimit by subtracting your adjustments from the value returned from spendingLimit in get requests.
    */
   @Filterable

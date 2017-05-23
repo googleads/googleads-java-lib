@@ -104,6 +104,19 @@ public class SuggestedAdUnit  implements java.io.Serializable {
            this.suggestedAdUnitSizes = suggestedAdUnitSizes;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("numRequests", getNumRequests())
+            .add("parentPath", getParentPath())
+            .add("path", getPath())
+            .add("suggestedAdUnitSizes", getSuggestedAdUnitSizes())
+            .add("targetPlatform", getTargetPlatform())
+            .add("targetWindow", getTargetWindow())
+            .toString();
+    }
 
     /**
      * Gets the id value for this SuggestedAdUnit.

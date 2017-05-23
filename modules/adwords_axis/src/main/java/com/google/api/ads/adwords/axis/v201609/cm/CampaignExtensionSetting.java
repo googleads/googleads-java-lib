@@ -42,10 +42,7 @@ public class CampaignExtensionSetting  implements java.io.Serializable {
      * for the specified campaign. If
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
-     *                 extensions are disabled for the specified extensionType.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD, SET.</span> */
+     *                 extensions are disabled for the specified extensionType. */
     private com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting extensionSetting;
 
     public CampaignExtensionSetting() {
@@ -60,6 +57,15 @@ public class CampaignExtensionSetting  implements java.io.Serializable {
            this.extensionSetting = extensionSetting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .add("extensionSetting", getExtensionSetting())
+            .add("extensionType", getExtensionType())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignExtensionSetting.
@@ -117,9 +123,6 @@ public class CampaignExtensionSetting  implements java.io.Serializable {
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
      *                 extensions are disabled for the specified extensionType.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD, SET.</span>
      */
     public com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting getExtensionSetting() {
         return extensionSetting;
@@ -134,9 +137,6 @@ public class CampaignExtensionSetting  implements java.io.Serializable {
      *                 extensionSetting is empty (i.e. has an empty list
      * of feed items and null platformRestrictions),
      *                 extensions are disabled for the specified extensionType.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD, SET.</span>
      */
     public void setExtensionSetting(com.google.api.ads.adwords.axis.v201609.cm.ExtensionSetting extensionSetting) {
         this.extensionSetting = extensionSetting;

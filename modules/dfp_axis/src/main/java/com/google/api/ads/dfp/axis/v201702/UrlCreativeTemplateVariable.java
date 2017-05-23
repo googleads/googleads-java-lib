@@ -60,6 +60,18 @@ public class UrlCreativeTemplateVariable  extends com.google.api.ads.dfp.axis.v2
         this.isTrackingUrl = isTrackingUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("defaultValue", getDefaultValue())
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("isTrackingUrl", getIsTrackingUrl())
+            .add("label", getLabel())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the defaultValue value for this UrlCreativeTemplateVariable.

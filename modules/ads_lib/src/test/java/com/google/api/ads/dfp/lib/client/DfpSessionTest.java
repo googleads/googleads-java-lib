@@ -26,7 +26,9 @@ import com.google.api.ads.dfp.lib.client.DfpSession.ImmutableDfpSession;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Lists;
-
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.List;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.hamcrest.CustomTypeSafeMatcher;
 import org.hamcrest.Matcher;
@@ -39,10 +41,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.MockitoAnnotations;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * Tests for {@link DfpSession}.
@@ -111,9 +109,9 @@ public class DfpSessionTest {
 
     DfpSession session =
         new DfpSession.Builder().from(config).withOAuth2Credential(credential).build();
-    assertEquals(session.getApplicationName(), "FooBar");
-    assertSame(session.getOAuth2Credential(), credential);
-    assertEquals(session.getEndpoint(), DfpSession.DEFAULT_ENDPOINT);
+    assertEquals("FooBar", session.getApplicationName());
+    assertSame(credential, session.getOAuth2Credential());
+    assertEquals(DfpSession.DEFAULT_ENDPOINT, session.getEndpoint());
   }
 
   /**
@@ -173,10 +171,10 @@ public class DfpSessionTest {
                 .withOAuth2Credential(credential)
                 .withNetworkCode("networkCode"));
 
-    assertEquals(dfpSession.getApplicationName(), "FooBar");
-    assertSame(dfpSession.getOAuth2Credential(), credential);
-    assertEquals(dfpSession.getEndpoint(), DfpSession.DEFAULT_ENDPOINT);
-    assertEquals(dfpSession.getNetworkCode(), "networkCode");
+    assertEquals("FooBar", dfpSession.getApplicationName());
+    assertSame(credential, dfpSession.getOAuth2Credential());
+    assertEquals(DfpSession.DEFAULT_ENDPOINT, dfpSession.getEndpoint());
+    assertEquals("networkCode", dfpSession.getNetworkCode());
   }
 
   /**
@@ -186,10 +184,10 @@ public class DfpSessionTest {
   public void testBuilder_oAuth2() throws Exception {
     DfpSession dfpSession = build(allSettingsBuilder);
 
-    assertEquals(dfpSession.getApplicationName(), "FooBar");
-    assertSame(dfpSession.getOAuth2Credential(), credential);
-    assertEquals(dfpSession.getEndpoint(), "https://ads.google.com");
-    assertEquals(dfpSession.getNetworkCode(), "networkCode");
+    assertEquals("FooBar", dfpSession.getApplicationName());
+    assertSame(credential, dfpSession.getOAuth2Credential());
+    assertEquals("https://ads.google.com", dfpSession.getEndpoint());
+    assertEquals("networkCode", dfpSession.getNetworkCode());
   }
 
   /**

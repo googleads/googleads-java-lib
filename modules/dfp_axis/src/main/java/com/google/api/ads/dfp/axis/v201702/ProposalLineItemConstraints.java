@@ -24,10 +24,10 @@ package com.google.api.ads.dfp.axis.v201702;
 
 /**
  * A {@code PropoalLineItemConstraints} represents all the constraints
- * set for a
- *             {@link ProposalLineItem} and is always readonly. It comes
- * from the {@link Product},
- *             based on which the proposal line item is created.
+ * set for a {@link
+ *             ProposalLineItem} and is always readonly. It comes from
+ * the {@link Product}, based on which the
+ *             proposal line item is created.
  */
 public class ProposalLineItemConstraints  implements java.io.Serializable {
     /* Allows customization of {@link CreativePlaceholder creative
@@ -107,6 +107,21 @@ public class ProposalLineItemConstraints  implements java.io.Serializable {
            this.customizableAttributes = customizableAttributes;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("allowCreativePlaceholdersCustomization", getAllowCreativePlaceholdersCustomization())
+            .add("builtInCompanionDeliveryOption", getBuiltInCompanionDeliveryOption())
+            .add("builtInCreativePlaceholders", getBuiltInCreativePlaceholders())
+            .add("builtInCreativeRotationType", getBuiltInCreativeRotationType())
+            .add("builtInDeliveryRateType", getBuiltInDeliveryRateType())
+            .add("builtInFrequencyCaps", getBuiltInFrequencyCaps())
+            .add("builtInRoadblockingType", getBuiltInRoadblockingType())
+            .add("customizableAttributes", getCustomizableAttributes())
+            .add("productBuiltInTargeting", getProductBuiltInTargeting())
+            .toString();
+    }
 
     /**
      * Gets the allowCreativePlaceholdersCustomization value for this ProposalLineItemConstraints.

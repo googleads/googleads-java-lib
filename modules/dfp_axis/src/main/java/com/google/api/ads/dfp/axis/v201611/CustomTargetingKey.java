@@ -56,8 +56,8 @@ public class CustomTargetingKey  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201611.CustomTargetingKeyType type;
 
     /* Status of the {@code CustomTargetingKey}. This field is read-only.
-     * A key can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingKeyAction}. */
+     * A key can be activated and
+     *                 deactivated by calling {@link CustomTargetingService#performCustomTargetingKeyAction}. */
     private com.google.api.ads.dfp.axis.v201611.CustomTargetingKeyStatus status;
 
     public CustomTargetingKey() {
@@ -76,6 +76,17 @@ public class CustomTargetingKey  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CustomTargetingKey.
@@ -195,8 +206,8 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Gets the status value for this CustomTargetingKey.
      * 
      * @return status   * Status of the {@code CustomTargetingKey}. This field is read-only.
-     * A key can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingKeyAction}.
+     * A key can be activated and
+     *                 deactivated by calling {@link CustomTargetingService#performCustomTargetingKeyAction}.
      */
     public com.google.api.ads.dfp.axis.v201611.CustomTargetingKeyStatus getStatus() {
         return status;
@@ -207,8 +218,8 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Sets the status value for this CustomTargetingKey.
      * 
      * @param status   * Status of the {@code CustomTargetingKey}. This field is read-only.
-     * A key can be activated and deactivated by calling
-     *                 {@link CustomTargetingService#performCustomTargetingKeyAction}.
+     * A key can be activated and
+     *                 deactivated by calling {@link CustomTargetingService#performCustomTargetingKeyAction}.
      */
     public void setStatus(com.google.api.ads.dfp.axis.v201611.CustomTargetingKeyStatus status) {
         this.status = status;

@@ -56,6 +56,16 @@ public class FeedChangeData  implements java.io.Serializable {
            this.removedFeedItems = removedFeedItems;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("changedFeedItems", getChangedFeedItems())
+            .add("feedChangeStatus", getFeedChangeStatus())
+            .add("feedId", getFeedId())
+            .add("removedFeedItems", getRemovedFeedItems())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this FeedChangeData.

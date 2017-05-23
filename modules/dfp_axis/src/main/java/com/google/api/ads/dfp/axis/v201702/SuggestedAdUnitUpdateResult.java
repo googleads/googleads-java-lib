@@ -47,6 +47,14 @@ public class SuggestedAdUnitUpdateResult  implements java.io.Serializable {
            this.numChanges = numChanges;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("newAdUnitIds", getNewAdUnitIds())
+            .add("numChanges", getNumChanges())
+            .toString();
+    }
 
     /**
      * Gets the newAdUnitIds value for this SuggestedAdUnitUpdateResult.

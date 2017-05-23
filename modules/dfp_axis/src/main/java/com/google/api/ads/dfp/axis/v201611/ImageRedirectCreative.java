@@ -72,6 +72,26 @@ public class ImageRedirectCreative  extends com.google.api.ads.dfp.axis.v201611.
         this.thirdPartyImpressionUrl = thirdPartyImpressionUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("altText", getAltText())
+            .add("appliedLabels", getAppliedLabels())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("id", getId())
+            .add("imageUrl", getImageUrl())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("thirdPartyImpressionUrl", getThirdPartyImpressionUrl())
+            .toString();
+    }
 
     /**
      * Gets the altText value for this ImageRedirectCreative.

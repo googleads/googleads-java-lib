@@ -59,6 +59,15 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
            this.content = content;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("content", getContent())
+            .add("name", getName())
+            .add("termsAndConditionsId", getTermsAndConditionsId())
+            .toString();
+    }
 
     /**
      * Gets the termsAndConditionsId value for this ProposalTermsAndConditions.

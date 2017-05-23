@@ -53,6 +53,15 @@ public class FrequencyCap  implements java.io.Serializable {
            this.timeUnit = timeUnit;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("maxImpressions", getMaxImpressions())
+            .add("numTimeUnits", getNumTimeUnits())
+            .add("timeUnit", getTimeUnit())
+            .toString();
+    }
 
     /**
      * Gets the maxImpressions value for this FrequencyCap.

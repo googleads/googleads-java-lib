@@ -29,6 +29,12 @@ public class ActivateUsers  extends com.google.api.ads.dfp.axis.v201611.UserActi
     public ActivateUsers() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ActivateUsers)) return false;

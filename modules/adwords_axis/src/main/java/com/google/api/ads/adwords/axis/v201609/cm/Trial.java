@@ -177,6 +177,22 @@ public class Trial  implements java.io.Serializable {
            this.trialCampaignId = trialCampaignId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("budgetId", getBudgetId())
+            .add("draftId", getDraftId())
+            .add("endDate", getEndDate())
+            .add("id", getId())
+            .add("name", getName())
+            .add("startDate", getStartDate())
+            .add("status", getStatus())
+            .add("trafficSplitPercent", getTrafficSplitPercent())
+            .add("trialCampaignId", getTrialCampaignId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Trial.

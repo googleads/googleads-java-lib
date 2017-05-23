@@ -42,6 +42,14 @@ public class PlacesOfInterestOperand  extends com.google.api.ads.adwords.axis.v2
         this.category = category;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("category", getCategory())
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .toString();
+    }
 
     /**
      * Gets the category value for this PlacesOfInterestOperand.

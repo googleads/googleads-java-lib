@@ -38,6 +38,13 @@ public class Chain  implements java.io.Serializable {
            this.chainId = chainId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("chainId", getChainId())
+            .toString();
+    }
 
     /**
      * Gets the chainId value for this Chain.

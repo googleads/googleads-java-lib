@@ -37,6 +37,13 @@ public abstract class RedirectAsset  extends com.google.api.ads.dfp.axis.v201608
         this.redirectUrl = redirectUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("redirectUrl", getRedirectUrl())
+            .toString();
+    }
 
     /**
      * Gets the redirectUrl value for this RedirectAsset.

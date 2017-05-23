@@ -60,6 +60,16 @@ public class SavedQuery  implements java.io.Serializable {
            this.isCompatibleWithApiVersion = isCompatibleWithApiVersion;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("isCompatibleWithApiVersion", getIsCompatibleWithApiVersion())
+            .add("name", getName())
+            .add("reportQuery", getReportQuery())
+            .toString();
+    }
 
     /**
      * Gets the id value for this SavedQuery.

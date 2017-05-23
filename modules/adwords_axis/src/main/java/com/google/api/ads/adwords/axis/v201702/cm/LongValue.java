@@ -40,6 +40,14 @@ public class LongValue  extends com.google.api.ads.adwords.axis.v201702.cm.Numbe
         this.number = number;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comparableValueType", getComparableValueType())
+            .add("number", getNumber())
+            .toString();
+    }
 
     /**
      * Gets the number value for this LongValue.

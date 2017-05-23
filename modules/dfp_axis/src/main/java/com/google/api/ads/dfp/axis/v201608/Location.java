@@ -59,6 +59,16 @@ public class Location  implements java.io.Serializable {
            this.displayName = displayName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("canonicalParentId", getCanonicalParentId())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Location.

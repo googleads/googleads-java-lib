@@ -39,6 +39,13 @@ public abstract class BaseCustomFieldValue  implements java.io.Serializable {
            this.customFieldId = customFieldId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldId", getCustomFieldId())
+            .toString();
+    }
 
     /**
      * Gets the customFieldId value for this BaseCustomFieldValue.

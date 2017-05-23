@@ -41,6 +41,14 @@ public class TargetingSetting  extends com.google.api.ads.adwords.axis.v201607.c
         this.details = details;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("details", getDetails())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the details value for this TargetingSetting.

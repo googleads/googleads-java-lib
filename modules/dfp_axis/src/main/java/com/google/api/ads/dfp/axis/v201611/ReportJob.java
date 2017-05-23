@@ -47,6 +47,14 @@ public class ReportJob  implements java.io.Serializable {
            this.reportQuery = reportQuery;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("reportQuery", getReportQuery())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ReportJob.

@@ -155,6 +155,22 @@ public class AdSenseSettings  implements java.io.Serializable {
            this.fontSize = fontSize;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adSenseEnabled", getAdSenseEnabled())
+            .add("adType", getAdType())
+            .add("backgroundColor", getBackgroundColor())
+            .add("borderColor", getBorderColor())
+            .add("borderStyle", getBorderStyle())
+            .add("fontFamily", getFontFamily())
+            .add("fontSize", getFontSize())
+            .add("textColor", getTextColor())
+            .add("titleColor", getTitleColor())
+            .add("urlColor", getUrlColor())
+            .toString();
+    }
 
     /**
      * Gets the adSenseEnabled value for this AdSenseSettings.

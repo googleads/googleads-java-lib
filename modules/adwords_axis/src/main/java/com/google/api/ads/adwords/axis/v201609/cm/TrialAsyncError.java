@@ -96,6 +96,18 @@ public class TrialAsyncError  implements java.io.Serializable {
            this.baseAdGroupId = baseAdGroupId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("asyncError", getAsyncError())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("trialAdGroupId", getTrialAdGroupId())
+            .add("trialCampaignId", getTrialCampaignId())
+            .add("trialId", getTrialId())
+            .toString();
+    }
 
     /**
      * Gets the trialId value for this TrialAsyncError.

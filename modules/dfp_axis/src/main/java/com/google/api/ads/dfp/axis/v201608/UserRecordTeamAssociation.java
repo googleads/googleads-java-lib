@@ -53,6 +53,15 @@ public abstract class UserRecordTeamAssociation  implements java.io.Serializable
            this.defaultTeamAccessType = defaultTeamAccessType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("defaultTeamAccessType", getDefaultTeamAccessType())
+            .add("overriddenTeamAccessType", getOverriddenTeamAccessType())
+            .add("teamId", getTeamId())
+            .toString();
+    }
 
     /**
      * Gets the teamId value for this UserRecordTeamAssociation.

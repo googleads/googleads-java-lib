@@ -58,6 +58,15 @@ public class AdGroupAdExperimentData  implements java.io.Serializable {
            this.experimentDataStatus = experimentDataStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("experimentDataStatus", getExperimentDataStatus())
+            .add("experimentDeltaStatus", getExperimentDeltaStatus())
+            .add("experimentId", getExperimentId())
+            .toString();
+    }
 
     /**
      * Gets the experimentId value for this AdGroupAdExperimentData.

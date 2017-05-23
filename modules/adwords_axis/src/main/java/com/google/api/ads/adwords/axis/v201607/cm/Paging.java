@@ -52,6 +52,14 @@ public class Paging  implements java.io.Serializable {
            this.numberResults = numberResults;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("numberResults", getNumberResults())
+            .add("startIndex", getStartIndex())
+            .toString();
+    }
 
     /**
      * Gets the startIndex value for this Paging.

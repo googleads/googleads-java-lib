@@ -27,11 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link ContentMetadataKeyHierarchy} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link ContentMetadataKeyHierarchy#id}</li>
- *             <li>{@link ContentMetadataKeyHierarchy#name}</li>
- *             <li>{@link ContentMetadataKeyHierarchy#hierarchyLevels}</li>
+ *             <li>{@link ContentMetadataKeyHierarchy#id}
+ *             <li>{@link ContentMetadataKeyHierarchy#name}
+ *             <li>{@link ContentMetadataKeyHierarchy#hierarchyLevels}
  *             </ul>
  *             
  *             @param contentMetadataKeyHierarchies the hierarchies to create

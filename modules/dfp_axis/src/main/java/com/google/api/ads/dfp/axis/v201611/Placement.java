@@ -99,6 +99,24 @@ public class Placement  extends com.google.api.ads.dfp.axis.v201611.SiteTargetin
         this.lastModifiedDateTime = lastModifiedDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adSenseTargetingLocale", getAdSenseTargetingLocale())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("isAdSenseTargetingEnabled", getIsAdSenseTargetingEnabled())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("placementCode", getPlacementCode())
+            .add("status", getStatus())
+            .add("targetedAdUnitIds", getTargetedAdUnitIds())
+            .add("targetingAdLocation", getTargetingAdLocation())
+            .add("targetingDescription", getTargetingDescription())
+            .add("targetingSiteName", getTargetingSiteName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Placement.

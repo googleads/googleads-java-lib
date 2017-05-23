@@ -21,7 +21,6 @@ import com.google.api.ads.dfp.axis.utils.v201611.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201611.BaseRate;
 import com.google.api.ads.dfp.axis.v201611.BaseRatePage;
 import com.google.api.ads.dfp.axis.v201611.BaseRateServiceInterface;
-
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 

@@ -46,6 +46,14 @@ public class BidMultiplier  implements java.io.Serializable {
            this.multipliedBid = multipliedBid;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("multipliedBid", getMultipliedBid())
+            .add("multiplier", getMultiplier())
+            .toString();
+    }
 
     /**
      * Gets the multiplier value for this BidMultiplier.

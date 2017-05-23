@@ -92,6 +92,31 @@ public class ReviewFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.
         this.reviewTextExactlyQuoted = reviewTextExactlyQuoted;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("policyData", getPolicyData())
+            .add("reviewSourceName", getReviewSourceName())
+            .add("reviewSourceUrl", getReviewSourceUrl())
+            .add("reviewText", getReviewText())
+            .add("reviewTextExactlyQuoted", getReviewTextExactlyQuoted())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the reviewText value for this ReviewFeedItem.

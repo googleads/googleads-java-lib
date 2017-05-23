@@ -40,6 +40,14 @@ public class TempAdUnionId  extends com.google.api.ads.adwords.axis.v201607.cm.A
             adUnionIdType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnionIdType", getAdUnionIdType())
+            .add("id", getId())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof TempAdUnionId)) return false;

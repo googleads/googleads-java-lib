@@ -21,8 +21,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201609.express.BusinessHour;
-import com.google.api.ads.adwords.jaxws.v201609.express.ProductService;
 
 
 /**
@@ -58,8 +56,6 @@ import com.google.api.ads.adwords.jaxws.v201609.express.ProductService;
     "criterionType"
 })
 @XmlSeeAlso({
-    BusinessHour.class,
-    ProductService.class,
     Gender.class,
     CriterionUserList.class,
     ContentLabel.class,

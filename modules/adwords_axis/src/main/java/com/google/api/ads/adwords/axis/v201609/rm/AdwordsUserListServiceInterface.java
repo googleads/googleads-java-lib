@@ -55,7 +55,9 @@ public interface AdwordsUserListServiceInterface extends java.rmi.Remote {
      * Mutate members of user lists by either adding or removing their
      * lists of members.
      *         The following {@link Operator}s are supported: ADD and REMOVE.
-     * 
+     * The SET operator
+     *         is not supported.
+     *         
      *         <p>Note that operations cannot have same user list id but
      * different operators.
      *         

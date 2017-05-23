@@ -43,6 +43,14 @@ public class MobileDeviceTargeting  implements java.io.Serializable {
            this.excludedMobileDevices = excludedMobileDevices;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedMobileDevices", getExcludedMobileDevices())
+            .add("targetedMobileDevices", getTargetedMobileDevices())
+            .toString();
+    }
 
     /**
      * Gets the targetedMobileDevices value for this MobileDeviceTargeting.

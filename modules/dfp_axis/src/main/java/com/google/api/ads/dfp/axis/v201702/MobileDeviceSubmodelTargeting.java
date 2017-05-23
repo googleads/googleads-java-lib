@@ -45,6 +45,14 @@ public class MobileDeviceSubmodelTargeting  implements java.io.Serializable {
            this.excludedMobileDeviceSubmodels = excludedMobileDeviceSubmodels;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedMobileDeviceSubmodels", getExcludedMobileDeviceSubmodels())
+            .add("targetedMobileDeviceSubmodels", getTargetedMobileDeviceSubmodels())
+            .toString();
+    }
 
     /**
      * Gets the targetedMobileDeviceSubmodels value for this MobileDeviceSubmodelTargeting.

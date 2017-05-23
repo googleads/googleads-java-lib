@@ -106,6 +106,22 @@ public class MobileApplication  implements java.io.Serializable {
            this.downloadUrl = downloadUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appStore", getAppStore())
+            .add("appStoreId", getAppStoreId())
+            .add("appStoreName", getAppStoreName())
+            .add("developerName", getDeveloperName())
+            .add("displayName", getDisplayName())
+            .add("downloadUrl", getDownloadUrl())
+            .add("id", getId())
+            .add("isArchived", getIsArchived())
+            .add("isFree", getIsFree())
+            .add("platform", getPlatform())
+            .toString();
+    }
 
     /**
      * Gets the id value for this MobileApplication.

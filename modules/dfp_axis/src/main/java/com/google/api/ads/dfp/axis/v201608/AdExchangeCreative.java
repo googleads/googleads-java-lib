@@ -68,6 +68,24 @@ public class AdExchangeCreative  extends com.google.api.ads.dfp.axis.v201608.Has
         this.isInterstitial = isInterstitial;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("codeSnippet", getCodeSnippet())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("isInterstitial", getIsInterstitial())
+            .add("isNativeEligible", getIsNativeEligible())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the isNativeEligible value for this AdExchangeCreative.

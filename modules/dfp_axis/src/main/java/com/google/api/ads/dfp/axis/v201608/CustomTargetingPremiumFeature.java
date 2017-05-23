@@ -50,6 +50,14 @@ public class CustomTargetingPremiumFeature  extends com.google.api.ads.dfp.axis.
         this.customTargetingValueId = customTargetingValueId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customTargetingKeyId", getCustomTargetingKeyId())
+            .add("customTargetingValueId", getCustomTargetingValueId())
+            .toString();
+    }
 
     /**
      * Gets the customTargetingKeyId value for this CustomTargetingPremiumFeature.

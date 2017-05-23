@@ -51,6 +51,15 @@ public class SwiffyFallbackAsset  implements java.io.Serializable {
            this.localizedInfoMessages = localizedInfoMessages;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("asset", getAsset())
+            .add("html5Features", getHtml5Features())
+            .add("localizedInfoMessages", getLocalizedInfoMessages())
+            .toString();
+    }
 
     /**
      * Gets the asset value for this SwiffyFallbackAsset.

@@ -44,6 +44,14 @@ public class ResultSet  implements java.io.Serializable {
            this.rows = rows;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("columnTypes", getColumnTypes())
+            .add("rows", getRows())
+            .toString();
+    }
 
     /**
      * Gets the columnTypes value for this ResultSet.

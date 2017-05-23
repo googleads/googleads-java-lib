@@ -24,13 +24,7 @@ package com.google.api.ads.adwords.axis.v201609.mcm;
 
 /**
  * An operation to create or modify a managed customer.
- *             <p class="note"><b>Note:</b>
- *             <li><code>ADD</code> operator is supported in all API
- * versions.</li>
- *             <li><code>SET</code> operator is supported beginning with
- * v201601.</li>
- *             <li><code>REMOVE</code> operator is not supported.</li>
- * </p>
+ *             <p><b>Note:</b> The {@code REMOVE} operator is not supported.</p>
  */
 public class ManagedCustomerOperation  extends com.google.api.ads.adwords.axis.v201609.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and
@@ -50,6 +44,15 @@ public class ManagedCustomerOperation  extends com.google.api.ads.adwords.axis.v
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this ManagedCustomerOperation.

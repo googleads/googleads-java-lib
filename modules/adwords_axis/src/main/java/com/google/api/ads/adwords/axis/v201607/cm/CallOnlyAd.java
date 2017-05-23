@@ -123,6 +123,32 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201607.cm.Ad  
         this.phoneNumberVerificationUrl = phoneNumberVerificationUrl;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("businessName", getBusinessName())
+            .add("callTracked", getCallTracked())
+            .add("conversionTypeId", getConversionTypeId())
+            .add("countryCode", getCountryCode())
+            .add("description1", getDescription1())
+            .add("description2", getDescription2())
+            .add("devicePreference", getDevicePreference())
+            .add("disableCallConversion", getDisableCallConversion())
+            .add("displayUrl", getDisplayUrl())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("id", getId())
+            .add("phoneNumber", getPhoneNumber())
+            .add("phoneNumberVerificationUrl", getPhoneNumberVerificationUrl())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .toString();
+    }
 
     /**
      * Gets the countryCode value for this CallOnlyAd.

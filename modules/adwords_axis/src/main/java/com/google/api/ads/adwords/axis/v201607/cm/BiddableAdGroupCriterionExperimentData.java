@@ -61,6 +61,16 @@ public class BiddableAdGroupCriterionExperimentData  implements java.io.Serializ
            this.experimentBidMultiplier = experimentBidMultiplier;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("experimentBidMultiplier", getExperimentBidMultiplier())
+            .add("experimentDataStatus", getExperimentDataStatus())
+            .add("experimentDeltaStatus", getExperimentDeltaStatus())
+            .add("experimentId", getExperimentId())
+            .toString();
+    }
 
     /**
      * Gets the experimentId value for this BiddableAdGroupCriterionExperimentData.

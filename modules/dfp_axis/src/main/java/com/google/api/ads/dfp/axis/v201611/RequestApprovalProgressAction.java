@@ -64,6 +64,19 @@ public class RequestApprovalProgressAction  extends com.google.api.ads.dfp.axis.
         this.approvalStatus = approvalStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("approvalStatus", getApprovalStatus())
+            .add("approverId", getApproverId())
+            .add("comment", getComment())
+            .add("eligibleApproverTeamIds", getEligibleApproverTeamIds())
+            .add("eligibleApproverUserIds", getEligibleApproverUserIds())
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("evaluationTime", getEvaluationTime())
+            .toString();
+    }
 
     /**
      * Gets the approverId value for this RequestApprovalProgressAction.

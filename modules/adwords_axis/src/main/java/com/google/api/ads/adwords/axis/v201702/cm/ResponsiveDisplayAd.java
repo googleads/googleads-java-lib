@@ -126,6 +126,30 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20170
         this.businessName = businessName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("businessName", getBusinessName())
+            .add("description", getDescription())
+            .add("devicePreference", getDevicePreference())
+            .add("displayUrl", getDisplayUrl())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("id", getId())
+            .add("logoImage", getLogoImage())
+            .add("longHeadline", getLongHeadline())
+            .add("marketingImage", getMarketingImage())
+            .add("shortHeadline", getShortHeadline())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("urlData", getUrlData())
+            .toString();
+    }
 
     /**
      * Gets the marketingImage value for this ResponsiveDisplayAd.

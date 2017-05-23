@@ -111,6 +111,23 @@ public class Contact  extends com.google.api.ads.dfp.axis.v201608.BaseContact  i
         this.workPhone = workPhone;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("address", getAddress())
+            .add("cellPhone", getCellPhone())
+            .add("comment", getComment())
+            .add("companyId", getCompanyId())
+            .add("email", getEmail())
+            .add("faxPhone", getFaxPhone())
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .add("title", getTitle())
+            .add("workPhone", getWorkPhone())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Contact.

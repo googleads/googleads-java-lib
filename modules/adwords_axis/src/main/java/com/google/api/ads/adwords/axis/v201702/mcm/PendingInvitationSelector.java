@@ -42,6 +42,14 @@ public class PendingInvitationSelector  implements java.io.Serializable {
            this.clientCustomerIds = clientCustomerIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clientCustomerIds", getClientCustomerIds())
+            .add("managerCustomerIds", getManagerCustomerIds())
+            .toString();
+    }
 
     /**
      * Gets the managerCustomerIds value for this PendingInvitationSelector.

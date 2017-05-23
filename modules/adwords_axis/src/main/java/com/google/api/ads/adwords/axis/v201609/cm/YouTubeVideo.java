@@ -54,6 +54,17 @@ public class YouTubeVideo  extends com.google.api.ads.adwords.axis.v201609.cm.Cr
         this.videoName = videoName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .add("videoId", getVideoId())
+            .add("videoName", getVideoName())
+            .toString();
+    }
 
     /**
      * Gets the videoId value for this YouTubeVideo.

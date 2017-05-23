@@ -24,7 +24,9 @@ package com.google.api.ads.adwords.axis.v201607.cm;
 
 /**
  * Operation for uploading {@link OfflineConversionFeed}.
- *             See {@link OfflineConversionFeedService#mutate}
+ *             See {@link OfflineConversionFeedService#mutate}.
+ *             
+ *             <p><b>Note:</b> Only the {@code ADD} operator is supported.
  */
 public class OfflineConversionFeedOperation  extends com.google.api.ads.adwords.axis.v201607.cm.Operation  implements java.io.Serializable {
     /* <span class="constraint Required">This field is required and
@@ -44,6 +46,15 @@ public class OfflineConversionFeedOperation  extends com.google.api.ads.adwords.
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this OfflineConversionFeedOperation.

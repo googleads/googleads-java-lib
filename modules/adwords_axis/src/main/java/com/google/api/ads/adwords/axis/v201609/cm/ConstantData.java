@@ -42,6 +42,13 @@ public class ConstantData  implements java.io.Serializable {
            this.constantDataType = constantDataType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("constantDataType", getConstantDataType())
+            .toString();
+    }
 
     /**
      * Gets the constantDataType value for this ConstantData.

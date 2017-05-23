@@ -79,6 +79,19 @@ public class Address  implements java.io.Serializable {
            this.countryCode = countryCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("cityName", getCityName())
+            .add("countryCode", getCountryCode())
+            .add("postalCode", getPostalCode())
+            .add("provinceCode", getProvinceCode())
+            .add("provinceName", getProvinceName())
+            .add("streetAddress", getStreetAddress())
+            .add("streetAddress2", getStreetAddress2())
+            .toString();
+    }
 
     /**
      * Gets the streetAddress value for this Address.

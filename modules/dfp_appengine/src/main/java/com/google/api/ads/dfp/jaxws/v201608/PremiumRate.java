@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A premium rate holding a set of {@link PremiumRateValue} objects with the
- *             same {@link PremiumFeature}.
+ *             A premium rate holding a set of {@link PremiumRateValue} objects with the same {@link
+ *             PremiumFeature}.
  *           
  * 
  * <p>Java class for PremiumRate complex type.

@@ -27,7 +27,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  * of
  *             associations between ad groups and feeds.
  */
-public class AdGroupFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm.NullStatsPage  implements java.io.Serializable {
+public class AdGroupFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm.NullStatsPage  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed>{
     /* The resulting AdGroupFeeds. */
     private com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed[] entries;
 
@@ -44,6 +44,16 @@ public class AdGroupFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this AdGroupFeedPage.
@@ -70,6 +80,23 @@ public class AdGroupFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201609.cm.AdGroupFeed>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

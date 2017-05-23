@@ -45,6 +45,14 @@ public class OperatingSystemVersionTargeting  implements java.io.Serializable {
            this.excludedOperatingSystemVersions = excludedOperatingSystemVersions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedOperatingSystemVersions", getExcludedOperatingSystemVersions())
+            .add("targetedOperatingSystemVersions", getTargetedOperatingSystemVersions())
+            .toString();
+    }
 
     /**
      * Gets the targetedOperatingSystemVersions value for this OperatingSystemVersionTargeting.

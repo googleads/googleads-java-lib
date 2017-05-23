@@ -48,6 +48,14 @@ public class AdUnitTargeting  implements java.io.Serializable {
            this.includeDescendants = includeDescendants;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnitId", getAdUnitId())
+            .add("includeDescendants", getIncludeDescendants())
+            .toString();
+    }
 
     /**
      * Gets the adUnitId value for this AdUnitTargeting.

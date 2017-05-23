@@ -34,14 +34,26 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
 
     /* Tracking URL template for all rows of this price extension.
      * To clear this field, set its value
-     *                     to the empty string/ */
+     *                     to an empty string. */
     private java.lang.String trackingUrlTemplate;
 
     /* The language the advertiser is using for this price extension.
      * Required.
      *                     Supported language codes:
      *                     <ul>
+     *                     <li>de</li>
      *                     <li>en</li>
+     *                     <li>es</li>
+     *                     <li>es-419</li>
+     *                     <li>fr</li>
+     *                     <li>it</li>
+     *                     <li>ja</li>
+     *                     <li>nl</li>
+     *                     <li>pl</li>
+     *                     <li>pt-BR</li>
+     *                     <li>pt-PT</li>
+     *                     <li>ru</li>
+     *                     <li>sv</li>
      *                     </ul> */
     private java.lang.String language;
 
@@ -97,6 +109,32 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
         this.tableRows = tableRows;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("language", getLanguage())
+            .add("policyData", getPolicyData())
+            .add("priceExtensionType", getPriceExtensionType())
+            .add("priceQualifier", getPriceQualifier())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .add("tableRows", getTableRows())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .toString();
+    }
 
     /**
      * Gets the priceExtensionType value for this PriceFeedItem.
@@ -143,7 +181,7 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
      * 
      * @return trackingUrlTemplate   * Tracking URL template for all rows of this price extension.
      * To clear this field, set its value
-     *                     to the empty string/
+     *                     to an empty string.
      */
     public java.lang.String getTrackingUrlTemplate() {
         return trackingUrlTemplate;
@@ -155,7 +193,7 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
      * 
      * @param trackingUrlTemplate   * Tracking URL template for all rows of this price extension.
      * To clear this field, set its value
-     *                     to the empty string/
+     *                     to an empty string.
      */
     public void setTrackingUrlTemplate(java.lang.String trackingUrlTemplate) {
         this.trackingUrlTemplate = trackingUrlTemplate;
@@ -169,7 +207,19 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
      * Required.
      *                     Supported language codes:
      *                     <ul>
+     *                     <li>de</li>
      *                     <li>en</li>
+     *                     <li>es</li>
+     *                     <li>es-419</li>
+     *                     <li>fr</li>
+     *                     <li>it</li>
+     *                     <li>ja</li>
+     *                     <li>nl</li>
+     *                     <li>pl</li>
+     *                     <li>pt-BR</li>
+     *                     <li>pt-PT</li>
+     *                     <li>ru</li>
+     *                     <li>sv</li>
      *                     </ul>
      */
     public java.lang.String getLanguage() {
@@ -184,7 +234,19 @@ public class PriceFeedItem  extends com.google.api.ads.adwords.axis.v201607.cm.E
      * Required.
      *                     Supported language codes:
      *                     <ul>
+     *                     <li>de</li>
      *                     <li>en</li>
+     *                     <li>es</li>
+     *                     <li>es-419</li>
+     *                     <li>fr</li>
+     *                     <li>it</li>
+     *                     <li>ja</li>
+     *                     <li>nl</li>
+     *                     <li>pl</li>
+     *                     <li>pt-BR</li>
+     *                     <li>pt-PT</li>
+     *                     <li>ru</li>
+     *                     <li>sv</li>
      *                     </ul>
      */
     public void setLanguage(java.lang.String language) {

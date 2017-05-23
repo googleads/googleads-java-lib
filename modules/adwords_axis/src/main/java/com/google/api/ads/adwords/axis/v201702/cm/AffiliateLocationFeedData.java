@@ -47,6 +47,15 @@ public class AffiliateLocationFeedData  extends com.google.api.ads.adwords.axis.
         this.relationshipType = relationshipType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("chains", getChains())
+            .add("relationshipType", getRelationshipType())
+            .add("systemFeedGenerationDataType", getSystemFeedGenerationDataType())
+            .toString();
+    }
 
     /**
      * Gets the chains value for this AffiliateLocationFeedData.

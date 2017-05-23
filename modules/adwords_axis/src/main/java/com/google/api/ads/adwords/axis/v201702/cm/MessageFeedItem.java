@@ -100,6 +100,32 @@ public class MessageFeedItem  extends com.google.api.ads.adwords.axis.v201702.cm
         this.messageText = messageText;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("messageBusinessName", getMessageBusinessName())
+            .add("messageCountryCode", getMessageCountryCode())
+            .add("messageExtensionText", getMessageExtensionText())
+            .add("messagePhoneNumber", getMessagePhoneNumber())
+            .add("messageText", getMessageText())
+            .add("policyData", getPolicyData())
+            .add("scheduling", getScheduling())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the messageBusinessName value for this MessageFeedItem.

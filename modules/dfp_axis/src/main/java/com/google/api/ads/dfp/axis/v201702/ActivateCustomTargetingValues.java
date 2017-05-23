@@ -23,13 +23,19 @@ package com.google.api.ads.dfp.axis.v201702;
 
 
 /**
- * The action used for activating inactive (i.e. deleted)
- *             {@link CustomTargetingValue} objects.
+ * The action used for activating inactive (i.e. deleted) {@link CustomTargetingValue}
+ * objects.
  */
 public class ActivateCustomTargetingValues  extends com.google.api.ads.dfp.axis.v201702.CustomTargetingValueAction  implements java.io.Serializable {
     public ActivateCustomTargetingValues() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ActivateCustomTargetingValues)) return false;

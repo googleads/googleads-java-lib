@@ -169,6 +169,18 @@ public class CampaignEstimateRequest  extends com.google.api.ads.adwords.axis.v2
         this.dailyBudget = dailyBudget;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupEstimateRequests", getAdGroupEstimateRequests())
+            .add("campaignId", getCampaignId())
+            .add("criteria", getCriteria())
+            .add("dailyBudget", getDailyBudget())
+            .add("estimateRequestType", getEstimateRequestType())
+            .add("networkSetting", getNetworkSetting())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignEstimateRequest.

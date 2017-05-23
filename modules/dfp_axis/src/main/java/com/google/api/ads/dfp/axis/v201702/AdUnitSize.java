@@ -67,6 +67,16 @@ public class AdUnitSize  implements java.io.Serializable {
            this.fullDisplayString = fullDisplayString;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("companions", getCompanions())
+            .add("environmentType", getEnvironmentType())
+            .add("fullDisplayString", getFullDisplayString())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the size value for this AdUnitSize.

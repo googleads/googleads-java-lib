@@ -38,6 +38,13 @@ public class Row  implements java.io.Serializable {
            this.values = values;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("values", getValues())
+            .toString();
+    }
 
     /**
      * Gets the values value for this Row.

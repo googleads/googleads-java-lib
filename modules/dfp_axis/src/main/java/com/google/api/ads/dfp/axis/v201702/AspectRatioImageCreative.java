@@ -98,6 +98,27 @@ public class AspectRatioImageCreative  extends com.google.api.ads.dfp.axis.v2017
         this.overrideSize = overrideSize;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("altText", getAltText())
+            .add("appliedLabels", getAppliedLabels())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("id", getId())
+            .add("imageAssets", getImageAssets())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("overrideSize", getOverrideSize())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("thirdPartyImpressionUrl", getThirdPartyImpressionUrl())
+            .toString();
+    }
 
     /**
      * Gets the imageAssets value for this AspectRatioImageCreative.

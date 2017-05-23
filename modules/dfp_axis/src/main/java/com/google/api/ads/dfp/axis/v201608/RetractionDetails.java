@@ -44,6 +44,14 @@ public class RetractionDetails  implements java.io.Serializable {
            this.comments = comments;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comments", getComments())
+            .add("retractionReasonId", getRetractionReasonId())
+            .toString();
+    }
 
     /**
      * Gets the retractionReasonId value for this RetractionDetails.

@@ -42,6 +42,12 @@ public class EditProposalsForNegotiation  extends com.google.api.ads.dfp.axis.v2
     public EditProposalsForNegotiation() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof EditProposalsForNegotiation)) return false;

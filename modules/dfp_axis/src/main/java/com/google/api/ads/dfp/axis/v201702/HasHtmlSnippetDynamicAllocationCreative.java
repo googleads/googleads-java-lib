@@ -60,6 +60,22 @@ public abstract class HasHtmlSnippetDynamicAllocationCreative  extends com.googl
         this.codeSnippet = codeSnippet;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("codeSnippet", getCodeSnippet())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the codeSnippet value for this HasHtmlSnippetDynamicAllocationCreative.

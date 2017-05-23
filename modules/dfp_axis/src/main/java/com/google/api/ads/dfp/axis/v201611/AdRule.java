@@ -146,6 +146,27 @@ public class AdRule  implements java.io.Serializable {
            this.postroll = postroll;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("endDateTime", getEndDateTime())
+            .add("frequencyCapBehavior", getFrequencyCapBehavior())
+            .add("id", getId())
+            .add("maxImpressionsPerLineItemPerPod", getMaxImpressionsPerLineItemPerPod())
+            .add("maxImpressionsPerLineItemPerStream", getMaxImpressionsPerLineItemPerStream())
+            .add("midroll", getMidroll())
+            .add("name", getName())
+            .add("postroll", getPostroll())
+            .add("preroll", getPreroll())
+            .add("priority", getPriority())
+            .add("startDateTime", getStartDateTime())
+            .add("startDateTimeType", getStartDateTimeType())
+            .add("status", getStatus())
+            .add("targeting", getTargeting())
+            .add("unlimitedEndDateTime", getUnlimitedEndDateTime())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdRule.

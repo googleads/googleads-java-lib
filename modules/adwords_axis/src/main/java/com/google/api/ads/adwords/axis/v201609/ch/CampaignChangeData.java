@@ -81,6 +81,19 @@ public class CampaignChangeData  implements java.io.Serializable {
            this.removedFeeds = removedFeeds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("addedCampaignCriteria", getAddedCampaignCriteria())
+            .add("campaignChangeStatus", getCampaignChangeStatus())
+            .add("campaignId", getCampaignId())
+            .add("changedAdGroups", getChangedAdGroups())
+            .add("changedFeeds", getChangedFeeds())
+            .add("removedCampaignCriteria", getRemovedCampaignCriteria())
+            .add("removedFeeds", getRemovedFeeds())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignChangeData.

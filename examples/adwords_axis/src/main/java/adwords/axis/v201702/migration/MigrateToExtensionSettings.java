@@ -55,10 +55,10 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -254,7 +254,7 @@ public class MigrateToExtensionSettings {
     FeedServiceInterface feedService = adWordsServices.get(session, FeedServiceInterface.class);
     String query = "SELECT Id, Name, Attributes WHERE Origin = 'USER' AND FeedStatus = 'ENABLED'";
 
-    List<Feed> feeds = Lists.newArrayList();
+    List<Feed> feeds = new ArrayList<>();
     int offset = 0;
     FeedPage feedPage;
 
@@ -282,7 +282,7 @@ public class MigrateToExtensionSettings {
         "SELECT FeedItemId, AttributeValues, Scheduling WHERE Status = 'ENABLED' AND FeedId = %d",
         feed.getId());
 
-    List<FeedItem> feedItems = Lists.newArrayList();
+    List<FeedItem> feedItems = new ArrayList<>();
     int offset = 0;
     FeedItemPage feedItemPage;
 
@@ -313,7 +313,7 @@ public class MigrateToExtensionSettings {
       return;
     }
 
-    List<FeedItemOperation> operations = Lists.newArrayList();
+    List<FeedItemOperation> operations = new ArrayList<>();
     for (Long feedItemId : feedItemIds) {
       FeedItemOperation operation = new FeedItemOperation();
 
@@ -356,7 +356,7 @@ public class MigrateToExtensionSettings {
 
     ExtensionSetting extensionSetting = new ExtensionSetting();
 
-    List<ExtensionFeedItem> extensionFeedItems = Lists.newArrayList();
+    List<ExtensionFeedItem> extensionFeedItems = new ArrayList<>();
 
     for (Long feedItemId : feedItemIds) {
       SiteLinkFromFeed siteLinkFromFeed = feedItems.get(feedItemId);
@@ -508,7 +508,7 @@ public class MigrateToExtensionSettings {
         "SELECT CampaignId, MatchingFunction, PlaceholderTypes WHERE Status = 'ENABLED' "
         + "AND FeedId = %d AND PlaceholderTypes CONTAINS_ANY [%d]", feed.getId(), placeholderType);
 
-    List<CampaignFeed> campaignFeeds = Lists.newArrayList();
+    List<CampaignFeed> campaignFeeds = new ArrayList<>();
     int offset = 0;
     CampaignFeedPage campaignFeedPage;
 

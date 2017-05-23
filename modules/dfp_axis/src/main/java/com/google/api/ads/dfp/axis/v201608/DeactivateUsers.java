@@ -29,6 +29,12 @@ public class DeactivateUsers  extends com.google.api.ads.dfp.axis.v201608.UserAc
     public DeactivateUsers() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DeactivateUsers)) return false;

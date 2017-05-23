@@ -54,6 +54,15 @@ public class FrequencyCap  implements java.io.Serializable {
            this.level = level;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("impressions", getImpressions())
+            .add("level", getLevel())
+            .add("timeUnit", getTimeUnit())
+            .toString();
+    }
 
     /**
      * Gets the impressions value for this FrequencyCap.

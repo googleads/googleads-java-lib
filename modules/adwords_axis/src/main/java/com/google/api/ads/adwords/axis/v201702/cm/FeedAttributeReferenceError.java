@@ -58,6 +58,20 @@ public class FeedAttributeReferenceError  extends com.google.api.ads.adwords.axi
         this.feedAttributeName = feedAttributeName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("feedAttributeName", getFeedAttributeName())
+            .add("feedName", getFeedName())
+            .add("fieldPath", getFieldPath())
+            .add("fieldPathElements", getFieldPathElements())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this FeedAttributeReferenceError.

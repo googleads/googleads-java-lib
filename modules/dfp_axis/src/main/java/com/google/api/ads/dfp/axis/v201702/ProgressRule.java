@@ -57,6 +57,17 @@ public class ProgressRule  implements java.io.Serializable {
            this.isExternal = isExternal;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("actions", getActions())
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("evaluationTime", getEvaluationTime())
+            .add("isExternal", getIsExternal())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the actions value for this ProgressRule.

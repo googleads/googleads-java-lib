@@ -108,6 +108,29 @@ public class VastRedirectCreative  extends com.google.api.ads.dfp.axis.v201611.C
         this.sslManualOverride = sslManualOverride;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("duration", getDuration())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .add("trackingUrls", getTrackingUrls())
+            .add("vastPreviewUrl", getVastPreviewUrl())
+            .add("vastRedirectType", getVastRedirectType())
+            .add("vastXmlUrl", getVastXmlUrl())
+            .toString();
+    }
 
     /**
      * Gets the vastXmlUrl value for this VastRedirectCreative.

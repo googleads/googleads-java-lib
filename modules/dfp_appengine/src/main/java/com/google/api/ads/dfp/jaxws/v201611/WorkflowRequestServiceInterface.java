@@ -27,9 +27,9 @@ import javax.xml.ws.ResponseWrapper;
 /**
  * 
  *       Provides methods to retrieve and perform actions on {@link WorkflowRequest} objects
- *       <p>
- *       To use this service, you need to have the new sales management solution enabled on your network.
- *       If you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for
+ *       
+ *       <p>To use this service, you need to have the new sales management solution enabled on your
+ *       network. If you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for
  *       Publishers (DFP)</a>, you will not be able to use this service.
  *     
  * 

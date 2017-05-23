@@ -43,6 +43,14 @@ public class CreativeTargeting  implements java.io.Serializable {
            this.targeting = targeting;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("name", getName())
+            .add("targeting", getTargeting())
+            .toString();
+    }
 
     /**
      * Gets the name value for this CreativeTargeting.

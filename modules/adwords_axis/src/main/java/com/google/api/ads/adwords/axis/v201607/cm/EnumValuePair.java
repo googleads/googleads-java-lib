@@ -46,6 +46,14 @@ public class EnumValuePair  implements java.io.Serializable {
            this.enumDisplayValue = enumDisplayValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("enumDisplayValue", getEnumDisplayValue())
+            .add("enumValue", getEnumValue())
+            .toString();
+    }
 
     /**
      * Gets the enumValue value for this EnumValuePair.

@@ -37,6 +37,14 @@ public class BrowserLanguage  extends com.google.api.ads.dfp.axis.v201611.Techno
             name);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof BrowserLanguage)) return false;

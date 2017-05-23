@@ -48,6 +48,14 @@ public abstract class Operation  implements java.io.Serializable {
            this.operationType = operationType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operator value for this Operation.

@@ -42,6 +42,14 @@ public class RequestContextOperand  extends com.google.api.ads.adwords.axis.v201
         this.contextType = contextType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("contextType", getContextType())
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .toString();
+    }
 
     /**
      * Gets the contextType value for this RequestContextOperand.

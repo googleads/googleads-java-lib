@@ -33,8 +33,10 @@ public class ValueSourceType implements java.io.Serializable {
 
     public static final java.lang.String _PARENT = "PARENT";
     public static final java.lang.String _DIRECTLY_SPECIFIED = "DIRECTLY_SPECIFIED";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ValueSourceType PARENT = new ValueSourceType(_PARENT);
     public static final ValueSourceType DIRECTLY_SPECIFIED = new ValueSourceType(_DIRECTLY_SPECIFIED);
+    public static final ValueSourceType UNKNOWN = new ValueSourceType(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static ValueSourceType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

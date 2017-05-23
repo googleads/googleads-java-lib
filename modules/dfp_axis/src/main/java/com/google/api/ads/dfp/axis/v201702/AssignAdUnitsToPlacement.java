@@ -39,6 +39,13 @@ public class AssignAdUnitsToPlacement  extends com.google.api.ads.dfp.axis.v2017
         this.placementId = placementId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("placementId", getPlacementId())
+            .toString();
+    }
 
     /**
      * Gets the placementId value for this AssignAdUnitsToPlacement.

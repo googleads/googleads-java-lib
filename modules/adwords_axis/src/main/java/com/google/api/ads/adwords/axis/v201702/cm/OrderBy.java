@@ -45,6 +45,14 @@ public class OrderBy  implements java.io.Serializable {
            this.sortOrder = sortOrder;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("field", getField())
+            .add("sortOrder", getSortOrder())
+            .toString();
+    }
 
     /**
      * Gets the field value for this OrderBy.

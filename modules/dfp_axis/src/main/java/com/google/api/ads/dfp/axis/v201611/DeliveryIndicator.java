@@ -45,6 +45,14 @@ public class DeliveryIndicator  implements java.io.Serializable {
            this.actualDeliveryPercentage = actualDeliveryPercentage;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("actualDeliveryPercentage", getActualDeliveryPercentage())
+            .add("expectedDeliveryPercentage", getExpectedDeliveryPercentage())
+            .toString();
+    }
 
     /**
      * Gets the expectedDeliveryPercentage value for this DeliveryIndicator.

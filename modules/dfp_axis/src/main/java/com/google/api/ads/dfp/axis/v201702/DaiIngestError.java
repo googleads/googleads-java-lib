@@ -42,6 +42,14 @@ public class DaiIngestError  implements java.io.Serializable {
            this.trigger = trigger;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this DaiIngestError.

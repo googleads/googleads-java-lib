@@ -46,6 +46,14 @@ public class PolicyTopicEvidence  implements java.io.Serializable {
            this.evidenceText = evidenceText;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("evidenceText", getEvidenceText())
+            .add("policyTopicEvidenceType", getPolicyTopicEvidenceType())
+            .toString();
+    }
 
     /**
      * Gets the policyTopicEvidenceType value for this PolicyTopicEvidence.

@@ -39,14 +39,13 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
-import com.google.common.collect.Lists;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.util.Arrays;
 
 /**
  * This example demonstrates how to create a Credential object from scratch.<br>
@@ -87,7 +86,7 @@ public class AdvancedCreateCredentialFromScratch {
         new JacksonFactory(),
         CLIENT_ID,
         CLIENT_SECRET,
-        Lists.newArrayList(SCOPE))
+        Arrays.asList(SCOPE))
         .setDataStoreFactory(storeFactory)
         // Set the access type to offline so that the token can be refreshed.
         // By default, the library will automatically refresh tokens when it
@@ -122,7 +121,7 @@ public class AdvancedCreateCredentialFromScratch {
         new JacksonFactory(),
         CLIENT_ID,
         CLIENT_SECRET,
-        Lists.newArrayList(SCOPE))
+        Arrays.asList(SCOPE))
         .build();
 
     // Load the credential.
@@ -162,7 +161,7 @@ public class AdvancedCreateCredentialFromScratch {
     // Create selector.
     com.google.api.ads.adwords.lib.jaxb.v201702.Selector reportSelector =
         new com.google.api.ads.adwords.lib.jaxb.v201702.Selector();
-    reportSelector.getFields().addAll(Lists.newArrayList(
+    reportSelector.getFields().addAll(Arrays.asList(
         "CampaignId",
         "AdGroupId",
         "Id",

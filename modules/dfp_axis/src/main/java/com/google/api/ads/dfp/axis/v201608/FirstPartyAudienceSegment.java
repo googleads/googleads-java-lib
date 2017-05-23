@@ -50,6 +50,20 @@ public abstract class FirstPartyAudienceSegment  extends com.google.api.ads.dfp.
             type);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("categoryIds", getCategoryIds())
+            .add("dataProvider", getDataProvider())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("name", getName())
+            .add("size", getSize())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof FirstPartyAudienceSegment)) return false;

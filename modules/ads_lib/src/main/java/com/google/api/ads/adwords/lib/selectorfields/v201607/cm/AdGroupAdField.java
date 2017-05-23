@@ -323,10 +323,24 @@ public enum AdGroupAdField implements EntityField {
   Labels(true),
 
   /**
+   * Logo image to be used in the ad.
+   * This ad format does not allow the creation of an image using the Image.data field.
+   * An image must first be created using the MediaService, and Image.mediaId must be populated when creating a {@code "ResponsiveDisplayAd"}.
+   */
+  LogoImage(false),
+
+  /**
    * Long format of the headline of the ad.
    */
   @Filterable
   LongHeadline(true),
+
+  /**
+   * Marketing image to be used in the ad.
+   * This ad format does not allow the creation of an image using the Image.data field.
+   * An image must first be created using the MediaService, and Image.mediaId must be populated when creating a {@code "ResponsiveDisplayAd"}.
+   */
+  MarketingImage(false),
 
   /**
    * ID of this media object.

@@ -56,6 +56,15 @@ public class UniversalAppCampaignAdsPolicyDecisions  implements java.io.Serializ
            this.policyTopicEntries = policyTopicEntries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("assetId", getAssetId())
+            .add("policyTopicEntries", getPolicyTopicEntries())
+            .add("universalAppCampaignAsset", getUniversalAppCampaignAsset())
+            .toString();
+    }
 
     /**
      * Gets the universalAppCampaignAsset value for this UniversalAppCampaignAdsPolicyDecisions.

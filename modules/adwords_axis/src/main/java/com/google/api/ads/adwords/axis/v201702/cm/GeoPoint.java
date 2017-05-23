@@ -46,6 +46,14 @@ public class GeoPoint  implements java.io.Serializable {
            this.longitudeInMicroDegrees = longitudeInMicroDegrees;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("latitudeInMicroDegrees", getLatitudeInMicroDegrees())
+            .add("longitudeInMicroDegrees", getLongitudeInMicroDegrees())
+            .toString();
+    }
 
     /**
      * Gets the latitudeInMicroDegrees value for this GeoPoint.

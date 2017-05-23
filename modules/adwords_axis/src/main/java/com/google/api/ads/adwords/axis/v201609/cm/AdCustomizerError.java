@@ -66,6 +66,21 @@ public class AdCustomizerError  extends com.google.api.ads.adwords.axis.v201609.
         this.operandValue = operandValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("functionString", getFunctionString())
+            .add("operandIndex", getOperandIndex())
+            .add("operandValue", getOperandValue())
+            .add("operatorName", getOperatorName())
+            .add("reason", getReason())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the reason value for this AdCustomizerError.

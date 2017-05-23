@@ -23,11 +23,18 @@ package com.google.api.ads.adwords.axis.v201702.rm;
 
 
 /**
- * A group of rule items that are ANDed together.
+ * A group of rule items that are ANDed together before version V201705.
+ * Starting from version V201705, rule item groups will be grouped together
+ * based on
+ *             {@link Rule#getRuleType()}.
  */
 public class RuleItemGroup  implements java.io.Serializable {
-    /* <span class="constraint CollectionSize">The minimum size of
-     * this collection is 1.</span>
+    /* Before version V201705, rule items are ANDed together.
+     *                 Starting from version V201705, rule items will be
+     * grouped together based on
+     *                 {@link Rule#getRuleType()}.
+     *                 <span class="constraint CollectionSize">The minimum
+     * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -44,12 +51,23 @@ public class RuleItemGroup  implements java.io.Serializable {
            this.items = items;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("items", getItems())
+            .toString();
+    }
 
     /**
      * Gets the items value for this RuleItemGroup.
      * 
-     * @return items   * <span class="constraint CollectionSize">The minimum size of
-     * this collection is 1.</span>
+     * @return items   * Before version V201705, rule items are ANDed together.
+     *                 Starting from version V201705, rule items will be
+     * grouped together based on
+     *                 {@link Rule#getRuleType()}.
+     *                 <span class="constraint CollectionSize">The minimum
+     * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -65,8 +83,12 @@ public class RuleItemGroup  implements java.io.Serializable {
     /**
      * Sets the items value for this RuleItemGroup.
      * 
-     * @param items   * <span class="constraint CollectionSize">The minimum size of
-     * this collection is 1.</span>
+     * @param items   * Before version V201705, rule items are ANDed together.
+     *                 Starting from version V201705, rule items will be
+     * grouped together based on
+     *                 {@link Rule#getRuleType()}.
+     *                 <span class="constraint CollectionSize">The minimum
+     * size of this collection is 1.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field

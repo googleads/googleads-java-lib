@@ -48,6 +48,17 @@ public class LongCreativeTemplateVariable  extends com.google.api.ads.dfp.axis.v
         this.defaultValue = defaultValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("defaultValue", getDefaultValue())
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("label", getLabel())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the defaultValue value for this LongCreativeTemplateVariable.

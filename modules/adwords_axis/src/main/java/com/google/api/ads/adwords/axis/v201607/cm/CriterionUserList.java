@@ -85,6 +85,20 @@ public class CriterionUserList  extends com.google.api.ads.adwords.axis.v201607.
         this.userListEligibleForDisplay = userListEligibleForDisplay;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .add("userListEligibleForDisplay", getUserListEligibleForDisplay())
+            .add("userListEligibleForSearch", getUserListEligibleForSearch())
+            .add("userListId", getUserListId())
+            .add("userListMembershipStatus", getUserListMembershipStatus())
+            .add("userListName", getUserListName())
+            .toString();
+    }
 
     /**
      * Gets the userListId value for this CriterionUserList.

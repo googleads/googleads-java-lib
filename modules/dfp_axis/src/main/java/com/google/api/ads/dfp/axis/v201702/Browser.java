@@ -47,6 +47,16 @@ public class Browser  extends com.google.api.ads.dfp.axis.v201702.Technology  im
         this.minorVersion = minorVersion;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("majorVersion", getMajorVersion())
+            .add("minorVersion", getMinorVersion())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the majorVersion value for this Browser.

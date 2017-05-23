@@ -46,6 +46,14 @@ public abstract class Page  implements java.io.Serializable {
            this.pageType = pageType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the totalNumEntries value for this Page.

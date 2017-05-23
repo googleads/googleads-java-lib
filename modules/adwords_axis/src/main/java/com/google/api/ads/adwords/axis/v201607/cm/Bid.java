@@ -37,6 +37,13 @@ public class Bid  implements java.io.Serializable {
            this.amount = amount;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("amount", getAmount())
+            .toString();
+    }
 
     /**
      * Gets the amount value for this Bid.

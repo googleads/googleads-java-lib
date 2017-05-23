@@ -109,6 +109,22 @@ public class Customer  implements java.io.Serializable {
            this.remarketingSettings = remarketingSettings;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("autoTaggingEnabled", getAutoTaggingEnabled())
+            .add("canManageClients", getCanManageClients())
+            .add("conversionTrackingSettings", getConversionTrackingSettings())
+            .add("currencyCode", getCurrencyCode())
+            .add("customerId", getCustomerId())
+            .add("dateTimeZone", getDateTimeZone())
+            .add("descriptiveName", getDescriptiveName())
+            .add("remarketingSettings", getRemarketingSettings())
+            .add("testAccount", getTestAccount())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .toString();
+    }
 
     /**
      * Gets the customerId value for this Customer.

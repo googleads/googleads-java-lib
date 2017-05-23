@@ -29,6 +29,12 @@ public class DeactivateRateCards  extends com.google.api.ads.dfp.axis.v201608.Ra
     public DeactivateRateCards() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DeactivateRateCards)) return false;

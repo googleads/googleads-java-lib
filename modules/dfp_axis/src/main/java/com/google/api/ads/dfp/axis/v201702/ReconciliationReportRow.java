@@ -55,15 +55,14 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     private java.lang.Long advertiserId;
 
     /* The ID of the {@link ProposalLineItem} associated with this
-     * report row.
-     *                 This value is 0 if there is no related {@link ProposalLineItem}.
-     * This attribute is read-only. */
+     * report row. This value is 0 if
+     *                 there is no related {@link ProposalLineItem}. This
+     * attribute is read-only. */
     private java.lang.Long proposalLineItemId;
 
     /* The ID of the {@link Proposal} associated with this report
-     * row.
-     *                 This value is 0 if there is no related {@link Proposal}.
-     * This attribute is read-only. */
+     * row. This value is 0 if there is no
+     *                 related {@link Proposal}. This attribute is read-only. */
     private java.lang.Long proposalId;
 
     /* Specifies which of {@link #dfpVolume}, {@link #thirdPartyVolume},
@@ -77,8 +76,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.BillFrom reconciliationSource;
 
     /* {@link RateType} of the line item and proposal line item this
-     * row represents.
-     *                 This attribute is read-only. */
+     * row represents. This attribute is
+     *                 read-only. */
     private com.google.api.ads.dfp.axis.v201702.RateType rateType;
 
     /* The {@link LineItem#costPerUnit} of the line item this row
@@ -93,18 +92,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     private java.lang.Long lineItemContractedUnitsBought;
 
     /* The volume recorded by the DoubleClick for Publishers server.
-     * The meaning of this value depends on the {@link #rateType}, for example
-     * if the {@link #rateType} is {@link RateType#CPC}, it represents clicks;
-     * if the {@link #rateType} is {@link RateType#CPM}, it represents impressions;
-     * if the {@link #rateType} is {@link RateType#CPD}, it represents line
-     * item days.
+     * The meaning of this value depends
+     *                 on the {@link #rateType}, for example if the {@link
+     * #rateType} is {@link RateType#CPC}, it
+     *                 represents clicks; if the {@link #rateType} is {@link
+     * RateType#CPM}, it represents impressions;
+     *                 if the {@link #rateType} is {@link RateType#CPD},
+     * it represents line item days.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#DFP},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#DFP},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 This attribute is read-only. */
+     *                 <p>This attribute is read-only. */
     private java.lang.Long dfpVolume;
 
     /* The volume recorded by the third-party ad server.
@@ -125,22 +126,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      *                 This attribute is optional. */
     private java.lang.Long thirdPartyVolume;
 
-    /* The volume manually entered.
-     *                 The meaning of this value depends on the {@link #rateType},
-     * for example
-     *                 if the {@link #rateType} is {@link RateType#CPC},
-     * it represents clicks;
-     *                 if the {@link #rateType} is {@link RateType#CPM},
-     * it represents impressions;
-     *                 if the {@link #rateType} is {@link RateType#CPD},
-     * it represents line item days.
+    /* The volume manually entered. The meaning of this value depends
+     * on the {@link #rateType}, for
+     *                 example if the {@link #rateType} is {@link RateType#CPC},
+     * it represents clicks; if the {@link
+     *                 #rateType} is {@link RateType#CPM}, it represents
+     * impressions; if the {@link #rateType} is
+     *                 {@link RateType#CPD}, it represents line item days.
+     * 
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#MANUAL},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#MANUAL},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
-     *                 
-     *                 This attribute is optional. */
+     *                 <p>This attribute is optional. */
     private java.lang.Long manualVolume;
 
     /* The volume depending upon the {@link #billFrom} value.
@@ -243,6 +242,34 @@ public class ReconciliationReportRow  implements java.io.Serializable {
            this.comments = comments;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("comments", getComments())
+            .add("contractedRevenue", getContractedRevenue())
+            .add("creativeId", getCreativeId())
+            .add("dfpRevenue", getDfpRevenue())
+            .add("dfpVolume", getDfpVolume())
+            .add("id", getId())
+            .add("lineItemContractedUnitsBought", getLineItemContractedUnitsBought())
+            .add("lineItemCostPerUnit", getLineItemCostPerUnit())
+            .add("lineItemId", getLineItemId())
+            .add("manualRevenue", getManualRevenue())
+            .add("manualVolume", getManualVolume())
+            .add("orderId", getOrderId())
+            .add("proposalId", getProposalId())
+            .add("proposalLineItemId", getProposalLineItemId())
+            .add("rateType", getRateType())
+            .add("reconciledRevenue", getReconciledRevenue())
+            .add("reconciledVolume", getReconciledVolume())
+            .add("reconciliationReportId", getReconciliationReportId())
+            .add("reconciliationSource", getReconciliationSource())
+            .add("thirdPartyRevenue", getThirdPartyRevenue())
+            .add("thirdPartyVolume", getThirdPartyVolume())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ReconciliationReportRow.
@@ -380,9 +407,9 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Gets the proposalLineItemId value for this ReconciliationReportRow.
      * 
      * @return proposalLineItemId   * The ID of the {@link ProposalLineItem} associated with this
-     * report row.
-     *                 This value is 0 if there is no related {@link ProposalLineItem}.
-     * This attribute is read-only.
+     * report row. This value is 0 if
+     *                 there is no related {@link ProposalLineItem}. This
+     * attribute is read-only.
      */
     public java.lang.Long getProposalLineItemId() {
         return proposalLineItemId;
@@ -393,9 +420,9 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Sets the proposalLineItemId value for this ReconciliationReportRow.
      * 
      * @param proposalLineItemId   * The ID of the {@link ProposalLineItem} associated with this
-     * report row.
-     *                 This value is 0 if there is no related {@link ProposalLineItem}.
-     * This attribute is read-only.
+     * report row. This value is 0 if
+     *                 there is no related {@link ProposalLineItem}. This
+     * attribute is read-only.
      */
     public void setProposalLineItemId(java.lang.Long proposalLineItemId) {
         this.proposalLineItemId = proposalLineItemId;
@@ -406,9 +433,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Gets the proposalId value for this ReconciliationReportRow.
      * 
      * @return proposalId   * The ID of the {@link Proposal} associated with this report
-     * row.
-     *                 This value is 0 if there is no related {@link Proposal}.
-     * This attribute is read-only.
+     * row. This value is 0 if there is no
+     *                 related {@link Proposal}. This attribute is read-only.
      */
     public java.lang.Long getProposalId() {
         return proposalId;
@@ -419,9 +445,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Sets the proposalId value for this ReconciliationReportRow.
      * 
      * @param proposalId   * The ID of the {@link Proposal} associated with this report
-     * row.
-     *                 This value is 0 if there is no related {@link Proposal}.
-     * This attribute is read-only.
+     * row. This value is 0 if there is no
+     *                 related {@link Proposal}. This attribute is read-only.
      */
     public void setProposalId(java.lang.Long proposalId) {
         this.proposalId = proposalId;
@@ -466,8 +491,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Gets the rateType value for this ReconciliationReportRow.
      * 
      * @return rateType   * {@link RateType} of the line item and proposal line item this
-     * row represents.
-     *                 This attribute is read-only.
+     * row represents. This attribute is
+     *                 read-only.
      */
     public com.google.api.ads.dfp.axis.v201702.RateType getRateType() {
         return rateType;
@@ -478,8 +503,8 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Sets the rateType value for this ReconciliationReportRow.
      * 
      * @param rateType   * {@link RateType} of the line item and proposal line item this
-     * row represents.
-     *                 This attribute is read-only.
+     * row represents. This attribute is
+     *                 read-only.
      */
     public void setRateType(com.google.api.ads.dfp.axis.v201702.RateType rateType) {
         this.rateType = rateType;
@@ -540,18 +565,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Gets the dfpVolume value for this ReconciliationReportRow.
      * 
      * @return dfpVolume   * The volume recorded by the DoubleClick for Publishers server.
-     * The meaning of this value depends on the {@link #rateType}, for example
-     * if the {@link #rateType} is {@link RateType#CPC}, it represents clicks;
-     * if the {@link #rateType} is {@link RateType#CPM}, it represents impressions;
-     * if the {@link #rateType} is {@link RateType#CPD}, it represents line
-     * item days.
+     * The meaning of this value depends
+     *                 on the {@link #rateType}, for example if the {@link
+     * #rateType} is {@link RateType#CPC}, it
+     *                 represents clicks; if the {@link #rateType} is {@link
+     * RateType#CPM}, it represents impressions;
+     *                 if the {@link #rateType} is {@link RateType#CPD},
+     * it represents line item days.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#DFP},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#DFP},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
      */
     public java.lang.Long getDfpVolume() {
         return dfpVolume;
@@ -562,18 +589,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
      * Sets the dfpVolume value for this ReconciliationReportRow.
      * 
      * @param dfpVolume   * The volume recorded by the DoubleClick for Publishers server.
-     * The meaning of this value depends on the {@link #rateType}, for example
-     * if the {@link #rateType} is {@link RateType#CPC}, it represents clicks;
-     * if the {@link #rateType} is {@link RateType#CPM}, it represents impressions;
-     * if the {@link #rateType} is {@link RateType#CPD}, it represents line
-     * item days.
+     * The meaning of this value depends
+     *                 on the {@link #rateType}, for example if the {@link
+     * #rateType} is {@link RateType#CPC}, it
+     *                 represents clicks; if the {@link #rateType} is {@link
+     * RateType#CPM}, it represents impressions;
+     *                 if the {@link #rateType} is {@link RateType#CPD},
+     * it represents line item days.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#DFP},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#DFP},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 This attribute is read-only.
+     *                 <p>This attribute is read-only.
      */
     public void setDfpVolume(java.lang.Long dfpVolume) {
         this.dfpVolume = dfpVolume;
@@ -633,22 +662,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     /**
      * Gets the manualVolume value for this ReconciliationReportRow.
      * 
-     * @return manualVolume   * The volume manually entered.
-     *                 The meaning of this value depends on the {@link #rateType},
-     * for example
-     *                 if the {@link #rateType} is {@link RateType#CPC},
-     * it represents clicks;
-     *                 if the {@link #rateType} is {@link RateType#CPM},
-     * it represents impressions;
-     *                 if the {@link #rateType} is {@link RateType#CPD},
-     * it represents line item days.
+     * @return manualVolume   * The volume manually entered. The meaning of this value depends
+     * on the {@link #rateType}, for
+     *                 example if the {@link #rateType} is {@link RateType#CPC},
+     * it represents clicks; if the {@link
+     *                 #rateType} is {@link RateType#CPM}, it represents
+     * impressions; if the {@link #rateType} is
+     *                 {@link RateType#CPD}, it represents line item days.
+     * 
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#MANUAL},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#MANUAL},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
-     *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public java.lang.Long getManualVolume() {
         return manualVolume;
@@ -658,22 +685,20 @@ public class ReconciliationReportRow  implements java.io.Serializable {
     /**
      * Sets the manualVolume value for this ReconciliationReportRow.
      * 
-     * @param manualVolume   * The volume manually entered.
-     *                 The meaning of this value depends on the {@link #rateType},
-     * for example
-     *                 if the {@link #rateType} is {@link RateType#CPC},
-     * it represents clicks;
-     *                 if the {@link #rateType} is {@link RateType#CPM},
-     * it represents impressions;
-     *                 if the {@link #rateType} is {@link RateType#CPD},
-     * it represents line item days.
+     * @param manualVolume   * The volume manually entered. The meaning of this value depends
+     * on the {@link #rateType}, for
+     *                 example if the {@link #rateType} is {@link RateType#CPC},
+     * it represents clicks; if the {@link
+     *                 #rateType} is {@link RateType#CPM}, it represents
+     * impressions; if the {@link #rateType} is
+     *                 {@link RateType#CPD}, it represents line item days.
+     * 
+     *                 <p>If the {@link #billFrom} is {@link BillFrom#MANUAL},
+     * this attribute will be set to {@link
+     *                 #reconciledVolume} and used to calculate the {@link
+     * #reconciledRevenue}.
      *                 
-     *                 If the {@link #billFrom} is {@link BillFrom#MANUAL},
-     * this attribute will be set to
-     *                 {@link #reconciledVolume} and used to calculate the
-     * {@link #reconciledRevenue}.
-     *                 
-     *                 This attribute is optional.
+     *                 <p>This attribute is optional.
      */
     public void setManualVolume(java.lang.Long manualVolume) {
         this.manualVolume = manualVolume;

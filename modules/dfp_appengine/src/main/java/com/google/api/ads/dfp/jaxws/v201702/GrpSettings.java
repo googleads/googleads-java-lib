@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@code GrpSettings} contains information for a line item that will have a target demographic
- *             when serving. This information will be used to set up tracking and enable reporting on the
- *             demographic information.
+ *             {@code GrpSettings} contains information for a line item that will have a target demographic when
+ *             serving. This information will be used to set up tracking and enable reporting on the demographic
+ *             information.
  *           
  * 
  * <p>Java class for GrpSettings complex type.

@@ -42,6 +42,14 @@ public class ExplorerAutoOptimizerSetting  extends com.google.api.ads.adwords.ax
         this.optIn = optIn;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("optIn", getOptIn())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the optIn value for this ExplorerAutoOptimizerSetting.

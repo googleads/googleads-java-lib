@@ -37,6 +37,13 @@ public class AccountLabelReturnValue  implements java.io.Serializable {
            this.labels = labels;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("labels", getLabels())
+            .toString();
+    }
 
     /**
      * Gets the labels value for this AccountLabelReturnValue.

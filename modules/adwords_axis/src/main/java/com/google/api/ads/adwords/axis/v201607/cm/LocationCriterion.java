@@ -95,6 +95,18 @@ public class LocationCriterion  implements java.io.Serializable {
            this.countryCode = countryCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("canonicalName", getCanonicalName())
+            .add("countryCode", getCountryCode())
+            .add("locale", getLocale())
+            .add("location", getLocation())
+            .add("reach", getReach())
+            .add("searchTerm", getSearchTerm())
+            .toString();
+    }
 
     /**
      * Gets the location value for this LocationCriterion.

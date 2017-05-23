@@ -28,9 +28,7 @@ package com.google.api.ads.adwords.axis.v201607.cm;
 public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v201607.cm.BidLandscape  implements java.io.Serializable {
     /* <span class="constraint Selectable">This field can be selected
      * using the value "LandscapeType".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201607.cm.AdGroupBidLandscapeType type;
 
     /* Only applies to landscapes with {@code landscapeType == DEFAULT}.
@@ -42,12 +40,11 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      *                     snapshot of ad group criteria, so it may contain
      * criteria to which bid overrides were recently
      *                     added, and may not contain criteria from which
-     * bid overrides were recently removed.
+     * bid overrides were recently removed. For other
+     *                     {@code landscapeType}s null is returned.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "LandscapeCurrent".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Boolean landscapeCurrent;
 
     public AdGroupBidLandscape() {
@@ -73,6 +70,20 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
         this.landscapeCurrent = landscapeCurrent;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("campaignId", getCampaignId())
+            .add("dataEntryType", getDataEntryType())
+            .add("endDate", getEndDate())
+            .add("landscapeCurrent", getLandscapeCurrent())
+            .add("landscapePoints", getLandscapePoints())
+            .add("startDate", getStartDate())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the type value for this AdGroupBidLandscape.
@@ -80,8 +91,6 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      * @return type   * <span class="constraint Selectable">This field can be selected
      * using the value "LandscapeType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public com.google.api.ads.adwords.axis.v201607.cm.AdGroupBidLandscapeType getType() {
         return type;
@@ -94,8 +103,6 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      * @param type   * <span class="constraint Selectable">This field can be selected
      * using the value "LandscapeType".</span><span class="constraint Filterable">This
      * field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public void setType(com.google.api.ads.adwords.axis.v201607.cm.AdGroupBidLandscapeType type) {
         this.type = type;
@@ -114,12 +121,11 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      *                     snapshot of ad group criteria, so it may contain
      * criteria to which bid overrides were recently
      *                     added, and may not contain criteria from which
-     * bid overrides were recently removed.
+     * bid overrides were recently removed. For other
+     *                     {@code landscapeType}s null is returned.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "LandscapeCurrent".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public java.lang.Boolean getLandscapeCurrent() {
         return landscapeCurrent;
@@ -138,12 +144,11 @@ public class AdGroupBidLandscape  extends com.google.api.ads.adwords.axis.v20160
      *                     snapshot of ad group criteria, so it may contain
      * criteria to which bid overrides were recently
      *                     added, and may not contain criteria from which
-     * bid overrides were recently removed.
+     * bid overrides were recently removed. For other
+     *                     {@code landscapeType}s null is returned.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "LandscapeCurrent".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
      */
     public void setLandscapeCurrent(java.lang.Boolean landscapeCurrent) {
         this.landscapeCurrent = landscapeCurrent;

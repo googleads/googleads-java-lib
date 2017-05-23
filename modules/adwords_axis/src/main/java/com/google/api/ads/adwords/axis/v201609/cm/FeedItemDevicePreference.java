@@ -43,6 +43,13 @@ public class FeedItemDevicePreference  implements java.io.Serializable {
            this.devicePreference = devicePreference;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("devicePreference", getDevicePreference())
+            .toString();
+    }
 
     /**
      * Gets the devicePreference value for this FeedItemDevicePreference.

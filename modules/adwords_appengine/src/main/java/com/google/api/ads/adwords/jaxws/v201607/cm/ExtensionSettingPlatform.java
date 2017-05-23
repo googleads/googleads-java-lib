@@ -42,7 +42,7 @@ public enum ExtensionSettingPlatform {
 
     /**
      * 
-     *                 Desktop only.
+     *                 Desktop and tablet devices only.
      *               
      * 
      */

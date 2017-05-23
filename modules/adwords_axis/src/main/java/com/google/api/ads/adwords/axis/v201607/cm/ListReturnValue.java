@@ -40,6 +40,13 @@ public abstract class ListReturnValue  implements java.io.Serializable {
            this.listReturnValueType = listReturnValueType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("listReturnValueType", getListReturnValueType())
+            .toString();
+    }
 
     /**
      * Gets the listReturnValueType value for this ListReturnValue.

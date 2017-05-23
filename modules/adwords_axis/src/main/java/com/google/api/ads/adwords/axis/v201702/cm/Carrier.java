@@ -59,6 +59,17 @@ public class Carrier  extends com.google.api.ads.adwords.axis.v201702.cm.Criteri
         this.countryCode = countryCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("countryCode", getCountryCode())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("name", getName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the name value for this Carrier.

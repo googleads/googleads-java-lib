@@ -93,6 +93,29 @@ public class Video  extends com.google.api.ads.adwords.axis.v201702.cm.Media  im
         this.youTubeVideoIdString = youTubeVideoIdString;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertisingId", getAdvertisingId())
+            .add("creationTime", getCreationTime())
+            .add("dimensions", getDimensions())
+            .add("durationMillis", getDurationMillis())
+            .add("fileSize", getFileSize())
+            .add("industryStandardCommercialIdentifier", getIndustryStandardCommercialIdentifier())
+            .add("mediaId", getMediaId())
+            .add("mediaType", getMediaType())
+            .add("mimeType", getMimeType())
+            .add("name", getName())
+            .add("readyToPlayOnTheWeb", getReadyToPlayOnTheWeb())
+            .add("referenceId", getReferenceId())
+            .add("sourceUrl", getSourceUrl())
+            .add("streamingUrl", getStreamingUrl())
+            .add("type", getType())
+            .add("urls", getUrls())
+            .add("youTubeVideoIdString", getYouTubeVideoIdString())
+            .toString();
+    }
 
     /**
      * Gets the durationMillis value for this Video.

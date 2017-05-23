@@ -57,6 +57,16 @@ public class DateRuleItem  implements java.io.Serializable {
            this.relativeValue = relativeValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("key", getKey())
+            .add("op", getOp())
+            .add("relativeValue", getRelativeValue())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the key value for this DateRuleItem.

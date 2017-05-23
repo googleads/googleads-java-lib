@@ -53,6 +53,17 @@ public class StringCreativeTemplateVariable  extends com.google.api.ads.dfp.axis
         this.defaultValue = defaultValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("defaultValue", getDefaultValue())
+            .add("description", getDescription())
+            .add("isRequired", getIsRequired())
+            .add("label", getLabel())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the defaultValue value for this StringCreativeTemplateVariable.

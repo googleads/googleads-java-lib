@@ -27,7 +27,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  * a list of
  *             associations between customer and feeds.
  */
-public class CustomerFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm.NullStatsPage  implements java.io.Serializable {
+public class CustomerFeedPage  extends com.google.api.ads.adwords.axis.v201609.cm.NullStatsPage  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed>{
     /* The resulting CustomerFeeds. */
     private com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed[] entries;
 
@@ -44,6 +44,16 @@ public class CustomerFeedPage  extends com.google.api.ads.adwords.axis.v201609.c
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this CustomerFeedPage.
@@ -70,6 +80,23 @@ public class CustomerFeedPage  extends com.google.api.ads.adwords.axis.v201609.c
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201609.cm.CustomerFeed>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

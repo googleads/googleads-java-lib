@@ -25,7 +25,7 @@ package com.google.api.ads.dfp.axis.v201702;
 /**
  * Captures a page of {@link CreativeWrapper} objects.
  */
-public class CreativeWrapperPage  implements java.io.Serializable {
+public class CreativeWrapperPage  implements java.io.Serializable , Iterable<com.google.api.ads.dfp.axis.v201702.CreativeWrapper>{
     /* The size of the total result set to which this page belongs. */
     private java.lang.Integer totalResultSetSize;
 
@@ -48,6 +48,16 @@ public class CreativeWrapperPage  implements java.io.Serializable {
            this.results = results;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of results to avoid overly verbose output
+            .add("results.length", getResults() == null ? 0 : getResults().length)
+            .add("startIndex", getStartIndex())
+            .add("totalResultSetSize", getTotalResultSetSize())
+            .toString();
+    }
 
     /**
      * Gets the totalResultSetSize value for this CreativeWrapperPage.
@@ -116,6 +126,23 @@ public class CreativeWrapperPage  implements java.io.Serializable {
 
     public void setResults(int i, com.google.api.ads.dfp.axis.v201702.CreativeWrapper _value) {
         this.results[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code results} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.dfp.axis.v201702.CreativeWrapper> iterator() {
+        if (results == null) {
+            return java.util.Collections.<com.google.api.ads.dfp.axis.v201702.CreativeWrapper>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.dfp.axis.v201702.CreativeWrapper>asList(results).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

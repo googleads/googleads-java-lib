@@ -25,8 +25,8 @@ import com.google.api.ads.dfp.axis.v201611.CustomTargetingValue;
 import com.google.api.ads.dfp.axis.v201611.CustomTargetingValuePage;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -94,7 +94,7 @@ public class GetAllCustomTargetingKeysAndValues {
    */
   private static List<Long> getAllCustomTargetingKeyIds(DfpServices dfpServices, DfpSession session)
       throws RemoteException {
-    List<Long> customTargetingKeyIds = Lists.newArrayList();
+    List<Long> customTargetingKeyIds = new ArrayList<>();
 
     // Get the CustomTargetingService.
     CustomTargetingServiceInterface customTargetingService =

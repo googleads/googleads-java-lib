@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents one or more {@link CustomTargetingValue custom targeting values} from different
- *             {@link CustomTargetingKey custom targeting keys} ANDed together.
+ *             Represents one or more {@link CustomTargetingValue custom targeting values} from different {@link
+ *             CustomTargetingKey custom targeting keys} ANDed together.
  *           
  * 
  * <p>Java class for ContentMetadataKeyHierarchyTargeting complex type.

@@ -99,6 +99,29 @@ public class ShowcaseAd  extends com.google.api.ads.adwords.axis.v201702.cm.Ad  
         this.expandedImage = expandedImage;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adType", getAdType())
+            .add("collapsedImage", getCollapsedImage())
+            .add("description", getDescription())
+            .add("devicePreference", getDevicePreference())
+            .add("displayUrl", getDisplayUrl())
+            .add("expandedImage", getExpandedImage())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("headline", getHeadline())
+            .add("id", getId())
+            .add("name", getName())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("urlData", getUrlData())
+            .toString();
+    }
 
     /**
      * Gets the name value for this ShowcaseAd.

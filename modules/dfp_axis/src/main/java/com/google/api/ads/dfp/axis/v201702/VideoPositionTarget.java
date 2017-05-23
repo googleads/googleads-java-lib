@@ -55,6 +55,15 @@ public class VideoPositionTarget  implements java.io.Serializable {
            this.videoPositionWithinPod = videoPositionWithinPod;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("videoBumperType", getVideoBumperType())
+            .add("videoPosition", getVideoPosition())
+            .add("videoPositionWithinPod", getVideoPositionWithinPod())
+            .toString();
+    }
 
     /**
      * Gets the videoPosition value for this VideoPositionTarget.

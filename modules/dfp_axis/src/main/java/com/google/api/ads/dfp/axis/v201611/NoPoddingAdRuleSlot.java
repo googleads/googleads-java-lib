@@ -53,6 +53,22 @@ public class NoPoddingAdRuleSlot  extends com.google.api.ads.dfp.axis.v201611.Ba
             maxAdsInPod);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bumper", getBumper())
+            .add("maxAdsInPod", getMaxAdsInPod())
+            .add("maxBumperDuration", getMaxBumperDuration())
+            .add("maxPodDuration", getMaxPodDuration())
+            .add("maxVideoAdDuration", getMaxVideoAdDuration())
+            .add("minPodDuration", getMinPodDuration())
+            .add("minVideoAdDuration", getMinVideoAdDuration())
+            .add("slotBehavior", getSlotBehavior())
+            .add("videoMidrollFrequency", getVideoMidrollFrequency())
+            .add("videoMidrollFrequencyType", getVideoMidrollFrequencyType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof NoPoddingAdRuleSlot)) return false;

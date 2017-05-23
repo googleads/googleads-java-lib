@@ -229,6 +229,32 @@ public class CustomizableAttributes  implements java.io.Serializable {
            this.allowCreativePlaceholdersCustomization = allowCreativePlaceholdersCustomization;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("allowAdUnitTargetingCustomization", getAllowAdUnitTargetingCustomization())
+            .add("allowAudienceSegmentTargetingCustomization", getAllowAudienceSegmentTargetingCustomization())
+            .add("allowBandwidthGroupTargetingCustomization", getAllowBandwidthGroupTargetingCustomization())
+            .add("allowBrowserLanguageTargetingCustomization", getAllowBrowserLanguageTargetingCustomization())
+            .add("allowBrowserTargetingCustomization", getAllowBrowserTargetingCustomization())
+            .add("allowCreativePlaceholdersCustomization", getAllowCreativePlaceholdersCustomization())
+            .add("allowDaypartTargetingCustomization", getAllowDaypartTargetingCustomization())
+            .add("allowDeliverySettingsCustomization", getAllowDeliverySettingsCustomization())
+            .add("allowDeviceCapabilityTargetingCustomization", getAllowDeviceCapabilityTargetingCustomization())
+            .add("allowDeviceCategoryTargetingCustomization", getAllowDeviceCategoryTargetingCustomization())
+            .add("allowFrequencyCapsCustomization", getAllowFrequencyCapsCustomization())
+            .add("allowGeoTargetingCustomization", getAllowGeoTargetingCustomization())
+            .add("allowMobileApplicationTargetingCustomization", getAllowMobileApplicationTargetingCustomization())
+            .add("allowMobileCarrierTargetingCustomization", getAllowMobileCarrierTargetingCustomization())
+            .add("allowMobileDeviceAndManufacturerTargetingCustomization", getAllowMobileDeviceAndManufacturerTargetingCustomization())
+            .add("allowOperatingSystemTargetingCustomization", getAllowOperatingSystemTargetingCustomization())
+            .add("allowPlacementTargetingCustomization", getAllowPlacementTargetingCustomization())
+            .add("allowUserDomainTargetingCustomization", getAllowUserDomainTargetingCustomization())
+            .add("customizableCustomTargetingKeyIds", getCustomizableCustomTargetingKeyIds())
+            .add("isAllCustomTargetingKeysCustomizable", getIsAllCustomTargetingKeysCustomizable())
+            .toString();
+    }
 
     /**
      * Gets the allowGeoTargetingCustomization value for this CustomizableAttributes.

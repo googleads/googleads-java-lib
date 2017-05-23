@@ -40,7 +40,7 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.DateTime;
 
@@ -168,7 +168,7 @@ public class AddRuleBasedUserLists {
     dateUserList.setEndDate(endDate.toString(DATE_FORMAT_STRING));
 
     // Create operations to add the user lists.
-    List<UserListOperation> operations = Lists.newArrayList();
+    List<UserListOperation> operations = new ArrayList<>();
     for (UserList userList : new UserList[] {expressionUserList, dateUserList}) {
       UserListOperation operation = new UserListOperation();
       operation.setOperand(userList);

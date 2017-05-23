@@ -77,6 +77,32 @@ public class VideoRedirectCreative  extends com.google.api.ads.dfp.axis.v201611.
         this.videoAssets = videoAssets;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("allowDurationOverride", getAllowDurationOverride())
+            .add("appliedLabels", getAppliedLabels())
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customParameters", getCustomParameters())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("duration", getDuration())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .add("trackingUrls", getTrackingUrls())
+            .add("vastPreviewUrl", getVastPreviewUrl())
+            .add("videoAssets", getVideoAssets())
+            .toString();
+    }
 
     /**
      * Gets the videoAssets value for this VideoRedirectCreative.

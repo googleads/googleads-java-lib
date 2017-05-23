@@ -47,6 +47,14 @@ public class MobileApplicationTargeting  implements java.io.Serializable {
            this.isTargeted = isTargeted;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("isTargeted", getIsTargeted())
+            .add("mobileApplicationIds", getMobileApplicationIds())
+            .toString();
+    }
 
     /**
      * Gets the mobileApplicationIds value for this MobileApplicationTargeting.

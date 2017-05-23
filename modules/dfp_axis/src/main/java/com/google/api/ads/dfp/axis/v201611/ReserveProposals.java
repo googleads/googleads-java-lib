@@ -40,6 +40,13 @@ public class ReserveProposals  extends com.google.api.ads.dfp.axis.v201611.Propo
         this.allowOverbook = allowOverbook;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("allowOverbook", getAllowOverbook())
+            .toString();
+    }
 
     /**
      * Gets the allowOverbook value for this ReserveProposals.

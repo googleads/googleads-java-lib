@@ -39,6 +39,13 @@ public class RemarketingSettings  implements java.io.Serializable {
            this.snippet = snippet;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("snippet", getSnippet())
+            .toString();
+    }
 
     /**
      * Gets the snippet value for this RemarketingSettings.

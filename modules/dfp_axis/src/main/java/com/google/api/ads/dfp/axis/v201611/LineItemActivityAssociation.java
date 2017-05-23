@@ -60,6 +60,15 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
            this.viewThroughConversionCost = viewThroughConversionCost;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("activityId", getActivityId())
+            .add("clickThroughConversionCost", getClickThroughConversionCost())
+            .add("viewThroughConversionCost", getViewThroughConversionCost())
+            .toString();
+    }
 
     /**
      * Gets the activityId value for this LineItemActivityAssociation.

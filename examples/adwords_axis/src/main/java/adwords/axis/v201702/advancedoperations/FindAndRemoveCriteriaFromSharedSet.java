@@ -38,7 +38,7 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Functions;
 import com.google.common.collect.Collections2;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -93,7 +93,7 @@ public class FindAndRemoveCriteriaFromSharedSet {
           SharedSetType.NEGATIVE_PLACEMENTS.getValue())
       .limit(PAGE_SIZE);
     
-    List<Long> sharedSetIds = Lists.newArrayList();
+    List<Long> sharedSetIds = new ArrayList<>();
     CampaignSharedSetPage campaignSharedSetPage;
     do {
       selectorBuilder.offset(offset);
@@ -126,7 +126,7 @@ public class FindAndRemoveCriteriaFromSharedSet {
       .in("SharedSetId", sharedSetIdStrings)
       .limit(PAGE_SIZE);
     
-    List<SharedCriterionOperation> removeCriterionOperations = Lists.newArrayList();
+    List<SharedCriterionOperation> removeCriterionOperations = new ArrayList<>();
     SharedCriterionPage sharedCriterionPage;
     do {
       selectorBuilder.offset(offset);

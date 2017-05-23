@@ -40,6 +40,14 @@ public class ManualCPMAdGroupExperimentBidMultipliers  extends com.google.api.ad
         this.maxCpmMultiplier = maxCpmMultiplier;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupExperimentBidMultipliersType", getAdGroupExperimentBidMultipliersType())
+            .add("maxCpmMultiplier", getMaxCpmMultiplier())
+            .toString();
+    }
 
     /**
      * Gets the maxCpmMultiplier value for this ManualCPMAdGroupExperimentBidMultipliers.

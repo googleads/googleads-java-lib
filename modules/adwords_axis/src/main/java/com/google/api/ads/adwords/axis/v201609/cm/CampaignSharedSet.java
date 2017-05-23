@@ -91,6 +91,18 @@ public class CampaignSharedSet  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .add("campaignName", getCampaignName())
+            .add("sharedSetId", getSharedSetId())
+            .add("sharedSetName", getSharedSetName())
+            .add("sharedSetType", getSharedSetType())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the sharedSetId value for this CampaignSharedSet.

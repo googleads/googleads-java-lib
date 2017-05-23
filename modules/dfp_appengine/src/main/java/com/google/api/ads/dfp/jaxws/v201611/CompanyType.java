@@ -92,6 +92,9 @@ public enum CompanyType {
     /**
      * 
      *                 A company representing a content owner's affiliate/distribution partner.
+     *                 <p>
+     *                 This field is deprecated in favor of {@link Type#PARTNER}. All companies of type
+     *                 {@link Type#AFFILIATE_DISTRIBUTION_PARTNER} were changed to {@link Type#PARTNER}.
      *               
      * 
      */
@@ -100,6 +103,9 @@ public enum CompanyType {
     /**
      * 
      *                 A company representing a distributor's content partner.
+     *                 <p>
+     *                 This field is deprecated in favor of {@link Type#PARTNER}. All companies of type
+     *                 {@link Type#CONTENT_PARTNER} were changed to {@link Type#PARTNER}.
      *               
      * 
      */

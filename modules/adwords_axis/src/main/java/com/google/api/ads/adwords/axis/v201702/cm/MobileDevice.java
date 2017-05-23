@@ -69,6 +69,19 @@ public class MobileDevice  extends com.google.api.ads.adwords.axis.v201702.cm.Cr
         this.operatingSystemName = operatingSystemName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("deviceName", getDeviceName())
+            .add("deviceType", getDeviceType())
+            .add("id", getId())
+            .add("manufacturerName", getManufacturerName())
+            .add("operatingSystemName", getOperatingSystemName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the deviceName value for this MobileDevice.

@@ -40,6 +40,13 @@ public class CallConversionType  implements java.io.Serializable {
            this.conversionTypeId = conversionTypeId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("conversionTypeId", getConversionTypeId())
+            .toString();
+    }
 
     /**
      * Gets the conversionTypeId value for this CallConversionType.

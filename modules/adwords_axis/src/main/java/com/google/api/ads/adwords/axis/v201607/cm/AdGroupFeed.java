@@ -117,6 +117,19 @@ public class AdGroupFeed  implements java.io.Serializable {
            this.baseAdGroupId = baseAdGroupId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("feedId", getFeedId())
+            .add("matchingFunction", getMatchingFunction())
+            .add("placeholderTypes", getPlaceholderTypes())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this AdGroupFeed.

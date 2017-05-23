@@ -40,6 +40,14 @@ public class Money  extends com.google.api.ads.adwords.axis.v201702.cm.Comparabl
         this.microAmount = microAmount;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comparableValueType", getComparableValueType())
+            .add("microAmount", getMicroAmount())
+            .toString();
+    }
 
     /**
      * Gets the microAmount value for this Money.

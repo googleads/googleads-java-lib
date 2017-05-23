@@ -64,6 +64,15 @@ public class ProductMarketplaceInfo  implements java.io.Serializable {
            this.additionalTermsSource = additionalTermsSource;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adExchangeEnvironment", getAdExchangeEnvironment())
+            .add("additionalTerms", getAdditionalTerms())
+            .add("additionalTermsSource", getAdditionalTermsSource())
+            .toString();
+    }
 
     /**
      * Gets the adExchangeEnvironment value for this ProductMarketplaceInfo.

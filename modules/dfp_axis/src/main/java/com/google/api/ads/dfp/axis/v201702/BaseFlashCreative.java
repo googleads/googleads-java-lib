@@ -101,6 +101,29 @@ public abstract class BaseFlashCreative  extends com.google.api.ads.dfp.axis.v20
         this.fallbackImageAsset = fallbackImageAsset;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("clickTagRequired", getClickTagRequired())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("fallbackImageAsset", getFallbackImageAsset())
+            .add("flashAsset", getFlashAsset())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("overrideSize", getOverrideSize())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .toString();
+    }
 
     /**
      * Gets the overrideSize value for this BaseFlashCreative.

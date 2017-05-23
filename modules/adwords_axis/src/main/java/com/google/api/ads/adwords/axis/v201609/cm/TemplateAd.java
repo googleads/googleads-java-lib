@@ -118,6 +118,31 @@ public class TemplateAd  extends com.google.api.ads.adwords.axis.v201609.cm.Ad  
         this.originAdId = originAdId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adAsImage", getAdAsImage())
+            .add("adType", getAdType())
+            .add("adUnionId", getAdUnionId())
+            .add("devicePreference", getDevicePreference())
+            .add("dimensions", getDimensions())
+            .add("displayUrl", getDisplayUrl())
+            .add("duration", getDuration())
+            .add("finalAppUrls", getFinalAppUrls())
+            .add("finalMobileUrls", getFinalMobileUrls())
+            .add("finalUrls", getFinalUrls())
+            .add("id", getId())
+            .add("name", getName())
+            .add("originAdId", getOriginAdId())
+            .add("templateElements", getTemplateElements())
+            .add("templateId", getTemplateId())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("type", getType())
+            .add("url", getUrl())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .toString();
+    }
 
     /**
      * Gets the templateId value for this TemplateAd.

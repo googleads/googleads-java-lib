@@ -49,6 +49,16 @@ public class ContentLabel  extends com.google.api.ads.adwords.axis.v201609.cm.Cr
         this.contentLabelType = contentLabelType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("contentLabelType", getContentLabelType())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the contentLabelType value for this ContentLabel.

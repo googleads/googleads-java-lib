@@ -44,6 +44,14 @@ public class AppUrl  implements java.io.Serializable {
            this.osType = osType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("osType", getOsType())
+            .add("url", getUrl())
+            .toString();
+    }
 
     /**
      * Gets the url value for this AppUrl.

@@ -94,6 +94,16 @@ public class KeywordEstimateRequest  extends com.google.api.ads.adwords.axis.v20
         this.isNegative = isNegative;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("estimateRequestType", getEstimateRequestType())
+            .add("isNegative", getIsNegative())
+            .add("keyword", getKeyword())
+            .add("maxCpc", getMaxCpc())
+            .toString();
+    }
 
     /**
      * Gets the keyword value for this KeywordEstimateRequest.

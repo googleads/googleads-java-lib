@@ -44,6 +44,15 @@ public class AdGroupExtensionSettingOperation  extends com.google.api.ads.adword
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this AdGroupExtensionSettingOperation.

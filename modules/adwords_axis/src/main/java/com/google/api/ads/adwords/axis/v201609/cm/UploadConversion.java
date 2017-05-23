@@ -75,6 +75,30 @@ public class UploadConversion  extends com.google.api.ads.adwords.axis.v201609.c
             conversionTrackerType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("alwaysUseDefaultRevenueValue", getAlwaysUseDefaultRevenueValue())
+            .add("attributionModelType", getAttributionModelType())
+            .add("category", getCategory())
+            .add("conversionTrackerType", getConversionTrackerType())
+            .add("conversionTypeOwnerCustomerId", getConversionTypeOwnerCustomerId())
+            .add("countingType", getCountingType())
+            .add("ctcLookbackWindow", getCtcLookbackWindow())
+            .add("dataDrivenModelStatus", getDataDrivenModelStatus())
+            .add("defaultRevenueCurrencyCode", getDefaultRevenueCurrencyCode())
+            .add("defaultRevenueValue", getDefaultRevenueValue())
+            .add("excludeFromBidding", getExcludeFromBidding())
+            .add("id", getId())
+            .add("lastReceivedRequestTime", getLastReceivedRequestTime())
+            .add("mostRecentConversionDate", getMostRecentConversionDate())
+            .add("name", getName())
+            .add("originalConversionTypeId", getOriginalConversionTypeId())
+            .add("status", getStatus())
+            .add("viewthroughLookbackWindow", getViewthroughLookbackWindow())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof UploadConversion)) return false;

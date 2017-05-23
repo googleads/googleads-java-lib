@@ -140,6 +140,24 @@ public class AdGroupAd  implements java.io.Serializable {
            this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("ad", getAd())
+            .add("adGroupId", getAdGroupId())
+            .add("approvalStatus", getApprovalStatus())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("disapprovalReasons", getDisapprovalReasons())
+            .add("experimentData", getExperimentData())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("labels", getLabels())
+            .add("status", getStatus())
+            .add("trademarkDisapproved", getTrademarkDisapproved())
+            .add("trademarks", getTrademarks())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdGroupAd.

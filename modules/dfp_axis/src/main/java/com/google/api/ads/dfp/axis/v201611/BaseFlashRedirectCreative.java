@@ -96,6 +96,28 @@ public abstract class BaseFlashRedirectCreative  extends com.google.api.ads.dfp.
         this.sslManualOverride = sslManualOverride;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("fallbackPreviewUrl", getFallbackPreviewUrl())
+            .add("fallbackUrl", getFallbackUrl())
+            .add("flashUrl", getFlashUrl())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .toString();
+    }
 
     /**
      * Gets the flashUrl value for this BaseFlashRedirectCreative.

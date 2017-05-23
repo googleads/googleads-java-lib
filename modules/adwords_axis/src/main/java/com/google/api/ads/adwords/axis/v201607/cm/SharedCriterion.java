@@ -54,6 +54,15 @@ public class SharedCriterion  implements java.io.Serializable {
            this.negative = negative;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterion", getCriterion())
+            .add("negative", getNegative())
+            .add("sharedSetId", getSharedSetId())
+            .toString();
+    }
 
     /**
      * Gets the sharedSetId value for this SharedCriterion.

@@ -28,10 +28,14 @@ package com.google.api.ads.adwords.axis.v201702.rm;
  */
 public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v201702.rm.RuleBasedUserList  implements java.io.Serializable {
     /* Boolean rule that defines this user list. The rule consists
-     * of a list of
-     *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation. This
-     *                     field is selected by default.
+     * of a list of rule item groups and
+     *                     each rule item group consists of a list of rule
+     * items.
+     *                     All the rule item groups are ORed together for
+     * evaluation before version V201705.
+     *                     Starting from version V201705, the group operator
+     * is based on {@link Rule#getRuleType()}.
+     *                     This field is selected by default.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is
@@ -86,15 +90,45 @@ public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v20
         this.rule = rule;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accessReason", getAccessReason())
+            .add("accountUserListStatus", getAccountUserListStatus())
+            .add("closingReason", getClosingReason())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("integrationCode", getIntegrationCode())
+            .add("isEligibleForDisplay", getIsEligibleForDisplay())
+            .add("isEligibleForSearch", getIsEligibleForSearch())
+            .add("isReadOnly", getIsReadOnly())
+            .add("listType", getListType())
+            .add("membershipLifeSpan", getMembershipLifeSpan())
+            .add("name", getName())
+            .add("prepopulationStatus", getPrepopulationStatus())
+            .add("rule", getRule())
+            .add("size", getSize())
+            .add("sizeForSearch", getSizeForSearch())
+            .add("sizeRange", getSizeRange())
+            .add("sizeRangeForSearch", getSizeRangeForSearch())
+            .add("status", getStatus())
+            .add("userListType", getUserListType())
+            .toString();
+    }
 
     /**
      * Gets the rule value for this ExpressionRuleUserList.
      * 
      * @return rule   * Boolean rule that defines this user list. The rule consists
-     * of a list of
-     *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation. This
-     *                     field is selected by default.
+     * of a list of rule item groups and
+     *                     each rule item group consists of a list of rule
+     * items.
+     *                     All the rule item groups are ORed together for
+     * evaluation before version V201705.
+     *                     Starting from version V201705, the group operator
+     * is based on {@link Rule#getRuleType()}.
+     *                     This field is selected by default.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is
@@ -110,10 +144,14 @@ public class ExpressionRuleUserList  extends com.google.api.ads.adwords.axis.v20
      * Sets the rule value for this ExpressionRuleUserList.
      * 
      * @param rule   * Boolean rule that defines this user list. The rule consists
-     * of a list of
-     *                     rule item groups. All the rule item groups are
-     * ORed for the evaluation. This
-     *                     field is selected by default.
+     * of a list of rule item groups and
+     *                     each rule item group consists of a list of rule
+     * items.
+     *                     All the rule item groups are ORed together for
+     * evaluation before version V201705.
+     *                     Starting from version V201705, the group operator
+     * is based on {@link Rule#getRuleType()}.
+     *                     This field is selected by default.
      *                     <span class="constraint Selectable">This field
      * can be selected using the value "ExpressionListRule".</span>
      *                     <span class="constraint Required">This field is

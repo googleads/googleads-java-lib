@@ -60,6 +60,15 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
         this.spendTarget = spendTarget;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("spendTarget", getSpendTarget())
+            .toString();
+    }
 
     /**
      * Gets the bidCeiling value for this TargetSpendBiddingScheme.

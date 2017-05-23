@@ -52,6 +52,14 @@ public class CustomParameters  implements java.io.Serializable {
            this.doReplace = doReplace;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("doReplace", getDoReplace())
+            .add("parameters", getParameters())
+            .toString();
+    }
 
     /**
      * Gets the parameters value for this CustomParameters.

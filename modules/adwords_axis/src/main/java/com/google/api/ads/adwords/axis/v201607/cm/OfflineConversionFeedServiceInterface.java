@@ -30,6 +30,11 @@ public interface OfflineConversionFeedServiceInterface extends java.rmi.Remote {
      * Some operations can succeed
      *         while others fail.
      *         
+     *         <p><b>Note:</b> {@link OfflineConversionFeedOperation} supports
+     * only the
+     *         {@code ADD} operator. ({@code SET} and {@code REMOVE} are
+     * not supported.)
+     *         
      *         
      * @param operations A list of offline conversion feed operations.
      *         

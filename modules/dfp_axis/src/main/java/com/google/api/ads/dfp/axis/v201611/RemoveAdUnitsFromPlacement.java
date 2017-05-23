@@ -38,6 +38,13 @@ public class RemoveAdUnitsFromPlacement  extends com.google.api.ads.dfp.axis.v20
         this.placementId = placementId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("placementId", getPlacementId())
+            .toString();
+    }
 
     /**
      * Gets the placementId value for this RemoveAdUnitsFromPlacement.

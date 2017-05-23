@@ -36,6 +36,9 @@ public class ChangeHistoryEntityType implements java.io.Serializable {
     public static final java.lang.String _CONTACT = "CONTACT";
     public static final java.lang.String _CREATIVE = "CREATIVE";
     public static final java.lang.String _CREATIVE_SET = "CREATIVE_SET";
+    public static final java.lang.String _CUSTOM_FIELD = "CUSTOM_FIELD";
+    public static final java.lang.String _CUSTOM_KEY = "CUSTOM_KEY";
+    public static final java.lang.String _CUSTOM_VALUE = "CUSTOM_VALUE";
     public static final java.lang.String _PLACEMENT = "PLACEMENT";
     public static final java.lang.String _AD_UNIT = "AD_UNIT";
     public static final java.lang.String _LABEL = "LABEL";
@@ -50,6 +53,9 @@ public class ChangeHistoryEntityType implements java.io.Serializable {
     public static final ChangeHistoryEntityType CONTACT = new ChangeHistoryEntityType(_CONTACT);
     public static final ChangeHistoryEntityType CREATIVE = new ChangeHistoryEntityType(_CREATIVE);
     public static final ChangeHistoryEntityType CREATIVE_SET = new ChangeHistoryEntityType(_CREATIVE_SET);
+    public static final ChangeHistoryEntityType CUSTOM_FIELD = new ChangeHistoryEntityType(_CUSTOM_FIELD);
+    public static final ChangeHistoryEntityType CUSTOM_KEY = new ChangeHistoryEntityType(_CUSTOM_KEY);
+    public static final ChangeHistoryEntityType CUSTOM_VALUE = new ChangeHistoryEntityType(_CUSTOM_VALUE);
     public static final ChangeHistoryEntityType PLACEMENT = new ChangeHistoryEntityType(_PLACEMENT);
     public static final ChangeHistoryEntityType AD_UNIT = new ChangeHistoryEntityType(_AD_UNIT);
     public static final ChangeHistoryEntityType LABEL = new ChangeHistoryEntityType(_LABEL);

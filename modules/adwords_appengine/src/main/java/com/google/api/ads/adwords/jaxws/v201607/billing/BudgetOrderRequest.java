@@ -26,7 +26,6 @@ import com.google.api.ads.adwords.jaxws.v201607.cm.Money;
  * 
  *             Holds fields that provide information on the last set of values that were passed in through
  *             the parent BudgetOrder for mutate.add and mutate.set.
- *             <span class="constraint Billing">This element only applies if manager account is whitelisted for new billing backend.</span>
  *           
  * 
  * <p>Java class for BudgetOrderRequest complex type.

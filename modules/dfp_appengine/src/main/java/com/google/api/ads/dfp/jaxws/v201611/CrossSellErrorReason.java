@@ -54,6 +54,8 @@ public enum CrossSellErrorReason {
     /**
      * 
      *                 Only standard or sponsorship line item types are supported for cross selling.
+     *                 <p>
+     *                 This field is deprecated. This error will never be returned.
      *               
      * 
      */
@@ -62,6 +64,8 @@ public enum CrossSellErrorReason {
     /**
      * 
      *                 A cross-sell partner must have at least one eligible line item type.
+     *                 <p>
+     *                 This field is deprecated. This error will never be returned.
      *               
      * 
      */
@@ -69,7 +73,7 @@ public enum CrossSellErrorReason {
 
     /**
      * 
-     *                 A company for cross-sell partner must be an affiliate/distribution company.
+     *                 A company for cross-sell partner must be of type {@link Company.Type#PARTNER}.
      *               
      * 
      */

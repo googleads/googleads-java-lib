@@ -42,6 +42,13 @@ public class QualityInfo  implements java.io.Serializable {
            this.qualityScore = qualityScore;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("qualityScore", getQualityScore())
+            .toString();
+    }
 
     /**
      * Gets the qualityScore value for this QualityInfo.

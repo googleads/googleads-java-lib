@@ -41,6 +41,13 @@ public class TrafficEstimatorResult  implements java.io.Serializable {
            this.campaignEstimates = campaignEstimates;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignEstimates", getCampaignEstimates())
+            .toString();
+    }
 
     /**
      * Gets the campaignEstimates value for this TrafficEstimatorResult.

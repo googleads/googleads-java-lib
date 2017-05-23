@@ -25,7 +25,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A client defined rule based on custom parameters sent by web sites.
- *             It consists of rule item groups that are connected by OR.
  *           
  * 
  * <p>Java class for Rule complex type.

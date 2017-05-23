@@ -32,6 +32,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -97,7 +98,7 @@ public class SetLineItemCustomFieldValue {
 
     // Create a combined custom field value list of existing different custom
     // field values and new ones.
-    List<BaseCustomFieldValue> combinedCustomFieldValues = Lists.newArrayList();
+    List<BaseCustomFieldValue> combinedCustomFieldValues = new ArrayList<>();
     if (lineItem.getCustomFieldValues() != null) {
       for (BaseCustomFieldValue existingCustomFieldValue : lineItem.getCustomFieldValues()) {
         if (!existingCustomFieldValue.getCustomFieldId().equals(numberCustomFieldId)

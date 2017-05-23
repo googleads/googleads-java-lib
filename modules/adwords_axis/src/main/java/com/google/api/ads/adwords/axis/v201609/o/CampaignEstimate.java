@@ -56,6 +56,16 @@ public class CampaignEstimate  extends com.google.api.ads.adwords.axis.v201609.o
         this.platformEstimates = platformEstimates;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupEstimates", getAdGroupEstimates())
+            .add("campaignId", getCampaignId())
+            .add("estimateType", getEstimateType())
+            .add("platformEstimates", getPlatformEstimates())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignEstimate.

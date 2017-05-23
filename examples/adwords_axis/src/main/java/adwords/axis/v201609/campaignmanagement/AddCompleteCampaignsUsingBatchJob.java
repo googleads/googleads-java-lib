@@ -57,8 +57,8 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.AbstractSequentialIterator;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -130,7 +130,7 @@ public class AddCompleteCampaignsUsingBatchJob {
     String namePrefix = UUID.randomUUID().toString();
 
     // Create the mutate request that will be sent to the upload URL.
-    List<Operation> operations = Lists.newArrayList();
+    List<Operation> operations = new ArrayList<>();
 
     // Create and add an operation to create a new budget.
     BudgetOperation budgetOperation = buildBudgetOperation(tempIdGenerator, namePrefix);
@@ -146,7 +146,7 @@ public class AddCompleteCampaignsUsingBatchJob {
 
     // Create and add operations to create new ad groups.
     List<AdGroupOperation> adGroupOperations =
-        Lists.newArrayList(buildAdGroupOperations(tempIdGenerator, namePrefix, campaignOperations));
+        new ArrayList<>(buildAdGroupOperations(tempIdGenerator, namePrefix, campaignOperations));
     operations.addAll(adGroupOperations);
 
     // Create and add operations to create new ad group criteria (keywords).
@@ -218,7 +218,7 @@ public class AddCompleteCampaignsUsingBatchJob {
 
   private static List<AdGroupAdOperation> buildAdGroupAdOperations(
       List<AdGroupOperation> adGroupOperations) {
-    List<AdGroupAdOperation> operations = Lists.newArrayList();
+    List<AdGroupAdOperation> operations = new ArrayList<>();
     for (AdGroupOperation adGroupOperation : adGroupOperations) {
       long adGroupId = adGroupOperation.getOperand().getId();
       AdGroupAd adGroupAd = new AdGroupAd();
@@ -243,7 +243,7 @@ public class AddCompleteCampaignsUsingBatchJob {
 
   private static List<AdGroupCriterionOperation> buildAdGroupCriterionOperations(
       List<AdGroupOperation> adGroupOperations) {
-    List<AdGroupCriterionOperation> adGroupCriteriaOperations = Lists.newArrayList();
+    List<AdGroupCriterionOperation> adGroupCriteriaOperations = new ArrayList<>();
 
     // Create AdGroupCriterionOperations to add keywords.
     for (AdGroupOperation adGroupOperation : adGroupOperations) {
@@ -279,7 +279,7 @@ public class AddCompleteCampaignsUsingBatchJob {
 
   private static List<AdGroupOperation> buildAdGroupOperations(Iterator<Long> tempIdGenerator,
       String namePrefix, Iterable<CampaignOperation> campaignOperations) {
-    List<AdGroupOperation> operations = Lists.newArrayList();
+    List<AdGroupOperation> operations = new ArrayList<>();
     for (CampaignOperation campaignOperation : campaignOperations) {
       for (int i = 0; i < NUMBER_OF_ADGROUPS_TO_ADD; i++) {
         AdGroup adGroup = new AdGroup();
@@ -308,7 +308,7 @@ public class AddCompleteCampaignsUsingBatchJob {
   private static List<CampaignCriterionOperation> buildCampaignCriterionOperations(
       List<CampaignOperation> campaignOperations) {
 
-    List<CampaignCriterionOperation> operations = Lists.newArrayList();
+    List<CampaignCriterionOperation> operations = new ArrayList<>();
     for (CampaignOperation campaignOperation : campaignOperations) {
       Keyword keyword = new Keyword();
       keyword.setMatchType(KeywordMatchType.BROAD);
@@ -332,7 +332,7 @@ public class AddCompleteCampaignsUsingBatchJob {
       Iterator<Long> tempIdGenerator, String namePrefix, BudgetOperation budgetOperation) {
     long budgetId = budgetOperation.getOperand().getBudgetId();
 
-    List<CampaignOperation> operations = Lists.newArrayList();
+    List<CampaignOperation> operations = new ArrayList<>();
     for (int i = 0; i < NUMBER_OF_CAMPAIGNS_TO_ADD; i++) {
       Campaign campaign = new Campaign();
       campaign.setName(String.format("Batch Campaign %s.%s", namePrefix, i));

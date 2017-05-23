@@ -109,6 +109,31 @@ public class Operand  implements java.io.Serializable {
            this.media = media;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("ad", getAd())
+            .add("adGroup", getAdGroup())
+            .add("adGroupAd", getAdGroupAd())
+            .add("adGroupAdLabel", getAdGroupAdLabel())
+            .add("adGroupBidModifier", getAdGroupBidModifier())
+            .add("adGroupCriterion", getAdGroupCriterion())
+            .add("adGroupCriterionLabel", getAdGroupCriterionLabel())
+            .add("adGroupExtensionSetting", getAdGroupExtensionSetting())
+            .add("adGroupLabel", getAdGroupLabel())
+            .add("budget", getBudget())
+            .add("campaign", getCampaign())
+            .add("campaignCriterion", getCampaignCriterion())
+            .add("campaignExtensionSetting", getCampaignExtensionSetting())
+            .add("campaignLabel", getCampaignLabel())
+            .add("customerExtensionSetting", getCustomerExtensionSetting())
+            .add("extensionFeedItem", getExtensionFeedItem())
+            .add("feedItem", getFeedItem())
+            .add("label", getLabel())
+            .add("media", getMedia())
+            .toString();
+    }
 
     /**
      * Gets the adGroupAdLabel value for this Operand.

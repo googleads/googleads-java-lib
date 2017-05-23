@@ -47,6 +47,15 @@ public class Date  implements java.io.Serializable {
            this.day = day;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("day", getDay())
+            .add("month", getMonth())
+            .add("year", getYear())
+            .toString();
+    }
 
     /**
      * Gets the year value for this Date.

@@ -76,6 +76,18 @@ public class Team  implements java.io.Serializable {
            this.teamAccessType = teamAccessType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("description", getDescription())
+            .add("hasAllCompanies", getHasAllCompanies())
+            .add("hasAllInventory", getHasAllInventory())
+            .add("id", getId())
+            .add("name", getName())
+            .add("teamAccessType", getTeamAccessType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Team.

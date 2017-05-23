@@ -23,8 +23,6 @@ import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201607.billing.BudgetOrderError;
 import com.google.api.ads.adwords.jaxws.v201607.billing.CustomerOrderLineError;
 import com.google.api.ads.adwords.jaxws.v201607.ch.CustomerSyncError;
-import com.google.api.ads.adwords.jaxws.v201607.express.ExpressBusinessError;
-import com.google.api.ads.adwords.jaxws.v201607.express.PromotionError;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.CustomerError;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.LabelServiceError;
 import com.google.api.ads.adwords.jaxws.v201607.mcm.ManagedCustomerServiceError;
@@ -72,6 +70,18 @@ import com.google.api.ads.adwords.jaxws.v201607.rm.UserListError;
     "apiErrorType"
 })
 @XmlSeeAlso({
+    CustomerSyncError.class,
+    CustomerError.class,
+    LabelServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201607.mcm.CollectionSizeError.class,
+    ManagedCustomerServiceError.class,
+    com.google.api.ads.adwords.jaxws.v201607.mcm.CurrencyCodeError.class,
+    TargetingIdeaError.class,
+    TrafficEstimatorError.class,
+    com.google.api.ads.adwords.jaxws.v201607.o.CurrencyCodeError.class,
+    UserListError.class,
+    MutateMembersError.class,
+    com.google.api.ads.adwords.jaxws.v201607.rm.CollectionSizeError.class,
     DataError.class,
     OfflineConversionError.class,
     ReportDefinitionError.class,
@@ -158,20 +168,6 @@ import com.google.api.ads.adwords.jaxws.v201607.rm.UserListError;
     AdParamError.class,
     RangeError.class,
     DatabaseError.class,
-    UserListError.class,
-    MutateMembersError.class,
-    com.google.api.ads.adwords.jaxws.v201607.rm.CollectionSizeError.class,
-    TargetingIdeaError.class,
-    TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201607.o.CurrencyCodeError.class,
-    CustomerError.class,
-    LabelServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201607.mcm.CollectionSizeError.class,
-    ManagedCustomerServiceError.class,
-    com.google.api.ads.adwords.jaxws.v201607.mcm.CurrencyCodeError.class,
-    ExpressBusinessError.class,
-    PromotionError.class,
-    CustomerSyncError.class,
     BudgetOrderError.class,
     CustomerOrderLineError.class
 })

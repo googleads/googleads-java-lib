@@ -74,6 +74,17 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
            this.buyerAccountId = buyerAccountId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("buyerAccountId", getBuyerAccountId())
+            .add("hasLocalVersionEdits", getHasLocalVersionEdits())
+            .add("isNewVersionFromBuyer", getIsNewVersionFromBuyer())
+            .add("marketplaceComment", getMarketplaceComment())
+            .add("negotiationStatus", getNegotiationStatus())
+            .toString();
+    }
 
     /**
      * Gets the hasLocalVersionEdits value for this ProposalMarketplaceInfo.

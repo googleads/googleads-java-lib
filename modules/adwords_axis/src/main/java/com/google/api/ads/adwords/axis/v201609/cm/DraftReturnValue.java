@@ -39,6 +39,14 @@ public class DraftReturnValue  extends com.google.api.ads.adwords.axis.v201609.c
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("listReturnValueType", getListReturnValueType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this DraftReturnValue.

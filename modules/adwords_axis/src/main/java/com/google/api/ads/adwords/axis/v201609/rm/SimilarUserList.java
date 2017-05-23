@@ -123,6 +123,34 @@ public class SimilarUserList  extends com.google.api.ads.adwords.axis.v201609.rm
         this.seedListSize = seedListSize;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("accessReason", getAccessReason())
+            .add("accountUserListStatus", getAccountUserListStatus())
+            .add("description", getDescription())
+            .add("id", getId())
+            .add("integrationCode", getIntegrationCode())
+            .add("isEligibleForDisplay", getIsEligibleForDisplay())
+            .add("isEligibleForSearch", getIsEligibleForSearch())
+            .add("isReadOnly", getIsReadOnly())
+            .add("listType", getListType())
+            .add("membershipLifeSpan", getMembershipLifeSpan())
+            .add("name", getName())
+            .add("seedListSize", getSeedListSize())
+            .add("seedUserListDescription", getSeedUserListDescription())
+            .add("seedUserListId", getSeedUserListId())
+            .add("seedUserListName", getSeedUserListName())
+            .add("seedUserListStatus", getSeedUserListStatus())
+            .add("size", getSize())
+            .add("sizeForSearch", getSizeForSearch())
+            .add("sizeRange", getSizeRange())
+            .add("sizeRangeForSearch", getSizeRangeForSearch())
+            .add("status", getStatus())
+            .add("userListType", getUserListType())
+            .toString();
+    }
 
     /**
      * Gets the seedUserListId value for this SimilarUserList.

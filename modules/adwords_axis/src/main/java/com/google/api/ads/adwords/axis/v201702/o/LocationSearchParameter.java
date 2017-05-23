@@ -68,6 +68,14 @@ public class LocationSearchParameter  extends com.google.api.ads.adwords.axis.v2
         this.locations = locations;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("locations", getLocations())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the locations value for this LocationSearchParameter.

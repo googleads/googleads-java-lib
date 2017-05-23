@@ -33,12 +33,9 @@ package com.google.api.ads.adwords.axis.v201609.o;
  */
 public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axis.v201609.o.SearchParameter  implements java.io.Serializable {
     /* A set of URL strings to which search results should be related.
-     * For
-     *                     {@code PLACEMENT} queries, up to five URLs may
-     * be submitted. For
-     *                     {@code KEYWORD} queries, only one URL may be submitted.
-     * <span class="constraint ContentsDistinct">This field must contain
-     * distinct elements.</span>
+     * For {@code KEYWORD} queries, only one URL may be submitted.
+     *                     <span class="constraint ContentsDistinct">This
+     * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
      *                     <span class="constraint NotEmpty">This field must
@@ -49,8 +46,7 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
 
     /* Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}. Valid only for {@code
-     * PLACEMENT} queries. */
+     *                     Default is {@code false}. */
     private java.lang.Boolean includeSubUrls;
 
     public RelatedToUrlSearchParameter() {
@@ -66,17 +62,23 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
         this.includeSubUrls = includeSubUrls;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("includeSubUrls", getIncludeSubUrls())
+            .add("searchParameterType", getSearchParameterType())
+            .add("urls", getUrls())
+            .toString();
+    }
 
     /**
      * Gets the urls value for this RelatedToUrlSearchParameter.
      * 
      * @return urls   * A set of URL strings to which search results should be related.
-     * For
-     *                     {@code PLACEMENT} queries, up to five URLs may
-     * be submitted. For
-     *                     {@code KEYWORD} queries, only one URL may be submitted.
-     * <span class="constraint ContentsDistinct">This field must contain
-     * distinct elements.</span>
+     * For {@code KEYWORD} queries, only one URL may be submitted.
+     *                     <span class="constraint ContentsDistinct">This
+     * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
      *                     <span class="constraint NotEmpty">This field must
@@ -93,12 +95,9 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
      * Sets the urls value for this RelatedToUrlSearchParameter.
      * 
      * @param urls   * A set of URL strings to which search results should be related.
-     * For
-     *                     {@code PLACEMENT} queries, up to five URLs may
-     * be submitted. For
-     *                     {@code KEYWORD} queries, only one URL may be submitted.
-     * <span class="constraint ContentsDistinct">This field must contain
-     * distinct elements.</span>
+     * For {@code KEYWORD} queries, only one URL may be submitted.
+     *                     <span class="constraint ContentsDistinct">This
+     * field must contain distinct elements.</span>
      *                     <span class="constraint ContentsNotNull">This
      * field must not contain {@code null} elements.</span>
      *                     <span class="constraint NotEmpty">This field must
@@ -124,8 +123,7 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
      * 
      * @return includeSubUrls   * Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}. Valid only for {@code
-     * PLACEMENT} queries.
+     *                     Default is {@code false}.
      */
     public java.lang.Boolean getIncludeSubUrls() {
         return includeSubUrls;
@@ -137,8 +135,7 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
      * 
      * @param includeSubUrls   * Whether to crawl links off of the {@code urls} for the same
      * domain.
-     *                     Default is {@code false}. Valid only for {@code
-     * PLACEMENT} queries.
+     *                     Default is {@code false}.
      */
     public void setIncludeSubUrls(java.lang.Boolean includeSubUrls) {
         this.includeSubUrls = includeSubUrls;

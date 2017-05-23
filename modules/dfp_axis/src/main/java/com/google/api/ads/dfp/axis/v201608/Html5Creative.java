@@ -70,7 +70,10 @@ public class Html5Creative  extends com.google.api.ads.dfp.axis.v201608.Creative
 
     /* The HTML5 asset. To preview the HTML5 asset, use the {@link
      * CreativeAsset#assetUrl}.
-     *                     This attribute is required. */
+     *                     In this field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the
+     *                     {@link CreativeAsset#fileName} must have a zip
+     * extension. This attribute is required. */
     private com.google.api.ads.dfp.axis.v201608.CreativeAsset html5Asset;
 
     public Html5Creative() {
@@ -116,6 +119,30 @@ public class Html5Creative  extends com.google.api.ads.dfp.axis.v201608.Creative
         this.html5Asset = html5Asset;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("html5Asset", getHtml5Asset())
+            .add("id", getId())
+            .add("isInterstitial", getIsInterstitial())
+            .add("isSafeFrameCompatible", getIsSafeFrameCompatible())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lockedOrientation", getLockedOrientation())
+            .add("name", getName())
+            .add("overrideSize", getOverrideSize())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .add("thirdPartyClickTrackingUrl", getThirdPartyClickTrackingUrl())
+            .add("thirdPartyImpressionTrackingUrls", getThirdPartyImpressionTrackingUrls())
+            .toString();
+    }
 
     /**
      * Gets the overrideSize value for this Html5Creative.
@@ -322,7 +349,10 @@ public class Html5Creative  extends com.google.api.ads.dfp.axis.v201608.Creative
      * 
      * @return html5Asset   * The HTML5 asset. To preview the HTML5 asset, use the {@link
      * CreativeAsset#assetUrl}.
-     *                     This attribute is required.
+     *                     In this field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the
+     *                     {@link CreativeAsset#fileName} must have a zip
+     * extension. This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201608.CreativeAsset getHtml5Asset() {
         return html5Asset;
@@ -334,7 +364,10 @@ public class Html5Creative  extends com.google.api.ads.dfp.axis.v201608.Creative
      * 
      * @param html5Asset   * The HTML5 asset. To preview the HTML5 asset, use the {@link
      * CreativeAsset#assetUrl}.
-     *                     This attribute is required.
+     *                     In this field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the
+     *                     {@link CreativeAsset#fileName} must have a zip
+     * extension. This attribute is required.
      */
     public void setHtml5Asset(com.google.api.ads.dfp.axis.v201608.CreativeAsset html5Asset) {
         this.html5Asset = html5Asset;

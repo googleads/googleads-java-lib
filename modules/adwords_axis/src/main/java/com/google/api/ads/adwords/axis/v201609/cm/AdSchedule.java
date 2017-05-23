@@ -109,6 +109,20 @@ public class AdSchedule  extends com.google.api.ads.adwords.axis.v201609.cm.Crit
         this.endMinute = endMinute;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("dayOfWeek", getDayOfWeek())
+            .add("endHour", getEndHour())
+            .add("endMinute", getEndMinute())
+            .add("id", getId())
+            .add("startHour", getStartHour())
+            .add("startMinute", getStartMinute())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the dayOfWeek value for this AdSchedule.

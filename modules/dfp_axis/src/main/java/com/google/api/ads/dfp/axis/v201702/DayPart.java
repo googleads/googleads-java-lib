@@ -49,6 +49,15 @@ public class DayPart  implements java.io.Serializable {
            this.endTime = endTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dayOfWeek", getDayOfWeek())
+            .add("endTime", getEndTime())
+            .add("startTime", getStartTime())
+            .toString();
+    }
 
     /**
      * Gets the dayOfWeek value for this DayPart.

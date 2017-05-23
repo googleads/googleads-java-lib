@@ -39,6 +39,13 @@ public class RejectWorkflowApprovalRequests  extends com.google.api.ads.dfp.axis
         this.comment = comment;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comment", getComment())
+            .toString();
+    }
 
     /**
      * Gets the comment value for this RejectWorkflowApprovalRequests.

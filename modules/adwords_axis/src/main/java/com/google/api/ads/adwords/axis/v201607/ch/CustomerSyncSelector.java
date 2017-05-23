@@ -59,6 +59,15 @@ public class CustomerSyncSelector  implements java.io.Serializable {
            this.feedIds = feedIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignIds", getCampaignIds())
+            .add("dateTimeRange", getDateTimeRange())
+            .add("feedIds", getFeedIds())
+            .toString();
+    }
 
     /**
      * Gets the dateTimeRange value for this CustomerSyncSelector.

@@ -70,6 +70,14 @@ public class AccountLabel  implements java.io.Serializable {
            this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AccountLabel.

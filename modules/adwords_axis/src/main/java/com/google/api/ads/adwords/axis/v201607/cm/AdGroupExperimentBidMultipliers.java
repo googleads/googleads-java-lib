@@ -43,6 +43,13 @@ public abstract class AdGroupExperimentBidMultipliers  implements java.io.Serial
            this.adGroupExperimentBidMultipliersType = adGroupExperimentBidMultipliersType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupExperimentBidMultipliersType", getAdGroupExperimentBidMultipliersType())
+            .toString();
+    }
 
     /**
      * Gets the adGroupExperimentBidMultipliersType value for this AdGroupExperimentBidMultipliers.

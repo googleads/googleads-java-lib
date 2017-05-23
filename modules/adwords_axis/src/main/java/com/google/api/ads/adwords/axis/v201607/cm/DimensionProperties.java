@@ -39,6 +39,14 @@ public abstract class DimensionProperties  extends com.google.api.ads.adwords.ax
         this.levelOfDetail = levelOfDetail;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataEntryType", getDataEntryType())
+            .add("levelOfDetail", getLevelOfDetail())
+            .toString();
+    }
 
     /**
      * Gets the levelOfDetail value for this DimensionProperties.

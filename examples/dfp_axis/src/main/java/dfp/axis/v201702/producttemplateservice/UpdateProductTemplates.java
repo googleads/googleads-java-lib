@@ -27,7 +27,7 @@ import com.google.api.ads.dfp.axis.v201702.Targeting;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -69,11 +69,12 @@ public class UpdateProductTemplates {
     Targeting productTemplateTargeting = productTemplate.getBuiltInTargeting();
     GeoTargeting geoTargeting = productTemplateTargeting.getGeoTargeting();
     
-    List<Location> existingTargetedLocations = Lists.newArrayList();
+    List<Location> existingTargetedLocations = new ArrayList<>();
     
     if (geoTargeting != null) {
       if (geoTargeting.getTargetedLocations() != null) {
-        existingTargetedLocations = Lists.newArrayList(geoTargeting.getTargetedLocations());
+        existingTargetedLocations =
+            new ArrayList<>(Arrays.asList(geoTargeting.getTargetedLocations()));
       }
     } else {
       geoTargeting = new GeoTargeting();

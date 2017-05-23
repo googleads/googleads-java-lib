@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="PARENT"/>
  *     &lt;enumeration value="DIRECTLY_SPECIFIED"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -53,7 +54,15 @@ public enum ValueSourceType {
      *               
      * 
      */
-    DIRECTLY_SPECIFIED;
+    DIRECTLY_SPECIFIED,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

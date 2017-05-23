@@ -46,11 +46,9 @@ public class BudgetOrder  implements java.io.Serializable {
      * to aid in reconciling monthly invoices.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BillingAccountName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 80, inclusive, (trimmed).</span> */
     private java.lang.String billingAccountName;
@@ -60,11 +58,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 in their monthly invoices.
      *                 
      *                 This number will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "PoNumber".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "PoNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 30, inclusive, (trimmed).</span> */
     private java.lang.String poNumber;
@@ -74,11 +70,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 will be provided if none is specified.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetOrderName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BudgetOrderName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 40, inclusive, (trimmed).</span> */
     private java.lang.String budgetOrderName;
@@ -89,11 +83,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PrimaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PrimaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span> */
     private java.lang.String primaryBillingId;
@@ -104,19 +96,17 @@ public class BudgetOrder  implements java.io.Serializable {
      * the user may ignore this parameter.
      *                 If specified, this must be passed in as a string with
      * dashes, e.g. "1234-5678-9012".
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "SecondaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SecondaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span> */
     private java.lang.String secondaryBillingId;
 
     /* The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0. Note,
-     * that for get requests the spending limit
+     *                 otherwise spendingLimit must be greater than 0. Note
+     * that for get requests, the spending limit
      *                 includes any adjustments that have been applied to
      * the budget order. For mutate,
      *                 the spending limit represents the maximum allowed
@@ -168,10 +158,8 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 were passed in through the parent BudgetOrder for
      * mutate.add and
      *                 mutate.set.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "LastRequest".</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201607.billing.BudgetOrderRequest lastRequest;
@@ -204,6 +192,23 @@ public class BudgetOrder  implements java.io.Serializable {
            this.lastRequest = lastRequest;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billingAccountId", getBillingAccountId())
+            .add("billingAccountName", getBillingAccountName())
+            .add("budgetOrderName", getBudgetOrderName())
+            .add("endDateTime", getEndDateTime())
+            .add("id", getId())
+            .add("lastRequest", getLastRequest())
+            .add("poNumber", getPoNumber())
+            .add("primaryBillingId", getPrimaryBillingId())
+            .add("secondaryBillingId", getSecondaryBillingId())
+            .add("spendingLimit", getSpendingLimit())
+            .add("startDateTime", getStartDateTime())
+            .toString();
+    }
 
     /**
      * Gets the billingAccountId value for this BudgetOrder.
@@ -268,11 +273,9 @@ public class BudgetOrder  implements java.io.Serializable {
      * to aid in reconciling monthly invoices.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BillingAccountName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 80, inclusive, (trimmed).</span>
      */
@@ -288,11 +291,9 @@ public class BudgetOrder  implements java.io.Serializable {
      * to aid in reconciling monthly invoices.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BillingAccountName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BillingAccountName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 80, inclusive, (trimmed).</span>
      */
@@ -309,11 +310,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 in their monthly invoices.
      *                 
      *                 This number will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "PoNumber".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "PoNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 30, inclusive, (trimmed).</span>
      */
@@ -330,11 +329,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 in their monthly invoices.
      *                 
      *                 This number will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "PoNumber".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "PoNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 30, inclusive, (trimmed).</span>
      */
@@ -351,11 +348,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 will be provided if none is specified.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetOrderName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BudgetOrderName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 40, inclusive, (trimmed).</span>
      */
@@ -372,11 +367,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 will be provided if none is specified.
      *                 
      *                 This name will be printed in the monthly invoices.
-     * <span class="constraint Billing">This element only applies if manager
-     * account is whitelisted for new billing backend.</span>
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "BudgetOrderName".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "BudgetOrderName".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 40, inclusive, (trimmed).</span>
      */
@@ -394,11 +387,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PrimaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PrimaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span>
      */
@@ -416,11 +407,9 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 
      *                 For mutate.add, this field is required if billingAccountId
      * is not specified.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "PrimaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PrimaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span>
      */
@@ -438,11 +427,9 @@ public class BudgetOrder  implements java.io.Serializable {
      * the user may ignore this parameter.
      *                 If specified, this must be passed in as a string with
      * dashes, e.g. "1234-5678-9012".
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "SecondaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SecondaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span>
      */
@@ -460,11 +447,9 @@ public class BudgetOrder  implements java.io.Serializable {
      * the user may ignore this parameter.
      *                 If specified, this must be passed in as a string with
      * dashes, e.g. "1234-5678-9012".
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "SecondaryBillingId".</span><span class="constraint Filterable">This
-     * field can be filtered on.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SecondaryBillingId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint StringLength">The length of
      * this string should be between 0 and 14, inclusive, (trimmed).</span>
      */
@@ -478,8 +463,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * 
      * @return spendingLimit   * The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0. Note,
-     * that for get requests the spending limit
+     *                 otherwise spendingLimit must be greater than 0. Note
+     * that for get requests, the spending limit
      *                 includes any adjustments that have been applied to
      * the budget order. For mutate,
      *                 the spending limit represents the maximum allowed
@@ -504,8 +489,8 @@ public class BudgetOrder  implements java.io.Serializable {
      * 
      * @param spendingLimit   * The spending limit in micros. To specify an unlimited budget,
      * set spendingLimit to -1,
-     *                 otherwise spendingLimit must be greater than 0. Note,
-     * that for get requests the spending limit
+     *                 otherwise spendingLimit must be greater than 0. Note
+     * that for get requests, the spending limit
      *                 includes any adjustments that have been applied to
      * the budget order. For mutate,
      *                 the spending limit represents the maximum allowed
@@ -623,10 +608,8 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 were passed in through the parent BudgetOrder for
      * mutate.add and
      *                 mutate.set.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "LastRequest".</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -643,10 +626,8 @@ public class BudgetOrder  implements java.io.Serializable {
      *                 were passed in through the parent BudgetOrder for
      * mutate.add and
      *                 mutate.set.
-     *                 <span class="constraint Billing">This element only
-     * applies if manager account is whitelisted for new billing backend.</span>
-     * <span class="constraint Selectable">This field can be selected using
-     * the value "LastRequest".</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LastRequest".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

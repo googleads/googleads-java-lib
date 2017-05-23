@@ -81,6 +81,18 @@ public class Activity  implements java.io.Serializable {
            this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("activityGroupId", getActivityGroupId())
+            .add("expectedURL", getExpectedURL())
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Activity.

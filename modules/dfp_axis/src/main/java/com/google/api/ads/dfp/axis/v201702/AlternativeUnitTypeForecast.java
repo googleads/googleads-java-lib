@@ -68,6 +68,16 @@ public class AlternativeUnitTypeForecast  implements java.io.Serializable {
            this.possibleUnits = possibleUnits;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("availableUnits", getAvailableUnits())
+            .add("matchedUnits", getMatchedUnits())
+            .add("possibleUnits", getPossibleUnits())
+            .add("unitType", getUnitType())
+            .toString();
+    }
 
     /**
      * Gets the unitType value for this AlternativeUnitTypeForecast.

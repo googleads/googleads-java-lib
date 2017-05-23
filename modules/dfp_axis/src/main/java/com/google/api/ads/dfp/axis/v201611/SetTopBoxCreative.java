@@ -107,6 +107,36 @@ public class SetTopBoxCreative  extends com.google.api.ads.dfp.axis.v201611.Base
         this.licenseWindowEndDateTime = licenseWindowEndDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("allowDurationOverride", getAllowDurationOverride())
+            .add("appliedLabels", getAppliedLabels())
+            .add("availabilityRegionIds", getAvailabilityRegionIds())
+            .add("companionCreativeIds", getCompanionCreativeIds())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customParameters", getCustomParameters())
+            .add("destinationUrl", getDestinationUrl())
+            .add("destinationUrlType", getDestinationUrlType())
+            .add("duration", getDuration())
+            .add("externalAssetId", getExternalAssetId())
+            .add("id", getId())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("licenseWindowEndDateTime", getLicenseWindowEndDateTime())
+            .add("licenseWindowStartDateTime", getLicenseWindowStartDateTime())
+            .add("name", getName())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("providerId", getProviderId())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .add("trackingUrls", getTrackingUrls())
+            .add("vastPreviewUrl", getVastPreviewUrl())
+            .toString();
+    }
 
     /**
      * Gets the externalAssetId value for this SetTopBoxCreative.

@@ -38,19 +38,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum CustomerErrorReason {
 
-
-    /**
-     * 
-     *                 A temporary server error. The request can be retried.
-     *               
-     * 
-     */
     TEMPORARY,
 
     /**
      * 
-     *                 CustomerService cannot {@link CustomerService#get() get} an account that is not fully set
-     *                 up.
+     *                 CustomerService cannot {@link CustomerService#get() get} an account that is not fully set up.
      *               
      * 
      */

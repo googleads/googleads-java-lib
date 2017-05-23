@@ -127,7 +127,12 @@ public class AdUnit  implements java.io.Serializable {
      * to which this ad unit belongs.
      *                 This attribute is optional. Setting this attribute
      * to {@code null} will disassociate
-     *                 the partner from this ad unit. */
+     *                 the partner from this ad unit.
+     *                 <p>
+     *                 This field is deprecated. All companies of type
+     *                 {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}
+     * were changed to
+     *                 {@link Company.Type#PARTNER}. */
     private java.lang.Long partnerId;
 
     /* The set of label frequency caps applied directly to this ad
@@ -167,36 +172,40 @@ public class AdUnit  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201608.DateTime lastModifiedDateTime;
 
     /* The smart size mode for this ad unit. This attribute is optional
-     * and
-     *                 defaults to {@link SmartSizeMode#NONE} for fixed sizes. */
+     * and defaults to {@link
+     *                 SmartSizeMode#NONE} for fixed sizes. */
     private com.google.api.ads.dfp.axis.v201608.SmartSizeMode smartSizeMode;
 
     /* The interval in seconds which ad units in mobile apps automatically
-     * refresh. Valid values are between 30 and 120 seconds. This attribute
-     * is
-     *                 optional and only applies to ad units in mobile apps.
-     * If this value is
-     *                 not set, then the mobile app ad will not refresh. */
+     * refresh. Valid values are
+     *                 between 30 and 120 seconds. This attribute is optional
+     * and only applies to ad units in mobile
+     *                 apps. If this value is not set, then the mobile app
+     * ad will not refresh. */
     private java.lang.Integer refreshRate;
 
     /* Whether this ad unit is shared by a distributor network. When
      * this field is {@code true}, then
      *                 {@code crossSellingDistributor} will contain data
-     * for the distributor network.
-     *                 This attribute is read-only. */
+     * for the distributor network. This attribute
+     *                 is read-only.
+     *                 <p>
+     *                 This field is deprecated. */
     private java.lang.Boolean isSharedByDistributor;
 
     /* If this ad unit is shared by a distributor network, then this
      * field will contain data
-     *                 describing that distributor network.
-     *                 This attribute is read-only. */
+     *                 describing that distributor network. This attribute
+     * is read-only.
+     *                 <p>
+     *                 This field is deprecated. */
     private com.google.api.ads.dfp.axis.v201608.CrossSellingDistributor crossSellingDistributor;
 
     /* Specifies an ID for a channel in an external set-top box campaign
      * management system. This
      *                 attribute is only meaningful if {@link #isSetTopBoxEnabled}
-     * is {@code true}.
-     *                 This attribute is read-only. */
+     * is {@code true}. This attribute is
+     *                 read-only. */
     private java.lang.String externalSetTopBoxChannelId;
 
     /* Flag that specifies whether this ad unit represents an external
@@ -264,6 +273,39 @@ public class AdUnit  implements java.io.Serializable {
            this.isSetTopBoxEnabled = isSetTopBoxEnabled;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnitCode", getAdUnitCode())
+            .add("adUnitSizes", getAdUnitSizes())
+            .add("appliedLabelFrequencyCaps", getAppliedLabelFrequencyCaps())
+            .add("appliedLabels", getAppliedLabels())
+            .add("appliedTeamIds", getAppliedTeamIds())
+            .add("crossSellingDistributor", getCrossSellingDistributor())
+            .add("description", getDescription())
+            .add("effectiveAppliedLabels", getEffectiveAppliedLabels())
+            .add("effectiveLabelFrequencyCaps", getEffectiveLabelFrequencyCaps())
+            .add("effectiveTeamIds", getEffectiveTeamIds())
+            .add("explicitlyTargeted", getExplicitlyTargeted())
+            .add("externalSetTopBoxChannelId", getExternalSetTopBoxChannelId())
+            .add("hasChildren", getHasChildren())
+            .add("id", getId())
+            .add("inheritedAdSenseSettings", getInheritedAdSenseSettings())
+            .add("isSetTopBoxEnabled", getIsSetTopBoxEnabled())
+            .add("isSharedByDistributor", getIsSharedByDistributor())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("mobilePlatform", getMobilePlatform())
+            .add("name", getName())
+            .add("parentId", getParentId())
+            .add("parentPath", getParentPath())
+            .add("partnerId", getPartnerId())
+            .add("refreshRate", getRefreshRate())
+            .add("smartSizeMode", getSmartSizeMode())
+            .add("status", getStatus())
+            .add("targetWindow", getTargetWindow())
+            .toString();
+    }
 
     /**
      * Gets the id value for this AdUnit.
@@ -652,6 +694,11 @@ public class AdUnit  implements java.io.Serializable {
      *                 This attribute is optional. Setting this attribute
      * to {@code null} will disassociate
      *                 the partner from this ad unit.
+     *                 <p>
+     *                 This field is deprecated. All companies of type
+     *                 {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}
+     * were changed to
+     *                 {@link Company.Type#PARTNER}.
      */
     public java.lang.Long getPartnerId() {
         return partnerId;
@@ -667,6 +714,11 @@ public class AdUnit  implements java.io.Serializable {
      *                 This attribute is optional. Setting this attribute
      * to {@code null} will disassociate
      *                 the partner from this ad unit.
+     *                 <p>
+     *                 This field is deprecated. All companies of type
+     *                 {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER}
+     * were changed to
+     *                 {@link Company.Type#PARTNER}.
      */
     public void setPartnerId(java.lang.Long partnerId) {
         this.partnerId = partnerId;
@@ -895,8 +947,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the smartSizeMode value for this AdUnit.
      * 
      * @return smartSizeMode   * The smart size mode for this ad unit. This attribute is optional
-     * and
-     *                 defaults to {@link SmartSizeMode#NONE} for fixed sizes.
+     * and defaults to {@link
+     *                 SmartSizeMode#NONE} for fixed sizes.
      */
     public com.google.api.ads.dfp.axis.v201608.SmartSizeMode getSmartSizeMode() {
         return smartSizeMode;
@@ -907,8 +959,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the smartSizeMode value for this AdUnit.
      * 
      * @param smartSizeMode   * The smart size mode for this ad unit. This attribute is optional
-     * and
-     *                 defaults to {@link SmartSizeMode#NONE} for fixed sizes.
+     * and defaults to {@link
+     *                 SmartSizeMode#NONE} for fixed sizes.
      */
     public void setSmartSizeMode(com.google.api.ads.dfp.axis.v201608.SmartSizeMode smartSizeMode) {
         this.smartSizeMode = smartSizeMode;
@@ -919,11 +971,11 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the refreshRate value for this AdUnit.
      * 
      * @return refreshRate   * The interval in seconds which ad units in mobile apps automatically
-     * refresh. Valid values are between 30 and 120 seconds. This attribute
-     * is
-     *                 optional and only applies to ad units in mobile apps.
-     * If this value is
-     *                 not set, then the mobile app ad will not refresh.
+     * refresh. Valid values are
+     *                 between 30 and 120 seconds. This attribute is optional
+     * and only applies to ad units in mobile
+     *                 apps. If this value is not set, then the mobile app
+     * ad will not refresh.
      */
     public java.lang.Integer getRefreshRate() {
         return refreshRate;
@@ -934,11 +986,11 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the refreshRate value for this AdUnit.
      * 
      * @param refreshRate   * The interval in seconds which ad units in mobile apps automatically
-     * refresh. Valid values are between 30 and 120 seconds. This attribute
-     * is
-     *                 optional and only applies to ad units in mobile apps.
-     * If this value is
-     *                 not set, then the mobile app ad will not refresh.
+     * refresh. Valid values are
+     *                 between 30 and 120 seconds. This attribute is optional
+     * and only applies to ad units in mobile
+     *                 apps. If this value is not set, then the mobile app
+     * ad will not refresh.
      */
     public void setRefreshRate(java.lang.Integer refreshRate) {
         this.refreshRate = refreshRate;
@@ -951,8 +1003,10 @@ public class AdUnit  implements java.io.Serializable {
      * @return isSharedByDistributor   * Whether this ad unit is shared by a distributor network. When
      * this field is {@code true}, then
      *                 {@code crossSellingDistributor} will contain data
-     * for the distributor network.
-     *                 This attribute is read-only.
+     * for the distributor network. This attribute
+     *                 is read-only.
+     *                 <p>
+     *                 This field is deprecated.
      */
     public java.lang.Boolean getIsSharedByDistributor() {
         return isSharedByDistributor;
@@ -965,8 +1019,10 @@ public class AdUnit  implements java.io.Serializable {
      * @param isSharedByDistributor   * Whether this ad unit is shared by a distributor network. When
      * this field is {@code true}, then
      *                 {@code crossSellingDistributor} will contain data
-     * for the distributor network.
-     *                 This attribute is read-only.
+     * for the distributor network. This attribute
+     *                 is read-only.
+     *                 <p>
+     *                 This field is deprecated.
      */
     public void setIsSharedByDistributor(java.lang.Boolean isSharedByDistributor) {
         this.isSharedByDistributor = isSharedByDistributor;
@@ -978,8 +1034,10 @@ public class AdUnit  implements java.io.Serializable {
      * 
      * @return crossSellingDistributor   * If this ad unit is shared by a distributor network, then this
      * field will contain data
-     *                 describing that distributor network.
-     *                 This attribute is read-only.
+     *                 describing that distributor network. This attribute
+     * is read-only.
+     *                 <p>
+     *                 This field is deprecated.
      */
     public com.google.api.ads.dfp.axis.v201608.CrossSellingDistributor getCrossSellingDistributor() {
         return crossSellingDistributor;
@@ -991,8 +1049,10 @@ public class AdUnit  implements java.io.Serializable {
      * 
      * @param crossSellingDistributor   * If this ad unit is shared by a distributor network, then this
      * field will contain data
-     *                 describing that distributor network.
-     *                 This attribute is read-only.
+     *                 describing that distributor network. This attribute
+     * is read-only.
+     *                 <p>
+     *                 This field is deprecated.
      */
     public void setCrossSellingDistributor(com.google.api.ads.dfp.axis.v201608.CrossSellingDistributor crossSellingDistributor) {
         this.crossSellingDistributor = crossSellingDistributor;
@@ -1005,8 +1065,8 @@ public class AdUnit  implements java.io.Serializable {
      * @return externalSetTopBoxChannelId   * Specifies an ID for a channel in an external set-top box campaign
      * management system. This
      *                 attribute is only meaningful if {@link #isSetTopBoxEnabled}
-     * is {@code true}.
-     *                 This attribute is read-only.
+     * is {@code true}. This attribute is
+     *                 read-only.
      */
     public java.lang.String getExternalSetTopBoxChannelId() {
         return externalSetTopBoxChannelId;
@@ -1019,8 +1079,8 @@ public class AdUnit  implements java.io.Serializable {
      * @param externalSetTopBoxChannelId   * Specifies an ID for a channel in an external set-top box campaign
      * management system. This
      *                 attribute is only meaningful if {@link #isSetTopBoxEnabled}
-     * is {@code true}.
-     *                 This attribute is read-only.
+     * is {@code true}. This attribute is
+     *                 read-only.
      */
     public void setExternalSetTopBoxChannelId(java.lang.String externalSetTopBoxChannelId) {
         this.externalSetTopBoxChannelId = externalSetTopBoxChannelId;

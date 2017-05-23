@@ -48,6 +48,14 @@ public class CampaignLabel  implements java.io.Serializable {
            this.labelId = labelId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignId", getCampaignId())
+            .add("labelId", getLabelId())
+            .toString();
+    }
 
     /**
      * Gets the campaignId value for this CampaignLabel.

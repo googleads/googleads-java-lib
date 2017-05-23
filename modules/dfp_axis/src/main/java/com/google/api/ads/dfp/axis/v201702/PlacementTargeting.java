@@ -37,6 +37,13 @@ public class PlacementTargeting  implements java.io.Serializable {
            this.targetedPlacementIds = targetedPlacementIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetedPlacementIds", getTargetedPlacementIds())
+            .toString();
+    }
 
     /**
      * Gets the targetedPlacementIds value for this PlacementTargeting.

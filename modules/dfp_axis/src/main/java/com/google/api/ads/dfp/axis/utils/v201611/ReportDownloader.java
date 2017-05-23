@@ -34,7 +34,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.rmi.RemoteException;
-import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -63,7 +62,7 @@ public class ReportDownloader {
   private final long reportJobId;
   private final Sleeper sleeper;
   
-  private static final Set<ExportFormat> SUPPORTED_CHARSOURCE_EXPORT_FORMATS =
+  private static final ImmutableSet<ExportFormat> SUPPORTED_CHARSOURCE_EXPORT_FORMATS =
       ImmutableSet.of(ExportFormat.CSV_DUMP, ExportFormat.TSV, ExportFormat.XML);
   
   private static class GZippedByteSource extends ByteSource {

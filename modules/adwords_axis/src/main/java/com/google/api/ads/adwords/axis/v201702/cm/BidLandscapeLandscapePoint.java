@@ -149,6 +149,23 @@ public class BidLandscapeLandscapePoint  implements java.io.Serializable {
            this.totalLocalPromotedImpressions = totalLocalPromotedImpressions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bid", getBid())
+            .add("bidModifier", getBidModifier())
+            .add("clicks", getClicks())
+            .add("cost", getCost())
+            .add("impressions", getImpressions())
+            .add("promotedImpressions", getPromotedImpressions())
+            .add("requiredBudget", getRequiredBudget())
+            .add("totalLocalClicks", getTotalLocalClicks())
+            .add("totalLocalCost", getTotalLocalCost())
+            .add("totalLocalImpressions", getTotalLocalImpressions())
+            .add("totalLocalPromotedImpressions", getTotalLocalPromotedImpressions())
+            .toString();
+    }
 
     /**
      * Gets the bid value for this BidLandscapeLandscapePoint.

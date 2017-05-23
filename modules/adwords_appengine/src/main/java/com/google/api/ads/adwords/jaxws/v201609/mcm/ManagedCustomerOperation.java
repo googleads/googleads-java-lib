@@ -24,11 +24,7 @@ import com.google.api.ads.adwords.jaxws.v201609.cm.Operation;
 /**
  * 
  *             An operation to create or modify a managed customer.
- *             <p class="note"><b>Note:</b>
- *             <li><code>ADD</code> operator is supported in all API versions.</li>
- *             <li><code>SET</code> operator is supported beginning with v201601.</li>
- *             <li><code>REMOVE</code> operator is not supported.</li>
- *             </p>
+ *             <p><b>Note:</b> The {@code REMOVE} operator is not supported.</p>
  *           
  * 
  * <p>Java class for ManagedCustomerOperation complex type.

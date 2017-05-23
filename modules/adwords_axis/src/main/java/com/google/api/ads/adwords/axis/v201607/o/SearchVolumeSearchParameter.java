@@ -52,6 +52,14 @@ public class SearchVolumeSearchParameter  extends com.google.api.ads.adwords.axi
         this.operation = operation;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operation", getOperation())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the operation value for this SearchVolumeSearchParameter.

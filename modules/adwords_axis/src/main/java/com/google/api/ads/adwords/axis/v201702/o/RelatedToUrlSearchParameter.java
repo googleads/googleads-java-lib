@@ -62,6 +62,15 @@ public class RelatedToUrlSearchParameter  extends com.google.api.ads.adwords.axi
         this.includeSubUrls = includeSubUrls;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("includeSubUrls", getIncludeSubUrls())
+            .add("searchParameterType", getSearchParameterType())
+            .add("urls", getUrls())
+            .toString();
+    }
 
     /**
      * Gets the urls value for this RelatedToUrlSearchParameter.

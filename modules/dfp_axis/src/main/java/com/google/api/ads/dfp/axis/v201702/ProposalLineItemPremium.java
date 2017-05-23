@@ -28,7 +28,8 @@ package com.google.api.ads.dfp.axis.v201702;
  */
 public class ProposalLineItemPremium  implements java.io.Serializable {
     /* The {@link PremiumRateValue} triggered by the {@link ProposalLineItem}.
-     * This attribute is required. */
+     * This attribute is
+     *                 required. */
     private com.google.api.ads.dfp.axis.v201702.PremiumRateValue premiumRateValue;
 
     /* The status of the triggered premium. This attribute is required. */
@@ -44,12 +45,21 @@ public class ProposalLineItemPremium  implements java.io.Serializable {
            this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("premiumRateValue", getPremiumRateValue())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the premiumRateValue value for this ProposalLineItemPremium.
      * 
      * @return premiumRateValue   * The {@link PremiumRateValue} triggered by the {@link ProposalLineItem}.
-     * This attribute is required.
+     * This attribute is
+     *                 required.
      */
     public com.google.api.ads.dfp.axis.v201702.PremiumRateValue getPremiumRateValue() {
         return premiumRateValue;
@@ -60,7 +70,8 @@ public class ProposalLineItemPremium  implements java.io.Serializable {
      * Sets the premiumRateValue value for this ProposalLineItemPremium.
      * 
      * @param premiumRateValue   * The {@link PremiumRateValue} triggered by the {@link ProposalLineItem}.
-     * This attribute is required.
+     * This attribute is
+     *                 required.
      */
     public void setPremiumRateValue(com.google.api.ads.dfp.axis.v201702.PremiumRateValue premiumRateValue) {
         this.premiumRateValue = premiumRateValue;

@@ -71,6 +71,17 @@ public class ShoppingSetting  extends com.google.api.ads.adwords.axis.v201702.cm
         this.enableLocal = enableLocal;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("campaignPriority", getCampaignPriority())
+            .add("enableLocal", getEnableLocal())
+            .add("merchantId", getMerchantId())
+            .add("salesCountry", getSalesCountry())
+            .add("settingType", getSettingType())
+            .toString();
+    }
 
     /**
      * Gets the merchantId value for this ShoppingSetting.

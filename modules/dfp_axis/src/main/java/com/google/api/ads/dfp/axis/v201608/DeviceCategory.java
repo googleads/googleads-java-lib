@@ -37,6 +37,14 @@ public class DeviceCategory  extends com.google.api.ads.dfp.axis.v201608.Technol
             name);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DeviceCategory)) return false;

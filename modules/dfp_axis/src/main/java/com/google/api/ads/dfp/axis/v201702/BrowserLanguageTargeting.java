@@ -47,6 +47,14 @@ public class BrowserLanguageTargeting  implements java.io.Serializable {
            this.browserLanguages = browserLanguages;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("browserLanguages", getBrowserLanguages())
+            .add("isTargeted", getIsTargeted())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this BrowserLanguageTargeting.

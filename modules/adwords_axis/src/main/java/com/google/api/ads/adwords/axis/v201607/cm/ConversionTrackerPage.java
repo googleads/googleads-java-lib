@@ -28,7 +28,7 @@ package com.google.api.ads.adwords.axis.v201607.cm;
  *             and paging of the {@link ConversionTrackerService#get}
  * call.
  */
-public class ConversionTrackerPage  extends com.google.api.ads.adwords.axis.v201607.cm.NoStatsPage  implements java.io.Serializable {
+public class ConversionTrackerPage  extends com.google.api.ads.adwords.axis.v201607.cm.NoStatsPage  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker>{
     /* The result entries in this page. */
     private com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker[] entries;
 
@@ -45,6 +45,16 @@ public class ConversionTrackerPage  extends com.google.api.ads.adwords.axis.v201
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this ConversionTrackerPage.
@@ -71,6 +81,23 @@ public class ConversionTrackerPage  extends com.google.api.ads.adwords.axis.v201
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201607.cm.ConversionTracker>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

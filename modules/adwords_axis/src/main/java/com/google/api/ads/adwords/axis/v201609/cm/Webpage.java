@@ -68,6 +68,18 @@ public class Webpage  extends com.google.api.ads.adwords.axis.v201609.cm.Criteri
         this.criteriaSamples = criteriaSamples;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criteriaCoverage", getCriteriaCoverage())
+            .add("criteriaSamples", getCriteriaSamples())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("parameter", getParameter())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the parameter value for this Webpage.

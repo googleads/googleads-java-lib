@@ -45,6 +45,14 @@ public class Money  implements java.io.Serializable {
            this.microAmount = microAmount;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("currencyCode", getCurrencyCode())
+            .add("microAmount", getMicroAmount())
+            .toString();
+    }
 
     /**
      * Gets the currencyCode value for this Money.

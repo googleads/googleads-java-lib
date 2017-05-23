@@ -46,6 +46,14 @@ public class ConversionOptimizerEligibility  implements java.io.Serializable {
            this.rejectionReasons = rejectionReasons;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("eligible", getEligible())
+            .add("rejectionReasons", getRejectionReasons())
+            .toString();
+    }
 
     /**
      * Gets the eligible value for this ConversionOptimizerEligibility.

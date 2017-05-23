@@ -49,6 +49,15 @@ public class CpmBid  extends com.google.api.ads.adwords.axis.v201702.cm.Bids  im
         this.cpmBidSource = cpmBidSource;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bid", getBid())
+            .add("bidsType", getBidsType())
+            .add("cpmBidSource", getCpmBidSource())
+            .toString();
+    }
 
     /**
      * Gets the bid value for this CpmBid.

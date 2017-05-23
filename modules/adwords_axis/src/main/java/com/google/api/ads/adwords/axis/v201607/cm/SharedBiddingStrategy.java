@@ -100,6 +100,18 @@ public class SharedBiddingStrategy  implements java.io.Serializable {
            this.systemStatus = systemStatus;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingScheme", getBiddingScheme())
+            .add("id", getId())
+            .add("name", getName())
+            .add("status", getStatus())
+            .add("systemStatus", getSystemStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the biddingScheme value for this SharedBiddingStrategy.

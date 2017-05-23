@@ -28,8 +28,7 @@ package com.google.api.ads.dfp.axis.v201702;
  */
 public class ApproveWorkflowApprovalRequests  extends com.google.api.ads.dfp.axis.v201702.WorkflowRequestAction  implements java.io.Serializable {
     /* The comment of the {@link ApproveWorkflowApprovalRequests}
-     * action.
-     *                     This field is optional. */
+     * action. This field is optional. */
     private java.lang.String comment;
 
     public ApproveWorkflowApprovalRequests() {
@@ -40,13 +39,19 @@ public class ApproveWorkflowApprovalRequests  extends com.google.api.ads.dfp.axi
         this.comment = comment;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("comment", getComment())
+            .toString();
+    }
 
     /**
      * Gets the comment value for this ApproveWorkflowApprovalRequests.
      * 
      * @return comment   * The comment of the {@link ApproveWorkflowApprovalRequests}
-     * action.
-     *                     This field is optional.
+     * action. This field is optional.
      */
     public java.lang.String getComment() {
         return comment;
@@ -57,8 +62,7 @@ public class ApproveWorkflowApprovalRequests  extends com.google.api.ads.dfp.axi
      * Sets the comment value for this ApproveWorkflowApprovalRequests.
      * 
      * @param comment   * The comment of the {@link ApproveWorkflowApprovalRequests}
-     * action.
-     *                     This field is optional.
+     * action. This field is optional.
      */
     public void setComment(java.lang.String comment) {
         this.comment = comment;

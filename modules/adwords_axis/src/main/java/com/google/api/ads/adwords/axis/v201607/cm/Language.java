@@ -55,6 +55,17 @@ public class Language  extends com.google.api.ads.adwords.axis.v201607.cm.Criter
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("code", getCode())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("name", getName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the code value for this Language.

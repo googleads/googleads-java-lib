@@ -91,28 +91,29 @@ public class ProductSegmentation  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.OperatingSystemTargeting operatingSystemSegment;
 
     /* The mobile carrier segmentation. {@link MobileCarrierTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201702.MobileCarrierTargeting mobileCarrierSegment;
 
-    /* The device capability segmentation.
-     *                 {@link DeviceCapabilityTargeting#excludedDeviceCapabilities}
+    /* The device capability segmentation. {@link
+     *                 DeviceCapabilityTargeting#excludedDeviceCapabilities}
      * must be empty or null.
      *                 
      *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201702.DeviceCapabilityTargeting deviceCapabilitySegment;
 
     /* The device category segmentation. {@link DeviceCategoryTargeting#excludedDeviceCategories}
-     * must be empty or null.
+     * must
+     *                 be empty or null.
      *                 
      *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201702.DeviceCategoryTargeting deviceCategorySegment;
 
     /* The device manufacturer segmentation. {@link DeviceFamilyTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201702.DeviceManufacturerTargeting deviceManufacturerSegment;
@@ -124,8 +125,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      *                 <p>This attribute is optional. */
     private com.google.api.ads.dfp.axis.v201702.MobileDeviceTargeting mobileDeviceSegment;
 
-    /* The mobile device submodel segmentation.
-     *                 {@link MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
+    /* The mobile device submodel segmentation. {@link
+     *                 MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
      * must be empty or null. */
     private com.google.api.ads.dfp.axis.v201702.MobileDeviceSubmodelTargeting mobileDeviceSubmodelSegment;
 
@@ -172,6 +173,28 @@ public class ProductSegmentation  implements java.io.Serializable {
            this.videoPositionSegment = videoPositionSegment;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adUnitSegments", getAdUnitSegments())
+            .add("bandwidthSegment", getBandwidthSegment())
+            .add("browserLanguageSegment", getBrowserLanguageSegment())
+            .add("browserSegment", getBrowserSegment())
+            .add("customTargetingSegment", getCustomTargetingSegment())
+            .add("deviceCapabilitySegment", getDeviceCapabilitySegment())
+            .add("deviceCategorySegment", getDeviceCategorySegment())
+            .add("deviceManufacturerSegment", getDeviceManufacturerSegment())
+            .add("geoSegment", getGeoSegment())
+            .add("mobileCarrierSegment", getMobileCarrierSegment())
+            .add("mobileDeviceSegment", getMobileDeviceSegment())
+            .add("mobileDeviceSubmodelSegment", getMobileDeviceSubmodelSegment())
+            .add("operatingSystemSegment", getOperatingSystemSegment())
+            .add("placementSegment", getPlacementSegment())
+            .add("userDomainSegment", getUserDomainSegment())
+            .add("videoPositionSegment", getVideoPositionSegment())
+            .toString();
+    }
 
     /**
      * Gets the geoSegment value for this ProductSegmentation.
@@ -427,8 +450,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Gets the mobileCarrierSegment value for this ProductSegmentation.
      * 
      * @return mobileCarrierSegment   * The mobile carrier segmentation. {@link MobileCarrierTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -441,8 +464,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Sets the mobileCarrierSegment value for this ProductSegmentation.
      * 
      * @param mobileCarrierSegment   * The mobile carrier segmentation. {@link MobileCarrierTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -454,8 +477,8 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Gets the deviceCapabilitySegment value for this ProductSegmentation.
      * 
-     * @return deviceCapabilitySegment   * The device capability segmentation.
-     *                 {@link DeviceCapabilityTargeting#excludedDeviceCapabilities}
+     * @return deviceCapabilitySegment   * The device capability segmentation. {@link
+     *                 DeviceCapabilityTargeting#excludedDeviceCapabilities}
      * must be empty or null.
      *                 
      *                 <p>This attribute is optional.
@@ -468,8 +491,8 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Sets the deviceCapabilitySegment value for this ProductSegmentation.
      * 
-     * @param deviceCapabilitySegment   * The device capability segmentation.
-     *                 {@link DeviceCapabilityTargeting#excludedDeviceCapabilities}
+     * @param deviceCapabilitySegment   * The device capability segmentation. {@link
+     *                 DeviceCapabilityTargeting#excludedDeviceCapabilities}
      * must be empty or null.
      *                 
      *                 <p>This attribute is optional.
@@ -483,7 +506,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Gets the deviceCategorySegment value for this ProductSegmentation.
      * 
      * @return deviceCategorySegment   * The device category segmentation. {@link DeviceCategoryTargeting#excludedDeviceCategories}
-     * must be empty or null.
+     * must
+     *                 be empty or null.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -496,7 +520,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Sets the deviceCategorySegment value for this ProductSegmentation.
      * 
      * @param deviceCategorySegment   * The device category segmentation. {@link DeviceCategoryTargeting#excludedDeviceCategories}
-     * must be empty or null.
+     * must
+     *                 be empty or null.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -509,8 +534,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Gets the deviceManufacturerSegment value for this ProductSegmentation.
      * 
      * @return deviceManufacturerSegment   * The device manufacturer segmentation. {@link DeviceFamilyTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -523,8 +548,8 @@ public class ProductSegmentation  implements java.io.Serializable {
      * Sets the deviceManufacturerSegment value for this ProductSegmentation.
      * 
      * @param deviceManufacturerSegment   * The device manufacturer segmentation. {@link DeviceFamilyTargeting#isTargeted}
-     * must be
-     *                 {@code true}.
+     * must be {@code
+     *                 true}.
      *                 
      *                 <p>This attribute is optional.
      */
@@ -564,8 +589,8 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Gets the mobileDeviceSubmodelSegment value for this ProductSegmentation.
      * 
-     * @return mobileDeviceSubmodelSegment   * The mobile device submodel segmentation.
-     *                 {@link MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
+     * @return mobileDeviceSubmodelSegment   * The mobile device submodel segmentation. {@link
+     *                 MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
      * must be empty or null.
      */
     public com.google.api.ads.dfp.axis.v201702.MobileDeviceSubmodelTargeting getMobileDeviceSubmodelSegment() {
@@ -576,8 +601,8 @@ public class ProductSegmentation  implements java.io.Serializable {
     /**
      * Sets the mobileDeviceSubmodelSegment value for this ProductSegmentation.
      * 
-     * @param mobileDeviceSubmodelSegment   * The mobile device submodel segmentation.
-     *                 {@link MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
+     * @param mobileDeviceSubmodelSegment   * The mobile device submodel segmentation. {@link
+     *                 MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels}
      * must be empty or null.
      */
     public void setMobileDeviceSubmodelSegment(com.google.api.ads.dfp.axis.v201702.MobileDeviceSubmodelTargeting mobileDeviceSubmodelSegment) {

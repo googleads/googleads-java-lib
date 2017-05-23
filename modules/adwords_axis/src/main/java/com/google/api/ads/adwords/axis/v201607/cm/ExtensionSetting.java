@@ -48,6 +48,14 @@ public class ExtensionSetting  implements java.io.Serializable {
            this.platformRestrictions = platformRestrictions;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("extensions", getExtensions())
+            .add("platformRestrictions", getPlatformRestrictions())
+            .toString();
+    }
 
     /**
      * Gets the extensions value for this ExtensionSetting.

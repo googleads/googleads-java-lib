@@ -26,8 +26,6 @@ package com.google.api.ads.adwords.axis.v201609.billing;
  * Holds fields that provide information on the last set of values
  * that were passed in through
  *             the parent BudgetOrder for mutate.add and mutate.set.
- *             <span class="constraint Billing">This element only applies
- * if manager account is whitelisted for new billing backend.</span>
  */
 public class BudgetOrderRequest  implements java.io.Serializable {
     /* Status of the last {@link BudgetOrder} change.
@@ -109,6 +107,20 @@ public class BudgetOrderRequest  implements java.io.Serializable {
            this.endDateTime = endDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billingAccountName", getBillingAccountName())
+            .add("budgetOrderName", getBudgetOrderName())
+            .add("date", getDate())
+            .add("endDateTime", getEndDateTime())
+            .add("poNumber", getPoNumber())
+            .add("spendingLimit", getSpendingLimit())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the status value for this BudgetOrderRequest.

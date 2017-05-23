@@ -53,6 +53,22 @@ public class CriterionPolicyError  extends com.google.api.ads.adwords.axis.v2016
             violatingParts);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("externalPolicyDescription", getExternalPolicyDescription())
+            .add("externalPolicyName", getExternalPolicyName())
+            .add("externalPolicyUrl", getExternalPolicyUrl())
+            .add("fieldPath", getFieldPath())
+            .add("isExemptable", getIsExemptable())
+            .add("key", getKey())
+            .add("trigger", getTrigger())
+            .add("violatingParts", getViolatingParts())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof CriterionPolicyError)) return false;

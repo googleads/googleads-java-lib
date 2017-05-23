@@ -37,6 +37,13 @@ public class TrackingUrls  implements java.io.Serializable {
            this.urls = urls;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("urls", getUrls())
+            .toString();
+    }
 
     /**
      * Gets the urls value for this TrackingUrls.

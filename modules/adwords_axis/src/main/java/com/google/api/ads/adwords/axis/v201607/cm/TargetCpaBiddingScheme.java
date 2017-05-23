@@ -76,6 +76,16 @@ public class TargetCpaBiddingScheme  extends com.google.api.ads.adwords.axis.v20
         this.maxCpcBidFloor = maxCpcBidFloor;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("maxCpcBidCeiling", getMaxCpcBidCeiling())
+            .add("maxCpcBidFloor", getMaxCpcBidFloor())
+            .add("targetCpa", getTargetCpa())
+            .toString();
+    }
 
     /**
      * Gets the targetCpa value for this TargetCpaBiddingScheme.

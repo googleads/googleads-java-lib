@@ -27,7 +27,7 @@ package com.google.api.ads.adwords.axis.v201607.cm;
  * from a
  *             {@code CustomerExtensionSettingService#get} call.
  */
-public class CustomerExtensionSettingPage  extends com.google.api.ads.adwords.axis.v201607.cm.Page  implements java.io.Serializable {
+public class CustomerExtensionSettingPage  extends com.google.api.ads.adwords.axis.v201607.cm.Page  implements java.io.Serializable , Iterable<com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting>{
     /* The result entries in this page. */
     private com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting[] entries;
 
@@ -44,6 +44,16 @@ public class CustomerExtensionSettingPage  extends com.google.api.ads.adwords.ax
         this.entries = entries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of entries to avoid overly verbose output
+            .add("entries.length", getEntries() == null ? 0 : getEntries().length)
+            .add("pageType", getPageType())
+            .add("totalNumEntries", getTotalNumEntries())
+            .toString();
+    }
 
     /**
      * Gets the entries value for this CustomerExtensionSettingPage.
@@ -70,6 +80,23 @@ public class CustomerExtensionSettingPage  extends com.google.api.ads.adwords.ax
 
     public void setEntries(int i, com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting _value) {
         this.entries[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code entries} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting> iterator() {
+        if (entries == null) {
+            return java.util.Collections.<com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.adwords.axis.v201607.cm.CustomerExtensionSetting>asList(entries).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

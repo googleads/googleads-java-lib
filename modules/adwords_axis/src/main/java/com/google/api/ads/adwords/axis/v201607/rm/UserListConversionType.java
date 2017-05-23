@@ -52,6 +52,15 @@ public class UserListConversionType  implements java.io.Serializable {
            this.category = category;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("category", getCategory())
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this UserListConversionType.

@@ -107,6 +107,20 @@ public class BudgetOrderRequest  implements java.io.Serializable {
            this.endDateTime = endDateTime;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("billingAccountName", getBillingAccountName())
+            .add("budgetOrderName", getBudgetOrderName())
+            .add("date", getDate())
+            .add("endDateTime", getEndDateTime())
+            .add("poNumber", getPoNumber())
+            .add("spendingLimit", getSpendingLimit())
+            .add("startDateTime", getStartDateTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the status value for this BudgetOrderRequest.

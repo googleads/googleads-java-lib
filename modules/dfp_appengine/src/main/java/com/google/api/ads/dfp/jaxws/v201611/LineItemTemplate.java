@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents the template that populates the fields of a new line item being
- *             created.
+ *             Represents the template that populates the fields of a new line item being created.
  *           
  * 
  * <p>Java class for LineItemTemplate complex type.

@@ -48,6 +48,14 @@ public class AppliedLabel  implements java.io.Serializable {
            this.isNegated = isNegated;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("isNegated", getIsNegated())
+            .add("labelId", getLabelId())
+            .toString();
+    }
 
     /**
      * Gets the labelId value for this AppliedLabel.

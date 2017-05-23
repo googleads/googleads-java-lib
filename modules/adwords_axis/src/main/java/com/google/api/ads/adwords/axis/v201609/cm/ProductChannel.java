@@ -41,6 +41,14 @@ public class ProductChannel  extends com.google.api.ads.adwords.axis.v201609.cm.
         this.channel = channel;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("channel", getChannel())
+            .add("productDimensionType", getProductDimensionType())
+            .toString();
+    }
 
     /**
      * Gets the channel value for this ProductChannel.

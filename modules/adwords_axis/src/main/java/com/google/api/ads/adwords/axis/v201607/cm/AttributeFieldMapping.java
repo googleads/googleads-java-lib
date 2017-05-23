@@ -52,6 +52,14 @@ public class AttributeFieldMapping  implements java.io.Serializable {
            this.fieldId = fieldId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("feedAttributeId", getFeedAttributeId())
+            .add("fieldId", getFieldId())
+            .toString();
+    }
 
     /**
      * Gets the feedAttributeId value for this AttributeFieldMapping.

@@ -39,6 +39,13 @@ public class SubmitOrdersForApproval  extends com.google.api.ads.dfp.axis.v20160
         this.skipInventoryCheck = skipInventoryCheck;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("skipInventoryCheck", getSkipInventoryCheck())
+            .toString();
+    }
 
     /**
      * Gets the skipInventoryCheck value for this SubmitOrdersForApproval.

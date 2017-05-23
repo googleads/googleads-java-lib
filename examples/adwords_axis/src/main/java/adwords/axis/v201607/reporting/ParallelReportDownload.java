@@ -38,11 +38,12 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
 import java.io.File;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -107,7 +108,7 @@ public class ParallelReportDownload {
     Selector selector = new Selector();
     selector
         .getFields()
-        .addAll(Lists.newArrayList("CampaignId", "AdGroupId", "Impressions", "Clicks", "Cost"));
+        .addAll(Arrays.asList("CampaignId", "AdGroupId", "Impressions", "Clicks", "Cost"));
 
     // Create report definition.
     ReportDefinition reportDefinition = new ReportDefinition();
@@ -142,7 +143,7 @@ public class ParallelReportDownload {
     File reportDirectory = Files.createTempDir();
 
     // List to keep track of the progress of each customer's report download task.
-    List<ReportDownloadFutureTask> reportDownloadFutureTasks = Lists.newArrayList();
+    List<ReportDownloadFutureTask> reportDownloadFutureTasks = new ArrayList<>();
 
     for (ManagedCustomer managedCustomer : managedCustomers.values()) {
       File outputFile =
@@ -162,9 +163,10 @@ public class ParallelReportDownload {
                   outputFile,
                   backOffBuilder.build()));
 
-      // Ignore the Future returned here. Instead, use the list of ReportDownloadFutureTask objects,
-      // which will provide the context (client customer ID) of each completed task.
-      threadPool.submit(reportDownloadFutureTask);
+      // Use execute instead of submit since there is no need to get a Future for a FutureTask.
+      // Instead, store this ReportDownloadFutureTask in the list so that it can be used later
+      // to check the result and determine the task context (client customer ID).
+      threadPool.execute(reportDownloadFutureTask);
 
       reportDownloadFutureTasks.add(reportDownloadFutureTask);
     }

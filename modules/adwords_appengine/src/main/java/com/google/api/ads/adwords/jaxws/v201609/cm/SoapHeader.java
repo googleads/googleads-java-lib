@@ -17,9 +17,7 @@ package com.google.api.ads.adwords.jaxws.v201609.cm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201609.express.ExpressSoapHeader;
 
 
 /**
@@ -56,9 +54,6 @@ import com.google.api.ads.adwords.jaxws.v201609.express.ExpressSoapHeader;
     "userAgent",
     "validateOnly",
     "partialFailure"
-})
-@XmlSeeAlso({
-    ExpressSoapHeader.class
 })
 public class SoapHeader {
 

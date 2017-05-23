@@ -36,6 +36,13 @@ public class ErrorList  implements java.io.Serializable {
            this.errors = errors;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errors", getErrors())
+            .toString();
+    }
 
     /**
      * Gets the errors value for this ErrorList.

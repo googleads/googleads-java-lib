@@ -88,6 +88,21 @@ public class VideoMetadata  implements java.io.Serializable {
            this.codecs = codecs;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bitRate", getBitRate())
+            .add("codecs", getCodecs())
+            .add("deliveryType", getDeliveryType())
+            .add("duration", getDuration())
+            .add("maximumBitRate", getMaximumBitRate())
+            .add("mimeType", getMimeType())
+            .add("minimumBitRate", getMinimumBitRate())
+            .add("scalableType", getScalableType())
+            .add("size", getSize())
+            .toString();
+    }
 
     /**
      * Gets the scalableType value for this VideoMetadata.

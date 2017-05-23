@@ -24,6 +24,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             The content partner related validation errors.
+ *             <p>
+ *             This class is deprecated. All companies of type
+ *             {@link Company.Type#CONTENT_PARTNER} were changed to {@link Company.Type#PARTNER}.
  *           
  * 
  * <p>Java class for ContentPartnerError complex type.

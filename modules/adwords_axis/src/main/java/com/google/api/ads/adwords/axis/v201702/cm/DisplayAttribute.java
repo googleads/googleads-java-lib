@@ -51,6 +51,15 @@ public class DisplayAttribute  extends com.google.api.ads.adwords.axis.v201702.c
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("backgroundColor", getBackgroundColor())
+            .add("description", getDescription())
+            .add("labelAttributeType", getLabelAttributeType())
+            .toString();
+    }
 
     /**
      * Gets the backgroundColor value for this DisplayAttribute.

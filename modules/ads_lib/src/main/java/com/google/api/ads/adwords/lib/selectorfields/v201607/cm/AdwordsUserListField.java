@@ -74,8 +74,9 @@ public enum AdwordsUserListField implements EntityField {
 
   /**
    * Boolean rule that defines this user list.
-   * The rule consists of a list of rule item groups.
-   * All the rule item groups are ORed for the evaluation.
+   * The rule consists of a list of rule item groups and each rule item group consists of a list of rule items.
+   * All the rule item groups are ORed together for evaluation before version V201705.
+   * Starting from version V201705, the group operator is based on {@code Rule#getRuleType()}.
    * This field is selected by default.
    */
   ExpressionListRule(false),
@@ -139,6 +140,7 @@ public enum AdwordsUserListField implements EntityField {
    * Logical list rules that define this user list.
    * The rules are defined as logical operator (ALL/ANY/NONE) and a list of user lists.
    * All the rules are anded for the evaluation.
+   * Required for ADD operation.
    */
   Rules(false),
 

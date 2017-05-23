@@ -154,6 +154,19 @@ public class OfflineConversionFeed  implements java.io.Serializable {
            this.externalAttributionModel = externalAttributionModel;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("conversionCurrencyCode", getConversionCurrencyCode())
+            .add("conversionName", getConversionName())
+            .add("conversionTime", getConversionTime())
+            .add("conversionValue", getConversionValue())
+            .add("externalAttributionCredit", getExternalAttributionCredit())
+            .add("externalAttributionModel", getExternalAttributionModel())
+            .add("googleClickId", getGoogleClickId())
+            .toString();
+    }
 
     /**
      * Gets the googleClickId value for this OfflineConversionFeed.

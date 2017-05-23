@@ -53,6 +53,15 @@ public abstract class ApiError  implements java.io.Serializable {
            this.errorString = errorString;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorString", getErrorString())
+            .add("fieldPath", getFieldPath())
+            .add("trigger", getTrigger())
+            .toString();
+    }
 
     /**
      * Gets the fieldPath value for this ApiError.

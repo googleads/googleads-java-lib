@@ -250,8 +250,8 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.CreativePlaceholder[] creativePlaceholders;
 
     /* This attribute is required and meaningful only if the {@link
-     * LineItem#costType} is
-     *                 {@link CostType.CPA}. */
+     * LineItem#costType} is {@link
+     *                 CostType.CPA}. */
     private com.google.api.ads.dfp.axis.v201702.LineItemActivityAssociation[] activityAssociations;
 
     /* The environment that the {@code LineItem} is targeting. The
@@ -314,8 +314,8 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Boolean skipInventoryCheck;
 
     /* True to skip checks for warnings from rules applied to line
-     * items targeting inventory shared
-     *                 by a distributor partner for cross selling when performing
+     * items targeting inventory shared by
+     *                 a distributor partner for cross selling when performing
      * an action on this line item. The
      *                 default is false. */
     private java.lang.Boolean skipCrossSellingRuleWarningChecks;
@@ -434,16 +434,15 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201702.DateTime creationDateTime;
 
     /* Whether an AdExchange line item has prioritized preferred deals
-     * enabled.
-     *                 This attribute is optional and defaults to false. */
+     * enabled. This attribute is
+     *                 optional and defaults to false. */
     private java.lang.Boolean isPrioritizedPreferredDealsEnabled;
 
     /* The priority at which an Ad Exchange line item enters the open
      * Ad Exchange auction if the
      *                 preferred deal fails to transact. This attribute is
-     * optional.  If prioritized preferred
-     *                 deals are enabled, it defaults to 12.  Otherwise,
-     * it is ignored. */
+     * optional. If prioritized preferred deals
+     *                 are enabled, it defaults to 12. Otherwise, it is ignored. */
     private java.lang.Integer adExchangeAuctionOpeningPriority;
 
     /* The values of the custom fields associated with this line item. */
@@ -458,27 +457,29 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Boolean isSetTopBoxEnabled;
 
     /* Indicates if a {@code LineItem} is missing any {@link Creative
-     * creatives} for the
-     *                 {@code creativePlaceholders} specified.
+     * creatives} for the {@code
+     *                 creativePlaceholders} specified.
      *                 
-     *                 {@link Creative Creatives} can be considered missing
+     *                 <p>{@link Creative Creatives} can be considered missing
      * for several reasons including:
-     *                 <ul><li>Not enough {@link Creative creatives} of a
-     * certain size have been uploaded, as
-     *                 determined by {@link CreativePlaceholder#expectedCreativeCount}.
-     * For example a
-     *                 {@code LineItem} specifies 750x350, 400x200 but only
-     * a 750x350 was uploaded.  Or
-     *                 {@code LineItem} specifies 750x350 with an expected
-     * count of 2, but only one was uploaded.
-     *                 </li>
+     *                 
+     *                 <ul>
+     *                 <li>Not enough {@link Creative creatives} of a certain
+     * size have been uploaded, as determined
+     *                 by {@link CreativePlaceholder#expectedCreativeCount}.
+     * For example a {@code LineItem}
+     *                 specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or {@code LineItem} specifies
+     *                 750x350 with an expected count of 2, but only one
+     * was uploaded.
      *                 <li>The {@link Creative#appliedLabels} of an associated
      * {@code Creative} do not match the
      *                 {@link CreativePlaceholder#effectiveAppliedLabels}
      * of the {@code LineItem}. For example
      *                 {@code LineItem} specifies 750x350 with a Foo {@code
      * AppliedLabel} but a 750x350 creative
-     *                 without a {@code AppliedLabel} was uploaded.</li></ul> */
+     *                 without a {@code AppliedLabel} was uploaded.
+     *                 </ul> */
     private java.lang.Boolean isMissingCreatives;
 
     /* Additional information for set-top box enabled line items.
@@ -495,17 +496,17 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Long videoMaxDuration;
 
     /* The primary goal that this {@code LineItem} is associated with,
-     * which is used in its
-     *                 pacing and budgeting. */
+     * which is used in its pacing and
+     *                 budgeting. */
     private com.google.api.ads.dfp.axis.v201702.Goal primaryGoal;
 
     /* The secondary goals that this {@code LineItem} is associated
-     * with.
-     *                 It is required and meaningful only if the {@link LineItem#costType}
-     * is {@link CostType.CPA}
-     *                 or if the {@link LineItem#lineItemType} is {@link
-     * LineItemType#SPONSORSHIP} and
-     *                 {@link LineItem#costType} is {@link CostType.CPM}. */
+     * with. It is required and
+     *                 meaningful only if the {@link LineItem#costType} is
+     * {@link CostType.CPA} or if the {@link
+     *                 LineItem#lineItemType} is {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItem#costType} is
+     *                 {@link CostType.CPM}. */
     private com.google.api.ads.dfp.axis.v201702.Goal[] secondaryGoals;
 
     /* Contains the information for a line item which has a target
@@ -630,6 +631,68 @@ public class LineItemSummary  implements java.io.Serializable {
            this.grpSettings = grpSettings;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("activityAssociations", getActivityAssociations())
+            .add("adExchangeAuctionOpeningPriority", getAdExchangeAuctionOpeningPriority())
+            .add("allowOverbook", getAllowOverbook())
+            .add("appliedLabels", getAppliedLabels())
+            .add("autoExtensionDays", getAutoExtensionDays())
+            .add("budget", getBudget())
+            .add("companionDeliveryOption", getCompanionDeliveryOption())
+            .add("contractedUnitsBought", getContractedUnitsBought())
+            .add("costPerUnit", getCostPerUnit())
+            .add("costType", getCostType())
+            .add("creationDateTime", getCreationDateTime())
+            .add("creativePersistenceType", getCreativePersistenceType())
+            .add("creativePlaceholders", getCreativePlaceholders())
+            .add("creativeRotationType", getCreativeRotationType())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("deliveryData", getDeliveryData())
+            .add("deliveryIndicator", getDeliveryIndicator())
+            .add("deliveryRateType", getDeliveryRateType())
+            .add("disableSameAdvertiserCompetitiveExclusion", getDisableSameAdvertiserCompetitiveExclusion())
+            .add("discount", getDiscount())
+            .add("discountType", getDiscountType())
+            .add("effectiveAppliedLabels", getEffectiveAppliedLabels())
+            .add("endDateTime", getEndDateTime())
+            .add("environmentType", getEnvironmentType())
+            .add("externalId", getExternalId())
+            .add("frequencyCaps", getFrequencyCaps())
+            .add("grpSettings", getGrpSettings())
+            .add("id", getId())
+            .add("isArchived", getIsArchived())
+            .add("isMissingCreatives", getIsMissingCreatives())
+            .add("isPrioritizedPreferredDealsEnabled", getIsPrioritizedPreferredDealsEnabled())
+            .add("isSetTopBoxEnabled", getIsSetTopBoxEnabled())
+            .add("lastModifiedByApp", getLastModifiedByApp())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lineItemType", getLineItemType())
+            .add("name", getName())
+            .add("notes", getNotes())
+            .add("orderId", getOrderId())
+            .add("orderName", getOrderName())
+            .add("primaryGoal", getPrimaryGoal())
+            .add("priority", getPriority())
+            .add("reservationStatus", getReservationStatus())
+            .add("reserveAtCreation", getReserveAtCreation())
+            .add("roadblockingType", getRoadblockingType())
+            .add("secondaryGoals", getSecondaryGoals())
+            .add("setTopBoxDisplayInfo", getSetTopBoxDisplayInfo())
+            .add("skipCrossSellingRuleWarningChecks", getSkipCrossSellingRuleWarningChecks())
+            .add("skipInventoryCheck", getSkipInventoryCheck())
+            .add("startDateTime", getStartDateTime())
+            .add("startDateTimeType", getStartDateTimeType())
+            .add("stats", getStats())
+            .add("status", getStatus())
+            .add("unlimitedEndDateTime", getUnlimitedEndDateTime())
+            .add("valueCostPerUnit", getValueCostPerUnit())
+            .add("videoMaxDuration", getVideoMaxDuration())
+            .add("webPropertyCode", getWebPropertyCode())
+            .toString();
+    }
 
     /**
      * Gets the orderId value for this LineItemSummary.
@@ -1415,8 +1478,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the activityAssociations value for this LineItemSummary.
      * 
      * @return activityAssociations   * This attribute is required and meaningful only if the {@link
-     * LineItem#costType} is
-     *                 {@link CostType.CPA}.
+     * LineItem#costType} is {@link
+     *                 CostType.CPA}.
      */
     public com.google.api.ads.dfp.axis.v201702.LineItemActivityAssociation[] getActivityAssociations() {
         return activityAssociations;
@@ -1427,8 +1490,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the activityAssociations value for this LineItemSummary.
      * 
      * @param activityAssociations   * This attribute is required and meaningful only if the {@link
-     * LineItem#costType} is
-     *                 {@link CostType.CPA}.
+     * LineItem#costType} is {@link
+     *                 CostType.CPA}.
      */
     public void setActivityAssociations(com.google.api.ads.dfp.axis.v201702.LineItemActivityAssociation[] activityAssociations) {
         this.activityAssociations = activityAssociations;
@@ -1635,8 +1698,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the skipCrossSellingRuleWarningChecks value for this LineItemSummary.
      * 
      * @return skipCrossSellingRuleWarningChecks   * True to skip checks for warnings from rules applied to line
-     * items targeting inventory shared
-     *                 by a distributor partner for cross selling when performing
+     * items targeting inventory shared by
+     *                 a distributor partner for cross selling when performing
      * an action on this line item. The
      *                 default is false.
      */
@@ -1649,8 +1712,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the skipCrossSellingRuleWarningChecks value for this LineItemSummary.
      * 
      * @param skipCrossSellingRuleWarningChecks   * True to skip checks for warnings from rules applied to line
-     * items targeting inventory shared
-     *                 by a distributor partner for cross selling when performing
+     * items targeting inventory shared by
+     *                 a distributor partner for cross selling when performing
      * an action on this line item. The
      *                 default is false.
      */
@@ -2129,8 +2192,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the isPrioritizedPreferredDealsEnabled value for this LineItemSummary.
      * 
      * @return isPrioritizedPreferredDealsEnabled   * Whether an AdExchange line item has prioritized preferred deals
-     * enabled.
-     *                 This attribute is optional and defaults to false.
+     * enabled. This attribute is
+     *                 optional and defaults to false.
      */
     public java.lang.Boolean getIsPrioritizedPreferredDealsEnabled() {
         return isPrioritizedPreferredDealsEnabled;
@@ -2141,8 +2204,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the isPrioritizedPreferredDealsEnabled value for this LineItemSummary.
      * 
      * @param isPrioritizedPreferredDealsEnabled   * Whether an AdExchange line item has prioritized preferred deals
-     * enabled.
-     *                 This attribute is optional and defaults to false.
+     * enabled. This attribute is
+     *                 optional and defaults to false.
      */
     public void setIsPrioritizedPreferredDealsEnabled(java.lang.Boolean isPrioritizedPreferredDealsEnabled) {
         this.isPrioritizedPreferredDealsEnabled = isPrioritizedPreferredDealsEnabled;
@@ -2155,9 +2218,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * @return adExchangeAuctionOpeningPriority   * The priority at which an Ad Exchange line item enters the open
      * Ad Exchange auction if the
      *                 preferred deal fails to transact. This attribute is
-     * optional.  If prioritized preferred
-     *                 deals are enabled, it defaults to 12.  Otherwise,
-     * it is ignored.
+     * optional. If prioritized preferred deals
+     *                 are enabled, it defaults to 12. Otherwise, it is ignored.
      */
     public java.lang.Integer getAdExchangeAuctionOpeningPriority() {
         return adExchangeAuctionOpeningPriority;
@@ -2170,9 +2232,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * @param adExchangeAuctionOpeningPriority   * The priority at which an Ad Exchange line item enters the open
      * Ad Exchange auction if the
      *                 preferred deal fails to transact. This attribute is
-     * optional.  If prioritized preferred
-     *                 deals are enabled, it defaults to 12.  Otherwise,
-     * it is ignored.
+     * optional. If prioritized preferred deals
+     *                 are enabled, it defaults to 12. Otherwise, it is ignored.
      */
     public void setAdExchangeAuctionOpeningPriority(java.lang.Integer adExchangeAuctionOpeningPriority) {
         this.adExchangeAuctionOpeningPriority = adExchangeAuctionOpeningPriority;
@@ -2241,27 +2302,29 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the isMissingCreatives value for this LineItemSummary.
      * 
      * @return isMissingCreatives   * Indicates if a {@code LineItem} is missing any {@link Creative
-     * creatives} for the
-     *                 {@code creativePlaceholders} specified.
+     * creatives} for the {@code
+     *                 creativePlaceholders} specified.
      *                 
-     *                 {@link Creative Creatives} can be considered missing
+     *                 <p>{@link Creative Creatives} can be considered missing
      * for several reasons including:
-     *                 <ul><li>Not enough {@link Creative creatives} of a
-     * certain size have been uploaded, as
-     *                 determined by {@link CreativePlaceholder#expectedCreativeCount}.
-     * For example a
-     *                 {@code LineItem} specifies 750x350, 400x200 but only
-     * a 750x350 was uploaded.  Or
-     *                 {@code LineItem} specifies 750x350 with an expected
-     * count of 2, but only one was uploaded.
-     *                 </li>
+     *                 
+     *                 <ul>
+     *                 <li>Not enough {@link Creative creatives} of a certain
+     * size have been uploaded, as determined
+     *                 by {@link CreativePlaceholder#expectedCreativeCount}.
+     * For example a {@code LineItem}
+     *                 specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or {@code LineItem} specifies
+     *                 750x350 with an expected count of 2, but only one
+     * was uploaded.
      *                 <li>The {@link Creative#appliedLabels} of an associated
      * {@code Creative} do not match the
      *                 {@link CreativePlaceholder#effectiveAppliedLabels}
      * of the {@code LineItem}. For example
      *                 {@code LineItem} specifies 750x350 with a Foo {@code
      * AppliedLabel} but a 750x350 creative
-     *                 without a {@code AppliedLabel} was uploaded.</li></ul>
+     *                 without a {@code AppliedLabel} was uploaded.
+     *                 </ul>
      */
     public java.lang.Boolean getIsMissingCreatives() {
         return isMissingCreatives;
@@ -2272,27 +2335,29 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the isMissingCreatives value for this LineItemSummary.
      * 
      * @param isMissingCreatives   * Indicates if a {@code LineItem} is missing any {@link Creative
-     * creatives} for the
-     *                 {@code creativePlaceholders} specified.
+     * creatives} for the {@code
+     *                 creativePlaceholders} specified.
      *                 
-     *                 {@link Creative Creatives} can be considered missing
+     *                 <p>{@link Creative Creatives} can be considered missing
      * for several reasons including:
-     *                 <ul><li>Not enough {@link Creative creatives} of a
-     * certain size have been uploaded, as
-     *                 determined by {@link CreativePlaceholder#expectedCreativeCount}.
-     * For example a
-     *                 {@code LineItem} specifies 750x350, 400x200 but only
-     * a 750x350 was uploaded.  Or
-     *                 {@code LineItem} specifies 750x350 with an expected
-     * count of 2, but only one was uploaded.
-     *                 </li>
+     *                 
+     *                 <ul>
+     *                 <li>Not enough {@link Creative creatives} of a certain
+     * size have been uploaded, as determined
+     *                 by {@link CreativePlaceholder#expectedCreativeCount}.
+     * For example a {@code LineItem}
+     *                 specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or {@code LineItem} specifies
+     *                 750x350 with an expected count of 2, but only one
+     * was uploaded.
      *                 <li>The {@link Creative#appliedLabels} of an associated
      * {@code Creative} do not match the
      *                 {@link CreativePlaceholder#effectiveAppliedLabels}
      * of the {@code LineItem}. For example
      *                 {@code LineItem} specifies 750x350 with a Foo {@code
      * AppliedLabel} but a 750x350 creative
-     *                 without a {@code AppliedLabel} was uploaded.</li></ul>
+     *                 without a {@code AppliedLabel} was uploaded.
+     *                 </ul>
      */
     public void setIsMissingCreatives(java.lang.Boolean isMissingCreatives) {
         this.isMissingCreatives = isMissingCreatives;
@@ -2357,8 +2422,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the primaryGoal value for this LineItemSummary.
      * 
      * @return primaryGoal   * The primary goal that this {@code LineItem} is associated with,
-     * which is used in its
-     *                 pacing and budgeting.
+     * which is used in its pacing and
+     *                 budgeting.
      */
     public com.google.api.ads.dfp.axis.v201702.Goal getPrimaryGoal() {
         return primaryGoal;
@@ -2369,8 +2434,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the primaryGoal value for this LineItemSummary.
      * 
      * @param primaryGoal   * The primary goal that this {@code LineItem} is associated with,
-     * which is used in its
-     *                 pacing and budgeting.
+     * which is used in its pacing and
+     *                 budgeting.
      */
     public void setPrimaryGoal(com.google.api.ads.dfp.axis.v201702.Goal primaryGoal) {
         this.primaryGoal = primaryGoal;
@@ -2381,12 +2446,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the secondaryGoals value for this LineItemSummary.
      * 
      * @return secondaryGoals   * The secondary goals that this {@code LineItem} is associated
-     * with.
-     *                 It is required and meaningful only if the {@link LineItem#costType}
-     * is {@link CostType.CPA}
-     *                 or if the {@link LineItem#lineItemType} is {@link
-     * LineItemType#SPONSORSHIP} and
-     *                 {@link LineItem#costType} is {@link CostType.CPM}.
+     * with. It is required and
+     *                 meaningful only if the {@link LineItem#costType} is
+     * {@link CostType.CPA} or if the {@link
+     *                 LineItem#lineItemType} is {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItem#costType} is
+     *                 {@link CostType.CPM}.
      */
     public com.google.api.ads.dfp.axis.v201702.Goal[] getSecondaryGoals() {
         return secondaryGoals;
@@ -2397,12 +2462,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the secondaryGoals value for this LineItemSummary.
      * 
      * @param secondaryGoals   * The secondary goals that this {@code LineItem} is associated
-     * with.
-     *                 It is required and meaningful only if the {@link LineItem#costType}
-     * is {@link CostType.CPA}
-     *                 or if the {@link LineItem#lineItemType} is {@link
-     * LineItemType#SPONSORSHIP} and
-     *                 {@link LineItem#costType} is {@link CostType.CPM}.
+     * with. It is required and
+     *                 meaningful only if the {@link LineItem#costType} is
+     * {@link CostType.CPA} or if the {@link
+     *                 LineItem#lineItemType} is {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItem#costType} is
+     *                 {@link CostType.CPM}.
      */
     public void setSecondaryGoals(com.google.api.ads.dfp.axis.v201702.Goal[] secondaryGoals) {
         this.secondaryGoals = secondaryGoals;

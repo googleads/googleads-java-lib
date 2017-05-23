@@ -49,6 +49,20 @@ public class NegativeCampaignCriterion  extends com.google.api.ads.adwords.axis.
             campaignCriterionType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("bidModifier", getBidModifier())
+            .add("campaignCriterionStatus", getCampaignCriterionStatus())
+            .add("campaignCriterionType", getCampaignCriterionType())
+            .add("campaignId", getCampaignId())
+            .add("criterion", getCriterion())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("isNegative", getIsNegative())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof NegativeCampaignCriterion)) return false;

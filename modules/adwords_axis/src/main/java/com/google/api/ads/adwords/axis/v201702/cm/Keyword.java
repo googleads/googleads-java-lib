@@ -66,6 +66,17 @@ public class Keyword  extends com.google.api.ads.adwords.axis.v201702.cm.Criteri
         this.matchType = matchType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("matchType", getMatchType())
+            .add("text", getText())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the text value for this Keyword.

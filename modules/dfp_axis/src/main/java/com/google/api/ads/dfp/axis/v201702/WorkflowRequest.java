@@ -65,6 +65,17 @@ public abstract class WorkflowRequest  implements java.io.Serializable {
            this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("entityId", getEntityId())
+            .add("entityType", getEntityType())
+            .add("id", getId())
+            .add("type", getType())
+            .add("workflowRuleName", getWorkflowRuleName())
+            .toString();
+    }
 
     /**
      * Gets the id value for this WorkflowRequest.

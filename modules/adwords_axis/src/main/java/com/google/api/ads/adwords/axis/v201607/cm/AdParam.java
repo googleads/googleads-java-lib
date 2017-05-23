@@ -131,6 +131,16 @@ public class AdParam  implements java.io.Serializable {
            this.paramIndex = paramIndex;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("criterionId", getCriterionId())
+            .add("insertionText", getInsertionText())
+            .add("paramIndex", getParamIndex())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdParam.

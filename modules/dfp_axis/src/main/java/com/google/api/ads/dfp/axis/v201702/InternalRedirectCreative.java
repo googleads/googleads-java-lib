@@ -23,16 +23,13 @@ package com.google.api.ads.dfp.axis.v201702;
 
 
 /**
- * A {@code Creative} hosted by either DoubleClick for Advertisers
- * (DFA) or DART
- *             for Publishers.
- *             <p>
- *             Similar to third-party creatives, a DoubleClick tag is
- * used to retrieve a
- *             creative asset. However, DoubleClick tags are not sent
- * to the user's browser.
- *             Instead, they are processed internally within the DoubleClick
- * system..
+ * A {@code Creative} hosted by DoubleClick for Advertisers (DFA).
+ * 
+ *             <p>Similar to third-party creatives, a DoubleClick tag
+ * is used to retrieve a creative asset.
+ *             However, DoubleClick tags are not sent to the user's browser.
+ * Instead, they are processed
+ *             internally within the DoubleClick system..
  */
 public class InternalRedirectCreative  extends com.google.api.ads.dfp.axis.v201702.Creative  implements java.io.Serializable {
     /* A locked orientation for this creative to be displayed in. */
@@ -110,6 +107,28 @@ public class InternalRedirectCreative  extends com.google.api.ads.dfp.axis.v2017
         this.sslManualOverride = sslManualOverride;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("advertiserId", getAdvertiserId())
+            .add("appliedLabels", getAppliedLabels())
+            .add("assetSize", getAssetSize())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("id", getId())
+            .add("internalRedirectUrl", getInternalRedirectUrl())
+            .add("isInterstitial", getIsInterstitial())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lockedOrientation", getLockedOrientation())
+            .add("name", getName())
+            .add("overrideSize", getOverrideSize())
+            .add("policyViolations", getPolicyViolations())
+            .add("previewUrl", getPreviewUrl())
+            .add("size", getSize())
+            .add("sslManualOverride", getSslManualOverride())
+            .add("sslScanResult", getSslScanResult())
+            .toString();
+    }
 
     /**
      * Gets the lockedOrientation value for this InternalRedirectCreative.

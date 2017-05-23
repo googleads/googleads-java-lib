@@ -31,8 +31,9 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -143,7 +144,7 @@ public class HandlePolicyViolationError {
     }
 
     // Create a new list of operations consisting of only the operations that should be retried.
-    List<AdGroupAdOperation> operationsToRetry = Lists.newArrayList();
+    List<AdGroupAdOperation> operationsToRetry = new ArrayList<>();
     for (Integer operationIndexToRetry : operationIndicesToRetry) {
       operationsToRetry.add(operations[operationIndexToRetry]);
     }
@@ -211,8 +212,8 @@ public class HandlePolicyViolationError {
 
       List<ExemptionRequest> exemptionRequests =
           (operation.getExemptionRequests() == null)
-              ? Lists.<ExemptionRequest>newArrayList()
-              : Lists.<ExemptionRequest>newArrayList(operation.getExemptionRequests());
+              ? new ArrayList<ExemptionRequest>()
+              : new ArrayList<>(Arrays.asList(operation.getExemptionRequests()));
       exemptionRequests.add(exemptionRequest);
       operation.setExemptionRequests(
           exemptionRequests.toArray(new ExemptionRequest[exemptionRequests.size()]));

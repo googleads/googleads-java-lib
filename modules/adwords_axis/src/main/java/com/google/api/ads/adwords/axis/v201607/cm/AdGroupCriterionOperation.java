@@ -54,6 +54,16 @@ public class AdGroupCriterionOperation  extends com.google.api.ads.adwords.axis.
         this.exemptionRequests = exemptionRequests;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("exemptionRequests", getExemptionRequests())
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this AdGroupCriterionOperation.

@@ -52,6 +52,14 @@ public class UserListLogicalRule  implements java.io.Serializable {
            this.ruleOperands = ruleOperands;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operator", getOperator())
+            .add("ruleOperands", getRuleOperands())
+            .toString();
+    }
 
     /**
      * Gets the operator value for this UserListLogicalRule.

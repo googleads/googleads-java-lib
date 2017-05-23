@@ -22,7 +22,6 @@ import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder.GoogleClien
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Before;
 import org.junit.Rule;
@@ -63,8 +62,8 @@ public class GoogleClientSecretsBuilderTest {
         .from(config)
         .build();
 
-    assertEquals(googleClientSecrets.getInstalled().getClientId(), "clientId");
-    assertEquals(googleClientSecrets.getInstalled().getClientSecret(), "clientSecret");
+    assertEquals("clientId", googleClientSecrets.getInstalled().getClientId());
+    assertEquals("clientSecret", googleClientSecrets.getInstalled().getClientSecret());
   }
 
   /**
@@ -84,8 +83,8 @@ public class GoogleClientSecretsBuilderTest {
         .from(config)
         .build();
 
-    assertEquals(googleClientSecrets.getInstalled().getClientId(), "clientIdDfp");
-    assertEquals(googleClientSecrets.getInstalled().getClientSecret(), "clientSecretDfp");
+    assertEquals("clientIdDfp", googleClientSecrets.getInstalled().getClientId());
+    assertEquals("clientSecretDfp", googleClientSecrets.getInstalled().getClientSecret());
   }
 
   /**
@@ -135,8 +134,8 @@ public class GoogleClientSecretsBuilderTest {
 
     GoogleClientSecrets googleClientSecrets = builder.fromFile("path").build();
 
-    assertEquals(googleClientSecrets.getInstalled().getClientId(), "clientId");
-    assertEquals(googleClientSecrets.getInstalled().getClientSecret(), "clientSecret");
+    assertEquals("clientId", googleClientSecrets.getInstalled().getClientId());
+    assertEquals("clientSecret", googleClientSecrets.getInstalled().getClientSecret());
   }
 
   /**
@@ -230,8 +229,8 @@ public class GoogleClientSecretsBuilderTest {
         .build();
 
     assertNotNull(clientSecrets.getDetails());
-    assertEquals(clientSecrets.getDetails().getClientId(), "clientId");
-    assertEquals(clientSecrets.getDetails().getClientSecret(), "clientSecret");
+    assertEquals("clientId", clientSecrets.getDetails().getClientId());
+    assertEquals("clientSecret", clientSecrets.getDetails().getClientSecret());
   }
 
   /**

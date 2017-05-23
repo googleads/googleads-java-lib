@@ -101,6 +101,7 @@ import javax.xml.bind.annotation.XmlType;
     FrequencyCapError.class,
     ProductError.class,
     CreativeAssetMacroError.class,
+    RequestError.class,
     AdUnitHierarchyError.class,
     ImageError.class,
     StatementError.class,

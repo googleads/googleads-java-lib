@@ -36,7 +36,8 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.joda.time.DateTime;
 
@@ -63,7 +64,7 @@ public class AddAdCustomizer {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    List<Long> adGroupIds = Lists.newArrayList( 
+    List<Long> adGroupIds = Arrays.asList( 
         Long.valueOf("INSERT_ADGROUP_ID_HERE"),
         Long.valueOf("INSERT_ADGROUP_ID_HERE"));
     String feedName = "INSERT_FEED_NAME_HERE";
@@ -139,7 +140,7 @@ public class AddAdCustomizer {
     FeedItemServiceInterface feedItemService =
         adWordsServices.get(session, FeedItemServiceInterface.class);
 
-    List<FeedItemOperation> feedItemOperations = Lists.newArrayList();
+    List<FeedItemOperation> feedItemOperations = new ArrayList<>();
 
     DateTime now = new DateTime();
 
@@ -176,7 +177,7 @@ public class AddAdCustomizer {
     FeedItem feedItem = new FeedItem();
     feedItem.setFeedId(adCustomizerFeed.getFeedId());
 
-    List<FeedItemAttributeValue> attributeValues = Lists.newArrayList();
+    List<FeedItemAttributeValue> attributeValues = new ArrayList<>();
 
     // FeedAttributes appear in the same order as they were created - Name, Price, Date.
     // See the createCustomizerFeed method for details.
@@ -224,7 +225,7 @@ public class AddAdCustomizer {
 
     // We add the same ad to both ad groups. When they serve, they will show different values, since
     // they match different feed items.
-    List<AdGroupAdOperation> adGroupAdOperations = Lists.newArrayList();
+    List<AdGroupAdOperation> adGroupAdOperations = new ArrayList<>();
     for (Long adGroupId : adGroupIds) {
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.setAdGroupId(adGroupId);

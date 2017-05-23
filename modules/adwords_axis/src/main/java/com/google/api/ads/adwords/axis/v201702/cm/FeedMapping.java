@@ -106,6 +106,18 @@ public class FeedMapping  implements java.io.Serializable {
            this.criterionType = criterionType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("attributeFieldMappings", getAttributeFieldMappings())
+            .add("criterionType", getCriterionType())
+            .add("feedId", getFeedId())
+            .add("feedMappingId", getFeedMappingId())
+            .add("placeholderType", getPlaceholderType())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the feedMappingId value for this FeedMapping.

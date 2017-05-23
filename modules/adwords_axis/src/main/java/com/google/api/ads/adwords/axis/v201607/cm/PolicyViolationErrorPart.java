@@ -43,6 +43,14 @@ public class PolicyViolationErrorPart  implements java.io.Serializable {
            this.length = length;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("index", getIndex())
+            .add("length", getLength())
+            .toString();
+    }
 
     /**
      * Gets the index value for this PolicyViolationErrorPart.

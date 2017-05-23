@@ -41,6 +41,14 @@ public class String_ValueMapEntry  implements java.io.Serializable {
            this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("key", getKey())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the key value for this String_ValueMapEntry.

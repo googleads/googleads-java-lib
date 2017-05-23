@@ -38,11 +38,9 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
-
-import org.joda.time.DateTime;
-
+import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * This example adds two rule-based remarketing user lists: one with no site visit date
@@ -165,7 +163,7 @@ public class AddRuleBasedUserLists {
     dateUserList.setEndDate(endDate.toString(DATE_FORMAT_STRING));
 
     // Create operations to add the user lists.
-    List<UserListOperation> operations = Lists.newArrayList();
+    List<UserListOperation> operations = new ArrayList<>();
     for (UserList userList : new UserList[] {expressionUserList, dateUserList}) {
       UserListOperation operation = new UserListOperation();
       operation.setOperand(userList);

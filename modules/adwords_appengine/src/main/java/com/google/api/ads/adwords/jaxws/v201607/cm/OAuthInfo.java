@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Data used for authorization using OAuth.
  *             For more information about OAuth, see:
- *             {@link "https://developers.google.com/accounts/docs/OAuth2"}
+ *             {@link "https://developers.google.com/identity/protocols/OAuth2"}
  *           
  * 
  * <p>Java class for OAuthInfo complex type.

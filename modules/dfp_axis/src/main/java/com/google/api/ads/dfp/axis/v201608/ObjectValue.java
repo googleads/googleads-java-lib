@@ -39,6 +39,12 @@ public abstract class ObjectValue  extends com.google.api.ads.dfp.axis.v201608.V
     public ObjectValue() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ObjectValue)) return false;

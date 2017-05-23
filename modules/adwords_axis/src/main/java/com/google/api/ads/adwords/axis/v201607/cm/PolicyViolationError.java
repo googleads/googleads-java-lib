@@ -90,6 +90,22 @@ public class PolicyViolationError  extends com.google.api.ads.adwords.axis.v2016
         this.violatingParts = violatingParts;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("apiErrorType", getApiErrorType())
+            .add("errorString", getErrorString())
+            .add("externalPolicyDescription", getExternalPolicyDescription())
+            .add("externalPolicyName", getExternalPolicyName())
+            .add("externalPolicyUrl", getExternalPolicyUrl())
+            .add("fieldPath", getFieldPath())
+            .add("isExemptable", getIsExemptable())
+            .add("key", getKey())
+            .add("trigger", getTrigger())
+            .add("violatingParts", getViolatingParts())
+            .toString();
+    }
 
     /**
      * Gets the key value for this PolicyViolationError.

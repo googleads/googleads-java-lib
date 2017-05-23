@@ -28,8 +28,8 @@ import com.google.api.ads.dfp.axis.v201611.Size;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Joiner;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -72,7 +72,7 @@ public class CreatePlacements {
       }
     }
 
-    List<Placement> placementsToCreate = Lists.newArrayList();
+    List<Placement> placementsToCreate = new ArrayList<>();
 
     // Only create placements with one or more ad unit.
     if (!mediumSquareAdUnitIds.isEmpty()) {
@@ -131,7 +131,7 @@ public class CreatePlacements {
    */
   public static List<AdUnit> getAllAdUnits(DfpServices dfpServices, DfpSession session)
       throws Exception {
-    List<AdUnit> adUnits = Lists.newArrayList();
+    List<AdUnit> adUnits = new ArrayList<>();
 
     // Get the InventoryService.
     InventoryServiceInterface inventoryService =

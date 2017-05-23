@@ -127,6 +127,18 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
            this.bids = bids;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("biddingScheme", getBiddingScheme())
+            .add("biddingStrategyId", getBiddingStrategyId())
+            .add("biddingStrategyName", getBiddingStrategyName())
+            .add("biddingStrategySource", getBiddingStrategySource())
+            .add("biddingStrategyType", getBiddingStrategyType())
+            .add("bids", getBids())
+            .toString();
+    }
 
     /**
      * Gets the biddingStrategyId value for this BiddingStrategyConfiguration.

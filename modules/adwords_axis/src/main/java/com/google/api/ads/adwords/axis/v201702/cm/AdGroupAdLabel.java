@@ -57,6 +57,15 @@ public class AdGroupAdLabel  implements java.io.Serializable {
            this.labelId = labelId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupId", getAdGroupId())
+            .add("adId", getAdId())
+            .add("labelId", getLabelId())
+            .toString();
+    }
 
     /**
      * Gets the adGroupId value for this AdGroupAdLabel.

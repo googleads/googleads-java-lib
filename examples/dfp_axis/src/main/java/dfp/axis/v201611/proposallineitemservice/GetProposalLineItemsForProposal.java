@@ -21,7 +21,6 @@ import com.google.api.ads.dfp.axis.utils.v201611.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201611.ProposalLineItem;
 import com.google.api.ads.dfp.axis.v201611.ProposalLineItemPage;
 import com.google.api.ads.dfp.axis.v201611.ProposalLineItemServiceInterface;
-
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.client.auth.oauth2.Credential;
 

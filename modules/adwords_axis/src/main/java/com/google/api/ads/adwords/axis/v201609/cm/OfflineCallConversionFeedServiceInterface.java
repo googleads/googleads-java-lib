@@ -30,6 +30,11 @@ public interface OfflineCallConversionFeedServiceInterface extends java.rmi.Remo
      * Some operations can succeed
      *         while others fail.
      *         
+     *         <p><b>Note:</b> {@link OfflineCallConversionFeedOperation}
+     * supports only the
+     *         {@code ADD} operator. ({@code SET} and {@code REMOVE} are
+     * not supported.)
+     *         
      *         
      * @param operations A list of offline call conversion feed operations.
      * 

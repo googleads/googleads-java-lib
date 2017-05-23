@@ -22,10 +22,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A ConversionTracker for phone calls from conversion-tracked call extensions.
- *             A call made from the call extension is reported as a conversion if it lasts longer
+ *             A ConversionTracker for phone calls from conversion-tracked call extensions and
+ *             call-only ads.
+ *             
+ *             <p>A call made from the call extension is reported as a conversion if it lasts longer
  *             than N seconds. This duration is 60 seconds by default. Each call extension can
- *             specify the desired conversion configuration.
+ *             specify the desired conversion configuration.</p>
  *           
  * 
  * <p>Java class for AdCallMetricsConversion complex type.

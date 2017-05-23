@@ -110,15 +110,14 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201611.DateTime endDateTime;
 
     /* The time zone ID in tz database format (e.g. "America/Los_Angeles")
-     * for this
-     *                 {@code ProposalLineItem}. The number of serving days
-     * is calculated in this time zone.
-     *                 So if {@link #rateType} is {@link RateType#CPD}, it
-     * will affect the cost calculation.
-     *                 The {@link #startDateTime} and {@link #endDateTime}
-     * will be returned in this time zone.
-     *                 This attribute is optional and defaults to the network's
-     * time zone.
+     * for this {@code
+     *                 ProposalLineItem}. The number of serving days is calculated
+     * in this time zone. So if {@link
+     *                 #rateType} is {@link RateType#CPD}, it will affect
+     * the cost calculation. The {@link
+     *                 #startDateTime} and {@link #endDateTime} will be returned
+     * in this time zone. This attribute is
+     *                 optional and defaults to the network's time zone.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
@@ -151,13 +150,12 @@ public class ProposalLineItem  implements java.io.Serializable {
     private java.lang.Boolean isArchived;
 
     /* The goal(i.e. contracted quantity, quantity or limit) that
-     * this {@code ProposalLineItem}
-     *                 is associated with, which is used in its pacing and
-     * budgeting.
-     *                 {@link Goal#units} must be greater than 0 when the
-     * proposal line item turns into a line item,
-     *                 {@link Goal#goalType} and {@link Goal#unitType} are
-     * readonly.
+     * this {@code ProposalLineItem} is
+     *                 associated with, which is used in its pacing and budgeting.
+     * {@link Goal#units} must be greater
+     *                 than 0 when the proposal line item turns into a line
+     * item, {@link Goal#goalType} and {@link
+     *                 Goal#unitType} are readonly.
      *                 This attribute is required. */
     private com.google.api.ads.dfp.axis.v201611.Goal goal;
 
@@ -258,9 +256,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@code false}. */
     private com.google.api.ads.dfp.axis.v201611.FrequencyCap[] frequencyCaps;
 
-    /* The unique ID of corresponding {@link LineItem}.
-     *                 This will be {@code null} if the {@link Proposal}
-     * has not been pushed to DFP.
+    /* The unique ID of corresponding {@link LineItem}. This will
+     * be {@code null} if the {@link
+     *                 Proposal} has not been pushed to DFP.
      *                 This attribute is read-only. */
     private java.lang.Long dfpLineItemId;
 
@@ -338,6 +336,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 from the same advertiser to serve regardless of the
      * other competitive exclusion labels being
      *                 applied.
+     *                 
      *                 <p>This attribute is optional and defaults to false. */
     private java.lang.Boolean disableSameAdvertiserCompetitiveExclusion;
 
@@ -547,17 +546,16 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* Overrides the billing base of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If this field is overridden, then other required billing
-     * fields ({@link #billingCap},
-     *                 {@link #billingSchedule}, or {@link #billingSource})
-     * also need to be overridden
-     *                 depending on the {@link #billingSource}. That is,
-     * none of the billing fields will inherit from
-     *                 their {@link Proposal} object anymore.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     *                 <p>If this field is overridden, then other required
+     * billing fields ({@link #billingCap}, {@link
+     *                 #billingSchedule}, or {@link #billingSource}) also
+     * need to be overridden depending on the
+     *                 {@link #billingSource}. That is, none of the billing
+     * fields will inherit from their {@link
+     *                 Proposal} object anymore. This attribute can be configured
+     * as editable after the proposal has
+     *                 been submitted. Please check with your network administrator
+     * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span> */
@@ -565,7 +563,7 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The date and time this {@code ProposalLineItem} was last modified.
      * 
-     *                 This attribute is assigned by Google when a {@code
+     *                 <p>This attribute is assigned by Google when a {@code
      * ProposalLineItem} is updated.
      *                 This attribute is read-only. */
     private com.google.api.ads.dfp.axis.v201611.DateTime lastModifiedDateTime;
@@ -580,38 +578,32 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201611.DateTime lastReservationDateTime;
 
     /* Whether to use the corresponding proposal's third party ad
-     * server.
-     *                 If this field is true, {@code thirdPartyAdServerId}
-     * and {@code customThirdPartyAdServerName}
-     *                 will be ignored.
+     * server. If this field is true,
+     *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
+     * will be ignored.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span> */
     private java.lang.Boolean useThirdPartyAdServerFromProposal;
 
     /* A predefined third party ad server, which will be used to fill
-     * in reconciliation.
-     *                 All predefined third party ad servers can be found
-     * in the {@code Third_Party_Company}
-     *                 PQL table.
-     *                 If actual third party ad server is not in the predefined
-     * list, this field is set to 0, and
-     *                 actual third party ad server name is set in {@code
-     * customThirdPartyAdServerName}.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * in reconciliation. All
+     *                 predefined third party ad servers can be found in
+     * the {@code Third_Party_Company} PQL table. If
+     *                 actual third party ad server is not in the predefined
+     * list, this field is set to 0, and actual
+     *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span> */
     private java.lang.Integer thirdPartyAdServerId;
 
     /* When actual third party ad server is not in the predefined
      * list, {@code thirdPartyAdServerId}
      *                 is set to 0, and actual third party ad server name
-     * is set here.
-     *                 When {@code thirdPartyAdServerId} is not 0, this field
-     * is ignored.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is set here. When {@code
+     *                 thirdPartyAdServerId} is not 0, this field is ignored.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span> */
     private java.lang.String customThirdPartyAdServerName;
 
     /* The environment that the {@code ProposalLineItem} is targeting.
@@ -808,6 +800,71 @@ public class ProposalLineItem  implements java.io.Serializable {
            this.additionalTerms = additionalTerms;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("additionalTerms", getAdditionalTerms())
+            .add("appliedLabels", getAppliedLabels())
+            .add("baseRate", getBaseRate())
+            .add("billingBase", getBillingBase())
+            .add("billingCap", getBillingCap())
+            .add("billingSchedule", getBillingSchedule())
+            .add("billingSource", getBillingSource())
+            .add("companionDeliveryOption", getCompanionDeliveryOption())
+            .add("computedStatus", getComputedStatus())
+            .add("contractedQuantityBuffer", getContractedQuantityBuffer())
+            .add("contractedUnitsBought", getContractedUnitsBought())
+            .add("costAdjustment", getCostAdjustment())
+            .add("creativePlaceholders", getCreativePlaceholders())
+            .add("creativeRotationType", getCreativeRotationType())
+            .add("customFieldValues", getCustomFieldValues())
+            .add("customThirdPartyAdServerName", getCustomThirdPartyAdServerName())
+            .add("deliveryData", getDeliveryData())
+            .add("deliveryIndicator", getDeliveryIndicator())
+            .add("deliveryRateType", getDeliveryRateType())
+            .add("dfpLineItemId", getDfpLineItemId())
+            .add("disableSameAdvertiserCompetitiveExclusion", getDisableSameAdvertiserCompetitiveExclusion())
+            .add("effectiveAppliedLabels", getEffectiveAppliedLabels())
+            .add("endDateTime", getEndDateTime())
+            .add("environmentType", getEnvironmentType())
+            .add("frequencyCaps", getFrequencyCaps())
+            .add("goal", getGoal())
+            .add("grossCost", getGrossCost())
+            .add("grossRate", getGrossRate())
+            .add("id", getId())
+            .add("internalNotes", getInternalNotes())
+            .add("isArchived", getIsArchived())
+            .add("isProgrammatic", getIsProgrammatic())
+            .add("isSold", getIsSold())
+            .add("lastModifiedDateTime", getLastModifiedDateTime())
+            .add("lastReservationDateTime", getLastReservationDateTime())
+            .add("lineItemPriority", getLineItemPriority())
+            .add("lineItemType", getLineItemType())
+            .add("linkStatus", getLinkStatus())
+            .add("marketplaceInfo", getMarketplaceInfo())
+            .add("name", getName())
+            .add("netCost", getNetCost())
+            .add("netRate", getNetRate())
+            .add("packageId", getPackageId())
+            .add("premiums", getPremiums())
+            .add("productConstraints", getProductConstraints())
+            .add("productId", getProductId())
+            .add("proposalId", getProposalId())
+            .add("rateCardId", getRateCardId())
+            .add("rateCardPricingModel", getRateCardPricingModel())
+            .add("rateType", getRateType())
+            .add("reservationStatus", getReservationStatus())
+            .add("roadblockingType", getRoadblockingType())
+            .add("scheduledQuantity", getScheduledQuantity())
+            .add("startDateTime", getStartDateTime())
+            // Exclude targeting to avoid overly verbose output
+            .add("thirdPartyAdServerId", getThirdPartyAdServerId())
+            .add("timeZoneId", getTimeZoneId())
+            .add("useThirdPartyAdServerFromProposal", getUseThirdPartyAdServerFromProposal())
+            .add("videoMaxDuration", getVideoMaxDuration())
+            .toString();
+    }
 
     /**
      * Gets the id value for this ProposalLineItem.
@@ -1079,15 +1136,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the timeZoneId value for this ProposalLineItem.
      * 
      * @return timeZoneId   * The time zone ID in tz database format (e.g. "America/Los_Angeles")
-     * for this
-     *                 {@code ProposalLineItem}. The number of serving days
-     * is calculated in this time zone.
-     *                 So if {@link #rateType} is {@link RateType#CPD}, it
-     * will affect the cost calculation.
-     *                 The {@link #startDateTime} and {@link #endDateTime}
-     * will be returned in this time zone.
-     *                 This attribute is optional and defaults to the network's
-     * time zone.
+     * for this {@code
+     *                 ProposalLineItem}. The number of serving days is calculated
+     * in this time zone. So if {@link
+     *                 #rateType} is {@link RateType#CPD}, it will affect
+     * the cost calculation. The {@link
+     *                 #startDateTime} and {@link #endDateTime} will be returned
+     * in this time zone. This attribute is
+     *                 optional and defaults to the network's time zone.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
@@ -1102,15 +1158,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the timeZoneId value for this ProposalLineItem.
      * 
      * @param timeZoneId   * The time zone ID in tz database format (e.g. "America/Los_Angeles")
-     * for this
-     *                 {@code ProposalLineItem}. The number of serving days
-     * is calculated in this time zone.
-     *                 So if {@link #rateType} is {@link RateType#CPD}, it
-     * will affect the cost calculation.
-     *                 The {@link #startDateTime} and {@link #endDateTime}
-     * will be returned in this time zone.
-     *                 This attribute is optional and defaults to the network's
-     * time zone.
+     * for this {@code
+     *                 ProposalLineItem}. The number of serving days is calculated
+     * in this time zone. So if {@link
+     *                 #rateType} is {@link RateType#CPD}, it will affect
+     * the cost calculation. The {@link
+     *                 #startDateTime} and {@link #endDateTime} will be returned
+     * in this time zone. This attribute is
+     *                 optional and defaults to the network's time zone.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
@@ -1217,13 +1272,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the goal value for this ProposalLineItem.
      * 
      * @return goal   * The goal(i.e. contracted quantity, quantity or limit) that
-     * this {@code ProposalLineItem}
-     *                 is associated with, which is used in its pacing and
-     * budgeting.
-     *                 {@link Goal#units} must be greater than 0 when the
-     * proposal line item turns into a line item,
-     *                 {@link Goal#goalType} and {@link Goal#unitType} are
-     * readonly.
+     * this {@code ProposalLineItem} is
+     *                 associated with, which is used in its pacing and budgeting.
+     * {@link Goal#units} must be greater
+     *                 than 0 when the proposal line item turns into a line
+     * item, {@link Goal#goalType} and {@link
+     *                 Goal#unitType} are readonly.
      *                 This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201611.Goal getGoal() {
@@ -1235,13 +1289,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the goal value for this ProposalLineItem.
      * 
      * @param goal   * The goal(i.e. contracted quantity, quantity or limit) that
-     * this {@code ProposalLineItem}
-     *                 is associated with, which is used in its pacing and
-     * budgeting.
-     *                 {@link Goal#units} must be greater than 0 when the
-     * proposal line item turns into a line item,
-     *                 {@link Goal#goalType} and {@link Goal#unitType} are
-     * readonly.
+     * this {@code ProposalLineItem} is
+     *                 associated with, which is used in its pacing and budgeting.
+     * {@link Goal#units} must be greater
+     *                 than 0 when the proposal line item turns into a line
+     * item, {@link Goal#goalType} and {@link
+     *                 Goal#unitType} are readonly.
      *                 This attribute is required.
      */
     public void setGoal(com.google.api.ads.dfp.axis.v201611.Goal goal) {
@@ -1580,9 +1633,9 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the dfpLineItemId value for this ProposalLineItem.
      * 
-     * @return dfpLineItemId   * The unique ID of corresponding {@link LineItem}.
-     *                 This will be {@code null} if the {@link Proposal}
-     * has not been pushed to DFP.
+     * @return dfpLineItemId   * The unique ID of corresponding {@link LineItem}. This will
+     * be {@code null} if the {@link
+     *                 Proposal} has not been pushed to DFP.
      *                 This attribute is read-only.
      */
     public java.lang.Long getDfpLineItemId() {
@@ -1593,9 +1646,9 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the dfpLineItemId value for this ProposalLineItem.
      * 
-     * @param dfpLineItemId   * The unique ID of corresponding {@link LineItem}.
-     *                 This will be {@code null} if the {@link Proposal}
-     * has not been pushed to DFP.
+     * @param dfpLineItemId   * The unique ID of corresponding {@link LineItem}. This will
+     * be {@code null} if the {@link
+     *                 Proposal} has not been pushed to DFP.
      *                 This attribute is read-only.
      */
     public void setDfpLineItemId(java.lang.Long dfpLineItemId) {
@@ -1891,6 +1944,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 from the same advertiser to serve regardless of the
      * other competitive exclusion labels being
      *                 applied.
+     *                 
      *                 <p>This attribute is optional and defaults to false.
      */
     public java.lang.Boolean getDisableSameAdvertiserCompetitiveExclusion() {
@@ -1908,6 +1962,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 from the same advertiser to serve regardless of the
      * other competitive exclusion labels being
      *                 applied.
+     *                 
      *                 <p>This attribute is optional and defaults to false.
      */
     public void setDisableSameAdvertiserCompetitiveExclusion(java.lang.Boolean disableSameAdvertiserCompetitiveExclusion) {
@@ -2531,17 +2586,16 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return billingBase   * Overrides the billing base of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If this field is overridden, then other required billing
-     * fields ({@link #billingCap},
-     *                 {@link #billingSchedule}, or {@link #billingSource})
-     * also need to be overridden
-     *                 depending on the {@link #billingSource}. That is,
-     * none of the billing fields will inherit from
-     *                 their {@link Proposal} object anymore.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     *                 <p>If this field is overridden, then other required
+     * billing fields ({@link #billingCap}, {@link
+     *                 #billingSchedule}, or {@link #billingSource}) also
+     * need to be overridden depending on the
+     *                 {@link #billingSource}. That is, none of the billing
+     * fields will inherit from their {@link
+     *                 Proposal} object anymore. This attribute can be configured
+     * as editable after the proposal has
+     *                 been submitted. Please check with your network administrator
+     * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span>
@@ -2557,17 +2611,16 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param billingBase   * Overrides the billing base of this {@code ProposalLineItem}.
      * This attribute is optional.
      *                 
-     *                 If this field is overridden, then other required billing
-     * fields ({@link #billingCap},
-     *                 {@link #billingSchedule}, or {@link #billingSource})
-     * also need to be overridden
-     *                 depending on the {@link #billingSource}. That is,
-     * none of the billing fields will inherit from
-     *                 their {@link Proposal} object anymore.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     *                 <p>If this field is overridden, then other required
+     * billing fields ({@link #billingCap}, {@link
+     *                 #billingSchedule}, or {@link #billingSource}) also
+     * need to be overridden depending on the
+     *                 {@link #billingSource}. That is, none of the billing
+     * fields will inherit from their {@link
+     *                 Proposal} object anymore. This attribute can be configured
+     * as editable after the proposal has
+     *                 been submitted. Please check with your network administrator
+     * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span>
@@ -2582,7 +2635,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return lastModifiedDateTime   * The date and time this {@code ProposalLineItem} was last modified.
      * 
-     *                 This attribute is assigned by Google when a {@code
+     *                 <p>This attribute is assigned by Google when a {@code
      * ProposalLineItem} is updated.
      *                 This attribute is read-only.
      */
@@ -2596,7 +2649,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param lastModifiedDateTime   * The date and time this {@code ProposalLineItem} was last modified.
      * 
-     *                 This attribute is assigned by Google when a {@code
+     *                 <p>This attribute is assigned by Google when a {@code
      * ProposalLineItem} is updated.
      *                 This attribute is read-only.
      */
@@ -2655,10 +2708,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the useThirdPartyAdServerFromProposal value for this ProposalLineItem.
      * 
      * @return useThirdPartyAdServerFromProposal   * Whether to use the corresponding proposal's third party ad
-     * server.
-     *                 If this field is true, {@code thirdPartyAdServerId}
-     * and {@code customThirdPartyAdServerName}
-     *                 will be ignored.
+     * server. If this field is true,
+     *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
+     * will be ignored.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span>
@@ -2672,10 +2724,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the useThirdPartyAdServerFromProposal value for this ProposalLineItem.
      * 
      * @param useThirdPartyAdServerFromProposal   * Whether to use the corresponding proposal's third party ad
-     * server.
-     *                 If this field is true, {@code thirdPartyAdServerId}
-     * and {@code customThirdPartyAdServerName}
-     *                 will be ignored.
+     * server. If this field is true,
+     *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
+     * will be ignored.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>not using programmatic guaranteed, using
      * sales management.</li></ul></span>
@@ -2689,17 +2740,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the thirdPartyAdServerId value for this ProposalLineItem.
      * 
      * @return thirdPartyAdServerId   * A predefined third party ad server, which will be used to fill
-     * in reconciliation.
-     *                 All predefined third party ad servers can be found
-     * in the {@code Third_Party_Company}
-     *                 PQL table.
-     *                 If actual third party ad server is not in the predefined
-     * list, this field is set to 0, and
-     *                 actual third party ad server name is set in {@code
-     * customThirdPartyAdServerName}.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * in reconciliation. All
+     *                 predefined third party ad servers can be found in
+     * the {@code Third_Party_Company} PQL table. If
+     *                 actual third party ad server is not in the predefined
+     * list, this field is set to 0, and actual
+     *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public java.lang.Integer getThirdPartyAdServerId() {
         return thirdPartyAdServerId;
@@ -2710,17 +2758,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the thirdPartyAdServerId value for this ProposalLineItem.
      * 
      * @param thirdPartyAdServerId   * A predefined third party ad server, which will be used to fill
-     * in reconciliation.
-     *                 All predefined third party ad servers can be found
-     * in the {@code Third_Party_Company}
-     *                 PQL table.
-     *                 If actual third party ad server is not in the predefined
-     * list, this field is set to 0, and
-     *                 actual third party ad server name is set in {@code
-     * customThirdPartyAdServerName}.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * in reconciliation. All
+     *                 predefined third party ad servers can be found in
+     * the {@code Third_Party_Company} PQL table. If
+     *                 actual third party ad server is not in the predefined
+     * list, this field is set to 0, and actual
+     *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public void setThirdPartyAdServerId(java.lang.Integer thirdPartyAdServerId) {
         this.thirdPartyAdServerId = thirdPartyAdServerId;
@@ -2733,12 +2778,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return customThirdPartyAdServerName   * When actual third party ad server is not in the predefined
      * list, {@code thirdPartyAdServerId}
      *                 is set to 0, and actual third party ad server name
-     * is set here.
-     *                 When {@code thirdPartyAdServerId} is not 0, this field
-     * is ignored.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is set here. When {@code
+     *                 thirdPartyAdServerId} is not 0, this field is ignored.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public java.lang.String getCustomThirdPartyAdServerName() {
         return customThirdPartyAdServerName;
@@ -2751,12 +2794,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param customThirdPartyAdServerName   * When actual third party ad server is not in the predefined
      * list, {@code thirdPartyAdServerId}
      *                 is set to 0, and actual third party ad server name
-     * is set here.
-     *                 When {@code thirdPartyAdServerId} is not 0, this field
-     * is ignored.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is set here. When {@code
+     *                 thirdPartyAdServerId} is not 0, this field is ignored.
+     * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
+     * using programmatic guaranteed, using sales management.</li></ul></span>
      */
     public void setCustomThirdPartyAdServerName(java.lang.String customThirdPartyAdServerName) {
         this.customThirdPartyAdServerName = customThirdPartyAdServerName;

@@ -122,6 +122,35 @@ public class SitelinkFeedItem  extends com.google.api.ads.adwords.axis.v201702.c
         this.sitelinkUrlCustomParameters = sitelinkUrlCustomParameters;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupTargeting", getAdGroupTargeting())
+            .add("campaignTargeting", getCampaignTargeting())
+            .add("devicePreference", getDevicePreference())
+            .add("endTime", getEndTime())
+            .add("extensionFeedItemType", getExtensionFeedItemType())
+            .add("feedId", getFeedId())
+            .add("feedItemId", getFeedItemId())
+            .add("feedType", getFeedType())
+            .add("geoTargeting", getGeoTargeting())
+            .add("geoTargetingRestriction", getGeoTargetingRestriction())
+            .add("keywordTargeting", getKeywordTargeting())
+            .add("policyData", getPolicyData())
+            .add("scheduling", getScheduling())
+            .add("sitelinkFinalMobileUrls", getSitelinkFinalMobileUrls())
+            .add("sitelinkFinalUrls", getSitelinkFinalUrls())
+            .add("sitelinkLine2", getSitelinkLine2())
+            .add("sitelinkLine3", getSitelinkLine3())
+            .add("sitelinkText", getSitelinkText())
+            .add("sitelinkTrackingUrlTemplate", getSitelinkTrackingUrlTemplate())
+            .add("sitelinkUrl", getSitelinkUrl())
+            .add("sitelinkUrlCustomParameters", getSitelinkUrlCustomParameters())
+            .add("startTime", getStartTime())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the sitelinkText value for this SitelinkFeedItem.

@@ -25,6 +25,9 @@ package com.google.api.ads.adwords.axis.v201609.rm;
 /**
  * Operation representing a request to add or remove members from
  * a user list.
+ *             The following {@link Operator}s are supported: ADD and
+ * REMOVE. The SET operator
+ *             is not supported.
  */
 public class MutateMembersOperation  extends com.google.api.ads.adwords.axis.v201609.cm.Operation  implements java.io.Serializable {
     /* The mutate members operand to operate on.
@@ -45,6 +48,15 @@ public class MutateMembersOperation  extends com.google.api.ads.adwords.axis.v20
         this.operand = operand;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("operand", getOperand())
+            .add("operationType", getOperationType())
+            .add("operator", getOperator())
+            .toString();
+    }
 
     /**
      * Gets the operand value for this MutateMembersOperation.

@@ -62,6 +62,16 @@ public class ReportDownloadOptions  implements java.io.Serializable {
            this.useGzipCompression = useGzipCompression;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("exportFormat", getExportFormat())
+            .add("includeReportProperties", getIncludeReportProperties())
+            .add("includeTotalsRow", getIncludeTotalsRow())
+            .add("useGzipCompression", getUseGzipCompression())
+            .toString();
+    }
 
     /**
      * Gets the exportFormat value for this ReportDownloadOptions.

@@ -39,6 +39,14 @@ public class BandwidthGroup  extends com.google.api.ads.dfp.axis.v201702.Technol
             name);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("name", getName())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof BandwidthGroup)) return false;

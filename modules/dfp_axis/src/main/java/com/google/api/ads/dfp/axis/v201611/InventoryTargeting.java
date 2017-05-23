@@ -47,6 +47,15 @@ public class InventoryTargeting  implements java.io.Serializable {
            this.targetedPlacementIds = targetedPlacementIds;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("excludedAdUnits", getExcludedAdUnits())
+            .add("targetedAdUnits", getTargetedAdUnits())
+            .add("targetedPlacementIds", getTargetedPlacementIds())
+            .toString();
+    }
 
     /**
      * Gets the targetedAdUnits value for this InventoryTargeting.

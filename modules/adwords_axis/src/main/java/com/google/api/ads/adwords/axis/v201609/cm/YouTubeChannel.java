@@ -61,6 +61,17 @@ public class YouTubeChannel  extends com.google.api.ads.adwords.axis.v201609.cm.
         this.channelName = channelName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("channelId", getChannelId())
+            .add("channelName", getChannelName())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the channelId value for this YouTubeChannel.

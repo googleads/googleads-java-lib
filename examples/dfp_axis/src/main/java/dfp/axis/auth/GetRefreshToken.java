@@ -25,10 +25,10 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.common.collect.Lists;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -53,7 +53,7 @@ public class GetRefreshToken {
    * Scopes to include in the authorization request. Add to this list any additional scopes you want
    * to include.
    */
-  private static final List<String> SCOPES = Lists.newArrayList(DFP_API_SCOPE);
+  private static final List<String> SCOPES = Arrays.asList(DFP_API_SCOPE);
 
   // This callback URL will allow you to copy the token from the success screen.
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
@@ -77,6 +77,7 @@ public class GetRefreshToken {
 
     // Wait for the authorization code.
     System.out.println("Type the code you received here: ");
+    @SuppressWarnings("DefaultCharset") // Reading from stdin, so default charset is appropriate.
     String authorizationCode = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
     // Authorize the OAuth2 token.

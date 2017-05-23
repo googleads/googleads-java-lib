@@ -49,6 +49,16 @@ public class AgeRange  extends com.google.api.ads.adwords.axis.v201607.cm.Criter
         this.ageRangeType = ageRangeType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("ageRangeType", getAgeRangeType())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the ageRangeType value for this AgeRange.

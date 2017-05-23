@@ -25,7 +25,7 @@ package com.google.api.ads.dfp.axis.v201702;
 /**
  * Captures a page of {@link MarketplaceComment} objects.
  */
-public class MarketplaceCommentPage  implements java.io.Serializable {
+public class MarketplaceCommentPage  implements java.io.Serializable , Iterable<com.google.api.ads.dfp.axis.v201702.MarketplaceComment>{
     /* The absolute index in the total result set on which this page
      * begins. */
     private java.lang.Integer startIndex;
@@ -43,6 +43,15 @@ public class MarketplaceCommentPage  implements java.io.Serializable {
            this.results = results;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            // Only include length of results to avoid overly verbose output
+            .add("results.length", getResults() == null ? 0 : getResults().length)
+            .add("startIndex", getStartIndex())
+            .toString();
+    }
 
     /**
      * Gets the startIndex value for this MarketplaceCommentPage.
@@ -91,6 +100,23 @@ public class MarketplaceCommentPage  implements java.io.Serializable {
 
     public void setResults(int i, com.google.api.ads.dfp.axis.v201702.MarketplaceComment _value) {
         this.results[i] = _value;
+    }
+
+    /**
+     * Returns an iterator over this page's {@code results} that:
+     * <ul>
+     * <li>Will not be {@code null}.</li>
+     * <li>Will not support {@link java.util.Iterator#remove()}.</li>
+     * </ul>
+     *
+     * @return a non-null iterator.
+     */
+    @Override
+    public java.util.Iterator<com.google.api.ads.dfp.axis.v201702.MarketplaceComment> iterator() {
+        if (results == null) {
+            return java.util.Collections.<com.google.api.ads.dfp.axis.v201702.MarketplaceComment>emptyIterator();
+        }
+        return java.util.Arrays.<com.google.api.ads.dfp.axis.v201702.MarketplaceComment>asList(results).iterator();
     }
 
     private java.lang.Object __equalsCalc = null;

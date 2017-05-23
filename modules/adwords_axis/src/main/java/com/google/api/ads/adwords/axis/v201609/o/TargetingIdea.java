@@ -45,6 +45,13 @@ public class TargetingIdea  implements java.io.Serializable {
            this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("data", getData())
+            .toString();
+    }
 
     /**
      * Gets the data value for this TargetingIdea.

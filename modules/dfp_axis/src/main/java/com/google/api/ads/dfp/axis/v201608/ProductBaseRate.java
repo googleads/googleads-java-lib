@@ -55,6 +55,16 @@ public class ProductBaseRate  extends com.google.api.ads.dfp.axis.v201608.BaseRa
         this.rate = rate;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("productId", getProductId())
+            .add("rate", getRate())
+            .add("rateCardId", getRateCardId())
+            .toString();
+    }
 
     /**
      * Gets the productId value for this ProductBaseRate.

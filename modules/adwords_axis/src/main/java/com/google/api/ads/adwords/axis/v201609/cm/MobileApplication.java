@@ -82,6 +82,17 @@ public class MobileApplication  extends com.google.api.ads.adwords.axis.v201609.
         this.displayName = displayName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appId", getAppId())
+            .add("criterionType", getCriterionType())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the appId value for this MobileApplication.

@@ -50,6 +50,15 @@ public class CustomFieldOption  implements java.io.Serializable {
            this.displayName = displayName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldId", getCustomFieldId())
+            .add("displayName", getDisplayName())
+            .add("id", getId())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CustomFieldOption.

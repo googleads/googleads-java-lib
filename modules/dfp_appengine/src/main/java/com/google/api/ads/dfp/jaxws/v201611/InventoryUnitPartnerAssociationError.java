@@ -24,6 +24,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Errors relating to the association of partner companies with inventory units.
+ *             <p>
+ *             This class is deprecated. All companies of type
+ *             {@link Company.Type#AFFILIATE_DISTRIBUTION_PARTNER} were changed to {@link Company.Type#PARTNER}.
  *           
  * 
  * <p>Java class for InventoryUnitPartnerAssociationError complex type.

@@ -49,6 +49,20 @@ public class NegativeAdGroupCriterion  extends com.google.api.ads.adwords.axis.v
             adGroupCriterionType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adGroupCriterionType", getAdGroupCriterionType())
+            .add("adGroupId", getAdGroupId())
+            .add("baseAdGroupId", getBaseAdGroupId())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("criterion", getCriterion())
+            .add("criterionUse", getCriterionUse())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("labels", getLabels())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof NegativeAdGroupCriterion)) return false;

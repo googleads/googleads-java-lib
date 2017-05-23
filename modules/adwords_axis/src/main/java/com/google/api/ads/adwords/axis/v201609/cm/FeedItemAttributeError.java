@@ -53,6 +53,15 @@ public class FeedItemAttributeError  implements java.io.Serializable {
            this.errorInformation = errorInformation;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("errorInformation", getErrorInformation())
+            .add("feedAttributeIds", getFeedAttributeIds())
+            .add("validationErrorCode", getValidationErrorCode())
+            .toString();
+    }
 
     /**
      * Gets the feedAttributeIds value for this FeedItemAttributeError.

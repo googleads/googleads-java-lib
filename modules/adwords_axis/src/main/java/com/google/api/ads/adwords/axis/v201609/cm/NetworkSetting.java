@@ -77,6 +77,16 @@ public class NetworkSetting  implements java.io.Serializable {
            this.targetPartnerSearchNetwork = targetPartnerSearchNetwork;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("targetContentNetwork", getTargetContentNetwork())
+            .add("targetGoogleSearch", getTargetGoogleSearch())
+            .add("targetPartnerSearchNetwork", getTargetPartnerSearchNetwork())
+            .add("targetSearchNetwork", getTargetSearchNetwork())
+            .toString();
+    }
 
     /**
      * Gets the targetGoogleSearch value for this NetworkSetting.

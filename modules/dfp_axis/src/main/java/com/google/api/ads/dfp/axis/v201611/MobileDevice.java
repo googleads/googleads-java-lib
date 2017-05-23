@@ -42,6 +42,15 @@ public class MobileDevice  extends com.google.api.ads.dfp.axis.v201611.Technolog
         this.manufacturerCriterionId = manufacturerCriterionId;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("manufacturerCriterionId", getManufacturerCriterionId())
+            .add("name", getName())
+            .toString();
+    }
 
     /**
      * Gets the manufacturerCriterionId value for this MobileDevice.

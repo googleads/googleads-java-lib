@@ -38,6 +38,14 @@ public class ReserveInventoryProgressAction  extends com.google.api.ads.dfp.axis
             evaluationStatus);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("evaluationTime", getEvaluationTime())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ReserveInventoryProgressAction)) return false;

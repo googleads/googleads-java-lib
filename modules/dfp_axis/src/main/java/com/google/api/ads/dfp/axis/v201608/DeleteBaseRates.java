@@ -29,6 +29,12 @@ public class DeleteBaseRates  extends com.google.api.ads.dfp.axis.v201608.BaseRa
     public DeleteBaseRates() {
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DeleteBaseRates)) return false;

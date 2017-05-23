@@ -80,6 +80,18 @@ public class TargetOutrankShareBiddingScheme  extends com.google.api.ads.adwords
         this.raiseBidWhenLowQualityScore = raiseBidWhenLowQualityScore;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidChangesForRaisesOnly", getBidChangesForRaisesOnly())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("competitorDomain", getCompetitorDomain())
+            .add("maxCpcBidCeiling", getMaxCpcBidCeiling())
+            .add("raiseBidWhenLowQualityScore", getRaiseBidWhenLowQualityScore())
+            .add("targetOutrankShare", getTargetOutrankShare())
+            .toString();
+    }
 
     /**
      * Gets the targetOutrankShare value for this TargetOutrankShareBiddingScheme.

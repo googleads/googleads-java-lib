@@ -42,8 +42,6 @@ public class AdWordsJaxWsModule extends ProductFrameworkModule {
     customHandlerMapBinder.addBinding(AdWordsSubProduct.DEFAULT).to(
         new TypeLiteral<HeaderHandler.NoOpHeaderHandler
             <AdWordsSession, AdWordsServiceDescriptor>>() {});
-    customHandlerMapBinder.addBinding(AdWordsSubProduct.EXPRESS).to(
-        AdWordsJaxWsExpressHeaderHandler.class);
 
     MapBinder<AdWordsSubProduct, String> subProductNamespaceMap =
         MapBinder.newMapBinder(binder(), AdWordsSubProduct.class, String.class);

@@ -80,6 +80,19 @@ public class CustomField  implements java.io.Serializable {
            this.visibility = visibility;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataType", getDataType())
+            .add("description", getDescription())
+            .add("entityType", getEntityType())
+            .add("id", getId())
+            .add("isActive", getIsActive())
+            .add("name", getName())
+            .add("visibility", getVisibility())
+            .toString();
+    }
 
     /**
      * Gets the id value for this CustomField.

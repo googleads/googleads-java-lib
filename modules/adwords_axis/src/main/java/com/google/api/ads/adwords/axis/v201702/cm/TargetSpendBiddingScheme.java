@@ -75,6 +75,16 @@ public class TargetSpendBiddingScheme  extends com.google.api.ads.adwords.axis.v
         this.enhancedCpcEnabled = enhancedCpcEnabled;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("enhancedCpcEnabled", getEnhancedCpcEnabled())
+            .add("spendTarget", getSpendTarget())
+            .toString();
+    }
 
     /**
      * Gets the bidCeiling value for this TargetSpendBiddingScheme.

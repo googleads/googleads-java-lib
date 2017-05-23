@@ -38,6 +38,13 @@ public class FeedItemGeoRestriction  implements java.io.Serializable {
            this.geoRestriction = geoRestriction;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("geoRestriction", getGeoRestriction())
+            .toString();
+    }
 
     /**
      * Gets the geoRestriction value for this FeedItemGeoRestriction.

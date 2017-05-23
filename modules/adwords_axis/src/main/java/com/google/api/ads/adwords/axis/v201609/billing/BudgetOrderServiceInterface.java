@@ -26,10 +26,12 @@ public interface BudgetOrderServiceInterface extends java.rmi.Remote {
     /**
      * Gets a list of {@link BudgetOrder}s using the generic selector.
      * 
+     *         
      * @param serviceSelector specifies which BudgetOrder to return.
      *         
      * @return A {@link BudgetOrderPage} of BudgetOrders of the client customer.
-     * All BudgetOrder fields are returned. Stats are not yet supported.
+     * All BudgetOrder
+     *         fields are returned. Stats are not yet supported.
      *         
      * @throws ApiException
      */
@@ -37,8 +39,8 @@ public interface BudgetOrderServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns all the open/active BillingAccounts associated with
-     * the current
-     *         manager.
+     * the current manager.
+     *         
      *         
      * @return A list of {@link BillingAccount}s.
      *         
@@ -47,7 +49,8 @@ public interface BudgetOrderServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.adwords.axis.v201609.billing.BillingAccount[] getBillingAccounts() throws java.rmi.RemoteException, com.google.api.ads.adwords.axis.v201609.cm.ApiException;
 
     /**
-     * Mutates BudgetOrders, supported operations are:
+     * Adds, updates, or removes budget orders. Supported operations
+     * are:
      *         <p><code>ADD</code>: Adds a {@link BudgetOrder} to the billing
      * account
      *         specified by the billing account ID.</p>
@@ -60,7 +63,9 @@ public interface BudgetOrderServiceInterface extends java.rmi.Remote {
      * is limited to one operation per mutate request. Any attempt to make
      * more
      *         than one operation will result in an <code>ApiException</code>.</p>
-     * 
+     * <p class="note"><b>Note:</b> This action is available only on a whitelist
+     * basis.</p>
+     *         
      * @param operations A list of operations, <b>however currently we only
      * support one operation per mutate call</b>.
      *         

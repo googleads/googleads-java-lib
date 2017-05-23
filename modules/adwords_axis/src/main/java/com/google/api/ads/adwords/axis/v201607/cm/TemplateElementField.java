@@ -61,6 +61,16 @@ public class TemplateElementField  implements java.io.Serializable {
            this.fieldMedia = fieldMedia;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("fieldMedia", getFieldMedia())
+            .add("fieldText", getFieldText())
+            .add("name", getName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the name value for this TemplateElementField.

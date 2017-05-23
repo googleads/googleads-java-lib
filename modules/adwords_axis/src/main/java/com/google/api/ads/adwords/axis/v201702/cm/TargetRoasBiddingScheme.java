@@ -73,6 +73,16 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
         this.bidFloor = bidFloor;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("bidFloor", getBidFloor())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("targetRoas", getTargetRoas())
+            .toString();
+    }
 
     /**
      * Gets the targetRoas value for this TargetRoasBiddingScheme.

@@ -53,6 +53,14 @@ public class ListStringCreativeTemplateVariableVariableChoice  implements java.i
            this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("label", getLabel())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the label value for this ListStringCreativeTemplateVariableVariableChoice.

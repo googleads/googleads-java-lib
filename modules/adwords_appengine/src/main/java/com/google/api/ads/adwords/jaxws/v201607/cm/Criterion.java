@@ -21,11 +21,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.google.api.ads.adwords.jaxws.v201607.express.BusinessHour;
-import com.google.api.ads.adwords.jaxws.v201607.express.KeywordGroup;
-import com.google.api.ads.adwords.jaxws.v201607.express.KeywordSet;
-import com.google.api.ads.adwords.jaxws.v201607.express.NegativeCriterion;
-import com.google.api.ads.adwords.jaxws.v201607.express.ProductService;
 
 
 /**
@@ -85,15 +80,10 @@ import com.google.api.ads.adwords.jaxws.v201607.express.ProductService;
     IpBlock.class,
     ProductScope.class,
     AppPaymentModel.class,
+    Keyword.class,
     YouTubeChannel.class,
     ProductPartition.class,
-    Webpage.class,
-    KeywordGroup.class,
-    BusinessHour.class,
-    KeywordSet.class,
-    NegativeCriterion.class,
-    Keyword.class,
-    ProductService.class
+    Webpage.class
 })
 public class Criterion {
 

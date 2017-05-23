@@ -240,6 +240,35 @@ public class Campaign  implements java.io.Serializable {
            this.selectiveOptimization = selectiveOptimization;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("adServingOptimizationStatus", getAdServingOptimizationStatus())
+            .add("advertisingChannelSubType", getAdvertisingChannelSubType())
+            .add("advertisingChannelType", getAdvertisingChannelType())
+            .add("baseCampaignId", getBaseCampaignId())
+            .add("biddingStrategyConfiguration", getBiddingStrategyConfiguration())
+            .add("budget", getBudget())
+            .add("campaignTrialType", getCampaignTrialType())
+            .add("conversionOptimizerEligibility", getConversionOptimizerEligibility())
+            .add("endDate", getEndDate())
+            .add("forwardCompatibilityMap", getForwardCompatibilityMap())
+            .add("frequencyCap", getFrequencyCap())
+            .add("id", getId())
+            .add("labels", getLabels())
+            .add("name", getName())
+            .add("networkSetting", getNetworkSetting())
+            .add("selectiveOptimization", getSelectiveOptimization())
+            .add("servingStatus", getServingStatus())
+            .add("settings", getSettings())
+            .add("startDate", getStartDate())
+            .add("status", getStatus())
+            .add("trackingUrlTemplate", getTrackingUrlTemplate())
+            .add("urlCustomParameters", getUrlCustomParameters())
+            .add("vanityPharma", getVanityPharma())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Campaign.

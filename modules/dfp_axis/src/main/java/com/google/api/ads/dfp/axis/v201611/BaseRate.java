@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201611;
 
 /**
  * A base rate that applies to a product template, product or product
- * package
- *             item belonging to rate card.
+ * package item belonging to rate
+ *             card.
  */
 public abstract class BaseRate  implements java.io.Serializable {
     /* The ID of the {@link RateCard} object to which this base rate
@@ -52,6 +52,14 @@ public abstract class BaseRate  implements java.io.Serializable {
            this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("rateCardId", getRateCardId())
+            .toString();
+    }
 
     /**
      * Gets the rateCardId value for this BaseRate.

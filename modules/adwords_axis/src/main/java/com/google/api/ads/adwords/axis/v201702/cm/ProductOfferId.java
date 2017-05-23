@@ -41,6 +41,14 @@ public class ProductOfferId  extends com.google.api.ads.adwords.axis.v201702.cm.
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("productDimensionType", getProductDimensionType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this ProductOfferId.

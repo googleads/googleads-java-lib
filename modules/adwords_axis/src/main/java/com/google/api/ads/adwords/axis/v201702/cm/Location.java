@@ -32,7 +32,9 @@ package com.google.api.ads.adwords.axis.v201702.cm;
 public class Location  extends com.google.api.ads.adwords.axis.v201702.cm.Criterion  implements java.io.Serializable {
     /* Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
-     *                     LocationCriterionService.
+     *                     LocationCriterionService. If used as a filter,
+     * a location name cannot be greater than 300
+     *                     characters.
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span> */
     private java.lang.String locationName;
@@ -73,13 +75,28 @@ public class Location  extends com.google.api.ads.adwords.axis.v201702.cm.Criter
         this.parentLocations = parentLocations;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("displayType", getDisplayType())
+            .add("id", getId())
+            .add("locationName", getLocationName())
+            .add("parentLocations", getParentLocations())
+            .add("targetingStatus", getTargetingStatus())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the locationName value for this Location.
      * 
      * @return locationName   * Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
-     *                     LocationCriterionService.
+     *                     LocationCriterionService. If used as a filter,
+     * a location name cannot be greater than 300
+     *                     characters.
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */
@@ -93,7 +110,9 @@ public class Location  extends com.google.api.ads.adwords.axis.v201702.cm.Criter
      * 
      * @param locationName   * Name of the location criterion. <b> Note:</b> This field is
      * filterable only in
-     *                     LocationCriterionService.
+     *                     LocationCriterionService. If used as a filter,
+     * a location name cannot be greater than 300
+     *                     characters.
      *                     <span class="constraint ReadOnly">This field is
      * read only and will be ignored when sent to the API.</span>
      */

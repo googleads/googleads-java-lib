@@ -40,6 +40,13 @@ public abstract class DataEntry  implements java.io.Serializable {
            this.dataEntryType = dataEntryType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("dataEntryType", getDataEntryType())
+            .toString();
+    }
 
     /**
      * Gets the dataEntryType value for this DataEntry.

@@ -37,6 +37,13 @@ public class UnknownProductDimension  extends com.google.api.ads.adwords.axis.v2
             productDimensionType);
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("productDimensionType", getProductDimensionType())
+            .toString();
+    }
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof UnknownProductDimension)) return false;

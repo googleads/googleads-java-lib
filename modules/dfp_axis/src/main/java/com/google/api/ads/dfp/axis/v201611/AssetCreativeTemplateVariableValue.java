@@ -42,6 +42,14 @@ public class AssetCreativeTemplateVariableValue  extends com.google.api.ads.dfp.
         this.asset = asset;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("asset", getAsset())
+            .add("uniqueName", getUniqueName())
+            .toString();
+    }
 
     /**
      * Gets the asset value for this AssetCreativeTemplateVariableValue.

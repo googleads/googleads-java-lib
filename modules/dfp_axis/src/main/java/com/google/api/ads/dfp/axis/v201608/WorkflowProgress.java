@@ -63,6 +63,18 @@ public class WorkflowProgress  implements java.io.Serializable {
            this.isProcessing = isProcessing;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("evaluationStatus", getEvaluationStatus())
+            .add("evaluationTime", getEvaluationTime())
+            .add("isProcessing", getIsProcessing())
+            .add("steps", getSteps())
+            .add("submissionTime", getSubmissionTime())
+            .add("submitterId", getSubmitterId())
+            .toString();
+    }
 
     /**
      * Gets the steps value for this WorkflowProgress.

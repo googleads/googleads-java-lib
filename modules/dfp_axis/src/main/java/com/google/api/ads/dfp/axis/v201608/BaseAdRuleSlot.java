@@ -120,6 +120,22 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
            this.maxAdsInPod = maxAdsInPod;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bumper", getBumper())
+            .add("maxAdsInPod", getMaxAdsInPod())
+            .add("maxBumperDuration", getMaxBumperDuration())
+            .add("maxPodDuration", getMaxPodDuration())
+            .add("maxVideoAdDuration", getMaxVideoAdDuration())
+            .add("minPodDuration", getMinPodDuration())
+            .add("minVideoAdDuration", getMinVideoAdDuration())
+            .add("slotBehavior", getSlotBehavior())
+            .add("videoMidrollFrequency", getVideoMidrollFrequency())
+            .add("videoMidrollFrequencyType", getVideoMidrollFrequencyType())
+            .toString();
+    }
 
     /**
      * Gets the slotBehavior value for this BaseAdRuleSlot.

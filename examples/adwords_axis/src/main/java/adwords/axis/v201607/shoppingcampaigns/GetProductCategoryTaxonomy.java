@@ -25,9 +25,8 @@ import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -72,7 +71,7 @@ public class GetProductCategoryTaxonomy {
         constantDataService.getProductBiddingCategoryData(selector);
     
     // List of top level category nodes.
-    List<CategoryNode> rootCategories = Lists.newArrayList();
+    List<CategoryNode> rootCategories = new ArrayList<>();
     // Map of category ID to category node for all categories found in the results.
     Map<Long, CategoryNode> biddingCategories = Maps.newHashMap();
     
@@ -133,7 +132,7 @@ public class GetProductCategoryTaxonomy {
      * @param name the name of the category
      */
     CategoryNode(Long id, String name) {
-      this.children = Lists.newArrayList();
+      this.children = new ArrayList<>();
       this.id = Preconditions.checkNotNull(id);
       this.name = name;
     }

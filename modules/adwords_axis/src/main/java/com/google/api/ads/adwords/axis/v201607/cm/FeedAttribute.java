@@ -70,6 +70,16 @@ public class FeedAttribute  implements java.io.Serializable {
            this.isPartOfKey = isPartOfKey;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("id", getId())
+            .add("isPartOfKey", getIsPartOfKey())
+            .add("name", getName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this FeedAttribute.

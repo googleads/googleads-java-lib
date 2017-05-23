@@ -43,6 +43,14 @@ public class FunctionOperand  extends com.google.api.ads.adwords.axis.v201609.cm
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("functionArgumentOperandType", getFunctionArgumentOperandType())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this FunctionOperand.

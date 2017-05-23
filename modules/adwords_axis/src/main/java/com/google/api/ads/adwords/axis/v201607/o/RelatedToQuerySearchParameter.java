@@ -54,6 +54,14 @@ public class RelatedToQuerySearchParameter  extends com.google.api.ads.adwords.a
         this.queries = queries;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("queries", getQueries())
+            .add("searchParameterType", getSearchParameterType())
+            .toString();
+    }
 
     /**
      * Gets the queries value for this RelatedToQuerySearchParameter.

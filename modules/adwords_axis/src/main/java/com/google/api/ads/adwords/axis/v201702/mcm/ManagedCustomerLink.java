@@ -62,6 +62,17 @@ public class ManagedCustomerLink  implements java.io.Serializable {
            this.isHidden = isHidden;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clientCustomerId", getClientCustomerId())
+            .add("isHidden", getIsHidden())
+            .add("linkStatus", getLinkStatus())
+            .add("managerCustomerId", getManagerCustomerId())
+            .add("pendingDescriptiveName", getPendingDescriptiveName())
+            .toString();
+    }
 
     /**
      * Gets the managerCustomerId value for this ManagedCustomerLink.

@@ -50,6 +50,16 @@ public class AppPaymentModel  extends com.google.api.ads.adwords.axis.v201702.cm
         this.appPaymentModelType = appPaymentModelType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("appPaymentModelType", getAppPaymentModelType())
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the appPaymentModelType value for this AppPaymentModel.

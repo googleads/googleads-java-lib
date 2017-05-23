@@ -87,6 +87,16 @@ public class AdCustomizerFeed  implements java.io.Serializable {
            this.feedAttributes = feedAttributes;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("feedAttributes", getFeedAttributes())
+            .add("feedId", getFeedId())
+            .add("feedName", getFeedName())
+            .add("feedStatus", getFeedStatus())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this AdCustomizerFeed.

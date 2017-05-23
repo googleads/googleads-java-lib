@@ -62,6 +62,15 @@ public class Criterion  implements java.io.Serializable {
            this.criterionType = criterionType;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the id value for this Criterion.

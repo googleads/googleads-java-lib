@@ -98,6 +98,17 @@ public class LocationGroups  extends com.google.api.ads.adwords.axis.v201702.cm.
         this.matchingFunction = matchingFunction;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("feedId", getFeedId())
+            .add("id", getId())
+            .add("matchingFunction", getMatchingFunction())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the feedId value for this LocationGroups.

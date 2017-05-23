@@ -52,6 +52,16 @@ public class ProgressStats  implements java.io.Serializable {
            this.numResultsWritten = numResultsWritten;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("estimatedPercentExecuted", getEstimatedPercentExecuted())
+            .add("numOperationsExecuted", getNumOperationsExecuted())
+            .add("numOperationsSucceeded", getNumOperationsSucceeded())
+            .add("numResultsWritten", getNumResultsWritten())
+            .toString();
+    }
 
     /**
      * Gets the numOperationsExecuted value for this ProgressStats.

@@ -44,6 +44,14 @@ public class FieldPathElement  implements java.io.Serializable {
            this.index = index;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("field", getField())
+            .add("index", getIndex())
+            .toString();
+    }
 
     /**
      * Gets the field value for this FieldPathElement.

@@ -84,6 +84,14 @@ public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
            this.customCriteriaRule = customCriteriaRule;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customCriteriaRule", getCustomCriteriaRule())
+            .add("inventoryRule", getInventoryRule())
+            .toString();
+    }
 
     /**
      * Gets the inventoryRule value for this FirstPartyAudienceSegmentRule.

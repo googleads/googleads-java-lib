@@ -131,7 +131,7 @@ public enum TrialErrorReason {
 
     /**
      * 
-     *                 All non-archived trials must start end end within their campaign's duration.
+     *                 All non-archived trials must start and end within their campaign's duration.
      *               
      * 
      */

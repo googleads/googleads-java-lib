@@ -74,6 +74,18 @@ public class ProductBiddingCategoryData  extends com.google.api.ads.adwords.axis
         this.displayValue = displayValue;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("constantDataType", getConstantDataType())
+            .add("country", getCountry())
+            .add("dimensionValue", getDimensionValue())
+            .add("displayValue", getDisplayValue())
+            .add("parentDimensionValue", getParentDimensionValue())
+            .add("status", getStatus())
+            .toString();
+    }
 
     /**
      * Gets the dimensionValue value for this ProductBiddingCategoryData.

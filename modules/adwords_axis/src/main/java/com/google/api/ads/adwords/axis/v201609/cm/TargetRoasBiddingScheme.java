@@ -33,7 +33,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  * conversion value.
  *             
  *             <p>Note that campaigns must meet <a
- *             href="//support.google.com/adwords/answer/2471188">specific
+ *             href="//support.google.com/adwords/answer/6268637">specific
  * eligibility requirements</a> before they can use the <code>TargetRoasBiddingScheme</code>
  * bidding strategy.
  *             <span class="constraint AdxEnabled">This is disabled for
@@ -73,6 +73,16 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
         this.bidFloor = bidFloor;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("bidCeiling", getBidCeiling())
+            .add("bidFloor", getBidFloor())
+            .add("biddingSchemeType", getBiddingSchemeType())
+            .add("targetRoas", getTargetRoas())
+            .toString();
+    }
 
     /**
      * Gets the targetRoas value for this TargetRoasBiddingScheme.

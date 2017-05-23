@@ -24,8 +24,8 @@ package com.google.api.ads.dfp.axis.v201611;
 
 /**
  * Contains data used to display information synchronized with Canoe
- * for set-top box enabled
- *             {@link LineItem line items}.
+ * for set-top box enabled {@link
+ *             LineItem line items}.
  */
 public class SetTopBoxInfo  implements java.io.Serializable {
     /* Indicates if the line item is ready to be synced with Canoe
@@ -60,6 +60,16 @@ public class SetTopBoxInfo  implements java.io.Serializable {
            this.nielsenProductCategoryCode = nielsenProductCategoryCode;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("lastSyncCanoeResponseMessage", getLastSyncCanoeResponseMessage())
+            .add("lastSyncResult", getLastSyncResult())
+            .add("nielsenProductCategoryCode", getNielsenProductCategoryCode())
+            .add("syncStatus", getSyncStatus())
+            .toString();
+    }
 
     /**
      * Gets the syncStatus value for this SetTopBoxInfo.

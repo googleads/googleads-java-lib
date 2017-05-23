@@ -23,8 +23,6 @@ import javax.xml.bind.annotation.XmlType;
 import com.google.api.ads.adwords.jaxws.v201609.billing.BudgetOrderError;
 import com.google.api.ads.adwords.jaxws.v201609.billing.CustomerOrderLineError;
 import com.google.api.ads.adwords.jaxws.v201609.ch.CustomerSyncError;
-import com.google.api.ads.adwords.jaxws.v201609.express.ExpressBusinessError;
-import com.google.api.ads.adwords.jaxws.v201609.express.PromotionError;
 import com.google.api.ads.adwords.jaxws.v201609.mcm.CustomerError;
 import com.google.api.ads.adwords.jaxws.v201609.mcm.LabelServiceError;
 import com.google.api.ads.adwords.jaxws.v201609.mcm.ManagedCustomerServiceError;
@@ -72,9 +70,6 @@ import com.google.api.ads.adwords.jaxws.v201609.rm.UserListError;
     "apiErrorType"
 })
 @XmlSeeAlso({
-    CustomerSyncError.class,
-    ExpressBusinessError.class,
-    PromotionError.class,
     DataError.class,
     OfflineConversionError.class,
     ReportDefinitionError.class,
@@ -161,19 +156,20 @@ import com.google.api.ads.adwords.jaxws.v201609.rm.UserListError;
     AdParamError.class,
     RangeError.class,
     DatabaseError.class,
+    CustomerSyncError.class,
     BudgetOrderError.class,
     CustomerOrderLineError.class,
-    UserListError.class,
-    MutateMembersError.class,
-    com.google.api.ads.adwords.jaxws.v201609.rm.CollectionSizeError.class,
+    TargetingIdeaError.class,
+    TrafficEstimatorError.class,
+    com.google.api.ads.adwords.jaxws.v201609.o.CurrencyCodeError.class,
     CustomerError.class,
     LabelServiceError.class,
     com.google.api.ads.adwords.jaxws.v201609.mcm.CollectionSizeError.class,
     ManagedCustomerServiceError.class,
     com.google.api.ads.adwords.jaxws.v201609.mcm.CurrencyCodeError.class,
-    TargetingIdeaError.class,
-    TrafficEstimatorError.class,
-    com.google.api.ads.adwords.jaxws.v201609.o.CurrencyCodeError.class
+    UserListError.class,
+    MutateMembersError.class,
+    com.google.api.ads.adwords.jaxws.v201609.rm.CollectionSizeError.class
 })
 public abstract class ApiError {
 

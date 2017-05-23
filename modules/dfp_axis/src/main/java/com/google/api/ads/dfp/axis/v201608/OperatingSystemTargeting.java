@@ -47,6 +47,14 @@ public class OperatingSystemTargeting  implements java.io.Serializable {
            this.operatingSystems = operatingSystems;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("isTargeted", getIsTargeted())
+            .add("operatingSystems", getOperatingSystems())
+            .toString();
+    }
 
     /**
      * Gets the isTargeted value for this OperatingSystemTargeting.

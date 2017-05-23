@@ -1522,6 +1522,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RequestError }
+     * 
+     */
+    public RequestError createRequestError() {
+        return new RequestError();
+    }
+
+    /**
      * Create an instance of {@link BandwidthPremiumFeature }
      * 
      */

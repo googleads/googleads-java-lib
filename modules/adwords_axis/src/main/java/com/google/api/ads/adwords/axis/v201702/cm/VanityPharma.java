@@ -44,6 +44,14 @@ public class VanityPharma  implements java.io.Serializable {
            this.vanityPharmaText = vanityPharmaText;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("vanityPharmaDisplayUrlMode", getVanityPharmaDisplayUrlMode())
+            .add("vanityPharmaText", getVanityPharmaText())
+            .toString();
+    }
 
     /**
      * Gets the vanityPharmaDisplayUrlMode value for this VanityPharma.

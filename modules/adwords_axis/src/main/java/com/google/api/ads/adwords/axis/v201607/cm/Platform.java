@@ -49,6 +49,16 @@ public class Platform  extends com.google.api.ads.adwords.axis.v201607.cm.Criter
         this.platformName = platformName;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("criterionType", getCriterionType())
+            .add("id", getId())
+            .add("platformName", getPlatformName())
+            .add("type", getType())
+            .toString();
+    }
 
     /**
      * Gets the platformName value for this Platform.

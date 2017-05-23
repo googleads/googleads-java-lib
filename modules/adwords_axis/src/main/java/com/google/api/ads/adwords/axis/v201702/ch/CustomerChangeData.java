@@ -56,6 +56,15 @@ public class CustomerChangeData  implements java.io.Serializable {
            this.lastChangeTimestamp = lastChangeTimestamp;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("changedCampaigns", getChangedCampaigns())
+            .add("changedFeeds", getChangedFeeds())
+            .add("lastChangeTimestamp", getLastChangeTimestamp())
+            .toString();
+    }
 
     /**
      * Gets the changedCampaigns value for this CustomerChangeData.

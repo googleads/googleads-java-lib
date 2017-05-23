@@ -66,6 +66,14 @@ public class ListOperations  implements java.io.Serializable {
            this.operators = operators;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("clear", getClear())
+            .add("operators", getOperators())
+            .toString();
+    }
 
     /**
      * Gets the clear value for this ListOperations.

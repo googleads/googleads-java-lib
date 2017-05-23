@@ -78,6 +78,21 @@ public class FeedItemPolicyData  extends com.google.api.ads.adwords.axis.v201607
         this.qualityDisapprovalReasons = qualityDisapprovalReasons;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("approvalStatus", getApprovalStatus())
+            .add("disapprovalReasons", getDisapprovalReasons())
+            .add("feedMappingId", getFeedMappingId())
+            .add("placeholderType", getPlaceholderType())
+            .add("policyDataType", getPolicyDataType())
+            .add("qualityApprovalStatus", getQualityApprovalStatus())
+            .add("qualityDisapprovalReasons", getQualityDisapprovalReasons())
+            .add("validationErrors", getValidationErrors())
+            .add("validationStatus", getValidationStatus())
+            .toString();
+    }
 
     /**
      * Gets the placeholderType value for this FeedItemPolicyData.

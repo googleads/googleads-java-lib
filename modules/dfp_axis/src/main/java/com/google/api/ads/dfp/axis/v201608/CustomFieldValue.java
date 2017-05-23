@@ -57,6 +57,14 @@ public class CustomFieldValue  extends com.google.api.ads.dfp.axis.v201608.BaseC
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return com.google.common.base.MoreObjects.toStringHelper(this.getClass())
+            .omitNullValues()
+            .add("customFieldId", getCustomFieldId())
+            .add("value", getValue())
+            .toString();
+    }
 
     /**
      * Gets the value value for this CustomFieldValue.
