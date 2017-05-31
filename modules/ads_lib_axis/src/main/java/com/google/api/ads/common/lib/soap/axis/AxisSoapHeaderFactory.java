@@ -15,13 +15,12 @@
 package com.google.api.ads.common.lib.soap.axis;
 
 import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
+import java.lang.reflect.InvocationTargetException;
 
-/**
- * Factory for creating subproduct-specific Axis soap headers.
- */
+/** Factory for creating Axis soap headers. */
 public interface AxisSoapHeaderFactory<D extends AdsServiceDescriptor> {
 
-  public Object createSoapHeader(D adsServiceDescriptor) throws ClassNotFoundException,
-      InstantiationException, IllegalAccessException;
-
+  public Object createSoapHeader(D adsServiceDescriptor)
+      throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException,
+          IllegalAccessException, InstantiationException;
 }

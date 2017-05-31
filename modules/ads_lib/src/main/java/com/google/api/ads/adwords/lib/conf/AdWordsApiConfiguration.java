@@ -14,14 +14,11 @@
 
 package com.google.api.ads.adwords.lib.conf;
 
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.common.collect.Lists;
 import com.google.inject.name.Named;
-
-import org.apache.commons.configuration.Configuration;
-
 import javax.inject.Inject;
+import org.apache.commons.configuration.Configuration;
 
 /**
  * Configuration information for AdWords library.
@@ -62,17 +59,6 @@ public class AdWordsApiConfiguration extends AdsApiConfiguration {
       }
     }
     throw new NullPointerException("No group found for service: " + version + "." + service);
-  }
-  
-  /**
-   * Gets the sub product for the service and version. 
-   */
-  public AdWordsSubProduct getServiceSubProduct(String version, String service) {
-    String subProductName = config.getString("api.adwords.version." + version + "."
-        + getServiceUrlGroup(version, service) + ".subproduct");
-    return subProductName != null
-        ? Enum.valueOf(AdWordsSubProduct.class, subProductName.toUpperCase())
-        : AdWordsSubProduct.DEFAULT;
   }
   
   @Override

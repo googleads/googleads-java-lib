@@ -15,15 +15,14 @@
 package com.google.api.ads.adwords.axis;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-
+import com.google.inject.Inject;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
 
 /**
  * AdWords implementation of {@link AxisSoapHeaderFactory}.
@@ -31,26 +30,29 @@ import javax.inject.Inject;
 public class AdWordsAxisSoapHeaderFactory
     implements AxisSoapHeaderFactory<AdWordsServiceDescriptor> {
 
-  private final Map<AdWordsSubProduct, String> subProductHeaderNameMap;
-
-  /**
-   * @param subProductHeaderNameMap a map from sub product to subpackage.headerTypeName, e.g.,
-   *        "cm.SoapHeader"
-   */
+  private final String headerPartialName;
+  
+  /** Constructor used by Guice. */
   @Inject
-  public AdWordsAxisSoapHeaderFactory(Map<AdWordsSubProduct, String> subProductHeaderNameMap) {
-    this.subProductHeaderNameMap = subProductHeaderNameMap;
+  AdWordsAxisSoapHeaderFactory() {
+    this("cm.SoapHeader");
+  }
+  
+  @VisibleForTesting
+  AdWordsAxisSoapHeaderFactory(String headerPartialName) {
+    this.headerPartialName = headerPartialName;
   }
 
   @Override
   public Object createSoapHeader(AdWordsServiceDescriptor adWordsServiceDescriptor)
-      throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+      throws InvocationTargetException, ClassNotFoundException, NoSuchMethodException,
+          IllegalAccessException, InstantiationException {
     Class<?> interfaceClass = adWordsServiceDescriptor.getInterfaceClass();
     String packageName = interfaceClass.getPackage().getName();
     List<String> packageParts = Lists.newArrayList(packageName.split("\\."));
     String parentPackage = Joiner.on(".").join(packageParts.subList(0, packageParts.size() - 1));
-    String headerName = subProductHeaderNameMap.get(adWordsServiceDescriptor.getSubProduct());
-    return Class.forName(parentPackage + "." + headerName).newInstance();
+    Constructor<?> constructor =
+        Class.forName(parentPackage + "." + headerPartialName).getDeclaredConstructor();
+    return constructor.newInstance();
   }
-
 }

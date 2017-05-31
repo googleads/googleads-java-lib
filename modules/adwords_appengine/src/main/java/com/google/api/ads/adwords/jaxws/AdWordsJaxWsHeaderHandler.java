@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.jaxws;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
@@ -28,9 +27,7 @@ import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
-
 import java.util.Map;
-
 import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
@@ -51,8 +48,6 @@ public class AdWordsJaxWsHeaderHandler implements
   private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
-  private final Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
-      subProductHeaderHandlerMap;
 
   /**
    * Constructor.
@@ -68,15 +63,12 @@ public class AdWordsJaxWsHeaderHandler implements
       AdWordsApiConfiguration adWordsApiConfiguration,
       AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
-      UserAgentCombiner userAgentCombiner,
-      Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
-          subProductHeaderHandlerMap) {
+      UserAgentCombiner userAgentCombiner) {
     this.soapClientHandler = soapClientHandler;
     this.adWordsApiConfiguration = adWordsApiConfiguration;
     this.adsLibConfiguration = adsLibConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
-    this.subProductHeaderHandlerMap = subProductHeaderHandlerMap;
   }
 
   /**
@@ -101,10 +93,6 @@ public class AdWordsJaxWsHeaderHandler implements
     soapClientHandler.setCompression(bindingProvider, adsLibConfiguration.isCompressionEnabled());
     soapClientHandler.setRequestTimeout(
         bindingProvider, adsLibConfiguration.getSoapRequestTimeout());
-    
-    HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
-        subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());
-    subProductHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
   }
 
   /**
@@ -172,7 +160,8 @@ public class AdWordsJaxWsHeaderHandler implements
       }
       return requestHeader;
     } catch (SOAPException e) {
-      throw new ServiceException("Unexpected exception.", e);
+      throw new ServiceException(
+          "Unexpected exception constructing SOAP header for: " + adWordsServiceDescriptor, e);
     }
   }
 }

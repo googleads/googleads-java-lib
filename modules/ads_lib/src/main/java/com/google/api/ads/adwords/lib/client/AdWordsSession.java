@@ -25,15 +25,12 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-
-import org.apache.commons.configuration.Configuration;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
+import org.apache.commons.configuration.Configuration;
 
 /**
  * A {@code AdWordsSession} represents a single session of AdWords use.
@@ -45,8 +42,6 @@ import javax.annotation.concurrent.ThreadSafe;
 public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
   private String clientCustomerId;
-  private Long expressBusinessId;
-  private String expressPlusPageId;
   private Boolean isValidateOnly;
   private Boolean isPartialFailure;
   private Credential oAuth2Credential;
@@ -92,44 +87,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
    */
   public void setClientCustomerId(String clientCustomerId) {
     this.clientCustomerId = clientCustomerId;
-  }
-
-  /**
-   * Gets the AdWords Express business ID used by AdWords Express PromotionService.
-   */
-  @Nullable
-  public Long getExpressBusinessId() {
-    return expressBusinessId;
-  }
-
-  /**
-   * Sets the AdWords Express business ID used by AdWords Express PromotionService.
-   *
-   * <p>When using PromotionService, either set this value or the express plus page ID,
-   * but not both.
-   */
-  public void setExpressBusinessId(@Nullable Long businessId) {
-    this.expressBusinessId = businessId;
-  }
-
-  /**
-   * Gets the Google+ page ID for the Google My Business location used by AdWords Express
-   * PromotionService.
-   */
-  @Nullable
-  public String getExpressPlusPageId() {
-    return expressPlusPageId;
-  }
-
-  /**
-   * Sets the Google+ page ID for the Google My Business location used by AdWords Express
-   * PromotionService.
-   *
-   * <p>When using PromotionService, either set this value or the express business ID,
-   * but not both.
-   */
-  public void setExpressPlusPageId(String expressPlusPageId) {
-    this.expressPlusPageId = expressPlusPageId;
   }
 
   /**
@@ -250,16 +207,6 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
     @Override
     public final void setClientCustomerId(String clientCustomerId) {
       throwUnsupportedOperationException("clientCustomerId");
-    }
-
-    @Override
-    public final void setExpressBusinessId(@Nullable Long businessId) {
-      throwUnsupportedOperationException("businessId");
-    }
-
-    @Override
-    public final void setExpressPlusPageId(String expressPlusPageId) {
-      throwUnsupportedOperationException("expressPlusPageId");
     }
 
     @Override

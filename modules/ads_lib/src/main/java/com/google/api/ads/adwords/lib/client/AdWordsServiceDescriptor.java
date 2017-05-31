@@ -20,11 +20,10 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 import com.google.api.ads.common.lib.soap.compatability.JaxWsCompatible;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.MoreObjects;
 import com.google.inject.assistedinject.Assisted;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import javax.inject.Inject;
 
 /**
@@ -37,11 +36,6 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
   private final Class<?> interfaceClass;
   private final String version;
   private final AdWordsApiConfiguration apiConfig;
-
-  /**
-   * Enumeration of high-level sub products within AdWords.
-   */
-  public enum AdWordsSubProduct{ DEFAULT, EXPRESS }
 
   /**
    * Constructor. Requires the necessary information to instantiate an AdWords
@@ -128,10 +122,11 @@ public class AdWordsServiceDescriptor implements AdsServiceDescriptor, AxisCompa
     return parts[parts.length - 1];
   }
   
-  /**
-   * Gets the sub product for this service.
-   */
-  public AdWordsSubProduct getSubProduct() {
-    return apiConfig.getServiceSubProduct(version, getServiceName());
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("interfaceClass", interfaceClass)
+        .add("version", version)
+        .toString();
   }
 }

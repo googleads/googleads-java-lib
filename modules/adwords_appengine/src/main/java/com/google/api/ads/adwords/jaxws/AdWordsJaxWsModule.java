@@ -18,13 +18,11 @@ import com.google.api.ads.adwords.lib.AdWordsModule;
 import com.google.api.ads.adwords.lib.AdWordsProductFrameworkModule;
 import com.google.api.ads.adwords.lib.AdWordsSoapModule;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.client.HeaderHandler;
 import com.google.api.ads.common.lib.soap.ProductFrameworkModule;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsModule;
 import com.google.inject.TypeLiteral;
-import com.google.inject.multibindings.MapBinder;
 
 /**
  * Guice module to bind AdWord's SOAP header handler to a JAX-WS-friendly
@@ -35,22 +33,8 @@ public class AdWordsJaxWsModule extends ProductFrameworkModule {
 
   @Override
   public void configure() {
-    MapBinder<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
-        customHandlerMapBinder = MapBinder.newMapBinder(binder(),
-            new TypeLiteral<AdWordsSubProduct>() {},
-            new TypeLiteral<HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {});
-    customHandlerMapBinder.addBinding(AdWordsSubProduct.DEFAULT).to(
-        new TypeLiteral<HeaderHandler.NoOpHeaderHandler
-            <AdWordsSession, AdWordsServiceDescriptor>>() {});
-
-    MapBinder<AdWordsSubProduct, String> subProductNamespaceMap =
-        MapBinder.newMapBinder(binder(), AdWordsSubProduct.class, String.class);
-    subProductNamespaceMap.addBinding(AdWordsSubProduct.DEFAULT).toInstance("cm");
-    subProductNamespaceMap.addBinding(AdWordsSubProduct.EXPRESS).toInstance("express");
-
     bind(new TypeLiteral<HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>() {})
         .to(new TypeLiteral<AdWordsJaxWsHeaderHandler>() {});
-
     install(new JaxWsModule());
     install(new AdWordsModule());
     install(new AdWordsSoapModule());

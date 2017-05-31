@@ -24,10 +24,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
-import com.google.api.ads.common.lib.client.HeaderHandler;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.soap.AuthorizationHeaderHandler;
 import com.google.api.ads.common.lib.soap.axis.AxisHandler;
@@ -35,16 +33,13 @@ import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Maps;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import org.apache.axis.client.Stub;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -52,14 +47,12 @@ import org.mockito.MockitoAnnotations;
 /**
  * Tests for the {@link AdWordsAxisHeaderHandler} class.
  */
-@RunWith(Parameterized.class)
+@RunWith(JUnit4.class)
 public class AdWordsAxisHeaderHandlerTest {
 
   private AdWordsAxisHeaderHandler headerHandler;
 
   private AdWordsSession adWordsSession;
-
-  private final AdWordsSubProduct subProduct;
 
   @Mock
   private AxisHandler soapClientHandler;
@@ -81,50 +74,17 @@ public class AdWordsAxisHeaderHandlerTest {
   @Mock
   private AdWordsServiceDescriptor adWordsServiceDescriptor;
 
-  /**
-   * Arguments for this constructor are provided by the {@link #data()} method
-   *
-   * @param subProduct the sub product for the service
-   */
-  public AdWordsAxisHeaderHandlerTest(AdWordsSubProduct subProduct) {
-    this.subProduct = subProduct;
-  }
-
-  /**
-   * Returns constructor args for each instance of the test
-   *
-   * @return a list of constructor args where the first element is a service 
-   *         interface class and the second element is a boolean indicating if
-   *         it is a standard (non-express) interface
-   */
-  @Parameters(name = "subProduct={0}")
-  public static Collection<Object[]> data() {
-    Collection<Object[]> parameters = new ArrayList<Object[]>();
-
-    parameters.add(new Object[] {AdWordsSubProduct.DEFAULT});
-
-    return parameters;
-  }
-
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-  
-    when(adWordsServiceDescriptor.getSubProduct()).thenReturn(subProduct);
-  
-    Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>> handlerMap =
-        Maps.newHashMap();
-    handlerMap.put(AdWordsSubProduct.DEFAULT,
-        new HeaderHandler.NoOpHeaderHandler<AdWordsSession, AdWordsServiceDescriptor>());
-    
+
     headerHandler = new AdWordsAxisHeaderHandler(soapClientHandler,
         adWordsApiConfiguration,
         adsLibConfiguration,
         authorizationHeaderHandler,
         userAgentCombiner,
-        handlerMap,
         soapHeaderFactory);
-  
+
     adWordsSession = new AdWordsSession.Builder()
         .withClientCustomerId("123-456-7890")
         .withDeveloperToken("DEV_TOKEN")
@@ -132,9 +92,7 @@ public class AdWordsAxisHeaderHandlerTest {
         .withUserAgent("Test User")
         .withOAuth2Credential(oAuth2Credential)
         .build();
-  
-    adWordsSession.setExpressBusinessId(123456789L);
-  
+
     adWordsSession.setValidateOnly(true);
   }
 

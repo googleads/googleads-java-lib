@@ -32,16 +32,15 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-
+import javax.xml.ws.WebServiceException;
 import org.custommonkey.xmlunit.XMLAssert;
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import javax.xml.ws.WebServiceException;
 
 /**
  * Tests that a AdWords JAX-WS SOAP call can be made end-to-end.
@@ -57,6 +56,13 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "false");
+  }
+
+  @After
+  public void tearDown() {
+    // Clear the request timeout property in case testRequestTimeoutEnforced runs before
+    // other tests.
+    System.clearProperty("api.adwords.soapRequestTimeout");
   }
 
   /**

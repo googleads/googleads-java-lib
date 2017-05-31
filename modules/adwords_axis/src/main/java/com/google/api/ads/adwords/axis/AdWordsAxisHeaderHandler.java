@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.axis;
 
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
-import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor.AdWordsSubProduct;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
 import com.google.api.ads.common.lib.client.HeaderHandler;
@@ -27,13 +26,9 @@ import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import com.google.api.ads.common.lib.soap.axis.AxisSoapHeaderFactory;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.common.base.Preconditions;
-
-import org.apache.axis.client.Stub;
-
 import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
-
 import javax.inject.Inject;
+import org.apache.axis.client.Stub;
 
 /**
  * AdWords implementation of {@link HeaderHandler} for Axis.
@@ -46,8 +41,6 @@ public class AdWordsAxisHeaderHandler implements
   private final AdsLibConfiguration adsLibConfiguration;
   private final AuthorizationHeaderHandler authorizationHeaderHandler;
   private final UserAgentCombiner userAgentCombiner;
-  private final Map<AdWordsSubProduct, HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>>
-      subProductHeaderHandlerMap;
   private final AxisSoapHeaderFactory<AdWordsServiceDescriptor> soapHeaderFactory;
   
   static final String REQUEST_HEADER_LOCAL_PART = "RequestHeader";
@@ -59,7 +52,6 @@ public class AdWordsAxisHeaderHandler implements
    * @param adWordsApiConfiguration the AdWords API configuration
    * @param authorizationHeaderHandler the authorization header handler
    * @param userAgentCombiner the full user agent provider
-   * @param subProductHeaderHandlerMap map of sub product to additional header handler
    * @param soapHeaderFactory factory for creating the underlying soap header objects
    */
   @Inject
@@ -69,15 +61,12 @@ public class AdWordsAxisHeaderHandler implements
       AdsLibConfiguration adsLibConfiguration,
       AuthorizationHeaderHandler authorizationHeaderHandler,
       UserAgentCombiner userAgentCombiner,
-      Map<AdWordsSubProduct,
-          HeaderHandler<AdWordsSession, AdWordsServiceDescriptor>> subProductHeaderHandlerMap,
       AxisSoapHeaderFactory<AdWordsServiceDescriptor> soapHeaderFactory) {
     this.soapClientHandler = soapClientHandler;
     this.adWordsApiConfiguration = adWordsApiConfiguration;
     this.adsLibConfiguration = adsLibConfiguration;
     this.authorizationHeaderHandler = authorizationHeaderHandler;
     this.userAgentCombiner = userAgentCombiner;
-    this.subProductHeaderHandlerMap = subProductHeaderHandlerMap;
     this.soapHeaderFactory = soapHeaderFactory;
   }
 
@@ -116,36 +105,16 @@ public class AdWordsAxisHeaderHandler implements
 
       soapClientHandler.setCompression(stub, adsLibConfiguration.isCompressionEnabled());
       soapClientHandler.setRequestTimeout(stub, adsLibConfiguration.getSoapRequestTimeout());
-      
-      HeaderHandler<AdWordsSession, AdWordsServiceDescriptor> subProductHandler =
-          subProductHeaderHandlerMap.get(adWordsServiceDescriptor.getSubProduct());
 
-      subProductHandler.setHeaders(soapClient, adWordsSession, adWordsServiceDescriptor);
-
-      setAuthenticationHeaders(soapClient, adWordsSession);
-
-    } catch (InstantiationException e) {
-      throw new ServiceException("Unexpected exception.", e);
-    } catch (IllegalAccessException e) {
-      throw new ServiceException("Unexpected exception.", e);
-    } catch (ClassNotFoundException e) {
-      throw new ServiceException("Unexpected exception.", e);
-    } catch (InvocationTargetException e) {
-      throw new ServiceException("Unexpected exception.", e);
+      authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
+    } catch (InstantiationException
+        | IllegalAccessException
+        | ServiceException
+        | ClassNotFoundException
+        | InvocationTargetException
+        | NoSuchMethodException e) {
+      throw new ServiceException(
+          "Unexpected exception setting headers for: " + adWordsServiceDescriptor, e);
     }
-  }
-
-  /**
-   * Sets the authentication headers.
-   *
-   * @param soapClient the SOAP client
-   * @param adWordsSession the AdWords session
-   * @throws IllegalAccessException if there was a problem setting the header
-   * @throws InvocationTargetException if there was a problem setting the header
-   * @throws AuthenticationException if there was a problem setting the header
-   */
-  private void setAuthenticationHeaders(Object soapClient, AdWordsSession adWordsSession)
-      throws IllegalAccessException, InvocationTargetException, AuthenticationException {
-    authorizationHeaderHandler.setAuthorization(soapClient, adWordsSession);
   }
 }
