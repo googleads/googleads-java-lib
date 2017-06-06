@@ -94,5 +94,5 @@ CampaignServiceInterface campaignService = adWordsServices.get(session, Campaign
 // Invoke API calls with the "campaignService" object.
 
 ReportDownloaderInterface reportDownloader = adWordsServices.getUtility(session, ReportDownloaderInterface.class);
-// Inovke API calls with the "reportDownloader" object.
+// Invoke API calls with the "reportDownloader" object.
 ```
