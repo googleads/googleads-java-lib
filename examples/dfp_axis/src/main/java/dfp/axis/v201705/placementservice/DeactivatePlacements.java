@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.placementservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Placement;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.PlacementPage;
 import com.google.api.ads.dfp.axis.v201705.PlacementServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -34,8 +37,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class DeactivatePlacements {
 
-  // Set the ID of the placement to deactivate.
-  private static final String PLACEMENT_ID = "INSERT_PLACEMENT_ID_HERE";
+  private static class DeactivatePlacementsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PLACEMENT_ID, required = true,
+        description = "The ID of the placement to deactivate.")
+    private Long placementId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long placementId)
       throws Exception {
@@ -108,6 +114,13 @@ public class DeactivatePlacements {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PLACEMENT_ID));
+    DeactivatePlacementsParams params = new DeactivatePlacementsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.placementId = Long.parseLong("INSERT_PLACEMENT_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.placementId);
   }
 }

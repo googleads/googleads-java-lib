@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.reconciliationlineitemreportservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.BillableRevenueOverrides;
@@ -25,6 +27,7 @@ import com.google.api.ads.dfp.axis.v201705.ReconciliationLineItemReport;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationLineItemReportPage;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationLineItemReportServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -40,9 +43,15 @@ import java.util.Arrays;
  */
 public class OverrideBillableRevenueForReconciliationLineItemReport {
 
-  // Set the IDs of the reconciliation report and line item to retrieve.
-  private static final String RECONCILIATION_REPORT_ID = "INSERT_RECONCILIATION_REPORT_ID_HERE";
-  private static final String LINE_ITEM_ID = "INSERT_LINE_ITEM_ID_HERE";
+  private static class OverrideBillableRevenueForReconciliationLineItemReportParams
+      extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RECONCILIATION_REPORT_ID, required = true,
+        description = "The IDs of the reconciliation report and line item to retrieve.")
+    private Long reconciliationReportId;
+
+    @Parameter(names = ArgumentNames.LINE_ITEM_ID, required = true)
+    private Long lineItemId;
+  }
 
   public static void runExample(
       DfpServices dfpServices, DfpSession session, long reconciliationReportId, long lineItemId)
@@ -111,7 +120,15 @@ public class OverrideBillableRevenueForReconciliationLineItemReport {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RECONCILIATION_REPORT_ID),
-        Long.parseLong(LINE_ITEM_ID));
+    OverrideBillableRevenueForReconciliationLineItemReportParams params =
+        new OverrideBillableRevenueForReconciliationLineItemReportParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.reconciliationReportId = Long.parseLong("INSERT_RECONCILIATION_REPORT_ID_HERE");
+      params.lineItemId = Long.parseLong("INSERT_LINE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.reconciliationReportId, params.lineItemId);
   }
 }

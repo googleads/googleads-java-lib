@@ -14,6 +14,8 @@
 
 package adwords.axis.v201702.basicoperations;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201702.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201702.cm.AdGroupCriterionOperation;
@@ -35,7 +37,6 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.util.Charsets;
 import java.net.URLEncoder;
 
 /**
@@ -93,7 +94,7 @@ public class AddKeywords {
     keywordBiddableAdGroupCriterion1.setUserStatus(UserStatus.PAUSED);
 
     String encodedFinalUrl = String.format("http://example.com/mars/cruise/?kw=%s",
-        URLEncoder.encode(keyword1.getText(), Charsets.UTF_8.name()));
+        URLEncoder.encode(keyword1.getText(), UTF_8.name()));
     keywordBiddableAdGroupCriterion1.setFinalUrls(new UrlList(new String[] {encodedFinalUrl}));
     
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();

@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.errorhandling;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroupCriterionOperation;
@@ -27,8 +28,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.KeywordMatchType;
 import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,11 @@ import java.util.List;
  * "ads.properties" file. See README for more info.
  */
 public class HandlePartialFailures {
+
+  private static class HandlePartialFailuresParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
+    private Long adGroupId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -55,10 +63,16 @@ public class HandlePartialFailures {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    long adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, adGroupId);
+    HandlePartialFailuresParams params = new HandlePartialFailuresParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.adGroupId);
   }
 
   public static void runExample(

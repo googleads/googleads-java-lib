@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroupAd;
@@ -26,8 +27,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201705.cm.AdGroupAdField;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -40,6 +43,11 @@ public class GetAllDisapprovedAds {
 
   private static final int PAGE_SIZE = 100;
   
+  private static class GetAllDisapprovedAdsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
+    private Long adGroupId;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
@@ -54,11 +62,16 @@ public class GetAllDisapprovedAds {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    long adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, adGroupId);
+    GetAllDisapprovedAdsParams params = new GetAllDisapprovedAdsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.adGroupId);
   }
 
   public static void runExample(
@@ -77,6 +90,9 @@ public class GetAllDisapprovedAds {
             .fields(AdGroupAdField.Id, AdGroupAdField.PolicySummary)
             .orderAscBy(AdGroupAdField.Id)
             .equals(AdGroupAdField.AdGroupId, adGroupId.toString())
+            .equals(
+                AdGroupAdField.CombinedApprovalStatus,
+                PolicyApprovalStatus.DISAPPROVED.toString())
             .offset(offset)
             .limit(PAGE_SIZE)
             .build();
@@ -90,12 +106,8 @@ public class GetAllDisapprovedAds {
 
       // Display ads.
       for (AdGroupAd adGroupAd : page) {
-        AdGroupAdPolicySummary policySummary = adGroupAd.getPolicySummary();
-        if (!PolicyApprovalStatus.DISAPPROVED.equals(policySummary.getCombinedApprovalStatus())) {
-          // Skip ad group ads that are not disapproved.
-          continue;
-        }
         disapprovedAdsCount++;
+        AdGroupAdPolicySummary policySummary = adGroupAd.getPolicySummary();
         System.out.printf(
             "Ad with ID %d and type '%s' was disapproved with the following "
                 + "policy topic entries:%n",

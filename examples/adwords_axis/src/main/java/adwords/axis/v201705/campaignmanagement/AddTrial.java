@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201705.cm.ApiError;
@@ -30,8 +31,10 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201705.cm.TrialAsyncErrorField;
 import com.google.api.ads.adwords.lib.selectorfields.v201705.cm.TrialField;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -51,6 +54,14 @@ public class AddTrial {
    */
   private static final int MAX_POLL_ATTEMPTS = 6;
 
+  private static class AddTrialParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.DRAFT_ID, required = true)
+    private Long draftId;
+
+    @Parameter(names = ArgumentNames.BASE_CAMPAIGN_ID, required = true)
+    private Long baseCampaignId;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
@@ -65,13 +76,17 @@ public class AddTrial {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    // Replace with valid values of your account.
-    long draftId = Long.parseLong("INSERT_DRAFT_ID_HERE");
-    long baseCampaignId = Long.parseLong("INSERT_BASE_CAMPAIGN_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, draftId, baseCampaignId);
+    AddTrialParams params = new AddTrialParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.draftId = Long.parseLong("INSERT_DRAFT_ID_HERE");
+      params.baseCampaignId = Long.parseLong("INSERT_BASE_CAMPAIGN_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.draftId, params.baseCampaignId);
   }
 
   public static void runExample(

@@ -14,6 +14,7 @@
 
 package adwords.axis.v201702.remarketing;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201702.cm.OfflineConversionFeed;
 import com.google.api.ads.adwords.axis.v201702.cm.OfflineConversionFeedOperation;
@@ -22,8 +23,10 @@ import com.google.api.ads.adwords.axis.v201702.cm.OfflineConversionFeedServiceIn
 import com.google.api.ads.adwords.axis.v201702.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -33,6 +36,23 @@ import com.google.api.client.auth.oauth2.Credential;
  * AddConversionTracker.java example.
  */
 public class UploadOfflineConversions {
+
+  private static class UploadOfflineConversionsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CONVERSION_NAME, required = true,
+        description = "Name of the conversion tracker to upload to.")
+    private String conversionName;
+
+    @Parameter(names = ArgumentNames.GCL_ID, required = true,
+        description = "Google Click ID should be newer than 30 days.")
+    private String gclId;
+
+    @Parameter(names = ArgumentNames.CONVERSION_TIME, required = true,
+        description = "Conversion time should be after the click time.")
+    private String conversionTime;
+
+    @Parameter(names = ArgumentNames.CONVERSION_VALUE, required = true)
+    private Double conversionValue;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -50,17 +70,18 @@ public class UploadOfflineConversions {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    // Name of the conversion tracker to upload to.
-    String conversionName = "INSERT_CONVERSION_NAME_HERE";
-    
-    // Google Click ID should be newer than 30 days.
-    String gClId = "INSERT_GOOGLE_CLICK_ID_HERE";
-    
-    // Conversion time should be after the click time.
-    String conversionTime = "INSERT_CONVERSION_TIME_HERE";
-    Double conversionValue = Double.valueOf("INSERT_CONVERSION_VALUE_HERE");
+    UploadOfflineConversionsParams params = new UploadOfflineConversionsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.conversionName = "INSERT_CONVERSION_NAME_HERE";
+      params.gclId = "INSERT_GCL_ID_HERE";
+      params.conversionTime = "INSERT_CONVERSION_TIME_HERE";
+      params.conversionValue = Double.parseDouble("INSERT_CONVERSION_VALUE_HERE");
+    }
 
-    runExample(adWordsServices, session, conversionName, gClId, conversionTime, conversionValue);
+    runExample(adWordsServices, session, params.conversionName, params.gclId, params.conversionTime,
+        params.conversionValue);
   }
 
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session, 

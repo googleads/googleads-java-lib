@@ -20,8 +20,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration.Builder;
-
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -31,7 +32,10 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReportingConfigurationTest {
 
-@Test
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
+  @Test
   public void testBuilder_allOptionsTrue() {
     ReportingConfiguration reportingConfiguration =
         new Builder()
@@ -137,6 +141,7 @@ public class ReportingConfigurationTest {
             .skipReportSummary(true)
             .includeZeroImpressions(true)
             .useRawEnumValues(true)
+            .reportDownloadTimeout(60_000)
             .build();
     config.validate(null);
     assertTrue("Validation should succeed", true);
@@ -151,12 +156,27 @@ public class ReportingConfigurationTest {
             .skipReportSummary(true)
             .includeZeroImpressions(true)
             .useRawEnumValues(true)
+            // A timeout of 0 is acceptable. This means do not time out.
+            .reportDownloadTimeout(0)
             .build();
-    config.validate("v201607");
-    assertTrue("Validation should succeed for v201607", true);
     config.validate("v201609");
     assertTrue("Validation should succeed for v201609", true);
     config.validate("v201702");
     assertTrue("Validation should succeed for v201702", true);
+    config.validate("v201705");
+    assertTrue("Validation should succeed for v201705", true);
+  }
+
+  @Test
+  public void testValidate_negativeTimeout_fails() {
+    ReportingConfiguration config =
+        new Builder()
+            .skipReportHeader(true)
+            .skipColumnHeader(true)
+            .reportDownloadTimeout(-1)
+            .build();
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("timeout");
+    config.validate(null);
   }
 }

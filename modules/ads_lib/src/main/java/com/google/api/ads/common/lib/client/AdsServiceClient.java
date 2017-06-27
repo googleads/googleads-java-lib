@@ -16,7 +16,6 @@ package com.google.api.ads.common.lib.client;
 
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceClient;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
@@ -90,18 +89,11 @@ public abstract class AdsServiceClient<S extends AdsSession,
     this.adsSession = session;
   }
 
-  /**
-   * @see #logSoapCall(SoapCallReturn)
-   */
   @Override
-  protected void logSoapCall(SoapCallReturn soapCallReturn) {
-    adsServiceLoggers.logRequest(soapCallReturn);
-    adsServiceLoggers.logSoapXml(soapCallReturn);
+  protected void logSoapCall(RemoteCallReturn remoteCallReturn) {
+    adsServiceLoggers.logRequest(remoteCallReturn);
   }
 
-  /**
-   * @see #setHeaders()
-   */
   @Override
   protected void setHeaders() throws ServiceException, AuthenticationException {
     getSoapClientHandler().clearHeaders(getSoapClient());

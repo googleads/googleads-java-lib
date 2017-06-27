@@ -14,9 +14,9 @@
 
 package com.google.api.ads.common.lib.soap.testing;
 
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.SoapCall;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
 import com.google.api.ads.common.lib.soap.SoapClientHandler;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 
@@ -103,7 +103,7 @@ public class TestHandler extends SoapClientHandler<Object> {
    * @return information about the SOAP response
    */
   @Override
-  public SoapCallReturn invokeSoapCall(SoapCall<Object> soapCall) {
+  public RemoteCallReturn invokeSoapCall(SoapCall<Object> soapCall) {
     return null;
   }
 

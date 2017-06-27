@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.inventoryservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.AdUnit;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.AdUnitPage;
 import com.google.api.ads.dfp.axis.v201705.InventoryServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class ArchiveAdUnits {
 
-  // Set the ad unit ID to archive underneath.
-  private static final String PARENT_AD_UNIT_ID = "INSERT_AD_UNIT_ID_HERE";
+  private static class ArchiveAdUnitsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PARENT_AD_UNIT_ID, required = true,
+        description = "The ad unit ID to archive underneath.")
+    private String parentAdUnitId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, String parentAdUnitId)
       throws Exception {
@@ -110,6 +116,13 @@ public class ArchiveAdUnits {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, PARENT_AD_UNIT_ID);
+    ArchiveAdUnitsParams params = new ArchiveAdUnitsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.parentAdUnitId = "INSERT_PARENT_AD_UNIT_ID_HERE";
+    }
+
+    runExample(dfpServices, session, params.parentAdUnitId);
   }
 }

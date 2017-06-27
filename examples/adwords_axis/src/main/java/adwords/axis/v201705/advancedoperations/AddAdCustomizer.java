@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.advancedoperations;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.AdCustomizerFeed;
 import com.google.api.ads.adwords.axis.v201705.cm.AdCustomizerFeedAttribute;
@@ -34,8 +35,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.FeedItemServiceInterface;
 import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,6 +54,14 @@ import org.joda.time.DateTime;
  */
 public class AddAdCustomizer {
 
+  private static class AddAdCustomizerParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
+    private List<Long> adGroupIds = new ArrayList<>();
+
+    @Parameter(names = ArgumentNames.FEED_NAME, required = true)
+    private String feedName;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
@@ -65,14 +76,19 @@ public class AddAdCustomizer {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    List<Long> adGroupIds = Arrays.asList( 
-        Long.valueOf("INSERT_ADGROUP_ID_HERE"),
-        Long.valueOf("INSERT_ADGROUP_ID_HERE"));
-    String feedName = "INSERT_FEED_NAME_HERE";
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, adGroupIds, feedName);
+    AddAdCustomizerParams params = new AddAdCustomizerParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.adGroupIds = Arrays.asList(
+          Long.valueOf("INSERT_AD_GROUP_ID_HERE"),
+          Long.valueOf("INSERT_AD_GROUP_ID_HERE"));
+      params.feedName = "INSERT_FEED_NAME_HERE";
+    }
+
+    runExample(adWordsServices, session, params.adGroupIds, params.feedName);
   }
 
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,

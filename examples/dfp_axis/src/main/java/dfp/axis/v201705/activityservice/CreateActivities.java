@@ -14,13 +14,16 @@
 
 package dfp.axis.v201705.activityservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.Activity;
 import com.google.api.ads.dfp.axis.v201705.ActivityServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.ActivityType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -33,8 +36,11 @@ import java.util.Random;
  */
 public class CreateActivities {
 
-  // Set the ID of the activity group to create the activities for.
-  private static final String ACTIVITY_GROUP_ID = "INSERT_ACTIVITY_GROUP_ID_HERE";
+  private static class CreateActivitiesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ACTIVITY_GROUP_ID, required = true,
+        description = "The ID of the activity group to create the activities for.")
+    private Integer activityGroupId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       int activityGroupId) throws Exception {
@@ -80,6 +86,13 @@ public class CreateActivities {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Integer.parseInt(ACTIVITY_GROUP_ID));
+    CreateActivitiesParams params = new CreateActivitiesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.activityGroupId = Integer.valueOf("INSERT_ACTIVITY_GROUP_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.activityGroupId);
   }
 }

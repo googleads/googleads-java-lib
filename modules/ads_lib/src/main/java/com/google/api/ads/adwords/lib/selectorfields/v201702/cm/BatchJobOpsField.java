@@ -25,6 +25,12 @@ public enum BatchJobOpsField implements EntityField {
   // Fields constants definitions
 
   /**
+   * Approval status that combines review state and status.
+   */
+  @Filterable
+  CombinedApprovalStatus(true),
+
+  /**
    * The descriptive text of the ad.
    */
   @Filterable

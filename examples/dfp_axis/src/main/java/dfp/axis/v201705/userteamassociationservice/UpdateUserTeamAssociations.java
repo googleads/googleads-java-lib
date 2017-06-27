@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.userteamassociationservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.TeamAccessType;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.UserTeamAssociation;
 import com.google.api.ads.dfp.axis.v201705.UserTeamAssociationPage;
 import com.google.api.ads.dfp.axis.v201705.UserTeamAssociationServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -38,11 +41,15 @@ import java.util.Arrays;
  */
 public class UpdateUserTeamAssociations {
 
-  // Set the user ID of the user team association to update.
-  private static final String USER_ID = "INSERT_USER_ID_HERE";
+  private static class UpdateUserTeamAssociationsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.USER_ID, required = true,
+        description = "The user ID of the user team association to update.")
+    private Long userId;
 
-  // Set the team ID of the user team association to update.
-  private static final String TEAM_ID = "INSERT_TEAM_ID_HERE";
+    @Parameter(names = ArgumentNames.TEAM_ID, required = true,
+        description = "The team ID of the user team association to update.")
+    private Long teamId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long userId,
       long teamId) throws Exception {
@@ -95,6 +102,14 @@ public class UpdateUserTeamAssociations {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(USER_ID), Long.parseLong(TEAM_ID));
+    UpdateUserTeamAssociationsParams params = new UpdateUserTeamAssociationsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.userId = Long.parseLong("INSERT_USER_ID_HERE");
+      params.teamId = Long.parseLong("INSERT_TEAM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.userId, params.teamId);
   }
 }

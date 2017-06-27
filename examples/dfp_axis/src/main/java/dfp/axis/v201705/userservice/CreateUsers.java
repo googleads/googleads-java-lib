@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.userservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.User;
 import com.google.api.ads.dfp.axis.v201705.UserServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -32,11 +35,15 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CreateUsers {
 
-  // Set the email address of the user.
-  private static final String EMAIL_ADDRESS = "INSERT_EMAIL_ADDRESS_HERE";
+  private static class CreateUsersParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.EMAIL_ADDRESS, required = true,
+        description = "The email address of the user.")
+    private String emailAddress;
 
-  // Set the name of the user.
-  private static final String NAME = "INSERT_NAME_HERE";
+    @Parameter(names = ArgumentNames.NAME, required = true,
+        description = "The name of the user.")
+    private String name;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, String emailAddress,
       String name) throws Exception {
@@ -77,6 +84,14 @@ public class CreateUsers {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, EMAIL_ADDRESS, NAME);
+    CreateUsersParams params = new CreateUsersParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.emailAddress = "INSERT_EMAIL_ADDRESS_HERE";
+      params.name = "INSERT_NAME_HERE";
+    }
+
+    runExample(dfpServices, session, params.emailAddress, params.name);
   }
 }

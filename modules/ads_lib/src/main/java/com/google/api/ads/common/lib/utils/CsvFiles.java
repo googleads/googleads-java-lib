@@ -14,17 +14,16 @@
 
 package com.google.api.ads.common.lib.utils;
 
+import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVWriter;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
-import au.com.bytecode.opencsv.CSVReader;
-import au.com.bytecode.opencsv.CSVWriter;
-
-import java.io.FileReader;
-import java.io.FileWriter;
+import com.google.common.io.Files;
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -229,7 +228,7 @@ public final class CsvFiles {
 
     CSVWriter writer = null;
     try {
-      writer = new CSVWriter(new FileWriter(fileName));
+      writer = new CSVWriter(Files.newWriter(new File(fileName), StandardCharsets.UTF_8));
       for (String[] line : csvData) {
         writer.writeNext(line);
       }
@@ -290,7 +289,7 @@ public final class CsvFiles {
     private void createCsvReader() throws IOException {
       lineNumber = 1;
       if (reader == null) {
-        reader = new CSVReader(new FileReader(fileName));
+        reader = new CSVReader(Files.newReader(new File(fileName), StandardCharsets.UTF_8));
       }
       if (headerPresent) {
         header = reader.readNext();

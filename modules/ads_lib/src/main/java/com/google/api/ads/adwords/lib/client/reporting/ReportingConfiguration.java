@@ -14,15 +14,13 @@
 
 package com.google.api.ads.adwords.lib.client.reporting;
 
+import com.google.common.base.Preconditions;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.ThreadSafe;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.ThreadSafe;
-
-/**
- * Additional AdWords report configuration options.
- */
+/** Additional AdWords report configuration options. */
 @ThreadSafe
 public class ReportingConfiguration {
 
@@ -31,33 +29,17 @@ public class ReportingConfiguration {
   private final Boolean isSkipReportSummary;
   private final Boolean isIncludeZeroImpressions;
   private final Boolean isUseRawEnumValues;
-  
-  private ReportingConfiguration(
-      Boolean isSkipReportHeader,
-      Boolean isSkipColumnHeader,
-      Boolean isSkipReportSummary,
-      Boolean isIncludeZeroImpressions,
-      Boolean isUseRawEnumValues) {
-    this.isSkipReportHeader = isSkipReportHeader;
-    this.isSkipColumnHeader = isSkipColumnHeader;
-    this.isSkipReportSummary = isSkipReportSummary;
-    this.isIncludeZeroImpressions = isIncludeZeroImpressions;
-    this.isUseRawEnumValues = isUseRawEnumValues;
+  private final Integer reportDownloadTimeout;
+
+  private ReportingConfiguration(Builder builder) {
+    this.isSkipReportHeader = builder.isSkipReportHeader;
+    this.isSkipColumnHeader = builder.isSkipColumnHeader;
+    this.isSkipReportSummary = builder.isSkipReportSummary;
+    this.isIncludeZeroImpressions = builder.isIncludeZeroImpressions;
+    this.isUseRawEnumValues = builder.isUseRawEnumValues;
+    this.reportDownloadTimeout = builder.reportDownloadTimeout;
   }
 
-
-  /**
-   * Copy constructor.
-   */
-  private ReportingConfiguration(ReportingConfiguration configToClone) {
-    this(
-        configToClone.isSkipReportHeader,
-        configToClone.isSkipColumnHeader,
-        configToClone.isSkipReportSummary,
-        configToClone.isIncludeZeroImpressions,
-        configToClone.isUseRawEnumValues);
-  }
-  
   /**
    * Return if report responses should skip the header row containing the
    * report name and date range.
@@ -100,17 +82,33 @@ public class ReportingConfiguration {
   public Boolean isUseRawEnumValues() {
     return isUseRawEnumValues;
   }
-  
+
+  /**
+   * Return the non-negative download timeout in milliseconds. A value of {@code 0} (zero) indicates
+   * infinite timeout. A value of {@code null} indicates that the default timeout from {@link
+   * com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration#getReportDownloadTimeout()} should
+   * be used.
+   *
+   * @return the timeout in milliseconds, or {@code null} if no timeout was specified.
+   */
+  @Nullable
+  public Integer getReportDownloadTimeout() {
+    return reportDownloadTimeout;
+  }
+
   /**
    * Validates this object for the specified version of the AdWords API.
+   *
    * @param version the {@code v20YYMM} version of the API to validate against.
-   * 
    * @throws IllegalArgumentException if validation fails
    */
   public void validate(@Nullable String version) {
-    // Currently there are no validations needed.
+    if (reportDownloadTimeout != null) {
+      Preconditions.checkArgument(
+          reportDownloadTimeout >= 0, "Report download timeout is < 0: %s", reportDownloadTimeout);
+    }
   }
-  
+
   @Override
   public String toString() {
     return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -119,20 +117,22 @@ public class ReportingConfiguration {
         .append("isSkipReportSummary", isSkipReportSummary)
         .append("isIncludeZeroImpressions", isIncludeZeroImpressions)
         .append("isUseRawEnumValues", isUseRawEnumValues)
+        .append("reportDownloadTimeout", reportDownloadTimeout)
         .toString();
   }
 
-  /**
-   * Builder for {@link ReportingConfiguration} objects.
-   * 
+  /** 
+   * Mutable builder for {@link ReportingConfiguration} objects. Unlike
+   * {@link ReportingConfiguration}, the instance variables here are <em>not</em> final. 
    */
   public static class Builder {
-    
+
     private Boolean isSkipReportHeader;
     private Boolean isSkipColumnHeader;
     private Boolean isSkipReportSummary;
     private Boolean isIncludeZeroImpressions;
     private Boolean isUseRawEnumValues;
+    private Integer reportDownloadTimeout;
     
     /**
      * Sets if report responses should skip the header row containing the report name and date
@@ -176,16 +176,20 @@ public class ReportingConfiguration {
     }
     
     /**
+     * Sets the report download timeout in milliseconds. If {@code null}, the default timeout
+     * will be used.
+     */
+    public Builder reportDownloadTimeout(@Nullable Integer reportDownloadTimeout) {
+      this.reportDownloadTimeout = reportDownloadTimeout;
+      return this;
+    }
+    
+    /**
      * Returns a new instance of {@link ReportingConfiguration} based on the attributes
      * of this builder.
      */
     public ReportingConfiguration build() {
-      return new ReportingConfiguration(
-          isSkipReportHeader,
-          isSkipColumnHeader,
-          isSkipReportSummary,
-          isIncludeZeroImpressions,
-          isUseRawEnumValues);
+      return new ReportingConfiguration(this);
     }
   }
 }

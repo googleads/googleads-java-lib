@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.lineitemcreativeassociationservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.DeactivateLineItemCreativeAssociations;
@@ -24,6 +26,7 @@ import com.google.api.ads.dfp.axis.v201705.LineItemCreativeAssociationPage;
 import com.google.api.ads.dfp.axis.v201705.LineItemCreativeAssociationServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -36,8 +39,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class DeactivateLicas {
 
-  // Set the ID of the line item to deactivate LICAs for.
-  private static final String LINE_ITEM_ID = "INSERT_LINE_ITEM_ID_HERE";
+  private static class DeactivateLicasParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.LINE_ITEM_ID, required = true,
+        description = "The ID of the line item to deactivate LICAs for.")
+    private Long lineItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long lineItemId)
       throws Exception {
@@ -116,6 +122,13 @@ public class DeactivateLicas {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(LINE_ITEM_ID));
+    DeactivateLicasParams params = new DeactivateLicasParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.lineItemId = Long.parseLong("INSERT_LINE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.lineItemId);
   }
 }

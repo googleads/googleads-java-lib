@@ -14,10 +14,26 @@
 
 package com.google.api.ads.adwords.axis.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSource;
-
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
+import javax.xml.namespace.QName;
+import javax.xml.rpc.encoding.DeserializerFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import org.apache.axis.Message;
 import org.apache.axis.MessageContext;
 import org.apache.axis.client.AxisClient;
@@ -28,23 +44,6 @@ import org.apache.axis.encoding.TypeMappingRegistryImpl;
 import org.apache.axis.message.MessageElement;
 import org.apache.axis.message.SOAPEnvelope;
 import org.xml.sax.InputSource;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
-
-import javax.xml.namespace.QName;
-import javax.xml.rpc.encoding.DeserializerFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 
 /**
  * Utility for deserializing XML to Axis objects.
@@ -124,9 +123,10 @@ public class AxisDeserializer {
     omitXmlDeclarationTransformer.transform(xmlSource, streamResult);
 
     return ByteSource.concat(
-        ByteSource.wrap(SOAP_START_BODY.getBytes()),
-        ByteSource.wrap(outputStream.toByteArray()),
-        ByteSource.wrap(SOAP_END_BODY.getBytes())).openStream();
+            ByteSource.wrap(SOAP_START_BODY.getBytes(UTF_8)),
+            ByteSource.wrap(outputStream.toByteArray()),
+            ByteSource.wrap(SOAP_END_BODY.getBytes(UTF_8)))
+        .openStream();
   }
 
   /**

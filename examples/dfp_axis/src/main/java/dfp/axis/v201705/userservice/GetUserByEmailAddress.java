@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.userservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.User;
 import com.google.api.ads.dfp.axis.v201705.UserPage;
 import com.google.api.ads.dfp.axis.v201705.UserServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -32,7 +35,10 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetUserByEmailAddress {
 
-  private static final String EMAIL_ADDRESS = "INSERT_EMAIL_ADDRESS_HERE";
+  private static class GetUserByEmailAddressParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.EMAIL_ADDRESS, required = true)
+    private String emailAddress;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, String emailAddress)
       throws Exception {
@@ -90,6 +96,13 @@ public class GetUserByEmailAddress {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, EMAIL_ADDRESS);
+    GetUserByEmailAddressParams params = new GetUserByEmailAddressParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.emailAddress = "INSERT_EMAIL_ADDRESS_HERE";
+    }
+
+    runExample(dfpServices, session, params.emailAddress);
   }
 }

@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.creativesetservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.CreativeSet;
 import com.google.api.ads.dfp.axis.v201705.CreativeSetPage;
 import com.google.api.ads.dfp.axis.v201705.CreativeSetServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -32,7 +35,10 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetCreativeSetsForMasterCreative {
 
-  private static final String MASTER_CREATIVE_ID = "INSERT_MASTER_CREATIVE_ID_HERE";
+  private static class GetCreativeSetsForMasterCreativeParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.MASTER_CREATIVE_ID, required = true)
+    private Long masterCreativeId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long masterCreativeId)
       throws Exception {
@@ -90,6 +96,13 @@ public class GetCreativeSetsForMasterCreative {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(MASTER_CREATIVE_ID));
+    GetCreativeSetsForMasterCreativeParams params = new GetCreativeSetsForMasterCreativeParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.masterCreativeId = Long.parseLong("INSERT_MASTER_CREATIVE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.masterCreativeId);
   }
 }

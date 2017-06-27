@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.productpackageservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.ProductPackage;
 import com.google.api.ads.dfp.axis.v201705.ProductPackageServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -33,8 +36,11 @@ import java.util.Random;
  */
 public class CreateProductPackages {
 
-  // Set the ID of the rate card to associate the product package with.
-  private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
+  private static class CreateProductPackagesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RATE_CARD_ID, required = true,
+        description = "The ID of the rate card to associate the product package with.")
+    private Long rateCardId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long rateCardId)
@@ -75,6 +81,13 @@ public class CreateProductPackages {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RATE_CARD_ID));
+    CreateProductPackagesParams params = new CreateProductPackagesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.rateCardId);
   }
 }

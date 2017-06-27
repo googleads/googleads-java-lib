@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.jaxws.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.ads.adwords.jaxws.utils.v201609.batchjob.BatchJobMutateRequest;
@@ -25,21 +26,16 @@ import com.google.api.ads.adwords.jaxws.v201609.cm.CampaignOperation;
 import com.google.api.ads.adwords.jaxws.v201609.cm.Operator;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
 import com.google.common.io.CharStreams;
-
+import java.io.IOException;
+import java.io.InputStreamReader;
+import javax.xml.namespace.QName;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-import javax.xml.namespace.QName;
-
-/**
- * Tests for JAX-WS serialization.
- */
+/** Tests for JAX-WS serialization. */
 @RunWith(JUnit4.class)
 public class JaxWsSerializationTest {
 
@@ -74,8 +70,12 @@ public class JaxWsSerializationTest {
 
     assertNotNull("Null serialized request returned", serializedRequest);
 
-    String expectedSerializedRequest = CharStreams.toString(new InputStreamReader(
-        JaxWsSerializationTest.class.getResourceAsStream("resources/BatchJobMutate.request.xml")));
+    String expectedSerializedRequest =
+        CharStreams.toString(
+            new InputStreamReader(
+                JaxWsSerializationTest.class.getResourceAsStream(
+                    "resources/BatchJobMutate.request.xml"),
+                UTF_8));
 
     XMLAssert.assertXMLEqual("Serialized request does not match expected value",
         expectedSerializedRequest, serializedRequest);

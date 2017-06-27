@@ -15,60 +15,56 @@
 package com.google.api.ads.adwords.lib.utils.logging;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.startsWith;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate;
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpContent;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.UrlEncodedContent;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.GenericData;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
-
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import javax.annotation.Nullable;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-/**
- * Tests for {@link ReportServiceLogger}.
- */
+/** Tests for {@link ReportServiceLogger}. */
 @RunWith(JUnit4.class)
 public class ReportServiceLoggerTest {
 
-  @Mock
-  private Logger reportLogger;
+  @Mock private Logger reportLogger;
+  @Mock private RemoteCallLoggerDelegate loggerDelegate;
 
   // Default values for various request/response attributes. These will all be set to some
   // non-null, meaningful value.
-  private HttpContent defaultRequestContent;
-  private GenericData defaultRequestHeaders;
-  private Set<String> defaultExpectedHeaders;
-  private Set<String> defaultRedactedHeaders;
-  private GenericUrl defaultUrl;
-  private String defaultRequestMethod;
+  @Mock private HttpTransport httpTransport;
 
-  /**
-   * ReportServiceLogger being tested.
-   */
+  private HttpRequestFactory requestFactory;
+
+  private HttpRequest httpRequest;
+  private Map<String, String> rawRequestHeaders;
+  private String url;
+  private String requestMethod;
+
+  /** ReportServiceLogger being tested. */
   private ReportServiceLogger reportServiceLogger;
 
   /**
@@ -79,284 +75,124 @@ public class ReportServiceLoggerTest {
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
 
-    defaultRequestMethod = "GET";
-    defaultUrl = new GenericUrl("http://www.foo.com/bar");
-    reportServiceLogger = new ReportServiceLogger(reportLogger);
+    requestMethod = "POST";
+    url = "http://www.foo.com/bar";
+    reportServiceLogger = new ReportServiceLogger(loggerDelegate);
 
+    requestFactory = new NetHttpTransport().createRequestFactory();
     // Constructs the request headers.
-    Map<String, String> data = Maps.newHashMap();
+    rawRequestHeaders = new HashMap<>();
     // Adds headers that should be scrubbed.
     for (String scrubbedHeader : ReportServiceLogger.SCRUBBED_HEADERS) {
-      data.put(scrubbedHeader, "foo" + scrubbedHeader);
-      // Also add the header in uppercase to confirm it will be scrubbed, regardless of case.
-      data.put(scrubbedHeader.toUpperCase(), "fooUpper" + scrubbedHeader);
+      rawRequestHeaders.put(scrubbedHeader, "foo" + scrubbedHeader);
     }
-    defaultRedactedHeaders = Sets.newHashSet(data.keySet());
-
     // Adds headers that should not be scrubbed.
-    data.put("ClientCustomerId", "123-456-7890");
-    data.put("SomeOtherHeader", "SomeOtherValue");
+    rawRequestHeaders.put("clientCustomerId", "123-456-7890");
+    rawRequestHeaders.put("someOtherHeader", "SomeOtherValue");
 
-    defaultExpectedHeaders = Sets.newHashSet(data.keySet());
-    defaultExpectedHeaders.removeAll(defaultRedactedHeaders);
+    GenericData postData = new GenericData();
+    postData.put("__rdquery", "SELECT CampaignId FROM CAMPAIGN_PERFORMANCE_REPORT");
 
-    defaultRequestHeaders = new GenericData();
-    defaultRequestHeaders.putAll(data);
-    defaultRequestContent = new UrlEncodedContent(data);
-  }
+    httpRequest =
+        requestFactory.buildPostRequest(new GenericUrl(url), new UrlEncodedContent(postData));
 
-  @Test
-  public void testLogRequest_nullRequestMethod() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(false,
-        null,
-        defaultUrl,
-        defaultRequestContent,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  @Test
-  public void testLogRequest_nullUrl() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(false,
-        defaultRequestMethod,
-        null,
-        defaultRequestContent,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  @Test
-  public void testLogRequest_nullContent() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(false,
-        defaultRequestMethod,
-        defaultUrl,
-        null,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  @Test
-  public void testLogRequest_nullHeaders() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(false,
-        defaultRequestMethod,
-        defaultUrl,
-        defaultRequestContent,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  @Test
-  public void testLogResponse_nullStatusMessage() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertResponseDetailsLogged(HttpStatusCodes.STATUS_CODE_FORBIDDEN, null, false);
-  }
-
-  /**
-   * Tests that failed request details are logged with WARN level if warn is enabled.
-   */
-  @Test
-  public void testLogFailedRequest_warnEnabled() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(false,
-        defaultRequestMethod,
-        defaultUrl,
-        defaultRequestContent,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  /**
-   * Tests that failed request details are NOT logged with WARN level if warn is disabled.
-   */
-  @Test
-  public void testLogFailedRequest_warnDisabled() {
-    when(reportLogger.isWarnEnabled()).thenReturn(false);
-    reportServiceLogger.logRequest(defaultRequestMethod, defaultUrl, defaultRequestContent,
-        defaultRequestHeaders, false);
-
-    verify(reportLogger, never()).warn(org.mockito.Matchers.anyString());
-  }
-
-  @Test
-  public void testLogFailedResponse_warnEnabled() {
-    when(reportLogger.isWarnEnabled()).thenReturn(true);
-
-    assertResponseDetailsLogged(HttpStatusCodes.STATUS_CODE_SERVER_ERROR, "FAILED", false);
-  }
-
-  /**
-   * Tests that failed response details are NOT logged with WARN level if warn is disabled.
-   */
-  @Test
-  public void testLogFailedResponse_warnDisabled() {
-    when(reportLogger.isWarnEnabled()).thenReturn(false);
-    reportServiceLogger.logResponse(HttpStatusCodes.STATUS_CODE_BAD_GATEWAY, "Failure", false);
-
-    verify(reportLogger, never()).warn(org.mockito.Matchers.anyString());
-  }
-
-  /**
-   * Tests that successful request details are logged with INFO level if info is enabled.
-   */
-  @Test
-  public void testLogSuccessfulRequest_infoEnabled() {
-    when(reportLogger.isInfoEnabled()).thenReturn(true);
-
-    assertRequestDetailsLogged(true,
-        defaultRequestMethod,
-        defaultUrl,
-        defaultRequestContent,
-        defaultRequestHeaders,
-        defaultExpectedHeaders,
-        defaultRedactedHeaders);
-  }
-
-  /**
-   * Tests that successful request details are NOT logged with INFO level if info is disabled.
-   */
-  @Test
-  public void testLogSuccessfulRequest_infoDisabled() {
-    when(reportLogger.isInfoEnabled()).thenReturn(false);
-    reportServiceLogger.logRequest(defaultRequestMethod, defaultUrl, defaultRequestContent,
-        defaultRequestHeaders, true);
-
-    verify(reportLogger, never()).info(org.mockito.Matchers.anyString());
-  }
-
-  @Test
-  public void testLogSuccessfulResponse_infoEnabled() {
-    when(reportLogger.isInfoEnabled()).thenReturn(true);
-
-    assertResponseDetailsLogged(HttpStatusCodes.STATUS_CODE_OK, "SUCCESS", true);
-  }
-
-  /**
-   * Tests that successful response details are NOT logged with INFO level if info is disabled.
-   */
-  @Test
-  public void testLogSuccessfulResponse_infoDisabled() {
-    when(reportLogger.isInfoEnabled()).thenReturn(false);
-    reportServiceLogger.logResponse(HttpStatusCodes.STATUS_CODE_OK, "Status is OK", true);
-
-    verify(reportLogger, never()).info(org.mockito.Matchers.anyString());
-  }
-
-  @Test
-  public void testGetLogger() {
-    assertNotNull("getLogger should return a non-null Logger", reportServiceLogger.getLogger());
-    assertSame("getLogger should return the Logger passed to its constructor", reportLogger,
-        reportServiceLogger.getLogger());
-  }
-
-  /**
-   * Asserts that all of the request details were logged.
-   *
-   * @param isSuccessful if the request was successful
-   * @param requestMethod HTTP request method of the request
-   * @param url URL of the request
-   * @param requestContent content of the request
-   * @param requestHeaders headers on the request
-   * @param expectedHeaders headers whose values should appear in log messages
-   * @param redactedHeaders headers whose values should be redacted in log messages
-   */
-  private void assertRequestDetailsLogged(boolean isSuccessful,
-      String requestMethod,
-      GenericUrl url,
-      HttpContent requestContent,
-      GenericData requestHeaders,
-      Set<String> expectedHeaders,
-      Set<String> redactedHeaders) {
-    // Invokes the report service logger so calls on it and its underlying SLF4J logger can
-    // be verified.
-    reportServiceLogger.logRequest(requestMethod, url, requestContent, requestHeaders,
-        isSuccessful);
-
-    // Verifies invocations and arguments.
-    ArgumentCaptor<String> messageCaptor = ArgumentCaptor.forClass(String.class);
-    if (isSuccessful) {
-      verify(reportLogger, times(2)).info(messageCaptor.capture());
-    } else {
-      verify(reportLogger, times(2)).warn(messageCaptor.capture());
-    }
-    List<String> capturedMessages = messageCaptor.getAllValues();
-    assertEquals("Number of captured messages is incorrect", 2, capturedMessages.size());
-
-    if (url != null) {
-      assertThat("URL not logged", capturedMessages.get(0), containsString(url.build()));
-    }
-    if (requestMethod != null) {
-      assertThat("Request method not logged", capturedMessages.get(0),
-          containsString(requestMethod));
-    }
-
-    if (requestHeaders != null) {
-      // Verifies that expected headers were logged with values and redacted headers were logged
-      // with masked values.
-      for (Entry<String, Object> headerEntry : requestHeaders.entrySet()) {
-        String header = headerEntry.getKey();
-        Object value = headerEntry.getValue();
-        assertThat("Expected header name not logged", capturedMessages.get(1),
-            containsString(header));
-
-        Object expectedValue;
-        if (expectedHeaders.contains(header)) {
-          assertThat("Expected header value not logged", capturedMessages.get(1),
-              containsString(value.toString()));
-          expectedValue = value;
-        } else {
-          assertThat("Header is in neither redactedHeaders nor expectedHeaders - confirm "
-              + "this test is set up correctly", redactedHeaders, Matchers.hasItem(header));
-          assertThat("Redacted header value logged when it shouldn't be", capturedMessages.get(1),
-              not(Matchers.containsString(value.toString())));
-          expectedValue = ReportServiceLogger.SCRUBBED_HEADERS_VALUE;
-        }
-
-        assertThat("Header: value does not match expectatations", capturedMessages.get(1),
-            Matchers.containsString(String.format("%s: %s", header, expectedValue)));
+    for (Entry<String, String> rawHeaderEntry : rawRequestHeaders.entrySet()) {
+      String key = rawHeaderEntry.getKey();
+      if ("authorization".equalsIgnoreCase(key)) {
+        httpRequest
+            .getHeaders()
+            .setAuthorization(Collections.<String>singletonList(rawHeaderEntry.getValue()));
+      } else {
+        httpRequest.getHeaders().put(key, rawHeaderEntry.getValue());
       }
     }
+
+    httpRequest.getResponseHeaders().setContentType("text/csv; charset=UTF-8");
+    httpRequest.getResponseHeaders().put("someOtherResponseHeader", "foo");
+    httpRequest
+        .getResponseHeaders()
+        .put("multiValueHeader", Arrays.<String>asList("value1", "value2"));
   }
 
-  /**
-   * Asserts that all of the response details were logged.
-   */
-  private void assertResponseDetailsLogged(int statusCode, String statusMessage,
-      boolean isSuccessful) {
-    // Invokes the report service logger so calls on it and its underlying SLF4J logger can
-    // be verified.
-    reportServiceLogger.logResponse(statusCode, statusMessage, isSuccessful);
+  @Test
+  public void testBuildInfos_success() {
+    RequestInfo requestInfo = reportServiceLogger.buildRequestInfo(httpRequest);
+    checkRequestInfoAttributes(requestInfo, true);
+    ResponseInfo responseInfo =
+        reportServiceLogger.buildResponseInfo(httpRequest, HttpStatusCodes.STATUS_CODE_OK, null);
+    checkResponseInfoAttributes(responseInfo, HttpStatusCodes.STATUS_CODE_OK, null);
+  }
 
-    // Verifies invocations and arguments.
-    ArgumentCaptor<String> messageCaptor = ArgumentCaptor.forClass(String.class);
-    if (isSuccessful) {
-      verify(reportLogger, times(1)).info(messageCaptor.capture());
-    } else {
-      verify(reportLogger, times(1)).warn(messageCaptor.capture());
+  @Test
+  public void testBuildInfos_failure() {
+    RequestInfo requestInfo = reportServiceLogger.buildRequestInfo(httpRequest);
+    checkRequestInfoAttributes(requestInfo, true);
+    ResponseInfo responseInfo =
+        reportServiceLogger.buildResponseInfo(
+            httpRequest, HttpStatusCodes.STATUS_CODE_BAD_GATEWAY, "Bad gateway");
+    checkResponseInfoAttributes(
+        responseInfo, HttpStatusCodes.STATUS_CODE_BAD_GATEWAY, "Bad gateway");
+  }
+
+  private void checkRequestInfoAttributes(RequestInfo requestInfo, boolean isCheckPayload) {
+    assertEquals(requestMethod, requestInfo.getMethodName());
+    assertEquals(url, requestInfo.getUrl());
+    assertEquals("clientCustomerId", requestInfo.getContextName());
+    assertEquals("123-456-7890", requestInfo.getContextValue());
+    assertEquals("reportdownload", requestInfo.getServiceName());
+
+    String requestPayload = requestInfo.getPayload();
+    if (!isCheckPayload) {
+      assertNull("Payload should have been null", requestPayload);
+      return;
     }
 
-    assertEquals("Number of captured messages is incorrect", 1,
-        messageCaptor.getAllValues().size());
+    for (Entry<String, String> headerEntry : rawRequestHeaders.entrySet()) {
+      String header = headerEntry.getKey().toLowerCase();
+      String value = headerEntry.getValue();
+      assertThat(
+          "Expected header name not logged", requestPayload.toLowerCase(), containsString(header));
 
-    String capturedMessage = messageCaptor.getValue();
-    assertThat("Status code not logged", capturedMessage,
-        containsString(String.valueOf(statusCode)));
+      Object expectedValue;
+      if (ReportServiceLogger.SCRUBBED_HEADERS.contains(header)) {
+        expectedValue = ReportServiceLogger.REDACTED_HEADER;
+      } else {
+        expectedValue = value;
+      }
+
+      assertThat(
+          "Header: value does not match expectatations",
+          requestPayload,
+          Matchers.containsString(String.format("%s: %s", header, expectedValue)));
+    }
+  }
+
+  private void checkResponseInfoAttributes(
+      ResponseInfo responseInfo, int statusCode, @Nullable String statusMessage) {
+    String responsePayloadLower = responseInfo.getPayload().toLowerCase();
+    for (Entry<String, Object> headerEntry : httpRequest.getResponseHeaders().entrySet()) {
+      assertThat(
+          "Payload does not contain response header key",
+          responsePayloadLower,
+          containsString(headerEntry.getKey()));
+      assertThat(
+          "Payload does not contain response header value",
+          responseInfo.getPayload(),
+          containsString(String.valueOf(headerEntry.getValue())));
+    }
+    assertThat(
+        "Payload does not contain redacted string",
+        responseInfo.getPayload(),
+        containsString(ReportServiceLogger.REDACTED_REPORT_DATA));
+    assertThat(
+        "Payload does not contain the HTTP status code",
+        responseInfo.getPayload(),
+        startsWith(Integer.toString(statusCode)));
     if (statusMessage != null) {
-      assertThat("Status message not logged", capturedMessage, containsString(statusMessage));
+      assertThat(
+          "Payload does not contain the HTTP status message",
+          responseInfo.getPayload(),
+          containsString(statusMessage));
     }
   }
 }

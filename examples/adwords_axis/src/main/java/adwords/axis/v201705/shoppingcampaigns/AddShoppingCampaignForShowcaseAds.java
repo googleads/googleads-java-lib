@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.shoppingcampaigns;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.shopping.ProductDimensions;
 import com.google.api.ads.adwords.axis.utils.v201705.shopping.ProductPartitionNode;
@@ -53,8 +54,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.ShoppingSetting;
 import com.google.api.ads.adwords.axis.v201705.cm.ShowcaseAd;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -67,6 +70,14 @@ import java.util.List;
  * See README for more info.
  */
 public class AddShoppingCampaignForShowcaseAds {
+  private static class AddShoppingCampaignForShowcaseAdsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.BUDGET_ID, required = true)
+    private Long budgetId;
+
+    @Parameter(names = ArgumentNames.MERCHANT_ID, required = true)
+    private Long merchantId;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential =
@@ -82,10 +93,15 @@ public class AddShoppingCampaignForShowcaseAds {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long budgetId = Long.valueOf("INSERT_BUDGET_ID_HERE");
-    Long merchantId = Long.valueOf("INSERT_MERCHANT_CENTER_ID_HERE");
+    AddShoppingCampaignForShowcaseAdsParams params = new AddShoppingCampaignForShowcaseAdsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.budgetId = Long.parseLong("INSERT_BUDGET_ID_HERE");
+      params.merchantId = Long.parseLong("INSERT_MERCHANT_ID_HERE");
+    }
 
-    runExample(adWordsServices, session, budgetId, merchantId);
+    runExample(adWordsServices, session, params.budgetId, params.merchantId);
   }
 
   public static void runExample(

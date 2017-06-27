@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.orderservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.Order;
 import com.google.api.ads.dfp.axis.v201705.OrderServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -32,12 +35,16 @@ import java.util.Random;
  */
 public class CreateOrders {
 
-  // Set the ID of the advertiser (company) that all creatives will be
-  // assigned to.
-  private static final String ADVERTISER_ID = "INSERT_ADVERTISER_COMPANY_ID_HERE";
+  private static class CreateOrdersParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser (company) that all creatives will be assigned"
+            + " to.")
+    private Long advertiserId;
 
-  // Set the ID of the trafficker (user) associated with this order.
-  private static final String TRAFFICKER_ID = "INSERT_TRAFFICKER_USER_ID_HERE";
+    @Parameter(names = ArgumentNames.TRAFFICKER_ID, required = true,
+        description = "The ID of the trafficker (user) associated with this order.")
+    private Long traffickerId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long advertiserId,
       long traffickerId) throws Exception {
@@ -76,6 +83,14 @@ public class CreateOrders {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ADVERTISER_ID), Long.parseLong(TRAFFICKER_ID));
+    CreateOrdersParams params = new CreateOrdersParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
+      params.traffickerId = Long.parseLong("INSERT_TRAFFICKER_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.advertiserId, params.traffickerId);
   }
 }

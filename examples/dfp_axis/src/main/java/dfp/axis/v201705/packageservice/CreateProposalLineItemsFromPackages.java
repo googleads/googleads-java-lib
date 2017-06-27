@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.packageservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Package;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.PackagePage;
 import com.google.api.ads.dfp.axis.v201705.PackageServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -36,8 +39,11 @@ import java.util.Arrays;
  */
 public class CreateProposalLineItemsFromPackages {
 
-  // Set the ID of the package to create line items from.
-  private static final String PACKAGE_ID = "INSERT_PACKAGE_ID_HERE";
+  private static class CreateProposalLineItemsFromPackagesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PACKAGE_ID, required = true,
+        description = "The ID of the package to create line items from.")
+    private Long packageId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long packageId)
@@ -96,6 +102,14 @@ public class CreateProposalLineItemsFromPackages {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PACKAGE_ID));
+    CreateProposalLineItemsFromPackagesParams params =
+        new CreateProposalLineItemsFromPackagesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.packageId = Long.parseLong("INSERT_PACKAGE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.packageId);
   }
 }

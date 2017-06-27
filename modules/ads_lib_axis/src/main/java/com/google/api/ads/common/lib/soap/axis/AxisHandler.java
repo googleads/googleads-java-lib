@@ -14,38 +14,32 @@
 
 package com.google.api.ads.common.lib.soap.axis;
 
-import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
 import com.google.api.ads.common.lib.exception.ServiceException;
-import com.google.api.ads.common.lib.soap.RequestInfo;
-import com.google.api.ads.common.lib.soap.ResponseInfo;
+import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
+import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.soap.SoapCall;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
 import com.google.api.ads.common.lib.soap.SoapClientHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
-import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Splitter;
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableList;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
 import java.util.Map;
 import javax.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
-import org.apache.axis.AxisFault;
 import org.apache.axis.EngineConfiguration;
 import org.apache.axis.EngineConfigurationFactory;
-import org.apache.axis.Message;
 import org.apache.axis.MessageContext;
 import org.apache.axis.client.Service;
 import org.apache.axis.client.Stub;
 import org.apache.axis.message.SOAPHeaderElement;
 import org.apache.axis.transport.http.HTTPConstants;
 import org.apache.commons.beanutils.BeanUtils;
-import org.w3c.dom.Node;
 
 /**
  * SOAP Client Handler implementation for use with Axis 1.x.
@@ -53,22 +47,16 @@ import org.w3c.dom.Node;
 public class AxisHandler extends SoapClientHandler<Stub> {
 
   private final EngineConfigurationFactory engineConfigurationFactory;
-  private final NodeExtractor nodeExtractor;
-  private final ImmutableList<String> requestIdXPathComponents;
+  private final RequestInfoXPathSet requestInfoXPathSet;
+  private final ResponseInfoXPathSet responseInfoXPathSet;
   
   @Inject
   public AxisHandler(EngineConfigurationFactory engineConfigurationFactory,
-      NodeExtractor nodeExtractor,
-      AdsApiConfiguration adsApiConfiguration) {
+      RequestInfoXPathSet requestInfoXPathSet,
+      ResponseInfoXPathSet responseInfoXPathSet) {
     this.engineConfigurationFactory = engineConfigurationFactory;
-    this.nodeExtractor = nodeExtractor;
-    String requestIdXPath = adsApiConfiguration.getRequestIdXPath();
-    if (!Strings.isNullOrEmpty(requestIdXPath)) {
-      requestIdXPathComponents = ImmutableList.<String>copyOf(
-          Splitter.on('/').split(requestIdXPath));
-    } else {
-      requestIdXPathComponents = ImmutableList.<String>of();
-    }
+    this.requestInfoXPathSet = requestInfoXPathSet;
+    this.responseInfoXPathSet = responseInfoXPathSet;
   }
   
   /**
@@ -237,9 +225,9 @@ public class AxisHandler extends SoapClientHandler<Stub> {
    * @return information about the SOAP response
    */
   @Override
-  public SoapCallReturn invokeSoapCall(SoapCall<Stub> soapCall) {
+  public RemoteCallReturn invokeSoapCall(SoapCall<Stub> soapCall) {
     Stub stub = soapCall.getSoapClient();
-    SoapCallReturn.Builder builder = new SoapCallReturn.Builder();
+    RemoteCallReturn.Builder builder = new RemoteCallReturn.Builder();
     synchronized (stub) {
       Object result = null;
       try {
@@ -250,40 +238,16 @@ public class AxisHandler extends SoapClientHandler<Stub> {
         builder.withException(e);
       } finally {
         MessageContext messageContext = stub._getCall().getMessageContext();
-        try {
-          builder.withRequestInfo(new RequestInfo.Builder().withSoapRequestXml(
-              messageContext.getRequestMessage().getSOAPPartAsString())
-                  .withMethodName(stub._getCall().getOperationName().getLocalPart())
-                  .withServiceName(stub.getPortName().getLocalPart())
-                  .withUrl(stub._getCall().getTargetEndpointAddress())
-                  .build());
-        } catch (AxisFault e) {
-          builder.withException(e);
-        }
-        String requestId = null;
-        Message responseMessage = messageContext.getResponseMessage();
-        try {
-          if (!requestIdXPathComponents.isEmpty() && responseMessage != null) {
-            Node requestIdNode =
-                nodeExtractor.extractNode(
-                    responseMessage.getSOAPHeader(), requestIdXPathComponents);
-            if (requestIdNode != null) {
-              requestId = requestIdNode.getFirstChild().getNodeValue();
-            }
-          }
-        } catch (SOAPException e) {
-          // Ignore, since capturing the requestId is not critical.
-        }
-        try {
-          builder.withResponseInfo(
-              new ResponseInfo.Builder()
-                  .withSoapResponseXml(
-                      responseMessage == null ? null : responseMessage.getSOAPPartAsString())
-                  .withRequestId(requestId)
-                  .build());
-        } catch (AxisFault e) {
-          builder.withException(e);
-        }
+        RequestInfo.Builder requestInfoBuilder = new RequestInfo.Builder()
+                .withMethodName(stub._getCall().getOperationName().getLocalPart())
+                .withServiceName(stub._getService().getServiceName().getLocalPart())
+                .withUrl(stub._getCall().getTargetEndpointAddress());
+        requestInfoXPathSet.parseMessage(requestInfoBuilder, messageContext.getRequestMessage());
+        builder.withRequestInfo(requestInfoBuilder
+                .build());
+        ResponseInfo.Builder responseInfoBuilder = new ResponseInfo.Builder();
+        responseInfoXPathSet.parseMessage(responseInfoBuilder, messageContext.getResponseMessage());
+        builder.withResponseInfo(responseInfoBuilder.build());
       }
 
       return builder.withReturnValue(result).build();

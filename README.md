@@ -143,11 +143,15 @@ are in the package `com.google.api.ads.adwords.{version}`.
 
     *   **If using Maven from the command line**
 
-        This command runs the ``GetCampaigns`` example, but you can update the
+        This command runs the ``GetAdGroups`` example, but you can update the
         ``-Dexec.mainClass`` argument with the example of your choice.
 
+        Any parameters required for an example to run can be passed on the
+        command line by using ``-Dexec.args``. To see more information about a
+        particular example, use ``-Dexec.args="--help"``.
+
         ```
-        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201705.basicoperations.GetCampaigns"
+        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201705.basicoperations.GetAdGroups" -Dexec.args="--campaignId YOUR_CAMPAIGN_ID"
         ```
 
     *   **If using jars**

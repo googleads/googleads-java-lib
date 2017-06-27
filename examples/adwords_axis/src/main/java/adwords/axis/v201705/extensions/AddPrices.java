@@ -15,6 +15,7 @@
 package adwords.axis.v201705.extensions;
 
 import adwords.axis.v201705.basicoperations.AddCampaigns;
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201705.cm.CustomerExtensionSetting;
@@ -40,8 +41,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.PriceTableRow;
 import com.google.api.ads.adwords.axis.v201705.cm.UrlList;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -57,6 +60,11 @@ import java.util.List;
  * "ads.properties" file. See README for more info.
  */
 public class AddPrices {
+
+  private static class AddPricesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private Long campaignId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -74,9 +82,14 @@ public class AddPrices {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long campaignId = Long.valueOf("INSERT_CAMPAIGN_ID_HERE");
+    AddPricesParams params = new AddPricesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
+    }
 
-    runExample(adWordsServices, session, campaignId);
+    runExample(adWordsServices, session, params.campaignId);
   }
 
   public static void runExample(

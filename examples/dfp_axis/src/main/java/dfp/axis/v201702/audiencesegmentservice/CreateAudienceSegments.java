@@ -73,7 +73,7 @@ public class CreateAudienceSegments {
     inventoryTargeting.setTargetedAdUnits(new AdUnitTargeting[] {adUnitTargeting});
 
     // Create the custom criteria to be used in the segment rule.
-    // CUSTOM_TARGETING_KEY_ID == CUSTOM_TARGETING_VALUE_ID
+    // TARGETING_KEY_ID == TARGETING_VALUE_ID
     CustomCriteria customCriteria = new CustomCriteria();
     customCriteria.setKeyId(customTargetingKeyId);
     customCriteria.setOperator(CustomCriteriaComparisonOperator.IS);

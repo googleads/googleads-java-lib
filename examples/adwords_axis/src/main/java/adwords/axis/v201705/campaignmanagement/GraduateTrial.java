@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.Budget;
 import com.google.api.ads.adwords.axis.v201705.cm.BudgetBudgetDeliveryMethod;
@@ -27,8 +28,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.TrialServiceInterface;
 import com.google.api.ads.adwords.axis.v201705.cm.TrialStatus;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -41,6 +44,11 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class GraduateTrial {
+
+  private static class GraduateTrialParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.TRIAL_ID, required = true)
+    private Long trialId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -56,12 +64,16 @@ public class GraduateTrial {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    // Replace with valid values of your account.
-    long trialId = Long.parseLong("INSERT_TRIAL_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, trialId);
+    GraduateTrialParams params = new GraduateTrialParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.trialId = Long.parseLong("INSERT_TRIAL_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.trialId);
   }
 
   public static void runExample(

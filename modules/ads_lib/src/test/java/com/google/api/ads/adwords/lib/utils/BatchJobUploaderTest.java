@@ -19,6 +19,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
@@ -259,7 +261,31 @@ public class BatchJobUploaderTest {
         expectedStatus.getResumableUploadUri(),
         actualStatus.getResumableUploadUri());
   }
-  
+
+  @Test
+  public void testUploadIncrementalBatchJobOperations_logging() throws Exception {
+    BatchJobUploadStatus status =
+        new BatchJobUploadStatus(10, URI.create(mockHttpServer.getServerUrl()));
+    String uploadRequestBody = "<mutate>testUpload</mutate>";
+    when(uploadBodyProvider.getHttpContent(request, false, true))
+        .thenReturn(new ByteArrayContent(null, uploadRequestBody.getBytes(UTF_8)));
+    mockHttpServer.setMockResponse(new MockResponse("testUploadResponse"));
+
+    String expectedBody = "testUpload</mutate>";
+    expectedBody =
+        Strings.padEnd(expectedBody, BatchJobUploader.REQUIRED_CONTENT_LENGTH_INCREMENT, ' ');
+
+    // Invoke the incremental upload method.
+    BatchJobUploadResponse response =
+        uploader.uploadIncrementalBatchJobOperations(request, true, status);
+    verify(batchJobLogger, times(1)).logUpload(
+        expectedBody,
+        status.getResumableUploadUri(),
+        response,
+        null
+    );
+   }
+
   @Test
   public void testConstructContentRangeHeaderValue_notLast_nonZeroLength_zeroPrevious() {
     BatchJobUploadStatus status = new BatchJobUploadStatus(0, null);

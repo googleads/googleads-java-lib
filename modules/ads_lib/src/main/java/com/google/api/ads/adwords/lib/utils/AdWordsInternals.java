@@ -17,13 +17,13 @@ package com.google.api.ads.adwords.lib.utils;
 import com.google.api.ads.adwords.lib.AdWordsModule;
 import com.google.api.ads.adwords.lib.conf.AdWordsLibConfiguration;
 import com.google.api.ads.adwords.lib.factory.DependencyBootstrapper;
-import com.google.api.ads.adwords.lib.utils.logging.AdWordsServiceLoggers;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.auth.OAuth2Helper;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
 import com.google.api.ads.common.lib.utils.Internals;
 import com.google.api.ads.common.lib.utils.XmlFieldExtractor;
+import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.client.http.HttpTransport;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -48,11 +48,11 @@ public class AdWordsInternals extends Internals {
   AdWordsInternals(AuthorizationHeaderProvider authorizationHeaderProvider,
       UserAgentCombiner userAgentCombiner, HttpTransport httpTransport,
       AdWordsLibConfiguration adWordsLibConfiguration,
-      AdWordsServiceLoggers adWordsServiceLoggers, OAuth2Helper oAuth2Helper,
+      AdsServiceLoggers adsServiceLoggers, OAuth2Helper oAuth2Helper,
       AdsUtilityRegistry adsUtilityRegistry,
       XmlFieldExtractor xmlFieldExtractor,
       Injector injector) {
-    super(authorizationHeaderProvider, userAgentCombiner, httpTransport, adWordsServiceLoggers,
+    super(authorizationHeaderProvider, userAgentCombiner, httpTransport, adsServiceLoggers,
         oAuth2Helper, adsUtilityRegistry, xmlFieldExtractor);
     this.adWordsLibConfiguration = adWordsLibConfiguration;
     this.injector = injector;
@@ -86,12 +86,5 @@ public class AdWordsInternals extends Internals {
    */
   public AdWordsLibConfiguration getAdWordsLibConfiguration() {
     return adWordsLibConfiguration;
-  }
-  
-  /**
-   * Returns the utility that provides access to additional AdWords-specific loggers.
-   */
-  public AdWordsServiceLoggers getAdWordsServiceLoggers() {
-    return (AdWordsServiceLoggers) getAdsServiceLoggers();
   }
 }

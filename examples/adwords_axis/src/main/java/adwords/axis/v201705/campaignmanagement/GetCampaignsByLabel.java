@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201705.cm.Campaign;
@@ -24,8 +25,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201705.cm.CampaignField;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -41,6 +44,11 @@ import com.google.common.collect.Lists;
 public class GetCampaignsByLabel {
 
   private static final int PAGE_SIZE = 100;
+
+  private static class GetCampaignsByLabelParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.LABEL_ID, required = true)
+    private Long labelId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -58,9 +66,15 @@ public class GetCampaignsByLabel {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long labelId = Long.valueOf("INSERT_LABEL_ID_HERE");
     
-    runExample(adWordsServices, session, labelId);
+    GetCampaignsByLabelParams params = new GetCampaignsByLabelParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.labelId = Long.parseLong("INSERT_LABEL_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.labelId);
   }
 
   public static void runExample(

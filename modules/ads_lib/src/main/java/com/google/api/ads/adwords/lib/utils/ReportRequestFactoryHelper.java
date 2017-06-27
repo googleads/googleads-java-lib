@@ -63,7 +63,11 @@ public class ReportRequestFactoryHelper {
     this.authorizationHeaderProvider = authorizationHeaderProvider;
     this.userAgentCombiner = userAgentCombiner;
     this.httpTransport = httpTransport;
-    this.reportDownloadTimeout = adWordsLibConfiguration.getReportDownloadTimeout();
+    this.reportDownloadTimeout =
+        (session.getReportingConfiguration() != null
+                && session.getReportingConfiguration().getReportDownloadTimeout() != null)
+            ? session.getReportingConfiguration().getReportDownloadTimeout()
+            : adWordsLibConfiguration.getReportDownloadTimeout();
     this.responseInterceptor = responseInterceptor;
   }
 

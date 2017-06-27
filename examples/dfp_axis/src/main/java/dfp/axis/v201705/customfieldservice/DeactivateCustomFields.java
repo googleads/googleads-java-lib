@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.customfieldservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.CustomField;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.CustomFieldPage;
 import com.google.api.ads.dfp.axis.v201705.CustomFieldServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -34,8 +37,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class DeactivateCustomFields {
 
-  // Set the ID of the custom field to deactivate.
-  private static final String CUSTOM_FIELD_ID = "INSERT_CUSTOM_FIELD_ID_HERE";
+  private static class DeactivateCustomFieldsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CUSTOM_FIELD_ID, required = true,
+        description = "The ID of the custom field to deactivate.")
+    private Long customFieldId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long customFieldId)
       throws Exception {
@@ -108,6 +114,13 @@ public class DeactivateCustomFields {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(CUSTOM_FIELD_ID));
+    DeactivateCustomFieldsParams params = new DeactivateCustomFieldsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.customFieldId = Long.parseLong("INSERT_CUSTOM_FIELD_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.customFieldId);
   }
 }

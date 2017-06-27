@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.soap;
 
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.ServiceException;
 
@@ -58,7 +59,7 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
    * @param soapCall the call to send to the SOAP client
    * @return the return value from the {@code soapCall}
    */
-  protected synchronized SoapCallReturn callSoapClient(SoapCall<T> soapCall) {
+  protected synchronized RemoteCallReturn callSoapClient(SoapCall<T> soapCall) {
     return soapClientHandler.invokeSoapCall(soapCall);
   }
 
@@ -73,7 +74,7 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
    *     client
    * @param args the method arguments
    * @return the return from the {@code SoapServiceClient} or a
-   *     {@link SoapCallReturn} object containing the result from the SOAP call
+   *     {@link RemoteCallReturn} object containing the result from the SOAP call
    * @see InvocationHandler#invoke(Object, Method, Object[])
    * @throws Throwable thrown if the SOAP call passed into this method results
    *     in an exception. The exception thrown will be not be wrapped - it will
@@ -89,10 +90,10 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
       // Ignore and let the SOAP client handler take over.
     }
     setHeaders();
-    SoapCallReturn soapCallReturn = callSoapClient(
+    RemoteCallReturn remoteCallReturn = callSoapClient(
         createSoapCall(soapClientHandler.getSoapClientMethod(soapClient, method), args));
-    logSoapCall(soapCallReturn);
-    return unwrapSoapCallReturn(soapCallReturn);
+    logSoapCall(remoteCallReturn);
+    return unwrapRemoteCallReturn(remoteCallReturn);
   }
 
   /**
@@ -127,9 +128,9 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
   /**
    * Logs a SOAP call.
    *
-   * @param soapCallReturn
+   * @param remoteCallReturn
    */
-  protected abstract void logSoapCall(SoapCallReturn soapCallReturn);
+  protected abstract void logSoapCall(RemoteCallReturn remoteCallReturn);
 
   /**
    * Sets the headers for the service client.
@@ -154,21 +155,21 @@ public abstract class SoapServiceClient<T> implements InvocationHandler {
   }
 
   /**
-   * Unwraps a SOAP call return such that if there was an exception, it is
+   * Unwraps a SOAP remote call return such that if there was an exception, it is
    * thrown and if it was a successful call, the return value of the SOAP call
    * is returned.
    *
-   * @param soapCallReturn the {@code SoapCallReturn} to unwrap
-   * @return the {@link SoapCallReturn#getReturnValue()} if the call was
+   * @param remoteCallReturn the {@link RemoteCallReturn} to unwrap
+   * @return the {@link RemoteCallReturn#getReturnValue()} if the call was
    *     successful
    * @throws Throwable the exception captured in the
-   *     {@link SoapCallReturn#getException()} if present
+   *     {@link RemoteCallReturn#getException()} if present
    */
-  protected Object unwrapSoapCallReturn(SoapCallReturn soapCallReturn) throws Throwable {
-    if (soapCallReturn.getException() != null) {
-      throw handleException(soapCallReturn.getException());
+  protected Object unwrapRemoteCallReturn(RemoteCallReturn remoteCallReturn) throws Throwable {
+    if (remoteCallReturn.getException() != null) {
+      throw handleException(remoteCallReturn.getException());
     } else {
-      return soapCallReturn.getReturnValue();
+      return remoteCallReturn.getReturnValue();
     }
   }
 }

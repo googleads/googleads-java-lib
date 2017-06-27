@@ -14,15 +14,17 @@
 
 package dfp.axis.v201705.exchangerateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRate;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRatePage;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRateServiceInterface;
-
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -33,7 +35,10 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetExchangeRatesForCurrencyCode {
 
-  private static final String CURRENCY_CODE = "INSERT_CURRENCY_CODE_HERE";
+  private static class GetExchangeRatesForCurrencyCodeParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CURRENCY_CODE, required = true)
+    private String currencyCode;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, String currencyCode)
       throws Exception {
@@ -93,6 +98,13 @@ public class GetExchangeRatesForCurrencyCode {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, CURRENCY_CODE);
+    GetExchangeRatesForCurrencyCodeParams params = new GetExchangeRatesForCurrencyCodeParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.currencyCode = "INSERT_CURRENCY_CODE_HERE";
+    }
+
+    runExample(dfpServices, session, params.currencyCode);
   }
 }

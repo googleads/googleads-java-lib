@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.creativesetservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.CreativeSet;
 import com.google.api.ads.dfp.axis.v201705.CreativeSetServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.primitives.Longs;
 import java.util.Random;
@@ -33,11 +36,15 @@ import java.util.Random;
  */
 public class CreateCreativeSets {
 
-  // Set the ID of the master creative in the creative set.
-  private static final String MASTER_CREATIVE_ID = "INSERT_MASTER_CREATIVE_ID_HERE";
+  private static class CreateCreativeSetsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.MASTER_CREATIVE_ID, required = true,
+        description = "The ID of the master creative in the creative set.")
+    private Long masterCreativeId;
 
-  // Set the ID of the companion creative in the creative set.
-  private static final String COMPANION_CREATIVE_ID = "INSERT_COMPANION_CREATIVE_ID_HERE";
+    @Parameter(names = ArgumentNames.COMPANION_CREATIVE_ID, required = true,
+        description = "The ID of the companion creative in the creative set.")
+    private Long companionCreativeId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long masterCreativeId, long companionCreativeId) throws Exception {
@@ -75,7 +82,14 @@ public class CreateCreativeSets {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(MASTER_CREATIVE_ID),
-        Long.parseLong(COMPANION_CREATIVE_ID));
+    CreateCreativeSetsParams params = new CreateCreativeSetsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.masterCreativeId = Long.parseLong("INSERT_MASTER_CREATIVE_ID_HERE");
+      params.companionCreativeId = Long.parseLong("INSERT_COMPANION_CREATIVE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.masterCreativeId, params.companionCreativeId);
   }
 }

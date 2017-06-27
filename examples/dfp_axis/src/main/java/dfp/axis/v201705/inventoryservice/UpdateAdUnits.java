@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.inventoryservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.AdUnit;
@@ -25,6 +27,7 @@ import com.google.api.ads.dfp.axis.v201705.EnvironmentType;
 import com.google.api.ads.dfp.axis.v201705.InventoryServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.Size;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
@@ -41,8 +44,11 @@ import java.util.List;
  */
 public class UpdateAdUnits {
 
-  // Set the ID of the ad unit to update.
-  private static final String AD_UNIT_ID = "INSERT_AD_UNIT_ID_HERE";
+  private static class UpdateAdUnitsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AD_UNIT_ID, required = true,
+        description = "The ID of the ad unit to update.")
+    private String adUnitId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, String adUnitId)
       throws Exception {
@@ -108,6 +114,13 @@ public class UpdateAdUnits {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, AD_UNIT_ID);
+    UpdateAdUnitsParams params = new UpdateAdUnitsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.adUnitId = "INSERT_AD_UNIT_ID_HERE";
+    }
+
+    runExample(dfpServices, session, params.adUnitId);
   }
 }

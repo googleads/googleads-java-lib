@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.baserateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.BaseRate;
 import com.google.api.ads.dfp.axis.v201705.BaseRateServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.Money;
 import com.google.api.ads.dfp.axis.v201705.ProductTemplateBaseRate;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -33,11 +36,15 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CreateProductTemplateBaseRates {
 
-  // Set the rate card ID to add the base rate to.
-  private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
+  private static class CreateProductTemplateBaseRatesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RATE_CARD_ID, required = true,
+        description = "The rate card ID to add the base rate to.")
+    private Long rateCardId;
 
-  // Set the product template to apply this base rate to.
-  private static final String PRODUCT_TEMPLATE_ID = "INSERT_PRODUCT_TEMPLATE_ID_HERE";
+    @Parameter(names = ArgumentNames.PRODUCT_TEMPLATE_ID, required = true,
+        description = "The product template to apply this base rate to.")
+    private Long productTemplateId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId,
       long productTemplateId)
@@ -89,7 +96,14 @@ public class CreateProductTemplateBaseRates {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RATE_CARD_ID),
-        Long.parseLong(PRODUCT_TEMPLATE_ID));
+    CreateProductTemplateBaseRatesParams params = new CreateProductTemplateBaseRatesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
+      params.productTemplateId = Long.parseLong("INSERT_PRODUCT_TEMPLATE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.rateCardId, params.productTemplateId);
   }
 }

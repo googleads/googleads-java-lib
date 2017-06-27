@@ -14,21 +14,20 @@
 
 package com.google.api.ads.adwords.axis.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateRequestInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadBodyProvider;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedSet;
-
-import org.apache.axis.encoding.SerializationContext;
-import org.xml.sax.Attributes;
-
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.SortedSet;
-
 import javax.xml.namespace.QName;
+import org.apache.axis.encoding.SerializationContext;
+import org.xml.sax.Attributes;
 
 /**
  * Implementation of {@link BatchJobUploadBodyProvider} for Axis requests.
@@ -74,7 +73,7 @@ public class AxisBatchJobUploadBodyProvider implements BatchJobUploadBodyProvide
     AxisSerializer serializer = new AxisSerializer();
     serializer.serialize(request, context);
 
-    return new ByteArrayContent("application/xml", writer.toString().getBytes());
+    return new ByteArrayContent("application/xml", writer.toString().getBytes(UTF_8));
   }
 
 }

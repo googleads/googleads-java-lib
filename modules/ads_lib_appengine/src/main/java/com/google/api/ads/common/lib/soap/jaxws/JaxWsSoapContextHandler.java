@@ -14,22 +14,15 @@
 
 package com.google.api.ads.common.lib.soap.jaxws;
 
-import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
 import com.google.api.ads.common.lib.exception.ServiceException;
-import com.google.api.ads.common.lib.utils.NodeExtractor;
+import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
+import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Splitter;
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableList;
-
-import org.w3c.dom.Node;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import com.google.inject.Inject;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
@@ -49,28 +42,20 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
  */
 public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> {
 
-  private String lastSoapRequest;
-  private String lastSoapResponse;
-  private String lastRequestId;
-  private String lastServiceCalled;
-  private String lastOperationCalled;
+  private RequestInfo.Builder lastRequestInfo;
+  private ResponseInfo.Builder lastResponseInfo;
   private Set<SOAPElement> soapHeaders = new HashSet<SOAPElement>();
-  private final NodeExtractor nodeExtractor;
-  private final ImmutableList<String> requestIdXPathComponents;
+  private final RequestInfoXPathSet requestInfoXPathSet;
+  private final ResponseInfoXPathSet responseInfoXPathSet;
 
-  /**
-   * @param nodeExtractor required; used to extract request ID from SOAP responses.
-   */
+  @Inject
   public JaxWsSoapContextHandler(
-      NodeExtractor nodeExtractor, AdsApiConfiguration adsApiConfiguration) {
-    this.nodeExtractor = nodeExtractor;
-    String requestIdXPath = adsApiConfiguration.getRequestIdXPath();
-    if (!Strings.isNullOrEmpty(requestIdXPath)) {
-      requestIdXPathComponents = ImmutableList.<String>copyOf(
-          Splitter.on('/').split(requestIdXPath));
-    } else {
-      requestIdXPathComponents = ImmutableList.<String>of();
-    }
+      RequestInfoXPathSet requestInfoXPathSet,
+      ResponseInfoXPathSet responseInfoXPathSet) {
+    this.requestInfoXPathSet = requestInfoXPathSet;
+    this.responseInfoXPathSet = responseInfoXPathSet;
+    this.lastRequestInfo = new RequestInfo.Builder();
+    this.lastResponseInfo = new ResponseInfo.Builder();
   }
 
   /**
@@ -85,6 +70,9 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
   @Override
   public boolean handleMessage(SOAPMessageContext context) {
     if ((Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY)) {
+      // Outbound message (request), so reset the last request and response builders.
+      lastRequestInfo = new RequestInfo.Builder();
+      lastResponseInfo = new ResponseInfo.Builder();      
       SOAPMessage soapMessage = context.getMessage();
       try {
         SOAPHeader soapHeader = soapMessage.getSOAPHeader();
@@ -111,27 +99,16 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
    */
   @VisibleForTesting
   void captureServiceAndOperationNames(SOAPMessageContext context) {
-    lastServiceCalled = ((QName) context.get(MessageContext.WSDL_SERVICE)).getLocalPart();
+    lastRequestInfo.withServiceName(
+        ((QName) context.get(MessageContext.WSDL_SERVICE)).getLocalPart());
+    String lastOperationCalled;
     try {
       lastOperationCalled = context.getMessage().getSOAPBody().getFirstChild().getLocalName();
     } catch (SOAPException e) {
       lastOperationCalled = "";
       // Fail silently. The logs will be missing the operation name for this interaction.
     }
-  }
-
-  /**
-   * Returns the name of the last SOAP operation through this handler.
-   */
-  public String getLastOperationCalled() {
-    return lastOperationCalled;
-  }
-
-  /**
-   * Returns the name of the last SOAP service contacted through handler.
-   */
-  public String getLastServiceCalled() {
-    return lastServiceCalled;
+    lastRequestInfo.withMethodName(lastOperationCalled);
   }
 
   /**
@@ -154,54 +131,25 @@ public class JaxWsSoapContextHandler implements SOAPHandler<SOAPMessageContext> 
    */
   private void captureSoapXml(SOAPMessageContext context) {
     SOAPMessage message = context.getMessage();
-    String soapXml = "";
-    try {
-      OutputStream outputStream = new ByteArrayOutputStream();
-      message.writeTo(outputStream);
-      soapXml = outputStream.toString();
-      SOAPHeader soapHeader = message.getSOAPHeader();
-      if ((!(Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
-          && soapHeader != null
-          && !requestIdXPathComponents.isEmpty()) {
-        Node requestIdNode = nodeExtractor.extractNode(soapHeader, requestIdXPathComponents);
-        if (requestIdNode != null) {
-          lastRequestId = requestIdNode.getFirstChild().getNodeValue();
-        }
-      }
-    } catch (IOException e) {
-      soapXml = "Exception logging SOAP message: " + e;
-    } catch (SOAPException e) {
-      soapXml = "Exception logging SOAP message: " + e;
-    }
-
-    if ((Boolean) context.get (MessageContext.MESSAGE_OUTBOUND_PROPERTY)) {
-      lastSoapRequest = soapXml;
+    if ((Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY)) {
+      // Outbound message (request).
+      requestInfoXPathSet.parseMessage(lastRequestInfo, message);
     } else {
-      lastSoapResponse = soapXml;
+      // Inbound message (response).
+      responseInfoXPathSet.parseMessage(lastResponseInfo, message);
     }
   }
 
-  /**
-   * Returns the last SOAP request XML message handled by this object.
-   */
-  public String getLastRequestXml() {
-    return lastSoapRequest;
-  }
-
-  /**
-   * Returns the last SOAP response XML message handled by this object.
-   */
-  public String getLastResponseXml() {
-    return lastSoapResponse;
+  /** Returns info for the last SOAP request. */
+  public RequestInfo.Builder getLastRequestInfoBuilder() {
+    return lastRequestInfo;
   }
   
-  /**
-   * Returns the request ID from the last SOAP response XML message handled by this object.
-   */
-  public String getLastRequestId() {
-    return lastRequestId;
+  /** Returns info for the last SOAP response. */
+  public ResponseInfo.Builder getLastResponseInfoBuilder() {
+    return lastResponseInfo;
   }
-
+  
   /**
    * Adds a header to the list of SOAP request headers.
    *

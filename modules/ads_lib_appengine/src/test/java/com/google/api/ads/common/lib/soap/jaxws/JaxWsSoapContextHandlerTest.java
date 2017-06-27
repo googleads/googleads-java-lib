@@ -21,25 +21,16 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.client.RequestInfo;
 import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
+import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.api.ads.common.lib.utils.Streams;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
-
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.xml.namespace.QName;
 import javax.xml.soap.Node;
 import javax.xml.soap.SOAPBody;
@@ -51,6 +42,15 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPPart;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 /**
  * Tests for the {@link JaxWsSoapContextHandler} class.
@@ -70,6 +70,8 @@ public class JaxWsSoapContextHandlerTest {
   @Mock private Node firstChild;
   @Mock private NodeExtractor mockNodeExtractor;
   @Mock private AdsApiConfiguration mockAdsApiConfiguration;
+  private RequestInfoXPathSet requestInfoXPathSet;
+  private ResponseInfoXPathSet responseInfoXPathSet;
   
   private static final String OPERATION_LOCAL_NAME = "saveAdvertiser";
 
@@ -80,8 +82,10 @@ public class JaxWsSoapContextHandlerTest {
     MockitoAnnotations.initMocks(this);
 
     wsdlService = new QName("http://www.example.com", "AdvertiserService");
+    requestInfoXPathSet = new RequestInfoXPathSet(mockAdsApiConfiguration, mockNodeExtractor);
+    responseInfoXPathSet = new ResponseInfoXPathSet(mockAdsApiConfiguration, mockNodeExtractor);
     jaxWsSoapContextHandler =
-        new JaxWsSoapContextHandler(mockNodeExtractor, mockAdsApiConfiguration);
+        new JaxWsSoapContextHandler(requestInfoXPathSet, responseInfoXPathSet);
   }
 
   @Test
@@ -97,12 +101,13 @@ public class JaxWsSoapContextHandlerTest {
     };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
-        .thenReturn(new Boolean(false));
+        .thenReturn(Boolean.FALSE);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
-    assertEquals(mockSoapXml, jaxWsSoapContextHandler.getLastResponseXml());
+    assertEquals(
+        mockSoapXml, jaxWsSoapContextHandler.getLastResponseInfoBuilder().build().getPayload());
   }
 
   @Test
@@ -118,7 +123,7 @@ public class JaxWsSoapContextHandlerTest {
     };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
-        .thenReturn(new Boolean(true));
+        .thenReturn(Boolean.TRUE);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockMessage.getSOAPPart()).thenReturn(mockSoapPart);
     when(mockSoapPart.getEnvelope()).thenReturn(mockEnvelope);
@@ -137,9 +142,10 @@ public class JaxWsSoapContextHandlerTest {
     Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
-    assertEquals(mockSoapXml, jaxWsSoapContextHandler.getLastRequestXml());
-    assertEquals(wsdlService.getLocalPart(), jaxWsSoapContextHandler.getLastServiceCalled());
-    assertEquals(OPERATION_LOCAL_NAME, jaxWsSoapContextHandler.getLastOperationCalled());
+    RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
+    assertEquals(mockSoapXml, requestInfo.getPayload());
+    assertEquals(wsdlService.getLocalPart(), requestInfo.getServiceName());
+    assertEquals(OPERATION_LOCAL_NAME, requestInfo.getMethodName());
   }
 
   @Test
@@ -161,7 +167,7 @@ public class JaxWsSoapContextHandlerTest {
     jaxWsSoapContextHandler.addHeader(null, null, mockHeader3);
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
-        .thenReturn(new Boolean(true));
+        .thenReturn(Boolean.TRUE);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockMessage.getSOAPHeader()).thenReturn(mockHeader);
 
@@ -178,9 +184,10 @@ public class JaxWsSoapContextHandlerTest {
     Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
-    assertEquals(mockSoapXml, jaxWsSoapContextHandler.getLastRequestXml());
-    assertEquals(wsdlService.getLocalPart(), jaxWsSoapContextHandler.getLastServiceCalled());
-    assertEquals(OPERATION_LOCAL_NAME, jaxWsSoapContextHandler.getLastOperationCalled());
+    RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
+    assertEquals(mockSoapXml, requestInfo.getPayload());
+    assertEquals(wsdlService.getLocalPart(), requestInfo.getServiceName());
+    assertEquals(OPERATION_LOCAL_NAME, requestInfo.getMethodName());
 
     verify(mockHeader).addChildElement(mockHeader1);
     verify(mockHeader).addChildElement(mockHeader2);
@@ -200,12 +207,13 @@ public class JaxWsSoapContextHandlerTest {
     };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
-        .thenReturn(new Boolean(false));
+        .thenReturn(Boolean.FALSE);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
 
     assertTrue(jaxWsSoapContextHandler.handleFault(mockSoapMessageContext));
-    assertEquals(mockSoapXml, jaxWsSoapContextHandler.getLastResponseXml());
+    assertEquals(
+        mockSoapXml, jaxWsSoapContextHandler.getLastResponseInfoBuilder().build().getPayload());
   }
 
   @Test
@@ -218,8 +226,9 @@ public class JaxWsSoapContextHandlerTest {
     when(firstChild.getLocalName()).thenReturn(OPERATION_LOCAL_NAME);
 
     jaxWsSoapContextHandler.captureServiceAndOperationNames(mockSoapMessageContext);
-    assertEquals(wsdlService.getLocalPart(), jaxWsSoapContextHandler.getLastServiceCalled());
-    assertEquals(OPERATION_LOCAL_NAME, jaxWsSoapContextHandler.getLastOperationCalled());
+    RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
+    assertEquals(wsdlService.getLocalPart(), requestInfo.getServiceName());
+    assertEquals(OPERATION_LOCAL_NAME, requestInfo.getMethodName());
   }
 
   @Test
@@ -230,8 +239,9 @@ public class JaxWsSoapContextHandlerTest {
     when(mockMessage.getSOAPBody()).thenThrow(new SOAPException());
 
     jaxWsSoapContextHandler.captureServiceAndOperationNames(mockSoapMessageContext);
-    assertEquals(wsdlService.getLocalPart(), jaxWsSoapContextHandler.getLastServiceCalled());
-    assertEquals("", jaxWsSoapContextHandler.getLastOperationCalled());
+    RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
+    assertEquals(wsdlService.getLocalPart(), requestInfo.getServiceName());
+    assertEquals("", requestInfo.getMethodName());
   }
 
   @Test

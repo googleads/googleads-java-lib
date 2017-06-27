@@ -23,6 +23,10 @@ public abstract class AdsApiConfiguration extends BaseConfiguration {
 
   protected static final String REQUEST_ID_XPATH_POSTFIX = "requestIdXPath";
   protected static final String SENSITIVE_XPATHS_POSTFIX = "sensitiveXPaths";
+  protected static final String REQUEST_CONTEXT_XPATH_POSTFIX = "requestContextXPath";
+  protected static final String RESPONSE_TIME_XPATH_POSTFIX = "responseTimeXPath";
+  protected static final String RESPONSE_OPERATIONS_COUNT_XPATH_POSTFIX =
+      "responseOperationsCountXPath";
 
   /**
    * Constructor.
@@ -44,5 +48,17 @@ public abstract class AdsApiConfiguration extends BaseConfiguration {
   
   public String[] getSensitiveXPaths() {
     return new String[0];
+  }
+  
+  public String getRequestContextXPath() {
+    return null;
+  }
+  
+  public String getResponseTimeXPath() {
+    return null;
+  }
+
+  public String getResponseOperationsCountXPath() {
+    return null;
   }
 }

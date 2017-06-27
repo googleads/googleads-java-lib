@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.advancedoperations;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.SelectorBuilder;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroupCriterionOperation;
@@ -55,8 +56,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.WebpageParameter;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201705.cm.CampaignField;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 
@@ -87,6 +90,14 @@ public class AddDynamicPageFeed {
     private Long labelAttributeId;
   }
 
+  private static class AddDynamicPageFeedParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private Long campaignId;
+
+    @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
+    private Long adGroupId;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential =
@@ -102,10 +113,15 @@ public class AddDynamicPageFeed {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long campaignId = Long.valueOf("INSERT_CAMPAIGN_ID_HERE");
-    Long adGroupId = Long.valueOf("INSERT_AD_GROUP_ID_HERE");
+    AddDynamicPageFeedParams params = new AddDynamicPageFeedParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
+      params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
+    }
 
-    runExample(adWordsServices, session, campaignId, adGroupId);
+    runExample(adWordsServices, session, params.campaignId, params.adGroupId);
   }
 
   public static void runExample(

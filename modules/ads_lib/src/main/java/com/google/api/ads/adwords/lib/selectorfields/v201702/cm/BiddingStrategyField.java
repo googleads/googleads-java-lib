@@ -142,7 +142,7 @@ public enum BiddingStrategyField implements EntityField {
   TargetOutrankShareRaiseBidWhenLowQualityScore(true),
 
   /**
-   * The desired revenue (based on conversion data) per unit of spend.
+   * The target return on average spend (ROAS).
    */
   TargetRoas(false),
 

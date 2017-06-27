@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.packageservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.Package;
 import com.google.api.ads.dfp.axis.v201705.PackageServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -33,15 +36,20 @@ import java.util.Random;
  */
 public class CreatePackages {
 
-  // Set the ID of the product package to create the package from.
-  private static final String PRODUCT_PACKAGE_ID = "INSERT_PRODUCT_PACKAGE_ID";
+  private static class CreatePackagesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PRODUCT_PACKAGE_ID, required = true,
+        description = "The ID of the product package to create the package from.")
+    private Long productPackageId;
 
-  // Set the ID of the proposal to create proposal line items under.
-  private static final String PROPOSAL_ID = "INSERT_PROPOSAL_ID";
+    @Parameter(names = ArgumentNames.PROPOSAL_ID, required = true,
+        description = "The ID of the proposal to create proposal line items under.")
+    private Long proposalId;
 
-  // Set the ID of the rate card the proposal line items belonging to the product package
-  // are priced from.
-  private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID";
+    @Parameter(names = ArgumentNames.RATE_CARD_ID, required = true,
+        description = "The ID of the rate card the proposal line items belonging to the product"
+            + " package are priced from.")
+    private Long rateCardId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long productPackageId, long proposalId, long rateCardId)
@@ -88,7 +96,15 @@ public class CreatePackages {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PRODUCT_PACKAGE_ID),
-        Long.parseLong(PROPOSAL_ID), Long.parseLong(RATE_CARD_ID));
+    CreatePackagesParams params = new CreatePackagesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.productPackageId = Long.parseLong("INSERT_PRODUCT_PACKAGE_ID_HERE");
+      params.proposalId = Long.parseLong("INSERT_PROPOSAL_ID_HERE");
+      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.productPackageId, params.proposalId, params.rateCardId);
   }
 }

@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.baserateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.BaseRate;
 import com.google.api.ads.dfp.axis.v201705.BaseRateServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.Money;
 import com.google.api.ads.dfp.axis.v201705.ProductPackageItemBaseRate;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -33,11 +36,15 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CreateProductPackageItemBaseRates {
 
-  // Set the rate card ID to add the base rate to.
-  private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
+  private static class CreateProductPackageItemBaseRatesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RATE_CARD_ID, required = true,
+        description = "The rate card ID to add the base rate to.")
+    private Long rateCardId;
 
-  // Set the product package item to apply this base rate to.
-  private static final String PRODUCT_PACKAGE_ITEM_ID = "INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE";
+    @Parameter(names = ArgumentNames.PRODUCT_PACKAGE_ITEM_ID, required = true,
+        description = "The product package item to apply this base rate to.")
+    private Long productPackageItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId,
       long productPackageItemId) throws Exception {
@@ -88,7 +95,14 @@ public class CreateProductPackageItemBaseRates {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RATE_CARD_ID),
-        Long.parseLong(PRODUCT_PACKAGE_ITEM_ID));
+    CreateProductPackageItemBaseRatesParams params = new CreateProductPackageItemBaseRatesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
+      params.productPackageItemId = Long.parseLong("INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.rateCardId, params.productPackageItemId);
   }
 }

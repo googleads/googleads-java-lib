@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.reportservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.ReportDownloader;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
@@ -28,6 +30,7 @@ import com.google.api.ads.dfp.axis.v201705.ReportServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.SavedQuery;
 import com.google.api.ads.dfp.axis.v201705.SavedQueryPage;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
@@ -44,8 +47,12 @@ import java.util.Arrays;
  */
 public class RunSavedQuery {
 
-  // Set the ID of the saved query to run. This ID is part of the URL in the DFP UI.
-  private static final String SAVED_QUERY_ID = "INSERT_SAVED_QUERY_ID_HERE";
+  private static class RunSavedQueryParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.SAVED_QUERY_ID, required = true,
+        description = "The ID of the saved query to run. This ID is part of the URL in the"
+            + " DFP UI.")
+    private Long savedQueryId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long savedQueryId)
       throws Exception {
@@ -114,6 +121,13 @@ public class RunSavedQuery {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(SAVED_QUERY_ID));
+    RunSavedQueryParams params = new RunSavedQueryParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.savedQueryId = Long.parseLong("INSERT_SAVED_QUERY_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.savedQueryId);
   }
 }

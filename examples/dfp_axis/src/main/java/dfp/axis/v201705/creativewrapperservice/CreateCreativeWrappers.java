@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.creativewrapperservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.CreativeWrapper;
 import com.google.api.ads.dfp.axis.v201705.CreativeWrapperHtmlSnippet;
 import com.google.api.ads.dfp.axis.v201705.CreativeWrapperOrdering;
 import com.google.api.ads.dfp.axis.v201705.CreativeWrapperServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CreateCreativeWrappers {
 
-  // Set the ID of the label that can be associated with creative wrappers.
-  private static final String LABEL_ID = "INSERT_CREATIVE_WRAPPER_LABEL_ID_HERE";
+  private static class CreateCreativeWrappersParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.LABEL_ID, required = true,
+        description = "The ID of the label that can be associated with creative wrappers.")
+    private Long labelId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long labelId)
       throws Exception {
@@ -81,6 +87,13 @@ public class CreateCreativeWrappers {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(LABEL_ID));
+    CreateCreativeWrappersParams params = new CreateCreativeWrappersParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.labelId = Long.parseLong("INSERT_LABEL_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.labelId);
   }
 }

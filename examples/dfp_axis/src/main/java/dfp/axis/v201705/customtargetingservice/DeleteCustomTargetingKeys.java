@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.customtargetingservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.CustomTargetingKey;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.CustomTargetingKeyPage;
 import com.google.api.ads.dfp.axis.v201705.CustomTargetingServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class DeleteCustomTargetingKeys {
 
-  // Set the ID of the custom targeting key.
-  private static final String CUSTOM_TARGETING_KEY_ID = "INSERT_CUSTOM_TARGETING_KEY_ID_HERE";
+  private static class DeleteCustomTargetingKeysParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.TARGETING_KEY_ID, required = true,
+        description = "The ID of the custom targeting key.")
+    private Long customTargetingKeyId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long customTargetingKeyId) throws Exception {
@@ -109,6 +115,13 @@ public class DeleteCustomTargetingKeys {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(CUSTOM_TARGETING_KEY_ID));
+    DeleteCustomTargetingKeysParams params = new DeleteCustomTargetingKeysParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.customTargetingKeyId = Long.parseLong("INSERT_CUSTOM_TARGETING_KEY_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.customTargetingKeyId);
   }
 }

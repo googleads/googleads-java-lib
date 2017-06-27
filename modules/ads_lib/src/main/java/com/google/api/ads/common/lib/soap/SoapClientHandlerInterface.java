@@ -14,11 +14,10 @@
 
 package com.google.api.ads.common.lib.soap;
 
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.exception.ServiceException;
-
 import java.lang.reflect.Method;
 import java.util.Map;
-
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPHeaderElement;
 
@@ -50,7 +49,7 @@ public interface SoapClientHandlerInterface<T> {
    * @param soapCall the {@code SoapCall} to execute
    * @return the result from the call to the SOAP client
    */
-  SoapCallReturn invokeSoapCall(SoapCall<T> soapCall);
+  RemoteCallReturn invokeSoapCall(SoapCall<T> soapCall);
 
   /**
    * Sets the endpoint address on the SOAP client.

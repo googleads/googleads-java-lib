@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.productservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Product;
 import com.google.api.ads.dfp.axis.v201705.ProductPage;
 import com.google.api.ads.dfp.axis.v201705.ProductServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -34,9 +37,12 @@ import java.util.Arrays;
  * "ads.properties" file. See README for more info.
  */
 public class UpdateProducts {
-  
-  // Set the ID of the product to update.
-  private static final String PRODUCT_ID = "INSERT_PRODUCT_ID_HERE";
+
+  private static class UpdateProductsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PRODUCT_ID, required = true,
+        description = "The ID of the product to update.")
+    private Long productId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long productId)
       throws Exception {
@@ -86,6 +92,13 @@ public class UpdateProducts {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PRODUCT_ID));
+    UpdateProductsParams params = new UpdateProductsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.productId = Long.parseLong("INSERT_PRODUCT_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.productId);
   }
 }

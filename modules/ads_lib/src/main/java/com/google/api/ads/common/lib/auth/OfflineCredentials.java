@@ -14,13 +14,11 @@
 
 package com.google.api.ads.common.lib.auth;
 
-import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Internals;
-import com.google.api.ads.dfp.lib.utils.DfpInternals;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleOAuthConstants;
@@ -32,15 +30,12 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
-
-import org.apache.commons.configuration.Configuration;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-
 import javax.annotation.Nullable;
+import org.apache.commons.configuration.Configuration;
 
 /**
  * OfflineCredentials offline OAuth2 provider.<br>
@@ -59,36 +54,92 @@ import javax.annotation.Nullable;
  */
 public class OfflineCredentials {
 
+  /** Interface outlining the values required for OAuth configuration. */
+  public interface OAuthConfig {
+
+    /**
+     * Returns the property key prefix. This is the prefix that is in the properties file e.g.
+     * api.adwords
+     */
+    String getPropertyKeyPrefix();
+
+    /**
+     * Returns the API OAuth scope.
+     */
+    String getScope();
+
+    /**
+     * Returns the internals object for the API that has the OAuth helper.
+     */
+    Internals getInternals();
+  }
+
   /**
    * Enum representing the API that OfflineCredentials can be used for.
    */
-  public static enum Api {
-    ADWORDS("api.adwords.", AdWordsInternals.getInstance(), 
-        "https://www.googleapis.com/auth/adwords"),
-    DFP("api.dfp.", DfpInternals.getInstance(), "https://www.googleapis.com/auth/dfp");
+  public static enum Api implements OAuthConfig {
+    ADWORDS("api.adwords.", "https://www.googleapis.com/auth/adwords"),
+    DFP("api.dfp.", "https://www.googleapis.com/auth/dfp");
 
     private final String propKeyPrefix;
-    private final Internals internals;
     private final String scope;
 
-    private Api(String propKeyPrefix, Internals internals, String scope) {
+    private Api(String propKeyPrefix, String scope) {
       this.propKeyPrefix =
           Preconditions.checkNotNull(propKeyPrefix, "Null property key prefix for: %s", this);
-      this.internals = Preconditions.checkNotNull(internals, "Null internals for: %s", this);
       this.scope = Preconditions.checkNotNull(scope, "Null scope for: %s", this);
     }
 
-    /**
-     * Gets the property key prefix.
-     */
-    public String getPropKeyPrefix() {
+    @Override
+    public String getPropertyKeyPrefix() {
       return propKeyPrefix;
     }
 
-    /**
-     * Gets the internals;
-     */
-    Internals getInternals() {
+    @Override
+    public String getScope() {
+      return scope;
+    }
+
+    @Override
+    public Internals getInternals() {
+      switch (this) {
+        case ADWORDS:
+          return com.google.api.ads.adwords.lib.utils.AdWordsInternals.getInstance();
+        case DFP:
+          return com.google.api.ads.dfp.lib.utils.DfpInternals.getInstance();
+        default:
+          return null;
+      }
+    }
+  }
+
+  /**
+   * A class defining a custom OAuth config. This can be used for APIs such as GMB or a whitelisted
+   * API.
+   */
+  public static class CustomOAuthConfig implements OAuthConfig {
+    private String propKeyPrefix;
+    private String scope;
+    private Internals internals;
+
+    public CustomOAuthConfig(String propKeyPrefix, String scope, Internals internals) {
+      this.propKeyPrefix = propKeyPrefix;
+      this.scope = scope;
+      this.internals = internals;
+    }
+
+    @Override
+    public String getPropertyKeyPrefix() {
+      return propKeyPrefix;
+    }
+
+    @Override
+    public String getScope() {
+      return scope;
+    }
+
+    @Override
+    public Internals getInternals() {
       return internals;
     }
   }
@@ -225,17 +276,17 @@ public class OfflineCredentials {
     }
 
     /**
-     * Specifies which {@link Api} should this {@code OfflineCredentials} be
+     * Specifies which {@link OAuthConfig} should this {@code OfflineCredentials} be
      * used for. Should be called first before any other builder methods.
      */
-    public ForApiBuilder forApi(Api api) {
-      defaultOptionals(api);
-      return new ForApiBuilder(api, oAuth2Helper);
+    public ForApiBuilder forApi(OAuthConfig oAuthConfig) {
+      defaultOptionals(oAuthConfig);
+      return new ForApiBuilder(oAuthConfig, oAuth2Helper);
     }
 
-    private void defaultOptionals(Api api) {
+    private void defaultOptionals(OAuthConfig oAuthConfig) {
       if (oAuth2Helper == null) {
-        oAuth2Helper = api.getInternals().getOAuth2Helper();
+        oAuth2Helper = oAuthConfig.getInternals().getOAuth2Helper();
       }
     }
   }
@@ -260,23 +311,24 @@ public class OfflineCredentials {
     private List<String> scopes;
 
     private final ConfigurationHelper configHelper;
-    private final Api api;
+    private final OAuthConfig oAuthConfig;
     private final OAuth2Helper oAuth2Helper;
 
     /**
      * Private constructor.
      *
-     * @param api the API for the builder
+     * @param oAuthConfig the API OAuth configuration for the builder
      * @param oAuth2Helper the OAuth2 helper
      */
-    private ForApiBuilder(Api api, OAuth2Helper oAuth2Helper) {
-      this(new ConfigurationHelper(), api, oAuth2Helper);
+    private ForApiBuilder(OAuthConfig oAuthConfig, OAuth2Helper oAuth2Helper) {
+      this(new ConfigurationHelper(), oAuthConfig, oAuth2Helper);
     }
 
     @VisibleForTesting
-    ForApiBuilder(ConfigurationHelper configHelper, Api api, OAuth2Helper oAuth2Helper) {
+    ForApiBuilder(ConfigurationHelper configHelper, OAuthConfig oAuthConfig,
+        OAuth2Helper oAuth2Helper) {
       this.configHelper = configHelper;
-      this.api = api;
+      this.oAuthConfig = oAuthConfig;
       this.oAuth2Helper = oAuth2Helper;
     }
 
@@ -478,7 +530,7 @@ public class OfflineCredentials {
       }
       
       if (this.scopes == null) {
-        this.scopes = Lists.newArrayList(this.api.scope);
+        this.scopes = Lists.newArrayList(this.oAuthConfig.getScope());
       }
     }
 
@@ -496,7 +548,7 @@ public class OfflineCredentials {
      * @return property value for key
      */
     private String getPropertyKey(String suffix) {
-      return api.getPropKeyPrefix() + suffix;
+      return oAuthConfig.getPropertyKeyPrefix() + suffix;
     }
   }
 }

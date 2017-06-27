@@ -14,29 +14,21 @@
 
 package com.google.api.ads.common.lib.utils.logging;
 
-import com.google.api.ads.common.lib.soap.RequestInfo;
-import com.google.api.ads.common.lib.soap.ResponseInfo;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate.RemoteCallType;
 import com.google.inject.name.Named;
-
+import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
-
-/**
- * The class {@code AdsServiceLogger} allows logging of outgoing and
- * incoming SOAP XML messages as API calls are executed.
- */
+/** Allows logging of outgoing and incoming SOAP XML messages as API calls are executed. */
 public class AdsServiceLoggers {
 
   /** The client library logger. */
   public static final Logger ADS_API_LIB_LOG =
       LoggerFactory.getLogger(AdsServiceLoggers.class.getName() + ".ads_api_lib");
-  private final PrettyPrinterInterface prettyPrinter;
 
-  private final Logger soapXmlLogger;
-  private final Logger requestInfoLogger;
+  private final RemoteCallLoggerDelegate loggerDelegate;
 
   /**
    * Constructor.
@@ -46,66 +38,26 @@ public class AdsServiceLoggers {
    * @param requestInfoLogger the request info logger
    */
   @Inject
-  protected AdsServiceLoggers(PrettyPrinterInterface prettyPrinter,
+  private AdsServiceLoggers(
+      PrettyPrinterInterface prettyPrinter,
       @Named("soapXmlLogger") Logger soapXmlLogger,
       @Named("requestInfoLogger") Logger requestInfoLogger) {
-    this.prettyPrinter = prettyPrinter;
-    this.soapXmlLogger = soapXmlLogger;
-    this.requestInfoLogger = requestInfoLogger;
+    this(
+        new RemoteCallLoggerDelegate(
+            requestInfoLogger, soapXmlLogger, prettyPrinter, RemoteCallType.SOAP));
   }
 
-  /**
-   * Gets the client library info logger.
-   *
-   * @return the request info logger
-   */
-  public Logger getLibLogger() {
-    return ADS_API_LIB_LOG;
-  }
-
-  /**
-   * Logs the XML messages from a given SOAP interaction.
-   *
-   * @param soapCallReturn information on the SOAP call to be logged
-   */
-  public void logSoapXml(SoapCallReturn soapCallReturn) {
-    RequestInfo request = soapCallReturn.getRequestInfo();
-    ResponseInfo response = soapCallReturn.getResponseInfo();
-    if (soapXmlLogger.isInfoEnabled() ||
-        (soapXmlLogger.isWarnEnabled() && soapCallReturn.getException() != null)) {
-      String prettyRequest = "SOAP Request:\n" +
-          prettyPrinter.prettyPrint(request.getSoapRequestXml());
-      String prettyResponse = "SOAP Response:\n" +
-          prettyPrinter.prettyPrint(response.getSoapResponseXml());
-      if (soapCallReturn.getException() == null) {
-        soapXmlLogger.info(prettyRequest);
-        soapXmlLogger.info(prettyResponse);
-      } else {
-        soapXmlLogger.warn(prettyRequest);
-        soapXmlLogger.warn(prettyResponse);
-      }
-    }
+  AdsServiceLoggers(RemoteCallLoggerDelegate loggerDelegate) {
+    this.loggerDelegate = loggerDelegate;
   }
 
   /**
    * Logs basic information on a SOAP request.
    *
-   * @param soapCallReturn information on the SOAP call to be logged
+   * @param remoteCallReturn information on the SOAP call to be logged
    */
-  public void logRequest(SoapCallReturn soapCallReturn) {
-    RequestInfo request = soapCallReturn.getRequestInfo();
-    ResponseInfo response = soapCallReturn.getResponseInfo();
-    Object[] logArgs = new Object[4];
-    if (request != null) {
-      logArgs[0] = request.getServiceName();
-      logArgs[1] = request.getMethodName();
-      logArgs[2] = request.getUrl();
-    }
-    if (response != null) {
-      logArgs[3] = response.getRequestId();
-    }
-    requestInfoLogger.info(
-        "Request made: Service: \"{}\" Method: \"{}\" URL: \"{}\" Request ID: \"{}\"",
-        logArgs);
+  public void logRequest(RemoteCallReturn remoteCallReturn) {
+    loggerDelegate.logRequestSummary(remoteCallReturn);
+    loggerDelegate.logRequestDetails(remoteCallReturn);
   }
 }

@@ -14,113 +14,162 @@
 
 package com.google.api.ads.adwords.lib.utils.logging;
 
-import com.google.api.client.http.GenericUrl;
+import com.google.api.ads.adwords.lib.utils.ReportException;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate.RemoteCallType;
 import com.google.api.client.http.HttpContent;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.util.Data;
-import com.google.api.client.util.GenericData;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Sets;
 import com.google.inject.name.Named;
-
-import org.slf4j.Logger;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
+import javax.annotation.Nullable;
 import javax.inject.Inject;
+import org.slf4j.Logger;
 
 /**
- * Logger that logs report requests and responses according to the following rules.<br/>
+ * Logger that logs report requests and responses according to the following rules.<br>
+ *
  * <ul>
- *   <li>Log successful requests (header and payload) and responses to INFO.</li>
- *   <li>Log failed requests (header and payload) and responses to WARN.</li>
+ *   <li>Log successful requests (header and payload) and responses to INFO.
+ *   <li>Log failed requests (header and payload) and responses to WARN.
  * </ul>
  */
 public class ReportServiceLogger {
 
-  private final Logger reportLogger;
-
   /**
-   * Headers whose value should not be logged because they contain sensitive information.
-   * Entries are in lowercase, but scrubbing should be case-insensitive.
+   * Headers whose value should not be logged because they contain sensitive information. Entries
+   * are in lowercase, but scrubbing should be case-insensitive.
    */
   @VisibleForTesting
   static final Set<String> SCRUBBED_HEADERS =
       Sets.newHashSet("authorization", "authtoken", "password", "developertoken");
+  /** Value to log for a scrubbed header. */
+  @VisibleForTesting static final String REDACTED_HEADER = "REDACTED";
+  /** String to log in place of the report response contents. */
+  @VisibleForTesting static final String REDACTED_REPORT_DATA = "REDACTED REPORT DATA";
 
-  @VisibleForTesting
-  static final String SCRUBBED_HEADERS_VALUE = "REDACTED";
+  private static final String CLIENT_CUSTOMER_ID = "clientCustomerId";
+
+  private final RemoteCallLoggerDelegate loggerDelegate;
 
   /**
    * Constructor that takes an injected logger identified by name.
-   * 
+   *
    * @param reportLogger underlying SLF4J logger for report service interactions
    */
   @Inject
-  ReportServiceLogger(@Named(AdWordsLoggingModule.REPORT_LOGGER_NAME) Logger reportLogger) {
-    this.reportLogger = reportLogger;
+  private ReportServiceLogger(@Named(AdWordsLoggingModule.REPORT_LOGGER_NAME) Logger reportLogger) {
+    this(new RemoteCallLoggerDelegate(reportLogger, reportLogger, null, RemoteCallType.HTTP));
+  }
+
+  /** @param remoteCallLoggerDelegate */
+  ReportServiceLogger(RemoteCallLoggerDelegate remoteCallLoggerDelegate) {
+    this.loggerDelegate = remoteCallLoggerDelegate;
   }
 
   /**
-   * Logs the request at the proper log level.
+   * Logs the specified request and response information.
+   *
+   * <p>Note that in order to avoid any temptation to consume the contents of the response, this
+   * does <em>not</em> take an {@link com.google.api.client.http.HttpResponse} object, but instead
+   * accepts the status code and message from the response.
    */
-  public void logRequest(String requestMethod, GenericUrl url, HttpContent requestContent,
-      GenericData requestHeaders, boolean isSuccessful) {
-    if (!isLoggable(isSuccessful)) {
+  public void logRequest(
+      @Nullable HttpRequest request, int statusCode, @Nullable String statusMessage) {
+    boolean isSuccess = HttpStatusCodes.isSuccess(statusCode);
+    if (!loggerDelegate.isSummaryLoggable(isSuccess)
+        && !loggerDelegate.isDetailsLoggable(isSuccess)) {
       return;
     }
 
-    log(String.format("Request made: %s %s%n", requestMethod, url), isSuccessful);
+    // Populate the RequestInfo builder from the request.
+    RequestInfo requestInfo = buildRequestInfo(request);
 
-    StringBuilder messageBuilder = new StringBuilder();
+    // Populate the ResponseInfo builder from the response.
+    ResponseInfo responseInfo = buildResponseInfo(request, statusCode, statusMessage);
 
-    // Log headers.
-    if (requestHeaders != null) {
-      messageBuilder.append(getMapAsString(requestHeaders));
+    RemoteCallReturn.Builder remoteCallReturnBuilder =
+        new RemoteCallReturn.Builder().withRequestInfo(requestInfo).withResponseInfo(responseInfo);
+    if (!isSuccess) {
+      remoteCallReturnBuilder.withException(
+          new ReportException(String.format("%s: %s", statusCode, statusMessage)));
     }
+    RemoteCallReturn remoteCallReturn = remoteCallReturnBuilder.build();
+    loggerDelegate.logRequestSummary(remoteCallReturn);
+    loggerDelegate.logRequestDetails(remoteCallReturn);
+  }
 
-    // Log request parameters.
-    messageBuilder.append(String.format("%nParameters:%n"));
-    if (requestContent instanceof UrlEncodedContent) {
-      UrlEncodedContent encodedContent = (UrlEncodedContent) requestContent;
-      messageBuilder.append(getMapAsString(Data.mapOf(encodedContent.getData())));
-    } else if (requestContent != null) {
-      ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+  @VisibleForTesting
+  RequestInfo buildRequestInfo(HttpRequest request) {
+    RequestInfo.Builder requestBuilder = new RequestInfo.Builder();
+    if (request != null) {
+      requestBuilder.withServiceName("reportdownload").withMethodName(request.getRequestMethod());
       try {
-        requestContent.writeTo(byteStream);
-        messageBuilder.append(byteStream.toString());
-      } catch (IOException e) {
-        messageBuilder.append("Unable to read request content due to exception: " + e);
+        requestBuilder.withUrl(request.getUrl().toURL().toString());
+      } catch (IllegalArgumentException e) {
+        requestBuilder.withUrl("Malformed URL: " + request.getUrl());
+      }
+
+      if (request.getHeaders() != null) {
+        String clientCustomerId =
+            request.getHeaders().getFirstHeaderStringValue(CLIENT_CUSTOMER_ID);
+        requestBuilder.withContext(CLIENT_CUSTOMER_ID, clientCustomerId);
+      }
+
+      // Get the payload from the request.
+      requestBuilder.withPayload(extractPayload(request.getHeaders(), request.getContent()));
+    }
+    return requestBuilder.build();
+  }
+
+  @VisibleForTesting
+  ResponseInfo buildResponseInfo(HttpRequest request, int statusCode, String statusMessage) {
+    ResponseInfo.Builder responseBuilder = new ResponseInfo.Builder();
+    // Include all response headers + the redacted token for the response body.
+    StringBuilder payloadBuilder = new StringBuilder();
+    payloadBuilder.append(String.format("%d %s%n", statusCode, statusMessage));
+    appendMapAsString(payloadBuilder, request.getResponseHeaders());
+    payloadBuilder.append(String.format("%nContent:%n%s", REDACTED_REPORT_DATA));
+
+    return responseBuilder.withPayload(payloadBuilder.toString()).build();
+  }
+
+  private String extractPayload(HttpHeaders headers, @Nullable HttpContent content) {
+    StringBuilder messageBuilder = new StringBuilder();
+    if (headers != null) {
+      appendMapAsString(messageBuilder, headers);
+    }
+    if (content != null) {
+      messageBuilder.append(String.format("%nContent:%n"));
+      if (content instanceof UrlEncodedContent) {
+        UrlEncodedContent encodedContent = (UrlEncodedContent) content;
+        appendMapAsString(messageBuilder, Data.mapOf(encodedContent.getData()));
+      } else if (content != null) {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        try {
+          content.writeTo(byteStream);
+          messageBuilder.append(byteStream.toString(StandardCharsets.UTF_8.name()));
+        } catch (IOException e) {
+          messageBuilder.append("Unable to read request content due to exception: " + e);
+        }
       }
     }
-
-    log(messageBuilder.toString(), isSuccessful);
+    return messageBuilder.toString();
   }
 
-  /**
-   * Logs the response at the proper log level based on its status code.
-   */
-  public void logResponse(int statusCode, String statusMessage, boolean isSuccessful) {
-    if (!isLoggable(isSuccessful)) {
-      return;
-    }
-
-    String responseInfo = String.format("Response received with status code %d and message: %s%n",
-        statusCode, statusMessage);
-    log(responseInfo, isSuccessful);
-  }
-
-  /**
-   * Returns the underlying logger for report service interactions. 
-   */
-  public Logger getLogger() {
-    return reportLogger;
-  }
-  
   /**
    * Converts the map of key/value pairs to a multi-line string (one line per key). Masks sensitive
    * information for a predefined set of header keys.
@@ -128,28 +177,15 @@ public class ReportServiceLogger {
    * @param map a non-null Map
    * @return a non-null String
    */
-  private String getMapAsString(Map<String, Object> map) {
-    StringBuilder messageBuilder = new StringBuilder();
+  private StringBuilder appendMapAsString(StringBuilder messageBuilder, Map<String, Object> map) {
     for (Entry<String, Object> mapEntry : map.entrySet()) {
       Object headerValue = mapEntry.getValue();
       // Perform a case-insensitive check if the header should be scrubbed.
       if (SCRUBBED_HEADERS.contains(mapEntry.getKey().toLowerCase())) {
-        headerValue = SCRUBBED_HEADERS_VALUE;
+        headerValue = REDACTED_HEADER;
       }
       messageBuilder.append(String.format("%s: %s%n", mapEntry.getKey(), headerValue));
     }
-    return messageBuilder.toString();
-  }
-
-  private boolean isLoggable(boolean isSuccessful) {
-    return isSuccessful ? reportLogger.isInfoEnabled() : reportLogger.isWarnEnabled();
-  }
-
-  private void log(String message, boolean isSuccessful) {
-    if (isSuccessful) {
-      reportLogger.info(message);
-    } else {
-      reportLogger.warn(message);
-    }
+    return messageBuilder;
   }
 }

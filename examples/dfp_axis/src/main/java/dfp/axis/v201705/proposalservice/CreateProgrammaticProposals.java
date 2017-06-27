@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.proposalservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.Money;
 import com.google.api.ads.dfp.axis.v201705.NetworkServiceInterface;
@@ -26,6 +28,7 @@ import com.google.api.ads.dfp.axis.v201705.ProposalMarketplaceInfo;
 import com.google.api.ads.dfp.axis.v201705.ProposalServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.SalespersonSplit;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -37,19 +40,26 @@ import java.util.Random;
  * "ads.properties" file. See README for more info.
  */
 public class CreateProgrammaticProposals {
-  
-  // Set the ID of the advertiser that the proposal will belong to.
-  private static final String ADVERTISER_ID = "INSERT_ADVERTISER_ID_HERE";
 
-  // Set the ID of the buyer. This can be obtained through the Programmatic_Buyer PQL table.
-  private static final String BUYER_ID = "INSERT_BUYER_ID_HERE";
+  private static class CreateProgrammaticProposalsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser that the proposal will belong to.")
+    private Long advertiserId;
 
-  // Set the ID of the primary salesperson.
-  private static final String PRIMARY_SALESPERSON_ID = "INSERT_PRIMARY_SALESPERSON_ID_HERE";
+    @Parameter(names = ArgumentNames.BUYER_ID, required = true,
+        description = "The ID of the buyer. This can be obtained through the Programmatic_Buyer"
+            + " PQL table.")
+    private Long buyerId;
 
-  // Set the ID of the primary trafficker.
-  private static final String PRIMARY_TRAFFICKER_ID = "INSERT_PRIMARY_TRAFFICKER_ID_HERE";
-  
+    @Parameter(names = ArgumentNames.PRIMARY_SALESPERSON_ID, required = true,
+        description = "The ID of the primary salesperson.")
+    private Long primarySalespersonId;
+
+    @Parameter(names = ArgumentNames.PRIMARY_TRAFFICKER_ID, required = true,
+        description = "The ID of the primary trafficker.")
+    private Long primaryTraffickerId;
+  }
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long advertiserId, long buyerId, long primarySalespersonId,
       long primaryTraffickerId) throws Exception {
@@ -120,8 +130,17 @@ public class CreateProgrammaticProposals {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ADVERTISER_ID),
-        Long.parseLong(BUYER_ID), Long.parseLong(PRIMARY_SALESPERSON_ID),
-        Long.parseLong(PRIMARY_TRAFFICKER_ID));
+    CreateProgrammaticProposalsParams params = new CreateProgrammaticProposalsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
+      params.buyerId = Long.parseLong("INSERT_BUYER_ID_HERE");
+      params.primarySalespersonId = Long.parseLong("INSERT_PRIMARY_SALESPERSON_ID_HERE");
+      params.primaryTraffickerId = Long.parseLong("INSERT_PRIMARY_TRAFFICKER_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.advertiserId, params.buyerId,
+        params.primarySalespersonId, params.primaryTraffickerId);
   }
 }

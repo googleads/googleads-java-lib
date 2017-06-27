@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.premiumrateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.AdUnitPremiumFeature;
 import com.google.api.ads.dfp.axis.v201705.PremiumAdjustmentType;
@@ -25,6 +27,7 @@ import com.google.api.ads.dfp.axis.v201705.PremiumRateValue;
 import com.google.api.ads.dfp.axis.v201705.PricingMethod;
 import com.google.api.ads.dfp.axis.v201705.RateType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CreatePremiumRates {
 
-  // Set the ID of the rate card to add premium rates to.
-  private static final String RATE_CARD_ID = "INSERT_RATE_CARD_ID_HERE";
+  private static class CreatePremiumRatesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RATE_CARD_ID, required = true,
+        description = "The ID of the rate card to add premium rates to.")
+    private Long rateCardId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId)
       throws Exception {
@@ -104,6 +110,13 @@ public class CreatePremiumRates {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RATE_CARD_ID));
+    CreatePremiumRatesParams params = new CreatePremiumRatesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.rateCardId);
   }
 }

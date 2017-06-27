@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.productpackageitemservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.ProductPackageItem;
 import com.google.api.ads.dfp.axis.v201705.ProductPackageItemPage;
 import com.google.api.ads.dfp.axis.v201705.ProductPackageItemServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,10 +38,12 @@ import java.util.Arrays;
  * "ads.properties" file. See README for more info.
  */
 public class UpdateProductPackageItems {
-  
-  // Set the ID of the product package item to update.
-  private static final String PRODUCT_PACKAGE_ITEM_ID =
-      "INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE";
+
+  private static class UpdateProductPackageItemsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PRODUCT_PACKAGE_ITEM_ID, required = true,
+        description = "The ID of the product package item to update.")
+    private Long productPackageItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long productPackageItemId) throws Exception {
@@ -96,6 +101,13 @@ public class UpdateProductPackageItems {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PRODUCT_PACKAGE_ITEM_ID));
+    UpdateProductPackageItemsParams params = new UpdateProductPackageItemsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.productPackageItemId = Long.parseLong("INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.productPackageItemId);
   }
 }

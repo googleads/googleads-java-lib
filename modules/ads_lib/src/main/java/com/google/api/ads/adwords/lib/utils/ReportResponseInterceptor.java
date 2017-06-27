@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.lib.utils;
 
 import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
-import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.inject.Inject;
@@ -43,13 +42,7 @@ class ReportResponseInterceptor implements HttpResponseInterceptor {
     if (response == null) {
       return;
     }
-    
-    HttpRequest request = response.getRequest();
-    if (request != null) {
-      reportServiceLogger.logRequest(request.getRequestMethod(), request.getUrl(),
-          request.getContent(), request.getHeaders(), response.isSuccessStatusCode());
-    }
-    reportServiceLogger.logResponse(response.getStatusCode(), response.getStatusMessage(),
-        response.isSuccessStatusCode());
+    reportServiceLogger.logRequest(
+        response.getRequest(), response.getStatusCode(), response.getStatusMessage());
   }
 }

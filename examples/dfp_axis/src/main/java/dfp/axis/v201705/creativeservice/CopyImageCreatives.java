@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.creativeservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.AspectRatioImageCreative;
@@ -25,6 +27,7 @@ import com.google.api.ads.dfp.axis.v201705.CreativeServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.ImageCreative;
 import com.google.api.ads.dfp.axis.v201705.Size;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -36,8 +39,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class CopyImageCreatives {
 
-  // Set the ID of the image creative to copy.
-  private static final String CREATIVE_ID = "INSERT_CREATIVE_ID_HERE";
+  private static class CopyImageCreativesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CREATIVE_ID, required = true,
+        description = "The ID of the image creative to copy.")
+    private Long creativeId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long creativeId)
       throws Exception {
@@ -97,6 +103,13 @@ public class CopyImageCreatives {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(CREATIVE_ID));
+    CopyImageCreativesParams params = new CopyImageCreativesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.creativeId = Long.parseLong("INSERT_CREATIVE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.creativeId);
   }
 }

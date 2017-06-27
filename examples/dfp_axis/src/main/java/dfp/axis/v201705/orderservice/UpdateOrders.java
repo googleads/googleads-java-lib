@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.orderservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Order;
 import com.google.api.ads.dfp.axis.v201705.OrderPage;
 import com.google.api.ads.dfp.axis.v201705.OrderServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,8 +38,11 @@ import java.util.Arrays;
  */
 public class UpdateOrders {
 
-  // Set the ID of the order to update.
-  private static final String ORDER_ID = "INSERT_ORDER_ID_HERE";
+  private static class UpdateOrdersParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ORDER_ID, required = true,
+        description = "The ID of the order to update.")
+    private Long orderId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long orderId)
       throws Exception {
@@ -85,6 +91,13 @@ public class UpdateOrders {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ORDER_ID));
+    UpdateOrdersParams params = new UpdateOrdersParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.orderId = Long.parseLong("INSERT_ORDER_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.orderId);
   }
 }

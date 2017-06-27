@@ -141,6 +141,12 @@ public enum AdGroupAdField implements EntityField {
   CallOnlyAdPhoneNumberVerificationUrl(true),
 
   /**
+   * Approval status that combines review state and status.
+   */
+  @Filterable
+  CombinedApprovalStatus(true),
+
+  /**
    * Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
    * This is not updatable and not specifiable.
    */

@@ -14,15 +14,21 @@
 
 package dfp.axis.v201705.forecastservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.DeliveryForecast;
 import com.google.api.ads.dfp.axis.v201705.DeliveryForecastOptions;
 import com.google.api.ads.dfp.axis.v201705.ForecastServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.LineItemDeliveryForecast;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.primitives.Longs;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * This example gets a delivery forecast for existing line items. To determine
@@ -33,12 +39,15 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetDeliveryForecastForLineItems {
 
-  //Set the IDs of the line items to get a forecast for.
-  private static final String LINE_ITEM_ID_1 = "INSERT_LINE_ITEM_ID_HERE";
-  private static final String LINE_ITEM_ID_2 = "INSERT_LINE_ITEM_ID_HERE";
+  private static class GetDeliveryForecastForLineItemsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.LINE_ITEM_ID, required = true,
+        description = "The IDs of the line items to get a forecast for. You may pass multiple"
+            + " values.")
+    private List<Long> lineItemIds;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
-      long lineItemId1, long lineItemId2) throws Exception {
+      List<Long> lineItemIds) throws Exception {
     // Get the ForecastService.
     ForecastServiceInterface forecastService =
         dfpServices.get(session, ForecastServiceInterface.class);
@@ -46,7 +55,7 @@ public class GetDeliveryForecastForLineItems {
     DeliveryForecastOptions options = new DeliveryForecastOptions();
 
     DeliveryForecast forecast = forecastService.getDeliveryForecastByIds(
-        new long[] {lineItemId1, lineItemId2}, options);
+        Longs.toArray(lineItemIds), options);
 
     for (LineItemDeliveryForecast lineItemForecast : forecast.getLineItemDeliveryForecasts()) {
       String unitType = lineItemForecast.getUnitType().toString().toLowerCase();
@@ -74,7 +83,17 @@ public class GetDeliveryForecastForLineItems {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(LINE_ITEM_ID_1),
-        Long.parseLong(LINE_ITEM_ID_2));
+    GetDeliveryForecastForLineItemsParams params = new GetDeliveryForecastForLineItemsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.lineItemIds = Arrays.asList(
+          Long.valueOf("INSERT_LINE_ITEM_ID_HERE"),
+          Long.valueOf("INSERT_LINE_ITEM_ID_HERE"),
+          Long.valueOf("INSERT_LINE_ITEM_ID_HERE")
+      );
+    }
+
+    runExample(dfpServices, session, params.lineItemIds);
   }
 }

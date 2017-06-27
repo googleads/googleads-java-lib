@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.lineitemservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.DateTimes;
 import com.google.api.ads.dfp.axis.v201705.AdUnitTargeting;
@@ -40,7 +42,11 @@ import com.google.api.ads.dfp.axis.v201705.StartDateTimeType;
 import com.google.api.ads.dfp.axis.v201705.Targeting;
 import com.google.api.ads.dfp.axis.v201705.UnitType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.common.primitives.Longs;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
@@ -58,46 +64,55 @@ import org.joda.time.Instant;
  */
 public class CreateLineItemsWithCustomCriteria {
 
-  // Set the ID of the order that the line items will belong to.
-  private static final String ORDER_ID = "INSERT_ORDER_ID_HERE";
-
   /**
    * Set the key and value IDs that will form the following custom criteria
    * expression:
    *
-   * (CUSTOM_TARGETING_KEY_ID_1 == CUSTOM_TARGETING_VALUE_ID_1 AND
-   * (CUSTOM_TARGETING_KEY_ID_2 !=
-   *    (CUSTOM_TARGETING_VALUE_ID_2 OR CUSTOM_TARGETING_VALUE_ID_3))
+   * (TARGETING_KEY_ID_1 == TARGETING_VALUE_ID_1 AND
+   * (TARGETING_KEY_ID_2 !=
+   *    (TARGETING_VALUE_IDS_2[0] OR TARGETING_VALUE_IDS_2[1] ...))
    * OR
-   * (CUSTOM_TARGETING_KEY_ID_3 = CUSTOM_TARGETING_VALUE_ID_4))
+   * (TARGETING_KEY_ID_3 = TARGETING_VALUE_ID_3))
    *
    * To perform broad (i.e. ~) matching, set a custom targeting value with a
    * broad match type.
    */
-  // Set the key ID and value ID belonging to it for the first expression.
-  private static final String CUSTOM_TARGETING_KEY_ID_1 =
-      "INSERT_CUSTOM_TARGETING_KEY_ID_HERE";
-  private static final String CUSTOM_TARGETING_VALUE_ID_1 =
-      "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
+  private static class CreateLineItemsWithCustomCriteriaParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ORDER_ID, required = true,
+        description = "The ID of the order that the line items will belong to.")
+    private Long orderId;
 
-  // Set the key ID and value IDs belonging to it for the second expression.
-  private static final String CUSTOM_TARGETING_KEY_ID_2 =
-      "INSERT_CUSTOM_TARGETING_KEY_ID_HERE";
-  private static final String CUSTOM_TARGETING_VALUE_ID_2 =
-      "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
-  private static final String CUSTOM_TARGETING_VALUE_ID_3 =
-      "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
+    @Parameter(names = ArgumentNames.TARGETING_KEY_ID_1, required = true,
+        description = "The key ID for the equality comparison in the first expression group.")
+    private Long customTargetingKeyId1;
 
-  // Set the key ID and value IDs belonging to it for the final expression.
-  private static final String CUSTOM_TARGETING_KEY_ID_3 =
-      "INSERT_CUSTOM_TARGETING_KEY_ID_HERE";
-  private static final String CUSTOM_TARGETING_VALUE_ID_4 =
-      "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
+    @Parameter(names = ArgumentNames.TARGETING_KEY_ID_2, required = true,
+        description = "The key ID for the inequality comparison in the first expression group.")
+    private Long customTargetingKeyId2;
+
+    @Parameter(names = ArgumentNames.TARGETING_KEY_ID_3, required = true,
+        description = "The key ID for the equality comparison in the second expression group.")
+    private Long customTargetingKeyId3;
+
+    @Parameter(names = ArgumentNames.TARGETING_VALUE_ID_1, required = true,
+        description = "The value ID that must match the first key ID in the first expression"
+            + " group.")
+    private Long customTargetingValueId1;
+
+    @Parameter(names = ArgumentNames.TARGETING_VALUE_IDS_2, required = true,
+        description = "The value IDs that must not match the second key ID in the first expression"
+            + " group.")
+    private List<Long> customTargetingValueId2;
+
+    @Parameter(names = ArgumentNames.TARGETING_VALUE_ID_3, required = true,
+        description = "The value ID that must match the key ID in the second expression group.")
+    private Long customTargetingValueId3;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long orderId,
       long customTargetingKeyId1, long customTargetingKeyId2, long customTargetingKeyId3,
-      long customTargetingValueId1, long customTargetingValueId2,  long customTargetingValueId3,
-      long customTargetingValueId4) throws Exception {
+      long customTargetingValueId1, List<Long> customTargetingValueIds2,
+      long customTargetingValueId3) throws Exception {
     // Get the LineItemService.
     LineItemServiceInterface lineItemService =
         dfpServices.get(session, LineItemServiceInterface.class);
@@ -125,7 +140,7 @@ public class CreateLineItemsWithCustomCriteria {
 
     // Create the expression:
     //
-    // CUSTOM_TARGETING_KEY_ID_1 == CUSTOM_TARGETING_VALUE_ID_1
+    // TARGETING_KEY_ID_1 == TARGETING_VALUE_ID_1
     CustomCriteria customCriteria1 = new CustomCriteria();
     customCriteria1.setKeyId(customTargetingKeyId1);
     customCriteria1.setOperator(CustomCriteriaComparisonOperator.IS);
@@ -133,43 +148,43 @@ public class CreateLineItemsWithCustomCriteria {
 
     // Create the expression:
     //
-    // CUSTOM_TARGETING_KEY_ID_2 !=
-    //     (CUSTOM_TARGETING_VALUE_ID_2 OR CUSTOM_TARGETING_VALUE_ID_3)
+    // TARGETING_KEY_ID_2 !=
+    //     (TARGETING_VALUE_IDS_2[0] OR TARGETING_VALUE_IDS_2[1] ...))
     CustomCriteria customCriteria2 = new CustomCriteria();
     customCriteria2.setKeyId(customTargetingKeyId2);
     customCriteria2.setOperator(CustomCriteriaComparisonOperator.IS_NOT);
-    customCriteria2.setValueIds(new long[] {customTargetingValueId2, customTargetingValueId3});
+    customCriteria2.setValueIds(Longs.toArray(customTargetingValueIds2));
 
     // Create the expression:
     //
-    // CUSTOM_TARGETING_KEY_ID_3 = CUSTOM_TARGETING_VALUE_ID_4
+    // TARGETING_KEY_ID_3 = TARGETING_VALUE_ID_3
     CustomCriteria customCriteria3 = new CustomCriteria();
     customCriteria3.setKeyId(customTargetingKeyId3);
     customCriteria3.setOperator(CustomCriteriaComparisonOperator.IS);
-    customCriteria3.setValueIds(new long[] {customTargetingValueId4});
+    customCriteria3.setValueIds(new long[] {customTargetingValueId3});
 
     // Create the custom criteria set that will resemble:
     //
-    // (CUSTOM_TARGETING_KEY_ID_1 == CUSTOM_TARGETING_VALUE_ID_1 AND
-    // (CUSTOM_TARGETING_KEY_ID_2 !=
-    //     (CUSTOM_TARGETING_VALUE_ID_2 OR CUSTOM_TARGETING_VALUE_ID_3))
+    // (TARGETING_KEY_ID_1 == TARGETING_VALUE_ID_1 AND
+    // (TARGETING_KEY_ID_2 !=
+    //     (TARGETING_VALUE_IDS_2[0] OR TARGETING_VALUE_IDS_2[1] ...))
     // OR
-    // (CUSTOM_TARGETING_KEY_ID_3 = CUSTOM_TARGETING_VALUE_ID_4)
+    // (TARGETING_KEY_ID_3 = TARGETING_VALUE_ID_3)
     CustomCriteriaSet topCustomCriteriaSet = new CustomCriteriaSet();
     topCustomCriteriaSet.setLogicalOperator(CustomCriteriaSetLogicalOperator.OR);
 
     // Create the sub expression:
     //
-    // (CUSTOM_TARGETING_KEY_ID_1 == CUSTOM_TARGETING_VALUE_ID_1 AND
-    // (CUSTOM_TARGETING_KEY_ID_2 !=
-    //     (CUSTOM_TARGETING_VALUE_ID_2 OR CUSTOM_TARGETING_VALUE_ID_3))
+    // (TARGETING_KEY_ID_1 == TARGETING_VALUE_ID_1 AND
+    // (TARGETING_KEY_ID_2 !=
+    //     (TARGETING_VALUE_IDS_2[0] OR TARGETING_VALUE_IDS_2[1] ...))
     CustomCriteriaSet subCustomCriteriaSet = new CustomCriteriaSet();
     subCustomCriteriaSet.setLogicalOperator(CustomCriteriaSetLogicalOperator.AND);
     subCustomCriteriaSet.setChildren(
         new CustomCriteriaNode[] {customCriteria1, customCriteria2});
 
     // Combine the expression
-    // (CUSTOM_TARGETING_KEY_ID_3 = CUSTOM_TARGETING_VALUE_ID_4) with
+    // (TARGETING_KEY_ID_3 = TARGETING_VALUE_ID_3) with
     // subCustomCriteriaSet.
     topCustomCriteriaSet.setChildren(
         new CustomCriteriaNode[] {subCustomCriteriaSet, customCriteria3});
@@ -249,15 +264,24 @@ public class CreateLineItemsWithCustomCriteria {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices,
-        session,
-        Long.parseLong(ORDER_ID),
-        Long.parseLong(CUSTOM_TARGETING_KEY_ID_1),
-        Long.parseLong(CUSTOM_TARGETING_KEY_ID_2),
-        Long.parseLong(CUSTOM_TARGETING_KEY_ID_3),
-        Long.parseLong(CUSTOM_TARGETING_VALUE_ID_1),
-        Long.parseLong(CUSTOM_TARGETING_VALUE_ID_2),
-        Long.parseLong(CUSTOM_TARGETING_VALUE_ID_3),
-        Long.parseLong(CUSTOM_TARGETING_VALUE_ID_4));
+    CreateLineItemsWithCustomCriteriaParams params = new CreateLineItemsWithCustomCriteriaParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.orderId = Long.parseLong("INSERT_ORDER_ID_HERE");
+      params.customTargetingKeyId1 = Long.parseLong("INSERT_CUSTOM_TARGETING_KEY_ID_1_HERE");
+      params.customTargetingKeyId2 = Long.parseLong("INSERT_CUSTOM_TARGETING_KEY_ID_2_HERE");
+      params.customTargetingKeyId3 = Long.parseLong("INSERT_CUSTOM_TARGETING_KEY_ID_3_HERE");
+      params.customTargetingValueId1 = Long.parseLong("INSERT_CUSTOM_TARGETING_VALUE_ID_1_HERE");
+      params.customTargetingValueId2 = Arrays.asList(
+          Long.parseLong("INSERT_CUSTOM_TARGETING_VALUE_ID_2_HERE"),
+          Long.parseLong("INSERT_CUSTOM_TARGETING_VALUE_ID_2_HERE")
+      );
+      params.customTargetingValueId3 = Long.parseLong("INSERT_CUSTOM_TARGETING_VALUE_ID_3_HERE");
+    }
+
+    runExample(dfpServices, session, params.orderId, params.customTargetingKeyId1,
+        params.customTargetingKeyId2, params.customTargetingKeyId3, params.customTargetingValueId1,
+        params.customTargetingValueId2, params.customTargetingValueId3);
   }
 }

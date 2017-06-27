@@ -53,8 +53,8 @@ public enum CampaignCriterionField implements EntityField {
 
   /**
    * The modifier for bids when the criterion matches.
-   * <p> Valid modifier values range from {@code 0.1} to {@code 10.0}, with {@code 0.0} reserved for opting out of platform criterion.
-   * <p>Specify {@code -1.0} to clear existing bid modifier.
+   * <p>Valid modifier values range from {@code 0.1} to {@code 10.0}, with {@code 0.0} reserved for opting out of platform criterion.
+   * <p>To clear an existing bid modifier, specify {@code -1.0} (invalid for initial {@code ADD} operations).
    */
   @Filterable
   BidModifier(true),

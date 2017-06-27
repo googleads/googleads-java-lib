@@ -14,12 +14,15 @@
 
 package dfp.axis.v201705.contactservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.Contact;
 import com.google.api.ads.dfp.axis.v201705.ContactServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 
@@ -32,11 +35,15 @@ import java.util.Random;
  */
 public class CreateContacts {
 
-  // Set the ID of the advertiser to create a contact for.
-  private static final String ADVERTISER_ID = "INSERT_ADVERTISER_COMPANY_ID_HERE";
+  private static class CreateContactsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser to create a contact for.")
+    private Long advertiserId;
 
-  // Set the ID of the agency to create a contact for.
-  private static final String AGENCY_ID = "INSERT_AGENCY_COMPANY_ID_HERE";
+    @Parameter(names = ArgumentNames.AGENCY_ID, required = true,
+        description = "The ID of the agency to create a contact for.")
+    private Long agencyId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long advertiserCompanyId, long agencyCompanyId) throws Exception {
@@ -82,7 +89,14 @@ public class CreateContacts {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ADVERTISER_ID),
-        Long.parseLong(AGENCY_ID));
+    CreateContactsParams params = new CreateContactsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
+      params.agencyId = Long.parseLong("INSERT_AGENCY_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.advertiserId, params.agencyId);
   }
 }

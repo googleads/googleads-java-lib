@@ -14,6 +14,8 @@
 
 package adwords.axis.v201705.reporting;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
@@ -24,7 +26,6 @@ import com.google.api.ads.adwords.lib.utils.v201705.ReportDownloaderInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.util.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
@@ -102,7 +103,7 @@ public class StreamCriteriaReportResults {
           reportDownloader.downloadReport(query, DownloadFormat.CSV);
       
       // Read the response as a BufferedReader.
-      reader = new BufferedReader(new InputStreamReader(response.getInputStream(), Charsets.UTF_8));
+      reader = new BufferedReader(new InputStreamReader(response.getInputStream(), UTF_8));
 
       // Map to store total impressions by ad network type 1.
       Map<String, Long> impressionsByAdNetworkType1 = Maps.newTreeMap();

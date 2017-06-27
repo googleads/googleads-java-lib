@@ -16,10 +16,8 @@ package com.google.api.ads.adwords.lib.utils;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyBoolean;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Matchers.isNull;
-import static org.mockito.Matchers.same;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
@@ -27,8 +25,6 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpContent;
-import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -37,18 +33,14 @@ import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
-import com.google.api.client.util.GenericData;
-
+import java.io.IOException;
+import java.io.InputStream;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Test for {@link ReportResponseInterceptor}.
@@ -86,8 +78,7 @@ public class ReportResponseInterceptorTest {
   @Test
   public void testIntercept_nullResponse() throws IOException {
     interceptor.interceptResponse(null);
-    verify(reportServiceLogger, never()).logRequest(Matchers.anyString(), any(GenericUrl.class),
-        any(HttpContent.class), any(GenericData.class), anyBoolean());
+    verify(reportServiceLogger, never()).logRequest(any(HttpRequest.class), anyInt(), anyString());
   }
 
   /**
@@ -95,7 +86,7 @@ public class ReportResponseInterceptorTest {
    */
   @Test
   public void testIntercept_successfulResponse() throws IOException {
-    testInterceptNonNullResponse(HttpStatusCodes.STATUS_CODE_OK, true);
+    testInterceptNonNullResponse(HttpStatusCodes.STATUS_CODE_OK);
   }
 
   /**
@@ -103,14 +94,14 @@ public class ReportResponseInterceptorTest {
    */
   @Test
   public void testIntercept_failedResponse() throws IOException {
-    testInterceptNonNullResponse(HttpStatusCodes.STATUS_CODE_BAD_GATEWAY, false);
+    testInterceptNonNullResponse(HttpStatusCodes.STATUS_CODE_BAD_GATEWAY);
   }
 
   /**
    * Helper method that asserts that the proper report service logger calls are made for a response
    * with the specified status code and success status.
    */
-  private void testInterceptNonNullResponse(int statusCode, boolean isSuccessful)
+  private void testInterceptNonNullResponse(int statusCode)
       throws IOException {
     when(lowLevelResponse.getStatusCode()).thenReturn(statusCode);
     FakeHttpTransport httpTransport = new FakeHttpTransport();
@@ -119,11 +110,9 @@ public class ReportResponseInterceptorTest {
     HttpResponse response = request.execute();
     assertNotNull("Fake transport should have returned a non-null response", response);
 
-    // Verifies that the expected report service logger calls are made - one to log the request and
-    // one to log the response.
-    verify(reportServiceLogger).logRequest(eq(HttpMethods.GET), same(genericUrl),
-        eq(request.getContent()), any(GenericData.class), eq(isSuccessful));
-    verify(reportServiceLogger).logResponse(eq(statusCode), isNull(String.class), eq(isSuccessful));
+    // Verifies that the expected report service logger call is made.
+    verify(reportServiceLogger).logRequest(request, response.getStatusCode(),
+        response.getStatusMessage());
 
     // Verifies that the interceptor does not try to consume or mutate the response's
     // input stream, as this would be a violation of the HttpResponseInterceptor contract.

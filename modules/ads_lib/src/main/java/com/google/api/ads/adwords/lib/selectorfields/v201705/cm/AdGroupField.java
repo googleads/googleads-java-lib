@@ -71,7 +71,7 @@ public enum AdGroupField implements EntityField {
    * The type of the bidding strategy to be attached.
    * <p>For details on portfolio vs.
    * standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.
-   * <p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level.
+   * <p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level to any value other than {@code BiddingStrategyType.NONE}.
    */
   @Filterable
   BiddingStrategyType(true),

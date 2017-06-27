@@ -20,17 +20,30 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.exception.ServiceException;
+import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
+import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.soap.SoapCall;
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterface;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterfaceImpl;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.MockJaxWsCompatibleDescriptor;
-import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.collect.Lists;
-
+import com.google.inject.Provider;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import javax.xml.namespace.QName;
+import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPFactory;
+import javax.xml.ws.Binding;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.handler.Handler;
+import javax.xml.ws.handler.MessageContext;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -40,21 +53,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.namespace.QName;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPFactory;
-import javax.xml.ws.Binding;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.handler.Handler;
-import javax.xml.ws.handler.MessageContext;
 
 /**
  * SOAP Client Handler implementation for use with JAX-WS.
@@ -68,12 +66,12 @@ public class JaxWsHandlerTest {
                                 // which returns a list of raw Handlers.
   private List<Handler> handlerChain;
   private JaxWsSoapContextHandler contextHandler;
-  @Mock private JaxWsSoapContextHandlerFactory handlerFactory;
+  @Mock private Provider<JaxWsSoapContextHandler> handlerFactory;
   @Mock private BindingProvider mockSoapClient;
   @Mock private Binding mockBinding;
   @Mock private Map<String, Object> mockRequestContext;
-  @Mock private NodeExtractor mockNodeExtractor;
-  @Mock private AdsApiConfiguration mockAdsApiConfiguration;
+  @Mock private RequestInfoXPathSet requestInfoXPathSet;
+  @Mock private ResponseInfoXPathSet responseInfoXPathSet;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
   
@@ -84,8 +82,8 @@ public class JaxWsHandlerTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
-    contextHandler = new JaxWsSoapContextHandler(mockNodeExtractor, mockAdsApiConfiguration);
-    when(handlerFactory.getJaxWsSoapContextHandler()).thenReturn(contextHandler);
+    contextHandler = new JaxWsSoapContextHandler(requestInfoXPathSet, responseInfoXPathSet);
+    when(handlerFactory.get()).thenReturn(contextHandler);
     handlerChain = new LinkedList<Handler>();
     handlerChain.add(contextHandler);
     jaxWsHandler = new JaxWsHandler(handlerFactory);
@@ -114,7 +112,7 @@ public class JaxWsHandlerTest {
     SoapCall<BindingProvider> soapCall = new SoapCall<BindingProvider>(
         soapCallMethod, soapClient, new Object[0]);
 
-    SoapCallReturn returnedValue = jaxWsHandler.invokeSoapCall(soapCall);
+    RemoteCallReturn returnedValue = jaxWsHandler.invokeSoapCall(soapCall);
 
     assertEquals("Here!", returnedValue.getReturnValue());
     assertEquals(null, returnedValue.getException());

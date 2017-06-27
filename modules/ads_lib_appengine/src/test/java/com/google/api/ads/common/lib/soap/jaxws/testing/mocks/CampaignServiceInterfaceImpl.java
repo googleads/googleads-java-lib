@@ -16,22 +16,19 @@ package com.google.api.ads.common.lib.soap.jaxws.testing.mocks;
 
 import static org.mockito.Mockito.when;
 
-import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
+import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
+import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsHandler;
 import com.google.api.ads.common.lib.soap.jaxws.JaxWsSoapContextHandler;
-import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.collect.Lists;
-
-import org.mockito.Mockito;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.xml.ws.Binding;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.EndpointReference;
 import javax.xml.ws.handler.Handler;
+import org.mockito.Mockito;
 
 /**
  * Mock of a JAX-WS web service interface implementation. Used to test
@@ -42,17 +39,21 @@ public class CampaignServiceInterfaceImpl implements CampaignServiceInterface {
   public static String endpointAddress = "http://abcdefg";
   
   private Binding binding;
-  private Map<String, Object> requestContext = new HashMap<String, Object>()
-      {{ put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress); }};
+  private Map<String, Object> requestContext =
+      new HashMap<String, Object>() {
+        {
+          put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
+        }
+      };
 
   @SuppressWarnings("rawtypes")
   public CampaignServiceInterfaceImpl() {
     binding = Mockito.mock(Binding.class);
-    NodeExtractor nodeExtractor = Mockito.mock(NodeExtractor.class);
-    AdsApiConfiguration adsApiConfiguration = Mockito.mock(AdsApiConfiguration.class);
+    RequestInfoXPathSet requestInfoXPathSet = Mockito.mock(RequestInfoXPathSet.class);
+    ResponseInfoXPathSet responseInfoXPathSet = Mockito.mock(ResponseInfoXPathSet.class);
     List<Handler> handlerList =
         Lists.<Handler>newArrayList(
-            new JaxWsSoapContextHandler(nodeExtractor, adsApiConfiguration));
+            new JaxWsSoapContextHandler(requestInfoXPathSet, responseInfoXPathSet));
     when(binding.getHandlerChain()).thenReturn(handlerList);
   }
   

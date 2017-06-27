@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.proposallineitemservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.ProposalLineItem;
 import com.google.api.ads.dfp.axis.v201705.ProposalLineItemPage;
 import com.google.api.ads.dfp.axis.v201705.ProposalLineItemServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,8 +38,11 @@ import java.util.Arrays;
  */
 public class UpdateProposalLineItems {
 
-  // Set the ID of the proposal line item to update.
-  private static final String PROPOSAL_LINE_ITEM_ID = "INSERT_PROPOSAL_LINE_ITEM_ID_HERE";
+  private static class UpdateProposalLineItemsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.PROPOSAL_LINE_ITEM_ID, required = true,
+        description = "The ID of the proposal line item to update.")
+    private Long proposalLineItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long proposalLineItemId) throws Exception {
@@ -87,6 +93,13 @@ public class UpdateProposalLineItems {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(PROPOSAL_LINE_ITEM_ID));
+    UpdateProposalLineItemsParams params = new UpdateProposalLineItemsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.proposalLineItemId = Long.parseLong("INSERT_PROPOSAL_LINE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.proposalLineItemId);
   }
 }

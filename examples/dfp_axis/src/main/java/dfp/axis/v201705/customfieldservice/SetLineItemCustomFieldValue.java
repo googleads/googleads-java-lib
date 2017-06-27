@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.customfieldservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.BaseCustomFieldValue;
@@ -27,6 +29,7 @@ import com.google.api.ads.dfp.axis.v201705.LineItemPage;
 import com.google.api.ads.dfp.axis.v201705.LineItemServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.NumberValue;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -46,14 +49,19 @@ import java.util.List;
  */
 public class SetLineItemCustomFieldValue {
 
-  // Set the ID of the number typed custom field to set on the line item.
-  private static final String NUMBER_CUSTOM_FIELD_ID = "INSERT_NUMBER_CUSTOM_FIELD_ID_HERE";
+  private static class SetLineItemCustomFieldValueParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.NUMBER_CUSTOM_FIELD_ID, required = true,
+        description = "The ID of the number typed custom field to set on the line item.")
+    private Long numberCustomFieldId;
 
-  // Set the ID of the option for the drop-down custom field.
-  private static final String CUSTOM_FIELD_OPTION_ID = "INSERT_DROP_DOWN_CUSTOM_FIELD_VALUE_HERE";
+    @Parameter(names = ArgumentNames.FIELD_OPTION_ID, required = true,
+        description = "The ID of the option for the drop-down custom field.")
+    private Long customFieldOptionId;
 
-  // Set the ID of the line item to set these custom fields.
-  private static final String LINE_ITEM_ID = "INSERT_LINE_ITEM_ID_HERE";
+    @Parameter(names = ArgumentNames.LINE_ITEM_ID, required = true,
+        description = "The ID of the line item to set these custom fields.")
+    private Long lineItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long numberCustomFieldId, long customFieldOptionId, long lineItemId)
@@ -161,7 +169,16 @@ public class SetLineItemCustomFieldValue {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(NUMBER_CUSTOM_FIELD_ID),
-        Long.parseLong(CUSTOM_FIELD_OPTION_ID), Long.parseLong(LINE_ITEM_ID));
+    SetLineItemCustomFieldValueParams params = new SetLineItemCustomFieldValueParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.numberCustomFieldId = Long.parseLong("INSERT_NUMBER_CUSTOM_FIELD_ID_HERE");
+      params.customFieldOptionId = Long.parseLong("INSERT_CUSTOM_FIELD_OPTION_ID_HERE");
+      params.lineItemId = Long.parseLong("INSERT_LINE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.numberCustomFieldId, params.customFieldOptionId,
+        params.lineItemId);
   }
 }

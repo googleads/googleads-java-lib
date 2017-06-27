@@ -55,6 +55,7 @@ public enum AdGroupField implements EntityField {
    * Id of the bidding strategy to be associated with the campaign, ad group or ad group criteria.
    * A bidding strategy is created using the BiddingStrategyService ADD operation and is assigned a BiddingStrategyId.
    * The BiddingStrategyId can be shared across campaigns, ad groups and ad group criteria.
+   * <p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level.
    */
   @Filterable
   BiddingStrategyId(true),
@@ -77,6 +78,7 @@ public enum AdGroupField implements EntityField {
    * The type of the bidding strategy to be attached.
    * <p>For details on portfolio vs.
    * standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.
+   * <p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level to any value other than {@code BiddingStrategyType.NONE}.
    */
   @Filterable
   BiddingStrategyType(true),

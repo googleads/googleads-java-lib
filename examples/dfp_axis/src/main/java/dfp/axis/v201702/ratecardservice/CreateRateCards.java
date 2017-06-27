@@ -17,6 +17,7 @@ package dfp.axis.v201702.ratecardservice;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
+import com.google.api.ads.dfp.axis.v201702.PricingModel;
 import com.google.api.ads.dfp.axis.v201702.RateCard;
 import com.google.api.ads.dfp.axis.v201702.RateCardServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
@@ -49,6 +50,7 @@ public class CreateRateCards {
     RateCard rateCard = new RateCard();
     rateCard.setName("RateCard #" + new Random().nextInt(Integer.MAX_VALUE));
     rateCard.setCurrencyCode(currencyCode);
+    rateCard.setPricingModel(PricingModel.NET);
 
     if (teamIds.length != 0) {
       rateCard.setAppliedTeamIds(teamIds);

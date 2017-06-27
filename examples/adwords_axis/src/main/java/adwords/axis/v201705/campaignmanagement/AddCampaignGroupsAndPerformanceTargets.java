@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201705.cm.Campaign;
@@ -34,8 +35,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.SpendTargetType;
 import com.google.api.ads.adwords.axis.v201705.cm.VolumeGoalType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -48,6 +51,11 @@ import org.joda.time.DateTime;
  * campaigns, run GetCampaigns.java. To download reports, run DownloadCriteriaReportWithAwql.java.
  */
 public class AddCampaignGroupsAndPerformanceTargets {
+
+  private static class AddCampaignGroupsAndPerformanceTargetsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private List<Long> campaignIds;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -62,13 +70,19 @@ public class AddCampaignGroupsAndPerformanceTargets {
     AdWordsSession session =
         new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
 
-    List<Long> campaignIds =
-        Arrays.asList(
-            Long.valueOf("INSERT_CAMPAIGN_ID_1_HERE"), Long.valueOf("INSERT_CAMPAIGN_ID_2_HERE"));
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, campaignIds);
+    AddCampaignGroupsAndPerformanceTargetsParams params =
+        new AddCampaignGroupsAndPerformanceTargetsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignIds = Arrays.asList(
+          Long.valueOf("INSERT_CAMPAIGN_ID_HERE"),
+          Long.valueOf("INSERT_CAMPAIGN_ID_HERE"));
+    }
+
+    runExample(adWordsServices, session, params.campaignIds);
   }
 
   public static void runExample(

@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.audiencesegmentservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.AudienceSegment;
@@ -24,6 +26,7 @@ import com.google.api.ads.dfp.axis.v201705.AudienceSegmentServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.PopulateAudienceSegments;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class PopulateFirstPartyAudienceSegments {
 
-  // Set the ID of the first party audience segment to populate.
-  private static final String AUDIENCE_SEGMENT_ID = "INSERT_AUDIENCE_SEGMENT_ID_HERE";
+  private static class PopulateFirstPartyAudienceSegmentsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AUDIENCE_SEGMENT_ID, required = true,
+        description = "The ID of the first party audience segment to populate.")
+    private Long audienceSegmentId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long audienceSegmentId) throws Exception {
@@ -111,6 +117,14 @@ public class PopulateFirstPartyAudienceSegments {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(AUDIENCE_SEGMENT_ID));
+    PopulateFirstPartyAudienceSegmentsParams params =
+        new PopulateFirstPartyAudienceSegmentsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.audienceSegmentId = Long.parseLong("INSERT_AUDIENCE_SEGMENT_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.audienceSegmentId);
   }
 }

@@ -18,13 +18,19 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.base.CharMatcher;
-import com.google.common.base.Charsets;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -33,15 +39,6 @@ import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Tests for {@link CsvFiles}.
@@ -86,7 +83,7 @@ public class CsvFilesTest {
   @Before
   public void setUp() throws Exception {
     csvStringFile = tempFolder.newFile();
-    Files.write(csvString, csvStringFile, Charsets.UTF_8);
+    Files.asCharSink(csvStringFile, StandardCharsets.UTF_8).write(csvString);
     if (headerPresent) {
       dataList.remove(0);
     }
@@ -96,7 +93,7 @@ public class CsvFilesTest {
   public void testWriteCsv() throws IOException {
     File csvFile = tempFolder.newFile();
     CsvFiles.writeCsv(dataList, csvFile.getPath());
-    List<String> actualLines = Files.readLines(csvFile, Charsets.UTF_8);
+    List<String> actualLines = Files.readLines(csvFile, StandardCharsets.UTF_8);
     assertEquals(dataList.size(), actualLines.size());
     Splitter splitter = Splitter.on(',').trimResults(CharMatcher.is('"'));
     for (int i = 0; i < dataList.size(); i++) {
@@ -161,7 +158,7 @@ public class CsvFilesTest {
 
   @Test
   public void testGetCsvDataArray_fromReader() throws IOException {
-    Reader reader = new FileReader(csvStringFile);
+    Reader reader = Files.newReader(csvStringFile, StandardCharsets.UTF_8);
     List<String[]> actualDataArray = CsvFiles.getCsvDataArray(reader, headerPresent);
     assertEquals(dataList.size(), actualDataArray.size());
     for (int i = 0; i < actualDataArray.size(); i++) {

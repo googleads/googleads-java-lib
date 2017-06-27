@@ -16,10 +16,8 @@ package com.google.api.ads.common.lib.client;
 
 import static org.mockito.Mockito.verify;
 
-import com.google.api.ads.common.lib.soap.SoapCallReturn;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,12 +54,11 @@ public class AdsServiceClientTest {
 
   @Test
   public void testLogSoapCall() {
-    SoapCallReturn soapCallReturn = Mockito.mock(SoapCallReturn.class);
+    RemoteCallReturn remoteCallReturn = Mockito.mock(RemoteCallReturn.class);
 
-    adsServiceClient.logSoapCall(soapCallReturn);
+    adsServiceClient.logSoapCall(remoteCallReturn);
 
-    verify(adsServiceLoggers).logRequest(soapCallReturn);
-    verify(adsServiceLoggers).logSoapXml(soapCallReturn);
+    verify(adsServiceLoggers).logRequest(remoteCallReturn);
   }
 
   @Test

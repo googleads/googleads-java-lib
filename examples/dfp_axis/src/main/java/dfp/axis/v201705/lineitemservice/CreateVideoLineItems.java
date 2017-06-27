@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.lineitemservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.DateTimes;
 import com.google.api.ads.dfp.axis.v201705.AdUnitTargeting;
@@ -41,6 +43,7 @@ import com.google.api.ads.dfp.axis.v201705.VideoPositionTarget;
 import com.google.api.ads.dfp.axis.v201705.VideoPositionTargeting;
 import com.google.api.ads.dfp.axis.v201705.VideoPositionType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Random;
 import org.joda.time.Duration;
@@ -58,18 +61,22 @@ import org.joda.time.Instant;
  */
 public class CreateVideoLineItems {
 
-  // Set the ID of the order that the line item will belong to.
-  private static final String ORDER_ID = "INSERT_ORDER_ID_HERE";
+  private static class CreateVideoLineItemsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ORDER_ID, required = true,
+        description = "The ID of the order that the line item will belong to.")
+    private Long orderId;
 
-  // Set the ID of the ad unit that the line item will target.
-  private static final String TARGETED_VIDEO_AD_UNIT_ID = "INSERT_VIDEO_AD_UNIT_ID_HERE";
+    @Parameter(names = ArgumentNames.TARGETED_VIDEO_AD_UNIT_ID, required = true,
+        description = "The ID of the ad unit that the line item will target.")
+    private String targetedVideoAdUnitId;
 
-  // Set the custom targeting value ID representing the metadata
-  // on the content to target. This would typically be from a key representing
-  // a "genre" and the value representing something like "comedy". The value
-  // must be from a key in a content metadata key hierarchy.
-  private static final String CONTENT_CUSTOM_TARGETING_VALUE_ID =
-      "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
+    @Parameter(names = ArgumentNames.CONTENT_CUSTOM_TARGETING_VALUE_ID, required = true,
+        description = "The custom targeting value ID representing the metadata on the content"
+            + " to target. This would typically be from a key representing a \"genre\" and the"
+            + " value representing something like \"comedy\". The value must be from a key in a"
+            + " content metadata key hierarchy.")
+    private Long contentCustomTargetingValueId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long orderId,
       String targetedVideoAdUnitId, long contentCustomTargetingValueId) throws Exception {
@@ -183,10 +190,17 @@ public class CreateVideoLineItems {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices,
-        session,
-        Long.parseLong(ORDER_ID),
-        TARGETED_VIDEO_AD_UNIT_ID,
-        Long.parseLong(CONTENT_CUSTOM_TARGETING_VALUE_ID));
+    CreateVideoLineItemsParams params = new CreateVideoLineItemsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.orderId = Long.parseLong("INSERT_ORDER_ID_HERE");
+      params.targetedVideoAdUnitId = "INSERT_TARGETED_VIDEO_AD_UNIT_ID_HERE";
+      params.contentCustomTargetingValueId =
+          Long.parseLong("INSERT_CONTENT_CUSTOM_TARGETING_VALUE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.orderId, params.targetedVideoAdUnitId,
+        params.contentCustomTargetingValueId);
   }
 }

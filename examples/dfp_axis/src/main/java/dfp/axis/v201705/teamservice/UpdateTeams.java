@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.teamservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Team;
 import com.google.api.ads.dfp.axis.v201705.TeamPage;
 import com.google.api.ads.dfp.axis.v201705.TeamServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -34,8 +37,11 @@ import java.util.Arrays;
  */
 public class UpdateTeams {
 
-  // Set the ID of the team to update.
-  private static final String TEAM_ID = "INSERT_TEAM_ID_HERE";
+  private static class UpdateTeamsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.TEAM_ID, required = true,
+        description = "The ID of the team to update.")
+    private Long teamId;
+  }
 
   public static void runExample(
       DfpServices dfpServices, DfpSession session, long teamId) throws Exception {
@@ -84,6 +90,13 @@ public class UpdateTeams {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(TEAM_ID));
+    UpdateTeamsParams params = new UpdateTeamsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.teamId = Long.parseLong("INSERT_TEAM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.teamId);
   }
 }

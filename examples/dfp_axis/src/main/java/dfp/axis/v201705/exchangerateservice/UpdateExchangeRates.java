@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.exchangerateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRate;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.ExchangeRatePage;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRateRefreshRate;
 import com.google.api.ads.dfp.axis.v201705.ExchangeRateServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,9 +38,12 @@ import java.util.Arrays;
  * "ads.properties" file. See README for more info.
  */
 public class UpdateExchangeRates {
-  
-  // Set the ID of the exchange rate to update.
-  private static final String EXCHANGE_RATE_ID = "INSERT_EXCHANGE_RATE_ID_HERE";
+
+  private static class UpdateExchangeRatesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.EXCHANGE_RATE_ID, required = true,
+        description = "The ID of the exchange rate to update.")
+    private Long exchangeRateId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long exchangeRateId)
       throws Exception {
@@ -91,6 +97,13 @@ public class UpdateExchangeRates {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(EXCHANGE_RATE_ID));
+    UpdateExchangeRatesParams params = new UpdateExchangeRatesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.exchangeRateId = Long.parseLong("INSERT_EXCHANGE_RATE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.exchangeRateId);
   }
 }

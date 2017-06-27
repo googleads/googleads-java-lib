@@ -17,25 +17,22 @@ package com.google.api.ads.adwords.lib.utils.logging;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResponseInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate.RemoteCallType;
+import com.google.common.base.Strings;
 import com.google.inject.name.Named;
-
-import org.slf4j.Logger;
-
+import java.net.URI;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import org.slf4j.Logger;
 
-/**
- * Logger for batch job uploads/downloads.
- */
+/** Logger for batch job uploads/downloads. */
 public class BatchJobLogger {
-  private final Logger batchJobLogger;
-
-  @VisibleForTesting
-  final static String SUCCESS_STATUS = "SUCCESSFUL";
-
-  @VisibleForTesting
-  final static String FAILURE_STATUS = "FAILED";
+  private static final String CONTEXT_NAME = "clientCustomerId";
+  private final RemoteCallLoggerDelegate loggerDelegate;
 
   /**
    * Constructor that takes an injected logger identified by name.
@@ -44,42 +41,52 @@ public class BatchJobLogger {
    */
   @Inject
   BatchJobLogger(@Named(AdWordsLoggingModule.BATCH_JOB_LOGGER_NAME) Logger batchJobLogger) {
-    this.batchJobLogger = batchJobLogger;
+    this(new RemoteCallLoggerDelegate(batchJobLogger, batchJobLogger, null, RemoteCallType.HTTP));
+  }
+
+  BatchJobLogger(RemoteCallLoggerDelegate loggerDelegate) {
+    this.loggerDelegate = loggerDelegate;
   }
 
   /**
    * Logs a batch job operations upload.
    *
    * @param uploadContents the contents of the upload.
-   * @param uploadUri the URI for the upload. This is of type Object because this method will
-   * simply use {@link Object#toString()} when logging.
+   * @param uploadUri the URI for the upload.
    * @param batchJobUploadResponse the upload response.
    * @param throwable the throwable that occurred during upload, or {@code null} if the upload
-   * succeeded.
+   *     succeeded.
    */
-  public void logUpload(String uploadContents, Object uploadUri,
-      @Nullable BatchJobUploadResponse batchJobUploadResponse, @Nullable Throwable throwable) {
-    boolean isSuccess = throwable == null;
-    String httpResponseInfo = null;
+  public void logUpload(
+      String uploadContents,
+      URI uploadUri,
+      @Nullable BatchJobUploadResponse batchJobUploadResponse,
+      @Nullable Throwable throwable) {
+    RequestInfo requestInfo =
+        new RequestInfo.Builder()
+            .withServiceName("batchjobupload")
+            .withContext(CONTEXT_NAME, null)
+            .withUrl(uploadUri.toString())
+            // Trim upload contents since the contents may be padded to the next multiple of 256K
+            // bytes.
+            .withPayload(Strings.nullToEmpty(uploadContents).trim())
+            .build();
+    ResponseInfo.Builder responseInfoBuilder = new ResponseInfo.Builder();
     if (batchJobUploadResponse != null) {
-      httpResponseInfo = String.format("%d: %s", batchJobUploadResponse.getHttpStatus(),
-          batchJobUploadResponse.getHttpResponseMessage());
+      responseInfoBuilder.withPayload(
+          String.format(
+              "%d %s%n",
+              batchJobUploadResponse.getHttpStatus(),
+              batchJobUploadResponse.getHttpResponseMessage()));
     }
-    String resultString =
-        String.format("%s (%s)", isSuccess ? SUCCESS_STATUS : FAILURE_STATUS, httpResponseInfo);
-
-    if (isSuccess) {
-      batchJobLogger.info("{} batch job upload to {}", resultString, uploadUri);
-    } else {
-      batchJobLogger.warn(
-          "{} batch job upload to {}. Exception: {}", resultString, uploadUri, throwable);
-    }
-
-    if (batchJobLogger.isDebugEnabled()) {
-      // Trim upload contents since the contents may be padded to the next multiple of 256K bytes.
-      batchJobLogger.debug("Contents for {} upload to {}: {}", resultString, uploadUri,
-          uploadContents == null ? null : uploadContents.trim());
-    }
+    RemoteCallReturn remoteCallReturn =
+        new RemoteCallReturn.Builder()
+            .withRequestInfo(requestInfo)
+            .withResponseInfo(responseInfoBuilder.build())
+            .withException(throwable)
+            .build();
+    loggerDelegate.logRequestSummary(remoteCallReturn);
+    loggerDelegate.logRequestDetails(remoteCallReturn);
   }
 
   /**
@@ -88,21 +95,34 @@ public class BatchJobLogger {
    * @param downloadUrl the download URL for the batch job.
    * @param response the response - only not null if the download succeeded.
    * @param throwable the throwable that occurred during download, or {@code null} if the download
-   * succeeded.
+   *     succeeded.
    */
   public <O, E, R extends BatchJobMutateResultInterface<O, E>> void logDownload(
-      String downloadUrl, BatchJobMutateResponseInterface<O, E, R> response, Throwable throwable) {
-    boolean isSuccess = throwable == null;
-    if (isSuccess) {
-      batchJobLogger.info(
-          "{} download of {} mutate results from batch job download URL {}", SUCCESS_STATUS,
-          (response == null || response.getMutateResults() == null)
-              ? 0 : response.getMutateResults().length,
-          downloadUrl);
-    } else {
-      batchJobLogger.warn(
-          "{} to download mutate results from batch job download URL {}. Exception: {}",
-          FAILURE_STATUS, downloadUrl, throwable);
+      String downloadUrl,
+      @Nullable BatchJobMutateResponseInterface<O, E, R> response,
+      @Nullable Throwable throwable) {
+    RequestInfo requestInfo =
+        new RequestInfo.Builder()
+            .withServiceName("batchjobdownload")
+            .withContext(CONTEXT_NAME, null)
+            .withUrl(downloadUrl)
+            .build();
+    int resultsCount = 0;
+    if (response != null && response.getMutateResults() != null) {
+      resultsCount = response.getMutateResults().length;
     }
+    // The response payload could be massive, so simply indicate the number of results instead.
+    ResponseInfo responseInfo =
+        new ResponseInfo.Builder()
+            .withPayload(String.format("Results count: %d", resultsCount))
+            .build();
+    RemoteCallReturn remoteCallReturn =
+        new RemoteCallReturn.Builder()
+            .withRequestInfo(requestInfo)
+            .withResponseInfo(responseInfo)
+            .withException(throwable)
+            .build();
+    loggerDelegate.logRequestSummary(remoteCallReturn);
+    loggerDelegate.logRequestDetails(remoteCallReturn);
   }
 }

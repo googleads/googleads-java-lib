@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.reconciliationreportrowservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.BillFrom;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.ReconciliationReportRow;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationReportRowPage;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationReportRowServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -38,9 +41,12 @@ import java.util.Arrays;
  */
 public class UpdateReconciliationReportRows {
 
-  // Set the IDs of the reconciliation report, line item, and creative to retrieve rows for.
-  private static final String RECONCILIATION_REPORT_ROW_ID =
-      "INSERT_RECONCILIATION_REPORT_ROW_ID_HERE";
+  private static class UpdateReconciliationReportRowsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RECONCILIATION_REPORT_ROW_ID, required = true,
+        description = "The IDs of the reconciliation report, line item, and creative to"
+            + " retrieve rows for.")
+    private Long reconciliationReportRowId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long reconciliationReportRowId) throws Exception {
@@ -99,6 +105,13 @@ public class UpdateReconciliationReportRows {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RECONCILIATION_REPORT_ROW_ID));
+    UpdateReconciliationReportRowsParams params = new UpdateReconciliationReportRowsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.reconciliationReportRowId = Long.parseLong("INSERT_RECONCILIATION_REPORT_ROW_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.reconciliationReportRowId);
   }
 }

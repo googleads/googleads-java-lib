@@ -19,9 +19,10 @@ import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.soap.testing.MockSoapClient;
-
+import java.lang.reflect.Method;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
@@ -32,8 +33,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
-import java.lang.reflect.Method;
 
 /**
  * Tests for {@link SoapServiceClient}.
@@ -60,29 +59,29 @@ public class SoapServiceClientTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCallSoapClient() throws Throwable {
-    SoapCallReturn expectedSoapCallReturn = new SoapCallReturn();
+    RemoteCallReturn expectedRemoteCallReturn = new RemoteCallReturn.Builder().build();
     SoapCall<Object> soapCall = Mockito.mock(SoapCall.class);
 
-    when(soapClientHandler.invokeSoapCall(soapCall)).thenReturn(expectedSoapCallReturn);
+    when(soapClientHandler.invokeSoapCall(soapCall)).thenReturn(expectedRemoteCallReturn);
 
-    SoapCallReturn soapCallReturn = soapServiceClient.callSoapClient(soapCall);
+    RemoteCallReturn remoteCallReturn = soapServiceClient.callSoapClient(soapCall);
 
-    assertSame(expectedSoapCallReturn, soapCallReturn);
+    assertSame(expectedRemoteCallReturn, remoteCallReturn);
   }
 
   @Test
   @SuppressWarnings("unchecked")
   public void testCallSoapClient_exception() {
-    SoapCallReturn expectedSoapCallReturn =
-        new SoapCallReturn.Builder().withException(MockSoapClient.EXCEPTION).build();
+    RemoteCallReturn expectedRemoteCallReturn =
+        new RemoteCallReturn.Builder().withException(MockSoapClient.EXCEPTION).build();
 
     SoapCall<Object> soapCall = Mockito.mock(SoapCall.class);
 
-    when(soapClientHandler.invokeSoapCall(soapCall)).thenReturn(expectedSoapCallReturn);
+    when(soapClientHandler.invokeSoapCall(soapCall)).thenReturn(expectedRemoteCallReturn);
 
-    SoapCallReturn testSoapCallReturn = soapServiceClient.callSoapClient(soapCall);
+    RemoteCallReturn testRemoteCallReturn = soapServiceClient.callSoapClient(soapCall);
 
-    assertSame(MockSoapClient.EXCEPTION, testSoapCallReturn.getException());
+    assertSame(MockSoapClient.EXCEPTION, testRemoteCallReturn.getException());
   }
 
   @Test
@@ -105,8 +104,8 @@ public class SoapServiceClientTest {
   @Test
   public void testInvoke_soapClientMethod() throws Throwable {
     Object returnValue = new Object();
-    SoapCallReturn callReturn =
-        new SoapCallReturn.Builder().withReturnValue(returnValue).build();
+    RemoteCallReturn callReturn =
+        new RemoteCallReturn.Builder().withReturnValue(returnValue).build();
 
     Method identityCallMethod = MockSoapClient.class.getMethod("identityCall", Object[].class);
     Object[] arg = new String[] {"arg1", "arg2"};
@@ -184,21 +183,21 @@ public class SoapServiceClientTest {
   }
 
   @Test
-  public void testUnwrapSoapCallReturn_exception() throws Throwable {
-    SoapCallReturn soapCallReturn =
-        new SoapCallReturn.Builder().withException(new NoSuchMethodException()).build();
+  public void testUnwrapRemoteCallReturn_exception() throws Throwable {
+    RemoteCallReturn remoteCallReturn =
+        new RemoteCallReturn.Builder().withException(new NoSuchMethodException()).build();
 
     thrown.expect(NoSuchMethodException.class);
-    soapServiceClient.unwrapSoapCallReturn(soapCallReturn);
+    soapServiceClient.unwrapRemoteCallReturn(remoteCallReturn);
   }
 
   @Test
-  public void testUnwrapSoapCallReturn_successful() throws Throwable {
+  public void testUnwrapRemoteCallReturn_successful() throws Throwable {
     Object expectedReturnValue = "return";
-    SoapCallReturn soapCallReturn =
-        new SoapCallReturn.Builder().withReturnValue(expectedReturnValue).build();
+    RemoteCallReturn remoteCallReturn =
+        new RemoteCallReturn.Builder().withReturnValue(expectedReturnValue).build();
 
-    assertEquals(expectedReturnValue, soapServiceClient.unwrapSoapCallReturn(soapCallReturn));
+    assertEquals(expectedReturnValue, soapServiceClient.unwrapRemoteCallReturn(remoteCallReturn));
   }
 
   /**
@@ -230,7 +229,7 @@ public class SoapServiceClientTest {
     }
 
     @Override
-    protected void logSoapCall(SoapCallReturn soapCallReturn) {}
+    protected void logSoapCall(RemoteCallReturn remoteCallReturn) {}
 
     @Override
     protected void setHeaders() throws AuthenticationException  {

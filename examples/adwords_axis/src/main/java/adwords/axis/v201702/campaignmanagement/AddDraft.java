@@ -14,6 +14,7 @@
 
 package adwords.axis.v201702.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201702.cm.CampaignCriterion;
 import com.google.api.ads.adwords.axis.v201702.cm.CampaignCriterionOperation;
@@ -25,8 +26,10 @@ import com.google.api.ads.adwords.axis.v201702.cm.Language;
 import com.google.api.ads.adwords.axis.v201702.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -39,6 +42,11 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class AddDraft {
+
+  private static class AddDraftParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.BASE_CAMPAIGN_ID, required = true)
+    private Long baseCampaignId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -54,12 +62,16 @@ public class AddDraft {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    // Replace with valid values of your account.
-    long baseCampaignId = Long.parseLong("INSERT_BASE_CAMPAIGN_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, baseCampaignId);
+    AddDraftParams params = new AddDraftParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here.
+      params.baseCampaignId = Long.parseLong("INSERT_BASE_CAMPAIGN_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.baseCampaignId);
   }
 
   public static void runExample(

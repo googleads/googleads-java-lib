@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.shoppingcampaigns;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201705.shopping.ProductPartitionTree;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroup;
@@ -43,8 +44,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.Setting;
 import com.google.api.ads.adwords.axis.v201705.cm.ShoppingSetting;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.List;
 
@@ -55,6 +58,20 @@ import java.util.List;
  * "ads.properties" file. See README for more info.
  */
 public class AddShoppingCampaign {
+  private static class AddShoppingCampaignParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.BUDGET_ID, required = true)
+    private Long budgetId;
+
+    @Parameter(names = ArgumentNames.MERCHANT_ID, required = true)
+    private Long merchantId;
+
+    @Parameter(names = ArgumentNames.CREATE_DEFAULT_PARTITION, required = true,
+        description = "If set to true, a default partition will be created. If running the"
+            + " AddProductPartitionTree.java example right after this example, make sure this stays"
+            + " set to false.")
+    private boolean createDefaultPartition;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
@@ -71,14 +88,17 @@ public class AddShoppingCampaign {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long budgetId = Long.valueOf("INSERT_BUDGET_ID_HERE");
-    Long merchantId = Long.valueOf("INSERT_MERCHANT_CENTER_ID_HERE");
-    // If set to true, a default partition will be created. If running the
-    // AddProductPartitionTree.java example right after this example, make sure this stays set to
-    // false.
-    boolean createDefaultPartition = false;
-    
-    runExample(adWordsServices, session, budgetId, merchantId, createDefaultPartition);
+    AddShoppingCampaignParams params = new AddShoppingCampaignParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.budgetId = Long.parseLong("INSERT_BUDGET_ID_HERE");
+      params.merchantId = Long.parseLong("INSERT_MERCHANT_ID_HERE");
+      params.createDefaultPartition = false;
+    }
+
+    runExample(adWordsServices, session, params.budgetId, params.merchantId,
+        params.createDefaultPartition);
   }
 
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,

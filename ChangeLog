@@ -1,3 +1,33 @@
+3.5.0 - 6/27/2017
+-----------------
+AdWords:
+  - Removed support and examples for v201607. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - All AdWords code examples now accept parameters from the command line.
+  - Report downloads will now use the report download timeout from the
+    ReportingConfiguration of the AdWordsSession, if present. Fixes
+    [issue 106](https://github.com/googleads/googleads-java-lib/issues/106).
+
+    **Note:** With this change, construction of a `ReportingConfiguration`
+    object will fail if the report download timeout is negative. If you set the
+    `api.adwords.reportDownloadTimeout` property in your `ads.properties` file
+    or via a reporting configuration builder, please ensure that the value
+    you provide is >= 0.
+  - All loggers now use consistent logging levels. See the
+    [updated logging guide](https://github.com/googleads/googleads-java-lib/wiki/Logging)
+    for more details.
+
+DFP:
+  - All DFP code examples now accept parameters from the command line.
+  - All loggers now use consistent logging levels. See the
+    [updated logging guide](https://github.com/googleads/googleads-java-lib/wiki/Logging)
+    for more details.
+
+Common:
+  - Added checks to the `install` phase for usage of discouraged classes
+    and methods. See:
+    https://github.com/policeman-tools/forbidden-apis
+
 3.4.0 - 5/31/2017
 -------------------
 AdWords:

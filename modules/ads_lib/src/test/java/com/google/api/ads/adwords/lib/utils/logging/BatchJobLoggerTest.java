@@ -14,259 +14,185 @@
 
 package com.google.api.ads.adwords.lib.utils.logging;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.startsWith;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResponseInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateResultInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
-import com.google.api.client.http.HttpHeaders;
-import com.google.api.client.http.HttpResponseException;
-import com.google.common.io.ByteSource;
-
-import org.junit.After;
+import com.google.api.ads.common.lib.client.RemoteCallReturn;
+import com.google.api.ads.common.lib.client.RequestInfo;
+import com.google.api.ads.common.lib.client.ResponseInfo;
+import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate;
+import com.google.api.client.http.HttpStatusCodes;
+import com.google.common.io.CharSource;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
+import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
 
-import java.io.IOException;
-
-/**
- * Tests for {@link BatchJobLogger}.
- */
-@RunWith(JUnit4.class)
+/** Tests for {@link BatchJobLogger}. Parameterized based on the request's success or failure. */
+@RunWith(Parameterized.class)
 public class BatchJobLoggerTest {
   private BatchJobLogger batchJobLogger;
+  private String url;
+  private Exception exception;
+  private int statusCode;
+  private String statusMessage;
 
-  @Mock
-  private Logger logger;
+  @Mock private RemoteCallLoggerDelegate loggerDelegate;
 
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-    when(logger.isDebugEnabled()).thenReturn(true);
-    batchJobLogger = new BatchJobLogger(logger);
+    batchJobLogger = new BatchJobLogger(loggerDelegate);
+    url = "http://www.example.com/batchinteraction";
   }
 
-  @After
-  public void tearDown() throws Exception {
-    // Not concerned with whether isDebugEnabled was invoked.
-    verify(logger, atLeast(0)).isDebugEnabled();
+  public BatchJobLoggerTest(int statusCode, String statusMessage, @Nullable Exception exception) {
+    this.statusCode = statusCode;
+    this.statusMessage = statusMessage;
+    this.exception = exception;
+  }
 
-    // Confirm that all logger method invocations have been verified. This ensures that the test
-    // will fail if it verified a call to info and a call to debug, but then there was an
-    // unexpected call to warn (for example).
-    verifyNoMoreInteractions(logger);
+  @Parameters(name = "statusCode={0}, statusMessage={1}, exception={2}")
+  public static List<Object[]> parameters() {
+    return Arrays.<Object[]>asList(
+        new Object[] {HttpStatusCodes.STATUS_CODE_OK, "OK", null},
+        new Object[] {
+          HttpStatusCodes.STATUS_CODE_FORBIDDEN, "forbidden", new IOException("Failed request")
+        });
+  }
+
+  /** Confirms an upload is logged as expected. */
+  @Test
+  public void testLogUpload() throws IOException {
+    String contentsString = "some contents";
+    InputStream responseContent = CharSource.wrap(contentsString).asByteSource(UTF_8).openStream();
+    BatchJobUploadResponse response =
+        new BatchJobUploadResponse(
+            responseContent, statusCode, statusMessage, contentsString.length(), URI.create(url));
+    ArgumentCaptor<RemoteCallReturn> returnCaptor = ArgumentCaptor.forClass(RemoteCallReturn.class);
+    batchJobLogger.logUpload(contentsString, URI.create(url), response, exception);
+    verify(loggerDelegate).logRequestSummary(returnCaptor.capture());
+    RemoteCallReturn capturedReturn = returnCaptor.getValue();
+    assertEquals(exception, capturedReturn.getException());
+
+    RequestInfo requestInfo = capturedReturn.getRequestInfo();
+    assertEquals(url, requestInfo.getUrl());
+    assertEquals("clientCustomerId", requestInfo.getContextName());
+    assertNull(requestInfo.getContextValue());
+    assertThat(requestInfo.getPayload(), containsString(contentsString));
+    assertThat(requestInfo.getServiceName(), containsString("upload"));
+
+    ResponseInfo responseInfo = capturedReturn.getResponseInfo();
+    assertNull(responseInfo.getRequestId());
+    assertThat(responseInfo.getPayload(), startsWith(String.valueOf(response.getHttpStatus())));
+    assertThat(responseInfo.getPayload(), containsString(response.getHttpResponseMessage()));
+
+    verify(loggerDelegate).logRequestDetails(returnCaptor.capture());
+    assertSame(
+        "The same RemoteCallReturn object was not passed to request details and request summary",
+        capturedReturn,
+        returnCaptor.getValue());
   }
 
   /**
-   * Verifies that if all arguments to {@code logUpload} are null, the logger logs a success
-   * message.
+   * Confirms that passing {@code null} to {@code logUpload} for parameters marked {@code Nullable}
+   * does not result in any exceptions.
    */
   @Test
-  public void testLogUpload_allNullArgumentsLoggedAsSuccessToInfo() {
-    batchJobLogger.logUpload(null, null, null, null);
+  public void testLogUpload_nullablesNull() {
+    String contentsString = "success contents";
 
-    // Verify the INFO level log message is correct.
-    verify(logger, times(1))
-        .info(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.SUCCESS_STATUS),
-            Matchers.isNull());
-
-
-    // Verify the DEBUG level log message is correct.
-    verify(logger, times(1))
-        .debug(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.SUCCESS_STATUS),
-            Matchers.isNull(), Matchers.isNull());
+    ArgumentCaptor<RemoteCallReturn> returnCaptor = ArgumentCaptor.forClass(RemoteCallReturn.class);
+    batchJobLogger.logUpload(contentsString, URI.create(url), null, null);
+    verify(loggerDelegate).logRequestSummary(returnCaptor.capture());
+    RemoteCallReturn capturedReturn = returnCaptor.getValue();
+    assertNull(capturedReturn.getException());
+    verify(loggerDelegate).logRequestDetails(returnCaptor.capture());
+    assertSame(
+        "The same RemoteCallReturn object was not passed to request details and request summary",
+        capturedReturn,
+        returnCaptor.getValue());
   }
 
-  /**
-   * Verifies that if all arguments to {@code logUpload} are null except for the exception, the
-   * logger logs a failure message.
-   */
-  @Test
-  public void testLogUpload_exceptionLoggedAsFailureToWarn() {
-    Exception exception = new IllegalArgumentException("Some failure");
-    batchJobLogger.logUpload(null, null, null, exception);
-
-    // Verify the WARN level log message is correct.
-    verify(logger, times(1))
-        .warn(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.FAILURE_STATUS),
-            Matchers.isNull(), Matchers.same(exception));
-
-    // Verify the DEBUG level log message is correct.
-    verify(logger, times(1))
-        .debug(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.FAILURE_STATUS),
-            Matchers.isNull(), Matchers.isNull());
-  }
-
-  /**
-   * Verifies that all relevant information is logged to the proper levels for a successful
-   * upload.
-   */
-  @Test
-  public void testLogUpload_success() throws IOException {
-    String uploadContents = "<mutate><a></a></mutate>";
-    Object uploadUrl = "http://www.example.com/upload";
-    String responseBody = "Upload succeeded";
-    int responseCode = 200;
-    String responseMessage = "OK";
-    BatchJobUploadResponse uploadResponse =
-        new BatchJobUploadResponse(ByteSource.wrap(responseBody.getBytes()).openStream(),
-            responseCode, responseMessage, uploadContents.getBytes().length, null);
-
-    ArgumentCaptor<String> messageCaptor = ArgumentCaptor.forClass(String.class);
-
-    batchJobLogger.logUpload(uploadContents, uploadUrl, uploadResponse, null);
-
-    // Verify the INFO level log message is correct.
-    verify(logger, times(1))
-        .info(Matchers.notNull(String.class), messageCaptor.capture(), Matchers.eq(uploadUrl));
-
-    assertThat("A null exception should be logged as successful", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(BatchJobLogger.SUCCESS_STATUS));
-    assertThat("HTTP response code should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(Integer.toString(responseCode)));
-    assertThat("HTTP response message should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(responseMessage));
-
-    messageCaptor = ArgumentCaptor.forClass(String.class);
-
-    // Verify the DEBUG level log message is correct.
-    verify(logger, times(1))
-        .debug(Matchers.notNull(String.class), messageCaptor.capture(), Matchers.eq(uploadUrl),
-            Matchers.eq(uploadContents));
-
-    assertThat("A null exception should be logged as successful", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(BatchJobLogger.SUCCESS_STATUS));
-    assertThat("HTTP response code should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(Integer.toString(responseCode)));
-    assertThat("HTTP response message should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(responseMessage));
-  }
-
-  /**
-   * Verifies that all relevant information is logged to the proper levels for a failed
-   * upload.
-   */
-  @Test
-  public void testLogUpload_failure() throws IOException {
-    String uploadContents = "<mutate><a></a></mutate>";
-    Object uploadUrl = "http://www.example.com/upload";
-    String responseBody = "Something went terribly wrong!";
-    int responseCode = 500;
-    String responseMessage = "Internal Server Error";
-    BatchJobUploadResponse uploadResponse =
-        new BatchJobUploadResponse(ByteSource.wrap(responseBody.getBytes()).openStream(),
-            responseCode, responseMessage, uploadContents.getBytes().length, null);
-    Exception exception =
-        new HttpResponseException.Builder(responseCode, responseMessage, new HttpHeaders()).build();
-
-    ArgumentCaptor<String> messageCaptor = ArgumentCaptor.forClass(String.class);
-
-    batchJobLogger.logUpload(uploadContents, uploadUrl, uploadResponse, exception);
-
-    // Verify the WARN level log message is correct.
-    verify(logger, times(1))
-        .warn(Matchers.notNull(String.class), messageCaptor.capture(), Matchers.eq(uploadUrl),
-            Matchers.same(exception));
-
-    assertThat("A non-null exception should be logged as failed", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(BatchJobLogger.FAILURE_STATUS));
-    assertThat("HTTP response code should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(Integer.toString(responseCode)));
-    assertThat("HTTP response message should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(responseMessage));
-
-    messageCaptor = ArgumentCaptor.forClass(String.class);
-
-    // Verify the DEBUG level log message is correct.
-    verify(logger, times(1))
-        .debug(Matchers.notNull(String.class), messageCaptor.capture(), Matchers.eq(uploadUrl),
-            Matchers.eq(uploadContents));
-
-    assertThat("A non-null exception should be logged as failed", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(BatchJobLogger.FAILURE_STATUS));
-    assertThat("HTTP response code should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(Integer.toString(responseCode)));
-    assertThat("HTTP response message should be logged", messageCaptor.getValue(),
-        org.hamcrest.Matchers.containsString(responseMessage));
-  }
-
-  /**
-   * Verifies that if all arguments to {@code logDownload} are null, the logger logs a success
-   * message.
-   */
-  @Test
-  public void testLogDownload_allNullArgumentsLoggedAsSuccessToInfo() {
-    batchJobLogger.logDownload(null, null, null);
-
-    // Verify the INFO level log message is correct.
-    verify(logger, times(1))
-        .info(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.SUCCESS_STATUS),
-            Matchers.eq(0), Matchers.isNull());
-  }
-
-  /**
-   * Verifies that all relevant information is logged to the proper levels for a failed
-   * download with a null download URL and response.
-   */
-  @Test
-  public void testLogDownload_exceptionLoggedAsFailureToWarn() {
-    Exception exception = new IllegalArgumentException("Some failure");
-    batchJobLogger.logDownload(null, null, exception);
-
-    // Verify the WARN level log message is correct.
-    verify(logger, times(1))
-        .warn(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.FAILURE_STATUS),
-            Matchers.isNull(), Matchers.same(exception));
-  }
-
-  /**
-   * Verifies that all relevant information is logged to the proper levels for a successful
-   * download.
-   */
+  /** Confirms a download is logged as expected. */
   @SuppressWarnings("unchecked")
   @Test
-  public void testLogDownload_success() {
-    BatchJobMutateResponseInterface<String, Exception,
-        BatchJobMutateResultInterface<String, Exception>> response =
-        Mockito.mock(BatchJobMutateResponseInterface.class);
-    int numberOfResults = 5;
-    when(response.getMutateResults())
-        .thenReturn(new BatchJobMutateResultInterface[numberOfResults]);
-    String downloadUrl = "http://www.example.com/download";
-    batchJobLogger.logDownload(downloadUrl, response, null);
+  public void testLogDownload() {
+    BatchJobMutateResponseInterface<
+            String, IllegalArgumentException,
+            BatchJobMutateResultInterface<String, IllegalArgumentException>>
+        response = Mockito.mock(BatchJobMutateResponseInterface.class);
+    @SuppressWarnings("rawtypes") // Cannot specify generic args for mocks
+    BatchJobMutateResultInterface[] mutateResults =
+        new BatchJobMutateResultInterface[] {
+          Mockito.mock(BatchJobMutateResultInterface.class),
+          Mockito.mock(BatchJobMutateResultInterface.class)
+        };
+    when(response.getMutateResults()).thenReturn(mutateResults);
+    batchJobLogger.logDownload(url, response, exception);
+    ArgumentCaptor<RemoteCallReturn> returnCaptor = ArgumentCaptor.forClass(RemoteCallReturn.class);
+    verify(loggerDelegate).logRequestSummary(returnCaptor.capture());
+    RemoteCallReturn capturedReturn = returnCaptor.getValue();
+    assertEquals(exception, capturedReturn.getException());
 
-    // Verify the INFO level log message is correct.
-    verify(logger, times(1))
-        .info(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.SUCCESS_STATUS),
-            Matchers.eq(numberOfResults), Matchers.eq(downloadUrl));
+    RequestInfo requestInfo = capturedReturn.getRequestInfo();
+    assertEquals(url, requestInfo.getUrl());
+    assertEquals("clientCustomerId", requestInfo.getContextName());
+    assertNull(requestInfo.getContextValue());
+    assertNull(requestInfo.getPayload());
+    assertThat(requestInfo.getServiceName(), containsString("download"));
+
+    ResponseInfo responseInfo = capturedReturn.getResponseInfo();
+    assertNull(responseInfo.getRequestId());
+    assertEquals("Results count: 2", responseInfo.getPayload());
+
+    verify(loggerDelegate).logRequestDetails(returnCaptor.capture());
+    assertSame(
+        "The same RemoteCallReturn object was not passed to request details and request summary",
+        capturedReturn,
+        returnCaptor.getValue());
   }
 
   /**
-   * Verifies that all relevant information is logged to the proper levels for a failed
-   * download with a non-null download URL.
+   * Confirms that passing {@code null} to {@code logUpload} for parameters marked {@code Nullable}
+   * does not result in any exceptions.
    */
   @Test
-  public void testLogDownload_failure() {
-    Exception exception = new IllegalArgumentException("Some failure");
-    String downloadUrl = "http://www.example.com/download";
-    batchJobLogger.logDownload(downloadUrl, null, exception);
+  public void testLogDownload_nullablesNull() {
+    batchJobLogger.logDownload(url, null, null);
+    ArgumentCaptor<RemoteCallReturn> returnCaptor = ArgumentCaptor.forClass(RemoteCallReturn.class);
+    verify(loggerDelegate).logRequestSummary(returnCaptor.capture());
+    RemoteCallReturn capturedReturn = returnCaptor.getValue();
 
-    // Verify the WARN level log message is correct.
-    verify(logger, times(1))
-        .warn(Matchers.notNull(String.class), Matchers.contains(BatchJobLogger.FAILURE_STATUS),
-            Matchers.eq(downloadUrl), Matchers.same(exception));
+    assertNull(capturedReturn.getException());
+    ResponseInfo responseInfo = capturedReturn.getResponseInfo();
+    assertEquals("Results count: 0", responseInfo.getPayload());
+
+    verify(loggerDelegate).logRequestDetails(returnCaptor.capture());
+    assertSame(
+        "The same RemoteCallReturn object was not passed to request details and request summary",
+        capturedReturn,
+        returnCaptor.getValue());
   }
 }

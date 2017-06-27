@@ -49,7 +49,6 @@ public class AdWordsLoggingModule extends LoggingModule {
   @Override
   protected void configure() {
     super.configure();
-    bind(AdWordsServiceLoggers.class);
     configureLogger(reportLoggerPrefix, REPORT_LOGGER_NAME);
     configureLogger(batchJobLoggerPrefix, BATCH_JOB_LOGGER_NAME);
     bind(ReportServiceLogger.class);

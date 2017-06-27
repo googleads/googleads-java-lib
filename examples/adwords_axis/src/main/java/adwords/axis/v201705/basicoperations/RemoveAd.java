@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.basicoperations;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.Ad;
 import com.google.api.ads.adwords.axis.v201705.cm.AdGroupAd;
@@ -23,8 +24,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.AdGroupAdServiceInterface;
 import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,6 +38,14 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class RemoveAd {
+
+  private static class RemoveAdParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
+    private Long adGroupId;
+
+    @Parameter(names = ArgumentNames.AD_ID, required = true)
+    private Long adId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -50,12 +61,17 @@ public class RemoveAd {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    long adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
-    long adId = Long.parseLong("INSERT_AD_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, adGroupId, adId);
+    RemoveAdParams params = new RemoveAdParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
+      params.adId = Long.parseLong("INSERT_AD_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.adGroupId, params.adId);
   }
 
   public static void runExample(

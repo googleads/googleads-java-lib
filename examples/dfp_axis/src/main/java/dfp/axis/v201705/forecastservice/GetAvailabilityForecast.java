@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.forecastservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.DateTimes;
 import com.google.api.ads.dfp.axis.v201705.AdUnitTargeting;
@@ -38,6 +40,7 @@ import com.google.api.ads.dfp.axis.v201705.StartDateTimeType;
 import com.google.api.ads.dfp.axis.v201705.Targeting;
 import com.google.api.ads.dfp.axis.v201705.UnitType;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
@@ -55,9 +58,13 @@ import org.joda.time.Instant;
  */
 public class GetAvailabilityForecast {
 
-  // Set the ID of the advertiser (company) to forecast for. Setting an advertiser
-  // will cause the forecast to apply the appropriate unified blocking rules.
-  private static final String ADVERTISER_ID = "INSERT_ADVERTISER_COMPANY_ID_HERE";
+  private static class GetAvailabilityForecastParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser (company) to forecast for. Setting an"
+            + " advertiser will cause the forecast to apply the appropriate unified blocking"
+            + " rules.")
+    private Long advertiserId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long advertiserId)
       throws Exception {
@@ -168,6 +175,13 @@ public class GetAvailabilityForecast {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ADVERTISER_ID));
+    GetAvailabilityForecastParams params = new GetAvailabilityForecastParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.advertiserId);
   }
 }

@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.reconciliationorderreportservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationOrderReport;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.ReconciliationOrderReportPage;
 import com.google.api.ads.dfp.axis.v201705.ReconciliationOrderReportServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -36,9 +39,11 @@ import java.util.Arrays;
  */
 public class SubmitReconciliationOrderReports {
 
-  // Set the ID of the reconciliation order report to submit.
-  private static final String RECONCILIATION_ORDER_REPORT_ID =
-      "INSERT_RECONCILIATION_ORDER_REPORT_ID_HERE";
+  private static class SubmitReconciliationOrderReportsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RECONCILIATION_ORDER_REPORT_ID, required = true,
+        description = "The ID of the reconciliation order report to submit.")
+    private Long reconciliationOrderReportId;
+  }
 
   public static void runExample(
       DfpServices dfpServices, DfpSession session, long reconciliationOrderReportId)
@@ -102,6 +107,14 @@ public class SubmitReconciliationOrderReports {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RECONCILIATION_ORDER_REPORT_ID));
+    SubmitReconciliationOrderReportsParams params = new SubmitReconciliationOrderReportsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.reconciliationOrderReportId =
+          Long.parseLong("INSERT_RECONCILIATION_ORDER_REPORT_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.reconciliationOrderReportId);
   }
 }

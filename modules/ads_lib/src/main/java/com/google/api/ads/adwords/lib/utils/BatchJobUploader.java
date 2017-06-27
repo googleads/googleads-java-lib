@@ -14,6 +14,8 @@
 
 package com.google.api.ads.adwords.lib.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -27,7 +29,6 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.util.Charsets;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -35,8 +36,6 @@ import com.google.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URI;
-import java.nio.charset.Charset;
-
 
 /**
  * Utility for uploading operations to a BatchJob and downloading results from
@@ -46,11 +45,6 @@ public class BatchJobUploader {
   private final AdWordsSession session;
   private final HttpTransport httpTransport;
   private final BatchJobLogger batchJobLogger;
-
-  /**
-   * Charset for request contents.
-   */
-  private static final Charset REQUEST_CHARSET = Charsets.UTF_8;
 
   /**
    * For incremental uploads, each request's contents must have a length in bytes
@@ -137,7 +131,7 @@ public class BatchJobUploader {
           requestFactory.buildPutRequest(
               new GenericUrl(effectiveStatus.getResumableUploadUri()), content);
 
-      requestXml = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
+      requestXml = Streams.readAll(content.getInputStream(), UTF_8);
       content.getInputStream().reset();
 
       HttpResponse response = httpRequest.execute();
@@ -161,8 +155,8 @@ public class BatchJobUploader {
       exception = e;
       throw new BatchJobException("Problem sending data to batch upload URL.", e);
     } finally {
-      logRequestResponse(requestXml, effectiveStatus.getResumableUploadUri(),
-          batchJobUploadResponse, exception);
+      batchJobLogger.logUpload(
+          requestXml, effectiveStatus.getResumableUploadUri(), batchJobUploadResponse, exception);
     }
   }
 
@@ -214,20 +208,20 @@ public class BatchJobUploader {
       return content;
     }
 
-    String serializedRequest = Streams.readAll(content.getInputStream(), REQUEST_CHARSET);
+    String serializedRequest = Streams.readAll(content.getInputStream(), UTF_8);
 
     serializedRequest = trimStartEndElements(serializedRequest, isFirstRequest, isLastRequest);
 
     // The request is part of a set of incremental uploads, so pad to the required content
     // length. This is not necessary if all operations for the job are being uploaded in a
     // single request.
-    int numBytes = serializedRequest.getBytes(REQUEST_CHARSET).length;
+    int numBytes = serializedRequest.getBytes(UTF_8).length;
     int remainder = numBytes % REQUIRED_CONTENT_LENGTH_INCREMENT;
     if (remainder > 0) {
       int pad = REQUIRED_CONTENT_LENGTH_INCREMENT - remainder;
       serializedRequest = Strings.padEnd(serializedRequest, numBytes + pad, ' ');
     }
-    return new ByteArrayContent(content.getType(), serializedRequest.getBytes(REQUEST_CHARSET));
+    return new ByteArrayContent(content.getType(), serializedRequest.getBytes(UTF_8));
   }
 
   /**
@@ -262,20 +256,6 @@ public class BatchJobUploader {
     return serializedRequest.substring(beginIndex, endIndex);
   }
   
-  /**
-   * Logs a request and response based on the standard rules for the library.
-   *
-   * @param requestXml the request body XML.
-   * @param uploadUri the upload URL, either as a String or a URI.
-   * @param batchJobUploadResponse the response from the upload.
-   * @param exception the exception from the upload. Will be null if the upload was successful.
-   */
-  private void logRequestResponse(String requestXml, Object uploadUri,
-      BatchJobUploadResponse batchJobUploadResponse, Throwable exception) {
-    // Log the request XML without padding.
-    batchJobLogger.logUpload(requestXml, uploadUri, batchJobUploadResponse, exception);
-  }
-
   /**
    * Constructs the content range header value for the specified arguments.
    * @param requestLength the length of the request that's about to be uploaded

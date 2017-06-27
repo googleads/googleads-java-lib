@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.accountmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.axis.v201705.mcm.CustomerServiceInterface;
@@ -23,8 +24,10 @@ import com.google.api.ads.adwords.axis.v201705.mcm.ServiceLinkOperation;
 import com.google.api.ads.adwords.axis.v201705.mcm.ServiceType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,6 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  * See README for more info.
  */
 public class AcceptServiceLink {
+
+  private static class AcceptServiceLinkParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.SERVICE_LINK_ID, required = true)
+    private Long serviceLinkId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -51,9 +59,14 @@ public class AcceptServiceLink {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    long serviceLinkId = Long.parseLong("INSERT_SERVICE_LINK_ID_HERE");
+    AcceptServiceLinkParams params = new AcceptServiceLinkParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.serviceLinkId = Long.parseLong("INSERT_SERVICE_LINK_ID_HERE");
+    }
 
-    runExample(adWordsServices, session, serviceLinkId);
+    runExample(adWordsServices, session, params.serviceLinkId);
   }
 
   public static void runExample(

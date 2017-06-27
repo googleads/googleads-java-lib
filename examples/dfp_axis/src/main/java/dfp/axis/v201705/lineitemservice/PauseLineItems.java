@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.lineitemservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.LineItem;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.LineItemPage;
 import com.google.api.ads.dfp.axis.v201705.LineItemServiceInterface;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class PauseLineItems {
 
-  // Set the ID of the line item to pause.
-  private static final String LINE_ITEM_ID = "INSERT_LINE_ITEM_ID_HERE";
+  private static class PauseLineItemsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.LINE_ITEM_ID, required = true,
+        description = "The ID of the line item to pause.")
+    private Long lineItemId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long lineItemId)
       throws Exception {
@@ -108,6 +114,13 @@ public class PauseLineItems {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(LINE_ITEM_ID));
+    PauseLineItemsParams params = new PauseLineItemsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.lineItemId = Long.parseLong("INSERT_LINE_ITEM_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.lineItemId);
   }
 }

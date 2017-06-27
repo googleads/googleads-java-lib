@@ -15,6 +15,7 @@
 package adwords.axis.v201705.extensions;
 
 import adwords.axis.auth.GetRefreshToken;
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201705.cm.ConstantOperand;
@@ -36,8 +37,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.axis.v201705.cm.PlacesLocationFeedData;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import javax.annotation.Nullable;
@@ -65,6 +68,29 @@ public class AddGoogleMyBusinessLocationExtensions {
    */
   private static final int MAX_CUSTOMER_FEED_ADD_ATTEMPTS = 10;
 
+  private static class AddGoogleMyBusinessLocationExtensionsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.GMB_EMAIL_ADDRESS, required = true,
+        description = "The email address of either an owner or a manager of the GMB account.")
+    private String gmbEmailAddress;
+
+    @Parameter(names = ArgumentNames.GMB_ACCESS_TOKEN, required = true,
+        description = "If the gmbEmailAddress is the same user you used to generate your AdWords"
+            + " API refresh token, leave this unchanged. Otherwise, to obtain an access token for"
+            + " your GMB account, run the GetRefreshToken example. Make sure you are logged in as"
+            + " the same user as gmbEmailAddress above when you follow the link provided by the"
+            + " example, then call Credential.getAccessToken() on the generated Credential object"
+            + " and pass the value here.")
+    private String gmbAccessToken;
+
+    @Parameter(names = ArgumentNames.BUSINESS_ACCOUNT_IDENTIFIER,
+        description = "If the gmbEmailAddress is for a GMB manager instead of the GMB account"
+            + " owner, then set businessAccountIdentifier to the +Page ID of a location for which"
+            + " the manager has access. See the location extensions guide at"
+            + " https:developers.google.com/adwords/api/docs/guides/feed-services-locations for"
+            + " details.")
+    private String businessAccountIdentifier;
+  }
+
   public static void main(String[] args) throws Exception {
 
     // Generate a refreshable OAuth2 credential.
@@ -82,26 +108,18 @@ public class AddGoogleMyBusinessLocationExtensions {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    // The email address of either an owner or a manager of the GMB account.
-    String gmbEmailAddress = "INSERT_GMB_EMAIL_ADDRESS_HERE";
+    AddGoogleMyBusinessLocationExtensionsParams params =
+        new AddGoogleMyBusinessLocationExtensionsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.gmbEmailAddress = "INSERT_GMB_EMAIL_ADDRESS_HERE";
+      params.gmbAccessToken = oAuth2Credential.getAccessToken();
+      params.businessAccountIdentifier = "INSERT_BUSINESS_ACCOUNT_IDENTIFIER_HERE";
+    }
 
-    // If the gmbEmailAddress above is the same user you used to generate your AdWords API
-    // refresh token, leave the assignment below unchanged.
-    // Otherwise, to obtain an access token for your GMB account, run the GetRefreshToken example.
-    // Make sure you are logged in as the same user as gmbEmailAddress above when you follow the
-    // link provided by the example, then call Credential.getAccessToken() on the generated
-    // Credential object and copy and paste the value into the assignment below.
-    String gmbAccessToken = oAuth2Credential.getAccessToken();
-
-    // If the gmbEmailAddress above is for a GMB manager instead of the GMB account owner,
-    // then set businessAccountIdentifier to the +Page ID of a location for which the
-    // manager has access. See the location extensions guide at
-    // https://developers.google.com/adwords/api/docs/guides/feed-services-locations
-    // for details.
-    String businessAccountIdentifier = null;
-    
-    runExample(adWordsServices, session, gmbEmailAddress, gmbAccessToken,
-        businessAccountIdentifier);
+    runExample(adWordsServices, session, params.gmbEmailAddress, params.gmbAccessToken,
+        params.businessAccountIdentifier);
   }
 
   private static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,

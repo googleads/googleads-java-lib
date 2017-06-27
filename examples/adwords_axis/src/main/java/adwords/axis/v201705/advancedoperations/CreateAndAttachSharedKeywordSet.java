@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.advancedoperations;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignSharedSet;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignSharedSetOperation;
@@ -31,8 +32,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.SharedSetServiceInterface;
 import com.google.api.ads.adwords.axis.v201705.cm.SharedSetType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,6 +49,11 @@ import java.util.List;
  * "ads.properties" file. See README for more info.
  */
 public class CreateAndAttachSharedKeywordSet {
+
+  private static class CreateAndAttachSharedKeywordSetParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private Long campaignId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -61,11 +69,16 @@ public class CreateAndAttachSharedKeywordSet {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    Long campaignId = Long.valueOf("INSERT_CAMPAIGN_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, campaignId);
+    CreateAndAttachSharedKeywordSetParams params = new CreateAndAttachSharedKeywordSetParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.campaignId);
   }
 
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,

@@ -30,7 +30,9 @@ import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Lists;
-
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.List;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.hamcrest.CustomTypeSafeMatcher;
 import org.hamcrest.Matcher;
@@ -41,10 +43,6 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.List;
 
 /** Tests for {@link AdWordsSession}. */
 @RunWith(Parameterized.class)
@@ -119,9 +117,28 @@ public class AdWordsSessionTest {
     assertEquals("FooBar", session.getUserAgent());
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
     assertFalse(session.isPartialFailure());
+    ReportingConfiguration reportingConfig = session.getReportingConfiguration();
+    assertNotNull("reporting configuration is null", reportingConfig);
+    // Verify that the ReportingConfiguration's attributes are set to the expected default value
+    // (null).
     assertNull(
-        "reporting configuration should be null if no reporting options are in the config",
-        session.getReportingConfiguration());
+        "include zero impressions is not null when no reporting options in config",
+        reportingConfig.isIncludeZeroImpressions());
+    assertNull(
+        "skip column header is not null, but no reporting options in config",
+        reportingConfig.isSkipColumnHeader());
+    assertNull(
+        "skip report header is not null, but no reporting options in config",
+        reportingConfig.isSkipReportHeader());
+    assertNull(
+        "skip report summary is not null, but no reporting options in config",
+        reportingConfig.isSkipReportSummary());
+    assertNull(
+        "use raw enum values is not null, but no reporting options in config",
+        reportingConfig.isUseRawEnumValues());
+    assertNull(
+        "download timeout is not null, but no reporting options in config",
+        reportingConfig.getReportDownloadTimeout());
   }
 
   /**
@@ -139,6 +156,7 @@ public class AdWordsSessionTest {
     config.setProperty("api.adwords.reporting.skipColumnHeader", "true");
     config.setProperty("api.adwords.reporting.skipSummary", "false");
     config.setProperty("api.adwords.reporting.useRawEnumValues", "false");
+    config.setProperty("api.adwords.reportDownloadTimeout", 9999999);
 
     AdWordsSession session =
         build(new AdWordsSession.Builder().from(config).withOAuth2Credential(credential));
@@ -147,12 +165,14 @@ public class AdWordsSessionTest {
     assertEquals("devTokendevTokendevTok", session.getDeveloperToken());
     assertFalse(session.isPartialFailure());
     assertNotNull(
-        "reporting configuration should not be null if reporting options are in the config",
+        "reporting configuration should not be null",
         session.getReportingConfiguration());
     assertTrue(session.getReportingConfiguration().isSkipReportHeader());
     assertTrue(session.getReportingConfiguration().isSkipColumnHeader());
     assertFalse(session.getReportingConfiguration().isSkipReportSummary());
     assertFalse(session.getReportingConfiguration().isUseRawEnumValues());
+    assertEquals(
+        9999999, session.getReportingConfiguration().getReportDownloadTimeout().intValue());
     assertNull(
         "includeZeroImpressions is not settable from ads.properties, so should be null",
         session.getReportingConfiguration().isIncludeZeroImpressions());

@@ -14,13 +14,16 @@
 
 package dfp.axis.v201705.contentmetadatakeyhierarchyservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.ContentMetadataKeyHierarchy;
 import com.google.api.ads.dfp.axis.v201705.ContentMetadataKeyHierarchyLevel;
 import com.google.api.ads.dfp.axis.v201705.ContentMetadataKeyHierarchyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +38,17 @@ import java.util.Random;
  * "ads.properties" file. See README for more info.
  */
 public class CreateContentMetadataKeyHierarchies {
-  
-  // Set the IDs of the custom targeting keys for the hierarchy.
-  private static final String HIERARCHY_LEVEL_ONE_KEY_ID =
-      "INSERT_LEVEL_ONE_CUSTOM_TARGETING_KEY_ID_HERE";
-  private static final String HIERARCHY_LEVEL_TWO_KEY_ID = 
-      "INSERT_LEVEL_TWO_CUSTOM_TARGETING_KEY_ID_HERE";
-  
+
+  private static class CreateContentMetadataKeyHierarchiesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.HIERARCHY_LEVEL_ONE_KEY_ID, required = true,
+        description = "The ID of the custom targeting key for the first level.")
+    private Long hierarchyLevelOneKeyId;
+
+    @Parameter(names = ArgumentNames.HIERARCHY_LEVEL_TWO_KEY_ID, required = true,
+        description = "The ID of the custom targeting key for the second level.")
+    private Long hierarchyLevelTwoKeyId;
+  }
+
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long customTargetingKeyId1, long customTargetingKeyId2) throws Exception {
 
@@ -98,7 +105,15 @@ public class CreateContentMetadataKeyHierarchies {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(HIERARCHY_LEVEL_ONE_KEY_ID), 
-        Long.parseLong(HIERARCHY_LEVEL_TWO_KEY_ID));
+    CreateContentMetadataKeyHierarchiesParams params =
+        new CreateContentMetadataKeyHierarchiesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.hierarchyLevelOneKeyId = Long.parseLong("INSERT_HIERARCHY_LEVEL_ONE_KEY_ID_HERE");
+      params.hierarchyLevelTwoKeyId = Long.parseLong("INSERT_HIERARCHY_LEVEL_TWO_KEY_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.hierarchyLevelOneKeyId, params.hierarchyLevelTwoKeyId);
   }
 }

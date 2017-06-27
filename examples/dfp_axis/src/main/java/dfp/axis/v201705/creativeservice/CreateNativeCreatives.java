@@ -14,9 +14,11 @@
 
 package dfp.axis.v201705.creativeservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.utils.Media;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201705.AssetCreativeTemplateVariableValue;
 import com.google.api.ads.dfp.axis.v201705.BaseCreativeTemplateVariableValue;
@@ -28,6 +30,7 @@ import com.google.api.ads.dfp.axis.v201705.StringCreativeTemplateVariableValue;
 import com.google.api.ads.dfp.axis.v201705.TemplateCreative;
 import com.google.api.ads.dfp.axis.v201705.UrlCreativeTemplateVariableValue;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +45,12 @@ import java.util.Random;
  */
 public class CreateNativeCreatives {
 
-  // Set the ID of the advertiser (company) that all creatives will be assigned to.
-  private static final String ADVERTISER_ID = "INSERT_ADVERTISER_ID_HERE";
+  private static class CreateNativeCreativesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser (company) that all creatives will be assigned"
+            + " to.")
+    private Long advertiserId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long advertiserId)
       throws Exception {
@@ -172,6 +179,13 @@ public class CreateNativeCreatives {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(ADVERTISER_ID));
+    CreateNativeCreativesParams params = new CreateNativeCreativesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.advertiserId);
   }
 }

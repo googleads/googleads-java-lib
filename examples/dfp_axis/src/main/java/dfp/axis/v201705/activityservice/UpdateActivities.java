@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.activityservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Activity;
 import com.google.api.ads.dfp.axis.v201705.ActivityPage;
 import com.google.api.ads.dfp.axis.v201705.ActivityServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,8 +38,11 @@ import java.util.Arrays;
  */
 public class UpdateActivities {
 
-  // Set the ID of the activity to update.
-  private static final String ACTIVITY_ID = "INSERT_ACTIVITY_ID_HERE";
+  private static class UpdateActivitiesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.ACTIVITY_ID, required = true,
+        description = "The ID of the activity to update.")
+    private Integer activityId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       int activityId) throws Exception {
@@ -87,6 +93,13 @@ public class UpdateActivities {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Integer.parseInt(ACTIVITY_ID));
+    UpdateActivitiesParams params = new UpdateActivitiesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.activityId = Integer.valueOf("INSERT_ACTIVITY_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.activityId);
   }
 }

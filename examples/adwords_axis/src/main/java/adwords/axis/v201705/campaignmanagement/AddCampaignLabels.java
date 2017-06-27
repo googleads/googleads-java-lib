@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.campaignmanagement;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignLabel;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignLabelOperation;
@@ -21,8 +22,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201705.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +38,14 @@ import java.util.List;
  * "ads.properties" file. See README for more info.
  */
 public class AddCampaignLabels {
+
+  private static class AddCampaignLabelsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private List<Long> campaignIds = new ArrayList<>();
+
+    @Parameter(names = ArgumentNames.LABEL_ID, required = true)
+    private Long labelId;
+  }
 
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
@@ -50,14 +61,19 @@ public class AddCampaignLabels {
         .withOAuth2Credential(oAuth2Credential)
         .build();
 
-    List<Long> campaignIds = Arrays.asList( 
-        Long.valueOf("INSERT_CAMPAIGN_ID_1_HERE"),
-        Long.valueOf("INSERT_CAMPAIGN_ID_2_HERE"));
-    Long labelId = Long.valueOf("INSERT_LABEL_ID_HERE");
-
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, campaignIds, labelId);
+    AddCampaignLabelsParams params = new AddCampaignLabelsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignIds = Arrays.asList(
+          Long.valueOf("INSERT_CAMPAIGN_ID_HERE"),
+          Long.valueOf("INSERT_CAMPAIGN_ID_HERE"));
+      params.labelId = Long.parseLong("INSERT_LABEL_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.campaignIds, params.labelId);
   }
 
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,

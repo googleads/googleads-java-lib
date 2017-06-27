@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.axis.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.ads.adwords.axis.utils.v201609.batchjob.BatchJobMutateRequest;
@@ -26,7 +27,10 @@ import com.google.api.ads.adwords.axis.v201609.cm.Operation;
 import com.google.api.ads.adwords.axis.v201609.cm.Operator;
 import com.google.common.collect.Lists;
 import com.google.common.io.CharStreams;
-
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
+import java.util.List;
 import org.apache.axis.encoding.SerializationContext;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.Test;
@@ -34,14 +38,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
-import java.util.List;
-
-/**
- * Tests for {@link AxisSerializer}.
- */
+/** Tests for {@link AxisSerializer}. */
 @RunWith(JUnit4.class)
 public class AxisSerializerTest {
   @Test
@@ -71,9 +68,13 @@ public class AxisSerializerTest {
     
     String serializedRequest = writer.toString();
     assertNotNull("Serialized request is null", serializedRequest);
-    
-    String expectedSerializedRequest = CharStreams.toString(new InputStreamReader(
-        AxisSerializerTest.class.getResourceAsStream("resources/BatchJobMutate.request.xml")));
+
+    String expectedSerializedRequest =
+        CharStreams.toString(
+            new InputStreamReader(
+                AxisSerializerTest.class.getResourceAsStream(
+                    "resources/BatchJobMutate.request.xml"),
+                UTF_8));
     XMLAssert.assertXMLEqual("Serialized request does not match expected XML",
         expectedSerializedRequest, serializedRequest);
   }

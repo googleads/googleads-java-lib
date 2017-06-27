@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.customtargetingservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.CustomTargetingServiceInterface;
@@ -23,6 +25,7 @@ import com.google.api.ads.dfp.axis.v201705.CustomTargetingValue;
 import com.google.api.ads.dfp.axis.v201705.CustomTargetingValuePage;
 import com.google.api.ads.dfp.axis.v201705.UpdateResult;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -35,8 +38,11 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class DeleteCustomTargetingValues {
 
-  // Set the ID of the custom targeting value to delete.
-  private static final String CUSTOM_TARGETING_VALUE_ID = "INSERT_CUSTOM_TARGETING_VALUE_ID_HERE";
+  private static class DeleteCustomTargetingValuesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.TARGETING_VALUE_ID, required = true,
+        description = "The ID of the custom targeting value to delete.")
+    private Long customTargetingValueId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
       long customTargetingValueId) throws Exception {
@@ -110,6 +116,13 @@ public class DeleteCustomTargetingValues {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(CUSTOM_TARGETING_VALUE_ID));
+    DeleteCustomTargetingValuesParams params = new DeleteCustomTargetingValuesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.customTargetingValueId = Long.parseLong("INSERT_CUSTOM_TARGETING_VALUE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.customTargetingValueId);
   }
 }

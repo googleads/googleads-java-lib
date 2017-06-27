@@ -14,8 +14,10 @@
 
 package dfp.axis.v201705.baserateservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.BaseRate;
@@ -25,6 +27,7 @@ import com.google.api.ads.dfp.axis.v201705.Money;
 import com.google.api.ads.dfp.axis.v201705.ProductBaseRate;
 import com.google.api.ads.dfp.axis.v201705.ProductTemplateBaseRate;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -37,9 +40,12 @@ import java.util.Arrays;
  * "ads.properties" file. See README for more info.
  */
 public class UpdateBaseRates {
-  
-  // Set the base rate ID to update.
-  private static final String BASE_RATE_ID = "INSERT_BASE_RATE_ID_HERE";
+
+  private static class UpdateBaseRatesParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.BASE_RATE_ID, required = true,
+        description = "The base rate ID to update.")
+    private Long baseRateId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long baseRateId)
       throws Exception {
@@ -99,6 +105,13 @@ public class UpdateBaseRates {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(BASE_RATE_ID));
+    UpdateBaseRatesParams params = new UpdateBaseRatesParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.baseRateId = Long.parseLong("INSERT_BASE_RATE_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.baseRateId);
   }
 }

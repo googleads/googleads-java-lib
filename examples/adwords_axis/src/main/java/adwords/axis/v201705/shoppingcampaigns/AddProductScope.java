@@ -14,6 +14,7 @@
 
 package adwords.axis.v201705.shoppingcampaigns;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignCriterion;
 import com.google.api.ads.adwords.axis.v201705.cm.CampaignCriterionOperation;
@@ -32,8 +33,10 @@ import com.google.api.ads.adwords.axis.v201705.cm.ProductScope;
 import com.google.api.ads.adwords.axis.v201705.cm.ProductType;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 
 /**
@@ -44,6 +47,11 @@ import com.google.api.client.auth.oauth2.Credential;
  * "ads.properties" file. See README for more info.
  */
 public class AddProductScope {
+  private static class AddProductScopeParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
+    private Long campaignId;
+  }
+
   public static void main(String[] args) throws Exception {
     // Generate a refreshable OAuth2 credential.
     Credential oAuth2Credential = new OfflineCredentials.Builder()
@@ -60,9 +68,15 @@ public class AddProductScope {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    Long campaignId = Long.valueOf("INSERT_CAMPAIGN_ID_HERE");
     
-    runExample(adWordsServices, session, campaignId);
+    AddProductScopeParams params = new AddProductScopeParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
+    }
+
+    runExample(adWordsServices, session, params.campaignId);
   }
 
   public static void runExample(

@@ -14,14 +14,17 @@
 
 package dfp.axis.v201705.contactservice;
 
+import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201705.StatementBuilder;
 import com.google.api.ads.dfp.axis.v201705.Contact;
 import com.google.api.ads.dfp.axis.v201705.ContactPage;
 import com.google.api.ads.dfp.axis.v201705.ContactServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
+import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -35,8 +38,11 @@ import java.util.Arrays;
  */
 public class UpdateContacts {
 
-  // Set the ID of the contact to update.
-  private static final String CONTACT_ID = "INSERT_CONTACT_ID_HERE";
+  private static class UpdateContactsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.CONTACT_ID, required = true,
+        description = "The ID of the contact to update.")
+    private Long contactId;
+  }
 
   public static void runExample(DfpServices dfpServices, DfpSession session, long contactId)
       throws Exception {
@@ -86,6 +92,13 @@ public class UpdateContacts {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(CONTACT_ID));
+    UpdateContactsParams params = new UpdateContactsParams();
+    if (!params.parseArguments(args)) {
+      // Either pass the required parameters for this example on the command line, or insert them
+      // into the code here. See the parameter class definition above for descriptions.
+      params.contactId = Long.parseLong("INSERT_CONTACT_ID_HERE");
+    }
+
+    runExample(dfpServices, session, params.contactId);
   }
 }
