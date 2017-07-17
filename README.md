@@ -31,8 +31,7 @@ If you have questions about the client library or the APIs, you can ask them on
 our forums:
 
   * [AdWords API Forum](https://groups.google.com/group/adwords-api)
-  * [DoubleClick for Publishers API Forum]
-    (https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
+  * [DoubleClick for Publishers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
 
 ## Maven artifacts
 
@@ -83,8 +82,7 @@ are in the package `com.google.api.ads.adwords.{version}`.
 
     *   **If using Maven with Eclipse**
 
-        In the [releases section]
-        (https://github.com/googleads/googleads-java-lib/releases)
+        In the [releases section](https://github.com/googleads/googleads-java-lib/releases)
         download a file like ``adwords-axis-maven-and-examples-v.vv.vv.tar.gz``
         and extract its contents to a directory.
 
@@ -93,15 +91,13 @@ are in the package `com.google.api.ads.adwords.{version}`.
 
     *   **If using Maven from the command line**
 
-        In the [releases section]
-        (https://github.com/googleads/googleads-java-lib/releases)
+        In the [releases section](https://github.com/googleads/googleads-java-lib/releases)
         download a file like ``adwords-axis-maven-and-examples-v.vv.vv.tar.gz``
         and extract its contents to a directory.
 
     *   **If using jars**
 
-        In the [releases section]
-        (https://github.com/googleads/googleads-java-lib/releases)
+        In the [releases section](https://github.com/googleads/googleads-java-lib/releases)
         download a file like ``adwords-axis-jars-and-examples-v.vv.vv.tar.gz`` and
         extract its contents to a directory.
 
@@ -110,10 +106,8 @@ are in the package `com.google.api.ads.adwords.{version}`.
     `clientSecret`, and `refreshToken` for now. You'll set those in the next
     step.
 
-    *   [AdWords ads.properties]
-        (https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/resources/ads.properties)
-    *   [DFP ads.properties]
-        (https://github.com/googleads/googleads-java-lib/blob/master/examples/dfp_axis/src/main/resources/ads.properties)
+    *   [AdWords ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/resources/ads.properties)
+    *   [DFP ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/dfp_axis/src/main/resources/ads.properties)
 
 3.  Setup your OAuth2 credentials.
 
@@ -123,15 +117,12 @@ are in the package `com.google.api.ads.adwords.{version}`.
 
     **If you're accessing an API using your own credentials...**
 
-    *   [Using AdWords]
-        (https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
-    *   [Using DFP]
-        (https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
+    *   [Using AdWords](https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
+    *   [Using DFP](https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
     **If you're accessing an API on behalf of clients...**
 
-    *   [Developing a web application (AdWords or DFP)]
-        (https://github.com/googleads/googleads-java-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+    *   [Developing a web application (AdWords or DFP)](https://github.com/googleads/googleads-java-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 4.  Run an example.
 
@@ -237,8 +228,8 @@ public static void main(String[] args) throws Exception {
 ## How do I enable logging?
 
 The client library uses [SLF4J](http://www.slf4j.org/) for all logging. Check
-out our [logging guide on github]
-(https://github.com/googleads/googleads-java-lib/wiki/Logging) for more details.
+out our
+[logging guide on github](https://github.com/googleads/googleads-java-lib/wiki/Logging) for more details.
 
 ## How do I enable compression?
 
