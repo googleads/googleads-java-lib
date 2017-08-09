@@ -65,7 +65,7 @@ public class UploadImage {
     // Create image.
     Image image = new Image();
     image.setData(
-        com.google.api.ads.common.lib.utils.Media.getMediaDataFromUrl("http://goo.gl/HJM3L"));
+        com.google.api.ads.common.lib.utils.Media.getMediaDataFromUrl("https://goo.gl/3b9Wfh"));
     image.setType(MediaMediaType.IMAGE);
 
     Media[] media = new Media[] {image};

@@ -35,7 +35,10 @@ public class AdGroupAdPolicySummary  implements java.io.Serializable {
     /* Overall review status based on the policy topic entries. */
     private com.google.api.ads.adwords.axis.v201705.cm.PolicySummaryDenormalizedStatus denormalizedStatus;
 
-    /* Approval status that combines review state and status. */
+    /* Approval status that combines review state and status.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CombinedApprovalStatus".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201705.cm.PolicyApprovalStatus combinedApprovalStatus;
 
     public AdGroupAdPolicySummary() {
@@ -135,6 +138,9 @@ public class AdGroupAdPolicySummary  implements java.io.Serializable {
      * Gets the combinedApprovalStatus value for this AdGroupAdPolicySummary.
      * 
      * @return combinedApprovalStatus   * Approval status that combines review state and status.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CombinedApprovalStatus".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201705.cm.PolicyApprovalStatus getCombinedApprovalStatus() {
         return combinedApprovalStatus;
@@ -145,6 +151,9 @@ public class AdGroupAdPolicySummary  implements java.io.Serializable {
      * Sets the combinedApprovalStatus value for this AdGroupAdPolicySummary.
      * 
      * @param combinedApprovalStatus   * Approval status that combines review state and status.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CombinedApprovalStatus".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setCombinedApprovalStatus(com.google.api.ads.adwords.axis.v201705.cm.PolicyApprovalStatus combinedApprovalStatus) {
         this.combinedApprovalStatus = combinedApprovalStatus;

@@ -26,6 +26,7 @@ public enum BatchJobOpsField implements EntityField {
 
   /**
    * The descriptive text of the ad.
+   * Maximum display width is 90.
    */
   @Filterable
   Description(true),

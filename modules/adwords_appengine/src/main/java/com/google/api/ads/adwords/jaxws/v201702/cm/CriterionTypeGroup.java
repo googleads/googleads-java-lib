@@ -110,7 +110,8 @@ public enum CriterionTypeGroup {
 
     /**
      * 
-     *                 Special criteria type group used to reset the existing value.
+     *                 Special criteria type group used to reset the existing value of AdGroup's
+     *                 contentBidCriterionTypeGroup.
      *               
      * 
      */

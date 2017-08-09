@@ -27,11 +27,9 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  */
 public class QualityInfo  implements java.io.Serializable {
     /* The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * <p>Beginning with v201607, this field will return null (designated
-     * by "--")
-     *                 when there aren't enough impressions or clicks to
-     * determine an appropriate
-     *                 quality score value. */
+     * <p>If there aren't enough impressions or clicks to determine an appropriate
+     * quality score value, the QualityInfo object is not returned. For reports,
+     * this field will return null (designated by "--"). */
     private java.lang.Integer qualityScore;
 
     public QualityInfo() {
@@ -54,11 +52,9 @@ public class QualityInfo  implements java.io.Serializable {
      * Gets the qualityScore value for this QualityInfo.
      * 
      * @return qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * <p>Beginning with v201607, this field will return null (designated
-     * by "--")
-     *                 when there aren't enough impressions or clicks to
-     * determine an appropriate
-     *                 quality score value.
+     * <p>If there aren't enough impressions or clicks to determine an appropriate
+     * quality score value, the QualityInfo object is not returned. For reports,
+     * this field will return null (designated by "--").
      */
     public java.lang.Integer getQualityScore() {
         return qualityScore;
@@ -69,11 +65,9 @@ public class QualityInfo  implements java.io.Serializable {
      * Sets the qualityScore value for this QualityInfo.
      * 
      * @param qualityScore   * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-     * <p>Beginning with v201607, this field will return null (designated
-     * by "--")
-     *                 when there aren't enough impressions or clicks to
-     * determine an appropriate
-     *                 quality score value.
+     * <p>If there aren't enough impressions or clicks to determine an appropriate
+     * quality score value, the QualityInfo object is not returned. For reports,
+     * this field will return null (designated by "--").
      */
     public void setQualityScore(java.lang.Integer qualityScore) {
         this.qualityScore = qualityScore;

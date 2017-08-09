@@ -25,6 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Operation (add, remove and set) on adgroup criteria.
+ *             
+ *             <p>If you try to ADD a criterion that already exists, it will be treated as a SET operation
+ *             on the existing criterion.
  *           
  * 
  * <p>Java class for AdGroupCriterionOperation complex type.

@@ -23,6 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Operation used to create or mutate a AdGroupBidModifier.
+ *             
+ *             <p>If you try to ADD a criterion that already exists, it will be treated as a SET operation
+ *             on the existing criterion.
  *           
  * 
  * <p>Java class for AdGroupBidModifierOperation complex type.

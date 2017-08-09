@@ -35,9 +35,6 @@ public class CampaignBidModifier  implements java.io.Serializable {
     private java.lang.Long campaignId;
 
     /* The criterion to which the bid modifier is applied.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Criterion".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201705.cm.Criterion criterion;
@@ -133,9 +130,6 @@ public class CampaignBidModifier  implements java.io.Serializable {
      * Gets the criterion value for this CampaignBidModifier.
      * 
      * @return criterion   * The criterion to which the bid modifier is applied.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Criterion".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -148,9 +142,6 @@ public class CampaignBidModifier  implements java.io.Serializable {
      * Sets the criterion value for this CampaignBidModifier.
      * 
      * @param criterion   * The criterion to which the bid modifier is applied.
-     *                 <span class="constraint Selectable">This field can
-     * be selected using the value "Criterion".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

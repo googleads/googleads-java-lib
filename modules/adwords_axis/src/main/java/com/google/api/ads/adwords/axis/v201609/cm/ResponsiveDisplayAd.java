@@ -36,51 +36,58 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  * AdX.</span>
  */
 public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v201609.cm.Ad  implements java.io.Serializable {
-    /* Marketing image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}.
+    /* Marketing image to be used in the ad. This ad format does not
+     * allow the creation of an image
+     *                     using the Image.data field. An image must first
+     * be created using the MediaService, and
+     *                     Image.mediaId must be populated when creating
+     * a {@link "ResponsiveDisplayAd"}. Valid image
+     *                     types are GIF, JPEG, and PNG. The minimum size
+     * is 600x314 and the aspect ratio must be 600:314
+     *                     (+-1%).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private com.google.api.ads.adwords.axis.v201609.cm.Image marketingImage;
 
-    /* Logo image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}. */
+    /* Logo image to be used in the ad. This ad format does not allow
+     * the creation of an image using
+     *                     the Image.data field. An image must first be created
+     * using the MediaService, and Image.mediaId
+     *                     must be populated when creating a {@link "ResponsiveDisplayAd"}.
+     * Valid image types are GIF,
+     *                     JPEG, and PNG. The minimum size is 128x128 and
+     * the aspect ratio must be 1:1 (+-1%). */
     private com.google.api.ads.adwords.axis.v201609.cm.Image logoImage;
 
-    /* Short format of the headline of the ad.
+    /* Short format of the headline of the ad. Maximum display width
+     * is 25.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private java.lang.String shortHeadline;
 
-    /* Long format of the headline of the ad.
+    /* Long format of the headline of the ad. Maximum display width
+     * is 90.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private java.lang.String longHeadline;
 
-    /* The descriptive text of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+    /* The descriptive text of the ad. Maximum display width is 90.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Description".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
     private java.lang.String description;
 
-    /* The business name.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}
-     *                     when it is contained within {@link Operator}s
-     * : ADD.</span> */
+    /* The business name. Maximum display width is 25. <span class="constraint
+     * Required">This field is
+     *                     required and should not be {@code null} when it
+     * is contained within {@link Operator}s :
+     *                     ADD.</span> */
     private java.lang.String businessName;
 
     public ResponsiveDisplayAd() {
@@ -151,12 +158,15 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the marketingImage value for this ResponsiveDisplayAd.
      * 
-     * @return marketingImage   * Marketing image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}.
+     * @return marketingImage   * Marketing image to be used in the ad. This ad format does not
+     * allow the creation of an image
+     *                     using the Image.data field. An image must first
+     * be created using the MediaService, and
+     *                     Image.mediaId must be populated when creating
+     * a {@link "ResponsiveDisplayAd"}. Valid image
+     *                     types are GIF, JPEG, and PNG. The minimum size
+     * is 600x314 and the aspect ratio must be 600:314
+     *                     (+-1%).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -169,12 +179,15 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the marketingImage value for this ResponsiveDisplayAd.
      * 
-     * @param marketingImage   * Marketing image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}.
+     * @param marketingImage   * Marketing image to be used in the ad. This ad format does not
+     * allow the creation of an image
+     *                     using the Image.data field. An image must first
+     * be created using the MediaService, and
+     *                     Image.mediaId must be populated when creating
+     * a {@link "ResponsiveDisplayAd"}. Valid image
+     *                     types are GIF, JPEG, and PNG. The minimum size
+     * is 600x314 and the aspect ratio must be 600:314
+     *                     (+-1%).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -187,12 +200,14 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the logoImage value for this ResponsiveDisplayAd.
      * 
-     * @return logoImage   * Logo image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}.
+     * @return logoImage   * Logo image to be used in the ad. This ad format does not allow
+     * the creation of an image using
+     *                     the Image.data field. An image must first be created
+     * using the MediaService, and Image.mediaId
+     *                     must be populated when creating a {@link "ResponsiveDisplayAd"}.
+     * Valid image types are GIF,
+     *                     JPEG, and PNG. The minimum size is 128x128 and
+     * the aspect ratio must be 1:1 (+-1%).
      */
     public com.google.api.ads.adwords.axis.v201609.cm.Image getLogoImage() {
         return logoImage;
@@ -202,12 +217,14 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the logoImage value for this ResponsiveDisplayAd.
      * 
-     * @param logoImage   * Logo image to be used in the ad.
-     *                     This ad format does not allow the creation of
-     * an image using the Image.data field. An image
-     *                     must first be created using the MediaService,
-     * and Image.mediaId must be populated when creating
-     *                     a {@link "ResponsiveDisplayAd"}.
+     * @param logoImage   * Logo image to be used in the ad. This ad format does not allow
+     * the creation of an image using
+     *                     the Image.data field. An image must first be created
+     * using the MediaService, and Image.mediaId
+     *                     must be populated when creating a {@link "ResponsiveDisplayAd"}.
+     * Valid image types are GIF,
+     *                     JPEG, and PNG. The minimum size is 128x128 and
+     * the aspect ratio must be 1:1 (+-1%).
      */
     public void setLogoImage(com.google.api.ads.adwords.axis.v201609.cm.Image logoImage) {
         this.logoImage = logoImage;
@@ -217,7 +234,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the shortHeadline value for this ResponsiveDisplayAd.
      * 
-     * @return shortHeadline   * Short format of the headline of the ad.
+     * @return shortHeadline   * Short format of the headline of the ad. Maximum display width
+     * is 25.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -230,7 +248,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the shortHeadline value for this ResponsiveDisplayAd.
      * 
-     * @param shortHeadline   * Short format of the headline of the ad.
+     * @param shortHeadline   * Short format of the headline of the ad. Maximum display width
+     * is 25.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -243,7 +262,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the longHeadline value for this ResponsiveDisplayAd.
      * 
-     * @return longHeadline   * Long format of the headline of the ad.
+     * @return longHeadline   * Long format of the headline of the ad. Maximum display width
+     * is 90.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -256,7 +276,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the longHeadline value for this ResponsiveDisplayAd.
      * 
-     * @param longHeadline   * Long format of the headline of the ad.
+     * @param longHeadline   * Long format of the headline of the ad. Maximum display width
+     * is 90.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -269,10 +290,10 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the description value for this ResponsiveDisplayAd.
      * 
-     * @return description   * The descriptive text of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @return description   * The descriptive text of the ad. Maximum display width is 90.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Description".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -285,10 +306,10 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the description value for this ResponsiveDisplayAd.
      * 
-     * @param description   * The descriptive text of the ad.
-     *                     <span class="constraint Selectable">This field
-     * can be selected using the value "Description".</span><span class="constraint
-     * Filterable">This field can be filtered on.</span>
+     * @param description   * The descriptive text of the ad. Maximum display width is 90.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "Description".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -301,11 +322,11 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Gets the businessName value for this ResponsiveDisplayAd.
      * 
-     * @return businessName   * The business name.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}
-     *                     when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * @return businessName   * The business name. Maximum display width is 25. <span class="constraint
+     * Required">This field is
+     *                     required and should not be {@code null} when it
+     * is contained within {@link Operator}s :
+     *                     ADD.</span>
      */
     public java.lang.String getBusinessName() {
         return businessName;
@@ -315,11 +336,11 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20160
     /**
      * Sets the businessName value for this ResponsiveDisplayAd.
      * 
-     * @param businessName   * The business name.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}
-     *                     when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * @param businessName   * The business name. Maximum display width is 25. <span class="constraint
+     * Required">This field is
+     *                     required and should not be {@code null} when it
+     * is contained within {@link Operator}s :
+     *                     ADD.</span>
      */
     public void setBusinessName(java.lang.String businessName) {
         this.businessName = businessName;

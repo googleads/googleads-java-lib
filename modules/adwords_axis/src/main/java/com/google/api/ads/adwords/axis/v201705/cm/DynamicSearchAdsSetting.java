@@ -31,8 +31,6 @@ package com.google.api.ads.adwords.axis.v201705.cm;
 public class DynamicSearchAdsSetting  extends com.google.api.ads.adwords.axis.v201705.cm.Setting  implements java.io.Serializable {
     /* The Internet domain name that this setting represents. E.g.
      * "google.com" or "www.google.com".
-     *                     To disable the setting set the domainName field
-     * to "-" (a single dash character).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span> */
     private java.lang.String domainName;
@@ -85,8 +83,6 @@ public class DynamicSearchAdsSetting  extends com.google.api.ads.adwords.axis.v2
      * 
      * @return domainName   * The Internet domain name that this setting represents. E.g.
      * "google.com" or "www.google.com".
-     *                     To disable the setting set the domainName field
-     * to "-" (a single dash character).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */
@@ -100,8 +96,6 @@ public class DynamicSearchAdsSetting  extends com.google.api.ads.adwords.axis.v2
      * 
      * @param domainName   * The Internet domain name that this setting represents. E.g.
      * "google.com" or "www.google.com".
-     *                     To disable the setting set the domainName field
-     * to "-" (a single dash character).
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
      */

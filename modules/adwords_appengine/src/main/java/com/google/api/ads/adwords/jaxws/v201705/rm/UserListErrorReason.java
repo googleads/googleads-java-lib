@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_USER_LIST_LOGICAL_RULE_OPERAND"/>
  *     &lt;enumeration value="NAME_ALREADY_USED"/>
  *     &lt;enumeration value="NEW_CONVERSION_TYPE_NAME_REQUIRED"/>
+ *     &lt;enumeration value="CONVERSION_TYPE_NAME_ALREADY_USED"/>
  *     &lt;enumeration value="OWNERSHIP_REQUIRED_FOR_SET"/>
  *     &lt;enumeration value="REMOVE_NOT_SUPPORTED"/>
  *     &lt;enumeration value="USER_LIST_MUTATE_NOT_SUPPORTED"/>
@@ -146,6 +147,14 @@ public enum UserListErrorReason {
      * 
      */
     NEW_CONVERSION_TYPE_NAME_REQUIRED,
+
+    /**
+     * 
+     *                 The given conversion type name has been used.
+     *               
+     * 
+     */
+    CONVERSION_TYPE_NAME_ALREADY_USED,
 
     /**
      * 

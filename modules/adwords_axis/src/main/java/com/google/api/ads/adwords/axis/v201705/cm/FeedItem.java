@@ -33,10 +33,7 @@ public class FeedItem  implements java.io.Serializable {
 
     /* ID of this feed item.
      *                 This may be unspecified if the user-defined key attributes
-     * are specified.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: ADD.</span> */
+     * are specified. */
     private java.lang.Long feedItemId;
 
     /* Status of feed item
@@ -262,9 +259,6 @@ public class FeedItem  implements java.io.Serializable {
      * @return feedItemId   * ID of this feed item.
      *                 This may be unspecified if the user-defined key attributes
      * are specified.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: ADD.</span>
      */
     public java.lang.Long getFeedItemId() {
         return feedItemId;
@@ -277,9 +271,6 @@ public class FeedItem  implements java.io.Serializable {
      * @param feedItemId   * ID of this feed item.
      *                 This may be unspecified if the user-defined key attributes
      * are specified.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API for the following {@link
-     * Operator}s: ADD.</span>
      */
     public void setFeedItemId(java.lang.Long feedItemId) {
         this.feedItemId = feedItemId;

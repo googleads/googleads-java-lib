@@ -42,10 +42,12 @@ public class CampaignCriterion  implements java.io.Serializable {
 
     /* The modifier for bids when the criterion matches.
      *
-     *                 <p> Valid modifier values range from {@code 0.1} to
+     *                 <p>Valid modifier values range from {@code 0.1} to
      * {@code 10.0}, with {@code 0.0} reserved
      *                 for opting out of platform criterion.
-     *                 <p>Specify {@code -1.0} to clear existing bid modifier. */
+     *                 <p>To clear an existing bid modifier, specify {@code
+     * -1.0} (invalid for initial {@code ADD}
+     *                 operations). */
     private java.lang.Double bidModifier;
 
     /* The status for criteria. */
@@ -178,10 +180,12 @@ public class CampaignCriterion  implements java.io.Serializable {
      *
      * @return bidModifier   * The modifier for bids when the criterion matches.
      *
-     *                 <p> Valid modifier values range from {@code 0.1} to
+     *                 <p>Valid modifier values range from {@code 0.1} to
      * {@code 10.0}, with {@code 0.0} reserved
      *                 for opting out of platform criterion.
-     *                 <p>Specify {@code -1.0} to clear existing bid modifier.
+     *                 <p>To clear an existing bid modifier, specify {@code
+     * -1.0} (invalid for initial {@code ADD}
+     *                 operations).
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -193,10 +197,12 @@ public class CampaignCriterion  implements java.io.Serializable {
      *
      * @param bidModifier   * The modifier for bids when the criterion matches.
      *
-     *                 <p> Valid modifier values range from {@code 0.1} to
+     *                 <p>Valid modifier values range from {@code 0.1} to
      * {@code 10.0}, with {@code 0.0} reserved
      *                 for opting out of platform criterion.
-     *                 <p>Specify {@code -1.0} to clear existing bid modifier.
+     *                 <p>To clear an existing bid modifier, specify {@code
+     * -1.0} (invalid for initial {@code ADD}
+     *                 operations).
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

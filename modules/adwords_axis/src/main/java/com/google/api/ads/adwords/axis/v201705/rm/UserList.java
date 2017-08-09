@@ -173,8 +173,10 @@ public class UserList  implements java.io.Serializable {
     private java.lang.Boolean isEligibleForDisplay;
 
     /* Indicating the reason why this user list membership status
-     * is closed. It'll be cleared once the
-     *                 list membership status becomes open.
+     * is closed. It is only populated on
+     *                 lists that were automatically closed due to inactivity,
+     * and will be cleared once the list
+     *                 membership status becomes open.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ClosingReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span> */
@@ -771,8 +773,10 @@ public class UserList  implements java.io.Serializable {
      * Gets the closingReason value for this UserList.
      * 
      * @return closingReason   * Indicating the reason why this user list membership status
-     * is closed. It'll be cleared once the
-     *                 list membership status becomes open.
+     * is closed. It is only populated on
+     *                 lists that were automatically closed due to inactivity,
+     * and will be cleared once the list
+     *                 membership status becomes open.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ClosingReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>
@@ -786,8 +790,10 @@ public class UserList  implements java.io.Serializable {
      * Sets the closingReason value for this UserList.
      * 
      * @param closingReason   * Indicating the reason why this user list membership status
-     * is closed. It'll be cleared once the
-     *                 list membership status becomes open.
+     * is closed. It is only populated on
+     *                 lists that were automatically closed due to inactivity,
+     * and will be cleared once the list
+     *                 membership status becomes open.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "ClosingReason".</span><span class="constraint
      * Filterable">This field can be filtered on.</span>

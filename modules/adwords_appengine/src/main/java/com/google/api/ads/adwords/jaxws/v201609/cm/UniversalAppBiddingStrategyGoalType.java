@@ -70,8 +70,8 @@ public enum UniversalAppBiddingStrategyGoalType {
     /**
      * 
      *                 The bidding strategy of the universal app campaign should aim to maximize all
-     *                 conversions' value, i.e., install + selected in-app conversions.NOTE: This value
-     *                 cannot be set by external clients.
+     *                 conversions' value, i.e., install + selected in-app conversions. NOTE: This
+     *                 value cannot be set by external clients, but it can be retrieved using get.
      *               
      * 
      */

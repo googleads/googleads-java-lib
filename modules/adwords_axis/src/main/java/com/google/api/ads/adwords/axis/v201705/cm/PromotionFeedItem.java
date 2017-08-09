@@ -33,22 +33,32 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
     private com.google.api.ads.adwords.axis.v201705.cm.PromotionExtensionDiscountModifier discountModifier;
 
     /* Percent off in micros. One million is equivalent to one percent.
-     * Either percentOff or moneyAmountOff is required. */
+     * Either percentOff or moneyAmountOff is required.
+     *                     Cannot set both percentOff and moneyAmountOff. */
     private java.lang.Long percentOff;
 
-    /* Money amount off. Either percentOff or moneyAmountOff is required. */
+    /* Money amount off. Either percentOff or moneyAmountOff is required.
+     * Cannot set both moneyAmountOff and percentOff. */
     private com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency moneyAmountOff;
 
-    /* Promotion code. Optional. */
+    /* Promotion code. Optional.
+     *                     Cannot set both promotionCode and ordersOverAmount. */
     private java.lang.String promotionCode;
 
-    /* Orders over amount. Optional. */
+    /* Orders over amount. Optional.
+     *                     Cannot set both ordersOverAmount and promotionCode. */
     private com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency ordersOverAmount;
 
-    /* Promotion start. Optional. */
+    /* Promotion start. Optional.
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value. */
     private java.lang.String promotionStart;
 
-    /* Promotion end . Optional. */
+    /* Promotion end. Optional
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value. */
     private java.lang.String promotionEnd;
 
     /* Occasion of the promotion. Optional. */
@@ -211,6 +221,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * 
      * @return percentOff   * Percent off in micros. One million is equivalent to one percent.
      * Either percentOff or moneyAmountOff is required.
+     *                     Cannot set both percentOff and moneyAmountOff.
      */
     public java.lang.Long getPercentOff() {
         return percentOff;
@@ -222,6 +233,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * 
      * @param percentOff   * Percent off in micros. One million is equivalent to one percent.
      * Either percentOff or moneyAmountOff is required.
+     *                     Cannot set both percentOff and moneyAmountOff.
      */
     public void setPercentOff(java.lang.Long percentOff) {
         this.percentOff = percentOff;
@@ -232,6 +244,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Gets the moneyAmountOff value for this PromotionFeedItem.
      * 
      * @return moneyAmountOff   * Money amount off. Either percentOff or moneyAmountOff is required.
+     * Cannot set both moneyAmountOff and percentOff.
      */
     public com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency getMoneyAmountOff() {
         return moneyAmountOff;
@@ -242,6 +255,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Sets the moneyAmountOff value for this PromotionFeedItem.
      * 
      * @param moneyAmountOff   * Money amount off. Either percentOff or moneyAmountOff is required.
+     * Cannot set both moneyAmountOff and percentOff.
      */
     public void setMoneyAmountOff(com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency moneyAmountOff) {
         this.moneyAmountOff = moneyAmountOff;
@@ -252,6 +266,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Gets the promotionCode value for this PromotionFeedItem.
      * 
      * @return promotionCode   * Promotion code. Optional.
+     *                     Cannot set both promotionCode and ordersOverAmount.
      */
     public java.lang.String getPromotionCode() {
         return promotionCode;
@@ -262,6 +277,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Sets the promotionCode value for this PromotionFeedItem.
      * 
      * @param promotionCode   * Promotion code. Optional.
+     *                     Cannot set both promotionCode and ordersOverAmount.
      */
     public void setPromotionCode(java.lang.String promotionCode) {
         this.promotionCode = promotionCode;
@@ -272,6 +288,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Gets the ordersOverAmount value for this PromotionFeedItem.
      * 
      * @return ordersOverAmount   * Orders over amount. Optional.
+     *                     Cannot set both ordersOverAmount and promotionCode.
      */
     public com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency getOrdersOverAmount() {
         return ordersOverAmount;
@@ -282,6 +299,7 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Sets the ordersOverAmount value for this PromotionFeedItem.
      * 
      * @param ordersOverAmount   * Orders over amount. Optional.
+     *                     Cannot set both ordersOverAmount and promotionCode.
      */
     public void setOrdersOverAmount(com.google.api.ads.adwords.axis.v201705.cm.MoneyWithCurrency ordersOverAmount) {
         this.ordersOverAmount = ordersOverAmount;
@@ -292,6 +310,9 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Gets the promotionStart value for this PromotionFeedItem.
      * 
      * @return promotionStart   * Promotion start. Optional.
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value.
      */
     public java.lang.String getPromotionStart() {
         return promotionStart;
@@ -302,6 +323,9 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
      * Sets the promotionStart value for this PromotionFeedItem.
      * 
      * @param promotionStart   * Promotion start. Optional.
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value.
      */
     public void setPromotionStart(java.lang.String promotionStart) {
         this.promotionStart = promotionStart;
@@ -311,7 +335,10 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
     /**
      * Gets the promotionEnd value for this PromotionFeedItem.
      * 
-     * @return promotionEnd   * Promotion end . Optional.
+     * @return promotionEnd   * Promotion end. Optional
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value.
      */
     public java.lang.String getPromotionEnd() {
         return promotionEnd;
@@ -321,7 +348,10 @@ public class PromotionFeedItem  extends com.google.api.ads.adwords.axis.v201705.
     /**
      * Sets the promotionEnd value for this PromotionFeedItem.
      * 
-     * @param promotionEnd   * Promotion end . Optional.
+     * @param promotionEnd   * Promotion end. Optional
+     *                     The time part must be set to midnight.
+     *                     The special value "00000101 000000" may be used
+     * to clear an existing value.
      */
     public void setPromotionEnd(java.lang.String promotionEnd) {
         this.promotionEnd = promotionEnd;

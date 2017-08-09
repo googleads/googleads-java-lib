@@ -24,6 +24,10 @@ package com.google.api.ads.adwords.axis.v201702.cm;
 
 /**
  * Operation used to create or mutate a AdGroupBidModifier.
+ *             
+ *             <p>If you try to ADD a criterion that already exists,
+ * it will be treated as a SET operation
+ *             on the existing criterion.
  */
 public class AdGroupBidModifierOperation  extends com.google.api.ads.adwords.axis.v201702.cm.Operation  implements java.io.Serializable {
     /* The AdGroupBidModifier to create or mutate.

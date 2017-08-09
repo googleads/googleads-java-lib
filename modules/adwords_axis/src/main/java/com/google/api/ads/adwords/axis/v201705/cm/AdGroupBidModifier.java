@@ -45,9 +45,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
-     *                 
-     *                 <p>Preferred Content Criteria is available in versions
-     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private com.google.api.ads.adwords.axis.v201705.cm.Criterion criterion;
@@ -165,9 +162,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
-     *                 
-     *                 <p>Preferred Content Criteria is available in versions
-     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -188,9 +182,6 @@ public class AdGroupBidModifier  implements java.io.Serializable {
      *                 The {@linkplain AdGroupBidModifierService#get} method
      * returns all platform and
      *                 preferred content criteria.
-     *                 
-     *                 <p>Preferred Content Criteria is available in versions
-     * >= V201603.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */

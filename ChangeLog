@@ -1,3 +1,21 @@
+3.6.0 - 8/9/2017
+-----------------
+AdWords:
+  - Added support and examples for v201708.
+  - Modified the default `log4j.properties` file to write to stderr instead of
+    files.
+  - Added a new `log4j.tofiles.properties` file as a sample of how to configure
+    logging to files.
+
+DFP:
+  - Modified the default `log4j.properties` file to write to stderr instead of
+    files.
+  - Added a new `log4j.tofiles.properties` file as a sample of how to configure
+    logging to files.
+
+Common:
+  - No changes.
+
 3.5.0 - 6/27/2017
 -----------------
 AdWords:

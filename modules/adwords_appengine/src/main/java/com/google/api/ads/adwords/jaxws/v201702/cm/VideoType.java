@@ -40,37 +40,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum VideoType {
 
-
-    /**
-     * 
-     *                 The Adobe Flash video format (.swf).
-     *               
-     * 
-     */
     ADOBE,
-
-    /**
-     * 
-     *                 The RealVideo format (.rm or .ram).
-     *               
-     * 
-     */
     REALPLAYER,
-
-    /**
-     * 
-     *                 The QuickTime format (.mov).
-     *               
-     * 
-     */
     QUICKTIME,
-
-    /**
-     * 
-     *                 The Windows Media format (.wmv).
-     *               
-     * 
-     */
     WINDOWSMEDIA;
 
     public String value() {

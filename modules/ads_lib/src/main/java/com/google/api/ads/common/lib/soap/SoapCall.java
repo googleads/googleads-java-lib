@@ -14,10 +14,9 @@
 
 package com.google.api.ads.common.lib.soap;
 
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Represents a single call to the SOAP client.
@@ -33,8 +32,7 @@ public class SoapCall<T> {
   /**
    * Constructor.
    *
-   * @param soapClientMethod the SOAP client method to invoke on the underlying
-   *     SOAP client.
+   * @param soapClientMethod the SOAP client method to invoke on the underlying SOAP client.
    * @param soapClient the underlying SOAP client that the call will be made on
    * @param soapArgs the arguments that will be passed into the SOAP call.
    */
@@ -44,48 +42,37 @@ public class SoapCall<T> {
     this.soapArgs = soapArgs;
   }
 
-  /**
-   * Returns the method to invoke on the underlying SOAP client.
-   */
+  /** Returns the method to invoke on the underlying SOAP client. */
   public Method getSoapClientMethod() {
     return soapClientMethod;
   }
 
-  /**
-   * Returns the underlying SOAP client that call will be made on.
-   */
+  /** Returns the underlying SOAP client that call will be made on. */
   public T getSoapClient() {
     return soapClient;
   }
 
-  /**
-   * Returns the arguments that will be passed into the SOAP call.
-   */
+  /** Returns the arguments that will be passed into the SOAP call. */
   public Object[] getSoapArgs() {
     return soapArgs;
   }
 
-  /**
-   * @see java.lang.Object#equals(java.lang.Object)
-   */
+  /** @see java.lang.Object#equals(java.lang.Object) */
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof SoapCall) {
-      SoapCall<?> soapCall = (SoapCall<?>) obj;
+      SoapCall<?> other = (SoapCall<?>) obj;
 
-      return this == soapCall
-          || (Arrays.equals(this.getSoapArgs(), soapCall.getSoapArgs())
-              && this.getSoapClient().equals(soapCall.getSoapClient()) && this
-              .getSoapClientMethod().equals(soapCall.getSoapClientMethod()));
+      return Objects.equals(soapClient, other.soapClient)
+          && Objects.equals(soapClientMethod, other.soapClientMethod)
+          && Objects.deepEquals(soapArgs, other.soapArgs);
     }
     return false;
   }
 
-  /**
-   * @see java.lang.Object#hashCode()
-   */
+  /** @see java.lang.Object#hashCode() */
   @Override
   public int hashCode() {
-    return HashCodeBuilder.reflectionHashCode(this);
+    return Objects.hash(soapClientMethod, soapClient, Arrays.hashCode(soapArgs));
   }
 }

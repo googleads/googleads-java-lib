@@ -34,7 +34,8 @@ public class RuleItemGroup  implements java.io.Serializable {
      * grouped together based on
      *                 {@link Rule#getRuleType()}.
      *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1.</span>
+     * size of this collection is 1. The maximum size of this collection
+     * is 1000.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -67,7 +68,8 @@ public class RuleItemGroup  implements java.io.Serializable {
      * grouped together based on
      *                 {@link Rule#getRuleType()}.
      *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1.</span>
+     * size of this collection is 1. The maximum size of this collection
+     * is 1000.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field
@@ -88,7 +90,8 @@ public class RuleItemGroup  implements java.io.Serializable {
      * grouped together based on
      *                 {@link Rule#getRuleType()}.
      *                 <span class="constraint CollectionSize">The minimum
-     * size of this collection is 1.</span>
+     * size of this collection is 1. The maximum size of this collection
+     * is 1000.</span>
      *                 <span class="constraint ContentsDistinct">This field
      * must contain distinct elements.</span>
      *                 <span class="constraint ContentsNotNull">This field

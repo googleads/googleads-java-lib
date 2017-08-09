@@ -86,7 +86,8 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * guide</a>.
      *                 
      *                 <p>Starting with v201705, this field cannot be set
-     * at the ad group or ad group criterion level. */
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}. */
     private com.google.api.ads.adwords.axis.v201705.cm.BiddingStrategyType biddingStrategyType;
 
     /* Indicates where the bidding strategy is associated i.e. campaign,
@@ -246,7 +247,8 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * guide</a>.
      *                 
      *                 <p>Starting with v201705, this field cannot be set
-     * at the ad group or ad group criterion level.
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}.
      */
     public com.google.api.ads.adwords.axis.v201705.cm.BiddingStrategyType getBiddingStrategyType() {
         return biddingStrategyType;
@@ -264,7 +266,8 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * guide</a>.
      *                 
      *                 <p>Starting with v201705, this field cannot be set
-     * at the ad group or ad group criterion level.
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}.
      */
     public void setBiddingStrategyType(com.google.api.ads.adwords.axis.v201705.cm.BiddingStrategyType biddingStrategyType) {
         this.biddingStrategyType = biddingStrategyType;

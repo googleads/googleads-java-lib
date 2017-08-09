@@ -76,6 +76,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * The business name.
+   * Maximum display width is 25.
    * <span class="constraint Required">This field is required and should not be {@code null} when it is contained within {@code Operator}s : ADD.</span>
    */
   @Filterable
@@ -309,11 +310,14 @@ public enum AdGroupAdField implements EntityField {
    * Logo image to be used in the ad.
    * This ad format does not allow the creation of an image using the Image.data field.
    * An image must first be created using the MediaService, and Image.mediaId must be populated when creating a {@code "ResponsiveDisplayAd"}.
+   * Valid image types are GIF, JPEG, and PNG.
+   * The minimum size is 128x128 and the aspect ratio must be 1:1 (+-1%).
    */
   LogoImage(false),
 
   /**
    * Long format of the headline of the ad.
+   * Maximum display width is 90.
    */
   @Filterable
   LongHeadline(true),
@@ -322,6 +326,8 @@ public enum AdGroupAdField implements EntityField {
    * Marketing image to be used in the ad.
    * This ad format does not allow the creation of an image using the Image.data field.
    * An image must first be created using the MediaService, and Image.mediaId must be populated when creating a {@code "ResponsiveDisplayAd"}.
+   * Valid image types are GIF, JPEG, and PNG.
+   * The minimum size is 600x314 and the aspect ratio must be 600:314 (+-1%).
    */
   MarketingImage(false),
 
@@ -405,6 +411,7 @@ public enum AdGroupAdField implements EntityField {
 
   /**
    * Short format of the headline of the ad.
+   * Maximum display width is 25.
    */
   @Filterable
   ShortHeadline(true),

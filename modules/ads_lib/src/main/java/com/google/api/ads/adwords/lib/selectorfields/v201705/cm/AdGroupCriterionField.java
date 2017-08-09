@@ -310,7 +310,8 @@ public enum AdGroupCriterionField implements EntityField {
 
   /**
    * The keyword quality score ranges from 1 (lowest) to 10 (highest).
-   * <p>Beginning with v201607, this field will return null (designated by "--") when there aren't enough impressions or clicks to determine an appropriate quality score value.
+   * <p>If there aren't enough impressions or clicks to determine an appropriate quality score value, the QualityInfo object is not returned.
+   * For reports, this field will return null (designated by "--").
    */
   @Filterable
   QualityScore(true),

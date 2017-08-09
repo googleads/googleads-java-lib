@@ -130,7 +130,7 @@ public enum BiddingStrategyType {
     /**
      * 
      *                 Target ROAS is an automated bidding strategy that helps you maximize
-     *                 revenue while averaging a specific target Return On Average Spend (ROAS).
+     *                 revenue while averaging a specific target return on average spend (ROAS).
      *                 See {@linkplain TargetRoasBiddingScheme} for more details.
      *               
      * 

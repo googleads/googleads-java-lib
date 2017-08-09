@@ -41,10 +41,50 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum DataDrivenModelStatus {
 
+
+    /**
+     * 
+     *                 The data driven model status is unknown.
+     *               
+     * 
+     */
     UNKNOWN,
+
+    /**
+     * 
+     *                 A data driven model is available.
+     *               
+     * 
+     */
     AVAILABLE,
+
+    /**
+     * 
+     *                 The data driven model is stale. It hasn't been updated for at least 7 days. It
+     *                 is still being used, but will become expired if it does not get updated for 30
+     *                 days.
+     *               
+     * 
+     */
     STALE,
+
+    /**
+     * 
+     *                 The data driven model expired. It hasn't been updated for at least 30 days and
+     *                 cannot be used. Most commonly this is because there haven't been the required
+     *                 number of events in a recent 30-day period.
+     *               
+     * 
+     */
     EXPIRED,
+
+    /**
+     * 
+     *                 A data driven model has never been generated. Most commonly this is because
+     *                 there has never been the required number of events in any 30-day period.
+     *               
+     * 
+     */
     NEVER_GENERATED;
 
     public String value() {

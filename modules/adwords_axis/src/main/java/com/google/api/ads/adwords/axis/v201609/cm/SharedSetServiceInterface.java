@@ -38,6 +38,7 @@ public interface SharedSetServiceInterface extends java.rmi.Remote {
     /**
      * Applies the list of mutate operations.
      *         
+     *         
      * @param operations the operations to apply
      *         
      * @return the modified CriterionList entities

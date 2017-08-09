@@ -49,8 +49,8 @@ public class CreateCreatives {
 
     // Create creative size.
     Size size = new Size();
-    size.setWidth(300);
-    size.setHeight(250);
+    size.setWidth(600);
+    size.setHeight(315);
     size.setIsAspectRatio(false);
 
     // Create an image creative.
@@ -63,8 +63,7 @@ public class CreateCreatives {
     // Create image asset.
     CreativeAsset creativeAsset = new CreativeAsset();
     creativeAsset.setFileName("image.jpg");
-    creativeAsset.setAssetByteArray(Media.getMediaDataFromUrl(
-        "http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg"));
+    creativeAsset.setAssetByteArray(Media.getMediaDataFromUrl("https://goo.gl/3b9Wfh"));
     creativeAsset.setSize(size);
     imageCreative.setPrimaryImageAsset(creativeAsset);
 
@@ -74,8 +73,7 @@ public class CreateCreatives {
         "Image redirect creative #" + new Random().nextInt(Integer.MAX_VALUE));
     imageRedirectCreative.setAdvertiserId(advertiserId);
     imageRedirectCreative.setDestinationUrl("http://google.com");
-    imageRedirectCreative.setImageUrl(
-        "http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg");
+    imageRedirectCreative.setImageUrl("https://goo.gl/3b9Wfh");
     imageRedirectCreative.setSize(size);
 
     // Create the creatives on the server.

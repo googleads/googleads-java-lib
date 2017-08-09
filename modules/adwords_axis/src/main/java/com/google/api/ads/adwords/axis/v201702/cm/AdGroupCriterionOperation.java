@@ -24,6 +24,10 @@ package com.google.api.ads.adwords.axis.v201702.cm;
 
 /**
  * Operation (add, remove and set) on adgroup criteria.
+ *             
+ *             <p>If you try to ADD a criterion that already exists,
+ * it will be treated as a SET operation
+ *             on the existing criterion.
  */
 public class AdGroupCriterionOperation  extends com.google.api.ads.adwords.axis.v201702.cm.Operation  implements java.io.Serializable {
     /* The adgroup criterion being operated on.

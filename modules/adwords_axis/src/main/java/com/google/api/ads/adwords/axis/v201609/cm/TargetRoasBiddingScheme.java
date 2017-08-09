@@ -25,7 +25,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
 /**
  * Target Roas bidding strategy helps you maximize revenue while averaging
  * a specific target
- *             Return On Average Spend (ROAS).
+ *             return on average spend (ROAS).
  *             
  *             <p>For example: If TargetRoas is 1.5, the strategy will
  * create as much revenue as possible while
@@ -40,8 +40,7 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  * AdX.</span>
  */
 public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme  implements java.io.Serializable {
-    /* The desired revenue (based on conversion data) per unit of
-     * spend.
+    /* The target return on average spend (ROAS).
      *                     <span class="constraint InRange">This field must
      * be between 0.01 and 1000.0, inclusive.</span> */
     private java.lang.Double targetRoas;
@@ -87,8 +86,7 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
     /**
      * Gets the targetRoas value for this TargetRoasBiddingScheme.
      * 
-     * @return targetRoas   * The desired revenue (based on conversion data) per unit of
-     * spend.
+     * @return targetRoas   * The target return on average spend (ROAS).
      *                     <span class="constraint InRange">This field must
      * be between 0.01 and 1000.0, inclusive.</span>
      */
@@ -100,8 +98,7 @@ public class TargetRoasBiddingScheme  extends com.google.api.ads.adwords.axis.v2
     /**
      * Sets the targetRoas value for this TargetRoasBiddingScheme.
      * 
-     * @param targetRoas   * The desired revenue (based on conversion data) per unit of
-     * spend.
+     * @param targetRoas   * The target return on average spend (ROAS).
      *                     <span class="constraint InRange">This field must
      * be between 0.01 and 1000.0, inclusive.</span>
      */

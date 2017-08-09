@@ -27,7 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Encapsulates the information about bids and bidding strategies.
  *             
- *             <p>Bidding Strategy can be set on campaigns, ad groups or ad group criteria.
+ *             <p class="note"><b>Note:</b> Starting with v201705, bidding strategies can only be set on
+ *             campaigns. In earlier versions, bidding strategies can be set on campaigns, ad groups and ad
+ *             group criteria.
+ *             
  *             <p>A bidding strategy can be set using one of the following:
  *             <ul>
  *             <li>{@linkplain BiddingStrategyConfiguration#biddingScheme bidding scheme}</li>

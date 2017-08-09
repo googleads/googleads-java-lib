@@ -96,16 +96,16 @@ public class AddResponsiveDisplayAd {
     responsiveDisplayAd.setFinalUrls(new String[] {"http://www.example.com/"});
 
     // Create ad group ad for the responsive display ad.
-    AdGroupAd expandedTextAdGroupAd = new AdGroupAd();
-    expandedTextAdGroupAd.setAdGroupId(adGroupId);
-    expandedTextAdGroupAd.setAd(responsiveDisplayAd);
+    AdGroupAd adGroupAd = new AdGroupAd();
+    adGroupAd.setAdGroupId(adGroupId);
+    adGroupAd.setAd(responsiveDisplayAd);
 
     // Optional: set the status.
-    expandedTextAdGroupAd.setStatus(AdGroupAdStatus.PAUSED);
+    adGroupAd.setStatus(AdGroupAdStatus.PAUSED);
 
     // Create the operation.
     AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-    adGroupAdOperation.setOperand(expandedTextAdGroupAd);
+    adGroupAdOperation.setOperand(adGroupAd);
     adGroupAdOperation.setOperator(Operator.ADD);
 
     // Make the mutate request.

@@ -42,7 +42,7 @@ public enum AdwordsUserListField implements EntityField {
 
   /**
    * Indicating the reason why this user list membership status is closed.
-   * It'll be cleared once the list membership status becomes open.
+   * It is only populated on lists that were automatically closed due to inactivity, and will be cleared once the list membership status becomes open.
    */
   @Filterable
   ClosingReason(true),

@@ -24,19 +24,19 @@ package com.google.api.ads.adwords.axis.v201702.cm;
 
 /**
  * Represents a dynamic search ad. This ad will have its headline
- * and
- *             tracking URL auto-generated at serving time according
- * to domain name
- *             specific information provided by {@link DomainInfoExtension}
- * linked at the
- *             campaign level.
+ * and final URL auto-generated at
+ *             serving time according to domain name specific information
+ * provided by DynamicSearchAdsSetting at
+ *             the campaign level.
  *             
- *             <p>Auto-generated fields: headline and optional tracking
- * URL.</p>
+ *             <p>Auto-generated fields: headline and final URL.</p>
+ *             
+ *             <p>Note: we recommend using the ExpandedDynamicSearchAd
+ * type, introduced in v201705, rather than
+ *             the DynamicSearchAd type.</p>
  *             
  *             <p><b>Required fields:</b> {@code description1}, {@code
- * description2},
- *             {@code displayUrl}.</p>
+ * description2}, {@code displayUrl}.</p>
  *             
  *             <p>The tracking URL field must contain at least one of
  * the following placeholder tags

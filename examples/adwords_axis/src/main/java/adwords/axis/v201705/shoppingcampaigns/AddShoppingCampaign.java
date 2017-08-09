@@ -65,7 +65,7 @@ public class AddShoppingCampaign {
     @Parameter(names = ArgumentNames.MERCHANT_ID, required = true)
     private Long merchantId;
 
-    @Parameter(names = ArgumentNames.CREATE_DEFAULT_PARTITION, required = true,
+    @Parameter(names = ArgumentNames.CREATE_DEFAULT_PARTITION, required = true, arity = 1,
         description = "If set to true, a default partition will be created. If running the"
             + " AddProductPartitionTree.java example right after this example, make sure this stays"
             + " set to false.")

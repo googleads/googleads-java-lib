@@ -54,7 +54,11 @@ public class ShoppingSetting  extends com.google.api.ads.adwords.axis.v201705.cm
     /* Enable local inventory ads. */
     private java.lang.Boolean enableLocal;
 
-    /* The platform on which a shopping product can be purchased. */
+    /* The platform on which a shopping product can be purchased.
+     *                     
+     *                     The merchantId must also be provided if changing
+     * purchase platform to
+     *                     GOOGLE or MERCHANT_AND_GOOGLE. */
     private com.google.api.ads.adwords.axis.v201705.cm.ShoppingPurchasePlatform purchasePlatform;
 
     public ShoppingSetting() {
@@ -199,6 +203,10 @@ public class ShoppingSetting  extends com.google.api.ads.adwords.axis.v201705.cm
      * Gets the purchasePlatform value for this ShoppingSetting.
      * 
      * @return purchasePlatform   * The platform on which a shopping product can be purchased.
+     *                     
+     *                     The merchantId must also be provided if changing
+     * purchase platform to
+     *                     GOOGLE or MERCHANT_AND_GOOGLE.
      */
     public com.google.api.ads.adwords.axis.v201705.cm.ShoppingPurchasePlatform getPurchasePlatform() {
         return purchasePlatform;
@@ -209,6 +217,10 @@ public class ShoppingSetting  extends com.google.api.ads.adwords.axis.v201705.cm
      * Sets the purchasePlatform value for this ShoppingSetting.
      * 
      * @param purchasePlatform   * The platform on which a shopping product can be purchased.
+     *                     
+     *                     The merchantId must also be provided if changing
+     * purchase platform to
+     *                     GOOGLE or MERCHANT_AND_GOOGLE.
      */
     public void setPurchasePlatform(com.google.api.ads.adwords.axis.v201705.cm.ShoppingPurchasePlatform purchasePlatform) {
         this.purchasePlatform = purchasePlatform;

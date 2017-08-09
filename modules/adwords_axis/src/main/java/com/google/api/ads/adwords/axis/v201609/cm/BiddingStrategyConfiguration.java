@@ -25,8 +25,12 @@ package com.google.api.ads.adwords.axis.v201609.cm;
 /**
  * Encapsulates the information about bids and bidding strategies.
  * 
- *             <p>Bidding Strategy can be set on campaigns, ad groups
- * or ad group criteria.
+ *             <p class="note"><b>Note:</b> Starting with v201705, bidding
+ * strategies can only be set on
+ *             campaigns. In earlier versions, bidding strategies can
+ * be set on campaigns, ad groups and ad
+ *             group criteria.
+ *             
  *             <p>A bidding strategy can be set using one of the following:
  * <ul>
  *             <li>{@linkplain BiddingStrategyConfiguration#biddingScheme
@@ -55,12 +59,15 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  */
 public class BiddingStrategyConfiguration  implements java.io.Serializable {
     /* Id of the bidding strategy to be associated with the campaign,
-     * ad group or ad group criteria.
-     *                 A bidding strategy is created using the BiddingStrategyService
-     * ADD operation and is
-     *                 assigned a BiddingStrategyId. The BiddingStrategyId
-     * can be shared across campaigns,
-     *                 ad groups and ad group criteria.
+     * ad group or ad group criteria. A
+     *                 bidding strategy is created using the BiddingStrategyService
+     * ADD operation and is assigned a
+     *                 BiddingStrategyId. The BiddingStrategyId can be shared
+     * across campaigns, ad groups and ad group
+     *                 criteria.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level.
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span> */
     private java.lang.Long biddingStrategyId;
@@ -74,9 +81,13 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
     /* The type of the bidding strategy to be attached.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
-     * guide</a>. */
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}. */
     private com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType biddingStrategyType;
 
     /* Indicates where the bidding strategy is associated i.e. campaign,
@@ -87,14 +98,17 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategySource biddingStrategySource;
 
     /* The bidding strategy metadata. Bidding strategy can be associated
-     * using the
-     *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
+     * using the {@linkplain
+     *                 BiddingStrategyConfiguration#biddingStrategyType}
      * or the bidding scheme.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
-     * guide</a>. */
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level. */
     private com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme biddingScheme;
 
     /* Specifies the bids. Bids can be set only on ad groups and ad
@@ -144,12 +158,15 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Gets the biddingStrategyId value for this BiddingStrategyConfiguration.
      * 
      * @return biddingStrategyId   * Id of the bidding strategy to be associated with the campaign,
-     * ad group or ad group criteria.
-     *                 A bidding strategy is created using the BiddingStrategyService
-     * ADD operation and is
-     *                 assigned a BiddingStrategyId. The BiddingStrategyId
-     * can be shared across campaigns,
-     *                 ad groups and ad group criteria.
+     * ad group or ad group criteria. A
+     *                 bidding strategy is created using the BiddingStrategyService
+     * ADD operation and is assigned a
+     *                 BiddingStrategyId. The BiddingStrategyId can be shared
+     * across campaigns, ad groups and ad group
+     *                 criteria.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level.
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -162,12 +179,15 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Sets the biddingStrategyId value for this BiddingStrategyConfiguration.
      * 
      * @param biddingStrategyId   * Id of the bidding strategy to be associated with the campaign,
-     * ad group or ad group criteria.
-     *                 A bidding strategy is created using the BiddingStrategyService
-     * ADD operation and is
-     *                 assigned a BiddingStrategyId. The BiddingStrategyId
-     * can be shared across campaigns,
-     *                 ad groups and ad group criteria.
+     * ad group or ad group criteria. A
+     *                 bidding strategy is created using the BiddingStrategyService
+     * ADD operation and is assigned a
+     *                 BiddingStrategyId. The BiddingStrategyId can be shared
+     * across campaigns, ad groups and ad group
+     *                 criteria.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level.
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      */
@@ -208,9 +228,13 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * @return biddingStrategyType   * The type of the bidding strategy to be attached.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
      * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}.
      */
     public com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType getBiddingStrategyType() {
         return biddingStrategyType;
@@ -223,9 +247,13 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * @param biddingStrategyType   * The type of the bidding strategy to be attached.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
      * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level
+     *                 to any value other than {@code BiddingStrategyType.NONE}.
      */
     public void setBiddingStrategyType(com.google.api.ads.adwords.axis.v201609.cm.BiddingStrategyType biddingStrategyType) {
         this.biddingStrategyType = biddingStrategyType;
@@ -264,14 +292,17 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Gets the biddingScheme value for this BiddingStrategyConfiguration.
      * 
      * @return biddingScheme   * The bidding strategy metadata. Bidding strategy can be associated
-     * using the
-     *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
+     * using the {@linkplain
+     *                 BiddingStrategyConfiguration#biddingStrategyType}
      * or the bidding scheme.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
      * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level.
      */
     public com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme getBiddingScheme() {
         return biddingScheme;
@@ -282,14 +313,17 @@ public class BiddingStrategyConfiguration  implements java.io.Serializable {
      * Sets the biddingScheme value for this BiddingStrategyConfiguration.
      * 
      * @param biddingScheme   * The bidding strategy metadata. Bidding strategy can be associated
-     * using the
-     *                 {@linkplain BiddingStrategyConfiguration#biddingStrategyType}
+     * using the {@linkplain
+     *                 BiddingStrategyConfiguration#biddingStrategyType}
      * or the bidding scheme.
      *                 
      *                 <p>For details on portfolio vs. standard availability,
-     * see the
-     *                 <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+     * see the <a
+     *                 href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
      * guide</a>.
+     *                 
+     *                 <p>Starting with v201705, this field cannot be set
+     * at the ad group or ad group criterion level.
      */
     public void setBiddingScheme(com.google.api.ads.adwords.axis.v201609.cm.BiddingScheme biddingScheme) {
         this.biddingScheme = biddingScheme;

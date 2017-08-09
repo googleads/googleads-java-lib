@@ -42,12 +42,8 @@ package com.google.api.ads.adwords.axis.v201609.cm;
  */
 public class ListOperations  implements java.io.Serializable {
     /* Indicates that all contents of the list should be deleted.
-     * If this is true, then operators
-     *                 should be empty, or contain only PUTs.
-     *                 
-     *                 <p>REMOVE/UPDATE is invalid with clear, as once the
-     * clear is applied no elements would exist to
-     *                 remove or update. */
+     * If this is true, the list will be
+     *                 cleared first, then proceed to the operators. */
     private java.lang.Boolean clear;
 
     /* The desired behavior of each element in the POJO list that
@@ -79,12 +75,8 @@ public class ListOperations  implements java.io.Serializable {
      * Gets the clear value for this ListOperations.
      * 
      * @return clear   * Indicates that all contents of the list should be deleted.
-     * If this is true, then operators
-     *                 should be empty, or contain only PUTs.
-     *                 
-     *                 <p>REMOVE/UPDATE is invalid with clear, as once the
-     * clear is applied no elements would exist to
-     *                 remove or update.
+     * If this is true, the list will be
+     *                 cleared first, then proceed to the operators.
      */
     public java.lang.Boolean getClear() {
         return clear;
@@ -95,12 +87,8 @@ public class ListOperations  implements java.io.Serializable {
      * Sets the clear value for this ListOperations.
      * 
      * @param clear   * Indicates that all contents of the list should be deleted.
-     * If this is true, then operators
-     *                 should be empty, or contain only PUTs.
-     *                 
-     *                 <p>REMOVE/UPDATE is invalid with clear, as once the
-     * clear is applied no elements would exist to
-     *                 remove or update.
+     * If this is true, the list will be
+     *                 cleared first, then proceed to the operators.
      */
     public void setClear(java.lang.Boolean clear) {
         this.clear = clear;

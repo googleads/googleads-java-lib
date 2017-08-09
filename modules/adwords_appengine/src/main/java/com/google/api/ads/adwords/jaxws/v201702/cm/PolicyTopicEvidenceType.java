@@ -47,7 +47,21 @@ public enum PolicyTopicEvidenceType {
      * 
      */
     UNKNOWN,
+
+    /**
+     * 
+     *                 Evidence found in the text of the ad.
+     *               
+     * 
+     */
     AD_TEXT,
+
+    /**
+     * 
+     *                 HTTP code returned when the final URL was crawled.
+     *               
+     * 
+     */
     HTTP_CODE;
 
     public String value() {

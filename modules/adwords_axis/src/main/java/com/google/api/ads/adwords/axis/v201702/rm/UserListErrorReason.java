@@ -42,6 +42,7 @@ public class UserListErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_USER_LIST_LOGICAL_RULE_OPERAND = "INVALID_USER_LIST_LOGICAL_RULE_OPERAND";
     public static final java.lang.String _NAME_ALREADY_USED = "NAME_ALREADY_USED";
     public static final java.lang.String _NEW_CONVERSION_TYPE_NAME_REQUIRED = "NEW_CONVERSION_TYPE_NAME_REQUIRED";
+    public static final java.lang.String _CONVERSION_TYPE_NAME_ALREADY_USED = "CONVERSION_TYPE_NAME_ALREADY_USED";
     public static final java.lang.String _OWNERSHIP_REQUIRED_FOR_SET = "OWNERSHIP_REQUIRED_FOR_SET";
     public static final java.lang.String _REMOVE_NOT_SUPPORTED = "REMOVE_NOT_SUPPORTED";
     public static final java.lang.String _USER_LIST_MUTATE_NOT_SUPPORTED = "USER_LIST_MUTATE_NOT_SUPPORTED";
@@ -62,6 +63,7 @@ public class UserListErrorReason implements java.io.Serializable {
     public static final UserListErrorReason INVALID_USER_LIST_LOGICAL_RULE_OPERAND = new UserListErrorReason(_INVALID_USER_LIST_LOGICAL_RULE_OPERAND);
     public static final UserListErrorReason NAME_ALREADY_USED = new UserListErrorReason(_NAME_ALREADY_USED);
     public static final UserListErrorReason NEW_CONVERSION_TYPE_NAME_REQUIRED = new UserListErrorReason(_NEW_CONVERSION_TYPE_NAME_REQUIRED);
+    public static final UserListErrorReason CONVERSION_TYPE_NAME_ALREADY_USED = new UserListErrorReason(_CONVERSION_TYPE_NAME_ALREADY_USED);
     public static final UserListErrorReason OWNERSHIP_REQUIRED_FOR_SET = new UserListErrorReason(_OWNERSHIP_REQUIRED_FOR_SET);
     public static final UserListErrorReason REMOVE_NOT_SUPPORTED = new UserListErrorReason(_REMOVE_NOT_SUPPORTED);
     public static final UserListErrorReason USER_LIST_MUTATE_NOT_SUPPORTED = new UserListErrorReason(_USER_LIST_MUTATE_NOT_SUPPORTED);

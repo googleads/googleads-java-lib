@@ -23,8 +23,20 @@ package com.google.api.ads.adwords.axis.v201705.rm;
 
 
 /**
- * Class that holds user list member identifiers. Multiple member
- * identifiers of same member could
+ * Class that holds user list member identifiers. Following types
+ * of member identifier are
+ *             supported:
+ *             
+ *             <ul>
+ *             <li>Contact info(email, address)
+ *             <li>Mobile advertising id
+ *             <li>User IDs generated and assigned by advertiser
+ *             </ul>
+ *             
+ *             One list could only be uploaded with one type of data.
+ * Once it's uploaded, the user list will not
+ *             accept other type of data. Multiple member identifiers
+ * of the same type for the same member could
  *             be provided at the same time. At least one identifier
  * is required to be provided.
  */

@@ -70,6 +70,7 @@ public interface SharedSetServiceInterface {
     /**
      * 
      *         Applies the list of mutate operations.
+     *         
      *         @param operations the operations to apply
      *         @return the modified CriterionList entities
      *         @throws ApiException

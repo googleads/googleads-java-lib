@@ -50,8 +50,8 @@ public class CreateCustomCreatives {
 
     // Create creative size.
     Size size = new Size();
-    size.setWidth(300);
-    size.setHeight(250);
+    size.setWidth(600);
+    size.setHeight(315);
     size.setIsAspectRatio(false);
 
     // Create a custom creative.
@@ -65,8 +65,7 @@ public class CreateCustomCreatives {
     CustomCreativeAsset customCreativeAsset = new CustomCreativeAsset();
     customCreativeAsset.setMacroName("IMAGE_ASSET");
     CreativeAsset asset = new CreativeAsset();
-    asset.setAssetByteArray(Media.getMediaDataFromUrl(
-        "http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg"));
+    asset.setAssetByteArray(Media.getMediaDataFromUrl("https://goo.gl/3b9Wfh"));
     // Filenames must be unique.
     asset.setFileName(
         String.format("image%s.jpg", new Random().nextInt(Integer.MAX_VALUE)));
