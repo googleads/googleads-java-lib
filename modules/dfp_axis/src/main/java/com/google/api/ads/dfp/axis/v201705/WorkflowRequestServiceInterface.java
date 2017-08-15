@@ -63,8 +63,8 @@ public interface WorkflowRequestServiceInterface extends java.rmi.Remote {
      *         </tr>
      *         </table>
      *         
-     *         <p>The {@code type} filter is required.
-     *         
+     *         <p>The {@code type} filter is required in v201705 and earlier.
+     * 
      *         
      * @param filterStatement a Publisher Query Language statement used to
      * filter a set of proposals

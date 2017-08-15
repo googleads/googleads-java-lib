@@ -15,9 +15,7 @@
 package com.google.api.ads.common.lib.soap;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * Base class for SOAP client handlers. Calling {@link #invoke(SoapCall)} will
@@ -52,18 +50,11 @@ public abstract class SoapClientHandler<T> implements SoapClientHandlerInterface
    * @return the arguments ready to be passed into the {@code soapClientMethod}.
    */
   protected Object[] processSoapArguments(Method soapClientMethod, Object[] args) {
-    List<Object> argsList = new ArrayList<Object>();
-    if (args != null) {
-      Collections.addAll(argsList, args);
-    } else {
+    if (args == null) {
       return null;
     }
-    int curretNumArgs = argsList.size();
-    while (curretNumArgs < soapClientMethod.getParameterTypes().length) {
-      argsList.add(null);
-      curretNumArgs++;
-    }
-    return argsList.toArray(new Object[0]);
+    int argsCount = Math.max(soapClientMethod.getParameterTypes().length, args.length);
+    return Arrays.copyOf(args, argsCount);
   }
 
   /**

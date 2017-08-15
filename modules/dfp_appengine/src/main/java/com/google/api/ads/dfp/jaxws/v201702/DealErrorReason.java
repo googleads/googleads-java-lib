@@ -155,7 +155,7 @@ public enum DealErrorReason {
     /**
      * 
      *                 A new version of the {@link Proposal} exists in Marketplace, cannot execute the requested
-     *                 action before performing {@link SyncProposalsWithMarketplace}.
+     *                 action before the proposal is synced to newest revision.
      *               
      * 
      */

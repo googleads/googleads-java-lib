@@ -52,7 +52,7 @@ public class DfpJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
 
   @BeforeClass
   public static void setupClass() {
-    System.setProperty("api.adwords.useCompression", "false");
+    System.setProperty("api.dfp.useCompression", "false");
   }
   
   @After

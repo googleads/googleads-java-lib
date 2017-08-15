@@ -42,24 +42,29 @@ import java.util.Arrays;
 public class UpdateReconciliationReportRows {
 
   private static class UpdateReconciliationReportRowsParams extends CodeSampleParams {
+    @Parameter(names = ArgumentNames.RECONCILIATION_REPORT_ID, required = true,
+        description = "The ID of the reconciliation report to retrieve rows for.")
+    private Long reconciliationReportId;
+
     @Parameter(names = ArgumentNames.RECONCILIATION_REPORT_ROW_ID, required = true,
-        description = "The IDs of the reconciliation report, line item, and creative to"
-            + " retrieve rows for.")
+        description = "The ID of the reconciliation report row to retrieve.")
     private Long reconciliationReportRowId;
   }
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
-      long reconciliationReportRowId) throws Exception {
+      long reconciliationReportId, long reconciliationReportRowId) throws Exception {
     // Get the ReconciliationReportRowService.
     ReconciliationReportRowServiceInterface reconciliationReportRowService =
         dfpServices.get(session, ReconciliationReportRowServiceInterface.class);
 
     // Create a statement to select reconciliation report rows.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("id = :reconciliationReportRowId")
+        .where("id = :reconciliationReportRowId AND "
+            + "reconciliationReportId = :reconciliationReportId")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-        .withBindVariableValue("reconciliationReportRowId", reconciliationReportRowId);
+        .withBindVariableValue("reconciliationReportRowId", reconciliationReportRowId)
+        .withBindVariableValue("reconciliationReportId", reconciliationReportId);
 
     // Get reconciliation report rows by statement.
     ReconciliationReportRowPage page =
@@ -109,9 +114,11 @@ public class UpdateReconciliationReportRows {
     if (!params.parseArguments(args)) {
       // Either pass the required parameters for this example on the command line, or insert them
       // into the code here. See the parameter class definition above for descriptions.
+      params.reconciliationReportId = Long.parseLong("INSERT_RECONCILIATION_REPORT_ID_HERE");
       params.reconciliationReportRowId = Long.parseLong("INSERT_RECONCILIATION_REPORT_ROW_ID_HERE");
     }
 
-    runExample(dfpServices, session, params.reconciliationReportRowId);
+    runExample(dfpServices, session, params.reconciliationReportId,
+        params.reconciliationReportRowId);
   }
 }

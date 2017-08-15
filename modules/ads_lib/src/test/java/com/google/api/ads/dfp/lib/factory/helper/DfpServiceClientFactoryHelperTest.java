@@ -60,8 +60,8 @@ public class DfpServiceClientFactoryHelperTest {
     DfpServiceClientFactoryHelper helper = new DfpServiceClientFactoryHelper(
         adsServiceClientFactory, adsServiceDescriptorFactory, soapClientHandler,
         adsLibConfiguration);
-    assertEquals("v201705", helper.determineVersion(
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201705.TestService.class));
+    assertEquals("v201708", helper.determineVersion(
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201708.TestService.class));
   }
 
   @Test
@@ -80,6 +80,6 @@ public class DfpServiceClientFactoryHelperTest {
         .build();
 
     helper.checkServiceClientPreconditions(dfpSession,
-        com.google.api.ads.dfp.lib.factory.helper.testing.v201705.TestService.class);
+        com.google.api.ads.dfp.lib.factory.helper.testing.v201708.TestService.class);
   }
 }

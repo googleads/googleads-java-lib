@@ -735,8 +735,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Proposal#isArchived} for {@link Dimension#PROPOSAL_NAME}. Can be used for
-     *                 filtering.
+     *                 Represents archival status for {@link Dimension#PROPOSAL_NAME}, the values are ARCHIVED
+     *                 and NOT_ARCHIVED. Can be used for filtering.
      *               
      * 
      */
@@ -1048,8 +1048,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link ProposalLineItem#isArchived} for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents archival status for {@link Dimension#PROPOSAL_LINE_ITEM_NAME}, the values are
+     *                 ARCHIVED and NOT_ARCHIVED. Can be used for filtering.
      *               
      * 
      */

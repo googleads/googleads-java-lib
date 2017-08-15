@@ -38,22 +38,27 @@ import java.util.Arrays;
  */
 public class UpdateReconciliationReportRows {
 
-  // Set the IDs of the reconciliation report, line item, and creative to retrieve rows for.
+  // Set the ID of the reconciliation report.
+  private static final String RECONCILIATION_REPORT_ID = "INSERT_RECONCILIATION_REPORT_ID_HERE";
+
+  // Set the ID of the reconciliation report row.
   private static final String RECONCILIATION_REPORT_ROW_ID =
       "INSERT_RECONCILIATION_REPORT_ROW_ID_HERE";
 
   public static void runExample(DfpServices dfpServices, DfpSession session,
-      long reconciliationReportRowId) throws Exception {
+      long reconciliationReportId, long reconciliationReportRowId) throws Exception {
     // Get the ReconciliationReportRowService.
     ReconciliationReportRowServiceInterface reconciliationReportRowService =
         dfpServices.get(session, ReconciliationReportRowServiceInterface.class);
 
     // Create a statement to select reconciliation report rows.
     StatementBuilder statementBuilder = new StatementBuilder()
-        .where("id = :reconciliationReportRowId")
+        .where("id = :reconciliationReportRowId AND "
+            + "reconciliationReportId = :reconciliationReportId")
         .orderBy("id ASC")
         .limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-        .withBindVariableValue("reconciliationReportRowId", reconciliationReportRowId);
+        .withBindVariableValue("reconciliationReportRowId", reconciliationReportRowId)
+        .withBindVariableValue("reconciliationReportId", reconciliationReportId);
 
     // Get reconciliation report rows by statement.
     ReconciliationReportRowPage page =
@@ -99,6 +104,8 @@ public class UpdateReconciliationReportRows {
 
     DfpServices dfpServices = new DfpServices();
 
-    runExample(dfpServices, session, Long.parseLong(RECONCILIATION_REPORT_ROW_ID));
+    runExample(dfpServices, session,
+        Long.parseLong(RECONCILIATION_REPORT_ID),
+        Long.parseLong(RECONCILIATION_REPORT_ROW_ID));
   }
 }

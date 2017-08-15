@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code ReportQuery} object allows you to specify the selection criteria for
- *             generating a report.
+ *             generating a report. Only reports with at least one {@link Column} are supported.
  *           
  * 
  * <p>Java class for ReportQuery complex type.

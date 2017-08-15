@@ -25,12 +25,14 @@ package com.google.api.ads.dfp.axis.v201705;
 /**
  * A {@code ReportQuery} object allows you to specify the selection
  * criteria for
- *             generating a report.
+ *             generating a report. Only reports with at least one {@link
+ * Column} are supported.
  */
 public class ReportQuery  implements java.io.Serializable {
     /* The list of break-down types being requested in the report.
      * The generated report will contain the dimensions in the same order
-     * as requested. */
+     * as requested.
+     *                 This field is required. */
     private com.google.api.ads.dfp.axis.v201705.Dimension[] dimensions;
 
     /* The ad unit view for the report. Defaults to {@link AdUnitView#TOP_LEVEL}. */
@@ -40,7 +42,7 @@ public class ReportQuery  implements java.io.Serializable {
      * being requested
      *                 in the report. The generated report will contain the
      * columns in the same
-     *                 order as requested. */
+     *                 order as requested. This field is required. */
     private com.google.api.ads.dfp.axis.v201705.Column[] columns;
 
     /* The list of break-down attributes being requested in this report.
@@ -276,6 +278,7 @@ public class ReportQuery  implements java.io.Serializable {
      * @return dimensions   * The list of break-down types being requested in the report.
      * The generated report will contain the dimensions in the same order
      * as requested.
+     *                 This field is required.
      */
     public com.google.api.ads.dfp.axis.v201705.Dimension[] getDimensions() {
         return dimensions;
@@ -288,6 +291,7 @@ public class ReportQuery  implements java.io.Serializable {
      * @param dimensions   * The list of break-down types being requested in the report.
      * The generated report will contain the dimensions in the same order
      * as requested.
+     *                 This field is required.
      */
     public void setDimensions(com.google.api.ads.dfp.axis.v201705.Dimension[] dimensions) {
         this.dimensions = dimensions;
@@ -329,7 +333,7 @@ public class ReportQuery  implements java.io.Serializable {
      * being requested
      *                 in the report. The generated report will contain the
      * columns in the same
-     *                 order as requested.
+     *                 order as requested. This field is required.
      */
     public com.google.api.ads.dfp.axis.v201705.Column[] getColumns() {
         return columns;
@@ -343,7 +347,7 @@ public class ReportQuery  implements java.io.Serializable {
      * being requested
      *                 in the report. The generated report will contain the
      * columns in the same
-     *                 order as requested.
+     *                 order as requested. This field is required.
      */
     public void setColumns(com.google.api.ads.dfp.axis.v201705.Column[] columns) {
         this.columns = columns;

@@ -22,12 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Synchronizes the local {@link Proposal} with the latest version in
- *             Marketplace.
- *             This action is only to be used in cases where a {@link RequestBuyerAcceptance} action is being
- *             performed, but the buyer has made updates that have not yet been picked up by DFP. In this case
- *             a {@link DealError#PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE} error will be thrown. This action is
- *             used to tell DFP to pick up the buyer changes immediately.
+ *             Synchronizes the local {@link Proposal} with the latest version in Marketplace.
+ *             This action is deprecated and is no-op.
  *           
  * 
  * <p>Java class for SyncProposalsWithMarketplace complex type.

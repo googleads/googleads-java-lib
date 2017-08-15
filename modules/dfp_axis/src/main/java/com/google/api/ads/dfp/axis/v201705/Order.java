@@ -34,7 +34,7 @@ public class Order  implements java.io.Serializable {
 
     /* The name of the {@code Order}. This value is required to create
      * an order
-     *                 and has a maximum length of 128 characters. */
+     *                 and has a maximum length of 255 characters. */
     private java.lang.String name;
 
     /* The date and time at which the {@code Order} and its associated
@@ -323,7 +323,7 @@ public class Order  implements java.io.Serializable {
      * 
      * @return name   * The name of the {@code Order}. This value is required to create
      * an order
-     *                 and has a maximum length of 128 characters.
+     *                 and has a maximum length of 255 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -335,7 +335,7 @@ public class Order  implements java.io.Serializable {
      * 
      * @param name   * The name of the {@code Order}. This value is required to create
      * an order
-     *                 and has a maximum length of 128 characters.
+     *                 and has a maximum length of 255 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;

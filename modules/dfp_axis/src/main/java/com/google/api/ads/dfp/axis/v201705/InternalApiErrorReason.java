@@ -35,10 +35,12 @@ public class InternalApiErrorReason implements java.io.Serializable {
     public static final java.lang.String _TRANSIENT_ERROR = "TRANSIENT_ERROR";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final java.lang.String _DOWNTIME = "DOWNTIME";
+    public static final java.lang.String _ERROR_GENERATING_RESPONSE = "ERROR_GENERATING_RESPONSE";
     public static final InternalApiErrorReason UNEXPECTED_INTERNAL_API_ERROR = new InternalApiErrorReason(_UNEXPECTED_INTERNAL_API_ERROR);
     public static final InternalApiErrorReason TRANSIENT_ERROR = new InternalApiErrorReason(_TRANSIENT_ERROR);
     public static final InternalApiErrorReason UNKNOWN = new InternalApiErrorReason(_UNKNOWN);
     public static final InternalApiErrorReason DOWNTIME = new InternalApiErrorReason(_DOWNTIME);
+    public static final InternalApiErrorReason ERROR_GENERATING_RESPONSE = new InternalApiErrorReason(_ERROR_GENERATING_RESPONSE);
     public java.lang.String getValue() { return _value_;}
     public static InternalApiErrorReason fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {
