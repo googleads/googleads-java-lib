@@ -32,9 +32,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-import javax.xml.ws.WebServiceException;
 import org.custommonkey.xmlunit.XMLAssert;
-import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -43,7 +41,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests that a AdWords JAX-WS SOAP call can be made end-to-end.
+ * Tests that a AdWords JAX-WS SOAP call can be made end-to-end with compression disabled.
  */
 @RunWith(JUnit4.class)
 public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
@@ -56,13 +54,6 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.adwords.useCompression", "false");
-  }
-
-  @After
-  public void tearDown() {
-    // Clear the request timeout property in case testRequestTimeoutEnforced runs before
-    // other tests.
-    System.clearProperty("api.adwords.soapRequestTimeout");
   }
 
   /**
@@ -112,46 +103,5 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
-  }
-  
-  /**
-   * Tests that the request timeout in ads.properties is enforced.
-   */
-  @Test
-  public void testRequestTimeoutEnforced() throws Exception {
-    System.setProperty("api.adwords.soapRequestTimeout", "100");
-
-    testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
-    testHttpServer.setDelay(200L);
-    
-    GoogleCredential credential = new GoogleCredential.Builder().setTransport(
-        new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
-    credential.setAccessToken("TEST_ACCESS_TOKEN");
-  
-    AdWordsSession session = new AdWordsSession.Builder()
-        .withUserAgent("TEST_APP")
-        .withOAuth2Credential(credential)
-        .withEndpoint(testHttpServer.getServerUrl())
-        .withDeveloperToken("TEST_DEVELOPER_TOKEN")
-        .withClientCustomerId("TEST_CLIENT_CUSTOMER_ID")
-        .build();
-  
-    BudgetServiceInterface budgetService =
-        new AdWordsServices().get(session, BudgetServiceInterface.class);
-    
-    Budget budget = new Budget();
-    budget.setName("Test Budget Name");
-    Money money = new Money();
-    money.setMicroAmount(50000000L);
-    budget.setAmount(money);
-    budget.setDeliveryMethod(BudgetBudgetDeliveryMethod.STANDARD);
-
-    BudgetOperation operation = new BudgetOperation();
-    operation.setOperand(budget);
-    operation.setOperator(Operator.ADD);
-    
-    thrown.expect(WebServiceException.class);
-    thrown.expectMessage("Read timed out");
-    budgetService.mutate(Lists.newArrayList(operation));
   }
 }

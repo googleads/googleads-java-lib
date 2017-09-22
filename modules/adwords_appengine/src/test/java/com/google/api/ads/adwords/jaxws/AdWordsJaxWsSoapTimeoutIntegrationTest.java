@@ -14,11 +14,7 @@
 
 package com.google.api.ads.adwords.jaxws;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.google.api.ads.adwords.jaxws.factory.AdWordsServices;
-import com.google.api.ads.adwords.jaxws.testing.SoapRequestXmlProvider;
 import com.google.api.ads.adwords.jaxws.v201708.cm.Budget;
 import com.google.api.ads.adwords.jaxws.v201708.cm.BudgetBudgetDeliveryMethod;
 import com.google.api.ads.adwords.jaxws.v201708.cm.BudgetOperation;
@@ -32,39 +28,43 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-import org.custommonkey.xmlunit.XMLAssert;
+import javax.xml.ws.WebServiceException;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests that a AdWords JAX-WS SOAP call can be made end-to-end when SOAP compression is enabled.
- * This test should be run in its own JVM because it makes changes to system properties that could
- * cause issues with other integration tests.
+ * Tests that the SOAP timeout is properly set and honored for an AdWords JAX-WS SOAP call.
  */
 @RunWith(JUnit4.class)
-public class AdWordsJaxWsSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
+public class AdWordsJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegrationTest {
   
   private static final String API_VERSION = "v201708";
   
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   @BeforeClass
   public static void setupClass() {
-    System.setProperty("api.adwords.useCompression", "true");
+    System.setProperty("api.adwords.soapRequestTimeout", "100");
   }
-
   /**
-   * Tests making a JAX-WS AdWords API call with OAuth2 and compression enabled.
+   * Tests that the request timeout in ads.properties is enforced.
    */
   @Test
-  public void testGoldenSoap_oauth2() throws Exception {   
+  public void testRequestTimeoutEnforced() throws Exception {
     testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
-  
+    testHttpServer.setDelay(200L);
+    
     GoogleCredential credential = new GoogleCredential.Builder().setTransport(
         new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
   
-    AdWordsSession session = new AdWordsSession.Builder().withUserAgent("TEST_APP")
+    AdWordsSession session = new AdWordsSession.Builder()
+        .withUserAgent("TEST_APP")
         .withOAuth2Credential(credential)
         .withEndpoint(testHttpServer.getServerUrl())
         .withDeveloperToken("TEST_DEVELOPER_TOKEN")
@@ -85,19 +85,8 @@ public class AdWordsJaxWsSoapCompressionIntegrationTest extends MockHttpIntegrat
     operation.setOperand(budget);
     operation.setOperator(Operator.ADD);
     
-    Budget responseBudget = budgetService.mutate(Lists.newArrayList(operation)).getValue().get(0);
-  
-    assertEquals("Budget ID does not match", 251877074L, responseBudget.getBudgetId().longValue());
-    assertEquals("Budget name does not match", budget.getName(), responseBudget.getName());
-    assertEquals("Budget amount does not match", budget.getAmount().getMicroAmount(),
-        responseBudget.getAmount().getMicroAmount());
-    assertEquals("Budget delivery method does not match", budget.getDeliveryMethod(),
-        responseBudget.getDeliveryMethod());
-    
-    assertTrue("Compression was enabled but the last request body was not compressed",
-        testHttpServer.wasLastRequestBodyCompressed());
-    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
-    assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
+    thrown.expect(WebServiceException.class);
+    thrown.expectMessage("Read timed out");
+    budgetService.mutate(Lists.newArrayList(operation));
   }
 }

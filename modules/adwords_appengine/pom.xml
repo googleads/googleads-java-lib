@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.8.1-SNAPSHOT</version>
+    <version>3.8.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,7 +30,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>adwords-appengine</artifactId>
-  <version>3.8.1-SNAPSHOT</version>
+  <version>3.8.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>AdWords AppEngine components</name>
@@ -52,6 +52,7 @@
               <excludes>
                 <exclude>**/AdWordsJaxWsSoapCompressionIntegrationTest.java</exclude>
                 <exclude>**/AdWordsJaxWsSoapIntegrationTest.java</exclude>
+                <exclude>**/AdWordsJaxWsSoapTimeoutIntegrationTest.java</exclude>
                 <exclude>**/UserAgentCombinerTest.java</exclude>
               </excludes>
             </configuration>
@@ -70,6 +71,7 @@
               <includes>
                 <include>**/AdWordsJaxWsSoapCompressionIntegrationTest.java</include>
                 <include>**/AdWordsJaxWsSoapIntegrationTest.java</include>
+                <include>**/AdWordsJaxWsSoapTimeoutIntegrationTest.java</include>
                 <include>**/UserAgentCombinerTest.java</include>
               </includes>
             </configuration>
@@ -111,12 +113,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib-appengine</artifactId>
-      <version>3.8.1-SNAPSHOT</version>
+      <version>3.8.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.8.1-SNAPSHOT</version>
+      <version>3.8.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -127,7 +129,7 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>3.8.1-SNAPSHOT</version>
+      <version>3.8.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>

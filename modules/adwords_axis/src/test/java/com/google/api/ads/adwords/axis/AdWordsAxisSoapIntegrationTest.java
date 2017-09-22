@@ -37,7 +37,8 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-
+import java.io.IOException;
+import java.rmi.RemoteException;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -45,11 +46,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
 
-import java.io.IOException;
-import java.rmi.RemoteException;
-
 /**
- * Tests that a AdWords Axis SOAP call can be made end-to-end when SOAP compression is enabled.
+ * Tests that a AdWords Axis SOAP call can be made end-to-end when SOAP compression is disabled.
  * This test should be run in its own JVM because it makes changes to system properties that could
  * cause issues with other integration tests.
  */

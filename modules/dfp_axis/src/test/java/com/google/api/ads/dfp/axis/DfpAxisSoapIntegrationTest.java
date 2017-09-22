@@ -40,7 +40,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests that a DFP Axis SOAP call can be made end-to-end.
+ * Tests that a DFP Axis SOAP call can be made end-to-end with compression disabled.
  */
 @RunWith(JUnit4.class)
 public class DfpAxisSoapIntegrationTest extends MockHttpIntegrationTest {
