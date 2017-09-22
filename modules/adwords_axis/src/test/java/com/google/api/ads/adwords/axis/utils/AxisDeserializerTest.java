@@ -18,14 +18,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.api.ads.adwords.axis.v201609.cm.AdGroupCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201609.cm.AdGroupServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201609.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201609.cm.CampaignServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201609.cm.CriterionError;
-import com.google.api.ads.adwords.axis.v201609.cm.MutateResult;
+import com.google.api.ads.adwords.axis.v201708.cm.AdGroupCriterionServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201708.cm.AdGroupServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201708.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201708.cm.CampaignServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201708.cm.CriterionError;
+import com.google.api.ads.adwords.axis.v201708.cm.MutateResult;
 import com.google.common.collect.Lists;
-
+import java.io.File;
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.List;
+import javax.xml.namespace.QName;
+import javax.xml.rpc.ServiceException;
+import javax.xml.transform.TransformerException;
 import org.apache.axis.client.Call;
 import org.apache.axis.encoding.TypeMapping;
 import org.hamcrest.Matchers;
@@ -35,15 +41,6 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXParseException;
-
-import java.io.File;
-import java.net.URL;
-import java.rmi.RemoteException;
-import java.util.List;
-
-import javax.xml.namespace.QName;
-import javax.xml.rpc.ServiceException;
-import javax.xml.transform.TransformerException;
 
 /**
  * Tests for {@link AxisDeserializer}.
@@ -122,7 +119,7 @@ public class AxisDeserializerTest {
   private List<MutateResult> testDeserializeBatchJobResponse(URL responseXmlUrl)
       throws Exception {
     QName mutateResultQName =
-        new QName("https://adwords.google.com/api/adwords/cm/v201609", "MutateResult");
+        new QName("https://adwords.google.com/api/adwords/cm/v201708", "MutateResult");
 
     TypeMapping agcMapping = new AdGroupCriterionServiceSoapBindingStub() {
       @Override

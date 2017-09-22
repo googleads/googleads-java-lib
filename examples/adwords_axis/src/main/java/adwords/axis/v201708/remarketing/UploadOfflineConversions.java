@@ -70,8 +70,8 @@ public class UploadOfflineConversions {
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    
-    
+
+
     UploadOfflineConversionsParams params = new UploadOfflineConversionsParams();
     if (!params.parseArguments(args)) {
       // Either pass the required parameters for this example on the command line, or insert them
@@ -86,8 +86,8 @@ public class UploadOfflineConversions {
         params.conversionValue);
   }
 
-  public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session, 
-      String conversionName, String gClid, String conversionTime, 
+  public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,
+      String conversionName, String gClid, String conversionTime,
       double conversionValue) throws Exception {
 
     // Get the OfflineConversionFeedService.

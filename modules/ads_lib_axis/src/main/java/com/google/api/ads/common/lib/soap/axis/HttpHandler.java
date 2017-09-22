@@ -57,6 +57,8 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
   /** The default transport used for everything except tests. */
   private static final HttpTransport defaultHttpTransport = new NetHttpTransport();
 
+  private static final int BUFFER_SIZE = 16384;
+  
   public HttpHandler() {
     this(defaultHttpTransport, null);
   }
@@ -117,17 +119,11 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
     
     // Construct the output stream.
     String contentType = requestMessage.getContentType(msgContext.getSOAPConstants());
-    ByteArrayOutputStream bos;
-    int contentLength = Long.valueOf(requestMessage.getContentLength()).intValue();
-    if (contentLength > 0) {
-      bos = new ByteArrayOutputStream(contentLength);
-    } else {
-      bos = new ByteArrayOutputStream();
-    }
+    ByteArrayOutputStream bos = new ByteArrayOutputStream(BUFFER_SIZE);
 
     if (msgContext.isPropertyTrue(HTTPConstants.MC_GZIP_REQUEST)) {
       logger.debug("Compressing request");
-      try (GZIPOutputStream gzipOs = new GZIPOutputStream(bos)) {
+      try (GZIPOutputStream gzipOs = new GZIPOutputStream(bos, BUFFER_SIZE)) {
         requestMessage.writeTo(gzipOs);
       }
     } else {
@@ -211,15 +207,14 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
       String statusMessage = httpResponse.getStatusMessage();
       AxisFault axisFault =
           new AxisFault("HTTP", "(" + statusCode + ")" + statusMessage, null, null);
-      byte[] contentBytes;
-      try (InputStream stream = responseInputStream) {
-        contentBytes = ByteStreams.toByteArray(stream);
-      }
-      axisFault.setFaultDetailString(
-          Messages.getMessage(
-              "return01", Integer.toString(statusCode), new String(contentBytes, UTF_8)));
       axisFault.addFaultDetail(
-          Constants.QNAME_FAULTDETAIL_HTTPERRORCODE, Integer.toString(statusCode));
+          Constants.QNAME_FAULTDETAIL_HTTPERRORCODE, String.valueOf(statusCode));
+      try (InputStream stream = responseInputStream) {
+        byte[] contentBytes = ByteStreams.toByteArray(stream);
+        axisFault.setFaultDetailString(
+            Messages.getMessage(
+                "return01", String.valueOf(statusCode), new String(contentBytes, UTF_8)));
+      }
       throw axisFault;
     }
     // Response is an XML response. Do not consume and close the stream in this case, since that

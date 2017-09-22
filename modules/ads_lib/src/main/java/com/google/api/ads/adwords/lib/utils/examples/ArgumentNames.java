@@ -31,6 +31,10 @@ public final class ArgumentNames {
 
   public static final String CAMPAIGN_ID = "--campaignId";
 
+  public static final String CAMPAIGN_ID_1 = "--campaignId1";
+
+  public static final String CAMPAIGN_ID_2 = "--campaignId2";
+
   public static final String CONVERSION_NAME = "--conversionName";
 
   public static final String CONVERSION_TIME = "--conversionTime";

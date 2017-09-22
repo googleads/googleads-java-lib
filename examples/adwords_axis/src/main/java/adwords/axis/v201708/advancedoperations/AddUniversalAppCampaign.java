@@ -135,7 +135,7 @@ public class AddUniversalAppCampaign {
     universalAppSetting.setDescription3("3 difficulty levels");
     universalAppSetting.setDescription4("4 colorful fun skins");
 
-    // Optional: You can set up to 10 image assets for your campaign.
+    // Optional: You can set up to 20 image assets for your campaign.
     // See UploadImage.java for an example on how to upload images.
     //
     // universalAppSetting.setImageMediaIds(new long[] { INSERT_IMAGE_MEDIA_ID_HERE });

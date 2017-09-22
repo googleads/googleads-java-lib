@@ -114,7 +114,6 @@ public class AddAdCustomizer {
     // Get the AdCustomizerFeedService.
     AdCustomizerFeedServiceInterface adCustomizerFeedService =
         adWordsServices.get(session, AdCustomizerFeedServiceInterface.class);
-
     AdCustomizerFeed customizerFeed = new AdCustomizerFeed();
     customizerFeed.setFeedName(feedName);
 
@@ -140,9 +139,14 @@ public class AddAdCustomizer {
     AdCustomizerFeed addedFeed = adCustomizerFeedService.mutate(
         new AdCustomizerFeedOperation[] {feedOperation}).getValue()[0];
 
-    System.out.printf("Created ad customizer feed with ID %d and name '%s'.%n",
+    System.out.printf(
+        "Created ad customizer feed with ID %d, name '%s' and attributes:%n",
         addedFeed.getFeedId(), addedFeed.getFeedName());
-
+    for (AdCustomizerFeedAttribute feedAttribute : addedFeed.getFeedAttributes()) {
+      System.out.printf(
+          "  ID: %d, name: '%s', type: %s%n",
+          feedAttribute.getId(), feedAttribute.getName(), feedAttribute.getType());
+    }
     return addedFeed;
   }
 
@@ -190,7 +194,6 @@ public class AddAdCustomizer {
    */
   private static FeedItemOperation createFeedItemAddOperation(String name, String price,
       String date, Long adGroupId, AdCustomizerFeed adCustomizerFeed) {
-
     FeedItem feedItem = new FeedItem();
     feedItem.setFeedId(adCustomizerFeed.getFeedId());
 

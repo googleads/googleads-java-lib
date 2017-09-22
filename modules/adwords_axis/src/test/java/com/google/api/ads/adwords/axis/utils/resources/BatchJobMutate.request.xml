@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201609">
+<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201708">
  <operations xsi:type="ns1:CampaignOperation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <operator xsi:type="ns1:Operator">ADD</operator>
   <Operation.Type xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ADD</Operation.Type>
   <operand xsi:type="ns1:Campaign">
    <id xsi:type="xsd:long" xmlns:xsd="http://www.w3.org/2001/XMLSchema">-1</id>
+   <campaignGroupId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>
    <name xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">Test campaign</name>
    <status xsi:type="ns1:CampaignStatus" xsi:nil="true"/>
    <servingStatus xsi:type="ns1:ServingStatus" xsi:nil="true"/>
@@ -40,6 +41,7 @@
    <baseAdGroupId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>
    <trackingUrlTemplate xsi:type="xsd:string" xsi:nil="true" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
    <urlCustomParameters xsi:type="ns1:CustomParameters" xsi:nil="true"/>
+   <adGroupType xsi:type="ns1:AdGroupType" xsi:nil="true"/>
   </operand>
  </operations>
 </ns1:mutate>

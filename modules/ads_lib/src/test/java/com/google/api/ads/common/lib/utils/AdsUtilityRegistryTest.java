@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.EnumSet;
 import java.util.Set;
-import org.junit.Before;
+import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -31,50 +31,35 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdsUtilityRegistryTest {
 
-  private AdsUtilityRegistry registry = AdsUtilityRegistry.getInstance();
-
   @Rule public ExpectedException thrown = ExpectedException.none();
 
-  @Before
-  public void setUp() throws Exception {
-    registry.removeUtilities(registry.getRegisteredUtilities());
+  @After
+  public void tearDown() throws Exception {
+    AdsUtilityRegistry.getInstance().popRegisteredUtilities();
   }
 
   @Test
   public void testAddDuplicate() {
+    AdsUtilityRegistry registry = AdsUtilityRegistry.getInstance();
     Set<AdsUtility> expectedUtilities = EnumSet.<AdsUtility>of(AdsUtility.BATCH_JOB_HELPER);
     registry.addUtility(AdsUtility.BATCH_JOB_HELPER);
-    assertEquals(expectedUtilities, registry.getRegisteredUtilities());
     registry.addUtility(AdsUtility.BATCH_JOB_HELPER);
-    assertEquals(expectedUtilities, registry.getRegisteredUtilities());
-  }
-
-  @Test
-  public void testRemovePartial() {
-    // Add the batch job utility.
-    registry.addUtility(AdsUtility.BATCH_JOB_HELPER);
-    Set<AdsUtility> addedUtility = EnumSet.<AdsUtility>of(AdsUtility.BATCH_JOB_HELPER);
-    // Add the product partition tree utility.
-    registry.addUtility(AdsUtility.PRODUCT_PARTITION_TREE);
-    // Only remove the batch job utility.
-    registry.removeUtilities(addedUtility);
-    assertEquals(
-        "removeUtilities should only remove the provided utility",
-        EnumSet.<AdsUtility>of(AdsUtility.PRODUCT_PARTITION_TREE),
-        registry.getRegisteredUtilities());
+    assertEquals(expectedUtilities, registry.popRegisteredUtilities());
   }
 
   @Test
   public void testAddNull_fails() {
+    AdsUtilityRegistry registry = AdsUtilityRegistry.getInstance();
     thrown.expect(NullPointerException.class);
     thrown.expectMessage("Null ads utility");
     registry.addUtility(null);
   }
 
   @Test
-  public void testRemoveNull_fails() {
-    thrown.expect(NullPointerException.class);
-    thrown.expectMessage("Null utilities collection");
-    registry.removeUtilities(null);
+  public void testRemoveTwiceOk() {
+    AdsUtilityRegistry registry = AdsUtilityRegistry.getInstance();
+    registry.addUtility(AdsUtility.BATCH_JOB_HELPER);
+    registry.popRegisteredUtilities();
+    registry.popRegisteredUtilities();
   }
 }

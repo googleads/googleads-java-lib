@@ -1,3 +1,15 @@
+3.8.0 - 9/22/2017
+-----------------
+AdWords:
+  - Removed support and examples for v201609. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 3.7.0 - 8/15/2017
 -----------------
 AdWords:

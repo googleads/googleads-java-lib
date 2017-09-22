@@ -17,13 +17,13 @@ package com.google.api.ads.adwords.jaxws.utils;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.api.ads.adwords.jaxws.utils.v201609.batchjob.BatchJobMutateRequest;
-import com.google.api.ads.adwords.jaxws.v201609.cm.AdGroup;
-import com.google.api.ads.adwords.jaxws.v201609.cm.AdGroupOperation;
-import com.google.api.ads.adwords.jaxws.v201609.cm.AdvertisingChannelType;
-import com.google.api.ads.adwords.jaxws.v201609.cm.Campaign;
-import com.google.api.ads.adwords.jaxws.v201609.cm.CampaignOperation;
-import com.google.api.ads.adwords.jaxws.v201609.cm.Operator;
+import com.google.api.ads.adwords.jaxws.utils.v201708.batchjob.BatchJobMutateRequest;
+import com.google.api.ads.adwords.jaxws.v201708.cm.AdGroup;
+import com.google.api.ads.adwords.jaxws.v201708.cm.AdGroupOperation;
+import com.google.api.ads.adwords.jaxws.v201708.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.jaxws.v201708.cm.Campaign;
+import com.google.api.ads.adwords.jaxws.v201708.cm.CampaignOperation;
+import com.google.api.ads.adwords.jaxws.v201708.cm.Operator;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
 import com.google.common.io.CharStreams;
 import java.io.IOException;
@@ -64,7 +64,7 @@ public class JaxWsSerializationTest {
 
     JaxBSerializer<BatchJobMutateRequest> serializer = new JaxBSerializer<BatchJobMutateRequest>(
         BatchJobMutateRequest.class,
-        new QName("https://adwords.google.com/api/adwords/cm/v201609", "mutate"));
+        new QName("https://adwords.google.com/api/adwords/cm/v201708", "mutate"));
 
     String serializedRequest = serializer.serialize((BatchJobMutateRequest) request);
 

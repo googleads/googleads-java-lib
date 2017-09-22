@@ -159,12 +159,12 @@ public class ReportingConfigurationTest {
             // A timeout of 0 is acceptable. This means do not time out.
             .reportDownloadTimeout(0)
             .build();
-    config.validate("v201609");
-    assertTrue("Validation should succeed for v201609", true);
     config.validate("v201702");
     assertTrue("Validation should succeed for v201702", true);
     config.validate("v201705");
     assertTrue("Validation should succeed for v201705", true);
+    config.validate("v201708");
+    assertTrue("Validation should succeed for v201708", true);
   }
 
   @Test

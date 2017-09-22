@@ -51,7 +51,7 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class HttpHandlerTest {
 
-  private static final String API_VERSION = "v201609";
+  private static final String API_VERSION = "v209901";
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -165,23 +165,25 @@ public class HttpHandlerTest {
   /** Tests that a request with null request on the message context will fail as expected. */
   @Test
   public void testInvokeWithoutRequestMessage() throws AxisFault {
+    MessageContext messageContext = new MessageContext(axisEngine);
+
     thrown.expect(AxisFault.class);
     thrown.expectCause(Matchers.<Exception>instanceOf(NullPointerException.class));
     thrown.expectMessage("request");
 
-    MessageContext messageContext = new MessageContext(axisEngine);
     httpHandler.invoke(messageContext);
   }
 
   /** Tests that a request with null request URL will fail as expected. */
   @Test
   public void testInvokeWithoutRequestUrl() throws AxisFault {
+    MessageContext messageContext = new MessageContext(axisEngine);
+    messageContext.setRequestMessage(requestMessage);
+
     thrown.expect(AxisFault.class);
     thrown.expectCause(Matchers.<Exception>instanceOf(IllegalArgumentException.class));
     thrown.expectMessage("URL");
 
-    MessageContext messageContext = new MessageContext(axisEngine);
-    messageContext.setRequestMessage(requestMessage);
     httpHandler.invoke(messageContext);
   }
 

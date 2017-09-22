@@ -16,16 +16,15 @@ package com.google.api.ads.common.lib.useragent;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.utils.AdsUtility;
 import com.google.api.ads.common.lib.utils.AdsUtilityRegistry;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,15 +46,7 @@ public class AdsUtilitiesUserAgentProviderTest {
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-
-    adsUtilityRegistry.removeUtilities(adsUtilityRegistry.getRegisteredUtilities());
     userAgentProvider = new AdsUtilitiesUserAgentProvider(adsUtilityRegistry, adsLibConfiguration);
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    assertEquals("User agent provider should clear utilities", Sets.newHashSet(),
-        adsUtilityRegistry.getRegisteredUtilities());
   }
 
   /**
@@ -81,13 +72,13 @@ public class AdsUtilitiesUserAgentProviderTest {
   public void testGenerateUserAgent_multipleUtilitiesRegistered_includeUtilitiesTrue() {
     when(adsLibConfiguration.isIncludeAdsUtilitiesInUserAgent()).thenReturn(true);
 
-    List<AdsUtility> adsUtilities =
-        Lists.newArrayList(
+    List<AdsUtility> adsUtilities = Arrays.asList(
             AdsUtility.PRODUCT_PARTITION_TREE,
             AdsUtility.SELECTOR_BUILDER,
             AdsUtility.REPORT_DOWNLOADER);
 
-    for (int i = 0; i < adsUtilities.size() * adsUtilities.size(); i++) {
+    for (int i = 0; i < adsUtilities.size(); i++) {
+      Collections.shuffle(adsUtilities);
       for (AdsUtility adsUtility : adsUtilities) {
         adsUtilityRegistry.addUtility(adsUtility);
       }
@@ -99,11 +90,8 @@ public class AdsUtilitiesUserAgentProviderTest {
           "User agent should include registered utilities in alphabetical order if include "
           + "utilities is true",
           expectedUserAgent, actualUserAgent);
-      assertEquals("User agent provider should clear utilities", Sets.newHashSet(),
-          adsUtilityRegistry.getRegisteredUtilities());
-
-      // Rotate the list of utilities in preparation for the next iteration.
-      Collections.rotate(adsUtilities, i);
+      assertTrue("User agent provider should clear utilities",
+          adsUtilityRegistry.popRegisteredUtilities().isEmpty());
     }
   }
 
@@ -111,12 +99,14 @@ public class AdsUtilitiesUserAgentProviderTest {
    * Tests that if no utilities are registered, the provider will return null.
    */
   @Test
-  public void testGenerateUserAgent_noUtitilitiesRegistered_includeUtilitiesTrue() {
+  public void testGenerateUserAgent_noUtilitiesRegistered_includeUtilitiesTrue() {
     when(adsLibConfiguration.isIncludeAdsUtilitiesInUserAgent()).thenReturn(true);
 
     String actualUserAgent = userAgentProvider.getUserAgent();
 
     assertNull("User agent should be null if no utilities are registered", actualUserAgent);
+    assertTrue("User agent provider should clear utilities",
+        adsUtilityRegistry.popRegisteredUtilities().isEmpty());
   }
 
   /**
@@ -131,5 +121,7 @@ public class AdsUtilitiesUserAgentProviderTest {
 
     String actualUserAgent = userAgentProvider.getUserAgent();
     assertNull("User agent should be null if include utilities is false", actualUserAgent);
+    assertTrue("User agent provider should clear utilities",
+        adsUtilityRegistry.popRegisteredUtilities().isEmpty());
   }
 }

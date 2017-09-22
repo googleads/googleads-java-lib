@@ -50,11 +50,7 @@ public class AdsUtilitiesUserAgentProvider implements UserAgentProvider {
 
   @Override
   public String getUserAgent() {
-    Set<AdsUtility> adsUtilities = adsUtilityRegistry.getRegisteredUtilities();
-    
-    // Always clear the registry, even if utilities will not be included in the user agent.
-    adsUtilityRegistry.removeUtilities(adsUtilities);
-    
+    Set<AdsUtility> adsUtilities = adsUtilityRegistry.popRegisteredUtilities();
     if (!adsLibConfiguration.isIncludeAdsUtilitiesInUserAgent() || adsUtilities.isEmpty()) {
       return null;
     }

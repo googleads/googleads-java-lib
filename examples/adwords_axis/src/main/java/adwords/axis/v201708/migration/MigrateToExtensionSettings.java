@@ -462,7 +462,6 @@ public class MigrateToExtensionSettings {
           }
         }
       }
-
     } else {
       // There are no other matching functions involving feed item IDs.
     }

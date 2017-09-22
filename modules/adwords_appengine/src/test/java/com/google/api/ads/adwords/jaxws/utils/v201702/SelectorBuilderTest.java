@@ -29,12 +29,11 @@ import com.google.api.ads.adwords.lib.selectorfields.EntityField;
 import com.google.api.ads.adwords.lib.selectorfields.v201702.cm.CampaignField;
 import com.google.api.ads.adwords.lib.utils.AdWordsInternals;
 import com.google.api.ads.common.lib.utils.AdsUtility;
-import com.google.common.collect.Sets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.HashSet;
 import java.util.Set;
 import org.joda.time.DateTime;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,35 +45,31 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class SelectorBuilderTest {
 
-  /**
-   * Indicates if this test invokes any of the methods on SelectorBuilder with an
-   * {@link EntityField} argument.
-   */
-  private boolean isTestUsingFieldEnums;
-
   @Before
   public void setUp() {
-    isTestUsingFieldEnums = false;
-    AdWordsInternals.getInstance().getAdsUtilityRegistry().removeUtilities(
-        AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+    AdWordsInternals.getInstance().getAdsUtilityRegistry().popRegisteredUtilities();
   }
 
-  @After
-  public void tearDown() {
-    Set<AdsUtility> expectedUtilities = Sets.<AdsUtility>newTreeSet();
+  /**
+   * Checks the utilities registry status.
+   *
+   * @param isTestUsingFieldEnums Indicates if this test invokes any of the methods on
+   * SelectorBuilder with an {@link EntityField} argument.
+   */
+  public void checkUtilitiesState(final boolean isTestUsingFieldEnums) {
+    Set<AdsUtility> expectedUtilities = new HashSet<>();
     expectedUtilities.add(AdsUtility.SELECTOR_BUILDER);
     if (isTestUsingFieldEnums) {
       expectedUtilities.add(AdsUtility.SELECTOR_FIELD);
     }
     assertEquals(expectedUtilities,
-        AdWordsInternals.getInstance().getAdsUtilityRegistry().getRegisteredUtilities());
+        AdWordsInternals.getInstance().getAdsUtilityRegistry().popRegisteredUtilities());
   }
 
   /**
-   * Tests the immutability of the selector
+   * Tests the immutability of the selector.
    */
   @Test
-  @SuppressWarnings("unchecked")
   public void testSelectorBuilderImmutability() {
     DateFormat dateFormat = new SimpleDateFormat(SelectorBuilderImpl.DEFAULT_DATE_FORMAT);
 
@@ -109,13 +104,13 @@ public class SelectorBuilderTest {
     assertEquals(formatStart, selectorRebuilt.getDateRange().getMin());
     assertEquals(formatEnd, selectorRebuilt.getDateRange().getMax());
 
+    checkUtilitiesState(false);
   }
 
   /**
-   * Tests the adding of a new field
+   * Tests the adding of a new field.
    */
   @Test
-  @SuppressWarnings("unchecked")
   public void testFieldsBuild() {
     SelectorBuilder builder = new SelectorBuilder();
 
@@ -155,13 +150,13 @@ public class SelectorBuilderTest {
     assertEquals("Settings", selector.getFields().get(6));
     assertEquals("AverageCpc", selector.getFields().get(7));
 
+    checkUtilitiesState(false);
   }
 
   /**
-   * Tests the removal of fields
+   * Tests the removal of fields.
    */
   @Test
-  @SuppressWarnings("unchecked")
   public void testFieldsRemove() {
     SelectorBuilder builder = new SelectorBuilder();
 
@@ -180,10 +175,11 @@ public class SelectorBuilderTest {
     assertEquals("ServingStatus", selector.getFields().get(5));
     assertEquals("Settings", selector.getFields().get(6));
 
+    checkUtilitiesState(false);
   }
 
   /**
-   * Tests the predicate build for the ID field
+   * Tests the predicate build for the ID field.
    */
   @Test
   public void testPredicatesBuild() {
@@ -202,10 +198,11 @@ public class SelectorBuilderTest {
     assertEquals(1, predicate.getValues().size());
     assertEquals("10", predicate.getValues().get(0));
 
+    checkUtilitiesState(false);
   }
 
   /**
-   * Tests the predicate with the IN clause
+   * Tests the predicate with the IN clause.
    */
   @Test
   public void testPredicatesInBuild() {
@@ -226,15 +223,15 @@ public class SelectorBuilderTest {
     assertEquals(CampaignStatus.ENABLED.toString(), predicate.getValues().get(0));
     assertEquals(CampaignStatus.REMOVED.toString(), predicate.getValues().get(1));
 
+    checkUtilitiesState(false);
   }
 
   /**
-   * Tests the order by criteria
+   * Tests the order by criteria.
    */
   @Test
   public void testOrderByBuild() {
     SelectorBuilder builder = new SelectorBuilder();
-    isTestUsingFieldEnums = true;
 
     builder = builder.orderAscBy(CampaignField.BidType);
     Selector selector = builder.build();
@@ -278,6 +275,8 @@ public class SelectorBuilderTest {
 
     assertEquals("Amount", orderBy.getField());
     assertEquals(SortOrder.ASCENDING, orderBy.getSortOrder());
+
+    checkUtilitiesState(true);
   }
 
   /**
@@ -286,7 +285,6 @@ public class SelectorBuilderTest {
   @Test
   public void testOrderBySubstitution() {
     SelectorBuilder builder = new SelectorBuilder();
-    isTestUsingFieldEnums = true;
 
     builder = builder.orderAscBy(CampaignField.BidType).orderDescBy(CampaignField.Amount);
     Selector selector = builder.build();
@@ -309,6 +307,8 @@ public class SelectorBuilderTest {
 
     assertEquals("Amount", orderBy.getField());
     assertEquals(SortOrder.DESCENDING, orderBy.getSortOrder());
+
+    checkUtilitiesState(true);
   }
 
   /**
@@ -330,6 +330,8 @@ public class SelectorBuilderTest {
 
     assertEquals(formatStart, selector.getDateRange().getMin());
     assertEquals(formatEnd, selector.getDateRange().getMax());
+
+    checkUtilitiesState(false);
   }
 
 
@@ -376,6 +378,7 @@ public class SelectorBuilderTest {
     assertEquals(55, selector.getPaging().getStartIndex().intValue());
     assertEquals(4, selector.getPaging().getNumberResults().intValue());
 
+    checkUtilitiesState(false);
   }
 
   /**
@@ -389,6 +392,8 @@ public class SelectorBuilderTest {
 
     assertEquals(10, selectorOne.getPaging().getStartIndex().intValue());
     assertEquals(345, selectorTwo.getPaging().getStartIndex().intValue());
+
+    checkUtilitiesState(false);
   }
 
   /**
@@ -405,6 +410,8 @@ public class SelectorBuilderTest {
 
     assertEquals("Id", selectorOne.getOrdering().get(0).getField());
     assertEquals("Status", selectorTwo.getOrdering().get(0).getField());
+
+    checkUtilitiesState(false);
   }
 
   /**
@@ -421,6 +428,8 @@ public class SelectorBuilderTest {
 
     assertEquals("Id", selectorOne.getPredicates().get(0).getField());
     assertEquals("Status", selectorTwo.getPredicates().get(0).getField());
+
+    checkUtilitiesState(false);
   }
 
   /**
@@ -443,6 +452,7 @@ public class SelectorBuilderTest {
     assertEquals(dateFormat.format(endOne.toDate()), selectorOne.getDateRange().getMax());
     assertEquals(dateFormat.format(startTwo.toDate()), selectorTwo.getDateRange().getMin());
     assertEquals(dateFormat.format(endTwo.toDate()), selectorTwo.getDateRange().getMax());
-  }
 
+    checkUtilitiesState(false);
+  }
 }

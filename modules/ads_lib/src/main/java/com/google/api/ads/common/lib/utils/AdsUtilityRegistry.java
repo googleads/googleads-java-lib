@@ -15,10 +15,10 @@
 package com.google.api.ads.common.lib.utils;
 
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Sets;
 import com.google.inject.Singleton;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.concurrent.ThreadSafe;
 
 /** A thread-safe registry for usage of {@link AdsUtility ads utilities}. */
@@ -26,7 +26,8 @@ import javax.annotation.concurrent.ThreadSafe;
 @Singleton
 public final class AdsUtilityRegistry {
 
-  private final Set<AdsUtility> adsUtilities = Sets.newConcurrentHashSet();
+  private volatile Set<AdsUtility> adsUtilities =
+      Collections.newSetFromMap(new ConcurrentHashMap<AdsUtility, Boolean>());
 
   private static final AdsUtilityRegistry INSTANCE = new AdsUtilityRegistry();
 
@@ -35,9 +36,8 @@ public final class AdsUtilityRegistry {
     return INSTANCE;
   }
 
-  private AdsUtilityRegistry() {
-    // Private constructor to enforce singleton behavior.
-  }
+  // Private constructor to enforce singleton behavior.
+  private AdsUtilityRegistry() { }
 
   /**
    * Adds the specified utility to the registry.
@@ -47,24 +47,16 @@ public final class AdsUtilityRegistry {
    *
    * @throws NullPointerException if {@code adsUtility == null}
    */
-  public void addUtility(AdsUtility adsUtility) {
-    adsUtilities.add(Preconditions.checkNotNull(adsUtility, "Null ads utility"));
+  public void addUtility(final AdsUtility adsUtility) {
+    Preconditions.checkNotNull(adsUtility, "Null ads utility");
+    adsUtilities.add(adsUtility);
   }
 
-  /** Returns all utilities in the registry. */
-  public Set<AdsUtility> getRegisteredUtilities() {
-    return Sets.<AdsUtility>newHashSet(adsUtilities);
-  }
-
-  /**
-   * Removes the specified utilities from the registry.
-   *
-   * <p>Removal is performed on a <em>best efforts</em> basis. It is possible that another thread
-   * will subsequently add one or more of the utilities immediately after the remove.
-   *
-   * @throws NullPointerException if {@code utilities == null}
-   */
-  public void removeUtilities(Collection<AdsUtility> utilities) {
-    adsUtilities.removeAll(Preconditions.checkNotNull(utilities, "Null utilities collection"));
+  /** Returns all utilities in the registry and clears the registry. */
+  public Set<AdsUtility> popRegisteredUtilities() {
+    // Detach and return, so we don't have to make a copy.
+    Set<AdsUtility> result = Collections.unmodifiableSet(adsUtilities);
+    adsUtilities = Collections.newSetFromMap(new ConcurrentHashMap<AdsUtility, Boolean>());
+    return result;
   }
 }
