@@ -14,43 +14,45 @@
 
 package com.google.api.ads.dfp.lib.conf;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.dfp.lib.DfpModule;
-import com.google.common.io.Files;
 import com.google.inject.Guice;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
- * Verifies that we correctly wire in all properties files to our
- * {@link DfpLibConfiguration}.
+ * Verifies that we correctly wire in all properties files to our {@link DfpLibConfiguration}.
+ * This test should be run in its own JVM because it makes changes to system properties that could
+ * cause issues with other integration tests.
  */
 @RunWith(JUnit4.class)
 public class DfpLibConfigurationIntegrationTest {
 
+  @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
+
   @Test
   public void testPropertyFileIncludedInConfig() throws Exception {
-    File adsPropertiesFile = createPropertiesFile(); 
+    File adsPropertiesFile = createPropertiesFile();
     System.setProperty("user.home", adsPropertiesFile.getParentFile().getAbsolutePath());
-    DfpLibConfiguration config = Guice.createInjector(
-        new DfpModule()).getInstance(DfpLibConfiguration.class);
+    DfpLibConfiguration config =
+        Guice.createInjector(new DfpModule()).getInstance(DfpLibConfiguration.class);
     assertFalse(config.isAutoRefreshOAuth2TokenEnabled());
   }
-  
-  /**
-   * Creates an ads.properties file.
-   */
-  private static File createPropertiesFile() throws IOException {
-    File tempDir = Files.createTempDir();
+
+  /** Creates an ads.properties file. */
+  private File createPropertiesFile() throws IOException {
+    File tempDir = tempFolder.newFolder();
     File adsPropertiesFile = new File(tempDir, "ads.properties");
-    FileWriter fileWriter = new FileWriter(adsPropertiesFile);
+    Writer fileWriter = Files.newBufferedWriter(adsPropertiesFile.toPath(), UTF_8);
     fileWriter.write("api.dfp.refreshOAuth2Token=false\n");
     fileWriter.flush();
     fileWriter.close();

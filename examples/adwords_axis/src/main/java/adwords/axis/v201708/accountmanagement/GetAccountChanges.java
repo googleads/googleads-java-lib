@@ -116,9 +116,9 @@ public class GetAccountChanges {
 
           if (campaignChanges.getChangedAdGroups() != null) {
             for (AdGroupChangeData adGroupChanges : campaignChanges.getChangedAdGroups()) {
-              System.out.printf("\tAd goup with ID %d was changed:%n",
+              System.out.printf("\tAd group with ID %d was changed:%n",
                   adGroupChanges.getAdGroupId());
-              System.out.printf("\t\tAd goup changed status: %s%n",
+              System.out.printf("\t\tAd group changed status: %s%n",
                   adGroupChanges.getAdGroupChangeStatus());
               if (!ChangeStatus.NEW.equals(adGroupChanges.getAdGroupChangeStatus())) {
                 System.out.printf("\t\tAds changed: %s%n",

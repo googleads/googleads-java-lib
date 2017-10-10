@@ -47,6 +47,10 @@ public final class ArgumentNames {
 
   public static final String DRAFT_ID = "--draftId";
 
+  public static final String EMAIL_ADDRESS = "--emailAddress";
+
+  public static final String EXTERNAL_UPLOAD_ID = "--externalUploadId";
+
   public static final String FEED_NAME = "--feedName";
 
   public static final String GCL_ID = "--gclId";

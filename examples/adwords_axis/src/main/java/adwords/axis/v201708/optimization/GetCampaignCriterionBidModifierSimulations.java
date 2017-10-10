@@ -40,6 +40,8 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetCampaignCriterionBidModifierSimulations {
 
+  private static final int PAGE_SIZE = 100;
+
   private static class GetCampaignCriterionBidModifierSimulationsParams extends CodeSampleParams {
     @Parameter(names = ArgumentNames.CAMPAIGN_ID, required = true)
     private Long campaignId;
@@ -94,40 +96,52 @@ public class GetCampaignCriterionBidModifierSimulations {
                 DataField.TotalLocalImpressions,
                 DataField.RequiredBudget)
             .equals(DataField.CampaignId, campaignId.toString())
+            .limit(PAGE_SIZE)
             .build();
 
-    // Get bid modifier landscapes for campaign criteria.
-    CriterionBidLandscapePage page = dataService.getCampaignCriterionBidLandscape(selector);
-
     // Display bid landscapes.
-    if (page.getEntries() != null) {
-      for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
-        System.out.printf(
-            "Found campaign-level criterion bid modifier landscape for"
-                + " criterion with ID %d, start date '%s', end date '%s', and"
-                + " landscape points:%n",
-            criterionBidLandscape.getCriterionId(),
-            criterionBidLandscape.getStartDate(),
-            criterionBidLandscape.getEndDate());
+    int landscapePointsInPreviousPage = 0;
+    int startIndex = 0;
+    do {
+      // Offset the start index by the number of landscape points in the last retrieved page,
+      // NOT the number of entries (bid landscapes) in the page.
+      startIndex += landscapePointsInPreviousPage;
+      selector.getPaging().setStartIndex(startIndex);
 
-        for (BidLandscapeLandscapePoint bidLandscapePoint :
-            criterionBidLandscape.getLandscapePoints()) {
+      // Reset the count of landscape points in preparation for processing the next page.
+      landscapePointsInPreviousPage = 0;
+
+      // Request the next page of bid landscapes.
+      CriterionBidLandscapePage page = dataService.getCampaignCriterionBidLandscape(selector);
+
+      if (page.getEntries() != null) {
+        for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
           System.out.printf(
-              "  {bid modifier: %.2f => clicks: %d, cost: %d, impressions: %d, "
-                  + "total clicks: %d, total cost: %d, total impressions: %d, and "
-                  + "required budget: %d%n",
-              bidLandscapePoint.getBidModifier(),
-              bidLandscapePoint.getClicks(),
-              bidLandscapePoint.getCost().getMicroAmount(),
-              bidLandscapePoint.getImpressions(),
-              bidLandscapePoint.getTotalLocalClicks(),
-              bidLandscapePoint.getTotalLocalCost().getMicroAmount(),
-              bidLandscapePoint.getTotalLocalImpressions(),
-              bidLandscapePoint.getRequiredBudget().getMicroAmount());
+              "Found campaign-level criterion bid modifier landscape for"
+                  + " criterion with ID %d, start date '%s', end date '%s', and"
+                  + " landscape points:%n",
+              criterionBidLandscape.getCriterionId(),
+              criterionBidLandscape.getStartDate(),
+              criterionBidLandscape.getEndDate());
+
+          for (BidLandscapeLandscapePoint bidLandscapePoint :
+              criterionBidLandscape.getLandscapePoints()) {
+            landscapePointsInPreviousPage++;
+            System.out.printf(
+                "  {bid modifier: %.2f => clicks: %d, cost: %d, impressions: %d, "
+                    + "total clicks: %d, total cost: %d, total impressions: %d, and "
+                    + "required budget: %d%n",
+                bidLandscapePoint.getBidModifier(),
+                bidLandscapePoint.getClicks(),
+                bidLandscapePoint.getCost().getMicroAmount(),
+                bidLandscapePoint.getImpressions(),
+                bidLandscapePoint.getTotalLocalClicks(),
+                bidLandscapePoint.getTotalLocalCost().getMicroAmount(),
+                bidLandscapePoint.getTotalLocalImpressions(),
+                bidLandscapePoint.getRequiredBudget().getMicroAmount());
+          }
         }
       }
-    } else {
-      System.out.println("No campaign criterion bid modifier landscapes were found");
-    }
+    } while (landscapePointsInPreviousPage >= PAGE_SIZE);
   }
 }

@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>dfp-axis-examples</artifactId>
-  <version>3.8.0</version>
+  <version>3.9.0</version>
 
   <packaging>jar</packaging>
   <name>DFP Examples using Axis</name>
@@ -86,12 +86,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.8.0</version>
+      <version>3.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfp-axis</artifactId>
-      <version>3.8.0</version>
+      <version>3.9.0</version>
     </dependency>
 
     <!-- Third party dependencies -->

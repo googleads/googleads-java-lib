@@ -14,6 +14,7 @@
 
 package com.google.api.ads.common.lib.conf;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,7 +25,16 @@ import com.google.api.ads.common.lib.conf.ConfigurationHelper.ConfigurationInfo;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.Writer;
+import java.net.URL;
+import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.SystemConfiguration;
@@ -33,22 +43,12 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 /**
  * Test for {@link ConfigurationHelper}.
-
  */
 @RunWith(JUnit4.class)
 public class ConfigurationHelperTest {
@@ -58,13 +58,14 @@ public class ConfigurationHelperTest {
   private Map<String, String> test3Properties;
   private String[] allPropertyKeys = {"a.b.c", "a.b.d", "e.f.g", "e.f.h", "i.j.k", "testProperty"};
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
+
+  @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
 
   @Before
   public void setUp() {
     AbstractConfiguration.setDefaultListDelimiter(',');
-    clearSystemProperties();
+    clearTestSystemProperties();
     this.configurationHelper = new ConfigurationHelper();
     this.test1Properties = new HashMap<String, String>() {{
         this.put("a.b.c", "efgh");
@@ -418,9 +419,9 @@ public class ConfigurationHelperTest {
   /**
    * Creates a properties file from the map.
    */
-  private static File createPropertiesFile(Map<String, String> properties) throws IOException {
-    File file = File.createTempFile("javalibtest", "properties");
-    FileWriter fileWriter = new FileWriter(file);
+  private File createPropertiesFile(Map<String, String> properties) throws IOException {
+    File file = tempFolder.newFile();
+    Writer fileWriter = Files.newBufferedWriter(file.toPath(), UTF_8);
     for (Map.Entry<String, String> entry : properties.entrySet()) {
       fileWriter.write(String.format("%s=%s\n", entry.getKey(), entry.getValue()));
     }
@@ -480,7 +481,7 @@ public class ConfigurationHelperTest {
   /**
    * Clears the tested properties from the System.
    */
-  private void clearSystemProperties() {
+  private void clearTestSystemProperties() {
     for (String key : allPropertyKeys) {
       System.clearProperty(key);
     }

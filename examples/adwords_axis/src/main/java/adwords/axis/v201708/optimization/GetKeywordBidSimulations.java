@@ -40,6 +40,8 @@ import com.google.api.client.auth.oauth2.Credential;
  */
 public class GetKeywordBidSimulations {
 
+  private static final int PAGE_SIZE = 100;
+
   private static class GetKeywordBidSimulationsParams extends CodeSampleParams {
     @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
     private Long adGroupId;
@@ -79,45 +81,63 @@ public class GetKeywordBidSimulations {
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Long adGroupId,
       Long criterionId) throws Exception {
     // Get the DataService.
-    DataServiceInterface dataService =
-        adWordsServices.get(session, DataServiceInterface.class);
+    DataServiceInterface dataService = adWordsServices.get(session, DataServiceInterface.class);
 
     // Create selector.
-    Selector selector = new SelectorBuilder()
-        .fields(
-            DataField.AdGroupId,
-            DataField.CriterionId,
-            DataField.StartDate,
-            DataField.EndDate,
-            DataField.Bid,
-            DataField.LocalClicks,
-            DataField.LocalCost,
-            DataField.LocalImpressions)
-        .equals(DataField.AdGroupId, adGroupId.toString())
-        .equals(DataField.CriterionId, criterionId.toString())
-        .build();
-
-    // Get bid landscape for ad group criteria.
-    CriterionBidLandscapePage page = dataService.getCriterionBidLandscape(selector);
+    Selector selector =
+        new SelectorBuilder()
+            .fields(
+                DataField.AdGroupId,
+                DataField.CriterionId,
+                DataField.StartDate,
+                DataField.EndDate,
+                DataField.Bid,
+                DataField.LocalClicks,
+                DataField.LocalCost,
+                DataField.LocalImpressions)
+            .equals(DataField.AdGroupId, adGroupId.toString())
+            .equals(DataField.CriterionId, criterionId.toString())
+            .limit(PAGE_SIZE)
+            .build();
 
     // Display bid landscapes.
-    if (page.getEntries() != null) {
-      for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
-        System.out.printf("Criterion bid landscape with ad group ID %d, criterion ID %d, "
-            + "start date %s, end date %s, with landscape points:%n",
-            criterionBidLandscape.getAdGroupId(), criterionBidLandscape.getCriterionId(), 
-            criterionBidLandscape.getStartDate(), criterionBidLandscape.getEndDate());
+    int landscapePointsInPreviousPage = 0;
+    int startIndex = 0;
+    do {
+      // Offset the start index by the number of landscape points in the last retrieved page,
+      // NOT the number of entries (bid landscapes) in the page.
+      startIndex += landscapePointsInPreviousPage;
+      selector.getPaging().setStartIndex(startIndex);
 
-        for (BidLandscapeLandscapePoint bidLanscapePoint : criterionBidLandscape
-            .getLandscapePoints()) {
-          System.out.printf("\t{bid: %d clicks: %d cost: %d impressions: %d}%n",
-              bidLanscapePoint.getBid().getMicroAmount(), bidLanscapePoint.getClicks(),
-              bidLanscapePoint.getCost().getMicroAmount(), bidLanscapePoint.getImpressions());
+      // Reset the count of landscape points in preparation for processing the next page.
+      landscapePointsInPreviousPage = 0;
+
+      // Request the next page of bid landscapes.
+      CriterionBidLandscapePage page = dataService.getCriterionBidLandscape(selector);
+
+      if (page.getEntries() != null) {
+        for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
+          System.out.printf(
+              "Criterion bid landscape with ad group ID %d, criterion ID %d, "
+                  + "start date %s, end date %s, with landscape points:%n",
+              criterionBidLandscape.getAdGroupId(),
+              criterionBidLandscape.getCriterionId(),
+              criterionBidLandscape.getStartDate(),
+              criterionBidLandscape.getEndDate());
+
+          for (BidLandscapeLandscapePoint bidLanscapePoint :
+              criterionBidLandscape.getLandscapePoints()) {
+            landscapePointsInPreviousPage++;
+            System.out.printf(
+                "\t{bid: %d clicks: %d cost: %d impressions: %d}%n",
+                bidLanscapePoint.getBid().getMicroAmount(),
+                bidLanscapePoint.getClicks(),
+                bidLanscapePoint.getCost().getMicroAmount(),
+                bidLanscapePoint.getImpressions());
+          }
+          System.out.println(" was found.");
         }
-        System.out.println(" was found.");
       }
-    } else {
-      System.out.println("No criterion bid landscapes were found.");
-    }
+    } while (landscapePointsInPreviousPage >= PAGE_SIZE);
   }
 }

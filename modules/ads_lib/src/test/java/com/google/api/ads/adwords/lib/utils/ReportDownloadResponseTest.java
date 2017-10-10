@@ -29,6 +29,7 @@ import java.util.zip.GZIPOutputStream;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -40,6 +41,8 @@ public class ReportDownloadResponseTest {
   
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+  @Rule
+  public TemporaryFolder tempFolder = new TemporaryFolder();
 
   /**
    * Test method for
@@ -97,7 +100,7 @@ public class ReportDownloadResponseTest {
    */
   @Test
   public void testSaveToFile() throws IOException {
-    File outputFile = File.createTempFile("ReportOutput", ".csv");
+    File outputFile = tempFolder.newFile("ReportOutput.csv");
     String expectedContents = "a,b,c\nd,e,f\n";
     InputStream inputStream = new ByteArrayInputStream(expectedContents.getBytes(UTF_8));
     RawReportDownloadResponse rawResponse = new RawReportDownloadResponse(HttpURLConnection.HTTP_OK,

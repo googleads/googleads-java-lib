@@ -38,6 +38,7 @@ import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXParseException;
@@ -49,6 +50,7 @@ import org.xml.sax.SAXParseException;
 public class AxisDeserializerTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+  @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
 
   /**
    * Tests that a response with errors will be properly deserialized.
@@ -110,7 +112,7 @@ public class AxisDeserializerTest {
    */
   @Test
   public void testDeserializeEmptyBatchJobResponse() throws Exception {
-    File emptyFile = File.createTempFile(AxisDeserializerTest.class.getSimpleName(), "empty.xml");
+    File emptyFile = tempFolder.newFile("empty.xml");
     thrown.expect(TransformerException.class);
     thrown.expectCause(Matchers.<Exception>instanceOf(SAXParseException.class));
     testDeserializeBatchJobResponse(emptyFile.toURI().toURL());
