@@ -15,9 +15,12 @@
 package com.google.api.ads.common.lib.auth;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.auth.OfflineCredentials.Builder;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.ForApiBuilder;
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.exception.OAuthException;
@@ -113,14 +116,26 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_dfpServiceAccount() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+    String jsonKeyFilePath = "someJsonKeyFilePath";
+    config.setProperty("api.dfp.jsonKeyFilePath", jsonKeyFilePath);
     
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
         .forApi(OfflineCredentials.Api.DFP)
         .from(config)
         .build();
 
-    assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
+    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
+    assertNull("service account user should be null", offlineCredentials.getServiceAccountUser());
+
+    // Create another credential with the service account user set.
+    String serviceAccountUser = "someUser@example.com";
+    offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .withServiceAccountUser(serviceAccountUser)
+        .build();
+    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
+    assertEquals(serviceAccountUser, offlineCredentials.getServiceAccountUser());
   }
 
   /**
@@ -150,14 +165,26 @@ public class OfflineCredentialsTest {
   public void testReadPropertiesFromConfiguration_adWordsServiceAccount() 
       throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.adwords.jsonKeyFilePath", "jsonKeyFilePath");
+    String jsonKeyFilePath = "someJsonKeyFilePath";
+    config.setProperty("api.adwords.jsonKeyFilePath", jsonKeyFilePath);
     
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
         .forApi(OfflineCredentials.Api.ADWORDS)
         .from(config)
         .build();
 
-    assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
+    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
+    assertNull("service account user should be null", offlineCredentials.getServiceAccountUser());
+
+    // Create another credential with the service account user set.
+    String serviceAccountUser = "someUser@example.com";
+    offlineCredentials = new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.ADWORDS)
+        .from(config)
+        .withServiceAccountUser(serviceAccountUser)
+        .build();
+    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
+    assertEquals(serviceAccountUser, offlineCredentials.getServiceAccountUser());
   }
 
   /**
@@ -262,7 +289,24 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
   }
-  
+
+  /**
+   * Tests that the builder does not fail when missing everything but a service account key and
+   * service account user.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_onlyKeyFilePathAndUser() throws Exception {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+    config.setProperty("api.dfp.serviceAccountUser", "someUser@example.com");
+
+    OfflineCredentials credentials = new Builder().forApi(Api.DFP).from(config).build();
+    assertEquals(
+        "service account user should have been set from the config",
+        "someUser@example.com",
+        credentials.getServiceAccountUser());
+  }
+
   /**
    * Tests that the builder correctly fails on a bad configuration.
    */
@@ -271,6 +315,25 @@ public class OfflineCredentialsTest {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.dfp.clientSecret", "clientSecret");
     config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+
+    thrown.expect(ValidationException.class);
+    new OfflineCredentials.Builder()
+        .forApi(OfflineCredentials.Api.DFP)
+        .from(config)
+        .build();
+  }
+
+  /**
+   * Tests that the builder correctly fails on a bad configuration that has serviceAccountUser
+   * specified but does not have the jsonKeyFilePath.
+   */
+  @Test
+  public void testReadPropertiesFromConfiguration_serviceAccountUserNoKeyFile() throws Exception {
+    PropertiesConfiguration config = new PropertiesConfiguration();
+    config.setProperty("api.dfp.clientId", "clientId");
+    config.setProperty("api.dfp.clientSecret", "clientSecret");
+    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.dfp.serviceAccountUser", "someUser@example.com");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()

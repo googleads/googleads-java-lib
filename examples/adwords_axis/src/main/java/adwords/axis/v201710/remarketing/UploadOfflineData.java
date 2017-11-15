@@ -25,8 +25,11 @@ import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUpload;
 import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUploadOperation;
 import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUploadReturnValue;
 import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUploadServiceInterface;
+import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUploadType;
 import com.google.api.ads.adwords.axis.v201710.rm.OfflineDataUploadUserIdentifierType;
 import com.google.api.ads.adwords.axis.v201710.rm.StoreSalesTransaction;
+import com.google.api.ads.adwords.axis.v201710.rm.ThirdPartyUploadMetadata;
+import com.google.api.ads.adwords.axis.v201710.rm.UploadMetadata;
 import com.google.api.ads.adwords.axis.v201710.rm.UserIdentifier;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
@@ -90,6 +93,15 @@ public class UploadOfflineData {
 
     @Parameter(names = ArgumentNames.EXTERNAL_UPLOAD_ID, required = true)
     private Long externalUploadId;
+
+    @Parameter(names = ArgumentNames.UPLOAD_TIME, required = true)
+    private String advertiserUploadTime;
+
+    @Parameter(names = ArgumentNames.BRIDGE_MAP_VERSION_ID, required = true)
+    private String bridgeMapVersionId;
+
+    @Parameter(names = ArgumentNames.PARTNER_ID, required = true)
+    private Integer partnerId;
   }
 
   public static void main(String[] args) throws Exception {
@@ -116,6 +128,13 @@ public class UploadOfflineData {
           Arrays.asList("INSERT_EMAIL_ADDRESS_1_HERE", "INSERT_EMAIL_ADDRESS_2_HERE");
       params.conversionName = "INSERT_CONVERSION_NAME_HERE";
       params.externalUploadId = Long.valueOf("INSERT_EXTERNAL_UPLOAD_ID_HERE");
+      // For times, use the format yyyyMMdd HHmmss tz. For more details on formats, see:
+      // https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
+      // For time zones, see:
+      // https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids
+      params.advertiserUploadTime = "INSERT_ADVERTISER_UPLOAD_TIME";
+      params.bridgeMapVersionId = "INSERT_BRIDGE_MAP_VERSION_ID";
+      params.partnerId = Integer.valueOf("INSERT_PARTNER_ID");
     }
 
     runExample(
@@ -123,7 +142,10 @@ public class UploadOfflineData {
         session,
         params.conversionName,
         params.externalUploadId,
-        params.emailAddresses);
+        params.emailAddresses,
+        params.advertiserUploadTime,
+        params.bridgeMapVersionId,
+        params.partnerId);
   }
 
   public static void runExample(
@@ -131,7 +153,10 @@ public class UploadOfflineData {
       AdWordsSession session,
       String conversionName,
       long externalUploadId,
-      List<String> emailAddresses)
+      List<String> emailAddresses,
+      String advertiserUploadTime,
+      String bridgeMapVersionId,
+      int partnerId)
       throws Exception {
     // This example requires exactly 2 email addresses.
     if (emailAddresses.size() != 2) {
@@ -182,8 +207,21 @@ public class UploadOfflineData {
     offlineDataUpload.setOfflineDataList(
         offlineDataList.toArray(new OfflineData[offlineDataList.size()]));
 
-    // Optional: You can set the type of this upload.
-    // offlineDataUpload.setUploadType(OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY);
+    // Set the type and metadata of this upload.
+    offlineDataUpload.setUploadType(OfflineDataUploadType.STORE_SALES_UPLOAD_THIRD_PARTY);
+    ThirdPartyUploadMetadata thirdPartyUploadMetadata = new ThirdPartyUploadMetadata();
+    thirdPartyUploadMetadata.setLoyaltyRate(1.0);
+    thirdPartyUploadMetadata.setTransactionUploadRate(1.0);
+    thirdPartyUploadMetadata.setAdvertiserUploadTime(advertiserUploadTime);
+    thirdPartyUploadMetadata.setValidTransactionRate(1.0);
+    thirdPartyUploadMetadata.setPartnerMatchRate(1.0);
+    thirdPartyUploadMetadata.setPartnerUploadRate(1.0);
+    thirdPartyUploadMetadata.setBridgeMapVersionId(bridgeMapVersionId);
+    thirdPartyUploadMetadata.setPartnerId(partnerId);
+
+    UploadMetadata uploadMetadata = new UploadMetadata();
+    uploadMetadata.setStoreSalesUploadCommonMetadata(thirdPartyUploadMetadata);
+    offlineDataUpload.setUploadMetadata(uploadMetadata);
 
     // Create an offline data upload operation.
     OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation();

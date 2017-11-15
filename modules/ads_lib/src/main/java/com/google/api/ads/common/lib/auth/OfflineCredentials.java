@@ -152,6 +152,7 @@ public class OfflineCredentials {
   private final String tokenServerUrl;
   private final String jsonKeyFilePath;
   private final List<String> scopes;
+  private final String serviceAccountUser;
 
   /**
    * Constructor.
@@ -167,6 +168,7 @@ public class OfflineCredentials {
     this.tokenServerUrl = builder.tokenServerUrl;
     this.jsonKeyFilePath = builder.jsonKeyFilePath;
     this.scopes = builder.scopes;
+    this.serviceAccountUser = builder.serviceAccountUser;
   }
 
   /**
@@ -210,6 +212,15 @@ public class OfflineCredentials {
   }
 
   /**
+   * Gets the service account user. Validation ensures this is only <em>potentially</em> set if
+   * {@link #getJsonKeyFilePath()} is not {@code null}, in which case it is still optional.
+   */
+  @VisibleForTesting
+  final String getServiceAccountUser() {
+    return serviceAccountUser;
+  }
+
+  /**
    * Generates a new offline credential and immediately refreshes it.
    *
    * @return a newly refreshed offline credential.
@@ -234,11 +245,29 @@ public class OfflineCredentials {
   private GoogleCredential generateCredentialFromKeyFile() throws OAuthException {
     try {
       File jsonKeyFile = new File(jsonKeyFilePath);
-      return GoogleCredential.fromStream(
+      GoogleCredential credential = GoogleCredential.fromStream(
           Files.asByteSource(jsonKeyFile).openStream(),
           httpTransport,
           new JacksonFactory())
           .createScoped(this.scopes);
+      if (Strings.isNullOrEmpty(this.serviceAccountUser)) {
+        return credential;
+      }
+      // Creates a credential based on the instance created above, but adds the service account
+      // user. Slightly wasteful because the instance created above will be discarded immediately,
+      // but this ensures that the stream parsing and validation in GoogleCredential.fromStream is
+      // used and not duplicated here.
+      // The approach here is from the suggestion posted on issue 1007 for google-api-java-client:
+      // https://github.com/google/google-api-java-client/issues/1007#issuecomment-264157989
+      return new GoogleCredential.Builder()
+          .setJsonFactory(credential.getJsonFactory())
+          .setServiceAccountId(credential.getServiceAccountId())
+          .setServiceAccountPrivateKey(credential.getServiceAccountPrivateKey())
+          .setServiceAccountScopes(credential.getServiceAccountScopes())
+          .setTransport(credential.getTransport())
+          // Sets the service account user.
+          .setServiceAccountUser(this.serviceAccountUser)
+          .build();
     } catch (IOException e) {
       throw new OAuthException("Service account key file could not be loaded.", e);
     }
@@ -308,6 +337,7 @@ public class OfflineCredentials {
     private String configFilePath;
     private String tokenServerUrl;
     private String jsonKeyFilePath;
+    private String serviceAccountUser;
     private List<String> scopes;
 
     private final ConfigurationHelper configHelper;
@@ -375,6 +405,7 @@ public class OfflineCredentials {
       this.clientId = config.getString(getPropertyKey("clientId"), null);
       this.clientSecret = config.getString(getPropertyKey("clientSecret"), null);
       this.jsonKeyFilePath = config.getString(getPropertyKey("jsonKeyFilePath"), null);
+      this.serviceAccountUser = config.getString(getPropertyKey("serviceAccountUser"), null);
       return this;
     }
 
@@ -431,6 +462,21 @@ public class OfflineCredentials {
       this.jsonKeyFilePath = jsonKeyFilePath;
       return this;
     }
+
+    /**
+     * Sets the service account user to impersonate. This attribute is optional, and only applicable
+     * to the service account flow.
+     *
+     * <p>See
+     * https://developers.google.com/adwords/api/docs/guides/authentication#granting_impersonation_abilities
+     * for details.
+     *
+     * @param serviceAccountUser the email address of the account to impersonate.
+     */
+    public ForApiBuilder withServiceAccountUser(String serviceAccountUser) {
+      this.serviceAccountUser = serviceAccountUser;
+      return this;
+    }
     
     /**
      * Optionally sets scopes for authenticating with a service account. By default,
@@ -471,7 +517,7 @@ public class OfflineCredentials {
      */
     private void validate() throws ValidationException {
       if (!Strings.isNullOrEmpty(this.jsonKeyFilePath)) {
-        // Make sure only one OAuth format is specified.
+        // Make sure attributes that are not related to service accounts are not set.
         boolean otherOAuthPropsSet =
             !Strings.isNullOrEmpty(this.clientId)
             || !Strings.isNullOrEmpty(this.clientSecret)
@@ -481,12 +527,18 @@ public class OfflineCredentials {
               + "a service account key file or a client ID and secret, not both.",
               this.configFilePath != null ? generateFilePathWarning("jsonKeyFilePath") : ".");
         }
-        // Key file has everything we need, so skip the remaining validation.
+        // Key file has everything we need for service accounts, so skip the remaining validation.
         return;
       }
-      
+
+      if (!Strings.isNullOrEmpty(this.serviceAccountUser)) {
+        throw new ValidationException(
+            "Service account user set, but no service account key file was specified.",
+            "serviceAccountUser");
+      }
+
       if (Strings.isNullOrEmpty(this.clientId)) {
-        throw new ValidationException(String.format("Client ID must be set%s\n"
+        throw new ValidationException(String.format("Client ID must be set%s%n"
             + "If you do not have a client ID or secret, please create one in the API console: "
             + "https://console.developers.google.com/project",
             this.configFilePath != null ? generateFilePathWarning("clientId") : "."),
@@ -494,7 +546,7 @@ public class OfflineCredentials {
       }
 
       if (Strings.isNullOrEmpty(this.clientSecret)) {
-        throw new ValidationException(String.format("Client secret must be set%s\n"
+        throw new ValidationException(String.format("Client secret must be set%s%n"
             + "If you do not have a client ID or secret, please create one in the API console: "
             + "https://console.developers.google.com/project",
             this.configFilePath != null ? generateFilePathWarning("clientSecret") : "."),
@@ -502,7 +554,7 @@ public class OfflineCredentials {
       }
 
       if (Strings.isNullOrEmpty(this.refreshToken)) {
-        throw new ValidationException(String.format("A refresh token must be set%s\n"
+        throw new ValidationException(String.format("A refresh token must be set%s%n"
             + "It is required for offline credentials. If you need to create one, see the "
             + "GetRefreshToken example.",
             this.configFilePath != null ? generateFilePathWarning("refreshToken") : "."),

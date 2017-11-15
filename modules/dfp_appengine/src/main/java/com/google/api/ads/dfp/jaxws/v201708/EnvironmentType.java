@@ -49,7 +49,7 @@ public enum EnvironmentType {
 
     /**
      * 
-     *                 Video players (such as Flash applications).
+     *                 Video players.
      *               
      * 
      */

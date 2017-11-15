@@ -198,6 +198,20 @@ public class WorkflowRequestServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "CustomTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.CustomTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "CustomTargetingError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.CustomTargetingErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "Date");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201708.Date.class;
@@ -359,6 +373,20 @@ public class WorkflowRequestServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "ProposalLineItemActionError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.ProposalLineItemActionError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "ProposalLineItemActionError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.ProposalLineItemActionErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "PublisherQueryLanguageContextError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201708.PublisherQueryLanguageContextError.class;
@@ -505,6 +533,20 @@ public class WorkflowRequestServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringFormatError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.StringFormatError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringFormatError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.StringFormatErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringLengthError");
             cachedSerQNames.add(qName);

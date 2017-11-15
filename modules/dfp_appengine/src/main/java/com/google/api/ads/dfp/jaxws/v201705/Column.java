@@ -4153,6 +4153,9 @@ public enum Column {
     /**
      * 
      *                 The host revenue in the partner management.
+     *                 <p>
+     *                 Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_HOST_REVENUE.
+     *                 Note that the new metric supports fewer dimensions.
      *               
      * 
      */
@@ -4161,6 +4164,9 @@ public enum Column {
     /**
      * 
      *                 The host eCPM in the partner management.
+     *                 <p>
+     *                 Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_HOST_ECPM.
+     *                 Note that the new metric supports fewer dimensions.
      *               
      * 
      */
@@ -4169,6 +4175,9 @@ public enum Column {
     /**
      * 
      *                 The partner revenue in the partner management.
+     *                 <p>
+     *                 Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_PARTNER_REVENUE.
+     *                 Note that the new metric supports fewer dimensions.
      *               
      * 
      */
@@ -4177,6 +4186,9 @@ public enum Column {
     /**
      * 
      *                 The partner eCPM in the partner management.
+     *                 <p>
+     *                 Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_PARTNER_ECPM.
+     *                 Note that the new metric supports fewer dimensions.
      *               
      * 
      */

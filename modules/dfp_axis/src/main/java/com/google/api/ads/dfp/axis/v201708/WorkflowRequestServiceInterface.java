@@ -67,7 +67,8 @@ public interface WorkflowRequestServiceInterface extends java.rmi.Remote {
      * 
      *         
      * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of proposals
+     * filter a set of workflow
+     *         requests belonging to an entity
      *         
      * @return the workflow requests that match the given filter
      */

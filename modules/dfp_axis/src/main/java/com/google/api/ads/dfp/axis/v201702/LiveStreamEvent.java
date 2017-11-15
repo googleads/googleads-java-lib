@@ -69,7 +69,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
 
     /* The start date and time of this {@code LiveStreamEvent}. This
      * attribute
-     *                 is required. */
+     *                 is required if the {@link LiveStreamEvent#startDateTimeType}
+     * is
+     *                 {@link StartDateTimeType#USE_START_DATE_TIME} and
+     * is ignored for all other values of
+     *                 {@link StartDateTimeType}. */
     private com.google.api.ads.dfp.axis.v201702.DateTime startDateTime;
 
     /* The scheduled end date and time of this {@code LiveStreamEvent}.
@@ -98,27 +102,34 @@ public class LiveStreamEvent  implements java.io.Serializable {
      *                 read-only and is assigned by Google. */
     private java.lang.String liveStreamEventCode;
 
-    /* The authentication service used to validate credientials and
-     * create
-     *                 a tokenized version of the content URL. This value
-     * is optional and defaults to
-     *                 {@link AuthenticationService#NONE}. */
+    /* This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used. */
     private com.google.api.ads.dfp.axis.v201702.AuthenticationService authenticationService;
 
-    /* The secure key used to generate a tokenized URL for authentication.
-     * This value is required
-     *                 if {@link LiveStreamEvent#authenticationService} is
-     * not equal to
-     *                 {@link AuthenticationService#NONE}. */
+    /* This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used. */
     private java.lang.String authenticationKey;
 
-    /* Whether the segment URLs should be signed using the {@link
-     * #authenticationKey} on the
-     *                 server-side. This field is only applicable when the
-     * value of {@link #authenticationService} is
-     *                 equal to {@link AuthenticationService#AKAMAI}, and
-     * will be set to false otherwise. This field
-     *                 is optional and defaults to false. */
+    /* This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used. */
     private java.lang.Boolean tokenAuthenticationUnsigned;
 
     /* Length of the DVR window in seconds. This value is optional.
@@ -351,7 +362,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return startDateTime   * The start date and time of this {@code LiveStreamEvent}. This
      * attribute
-     *                 is required.
+     *                 is required if the {@link LiveStreamEvent#startDateTimeType}
+     * is
+     *                 {@link StartDateTimeType#USE_START_DATE_TIME} and
+     * is ignored for all other values of
+     *                 {@link StartDateTimeType}.
      */
     public com.google.api.ads.dfp.axis.v201702.DateTime getStartDateTime() {
         return startDateTime;
@@ -363,7 +378,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param startDateTime   * The start date and time of this {@code LiveStreamEvent}. This
      * attribute
-     *                 is required.
+     *                 is required if the {@link LiveStreamEvent#startDateTimeType}
+     * is
+     *                 {@link StartDateTimeType#USE_START_DATE_TIME} and
+     * is ignored for all other values of
+     *                 {@link StartDateTimeType}.
      */
     public void setStartDateTime(com.google.api.ads.dfp.axis.v201702.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -511,11 +530,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Gets the authenticationService value for this LiveStreamEvent.
      * 
-     * @return authenticationService   * The authentication service used to validate credientials and
-     * create
-     *                 a tokenized version of the content URL. This value
-     * is optional and defaults to
-     *                 {@link AuthenticationService#NONE}.
+     * @return authenticationService   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public com.google.api.ads.dfp.axis.v201702.AuthenticationService getAuthenticationService() {
         return authenticationService;
@@ -525,11 +547,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Sets the authenticationService value for this LiveStreamEvent.
      * 
-     * @param authenticationService   * The authentication service used to validate credientials and
-     * create
-     *                 a tokenized version of the content URL. This value
-     * is optional and defaults to
-     *                 {@link AuthenticationService#NONE}.
+     * @param authenticationService   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public void setAuthenticationService(com.google.api.ads.dfp.axis.v201702.AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
@@ -539,11 +564,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Gets the authenticationKey value for this LiveStreamEvent.
      * 
-     * @return authenticationKey   * The secure key used to generate a tokenized URL for authentication.
-     * This value is required
-     *                 if {@link LiveStreamEvent#authenticationService} is
-     * not equal to
-     *                 {@link AuthenticationService#NONE}.
+     * @return authenticationKey   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public java.lang.String getAuthenticationKey() {
         return authenticationKey;
@@ -553,11 +581,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Sets the authenticationKey value for this LiveStreamEvent.
      * 
-     * @param authenticationKey   * The secure key used to generate a tokenized URL for authentication.
-     * This value is required
-     *                 if {@link LiveStreamEvent#authenticationService} is
-     * not equal to
-     *                 {@link AuthenticationService#NONE}.
+     * @param authenticationKey   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public void setAuthenticationKey(java.lang.String authenticationKey) {
         this.authenticationKey = authenticationKey;
@@ -567,13 +598,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Gets the tokenAuthenticationUnsigned value for this LiveStreamEvent.
      * 
-     * @return tokenAuthenticationUnsigned   * Whether the segment URLs should be signed using the {@link
-     * #authenticationKey} on the
-     *                 server-side. This field is only applicable when the
-     * value of {@link #authenticationService} is
-     *                 equal to {@link AuthenticationService#AKAMAI}, and
-     * will be set to false otherwise. This field
-     *                 is optional and defaults to false.
+     * @return tokenAuthenticationUnsigned   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public java.lang.Boolean getTokenAuthenticationUnsigned() {
         return tokenAuthenticationUnsigned;
@@ -583,13 +615,14 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Sets the tokenAuthenticationUnsigned value for this LiveStreamEvent.
      * 
-     * @param tokenAuthenticationUnsigned   * Whether the segment URLs should be signed using the {@link
-     * #authenticationKey} on the
-     *                 server-side. This field is only applicable when the
-     * value of {@link #authenticationService} is
-     *                 equal to {@link AuthenticationService#AKAMAI}, and
-     * will be set to false otherwise. This field
-     *                 is optional and defaults to false.
+     * @param tokenAuthenticationUnsigned   * This field is deprecated and should not be set or read. Please
+     * update the API version to
+     *                 v201711 or later and use the {@link LiveStreamEvent#sourceContentConfigurations}
+     * field to
+     *                 specify security policies for {@link LiveStreamEvent#contentUrls}.
+     * The value for this field
+     *                 will be out-of-date once {@link LiveStreamEvent#sourceContentConfigurations}
+     * is used.
      */
     public void setTokenAuthenticationUnsigned(java.lang.Boolean tokenAuthenticationUnsigned) {
         this.tokenAuthenticationUnsigned = tokenAuthenticationUnsigned;

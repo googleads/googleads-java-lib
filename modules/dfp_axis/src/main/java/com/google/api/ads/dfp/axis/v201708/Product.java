@@ -42,8 +42,7 @@ public class Product  implements java.io.Serializable {
      * this field to {@link ValueSourceType#PARENT}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.ValueSourceType nameSource;
 
     /* The status of the {@code Product}.
@@ -55,20 +54,17 @@ public class Product  implements java.io.Serializable {
      *                 guaranteed products.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.ProductType productType;
 
     /* The ID of the {@code ProductTemplate} from which this product
      * is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private java.lang.Long productTemplateId;
 
     /* Unique identifier of the {@code Product}.
@@ -88,12 +84,10 @@ public class Product  implements java.io.Serializable {
      * product is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private java.lang.String productTemplateDescription;
 
     /* The date and time this product was last modified.
@@ -105,7 +99,7 @@ public class Product  implements java.io.Serializable {
     /* The method used for billing the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span> */
@@ -117,24 +111,20 @@ public class Product  implements java.io.Serializable {
      * web page.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.RoadblockingType roadblockingType;
 
     /* The strategy for delivering ads over the course of the line
      * item's duration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.DeliveryRateType deliveryRateType;
 
     /* The strategy used for displaying multiple {@link Creative}
@@ -142,22 +132,19 @@ public class Product  implements java.io.Serializable {
      *                 associated with the created {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.CreativeRotationType creativeRotationType;
 
     /* The delivery option for companions.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.CompanionDeliveryOption companionDeliveryOption;
 
     /* Details about the creatives that are expected to serve for
@@ -169,17 +156,15 @@ public class Product  implements java.io.Serializable {
      * one companion size.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.CreativePlaceholder[] creativePlaceholders;
 
     /* Indicates the line item type for the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span> */
@@ -190,23 +175,19 @@ public class Product  implements java.io.Serializable {
      *                 between 1 and 16.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span> */
     private java.lang.Integer priority;
 
     /* The set of frequency capping units for the created {@link ProposalLineItem}.
      * Each frequency cap in the list must have unique {@link TimeUnit}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.FrequencyCap[] frequencyCaps;
 
     /* The targeting for the created {@link ProposalLineItem}. For
@@ -217,11 +198,9 @@ public class Product  implements java.io.Serializable {
      * in {@link ProductTemplate}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.Targeting builtInTargeting;
 
     /* Specifies what targeting or attributes for the created {@link
@@ -229,12 +208,10 @@ public class Product  implements java.io.Serializable {
      *                 are customizable.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.CustomizableAttributes customizableAttributes;
 
     /* The values of the custom fields associated with this {@code
@@ -243,8 +220,7 @@ public class Product  implements java.io.Serializable {
      *                 This attribute is optional.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.BaseCustomFieldValue[] customFieldValues;
 
     /* The environment that the created {@link ProposalLineItem} will
@@ -258,11 +234,9 @@ public class Product  implements java.io.Serializable {
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201708.EnvironmentType environmentType;
 
     /* The rate of this {@code Product}.
@@ -289,11 +263,10 @@ public class Product  implements java.io.Serializable {
      *                 This value is only meaningful if this is a video product.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private java.lang.Long videoMaxDuration;
 
     public Product() {
@@ -426,8 +399,7 @@ public class Product  implements java.io.Serializable {
      * this field to {@link ValueSourceType#PARENT}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.ValueSourceType getNameSource() {
         return nameSource;
@@ -442,8 +414,7 @@ public class Product  implements java.io.Serializable {
      * this field to {@link ValueSourceType#PARENT}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setNameSource(com.google.api.ads.dfp.axis.v201708.ValueSourceType nameSource) {
         this.nameSource = nameSource;
@@ -480,8 +451,7 @@ public class Product  implements java.io.Serializable {
      *                 guaranteed products.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.ProductType getProductType() {
         return productType;
@@ -496,8 +466,7 @@ public class Product  implements java.io.Serializable {
      *                 guaranteed products.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setProductType(com.google.api.ads.dfp.axis.v201708.ProductType productType) {
         this.productType = productType;
@@ -511,12 +480,10 @@ public class Product  implements java.io.Serializable {
      * is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getProductTemplateId() {
         return productTemplateId;
@@ -530,12 +497,10 @@ public class Product  implements java.io.Serializable {
      * is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setProductTemplateId(java.lang.Long productTemplateId) {
         this.productTemplateId = productTemplateId;
@@ -603,12 +568,10 @@ public class Product  implements java.io.Serializable {
      * product is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public java.lang.String getProductTemplateDescription() {
         return productTemplateDescription;
@@ -622,12 +585,10 @@ public class Product  implements java.io.Serializable {
      * product is generated.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setProductTemplateDescription(java.lang.String productTemplateDescription) {
         this.productTemplateDescription = productTemplateDescription;
@@ -666,7 +627,7 @@ public class Product  implements java.io.Serializable {
      * @return rateType   * The method used for billing the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
@@ -682,7 +643,7 @@ public class Product  implements java.io.Serializable {
      * @param rateType   * The method used for billing the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
@@ -701,12 +662,10 @@ public class Product  implements java.io.Serializable {
      * web page.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -722,12 +681,10 @@ public class Product  implements java.io.Serializable {
      * web page.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setRoadblockingType(com.google.api.ads.dfp.axis.v201708.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -741,12 +698,10 @@ public class Product  implements java.io.Serializable {
      * item's duration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -760,12 +715,10 @@ public class Product  implements java.io.Serializable {
      * item's duration.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setDeliveryRateType(com.google.api.ads.dfp.axis.v201708.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -780,11 +733,10 @@ public class Product  implements java.io.Serializable {
      *                 associated with the created {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.CreativeRotationType getCreativeRotationType() {
         return creativeRotationType;
@@ -799,11 +751,10 @@ public class Product  implements java.io.Serializable {
      *                 associated with the created {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setCreativeRotationType(com.google.api.ads.dfp.axis.v201708.CreativeRotationType creativeRotationType) {
         this.creativeRotationType = creativeRotationType;
@@ -816,12 +767,10 @@ public class Product  implements java.io.Serializable {
      * @return companionDeliveryOption   * The delivery option for companions.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.CompanionDeliveryOption getCompanionDeliveryOption() {
         return companionDeliveryOption;
@@ -834,12 +783,10 @@ public class Product  implements java.io.Serializable {
      * @param companionDeliveryOption   * The delivery option for companions.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setCompanionDeliveryOption(com.google.api.ads.dfp.axis.v201708.CompanionDeliveryOption companionDeliveryOption) {
         this.companionDeliveryOption = companionDeliveryOption;
@@ -858,11 +805,9 @@ public class Product  implements java.io.Serializable {
      * one companion size.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.CreativePlaceholder[] getCreativePlaceholders() {
         return creativePlaceholders;
@@ -881,11 +826,9 @@ public class Product  implements java.io.Serializable {
      * one companion size.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setCreativePlaceholders(com.google.api.ads.dfp.axis.v201708.CreativePlaceholder[] creativePlaceholders) {
         this.creativePlaceholders = creativePlaceholders;
@@ -906,7 +849,7 @@ public class Product  implements java.io.Serializable {
      * @return lineItemType   * Indicates the line item type for the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
@@ -922,7 +865,7 @@ public class Product  implements java.io.Serializable {
      * @param lineItemType   * Indicates the line item type for the created {@link ProposalLineItem}.
      * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
@@ -940,11 +883,9 @@ public class Product  implements java.io.Serializable {
      *                 between 1 and 16.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public java.lang.Integer getPriority() {
         return priority;
@@ -959,11 +900,9 @@ public class Product  implements java.io.Serializable {
      *                 between 1 and 16.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setPriority(java.lang.Integer priority) {
         this.priority = priority;
@@ -977,12 +916,10 @@ public class Product  implements java.io.Serializable {
      * Each frequency cap in the list must have unique {@link TimeUnit}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.FrequencyCap[] getFrequencyCaps() {
         return frequencyCaps;
@@ -996,12 +933,10 @@ public class Product  implements java.io.Serializable {
      * Each frequency cap in the list must have unique {@link TimeUnit}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setFrequencyCaps(com.google.api.ads.dfp.axis.v201708.FrequencyCap[] frequencyCaps) {
         this.frequencyCaps = frequencyCaps;
@@ -1027,11 +962,9 @@ public class Product  implements java.io.Serializable {
      * in {@link ProductTemplate}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.Targeting getBuiltInTargeting() {
         return builtInTargeting;
@@ -1049,11 +982,9 @@ public class Product  implements java.io.Serializable {
      * in {@link ProductTemplate}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setBuiltInTargeting(com.google.api.ads.dfp.axis.v201708.Targeting builtInTargeting) {
         this.builtInTargeting = builtInTargeting;
@@ -1068,12 +999,10 @@ public class Product  implements java.io.Serializable {
      *                 are customizable.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.CustomizableAttributes getCustomizableAttributes() {
         return customizableAttributes;
@@ -1088,12 +1017,10 @@ public class Product  implements java.io.Serializable {
      *                 are customizable.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setCustomizableAttributes(com.google.api.ads.dfp.axis.v201708.CustomizableAttributes customizableAttributes) {
         this.customizableAttributes = customizableAttributes;
@@ -1109,8 +1036,7 @@ public class Product  implements java.io.Serializable {
      *                 This attribute is optional.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.BaseCustomFieldValue[] getCustomFieldValues() {
         return customFieldValues;
@@ -1126,8 +1052,7 @@ public class Product  implements java.io.Serializable {
      *                 This attribute is optional.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setCustomFieldValues(com.google.api.ads.dfp.axis.v201708.BaseCustomFieldValue[] customFieldValues) {
         this.customFieldValues = customFieldValues;
@@ -1156,11 +1081,9 @@ public class Product  implements java.io.Serializable {
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201708.EnvironmentType getEnvironmentType() {
         return environmentType;
@@ -1181,11 +1104,9 @@ public class Product  implements java.io.Serializable {
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setEnvironmentType(com.google.api.ads.dfp.axis.v201708.EnvironmentType environmentType) {
         this.environmentType = environmentType;
@@ -1266,11 +1187,10 @@ public class Product  implements java.io.Serializable {
      *                 This value is only meaningful if this is a video product.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getVideoMaxDuration() {
         return videoMaxDuration;
@@ -1285,11 +1205,10 @@ public class Product  implements java.io.Serializable {
      *                 This value is only meaningful if this is a video product.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setVideoMaxDuration(java.lang.Long videoMaxDuration) {
         this.videoMaxDuration = videoMaxDuration;

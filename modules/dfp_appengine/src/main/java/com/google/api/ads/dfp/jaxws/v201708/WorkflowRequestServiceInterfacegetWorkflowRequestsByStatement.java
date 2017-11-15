@@ -63,7 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>The {@code type} filter is required in v201705 and earlier.
  *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of proposals
+ *             @param filterStatement a Publisher Query Language statement used to filter a set of workflow
+ *             requests belonging to an entity
  *             @return the workflow requests that match the given filter
  *           
  * 

@@ -29,10 +29,10 @@ import javax.xml.ws.ResponseWrapper;
  * 
  *       Provides methods for creating, updating and retrieving {@link Activity} objects.
  *       <p>
- *       An activity group contains {@link Activity} objects. Activities have a one-to-one relationship
- *       with activity groups. Each activity can belong to only one activity group. Activity groups,
- *       however, have a one-to-many relationship with activities, meaning each activity group can have
- *       multiple activities. A activity group can be used to manage the activities it contains.
+ *       An activity group contains {@link Activity} objects. Activities have a many-to-one relationship
+ *       with activity groups, meaning each activity can belong to only one activity group, but activity
+ *       groups can have multiple activities. An activity group can be used to manage the activities it
+ *       contains.
  *       </p>
  *     
  * 

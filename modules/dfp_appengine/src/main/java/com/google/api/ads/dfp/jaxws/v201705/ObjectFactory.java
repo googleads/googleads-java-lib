@@ -3482,6 +3482,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link StringFormatError }
+     * 
+     */
+    public StringFormatError createStringFormatError() {
+        return new StringFormatError();
+    }
+
+    /**
      * Create an instance of {@link ProductPackagePage }
      * 
      */

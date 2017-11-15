@@ -1,0 +1,44 @@
+# IntelliJ IDE files
+# See: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+.idea/
+modules/*/*.iml
+examples/*/*.iml
+
+# Eclipse IDE files
+# See: https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
+.factorypath
+.metadata/
+.project
+.settings/
+modules/*/.classpath
+modules/*/.factorypath
+modules/*/.project
+modules/*/.settings/
+examples/*/.classpath
+examples/*/.factorypath
+examples/*/.project
+examples/*/.settings/
+
+# Maven build output
+target/
+modules/*/target/
+examples/*/target/
+
+# maven-release-plugin output
+# See: https://github.com/github/gitignore/blob/master/Maven.gitignore
+pom.xml.releaseBackup
+pom.xml.tag
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+modules/*/pom.xml.releaseBackup
+modules/*/pom.xml.tag
+modules/*/pom.xml.versionsBackup
+modules/*/pom.xml.next
+modules/*/release.properties
+## maven-shade-plugin output
+dependency-reduced-pom.xml
+modules/*/dependency-reduced-pom.xml
+## buildnumber-maven-plugin output
+buildNumber.properties
+modules/*/buildNumber.properties

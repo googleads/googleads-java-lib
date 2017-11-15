@@ -170,6 +170,7 @@ import javax.xml.bind.annotation.XmlType;
     InvalidColorError.class,
     CreativePreviewError.class,
     InventoryUnitSizesError.class,
+    StringFormatError.class,
     ProposalLineItemError.class,
     PackageError.class,
     CommonError.class,

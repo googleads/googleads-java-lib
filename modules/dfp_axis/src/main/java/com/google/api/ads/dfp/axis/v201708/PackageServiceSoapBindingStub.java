@@ -826,6 +826,20 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringFormatError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.StringFormatError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringFormatError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.StringFormatErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "StringLengthError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201708.StringLengthError.class;
@@ -847,20 +861,6 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "TeamError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201708.TeamErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "TechnologyTargetingError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.dfp.axis.v201708.TechnologyTargetingError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -876,6 +876,20 @@ public class PackageServiceSoapBindingStub extends org.apache.axis.client.Stub i
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "TeamError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.TeamErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "TechnologyTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201708.TechnologyTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201708", "TechnologyTargetingError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201708.TechnologyTargetingErrorReason.class;

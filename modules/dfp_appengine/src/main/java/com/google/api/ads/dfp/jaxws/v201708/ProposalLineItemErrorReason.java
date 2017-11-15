@@ -82,6 +82,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="MARKETPLACE_RATE_CARD_NOT_ALLOWED"/>
  *     &lt;enumeration value="CANNOT_CREATE_FROM_PRODUCT"/>
  *     &lt;enumeration value="CONTRACTED_UNITS_LESS_THAN_DELIVERED"/>
+ *     &lt;enumeration value="DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING"/>
+ *     &lt;enumeration value="MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -554,6 +556,24 @@ public enum ProposalLineItemErrorReason {
      * 
      */
     CONTRACTED_UNITS_LESS_THAN_DELIVERED,
+
+    /**
+     * 
+     *                 If AdExchangeEnvironment is DISPLAY, the proposal line item must have mobile apps as excluded
+     *                 device capability targeting.
+     *               
+     * 
+     */
+    DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING,
+
+    /**
+     * 
+     *                 If AdExchangeEnvironment is MOBILE, the proposal line item must have mobile apps as included
+     *                 device capability targeting.
+     *               
+     * 
+     */
+    MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING,
 
     /**
      * 

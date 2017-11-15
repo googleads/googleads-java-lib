@@ -49,9 +49,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the {@code ProposalLineItem} by performing
      *                 the package action {@link CreateProposalLineItemsFromPackages}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private java.lang.Long packageId;
 
     /* The unique ID of the {@link RateCard}, based on which the {@code
@@ -62,11 +62,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * for creation and then is readonly.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private java.lang.Long rateCardId;
 
     /* The unique ID of the {@link Product}, which the {@code ProposalLineItem}
@@ -76,7 +75,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span> */
     private java.lang.Long productId;
 
     /* The name of the {@code ProposalLineItem} which should be unique
@@ -139,7 +138,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 optional and default value is {@link CostAdjustment#NONE}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li></ul></span> */
@@ -166,8 +165,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 This number is milli-percent based, i.e. 10% would
      * be 10000.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private java.lang.Integer contractedQuantityBuffer;
 
     /* The scheduled number of impressions or clicks of a STANDARD
@@ -176,9 +174,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * be relaxed. This attribute is calculated
      *                 from {@link Goal#units} and {@link #contractedQuantityBuffer}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private java.lang.Long scheduledQuantity;
 
     /* The contracted number of impressions or clicks.
@@ -234,7 +232,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * attribute is optional and
      *                 default value is {@link CreativeRotationType#OPTIMIZED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.CreativeRotationType creativeRotationType;
 
     /* The max duration of a video creative associated with this {@code
@@ -284,11 +282,9 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The method used for billing the {@code ProposalLineItem}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.RateType rateType;
 
     /* Details about the creatives that are expected to serve through
@@ -343,11 +339,10 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* All the product constraints set for this {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.ProposalLineItemConstraints productConstraints;
 
     /* The premiums triggered by this {@code ProposalLineItem} and
@@ -357,7 +352,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is {@link ProposalLineItemPremiumStatus#INCLUDED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span> */
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.ProposalLineItemPremium[] premiums;
 
     /* Indicates whether this {@code ProposalLineItem} has been sold.
@@ -367,11 +362,10 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The base rate of the {@code ProposalLineItem} in proposal currency.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.Money baseRate;
 
     /* The amount of money to spend per impression or click in proposal
@@ -407,8 +401,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.Money grossRate;
 
     /* The cost of the {@code ProposalLineItem} in proposal currency.
@@ -444,8 +437,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.Money grossCost;
 
     /* Indicates how well the line item generated from this proposal
@@ -501,8 +493,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.BillingCap billingCap;
 
     /* Overrides the billing schedule of this {@code ProposalLineItem}.
@@ -520,8 +511,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.BillingSchedule billingSchedule;
 
     /* Overrides the billing source of this {@code ProposalLineItem}.
@@ -539,8 +529,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.BillingSource billingSource;
 
     /* Overrides the billing base of this {@code ProposalLineItem}.
@@ -557,8 +546,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 been submitted. Please check with your network administrator
      * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.BillingBase billingBase;
 
     /* The date and time this {@code ProposalLineItem} was last modified.
@@ -582,8 +570,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
      * will be ignored.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span> */
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span> */
     private java.lang.Boolean useThirdPartyAdServerFromProposal;
 
     /* A predefined third party ad server, which will be used to fill
@@ -594,7 +581,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * list, this field is set to 0, and actual
      *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span> */
     private java.lang.Integer thirdPartyAdServerId;
 
     /* When actual third party ad server is not in the predefined
@@ -603,7 +590,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is set here. When {@code
      *                 thirdPartyAdServerId} is not 0, this field is ignored.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span> */
+     * using programmatic, using sales management.</li></ul></span> */
     private java.lang.String customThirdPartyAdServerName;
 
     /* The environment that the {@code ProposalLineItem} is targeting.
@@ -633,12 +620,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * and its {link Product}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.LinkStatus linkStatus;
 
     /* The marketplace info if this proposal line item is programmatic,
@@ -661,12 +646,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link grossRate} fields.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span> */
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span> */
     private com.google.api.ads.dfp.axis.v201705.PricingModel rateCardPricingModel;
 
     /* Additional terms shown to the buyer in Marketplace.
@@ -925,9 +908,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the {@code ProposalLineItem} by performing
      *                 the package action {@link CreateProposalLineItemsFromPackages}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getPackageId() {
         return packageId;
@@ -943,9 +926,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the {@code ProposalLineItem} by performing
      *                 the package action {@link CreateProposalLineItemsFromPackages}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setPackageId(java.lang.Long packageId) {
         this.packageId = packageId;
@@ -963,11 +946,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * for creation and then is readonly.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getRateCardId() {
         return rateCardId;
@@ -985,11 +967,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * for creation and then is readonly.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setRateCardId(java.lang.Long rateCardId) {
         this.rateCardId = rateCardId;
@@ -1006,7 +987,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getProductId() {
         return productId;
@@ -1023,7 +1004,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * management.</li></ul></span>
      *                 <span class="constraint Required">This attribute is
      * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public void setProductId(java.lang.Long productId) {
         this.productId = productId;
@@ -1218,7 +1199,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 optional and default value is {@link CostAdjustment#NONE}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li></ul></span>
@@ -1236,7 +1217,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 optional and default value is {@link CostAdjustment#NONE}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
      * management.</li></ul></span>
@@ -1312,8 +1293,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 This number is milli-percent based, i.e. 10% would
      * be 10000.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Integer getContractedQuantityBuffer() {
         return contractedQuantityBuffer;
@@ -1330,8 +1310,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 This number is milli-percent based, i.e. 10% would
      * be 10000.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setContractedQuantityBuffer(java.lang.Integer contractedQuantityBuffer) {
         this.contractedQuantityBuffer = contractedQuantityBuffer;
@@ -1347,9 +1326,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * be relaxed. This attribute is calculated
      *                 from {@link Goal#units} and {@link #contractedQuantityBuffer}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Long getScheduledQuantity() {
         return scheduledQuantity;
@@ -1365,9 +1344,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * be relaxed. This attribute is calculated
      *                 from {@link Goal#units} and {@link #contractedQuantityBuffer}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
+     *                 <span class="constraint ReadOnly">This attribute is
+     * read-only when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setScheduledQuantity(java.lang.Long scheduledQuantity) {
         this.scheduledQuantity = scheduledQuantity;
@@ -1533,7 +1512,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * attribute is optional and
      *                 default value is {@link CreativeRotationType#OPTIMIZED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.CreativeRotationType getCreativeRotationType() {
         return creativeRotationType;
@@ -1549,7 +1528,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * attribute is optional and
      *                 default value is {@link CreativeRotationType#OPTIMIZED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public void setCreativeRotationType(com.google.api.ads.dfp.axis.v201705.CreativeRotationType creativeRotationType) {
         this.creativeRotationType = creativeRotationType;
@@ -1728,11 +1707,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return rateType   * The method used for billing the {@code ProposalLineItem}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.RateType getRateType() {
         return rateType;
@@ -1745,11 +1722,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param rateType   * The method used for billing the {@code ProposalLineItem}.
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint Required">This attribute is required when:<ul><li>using
+     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setRateType(com.google.api.ads.dfp.axis.v201705.RateType rateType) {
         this.rateType = rateType;
@@ -1976,11 +1951,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return productConstraints   * All the product constraints set for this {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.ProposalLineItemConstraints getProductConstraints() {
         return productConstraints;
@@ -1993,11 +1967,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param productConstraints   * All the product constraints set for this {@code ProposalLineItem}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setProductConstraints(com.google.api.ads.dfp.axis.v201705.ProposalLineItemConstraints productConstraints) {
         this.productConstraints = productConstraints;
@@ -2014,7 +1987,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is {@link ProposalLineItemPremiumStatus#INCLUDED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.ProposalLineItemPremium[] getPremiums() {
         return premiums;
@@ -2031,7 +2004,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 is {@link ProposalLineItemPremiumStatus#INCLUDED}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setPremiums(com.google.api.ads.dfp.axis.v201705.ProposalLineItemPremium[] premiums) {
         this.premiums = premiums;
@@ -2074,11 +2047,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return baseRate   * The base rate of the {@code ProposalLineItem} in proposal currency.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.Money getBaseRate() {
         return baseRate;
@@ -2091,11 +2063,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param baseRate   * The base rate of the {@code ProposalLineItem} in proposal currency.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>using
      * programmatic guaranteed, using sales management.</li><li>not using
-     * programmatic guaranteed, using sales management.</li></ul></span>
+     * programmatic, using sales management.</li></ul></span>
      *                 <span class="constraint ReadOnly">This attribute is
      * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setBaseRate(com.google.api.ads.dfp.axis.v201705.Money baseRate) {
         this.baseRate = baseRate;
@@ -2172,8 +2143,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.Money getGrossRate() {
         return grossRate;
@@ -2196,8 +2166,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setGrossRate(com.google.api.ads.dfp.axis.v201705.Money grossRate) {
         this.grossRate = grossRate;
@@ -2274,8 +2243,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.Money getGrossCost() {
         return grossCost;
@@ -2298,8 +2266,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link ProposalLineItem#grossCost} is required.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setGrossCost(com.google.api.ads.dfp.axis.v201705.Money grossCost) {
         this.grossCost = grossCost;
@@ -2442,8 +2409,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.BillingCap getBillingCap() {
         return billingCap;
@@ -2468,8 +2434,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setBillingCap(com.google.api.ads.dfp.axis.v201705.BillingCap billingCap) {
         this.billingCap = billingCap;
@@ -2494,8 +2459,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.BillingSchedule getBillingSchedule() {
         return billingSchedule;
@@ -2520,8 +2484,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setBillingSchedule(com.google.api.ads.dfp.axis.v201705.BillingSchedule billingSchedule) {
         this.billingSchedule = billingSchedule;
@@ -2546,8 +2509,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.BillingSource getBillingSource() {
         return billingSource;
@@ -2572,8 +2534,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Please check with your network administrator for editable
      * fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setBillingSource(com.google.api.ads.dfp.axis.v201705.BillingSource billingSource) {
         this.billingSource = billingSource;
@@ -2597,8 +2558,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 been submitted. Please check with your network administrator
      * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.BillingBase getBillingBase() {
         return billingBase;
@@ -2622,8 +2582,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 been submitted. Please check with your network administrator
      * for editable fields configuration.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setBillingBase(com.google.api.ads.dfp.axis.v201705.BillingBase billingBase) {
         this.billingBase = billingBase;
@@ -2712,8 +2671,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
      * will be ignored.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Boolean getUseThirdPartyAdServerFromProposal() {
         return useThirdPartyAdServerFromProposal;
@@ -2728,8 +2686,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@code thirdPartyAdServerId} and {@code customThirdPartyAdServerName}
      * will be ignored.
      *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>not using programmatic guaranteed, using
-     * sales management.</li></ul></span>
+     * is applicable when:<ul><li>not using programmatic, using sales management.</li></ul></span>
      */
     public void setUseThirdPartyAdServerFromProposal(java.lang.Boolean useThirdPartyAdServerFromProposal) {
         this.useThirdPartyAdServerFromProposal = useThirdPartyAdServerFromProposal;
@@ -2747,7 +2704,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * list, this field is set to 0, and actual
      *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.Integer getThirdPartyAdServerId() {
         return thirdPartyAdServerId;
@@ -2765,7 +2722,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * list, this field is set to 0, and actual
      *                 third party ad server name is set in {@code customThirdPartyAdServerName}.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public void setThirdPartyAdServerId(java.lang.Integer thirdPartyAdServerId) {
         this.thirdPartyAdServerId = thirdPartyAdServerId;
@@ -2781,7 +2738,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is set here. When {@code
      *                 thirdPartyAdServerId} is not 0, this field is ignored.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public java.lang.String getCustomThirdPartyAdServerName() {
         return customThirdPartyAdServerName;
@@ -2797,7 +2754,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is set here. When {@code
      *                 thirdPartyAdServerId} is not 0, this field is ignored.
      * <span class="constraint Applicable">This attribute is applicable when:<ul><li>not
-     * using programmatic guaranteed, using sales management.</li></ul></span>
+     * using programmatic, using sales management.</li></ul></span>
      */
     public void setCustomThirdPartyAdServerName(java.lang.String customThirdPartyAdServerName) {
         this.customThirdPartyAdServerName = customThirdPartyAdServerName;
@@ -2885,12 +2842,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * and its {link Product}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.LinkStatus getLinkStatus() {
         return linkStatus;
@@ -2904,12 +2859,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * and its {link Product}.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setLinkStatus(com.google.api.ads.dfp.axis.v201705.LinkStatus linkStatus) {
         this.linkStatus = linkStatus;
@@ -2964,12 +2917,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link grossRate} fields.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public com.google.api.ads.dfp.axis.v201705.PricingModel getRateCardPricingModel() {
         return rateCardPricingModel;
@@ -2988,12 +2939,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link grossRate} fields.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic guaranteed, using sales
-     * management.</li></ul></span>
+     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
+     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
+     * programmatic guaranteed, using sales management.</li><li>not using
+     * programmatic, using sales management.</li></ul></span>
      */
     public void setRateCardPricingModel(com.google.api.ads.dfp.axis.v201705.PricingModel rateCardPricingModel) {
         this.rateCardPricingModel = rateCardPricingModel;

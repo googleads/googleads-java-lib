@@ -32,12 +32,16 @@ import javax.xml.bind.annotation.XmlType;
  *             The following rules apply for geographical targeting:
  *             </p>
  *             <ul>
- *             <li>You cannot target and exclude the same location</li>
- *             <li>You cannot target a child whose parent has been excluded. So if the state
- *             of Illinois has been excluded, then you cannot target Chicago</li>
+ *             <li>You cannot target and exclude the same location.</li>
+ *             <li>You cannot target a child whose parent has been excluded. For example, if the state
+ *             of Illinois has been excluded, then you cannot target Chicago.</li>
  *             <li>You must not target a location if you are also targeting its parent.
- *             So if you are targeting New York City, you must not have the state of New
- *             York as one of the targeted locations</li>
+ *             For example, if you are targeting New York City, you must not have the state of New
+ *             York as one of the targeted locations.</li>
+ *             <li>You cannot explicitly define inclusions or exclusions that are already implicit. For example,
+ *             if you explicitly include California, you implicitly exclude all other states. You therefore
+ *             cannot explicitly exclude Florida, because it is already implicitly excluded. Conversely if you
+ *             explicitly exclude Florida, you cannot excplicitly include California.</li>
  *             </ul>
  *           
  * 

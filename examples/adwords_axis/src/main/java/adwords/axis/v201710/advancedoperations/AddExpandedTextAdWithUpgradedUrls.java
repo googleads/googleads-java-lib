@@ -83,13 +83,13 @@ public class AddExpandedTextAdWithUpgradedUrls {
     expandedTextAd.setHeadlinePart1("Luxury Cruise to Mars");
     expandedTextAd.setHeadlinePart2("Visit the Red Planet in style.");
     expandedTextAd.setDescription("Low-gravity fun for everyone!");
-    
+
     // Specify a tracking url for 3rd party tracking provider. You may
     // specify one at customer, campaign, ad group, ad, criterion or
     // feed item levels.
     expandedTextAd.setTrackingUrlTemplate(
         "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}");
-    
+
     // Since your tracking url has two custom parameters, provide their
     // values too. This can be provided at campaign, ad group, ad, criterion
     // or feed item levels.
@@ -105,12 +105,12 @@ public class AddExpandedTextAdWithUpgradedUrls {
     trackingUrlParameters.setParameters(
         new CustomParameter[] {seasonParameter, promoCodeParameter});
     expandedTextAd.setUrlCustomParameters(trackingUrlParameters);
-    
+
     // Specify a list of final urls. This field cannot be set if url field is
     // set. This may be specified at ad, criterion, and feed item levels.
     expandedTextAd.setFinalUrls(new String[] {"http://www.example.com/cruise/space/",
         "http://www.example.com/locations/mars/"});
-    
+
     // Specify a list of final mobile urls. This field cannot be set if url field is
     // set or finalUrls is not set. This may be specified at ad, criterion, and feed
     // item levels.

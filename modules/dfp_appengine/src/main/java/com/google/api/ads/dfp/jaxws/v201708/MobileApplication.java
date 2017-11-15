@@ -26,8 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             A mobile application that has been added to or "claimed" by the network to be used for
  *             targeting purposes.
  *             These mobile apps can come from various app stores.
- *             To see available mobile apps, query the {@code Mobile_Application_Catalog}
- *             PQL table in {@link PublisherQueryLanguageService}.
  *           
  * 
  * <p>Java class for MobileApplication complex type.

@@ -27,8 +27,6 @@ package com.google.api.ads.dfp.axis.v201708;
  * network to be used for
  *             targeting purposes.
  *             These mobile apps can come from various app stores.
- *             To see available mobile apps, query the {@code Mobile_Application_Catalog}
- * PQL table in {@link PublisherQueryLanguageService}.
  */
 public class MobileApplication  implements java.io.Serializable {
     /* Uniquely identifies the mobile application. This attribute

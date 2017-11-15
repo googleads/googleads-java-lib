@@ -86,6 +86,8 @@ public class ProposalLineItemErrorReason implements java.io.Serializable {
     public static final java.lang.String _MARKETPLACE_RATE_CARD_NOT_ALLOWED = "MARKETPLACE_RATE_CARD_NOT_ALLOWED";
     public static final java.lang.String _CANNOT_CREATE_FROM_PRODUCT = "CANNOT_CREATE_FROM_PRODUCT";
     public static final java.lang.String _CONTRACTED_UNITS_LESS_THAN_DELIVERED = "CONTRACTED_UNITS_LESS_THAN_DELIVERED";
+    public static final java.lang.String _DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING = "DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING";
+    public static final java.lang.String _MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING = "MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ProposalLineItemErrorReason NOT_SAME_RATE_CARD = new ProposalLineItemErrorReason(_NOT_SAME_RATE_CARD);
     public static final ProposalLineItemErrorReason LINE_ITEM_TYPE_NOT_ALLOWED = new ProposalLineItemErrorReason(_LINE_ITEM_TYPE_NOT_ALLOWED);
@@ -142,6 +144,8 @@ public class ProposalLineItemErrorReason implements java.io.Serializable {
     public static final ProposalLineItemErrorReason MARKETPLACE_RATE_CARD_NOT_ALLOWED = new ProposalLineItemErrorReason(_MARKETPLACE_RATE_CARD_NOT_ALLOWED);
     public static final ProposalLineItemErrorReason CANNOT_CREATE_FROM_PRODUCT = new ProposalLineItemErrorReason(_CANNOT_CREATE_FROM_PRODUCT);
     public static final ProposalLineItemErrorReason CONTRACTED_UNITS_LESS_THAN_DELIVERED = new ProposalLineItemErrorReason(_CONTRACTED_UNITS_LESS_THAN_DELIVERED);
+    public static final ProposalLineItemErrorReason DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING = new ProposalLineItemErrorReason(_DISPLAY_ENVIRONMENT_MUST_HAVE_EXCLUDED_MOBILE_APPS_TARGETING);
+    public static final ProposalLineItemErrorReason MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING = new ProposalLineItemErrorReason(_MOBILE_ENVIRONMENT_MUST_HAVE_INCLUDED_MOBILE_APPS_TARGETING);
     public static final ProposalLineItemErrorReason UNKNOWN = new ProposalLineItemErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static ProposalLineItemErrorReason fromValue(java.lang.String value)
