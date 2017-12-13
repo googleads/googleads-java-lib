@@ -25,7 +25,7 @@ For API and client library updates and news, please follow our
 [Google+ Ads Developers page](https://plus.google.com/+GoogleAdsDevelopers/posts)
 and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/).
 
-### Support forum
+## Support forum
 
 If you have questions about the client library or the APIs, you can ask them on
 our forums:
@@ -270,6 +270,21 @@ If necessary, set this up in code by doing the following:
     System.setProperty("https.proxyUser", "someone");
     System.setProperty("https.proxyPassword", "secret");
 
+## Extensions
+
+*   The [AdWords API RateLimiter](https://github.com/googleads/googleads-java-lib/tree/master/extensions/adwords_rate_limiter)
+    contains a reference implementation for proper handling of rate limits,
+    as described in the [Rate Limits guide](https://developers.google.com/adwords/api/docs/guides/rate-limits).
+
+## Applications
+
+*   The [Keyword Optimizer application](https://github.com/googleads/keyword-optimizer)
+    is an open-source tool that uses the Google Ads API Java Client Library to
+    find additional sets of keywords for AdWords.
+*   The [AwReporting application](https://github.com/googleads/aw-reporting) is
+    an open-source application that uses the Google Ads API Java Client Library
+    to download reports from multiple AdWords accounts and store the report
+    contents in a database.
 
 ## Where do I submit bug reports, feature requests and patches?
 
