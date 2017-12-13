@@ -248,6 +248,10 @@ If using Axis, then no further steps are required unless you are setting the
 compression, please ensure that the `http` transport defined in your WSDD
 supports compression.
 
+## How do I handle rate-limiting errors?
+
+Please refer to the [AdWords API Extension: RateLimiter](extensions/adwords_rate_limiter/README.md).
+
 ## Using a proxy
 
 It is recommended that the user set JVM arguments to configure this application
