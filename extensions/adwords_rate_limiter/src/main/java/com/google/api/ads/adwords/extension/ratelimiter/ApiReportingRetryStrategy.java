@@ -17,7 +17,6 @@ package com.google.api.ads.adwords.extension.ratelimiter;
 import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.common.base.Strings;
 import java.net.HttpURLConnection;
-import javax.annotation.Nullable;
 
 /**
  * The {@link ApiRetryStrategy} implementation for report downing bucket.
@@ -29,13 +28,13 @@ import javax.annotation.Nullable;
  */
 public final class ApiReportingRetryStrategy implements ApiRetryStrategy {
   // Property for the maximum number of attempts on rate limit error.
-  static final String MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY =
+  public static final String MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiReportingRetryStrategy.maxAttemptsOnRateExceededError";
   private static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT = 3;
 
   // Property for the exponential backoff interval (in milliseconds) before retrying on rate limit
   // error.
-  static final String BACKOFF_INTERVAL_ON_RATE_EXCEEDED_ERROR_PROPERTY =
+  public static final String BACKOFF_INTERVAL_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiReportingRetryStrategy.backoffIntervalOnRateExceededError";
   private static final int BACKOFF_INTERVAL_ON_RATE_EXCEEDED_ERROR_DEFAULT = 1000 * 5;
 
@@ -76,7 +75,7 @@ public final class ApiReportingRetryStrategy implements ApiRetryStrategy {
   }
 
   @Override
-  public boolean shouldRetryOnError(@Nullable Long clientCustomerId, Throwable throwable) {
+  public boolean shouldRetryOnError(long clientCustomerId, Throwable throwable) {
     // Do not care about clientCustomerId, just check RateExceededError.
     // By default it can retry (e.g., ReportException, ReportDownloadResponseException).
     boolean canRetry = true;
@@ -100,8 +99,7 @@ public final class ApiReportingRetryStrategy implements ApiRetryStrategy {
   }
 
   @Override
-  public long calcWaitTimeBeforeCall(
-      @Nullable Long clientCutomerId, final int kthAttempt, Throwable throwable) {
+  public long calcWaitTimeBeforeCall(long clientCustomerId, int kthAttempt, Throwable throwable) {
     // Do not care about clientCustomerId and throwable, just do exponential backoff.
     return kthAttempt == 1
         ? 0

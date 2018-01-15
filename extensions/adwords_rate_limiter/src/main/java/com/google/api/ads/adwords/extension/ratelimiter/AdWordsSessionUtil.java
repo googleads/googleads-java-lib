@@ -20,22 +20,26 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
  * Utilities of AdWordsSession
  */
 class AdWordsSessionUtil {
+  public static final long VIRTUAL_CID = -1L;
+
   /**
    * Get client customer ID from the adwords session, and convert it to Long type.
    *
    * @param session the AdWords session
-   * @return the client customer ID in the AdWords session
+   * @return the client customer ID in the AdWords session, or VIRTUAL_CID if absent
    */
-  public static Long getClientCustomerId(AdWordsSession session) {
+  public static long getClientCustomerId(AdWordsSession session) {
     String accountIdStr = session.getClientCustomerId();
 
-    // No CID, such as for ReportDefinitionService calls.
+    // clientCustomerId might be absent from AdWordsSession, e.g., for
+    // ReportDefinitionService.getReportFields() and CustomerService.getCustomers().
+    // In this case, use ONE virtual account to handle rate limit of ALL unknown accounts combined.
     if (accountIdStr == null) {
-      return null;
+      return VIRTUAL_CID;
     }
 
     try {
-      return Long.valueOf(accountIdStr.replace("-", ""));
+      return Long.parseLong(accountIdStr.replace("-", ""));
     } catch (NumberFormatException e) {
       throw new RateLimiterException("Encountered invalid CID: " + accountIdStr, e);
     }

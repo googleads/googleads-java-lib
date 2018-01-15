@@ -14,8 +14,6 @@
 
 package com.google.api.ads.adwords.extension.ratelimiter;
 
-import javax.annotation.Nullable;
-
 /** Generic strategy interface for retry logic. */
 public interface ApiRetryStrategy {
   /**
@@ -33,16 +31,15 @@ public interface ApiRetryStrategy {
    * @param throwable the excountered error
    * @return whether the AdWords API call should be retried after encountering the speicified error
    */
-  public boolean shouldRetryOnError(@Nullable Long clientCustomerId, Throwable throwable);
+  public boolean shouldRetryOnError(long clientCustomerId, Throwable throwable);
 
   /**
    * Calculate wait time (in millis) before the retrying the AdWords API call.
    *
    * @param clientCustomerId the client customer ID
-   * @kthAttempt this is the kth attempt of calling the AdWords API function
-   * @throwable the encountered error
+   * @param kthAttempt this is the kth attempt of calling the AdWords API function
+   * @param throwable the encountered error
    * @return the wait time (in millis) before retrying the AdWords API call
    */
-  public long calcWaitTimeBeforeCall(
-      @Nullable Long clientCustomerId, final int kthAttempt, Throwable throwable);
+  public long calcWaitTimeBeforeCall(long clientCustomerId, int kthAttempt, Throwable throwable);
 }

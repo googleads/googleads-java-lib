@@ -17,7 +17,6 @@ package com.google.api.ads.adwords.extension.ratelimiter;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.Callable;
-import javax.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,13 +32,13 @@ import org.slf4j.LoggerFactory;
 public class ApiRetryHelper<V> {
   private static final Logger logger = LoggerFactory.getLogger(ApiRetryHelper.class);
 
-  @Nullable private final Long clientCustomerId;  // E.g., RDS doesn't require CID.
+  private final long clientCustomerId;
   private final Callable<V> callable;
   private final String actionDescription; // Short description of the action.
   private final ApiRetryStrategy retryStrategy;
 
   public ApiRetryHelper(
-      Long clientCustomerId,
+      long clientCustomerId,
       Callable<V> callable,
       String actionDescription,
       ApiRetryStrategy retryStrategy) {
@@ -56,6 +55,7 @@ public class ApiRetryHelper<V> {
   /**
    * Invoke the AdWords API call with retry logic.
    *
+   * @throws ApiInvocationException the exception during AdWords API invocation
    * @return the returned result of the callable other than AlertProcessingException occurs, the
    *     thread is interrupted during waiting, or all retries are exhausted.
    */
@@ -96,10 +96,10 @@ public class ApiRetryHelper<V> {
       // Check whether the error is retriable
       if (retryStrategy.shouldRetryOnError(clientCustomerId, lastError)) {
         logger.error(
-            "Failed to {} at exception check, attempt #{}.", actionDescription, kthAttempt);
+            "Failed to call {} at exception check, attempt #{}.", actionDescription, kthAttempt);
       } else {
         logger.error(
-            "Failed to {} at exception check: encountered non-retriable {}, skip retry!",
+            "Failed to call {} at exception check: encountered non-retriable {}, skip retry!",
             actionDescription,
             lastError.getClass().getName());
         throw new ApiInvocationException("Encountered non-retriable exception.", lastError);
@@ -107,8 +107,9 @@ public class ApiRetryHelper<V> {
     }
 
     if (result == null) {
-      throw new ApiInvocationException(
-          "Failed to " + actionDescription + " after all retries.", lastError);
+      String msg = "Failed to " + actionDescription + " after all retries.";
+      logger.error(msg, lastError);
+      throw new ApiInvocationException(msg, lastError);
     }
 
     return result;

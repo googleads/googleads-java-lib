@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.extension.ratelimiter;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -29,7 +28,7 @@ import org.junit.runners.JUnit4;
 public class AdWordsSessionUtilTest {
   private static final String CID_WITH_DASH = "123-456-7890";
   private static final String CID_WITHOUT_DASH = CID_WITH_DASH.replace("-", "");
-  private static final Long CID_VALID = Long.valueOf(CID_WITHOUT_DASH);
+  private static final long CID_VALID = Long.parseLong(CID_WITHOUT_DASH);
   private static final String CID_EMPTY = "";
   private static final String CID_INVALID1 = "123-456-7890A";
   private static final String CID_INVALID2 = "abc";
@@ -37,7 +36,10 @@ public class AdWordsSessionUtilTest {
   @Test
   public void testNullCidSession() throws ValidationException {
     AdWordsSession session = getTestAdWordsSessionWithoutCid();
-    assertNull("Null cid test failed.", AdWordsSessionUtil.getClientCustomerId(session));
+    assertEquals(
+        "Null cid test failed.",
+        AdWordsSessionUtil.VIRTUAL_CID,
+        AdWordsSessionUtil.getClientCustomerId(session));
   }
   
   @Test
@@ -84,7 +86,7 @@ public class AdWordsSessionUtilTest {
         .build();
   }
   
-  private static Long getInvalidCid(String invalidCid) throws ValidationException {
+  private static long getInvalidCid(String invalidCid) throws ValidationException {
     AdWordsSession session = getTestAdWordsSessionWithoutCid();
     session.setClientCustomerId(invalidCid);
     return AdWordsSessionUtil.getClientCustomerId(session);

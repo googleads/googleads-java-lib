@@ -17,7 +17,6 @@ package com.google.api.ads.adwords.extension.ratelimiter;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
-import javax.annotation.Nullable;
 
 /**
  * A rate limiter implementation that handles RateExceededError for AdWords API applications.
@@ -39,10 +38,11 @@ public final class ApiRateLimiter {
    * @param obj the object being invoked in AdWords API call
    * @param method the AdWords API call to invoke
    * @param args the arguments used for the AdWords API call
+   * @throws Throwable the encountered error
    * @return the result of running the AdWords API call
    */
   public Object run(
-      @Nullable Long clientCustomerId, final Object obj, final Method method, final Object[] args)
+      long clientCustomerId, final Object obj, final Method method, final Object[] args)
       throws Throwable {
     Callable<Object> callable =
         new Callable<Object>() {

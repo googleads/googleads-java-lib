@@ -38,7 +38,7 @@ the [issue tracker](https://github.com/googleads/googleads-java-lib/issues).
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>adwords-extension-ratelimiter</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
     </dependency>
 ```
 

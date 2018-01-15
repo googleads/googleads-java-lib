@@ -37,12 +37,12 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   private static final Logger logger = LoggerFactory.getLogger(ApiServicesRetryStrategy.class);
 
   // Property for the maximum number of attempts on rate limit error.
-  static final String MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY =
+  public static final String MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiServicesRetryStrategy.maxAttemptsOnRateExceededError";
   private static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT = 5;
 
   // Property for the maximum wait time (in seconds) before retrying on rate limit error.
-  static final String MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY =
+  public static final String MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiServicesRetryStrategy.maxWaitTimeOnRateExceededError";
   private static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT = 86400;
 
@@ -92,14 +92,13 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   }
 
   @Override
-  public boolean shouldRetryOnError(@Nullable Long clientCustomerId, Throwable throwable) {
+  public boolean shouldRetryOnError(long clientCustomerId, Throwable throwable) {
     // Retry on RateExceededError within the invocation.
     return checkRateExceededErrorAndUpdateWaitTime(clientCustomerId, throwable);
   }
 
   @Override
-  public long calcWaitTimeBeforeCall(
-      @Nullable Long clientCustomerId, int kthAttempt, Throwable throwable) {
+  public long calcWaitTimeBeforeCall(long clientCustomerId, int kthAttempt, Throwable throwable) {
     // Do not care about kthAttempt, just check when it can make next AdWords API call.
     return calcWaitTime(clientCustomerId, throwable);
   }
@@ -130,7 +129,7 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
    * @param clientCustomerId the client customer ID
    * @param waitForMillis the wait time in milliseconds
    */
-  private void updateAccountWaitTime(Long clientCustomerId, long waitForMillis) {
+  private void updateAccountWaitTime(long clientCustomerId, long waitForMillis) {
     final long newTime = millisFromNow(waitForMillis);
 
     boolean done = true;
@@ -147,16 +146,12 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   }
 
   /** Calculate the wait time (in millis) before next AdWords API call is allowed. */
-  private long calcWaitTime(Long clientCustomerId, @Nullable Throwable throwable) {
+  private long calcWaitTime(long clientCustomerId, @Nullable Throwable throwable) {
     long nowInMillis = nowInMillis();
 
     long waitForMillis = 0L;
     waitForMillis = Math.max(waitForMillis, tokenWaitUntil.get() - nowInMillis);
-
-    // clientCustomerId could be null, e.g., for ReportDefinitionService invocation.
-    if (clientCustomerId != null) {
-      waitForMillis = Math.max(waitForMillis, accountWaitUntil.get(clientCustomerId) - nowInMillis);
-    }
+    waitForMillis = Math.max(waitForMillis, accountWaitUntil.get(clientCustomerId) - nowInMillis);
 
     if (waitForMillis > 0
         && maxWaitTimeOnRateExceededError > 0
@@ -171,7 +166,7 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
 
   /** Check whether the invocation causes RateExceededError, and update wait time accordingly. */
   private boolean checkRateExceededErrorAndUpdateWaitTime(
-      Long clientCustomerId, Throwable throwable) {
+      long clientCustomerId, Throwable throwable) {
     boolean hasRateExceededError = false;
 
     if (ReflectionUtil.isInstanceOf(throwable, "ApiException")) {
