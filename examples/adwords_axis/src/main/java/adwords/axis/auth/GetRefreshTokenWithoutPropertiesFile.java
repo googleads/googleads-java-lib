@@ -27,6 +27,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.base.Strings;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
@@ -45,7 +46,7 @@ public class GetRefreshTokenWithoutPropertiesFile {
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
 
   private static Credential getOAuth2Credential(GoogleClientSecrets clientSecrets)
-      throws Exception {
+      throws IOException {
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
         new NetHttpTransport(),
         new JacksonFactory(),
@@ -85,23 +86,30 @@ public class GetRefreshTokenWithoutPropertiesFile {
     return credential;
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
+    String clientId;
+    String clientSecret;
     @SuppressWarnings("DefaultCharset") // Reading from stdin, so default charset is appropriate.
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     System.out.println("Please input your client ID and secret. "
           + "If you do not have a client ID or secret, please create one in "
           + "the API console: https://console.developers.google.com");
-    System.out.println("Enter your client ID: ");
-    String clientId = reader.readLine();
-    if (Strings.isNullOrEmpty(clientId)) {
-      System.err.println("Please input your client ID.");
-      System.exit(1);
-    }
-    System.out.println("Enter your client secret: ");
-    String clientSecret = reader.readLine();
-    if (Strings.isNullOrEmpty(clientSecret)) {
-      System.err.println("Please input your client secret.");
-      System.exit(1);
+    try {
+      System.out.println("Enter your client ID: ");
+      clientId = reader.readLine();
+      if (Strings.isNullOrEmpty(clientId)) {
+        System.err.println("Invalid client ID.");
+        return;
+      }
+      System.out.println("Enter your client secret: ");
+      clientSecret = reader.readLine();
+      if (Strings.isNullOrEmpty(clientSecret)) {
+        System.err.println("Invalid client secret.");
+        return;
+      }
+    } catch (IOException ioe) {
+      System.err.printf("Failed to read client ID and secret: %s%n", ioe);
+      return;
     }
 
     GoogleClientSecrets clientSecrets = null;
@@ -115,11 +123,17 @@ public class GetRefreshTokenWithoutPropertiesFile {
           "Please input your client ID and secret. If you do not have a "
           + "client ID or secret, please create one in "
           + "the API console: https://console.developers.google.com");
-      System.exit(1);
+      return;
     }
 
     // Get the OAuth2 credential.
-    Credential credential = getOAuth2Credential(clientSecrets);
+    Credential credential = null;
+    try {
+      credential = getOAuth2Credential(clientSecrets);
+    } catch (IOException ioe) {
+      System.err.printf("Failed to generate credentials. Exception: %s%n", ioe);
+      return;
+    }
 
     System.out.printf("Your refresh token is: %s%n", credential.getRefreshToken());
   }

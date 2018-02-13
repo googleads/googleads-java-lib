@@ -297,6 +297,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="AD_EXCHANGE_ACTIVE_VIEW_REVENUE"/>
  *     &lt;enumeration value="AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME"/>
  *     &lt;enumeration value="TOTAL_ACTIVE_VIEW_REVENUE"/>
+ *     &lt;enumeration value="AUDIENCE_EXTENSION_COST"/>
  *     &lt;enumeration value="VIEW_THROUGH_CONVERSIONS"/>
  *     &lt;enumeration value="CONVERSIONS_PER_THOUSAND_IMPRESSIONS"/>
  *     &lt;enumeration value="CLICK_THROUGH_CONVERSIONS"/>
@@ -1142,6 +1143,8 @@ public enum Column {
      *                 
      *                 <p><b>This experimental column only works with Ad Exchange web properties linked with an active
      *                 status.</b>
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1151,6 +1154,8 @@ public enum Column {
      * 
      *                 Impressions generated for mediation requests.  This includes third-party network and
      *                 Ad Exchange impressions for mediation.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1160,6 +1165,8 @@ public enum Column {
      * 
      *                 Estimated revenue generated for mediation requests.  This combines estimated revenue from
      *                 third-parties along with Ad Exchange.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1168,6 +1175,8 @@ public enum Column {
     /**
      * 
      *                 The average estimated cost-per-thousand-impressions earned from mediation ads.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1184,6 +1193,8 @@ public enum Column {
     /**
      * 
      *                 Mediation fill rate indicating how often a network fills an ad request.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1192,6 +1203,8 @@ public enum Column {
     /**
      * 
      *                 Mediation passbacks recorded when a network does not fill an ad request.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -2793,6 +2806,17 @@ public enum Column {
      * 
      */
     TOTAL_ACTIVE_VIEW_REVENUE,
+
+    /**
+     * 
+     *                 Cost for audience extension
+     *                 ie. cost the publisher had to pay in order to buy the inventory.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
+     *               
+     * 
+     */
+    AUDIENCE_EXTENSION_COST,
 
     /**
      * 

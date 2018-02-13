@@ -14,8 +14,11 @@
 
 package adwords.axis.v201710.reporting;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201710.SelectorBuilder;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.mcm.ManagedCustomer;
 import com.google.api.ads.adwords.axis.v201710.mcm.ManagedCustomerPage;
@@ -30,17 +33,23 @@ import com.google.api.ads.adwords.lib.jaxb.v201710.ReportDefinitionDateRangeType
 import com.google.api.ads.adwords.lib.jaxb.v201710.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.jaxb.v201710.Selector;
 import com.google.api.ads.adwords.lib.selectorfields.v201710.cm.ManagedCustomerField;
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
+import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.v201710.ReportDownloaderInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
 import java.io.File;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,21 +77,41 @@ public class ParallelReportDownload {
 
   private static final int PAGE_SIZE = 500;
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential =
-        new OfflineCredentials.Builder()
-            .forApi(Api.ADWORDS)
-            .fromFile()
-            .build()
-            .generateCredential();
+  public static void main(String[] args) {
+    ImmutableAdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    ImmutableAdWordsSession session =
-        new AdWordsSession.Builder()
-            .fromFile()
-            .withOAuth2Credential(oAuth2Credential)
-            .buildImmutable();
+      // Construct an ImmutableAdWordsSession to use as a prototype when creating a session for each
+      // managed customer.
+      session =
+          new AdWordsSession.Builder()
+              .fromFile()
+              .withOAuth2Credential(oAuth2Credential)
+              .buildImmutable();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
@@ -90,15 +119,81 @@ public class ParallelReportDownload {
     int numberOfThreads = 5;
     int maxElapsedSecondsPerCustomer = 60 * 5;
 
-    runExample(adWordsServices, session, numberOfThreads, maxElapsedSecondsPerCustomer);
+    try {
+      runExample(adWordsServices, session, numberOfThreads, maxElapsedSecondsPerCustomer);
+    } catch (DetailedReportDownloadResponseException dre) {
+      // A DetailedReportDownloadResponseException will be thrown if the HTTP status code in the
+      // response indicates an error occurred and the response body contains XML with further
+      // information, such as the fieldPath and trigger.
+      System.err.printf(
+          "Report was not downloaded due to a %s with errorText '%s', trigger '%s' and "
+              + "field path '%s'%n",
+          dre.getClass().getSimpleName(), dre.getErrorText(), dre.getTrigger(), dre.getFieldPath());
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    } catch (ReportDownloadResponseException rde) {
+      // A ReportDownloadResponseException will be thrown if the HTTP status code in the response
+      // indicates an error occurred, but the response did not contain further details.
+      System.err.printf("Report was not downloaded due to: %s%n", rde);
+    } catch (ReportException re) {
+      // A ReportException will be thrown if the download failed due to a transport layer exception.
+      System.err.printf("Report was not downloaded due to transport layer exception: %s%n", re);
+    } catch (IOException ioe) {
+      // An IOException in this example indicates that the report's contents could not be read from
+      // the response.
+      System.err.printf("Report was not read due to an IOException: %s%n", ioe);
+    } catch (InterruptedException ie) {
+      System.err.printf("Thread was interrupted while waiting for reports to complete: %s%n", ie);
+    } catch (ValidationException ve) {
+      System.err.printf("Failed to create a session for a customer: %s%n", ve);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param numberOfThreads number of threads to use for concurrent report requests.
+   * @param maxElapsedSecondsPerCustomer the maximum number of seconds to wait for each report
+   *     request to complete.
+   * @throws ApiException if the API request to retrieve managed customers failed with one or more
+   *     service errors.
+   * @throws RemoteException if the API request to retrieve managed customers failed due to other
+   *     errors.
+   * @throws DetailedReportDownloadResponseException if the report request failed with a detailed
+   *     error from the reporting service.
+   * @throws ReportDownloadResponseException if the report request failed with a general error from
+   *     the reporting service.
+   * @throws ReportException if the report request failed due to a transport layer error.
+   * @throws IOException if the report's contents could not be read from the response.
+   * @throws ValidationException if creation of an ImmutableAdWordsSession for a customer failed due
+   *     to validation issues.
+   * @throws InterruptedException if the thread was interrupted while waiting for all report
+   *     downloads to complete.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices,
       ImmutableAdWordsSession session,
       int numberOfThreads,
       int maxElapsedSecondsPerCustomer)
-      throws Exception {
+      throws ReportDownloadResponseException, ReportException, IOException, ValidationException,
+          InterruptedException {
 
     // Retrieve all accounts under the manager account.
     Map<Long, ManagedCustomer> managedCustomers = getAllManagedCustomers(adWordsServices, session);
@@ -188,11 +283,7 @@ public class ParallelReportDownload {
       try {
         File reportFile = reportDownloadFutureTask.get();
         successfulReports.put(clientCustomerId, reportFile);
-      } catch (CancellationException e) {
-        failedReports.put(clientCustomerId, e);
-      } catch (InterruptedException e) {
-        failedReports.put(clientCustomerId, e);
-      } catch (ExecutionException e) {
+      } catch (CancellationException | InterruptedException | ExecutionException e) {
         failedReports.put(clientCustomerId, e);
       }
     }
@@ -219,7 +310,7 @@ public class ParallelReportDownload {
    */
   private static Map<Long, ManagedCustomer> getAllManagedCustomers(
       AdWordsServicesInterface adWordsServices, ImmutableAdWordsSession session)
-      throws RemoteException, ApiException {
+      throws RemoteException {
     // Get the ManagedCustomerService.
     ManagedCustomerServiceInterface managedCustomerService =
         adWordsServices.get(session, ManagedCustomerServiceInterface.class);
@@ -255,9 +346,6 @@ public class ParallelReportDownload {
 
     private final String clientCustomerId;
 
-    /**
-     * @param callable
-     */
     public ReportDownloadFutureTask(ReportDownloadCallable callable) {
       super(callable);
       this.clientCustomerId = callable.session.getClientCustomerId();
@@ -292,8 +380,23 @@ public class ParallelReportDownload {
       this.backOff = backOff;
     }
 
+    /**
+     * Downloads the report for a specific customer account. On request failure, retries the request
+     * using an exponential backoff strategy. If all attempts fail, throws the exception from the
+     * last attempt.
+     *
+     * @return the output file containing the report results.
+     * @throws DetailedReportDownloadResponseException if the report request failed with a detailed
+     *     error from the reporting service.
+     * @throws ReportDownloadResponseException if the report request failed with a general error
+     *     from the reporting service.
+     * @throws ReportException if the report request failed due to a transport layer error.
+     * @throws IOException if the report's contents could not be written to {@code reportFile}.
+     * @throws InterruptedException if the thread was interrupted while waiting between retries.
+     */
     @Override
-    public File call() throws Exception {
+    public File call()
+        throws ReportException, ReportDownloadResponseException, IOException, InterruptedException {
       long clientCustomerId = Long.valueOf(session.getClientCustomerId());
       int numberOfAttempts = 0;
       boolean doContinue = true;

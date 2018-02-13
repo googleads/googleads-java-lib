@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.10.1-SNAPSHOT</version>
+    <version>3.11.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,11 +30,15 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib-axis</artifactId>
-  <version>3.10.1-SNAPSHOT</version>
+  <version>3.11.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Ads API Client Library Axis components.</name>
-  <description>Ads API Client Library Axis components.</description>
+  <name>Ads APIs Client Library Axis components</name>
+  <description>
+    Ads APIs Client Library Axis components. Most users do not explicitly
+    depend on this module, but instead depend on the Axis module for a specific
+    ads API, such as "adwords-axis" or "dfp-axis".
+  </description>
 
   <build>
     <plugins>
@@ -94,7 +98,7 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.10.1-SNAPSHOT</version>
+      <version>3.11.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -106,7 +110,7 @@
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client</artifactId>
-      <version>1.22.0</version>
+      <version>1.23.0</version>
     </dependency>
     <dependency>
       <groupId>javax.xml</groupId>
@@ -130,7 +134,7 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>3.10.1-SNAPSHOT</version>
+      <version>3.11.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>

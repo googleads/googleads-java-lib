@@ -219,6 +219,13 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by month and year in the network time zone. Can
      *                 be used to filter on month using ISO 4601 format 'YYYY-MM'.
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.PUBLISHER}
+     *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
+     *                 </ul>
      *               
      * 
      */
@@ -228,6 +235,13 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by week of the year in the network time zone.
      *                 Cannot be used for filtering.
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.PUBLISHER}
+     *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
+     *                 </ul>
      *               
      * 
      */
@@ -237,6 +251,13 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by date in the network time zone. Can be used to
      *                 filter by date using ISO 8601's format 'YYYY-MM-DD'".
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.PUBLISHER}
+     *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
+     *                 </ul>
      *               
      * 
      */
@@ -292,6 +313,8 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by aggregated demand channel type.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -947,6 +970,8 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by mediation group ID.  A mediation group is an abstraction of
      *                 inventory used in the DFP Mediation.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -956,6 +981,8 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by mediation group name.  A mediation group is an abstraction of
      *                 inventory used in the DFP Mediation.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -964,6 +991,8 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by mediation network.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -972,6 +1001,8 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange network tag name.
+     *                 
+     *                 <p>This field is deprecated and will be removed in v201805.
      *               
      * 
      */
@@ -1510,7 +1541,13 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange date.
+     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange date, in Ad Exchange timezone.
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.AD_EXCHANGE}
+     *                 </ul>
      *               
      * 
      */
@@ -1639,7 +1676,13 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange month.
+     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange month, in Ad Exchange timezone.
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.AD_EXCHANGE}
+     *                 </ul>
      *               
      * 
      */
@@ -1735,7 +1778,13 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange week.
+     *                 Breaks down mapped Ad Exchange web property data by Ad Exchange week, in Ad Exchange timezone.
+     *                 
+     *                 <p><b>Note:</b> In v201802 and later, this dimension is compatible with the following
+     *                 time zone types:
+     *                 <ul>
+     *                 <li> {@link TimeZoneType.AD_EXCHANGE}
+     *                 </ul>
      *               
      * 
      */

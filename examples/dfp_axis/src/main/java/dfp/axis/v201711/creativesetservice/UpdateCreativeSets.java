@@ -14,12 +14,19 @@
 
 package dfp.axis.v201711.creativesetservice;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201711.StatementBuilder;
+import com.google.api.ads.dfp.axis.v201711.ApiError;
+import com.google.api.ads.dfp.axis.v201711.ApiException;
 import com.google.api.ads.dfp.axis.v201711.CreativeSet;
 import com.google.api.ads.dfp.axis.v201711.CreativeSetPage;
 import com.google.api.ads.dfp.axis.v201711.CreativeSetServiceInterface;
@@ -28,6 +35,7 @@ import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Iterables;
 import com.google.common.primitives.Longs;
+import java.rmi.RemoteException;
 import java.util.Arrays;
 
 /**
@@ -49,9 +57,19 @@ public class UpdateCreativeSets {
     private Long companionCreativeId;
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param dfpServices the services factory.
+   * @param session the session.
+   * @param creativeSetId the ID of the creative set to update.
+   * @param companionCreativeId the ID of the companion creative to add to the creative set.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
   public static void runExample(
       DfpServices dfpServices, DfpSession session, long creativeSetId, long companionCreativeId)
-      throws Exception {
+      throws RemoteException {
     // Get the CreativeSetService.
     CreativeSetServiceInterface creativeSetService =
         dfpServices.get(session, CreativeSetServiceInterface.class);
@@ -82,19 +100,37 @@ public class UpdateCreativeSets {
         Longs.join(",", updatedCreativeSet.getCompanionCreativeIds()));
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.DFP)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    DfpSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.DFP)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct a DfpSession.
-    DfpSession session = new DfpSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct a DfpSession.
+      session =
+          new DfpSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     DfpServices dfpServices = new DfpServices();
 
@@ -106,6 +142,25 @@ public class UpdateCreativeSets {
       params.companionCreativeId = Long.parseLong("INSERT_COMPANION_CREATIVE_ID_HERE");
     }
 
-    runExample(dfpServices, session, params.creativeSetId, params.companionCreativeId);
+    try {
+      runExample(dfpServices, session, params.creativeSetId, params.companionCreativeId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the dfp.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 }

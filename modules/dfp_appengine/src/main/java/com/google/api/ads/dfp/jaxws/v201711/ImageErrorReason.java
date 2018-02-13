@@ -234,7 +234,7 @@ public enum ImageErrorReason {
 
     /**
      * 
-     *                 A system error occured, please try again.
+     *                 A system error occurred, please try again.
      *               
      * 
      */

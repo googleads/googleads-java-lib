@@ -301,6 +301,7 @@ public class Column implements java.io.Serializable {
     public static final java.lang.String _AD_EXCHANGE_ACTIVE_VIEW_REVENUE = "AD_EXCHANGE_ACTIVE_VIEW_REVENUE";
     public static final java.lang.String _AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = "AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME";
     public static final java.lang.String _TOTAL_ACTIVE_VIEW_REVENUE = "TOTAL_ACTIVE_VIEW_REVENUE";
+    public static final java.lang.String _AUDIENCE_EXTENSION_COST = "AUDIENCE_EXTENSION_COST";
     public static final java.lang.String _VIEW_THROUGH_CONVERSIONS = "VIEW_THROUGH_CONVERSIONS";
     public static final java.lang.String _CONVERSIONS_PER_THOUSAND_IMPRESSIONS = "CONVERSIONS_PER_THOUSAND_IMPRESSIONS";
     public static final java.lang.String _CLICK_THROUGH_CONVERSIONS = "CLICK_THROUGH_CONVERSIONS";
@@ -711,6 +712,7 @@ public class Column implements java.io.Serializable {
     public static final Column AD_EXCHANGE_ACTIVE_VIEW_REVENUE = new Column(_AD_EXCHANGE_ACTIVE_VIEW_REVENUE);
     public static final Column AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = new Column(_AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME);
     public static final Column TOTAL_ACTIVE_VIEW_REVENUE = new Column(_TOTAL_ACTIVE_VIEW_REVENUE);
+    public static final Column AUDIENCE_EXTENSION_COST = new Column(_AUDIENCE_EXTENSION_COST);
     public static final Column VIEW_THROUGH_CONVERSIONS = new Column(_VIEW_THROUGH_CONVERSIONS);
     public static final Column CONVERSIONS_PER_THOUSAND_IMPRESSIONS = new Column(_CONVERSIONS_PER_THOUSAND_IMPRESSIONS);
     public static final Column CLICK_THROUGH_CONVERSIONS = new Column(_CLICK_THROUGH_CONVERSIONS);

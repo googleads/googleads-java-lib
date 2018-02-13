@@ -28,8 +28,12 @@ public enum AdsUtility {
   /** AdWords shopping utility for managing shopping product partition trees */
   PRODUCT_PARTITION_TREE("ProductPartitionTree"),
   /** AdWords BatchJobService upload/download utility */
-  BATCH_JOB_HELPER("BatchJobHelper");
-  
+  BATCH_JOB_HELPER("BatchJobHelper"),
+  /** AdWords ReportQueryBuilder */
+  REPORT_QUERY_BUILDER("ReportQueryBuilder"),
+  /** AdWords ServiceQueryBuilder */
+  SERVICE_QUERY_BUILDER("ServiceQueryBuilder");
+
   private final String userAgentIdentifier;
   
   private AdsUtility(String userAgentIdentifier) {

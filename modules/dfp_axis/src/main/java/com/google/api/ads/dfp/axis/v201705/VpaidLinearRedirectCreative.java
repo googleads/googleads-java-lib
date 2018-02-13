@@ -24,11 +24,13 @@ package com.google.api.ads.dfp.axis.v201705;
 
 /**
  * A {@code Creative} that displays an externally hosted Flash-based
- * ad
- *             and is served via VAST 2.0 XML.  It is displayed in a
- * linear fashion
- *             with a video (before, after, interrupting).  This creative
- * is read only.
+ * ad and is served via VAST 2.0
+ *             XML. It is displayed in a linear fashion with a video
+ * (before, after, interrupting). This
+ *             creative is read only.
+ *             <p>
+ *             This creative type has been deprecated as part of the
+ * Flash deprecation.
  */
 public class VpaidLinearRedirectCreative  extends com.google.api.ads.dfp.axis.v201705.HasDestinationUrlCreative  implements java.io.Serializable {
     /* The IDs of the companion creatives that are associated with

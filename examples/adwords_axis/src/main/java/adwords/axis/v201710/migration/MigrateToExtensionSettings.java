@@ -14,7 +14,11 @@
 
 package adwords.axis.v201710.migration;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.AttributeFieldMapping;
 import com.google.api.ads.adwords.axis.v201710.cm.CampaignExtensionSetting;
 import com.google.api.ads.adwords.axis.v201710.cm.CampaignExtensionSettingOperation;
@@ -53,11 +57,15 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -89,22 +97,73 @@ public class MigrateToExtensionSettings {
   private static final int PLACEHOLDER_FIELD_FINAL_MOBILE_URLS = 6;
   private static final int PLACEHOLDER_FIELD_TRACKING_URL_TEMPLATE = 7;
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder().forApi(Api.ADWORDS).fromFile()
-        .build().generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session =
-        new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session);
+    try {
+      runExample(adWordsServices, session);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf(
+          "Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session)
-      throws Exception {
+      throws RemoteException {
     // Get all of the feeds for the session's account.
     List<Feed> feeds = getFeeds(adWordsServices, session);
 
@@ -158,7 +217,7 @@ public class MigrateToExtensionSettings {
    */
   private static Map<Long, SiteLinkFromFeed> getSiteLinksFromFeed(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Feed feed)
-      throws Exception {
+      throws RemoteException {
     // Retrieve the feed's attribute mapping.
     Multimap<Long, Integer> feedMappings =
         getFeedMapping(adWordsServices, session, feed, PLACEHOLDER_SITELINKS);
@@ -217,7 +276,7 @@ public class MigrateToExtensionSettings {
    * @return a multimap from feed attribute ID to the set of field IDs mapped to the attribute
    */
   private static Multimap<Long, Integer> getFeedMapping(AdWordsServicesInterface adWordsServices,
-      AdWordsSession session, Feed feed, long placeholderType) throws Exception {
+      AdWordsSession session, Feed feed, long placeholderType) throws RemoteException {
     // Get the FeedMappingService.
     FeedMappingServiceInterface feedMappingService =
         adWordsServices.get(session, FeedMappingServiceInterface.class);
@@ -250,7 +309,7 @@ public class MigrateToExtensionSettings {
 
   /** Returns a list of all enabled feeds. */
   private static List<Feed> getFeeds(
-      AdWordsServicesInterface adWordsServices, AdWordsSession session) throws Exception {
+      AdWordsServicesInterface adWordsServices, AdWordsSession session) throws RemoteException {
     FeedServiceInterface feedService = adWordsServices.get(session, FeedServiceInterface.class);
     String query = "SELECT Id, Name, Attributes WHERE Origin = 'USER' AND FeedStatus = 'ENABLED'";
 
@@ -274,7 +333,7 @@ public class MigrateToExtensionSettings {
    * Returns the feed items for a feed.
    */
   private static List<FeedItem> getFeedItems(AdWordsServicesInterface adWordsServices,
-      AdWordsSession session, Feed feed) throws Exception {
+      AdWordsSession session, Feed feed) throws RemoteException {
     // Get the FeedItemService.
     FeedItemServiceInterface feedItemService =
         adWordsServices.get(session, FeedItemServiceInterface.class);
@@ -304,7 +363,7 @@ public class MigrateToExtensionSettings {
       AdWordsSession session,
       Set<Long> feedItemIds,
       Feed feed)
-      throws Exception {
+      throws RemoteException {
     // Get the FeedItemService.
     FeedItemServiceInterface feedItemService =
         adWordsServices.get(session, FeedItemServiceInterface.class);
@@ -345,7 +404,7 @@ public class MigrateToExtensionSettings {
       Map<Long, SiteLinkFromFeed> feedItems,
       CampaignFeed campaignFeed,
       Set<Long> feedItemIds,
-      ExtensionSettingPlatform platformRestrictions) throws Exception {
+      ExtensionSettingPlatform platformRestrictions) throws RemoteException {
     // Get the CampaignExtensionSettingService.
     CampaignExtensionSettingServiceInterface campaignExtensionSettingService =
         adWordsServices.get(session, CampaignExtensionSettingServiceInterface.class);
@@ -400,7 +459,7 @@ public class MigrateToExtensionSettings {
    * Deletes a campaign feed.
    */
   private static CampaignFeed deleteCampaignFeed(AdWordsServicesInterface adWordsServices,
-      AdWordsSession session, CampaignFeed campaignFeed) throws Exception {
+      AdWordsSession session, CampaignFeed campaignFeed) throws RemoteException {
     // Get the CampaignFeedService.
     CampaignFeedServiceInterface campaignFeedService =
         adWordsServices.get(session, CampaignFeedServiceInterface.class);
@@ -442,7 +501,8 @@ public class MigrateToExtensionSettings {
   /**
    * Returns the list of feed item IDs that are used by a campaign through a given campaign feed.
    */
-  private static Set<Long> getFeedItemIdsForCampaign(CampaignFeed campaignFeed) throws Exception {
+  private static Set<Long> getFeedItemIdsForCampaign(CampaignFeed campaignFeed)
+      throws RemoteException {
     Set<Long> feedItemIds = Sets.newHashSet();
 
     FunctionOperator functionOperator = campaignFeed.getMatchingFunction().getOperator();
@@ -498,7 +558,7 @@ public class MigrateToExtensionSettings {
    * Returns the campaign feeds that use a particular feed for a particular placeholder type.
    */
   private static List<CampaignFeed> getCampaignFeeds(AdWordsServicesInterface adWordsServices,
-      AdWordsSession session, Feed feed, int placeholderType) throws Exception {
+      AdWordsSession session, Feed feed, int placeholderType) throws RemoteException {
     // Get the CampaignFeedService.
     CampaignFeedServiceInterface campaignFeedService =
         adWordsServices.get(session, CampaignFeedServiceInterface.class);

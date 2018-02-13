@@ -26,9 +26,11 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} that displays a DFP-hosted Flash-based ad
- *             and is served via VAST 2.0 XML.  It is displayed in a linear fashion
- *             with a video (before, after, interrupting).  This creative is read only.
+ *             A {@code Creative} that displays a DFP-hosted Flash-based ad and is served via VAST 2.0 XML. It
+ *             is displayed in a linear fashion with a video (before, after, interrupting). This creative is
+ *             read only.
+ *             <p>
+ *             This creative type has been deprecated as part of the Flash deprecation.
  *           
  * 
  * <p>Java class for VpaidLinearCreative complex type.

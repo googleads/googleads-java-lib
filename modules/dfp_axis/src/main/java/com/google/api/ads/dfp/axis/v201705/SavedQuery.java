@@ -43,7 +43,11 @@ public class SavedQuery  implements java.io.Serializable {
     /* Whether or not the saved query is compatible with the current
      * API version.
      *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
-     * is non-null. */
+     * is non-null.
+     *                 A saved query will be incompatible with the API if
+     * it uses columns, dimensions, or other
+     *                 reporting features from the UI that are not available
+     * in the {@link ReportQuery} entity. */
     private java.lang.Boolean isCompatibleWithApiVersion;
 
     public SavedQuery() {
@@ -146,6 +150,10 @@ public class SavedQuery  implements java.io.Serializable {
      * API version.
      *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
      * is non-null.
+     *                 A saved query will be incompatible with the API if
+     * it uses columns, dimensions, or other
+     *                 reporting features from the UI that are not available
+     * in the {@link ReportQuery} entity.
      */
     public java.lang.Boolean getIsCompatibleWithApiVersion() {
         return isCompatibleWithApiVersion;
@@ -159,6 +167,10 @@ public class SavedQuery  implements java.io.Serializable {
      * API version.
      *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
      * is non-null.
+     *                 A saved query will be incompatible with the API if
+     * it uses columns, dimensions, or other
+     *                 reporting features from the UI that are not available
+     * in the {@link ReportQuery} entity.
      */
     public void setIsCompatibleWithApiVersion(java.lang.Boolean isCompatibleWithApiVersion) {
         this.isCompatibleWithApiVersion = isCompatibleWithApiVersion;

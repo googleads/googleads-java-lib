@@ -14,8 +14,11 @@
 
 package adwords.axis.auth;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder;
 import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
@@ -26,6 +29,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
@@ -58,7 +62,7 @@ public class GetRefreshToken {
   private static final String CALLBACK_URL = "urn:ietf:wg:oauth:2.0:oob";
 
   private static Credential getOAuth2Credential(GoogleClientSecrets clientSecrets)
-      throws Exception {
+      throws IOException {
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
         new NetHttpTransport(),
         new JacksonFactory(),
@@ -98,7 +102,7 @@ public class GetRefreshToken {
     return credential;
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     // Get the client ID and secret from the ads.properties file.
     // If you do not have a client ID or secret, please create one in the
     // API console: https://console.developers.google.com/project and set it
@@ -112,14 +116,25 @@ public class GetRefreshToken {
     } catch (ValidationException e) {
       System.err.println(
           "Please input your client ID and secret into your ads.properties file, which is either "
-          + "located in your home directory in your src/main/resources directory, or "
+          + "located in your home directory, in your src/main/resources directory, or "
           + "on your classpath. If you do not have a client ID or secret, please create one in "
           + "the API console: https://console.developers.google.com/project");
-      System.exit(1);
+      return;
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
     }
 
     // Get the OAuth2 credential.
-    Credential credential = getOAuth2Credential(clientSecrets);
+    Credential credential = null;
+    try {
+      credential = getOAuth2Credential(clientSecrets);
+    } catch (IOException ioe) {
+      System.err.printf("Failed to generate credentials. Exception: %s%n", ioe);
+      return;
+    }
 
     System.out.printf("Your refresh token is: %s%n", credential.getRefreshToken());
 

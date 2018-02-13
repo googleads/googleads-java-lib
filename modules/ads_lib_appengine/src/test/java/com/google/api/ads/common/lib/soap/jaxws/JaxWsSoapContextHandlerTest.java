@@ -27,6 +27,7 @@ import com.google.api.ads.common.lib.soap.RequestInfoXPathSet;
 import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.api.ads.common.lib.utils.Streams;
+import com.google.common.base.Supplier;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.HashSet;
@@ -40,6 +41,9 @@ import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPPart;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
 import org.junit.Before;
@@ -51,6 +55,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.slf4j.Logger;
 
 /**
  * Tests for the {@link JaxWsSoapContextHandler} class.
@@ -70,6 +75,9 @@ public class JaxWsSoapContextHandlerTest {
   @Mock private Node firstChild;
   @Mock private NodeExtractor mockNodeExtractor;
   @Mock private AdsApiConfiguration mockAdsApiConfiguration;
+  @Mock private Supplier<Transformer> mockTransformerSupplier;
+  @Mock private Transformer mockTransformer;
+  @Mock private Logger mockLogger;
   private RequestInfoXPathSet requestInfoXPathSet;
   private ResponseInfoXPathSet responseInfoXPathSet;
   
@@ -82,7 +90,11 @@ public class JaxWsSoapContextHandlerTest {
     MockitoAnnotations.initMocks(this);
 
     wsdlService = new QName("http://www.example.com", "AdvertiserService");
-    requestInfoXPathSet = new RequestInfoXPathSet(mockAdsApiConfiguration, mockNodeExtractor);
+    requestInfoXPathSet = new RequestInfoXPathSet(
+        mockAdsApiConfiguration,
+        mockNodeExtractor,
+        mockTransformerSupplier,
+        mockLogger);
     responseInfoXPathSet = new ResponseInfoXPathSet(mockAdsApiConfiguration, mockNodeExtractor);
     jaxWsSoapContextHandler =
         new JaxWsSoapContextHandler(requestInfoXPathSet, responseInfoXPathSet);
@@ -113,11 +125,11 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleMessage_outboundNoHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
-    Answer<Object> writeXml = new Answer<Object>() {
+    Answer<Object> transform = new Answer<Object>() {
       @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
-        OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+        StreamResult stream = (StreamResult) invocation.getArguments()[1];
+        Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
         return null;
       }
     };
@@ -134,12 +146,15 @@ public class JaxWsSoapContextHandlerTest {
         .thenReturn(wsdlService);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockMessage.getSOAPBody()).thenReturn(mockSoapBody);
+    when(mockMessage.getSOAPPart()).thenReturn(mockSoapPart);
     when(mockSoapBody.getFirstChild()).thenReturn(firstChild);
     when(firstChild.getLocalName()).thenReturn(OPERATION_LOCAL_NAME);
 
     // captureSoapXml
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
-    Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
+    when(mockTransformerSupplier.get()).thenReturn(mockTransformer);
+    Mockito.doAnswer(transform).when(mockTransformer)
+        .transform(any(Source.class), any(StreamResult.class));
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
     RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
@@ -151,11 +166,11 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleMessage_outboundWithHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
-    Answer<Object> writeXml = new Answer<Object>() {
+    Answer<Object> transform = new Answer<Object>() {
       @Override
       public Object answer(InvocationOnMock invocation) throws Throwable {
-        OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+        StreamResult stream = (StreamResult) invocation.getArguments()[1];
+        Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
         return null;
       }
     };
@@ -176,12 +191,15 @@ public class JaxWsSoapContextHandlerTest {
         .thenReturn(wsdlService);
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockMessage.getSOAPBody()).thenReturn(mockSoapBody);
+    when(mockMessage.getSOAPPart()).thenReturn(mockSoapPart);
     when(mockSoapBody.getFirstChild()).thenReturn(firstChild);
     when(firstChild.getLocalName()).thenReturn(OPERATION_LOCAL_NAME);
 
     // captureSoapXml
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
-    Mockito.doAnswer(writeXml).when(mockMessage).writeTo(any(OutputStream.class));
+    when(mockTransformerSupplier.get()).thenReturn(mockTransformer);
+    Mockito.doAnswer(transform).when(mockTransformer)
+        .transform(any(Source.class), any(StreamResult.class));
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
     RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();

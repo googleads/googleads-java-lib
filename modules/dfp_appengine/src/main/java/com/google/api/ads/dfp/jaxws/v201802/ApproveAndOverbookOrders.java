@@ -1,0 +1,53 @@
+// Copyright 2018 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+package com.google.api.ads.dfp.jaxws.v201802;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * 
+ *             The action used for approving and overbooking {@link Order} objects.
+ *             All {@link LineItem} objects within the order will be approved as well.
+ *           
+ * 
+ * <p>Java class for ApproveAndOverbookOrders complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="ApproveAndOverbookOrders">
+ *   &lt;complexContent>
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v201802}ApproveOrders">
+ *       &lt;sequence>
+ *       &lt;/sequence>
+ *     &lt;/extension>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ApproveAndOverbookOrders")
+public class ApproveAndOverbookOrders
+    extends ApproveOrders
+{
+
+
+}

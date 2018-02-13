@@ -155,6 +155,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
      *                 Goal#unitType} are readonly.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * goal type can only be {@link GoalType#NONE}.
      *                 This attribute is required. */
     private com.google.api.ads.dfp.axis.v201711.Goal goal;
 
@@ -200,7 +202,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}'s
      *                 duration. This attribute is optional and default value
      * is
-     *                 {@link DeliveryRateType#EVENLY}. */
+     *                 {@link DeliveryRateType#EVENLY}.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * value can only be
+     *                 {@link DeliveryRateType#FRONTLOADED}. */
     private com.google.api.ads.dfp.axis.v201711.DeliveryRateType deliveryRateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
@@ -266,6 +271,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <ul>
      *                 <li>{@link LineItemType#SPONSORSHIP}</li>
      *                 <li>{@link LineItemType#STANDARD}</li>
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
      *                 This attribute is required. */
     private com.google.api.ads.dfp.axis.v201711.LineItemType lineItemType;
@@ -1270,6 +1276,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
      *                 Goal#unitType} are readonly.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * goal type can only be {@link GoalType#NONE}.
      *                 This attribute is required.
      */
     public com.google.api.ads.dfp.axis.v201711.Goal getGoal() {
@@ -1287,6 +1295,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
      *                 Goal#unitType} are readonly.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * goal type can only be {@link GoalType#NONE}.
      *                 This attribute is required.
      */
     public void setGoal(com.google.api.ads.dfp.axis.v201711.Goal goal) {
@@ -1420,6 +1430,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 duration. This attribute is optional and default value
      * is
      *                 {@link DeliveryRateType#EVENLY}.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * value can only be
+     *                 {@link DeliveryRateType#FRONTLOADED}.
      */
     public com.google.api.ads.dfp.axis.v201711.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -1434,6 +1447,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 duration. This attribute is optional and default value
      * is
      *                 {@link DeliveryRateType#EVENLY}.
+     *                 For a Preferred deal {@code ProposalLineItem}, the
+     * value can only be
+     *                 {@link DeliveryRateType#FRONTLOADED}.
      */
     public void setDeliveryRateType(com.google.api.ads.dfp.axis.v201711.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -1655,6 +1671,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <ul>
      *                 <li>{@link LineItemType#SPONSORSHIP}</li>
      *                 <li>{@link LineItemType#STANDARD}</li>
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
      *                 This attribute is required.
      */
@@ -1672,6 +1689,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <ul>
      *                 <li>{@link LineItemType#SPONSORSHIP}</li>
      *                 <li>{@link LineItemType#STANDARD}</li>
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
      *                 This attribute is required.
      */

@@ -14,22 +14,33 @@
 
 package adwords.axis.v201710.campaignmanagement;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201710.ServiceQuery;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupAd;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupAdPage;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupAdPolicySummary;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupAdServiceInterface;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.PolicyApprovalStatus;
 import com.google.api.ads.adwords.axis.v201710.cm.PolicyTopicEntry;
 import com.google.api.ads.adwords.axis.v201710.cm.PolicyTopicEvidence;
+import com.google.api.ads.adwords.axis.v201710.cm.SortOrder;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.selectorfields.v201710.cm.AdGroupAdField;
 import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
+import java.rmi.RemoteException;
 
 /**
  * This example gets all disapproved ads in an ad group with AWQL. To get ad groups, run
@@ -41,25 +52,43 @@ import com.google.api.client.auth.oauth2.Credential;
 public class GetAllDisapprovedAdsWithAwql {
 
   private static final int PAGE_SIZE = 100;
-  
+
   private static class GetAllDisapprovedAdsWithAwqlParams extends CodeSampleParams {
     @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
     private Long adGroupId;
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.ADWORDS)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session = new AdWordsSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
@@ -70,30 +99,60 @@ public class GetAllDisapprovedAdsWithAwql {
       params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
     }
 
-    runExample(adWordsServices, session, params.adGroupId);
+    try {
+      runExample(adWordsServices, session, params.adGroupId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param adGroupId the ID of the ad group to search for disapproved ads.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Long adGroupId)
-      throws Exception {
+      throws RemoteException {
     // Get the AdGroupAdService.
     AdGroupAdServiceInterface adGroupAdService =
         adWordsServices.get(session, AdGroupAdServiceInterface.class);
 
-    int offset = 0;
-
-    String query =
-        String.format(
-            "SELECT Id, PolicySummary "
-                + "WHERE AdGroupId = %d AND CombinedApprovalStatus = %s ORDER BY Id",
-            adGroupId, PolicyApprovalStatus.DISAPPROVED);
+    ServiceQuery serviceQuery =
+        new ServiceQuery.Builder()
+            .fields(AdGroupAdField.Id, AdGroupAdField.PolicySummary)
+            .where(AdGroupAdField.AdGroupId).equalTo(adGroupId)
+            .where(AdGroupAdField.CombinedApprovalStatus)
+            .equalTo(PolicyApprovalStatus.DISAPPROVED.getValue())
+            .orderBy(AdGroupAdField.Id, SortOrder.ASCENDING)
+            .limit(0, PAGE_SIZE)
+            .build();
 
     // Get all disapproved ads.
     AdGroupAdPage page = null;
     int disapprovedAdsCount = 0;
     do {
-      String pageQuery = query + String.format(" LIMIT %d, %d", offset, PAGE_SIZE);
-      page = adGroupAdService.query(pageQuery);
+      serviceQuery.nextPage(page);
+      page = adGroupAdService.query(serviceQuery.toString());
 
       // Display ads.
       for (AdGroupAd adGroupAd : page) {
@@ -122,8 +181,7 @@ public class GetAllDisapprovedAdsWithAwql {
           }
         }
       }
-      offset += PAGE_SIZE;
-    } while (offset < page.getTotalNumEntries());
+    } while (serviceQuery.hasNext(page));
 
     System.out.printf("%d disapproved ads were found.%n", disapprovedAdsCount);
   }

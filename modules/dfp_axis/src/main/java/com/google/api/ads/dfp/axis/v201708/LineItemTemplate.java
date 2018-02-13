@@ -72,14 +72,14 @@ public class LineItemTemplate  implements java.io.Serializable {
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional. */
+     *                 This attribute is deprecated. */
     private com.google.api.ads.dfp.axis.v201708.DateTime startTime;
 
     /* The default time of the {@link LineItem#endDateTime} field
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional. */
+     *                 This attribute is deprecated. */
     private com.google.api.ads.dfp.axis.v201708.DateTime endTime;
 
     /* The default {@link LineItem#deliveryRateType delivery strategy}
@@ -333,7 +333,7 @@ public class LineItemTemplate  implements java.io.Serializable {
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional.
+     *                 This attribute is deprecated.
      */
     public com.google.api.ads.dfp.axis.v201708.DateTime getStartTime() {
         return startTime;
@@ -347,7 +347,7 @@ public class LineItemTemplate  implements java.io.Serializable {
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional.
+     *                 This attribute is deprecated.
      */
     public void setStartTime(com.google.api.ads.dfp.axis.v201708.DateTime startTime) {
         this.startTime = startTime;
@@ -361,7 +361,7 @@ public class LineItemTemplate  implements java.io.Serializable {
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional.
+     *                 This attribute is deprecated.
      */
     public com.google.api.ads.dfp.axis.v201708.DateTime getEndTime() {
         return endTime;
@@ -375,7 +375,7 @@ public class LineItemTemplate  implements java.io.Serializable {
      * of a new
      *                 {@code LineItem}. Only the time part is used, and
      * the date part is ignored.
-     *                 This attribute is optional.
+     *                 This attribute is deprecated.
      */
     public void setEndTime(com.google.api.ads.dfp.axis.v201708.DateTime endTime) {
         this.endTime = endTime;

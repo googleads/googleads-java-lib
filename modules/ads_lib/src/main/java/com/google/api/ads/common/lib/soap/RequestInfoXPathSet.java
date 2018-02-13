@@ -20,14 +20,20 @@ import com.google.api.ads.common.lib.utils.IterableXPath;
 import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.stream.StreamResult;
+import org.slf4j.Logger;
 
 /** XPaths to capture from SOAP requests. */
 public class RequestInfoXPathSet {
@@ -35,13 +41,22 @@ public class RequestInfoXPathSet {
   private final IterableXPath contextXPath;
   private final String contextName;
   private final NodeExtractor nodeExtractor;
+  private final Supplier<Transformer> transformerSupplier;
+  private final Logger libLogger;
 
   @Inject
-  public RequestInfoXPathSet(AdsApiConfiguration apiConfig, NodeExtractor nodeExtractor) {
+  public RequestInfoXPathSet(
+      AdsApiConfiguration apiConfig,
+      NodeExtractor nodeExtractor,
+      Supplier<Transformer> transformerSupplier,
+      @Named("libLogger") Logger libLogger) {
+    Preconditions.checkNotNull(apiConfig);
     this.contextXPath = new IterableXPath(apiConfig.getRequestContextXPath());
     this.contextName =
         Iterables.isEmpty(this.contextXPath) ? null : Iterables.getLast(this.contextXPath);
-    this.nodeExtractor = nodeExtractor;
+    this.nodeExtractor = Preconditions.checkNotNull(nodeExtractor);
+    this.transformerSupplier = Preconditions.checkNotNull(transformerSupplier);
+    this.libLogger = Preconditions.checkNotNull(libLogger);
   }
 
   public IterableXPath getContextXPath() {
@@ -62,14 +77,18 @@ public class RequestInfoXPathSet {
 
   public RequestInfo.Builder parseMessage(RequestInfo.Builder builder, SOAPMessage soapMessage) {
     Preconditions.checkNotNull(builder, "Null builder");
-    if (soapMessage == null) {
+    Transformer transformer = transformerSupplier.get();
+    if (soapMessage == null || soapMessage.getSOAPPart() == null || transformer == null) {
       return builder;
     }
     try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
-      soapMessage.writeTo(outputStream);
+      // Some SOAP frameworks don't include SOAP headers when calling SOAPMessage.writeTo.
+      // Use an XML transformer to write the XML content instead.
+      transformer.transform(soapMessage.getSOAPPart().getContent(), new StreamResult(outputStream));
       builder.withPayload(outputStream.toString(StandardCharsets.UTF_8.name()));
-    } catch (SOAPException | IOException e) {
+    } catch (TransformerException | SOAPException | IOException e) {
       builder.withPayload("Unable to read request content due to exception: " + e);
+      libLogger.warn("Unable to read request content due to exception.", e);
     }
 
     try {

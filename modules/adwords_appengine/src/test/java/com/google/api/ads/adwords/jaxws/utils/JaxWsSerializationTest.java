@@ -25,10 +25,13 @@ import com.google.api.ads.adwords.jaxws.v201708.cm.Campaign;
 import com.google.api.ads.adwords.jaxws.v201708.cm.CampaignOperation;
 import com.google.api.ads.adwords.jaxws.v201708.cm.Operator;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
+import com.google.api.ads.common.lib.soap.testing.CustomDifferenceListener;
 import com.google.common.io.CharStreams;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.xml.namespace.QName;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -66,7 +69,7 @@ public class JaxWsSerializationTest {
         BatchJobMutateRequest.class,
         new QName("https://adwords.google.com/api/adwords/cm/v201708", "mutate"));
 
-    String serializedRequest = serializer.serialize((BatchJobMutateRequest) request);
+    String serializedRequest = serializer.serialize(request);
 
     assertNotNull("Null serialized request returned", serializedRequest);
 
@@ -77,16 +80,27 @@ public class JaxWsSerializationTest {
                     "resources/BatchJobMutate.request.xml"),
                 UTF_8));
 
-    XMLAssert.assertXMLEqual("Serialized request does not match expected value",
-        expectedSerializedRequest, serializedRequest);
+    // Perform XML diffs using the custom difference listener that properly handles namespaces
+    // and attributes.
+    Diff diff = new Diff(expectedSerializedRequest, serializedRequest);
+    DifferenceListener diffListener = new CustomDifferenceListener();
+    diff.overrideDifferenceListener(diffListener);
+    XMLAssert.assertXMLEqual("Serialized request does not match expected value", diff, true);
 
-    serializedRequest = serializer.serialize((BatchJobMutateRequest) request, false);
+    // Serialize again, this time without the XML declaration, and confirm the serialized XML
+    // matches the expected string.
+    serializedRequest = serializer.serialize(request, false);
 
-    expectedSerializedRequest = expectedSerializedRequest.replaceFirst(
-        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", "");
+    expectedSerializedRequest =
+        expectedSerializedRequest.replaceFirst(
+            "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", "");
+
+    diff = new Diff(expectedSerializedRequest, serializedRequest);
+    diff.overrideDifferenceListener(diffListener);
     XMLAssert.assertXMLEqual(
         "Serialized request with XML declaration excluded does not match expected value",
-        expectedSerializedRequest, serializedRequest);
+        diff,
+        true);
   }
 }
 

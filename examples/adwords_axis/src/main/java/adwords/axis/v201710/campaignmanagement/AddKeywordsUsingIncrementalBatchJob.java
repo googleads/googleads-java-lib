@@ -14,6 +14,8 @@
 
 package adwords.axis.v201710.campaignmanagement;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201710.SelectorBuilder;
@@ -21,6 +23,7 @@ import com.google.api.ads.adwords.axis.utils.v201710.batchjob.BatchJobHelper;
 import com.google.api.ads.adwords.axis.utils.v201710.batchjob.BatchJobMutateResponse;
 import com.google.api.ads.adwords.axis.utils.v201710.batchjob.MutateResult;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupCriterionOperation;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.BatchJob;
 import com.google.api.ads.adwords.axis.v201710.cm.BatchJobError;
@@ -37,15 +40,20 @@ import com.google.api.ads.adwords.axis.v201710.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201710.cm.BatchJobField;
+import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.Sets;
 import java.net.URI;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -73,19 +81,37 @@ public class AddKeywordsUsingIncrementalBatchJob {
     private Long adGroupId;
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.ADWORDS)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session = new AdWordsSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
@@ -97,12 +123,51 @@ public class AddKeywordsUsingIncrementalBatchJob {
       params.adGroupId = Long.parseLong("INSERT_AD_GROUP_ID_HERE");
     }
 
-    runExample(adWordsServices, session, params.adGroupId);
+    try {
+      runExample(adWordsServices, session, params.adGroupId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    } catch (InterruptedException ie) {
+      System.err.printf("Thread was interrupted: %s%n", ie);
+    } catch (TimeoutException te) {
+      System.err.printf("Job did not complete after status was polled %s times: %s%n",
+          MAX_POLL_ATTEMPTS, te);
+    } catch (BatchJobException be) {
+      System.err.printf("Example failed due to BatchJobException: %s%n", be);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param adGroupId the ID of the ad group where keywords will be added.
+   * @throws BatchJobException if uploading operations or downloading results failed.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   * @throws InterruptedException if the thread was interrupted while sleeping between retries.
+   * @throws TimeoutException if the job did not complete after job status was polled {@link
+   *     #MAX_POLL_ATTEMPTS} times.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Long adGroupId)
-      throws Exception {
+      throws RemoteException, BatchJobException, InterruptedException, TimeoutException {
     // Get the BatchJobService.
     BatchJobServiceInterface batchJobService =
         adWordsServices.get(session, BatchJobServiceInterface.class);
@@ -121,7 +186,7 @@ public class AddKeywordsUsingIncrementalBatchJob {
     BatchJobUploadStatus batchJobUploadStatus = new BatchJobUploadStatus(0, 
         URI.create(batchJob.getUploadUrl().getUrl()));
     
-    List<AdGroupCriterionOperation> operations = new ArrayList<AdGroupCriterionOperation>();
+    List<AdGroupCriterionOperation> operations = new ArrayList<>();
 
     // Create AdGroupCriterionOperations to add keywords, and upload every 10 operations
     // incrementally.
@@ -169,7 +234,7 @@ public class AddKeywordsUsingIncrementalBatchJob {
 
     // Poll for completion of the batch job using an exponential back off.
     int pollAttempts = 0;
-    boolean isPending = true;
+    boolean isPending;
     boolean wasCancelRequested = false;
     
     Selector selector =

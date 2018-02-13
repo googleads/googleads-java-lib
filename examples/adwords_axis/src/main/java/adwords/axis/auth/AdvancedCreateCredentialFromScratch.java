@@ -14,20 +14,26 @@
 
 package adwords.axis.auth;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201702.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201702.cm.CampaignPage;
-import com.google.api.ads.adwords.axis.v201702.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201702.cm.Selector;
+import com.google.api.ads.adwords.axis.v201710.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201710.cm.CampaignPage;
+import com.google.api.ads.adwords.axis.v201710.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201710.cm.Paging;
+import com.google.api.ads.adwords.axis.v201710.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
-import com.google.api.ads.adwords.lib.jaxb.v201702.DownloadFormat;
-import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinition;
-import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinitionDateRangeType;
-import com.google.api.ads.adwords.lib.jaxb.v201702.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.jaxb.v201710.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201710.ReportDefinition;
+import com.google.api.ads.adwords.lib.jaxb.v201710.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201710.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
-import com.google.api.ads.adwords.lib.utils.v201702.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
+import com.google.api.ads.adwords.lib.utils.ReportException;
+import com.google.api.ads.adwords.lib.utils.v201710.ReportDownloader;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -44,7 +50,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.util.Arrays;
 
 /**
@@ -134,20 +139,37 @@ public class AdvancedCreateCredentialFromScratch {
         .build();
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param reportFile the output file for the report contents.
+   * @throws DetailedReportDownloadResponseException if the report request failed with a detailed
+   *     error from the reporting service.
+   * @throws ReportDownloadResponseException if the report request failed with a general error from
+   *     the reporting service.
+   * @throws ReportException if the report request failed due to a transport layer error.
+   * @throws IOException if the report's contents could not be written to {@code reportFile}.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, String reportFile)
-      throws Exception {
+      throws ReportDownloadResponseException, ReportException, IOException {
     // Get the CampaignService.
     CampaignServiceInterface campaignService =
         adWordsServices.get(session, CampaignServiceInterface.class);
 
-    // Create selector.
+    // Create selector to retrieve the first 100 campaigns.
     Selector selector = new Selector();
     selector.setFields(new String[] {"Id", "Name"});
+    Paging paging = new Paging();
+    paging.setStartIndex(0);
+    paging.setNumberResults(100);
 
-    // Get all campaigns.
+    // Get the first page of campaigns.
     CampaignPage page = campaignService.get(selector);
 
+    System.out.printf("Found %d total campaigns.%n", page.getTotalNumEntries());
     // Display campaigns.
     if (page.getEntries() != null) {
       for (Campaign campaign : page.getEntries()) {
@@ -159,8 +181,8 @@ public class AdvancedCreateCredentialFromScratch {
     }
 
     // Create selector.
-    com.google.api.ads.adwords.lib.jaxb.v201702.Selector reportSelector =
-        new com.google.api.ads.adwords.lib.jaxb.v201702.Selector();
+    com.google.api.ads.adwords.lib.jaxb.v201710.Selector reportSelector =
+        new com.google.api.ads.adwords.lib.jaxb.v201710.Selector();
     reportSelector.getFields().addAll(Arrays.asList(
         "CampaignId",
         "AdGroupId",
@@ -190,18 +212,13 @@ public class AdvancedCreateCredentialFromScratch {
 
     ReportDownloadResponse response =
         new ReportDownloader(session).downloadReport(reportDefinition);
-    if (response.getHttpStatus() == HttpURLConnection.HTTP_OK) {
-      FileOutputStream fos = new FileOutputStream(new File(reportFile));
-      Streams.copy(response.getInputStream(), fos);
-      fos.close();
-      System.out.printf("Report successfully downloaded: %s%n", reportFile);
-    } else {
-      System.out.printf("Report was not downloaded. %d: %s%n", response.getHttpStatus(),
-          response.getHttpResponseMessage());
-    }
+    FileOutputStream fos = new FileOutputStream(new File(reportFile));
+    Streams.copy(response.getInputStream(), fos);
+    fos.close();
+    System.out.printf("Report successfully downloaded: %s%n", reportFile);
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     if (CLIENT_ID.equals("INSERT_CLIENT_ID_HERE")
         || CLIENT_SECRET.equals("INSERT_CLIENT_SECRET_HERE")) {
       throw new IllegalArgumentException("Please input your client IDs or secret. "
@@ -214,18 +231,54 @@ public class AdvancedCreateCredentialFromScratch {
     DataStoreFactory storeFactory = new MemoryDataStoreFactory();
 
     // Authorize and store your credential.
-    authorize(storeFactory, USER_ID);
+    try {
+      authorize(storeFactory, USER_ID);
+    } catch (Exception e) {
+      System.err.printf("Failed to authorize credentials: %s%n", e);
+      return;
+    }
 
     // Create a AdWordsSession from the credential store. You will typically do this
     // in a servlet interceptor for a web application or per separate thread
     // of your offline application.
-    AdWordsSession adWordsSession = createAdWordsSession(USER_ID);
+    AdWordsSession adWordsSession;
+
+    try {
+      adWordsSession = createAdWordsSession(USER_ID);
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (IOException ioe) {
+      System.err.printf(
+          "Failed to load OAuth credentials from local data store. Exception: %s%n", ioe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
     // Location to download report to.
     String reportFile = System.getProperty("user.home") + File.separatorChar + "report.csv";
 
-    runExample(adWordsServices, adWordsSession, reportFile);
+    try {
+      runExample(adWordsServices, adWordsSession, reportFile);
+    } catch (ReportDownloadResponseException rde) {
+      // A ReportDownloadResponseException will be thrown if the HTTP status code in the response
+      // indicates an error occurred, but the response did not contain further details.
+      System.err.printf("Report was not downloaded due to: %s%n", rde);
+    } catch (ReportException re) {
+      // A ReportException will be thrown if the download failed due to a transport layer exception.
+      System.err.printf("Report was not downloaded due to transport layer exception: %s%n", re);
+    } catch (IOException ioe) {
+      // An IOException in this example indicates that the report's contents could not be read from
+      // the response.
+      System.err.printf("Report was not read due to an IOException: %s%n", ioe);
+    }
   }
 }

@@ -14,6 +14,7 @@
 
 package adwords.axis.v201710.reporting;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
@@ -21,16 +22,23 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.jaxb.v201710.DownloadFormat;
+import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
+import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
+import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.v201710.ReportDownloaderInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
 import com.google.common.primitives.Longs;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
@@ -45,28 +53,83 @@ import org.apache.commons.lang.SystemUtils;
  * "ads.properties" file. See README for more info.
  */
 public class StreamCriteriaReportResults {
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential =
-        new OfflineCredentials.Builder()
-            .forApi(Api.ADWORDS)
-            .fromFile()
-            .build()
-            .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session = new AdWordsSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
+
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session);
+    try {
+      runExample(adWordsServices, session);
+    } catch (DetailedReportDownloadResponseException dre) {
+      // A DetailedReportDownloadResponseException will be thrown if the HTTP status code in the
+      // response indicates an error occurred and the response body contains XML with further
+      // information, such as the fieldPath and trigger.
+      System.err.printf(
+          "Report was not downloaded due to a %s with errorText '%s', trigger '%s' and "
+              + "field path '%s'%n",
+          dre.getClass().getSimpleName(),
+          dre.getErrorText(),
+          dre.getTrigger(),
+          dre.getFieldPath());
+    } catch (ReportDownloadResponseException rde) {
+      // A ReportDownloadResponseException will be thrown if the HTTP status code in the response
+      // indicates an error occurred, but the response did not contain further details.
+      System.err.printf("Report was not downloaded due to: %s%n", rde);
+    } catch (ReportException re) {
+      // A ReportException will be thrown if the download failed due to a transport layer exception.
+      System.err.printf("Report was not downloaded due to transport layer exception: %s%n", re);
+    } catch (IOException ioe) {
+      // An IOException in this example indicates that the report's contents could not be read from
+      // the response.
+      System.err.printf(
+          "Report was not read due to an IOException: %s%n", ioe);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @throws DetailedReportDownloadResponseException if the report request failed with a detailed
+   *     error from the reporting service.
+   * @throws ReportDownloadResponseException if the report request failed with a general error from
+   *     the reporting service.
+   * @throws ReportException if the report request failed due to a transport layer error.
+   * @throws IOException if the report's contents could not be read from the response.
+   */
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session)
-      throws Exception {
+      throws ReportDownloadResponseException, ReportException, IOException  {
     // Create the query.
     String query =
         "SELECT Id, AdNetworkType1, Impressions "

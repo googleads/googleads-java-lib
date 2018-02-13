@@ -14,8 +14,11 @@
 
 package adwords.axis.v201710.advancedoperations;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201710.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyOperation;
@@ -40,9 +43,12 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
-import javax.xml.rpc.ServiceException;
+import javax.annotation.Nullable;
 
 /**
  * This example adds a portfolio bidding strategy and uses it to construct a campaign.
@@ -53,26 +59,78 @@ public class UsePortfolioBiddingStrategy {
   //           shared budget ID here.
   private static final Long SHARED_BUDGET_ID = null; 
   
-  public static void main(String[] args) throws Exception {
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.ADWORDS)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session = new AdWordsSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
-    runExample(adWordsServices, session, SHARED_BUDGET_ID);
+    try {
+      runExample(adWordsServices, session, SHARED_BUDGET_ID);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf(
+          "Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 
-  public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,
-      Long sharedBudgetId) throws Exception {
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param sharedBudgetId the ID of the shared budget to use. If null, this example will create a
+   *     new shared budget.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
+  public static void runExample(
+      AdWordsServicesInterface adWordsServices,
+      AdWordsSession session,
+      @Nullable Long sharedBudgetId)
+      throws RemoteException {
     SharedBiddingStrategy portfolioBiddingStrategy =
         createBiddingStrategy(adWordsServices, session);
     if (sharedBudgetId == null) {
@@ -88,13 +146,11 @@ public class UsePortfolioBiddingStrategy {
    *
    * @param adWordsServices the user to run the example with
    * @param session the AdWordsSession
-   * @throws RemoteException
-   * @throws ApiException
-   * @throws ServiceException
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
    */
   private static SharedBiddingStrategy createBiddingStrategy(
-      AdWordsServicesInterface adWordsServices, AdWordsSession session)
-      throws ApiException, RemoteException, ServiceException {
+      AdWordsServicesInterface adWordsServices, AdWordsSession session) throws RemoteException {
     // Get the BiddingStrategyService, which loads the required classes.
     BiddingStrategyServiceInterface biddingStrategyService =
         adWordsServices.get(session, BiddingStrategyServiceInterface.class);
@@ -133,13 +189,11 @@ public class UsePortfolioBiddingStrategy {
    *
    * @param adWordsServices the user to run the example with
    * @param session the AdWordsSession
-   * @throws ServiceException
-   * @throws RemoteException
-   * @throws ApiException
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
    */
-  private static Budget createSharedBudget(AdWordsServicesInterface adWordsServices,
-      AdWordsSession session)
-      throws ServiceException, ApiException, RemoteException {
+  private static Budget createSharedBudget(
+      AdWordsServicesInterface adWordsServices, AdWordsSession session) throws RemoteException {
     // Get the BudgetService, which loads the required classes.
     BudgetServiceInterface budgetService =
         adWordsServices.get(session, BudgetServiceInterface.class);
@@ -174,13 +228,15 @@ public class UsePortfolioBiddingStrategy {
    * @param session the AdWordsSession
    * @param biddingStrategyId the bidding strategy id to use
    * @param sharedBudgetId the shared budget id to use
-   * @throws RemoteException
-   * @throws ApiException
-   * @throws ServiceException
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
    */
   private static Campaign createCampaignWithBiddingStrategy(
-      AdWordsServicesInterface adWordsServices, AdWordsSession session, Long biddingStrategyId,
-      Long sharedBudgetId) throws ApiException, RemoteException, ServiceException {
+      AdWordsServicesInterface adWordsServices,
+      AdWordsSession session,
+      Long biddingStrategyId,
+      Long sharedBudgetId)
+      throws RemoteException {
     // Get the CampaignService, which loads the required classes.
     CampaignServiceInterface campaignService =
         adWordsServices.get(session, CampaignServiceInterface.class);

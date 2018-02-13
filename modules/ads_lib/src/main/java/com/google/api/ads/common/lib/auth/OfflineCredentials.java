@@ -419,6 +419,7 @@ public class OfflineCredentials {
      * <li>clientId</li>
      * <li>clientSecret</li>
      * <li>jsonKeyFilePath</li>
+     * <li>serviceAccountUser</li>
      * </ul><br>
      * For example, the AdWords OAuth2 refresh token can be read from:
      * <code>api.adwords.refreshToken</code>

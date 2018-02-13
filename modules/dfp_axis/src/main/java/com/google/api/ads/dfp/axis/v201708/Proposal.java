@@ -141,9 +141,8 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10 with the range from 0 to
-     *                 100000. This attribute is required and will be used
-     * to calculate the revenue
-     *                 in reporting.
+     *                 100000. This attribute will be used to calculate the
+     * revenue in reporting.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>not using programmatic, using sales management.</li></ul></span>
@@ -1107,9 +1106,8 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10 with the range from 0 to
-     *                 100000. This attribute is required and will be used
-     * to calculate the revenue
-     *                 in reporting.
+     *                 100000. This attribute will be used to calculate the
+     * revenue in reporting.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>not using programmatic, using sales management.</li></ul></span>
@@ -1129,9 +1127,8 @@ public class Proposal  implements java.io.Serializable {
      * value is in
      *                 terms of millipercent, and should be multiples of
      * 10 with the range from 0 to
-     *                 100000. This attribute is required and will be used
-     * to calculate the revenue
-     *                 in reporting.
+     *                 100000. This attribute will be used to calculate the
+     * revenue in reporting.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>not using programmatic, using sales management.</li></ul></span>

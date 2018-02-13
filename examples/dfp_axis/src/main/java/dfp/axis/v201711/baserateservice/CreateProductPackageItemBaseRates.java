@@ -14,11 +14,18 @@
 
 package dfp.axis.v201711.baserateservice;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
+import com.google.api.ads.dfp.axis.v201711.ApiError;
+import com.google.api.ads.dfp.axis.v201711.ApiException;
 import com.google.api.ads.dfp.axis.v201711.BaseRate;
 import com.google.api.ads.dfp.axis.v201711.BaseRateServiceInterface;
 import com.google.api.ads.dfp.axis.v201711.Money;
@@ -26,6 +33,7 @@ import com.google.api.ads.dfp.axis.v201711.ProductPackageItemBaseRate;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.utils.examples.ArgumentNames;
 import com.google.api.client.auth.oauth2.Credential;
+import java.rmi.RemoteException;
 
 /**
  * This example creates a product package item base rate. To determine which base rates exist,
@@ -46,8 +54,18 @@ public class CreateProductPackageItemBaseRates {
     private Long productPackageItemId;
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param dfpServices the services factory.
+   * @param session the session.
+   * @param rateCardId the rate card ID to add the base rate to.
+   * @param productPackageItemId the product package item to apply the base rate to.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
   public static void runExample(DfpServices dfpServices, DfpSession session, long rateCardId,
-      long productPackageItemId) throws Exception {
+      long productPackageItemId) throws RemoteException {
     // Get the BaseRateService.
     BaseRateServiceInterface baseRateService =
         dfpServices.get(session, BaseRateServiceInterface.class);
@@ -79,19 +97,37 @@ public class CreateProductPackageItemBaseRates {
     }
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.DFP)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    DfpSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.DFP)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct a DfpSession.
-    DfpSession session = new DfpSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct a DfpSession.
+      session =
+          new DfpSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     DfpServices dfpServices = new DfpServices();
 
@@ -103,6 +139,25 @@ public class CreateProductPackageItemBaseRates {
       params.productPackageItemId = Long.parseLong("INSERT_PRODUCT_PACKAGE_ITEM_ID_HERE");
     }
 
-    runExample(dfpServices, session, params.rateCardId, params.productPackageItemId);
+    try {
+      runExample(dfpServices, session, params.rateCardId, params.productPackageItemId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the dfp.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 }

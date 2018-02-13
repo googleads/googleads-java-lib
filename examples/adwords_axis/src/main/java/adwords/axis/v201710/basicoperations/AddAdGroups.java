@@ -14,6 +14,8 @@
 
 package adwords.axis.v201710.basicoperations;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroup;
@@ -23,6 +25,8 @@ import com.google.api.ads.adwords.axis.v201710.cm.AdGroupReturnValue;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupServiceInterface;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupStatus;
 import com.google.api.ads.adwords.axis.v201710.cm.AdRotationMode;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201710.cm.Bids;
 import com.google.api.ads.adwords.axis.v201710.cm.CpcBid;
@@ -37,8 +41,12 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
+import java.rmi.RemoteException;
 
 /**
  * This example adds ad groups to a campaign. To get campaigns, run
@@ -54,19 +62,37 @@ public class AddAdGroups {
     private Long campaignId;
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.ADWORDS)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session = new AdWordsSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
@@ -77,12 +103,41 @@ public class AddAdGroups {
       params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
     }
 
-    runExample(adWordsServices, session, params.campaignId);
+    try {
+      runExample(adWordsServices, session, params.campaignId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf(
+          "Request failed unexpectedly due to RemoteException: %s%n", re);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param campaignId the ID of the campaign where the ad groups will be created.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, long campaignId)
-      throws Exception {
+      throws RemoteException {
     // Get the AdGroupService.
     AdGroupServiceInterface adGroupService =
         adWordsServices.get(session, AdGroupServiceInterface.class);
@@ -122,8 +177,10 @@ public class AddAdGroups {
 
     // Create ad group bid.
     BiddingStrategyConfiguration biddingStrategyConfiguration = new BiddingStrategyConfiguration();
+    Money cpcBidMoney = new Money();
+    cpcBidMoney.setMicroAmount(10_000_000L);
     CpcBid bid = new CpcBid();
-    bid.setBid(new Money(null, 10000000L));
+    bid.setBid(cpcBidMoney);
     biddingStrategyConfiguration.setBids(new Bids[] {bid});
     adGroup.setBiddingStrategyConfiguration(biddingStrategyConfiguration);
 
@@ -134,8 +191,10 @@ public class AddAdGroups {
     adGroup2.setCampaignId(campaignId);
 
     BiddingStrategyConfiguration biddingStrategyConfiguration2 = new BiddingStrategyConfiguration();
+    Money cpcBidMoney2 = new Money();
+    cpcBidMoney2.setMicroAmount(10_000_000L);
     CpcBid bid2 = new CpcBid();
-    bid2.setBid(new Money(null, 10000000L));
+    bid2.setBid(cpcBidMoney2);
     biddingStrategyConfiguration2.setBids(new Bids[] {bid2});
     adGroup2.setBiddingStrategyConfiguration(biddingStrategyConfiguration2);
 

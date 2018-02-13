@@ -23,19 +23,19 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>dfp-axis-examples</artifactId>
-  <version>3.10.0</version>
+  <version>3.11.0</version>
 
   <packaging>jar</packaging>
   <name>DFP Examples using Axis</name>
   <description>
-    This project contains examples of using the Ads APIs Java client library
-    with DFP and the Apache Axis framework. Please see the README file for
-    more information about how to use the library.
+    This project contains examples of using the Ads APIs client library for
+    Java with DFP and the Apache Axis framework. Please see the README file
+    for more information about how to use the library.
   </description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smokeMainClass>dfp.axis.v201711.companyservice.GetAllCompanies</smokeMainClass>
+    <smokeMainClass>dfp.axis.v201802.companyservice.GetAllCompanies</smokeMainClass>
   </properties>
 
   <build>
@@ -86,24 +86,24 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.10.0</version>
+      <version>3.11.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfp-axis</artifactId>
-      <version>3.10.0</version>
+      <version>3.11.0</version>
     </dependency>
 
     <!-- Third party dependencies -->
     <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client-gson</artifactId>
-      <version>1.22.0</version>
+      <version>1.23.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.22.0</version>
+      <version>1.23.0</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>

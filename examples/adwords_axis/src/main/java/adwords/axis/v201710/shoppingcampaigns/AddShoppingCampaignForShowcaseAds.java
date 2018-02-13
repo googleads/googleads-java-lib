@@ -14,6 +14,8 @@
 
 package adwords.axis.v201710.shoppingcampaigns;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201710.shopping.ProductDimensions;
@@ -31,6 +33,7 @@ import com.google.api.ads.adwords.axis.v201710.cm.AdGroupReturnValue;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupServiceInterface;
 import com.google.api.ads.adwords.axis.v201710.cm.AdGroupType;
 import com.google.api.ads.adwords.axis.v201710.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyType;
@@ -57,6 +60,9 @@ import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.utils.examples.ArgumentNames;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.io.IOException;
@@ -78,18 +84,37 @@ public class AddShoppingCampaignForShowcaseAds {
     private Long merchantId;
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential =
-        new OfflineCredentials.Builder()
-            .forApi(Api.ADWORDS)
-            .fromFile()
-            .build()
-            .generateCredential();
+  public static void main(String[] args) {
+    AdWordsSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.ADWORDS)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct an AdWordsSession.
-    AdWordsSession session =
-        new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+      // Construct an AdWordsSession.
+      session =
+          new AdWordsSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     AdWordsServicesInterface adWordsServices = AdWordsServices.getInstance();
 
@@ -101,15 +126,47 @@ public class AddShoppingCampaignForShowcaseAds {
       params.merchantId = Long.parseLong("INSERT_MERCHANT_ID_HERE");
     }
 
-    runExample(adWordsServices, session, params.budgetId, params.merchantId);
+    try {
+      runExample(adWordsServices, session, params.budgetId, params.merchantId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the adwords.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    } catch (IOException ioe) {
+      System.err.printf("Example failed due to IOException: %s%n", ioe);
+    }
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param adWordsServices the services factory.
+   * @param session the session.
+   * @param budgetId the budget ID to use for the new campaign.
+   * @param merchantId the Merchant Center ID for the new campaign.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   * @throws IOException if unable to get media data from the URL.
+   */
   public static void runExample(
       AdWordsServicesInterface adWordsServices,
       AdWordsSession session,
       Long budgetId,
       Long merchantId)
-      throws Exception {
+      throws IOException {
     Campaign campaign = createCampaign(adWordsServices, session, budgetId, merchantId);
     System.out.printf(
         "Campaign with name '%s' and ID %d was added.%n", campaign.getName(), campaign.getId());
@@ -132,7 +189,7 @@ public class AddShoppingCampaignForShowcaseAds {
       AdWordsSession session,
       Long budgetId,
       Long merchantId)
-      throws RemoteException, ApiException {
+      throws RemoteException {
     // Get the CampaignService
     CampaignServiceInterface campaignService =
         adWordsServices.get(session, CampaignServiceInterface.class);
@@ -184,7 +241,7 @@ public class AddShoppingCampaignForShowcaseAds {
   /** Creates an ad group in the Shopping campaign. */
   private static AdGroup createAdGroup(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Campaign campaign)
-      throws RemoteException, ApiException {
+      throws RemoteException {
     // Get the AdGroupService.
     AdGroupServiceInterface adGroupService =
         adWordsServices.get(session, AdGroupServiceInterface.class);
@@ -224,7 +281,7 @@ public class AddShoppingCampaignForShowcaseAds {
   /** Creates a Showcase ad. */
   private static AdGroupAd createShowcaseAd(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, AdGroup adGroup)
-      throws IOException, RemoteException, ApiException {
+      throws IOException {
     // Create the Showcase ad.
     AdGroupAdServiceInterface adGroupAdService =
         adWordsServices.get(session, AdGroupAdServiceInterface.class);
@@ -263,7 +320,7 @@ public class AddShoppingCampaignForShowcaseAds {
   /** Creates the product partition tree for the ad group. */
   private static ProductPartitionTree createProductPartitions(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, Long adGroupId)
-      throws ApiException, RemoteException {
+      throws RemoteException {
     AdGroupCriterionServiceInterface adGroupCriterionService =
         adWordsServices.get(session, AdGroupCriterionServiceInterface.class);
 

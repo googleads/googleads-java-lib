@@ -43,6 +43,8 @@ public final class ArgumentNames {
 
   public static final String CONVERSION_VALUE = "--conversionValue";
 
+  public static final String CPC_BID_MICRO_AMOUNT = "--cpcBidMicroAmount";
+
   public static final String CREATE_DEFAULT_PARTITION = "--createDefaultPartition";
 
   public static final String CRITERION_ID = "--criterionId";
@@ -76,5 +78,7 @@ public final class ArgumentNames {
   public static final String TRIAL_ID = "--trialId";
 
   public static final String UPLOAD_TIME = "--uploadTime";
+
+  public static final String OFFLINE_DATA_UPLOAD_TYPE = "--offlineDataUploadType";
 
 }

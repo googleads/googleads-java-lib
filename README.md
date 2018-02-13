@@ -1,8 +1,8 @@
-Google Ads API Java Client Library
-==================================
+Google Ads APIs Client Library for Java
+=======================================
 
-This project hosts the Java client library for the various SOAP-Based Ads APIs
-(AdWords and DFP) at Google.
+This project hosts the client library for Java for the various SOAP-based ads
+APIs (AdWords and DFP) at Google.
 
 ## Features
 
@@ -86,7 +86,7 @@ are in the package `com.google.api.ads.adwords.{version}`.
         download a file like ``adwords-axis-maven-and-examples-v.vv.vv.tar.gz``
         and extract its contents to a directory.
 
-        Import the eclipse project by going to File > Import, then General >
+        Import the Eclipse project by going to File > Import, then General >
         Existing projects into workspace and selecting the extracted folder.
 
     *   **If using Maven from the command line**
@@ -258,7 +258,8 @@ for their proxy.
     https.proxyUser      Optional username for proxy authentication    someone
     https.proxyPassword  Optional proxy server password                secret
 
-These properties can be set with java args in your eclipse run configuration:
+These properties can be set with JVM arguments in your Eclipse run
+configuration:
 
     -Dhttps.proxyHost=web-proxy -Dhttps.proxyPort=8080 -Dhttps.proxyUser=someone
     -Dhttps.proxyPassword=secret ...
@@ -279,11 +280,11 @@ If necessary, set this up in code by doing the following:
 ## Applications
 
 *   The [Keyword Optimizer application](https://github.com/googleads/keyword-optimizer)
-    is an open-source tool that uses the Google Ads API Java Client Library to
-    find additional sets of keywords for AdWords.
+    is an open-source tool that uses the Google Ads APIs Client Library for Java
+    to find additional sets of keywords for AdWords.
 *   The [AwReporting application](https://github.com/googleads/aw-reporting) is
-    an open-source application that uses the Google Ads API Java Client Library
-    to download reports from multiple AdWords accounts and store the report
+    an open-source application that uses the Google Ads APIs Client Library for
+    Java to download reports from multiple AdWords accounts and store the report
     contents in a database.
 
 ## Where do I submit bug reports, feature requests and patches?

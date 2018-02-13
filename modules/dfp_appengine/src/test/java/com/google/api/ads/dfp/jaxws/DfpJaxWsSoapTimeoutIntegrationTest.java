@@ -16,8 +16,8 @@ package com.google.api.ads.dfp.jaxws;
 
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.dfp.jaxws.factory.DfpServices;
-import com.google.api.ads.dfp.jaxws.v201702.Company;
-import com.google.api.ads.dfp.jaxws.v201702.CompanyServiceInterface;
+import com.google.api.ads.dfp.jaxws.v201711.Company;
+import com.google.api.ads.dfp.jaxws.v201711.CompanyServiceInterface;
 import com.google.api.ads.dfp.lib.client.DfpSession;
 import com.google.api.ads.dfp.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -38,7 +38,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DfpJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201702";  
+  private static final String API_VERSION = "v201711";  
 
   @Rule
   public final ExpectedException thrown = ExpectedException.none(); 

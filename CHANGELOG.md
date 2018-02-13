@@ -1,3 +1,25 @@
+3.11.0 - 2/13/2018
+-----------------
+AdWords:
+  - Modified all examples to demonstrate proper exception handling.
+  - Removed support and examples for v201702. See deprecation schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Added v201710 ReportQuery and ServiceQuery utilities for JAX-WS and Axis to
+    simplify the process of creating AWQL queries.
+
+DFP:
+  - Added support for v201802.
+  - Removed support for v201702.
+  - Removed v201705 examples.
+
+Common:
+  - Added list of available extensions and applications to README.md.
+    See https://github.com/googleads/googleads-java-lib/issues/127.
+  - Upgraded all dependencies in group IDs 'com.google.api-client' and
+    'com.google.http-client' to version 1.23.0. Fixes
+    https://github.com/googleads/googleads-java-lib/issues/130.
+
+
 3.10.0 - 11/15/2017
 -----------------
 AdWords:
@@ -1417,7 +1439,7 @@ DFA:
 DFP:
   - Added support for v201211.
   - Updated generated code for all versions to support UnsupportedCreative and
-    new UKNOWN enum values.
+    new UNKNOWN enum values.
   - Removed support for v201111 and v201201.
 
 Common:

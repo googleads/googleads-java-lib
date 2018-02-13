@@ -50,16 +50,6 @@ public interface ProposalLineItemServiceInterface {
      * 
      *         Creates new {@link ProposalLineItem} objects.
      *         
-     *         For each proposal line item, the following fields are required:
-     *         <ul>
-     *         <li>{@link ProposalLineItem#proposalId}</li>
-     *         <li>{@link ProposalLineItem#rateCardId}</li>
-     *         <li>{@link ProposalLineItem#productId}</li>
-     *         <li>{@link ProposalLineItem#name}</li>
-     *         <li>{@link ProposalLineItem#startDateTime}</li>
-     *         <li>{@link ProposalLineItem#endDateTime}</li>
-     *         </ul>
-     *         
      *         @param proposalLineItems the proposal line items to create
      *         @return the created proposal line items with their IDs filled in
      *       

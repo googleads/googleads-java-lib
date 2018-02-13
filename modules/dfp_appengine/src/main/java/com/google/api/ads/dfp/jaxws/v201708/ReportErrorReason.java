@@ -222,8 +222,19 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 Not all {@link Column} objects requested are supported for the given set
+     *                 The provided report violates one or more constraints, which govern incompatibilities and
+     *                 requirements between different report properties. Some reasons for constraint violations
+     *                 include:
+     *                 <ul>
+     *                 <li> Not all {@link Column} objects requested are supported for the given set
      *                 of {@link Dimension} objects.
+     *                 <li> The report's date range is not compatible with the given set of {@link Column}
+     *                 objects.
+     *                 <li> The report's {@link TimeZoneType} is not compatible with the given set of
+     *                 {@link Column} and {@link Dimension} objects (version 201802 and later).
+     *                 <li> The report's currency is not compatible with the given set of {@link Column} objects
+     *                 (version 201802 and later).
+     *                 </ul>
      *               
      * 
      */

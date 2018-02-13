@@ -14,13 +14,20 @@
 
 package dfp.axis.v201711.reportservice;
 
+import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
+
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
+import com.google.api.ads.common.lib.exception.OAuthException;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.utils.v201711.ReportDownloader;
 import com.google.api.ads.dfp.axis.utils.v201711.StatementBuilder;
+import com.google.api.ads.dfp.axis.v201711.ApiError;
+import com.google.api.ads.dfp.axis.v201711.ApiException;
 import com.google.api.ads.dfp.axis.v201711.ExportFormat;
 import com.google.api.ads.dfp.axis.v201711.ReportDownloadOptions;
 import com.google.api.ads.dfp.axis.v201711.ReportJob;
@@ -36,7 +43,9 @@ import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import com.google.common.io.Resources;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.Arrays;
 
 /**
@@ -54,8 +63,20 @@ public class RunSavedQuery {
     private Long savedQueryId;
   }
 
+  /**
+   * Runs the example.
+   *
+   * @param dfpServices the services factory.
+   * @param session the session.
+   * @param savedQueryId the ID of the saved query to run. This ID is part of the URL in the DFP UI.
+   * @throws ApiException if the API request failed with one or more service errors.
+   * @throws RemoteException if the API request failed due to other errors.
+   * @throws IOException if unable to write the response to a file.
+   * @throws InterruptedException if the thread is interrupted while waiting for the report to
+   *     complete.
+   */
   public static void runExample(DfpServices dfpServices, DfpSession session, long savedQueryId)
-      throws Exception {
+      throws IOException, InterruptedException {
     // Get the ReportService.
     ReportServiceInterface reportService = dfpServices.get(session, ReportServiceInterface.class);
 
@@ -105,19 +126,37 @@ public class RunSavedQuery {
     System.out.println("done.");
   }
 
-  public static void main(String[] args) throws Exception {
-    // Generate a refreshable OAuth2 credential.
-    Credential oAuth2Credential = new OfflineCredentials.Builder()
-        .forApi(Api.DFP)
-        .fromFile()
-        .build()
-        .generateCredential();
+  public static void main(String[] args) {
+    DfpSession session;
+    try {
+      // Generate a refreshable OAuth2 credential.
+      Credential oAuth2Credential =
+          new OfflineCredentials.Builder()
+              .forApi(Api.DFP)
+              .fromFile()
+              .build()
+              .generateCredential();
 
-    // Construct a DfpSession.
-    DfpSession session = new DfpSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(oAuth2Credential)
-        .build();
+      // Construct a DfpSession.
+      session =
+          new DfpSession.Builder().fromFile().withOAuth2Credential(oAuth2Credential).build();
+    } catch (ConfigurationLoadException cle) {
+      System.err.printf(
+          "Failed to load configuration from the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, cle);
+      return;
+    } catch (ValidationException ve) {
+      System.err.printf(
+          "Invalid configuration in the %s file. Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, ve);
+      return;
+    } catch (OAuthException oe) {
+      System.err.printf(
+          "Failed to create OAuth credentials. Check OAuth settings in the %s file. "
+              + "Exception: %s%n",
+          DEFAULT_CONFIGURATION_FILENAME, oe);
+      return;
+    }
 
     DfpServices dfpServices = new DfpServices();
 
@@ -128,6 +167,29 @@ public class RunSavedQuery {
       params.savedQueryId = Long.parseLong("INSERT_SAVED_QUERY_ID_HERE");
     }
 
-    runExample(dfpServices, session, params.savedQueryId);
+    try {
+      runExample(dfpServices, session, params.savedQueryId);
+    } catch (ApiException apiException) {
+      // ApiException is the base class for most exceptions thrown by an API request. Instances
+      // of this exception have a message and a collection of ApiErrors that indicate the
+      // type and underlying cause of the exception. Every exception object in the dfp.axis
+      // packages will return a meaningful value from toString
+      //
+      // ApiException extends RemoteException, so this catch block must appear before the
+      // catch block for RemoteException.
+      System.err.println("Request failed due to ApiException. Underlying ApiErrors:");
+      if (apiException.getErrors() != null) {
+        int i = 0;
+        for (ApiError apiError : apiException.getErrors()) {
+          System.err.printf("  Error %d: %s%n", i++, apiError);
+        }
+      }
+    } catch (RemoteException re) {
+      System.err.printf("Request failed unexpectedly due to RemoteException: %s%n", re);
+    } catch (IOException ioe) {
+      System.err.printf("Example failed due to IOException: %s%n", ioe);
+    } catch (InterruptedException ie) {
+      System.err.printf("Thread was interrupted: %s%n", ie);
+    }
   }
 }
