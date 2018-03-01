@@ -247,7 +247,7 @@ public class UploadOfflineData {
       OfflineDataUploadType offlineDataUploadType,
       String advertiserUploadTime,
       String bridgeMapVersionId,
-      int partnerId)
+      Integer partnerId)
       throws RemoteException, UnsupportedEncodingException {
     // This example requires exactly 2 email addresses.
     if (emailAddresses.size() != 2) {
@@ -297,12 +297,12 @@ public class UploadOfflineData {
     offlineDataUpload.setExternalUploadId(externalUploadId);
     offlineDataUpload.setOfflineDataList(
         offlineDataList.toArray(new OfflineData[offlineDataList.size()]));
+    offlineDataUpload.setUploadType(offlineDataUploadType);
 
     // Set the type and metadata of this upload.
     StoreSalesUploadCommonMetadata storeSalesUploadMetadata;
     if (OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY.equals(offlineDataUploadType)) {
       storeSalesUploadMetadata = new FirstPartyUploadMetadata();
-      offlineDataUpload.setUploadType(OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY);
     } else {
       ThirdPartyUploadMetadata thirdPartyUploadMetadata = new ThirdPartyUploadMetadata();
       thirdPartyUploadMetadata.setAdvertiserUploadTime(advertiserUploadTime);
@@ -312,11 +312,9 @@ public class UploadOfflineData {
       thirdPartyUploadMetadata.setBridgeMapVersionId(bridgeMapVersionId);
       thirdPartyUploadMetadata.setPartnerId(partnerId);
       storeSalesUploadMetadata = thirdPartyUploadMetadata;
-      offlineDataUpload.setUploadType(OfflineDataUploadType.STORE_SALES_UPLOAD_THIRD_PARTY);
     }
     storeSalesUploadMetadata.setLoyaltyRate(1.0);
     storeSalesUploadMetadata.setTransactionUploadRate(1.0);
-    offlineDataUpload.setUploadType(offlineDataUploadType);
 
     UploadMetadata uploadMetadata = new UploadMetadata();
     uploadMetadata.setStoreSalesUploadCommonMetadata(storeSalesUploadMetadata);

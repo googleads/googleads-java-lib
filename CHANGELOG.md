@@ -1,3 +1,17 @@
+3.12.0 - 2/1/2018
+-----------------
+AdWords:
+  - Added support and examples for v201802.
+  - Added support for tracking URL template and custom parameters in the
+    [Shopping product partition utility](https://github.com/googleads/googleads-java-lib/wiki/Shopping-product-partition-utility-for-AdWords).
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
+
 3.11.0 - 2/13/2018
 -----------------
 AdWords:

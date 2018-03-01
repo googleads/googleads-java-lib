@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc. All Rights Reserved.
+// Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -159,16 +159,71 @@ public class ProductPartitionNodeDifferTest {
         2000000L);
     // Regardless of which is original and which is new, the differ should return the same
     // NodeDifference for this case.
-    assertEquals(NodeDifference.BID_CHANGE,
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
-    assertEquals(NodeDifference.BID_CHANGE,
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
 
     // Result should be the same if one of the nodes has a null bid.
     newNode = newNode.setBid(null);
-    assertEquals(NodeDifference.BID_CHANGE,
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
-    assertEquals(NodeDifference.BID_CHANGE,
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
+  }
+
+  @Test
+  public void testFindNodeDifference_trackingTemplateDiffers() {
+    ProductPartitionNode origNode = new ProductPartitionNode(null,
+        ProductDimensions.createOfferId("1234"), -1L, dimensionComparator).asBiddableUnit().setBid(
+        1000000L).setTrackingUrlTemplate("http://www.example.com/tracking/1");
+    ProductPartitionNode newNode = new ProductPartitionNode(null,
+        ProductDimensions.createOfferId("1234"), -1L, dimensionComparator).asBiddableUnit().setBid(
+        1000000L).setTrackingUrlTemplate("http://www.example.com/tracking/2");
+    // Regardless of which is original and which is new, the differ should return the same
+    // NodeDifference for this case.
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
+    // Result should be the same if one of the nodes has a null tracking template.
+    newNode = newNode.setTrackingUrlTemplate(null);
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
+  }
+
+  @Test
+  public void testFindNodeDifference_customParametersDiffers() {
+    ProductPartitionNode origNode =
+        new ProductPartitionNode(
+                null, ProductDimensions.createOfferId("1234"), -1L, dimensionComparator)
+            .asBiddableUnit()
+            .setBid(1000000L)
+            .putCustomParameter("param0", "value0")
+            .putCustomParameter("param1", "value1");
+
+    ProductPartitionNode newNode =
+        new ProductPartitionNode(
+                null, ProductDimensions.createOfferId("1234"), -1L, dimensionComparator)
+            .asBiddableUnit()
+            .setBid(1000000L)
+            .putCustomParameter("param0", "newValue0")
+            .putCustomParameter("param1", "newValue1");
+    // Regardless of which is original and which is new, the differ should return the same
+    // NodeDifference for this case.
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
+    // Result should be the same if one of the nodes has a null custom parameters.
+    for (String paramKey : newNode.getCustomParameters().keySet()) {
+      newNode.removeCustomParameter(paramKey);
+    }
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
+        ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
+    assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
   }
 

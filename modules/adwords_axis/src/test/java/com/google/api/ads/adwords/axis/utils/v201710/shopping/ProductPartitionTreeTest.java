@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc. All Rights Reserved.
+// Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.api.ads.adwords.axis.v201710.cm.BiddableAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201710.cm.Bids;
 import com.google.api.ads.adwords.axis.v201710.cm.CpcBid;
+import com.google.api.ads.adwords.axis.v201710.cm.CustomParameter;
+import com.google.api.ads.adwords.axis.v201710.cm.CustomParameters;
 import com.google.api.ads.adwords.axis.v201710.cm.Money;
 import com.google.api.ads.adwords.axis.v201710.cm.NegativeAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201710.cm.Operator;
@@ -56,9 +58,11 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Set;
 import javax.xml.namespace.QName;
@@ -251,7 +255,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
 
     // Add an offer C node. This should produce 1 ADD operation.
     ProductPartitionNode offerCNode = brandGoogleNode.addChild(ProductDimensions.createOfferId("C"))
-        .asBiddableUnit().setBid(1500000L);
+        .asBiddableUnit().setBid(1500000L).putCustomParameter("param1", "value1");
 
     // Remove the brand Motorola node. This should produce 1 REMOVE operation.
     tree.getRoot().removeChild(brandMotorola);
@@ -276,34 +280,34 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
     // Check the offer B node that went from excluded to biddable.
     int addOfferBOpNumber =
         opsDescriptorMap.get(offerBNode.getProductPartitionId()).operationNumber;
-    assertEquals("Offer B node with a biddable change should have an add operation for the new ID",
+    assertEquals("Offer B node with a biddable change should have an ADD operation for the new ID",
         Operator.ADD, mutateOperations.get(addOfferBOpNumber).getOperator());
     int removeOfferBOpNumber = opsDescriptorMap.get(offerBOriginalPartitionId).operationNumber;
     assertEquals(
-        "Offer B node with a biddable change should have a remove operation for the original ID",
+        "Offer B node with a biddable change should have a REMOVE operation for the original ID",
         Operator.REMOVE, mutateOperations.get(removeOfferBOpNumber).getOperator());
 
     // Check the offer C node that was added.
     int addOfferCOpNumber =
         opsDescriptorMap.get(offerCNode.getProductPartitionId()).operationNumber;
-    assertEquals("New offer C node should have an add operation for the new ID", Operator.ADD,
+    assertEquals("New offer C node should have an ADD operation for the new ID", Operator.ADD,
         mutateOperations.get(addOfferCOpNumber).getOperator());
 
     // Check the brand null node that went from excluded to biddable.
     int addBrandOtherOpNumber =
         opsDescriptorMap.get(brandOtherNode.getProductPartitionId()).operationNumber;
     assertEquals(
-        "Brand null node with a biddable change should have an add operation for the new ID",
+        "Brand null node with a biddable change should have an ADD operation for the new ID",
         Operator.ADD, mutateOperations.get(addBrandOtherOpNumber).getOperator());
     int brandOtherOpNumber = opsDescriptorMap.get(offerBOriginalPartitionId).operationNumber;
     assertEquals(
-        "Brand null node with a biddable change should have a remove operation for the original ID",
+        "Brand null node with a biddable change should have a REMOVE operation for the original ID",
         Operator.REMOVE, mutateOperations.get(brandOtherOpNumber).getOperator());
 
     // Check the brand Motorola node that was removed.
     int brandMotorolaOpNumber =
         opsDescriptorMap.get(brandMotorolaOriginalPartitionId).operationNumber;
-    assertEquals("Removed node should have a remove operation", Operator.REMOVE,
+    assertEquals("Removed node should have a REMOVE operation", Operator.REMOVE,
         mutateOperations.get(brandMotorolaOpNumber).getOperator());
   }
 
@@ -319,7 +323,12 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
     ProductPartitionNode brand1 =
         rootNode.addChild(ProductDimensions.createBrand("google")).asSubdivision();
     ProductPartitionNode brand1Offer1 =
-        brand1.addChild(ProductDimensions.createOfferId("A")).asBiddableUnit().setBid(1000000L);
+        brand1
+            .addChild(ProductDimensions.createOfferId("A"))
+            .asBiddableUnit()
+            .setBid(1000000L)
+            .putCustomParameter("param1", "value1")
+            .putCustomParameter("param2", "value2");
     ProductPartitionNode brand1Offer2 =
         brand1.addChild(ProductDimensions.createOfferId(null)).asExcludedUnit();
     ProductPartitionNode brand2 =
@@ -433,9 +442,18 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
         true, true, ProductDimensions.createOfferId(null), null, partitionId++, rootPartitionId));
 
     for (int i = 1; i <= (numberOfCriteria - 2); i++) {
-      descriptors.add(
-          new CriterionDescriptor(true, false, ProductDimensions.createOfferId(Integer.toString(i)),
-              10000000L, partitionId++, rootPartitionId));
+      CriterionDescriptor descriptor =
+          new CriterionDescriptor(
+              true,
+              false,
+              ProductDimensions.createOfferId(Integer.toString(i)),
+              10000000L,
+              partitionId++,
+              rootPartitionId,
+              i == 2 ? "http://wwww.example.com/tracking?{lpurl}" : null);
+      descriptor.customParams.put("param1", "value1");
+      descriptor.customParams.put("param2", "value2");
+      descriptors.add(descriptor);
     }
 
     // Split the descriptor list into batches of size pageSize.
@@ -560,16 +578,28 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
     private final Long partitionId;
     private final Long parentPartitionId;
     private final Integer operationNumber;
+    private final String trackingUrlTemplate;
+    private final Map<String, String> customParams;
 
-    /**
-     * Creates a new instance based on explicitly provided attribute values.
-     */
-    CriterionDescriptor(boolean isUnit,
+    CriterionDescriptor(
+        boolean isUnit,
         boolean isExcluded,
         ProductDimension dimension,
         Long bid,
         Long partitionId,
         Long parentPartitionId) {
+      this(isUnit, isExcluded, dimension, bid, partitionId, parentPartitionId, null);
+    }
+
+    /** Creates a new instance based on explicitly provided attribute values. */
+    CriterionDescriptor(
+        boolean isUnit,
+        boolean isExcluded,
+        ProductDimension dimension,
+        Long bid,
+        Long partitionId,
+        Long parentPartitionId,
+        String trackingUrlTemplate) {
       // Add a few sanity checks to catch coding errors in tests as early as possible.
       if (isExcluded) {
         Preconditions.checkArgument(isUnit, "Cannot exclude a non-unit");
@@ -591,6 +621,8 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
       this.partitionId = partitionId;
       this.parentPartitionId = parentPartitionId;
       this.operationNumber = null;
+      this.trackingUrlTemplate = trackingUrlTemplate;
+      this.customParams = new HashMap<>();
     }
 
     /**
@@ -609,6 +641,9 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
         this.parentPartitionId = null;
       }
       this.operationNumber = null;
+      this.trackingUrlTemplate = node.getTrackingUrlTemplate();
+      this.customParams = new HashMap<>();
+      this.customParams.putAll(node.getCustomParameters());
     }
 
     CriterionDescriptor(AdGroupCriterion adGroupCriterion, int operationNumber) {
@@ -619,12 +654,20 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
       this.dimension = partition.getCaseValue();
       this.partitionId = partition.getId();
       this.parentPartitionId = partition.getParentCriterionId();
+      this.customParams = new HashMap<>();
       if (adGroupCriterion instanceof BiddableAdGroupCriterion) {
         BiddableAdGroupCriterion biddableCriterion = (BiddableAdGroupCriterion) adGroupCriterion;
         this.isExcluded = false;
         BiddingStrategyConfiguration biddingConfig =
             biddableCriterion.getBiddingStrategyConfiguration();
         Long bidAmount = null;
+        this.trackingUrlTemplate = biddableCriterion.getTrackingUrlTemplate();
+        if (biddableCriterion.getUrlCustomParameters() != null) {
+          for (CustomParameter customParam :
+              biddableCriterion.getUrlCustomParameters().getParameters()) {
+            this.customParams.put(customParam.getKey(), customParam.getValue());
+          }
+        }
         if (biddingConfig != null) {
           Bids[] bids = biddingConfig.getBids();
           if (bids != null) {
@@ -641,6 +684,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
       } else {
         this.isExcluded = true;
         this.bid = null;
+        this.trackingUrlTemplate = null;
       }
       this.operationNumber = operationNumber;
     }
@@ -655,6 +699,9 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
       assertEquals("bid is incorrect", this.bid, other.bid);
       assertEquals("isUnit is incorrect", this.isUnit, other.isUnit);
       assertEquals("isExcludedUnit is incorrect", this.isExcluded, other.isExcluded);
+      assertEquals(
+          "trackingUrlTemplate is incorrect", this.trackingUrlTemplate, other.trackingUrlTemplate);
+      assertEquals("custom parameters is incorrect", this.customParams, other.customParams);
     }
 
     /**
@@ -674,6 +721,19 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
       } else {
         BiddableAdGroupCriterion biddable = new BiddableAdGroupCriterion();
         biddable.setUserStatus(UserStatus.ENABLED);
+        biddable.setTrackingUrlTemplate(trackingUrlTemplate);
+        if (!customParams.isEmpty()) {
+          CustomParameters customParameters = new CustomParameters();
+          List<CustomParameter> customParameterList = new ArrayList<>();
+          for (Entry<String, String> paramEntry : customParams.entrySet()) {
+            CustomParameter customParameter = new CustomParameter();
+            customParameter.setKey(paramEntry.getKey());
+            customParameter.setValue(paramEntry.getValue());
+            customParameterList.add(customParameter);
+          }
+          customParameters.setParameters(customParameterList.toArray(new CustomParameter[0]));
+          biddable.setUrlCustomParameters(customParameters);
+        }
 
         BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
         if (isUnit && bid != null) {

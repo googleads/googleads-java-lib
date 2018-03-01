@@ -16,6 +16,7 @@ package com.google.api.ads.adwords.axis.utils.v201708.shopping;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -25,9 +26,13 @@ import com.google.api.ads.adwords.axis.v201708.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201708.cm.Bids;
 import com.google.api.ads.adwords.axis.v201708.cm.CpcBid;
 import com.google.api.ads.adwords.axis.v201708.cm.Criterion;
+import com.google.api.ads.adwords.axis.v201708.cm.CustomParameter;
+import com.google.api.ads.adwords.axis.v201708.cm.CustomParameters;
 import com.google.api.ads.adwords.axis.v201708.cm.NegativeAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201708.cm.ProductPartition;
 import com.google.api.ads.adwords.axis.v201708.cm.ProductPartitionType;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -99,35 +104,39 @@ public class ProductPartitionNodeAdapterTest {
         false);
   }
 
-  /**
-   * Tests creating a criterion for a SET bid operation where the bid is not null.
-   */
+  /** Tests creating a criterion for a SET bid operation where the bid is not null. */
   @Test
   public void testCreateCriterionForSetBid_bidNotNull() {
     childNode.setBid(1500000L);
-    testCommonAttributes(childNode,
-        ProductPartitionNodeAdapter.createCriterionForSetBid(childNode, adGroupId, biddingConfig),
+    testCommonAttributes(
+        childNode,
+        ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(
+            childNode, adGroupId, biddingConfig),
         false);
 
     parentNode = parentNode.asBiddableUnit().setBid(2000000L);
-    testCommonAttributes(parentNode,
-        ProductPartitionNodeAdapter.createCriterionForSetBid(parentNode, adGroupId, biddingConfig),
+    testCommonAttributes(
+        parentNode,
+        ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(
+            parentNode, adGroupId, biddingConfig),
         false);
   }
 
-  /**
-   * Tests creating a criterion for a SET bid operation where the bid is null.
-   */
+  /** Tests creating a criterion for a SET bid operation where the bid is null. */
   @Test
   public void testCreateCriterionForSetBid_bidNull() {
     childNode.setBid(null);
-    testCommonAttributes(childNode,
-        ProductPartitionNodeAdapter.createCriterionForSetBid(childNode, adGroupId, biddingConfig),
+    testCommonAttributes(
+        childNode,
+        ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(
+            childNode, adGroupId, biddingConfig),
         false);
 
     parentNode.setBid(null);
-    testCommonAttributes(parentNode,
-        ProductPartitionNodeAdapter.createCriterionForSetBid(parentNode, adGroupId, biddingConfig),
+    testCommonAttributes(
+        parentNode,
+        ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(
+            parentNode, adGroupId, biddingConfig),
         false);
   }
 
@@ -139,7 +148,8 @@ public class ProductPartitionNodeAdapterTest {
   public void testCreateCriterionForSetBid_excludedNode_fails() {
     childNode = childNode.asExcludedUnit();
     thrown.expect(IllegalArgumentException.class);
-    ProductPartitionNodeAdapter.createCriterionForSetBid(childNode, adGroupId, biddingConfig);
+    ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(
+        childNode, adGroupId, biddingConfig);
   }
 
   /**
@@ -194,6 +204,32 @@ public class ProductPartitionNodeAdapterTest {
         assertEquals("Partition is not a UNIT partition", ProductPartitionType.UNIT,
             partition.getPartitionType());
       }
+
+      assertEquals(
+          "tracking URL template is incorrect",
+          node.getTrackingUrlTemplate(),
+          biddableCriterion.getTrackingUrlTemplate());
+      // The adapter should always have a CustomParameters object, even if the node had no params.
+      // This ensures that the parameters will be cleared (via doReplace=true) if all params were
+      // removed from the node.
+      CustomParameters customParameters = biddableCriterion.getUrlCustomParameters();
+      assertNotNull("Biddable criterion does not have custom parameters", customParameters);
+      assertEquals(
+          "doReplace for custom parameters should always be true",
+          true,
+          customParameters.getDoReplace());
+
+      // Convert the BiddableAdGroupCriterion's custom parameters to a map to simplify comparison
+      // against the node's custom parameter map.
+      Map<String, String> actualCustomParameters = new HashMap<>();
+      for (CustomParameter customParameter : customParameters.getParameters()) {
+        actualCustomParameters.put(customParameter.getKey(),
+            customParameter.getValue());
+      }
+      assertEquals(
+          "node and criterion do not have the same custom parameters",
+          node.getCustomParameters(),
+          actualCustomParameters);
     } else {
       assertTrue("Excluded node should be translated into a NegativeAdGroupCriterion",
           adGroupCriterion instanceof NegativeAdGroupCriterion);

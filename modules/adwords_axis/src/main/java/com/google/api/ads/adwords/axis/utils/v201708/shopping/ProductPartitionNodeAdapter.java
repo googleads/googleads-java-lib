@@ -20,11 +20,16 @@ import com.google.api.ads.adwords.axis.v201708.cm.BiddableAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201708.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201708.cm.Bids;
 import com.google.api.ads.adwords.axis.v201708.cm.CpcBid;
+import com.google.api.ads.adwords.axis.v201708.cm.CustomParameter;
+import com.google.api.ads.adwords.axis.v201708.cm.CustomParameters;
 import com.google.api.ads.adwords.axis.v201708.cm.Money;
 import com.google.api.ads.adwords.axis.v201708.cm.NegativeAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201708.cm.ProductPartition;
 import com.google.api.ads.adwords.axis.v201708.cm.ProductPartitionType;
 import com.google.common.base.Preconditions;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * Adapter that translates {@link ProductPartitionNode} objects into {@link AdGroupCriterion}
@@ -38,14 +43,14 @@ class ProductPartitionNodeAdapter {
 
   /**
    * Returns a new AdGroupCriterion configured for a REMOVE operation.
-   * 
+   *
    * @param node the node whose criterion should be removed
    * @param adGroupId the ad group ID of the criterion
    */
   static AdGroupCriterion createCriterionForRemove(ProductPartitionNode node,
       long adGroupId) {
     Preconditions.checkNotNull(node, "Null node");
-    
+
     AdGroupCriterion adGroupCriterion = new AdGroupCriterion();
     adGroupCriterion.setAdGroupId(adGroupId);
     adGroupCriterion.setCriterion(new ProductPartition());
@@ -56,7 +61,7 @@ class ProductPartitionNodeAdapter {
 
   /**
    * Returns a new AdGroupCriterion configured for an ADD operation.
-   * 
+   *
    * @param node the node whose criterion should be added
    * @param adGroupId the ad group ID of the criterion
    * @param biddingConfig the bidding strategy configuration of the criterion
@@ -65,22 +70,30 @@ class ProductPartitionNodeAdapter {
       BiddingStrategyConfiguration biddingConfig) {
     Preconditions.checkNotNull(node, "Null node");
     Preconditions.checkNotNull(biddingConfig, "Null bidding configuration");
-    
+
     AdGroupCriterion adGroupCriterion;
     if (node.isExcludedUnit()) {
       adGroupCriterion = new NegativeAdGroupCriterion();
-    } else {
-      adGroupCriterion = new BiddableAdGroupCriterion();
-      if (node.isUnit() && node.getBid() != null) {
+    } else if (node.isBiddableUnit()){
+      BiddableAdGroupCriterion biddableCriterion = new BiddableAdGroupCriterion();
+      if (node.getBid() != null) {
         Money bidMoney = new Money();
         bidMoney.setMicroAmount(node.getBid());
         CpcBid cpcBid = new CpcBid();
         cpcBid.setBid(bidMoney);
         cpcBid.setCpcBidSource(BidSource.CRITERION);
         biddingConfig.setBids(new Bids[] {cpcBid});
-        ((BiddableAdGroupCriterion) adGroupCriterion).setBiddingStrategyConfiguration(
+        biddableCriterion.setBiddingStrategyConfiguration(
             biddingConfig);
       }
+      if (node.getTrackingUrlTemplate() != null) {
+        biddableCriterion.setTrackingUrlTemplate(
+            node.getTrackingUrlTemplate());
+      }
+      biddableCriterion.setUrlCustomParameters(createCustomParameters(node));
+      adGroupCriterion = biddableCriterion;
+    } else {
+      adGroupCriterion = new BiddableAdGroupCriterion();
     }
     adGroupCriterion.setAdGroupId(adGroupId);
 
@@ -95,21 +108,21 @@ class ProductPartitionNodeAdapter {
     adGroupCriterion.setCriterion(partition);
     return adGroupCriterion;
   }
-  
+
   /**
-   * Returns a new AdGroupCriterion configured for a SET operation that will set
-   * the criterion's bid.
-   * 
+   * Returns a new AdGroupCriterion configured for a SET operation that will set the criterion's
+   * bid, tracking template, and custom parameters.
+   *
    * @param node the node whose criterion should be updated
    * @param adGroupId the ad group ID of the criterion
    * @param biddingConfig the bidding strategy configuration of the criterion
    */
-  static AdGroupCriterion createCriterionForSetBid(ProductPartitionNode node, long adGroupId,
-      BiddingStrategyConfiguration biddingConfig) {
+  static AdGroupCriterion createCriterionForSetBiddableUnit(
+      ProductPartitionNode node, long adGroupId, BiddingStrategyConfiguration biddingConfig) {
     Preconditions.checkNotNull(node, "Null node");
     Preconditions.checkNotNull(biddingConfig, "Null bidding configuration");
     Preconditions.checkArgument(node.isBiddableUnit(), "Node is not a biddable unit");
-    
+
     BiddableAdGroupCriterion biddableCriterion = new BiddableAdGroupCriterion();
     biddableCriterion.setAdGroupId(adGroupId);
 
@@ -123,6 +136,7 @@ class ProductPartitionNodeAdapter {
 
     biddableCriterion.setCriterion(partition);
 
+    // Set the bidding attributes on the new ad group criterion.
     if (node.getBid() != null) {
       Money bidMoney = new Money();
       bidMoney.setMicroAmount(node.getBid());
@@ -133,6 +147,36 @@ class ProductPartitionNodeAdapter {
       biddingConfig.setBids(new Bids[0]);
     }
     biddableCriterion.setBiddingStrategyConfiguration(biddingConfig);
+
+    // Set the upgraded URL attributes on the new ad group criterion.
+    if (node.getTrackingUrlTemplate() != null) {
+      biddableCriterion.setTrackingUrlTemplate(
+          node.getTrackingUrlTemplate());
+    }
+    biddableCriterion.setUrlCustomParameters(createCustomParameters(node));
     return biddableCriterion;
+  }
+
+  /**
+   * Creates an AdWords API {@link CustomParameters} object using the map of custom parameters
+   * on the node.
+   *
+   * @param node the node.
+   */
+  private static CustomParameters createCustomParameters(ProductPartitionNode node) {
+    Preconditions.checkArgument(
+        node.isBiddableUnit(), "Node is not a biddable unit. Custom parameters not supported.");
+    CustomParameters customParameters = new CustomParameters();
+    List<CustomParameter> parameters = new ArrayList<>();
+    for (Entry<String, String> customParamEntry : node.getCustomParameters().entrySet()) {
+      CustomParameter customParameter = new CustomParameter();
+      customParameter.setKey(customParamEntry.getKey());
+      customParameter.setValue(customParamEntry.getValue());
+      parameters.add(customParameter);
+    }
+    customParameters.setParameters(parameters.toArray(new CustomParameter[0]));
+    // Always replace all custom parameters. This attribute is ignored on ADD.
+    customParameters.setDoReplace(true);
+    return customParameters;
   }
 }

@@ -37,7 +37,9 @@ import com.google.api.ads.adwords.axis.v201708.cm.ProductType;
 import com.google.api.ads.adwords.axis.v201708.cm.ShoppingProductChannel;
 import com.google.api.ads.adwords.axis.v201708.cm.ShoppingProductChannelExclusivity;
 import com.google.common.collect.Maps;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -163,6 +165,67 @@ public class ProductPartitionNodeTest {
     rootNode = rootNode.asSubdivision();
     thrown.expect(IllegalStateException.class);
     rootNode.setBid(1L);
+  }
+
+  /** Checks that adding upgraded URL attributes to a biddable UNIT succeeds. */
+  @Test
+  public void testSetUpgradedUrlAttributesOnBiddableUnit() {
+    String trackingUrlTemplate =
+        "http://www.example.com/tracking?param1={_param1}&param2={_param2}&u={lpurl}";
+    Map<String, String> customParams = new HashMap<>();
+    customParams.put("param1", "value1");
+    customParams.put("param2", "value2");
+
+    rootNode = rootNode.asBiddableUnit().setTrackingUrlTemplate(trackingUrlTemplate);
+    for (Entry<String, String> paramEntry : customParams.entrySet()) {
+      rootNode.putCustomParameter(paramEntry.getKey(), paramEntry.getValue());
+    }
+    assertEquals(trackingUrlTemplate, rootNode.getTrackingUrlTemplate());
+    assertEquals(customParams, rootNode.getCustomParameters());
+  }
+
+  /**
+   * Checks that setting the tracking URL template on a SUBDIVISION node fails.
+   */
+  @Test
+  public void testSetTrackingUrlTemplateOnSubdivision_fails() {
+    rootNode = rootNode.asSubdivision();
+    thrown.expect(IllegalStateException.class);
+    rootNode.setTrackingUrlTemplate("http://www.example.com/tracking?{lpurl}");
+  }
+
+  /**
+   * Checks that setting the tracking URL template on an excluded UNIT node fails.
+   */
+  @Test
+  public void testSetTrackingUrlTemplateOnExcludedUnit_fails() {
+    rootNode = rootNode.asSubdivision();
+    ProductBrand childDimension = ProductDimensions.createBrand("google");
+    ProductPartitionNode excludedUnitNode = rootNode.addChild(childDimension).asExcludedUnit();
+    thrown.expect(IllegalStateException.class);
+    excludedUnitNode.setTrackingUrlTemplate("http://www.example.com/tracking?{lpurl}");
+  }
+
+  /**
+   * Checks that adding custom parameters to a SUBDIVISION node fails.
+   */
+  @Test
+  public void testPutCustomParametersOnSubdivision_fails() {
+    rootNode = rootNode.asSubdivision();
+    thrown.expect(IllegalStateException.class);
+    rootNode.putCustomParameter("param", "value");
+  }
+
+  /**
+   * Checks that adding custom parameters to an excluded UNIT node fails.
+   */
+  @Test
+  public void testPutCustomParametersOnExcludedUnit_fails() {
+    rootNode = rootNode.asSubdivision();
+    ProductBrand childDimension = ProductDimensions.createBrand("google");
+    ProductPartitionNode excludedUnitNode = rootNode.addChild(childDimension).asExcludedUnit();
+    thrown.expect(IllegalStateException.class);
+    excludedUnitNode.putCustomParameter("param", "value");
   }
 
   /**

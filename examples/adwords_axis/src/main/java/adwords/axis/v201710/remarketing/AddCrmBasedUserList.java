@@ -20,6 +20,7 @@ import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201710.cm.Operator;
+import com.google.api.ads.adwords.axis.v201710.rm.AddressInfo;
 import com.google.api.ads.adwords.axis.v201710.rm.AdwordsUserListServiceInterface;
 import com.google.api.ads.adwords.axis.v201710.rm.CrmBasedUserList;
 import com.google.api.ads.adwords.axis.v201710.rm.Member;
@@ -178,24 +179,22 @@ public class AddCrmBasedUserList {
       members.add(member);
     }
 
-    // Adding address info is currently available on a whitelist-only basis. This code demonstrates
-    // how to do it, and you can uncomment it if you are on the whitelist.
-    //  String firstName = "John";
-    //  String lastName = "Doe";
-    //  String countryCode = "US";
-    //  String zipCode = "10011";
-    //
-    //  com.google.api.ads.adwords.axis.v201710.rm.AddressInfo addressInfo = new AddressInfo();
-    //  // First and last name must be normalized and hashed.
-    //  addressInfo.setHashedFirstName(toSHA256String(toNormalizedString(firstName)));
-    //  addressInfo.setHashedLastName(toSHA256String(toNormalizedString(lastName)));
-    //  // Country code and zip code are sent in plaintext.
-    //  addressInfo.setCountryCode(countryCode);
-    //  addressInfo.setZipCode(zipCode);
-    //
-    //  Member memberByAddress = new Member();
-    //  memberByAddress.setAddressInfo(addressInfo);
-    //  members.add(memberByAddress);
+    String firstName = "John";
+    String lastName = "Doe";
+    String countryCode = "US";
+    String zipCode = "10011";
+
+    com.google.api.ads.adwords.axis.v201710.rm.AddressInfo addressInfo = new AddressInfo();
+    // First and last name must be normalized and hashed.
+    addressInfo.setHashedFirstName(toSHA256String(toNormalizedString(firstName)));
+    addressInfo.setHashedLastName(toSHA256String(toNormalizedString(lastName)));
+    // Country code and zip code are sent in plaintext.
+    addressInfo.setCountryCode(countryCode);
+    addressInfo.setZipCode(zipCode);
+
+    Member memberByAddress = new Member();
+    memberByAddress.setAddressInfo(addressInfo);
+    members.add(memberByAddress);
 
     operand.setMembersList(members.toArray(new Member[members.size()]));
     mutateMembersOperation.setOperand(operand);

@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc. All Rights Reserved.
+// Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.google.api.ads.adwords.axis.utils.v201710.shopping;
 
 import com.google.api.ads.adwords.axis.v201710.cm.ProductDimension;
 import java.util.Comparator;
+import java.util.Objects;
 
 
 /**
@@ -51,18 +52,18 @@ class ProductPartitionNodeDiffer {
     } else if (originalNode.isExcludedUnit() != newNode.isExcludedUnit()) {
       nodeDifference = NodeDifference.EXCLUDED_UNIT_CHANGE;
     } else if (!originalNode.isExcludedUnit() && originalNode.isUnit() && newNode.isUnit()) {
-      // Both nodes are non-excluded units - the only possible difference
-      // left is the bid.
-      Long bid1 = originalNode.getBid();
-      Long bid2 = newNode.getBid();
-      if ((bid1 == null) != (bid2 == null)) {
-        nodeDifference = NodeDifference.BID_CHANGE;
-      } else if (bid1 == null && bid2 == null) {
-        nodeDifference = NodeDifference.NONE;
-      } else if (bid1.compareTo(bid2) != 0) {
-        nodeDifference = NodeDifference.BID_CHANGE;
-      } else {
-        nodeDifference = NodeDifference.NONE;
+      // Both nodes are non-excluded units - the only possible differences
+      // left are from the bid, tracking URL template, or custom parameters.
+      nodeDifference = NodeDifference.NONE;
+      if (!Objects.equals(originalNode.getBid(), newNode.getBid())) {
+        nodeDifference = NodeDifference.BIDDABLE_UNIT_CHANGE;
+      }
+      if (!Objects.equals(
+          originalNode.getTrackingUrlTemplate(), newNode.getTrackingUrlTemplate())) {
+        nodeDifference = NodeDifference.BIDDABLE_UNIT_CHANGE;
+      }
+      if (!Objects.equals(originalNode.getCustomParameters(), newNode.getCustomParameters())) {
+        nodeDifference = NodeDifference.BIDDABLE_UNIT_CHANGE;
       }
     } else {
       nodeDifference = NodeDifference.NONE;
@@ -84,7 +85,10 @@ class ProductPartitionNodeDiffer {
     PARTITION_TYPE_CHANGE,
     /** The isExcludedUnit attribute differs between the two nodes - both nodes are unit nodes */
     EXCLUDED_UNIT_CHANGE,
-    /** The bid differs between the two nodes - both nodes are non-excluded unit nodes */
-    BID_CHANGE;
+    /**
+     * The bid, tracking template, or custom parameters differ between the two nodes - both nodes
+     * are non-excluded unit nodes
+     */
+    BIDDABLE_UNIT_CHANGE;
   }
 }

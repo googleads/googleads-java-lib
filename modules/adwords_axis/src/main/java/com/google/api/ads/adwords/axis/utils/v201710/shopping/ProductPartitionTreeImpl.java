@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc. All Rights Reserved.
+// Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.ads.adwords.axis.v201710.cm.BiddableAdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201710.cm.BiddingStrategyConfiguration;
 import com.google.api.ads.adwords.axis.v201710.cm.Bids;
 import com.google.api.ads.adwords.axis.v201710.cm.CpcBid;
+import com.google.api.ads.adwords.axis.v201710.cm.CustomParameter;
 import com.google.api.ads.adwords.axis.v201710.cm.Money;
 import com.google.api.ads.adwords.axis.v201710.cm.Operator;
 import com.google.api.ads.adwords.axis.v201710.cm.ProductDimension;
@@ -107,7 +108,9 @@ class ProductPartitionTreeImpl
           AdGroupCriterionField.CaseValue,
           AdGroupCriterionField.CpcBid,
           AdGroupCriterionField.CpcBidSource,
-          AdGroupCriterionField.Status);
+          AdGroupCriterionField.Status,
+          AdGroupCriterionField.TrackingUrlTemplate,
+          AdGroupCriterionField.UrlCustomParameters);
 
   /**
    * Constructor that initializes the temp ID generator based on the ID of the root node.
@@ -307,6 +310,8 @@ class ProductPartitionTreeImpl
     if (rootNodeBid != null) {
       rootNode = rootNode.asBiddableUnit().setBid(rootNodeBid.getMicroAmount());
     }
+    rootNode = rootNode.setTrackingUrlTemplate(biddableRootCriterion.getTrackingUrlTemplate());
+    rootNode = copyCustomParametersToNode(biddableRootCriterion, rootNode);
 
     addChildNodes(rootNode, parentIdMap);
 
@@ -459,7 +464,7 @@ class ProductPartitionTreeImpl
         // for all children of newNode.
         isProcessChildren = false;
         break;
-      case BID_CHANGE:
+      case BIDDABLE_UNIT_CHANGE:
         // Ensure that the new node has the proper ID (this may have been lost if the node
         // was removed and then re-added).
         newNode = newNode.setProductPartitionId(originalNode.getProductPartitionId());
@@ -500,7 +505,7 @@ class ProductPartitionTreeImpl
         "Node for SET operation has a negative partition ID: %s", node);
     AdGroupCriterionOperation setOp = new AdGroupCriterionOperation();
     setOp.setOperator(Operator.SET);
-    setOp.setOperand(ProductPartitionNodeAdapter.createCriterionForSetBid(node, adGroupId,
+    setOp.setOperand(ProductPartitionNodeAdapter.createCriterionForSetBiddableUnit(node, adGroupId,
         getBiddingStrategyConfiguration()));
 
     return new OperationPair(node, setOp);
@@ -631,10 +636,15 @@ class ProductPartitionTreeImpl
       } else {
         if (adGroupCriterion instanceof BiddableAdGroupCriterion) {
           childNode = childNode.asBiddableUnit();
-          Money cpcBidAmount = getBid((BiddableAdGroupCriterion) adGroupCriterion);
+          BiddableAdGroupCriterion biddableAdGroupCriterion =
+              (BiddableAdGroupCriterion) adGroupCriterion;
+          Money cpcBidAmount = getBid(biddableAdGroupCriterion);
           if (cpcBidAmount != null) {
             childNode = childNode.setBid(cpcBidAmount.getMicroAmount());
           }
+          childNode =
+              childNode.setTrackingUrlTemplate(biddableAdGroupCriterion.getTrackingUrlTemplate());
+          childNode = copyCustomParametersToNode(biddableAdGroupCriterion, childNode);
         } else {
           childNode = childNode.asExcludedUnit();
         }
@@ -662,5 +672,26 @@ class ProductPartitionTreeImpl
       }
     }
     return cpcBidAmount;
+  }
+
+  /**
+   * Utility method that copies {@link CustomParameter}s
+   * from a {@link BiddableAdGroupCriterion} to a {@link ProductPartitionNode}.
+   *
+   * @param biddableCriterion the source of the copy process.
+   * @param node the destination of the copy process.
+   * @return {@code node}.
+   */
+  private static ProductPartitionNode copyCustomParametersToNode(
+      BiddableAdGroupCriterion biddableCriterion, ProductPartitionNode node) {
+    if (biddableCriterion.getUrlCustomParameters() == null
+        || biddableCriterion.getUrlCustomParameters().getParameters() == null) {
+      return node;
+    }
+    for (CustomParameter customParameter :
+        biddableCriterion.getUrlCustomParameters().getParameters()) {
+      node.putCustomParameter(customParameter.getKey(), customParameter.getValue());
+    }
+    return node;
   }
 }

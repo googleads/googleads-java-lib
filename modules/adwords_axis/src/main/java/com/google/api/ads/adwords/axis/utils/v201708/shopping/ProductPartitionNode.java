@@ -21,11 +21,14 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.SortedMap;
 import javax.annotation.Nullable;
 import org.apache.commons.beanutils.BeanUtils;
@@ -89,6 +92,13 @@ public class ProductPartitionNode {
       case BIDDABLE_UNIT:
         toNode = toNode.asBiddableUnit();
         toNode.setBid(fromNode.getBid());
+        toNode.setTrackingUrlTemplate(fromNode.getTrackingUrlTemplate());
+        // Clone the CustomParameters from fromNode so that changes on the toNode won't be
+        // reflected in the fromNode.
+        for (Entry<String, String> customParamEntry :
+            fromNode.nodeState.getCustomParams().entrySet()) {
+          toNode.putCustomParameter(customParamEntry.getKey(), customParamEntry.getValue());
+        }
         break;
       case EXCLUDED_UNIT:
         toNode = toNode.asExcludedUnit();
@@ -221,8 +231,10 @@ public class ProductPartitionNode {
         .append("partitionId", partitionId)
         .append("parentPartitionId", parentPartitionId)
         .append("nodeType", nodeState.getNodeType())
-        .append("bidMicros", nodeState.getBidInMicros())
+        .append("bidMicros", getBid())
         .append("hasChildren", hasChildren())
+        .append("trackingUrlTemplate", getTrackingUrlTemplate())
+        .append("customParameters", nodeState.getCustomParams())
         .toString();
   }
 
@@ -365,24 +377,103 @@ public class ProductPartitionNode {
     this.nodeState.setBidInMicros(bidInMicros);
     return this;
   }
-  
+
+  /** Returns the tracking URL template for this node. */
+  @Nullable
+  public String getTrackingUrlTemplate() {
+    return nodeState.getTrackingUrlTemplate();
+  }
+
+  /**
+   * Sets the tracking URL template for this node.
+   *
+   * @param trackingUrlTemplate the tracking URL template
+   * @throws IllegalStateException if this node is not a biddable UNIT node
+   */
+  public ProductPartitionNode setTrackingUrlTemplate(String trackingUrlTemplate) {
+    this.nodeState.setTrackingUrlTemplate(trackingUrlTemplate);
+    return this;
+  }
+
+  /**
+   * Puts the specified key/value pair in the map of custom parameters.
+   * @throws IllegalStateException if this node is not a biddable UNIT node
+   */
+  public ProductPartitionNode putCustomParameter(String key, String value) {
+    if (!nodeState.supportsCustomParameters()) {
+      throw new IllegalStateException(
+          String.format("Cannot set custom parameters on a %s node", nodeState.getNodeType()));
+    }
+    this.nodeState.getCustomParams().put(key, value);
+    return this;
+  }
+
+  /**
+   * Returns the custom parameter for the specified {@code key}, or null if no such entry exists.
+   */
+  @Nullable
+  public String getCustomParameter(String key) {
+    return this.nodeState.getCustomParams().get(key);
+  }
+
+  /**
+   * Returns an immutable map of the node's custom parameters to support users who want to
+   * inspect the entire map. To modify the map, use {@link #putCustomParameter(String, String)}
+   * and {@link #removeCustomParameter(String)}.
+   */
+  public ImmutableMap<String, String> getCustomParameters() {
+    return ImmutableMap.copyOf(this.nodeState.getCustomParams());
+  }
+
+  /**
+   * Removes the specified key from the custom parameters map. The key <em>must</em> be present in
+   * the map.
+   *
+   * <p>Since this method follows the standard builder pattern and returns {@code this}, there is no
+   * way to indicate if the remove operation failed besides throwing an exception.
+   *
+   * @param key the key to remove. This must not be {@code null}.
+   * @throws IllegalStateException if this node is not a biddable UNIT node
+   * @throws IllegalArgumentException if there is no entry for {@code key} in the map
+   */
+  public ProductPartitionNode removeCustomParameter(String key) {
+    if (!nodeState.supportsCustomParameters()) {
+      throw new IllegalStateException(
+          String.format("Cannot remove custom parameters on a %s node", nodeState.getNodeType()));
+    }
+    Preconditions.checkNotNull(key, "Null key");
+    if (!nodeState.getCustomParams().containsKey(key)) {
+      throw new IllegalArgumentException("No custom parameter exists for key: " + key);
+    }
+    this.nodeState.getCustomParams().remove(key);
+    return this;
+  }
+
   /**
    * Enumeration of valid node types.
    */
   private enum NodeType {
     BIDDABLE_UNIT, EXCLUDED_UNIT, SUBDIVISION;
   }
-  
+
   /**
-   * The state of a node. This encapsulates the node type and behavior for setting/getting bids, as
-   * well as transitions from one node type to another.
+   * The state of a node. This encapsulates the node type and behavior for setting/getting bids,
+   * tracking templates, and custom parameters, as well as transitions from one node type to
+   * another.
    */
   private abstract static class NodeState {
+
+    private final Map<String, String> customParams = new HashMap<>();
 
     /**
      * Returns the NodeType for this state.
      */
     abstract NodeType getNodeType();
+
+    /** Indicates if this state supports mutating custom parameters. */
+    boolean supportsCustomParameters() {
+      return false;
+    }
 
     /**
      * Returns the bid in micros for this state.
@@ -400,6 +491,31 @@ public class ProductPartitionNode {
      */
     void setBidInMicros(@Nullable Long bidInMicros) {
       throw new IllegalStateException(String.format("Cannot set bid on a %s node", getNodeType()));
+    }
+
+    /**
+     * Returns the tracking URL template for this state.
+     */
+    @Nullable
+    String getTrackingUrlTemplate() {
+      return null;
+    }
+
+    /**
+     * Sets the tracking URL template for this state.
+     * @param trackingUrlTemplate the new tracking URL template.
+     * @throws IllegalStateException by default. Biddable subclasses should override this behavior.
+     */
+    void setTrackingUrlTemplate(@Nullable String trackingUrlTemplate) {
+      throw new IllegalStateException(String.format("Cannot set tracking URL template on a %s node",
+          getNodeType()));
+    }
+
+    /**
+     * Returns the map representing custom URL parameters for this state.
+     */
+    Map<String, String> getCustomParams() {
+      return customParams;
     }
 
     /**
@@ -453,6 +569,7 @@ public class ProductPartitionNode {
   private static class BiddableUnitState extends NodeState {
 
     private Long bidInMicros;
+    private String trackingUrlTemplate;
 
     @Override
     Long getBidInMicros() {
@@ -465,10 +582,25 @@ public class ProductPartitionNode {
           "Invalid bid: %s. Bid must be null or > 0.", bidInMicros);
       this.bidInMicros = bidInMicros;
     }
-    
+
     @Override
     NodeType getNodeType() {
       return NodeType.BIDDABLE_UNIT;
+    }
+
+    @Override
+    String getTrackingUrlTemplate() {
+      return trackingUrlTemplate;
+    }
+
+    @Override
+    void setTrackingUrlTemplate(@Nullable String trackingUrlTemplate) {
+      this.trackingUrlTemplate = trackingUrlTemplate;
+    }
+
+    @Override
+    boolean supportsCustomParameters() {
+      return true;
     }
   }
 }

@@ -79,6 +79,8 @@ public final class ArgumentNames {
 
   public static final String UPLOAD_TIME = "--uploadTime";
 
+  public static final String USER_LIST_ID = "--userListId";
+
   public static final String OFFLINE_DATA_UPLOAD_TYPE = "--offlineDataUploadType";
 
 }
