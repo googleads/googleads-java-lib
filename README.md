@@ -290,4 +290,4 @@ If necessary, set this up in code by doing the following:
 ## Where do I submit bug reports, feature requests and patches?
 
 All of these items can be submitted at
-(https://github.com/googleads/googleads-java-lib/issues)
+https://github.com/googleads/googleads-java-lib/issues.
