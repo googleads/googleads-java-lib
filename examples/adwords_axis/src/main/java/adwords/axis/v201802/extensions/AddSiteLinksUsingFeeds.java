@@ -30,11 +30,14 @@ import com.google.api.ads.adwords.axis.v201802.cm.Feed;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedAttribute;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedAttributeType;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItem;
+import com.google.api.ads.adwords.axis.v201802.cm.FeedItemAdGroupTarget;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItemAttributeValue;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItemGeoRestriction;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItemOperation;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItemReturnValue;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedItemServiceInterface;
+import com.google.api.ads.adwords.axis.v201802.cm.FeedItemTargetOperation;
+import com.google.api.ads.adwords.axis.v201802.cm.FeedItemTargetServiceInterface;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedMapping;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedMappingOperation;
 import com.google.api.ads.adwords.axis.v201802.cm.FeedMappingReturnValue;
@@ -61,6 +64,7 @@ import com.google.common.base.Joiner;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * This example adds a sitelinks feed and associates it with a campaign. To create a campaign,
@@ -78,6 +82,9 @@ public class AddSiteLinksUsingFeeds {
 
     @Parameter(names = ArgumentNames.FEED_NAME, required = true)
     private String feedName;
+
+    @Parameter(names = ArgumentNames.AD_GROUP_ID)
+    private Long adGroupId;
   }
 
   public static void main(String[] args) {
@@ -120,10 +127,12 @@ public class AddSiteLinksUsingFeeds {
       // into the code here. See the parameter class definition above for descriptions.
       params.campaignId = Long.parseLong("INSERT_CAMPAIGN_ID_HERE");
       params.feedName = "INSERT_FEED_NAME_HERE";
+      // Optional: Ad group to restrict targeting to.
+      params.adGroupId = null;
     }
 
     try {
-      runExample(adWordsServices, session, params.campaignId, params.feedName);
+      runExample(adWordsServices, session, params.campaignId, params.feedName, params.adGroupId);
     } catch (ApiException apiException) {
       // ApiException is the base class for most exceptions thrown by an API request. Instances
       // of this exception have a message and a collection of ApiErrors that indicate the
@@ -152,16 +161,21 @@ public class AddSiteLinksUsingFeeds {
    * @param session the session.
    * @param campaignId the ID of the campaign where sitelinks will be added.
    * @param feedName the name of the new sitelinks feed.
+   * @param adGroupId the ID of the ad group to which additional targeting will be applied.
    * @throws ApiException if the API request failed with one or more service errors.
    * @throws RemoteException if the API request failed due to other errors.
    */
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session,
-      Long campaignId, String feedName) throws RemoteException {
+      Long campaignId, String feedName, @Nullable Long adGroupId) throws RemoteException {
     SiteLinksDataHolder siteLinksData = new SiteLinksDataHolder();
     createSiteLinksFeed(adWordsServices, session, siteLinksData, feedName);
     createSiteLinksFeedItems(adWordsServices, session, siteLinksData);
     createSiteLinksFeedMapping(adWordsServices, session, siteLinksData);
     createSiteLinksCampaignFeed(adWordsServices, session, siteLinksData, campaignId);
+    // Optional: Restrict the first feed item to only serve with ads for the specified ad group ID.
+    if (adGroupId != null) {
+      addFeedItemTarget(adWordsServices, session, siteLinksData, adGroupId);
+    }
   }
 
   private static void createSiteLinksFeed(
@@ -401,6 +415,38 @@ public class AddSiteLinksUsingFeeds {
     operation.setOperand(item);
     operation.setOperator(Operator.ADD);
     return operation;
+  }
+
+  /**
+   * Restricts the first feed item in {@code siteLinksData} to only serve with ads for the specified
+   * ad group ID.
+   */
+  private static void addFeedItemTarget(
+      AdWordsServicesInterface adWordsServices,
+      AdWordsSession session,
+      SiteLinksDataHolder siteLinksData,
+      Long adGroupId)
+      throws RemoteException {
+    FeedItemTargetServiceInterface feedItemTargetService =
+        adWordsServices.get(session, FeedItemTargetServiceInterface.class);
+    FeedItemAdGroupTarget feedItemAdGroupTarget = new FeedItemAdGroupTarget();
+    feedItemAdGroupTarget.setAdGroupId(adGroupId);
+    feedItemAdGroupTarget.setFeedId(siteLinksData.siteLinksFeedId);
+    feedItemAdGroupTarget.setFeedItemId(siteLinksData.siteLinkFeedItemIds.get(0));
+
+    FeedItemTargetOperation operation = new FeedItemTargetOperation();
+    operation.setOperand(feedItemAdGroupTarget);
+    operation.setOperator(Operator.ADD);
+
+    feedItemAdGroupTarget =
+        (FeedItemAdGroupTarget)
+            feedItemTargetService.mutate(new FeedItemTargetOperation[] {operation}).getValue(0);
+    System.out.printf(
+        "Feed item target for feed ID %d and feed item ID %d was created to restrict serving to "
+            + "ad group ID %d'.%n",
+        feedItemAdGroupTarget.getFeedId(),
+        feedItemAdGroupTarget.getFeedItemId(),
+        feedItemAdGroupTarget.getAdGroupId());
   }
 
   private static class SiteLinksDataHolder {

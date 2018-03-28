@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -279,7 +280,10 @@ public class ProductPartitionNode {
               String.format("%s=%s", propertyName, BeanUtils.getProperty(dimension, propertyName)));
         }
       }
-    } catch (Exception e) {
+    } catch (RuntimeException
+        | IllegalAccessException
+        | InvocationTargetException
+        | NoSuchMethodException e) {
       attributeToStrings.add("--UNKNOWN--");
     }
     return String.format("%s[%s]", dimension.getClass().getSimpleName(),

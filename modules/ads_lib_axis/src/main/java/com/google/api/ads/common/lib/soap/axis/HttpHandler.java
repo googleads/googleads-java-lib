@@ -85,7 +85,7 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
       response = postRequest.execute();
       // Translate the HTTP response to an Axis message on the message context.
       msgContext.setResponseMessage(createResponseMessage(response));
-    } catch (Exception e) {
+    } catch (RuntimeException | SOAPException | IOException e) {
       throw AxisFault.makeFault(e);
     }
   }

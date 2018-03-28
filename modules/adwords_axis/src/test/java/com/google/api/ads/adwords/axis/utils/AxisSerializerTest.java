@@ -17,14 +17,14 @@ package com.google.api.ads.adwords.axis.utils;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.api.ads.adwords.axis.utils.v201708.batchjob.BatchJobMutateRequest;
-import com.google.api.ads.adwords.axis.v201708.cm.AdGroup;
-import com.google.api.ads.adwords.axis.v201708.cm.AdGroupOperation;
-import com.google.api.ads.adwords.axis.v201708.cm.AdvertisingChannelType;
-import com.google.api.ads.adwords.axis.v201708.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201708.cm.CampaignOperation;
-import com.google.api.ads.adwords.axis.v201708.cm.Operation;
-import com.google.api.ads.adwords.axis.v201708.cm.Operator;
+import com.google.api.ads.adwords.axis.utils.v201802.batchjob.BatchJobMutateRequest;
+import com.google.api.ads.adwords.axis.v201802.cm.AdGroup;
+import com.google.api.ads.adwords.axis.v201802.cm.AdGroupOperation;
+import com.google.api.ads.adwords.axis.v201802.cm.AdvertisingChannelType;
+import com.google.api.ads.adwords.axis.v201802.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201802.cm.CampaignOperation;
+import com.google.api.ads.adwords.axis.v201802.cm.Operation;
+import com.google.api.ads.adwords.axis.v201802.cm.Operator;
 import com.google.common.collect.Lists;
 import com.google.common.io.CharStreams;
 import java.io.IOException;
@@ -65,7 +65,7 @@ public class AxisSerializerTest {
     context.setSendDecl(true);
     context.setPretty(true);
     serializer.serialize(mutate, context);
-    
+
     String serializedRequest = writer.toString();
     assertNotNull("Serialized request is null", serializedRequest);
 

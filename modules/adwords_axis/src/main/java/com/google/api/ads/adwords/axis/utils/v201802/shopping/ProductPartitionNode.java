@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +48,7 @@ public class ProductPartitionNode {
   @Nullable private final ProductDimension dimension;
   @Nullable private Long partitionId;
   private NodeState nodeState;
-  
+
   /**
    * A map from ProductDimension to child ProductPartitionNode.
    *
@@ -55,7 +56,7 @@ public class ProductPartitionNode {
    * Therefore, this map does <em>not</em> obey the general contract of the {@link Map} interface.
    */
   private final SortedMap<ProductDimension, ProductPartitionNode> children;
-  
+
   /**
    * Union of relevant attributes from all subclasses of ProductDimension. Used by
    * {@link #toString(ProductDimension)} to construct a String representation of a ProductDimension
@@ -167,7 +168,7 @@ public class ProductPartitionNode {
 
 
   /**
-   * Returns an Iterable of a shallow copy of all children of this node. 
+   * Returns an Iterable of a shallow copy of all children of this node.
    */
   public Iterable<ProductPartitionNode> getChildren() {
     return ImmutableList.<ProductPartitionNode>copyOf(children.values());
@@ -279,7 +280,10 @@ public class ProductPartitionNode {
               String.format("%s=%s", propertyName, BeanUtils.getProperty(dimension, propertyName)));
         }
       }
-    } catch (Exception e) {
+    } catch (RuntimeException
+        | IllegalAccessException
+        | InvocationTargetException
+        | NoSuchMethodException e) {
       attributeToStrings.add("--UNKNOWN--");
     }
     return String.format("%s[%s]", dimension.getClass().getSimpleName(),
@@ -328,7 +332,7 @@ public class ProductPartitionNode {
     children.remove(childDimension);
     return this;
   }
-  
+
   /**
    * Removes all children of this node.
    *
@@ -542,7 +546,7 @@ public class ProductPartitionNode {
       }
     }
   }
-  
+
   /**
    * NodeState implementation for {@link NodeType#SUBDIVISION}.
    */
@@ -552,7 +556,7 @@ public class ProductPartitionNode {
       return NodeType.SUBDIVISION;
     }
   }
-  
+
   /**
    * NodeState implementation for {@link NodeType#EXCLUDED_UNIT}.
    */
@@ -562,7 +566,7 @@ public class ProductPartitionNode {
       return NodeType.EXCLUDED_UNIT;
     }
   }
-  
+
   /**
    * NodeState implementation for {@link NodeType#BIDDABLE_UNIT}.
    */

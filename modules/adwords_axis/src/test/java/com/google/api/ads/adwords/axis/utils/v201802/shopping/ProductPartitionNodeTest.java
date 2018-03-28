@@ -22,6 +22,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.axis.v201802.cm.ProductBiddingCategory;
 import com.google.api.ads.adwords.axis.v201802.cm.ProductBrand;
@@ -364,6 +366,20 @@ public class ProductPartitionNodeTest {
       assertThat("ProductPartitionNode.toString failed to interpret the attributes of a "
           + dimensionSubclass, dimensionToString, Matchers.not(Matchers.containsString("UNKNOWN")));
     }
+  }
+
+  /**
+   * Test to confirm that {@link ProductPartitionNode#toString(ProductDimension)} handles a
+   * malformed {@link ProductDimension} gracefully without throwing an exception.
+   */
+  @Test
+  public void testDimensionToString_unknownAttribute() throws Exception {
+    ProductBrand productBrand = mock(ProductBrand.class);
+    when(productBrand.getValue()).thenThrow(new RuntimeException());
+    assertThat("ProductPartitionNode did not fail gracefully when interpreting the attributes of "
+        + "a malformed ProductDimension",
+        ProductPartitionNode.toString(productBrand),
+        Matchers.containsString("UNKNOWN"));
   }
 }
 

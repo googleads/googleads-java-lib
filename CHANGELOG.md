@@ -1,3 +1,20 @@
+3.13.0 - 3/28/2018
+-----------------
+
+AdWords:
+  - Removed support and examples for v201705 and v201708. See deprecation
+    schedule at:
+    https://developers.google.com/adwords/api/docs/sunset-dates
+  - Replaced `catch Exception` blocks with multi-catch to clarify which
+    exceptions are expected in each case.
+
+DFP:
+  - No changes.
+
+Common:
+  - Replaced `catch Exception` blocks with multi-catch to clarify which
+    exceptions are expected in each case.
+
 3.12.0 - 2/1/2018
 -----------------
 AdWords:

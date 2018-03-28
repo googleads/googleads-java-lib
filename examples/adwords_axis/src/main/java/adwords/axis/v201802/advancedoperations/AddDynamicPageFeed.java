@@ -317,10 +317,8 @@ public class AddDynamicPageFeed {
     // Create the FeedItemAttributeValues for the URL and label.
     FeedItemAttributeValue urlAttributeValue = new FeedItemAttributeValue();
     urlAttributeValue.setFeedAttributeId(feedDetails.urlAttributeId);
-
-    // Optional: Add the {feeditem} valuetrack parameter to track which page feed items lead
-    // to each click.
-    url = url + "?id={feeditem}";
+    // See https://support.google.com/adwords/answer/7166527 for page feed URL recommendations and
+    // rules.
     urlAttributeValue.setStringValues(new String[] {url});
 
     FeedItemAttributeValue labelAttributeValue = new FeedItemAttributeValue();

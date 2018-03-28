@@ -14,15 +14,14 @@
 
 package com.google.api.ads.adwords.axis.utils;
 
-import org.apache.axis.description.TypeDesc;
-import org.apache.axis.encoding.SerializationContext;
-import org.apache.axis.encoding.Serializer;
-
+import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 import javax.xml.namespace.QName;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.SerializationContext;
+import org.apache.axis.encoding.Serializer;
 
 /**
  * Serializes an Axis generated class to XML.
@@ -35,7 +34,11 @@ public class AxisSerializer {
       QName xmlType = getXmlType(objectToSerialize.getClass());
       getSerializer(xmlType, objectToSerialize.getClass())
           .serialize(xmlType, null, objectToSerialize, serializationContext);
-    } catch (Exception e) {
+    } catch (RuntimeException
+        | IOException
+        | NoSuchMethodException
+        | IllegalAccessException
+        | InvocationTargetException e) {
       throw new RuntimeException("Failed to serialize: " + objectToSerialize, e);
     }
   }

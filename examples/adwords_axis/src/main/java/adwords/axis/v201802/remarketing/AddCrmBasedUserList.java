@@ -146,7 +146,8 @@ public class AddCrmBasedUserList {
     userList.setName("Customer relationship management list #" + System.currentTimeMillis());
     userList.setDescription("A list of customers that originated from email addresses");
 
-    // See limit here: https://support.google.com/adwords/answer/6276125#requirements.
+    // CRM-based user lists can use a membershipLifeSpan of 10000 to indicate unlimited; otherwise
+    // normal values apply.
     userList.setMembershipLifeSpan(30L);
     userList.setUploadKeyType(CustomerMatchUploadKeyType.CONTACT_INFO);
 

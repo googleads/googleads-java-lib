@@ -21,12 +21,12 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.ads.adwords.jaxws.v201708.billing.BudgetOrderServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201708.ch.CustomerSyncServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201708.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201708.mcm.ManagedCustomerServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201708.o.TargetingIdeaServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201708.rm.AdwordsUserListServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.billing.BudgetOrderServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.ch.CustomerSyncServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.mcm.ManagedCustomerServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.o.TargetingIdeaServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201802.rm.AdwordsUserListServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsServiceDescriptor;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.conf.AdWordsApiConfiguration;
@@ -102,7 +102,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
   @Parameters(name = "interface={0}, namespace={1}")
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
-    // Test at least one standard interface for every subpackage of v201708
+    // Test at least one standard interface for every subpackage of v201802
     parameters.add(
         new Object[] {BudgetOrderServiceInterface.class, "billing"});
     parameters.add(

@@ -18,12 +18,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.api.ads.adwords.axis.v201708.cm.AdGroupCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201708.cm.AdGroupServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201708.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201708.cm.CampaignServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201708.cm.CriterionError;
-import com.google.api.ads.adwords.axis.v201708.cm.MutateResult;
+import com.google.api.ads.adwords.axis.v201802.cm.AdGroupCriterionServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201802.cm.AdGroupServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201802.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201802.cm.CampaignServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201802.cm.CriterionError;
+import com.google.api.ads.adwords.axis.v201802.cm.MutateResult;
 import com.google.common.collect.Lists;
 import java.io.File;
 import java.net.URL;
@@ -121,7 +121,7 @@ public class AxisDeserializerTest {
   private List<MutateResult> testDeserializeBatchJobResponse(URL responseXmlUrl)
       throws Exception {
     QName mutateResultQName =
-        new QName("https://adwords.google.com/api/adwords/cm/v201708", "MutateResult");
+        new QName("https://adwords.google.com/api/adwords/cm/v201802", "MutateResult");
 
     TypeMapping agcMapping = new AdGroupCriterionServiceSoapBindingStub() {
       @Override

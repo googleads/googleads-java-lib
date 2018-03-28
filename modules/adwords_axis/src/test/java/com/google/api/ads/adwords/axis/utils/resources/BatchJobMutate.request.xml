@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201708">
+<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201802">
  <operations xsi:type="ns1:CampaignOperation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <operator xsi:type="ns1:Operator">ADD</operator>
   <Operation.Type xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ADD</Operation.Type>
@@ -21,6 +21,7 @@
    <campaignTrialType xsi:type="ns1:CampaignTrialType" xsi:nil="true"/>
    <baseCampaignId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>
    <trackingUrlTemplate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:string" xsi:nil="true"/>
+   <finalUrlSuffix xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:string" xsi:nil="true"/>
    <urlCustomParameters xsi:type="ns1:CustomParameters" xsi:nil="true"/>
    <vanityPharma xsi:type="ns1:VanityPharma" xsi:nil="true"/>
    <selectiveOptimization xsi:type="ns1:SelectiveOptimization" xsi:nil="true"/>
@@ -40,8 +41,10 @@
    <baseCampaignId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>
    <baseAdGroupId xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:long" xsi:nil="true"/>
    <trackingUrlTemplate xsi:type="xsd:string" xsi:nil="true" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <finalUrlSuffix xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="xsd:string" xsi:nil="true"/>
    <urlCustomParameters xsi:type="ns1:CustomParameters" xsi:nil="true"/>
    <adGroupType xsi:type="ns1:AdGroupType" xsi:nil="true"/>
+   <adGroupAdRotationMode xsi:type="ns1:AdGroupAdRotationMode" xsi:nil="true"/>
   </operand>
  </operations>
 </ns1:mutate>
