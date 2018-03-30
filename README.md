@@ -271,6 +271,23 @@ If necessary, set this up in code by doing the following:
     System.setProperty("https.proxyUser", "someone");
     System.setProperty("https.proxyPassword", "secret");
 
+## Utilities
+
+*   AdWords
+    *   [BatchJobHelper](/googleads/googleads-java-lib/wiki/BatchJobHelper-utility-for-AdWords) for managing
+        [BatchJobs](https://developers.google.com/adwords/api/docs/guides/batch-jobs).
+    *   [Report downloader](/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
+        [reports](https://developers.google.com/adwords/api/docs/guides/reporting).
+    *   [Selector builder](/googleads/googleads-java-lib/wiki/SelectorBuilder-utility-for-AdWords) to simplify the
+        creation of
+        [`Selector` objects for `get` requests](https://developers.google.com/adwords/api/docs/guides/objects-methods#the_get_method).
+    *   [Shopping ProductPartitionTree utility](/googleads/googleads-java-lib/wiki/Shopping-product-partition-utility-for-AdWords)
+        for managing
+        [partitions in Shopping campaigns](https://developers.google.com/adwords/api/docs/guides/shopping#partitioning).
+*   DFP
+    *   [Report downloader](/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
+        [reports](https://developers.google.com/doubleclick-publishers/docs/reporting).
+
 ## Extensions
 
 *   The [AdWords API RateLimiter](https://github.com/googleads/googleads-java-lib/tree/master/extensions/adwords_rate_limiter)
