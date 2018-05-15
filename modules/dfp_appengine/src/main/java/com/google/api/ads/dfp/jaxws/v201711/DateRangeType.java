@@ -95,9 +95,8 @@ public enum DateRangeType {
 
     /**
      * 
-     *                 The last 5 months and the current month to date. This date range is only
-     *                 usable for the columns {@link Column#REACH_FREQUENCY},
-     *                 {@link Column#REACH_AVERAGE_REVENUE} and {@link Column#REACH}.
+     *                 The last 63 days. This date range is only usable for the columns
+     *                 {@link Column#REACH_FREQUENCY}, {@link Column#REACH_AVERAGE_REVENUE} and {@link Column#REACH}.
      *               
      * 
      */

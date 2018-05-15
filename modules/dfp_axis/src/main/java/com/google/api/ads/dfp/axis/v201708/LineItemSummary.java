@@ -118,7 +118,12 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.dfp.axis.v201708.FrequencyCap[] frequencyCaps;
 
     /* Indicates the line item type of a {@code LineItem}. This attribute
-     * is required. */
+     * is required.
+     *                 
+     *                 The line item type determines the default priority
+     * of the line item. More information can be
+     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
+     * DFP Help Center</a>. */
     private com.google.api.ads.dfp.axis.v201708.LineItemType lineItemType;
 
     /* The priority for the line item. Valid values range from 1 to
@@ -1081,6 +1086,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @return lineItemType   * Indicates the line item type of a {@code LineItem}. This attribute
      * is required.
+     *                 
+     *                 The line item type determines the default priority
+     * of the line item. More information can be
+     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
+     * DFP Help Center</a>.
      */
     public com.google.api.ads.dfp.axis.v201708.LineItemType getLineItemType() {
         return lineItemType;
@@ -1092,6 +1102,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @param lineItemType   * Indicates the line item type of a {@code LineItem}. This attribute
      * is required.
+     *                 
+     *                 The line item type determines the default priority
+     * of the line item. More information can be
+     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
+     * DFP Help Center</a>.
      */
     public void setLineItemType(com.google.api.ads.dfp.axis.v201708.LineItemType lineItemType) {
         this.lineItemType = lineItemType;

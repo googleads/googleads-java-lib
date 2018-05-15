@@ -25,8 +25,8 @@ package com.google.api.ads.dfp.axis.v201711;
 /**
  * An overlay {@code Creative} that loads an image asset from a specified
  * URL
- *             and is served via VAST 2.0 XML. Overlays cover part of
- * the video content
+ *             and is served via VAST XML. Overlays cover part of the
+ * video content
  *             they are displayed on top of.  This creative is read only.
  */
 public class ImageRedirectOverlayCreative  extends com.google.api.ads.dfp.axis.v201711.BaseImageRedirectCreative  implements java.io.Serializable {

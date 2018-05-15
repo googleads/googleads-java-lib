@@ -24,8 +24,13 @@ package com.google.api.ads.dfp.axis.v201708;
 
 /**
  * The action used for approving and overbooking {@link Order} objects.
- * All {@link LineItem} objects within the order will be approved as
- * well.
+ * All {@link LineItem} objects
+ *             within the order will be approved as well. For more information
+ * on what happens to an order and
+ *             its line items when it is approved and overbooked, see
+ * the
+ *             <a href="https://support.google.com/dfp_premium/answer/177334">DFP
+ * Help Center</a>.
  */
 public class ApproveAndOverbookOrders  extends com.google.api.ads.dfp.axis.v201708.ApproveOrders  implements java.io.Serializable {
     public ApproveAndOverbookOrders() {

@@ -28,7 +28,8 @@ package com.google.api.ads.dfp.axis.v201711;
  */
 public class ProposalTermsAndConditions  implements java.io.Serializable {
     /* The ID of the terms and conditions added to the proposal.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long termsAndConditionsId;
 
     /* The name of the terms and conditions at the time it was added
@@ -73,7 +74,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * Gets the termsAndConditionsId value for this ProposalTermsAndConditions.
      * 
      * @return termsAndConditionsId   * The ID of the terms and conditions added to the proposal.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getTermsAndConditionsId() {
         return termsAndConditionsId;
@@ -84,7 +86,8 @@ public class ProposalTermsAndConditions  implements java.io.Serializable {
      * Sets the termsAndConditionsId value for this ProposalTermsAndConditions.
      * 
      * @param termsAndConditionsId   * The ID of the terms and conditions added to the proposal.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setTermsAndConditionsId(java.lang.Long termsAndConditionsId) {
         this.termsAndConditionsId = termsAndConditionsId;

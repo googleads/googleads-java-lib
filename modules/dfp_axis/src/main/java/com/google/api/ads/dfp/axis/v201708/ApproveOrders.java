@@ -25,7 +25,12 @@ package com.google.api.ads.dfp.axis.v201708;
 /**
  * The action used for approving {@link Order} objects. All {@link
  * LineItem}
- *             objects within the order will be approved as well.
+ *             objects within the order will be approved as well. For
+ * more information on what happens to an
+ *             order and its line items when it is approved, see the
+ *             <a href="https://support.google.com/dfp_premium/answer/177334">DFP
+ * Help Center</a>.
+ *             </p>
  */
 public class ApproveOrders  extends com.google.api.ads.dfp.axis.v201708.OrderAction  implements java.io.Serializable {
     /* Indicates whether the inventory check should be skipped when

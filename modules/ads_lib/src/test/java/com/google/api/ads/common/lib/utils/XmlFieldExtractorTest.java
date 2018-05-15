@@ -14,12 +14,28 @@
 
 package com.google.api.ads.common.lib.utils;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.mockito.Matchers.contains;
+import static org.mockito.Matchers.isA;
+import static org.mockito.Matchers.same;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
-
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,14 +43,7 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
-
-import java.io.ByteArrayInputStream;
-import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathFactory;
+import org.xml.sax.SAXException;
 
 /**
  * Test for {@link XmlFieldExtractor}.
@@ -63,23 +72,23 @@ public class XmlFieldExtractorTest {
   }
 
   @Test
-  public void testExtract() throws Exception {
+  public void testExtract_singleField() {
     Map<String, String> ret = xmlFieldExtractor.extract(
-        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"trigger"});
+        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)), new String[] {"trigger"});
     assertEquals("AdFormatt", ret.get("trigger"));
   }
 
   @Test
-  public void testExtract_fieldNotInXml() throws Exception {
+  public void testExtract_fieldNotInXml() {
     Map<String, String> ret = xmlFieldExtractor.extract(
-        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"foo"});
+        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)), new String[] {"foo"});
     assertNull(ret.get("foo"));
   }
 
   @Test
-  public void testExtract_multipleFields() throws Exception {
+  public void testExtract_multipleFields() {
     Map<String, String> ret = xmlFieldExtractor.extract(
-        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()),
+        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)),
         new String[] {"type", "trigger", "fieldPath"});
     assertEquals("ReportDefinitionError.INVALID_FIELD_NAME_FOR_REPORT", ret.get("type"));
     assertEquals("AdFormatt", ret.get("trigger"));
@@ -87,9 +96,55 @@ public class XmlFieldExtractorTest {
   }
 
   @Test
-  public void testConvert_fieldNotInXml() throws Exception {
+  public void testConvert_fieldNotInXml_returnsEmptyMap() {
     Map<String, String> ret = xmlFieldExtractor.extract(
-        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes()), new String[] {"foo"});
+        new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)), new String[] {"foo"});
     assertEquals(0, ret.size());
+  }
+
+  @Test
+  public void testExtract_invalidXPath_returnsEmptyMap() {
+    Map<String, String> ret =
+        xmlFieldExtractor.extract(
+            new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)),
+            new String[] {"not valid XPath"});
+    assertEquals(0, ret.size());
+    verify(logger, times(1)).warn(contains("not valid XPath"), isA(XPathExpressionException.class));
+  }
+
+  /**
+   * Verifies that if the DocumentBuilder supplier returns null, the {@code extract} method will
+   * return an empty map.
+   */
+  @Test
+  public void testExtract_nullDocumentBuilder_returnsEmptyMap() {
+    xmlFieldExtractor =
+        new XmlFieldExtractor(logger, Suppliers.<DocumentBuilder>ofInstance(null), xpathSupplier);
+    Map<String, String> ret =
+        xmlFieldExtractor.extract(
+            new ByteArrayInputStream(REPORT_DOWNLOAD_ERROR.getBytes(UTF_8)),
+            new String[] {"trigger"});
+    assertEquals(0, ret.size());
+    verify(logger, times(1)).warn(contains("DocumentBuilder"));
+  }
+
+  @Test
+  public void testExtract_IOExceptionThrown_returnsEmptyMap() throws IOException {
+    InputStream mockInputStream = mock(InputStream.class);
+    String message = "Intentionally throwing IOException";
+    IOException exception = new IOException(message);
+    when(mockInputStream.read()).thenThrow(exception);
+    Map<String, String> ret = xmlFieldExtractor.extract(mockInputStream, new String[] {"trigger"});
+    assertEquals(0, ret.size());
+    verify(logger, times(1)).warn(contains("input"), same(exception));
+  }
+
+  @Test
+  public void testExtract_invalidXml_returnsEmptyMap() {
+    Map<String, String> ret =
+        xmlFieldExtractor.extract(
+            new ByteArrayInputStream("this is not XML".getBytes(UTF_8)), new String[] {"trigger"});
+    assertEquals(0, ret.size());
+    verify(logger, times(1)).warn(contains("XML"), isA(SAXException.class));
   }
 }

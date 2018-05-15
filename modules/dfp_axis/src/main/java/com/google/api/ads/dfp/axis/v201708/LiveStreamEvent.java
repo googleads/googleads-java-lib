@@ -78,7 +78,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
 
     /* The scheduled end date and time of this {@code LiveStreamEvent}.
      * This
-     *                 attribute is required. */
+     *                 attribute is required if {@code unlimitedEndDateTime}
+     * is false and ignored if
+     *                 {@code unlimitedEndDateTime} is true. */
     private com.google.api.ads.dfp.axis.v201708.DateTime endDateTime;
 
     /* The total number of concurrent users expected to watch this
@@ -450,7 +452,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return endDateTime   * The scheduled end date and time of this {@code LiveStreamEvent}.
      * This
-     *                 attribute is required.
+     *                 attribute is required if {@code unlimitedEndDateTime}
+     * is false and ignored if
+     *                 {@code unlimitedEndDateTime} is true.
      */
     public com.google.api.ads.dfp.axis.v201708.DateTime getEndDateTime() {
         return endDateTime;
@@ -462,7 +466,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param endDateTime   * The scheduled end date and time of this {@code LiveStreamEvent}.
      * This
-     *                 attribute is required.
+     *                 attribute is required if {@code unlimitedEndDateTime}
+     * is false and ignored if
+     *                 {@code unlimitedEndDateTime} is true.
      */
     public void setEndDateTime(com.google.api.ads.dfp.axis.v201708.DateTime endDateTime) {
         this.endDateTime = endDateTime;

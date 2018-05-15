@@ -51,7 +51,8 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String name;
 
     /* The option to specify whether the {@code Proposal} uses the
@@ -314,12 +315,11 @@ public class Proposal  implements java.io.Serializable {
      * management.</li><li>not using programmatic, using sales management.</li></ul></span> */
     private long[] secondaryTraffickerIds;
 
-    /* {@link User users} who are the seller's contacts. This attribute
-     * is optional.
+    /* {@link User users} who are the seller's contacts.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
     private long[] sellerContactIds;
 
     /* The IDs of all teams that the {@code Proposal} is on directly.
@@ -788,7 +788,8 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -806,7 +807,8 @@ public class Proposal  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -1662,12 +1664,11 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the sellerContactIds value for this Proposal.
      * 
-     * @return sellerContactIds   * {@link User users} who are the seller's contacts. This attribute
-     * is optional.
+     * @return sellerContactIds   * {@link User users} who are the seller's contacts.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public long[] getSellerContactIds() {
         return sellerContactIds;
@@ -1677,12 +1678,11 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the sellerContactIds value for this Proposal.
      * 
-     * @param sellerContactIds   * {@link User users} who are the seller's contacts. This attribute
-     * is optional.
+     * @param sellerContactIds   * {@link User users} who are the seller's contacts.
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public void setSellerContactIds(long[] sellerContactIds) {
         this.sellerContactIds = sellerContactIds;

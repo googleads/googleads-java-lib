@@ -24,7 +24,7 @@ package com.google.api.ads.dfp.axis.v201711;
 
 /**
  * A {@code Creative} that displays a DFP-hosted Flash-based ad and
- * is served via VAST 2.0 XML. It
+ * is served via VAST XML. It
  *             is displayed in a linear fashion with a video (before,
  * after, interrupting). This creative is
  *             read only.

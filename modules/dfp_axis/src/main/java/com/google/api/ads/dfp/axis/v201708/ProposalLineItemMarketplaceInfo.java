@@ -33,7 +33,8 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 This is only for {@link ProposalLineItem proposal
      * line items} with a corresponding deal in
      *                 Marketplace.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.dfp.axis.v201708.AdExchangeEnvironment adExchangeEnvironment;
 
     public ProposalLineItemMarketplaceInfo() {
@@ -61,7 +62,8 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 This is only for {@link ProposalLineItem proposal
      * line items} with a corresponding deal in
      *                 Marketplace.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.dfp.axis.v201708.AdExchangeEnvironment getAdExchangeEnvironment() {
         return adExchangeEnvironment;
@@ -77,7 +79,8 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 This is only for {@link ProposalLineItem proposal
      * line items} with a corresponding deal in
      *                 Marketplace.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setAdExchangeEnvironment(com.google.api.ads.dfp.axis.v201708.AdExchangeEnvironment adExchangeEnvironment) {
         this.adExchangeEnvironment = adExchangeEnvironment;

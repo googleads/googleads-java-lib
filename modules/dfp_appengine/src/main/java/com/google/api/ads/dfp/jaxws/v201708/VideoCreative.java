@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code Creative} that contains DFP-hosted video ads and is served
- *             via VAST 2.0 XML.  This creative is read-only.
+ *             via VAST XML.  This creative is read-only.
  *           
  * 
  * <p>Java class for VideoCreative complex type.

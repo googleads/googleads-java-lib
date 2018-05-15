@@ -27,6 +27,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code Creative} represents the media for the ad being served.
+ *             
+ *             <p>Read more about creatives on the
+ *             <a href="https://support.google.com/dfp_premium/answer/3185155">DFP Help Center</a>.</p>
  *           
  * 
  * <p>Java class for Creative complex type.

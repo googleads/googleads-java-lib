@@ -24,6 +24,10 @@ package com.google.api.ads.dfp.axis.v201802;
 
 /**
  * A {@code Creative} represents the media for the ad being served.
+ * 
+ *             <p>Read more about creatives on the
+ *             <a href="https://support.google.com/dfp_premium/answer/3185155">DFP
+ * Help Center</a>.</p>
  */
 public abstract class Creative  implements java.io.Serializable {
     /* The ID of the advertiser that owns the creative. This attribute

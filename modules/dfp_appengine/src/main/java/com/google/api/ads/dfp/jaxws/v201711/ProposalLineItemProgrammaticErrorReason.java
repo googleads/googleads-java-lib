@@ -37,6 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_PROGRAMMATIC_CREATIVE_SOURCE"/>
  *     &lt;enumeration value="CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE"/>
  *     &lt;enumeration value="INVALID_NUM_UNITS"/>
+ *     &lt;enumeration value="MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED"/>
+ *     &lt;enumeration value="CANNOT_UPDATE_SIZES"/>
  *     &lt;enumeration value="INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT"/>
  *     &lt;enumeration value="INVALID_PROGRAMMATIC_PRICING_MODEL"/>
  *     &lt;enumeration value="UNKNOWN"/>
@@ -137,6 +139,23 @@ public enum ProposalLineItemProgrammaticErrorReason {
      * 
      */
     INVALID_NUM_UNITS,
+
+    /**
+     * 
+     *                 Cannot mix native and banner size in a programmatic proposal line item.
+     *               
+     * 
+     */
+    MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED,
+
+    /**
+     * 
+     *                 Cannot update sizes when a programmatic proposal line item with publisher creative source is
+     *                 sent to a buyer.
+     *               
+     * 
+     */
+    CANNOT_UPDATE_SIZES,
 
     /**
      * 

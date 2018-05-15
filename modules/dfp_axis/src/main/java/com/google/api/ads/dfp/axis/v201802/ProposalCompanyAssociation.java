@@ -31,11 +31,12 @@ package com.google.api.ads.dfp.axis.v201802;
 public class ProposalCompanyAssociation  implements java.io.Serializable {
     /* The unique ID of the {@link Company} associated with the {@link
      * Proposal}.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long companyId;
 
     /* The association type of the {@link Company} and {@link Proposal}.
-     * This attribute is required. */
+     * <span class="constraint Required">This attribute is required.</span> */
     private com.google.api.ads.dfp.axis.v201802.ProposalCompanyAssociationType type;
 
     /* List of unique IDs for {@link Contact} objects of the {@link
@@ -69,7 +70,8 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * 
      * @return companyId   * The unique ID of the {@link Company} associated with the {@link
      * Proposal}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getCompanyId() {
         return companyId;
@@ -81,7 +83,8 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * 
      * @param companyId   * The unique ID of the {@link Company} associated with the {@link
      * Proposal}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setCompanyId(java.lang.Long companyId) {
         this.companyId = companyId;
@@ -92,7 +95,7 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * Gets the type value for this ProposalCompanyAssociation.
      * 
      * @return type   * The association type of the {@link Company} and {@link Proposal}.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public com.google.api.ads.dfp.axis.v201802.ProposalCompanyAssociationType getType() {
         return type;
@@ -103,7 +106,7 @@ public class ProposalCompanyAssociation  implements java.io.Serializable {
      * Sets the type value for this ProposalCompanyAssociation.
      * 
      * @param type   * The association type of the {@link Company} and {@link Proposal}.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setType(com.google.api.ads.dfp.axis.v201802.ProposalCompanyAssociationType type) {
         this.type = type;

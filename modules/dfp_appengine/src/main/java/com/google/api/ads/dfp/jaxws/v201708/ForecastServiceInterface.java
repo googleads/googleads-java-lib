@@ -27,16 +27,15 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Provides methods for estimating traffic (clicks/impressions) for line items.
- *       Forecasts can be provided for {@link LineItem} objects that exist in the
- *       system or which have not had an ID set yet.
+ *       Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be
+ *       provided for {@link LineItem} objects that exist in the system or which have not had an ID set
+ *       yet.
  *       
  *       <h4>Test network behavior</h4>
  *       
- *       <p>Test networks are unable to provide forecasts that would be
- *       comparable to the production environment because forecasts require traffic
- *       history. For test networks, a consistent behavior can be expected
- *       for forecast requests, according to the following rules:
+ *       <p>Test networks are unable to provide forecasts that would be comparable to the production
+ *       environment because forecasts require traffic history. For test networks, a consistent behavior
+ *       can be expected for forecast requests, according to the following rules:
  *       
  *       <table>
  *       <tr>

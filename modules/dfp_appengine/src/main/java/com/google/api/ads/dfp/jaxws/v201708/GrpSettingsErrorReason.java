@@ -53,8 +53,9 @@ public enum GrpSettingsErrorReason {
 
     /**
      * 
-     *                 Age range for GRP audience is not valid. Please see
-     *                 https://support.google.com/dfp_premium/answer/6337075 for more information.
+     *                 Age range for GRP audience is not valid. Please see the
+     *                 <a href="https://support.google.com/dfp_premium/answer/6135438">DFP Help Center</a> for more
+     *                 information.
      *               
      * 
      */

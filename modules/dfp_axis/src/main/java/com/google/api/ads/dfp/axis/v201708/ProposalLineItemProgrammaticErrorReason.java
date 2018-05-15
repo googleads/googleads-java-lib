@@ -40,6 +40,8 @@ public class ProposalLineItemProgrammaticErrorReason implements java.io.Serializ
     public static final java.lang.String _ZERO_COST_PER_UNIT_NOT_SUPPORTED = "ZERO_COST_PER_UNIT_NOT_SUPPORTED";
     public static final java.lang.String _INVALID_PROGRAMMATIC_CREATIVE_SOURCE = "INVALID_PROGRAMMATIC_CREATIVE_SOURCE";
     public static final java.lang.String _INVALID_NUM_UNITS = "INVALID_NUM_UNITS";
+    public static final java.lang.String _MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED = "MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED";
+    public static final java.lang.String _CANNOT_UPDATE_SIZES = "CANNOT_UPDATE_SIZES";
     public static final java.lang.String _INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT = "INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT";
     public static final java.lang.String _INVALID_PROGRAMMATIC_PRICING_MODEL = "INVALID_PROGRAMMATIC_PRICING_MODEL";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
@@ -52,6 +54,8 @@ public class ProposalLineItemProgrammaticErrorReason implements java.io.Serializ
     public static final ProposalLineItemProgrammaticErrorReason ZERO_COST_PER_UNIT_NOT_SUPPORTED = new ProposalLineItemProgrammaticErrorReason(_ZERO_COST_PER_UNIT_NOT_SUPPORTED);
     public static final ProposalLineItemProgrammaticErrorReason INVALID_PROGRAMMATIC_CREATIVE_SOURCE = new ProposalLineItemProgrammaticErrorReason(_INVALID_PROGRAMMATIC_CREATIVE_SOURCE);
     public static final ProposalLineItemProgrammaticErrorReason INVALID_NUM_UNITS = new ProposalLineItemProgrammaticErrorReason(_INVALID_NUM_UNITS);
+    public static final ProposalLineItemProgrammaticErrorReason MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED = new ProposalLineItemProgrammaticErrorReason(_MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED);
+    public static final ProposalLineItemProgrammaticErrorReason CANNOT_UPDATE_SIZES = new ProposalLineItemProgrammaticErrorReason(_CANNOT_UPDATE_SIZES);
     public static final ProposalLineItemProgrammaticErrorReason INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT = new ProposalLineItemProgrammaticErrorReason(_INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT);
     public static final ProposalLineItemProgrammaticErrorReason INVALID_PROGRAMMATIC_PRICING_MODEL = new ProposalLineItemProgrammaticErrorReason(_INVALID_PROGRAMMATIC_PRICING_MODEL);
     public static final ProposalLineItemProgrammaticErrorReason UNKNOWN = new ProposalLineItemProgrammaticErrorReason(_UNKNOWN);

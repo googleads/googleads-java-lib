@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * This example will create an OAuth2 refresh token that can be used with the
  * OfflineCredentials utility. Please copy the refresh token into your
- * ads.properites file after running.
+ * ads.properties file after running.
  *
  * <p>This example is meant to be run from the command line and requires user
  * input.

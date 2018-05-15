@@ -30,7 +30,8 @@ import java.rmi.RemoteException;
 
 /**
  * This example demonstrates how to create a Credential and an AdWordsSession
- * object without using an ads.properties file.
+ * object without using an ads.properties file, then uses {@code CustomerService} to
+ * display the list of accounts to which the provided credentials have direct access.
  */
 public class CreateAdWordsSessionWithoutPropertiesFile {
 
@@ -56,6 +57,13 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
         .withDeveloperToken(developerToken)
         .withUserAgent(userAgent)
         .withOAuth2Credential(credential)
+        // NOTE: If you are copying this as a template for use with other services you should set
+        // the clientCustomerId of the AdWordsSession as shown in the commented out line below. The
+        // CustomerService.getCustomers method (called in this example) is one of the few methods
+        // in the AdWords API where the clientCustomerId is optional. See
+        // https://developers.google.com/adwords/api/docs/guides/call-structure#request_headers
+        // for details.
+        // .withClientCustomerId("INSERT_CLIENT_CUSTOMER_ID_HERE")
         .build();
   }
 
@@ -63,6 +71,8 @@ public class CreateAdWordsSessionWithoutPropertiesFile {
       throws RemoteException {
     CustomerServiceInterface customerService =
         adWordsServices.get(session, CustomerServiceInterface.class);
+    // Sends a getCustomers request, which will return all customers to which the session's OAuth
+    // credentials have direct access.
     System.out.println("You are logged in as a user with access to the following customers:");
     for (Customer customer : customerService.getCustomers()) {
       System.out.printf("  %s%n", customer.getCustomerId());

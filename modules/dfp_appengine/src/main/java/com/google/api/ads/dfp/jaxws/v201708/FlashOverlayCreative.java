@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             An overlay {@code Creative} that displays a Flash-based ad and is
- *             served via VAST 2.0 XML. Overlays cover part of the video content
+ *             served via VAST XML. Overlays cover part of the video content
  *             they are displayed on top of.  This creative is read-only.
  *           
  * 

@@ -24,7 +24,7 @@ package com.google.api.ads.dfp.axis.v201711;
 
 /**
  * A {@code Creative} that contains DFP-hosted video ads and is served
- * via VAST 2.0 XML.  This creative is read-only.
+ * via VAST XML.  This creative is read-only.
  */
 public class VideoCreative  extends com.google.api.ads.dfp.axis.v201711.BaseVideoCreative  implements java.io.Serializable {
     public VideoCreative() {

@@ -69,7 +69,12 @@ public class XmlFieldExtractor {
   public Map<String, String> extract(InputStream xml, String[] fields) {
     Map<String, String> parsedFields = Maps.newHashMap();
     try {
-      Document doc = documentBuilderSupplier.get().parse(xml);
+      DocumentBuilder documentBuilder = documentBuilderSupplier.get();
+      if (documentBuilder == null) {
+        logger.warn("Could not create DocumentBuilder");
+        return parsedFields;
+      }
+      Document doc = documentBuilder.parse(xml);
       for (String field : fields) {
         try {
           String value = extract(doc, field);
@@ -78,13 +83,13 @@ public class XmlFieldExtractor {
           }
         } catch (XPathExpressionException e) {
           // Ignore problems with the xpath.
-          logger.warn("While processing xml, XPath invalid.", e);
+          logger.warn("Invalid XPath: " + field, e);
         }
       }
     } catch (SAXException e) {
-      logger.error("Couldn't process XML into a Document", e);
+      logger.warn("Couldn't process XML into a Document", e);
     } catch (IOException e) {
-      logger.error("Problem reading input stream", e);
+      logger.warn("Problem reading input stream", e);
     }
     return parsedFields;
   }

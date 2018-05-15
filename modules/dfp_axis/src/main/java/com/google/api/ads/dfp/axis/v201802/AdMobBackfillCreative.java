@@ -31,8 +31,9 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201802.
      *                     test=true&bgcolor=000000. */
     private java.lang.String additionalParameters;
 
-    /* The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
-     * for more information. This attribute is required. */
+    /* The AdMob publisher ID.
+     *                     See the <a href="https://support.google.com/dfp_premium/answer/1209767#admob">
+     * DFP Help Center</a> for more information. This attribute is required. */
     private java.lang.String publisherId;
 
     /* A locked orientation for this creative to be displayed in. */
@@ -115,8 +116,9 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201802.
     /**
      * Gets the publisherId value for this AdMobBackfillCreative.
      * 
-     * @return publisherId   * The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
-     * for more information. This attribute is required.
+     * @return publisherId   * The AdMob publisher ID.
+     *                     See the <a href="https://support.google.com/dfp_premium/answer/1209767#admob">
+     * DFP Help Center</a> for more information. This attribute is required.
      */
     public java.lang.String getPublisherId() {
         return publisherId;
@@ -126,8 +128,9 @@ public class AdMobBackfillCreative  extends com.google.api.ads.dfp.axis.v201802.
     /**
      * Sets the publisherId value for this AdMobBackfillCreative.
      * 
-     * @param publisherId   * The AdMob publisher ID. See https://support.google.com/dfp_premium/answer/1209767#admob
-     * for more information. This attribute is required.
+     * @param publisherId   * The AdMob publisher ID.
+     *                     See the <a href="https://support.google.com/dfp_premium/answer/1209767#admob">
+     * DFP Help Center</a> for more information. This attribute is required.
      */
     public void setPublisherId(java.lang.String publisherId) {
         this.publisherId = publisherId;

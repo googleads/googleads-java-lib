@@ -30,7 +30,8 @@ public class SalespersonSplit  implements java.io.Serializable {
     /* The unique ID of the {@link User} responsible for the sales
      * of the
      *                 {@link Proposal}.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long userId;
 
     /* The split can be attributed to the salesperson.
@@ -65,7 +66,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * @return userId   * The unique ID of the {@link User} responsible for the sales
      * of the
      *                 {@link Proposal}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getUserId() {
         return userId;
@@ -78,7 +80,8 @@ public class SalespersonSplit  implements java.io.Serializable {
      * @param userId   * The unique ID of the {@link User} responsible for the sales
      * of the
      *                 {@link Proposal}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setUserId(java.lang.Long userId) {
         this.userId = userId;

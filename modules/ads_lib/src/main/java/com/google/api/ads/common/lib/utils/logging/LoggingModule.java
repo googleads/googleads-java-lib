@@ -14,18 +14,16 @@
 
 package com.google.api.ads.common.lib.utils.logging;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Supplier;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provider;
 import com.google.inject.TypeLiteral;
 import com.google.inject.name.Names;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.annotation.concurrent.ThreadSafe;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -34,6 +32,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Module for logging.
@@ -86,44 +86,78 @@ public class LoggingModule extends AbstractModule {
       return XPathFactory.newInstance().newXPath();
     }
   }
-  
+
   /**
-   * Thread-safe supplier for {@link DocumentBuilder} objects. This is necessary because
-   * {@link DocumentBuilderFactory} is <em>not</em> thread-safe.
+   * Thread-safe supplier for {@link DocumentBuilder} objects. This is necessary because {@link
+   * DocumentBuilderFactory} is <em>not</em> thread-safe.
    */
   @ThreadSafe
-  private static final class DocumentBuilderSupplier implements Supplier<DocumentBuilder> {
+  @VisibleForTesting
+  static final class DocumentBuilderSupplier implements Supplier<DocumentBuilder> {
     @Override
     public DocumentBuilder get() {
+      DocumentBuilderFactory factory;
       try {
-        return DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        factory = DocumentBuilderFactory.newInstance();
+      } catch (FactoryConfigurationError e) {
+        AdsServiceLoggers.ADS_API_LIB_LOG.warn(
+            "Unable to instantiate a DocumentBuilderFactory. Error: " + e);
+        return null;
+      }
+
+      try {
+        return factory.newDocumentBuilder();
       } catch (ParserConfigurationException e) {
-        AdsServiceLoggers.ADS_API_LIB_LOG.warn("Unable to initialize DocumentBuilder. Error: " + e);
+        AdsServiceLoggers.ADS_API_LIB_LOG.warn(
+            "Unable to obtain a new DocumentBuilder. Error: " + e);
         return null;
       }
     }
   }
 
   /**
-   * Thread-safe supplier for {@link Transformer} objects. This is necessary because
-   * {@link TransformerFactory} is <em>not</em> thread-safe.
+   * Thread-safe supplier for {@link Transformer} objects. This is necessary because {@link
+   * TransformerFactory} is <em>not</em> thread-safe.
    */
   @ThreadSafe
-  private static final class TransformerSupplier implements Supplier<Transformer> {
+  @VisibleForTesting
+  static final class TransformerSupplier implements Supplier<Transformer> {
     @Override
     public Transformer get() {
-      Transformer transformer;
+      TransformerFactory factory;
       try {
-        transformer = TransformerFactory.newInstance().newTransformer();
-      } catch (TransformerConfigurationException e) {
-        AdsServiceLoggers.ADS_API_LIB_LOG.warn("Unable to initialize Transformer. Error: " + e);
-        return null;
+        factory = TransformerFactory.newInstance();
       } catch (TransformerFactoryConfigurationError e) {
-        AdsServiceLoggers.ADS_API_LIB_LOG.warn("Unable to initialize Transformer. Error: " + e);
+        AdsServiceLoggers.ADS_API_LIB_LOG.warn(
+            "Unable to instantiate a TransformerFactory. Error: ", e);
         return null;
       }
-      transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-      transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+      Transformer transformer;
+      try {
+        transformer = factory.newTransformer();
+      } catch (TransformerConfigurationException e) {
+        AdsServiceLoggers.ADS_API_LIB_LOG.warn("Unable to obtain a new Transformer. Error: ", e);
+        return null;
+      }
+
+      // An incorrectly implemented factory could return null.
+      if (transformer == null) {
+        AdsServiceLoggers.ADS_API_LIB_LOG.warn("TransformerFactory returned a null instance.");
+        return null;
+      }
+
+      try {
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+      } catch (IllegalArgumentException e) {
+        // Ignore this exception since it indicates that the transformer does not support indent or
+        // indent amount. This will only affect log output formatting and is therefore non-critical.
+        AdsServiceLoggers.ADS_API_LIB_LOG.debug(
+            "[NON-CRITICAL] XML in log messages may not be indented properly because Transformer "
+                + "implementation does not support one or more indent options.",
+            e);
+      }
       return transformer;
     }
   }

@@ -1,3 +1,20 @@
+3.14.0 - 05/15/2018
+-----------------
+AdWords:
+  - No changes.
+
+DFP:
+  - Added support for v201805.
+  - Removed support for v201705.
+  - Removed examples for v201708.
+
+Common:
+  - Modified `LoggingModule` to avoid throwing exceptions if it is unable
+    to instantiate `TransformerFactory` or `DocumentBuilderFactory`. Fixes
+    https://github.com/googleads/googleads-java-lib/issues/138. Also made
+    `XmlFieldExtractor` log warnings instead of errors to clarify that
+    the exceptions involved are not thrown.
+
 3.13.0 - 3/28/2018
 -----------------
 

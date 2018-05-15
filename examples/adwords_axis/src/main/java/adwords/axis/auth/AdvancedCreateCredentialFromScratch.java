@@ -53,14 +53,14 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 /**
- * This example demonstrates how to create a Credential object from scratch.<br>
- * This example is *not* meant to be used with our other examples, but shows
- * how you might use the general OAuth2 libraries to add OAuth2 to your
- * existing application.<br>
- * <br>
- * For an alternative to service accounts, installed applications, or a web
- * application that will not need to have multiple users log in, using
- * OfflineCredentials to generate a refreshable OAuth2
+ * This example demonstrates how to create a Credential object from scratch. Other properties for
+ * the AdWordsSession will be read from your ads.properties file.
+ *
+ * <p>This example is *not* meant to be used with our other examples, but shows how you might use
+ * the general OAuth2 libraries to add OAuth2 to your existing application.
+ *
+ * <p>For an alternative to service accounts, installed applications, or a web application that will
+ * not need to have multiple users log in, using OfflineCredentials to generate a refreshable OAuth2
  * credential instead will be much easier.
  */
 public class AdvancedCreateCredentialFromScratch {
@@ -118,7 +118,7 @@ public class AdvancedCreateCredentialFromScratch {
     authorizationFlow.createAndStoreCredential(tokenResponse, userId);
   }
 
-  private static AdWordsSession createAdWordsSession(String userId)
+  private static AdWordsSession createAdWordsSession(String userId, DataStoreFactory storeFactory)
       throws IOException, ValidationException, ConfigurationLoadException {
     // Create a GoogleCredential with minimal information.
     GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
@@ -127,12 +127,14 @@ public class AdvancedCreateCredentialFromScratch {
         CLIENT_ID,
         CLIENT_SECRET,
         Arrays.asList(SCOPE))
+        .setDataStoreFactory(storeFactory)
         .build();
 
     // Load the credential.
     Credential credential = authorizationFlow.loadCredential(userId);
 
-    // Construct a AdWordsSession.
+    // Construct an AdWordsSession using the default ads.properties file to set the session's
+    // developer token, client customer ID, etc., but use the credentials created above.
     return new AdWordsSession.Builder()
         .fromFile()
         .withOAuth2Credential(credential)
@@ -244,7 +246,7 @@ public class AdvancedCreateCredentialFromScratch {
     AdWordsSession adWordsSession;
 
     try {
-      adWordsSession = createAdWordsSession(USER_ID);
+      adWordsSession = createAdWordsSession(USER_ID, storeFactory);
     } catch (ConfigurationLoadException cle) {
       System.err.printf(
           "Failed to load configuration from the %s file. Exception: %s%n",

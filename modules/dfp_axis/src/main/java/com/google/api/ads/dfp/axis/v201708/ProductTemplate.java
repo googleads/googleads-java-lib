@@ -45,7 +45,7 @@ public class ProductTemplate  implements java.io.Serializable {
     /* The name of the {@code ProductTemplate}.
      *                 
      *                 This attribute has maximum length of 255 characters.
-     * This attribute is required. */
+     * <span class="constraint Required">This attribute is required.</span> */
     private java.lang.String name;
 
     /* The creation time of the {@code ProductTemplate}.
@@ -161,7 +161,8 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.dfp.axis.v201708.ProductType productType;
 
     /* The {@link User#ID id} of the user who created the {@code ProductTemplate}.
@@ -170,7 +171,7 @@ public class ProductTemplate  implements java.io.Serializable {
     private java.lang.Long creatorId;
 
     /* The method used for billing the created {@link ProposalLineItem}.
-     * This attribute is required. */
+     * <span class="constraint Required">This attribute is required.</span> */
     private com.google.api.ads.dfp.axis.v201708.RateType rateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
@@ -477,7 +478,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * @return name   * The name of the {@code ProductTemplate}.
      *                 
      *                 This attribute has maximum length of 255 characters.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -490,7 +491,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * @param name   * The name of the {@code ProductTemplate}.
      *                 
      *                 This attribute has maximum length of 255 characters.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -786,7 +787,8 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.dfp.axis.v201708.ProductType getProductType() {
         return productType;
@@ -806,7 +808,8 @@ public class ProductTemplate  implements java.io.Serializable {
      * {@link #frequencyCaps},
      *                 {@link #productSegmentation} and {@link #targeting}.
      * </b>
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setProductType(com.google.api.ads.dfp.axis.v201708.ProductType productType) {
         this.productType = productType;
@@ -841,7 +844,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Gets the rateType value for this ProductTemplate.
      * 
      * @return rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public com.google.api.ads.dfp.axis.v201708.RateType getRateType() {
         return rateType;
@@ -852,7 +855,7 @@ public class ProductTemplate  implements java.io.Serializable {
      * Sets the rateType value for this ProductTemplate.
      * 
      * @param rateType   * The method used for billing the created {@link ProposalLineItem}.
-     * This attribute is required.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setRateType(com.google.api.ads.dfp.axis.v201708.RateType rateType) {
         this.rateType = rateType;

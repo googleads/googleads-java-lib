@@ -22,8 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for approving and overbooking {@link Order} objects.
- *             All {@link LineItem} objects within the order will be approved as well.
+ *             The action used for approving and overbooking {@link Order} objects. All {@link LineItem} objects
+ *             within the order will be approved as well. For more information on what happens to an order and
+ *             its line items when it is approved and overbooked, see the
+ *             <a href="https://support.google.com/dfp_premium/answer/177334">DFP Help Center</a>.
  *           
  * 
  * <p>Java class for ApproveAndOverbookOrders complex type.

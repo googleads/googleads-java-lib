@@ -40,7 +40,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}
      *                 belongs. This attribute is required for creation and
      * then is readonly.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long proposalId;
 
     /* The unique ID of the {@link Package}, to which the {@code ProposalLineItem}
@@ -86,7 +87,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String name;
 
     /* The date and time at which the line item associated with the
@@ -157,7 +159,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Goal#unitType} are readonly.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * goal type can only be {@link GoalType#NONE}.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.dfp.axis.v201708.Goal goal;
 
     /* A percentage number to a STANDARD line item with CPM or CPC
@@ -273,7 +276,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <li>{@link LineItemType#STANDARD}</li>
      *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.dfp.axis.v201708.LineItemType lineItemType;
 
     /* The priority for the corresponding {@link LineItem} of the
@@ -382,6 +386,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * of 100. It doesn't include agency
      *                 commission.
      *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
+     *                 
      *                 <p>When using sales management, at least one of the
      * four fields
      *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
@@ -401,6 +410,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 100. It includes agency commission.
      *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
+     *                 
      *                 <p>At least one of the four fields {@link ProposalLineItem#netRate},
      * {@link ProposalLineItem#grossRate}, {@link ProposalLineItem#netCost}
      * and
@@ -417,6 +431,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 10000. It doesn't include agency
      *                 commission.
+     *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.45 could be
+     *                 represented as 123450000, but further precision is
+     * not supported.
      *                 
      *                 <p>When using sales management, at least one of the
      * four fields
@@ -884,7 +903,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}
      *                 belongs. This attribute is required for creation and
      * then is readonly.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getProposalId() {
         return proposalId;
@@ -898,7 +918,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * ProposalLineItem}
      *                 belongs. This attribute is required for creation and
      * then is readonly.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setProposalId(java.lang.Long proposalId) {
         this.proposalId = proposalId;
@@ -1028,7 +1049,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -1046,7 +1068,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -1267,7 +1290,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Goal#unitType} are readonly.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * goal type can only be {@link GoalType#NONE}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.dfp.axis.v201708.Goal getGoal() {
         return goal;
@@ -1286,7 +1310,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 Goal#unitType} are readonly.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * goal type can only be {@link GoalType#NONE}.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setGoal(com.google.api.ads.dfp.axis.v201708.Goal goal) {
         this.goal = goal;
@@ -1662,7 +1687,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <li>{@link LineItemType#STANDARD}</li>
      *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.dfp.axis.v201708.LineItemType getLineItemType() {
         return lineItemType;
@@ -1680,7 +1706,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <li>{@link LineItemType#STANDARD}</li>
      *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
      *                 </ul>
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setLineItemType(com.google.api.ads.dfp.axis.v201708.LineItemType lineItemType) {
         this.lineItemType = lineItemType;
@@ -2102,6 +2129,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * of 100. It doesn't include agency
      *                 commission.
      *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
+     *                 
      *                 <p>When using sales management, at least one of the
      * four fields
      *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
@@ -2129,6 +2161,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * of 100. It doesn't include agency
      *                 commission.
      *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
+     *                 
      *                 <p>When using sales management, at least one of the
      * four fields
      *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
@@ -2155,6 +2192,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 100. It includes agency commission.
      *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
+     *                 
      *                 <p>At least one of the four fields {@link ProposalLineItem#netRate},
      * {@link ProposalLineItem#grossRate}, {@link ProposalLineItem#netCost}
      * and
@@ -2177,6 +2219,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * currency unit, so the
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 100. It includes agency commission.
+     *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.4567 could be
+     *                 represented as 123456700, but further precision is
+     * not supported.
      *                 
      *                 <p>At least one of the four fields {@link ProposalLineItem#netRate},
      * {@link ProposalLineItem#grossRate}, {@link ProposalLineItem#netCost}
@@ -2201,6 +2248,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 10000. It doesn't include agency
      *                 commission.
+     *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.45 could be
+     *                 represented as 123450000, but further precision is
+     * not supported.
      *                 
      *                 <p>When using sales management, at least one of the
      * four fields
@@ -2228,6 +2280,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 {@link Money#getAmountInMicros} must be multiples
      * of 10000. It doesn't include agency
      *                 commission.
+     *                 
+     *                 <p>For example, if {@link Proposal#currencyCode} is
+     * 'USD', then $123.45 could be
+     *                 represented as 123450000, but further precision is
+     * not supported.
      *                 
      *                 <p>When using sales management, at least one of the
      * four fields

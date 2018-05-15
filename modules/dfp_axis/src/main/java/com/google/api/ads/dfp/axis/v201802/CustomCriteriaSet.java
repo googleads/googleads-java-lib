@@ -33,7 +33,10 @@ package com.google.api.ads.dfp.axis.v201802;
  */
 public class CustomCriteriaSet  extends com.google.api.ads.dfp.axis.v201802.CustomCriteriaNode  implements java.io.Serializable {
     /* The logical operator to be applied to {@link CustomCriteriaSet#children}.
-     * This attribute is required. */
+     * This attribute is
+     *                     required.
+     *                     <span class="constraint Required">This attribute
+     * is required.</span> */
     private com.google.api.ads.dfp.axis.v201802.CustomCriteriaSetLogicalOperator logicalOperator;
 
     /* The custom criteria. This attribute is required. */
@@ -63,7 +66,10 @@ public class CustomCriteriaSet  extends com.google.api.ads.dfp.axis.v201802.Cust
      * Gets the logicalOperator value for this CustomCriteriaSet.
      * 
      * @return logicalOperator   * The logical operator to be applied to {@link CustomCriteriaSet#children}.
-     * This attribute is required.
+     * This attribute is
+     *                     required.
+     *                     <span class="constraint Required">This attribute
+     * is required.</span>
      */
     public com.google.api.ads.dfp.axis.v201802.CustomCriteriaSetLogicalOperator getLogicalOperator() {
         return logicalOperator;
@@ -74,7 +80,10 @@ public class CustomCriteriaSet  extends com.google.api.ads.dfp.axis.v201802.Cust
      * Sets the logicalOperator value for this CustomCriteriaSet.
      * 
      * @param logicalOperator   * The logical operator to be applied to {@link CustomCriteriaSet#children}.
-     * This attribute is required.
+     * This attribute is
+     *                     required.
+     *                     <span class="constraint Required">This attribute
+     * is required.</span>
      */
     public void setLogicalOperator(com.google.api.ads.dfp.axis.v201802.CustomCriteriaSetLogicalOperator logicalOperator) {
         this.logicalOperator = logicalOperator;

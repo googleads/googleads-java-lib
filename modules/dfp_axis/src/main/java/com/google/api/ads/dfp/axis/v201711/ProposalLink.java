@@ -34,7 +34,8 @@ public class ProposalLink  implements java.io.Serializable {
      * the same
      *                 {@link Proposal}. This attribute has a maximum length
      * of 255 characters.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String name;
 
     /* The unique ID of the {@link User} who created the {@code ProposalLink}.
@@ -42,7 +43,8 @@ public class ProposalLink  implements java.io.Serializable {
     private java.lang.Long creatorId;
 
     /* The link to the {@code ProposalLink} resource.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String url;
 
     /* The description for the {@code ProposalLink}. This attribute
@@ -115,7 +117,8 @@ public class ProposalLink  implements java.io.Serializable {
      * the same
      *                 {@link Proposal}. This attribute has a maximum length
      * of 255 characters.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -129,7 +132,8 @@ public class ProposalLink  implements java.io.Serializable {
      * the same
      *                 {@link Proposal}. This attribute has a maximum length
      * of 255 characters.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -162,7 +166,8 @@ public class ProposalLink  implements java.io.Serializable {
      * Gets the url value for this ProposalLink.
      * 
      * @return url   * The link to the {@code ProposalLink} resource.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getUrl() {
         return url;
@@ -173,7 +178,8 @@ public class ProposalLink  implements java.io.Serializable {
      * Sets the url value for this ProposalLink.
      * 
      * @param url   * The link to the {@code ProposalLink} resource.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setUrl(java.lang.String url) {
         this.url = url;

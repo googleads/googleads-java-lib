@@ -55,7 +55,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
 
     /* The ID of the buyer that this {@code Proposal} is being negotiated
      * with.
-     *                 This attribute is required. */
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long buyerAccountId;
 
     public ProposalMarketplaceInfo() {
@@ -201,7 +202,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * 
      * @return buyerAccountId   * The ID of the buyer that this {@code Proposal} is being negotiated
      * with.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getBuyerAccountId() {
         return buyerAccountId;
@@ -213,7 +215,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * 
      * @param buyerAccountId   * The ID of the buyer that this {@code Proposal} is being negotiated
      * with.
-     *                 This attribute is required.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setBuyerAccountId(java.lang.Long buyerAccountId) {
         this.buyerAccountId = buyerAccountId;

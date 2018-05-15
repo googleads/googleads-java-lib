@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.13.1-SNAPSHOT</version>
+    <version>3.14.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,7 +29,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>3.13.1-SNAPSHOT</version>
+  <version>3.14.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads APIs Client Library common components</name>
@@ -74,6 +74,7 @@
               <excludes>
                 <exclude>**/AdWordsLibConfigurationIntegrationTest.java</exclude>
                 <exclude>**/DfpLibConfigurationIntegrationTest.java</exclude>
+                <exclude>**/LoggingModuleTest.java</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -91,6 +92,7 @@
               <includes>
                 <include>**/AdWordsLibConfigurationIntegrationTest.java</include>
                 <include>**/DfpLibConfigurationIntegrationTest.java</include>
+                <include>**/LoggingModuleTest.java</include>
               </includes>
             </configuration>
           </execution>
