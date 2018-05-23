@@ -85,6 +85,7 @@ import javax.xml.bind.annotation.XmlType;
     ProposalLineItemActionError.class,
     CompanyCreditStatusError.class,
     ContactError.class,
+    ContentFilterError.class,
     QuotaError.class,
     WorkflowActionError.class,
     CreativeWrapperError.class,

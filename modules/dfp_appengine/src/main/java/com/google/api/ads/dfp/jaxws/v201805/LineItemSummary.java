@@ -96,6 +96,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="secondaryGoals" type="{https://www.google.com/apis/ads/publisher/v201805}Goal" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="grpSettings" type="{https://www.google.com/apis/ads/publisher/v201805}GrpSettings" minOccurs="0"/>
  *         &lt;element name="viewabilityProviderCompanyId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+ *         &lt;element name="userConsentEligibility" type="{https://www.google.com/apis/ads/publisher/v201805}UserConsentEligibility" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -162,7 +163,8 @@ import javax.xml.bind.annotation.XmlType;
     "primaryGoal",
     "secondaryGoals",
     "grpSettings",
-    "viewabilityProviderCompanyId"
+    "viewabilityProviderCompanyId",
+    "userConsentEligibility"
 })
 @XmlSeeAlso({
     LineItem.class
@@ -238,6 +240,8 @@ public class LineItemSummary {
     protected List<Goal> secondaryGoals;
     protected GrpSettings grpSettings;
     protected Long viewabilityProviderCompanyId;
+    @XmlSchemaType(name = "string")
+    protected UserConsentEligibility userConsentEligibility;
 
     /**
      * Gets the value of the orderId property.
@@ -1640,6 +1644,30 @@ public class LineItemSummary {
      */
     public void setViewabilityProviderCompanyId(Long value) {
         this.viewabilityProviderCompanyId = value;
+    }
+
+    /**
+     * Gets the value of the userConsentEligibility property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link UserConsentEligibility }
+     *     
+     */
+    public UserConsentEligibility getUserConsentEligibility() {
+        return userConsentEligibility;
+    }
+
+    /**
+     * Sets the value of the userConsentEligibility property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UserConsentEligibility }
+     *     
+     */
+    public void setUserConsentEligibility(UserConsentEligibility value) {
+        this.userConsentEligibility = value;
     }
 
 }

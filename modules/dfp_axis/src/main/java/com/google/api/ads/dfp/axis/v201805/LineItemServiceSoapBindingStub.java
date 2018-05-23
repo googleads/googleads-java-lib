@@ -1816,6 +1816,13 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201805", "UserConsentEligibility");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201805.UserConsentEligibility.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201805", "UserDomainTargeting");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201805.UserDomainTargeting.class;

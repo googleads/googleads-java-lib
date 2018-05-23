@@ -1,3 +1,14 @@
+3.14.1 - 05/23/2018
+-----------------
+AdWords:
+  - No changes.
+
+DFP:
+  - Regenerated v201805 service stubs to fix potential unmarshalling error.
+
+Common:
+  - No changes.
+
 3.14.0 - 05/15/2018
 -----------------
 AdWords:

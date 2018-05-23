@@ -970,6 +970,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ContentFilterError }
+     * 
+     */
+    public ContentFilterError createContentFilterError() {
+        return new ContentFilterError();
+    }
+
+    /**
      * Create an instance of {@link ProductPage }
      * 
      */
