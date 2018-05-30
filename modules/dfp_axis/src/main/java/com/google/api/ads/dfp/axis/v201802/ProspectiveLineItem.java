@@ -28,7 +28,7 @@ package com.google.api.ads.dfp.axis.v201802;
 public class ProspectiveLineItem  implements java.io.Serializable {
     /* The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
-     *                 then a forecast is computed for the the subject, predicting
+     *                 then a forecast is computed for the subject, predicting
      * what would happen if it were added
      *                 to the network. If a line item already exists with
      * {@link LineItem#id}, the forecast is
@@ -68,7 +68,7 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * 
      * @return lineItem   * The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
-     *                 then a forecast is computed for the the subject, predicting
+     *                 then a forecast is computed for the subject, predicting
      * what would happen if it were added
      *                 to the network. If a line item already exists with
      * {@link LineItem#id}, the forecast is
@@ -86,7 +86,7 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * 
      * @param lineItem   * The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
-     *                 then a forecast is computed for the the subject, predicting
+     *                 then a forecast is computed for the subject, predicting
      * what would happen if it were added
      *                 to the network. If a line item already exists with
      * {@link LineItem#id}, the forecast is

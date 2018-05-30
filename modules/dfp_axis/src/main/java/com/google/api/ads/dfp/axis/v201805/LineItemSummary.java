@@ -527,6 +527,20 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 {@link Company.Type#VIEWABILITY_PROVIDER}. */
     private java.lang.Long viewabilityProviderCompanyId;
 
+    /* Optional User consent eligibility designation for this line
+     * item.
+     *                 
+     *                 Defaults {@link UserConsentEligibility#NONE} if the
+     * network's EU User Consent settings limit
+     *                 line items.
+     *                 
+     *                 This field has no effect on serving enforcement unless
+     * you opt to "Limit line items" in the
+     *                 network's EU User Consent settings.  See
+     *                 https://support.google.com/dfp_premium/answer/7673898#limit
+     * for more information. */
+    private com.google.api.ads.dfp.axis.v201805.UserConsentEligibility userConsentEligibility;
+
     public LineItemSummary() {
     }
 
@@ -587,7 +601,8 @@ public class LineItemSummary  implements java.io.Serializable {
            com.google.api.ads.dfp.axis.v201805.Goal primaryGoal,
            com.google.api.ads.dfp.axis.v201805.Goal[] secondaryGoals,
            com.google.api.ads.dfp.axis.v201805.GrpSettings grpSettings,
-           java.lang.Long viewabilityProviderCompanyId) {
+           java.lang.Long viewabilityProviderCompanyId,
+           com.google.api.ads.dfp.axis.v201805.UserConsentEligibility userConsentEligibility) {
            this.orderId = orderId;
            this.id = id;
            this.name = name;
@@ -645,6 +660,7 @@ public class LineItemSummary  implements java.io.Serializable {
            this.secondaryGoals = secondaryGoals;
            this.grpSettings = grpSettings;
            this.viewabilityProviderCompanyId = viewabilityProviderCompanyId;
+           this.userConsentEligibility = userConsentEligibility;
     }
 
     @Override
@@ -704,6 +720,7 @@ public class LineItemSummary  implements java.io.Serializable {
             .add("stats", getStats())
             .add("status", getStatus())
             .add("unlimitedEndDateTime", getUnlimitedEndDateTime())
+            .add("userConsentEligibility", getUserConsentEligibility())
             .add("valueCostPerUnit", getValueCostPerUnit())
             .add("videoMaxDuration", getVideoMaxDuration())
             .add("viewabilityProviderCompanyId", getViewabilityProviderCompanyId())
@@ -2562,6 +2579,48 @@ public class LineItemSummary  implements java.io.Serializable {
         this.viewabilityProviderCompanyId = viewabilityProviderCompanyId;
     }
 
+
+    /**
+     * Gets the userConsentEligibility value for this LineItemSummary.
+     * 
+     * @return userConsentEligibility   * Optional User consent eligibility designation for this line
+     * item.
+     *                 
+     *                 Defaults {@link UserConsentEligibility#NONE} if the
+     * network's EU User Consent settings limit
+     *                 line items.
+     *                 
+     *                 This field has no effect on serving enforcement unless
+     * you opt to "Limit line items" in the
+     *                 network's EU User Consent settings.  See
+     *                 https://support.google.com/dfp_premium/answer/7673898#limit
+     * for more information.
+     */
+    public com.google.api.ads.dfp.axis.v201805.UserConsentEligibility getUserConsentEligibility() {
+        return userConsentEligibility;
+    }
+
+
+    /**
+     * Sets the userConsentEligibility value for this LineItemSummary.
+     * 
+     * @param userConsentEligibility   * Optional User consent eligibility designation for this line
+     * item.
+     *                 
+     *                 Defaults {@link UserConsentEligibility#NONE} if the
+     * network's EU User Consent settings limit
+     *                 line items.
+     *                 
+     *                 This field has no effect on serving enforcement unless
+     * you opt to "Limit line items" in the
+     *                 network's EU User Consent settings.  See
+     *                 https://support.google.com/dfp_premium/answer/7673898#limit
+     * for more information.
+     */
+    public void setUserConsentEligibility(com.google.api.ads.dfp.axis.v201805.UserConsentEligibility userConsentEligibility) {
+        this.userConsentEligibility = userConsentEligibility;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LineItemSummary)) return false;
@@ -2744,7 +2803,10 @@ public class LineItemSummary  implements java.io.Serializable {
               this.grpSettings.equals(other.getGrpSettings()))) &&
             ((this.viewabilityProviderCompanyId==null && other.getViewabilityProviderCompanyId()==null) || 
              (this.viewabilityProviderCompanyId!=null &&
-              this.viewabilityProviderCompanyId.equals(other.getViewabilityProviderCompanyId())));
+              this.viewabilityProviderCompanyId.equals(other.getViewabilityProviderCompanyId()))) &&
+            ((this.userConsentEligibility==null && other.getUserConsentEligibility()==null) || 
+             (this.userConsentEligibility!=null &&
+              this.userConsentEligibility.equals(other.getUserConsentEligibility())));
         __equalsCalc = null;
         return _equals;
     }
@@ -2982,6 +3044,9 @@ public class LineItemSummary  implements java.io.Serializable {
         }
         if (getViewabilityProviderCompanyId() != null) {
             _hashCode += getViewabilityProviderCompanyId().hashCode();
+        }
+        if (getUserConsentEligibility() != null) {
+            _hashCode += getUserConsentEligibility().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -3396,6 +3461,13 @@ public class LineItemSummary  implements java.io.Serializable {
         elemField.setFieldName("viewabilityProviderCompanyId");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201805", "viewabilityProviderCompanyId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userConsentEligibility");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201805", "userConsentEligibility"));
+        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201805", "UserConsentEligibility"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

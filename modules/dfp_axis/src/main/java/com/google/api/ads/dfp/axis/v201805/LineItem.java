@@ -107,6 +107,7 @@ public class LineItem  extends com.google.api.ads.dfp.axis.v201805.LineItemSumma
            com.google.api.ads.dfp.axis.v201805.Goal[] secondaryGoals,
            com.google.api.ads.dfp.axis.v201805.GrpSettings grpSettings,
            java.lang.Long viewabilityProviderCompanyId,
+           com.google.api.ads.dfp.axis.v201805.UserConsentEligibility userConsentEligibility,
            com.google.api.ads.dfp.axis.v201805.Targeting targeting,
            com.google.api.ads.dfp.axis.v201805.CreativeTargeting[] creativeTargetings) {
         super(
@@ -166,7 +167,8 @@ public class LineItem  extends com.google.api.ads.dfp.axis.v201805.LineItemSumma
             primaryGoal,
             secondaryGoals,
             grpSettings,
-            viewabilityProviderCompanyId);
+            viewabilityProviderCompanyId,
+            userConsentEligibility);
         this.targeting = targeting;
         this.creativeTargetings = creativeTargetings;
     }
@@ -231,6 +233,7 @@ public class LineItem  extends com.google.api.ads.dfp.axis.v201805.LineItemSumma
             .add("status", getStatus())
             // Exclude targeting to avoid overly verbose output
             .add("unlimitedEndDateTime", getUnlimitedEndDateTime())
+            .add("userConsentEligibility", getUserConsentEligibility())
             .add("valueCostPerUnit", getValueCostPerUnit())
             .add("videoMaxDuration", getVideoMaxDuration())
             .add("viewabilityProviderCompanyId", getViewabilityProviderCompanyId())

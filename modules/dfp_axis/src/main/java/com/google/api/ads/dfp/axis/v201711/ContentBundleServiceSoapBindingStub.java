@@ -262,6 +262,20 @@ public class ContentBundleServiceSoapBindingStub extends org.apache.axis.client.
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201711", "ContentFilterError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201711.ContentFilterError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201711", "ContentFilterError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.dfp.axis.v201711.ContentFilterErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201711", "Date");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.dfp.axis.v201711.Date.class;

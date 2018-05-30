@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2017 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,51 +13,32 @@
 // limitations under the License.
 
 
-package com.google.api.ads.dfp.jaxws.v201802;
+package com.google.api.ads.dfp.jaxws.v201708;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ThirdPartyAudienceSegment.LicenseType.
+ * <p>Java class for ContentFilterError.Reason.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ThirdPartyAudienceSegment.LicenseType">
+ * &lt;simpleType name="ContentFilterError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DIRECT_LICENSE"/>
- *     &lt;enumeration value="GLOBAL_LICENSE"/>
  *     &lt;enumeration value="UNKNOWN"/>
+ *     &lt;enumeration value="WRONG_NUMBER_OF_ARGUMENTS"/>
+ *     &lt;enumeration value="ANY_FILTER_NOT_SUPPORTED"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "ThirdPartyAudienceSegment.LicenseType")
+@XmlType(name = "ContentFilterError.Reason")
 @XmlEnum
-public enum ThirdPartyAudienceSegmentLicenseType {
+public enum ContentFilterErrorReason {
 
-
-    /**
-     * 
-     *                 A direct license is the result of a direct contract between the data provider and the
-     *                 publisher.
-     *               
-     * 
-     */
-    DIRECT_LICENSE,
-
-    /**
-     * 
-     *                 A global license is the result of an agreement between Google and the data provider, which
-     *                 agrees to license their audience segments to all the publishers and/or advertisers of the
-     *                 Doubleclick ecosystem.
-     *               
-     * 
-     */
-    GLOBAL_LICENSE,
 
     /**
      * 
@@ -65,13 +46,15 @@ public enum ThirdPartyAudienceSegmentLicenseType {
      *               
      * 
      */
-    UNKNOWN;
+    UNKNOWN,
+    WRONG_NUMBER_OF_ARGUMENTS,
+    ANY_FILTER_NOT_SUPPORTED;
 
     public String value() {
         return name();
     }
 
-    public static ThirdPartyAudienceSegmentLicenseType fromValue(String v) {
+    public static ContentFilterErrorReason fromValue(String v) {
         return valueOf(v);
     }
 

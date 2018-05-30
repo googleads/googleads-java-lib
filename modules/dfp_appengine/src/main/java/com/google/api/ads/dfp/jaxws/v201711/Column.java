@@ -457,7 +457,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by the ad server.
-     *                 <p>Corresponds to "Ad server impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -466,7 +466,7 @@ public enum Column {
     /**
      * 
      *                 The number of downloaded impressions delivered by the ad server.
-     *                 <p>Corresponds to "Ad server downloaded impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server downloaded impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -484,7 +484,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks delivered by the ad server.
-     *                 <p>Corresponds to "Ad server clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -502,7 +502,7 @@ public enum Column {
     /**
      * 
      *                 The CTR for an ad delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -512,7 +512,7 @@ public enum Column {
      * 
      *                 The CPM and CPC revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CPM and CPC revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server CPM and CPC revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -522,7 +522,7 @@ public enum Column {
      * 
      *                 The CPD revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CPD revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad server CPD revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -542,7 +542,7 @@ public enum Column {
      * 
      *                 The CPM, CPC and CPD revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Can correspond to any of the following in the DFP UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and CPD revenue. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Can correspond to any of the following in the DFP UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and CPD revenue. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -552,7 +552,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the CPM and CPC ads
      *                 delivered by the ad server.
-     *                 <p>Corresponds to "Ad server average eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad server average eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -585,7 +585,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered to the total impressions
      *                 delivered by the ad server for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server impressions (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad server impressions (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -609,7 +609,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered to the total clicks delivered
      *                 by the ad server for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server clicks (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad server clicks (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -645,7 +645,7 @@ public enum Column {
      *                 The ratio of revenue generated by ad server to the total CPM and CPC revenue earned by
      *                 the ads delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server revenue (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad server revenue (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -666,7 +666,7 @@ public enum Column {
      *                 The number of times that the code for an ad is served by the ad server.
      *                 
      *                 <p>This field is deprecated and will be removed in v201808.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -705,7 +705,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions an AdSense ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -735,7 +735,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks an AdSense ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -767,7 +767,7 @@ public enum Column {
      * 
      *                 The ratio of clicks an AdSense reservation ad delivered to the number of
      *                 impressions it delivered, including line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -787,7 +787,7 @@ public enum Column {
     /**
      * 
      *                 Revenue generated from AdSense ads delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -809,7 +809,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the ads
      *                 delivered by AdSense for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense average eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense average eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -833,7 +833,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered by AdSense reservation
      *                 ads to the total impressions delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense impressions (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense impressions (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -857,7 +857,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered by AdSense reservation ads to
      *                 the total clicks delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense clicks (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense clicks (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -893,7 +893,7 @@ public enum Column {
      *                 The ratio of revenue to the total revenue earned from the CPM and CPC ads
      *                 delivered by AdSense for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense revenue (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "AdSense revenue (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -912,7 +912,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions an Ad Exchange ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1300,7 +1300,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks an Ad Exchange ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1320,7 +1320,7 @@ public enum Column {
      * 
      *                 The ratio of clicks an Ad Exchange ad delivered to the number of
      *                 impressions it delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1331,7 +1331,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered to the total impressions delivered
      *                 by Ad Exchange for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange impressions (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange impressions (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1342,7 +1342,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered to the total clicks delivered
      *                 by Ad Exchange for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange clicks (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange clicks (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1352,7 +1352,7 @@ public enum Column {
      * 
      *                 Revenue generated from Ad Exchange ads delivered for line item-level dynamic allocation.
      *                 Represented in publisher currency and time zone.
-     *                 <p>Corresponds to "Ad Exchange revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1363,7 +1363,7 @@ public enum Column {
      *                 The ratio of revenue generated by Ad Exchange to the total revenue earned
      *                 by CPM and CPC ads delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange revenue (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange revenue (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1383,7 +1383,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the
      *                 delivery of Ad Exchange ads for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange average eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Ad Exchange average eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1402,7 +1402,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions delivered including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1431,7 +1431,7 @@ public enum Column {
     /**
      * 
      *                 The total number of clicks delivered including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1461,7 +1461,7 @@ public enum Column {
      * 
      *                 The ratio of total clicks on ads delivered by the ad servers to the total number
      *                 of impressions delivered for an ad including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1490,7 +1490,7 @@ public enum Column {
      * 
      *                 The total CPM and CPC revenue generated by the ad servers
      *                 including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total CPM and CPC revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total CPM and CPC revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1500,7 +1500,7 @@ public enum Column {
      * 
      *                 The total CPM, CPC and CPD revenue generated by the ad servers
      *                 including line item-level dynamic allocation.
-     *                 <p>Can correspond to any of the following in the DFP UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD revenue. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Can correspond to any of the following in the DFP UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD revenue. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1529,7 +1529,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of CPM and CPC ads delivered by the
      *                 ad servers including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total average eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total average eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1548,7 +1548,7 @@ public enum Column {
      * 
      *                 The total number of times that the code for an ad is served by the ad server including
      *                 inventory-level dynamic allocation.
-     *                 <p>Corresponds to "Total code served count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total code served count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1558,7 +1558,7 @@ public enum Column {
      * 
      *                 The total number of missed impressions due to the ad servers' inability to
      *                 find ads to serve, including inventory-level dynamic allocation.
-     *                 <p>Corresponds to "Unfilled impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Unfilled impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1568,7 +1568,7 @@ public enum Column {
      * 
      *                 The number of control (unoptimized) impressions delivered for an ad for
      *                 which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1578,7 +1578,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1588,7 +1588,7 @@ public enum Column {
      * 
      *                 The CTR for control (unoptimized) impressions for an order for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Control CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1598,7 +1598,7 @@ public enum Column {
      * 
      *                 Number of optimized impressions delivered for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1608,7 +1608,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1618,7 +1618,7 @@ public enum Column {
      * 
      *                 Number of non-optimized impressions delivered for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Non-optimized impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Non-optimized impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1628,7 +1628,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of non-optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Non-optimized clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Non-optimized clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1638,7 +1638,7 @@ public enum Column {
      * 
      *                 Number of extra clicks resulting from the delivery of optimized impressions
      *                 for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Extra clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Extra clicks" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1648,7 +1648,7 @@ public enum Column {
      * 
      *                 The CTR for optimized impressions for an ad for which the optimization
      *                 feature has been enabled.
-     *                 <p>Corresponds to "Optimized CTR" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized CTR" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1660,7 +1660,7 @@ public enum Column {
      *                 CTRs. This is calculated as (({@link Column#OPTIMIZATION_OPTIMIZED_CTR}/
      *                 {@link Column#OPTIMIZATION_CONTROL_CTR}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Lift" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Lift" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1670,7 +1670,7 @@ public enum Column {
      * 
      *                 The line item coverage measures how often the traffic was sent for
      *                 optimization.
-     *                 <p>Corresponds to "Percent optimized" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Percent optimized" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1679,7 +1679,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were behind schedule at the time of their delivery.
-     *                 <p>Corresponds to "Impressions that are behind schedule" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions that are behind schedule" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1688,7 +1688,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that did not have any clicks recorded in the recent past.
-     *                 <p>Corresponds to "Impressions with no clicks recorded" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions with no clicks recorded" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1697,7 +1697,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were delivered as sponsorship items.
-     *                 <p>Corresponds to "Sponsorship impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Sponsorship impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1706,7 +1706,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were set to deliver as fast as possible.
-     *                 <p>Corresponds to "Impressions serving as fast as possible" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions serving as fast as possible" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1715,7 +1715,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that have no absolute lifetime delivery goals.
-     *                 <p>Corresponds to "Impressions with no lifetime goal" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions with no lifetime goal" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1725,7 +1725,7 @@ public enum Column {
      * 
      *                 Total revenue resulting from the delivery of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1735,7 +1735,7 @@ public enum Column {
      * 
      *                 Total revenue resulting from the delivery of optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized revenue" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1745,7 +1745,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1755,7 +1755,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of optimized
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized eCPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized eCPM" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1764,7 +1764,7 @@ public enum Column {
     /**
      * 
      *                 Freed-up impressions as a result of optimization.
-     *                 <p>Corresponds to "Freed-up impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Freed-up impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1773,7 +1773,7 @@ public enum Column {
     /**
      * 
      *                 Relative change in eCPM as a result of optimization.
-     *                 <p>Corresponds to "eCPM lift" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "eCPM lift" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1951,7 +1951,7 @@ public enum Column {
     /**
      * 
      *                 The total number of times a backup image is served in place of a rich media ad.
-     *                 <p>Corresponds to "Backup image impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Backup image impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1960,7 +1960,7 @@ public enum Column {
     /**
      * 
      *                 The amount of time(seconds) that each rich media ad is displayed to users.
-     *                 <p>Corresponds to "Total display time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total display time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1969,7 +1969,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that each rich media ad is displayed to users.
-     *                 <p>Corresponds to "Average display time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Average display time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1978,7 +1978,7 @@ public enum Column {
     /**
      * 
      *                 The number of times an expanding ad was expanded.
-     *                 <p>Corresponds to "Total expansions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total expansions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1987,7 +1987,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that an expanding ad is viewed in an expanded state.
-     *                 <p>Corresponds to "Average expanding time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Average expanding time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -1996,7 +1996,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Interaction time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Interaction time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2005,7 +2005,7 @@ public enum Column {
     /**
      * 
      *                 The number of times that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Total interactions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total interactions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2015,7 +2015,7 @@ public enum Column {
      * 
      *                 The ratio of rich media ad interactions to the number of times the ad was displayed.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Interaction rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Interaction rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2024,7 +2024,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Average interaction time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Average interaction time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2033,7 +2033,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions where a user interacted with a rich media ad.
-     *                 <p>Corresponds to "Interactive impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Interactive impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2043,7 +2043,7 @@ public enum Column {
      * 
      *                 The number of times that a user manually closes a floating, expanding,
      *                 in-page with overlay, or in-page with floating ad.
-     *                 <p>Corresponds to "Manual closes" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Manual closes" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2052,7 +2052,7 @@ public enum Column {
     /**
      * 
      *                 A metric that measures an impression only once when a user opens an ad in full screen mode.
-     *                 <p>Corresponds to "Full-screen impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Full-screen impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2061,7 +2061,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a user clicked on the graphical controls of a video player.
-     *                 <p>Corresponds to "Total video interactions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total video interactions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2071,7 +2071,7 @@ public enum Column {
      * 
      *                 The ratio of video interactions to video plays.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Video interaction rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Video interaction rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2080,7 +2080,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was muted.
-     *                 <p>Corresponds to "Mute" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Mute" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2089,7 +2089,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was paused.
-     *                 <p>Corresponds to "Pause" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Pause" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2098,7 +2098,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was played.
-     *                 <p>Corresponds to "Plays" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Plays" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2107,7 +2107,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was played upto midpoint.
-     *                 <p>Corresponds to "Midpoint" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Midpoint" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2116,7 +2116,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was fully played.
-     *                 <p>Corresponds to "Complete" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Complete" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2125,7 +2125,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was restarted.
-     *                 <p>Corresponds to "Replays" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Replays" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2134,7 +2134,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was stopped.
-     *                 <p>Corresponds to "Stops" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Stops" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2143,7 +2143,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was unmuted.
-     *                 <p>Corresponds to "Unmute" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unmute" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2152,7 +2152,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a rich media video was viewed per view.
-     *                 <p>Corresponds to "Average view time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Average view time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2161,7 +2161,7 @@ public enum Column {
     /**
      * 
      *                 The percentage of a video watched by a user.
-     *                 <p>Corresponds to "View rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "View rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2170,7 +2170,7 @@ public enum Column {
     /**
      * 
      *                 The amount of time (seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Custom event - time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Custom event - time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2179,7 +2179,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a user views and interacts with a specified part of a rich media ad.
-     *                 <p>Corresponds to "Custom event - count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Custom event - count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2188,7 +2188,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions where the video was played.
-     *                 <p>Corresponds to "Start" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Start" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2197,7 +2197,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to 25% of its length.
-     *                 <p>Corresponds to "First quartile" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "First quartile" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2206,7 +2206,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video reached its midpoint during play.
-     *                 <p>Corresponds to "Midpoint" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Midpoint" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2215,7 +2215,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to 75% of its length.
-     *                 <p>Corresponds to "Third quartile" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Third quartile" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2224,7 +2224,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to completion.
-     *                 <p>Corresponds to "Complete" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Complete" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2233,7 +2233,7 @@ public enum Column {
     /**
      * 
      *                 Average percentage of the video watched by users.
-     *                 <p>Corresponds to "Average view rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Average view rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2242,7 +2242,7 @@ public enum Column {
     /**
      * 
      *                 Average time(seconds) users watched the video.
-     *                 <p>Corresponds to "Average view time" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Average view time" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2251,7 +2251,7 @@ public enum Column {
     /**
      * 
      *                 Percentage of times the video played to the end.
-     *                 <p>Corresponds to "Completion rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Completion rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2261,7 +2261,7 @@ public enum Column {
      * 
      *                 The number of times an error occurred, such as a VAST redirect error, a video playback error,
      *                 or an invalid response error.
-     *                 <p>Corresponds to "Total error count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Total error count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2270,7 +2270,7 @@ public enum Column {
     /**
      * 
      *                 Duration of the video creative.
-     *                 <p>Corresponds to "Video length" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Video length" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2279,7 +2279,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a skip button is shown in video.
-     *                 <p>Corresponds to "Skip button shown" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Skip button shown" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2289,7 +2289,7 @@ public enum Column {
      * 
      *                 The number of engaged views i.e. ad is viewed to completion
      *                 or for 30s, whichever comes first.
-     *                 <p>Corresponds to "Engaged view" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Engaged view" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2298,7 +2298,7 @@ public enum Column {
     /**
      * 
      *                 View-through rate represented as a percentage.
-     *                 <p>Corresponds to "View-through rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "View-through rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2307,7 +2307,7 @@ public enum Column {
     /**
      * 
      *                 Number of times that the publisher specified a video ad played automatically.
-     *                 <p>Corresponds to "Auto-plays" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Auto-plays" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2316,7 +2316,7 @@ public enum Column {
     /**
      * 
      *                 Number of times that the publisher specified a video ad was clicked to play.
-     *                 <p>Corresponds to "Click-to-plays" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Click-to-plays" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2325,7 +2325,7 @@ public enum Column {
     /**
      * 
      *                 Error rate is the percentage of video error count from (error count + total impressions).
-     *                 <p>Corresponds to "Total error rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Total error rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2334,7 +2334,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 100.
-     *                 <p>Corresponds to "VAST error 100 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 100 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2343,7 +2343,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 101.
-     *                 <p>Corresponds to "VAST error 101 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 101 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2352,7 +2352,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 102.
-     *                 <p>Corresponds to "VAST error 102 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 102 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2361,7 +2361,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 200.
-     *                 <p>Corresponds to "VAST error 200 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 200 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2370,7 +2370,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 201.
-     *                 <p>Corresponds to "VAST error 201 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 201 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2379,7 +2379,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 202.
-     *                 <p>Corresponds to "VAST error 202 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 202 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2388,7 +2388,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 203.
-     *                 <p>Corresponds to "VAST error 203 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 203 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2397,7 +2397,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 300.
-     *                 <p>Corresponds to "VAST error 300 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 300 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2406,7 +2406,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 301.
-     *                 <p>Corresponds to "VAST error 301 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 301 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2415,7 +2415,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 302.
-     *                 <p>Corresponds to "VAST error 302 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 302 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2424,7 +2424,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 303.
-     *                 <p>Corresponds to "VAST error 303 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 303 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2433,7 +2433,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 400.
-     *                 <p>Corresponds to "VAST error 400 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 400 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2442,7 +2442,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 401.
-     *                 <p>Corresponds to "VAST error 401 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 401 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2451,7 +2451,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 402.
-     *                 <p>Corresponds to "VAST error 402 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 402 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2460,7 +2460,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 403.
-     *                 <p>Corresponds to "VAST error 403 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 403 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2469,7 +2469,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 405.
-     *                 <p>Corresponds to "VAST error 405 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 405 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2478,7 +2478,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 500.
-     *                 <p>Corresponds to "VAST error 500 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 500 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2487,7 +2487,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 501.
-     *                 <p>Corresponds to "VAST error 501 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 501 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2496,7 +2496,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 502.
-     *                 <p>Corresponds to "VAST error 502 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 502 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2505,7 +2505,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 503.
-     *                 <p>Corresponds to "VAST error 503 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 503 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2514,7 +2514,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 600.
-     *                 <p>Corresponds to "VAST error 600 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 600 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2523,7 +2523,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 601.
-     *                 <p>Corresponds to "VAST error 601 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 601 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2532,7 +2532,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 602.
-     *                 <p>Corresponds to "VAST error 602 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 602 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2541,7 +2541,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 603.
-     *                 <p>Corresponds to "VAST error 603 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 603 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2550,7 +2550,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 604.
-     *                 <p>Corresponds to "VAST error 604 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 604 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2559,7 +2559,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 900.
-     *                 <p>Corresponds to "VAST error 900 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 900 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2568,7 +2568,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 901.
-     *                 <p>Corresponds to "VAST error 901 count" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "VAST error 901 count" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2577,7 +2577,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times user paused ad clip.
-     *                 <p>Corresponds to "Pause" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Pause" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2586,7 +2586,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times the user unpaused the video.
-     *                 <p>Corresponds to "Resume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Resume" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2595,7 +2595,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user rewinds the video.
-     *                 <p>Corresponds to "Rewind" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Rewind" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2605,7 +2605,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of times video player was in mute state during play
      *                 of ad clip.
-     *                 <p>Corresponds to "Mute" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Mute" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2614,7 +2614,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user unmutes the video.
-     *                 <p>Corresponds to "Unmute" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Unmute" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2624,7 +2624,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of times a user collapses a video,
      *                 either to its original size or to a different size.
-     *                 <p>Corresponds to "Collapse" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Collapse" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2633,7 +2633,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user expands a video.
-     *                 <p>Corresponds to "Expand" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Expand" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2642,7 +2642,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times ad clip played in full screen mode.
-     *                 <p>Corresponds to "Full screen" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Full screen" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2652,7 +2652,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of user interactions with a video, on average,
      *                 such as pause, full screen, mute, etc.
-     *                 <p>Corresponds to "Average interaction rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Average interaction rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2661,7 +2661,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a skippable video is skipped.
-     *                 <p>Corresponds to "Video skipped" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Video skipped" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2670,7 +2670,7 @@ public enum Column {
     /**
      * 
      *                 The number of control starts.
-     *                 <p>Corresponds to "Control starts" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control starts" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2679,7 +2679,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized starts.
-     *                 <p>Corresponds to "Optimized starts" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized starts" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2688,7 +2688,7 @@ public enum Column {
     /**
      * 
      *                 The number of control completes.
-     *                 <p>Corresponds to "Control completes" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control completes" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2697,7 +2697,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized completes.
-     *                 <p>Corresponds to "Optimized completes" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized completes" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2706,7 +2706,7 @@ public enum Column {
     /**
      * 
      *                 The rate of control completions.
-     *                 <p>Corresponds to "Control completion rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control completion rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2715,7 +2715,7 @@ public enum Column {
     /**
      * 
      *                 The rate of optimized completions.
-     *                 <p>Corresponds to "Optimized completion rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized completion rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2727,7 +2727,7 @@ public enum Column {
      *                 rate. This is calculated as (( {@link Column#VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETION_RATE}/
      *                 {@link Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Completion rate lift" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Completion rate lift" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2736,7 +2736,7 @@ public enum Column {
     /**
      * 
      *                 The number of control skip buttons shown.
-     *                 <p>Corresponds to "Control skip button shown" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control skip button shown" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2745,7 +2745,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized skip buttons shown.
-     *                 <p>Corresponds to "Optimized skip button shown" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized skip button shown" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2754,7 +2754,7 @@ public enum Column {
     /**
      * 
      *                 The number of control engaged views.
-     *                 <p>Corresponds to "Control engaged view" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control engaged view" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2763,7 +2763,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized engaged views.
-     *                 <p>Corresponds to "Optimized engaged view" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized engaged view" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2772,7 +2772,7 @@ public enum Column {
     /**
      * 
      *                 The control view-through rate.
-     *                 <p>Corresponds to "Control view-through rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Control view-through rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2781,7 +2781,7 @@ public enum Column {
     /**
      * 
      *                 The optimized view-through rate.
-     *                 <p>Corresponds to "Optimized view-through rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Optimized view-through rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2794,7 +2794,7 @@ public enum Column {
      *                 Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE}/ {@link
      *                 Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "View-through rate lift" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "View-through rate lift" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2803,7 +2803,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions viewed on the user's screen.
-     *                 <p>Corresponds to "Total Active View viewable impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total Active View viewable impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2812,7 +2812,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions that were sampled and measured by active view.
-     *                 <p>Corresponds to "Total Active View measurable impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total Active View measurable impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2830,7 +2830,7 @@ public enum Column {
     /**
      * 
      *                 Total number of impressions that were eligible to measure viewability.
-     *                 <p>Corresponds to "Total Active View eligible impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total Active View eligible impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -2840,7 +2840,7 @@ public enum Column {
      * 
      *                 The percentage of total impressions that were measurable by active view (out of all the total
      *                 impressions sampled for active view).
-     *                 <p>Corresponds to "Total Active View % measurable impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total Active View % measurable impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3073,7 +3073,7 @@ public enum Column {
      *                 ie. cost the publisher had to pay in order to buy the inventory.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3090,7 +3090,7 @@ public enum Column {
     /**
      * 
      *                 Number of view-through conversions per thousand impressions.
-     *                 <p>Corresponds to "Conversions per thousand impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Conversions per thousand impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3099,7 +3099,7 @@ public enum Column {
     /**
      * 
      *                 Number of click-through conversions.
-     *                 <p>Corresponds to "Click-through conversions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Click-through conversions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3108,7 +3108,7 @@ public enum Column {
     /**
      * 
      *                 Number of click-through conversions per click.
-     *                 <p>Corresponds to "Conversions per click" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Conversions per click" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3117,7 +3117,7 @@ public enum Column {
     /**
      * 
      *                 Revenue for view-through conversions.
-     *                 <p>Corresponds to "Advertiser view-through sales" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Advertiser view-through sales" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3126,7 +3126,7 @@ public enum Column {
     /**
      * 
      *                 Revenue for click-through conversions.
-     *                 <p>Corresponds to "Advertiser click-through sales" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Advertiser click-through sales" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3135,7 +3135,7 @@ public enum Column {
     /**
      * 
      *                 Total number of conversions.
-     *                 <p>Corresponds to "Total conversions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total conversions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3144,7 +3144,7 @@ public enum Column {
     /**
      * 
      *                 Total revenue for conversions.
-     *                 <p>Corresponds to "Total advertiser sales" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Total advertiser sales" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3154,7 +3154,7 @@ public enum Column {
      * 
      *                 The number of impressions sent to Ad Exchange / AdSense, regardless of whether they
      *                 won or lost (total number of dynamic allocation impressions).
-     *                 <p>Corresponds to "Impressions competing" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions competing" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3163,7 +3163,7 @@ public enum Column {
     /**
      * 
      *                 The number of unfilled queries that attempted dynamic allocation by Ad Exchange / AdSense.
-     *                 <p>Corresponds to "Unfilled competing impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unfilled competing impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3172,7 +3172,7 @@ public enum Column {
     /**
      * 
      *                 The number of Ad Exchange / AdSense and DFP impressions.
-     *                 <p>Corresponds to "Eligible impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Eligible impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3189,7 +3189,7 @@ public enum Column {
     /**
      * 
      *                 The percentage of eligible impressions that are not competing in dynamic allocation.
-     *                 <p>Corresponds to "Impressions not competing (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impressions not competing (%)" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3206,7 +3206,7 @@ public enum Column {
     /**
      * 
      *                 The percent of total dynamic allocation queries that won.
-     *                 <p>Corresponds to "Dynamic allocation match rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Dynamic allocation match rate" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -3215,7 +3215,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3226,7 +3226,7 @@ public enum Column {
      *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
-     *                 <p>Can correspond to any of the following in the DFP UI: Contracted revenue (local), Contracted revenue (net) (local). Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Can correspond to any of the following in the DFP UI: Contracted revenue (local), Contracted revenue (net) (local). Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3235,7 +3235,7 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission.
-     *                 <p>Corresponds to "Contracted revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3247,7 +3247,7 @@ public enum Column {
      *                 agency commission.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Contracted revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3257,7 +3257,7 @@ public enum Column {
      * 
      *                 The value added tax on contracted net revenue of the {@link ProposalLineItem} or
      *                 {@link Proposal}.
-     *                 <p>Corresponds to "Contracted VAT" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted VAT" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3269,7 +3269,7 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_VAT}
-     *                 <p>Corresponds to "Contracted VAT (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted VAT (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3278,7 +3278,7 @@ public enum Column {
     /**
      * 
      *                 The contracted agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Contracted agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3290,7 +3290,7 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Contracted agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3299,7 +3299,7 @@ public enum Column {
     /**
      * 
      *                 The contracted impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3308,7 +3308,7 @@ public enum Column {
     /**
      * 
      *                 The contracted clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3318,7 +3318,7 @@ public enum Column {
      * 
      *                 The contracted volume of the {@link ProposalLineItem}. Volume represents impressions for
      *                 rate type CPM, clicks for CPC, and days for CPD.
-     *                 <p>Corresponds to "Contracted volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3327,7 +3327,7 @@ public enum Column {
     /**
      * 
      *                 The budget of the {@link Proposal}.
-     *                 <p>Corresponds to "Budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3337,7 +3337,7 @@ public enum Column {
      * 
      *                 The remaining budget of the {@link Proposal}. It is calculated by subtracting the contracted
      *                 net revenue from the budget.
-     *                 <p>Corresponds to "Remaining budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Remaining budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3346,7 +3346,7 @@ public enum Column {
     /**
      * 
      *                 The buffered impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Buffered impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3355,7 +3355,7 @@ public enum Column {
     /**
      * 
      *                 The buffered clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Buffered clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3366,7 +3366,7 @@ public enum Column {
      *                 The scheduled impressions of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_IMPRESSIONS} and
      *                 {@link #SALES_CONTRACT_BUFFERED_IMPRESSIONS}.
-     *                 <p>Corresponds to "Scheduled impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3376,7 +3376,7 @@ public enum Column {
      * 
      *                 The scheduled clicks of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_CLICKS} and {@link #SALES_CONTRACT_BUFFERED_CLICKS}.
-     *                 <p>Corresponds to "Scheduled clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled clicks" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3386,7 +3386,7 @@ public enum Column {
      * 
      *                 The scheduled volume of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_VOLUME} and buffered volume.
-     *                 <p>Corresponds to "Scheduled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3395,7 +3395,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3404,7 +3404,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3413,7 +3413,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3422,7 +3422,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Scheduled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3432,7 +3432,7 @@ public enum Column {
      * 
      *                 The total budget of the {@link Proposal}. It differs from {@link #SALES_CONTRACT_BUDGET} since
      *                 it always contains the total budget, not the prorated budget.
-     *                 <p>Corresponds to "Total budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3443,7 +3443,7 @@ public enum Column {
      *                 The total remaining budget of the {@link Proposal}. It differs from {@link
      *                 #SALES_CONTRACT_REMAINING_BUDGET} since it always contains the total remaining budget, not the
      *                 prorated remaining budget.
-     *                 <p>Corresponds to "Total remaining budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total remaining budget" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3454,7 +3454,7 @@ public enum Column {
      *                 The total contracted volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SALES_CONTRACT_CONTRACTED_VOLUME} that the volume is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total contracted volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3465,7 +3465,7 @@ public enum Column {
      *                 The total contracted net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE} that the revenue is not prorated with regard to the
      *                 date range.
-     *                 <p>Corresponds to "Total contracted revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3478,7 +3478,7 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3489,7 +3489,7 @@ public enum Column {
      *                 The total contracted gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE} that the revenue is not prorated with regard to
      *                 the date range.
-     *                 <p>Corresponds to "Total contracted revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3502,7 +3502,7 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3513,7 +3513,7 @@ public enum Column {
      *                 The total contracted agency commission of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION} that the revenue is not prorated with regard
      *                 to the date range.
-     *                 <p>Corresponds to "Total contracted agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3526,7 +3526,7 @@ public enum Column {
      *                 is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Total contracted agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3536,7 +3536,7 @@ public enum Column {
      * 
      *                 The total net revenue plus its value added tax of the {@link ProposalLineItem}. The revenue is
      *                 not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue with VAT (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3548,7 +3548,7 @@ public enum Column {
      *                 ProposalLineItem}. The revenue is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT}
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3558,7 +3558,7 @@ public enum Column {
      * 
      *                 The total scheduled volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_VOLUME} that the volume is not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total scheduled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total scheduled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3569,7 +3569,7 @@ public enum Column {
      *                 The total scheduled net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_NET_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3582,7 +3582,7 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3593,7 +3593,7 @@ public enum Column {
      *                 The total scheduled gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_GROSS_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3606,7 +3606,7 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3616,7 +3616,7 @@ public enum Column {
      * 
      *                 The unreconciled net revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from unreconciled DFP volume.
-     *                 <p>Corresponds to "Unreconciled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3629,7 +3629,7 @@ public enum Column {
      *                 volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3639,7 +3639,7 @@ public enum Column {
      * 
      *                 The unreconciled gross revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} coming from unreconciled DFP volume.
-     *                 <p>Corresponds to "Unreconciled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3652,7 +3652,7 @@ public enum Column {
      *                 volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3709,7 +3709,7 @@ public enum Column {
      *                 #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}, {@link #BILLING_BILLABLE_NET_REVENUE}, and {@link
      *                 #UNIFIED_REVENUE_FORECASTED_NET_REVENUE} when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3724,7 +3724,7 @@ public enum Column {
      *                 historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3736,7 +3736,7 @@ public enum Column {
      *                 {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}, {@link #BILLING_BILLABLE_GROSS_REVENUE},
      *                 and {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE} when query date range spans historical
      *                 delivery and forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3751,7 +3751,7 @@ public enum Column {
      *                 delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3763,7 +3763,7 @@ public enum Column {
      *                 unreconciled agency commission, the {@link #BILLING_BILLABLE_AGENCY_COMMISSION},
      *                 and the forecasted agency commission when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3777,7 +3777,7 @@ public enum Column {
      *                 date range spans historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Unified agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3788,7 +3788,7 @@ public enum Column {
      *                 The unreconciled volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unreconciled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unreconciled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3810,7 +3810,7 @@ public enum Column {
      *                 The unified volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unified volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Unified volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3821,7 +3821,7 @@ public enum Column {
      *                 The expected revenue of the {@link ProposalLineItem}. It is equivalent to
      *                 {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} when the {@link ProposalLineItem} is sold and
      *                 {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Expected revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3834,7 +3834,7 @@ public enum Column {
      *                 and {@link #SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_NET_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Expected revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3845,7 +3845,7 @@ public enum Column {
      *                 The expected gross revenue of the {@link ProposalLineItem}. It is equivalent to {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} when the {@link ProposalLineItem} is sold and {@link
      *                 #SALES_PIPELINE_PIPELINE_GROSS_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Expected revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3858,7 +3858,7 @@ public enum Column {
      *                 sold and {@link #SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Expected revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3952,7 +3952,7 @@ public enum Column {
      * 
      *                 The DFP volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "DFP volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "DFP volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3962,7 +3962,7 @@ public enum Column {
      * 
      *                 The third party volume of the {@link ProposalLineItem}, which is used for reconciliation.
      *                 Volume represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Third-party volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Third-party volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3972,7 +3972,7 @@ public enum Column {
      * 
      *                 The reconciled volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Reconciled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Reconciled volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3981,7 +3981,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy percentage between DFP volume and third party volume.
-     *                 <p>Corresponds to "Discrepancy (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Discrepancy (%)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3990,7 +3990,7 @@ public enum Column {
     /**
      * 
      *                 The reconciled revenue of the {@link LineItem}.
-     *                 <p>Corresponds to "Reconciled revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Reconciled revenue" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -3999,7 +3999,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between DFP impressions and third party impressions.
-     *                 <p>Corresponds to "Impression discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Impression discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4008,7 +4008,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between DFP clicks and third party clicks.
-     *                 <p>Corresponds to "Click discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Click discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4017,7 +4017,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between DFP revenue and third party revenue.
-     *                 <p>Corresponds to "Revenue discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Revenue discrepancy" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4027,7 +4027,7 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied.
-     *                 <p>Corresponds to "Billable revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4039,7 +4039,7 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied.
      *                 
      *                 See {@link #BILLING_BILLABLE_NET_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4049,7 +4049,7 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied, and including agency commission.
-     *                 <p>Corresponds to "Billable revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4061,7 +4061,7 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied, and including agency commission.
      *                 
      *                 See {@link #BILLING_BILLABLE_GROSS_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4071,7 +4071,7 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4084,7 +4084,7 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4094,7 +4094,7 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4107,7 +4107,7 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4117,7 +4117,7 @@ public enum Column {
      * 
      *                 The value added tax on billable net revenue of the {@link ProposalLineItem} or {@link
      *                 Proposal}.
-     *                 <p>Corresponds to "Billable VAT" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable VAT" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4129,7 +4129,7 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_VAT}
-     *                 <p>Corresponds to "Billable VAT (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable VAT (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4138,7 +4138,7 @@ public enum Column {
     /**
      * 
      *                 The billable agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Billable agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable agency commission" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4150,7 +4150,7 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Billable agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable agency commission (local)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4160,7 +4160,7 @@ public enum Column {
      * 
      *                 The cap quantity of the {@link ProposalLineItem} for each cycle. Quantity represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Cap quantity" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Cap quantity" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4171,7 +4171,7 @@ public enum Column {
      *                 The billable volume of the {@link ProposalLineItem} for each cycle. Billable volumes are
      *                 calculated by applying cap quantity to reconciled volumes. Volume represents impressions for
      *                 rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Billable volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable volume" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4181,7 +4181,7 @@ public enum Column {
      * 
      *                 The delivery rollover volume of the {@link ProposalLineItem} from previous cycle. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Delivery rollover" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Delivery rollover" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4190,7 +4190,7 @@ public enum Column {
     /**
      * 
      *                 The CPM calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and {@link #AD_SERVER_IMPRESSIONS}.
-     *                 <p>Corresponds to "Realized CPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Realized CPM" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4199,7 +4199,7 @@ public enum Column {
     /**
      * 
      *                 The rate calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and DFP volume.
-     *                 <p>Corresponds to "Realized rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Realized rate" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4208,7 +4208,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted overall discount (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted overall discount (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4217,7 +4217,7 @@ public enum Column {
     /**
      * 
      *                 The billable net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Billable overall discount (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Billable overall discount (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4227,7 +4227,7 @@ public enum Column {
      * 
      *                 The contracted non-billable (net) of the {@link ProposalLineItem}.
      *                 The non-billable means revenue that marked as make good, added value or barter.
-     *                 <p>Corresponds to "Contracted non-billable (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES, BUSINESS_INTELLIGENCE.</p>
+     *                 <p>Corresponds to "Contracted non-billable (net)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
      *               
      * 
      */
@@ -4236,7 +4236,7 @@ public enum Column {
     /**
      * 
      *                 The number of invoiced impressions.
-     *                 <p>Corresponds to "Invoiced impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Invoiced impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */
@@ -4245,7 +4245,7 @@ public enum Column {
     /**
      * 
      *                 The number of invoiced unfilled impressions.
-     *                 <p>Corresponds to "Invoiced unfilled impressions" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Invoiced unfilled impressions" in the DFP UI. Compatible with the HISTORICAL report type.</p>
      *               
      * 
      */

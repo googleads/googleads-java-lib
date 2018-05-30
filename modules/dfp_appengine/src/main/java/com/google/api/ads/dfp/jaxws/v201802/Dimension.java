@@ -233,7 +233,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Month and year" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, PARTNER_FINANCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Month and year" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, PARTNER_FINANCE.</p>
      *               
      * 
      */
@@ -250,7 +250,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Week" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Week" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -267,7 +267,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Date" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, BUSINESS_INTELLIGENCE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Date" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -278,7 +278,7 @@ public enum Dimension {
      *                 Breaks down reporting data by day of the week in the network time zone. Can
      *                 be used to filter by day of the week using the index of the day (from 1 for
      *                 Monday is 1 to 7 for Sunday).
-     *                 <p>Corresponds to "Day of week" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Day of week" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -288,7 +288,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by hour of the day in the network time zone. Can
      *                 be used to filter by hour of the day (from 0 to 23).
-     *                 <p>Corresponds to "Hour" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Hour" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -298,7 +298,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#id}. Can be used to
      *                 filter by {@link LineItem#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -309,7 +309,7 @@ public enum Dimension {
      *                 Breaks down reporting data by line item. {@link LineItem#name} and
      *                 {@link LineItem#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link LineItem#name}.
-     *                 <p>Corresponds to "Line item" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Line item" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -319,7 +319,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#lineItemType}. Can be used
      *                 to filter by line item type using {@link LineItemType} enumeration names.
-     *                 <p>Corresponds to "Line item type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, DATA_LEAKAGE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Line item type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -330,7 +330,7 @@ public enum Dimension {
      *                 Breaks down reporting data by aggregated demand channel type.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -340,7 +340,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Order#id}. Can be used to filter by
      *                 {@link Order#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -351,7 +351,7 @@ public enum Dimension {
      *                 Breaks down reporting data by order. {@link Order#name} and
      *                 {@link Order#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Order#name}.
-     *                 <p>Corresponds to "Order" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Order" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -362,7 +362,7 @@ public enum Dimension {
      *                 Delivery status of the order. Not available as a dimension to report on,
      *                 but exists as a dimension in order to filter on it using PQL.
      *                 Valid values are 'STARTED', 'NOT_STARTED' and 'COMPLETED'.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -372,7 +372,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by advertising company {@link Company#id}. Can
      *                 be used to filter by {@link Company#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -383,7 +383,7 @@ public enum Dimension {
      *                 Breaks down reporting data by advertising company. {@link Company#name} and
      *                 {@link Company#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Company#name}.
-     *                 <p>Corresponds to "Advertiser" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Advertiser" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -401,7 +401,7 @@ public enum Dimension {
      *                 network one-by-one until it finds an ad network with an ad to serve. The ad network that ends
      *                 up serving the ad will appear here. Note that this id does not correlate to anything in the
      *                 companies table and is not the same id as is served by {@link #ADVERTISER_ID}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -420,7 +420,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}. Can be used to
      *                 filter by {@link User#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -431,7 +431,7 @@ public enum Dimension {
      *                 Breaks down reporting data by salesperson. {@link User#name} and
      *                 {@link User#id} of the salesperson are automatically included as columns in
      *                 the report. Can be used to filter by {@link User#name}.
-     *                 <p>Corresponds to "Salesperson" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Salesperson" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -442,7 +442,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link Creative#id} or creative set id
      *                 (master's {@link Creative#id}) if the creative is part of a creative set.
      *                 Can be used to filter by {@link Creative#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, DATA_LEAKAGE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -453,7 +453,7 @@ public enum Dimension {
      *                 Breaks down reporting data by creative. {@link Creative#name} and
      *                 {@link Creative#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Creative#name}.
-     *                 <p>Corresponds to "Creative" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DATA_LEAKAGE, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Creative" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DATA_LEAKAGE.</p>
      *               
      * 
      */
@@ -462,7 +462,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by creative type.
-     *                 <p>Corresponds to "Creative type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Creative type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -471,7 +471,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by creative billing type.
-     *                 <p>Corresponds to "Creative billing type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Creative billing type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -480,7 +480,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -489,7 +489,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event name.
-     *                 <p>Corresponds to "Custom event" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Custom event" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -498,7 +498,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event type (timer/exit/counter).
-     *                 <p>Corresponds to "Custom event type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Custom event type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -508,7 +508,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Creative#size}. Cannot be used for
      *                 filtering.
-     *                 <p>Corresponds to "Creative size" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Creative size" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -519,7 +519,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link AdUnit#id}. Can be used to filter by
      *                 {@link AdUnit#id}. {@link #AD_UNIT_NAME}, i.e. {@link AdUnit#name}, is
      *                 automatically included as a dimension in the report.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -530,7 +530,7 @@ public enum Dimension {
      *                 Breaks down reporting data by ad unit. {@link AdUnit#name} and
      *                 {@link AdUnit#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link AdUnit#name}.
-     *                 <p>Corresponds to "Ad unit" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Ad unit" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -540,7 +540,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#id}. Not available as a
      *                 dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -550,7 +550,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#name}. Not available as a
      *                 dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -560,7 +560,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Placement#id}. Can be used to filter
      *                 by {@link Placement#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -571,7 +571,7 @@ public enum Dimension {
      *                 Breaks down reporting data by placement. {@link Placement#name} and
      *                 {@link Placement#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Placement#name}.
-     *                 <p>Corresponds to "Placement" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Placement" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -583,7 +583,7 @@ public enum Dimension {
      *                 exists as a dimension in order to filter on it using PQL. Can be used to
      *                 filter on {@link Placement#status} by using {@link InventoryStatus}
      *                 enumeration names.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -604,7 +604,7 @@ public enum Dimension {
      *                 The ID of the device category to which an ad is being targeted.
      *                 
      *                 Can be used to filter by device category ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -616,7 +616,7 @@ public enum Dimension {
      *                 targeted.
      *                 
      *                 Can be used to filter by device category name.
-     *                 <p>Corresponds to "Device category" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Device category" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -626,7 +626,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by country criteria ID. Can be used to filter by
      *                 country criteria ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -637,7 +637,7 @@ public enum Dimension {
      *                 Breaks down reporting data by country name. The country name and the
      *                 country criteria ID are automatically included as columns in the report.
      *                 Can be used to filter by country name using the US English name.
-     *                 <p>Corresponds to "Country" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Country" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -647,7 +647,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by region criteria ID. Can be used to filter by
      *                 region criteria ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -658,7 +658,7 @@ public enum Dimension {
      *                 Breaks down reporting data by region name. The region name and the region
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by region name using the US English name.
-     *                 <p>Corresponds to "Region" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Region" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -668,7 +668,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by city criteria ID. Can be used to filter by
      *                 city criteria ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -679,7 +679,7 @@ public enum Dimension {
      *                 Breaks down reporting data by city name. The city name and the city
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by city name using the US English name.
-     *                 <p>Corresponds to "City" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "City" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -689,7 +689,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by metro criteria ID. Can be used to filter by
      *                 metro criteria ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -700,7 +700,7 @@ public enum Dimension {
      *                 Breaks down reporting data by metro name. The metro name and the metro
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by metro name using the US English name.
-     *                 <p>Corresponds to "Metro" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Metro" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -710,7 +710,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by postal code criteria ID. Can be used to
      *                 filter by postal code criteria ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -817,7 +817,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Content#id}. Can be used to filter by
      *                 {@link Content#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -828,7 +828,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content. {@link Content#name} and
      *                 {@link Content#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Content#name}.
-     *                 <p>Corresponds to "Content" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Content" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -838,7 +838,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ContentBundle#id}. Can be used to filter
      *                 by {@link ContentBundle#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -849,7 +849,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content bundle. {@link ContentBundle#name} and
      *                 {@link ContentBundle#id} are automatically included as columns in the
      *                 report. Can be used to filter by {@link ContentBundle#name}.
-     *                 <p>Corresponds to "Content bundle" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Content bundle" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -862,7 +862,7 @@ public enum Dimension {
      *                 {@link ReportQuery#contentMetadataKeyHierarchyCustomTargetingKeyIds}.
      *                 <p>
      *                 This dimension can be used as a filter in the {@link Statement} in PQL syntax:
-     *                 CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[contentMetadataKeyHierarchyCustomTargetingKeyId]_ID =
+     *                 CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[keyId]_ID =
      *                 {@link CustomTargetingValue#id custom targeting value ID}
      *                 <p>
      *                 For example: WHERE CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[4242]_ID = 53423
@@ -876,7 +876,7 @@ public enum Dimension {
      *                 Breaks down reporting data by the fallback position of the video ad, i.e.,
      *                 {@code NON_FALLBACK}, {@code FALLBACK_POSITION_1}, {@code FALLBACK_POSITION_2}, etc. Can be
      *                 used for filtering.
-     *                 <p>Corresponds to "Fallback position" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Fallback position" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -888,7 +888,7 @@ public enum Dimension {
      *                 {@code UNKNOWN_POSITION}, {@code PREROLL}, {@code POSTROLL}, {@code UNKNOWN_MIDROLL},
      *                 {@code MIDROLL_1}, {@code MIDROLL_2}, etc. {@code UNKNOWN_MIDROLL} represents a midroll, but
      *                 which specific midroll is unknown. Can be used for filtering.
-     *                 <p>Corresponds to "Position of pod" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Position of pod" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -899,7 +899,7 @@ public enum Dimension {
      *                 Breaks down reporting data by the position of the video ad within the pod, i.e.,
      *                 {@code UNKNOWN_POSITION}, {@code POSITION_1}, {@code POSITION_2}, etc.
      *                 Can be used for filtering.
-     *                 <p>Corresponds to "Position in pod" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Position in pod" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1020,7 +1020,6 @@ public enum Dimension {
      * 
      *                 The unique identifier used for an ad network that is associated with the company that the ad is
      *                 served for.
-     *                 <p>Compatible with any of the following report types: BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
      *               
      * 
      */
@@ -1029,7 +1028,7 @@ public enum Dimension {
     /**
      * 
      *                 The name of the ad network that is associated with the company that the ad is served for.
-     *                 <p>Corresponds to "Buyer" in the DFP UI. Compatible with any of the following report types: BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Buyer" in the DFP UI.</p>
      *               
      * 
      */
@@ -1041,7 +1040,7 @@ public enum Dimension {
      *                 or omits it. If this filter isn't included, the report will include
      *                 First Look Deals traffic in addition to any other traffic.
      *                 Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1053,7 +1052,7 @@ public enum Dimension {
      *                 inventory used in the DFP Mediation.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1065,7 +1064,7 @@ public enum Dimension {
      *                 inventory used in the DFP Mediation.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1092,7 +1091,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by yield partner.
-     *                 <p>Corresponds to "Yield partner" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO.</p>
+     *                 <p>Corresponds to "Yield partner" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1112,7 +1111,7 @@ public enum Dimension {
      *                 Breaks down mapped Ad Exchange web property data by mediation network.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1123,7 +1122,7 @@ public enum Dimension {
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange network tag name.
      *                 
      *                 <p>This field is deprecated and will be removed in v201805.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1133,7 +1132,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by mediation type.   A mediation type can be web, mobile app or
      *                 video.
-     *                 <p>Corresponds to "Mediation type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Mediation type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1142,7 +1141,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native template (also known as creative template) ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1151,7 +1150,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native template (also known as creative template) name.
-     *                 <p>Corresponds to "Native ad format name" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Native ad format name" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1160,7 +1159,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native style ID.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1169,7 +1168,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native style name.
-     *                 <p>Corresponds to "Native style name" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Native style name" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1178,7 +1177,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by mobile app name. Can be used for filtering.
-     *                 <p>Corresponds to "App names" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "App names" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1187,7 +1186,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by device name. Can be used for filtering.
-     *                 <p>Corresponds to "Devices" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Devices" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1196,7 +1195,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by inventory type. Can be used for filtering.
-     *                 <p>Corresponds to "Inventory types" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Inventory types" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1205,7 +1204,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by request type. Can be used for filtering.
-     *                 <p>Corresponds to "Request type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Request type" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1217,7 +1216,6 @@ public enum Dimension {
      *                 Ad Exchange or another ad network or exchange.
      *                 
      *                 <p>This field is deprecated and will be removed in v201808.
-     *                 <p>Compatible with any of the following report types: BUSINESS_INTELLIGENCE, SAMPLED_HISTORICAL.</p>
      *               
      * 
      */
@@ -1229,7 +1227,7 @@ public enum Dimension {
      *                 Google Ad Exchange or another ad network or exchange.
      *                 
      *                 <p>This field is deprecated and will be removed in v201808.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1240,7 +1238,7 @@ public enum Dimension {
      *                 Status of the ad unit. Not available as a dimension to report on,
      *                 but exists as a dimension in order to filter on it using PQL.
      *                 Valid values correspond to {@link InventoryStatus}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
      *               
      * 
      */
@@ -1250,7 +1248,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Creative#id}. This includes regular creatives,
      *                 and master and companions in case of creative sets.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1260,7 +1258,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by creative. This includes regular creatives,
      *                 and master and companions in case of creative sets.
-     *                 <p>Corresponds to "Master and Companion creative" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Master and Companion creative" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -1270,7 +1268,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#id}. Can be used to filter by
      *                 {@link ProposalLineItem#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -1280,7 +1278,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#name}. Can be used to filter by
      *                 {@link ProposalLineItem#name}.
-     *                 <p>Corresponds to "Proposal line item" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Proposal line item" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -1290,7 +1288,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#id}. Can be used to filter by
      *                 {@link Proposal#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -1300,7 +1298,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#name}. Can be used to filter by
      *                 {@link Proposal#name}.
-     *                 <p>Corresponds to "Proposal" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Proposal" in the DFP UI. Compatible with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
      *               
      * 
      */
@@ -1310,7 +1308,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1320,7 +1318,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#name}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#name}.
-     *                 <p>Corresponds to "All salespeople" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "All salespeople" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1330,7 +1328,7 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#id} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1340,7 +1338,7 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#name} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1350,7 +1348,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#id}. Can be used to filter by
      *                 proposal agency {@link Company#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1360,7 +1358,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#name}. Can be used to filter by
      *                 proposal agency {@link Company#name}.
-     *                 <p>Corresponds to "Proposal agency" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Proposal agency" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1369,7 +1367,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#id}. Can be used to filter by {@link Product#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1378,7 +1376,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#name}.
-     *                 <p>Corresponds to "Product" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Product" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1388,7 +1386,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#id}. Can be used to filter by
      *                 {@link ProductTemplate#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1398,7 +1396,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#name}. Can be used to filter by
      *                 {@link ProductTemplate#name}.
-     *                 <p>Corresponds to "Product template" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Product template" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1408,7 +1406,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#id}. Can be used to filter by {@link
      *                 RateCard#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1418,7 +1416,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#name}. Can be used to filter by {@link
      *                 RateCard#name}.
-     *                 <p>Corresponds to "Rate card" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Rate card" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1427,7 +1425,7 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#id}. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1436,7 +1434,7 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#name}. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1445,7 +1443,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1454,7 +1452,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#name}.
-     *                 <p>Corresponds to "Package" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Package" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1464,7 +1462,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#id}. Can be used to filter by
      *                 {@link ProductPackage#id}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -1474,7 +1472,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#name}. Can be used to filter by
      *                 {@link ProductPackage#name}.
-     *                 <p>Corresponds to "Product package" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Product package" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -2067,7 +2065,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link ProposalMarketplaceInfo#buyerAccountId}.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -2076,7 +2074,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by programmatic buyer name.
-     *                 <p>Corresponds to "Programmatic buyer" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Programmatic buyer" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
      *               
      * 
      */
@@ -2086,7 +2084,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by requested ad size(s).
      *                 This can be a chain of sizes or a single size.
-     *                 <p>Corresponds to "Requested ad sizes" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Requested ad sizes" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -2095,7 +2093,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the creative size the ad was delivered to.
-     *                 <p>Corresponds to "Creative size (delivered)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Creative size (delivered)" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -2104,7 +2102,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by demand channels.
-     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH, SAMPLED_HISTORICAL.</p>
+     *                 <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */
@@ -2113,7 +2111,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by demand channel name.
-     *                 <p>Corresponds to "Demand channel" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH, DFP_HISTORICAL_DATA_STUDIO, SAMPLED_HISTORICAL.</p>
+     *                 <p>Corresponds to "Demand channel" in the DFP UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
      *               
      * 
      */

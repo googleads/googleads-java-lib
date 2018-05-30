@@ -42,8 +42,8 @@ public enum ThirdPartyAudienceSegmentLicenseType {
 
     /**
      * 
-     *                 A direct license is the result of a direct contract between the data provider
-     *                 and the publisher.
+     *                 A direct license is the result of a direct contract between the data provider and the
+     *                 publisher.
      *               
      * 
      */
@@ -52,8 +52,8 @@ public enum ThirdPartyAudienceSegmentLicenseType {
     /**
      * 
      *                 A global license is the result of an agreement between Google and the data provider, which
-     *                 agrees to license their audience segments to all the publishers and/or advertisers
-     *                 of the Doubleclick ecosystem.
+     *                 agrees to license their audience segments to all the publishers and/or advertisers of the
+     *                 Doubleclick ecosystem.
      *               
      * 
      */
