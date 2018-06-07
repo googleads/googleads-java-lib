@@ -19,6 +19,12 @@ package com.google.api.ads.adwords.lib.utils.examples;
  */
 public final class ArgumentNames {
 
+  public static final String ADJUSTED_VALUE = "--adjustedValue";
+
+  public static final String ADJUSTMENT_TIME = "--adjustmentTime";
+
+  public static final String ADJUSTMENT_TYPE = "--adjustmentType";
+
   public static final String AD_GROUP_ID = "--adGroupId";
 
   public static final String AD_ID = "--adId";
@@ -71,6 +77,8 @@ public final class ArgumentNames {
 
   public static final String MERCHANT_ID = "--merchantId";
 
+  public static final String OFFLINE_DATA_UPLOAD_TYPE = "--offlineDataUploadType";
+
   public static final String PARTNER_ID = "--partnerId";
 
   public static final String SERVICE_LINK_ID = "--serviceLinkId";
@@ -80,7 +88,4 @@ public final class ArgumentNames {
   public static final String UPLOAD_TIME = "--uploadTime";
 
   public static final String USER_LIST_ID = "--userListId";
-
-  public static final String OFFLINE_DATA_UPLOAD_TYPE = "--offlineDataUploadType";
-
 }

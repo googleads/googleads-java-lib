@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint CampaignType">This field may
      * only be set to true for campaign channel type SEARCH.</span>
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel type DISPLAY.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -44,7 +44,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * only be set to true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * true for campaign channel subtype SHOPPING_UNIVERSAL_ADS.</span> */
     private java.lang.Boolean targetSearchNetwork;
@@ -53,7 +53,7 @@ public class NetworkSetting  implements java.io.Serializable {
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel subtype SEARCH_MOBILE_APP.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -66,7 +66,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span> */
+     * only be set to false for campaign channel type MULTI_CHANNEL.</span> */
     private java.lang.Boolean targetPartnerSearchNetwork;
 
     public NetworkSetting() {
@@ -103,7 +103,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint CampaignType">This field may
      * only be set to true for campaign channel type SEARCH.</span>
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel type DISPLAY.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -123,7 +123,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint CampaignType">This field may
      * only be set to true for campaign channel type SEARCH.</span>
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel type DISPLAY.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -142,7 +142,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * only be set to true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * true for campaign channel subtype SHOPPING_UNIVERSAL_ADS.</span>
      */
@@ -159,7 +159,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * only be set to true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * true for campaign channel subtype SHOPPING_UNIVERSAL_ADS.</span>
      */
@@ -175,7 +175,7 @@ public class NetworkSetting  implements java.io.Serializable {
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel subtype SEARCH_MOBILE_APP.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -193,7 +193,7 @@ public class NetworkSetting  implements java.io.Serializable {
      * Network.
      *                 Placements are specified using {@code Placement} criteria.
      * <span class="constraint CampaignType">This field may only be set to
-     * true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * true for campaign channel type MULTI_CHANNEL.</span>
      * <span class="constraint CampaignType">This field may only be set to
      * false for campaign channel subtype SEARCH_MOBILE_APP.</span>
      * <span class="constraint CampaignType">This field may only be set to
@@ -213,7 +213,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * only be set to false for campaign channel type MULTI_CHANNEL.</span>
      */
     public java.lang.Boolean getTargetPartnerSearchNetwork() {
         return targetPartnerSearchNetwork;
@@ -229,7 +229,7 @@ public class NetworkSetting  implements java.io.Serializable {
      *                 <span class="constraint AdxEnabled">This is disabled
      * for AdX.</span>
      *                 <span class="constraint CampaignType">This field may
-     * only be set to false for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+     * only be set to false for campaign channel type MULTI_CHANNEL.</span>
      */
     public void setTargetPartnerSearchNetwork(java.lang.Boolean targetPartnerSearchNetwork) {
         this.targetPartnerSearchNetwork = targetPartnerSearchNetwork;

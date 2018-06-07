@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -60,10 +60,6 @@ package com.google.api.ads.adwords.axis.v201802.cm;
  * or either.
  *             <li> Negatively geotargeted using solely LOP, or both.
  * </ul>
- *             
- *             <p>This setting applies only to ads shown on the search
- * network, and does
- *             not affect ads shown on the Google Display Network.
  */
 public class GeoTargetTypeSetting  extends com.google.api.ads.adwords.axis.v201802.cm.Setting  implements java.io.Serializable {
     /* The setting used for positive geotargeting in this particular

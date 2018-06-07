@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -47,7 +47,10 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 for opting out of platform criterion.
      *                 <p>To clear an existing bid modifier, specify {@code
      * -1.0} (invalid for initial {@code ADD}
-     *                 operations). */
+     *                 operations).
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel type SHOPPING with campaign channel
+     * subtype SHOPPING_UNIVERSAL_ADS.</span> */
     private java.lang.Double bidModifier;
 
     /* The status for criteria. */
@@ -186,6 +189,9 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 <p>To clear an existing bid modifier, specify {@code
      * -1.0} (invalid for initial {@code ADD}
      *                 operations).
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel type SHOPPING with campaign channel
+     * subtype SHOPPING_UNIVERSAL_ADS.</span>
      */
     public java.lang.Double getBidModifier() {
         return bidModifier;
@@ -203,6 +209,9 @@ public class CampaignCriterion  implements java.io.Serializable {
      *                 <p>To clear an existing bid modifier, specify {@code
      * -1.0} (invalid for initial {@code ADD}
      *                 operations).
+     *                 <span class="constraint CampaignType">This field may
+     * not be set for campaign channel type SHOPPING with campaign channel
+     * subtype SHOPPING_UNIVERSAL_ADS.</span>
      */
     public void setBidModifier(java.lang.Double bidModifier) {
         this.bidModifier = bidModifier;

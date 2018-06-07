@@ -129,7 +129,7 @@ are in the package `com.google.api.ads.adwords.{version}`.
     *   **If using Maven with Eclipse**
 
         Navigate in your project to any example (e.g.,
-        `src/main/java/adwords/axis/v201802/basicoperations/GetCampaigns.java`)
+        `src/main/java/adwords/axis/v201806/basicoperations/GetCampaigns.java`)
         and run the example.
 
     *   **If using Maven from the command line**
@@ -142,13 +142,13 @@ are in the package `com.google.api.ads.adwords.{version}`.
         particular example, use ``-Dexec.args="--help"``.
 
         ```
-        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201802.basicoperations.GetAdGroups" -Dexec.args="--campaignId YOUR_CAMPAIGN_ID"
+        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201806.basicoperations.GetAdGroups" -Dexec.args="--campaignId YOUR_CAMPAIGN_ID"
         ```
 
     *   **If using jars**
 
         Navigate in your project to any example (e.g.,
-        `src/adwords/axis/v201802/basicoperations/GetCampaigns.java`)
+        `src/adwords/axis/v201806/basicoperations/GetCampaigns.java`)
         and run the example.
 
 ## Basic usage
@@ -158,7 +158,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201802.*;
+import com.google.api.ads.adwords.axis.v201806.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;

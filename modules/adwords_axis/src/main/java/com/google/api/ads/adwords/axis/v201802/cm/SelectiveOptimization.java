@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,10 +23,11 @@ package com.google.api.ads.adwords.axis.v201802.cm;
 
 
 /**
- * Selected set of conversion types for optimizing campaigns. For
- * e.g. For universal app campaigns,
- *             these are the set of in-app actions to optimize the campaign
- * towards.
+ * Selected set of conversion types or a selective optimization set
+ * id for optimizing campaigns. For
+ *             e.g. For universal app campaigns, these are the set of
+ * in-app actions to optimize the campaign
+ *             towards.
  */
 public class SelectiveOptimization  implements java.io.Serializable {
     /* The selected conversion ids for selective optimization. */

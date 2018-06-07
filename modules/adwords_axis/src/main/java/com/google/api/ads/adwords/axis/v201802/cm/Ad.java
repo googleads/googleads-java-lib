@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,14 +23,10 @@ package com.google.api.ads.adwords.axis.v201802.cm;
 
 
 /**
- * The base class of all ad types. {@code Ad} objects themselves cannot
- * be modified. If you want to
- *             make a change to an {@code Ad} object, you must REMOVE
- * its AdGroupAd and ADD a new AdGroupAd with
- *             the new {@code Ad}. This will result in a new {@code Ad}
- * ID, so stats for the original {@code Ad}
- *             and the new {@code Ad} will appear under separate IDs
- * in reports.
+ * The base class of all ad types. {@code Ad}s are created using the
+ * {@code AdGroupAdService}.
+ *             Some ad types such as {@code ExpandedTextAd}s may be modified
+ * using the {@code AdService}.
  *             
  *             <p>When calling {@code AdGroupAdService} to update the
  * {@code status} of an {@code AdGroupAd},
@@ -87,7 +83,8 @@ public class Ad  implements java.io.Serializable {
     /* URL template for appending params to Final URL.
      *                 
      *                 <p>On update, empty string ("") indicates to clear
-     * the field. */
+     * the field.
+     *                 <p>This field is supported only in test accounts. */
     private java.lang.String finalUrlSuffix;
 
     /* A list of mappings to be used for substituting URL custom parameter
@@ -401,6 +398,7 @@ public class Ad  implements java.io.Serializable {
      *                 
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
+     *                 <p>This field is supported only in test accounts.
      */
     public java.lang.String getFinalUrlSuffix() {
         return finalUrlSuffix;
@@ -414,6 +412,7 @@ public class Ad  implements java.io.Serializable {
      *                 
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
+     *                 <p>This field is supported only in test accounts.
      */
     public void setFinalUrlSuffix(java.lang.String finalUrlSuffix) {
         this.finalUrlSuffix = finalUrlSuffix;

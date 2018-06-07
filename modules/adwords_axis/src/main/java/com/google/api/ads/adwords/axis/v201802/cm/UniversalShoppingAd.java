@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,24 +23,28 @@ package com.google.api.ads.adwords.axis.v201802.cm;
 
 
 /**
- * Represents a universal shopping ad. A universal shopping ad targets
- * multiple advertising channels
- *             across Search, Google Display Network, and YouTube with
- * a focus on retail. This supports ads
- *             that display product data (managed using the Google Merchant
+ * Represents a goal-optimized Shopping ad (known as Shopping ad (goal-optimized)
+ * in the AdWords
+ *             user interface). A goal-optimized Shopping ad targets
+ * multiple advertising channels across
+ *             Search, Google Display Network, and YouTube with a focus
+ * on retail. This supports ads that
+ *             display product data (managed using the Google Merchant
  * Center) as specified in the parent
- *             campaign's {@linkplain ShoppingSetting shopping setting}
+ *             campaign's {@linkplain ShoppingSetting Shopping setting}
  * as well as ads using advertiser provided
  *             asset data.
  *             
- *             <p class="caution"><b>Caution:</b> Product ads do not
- * use {@link #url url},
+ *             <p class="caution"><b>Caution:</b> goal-optimized Shopping
+ * ads do not use {@link #url url},
  *             {@link #finalUrls finalUrls}, {@link #finalMobileUrls
  * finalMobileUrls},
  *             {@link #finalAppUrls finalAppUrls}, or {@link #displayUrl
  * displayUrl};
- *             setting these fields on a product ad will cause an error.
- * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
+ *             setting these fields on a goal-optimized Shopping ad will
+ * cause an error.
+ *             <span class="constraint AdxEnabled">This is enabled for
+ * AdX.</span>
  */
 public class UniversalShoppingAd  extends com.google.api.ads.adwords.axis.v201802.cm.Ad  implements java.io.Serializable {
     public UniversalShoppingAd() {

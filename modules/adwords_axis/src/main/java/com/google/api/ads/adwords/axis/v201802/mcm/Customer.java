@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -78,7 +78,8 @@ public class Customer  implements java.io.Serializable {
     /* URL template for appending params to Final URL.
      *                 
      *                 <p>On update, empty string ("") indicates to clear
-     * the field. */
+     * the field.
+     *                 <p>This field is supported only in test accounts. */
     private java.lang.String finalUrlSuffix;
 
     /* Whether parallel tracking is enabled for this customer. */
@@ -358,6 +359,7 @@ public class Customer  implements java.io.Serializable {
      *                 
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
+     *                 <p>This field is supported only in test accounts.
      */
     public java.lang.String getFinalUrlSuffix() {
         return finalUrlSuffix;
@@ -371,6 +373,7 @@ public class Customer  implements java.io.Serializable {
      *                 
      *                 <p>On update, empty string ("") indicates to clear
      * the field.
+     *                 <p>This field is supported only in test accounts.
      */
     public void setFinalUrlSuffix(java.lang.String finalUrlSuffix) {
         this.finalUrlSuffix = finalUrlSuffix;

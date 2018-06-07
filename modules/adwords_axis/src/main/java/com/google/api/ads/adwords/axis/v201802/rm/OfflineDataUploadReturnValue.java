@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,12 +28,15 @@ package com.google.api.ads.adwords.axis.v201802.rm;
 public class OfflineDataUploadReturnValue  extends com.google.api.ads.adwords.axis.v201802.cm.ListReturnValue  implements java.io.Serializable {
     private com.google.api.ads.adwords.axis.v201802.rm.OfflineDataUpload[] value;
 
-    /* List of partial failure errors. For row level errors, offlineDataList
-     * will be shown in the
-     *                     fieldPath along with row index. In this case the
-     * operation will be processed and just the rows
-     *                     with errors will not be used. For more information
-     * about partial failure, see:
+    /* In v201710 and previous, this field stores a list of operation
+     * level errors. Starting in
+     *                     v201802, this field stores both operation-level
+     * and row-level errors. For row-level errors,
+     *                     offlineDataList will be shown in the fieldPath
+     * along with row index. In this case, the
+     *                     operation will be processed and just the rows
+     * with errors will not be used. For more
+     *                     information about partial failure, see:
      *                     https://developers.google.com/adwords/api/docs/guides/partial-failure */
     private com.google.api.ads.adwords.axis.v201802.cm.ApiError[] partialFailureErrors;
 
@@ -91,12 +94,15 @@ public class OfflineDataUploadReturnValue  extends com.google.api.ads.adwords.ax
     /**
      * Gets the partialFailureErrors value for this OfflineDataUploadReturnValue.
      * 
-     * @return partialFailureErrors   * List of partial failure errors. For row level errors, offlineDataList
-     * will be shown in the
-     *                     fieldPath along with row index. In this case the
-     * operation will be processed and just the rows
-     *                     with errors will not be used. For more information
-     * about partial failure, see:
+     * @return partialFailureErrors   * In v201710 and previous, this field stores a list of operation
+     * level errors. Starting in
+     *                     v201802, this field stores both operation-level
+     * and row-level errors. For row-level errors,
+     *                     offlineDataList will be shown in the fieldPath
+     * along with row index. In this case, the
+     *                     operation will be processed and just the rows
+     * with errors will not be used. For more
+     *                     information about partial failure, see:
      *                     https://developers.google.com/adwords/api/docs/guides/partial-failure
      */
     public com.google.api.ads.adwords.axis.v201802.cm.ApiError[] getPartialFailureErrors() {
@@ -107,12 +113,15 @@ public class OfflineDataUploadReturnValue  extends com.google.api.ads.adwords.ax
     /**
      * Sets the partialFailureErrors value for this OfflineDataUploadReturnValue.
      * 
-     * @param partialFailureErrors   * List of partial failure errors. For row level errors, offlineDataList
-     * will be shown in the
-     *                     fieldPath along with row index. In this case the
-     * operation will be processed and just the rows
-     *                     with errors will not be used. For more information
-     * about partial failure, see:
+     * @param partialFailureErrors   * In v201710 and previous, this field stores a list of operation
+     * level errors. Starting in
+     *                     v201802, this field stores both operation-level
+     * and row-level errors. For row-level errors,
+     *                     offlineDataList will be shown in the fieldPath
+     * along with row index. In this case, the
+     *                     operation will be processed and just the rows
+     * with errors will not be used. For more
+     *                     information about partial failure, see:
      *                     https://developers.google.com/adwords/api/docs/guides/partial-failure
      */
     public void setPartialFailureErrors(com.google.api.ads.adwords.axis.v201802.cm.ApiError[] partialFailureErrors) {

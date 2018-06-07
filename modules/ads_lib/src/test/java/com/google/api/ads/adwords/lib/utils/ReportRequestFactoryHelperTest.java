@@ -76,7 +76,7 @@ public class ReportRequestFactoryHelperTest {
   public static Collection<Object[]> data() {
     Collection<Object[]> parameters = new ArrayList<Object[]>();
     List<Boolean> booleanValues = Arrays.<Boolean>asList(true, false, null);
-    List<String> versions = Arrays.<String>asList("v201710", "v201802");
+    List<String> versions = Arrays.<String>asList("v201710", "v201802", "v201806");
     List<Integer> timeouts = Arrays.<Integer>asList(5_000_000, null);
 
     // Create a reporting configuration for all combinations of attribute values from the lists

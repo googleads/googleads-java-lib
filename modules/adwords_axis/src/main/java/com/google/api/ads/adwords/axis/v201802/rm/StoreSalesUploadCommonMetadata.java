@@ -1,4 +1,4 @@
-// Copyright 2018 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,8 +26,9 @@ package com.google.api.ads.adwords.axis.v201802.rm;
  * Common metadata for Store Sales uploads.
  */
 public abstract class StoreSalesUploadCommonMetadata  implements java.io.Serializable {
-    /* This is the fraction of overall sales which you can associate
-     * with a customer loyalty program.
+    /* This is the fraction of all transactions that are identifiable
+     * (i.e., associated with any form
+     *                 of customer information).
      *                 The fraction needs to be between 0 and 1 (excluding
      * 0).
      *                 <span class="constraint Required">This field is required
@@ -76,8 +77,9 @@ public abstract class StoreSalesUploadCommonMetadata  implements java.io.Seriali
     /**
      * Gets the loyaltyRate value for this StoreSalesUploadCommonMetadata.
      * 
-     * @return loyaltyRate   * This is the fraction of overall sales which you can associate
-     * with a customer loyalty program.
+     * @return loyaltyRate   * This is the fraction of all transactions that are identifiable
+     * (i.e., associated with any form
+     *                 of customer information).
      *                 The fraction needs to be between 0 and 1 (excluding
      * 0).
      *                 <span class="constraint Required">This field is required
@@ -91,8 +93,9 @@ public abstract class StoreSalesUploadCommonMetadata  implements java.io.Seriali
     /**
      * Sets the loyaltyRate value for this StoreSalesUploadCommonMetadata.
      * 
-     * @param loyaltyRate   * This is the fraction of overall sales which you can associate
-     * with a customer loyalty program.
+     * @param loyaltyRate   * This is the fraction of all transactions that are identifiable
+     * (i.e., associated with any form
+     *                 of customer information).
      *                 The fraction needs to be between 0 and 1 (excluding
      * 0).
      *                 <span class="constraint Required">This field is required

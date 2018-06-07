@@ -163,6 +163,8 @@ public class ReportingConfigurationTest {
     assertTrue("Validation should succeed for v201710", true);
     config.validate("v201802");
     assertTrue("Validation should succeed for v201802", true);
+    config.validate("v201806");
+    assertTrue("Validation should succeed for v201806", true);
   }
 
   @Test

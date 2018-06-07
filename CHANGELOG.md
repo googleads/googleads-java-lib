@@ -1,3 +1,14 @@
+3.15.0 - 06/07/2018
+-----------------
+AdWords:
+  - Added support and examples for v201806.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 3.14.2 - 05/30/2018
 -----------------
 AdWords:
