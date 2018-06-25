@@ -13,8 +13,7 @@ and employs a simple wait-and-retry strategy.
 *   Uses [SLF4J](https://www.slf4j.org/) logging facade, allowing you to plug in
     a concrete logging framework of your choice.
 *   Automatic handling of rate limit errors for single process applications.
-*   Client library SOAP toolkit (Axis, JAX-WS) agnostic and version agnostic
-    (best to use with v201702 onwards).
+*   Client library SOAP toolkit (Axis, JAX-WS) agnostic and version agnostic.
 
 ## Requirements
 

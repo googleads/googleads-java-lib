@@ -5,7 +5,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>adwords-extension-ratelimiter</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 
   <packaging>jar</packaging>
   <name>Ads API Client Library Rate Limiter extension.</name>
@@ -62,13 +62,8 @@
       <version>RELEASE</version>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
+      <artifactId>slf4j-api</artifactId>
       <version>1.7.7</version>
     </dependency>
     <dependency>

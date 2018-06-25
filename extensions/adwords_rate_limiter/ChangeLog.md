@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2018-06-12
+- Update dependencies for slf4j. Depend on slf4j-api rather than slf4j-log4j12.
+
 ## [0.1.1] - 2018-01-15
 - Make setting variables public, so clients can set customization via variable names.
 - Use ONE virtual account to handle rate limit of ALL unknown accounts combined.
