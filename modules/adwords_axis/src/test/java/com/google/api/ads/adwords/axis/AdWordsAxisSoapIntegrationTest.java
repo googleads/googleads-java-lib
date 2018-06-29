@@ -20,13 +20,13 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.adwords.axis.v201802.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201802.cm.Budget;
-import com.google.api.ads.adwords.axis.v201802.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.axis.v201802.cm.BudgetOperation;
-import com.google.api.ads.adwords.axis.v201802.cm.BudgetServiceInterface;
-import com.google.api.ads.adwords.axis.v201802.cm.Money;
-import com.google.api.ads.adwords.axis.v201802.cm.Operator;
+import com.google.api.ads.adwords.axis.v201806.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201806.cm.Budget;
+import com.google.api.ads.adwords.axis.v201806.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.axis.v201806.cm.BudgetOperation;
+import com.google.api.ads.adwords.axis.v201806.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.axis.v201806.cm.Money;
+import com.google.api.ads.adwords.axis.v201806.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -54,7 +54,7 @@ import org.xml.sax.SAXException;
 @RunWith(JUnit4.class)
 public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201802";
+  private static final String API_VERSION = "v201806";
 
   @BeforeClass
   public static void setupClass() {

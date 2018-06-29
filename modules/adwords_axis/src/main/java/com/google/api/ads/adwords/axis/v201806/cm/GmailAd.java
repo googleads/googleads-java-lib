@@ -44,7 +44,9 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     populated when creating a {@link "GmailAd"}. Valid
      * image types are GIF, JPEG, and PNG. The
      *                     minimum size is 300x100 and the aspect ratio must
-     * be in 3:1 to 5:1 (+-1%). */
+     * be in 3:1 to 5:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "GmailHeaderImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image headerImage;
 
     /* Marketing image. An image must first be created using the MediaService,
@@ -55,21 +57,29 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * be 600:314 (+-1%). For square marketing
      *                     image, the minimum size is 300x300 and the aspect
      * ratio must be 1:1 (+-1%). Either
-     *                     productVideos or marketingImage must be specified. */
+     *                     productVideos or marketingImage must be specified.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailMarketingImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image marketingImage;
 
     /* Headline of the marketing image. Maximum display width is 25
      * characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageHeadline".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String marketingImageHeadline;
 
     /* Description of the marketing image. Maximum display width is
      * 90 characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span> */
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageDescription".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String marketingImageDescription;
 
     /* Display-call-to-action of the marketing image. The DisplayCallToAction.urlId
@@ -77,7 +87,9 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     set when setting this field. */
     private com.google.api.ads.adwords.axis.v201806.cm.DisplayCallToAction marketingImageDisplayCallToAction;
 
-    /* Product images. Support up to 15 product images. */
+    /* Product images. Support up to 15 product images.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductImages".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.ProductImage[] productImages;
 
     /* Product Videos. Either productVideoList or marketingImage must
@@ -86,7 +98,9 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * and mediaId must be populated. The YouTube
      *                     hosted video can be added to AdWords through either
      * the AdWords UI or through AdWords Scripts
-     *                     (https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_videobuilder). */
+     *                     (https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_videobuilder).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "ProductVideoList".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Video[] productVideoList;
 
     public GmailAd() {
@@ -207,6 +221,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * image types are GIF, JPEG, and PNG. The
      *                     minimum size is 300x100 and the aspect ratio must
      * be in 3:1 to 5:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "GmailHeaderImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getHeaderImage() {
         return headerImage;
@@ -222,6 +238,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * image types are GIF, JPEG, and PNG. The
      *                     minimum size is 300x100 and the aspect ratio must
      * be in 3:1 to 5:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "GmailHeaderImage".</span>
      */
     public void setHeaderImage(com.google.api.ads.adwords.axis.v201806.cm.Image headerImage) {
         this.headerImage = headerImage;
@@ -240,6 +258,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     image, the minimum size is 300x300 and the aspect
      * ratio must be 1:1 (+-1%). Either
      *                     productVideos or marketingImage must be specified.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailMarketingImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getMarketingImage() {
         return marketingImage;
@@ -258,6 +278,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     image, the minimum size is 300x300 and the aspect
      * ratio must be 1:1 (+-1%). Either
      *                     productVideos or marketingImage must be specified.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailMarketingImage".</span>
      */
     public void setMarketingImage(com.google.api.ads.adwords.axis.v201806.cm.Image marketingImage) {
         this.marketingImage = marketingImage;
@@ -269,9 +291,12 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * 
      * @return marketingImageHeadline   * Headline of the marketing image. Maximum display width is 25
      * characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageHeadline".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getMarketingImageHeadline() {
         return marketingImageHeadline;
@@ -283,9 +308,12 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * 
      * @param marketingImageHeadline   * Headline of the marketing image. Maximum display width is 25
      * characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageHeadline".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setMarketingImageHeadline(java.lang.String marketingImageHeadline) {
         this.marketingImageHeadline = marketingImageHeadline;
@@ -297,9 +325,12 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * 
      * @return marketingImageDescription   * Description of the marketing image. Maximum display width is
      * 90 characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageDescription".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getMarketingImageDescription() {
         return marketingImageDescription;
@@ -311,9 +342,12 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * 
      * @param marketingImageDescription   * Description of the marketing image. Maximum display width is
      * 90 characters.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null} when it is contained within
-     * {@link Operator}s : ADD.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImageDescription".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setMarketingImageDescription(java.lang.String marketingImageDescription) {
         this.marketingImageDescription = marketingImageDescription;
@@ -348,6 +382,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * Gets the productImages value for this GmailAd.
      * 
      * @return productImages   * Product images. Support up to 15 product images.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductImages".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.ProductImage[] getProductImages() {
         return productImages;
@@ -358,6 +394,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      * Sets the productImages value for this GmailAd.
      * 
      * @param productImages   * Product images. Support up to 15 product images.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ProductImages".</span>
      */
     public void setProductImages(com.google.api.ads.adwords.axis.v201806.cm.ProductImage[] productImages) {
         this.productImages = productImages;
@@ -382,6 +420,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     hosted video can be added to AdWords through either
      * the AdWords UI or through AdWords Scripts
      *                     (https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_videobuilder).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "ProductVideoList".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Video[] getProductVideoList() {
         return productVideoList;
@@ -398,6 +438,8 @@ public class GmailAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  imp
      *                     hosted video can be added to AdWords through either
      * the AdWords UI or through AdWords Scripts
      *                     (https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/adwordsapp_videobuilder).
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "ProductVideoList".</span>
      */
     public void setProductVideoList(com.google.api.ads.adwords.axis.v201806.cm.Video[] productVideoList) {
         this.productVideoList = productVideoList;

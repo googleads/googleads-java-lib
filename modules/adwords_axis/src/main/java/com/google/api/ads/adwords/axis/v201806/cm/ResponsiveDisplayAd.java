@@ -45,6 +45,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     types are GIF, JPEG, and PNG. The minimum size
      * is 600x314 and the aspect ratio must be 600:314
      *                     (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImage".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span> */
@@ -57,7 +59,9 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     must be populated when creating a {@link "ResponsiveDisplayAd"}.
      * Valid image types are GIF,
      *                     JPEG, and PNG. The minimum size is 128x128 and
-     * the aspect ratio must be 1:1 (+-1%). */
+     * the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LogoImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image logoImage;
 
     /* Square marketing image to be used in the ad. This image may
@@ -70,7 +74,9 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      * must be populated when creating a {@link
      *                     "ResponsiveDisplayAd"}. Valid image types are
      * GIF, JPEG, and PNG. The minimum size is 300x300
-     *                     the aspect ratio must be 1:1 (+-1%). */
+     *                     the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "SquareMarketingImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image squareMarketingImage;
 
     /* Short format of the headline of the ad. Maximum display width
@@ -265,6 +271,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     types are GIF, JPEG, and PNG. The minimum size
      * is 600x314 and the aspect ratio must be 600:314
      *                     (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImage".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -286,6 +294,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     types are GIF, JPEG, and PNG. The minimum size
      * is 600x314 and the aspect ratio must be 600:314
      *                     (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "MarketingImage".</span>
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null} when it is contained within
      * {@link Operator}s : ADD.</span>
@@ -306,6 +316,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      * Valid image types are GIF,
      *                     JPEG, and PNG. The minimum size is 128x128 and
      * the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LogoImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getLogoImage() {
         return logoImage;
@@ -323,6 +335,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      * Valid image types are GIF,
      *                     JPEG, and PNG. The minimum size is 128x128 and
      * the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "LogoImage".</span>
      */
     public void setLogoImage(com.google.api.ads.adwords.axis.v201806.cm.Image logoImage) {
         this.logoImage = logoImage;
@@ -343,6 +357,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     "ResponsiveDisplayAd"}. Valid image types are
      * GIF, JPEG, and PNG. The minimum size is 300x300
      *                     the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "SquareMarketingImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getSquareMarketingImage() {
         return squareMarketingImage;
@@ -363,6 +379,8 @@ public class ResponsiveDisplayAd  extends com.google.api.ads.adwords.axis.v20180
      *                     "ResponsiveDisplayAd"}. Valid image types are
      * GIF, JPEG, and PNG. The minimum size is 300x300
      *                     the aspect ratio must be 1:1 (+-1%).
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "SquareMarketingImage".</span>
      */
     public void setSquareMarketingImage(com.google.api.ads.adwords.axis.v201806.cm.Image squareMarketingImage) {
         this.squareMarketingImage = squareMarketingImage;

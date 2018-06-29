@@ -54,26 +54,34 @@ class BatchJobHelperImpl
   }
 
   @Override
-  public BatchJobUploadResponse uploadBatchJobOperations(Iterable<Operation> operations,
-      String uploadUrl) throws BatchJobException {
+  public BatchJobUploadResponse uploadBatchJobOperations(
+      Iterable<Operation> operations, String uploadUrl) throws BatchJobException {
     // All uploads must go through the incremental upload workflow.
     return uploadIncrementalBatchJobOperations(
         operations, true, new BatchJobUploadStatus(0, URI.create(uploadUrl)));
   }
-  
+
   @Override
   public BatchJobUploadResponse uploadIncrementalBatchJobOperations(
-      Iterable<? extends Operation> operations, boolean isLastRequest,
-      BatchJobUploadStatus batchJobUploadStatus) throws BatchJobException {
+      Iterable<? extends Operation> operations,
+      boolean isLastRequest,
+      BatchJobUploadStatus batchJobUploadStatus)
+      throws BatchJobException {
     BatchJobMutateRequest request = new BatchJobMutateRequest();
     request.addOperations(operations);
     return uploader.uploadIncrementalBatchJobOperations(
         request, isLastRequest, batchJobUploadStatus);
   }
-  
+
   @Override
   public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
       throws BatchJobException {
+    return downloadBatchJobMutateResponse(downloadUrl, 0, Integer.MAX_VALUE);
+  }
+
+  @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(
+      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
     AxisDeserializer deserializer = new AxisDeserializer();
     /*
      * Deserialize using the generated cm.MutateResult class instead of the batchjob.MutateResult
@@ -93,7 +101,9 @@ class BatchJobHelperImpl
               new URL(downloadUrl),
               getServiceTypeMappings(),
               com.google.api.ads.adwords.axis.v201806.cm.MutateResult.class,
-              resultQName);
+              resultQName,
+              startIndex,
+              numberResults);
     } catch (Exception e) {
       batchJobLogger.logDownload(downloadUrl, null, e);
       throw new BatchJobException(
@@ -121,9 +131,7 @@ class BatchJobHelperImpl
     return response;
   }
 
-  /**
-   * Returns all of the service type mappings required to serialize/deserialize Axis objects.
-   */
+  /** Returns all of the service type mappings required to serialize/deserialize Axis objects. */
   static List<TypeMapping> getServiceTypeMappings() {
     // Build the list of type mappings based on BatchJobOpsService for this version of the API.
     ImmutableList.Builder<TypeMapping> mappings = ImmutableList.builder();
@@ -147,4 +155,3 @@ class BatchJobHelperImpl
     return mappings.build();
   }
 }
-

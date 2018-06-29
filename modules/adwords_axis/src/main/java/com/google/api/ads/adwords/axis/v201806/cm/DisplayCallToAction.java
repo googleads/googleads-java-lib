@@ -28,13 +28,19 @@ package com.google.api.ads.adwords.axis.v201806.cm;
 public class DisplayCallToAction  implements java.io.Serializable {
     /* Text of the display-call-to-action. Maximum display width is
      * 15 characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span> */
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String text;
 
     /* Text color of the display-call-to-action. In hexadecimal, e.g.
-     * #ffffff for white. */
+     * #ffffff for white.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionTextColor".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String textColor;
 
     /* Identifies the url data in Ad.urlData used for this DisplayCallToAction.
@@ -69,9 +75,12 @@ public class DisplayCallToAction  implements java.io.Serializable {
      * 
      * @return text   * Text of the display-call-to-action. Maximum display width is
      * 15 characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getText() {
         return text;
@@ -83,9 +92,12 @@ public class DisplayCallToAction  implements java.io.Serializable {
      * 
      * @param text   * Text of the display-call-to-action. Maximum display width is
      * 15 characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionText".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setText(java.lang.String text) {
         this.text = text;
@@ -97,6 +109,9 @@ public class DisplayCallToAction  implements java.io.Serializable {
      * 
      * @return textColor   * Text color of the display-call-to-action. In hexadecimal, e.g.
      * #ffffff for white.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionTextColor".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getTextColor() {
         return textColor;
@@ -108,6 +123,9 @@ public class DisplayCallToAction  implements java.io.Serializable {
      * 
      * @param textColor   * Text color of the display-call-to-action. In hexadecimal, e.g.
      * #ffffff for white.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MarketingImageCallToActionTextColor".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setTextColor(java.lang.String textColor) {
         this.textColor = textColor;

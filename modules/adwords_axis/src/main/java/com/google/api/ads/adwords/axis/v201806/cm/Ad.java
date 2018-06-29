@@ -125,10 +125,15 @@ public class Ad  implements java.io.Serializable {
      * Currently only used for
      *                 TemplateAds for specific template IDs. For all other
      * ad types, use finalUrls,
-     *                 finalMobileUrls and finalAppUrls instead. */
+     *                 finalMobileUrls and finalAppUrls instead.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "UrlData".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.UrlData[] urlData;
 
-    /* Indicates if this ad was added by AdWords. */
+    /* Indicates if this ad was added by AdWords.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Automated".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Boolean automated;
 
     /* Type of ad.
@@ -141,12 +146,18 @@ public class Ad  implements java.io.Serializable {
      * for
      *                 mobile devices (CriterionId 30001). If unspecified
      * (no device preference),
-     *                 all devices are targeted. */
+     *                 all devices are targeted.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "DevicePreference".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.Long devicePreference;
 
     /* The source of this system-managed ad.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span> */
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SystemManagedEntitySource".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.SystemManagedEntitySource systemManagedEntitySource;
 
     /* Indicates that this instance is a subtype of Ad.
@@ -539,6 +550,8 @@ public class Ad  implements java.io.Serializable {
      *                 TemplateAds for specific template IDs. For all other
      * ad types, use finalUrls,
      *                 finalMobileUrls and finalAppUrls instead.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "UrlData".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.UrlData[] getUrlData() {
         return urlData;
@@ -553,6 +566,8 @@ public class Ad  implements java.io.Serializable {
      *                 TemplateAds for specific template IDs. For all other
      * ad types, use finalUrls,
      *                 finalMobileUrls and finalAppUrls instead.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "UrlData".</span>
      */
     public void setUrlData(com.google.api.ads.adwords.axis.v201806.cm.UrlData[] urlData) {
         this.urlData = urlData;
@@ -571,6 +586,9 @@ public class Ad  implements java.io.Serializable {
      * Gets the automated value for this Ad.
      * 
      * @return automated   * Indicates if this ad was added by AdWords.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Automated".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Boolean getAutomated() {
         return automated;
@@ -581,6 +599,9 @@ public class Ad  implements java.io.Serializable {
      * Sets the automated value for this Ad.
      * 
      * @param automated   * Indicates if this ad was added by AdWords.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Automated".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setAutomated(java.lang.Boolean automated) {
         this.automated = automated;
@@ -621,6 +642,9 @@ public class Ad  implements java.io.Serializable {
      *                 mobile devices (CriterionId 30001). If unspecified
      * (no device preference),
      *                 all devices are targeted.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "DevicePreference".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.Long getDevicePreference() {
         return devicePreference;
@@ -635,6 +659,9 @@ public class Ad  implements java.io.Serializable {
      *                 mobile devices (CriterionId 30001). If unspecified
      * (no device preference),
      *                 all devices are targeted.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "DevicePreference".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setDevicePreference(java.lang.Long devicePreference) {
         this.devicePreference = devicePreference;
@@ -645,8 +672,11 @@ public class Ad  implements java.io.Serializable {
      * Gets the systemManagedEntitySource value for this Ad.
      * 
      * @return systemManagedEntitySource   * The source of this system-managed ad.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SystemManagedEntitySource".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.SystemManagedEntitySource getSystemManagedEntitySource() {
         return systemManagedEntitySource;
@@ -657,8 +687,11 @@ public class Ad  implements java.io.Serializable {
      * Sets the systemManagedEntitySource value for this Ad.
      * 
      * @param systemManagedEntitySource   * The source of this system-managed ad.
-     *                 <span class="constraint ReadOnly">This field is read
-     * only and will be ignored when sent to the API.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SystemManagedEntitySource".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint ReadOnly">This field is read only and will
+     * be ignored when sent to the API.</span>
      */
     public void setSystemManagedEntitySource(com.google.api.ads.adwords.axis.v201806.cm.SystemManagedEntitySource systemManagedEntitySource) {
         this.systemManagedEntitySource = systemManagedEntitySource;

@@ -26,30 +26,42 @@ package com.google.api.ads.adwords.axis.v201806.cm;
  * Encapsulates a Video media identified by a MediaId.
  */
 public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  implements java.io.Serializable {
-    /* The duration of the associated video, in milliseconds. */
+    /* The duration of the associated video, in milliseconds.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DurationMillis".</span> */
     private java.lang.Long durationMillis;
 
-    /* Streaming URL for the video. */
+    /* Streaming URL for the video.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "StreamingUrl".</span> */
     private java.lang.String streamingUrl;
 
-    /* Indicates whether the video is ready to play on the web. */
+    /* Indicates whether the video is ready to play on the web.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ReadyToPlayOnTheWeb".</span> */
     private java.lang.Boolean readyToPlayOnTheWeb;
 
     /* The Industry Standard Commercial Identifier code for this media,
      * used
-     *                     mainly for television commercials. */
+     *                     mainly for television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IndustryStandardCommercialIdentifier".</span> */
     private java.lang.String industryStandardCommercialIdentifier;
 
     /* The Advertising Digital Identification code for this media,
      * as defined by
      *                     the American Association of Advertising Agencies,
      * used mainly for
-     *                     television commercials. */
+     *                     television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AdvertisingId".</span> */
     private java.lang.String advertisingId;
 
     /* For YouTube-hosted videos, the YouTube video ID (as seen in
      * YouTube URLs)
-     *                     may also be filled in. */
+     *                     may also be filled in.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "YouTubeVideoIdString".</span> */
     private java.lang.String youTubeVideoIdString;
 
     public Video() {
@@ -121,6 +133,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Gets the durationMillis value for this Video.
      * 
      * @return durationMillis   * The duration of the associated video, in milliseconds.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DurationMillis".</span>
      */
     public java.lang.Long getDurationMillis() {
         return durationMillis;
@@ -131,6 +145,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Sets the durationMillis value for this Video.
      * 
      * @param durationMillis   * The duration of the associated video, in milliseconds.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "DurationMillis".</span>
      */
     public void setDurationMillis(java.lang.Long durationMillis) {
         this.durationMillis = durationMillis;
@@ -141,6 +157,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Gets the streamingUrl value for this Video.
      * 
      * @return streamingUrl   * Streaming URL for the video.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "StreamingUrl".</span>
      */
     public java.lang.String getStreamingUrl() {
         return streamingUrl;
@@ -151,6 +169,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Sets the streamingUrl value for this Video.
      * 
      * @param streamingUrl   * Streaming URL for the video.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "StreamingUrl".</span>
      */
     public void setStreamingUrl(java.lang.String streamingUrl) {
         this.streamingUrl = streamingUrl;
@@ -161,6 +181,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Gets the readyToPlayOnTheWeb value for this Video.
      * 
      * @return readyToPlayOnTheWeb   * Indicates whether the video is ready to play on the web.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ReadyToPlayOnTheWeb".</span>
      */
     public java.lang.Boolean getReadyToPlayOnTheWeb() {
         return readyToPlayOnTheWeb;
@@ -171,6 +193,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * Sets the readyToPlayOnTheWeb value for this Video.
      * 
      * @param readyToPlayOnTheWeb   * Indicates whether the video is ready to play on the web.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "ReadyToPlayOnTheWeb".</span>
      */
     public void setReadyToPlayOnTheWeb(java.lang.Boolean readyToPlayOnTheWeb) {
         this.readyToPlayOnTheWeb = readyToPlayOnTheWeb;
@@ -183,6 +207,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * @return industryStandardCommercialIdentifier   * The Industry Standard Commercial Identifier code for this media,
      * used
      *                     mainly for television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IndustryStandardCommercialIdentifier".</span>
      */
     public java.lang.String getIndustryStandardCommercialIdentifier() {
         return industryStandardCommercialIdentifier;
@@ -195,6 +221,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * @param industryStandardCommercialIdentifier   * The Industry Standard Commercial Identifier code for this media,
      * used
      *                     mainly for television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "IndustryStandardCommercialIdentifier".</span>
      */
     public void setIndustryStandardCommercialIdentifier(java.lang.String industryStandardCommercialIdentifier) {
         this.industryStandardCommercialIdentifier = industryStandardCommercialIdentifier;
@@ -209,6 +237,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      *                     the American Association of Advertising Agencies,
      * used mainly for
      *                     television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AdvertisingId".</span>
      */
     public java.lang.String getAdvertisingId() {
         return advertisingId;
@@ -223,6 +253,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      *                     the American Association of Advertising Agencies,
      * used mainly for
      *                     television commercials.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "AdvertisingId".</span>
      */
     public void setAdvertisingId(java.lang.String advertisingId) {
         this.advertisingId = advertisingId;
@@ -235,6 +267,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * @return youTubeVideoIdString   * For YouTube-hosted videos, the YouTube video ID (as seen in
      * YouTube URLs)
      *                     may also be filled in.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "YouTubeVideoIdString".</span>
      */
     public java.lang.String getYouTubeVideoIdString() {
         return youTubeVideoIdString;
@@ -247,6 +281,8 @@ public class Video  extends com.google.api.ads.adwords.axis.v201806.cm.Media  im
      * @param youTubeVideoIdString   * For YouTube-hosted videos, the YouTube video ID (as seen in
      * YouTube URLs)
      *                     may also be filled in.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "YouTubeVideoIdString".</span>
      */
     public void setYouTubeVideoIdString(java.lang.String youTubeVideoIdString) {
         this.youTubeVideoIdString = youTubeVideoIdString;

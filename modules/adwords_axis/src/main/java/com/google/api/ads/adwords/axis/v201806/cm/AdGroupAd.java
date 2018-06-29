@@ -27,6 +27,9 @@ package com.google.api.ads.adwords.axis.v201806.cm;
  */
 public class AdGroupAd  implements java.io.Serializable {
     /* The id of the adgroup containing this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span> */
     private java.lang.Long adGroupId;
@@ -39,10 +42,15 @@ public class AdGroupAd  implements java.io.Serializable {
     /* The status of the ad.
      *                 This field is required and should not be {@code null}
      * when it is contained within
-     *                 {@link Operator}s : SET. */
+     *                 {@link Operator}s : SET.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.AdGroupAdStatus status;
 
     /* Summary of policy findings for this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PolicySummary".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.AdGroupAdPolicySummary policySummary;
@@ -59,6 +67,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * {@link Predicate.Operator#CONTAINS_ANY},
      *                 {@link Predicate.Operator#CONTAINS_NONE} operators
      * with a list of {@link Label} ids.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Labels".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * not be set for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
      * <span class="constraint ReadOnly">This field is read only and will
@@ -69,6 +80,9 @@ public class AdGroupAd  implements java.io.Serializable {
     /* ID of the base campaign from which this draft/trial ad was
      * created.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseCampaignId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long baseCampaignId;
@@ -80,6 +94,9 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseAdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long baseAdGroupId;
@@ -127,6 +144,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the adGroupId value for this AdGroupAd.
      *
      * @return adGroupId   * The id of the adgroup containing this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -139,6 +159,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the adGroupId value for this AdGroupAd.
      *
      * @param adGroupId   * The id of the adgroup containing this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "AdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
      */
@@ -178,6 +201,9 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 This field is required and should not be {@code null}
      * when it is contained within
      *                 {@link Operator}s : SET.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.AdGroupAdStatus getStatus() {
         return status;
@@ -191,6 +217,9 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 This field is required and should not be {@code null}
      * when it is contained within
      *                 {@link Operator}s : SET.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Status".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setStatus(com.google.api.ads.adwords.axis.v201806.cm.AdGroupAdStatus status) {
         this.status = status;
@@ -201,6 +230,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Gets the policySummary value for this AdGroupAd.
      *
      * @return policySummary   * Summary of policy findings for this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PolicySummary".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -213,6 +244,8 @@ public class AdGroupAd  implements java.io.Serializable {
      * Sets the policySummary value for this AdGroupAd.
      *
      * @param policySummary   * Summary of policy findings for this ad.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PolicySummary".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -236,6 +269,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * {@link Predicate.Operator#CONTAINS_ANY},
      *                 {@link Predicate.Operator#CONTAINS_NONE} operators
      * with a list of {@link Label} ids.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Labels".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * not be set for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
      * <span class="constraint ReadOnly">This field is read only and will
@@ -262,6 +298,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * {@link Predicate.Operator#CONTAINS_ANY},
      *                 {@link Predicate.Operator#CONTAINS_NONE} operators
      * with a list of {@link Label} ids.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Labels".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint CampaignType">This field may
      * not be set for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
      * <span class="constraint ReadOnly">This field is read only and will
@@ -287,6 +326,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * @return baseCampaignId   * ID of the base campaign from which this draft/trial ad was
      * created.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseCampaignId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -301,6 +343,9 @@ public class AdGroupAd  implements java.io.Serializable {
      * @param baseCampaignId   * ID of the base campaign from which this draft/trial ad was
      * created.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseCampaignId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -319,6 +364,9 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseAdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -337,6 +385,9 @@ public class AdGroupAd  implements java.io.Serializable {
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
      *                 This field is only returned on get requests.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "BaseAdGroupId".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */

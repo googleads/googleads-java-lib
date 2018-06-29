@@ -40,6 +40,8 @@ public class AdOperation  extends com.google.api.ads.adwords.axis.v201806.cm.Ope
      * containing PROHIBITED or FULLY_LIMITED policy
      *                     topic entries of these types, the reviewable entities
      * will be saved without reporting an error.
+     *                     The reviewable entities will not be eligible to
+     * serve until they pass the policy check.
      *                     
      *                     <p>This field accepts returned policyTopicId from
      * PolicyTopicEntry in the PolicyFindingError. */
@@ -135,6 +137,8 @@ public class AdOperation  extends com.google.api.ads.adwords.axis.v201806.cm.Ope
      * containing PROHIBITED or FULLY_LIMITED policy
      *                     topic entries of these types, the reviewable entities
      * will be saved without reporting an error.
+     *                     The reviewable entities will not be eligible to
+     * serve until they pass the policy check.
      *                     
      *                     <p>This field accepts returned policyTopicId from
      * PolicyTopicEntry in the PolicyFindingError.
@@ -153,6 +157,8 @@ public class AdOperation  extends com.google.api.ads.adwords.axis.v201806.cm.Ope
      * containing PROHIBITED or FULLY_LIMITED policy
      *                     topic entries of these types, the reviewable entities
      * will be saved without reporting an error.
+     *                     The reviewable entities will not be eligible to
+     * serve until they pass the policy check.
      *                     
      *                     <p>This field accepts returned policyTopicId from
      * PolicyTopicEntry in the PolicyFindingError.

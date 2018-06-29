@@ -27,6 +27,8 @@ package com.google.api.ads.adwords.axis.v201806.cm;
  */
 public class Media  implements java.io.Serializable {
     /* ID of this media object.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MediaId".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET, REMOVE.</span> */
@@ -36,12 +38,16 @@ public class Media  implements java.io.Serializable {
      * to upload a new media
      *                 file. MEDIA_BUNDLE, ICON, IMAGE, and DYNAMIC_IMAGE
      * are the supported MediaTypes to upload.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Type".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.MediaMediaType type;
 
     /* Media reference ID key.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
@@ -49,16 +55,22 @@ public class Media  implements java.io.Serializable {
 
     /* Various dimension sizes for the media. Only applies to image
      * media (and video media for
-     *                 video thumbnails). */
+     *                 video thumbnails).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Dimensions".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Media_Size_DimensionsMapEntry[] dimensions;
 
     /* URLs pointing to the resized media for the given sizes. Only
      * applies to image media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Media_Size_StringMapEntry[] urls;
 
     /* The mime type of the media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MimeType".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
@@ -66,16 +78,22 @@ public class Media  implements java.io.Serializable {
 
     /* The URL of where the original media was downloaded from (or
      * a file name).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SourceUrl".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
     private java.lang.String sourceUrl;
 
     /* The name of the media. The name can be used by clients to
-     *                 help identify previously uploaded media. */
+     *                 help identify previously uploaded media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span> */
     private java.lang.String name;
 
     /* The size of the media file in bytes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "FileSize".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
@@ -83,6 +101,8 @@ public class Media  implements java.io.Serializable {
 
     /* Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
      *                 This is not updatable and not specifiable.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CreationTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span> */
@@ -144,6 +164,8 @@ public class Media  implements java.io.Serializable {
      * Gets the mediaId value for this Media.
      * 
      * @return mediaId   * ID of this media object.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MediaId".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET, REMOVE.</span>
@@ -157,6 +179,8 @@ public class Media  implements java.io.Serializable {
      * Sets the mediaId value for this Media.
      * 
      * @param mediaId   * ID of this media object.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MediaId".</span>
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null} when it is contained within {@link
      * Operator}s : SET, REMOVE.</span>
@@ -173,6 +197,8 @@ public class Media  implements java.io.Serializable {
      * to upload a new media
      *                 file. MEDIA_BUNDLE, ICON, IMAGE, and DYNAMIC_IMAGE
      * are the supported MediaTypes to upload.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Type".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -189,6 +215,8 @@ public class Media  implements java.io.Serializable {
      * to upload a new media
      *                 file. MEDIA_BUNDLE, ICON, IMAGE, and DYNAMIC_IMAGE
      * are the supported MediaTypes to upload.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Type".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -202,6 +230,8 @@ public class Media  implements java.io.Serializable {
      * Gets the referenceId value for this Media.
      * 
      * @return referenceId   * Media reference ID key.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -215,6 +245,8 @@ public class Media  implements java.io.Serializable {
      * Sets the referenceId value for this Media.
      * 
      * @param referenceId   * Media reference ID key.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "ReferenceId".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -230,6 +262,8 @@ public class Media  implements java.io.Serializable {
      * @return dimensions   * Various dimension sizes for the media. Only applies to image
      * media (and video media for
      *                 video thumbnails).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Dimensions".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Media_Size_DimensionsMapEntry[] getDimensions() {
         return dimensions;
@@ -242,6 +276,8 @@ public class Media  implements java.io.Serializable {
      * @param dimensions   * Various dimension sizes for the media. Only applies to image
      * media (and video media for
      *                 video thumbnails).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Dimensions".</span>
      */
     public void setDimensions(com.google.api.ads.adwords.axis.v201806.cm.Media_Size_DimensionsMapEntry[] dimensions) {
         this.dimensions = dimensions;
@@ -261,6 +297,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @return urls   * URLs pointing to the resized media for the given sizes. Only
      * applies to image media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -274,6 +312,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @param urls   * URLs pointing to the resized media for the given sizes. Only
      * applies to image media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Urls".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API.</span>
      */
@@ -294,6 +334,8 @@ public class Media  implements java.io.Serializable {
      * Gets the mimeType value for this Media.
      * 
      * @return mimeType   * The mime type of the media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MimeType".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -307,6 +349,8 @@ public class Media  implements java.io.Serializable {
      * Sets the mimeType value for this Media.
      * 
      * @param mimeType   * The mime type of the media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "MimeType".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -321,6 +365,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @return sourceUrl   * The URL of where the original media was downloaded from (or
      * a file name).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SourceUrl".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -335,6 +381,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @param sourceUrl   * The URL of where the original media was downloaded from (or
      * a file name).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "SourceUrl".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -349,6 +397,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @return name   * The name of the media. The name can be used by clients to
      *                 help identify previously uploaded media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span>
      */
     public java.lang.String getName() {
         return name;
@@ -360,6 +410,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @param name   * The name of the media. The name can be used by clients to
      *                 help identify previously uploaded media.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "Name".</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -370,6 +422,8 @@ public class Media  implements java.io.Serializable {
      * Gets the fileSize value for this Media.
      * 
      * @return fileSize   * The size of the media file in bytes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "FileSize".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -383,6 +437,8 @@ public class Media  implements java.io.Serializable {
      * Sets the fileSize value for this Media.
      * 
      * @param fileSize   * The size of the media file in bytes.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "FileSize".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -397,6 +453,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @return creationTime   * Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
      *                 This is not updatable and not specifiable.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CreationTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>
@@ -411,6 +469,8 @@ public class Media  implements java.io.Serializable {
      * 
      * @param creationTime   * Media creation date in the format YYYY-MM-DD HH:MM:SS+TZ.
      *                 This is not updatable and not specifiable.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "CreationTime".</span>
      *                 <span class="constraint ReadOnly">This field is read
      * only and will be ignored when sent to the API for the following {@link
      * Operator}s: REMOVE and SET.</span>

@@ -65,7 +65,8 @@ public interface CustomAffinityServiceInterface extends java.rmi.Remote {
      *         
      *         <p>
      *         Add - creates a custom affinity token
-     *         Remove - deletes a custom affinity token
+     *         Set - set operation for custom affinity token is not supported
+     * Remove - deletes a custom affinity token
      *         
      *         
      * @param operations the operations to apply

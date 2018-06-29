@@ -70,10 +70,16 @@ class BatchJobHelperImpl
     return uploader.uploadIncrementalBatchJobOperations(
         request, isLastRequest, batchJobUploadStatus);
   }
-  
+
   @Override
   public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
       throws BatchJobException {
+    return downloadBatchJobMutateResponse(downloadUrl, 0, Integer.MAX_VALUE);
+  }
+
+  @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(
+      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
     AxisDeserializer deserializer = new AxisDeserializer();
     /*
      * Deserialize using the generated cm.MutateResult class instead of the batchjob.MutateResult
@@ -93,7 +99,9 @@ class BatchJobHelperImpl
               new URL(downloadUrl),
               getServiceTypeMappings(),
               com.google.api.ads.adwords.axis.v201710.cm.MutateResult.class,
-              resultQName);
+              resultQName,
+              startIndex,
+              numberResults);
     } catch (Exception e) {
       batchJobLogger.logDownload(downloadUrl, null, e);
       throw new BatchJobException(

@@ -84,8 +84,9 @@ public class FeedItem  implements java.io.Serializable {
 
     /* Geo targeting restriction specifies the type of location that
      * can be used for targeting.
-     *                 On update, if the field is left unspecified, the previous
-     * geo targeting restriction state
+     *                 Only applies if the feed item has a location FeedItemTarget.
+     * On update, if the field is left unspecified, the previous geo targeting
+     * restriction state
      *                 will not be changed.
      *                 On update, if the field is set with a null GeoRestriction
      * enum, the geo targeting restriction
@@ -368,8 +369,9 @@ public class FeedItem  implements java.io.Serializable {
      * 
      * @return geoTargetingRestriction   * Geo targeting restriction specifies the type of location that
      * can be used for targeting.
-     *                 On update, if the field is left unspecified, the previous
-     * geo targeting restriction state
+     *                 Only applies if the feed item has a location FeedItemTarget.
+     * On update, if the field is left unspecified, the previous geo targeting
+     * restriction state
      *                 will not be changed.
      *                 On update, if the field is set with a null GeoRestriction
      * enum, the geo targeting restriction
@@ -385,8 +387,9 @@ public class FeedItem  implements java.io.Serializable {
      * 
      * @param geoTargetingRestriction   * Geo targeting restriction specifies the type of location that
      * can be used for targeting.
-     *                 On update, if the field is left unspecified, the previous
-     * geo targeting restriction state
+     *                 Only applies if the feed item has a location FeedItemTarget.
+     * On update, if the field is left unspecified, the previous geo targeting
+     * restriction state
      *                 will not be changed.
      *                 On update, if the field is set with a null GeoRestriction
      * enum, the geo targeting restriction

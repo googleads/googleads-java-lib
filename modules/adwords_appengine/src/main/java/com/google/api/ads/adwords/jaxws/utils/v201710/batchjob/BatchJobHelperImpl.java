@@ -77,6 +77,12 @@ class BatchJobHelperImpl
   }
 
   @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(
+      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
+    throw new UnsupportedOperationException("This method is not supported yet.");
+  }
+
+  @Override
   public BatchJobUploadResponse uploadIncrementalBatchJobOperations(
       Iterable<? extends Operation> operations,
       boolean isLastRequest,

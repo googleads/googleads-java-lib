@@ -23,9 +23,11 @@ package com.google.api.ads.adwords.axis.v201806.cm;
 
 
 /**
- * Error indicating that a reviewable was not saved because it contained
- * a policy summary with
- *             a PROHIBITED or FULLY_LIMITED policy topic entry.
+ * Error indicating that an entity will be disapproved unless changes
+ * are made to it before it is
+ *             saved. This error occurs when the entity will have a policy
+ * summary that includes a PROHIBITED
+ *             policy topic entry.
  */
 public class PolicyFindingError  extends com.google.api.ads.adwords.axis.v201806.cm.ApiError  implements java.io.Serializable {
     /* Error reason enum. */

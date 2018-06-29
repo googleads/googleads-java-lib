@@ -23,14 +23,62 @@ package com.google.api.ads.adwords.axis.v201806.cm;
 
 
 /**
- * Represents a responsive search ad
+ * Represents a responsive search ad.
+ *             
+ *             <p><strong>Important</strong></p>
+ *             
+ *             <p>
+ *             <ul>
+ *             <li>Responsive search ads are in beta and may not be available
+ * to all AdWords advertisers.</li>
+ *             <li>Per the <a href="https://support.google.com/adwordspolicy/answer/54818">AdWords
+ * Terms &amp;
+ *             Conditions</a> for features in beta, you may not disclose
+ * any non-public information.</li>
+ *             <li>Responsive search ads will learn and improve over
+ * time, so make sure to regularly monitor the
+ *             performance and status of your ads.</li>
+ *             <li>Responsive search ads are currently available in <strong>English,
+ * French, German, and
+ *             Spanish</strong> only.</li>
+ *             <li>Assets can be shown in any order, so make sure that
+ * they make sense individually or in
+ *             combination, and don?t violate our policies or local law.</li>
+ * <li>Even after ads are assembled, they may not serve.</li>
+ *             <li>If you have text that should appear in every ad, then
+ * you must pin it to either Headline
+ *             position 1, Headline position 2, or Description position
+ * 1, and also make sure it is less
+ *             than 80 characters long.</li>
+ *             </ul>
+ *             </p>
+ *             
+ *             <p>To increase the likelihood that your ad shows, be sure
+ * to provide at least 5 distinct
+ *             headlines and 2 distinct descriptions that don't repeat
+ * the same or similar phrases. Providing
+ *             redundant content will restrict the system's ability to
+ * assemble combinations.
+ *             <a href="https://support.google.com/adwords/answer/9023565">See
+ * example ads</a></p>
+ *             
+ *             <p>Help center documentation
+ *             <ul>
+ *             <li><a href="https://support.google.com/adwords/answer/7684791">About
+ * responsive search
+ *             ads</a></li>
+ *             <li><a href="https://support.google.com/adwords/answer/9023565">Create
+ * a responsive search ad
+ *             (see examples)</a></li>
+ *             </ul>
+ *             </p>
  *             
  *             <p class="caution"><b>Caution:</b> Responsive search ads
  * do not use {@link #url url}, {@link
  *             #displayUrl displayUrl}, {@link #finalAppUrls finalAppUrls},
  * or {@link #devicePreference
  *             devicePreference}; setting these fields on a responsive
- * search ad will cause an error.
+ * search ad will cause an error.</p>
  *             <span class="constraint AdxEnabled">This is enabled for
  * AdX.</span>
  */

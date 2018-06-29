@@ -27,22 +27,34 @@ package com.google.api.ads.adwords.axis.v201806.cm;
  */
 public class GmailTeaser  implements java.io.Serializable {
     /* Headline of the teaser. Maximum display width is 25 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span> */
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserHeadline". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserHeadline".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span> */
     private java.lang.String headline;
 
     /* Description of the teaser. Maximum display width is 90 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span> */
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserDescription". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserDescription".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span> */
     private java.lang.String description;
 
     /* Business name of the advertiser. Maximum display width is 20
      * characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span> */
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserBusinessName". This field
+     * can be selected using the value "DisplayUploadAdGmailTeaserBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span> */
     private java.lang.String businessName;
 
     /* Required. Logo image. An image must first be created using
@@ -50,7 +62,10 @@ public class GmailTeaser  implements java.io.Serializable {
      *                 must be populated when creating a {@link "GmailTeaser"}.
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 144x144 and the aspect ratio
-     * must be 1:1 (+-1%). Required. */
+     * must be 1:1 (+-1%). Required.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserLogoImage". This field can
+     * be selected using the value "DisplayUploadAdGmailTeaserLogoImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image logoImage;
 
     public GmailTeaser() {
@@ -82,9 +97,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * Gets the headline value for this GmailTeaser.
      * 
      * @return headline   * Headline of the teaser. Maximum display width is 25 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserHeadline". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserHeadline".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span>
      */
     public java.lang.String getHeadline() {
         return headline;
@@ -95,9 +114,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * Sets the headline value for this GmailTeaser.
      * 
      * @param headline   * Headline of the teaser. Maximum display width is 25 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserHeadline". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserHeadline".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span>
      */
     public void setHeadline(java.lang.String headline) {
         this.headline = headline;
@@ -108,9 +131,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * Gets the description value for this GmailTeaser.
      * 
      * @return description   * Description of the teaser. Maximum display width is 90 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserDescription". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserDescription".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span>
      */
     public java.lang.String getDescription() {
         return description;
@@ -121,9 +148,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * Sets the description value for this GmailTeaser.
      * 
      * @param description   * Description of the teaser. Maximum display width is 90 characters.
-     * <span class="constraint Required">This field is required and should
-     * not be {@code null} when it is contained within {@link Operator}s
-     * : ADD.</span>
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "GmailTeaserDescription". This field can be selected using
+     * the value "DisplayUploadAdGmailTeaserDescription".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
+     *                 <span class="constraint Required">This field is required
+     * and should not be {@code null} when it is contained within {@link
+     * Operator}s : ADD.</span>
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -135,9 +166,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * 
      * @return businessName   * Business name of the advertiser. Maximum display width is 20
      * characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserBusinessName". This field
+     * can be selected using the value "DisplayUploadAdGmailTeaserBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public java.lang.String getBusinessName() {
         return businessName;
@@ -149,9 +184,13 @@ public class GmailTeaser  implements java.io.Serializable {
      * 
      * @param businessName   * Business name of the advertiser. Maximum display width is 20
      * characters.
-     *                 <span class="constraint Required">This field is required
-     * and should not be {@code null} when it is contained within {@link
-     * Operator}s : ADD.</span>
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserBusinessName". This field
+     * can be selected using the value "DisplayUploadAdGmailTeaserBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null} when it is contained within {@link Operator}s
+     * : ADD.</span>
      */
     public void setBusinessName(java.lang.String businessName) {
         this.businessName = businessName;
@@ -167,6 +206,9 @@ public class GmailTeaser  implements java.io.Serializable {
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 144x144 and the aspect ratio
      * must be 1:1 (+-1%). Required.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserLogoImage". This field can
+     * be selected using the value "DisplayUploadAdGmailTeaserLogoImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getLogoImage() {
         return logoImage;
@@ -182,6 +224,9 @@ public class GmailTeaser  implements java.io.Serializable {
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 144x144 and the aspect ratio
      * must be 1:1 (+-1%). Required.
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "GmailTeaserLogoImage". This field can
+     * be selected using the value "DisplayUploadAdGmailTeaserLogoImage".</span>
      */
     public void setLogoImage(com.google.api.ads.adwords.axis.v201806.cm.Image logoImage) {
         this.logoImage = logoImage;

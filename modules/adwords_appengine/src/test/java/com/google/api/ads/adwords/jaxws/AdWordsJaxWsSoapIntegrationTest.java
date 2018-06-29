@@ -19,12 +19,12 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.adwords.jaxws.factory.AdWordsServices;
 import com.google.api.ads.adwords.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.adwords.jaxws.v201802.cm.Budget;
-import com.google.api.ads.adwords.jaxws.v201802.cm.BudgetBudgetDeliveryMethod;
-import com.google.api.ads.adwords.jaxws.v201802.cm.BudgetOperation;
-import com.google.api.ads.adwords.jaxws.v201802.cm.BudgetServiceInterface;
-import com.google.api.ads.adwords.jaxws.v201802.cm.Money;
-import com.google.api.ads.adwords.jaxws.v201802.cm.Operator;
+import com.google.api.ads.adwords.jaxws.v201806.cm.Budget;
+import com.google.api.ads.adwords.jaxws.v201806.cm.BudgetBudgetDeliveryMethod;
+import com.google.api.ads.adwords.jaxws.v201806.cm.BudgetOperation;
+import com.google.api.ads.adwords.jaxws.v201806.cm.BudgetServiceInterface;
+import com.google.api.ads.adwords.jaxws.v201806.cm.Money;
+import com.google.api.ads.adwords.jaxws.v201806.cm.Operator;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -46,7 +46,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   
-  private static final String API_VERSION = "v201802";
+  private static final String API_VERSION = "v201806";
   
   @Rule
   public final ExpectedException thrown = ExpectedException.none(); 

@@ -36,25 +36,42 @@ package com.google.api.ads.adwords.axis.v201806.cm;
  * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
  */
 public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  implements java.io.Serializable {
-    /* Two letter country code for the ad. Examples: 'US', 'GB'. */
+    /* Two letter country code for the ad. Examples: 'US', 'GB'.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCountryCode".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String countryCode;
 
     /* Phone number string for the ad.
-     *                     Examples: '(800) 356-9377', "16502531234", "+442001234567" */
+     *                     Examples: '(800) 356-9377', "16502531234", "+442001234567"
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "CallOnlyAdPhoneNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span> */
     private java.lang.String phoneNumber;
 
-    /* Business name of the ad. */
+    /* Business name of the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String businessName;
 
-    /* First line of ad text. */
+    /* First line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription1".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String description1;
 
-    /* Second line of ad text. */
+    /* Second line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription2".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String description2;
 
     /* If set to true, enable call tracking for the creative. Enabling
      * call
-     *                     tracking also enables call conversions. */
+     *                     tracking also enables call conversions.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCallTracked".</span> */
     private java.lang.Boolean callTracked;
 
     /* By default, call conversions are enabled when callTracked is
@@ -63,17 +80,24 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * true.
      *                     Only in effect if callTracked is also set to true.
      * If callTracked is set
-     *                     to false, this field is ignored. */
+     *                     to false, this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDisableCallConversion".</span> */
     private java.lang.Boolean disableCallConversion;
 
     /* Conversion type to attribute a call conversion to. If not set,
      * then a
      *                     default conversion type id is used. Only in effect
      * if callTracked is also
-     *                     set to true otherwise this field is ignored. */
+     *                     set to true otherwise this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdConversionTypeId".</span> */
     private java.lang.Long conversionTypeId;
 
-    /* Url to be used for phone number verification. */
+    /* Url to be used for phone number verification.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdPhoneNumberVerificationUrl".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span> */
     private java.lang.String phoneNumberVerificationUrl;
 
     public CallOnlyAd() {
@@ -166,6 +190,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Gets the countryCode value for this CallOnlyAd.
      * 
      * @return countryCode   * Two letter country code for the ad. Examples: 'US', 'GB'.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCountryCode".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getCountryCode() {
         return countryCode;
@@ -176,6 +203,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Sets the countryCode value for this CallOnlyAd.
      * 
      * @param countryCode   * Two letter country code for the ad. Examples: 'US', 'GB'.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCountryCode".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setCountryCode(java.lang.String countryCode) {
         this.countryCode = countryCode;
@@ -187,6 +217,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * 
      * @return phoneNumber   * Phone number string for the ad.
      *                     Examples: '(800) 356-9377', "16502531234", "+442001234567"
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "CallOnlyAdPhoneNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      */
     public java.lang.String getPhoneNumber() {
         return phoneNumber;
@@ -198,6 +231,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * 
      * @param phoneNumber   * Phone number string for the ad.
      *                     Examples: '(800) 356-9377', "16502531234", "+442001234567"
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "CallOnlyAdPhoneNumber".</span><span class="constraint Filterable">This
+     * field can be filtered on.</span>
      */
     public void setPhoneNumber(java.lang.String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -208,6 +244,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Gets the businessName value for this CallOnlyAd.
      * 
      * @return businessName   * Business name of the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getBusinessName() {
         return businessName;
@@ -218,6 +257,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Sets the businessName value for this CallOnlyAd.
      * 
      * @param businessName   * Business name of the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdBusinessName".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setBusinessName(java.lang.String businessName) {
         this.businessName = businessName;
@@ -228,6 +270,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Gets the description1 value for this CallOnlyAd.
      * 
      * @return description1   * First line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription1".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getDescription1() {
         return description1;
@@ -238,6 +283,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Sets the description1 value for this CallOnlyAd.
      * 
      * @param description1   * First line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription1".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setDescription1(java.lang.String description1) {
         this.description1 = description1;
@@ -248,6 +296,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Gets the description2 value for this CallOnlyAd.
      * 
      * @return description2   * Second line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription2".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getDescription2() {
         return description2;
@@ -258,6 +309,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Sets the description2 value for this CallOnlyAd.
      * 
      * @param description2   * Second line of ad text.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDescription2".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setDescription2(java.lang.String description2) {
         this.description2 = description2;
@@ -270,6 +324,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * @return callTracked   * If set to true, enable call tracking for the creative. Enabling
      * call
      *                     tracking also enables call conversions.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCallTracked".</span>
      */
     public java.lang.Boolean getCallTracked() {
         return callTracked;
@@ -282,6 +338,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * @param callTracked   * If set to true, enable call tracking for the creative. Enabling
      * call
      *                     tracking also enables call conversions.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdCallTracked".</span>
      */
     public void setCallTracked(java.lang.Boolean callTracked) {
         this.callTracked = callTracked;
@@ -298,6 +356,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      *                     Only in effect if callTracked is also set to true.
      * If callTracked is set
      *                     to false, this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDisableCallConversion".</span>
      */
     public java.lang.Boolean getDisableCallConversion() {
         return disableCallConversion;
@@ -314,6 +374,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      *                     Only in effect if callTracked is also set to true.
      * If callTracked is set
      *                     to false, this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdDisableCallConversion".</span>
      */
     public void setDisableCallConversion(java.lang.Boolean disableCallConversion) {
         this.disableCallConversion = disableCallConversion;
@@ -328,6 +390,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      *                     default conversion type id is used. Only in effect
      * if callTracked is also
      *                     set to true otherwise this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdConversionTypeId".</span>
      */
     public java.lang.Long getConversionTypeId() {
         return conversionTypeId;
@@ -342,6 +406,8 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      *                     default conversion type id is used. Only in effect
      * if callTracked is also
      *                     set to true otherwise this field is ignored.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdConversionTypeId".</span>
      */
     public void setConversionTypeId(java.lang.Long conversionTypeId) {
         this.conversionTypeId = conversionTypeId;
@@ -352,6 +418,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Gets the phoneNumberVerificationUrl value for this CallOnlyAd.
      * 
      * @return phoneNumberVerificationUrl   * Url to be used for phone number verification.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdPhoneNumberVerificationUrl".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getPhoneNumberVerificationUrl() {
         return phoneNumberVerificationUrl;
@@ -362,6 +431,9 @@ public class CallOnlyAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  
      * Sets the phoneNumberVerificationUrl value for this CallOnlyAd.
      * 
      * @param phoneNumberVerificationUrl   * Url to be used for phone number verification.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "CallOnlyAdPhoneNumberVerificationUrl".</span><span
+     * class="constraint Filterable">This field can be filtered on.</span>
      */
     public void setPhoneNumberVerificationUrl(java.lang.String phoneNumberVerificationUrl) {
         this.phoneNumberVerificationUrl = phoneNumberVerificationUrl;

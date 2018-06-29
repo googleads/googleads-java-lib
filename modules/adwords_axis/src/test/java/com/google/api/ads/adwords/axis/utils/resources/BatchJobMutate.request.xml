@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201802">
+<?xml version="1.0" encoding="UTF-8"?><ns1:mutate xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201806">
  <operations xsi:type="ns1:CampaignOperation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <operator xsi:type="ns1:Operator">ADD</operator>
   <Operation.Type xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ADD</Operation.Type>

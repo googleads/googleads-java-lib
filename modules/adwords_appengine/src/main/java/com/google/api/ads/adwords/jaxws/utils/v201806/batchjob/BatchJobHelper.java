@@ -76,4 +76,10 @@ public class BatchJobHelper
       throws BatchJobException {
     return impl.downloadBatchJobMutateResponse(downloadUrl);
   }
+
+  @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(
+      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
+    return impl.downloadBatchJobMutateResponse(downloadUrl, startIndex, numberResults);
+  }
 }

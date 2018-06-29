@@ -1,3 +1,23 @@
+3.15.1 - 06/29/2018
+-------------------
+AdWords:
+  - Updated definition of v201806 `TemplateAd.adUnionId` to match the type
+    definition in the `AdGroupAdService` WSDL. This avoids issues with
+    unmarshalling responses from `AdGroupAdService` that contain template
+    ads. Fixes https://github.com/googleads/googleads-java-lib/issues/145.
+  - Added an overload of `downloadBatchJobMutateResponse` in
+    [`BatchJobHelperInterface`](https://github.com/googleads/googleads-java-lib/blob/master/modules/ads_lib/src/main/java/com/google/api/ads/adwords/lib/utils/BatchJobHelperInterface.java)
+    to support retrieving batch job results in chunks. The new method takes
+    `startIndex` and `numberResults` parameters, similar to paging options
+    for `get` requests.  This new feature is only available in the Axis
+    implementations of the interface.
+
+DFP:
+  - No changes.
+
+Common:
+  - No changes.
+
 3.15.0 - 06/07/2018
 -----------------
 AdWords:

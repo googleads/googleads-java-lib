@@ -30,7 +30,9 @@ package com.google.api.ads.adwords.axis.v201806.cm;
 public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v201806.cm.Ad  implements java.io.Serializable {
     /* Name of the rich media ad.
      *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     * required and should not be {@code null}.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdName".</span> */
     private java.lang.String name;
 
     /* Dimensions (height and width) of the ad.
@@ -45,30 +47,42 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
     private com.google.api.ads.adwords.axis.v201806.cm.Dimensions dimensions;
 
     /* Snippet for this ad. Required for standard third-party ads.
-     * <p>The length of the string should be between 1 and 3072, inclusive. */
+     * <p>The length of the string should be between 1 and 3072, inclusive.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "RichMediaAdSnippet".</span> */
     private java.lang.String snippet;
 
-    /* Impression beacon URL for the ad. */
+    /* Impression beacon URL for the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdImpressionBeaconUrl".</span> */
     private java.lang.String impressionBeaconUrl;
 
     /* Duration for the ad (in milliseconds). Default is 0.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdDuration".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span> */
     private java.lang.Integer adDuration;
 
     /* <a href="/adwords/api/docs/appendix/richmediacodes">
      *                     Certified Vendor Format ID</a>.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span> */
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdCertifiedVendorFormatId".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span> */
     private java.lang.Long certifiedVendorFormatId;
 
     /* SourceUrl pointing to the third party snippet.
      *                     For third party in-stream video ads, this stores
      * the VAST URL. For DFA ads,
-     *                     it stores the InRed URL. */
+     *                     it stores the InRed URL.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdSourceUrl".</span> */
     private java.lang.String sourceUrl;
 
-    /* Type of this rich media ad, the default is Standard. */
+    /* Type of this rich media ad, the default is Standard.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdType".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.RichMediaAdRichMediaAdType richMediaAdType;
 
     /* A list of attributes that describe the rich media ad capabilities. */
@@ -166,6 +180,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * @return name   * Name of the rich media ad.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdName".</span>
      */
     public java.lang.String getName() {
         return name;
@@ -178,6 +194,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * @param name   * Name of the rich media ad.
      *                     <span class="constraint Required">This field is
      * required and should not be {@code null}.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdName".</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -225,6 +243,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * 
      * @return snippet   * Snippet for this ad. Required for standard third-party ads.
      * <p>The length of the string should be between 1 and 3072, inclusive.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "RichMediaAdSnippet".</span>
      */
     public java.lang.String getSnippet() {
         return snippet;
@@ -236,6 +256,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * 
      * @param snippet   * Snippet for this ad. Required for standard third-party ads.
      * <p>The length of the string should be between 1 and 3072, inclusive.
+     * <span class="constraint Selectable">This field can be selected using
+     * the value "RichMediaAdSnippet".</span>
      */
     public void setSnippet(java.lang.String snippet) {
         this.snippet = snippet;
@@ -246,6 +268,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Gets the impressionBeaconUrl value for this RichMediaAd.
      * 
      * @return impressionBeaconUrl   * Impression beacon URL for the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdImpressionBeaconUrl".</span>
      */
     public java.lang.String getImpressionBeaconUrl() {
         return impressionBeaconUrl;
@@ -256,6 +280,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Sets the impressionBeaconUrl value for this RichMediaAd.
      * 
      * @param impressionBeaconUrl   * Impression beacon URL for the ad.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdImpressionBeaconUrl".</span>
      */
     public void setImpressionBeaconUrl(java.lang.String impressionBeaconUrl) {
         this.impressionBeaconUrl = impressionBeaconUrl;
@@ -266,6 +292,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Gets the adDuration value for this RichMediaAd.
      * 
      * @return adDuration   * Duration for the ad (in milliseconds). Default is 0.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdDuration".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
      */
@@ -278,6 +306,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Sets the adDuration value for this RichMediaAd.
      * 
      * @param adDuration   * Duration for the ad (in milliseconds). Default is 0.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdDuration".</span>
      *                     <span class="constraint InRange">This field must
      * be greater than or equal to 0.</span>
      */
@@ -291,8 +321,10 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * 
      * @return certifiedVendorFormatId   * <a href="/adwords/api/docs/appendix/richmediacodes">
      *                     Certified Vendor Format ID</a>.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdCertifiedVendorFormatId".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public java.lang.Long getCertifiedVendorFormatId() {
         return certifiedVendorFormatId;
@@ -304,8 +336,10 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * 
      * @param certifiedVendorFormatId   * <a href="/adwords/api/docs/appendix/richmediacodes">
      *                     Certified Vendor Format ID</a>.
-     *                     <span class="constraint Required">This field is
-     * required and should not be {@code null}.</span>
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdCertifiedVendorFormatId".</span>
+     * <span class="constraint Required">This field is required and should
+     * not be {@code null}.</span>
      */
     public void setCertifiedVendorFormatId(java.lang.Long certifiedVendorFormatId) {
         this.certifiedVendorFormatId = certifiedVendorFormatId;
@@ -319,6 +353,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      *                     For third party in-stream video ads, this stores
      * the VAST URL. For DFA ads,
      *                     it stores the InRed URL.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdSourceUrl".</span>
      */
     public java.lang.String getSourceUrl() {
         return sourceUrl;
@@ -332,6 +368,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      *                     For third party in-stream video ads, this stores
      * the VAST URL. For DFA ads,
      *                     it stores the InRed URL.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdSourceUrl".</span>
      */
     public void setSourceUrl(java.lang.String sourceUrl) {
         this.sourceUrl = sourceUrl;
@@ -342,6 +380,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Gets the richMediaAdType value for this RichMediaAd.
      * 
      * @return richMediaAdType   * Type of this rich media ad, the default is Standard.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdType".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.RichMediaAdRichMediaAdType getRichMediaAdType() {
         return richMediaAdType;
@@ -352,6 +392,8 @@ public abstract class RichMediaAd  extends com.google.api.ads.adwords.axis.v2018
      * Sets the richMediaAdType value for this RichMediaAd.
      * 
      * @param richMediaAdType   * Type of this rich media ad, the default is Standard.
+     *                     <span class="constraint Selectable">This field
+     * can be selected using the value "RichMediaAdType".</span>
      */
     public void setRichMediaAdType(com.google.api.ads.adwords.axis.v201806.cm.RichMediaAdRichMediaAdType richMediaAdType) {
         this.richMediaAdType = richMediaAdType;

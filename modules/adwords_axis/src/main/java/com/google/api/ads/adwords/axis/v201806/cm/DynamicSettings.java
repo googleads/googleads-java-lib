@@ -33,16 +33,24 @@ public class DynamicSettings  implements java.io.Serializable {
      *                 be populated when creating a {@link "DynamicSettings"}.
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 512x128 the aspect ratio
-     * must be 512:128 (+-1%). */
+     * must be 512:128 (+-1%).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LandscapeLogoImage".</span> */
     private com.google.api.ads.adwords.axis.v201806.cm.Image landscapeLogoImage;
 
     /* Prefix before price. Maximum display width is 10. example,
-     * "as low as". */
+     * "as low as".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PricePrefix".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.String pricePrefix;
 
     /* Promotion text used for dynamic formats of responsive ads.
      * Maximum display width is 25. For
-     *                 example, "Free two-day shipping". */
+     *                 example, "Free two-day shipping".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromoText".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span> */
     private java.lang.String promoText;
 
     public DynamicSettings() {
@@ -78,6 +86,8 @@ public class DynamicSettings  implements java.io.Serializable {
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 512x128 the aspect ratio
      * must be 512:128 (+-1%).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LandscapeLogoImage".</span>
      */
     public com.google.api.ads.adwords.axis.v201806.cm.Image getLandscapeLogoImage() {
         return landscapeLogoImage;
@@ -95,6 +105,8 @@ public class DynamicSettings  implements java.io.Serializable {
      * Valid image types are GIF, JPEG, and
      *                 PNG. The minimum size is 512x128 the aspect ratio
      * must be 512:128 (+-1%).
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "LandscapeLogoImage".</span>
      */
     public void setLandscapeLogoImage(com.google.api.ads.adwords.axis.v201806.cm.Image landscapeLogoImage) {
         this.landscapeLogoImage = landscapeLogoImage;
@@ -106,6 +118,9 @@ public class DynamicSettings  implements java.io.Serializable {
      * 
      * @return pricePrefix   * Prefix before price. Maximum display width is 10. example,
      * "as low as".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PricePrefix".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getPricePrefix() {
         return pricePrefix;
@@ -117,6 +132,9 @@ public class DynamicSettings  implements java.io.Serializable {
      * 
      * @param pricePrefix   * Prefix before price. Maximum display width is 10. example,
      * "as low as".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PricePrefix".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setPricePrefix(java.lang.String pricePrefix) {
         this.pricePrefix = pricePrefix;
@@ -129,6 +147,9 @@ public class DynamicSettings  implements java.io.Serializable {
      * @return promoText   * Promotion text used for dynamic formats of responsive ads.
      * Maximum display width is 25. For
      *                 example, "Free two-day shipping".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromoText".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public java.lang.String getPromoText() {
         return promoText;
@@ -141,6 +162,9 @@ public class DynamicSettings  implements java.io.Serializable {
      * @param promoText   * Promotion text used for dynamic formats of responsive ads.
      * Maximum display width is 25. For
      *                 example, "Free two-day shipping".
+     *                 <span class="constraint Selectable">This field can
+     * be selected using the value "PromoText".</span><span class="constraint
+     * Filterable">This field can be filtered on.</span>
      */
     public void setPromoText(java.lang.String promoText) {
         this.promoText = promoText;
