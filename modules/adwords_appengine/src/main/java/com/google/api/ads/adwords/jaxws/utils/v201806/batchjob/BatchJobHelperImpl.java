@@ -1,10 +1,10 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// http://www.apache.org/licenses/LICENSE-2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,6 +14,7 @@
 
 package com.google.api.ads.adwords.jaxws.utils.v201806.batchjob;
 
+import com.google.api.ads.adwords.jaxws.utils.JaxWsBatchJobResponseDeserializer;
 import com.google.api.ads.adwords.jaxws.v201806.cm.ApiError;
 import com.google.api.ads.adwords.jaxws.v201806.cm.BatchJob;
 import com.google.api.ads.adwords.jaxws.v201806.cm.Operand;
@@ -24,12 +25,9 @@ import com.google.api.ads.adwords.lib.utils.BatchJobUploadResponse;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadStatus;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
 import com.google.api.ads.adwords.lib.utils.logging.BatchJobLogger;
-import com.google.api.ads.common.lib.soap.jaxb.JaxBDeserializer;
 import com.google.inject.Inject;
-import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-import javax.xml.transform.stream.StreamSource;
 
 /** Utility for uploading operations and downloading results for a {@link BatchJob}. */
 class BatchJobHelperImpl
@@ -37,11 +35,16 @@ class BatchJobHelperImpl
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
   private final BatchJobUploader uploader;
   private final BatchJobLogger batchJobLogger;
+  private final JaxWsBatchJobResponseDeserializer deserializer;
 
   @Inject
-  BatchJobHelperImpl(BatchJobUploader uploader, BatchJobLogger batchJobLogger) {
+  BatchJobHelperImpl(
+      BatchJobUploader uploader,
+      BatchJobLogger batchJobLogger,
+      JaxWsBatchJobResponseDeserializer deserializer) {
     this.uploader = uploader;
     this.batchJobLogger = batchJobLogger;
+    this.deserializer = deserializer;
   }
 
   @Override
@@ -50,36 +53,6 @@ class BatchJobHelperImpl
     // All uploads must go through the incremental upload workflow.
     return uploadIncrementalBatchJobOperations(
         operations, true, new BatchJobUploadStatus(0, URI.create(uploadUrl)));
-  }
-
-  @Override
-  public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
-      throws BatchJobException {
-    JaxBDeserializer<BatchJobMutateResponse> deserializer =
-        new JaxBDeserializer<BatchJobMutateResponse>(BatchJobMutateResponse.class);
-    MutateResult[] mutateResults;
-    try {
-      mutateResults =
-          deserializer
-              .deserialize(new StreamSource(new URL(downloadUrl).openStream()))
-              .getMutateResults();
-    } catch (IOException e) {
-      batchJobLogger.logDownload(downloadUrl, null, e);
-      throw new BatchJobException(
-          "Failed to download batch job mutate response from URL: " + downloadUrl, e);
-    }
-
-    BatchJobMutateResponse response = new BatchJobMutateResponse();
-    response.setMutateResults(mutateResults);
-
-    batchJobLogger.logDownload(downloadUrl, response, null);
-    return response;
-  }
-
-  @Override
-  public BatchJobMutateResponse downloadBatchJobMutateResponse(
-      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
-    throw new UnsupportedOperationException("This method is not supported yet.");
   }
 
   @Override
@@ -92,5 +65,28 @@ class BatchJobHelperImpl
     request.addOperations(operations);
     return uploader.uploadIncrementalBatchJobOperations(
         request, isLastRequest, batchJobUploadStatus);
+  }
+
+  @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(String downloadUrl)
+      throws BatchJobException {
+    return this.downloadBatchJobMutateResponse(downloadUrl, 0, Integer.MAX_VALUE);
+  }
+
+  @Override
+  public BatchJobMutateResponse downloadBatchJobMutateResponse(
+      String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
+    try {
+
+      BatchJobMutateResponse response =
+          deserializer.deserializeBatchJobMutateResults(
+              BatchJobMutateResponse.class, new URL(downloadUrl), startIndex, numberResults);
+      batchJobLogger.logDownload(downloadUrl, response, null);
+      return response;
+    } catch (Exception e) {
+      batchJobLogger.logDownload(downloadUrl, null, e);
+      throw new BatchJobException(
+          "Failed to download batch job mutate response from URL: " + downloadUrl, e);
+    }
   }
 }

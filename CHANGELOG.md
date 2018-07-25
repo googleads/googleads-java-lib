@@ -1,3 +1,15 @@
+3.16.0 - 07/25/2018
+-------------------
+AdWords:
+  - Removed support for v201710.
+  - Changed minimum JRE version to 1.8.
+
+DFP:
+  - Changed minimum JRE version to 1.8.
+
+Common:
+  - Changed minimum JRE version to 1.8.
+
 3.15.1 - 06/29/2018
 -------------------
 AdWords:

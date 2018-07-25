@@ -23,6 +23,10 @@ import com.google.api.ads.common.lib.AdsModule;
 import com.google.api.ads.common.lib.utils.XmlFieldExtractor;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.inject.Provides;
+import javax.xml.stream.XMLEventFactory;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLOutputFactory;
 
 /** Guice module for AdWords bindings. */
 public class AdWordsModule extends AdsModule {
@@ -45,5 +49,20 @@ public class AdWordsModule extends AdsModule {
             loggerPrefix,
             AdHocReportDownloadHelper.class.getPackage().getName(),
             BatchJobHelperInterface.class.getPackage().getName()));
+  }
+
+  @Provides
+  XMLInputFactory provideXMLInputFactory() {
+    return XMLInputFactory.newFactory();
+  }
+
+  @Provides
+  XMLOutputFactory provideXMLOutputFactory() {
+    return XMLOutputFactory.newFactory();
+  }
+
+  @Provides
+  XMLEventFactory provideXMLEventFactory() {
+    return XMLEventFactory.newInstance();
   }
 }

@@ -77,11 +77,7 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
     if (page == null) {
       return this;
     }
-    int totalLandscapePointsInPage = 0;
-    for (AdGroupBidLandscape adGroupBidLandscape : page.getEntries()) {
-      totalLandscapePointsInPage += adGroupBidLandscape.getLandscapePoints().length;
-    }
-    return nextPage(totalLandscapePointsInPage);
+    return nextPage(getTotalLandscapePointsInPage(page));
   }
 
   /**
@@ -101,13 +97,14 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
     if (page == null) {
       return this;
     }
-    int totalLandscapePointsInPage = 0;
-    for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
-      totalLandscapePointsInPage += criterionBidLandscape.getLandscapePoints().length;
-    }
-    return nextPage(totalLandscapePointsInPage);
+    return nextPage(getTotalLandscapePointsInPage(page));
   }
 
+  /**
+   * Advances this object's {@link #startIndex} by the specified {@link #pageSize}.
+   *
+   * @return this service query object
+   */
   private ServiceQuery nextPage(int pageSize) {
     startIndex = startIndex + pageSize;
     return this;
@@ -134,11 +131,7 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
     if (page == null) {
       return true;
     }
-    int totalLandscapePointsInPage = 0;
-    for (AdGroupBidLandscape adGroupBidLandscape : page.getEntries()) {
-      totalLandscapePointsInPage += adGroupBidLandscape.getLandscapePoints().length;
-    }
-    return totalLandscapePointsInPage >= pageSize;
+    return getTotalLandscapePointsInPage(page) >= pageSize;
   }
 
   /**
@@ -157,11 +150,7 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
     if (page == null) {
       return true;
     }
-    int totalLandscapePointsInPage = 0;
-    for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
-      totalLandscapePointsInPage += criterionBidLandscape.getLandscapePoints().length;
-    }
-    return totalLandscapePointsInPage >= pageSize;
+    return getTotalLandscapePointsInPage(page) >= pageSize;
   }
 
   @Override
@@ -181,6 +170,36 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
   @Override
   public int hashCode() {
     return Objects.hashCode(partialAwqlQuery);
+  }
+
+  /**
+   * Returns the total number of inner landscape points in the ad group bid landscape page. If the
+   * page has a null {@code entries} array, returns {@code 0}.
+   */
+  private int getTotalLandscapePointsInPage(AdGroupBidLandscapePage page) {
+    if (page.getEntries() == null) {
+      return 0;
+    }
+    int totalLandscapePointsInPage = 0;
+    for (AdGroupBidLandscape adGroupBidLandscape : page.getEntries()) {
+      totalLandscapePointsInPage += adGroupBidLandscape.getLandscapePoints().length;
+    }
+    return totalLandscapePointsInPage;
+  }
+
+  /**
+   * Returns the total number of inner landscape points in the criterion bid landscape page. If the
+   * page has a null {@code entries} array, returns {@code 0}.
+   */
+  private int getTotalLandscapePointsInPage(CriterionBidLandscapePage page) {
+    if (page.getEntries() == null) {
+      return 0;
+    }
+    int totalLandscapePointsInPage = 0;
+    for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
+      totalLandscapePointsInPage += criterionBidLandscape.getLandscapePoints().length;
+    }
+    return totalLandscapePointsInPage;
   }
 
   /**

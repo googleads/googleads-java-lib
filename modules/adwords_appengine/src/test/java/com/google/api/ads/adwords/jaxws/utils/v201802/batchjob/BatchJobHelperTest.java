@@ -17,7 +17,9 @@ package com.google.api.ads.adwords.jaxws.utils.v201802.batchjob;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.api.ads.adwords.jaxws.AdWordsJaxWsModule;
 import com.google.api.ads.adwords.jaxws.factory.AdWordsServices;
+import com.google.api.ads.adwords.jaxws.utils.JaxWsBatchJobResponseDeserializer;
 import com.google.api.ads.adwords.jaxws.v201802.cm.ApiError;
 import com.google.api.ads.adwords.jaxws.v201802.cm.Campaign;
 import com.google.api.ads.adwords.jaxws.v201802.cm.CampaignOperation;
@@ -27,6 +29,8 @@ import com.google.api.ads.adwords.jaxws.v201802.cm.Operation;
 import com.google.api.ads.adwords.jaxws.v201802.cm.Operator;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import com.google.inject.Guice;
+import com.google.inject.Inject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -36,6 +40,8 @@ import org.junit.runners.JUnit4;
 public class BatchJobHelperTest
     extends com.google.api.ads.adwords.lib.utils.testing.BatchJobHelperTest<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
+
+  @Inject private JaxWsBatchJobResponseDeserializer deserializer;
 
   @Test
   public void testGetFromAdWordsServices() {
@@ -53,7 +59,9 @@ public class BatchJobHelperTest
   protected BatchJobHelperInterface<
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
       createBatchJobHelper(BatchJobUploader uploader) {
-    return new BatchJobHelper(new BatchJobHelperImpl(uploader, batchJobLogger), adsUtilityRegistry);
+    Guice.createInjector(new AdWordsJaxWsModule()).injectMembers(this);
+    return new BatchJobHelper(
+        new BatchJobHelperImpl(uploader, batchJobLogger, deserializer), adsUtilityRegistry);
   }
 
   @Override

@@ -18,14 +18,13 @@ import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_
 
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.utils.v201806.SelectorBuilder;
+import com.google.api.ads.adwords.axis.utils.v201806.ServiceQuery;
 import com.google.api.ads.adwords.axis.v201806.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201806.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201806.cm.BidLandscapeLandscapePoint;
 import com.google.api.ads.adwords.axis.v201806.cm.CriterionBidLandscape;
 import com.google.api.ads.adwords.axis.v201806.cm.CriterionBidLandscapePage;
 import com.google.api.ads.adwords.axis.v201806.cm.DataServiceInterface;
-import com.google.api.ads.adwords.axis.v201806.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201806.cm.DataField;
@@ -139,9 +138,9 @@ public class GetKeywordBidSimulations {
     // Get the DataService.
     DataServiceInterface dataService = adWordsServices.get(session, DataServiceInterface.class);
 
-    // Create selector.
-    Selector selector =
-        new SelectorBuilder()
+    // Create a query to select all keyword bid simulations for the ad group.
+    ServiceQuery query =
+        new ServiceQuery.Builder()
             .fields(
                 DataField.AdGroupId,
                 DataField.CriterionId,
@@ -153,25 +152,20 @@ public class GetKeywordBidSimulations {
                 DataField.LocalClicks,
                 DataField.LocalCost,
                 DataField.LocalImpressions)
-            .equals(DataField.AdGroupId, adGroupId.toString())
-            .equals(DataField.CriterionId, criterionId.toString())
-            .limit(PAGE_SIZE)
+            .where(DataField.AdGroupId)
+            .equalTo(adGroupId)
+            .where(DataField.CriterionId)
+            .equalTo(criterionId)
+            .limit(0, PAGE_SIZE)
             .build();
 
     // Display bid landscapes.
-    int landscapePointsInPreviousPage = 0;
-    int startIndex = 0;
+    CriterionBidLandscapePage page = null;
     do {
-      // Offset the start index by the number of landscape points in the last retrieved page,
-      // NOT the number of entries (bid landscapes) in the page.
-      startIndex += landscapePointsInPreviousPage;
-      selector.getPaging().setStartIndex(startIndex);
-
-      // Reset the count of landscape points in preparation for processing the next page.
-      landscapePointsInPreviousPage = 0;
-
-      // Request the next page of bid landscapes.
-      CriterionBidLandscapePage page = dataService.getCriterionBidLandscape(selector);
+      query.nextPage(page);
+      // Retrieve keyword bid simulations one page at a time, continuing to request pages until all
+      // of them have been retrieved.
+      page = dataService.queryCriterionBidLandscape(query.toString());
 
       if (page.getEntries() != null) {
         for (CriterionBidLandscape criterionBidLandscape : page.getEntries()) {
@@ -185,7 +179,6 @@ public class GetKeywordBidSimulations {
 
           for (BidLandscapeLandscapePoint bidLanscapePoint :
               criterionBidLandscape.getLandscapePoints()) {
-            landscapePointsInPreviousPage++;
             System.out.printf(
                 "\t{bid: %d clicks: %d cost: %d impressions: %d, biddable conversions: %.2f, "
                     + "biddable conversions value: %.2f}%n",
@@ -199,6 +192,6 @@ public class GetKeywordBidSimulations {
           System.out.println(" was found.");
         }
       }
-    } while (landscapePointsInPreviousPage >= PAGE_SIZE);
+    } while (query.hasNext(page));
   }
 }

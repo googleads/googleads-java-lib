@@ -17,7 +17,9 @@ package com.google.api.ads.adwords.axis.utils.v201806.batchjob;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.api.ads.adwords.axis.AdWordsAxisModule;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.AxisDeserializer;
 import com.google.api.ads.adwords.axis.v201806.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201806.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201806.cm.CampaignOperation;
@@ -27,17 +29,19 @@ import com.google.api.ads.adwords.axis.v201806.cm.Operation;
 import com.google.api.ads.adwords.axis.v201806.cm.Operator;
 import com.google.api.ads.adwords.lib.utils.BatchJobHelperInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploader;
+import com.google.inject.Guice;
+import com.google.inject.Inject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link BatchJobHelper}.
- */
+/** Tests for {@link BatchJobHelper}. */
 @RunWith(JUnit4.class)
 public class BatchJobHelperTest
     extends com.google.api.ads.adwords.lib.utils.testing.BatchJobHelperTest<
         Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse> {
+
+  @Inject private AxisDeserializer deserializer;
 
   @Test
   public void testGetFromAdWordsServices() {
@@ -50,14 +54,14 @@ public class BatchJobHelperTest
     BatchJobHelper helper = new BatchJobHelper(session);
     assertNotNull("Helper from session-based constructor is null", helper);
   }
-  
+
   @Override
   protected BatchJobHelperInterface<
           Operation, Operand, ApiError, MutateResult, BatchJobMutateResponse>
-      createBatchJobHelper(
-          BatchJobUploader uploader) {
-    return new BatchJobHelper(new BatchJobHelperImpl(uploader, batchJobLogger),
-        adsUtilityRegistry);
+      createBatchJobHelper(BatchJobUploader uploader) {
+    Guice.createInjector(new AdWordsAxisModule()).injectMembers(this);
+    return new BatchJobHelper(
+        new BatchJobHelperImpl(uploader, batchJobLogger, deserializer), adsUtilityRegistry);
   }
 
   @Override

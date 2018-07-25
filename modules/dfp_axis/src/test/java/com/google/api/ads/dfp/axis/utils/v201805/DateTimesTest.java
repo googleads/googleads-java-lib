@@ -328,8 +328,8 @@ public class DateTimesTest {
    * Asserts Joda DateTimes have the same millis.
    */
   private static void assertEquals(DateTime expected, DateTime actual) {
-    DateTime expectedCopy = new DateTime(expected).withMillisOfSecond(0);
-    DateTime actualCopy = new DateTime(actual).withMillisOfSecond(0);
+    DateTime expectedCopy = expected.withMillisOfSecond(0);
+    DateTime actualCopy = actual.withMillisOfSecond(0);
     Assert.assertEquals(expectedCopy.getMillis(), actualCopy.getMillis());
   }
 

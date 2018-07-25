@@ -105,6 +105,20 @@ public class ServiceQueryTest {
   }
 
   /**
+   * Tests {@link ServiceQuery#hasNext(AdGroupBidLandscapePage)} when the page has an empty {@code
+   * entries} list.
+   */
+  @Test
+  public void testHasNextWithEmptyEntriesOnAdGroupBidLandscapePage() {
+    AdGroupBidLandscapePage page = new AdGroupBidLandscapePage();
+
+    assertFalse("hasNext should return false if entries is null", serviceQuery.hasNext(page));
+
+    assertEquals(
+        "AWQL should not change after calling hasNext", expectedAwql, serviceQuery.toString());
+  }
+
+  /**
    * Tests using {@link ServiceQuery#hasNext(CriterionBidLandscapePage)} to check if there is still
    * a next page.
    */
@@ -134,6 +148,20 @@ public class ServiceQueryTest {
     serviceQuery = new ServiceQuery.Builder().fields("Id", "Name").limit(0, 500).build();
     // 2 * 200 landscape points are less than the page size that is 500.
     assertFalse(serviceQuery.hasNext(page));
+  }
+
+  /**
+   * Tests {@link ServiceQuery#hasNext(CriterionBidLandscapePage)} when the page has an empty {@code
+   * entries} list.
+   */
+  @Test
+  public void testHasNextWithEmptyEntriesOnCriterionBidLandscapePage() {
+    CriterionBidLandscapePage page = new CriterionBidLandscapePage();
+
+    assertFalse("hasNext should return false if entries is null", serviceQuery.hasNext(page));
+
+    assertEquals(
+        "AWQL should not change after calling hasNext", expectedAwql, serviceQuery.toString());
   }
 
   /**
@@ -209,6 +237,22 @@ public class ServiceQueryTest {
   }
 
   /**
+   * Tests using {@link ServiceQuery#nextPage(AdGroupBidLandscapePage)} when the passed page has
+   * an empty {@code entries} list.
+   */
+  @Test
+  public void testNextPageWithEmptyEntriesOnAdGroupBidLandscapePage() {
+    AdGroupBidLandscapePage page = new AdGroupBidLandscapePage();
+
+    serviceQuery.nextPage(page);
+    assertEquals(expectedAwql, serviceQuery.toString());
+
+    // LIMIT clause stays the same as long as the page entries attribute is null.
+    serviceQuery.nextPage(page);
+    assertEquals(expectedAwql, serviceQuery.toString());
+  }
+
+  /**
    * Tests using {@link ServiceQuery#nextPage(CriterionBidLandscapePage)} ] to get a next page of
    * the result by specifying the previous criterion bid landscape page.
    */
@@ -238,7 +282,7 @@ public class ServiceQueryTest {
    * null.
    */
   @Test
-  public void testNextPageFailedWithPassedNullCriterionBidLandscapePage() {
+  public void testNextPageWithPassedNullCriterionBidLandscapePage() {
     CriterionBidLandscapePage page = null;
 
     serviceQuery.nextPage(page);
@@ -249,5 +293,19 @@ public class ServiceQueryTest {
     assertEquals(expectedAwql, serviceQuery.toString());
   }
 
-}
+  /**
+   * Tests using {@link ServiceQuery#nextPage(CriterionBidLandscapePage)} when the passed page has
+   * an empty {@code entries} list.
+   */
+  @Test
+  public void testNextPageWithEmptyEntriesOnCriterionBidLandscapePage() {
+    CriterionBidLandscapePage page = new CriterionBidLandscapePage();
 
+    serviceQuery.nextPage(page);
+    assertEquals(expectedAwql, serviceQuery.toString());
+
+    // LIMIT clause stays the same as long as the page entries attribute is null.
+    serviceQuery.nextPage(page);
+    assertEquals(expectedAwql, serviceQuery.toString());
+  }
+}

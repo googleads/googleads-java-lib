@@ -14,6 +14,9 @@
 
 package com.google.api.ads.dfp.lib.utils;
 
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -22,10 +25,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Test for {@link DateTimesHelper}.
@@ -350,8 +349,8 @@ public class DateTimesHelperTest {
    * Asserts Joda DateTimes have the same millis.
    */
   private static void assertEquals(DateTime expected, DateTime actual) {
-    DateTime expectedCopy = new DateTime(expected).withMillisOfSecond(0);
-    DateTime actualCopy = new DateTime(actual).withMillisOfSecond(0);
+    DateTime expectedCopy = expected.withMillisOfSecond(0);
+    DateTime actualCopy = actual.withMillisOfSecond(0);
     Assert.assertEquals(expectedCopy.getMillis(), actualCopy.getMillis());
   }
 

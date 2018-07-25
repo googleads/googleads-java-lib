@@ -18,6 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
+import com.google.api.ads.adwords.axis.AdWordsAxisModule;
 import com.google.api.ads.adwords.axis.v201806.cm.AdGroupCriterionServiceSoapBindingStub;
 import com.google.api.ads.adwords.axis.v201806.cm.AdGroupServiceSoapBindingStub;
 import com.google.api.ads.adwords.axis.v201806.cm.BiddableAdGroupCriterion;
@@ -25,6 +26,8 @@ import com.google.api.ads.adwords.axis.v201806.cm.CampaignServiceSoapBindingStub
 import com.google.api.ads.adwords.axis.v201806.cm.CriterionError;
 import com.google.api.ads.adwords.axis.v201806.cm.MutateResult;
 import com.google.common.collect.Lists;
+import com.google.inject.Guice;
+import com.google.inject.Inject;
 import java.io.File;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -35,6 +38,7 @@ import javax.xml.stream.XMLStreamException;
 import org.apache.axis.client.Call;
 import org.apache.axis.encoding.TypeMapping;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -47,6 +51,13 @@ import org.junit.runners.JUnit4;
 public class AxisDeserializerTest {
   @Rule public ExpectedException thrown = ExpectedException.none();
   @Rule public TemporaryFolder tempFolder = new TemporaryFolder();
+
+  @Inject private AxisDeserializer deserializer;
+
+  @Before
+  public void setUp() {
+    Guice.createInjector(new AdWordsAxisModule()).injectMembers(this);
+  }
 
   /** Tests that a response with errors will be properly deserialized. */
   @Test
@@ -236,14 +247,13 @@ public class AxisDeserializerTest {
         Lists.newArrayList(campaignMapping, agcMapping, adGroupMapping);
 
     List<MutateResult> mutateResults =
-        new AxisDeserializer()
-            .deserializeBatchJobMutateResults(
-                responseXmlUrl,
-                typeMappings,
-                MutateResult.class,
-                mutateResultQName,
-                startIndex,
-                numberResults);
+        deserializer.deserializeBatchJobMutateResults(
+            responseXmlUrl,
+            typeMappings,
+            MutateResult.class,
+            mutateResultQName,
+            startIndex,
+            numberResults);
     return mutateResults;
   }
 }

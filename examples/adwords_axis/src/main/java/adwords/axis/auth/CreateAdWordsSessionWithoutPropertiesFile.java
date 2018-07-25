@@ -15,10 +15,10 @@
 package adwords.axis.auth;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201710.cm.ApiError;
-import com.google.api.ads.adwords.axis.v201710.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201710.mcm.Customer;
-import com.google.api.ads.adwords.axis.v201710.mcm.CustomerServiceInterface;
+import com.google.api.ads.adwords.axis.v201806.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201806.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201806.mcm.Customer;
+import com.google.api.ads.adwords.axis.v201806.mcm.CustomerServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;

@@ -1,10 +1,10 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// http://www.apache.org/licenses/LICENSE-2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,34 +16,17 @@ package com.google.api.ads.adwords.axis.utils;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.ads.adwords.lib.utils.BatchJobHelperUtility;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSource;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import com.google.inject.Inject;
 import java.io.InputStream;
-import java.io.StringWriter;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import javax.xml.namespace.QName;
 import javax.xml.rpc.encoding.DeserializerFactory;
-import javax.xml.stream.XMLEventFactory;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLEventWriter;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.EndElement;
-import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import org.apache.axis.Message;
 import org.apache.axis.MessageContext;
 import org.apache.axis.client.AxisClient;
@@ -65,11 +48,12 @@ public class AxisDeserializer {
 
   private static final String SOAP_END_BODY = "</soapenv:Body></soapenv:Envelope>";
 
-  private static final String TAG_MUTATE_RESPONSE = "mutateResponse";
+  private final BatchJobHelperUtility batchJobHelperUtility;
 
-  private static final String TAG_RVAL = "rval";
-
-  private static final String INDENT_AMOUNT = "4";
+  @Inject
+  public AxisDeserializer(BatchJobHelperUtility batchJobHelperUtility) {
+    this.batchJobHelperUtility = batchJobHelperUtility;
+  }
 
   public <ResultT> List<ResultT> deserializeBatchJobMutateResults(
       URL url, List<TypeMapping> serviceTypeMappings, Class<ResultT> resultClass, QName resultQName)
@@ -91,7 +75,12 @@ public class AxisDeserializer {
     List<ResultT> results = Lists.newArrayList();
 
     // Build a wrapped input stream from the response.
-    InputStream wrappedStream = buildWrappedInputStream(url, startIndex, numberResults);
+    InputStream wrappedStream =
+        ByteSource.concat(
+                ByteSource.wrap(SOAP_START_BODY.getBytes(UTF_8)),
+                batchJobHelperUtility.buildWrappedByteSource(url, startIndex, numberResults),
+                ByteSource.wrap(SOAP_END_BODY.getBytes(UTF_8)))
+            .openStream();
 
     // Create a MessageContext with a new TypeMappingRegistry that will only
     // contain deserializers derived from serviceTypeMappings and the
@@ -125,86 +114,6 @@ public class AxisDeserializer {
       results.add(mutateResult);
     }
     return results;
-  }
-
-  /**
-   * Returns a new input stream that wraps the download URL into a SOAP body with pagination, so it
-   * can be parsed by Axis.
-   */
-  private InputStream buildWrappedInputStream(URL url, int startIndex, int numberResults)
-      throws IOException, XMLStreamException, TransformerException {
-    Preconditions.checkArgument(startIndex >= 0, "startIndex must not be negative");
-    Preconditions.checkArgument(numberResults > 0, "numberResults must be positive");
-
-    StringWriter stringWriter = new StringWriter();
-
-    XMLEventReader xmlEventReader =
-        XMLInputFactory.newFactory().createXMLEventReader(url.openStream());
-    XMLEventWriter xmlEventWriter =
-        XMLOutputFactory.newFactory().createXMLEventWriter(stringWriter);
-    XMLEventFactory xmlEventFactory = XMLEventFactory.newInstance();
-
-    int index = 0;
-    boolean included = false;
-
-    while (xmlEventReader.hasNext()) {
-      XMLEvent event = xmlEventReader.nextEvent();
-
-      if (event.isStartElement()) {
-        String name = ((StartElement) event).getName().getLocalPart();
-        if (name.equals(TAG_MUTATE_RESPONSE)) {
-          // Write the <mutateResponse> tag.
-          xmlEventWriter.add(event);
-          continue;
-        } else if (name.equals(TAG_RVAL) && ++index > startIndex) {
-          // Included the eligible <rval> tags and sub tags by setting the 'included' flag.
-          included = true;
-        }
-      } else if (event.isEndElement()) {
-        String name = ((EndElement) event).getName().getLocalPart();
-        if (name.equals(TAG_MUTATE_RESPONSE)) {
-          // Write the </mutateResponse> tag.
-          xmlEventWriter.add(event);
-          break;
-        } else if (included && name.equals(TAG_RVAL) && index == startIndex + numberResults) {
-          // Write the last </rval> tag and append a </mutateResponse> tag, if this has written
-          // the specified number of results.
-          xmlEventWriter.add(event);
-          xmlEventWriter.add(xmlEventFactory.createEndElement("", "", TAG_MUTATE_RESPONSE));
-          break;
-        }
-      }
-
-      if (included) {
-        // Write the included tags and events.
-        xmlEventWriter.add(event);
-      }
-    }
-    xmlEventReader.close();
-    xmlEventWriter.close();
-
-    InputStream truncatedInputStream =
-        ByteSource.wrap(stringWriter.toString().getBytes(UTF_8)).openStream();
-
-    // Pass the input stream through a Transformer that removes the XML
-    // declaration. Create a new TransformerFactory and Transformer on each invocation
-    // since these objects are <em>not</em> thread safe.
-    Transformer omitXmlDeclarationTransformer = TransformerFactory.newInstance().newTransformer();
-    omitXmlDeclarationTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
-    omitXmlDeclarationTransformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-    omitXmlDeclarationTransformer.setOutputProperty(
-        "{http://xml.apache.org/xslt}indent-amount", INDENT_AMOUNT);
-
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    StreamResult streamResult = new StreamResult(outputStream);
-    Source xmlSource = new StreamSource(truncatedInputStream);
-    omitXmlDeclarationTransformer.transform(xmlSource, streamResult);
-
-    return ByteSource.concat(
-            ByteSource.wrap(SOAP_START_BODY.getBytes(UTF_8)),
-            ByteSource.wrap(outputStream.toByteArray()),
-            ByteSource.wrap(SOAP_END_BODY.getBytes(UTF_8)))
-        .openStream();
   }
 
   /** Adds the type mappings in the list to {@code registryTypeMapping}. */

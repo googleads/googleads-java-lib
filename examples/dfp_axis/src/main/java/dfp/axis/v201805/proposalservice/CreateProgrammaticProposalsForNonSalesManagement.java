@@ -27,6 +27,8 @@ import com.google.api.ads.dfp.axis.factory.DfpServices;
 import com.google.api.ads.dfp.axis.v201805.ApiError;
 import com.google.api.ads.dfp.axis.v201805.ApiException;
 import com.google.api.ads.dfp.axis.v201805.Proposal;
+import com.google.api.ads.dfp.axis.v201805.ProposalCompanyAssociation;
+import com.google.api.ads.dfp.axis.v201805.ProposalCompanyAssociationType;
 import com.google.api.ads.dfp.axis.v201805.ProposalMarketplaceInfo;
 import com.google.api.ads.dfp.axis.v201805.ProposalServiceInterface;
 import com.google.api.ads.dfp.axis.v201805.SalespersonSplit;
@@ -58,6 +60,10 @@ public class CreateProgrammaticProposalsForNonSalesManagement {
         description = "The ID of the programmatic buyer. This can be obtained through the"
             + " Programmatic_Buyer PQL table.")
     private Long programmaticBuyerId;
+
+    @Parameter(names = ArgumentNames.ADVERTISER_ID, required = true,
+        description = "The ID of the advertiser.")
+    private Long advertiserId;
   }
 
   /**
@@ -77,30 +83,37 @@ public class CreateProgrammaticProposalsForNonSalesManagement {
       DfpSession session,
       long primarySalespersonId,
       long primaryTraffickerId,
-      long programmaticBuyerId)
+      long programmaticBuyerId,
+      long advertiserId)
       throws RemoteException {
     ProposalServiceInterface proposalService =
         dfpServices.get(session, ProposalServiceInterface.class);
-    
     Proposal proposal = new Proposal();
-    
+
     // Setting required Marketplace information.
     ProposalMarketplaceInfo proposalMarketplaceInfo = new ProposalMarketplaceInfo();
     proposalMarketplaceInfo.setBuyerAccountId(programmaticBuyerId);
-    
+
     // Set common required fields for a programmatic proposal.
     proposal.setName("Proposal #" + new Random().nextInt(Integer.MAX_VALUE));
     proposal.setIsProgrammatic(true);
-    proposal.setPrimaryTraffickerId(primaryTraffickerId);
     proposal.setMarketplaceInfo(proposalMarketplaceInfo);
+
+    // Set fields that are required before sending the proposal to the buyer.
+    proposal.setPrimaryTraffickerId(primaryTraffickerId);
+    proposal.setSellerContactIds(new long[] { primarySalespersonId });
     SalespersonSplit primarySalesperson = new SalespersonSplit();
     primarySalesperson.setUserId(primarySalespersonId);
     primarySalesperson.setSplit(100000);
     proposal.setPrimarySalesperson(primarySalesperson);
+    ProposalCompanyAssociation advertiser = new ProposalCompanyAssociation();
+    advertiser.setType(ProposalCompanyAssociationType.ADVERTISER);
+    advertiser.setCompanyId(advertiserId);
+    proposal.setAdvertiser(advertiser);
 
     // Create the proposal on the server.
     Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
-    
+
     for (Proposal createdProposal : proposals) {
       System.out.printf("A programmatic proposal for non-sales management with ID %d and name '%s' "
           + "was created.%n", createdProposal.getId(), createdProposal.getName());
@@ -149,11 +162,12 @@ public class CreateProgrammaticProposalsForNonSalesManagement {
       params.primarySalespersonId = Long.parseLong("INSERT_PRIMARY_SALESPERSON_ID_HERE");
       params.primaryTraffickerId = Long.parseLong("INSERT_PRIMARY_TRAFFICKER_ID_HERE");
       params.programmaticBuyerId = Long.parseLong("INSERT_PROGRAMMATIC_BUYER_ID_HERE");
+      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
     }
 
     try {
       runExample(dfpServices, session, params.primarySalespersonId, params.primaryTraffickerId,
-          params.programmaticBuyerId);
+          params.programmaticBuyerId, params.advertiserId);
     } catch (ApiException apiException) {
       // ApiException is the base class for most exceptions thrown by an API request. Instances
       // of this exception have a message and a collection of ApiErrors that indicate the

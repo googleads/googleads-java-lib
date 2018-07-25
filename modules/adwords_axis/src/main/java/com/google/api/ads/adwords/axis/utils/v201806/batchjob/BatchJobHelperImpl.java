@@ -45,12 +45,15 @@ class BatchJobHelperImpl
   private final BatchJobUploader uploader;
   private final BatchJobLogger batchJobLogger;
   private final QName resultQName;
+  private final AxisDeserializer deserializer;
 
   @Inject
-  BatchJobHelperImpl(BatchJobUploader uploader, BatchJobLogger batchJobLogger) {
+  BatchJobHelperImpl(
+      BatchJobUploader uploader, BatchJobLogger batchJobLogger, AxisDeserializer deserializer) {
     this.uploader = uploader;
     this.batchJobLogger = batchJobLogger;
     resultQName = new QName("https://adwords.google.com/api/adwords/cm/v201806", "MutateResult");
+    this.deserializer = deserializer;
   }
 
   @Override
@@ -82,7 +85,6 @@ class BatchJobHelperImpl
   @Override
   public BatchJobMutateResponse downloadBatchJobMutateResponse(
       String downloadUrl, int startIndex, int numberResults) throws BatchJobException {
-    AxisDeserializer deserializer = new AxisDeserializer();
     /*
      * Deserialize using the generated cm.MutateResult class instead of the batchjob.MutateResult
      * class. The MutateResult and ErrorList types in the batchjob package have properties defined
