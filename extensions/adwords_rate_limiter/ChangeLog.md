@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.1.3] - 2018-07-27
+- Fix race condition in ApiServicesRetryStrategy (issue 149.)
+
 ## [0.1.2] - 2018-06-12
 - Update dependencies for slf4j. Depend on slf4j-api rather than slf4j-log4j12.
 

@@ -17,7 +17,7 @@ and employs a simple wait-and-retry strategy.
 
 ## Requirements
 
-*   Java 1.7+
+*   Java 1.8+
 *   Maven 3.0+ not required, but recommended
 
 ## Announcements and updates

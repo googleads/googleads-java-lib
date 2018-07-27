@@ -18,9 +18,15 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
+import com.google.api.ads.adwords.axis.v201806.cm.ApiError;
+import com.google.api.ads.adwords.axis.v201806.cm.ApiException;
+import com.google.api.ads.adwords.axis.v201806.cm.RateExceededError;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
+import java.util.Properties;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -41,82 +47,55 @@ public class ApiRateLimiterTest {
   private static final int RETRY_AFTER_SECONDS = 1;
   private static final int LONG_RETRY_AFTER_SECONDS = 5;
 
-  // Mock the SOAP toolkit agnostic and version agnostic errors.
-  private abstract static class ApiError {}
+  private static final RateExceededError rateExceededError = new RateExceededError();
+  private static final RateExceededError rateExceededErrorLong = new RateExceededError();
+  private static final ApiException rateExceededException = new ApiException();
+  private static final ApiException rateExceededExceptionLong = new ApiException();
 
-  private static class RateExceededError extends ApiError {
-    private String rateScope;
-    private Integer retryAfterSeconds;
-
-    public RateExceededError(String rateScope, Integer retryAfterSeconds) {
-      this.rateScope = rateScope;
-      this.retryAfterSeconds = retryAfterSeconds;
-    }
-
-    @SuppressWarnings("unused")
-    public String getRateScope() {
-      return rateScope;
-    }
-
-    @SuppressWarnings("unused")
-    public Integer getRetryAfterSeconds() {
-      return retryAfterSeconds;
-    }
-  }
-
-  private static class ApiException extends Exception {
-    private ApiError[] errors;
-
-    public ApiException(ApiError[] errors) {
-      this.errors = errors;
-    }
-
-    @SuppressWarnings("unused")
-    public ApiError[] getErrors() {
-      return errors;
-    }
-  }
-
-  private static final RateExceededError rateExceededError =
-      new RateExceededError("DEVELOPER", RETRY_AFTER_SECONDS);
-  private static final ApiException rateExceededException =
-      new ApiException(new ApiError[] {rateExceededError});
-
-  // RateExceededError with long wait time
-  private static final RateExceededError rateExceededErrorLong =
-      new RateExceededError("DEVELOPER", LONG_RETRY_AFTER_SECONDS);
-  private static final ApiException rateExceededExceptionLong =
-      new ApiException(new ApiError[] {rateExceededErrorLong});
-
-  private static final ApiException otherApiException = new ApiException(new ApiError[] {});
+  private static final ApiException otherApiException = new ApiException();
   private static final RemoteException remoteException = new RemoteException("message");
 
   // Overwrite default configuration.
   private static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR = 3;
   private static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR = 5;
+  private static Properties systemPropertiesRestore;
 
-  static {
+  // The service that mocks AdWords API services.
+  private interface MockService {
+    Object invoke() throws RemoteException;
+  }
+
+  @Mock private final MockService mockService = Mockito.mock(MockService.class);
+  private Method method;
+  private ApiRateLimiter rateLimiter;
+
+  @Rule public final ExpectedException thrown = ExpectedException.none();
+
+  @BeforeClass
+  public static void beforeClass() {
+    systemPropertiesRestore = System.getProperties();
+
     System.setProperty(
         ApiServicesRetryStrategy.MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY,
         String.valueOf(MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR));
     System.setProperty(
         ApiServicesRetryStrategy.MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY,
         String.valueOf(MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR));
+
+    rateExceededError.setRateScope("DEVELOPER");
+    rateExceededError.setRetryAfterSeconds(RETRY_AFTER_SECONDS);
+    rateExceededException.setErrors(new ApiError[] {rateExceededError});
+
+    rateExceededErrorLong.setRateScope("DEVELOPER");
+    rateExceededErrorLong.setRetryAfterSeconds(LONG_RETRY_AFTER_SECONDS);
+    rateExceededExceptionLong.setErrors(new ApiError[] {rateExceededErrorLong});
   }
 
-  // The service that mocks AdWords API services.
-  private static interface MockService {
-    Object invoke() throws ApiException, RemoteException;
+  @AfterClass
+  public static void tearDown() {
+    System.setProperties(systemPropertiesRestore);
   }
 
-  @Mock
-  private final MockService mockService = Mockito.mock(MockService.class);
-  private Method method;
-  private ApiRateLimiter rateLimiter;
-
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
-  
   @Before
   public void setUp() throws Exception {
     method = mockService.getClass().getDeclaredMethod("invoke");

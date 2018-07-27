@@ -17,7 +17,9 @@ package com.google.api.ads.adwords.extension.ratelimiter;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.AtomicLongMap;
+import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.annotation.Nullable;
@@ -46,19 +48,6 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
       "com.google.api.ads.adwords.extension.ratelimiter.ApiServicesRetryStrategy.maxWaitTimeOnRateExceededError";
   private static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT = 86400;
 
-  // Thread-safe helper for calculating {@link ApiServicesRetryStrategy} configuration.
-  private static final class ConfigCalculator {
-    private static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR =
-        ConfigUtil.getIntConfigValue(
-            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY,
-            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT);
-
-    private static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR =
-        ConfigUtil.getIntConfigValue(
-            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY,
-            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT);
-  }
-
   // The min/max range of random multiplier for waiting time before retry.
   @VisibleForTesting static final int MIN_WAIT_TIME_MULTIPLIER = 1;
   @VisibleForTesting static final int MAX_WAIT_TIME_MULTIPLIER = 2;
@@ -72,14 +61,31 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   // Wait until time (in millis of DateTime) for token scope.
   private final AtomicLong tokenWaitUntil;
   // Wait until time (in millis of DateTime) for account scope.
-  private final AtomicLongMap<Long> accountWaitUntil;
+  private final ConcurrentMap<Long, AtomicLong> accountWaitUntil;
 
-  private ApiServicesRetryStrategy() {
-    this.maxAttemptsOnRateExceededError = ConfigCalculator.MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR;
-    this.maxWaitTimeOnRateExceededError = ConfigCalculator.MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR;
+  private final DateProvider dateProvider;
+  private final RandomProvider waitTimeNoiseFactor;
+
+  public ApiServicesRetryStrategy() {
+    this(new DefaultDateProvider(), new DefaultRandomProvider());
+  }
+
+  @VisibleForTesting
+  public ApiServicesRetryStrategy(DateProvider dateProvider, RandomProvider waitTimeNoiseFactor) {
+    this.dateProvider = dateProvider;
+    this.waitTimeNoiseFactor = waitTimeNoiseFactor;
+
+    this.maxAttemptsOnRateExceededError =
+        ConfigUtil.getIntConfigValue(
+            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY,
+            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT);
+    this.maxWaitTimeOnRateExceededError =
+        ConfigUtil.getIntConfigValue(
+            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY,
+            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT);
 
     this.tokenWaitUntil = new AtomicLong();
-    this.accountWaitUntil = AtomicLongMap.create();
+    this.accountWaitUntil = new ConcurrentHashMap<>();
   }
 
   public static ApiServicesRetryStrategy newInstance() {
@@ -111,7 +117,7 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   private void updateTokenWaitTime(long waitForMillis) {
     final long newTime = millisFromNow(waitForMillis);
 
-    boolean done = true;
+    boolean done;
     do {
       long oldTime = tokenWaitUntil.get();
       // If the new wait until time exceeds current one, update it; otherwise just skip the loop.
@@ -130,28 +136,45 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
    * @param waitForMillis the wait time in milliseconds
    */
   private void updateAccountWaitTime(long clientCustomerId, long waitForMillis) {
-    final long newTime = millisFromNow(waitForMillis);
+    final long minWaitTime = millisFromNow(waitForMillis);
 
-    boolean done = true;
-    do {
-      long oldTime = accountWaitUntil.get(clientCustomerId);
-      // If the new wait until time exceeds current one, update it; otherwise
-      // just skip the loop.
-      if (oldTime < newTime) {
-        done = (oldTime == accountWaitUntil.getAndAdd(clientCustomerId, newTime - oldTime));
+    // Here we are assuming that the AtomicLong reference isn't changed once inserted. Therefore,
+    // the content of this map grows with the number of account rate limits encountered. Future work
+    // may address the problem of flushing this to reduce overall memory pressure.
+    //
+    // Overhead of AtomicLong is ~ size(long) 64 bytes,
+    // if managing 100k customers this implies a total memory pressure of ~ 100000 * 64 = 6MB.
+    //
+    // Overhead of managing the map is 2 * 100k * (size(key) + size(reference)) = 24MB,
+    // multiplying by factor of 2 to compensate for a map with 50% max load.
+    //
+    // An additional 36MB of RAM is a reasonable trade-off to simplify this implementation.
+
+    AtomicLong recordedWaitTime =
+        accountWaitUntil.computeIfAbsent(clientCustomerId, k -> new AtomicLong(minWaitTime));
+
+    // This update algorithm will eventually terminate, but possibly not on the first iteration due
+    // to concurrent updates. A better solution would be to use
+    // AtomicLongMap.accumulateAndGet(K, long, LongBinaryOperator) from Guava 21.0, however this
+    // would require bumping the Guava version for all Google Ads Java libraries and their
+    // dependents.
+    long snapshotTime = recordedWaitTime.get();
+    while (snapshotTime < minWaitTime) {
+      if (recordedWaitTime.compareAndSet(snapshotTime, minWaitTime)) {
+        break;
       } else {
-        done = true;
+        snapshotTime = recordedWaitTime.get();
       }
-    } while (!done);
+    }
   }
 
   /** Calculate the wait time (in millis) before next AdWords API call is allowed. */
   private long calcWaitTime(long clientCustomerId, @Nullable Throwable throwable) {
-    long nowInMillis = nowInMillis();
+    long nowInMillis = dateProvider.getNowInMillis();
 
     long waitForMillis = 0L;
     waitForMillis = Math.max(waitForMillis, tokenWaitUntil.get() - nowInMillis);
-    waitForMillis = Math.max(waitForMillis, accountWaitUntil.get(clientCustomerId) - nowInMillis);
+    waitForMillis = Math.max(waitForMillis, getAccountWaitTime(clientCustomerId) - nowInMillis);
 
     if (waitForMillis > 0
         && maxWaitTimeOnRateExceededError > 0
@@ -167,11 +190,12 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   /** Check whether the invocation causes RateExceededError, and update wait time accordingly. */
   private boolean checkRateExceededErrorAndUpdateWaitTime(
       long clientCustomerId, Throwable throwable) {
-    boolean hasRateExceededError = false;
-
     if (ReflectionUtil.isInstanceOf(throwable, "ApiException")) {
       try {
         Object[] errors = (Object[]) ReflectionUtil.invokeNoArgMethod(throwable, "getErrors");
+        if (errors == null) {
+          return false;
+        }
         for (Object error : errors) {
           if (ReflectionUtil.isInstanceOf(error, "RateExceededError")) {
             String rateScope = (String) ReflectionUtil.invokeNoArgMethod(error, "getRateScope");
@@ -181,24 +205,20 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
                 "Encountered RateExceededError: scope={}, seconds={}.",
                 rateScope,
                 retryAfterSeconds);
-
-            if (retryAfterSeconds != null) {
-              long waitForMillis = getActualWaitTime(retryAfterSeconds.intValue());
-
+            if (retryAfterSeconds == null) {
+              logger.warn("Unexpected rate exceeed error, missing retryAfterSeconds");
+            } else if (retryAfterSeconds != null) {
+              long waitForMillis = getWaitUntilMillis(retryAfterSeconds.intValue());
               if ("DEVELOPER".equals(rateScope)) {
                 updateTokenWaitTime(waitForMillis);
+                return true;
               } else if ("ACCOUNT".equals(rateScope)) {
                 updateAccountWaitTime(clientCustomerId, waitForMillis);
+                return true;
               } else {
-                // Should not happen.
-                throw new AssertionError(
-                    "Unknown RateExceededError scope: " + rateScope, throwable);
+                logger.warn("Unknown RateExceededError scope: " + rateScope, throwable);
               }
             }
-
-            // Found an RateExceededError, skip the rest in error list.
-            hasRateExceededError = true;
-            break;
           }
         }
       } catch (RateLimiterReflectionException e) {
@@ -206,26 +226,80 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
         logger.error("Encountered error during analysis using reflection.", e);
       }
     }
-
-    return hasRateExceededError;
-  }
-
-  private static long nowInMillis() {
-    return DateTime.now().getMillis();
-  }
-
-  private static long millisFromNow(long millis) {
-    return nowInMillis() + millis;
+    return false;
   }
 
   /**
    * Decides the actual wait time in milliseconds, by applying a random multiplier to
    * retryAfterSeconds.
    */
-  private static long getActualWaitTime(int retryAfterSeconds) {
-    double multiplier =
-        ThreadLocalRandom.current().nextDouble(MIN_WAIT_TIME_MULTIPLIER, MAX_WAIT_TIME_MULTIPLIER);
+  private long getWaitUntilMillis(int retryAfterSeconds) {
+    double multiplier = waitTimeNoiseFactor.get().nextDouble();
+    multiplier =
+        multiplier * (MAX_WAIT_TIME_MULTIPLIER - MIN_WAIT_TIME_MULTIPLIER)
+            + MIN_WAIT_TIME_MULTIPLIER;
     double result = SECONDS.toMillis(retryAfterSeconds) * multiplier;
     return (long) result;
+  }
+
+  @VisibleForTesting
+  long getAccountWaitTime(long account) {
+    AtomicLong waitTime = accountWaitUntil.get(account);
+    return waitTime == null ? 0L : waitTime.get();
+  }
+
+  @VisibleForTesting
+  long getDeveloperWaitTime() {
+    return tokenWaitUntil.get();
+  }
+
+  private long millisFromNow(long millis) {
+    return dateProvider.getNowInMillis() + millis;
+  }
+
+  /**
+   * Primarily to support testing, allow abstraction of wait time calculations and provision of
+   * current system time.
+   */
+  @VisibleForTesting
+  public interface DateProvider {
+
+    /**
+     * Return the number of milliseconds in local timezone since the UNIX epoch.
+     *
+     * @return the current time in milliseconds since epoch.
+     */
+    long getNowInMillis();
+  }
+
+  /**
+   * Primarily to support testing, allow injecting different RNG to make the wait times more
+   * predictable.
+   */
+  @VisibleForTesting
+  public interface RandomProvider {
+
+    /**
+     * Provides an instance of Random.
+     *
+     * @return the random number generator.
+     */
+    Random get();
+  }
+
+  private static class DefaultDateProvider implements DateProvider {
+
+    @Override
+    public long getNowInMillis() {
+      return DateTime.now().getMillis();
+    }
+  }
+
+  private static class DefaultRandomProvider implements RandomProvider {
+
+    @Override
+    public Random get() {
+      return ThreadLocalRandom.current();
+    }
   }
 }
