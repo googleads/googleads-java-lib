@@ -57,7 +57,7 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
   }
 
   /**
-   * Tests making a JAX-WS DFP API call with OAuth2.
+   * Tests making a JAX-WS Ad Manager API call with OAuth2.
    */
   @Test
   public void testGoldenSoap_oauth2() throws Exception {

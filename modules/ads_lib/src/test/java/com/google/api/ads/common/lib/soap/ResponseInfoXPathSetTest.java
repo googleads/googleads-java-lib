@@ -43,8 +43,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
 /** Tests for {@link ResponseInfoXPathSet}. */
 @RunWith(JUnit4.class)
@@ -97,13 +95,10 @@ public class ResponseInfoXPathSetTest {
     when(message.getSOAPHeader()).thenReturn(header);
     final String payload = "<foo><bar>MyBar</bar></foo>";
     doAnswer(
-            new Answer<Void>() {
-              @Override
-              public Void answer(InvocationOnMock invocation) throws Throwable {
-                OutputStream outputStream = (OutputStream) invocation.getArguments()[0];
-                outputStream.write(payload.getBytes(StandardCharsets.UTF_8));
-                return null;
-              }
+            invocation -> {
+              OutputStream outputStream = (OutputStream) invocation.getArguments()[0];
+              outputStream.write(payload.getBytes(StandardCharsets.UTF_8));
+              return null;
             })
         .when(message)
         .writeTo(org.mockito.Matchers.any(OutputStream.class));

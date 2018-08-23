@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.16.1-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,11 +30,11 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>dfp-appengine</artifactId>
-  <version>3.16.1-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>DFP AppEngine components</name>
-  <description>DFP-specific AppEngine components.</description>
+  <name>Ad Manager AppEngine components</name>
+  <description>Ad Manager specific AppEngine components.</description>
 
   <build>
     <plugins>
@@ -50,9 +50,9 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>**/DfpJaxWsSoapCompressionIntegrationTest.java</exclude>
-                <exclude>**/DfpJaxWsSoapIntegrationTest.java</exclude>
-                <exclude>**/DfpJaxWsSoapTimeoutIntegrationTest.java</exclude>
+                <exclude>**/AdManagerJaxWsSoapCompressionIntegrationTest.java</exclude>
+                <exclude>**/AdManagerJaxWsSoapIntegrationTest.java</exclude>
+                <exclude>**/AdManagerJaxWsSoapTimeoutIntegrationTest.java</exclude>
                 <exclude>**/UserAgentCombinerTest.java</exclude>
               </excludes>
             </configuration>
@@ -69,9 +69,9 @@
               <reuseForks>false</reuseForks>
               <forkCount>1</forkCount>
               <includes>
-                <include>**/DfpJaxWsSoapCompressionIntegrationTest.java</include>
-                <include>**/DfpJaxWsSoapIntegrationTest.java</include>
-                <include>**/DfpJaxWsSoapTimeoutIntegrationTest.java</include>
+                <include>**/AdManagerJaxWsSoapCompressionIntegrationTest.java</include>
+                <include>**/AdManagerJaxWsSoapIntegrationTest.java</include>
+                <include>**/AdManagerJaxWsSoapTimeoutIntegrationTest.java</include>
                 <include>**/UserAgentCombinerTest.java</include>
               </includes>
             </configuration>
@@ -81,9 +81,9 @@
     </plugins>
     <resources>
        <resource>
-         <targetPath>com/google/api/ads/dfp/jaxws/conf/props</targetPath>
+         <targetPath>com/google/api/ads/admanager/jaxws/conf/props</targetPath>
          <filtering>false</filtering>
-         <directory>src/main/java/com/google/api/ads/dfp/jaxws/conf/props</directory>
+         <directory>src/main/java/com/google/api/ads/admanager/jaxws/conf/props</directory>
          <includes>
            <include>*.properties</include>
         </includes>
@@ -91,9 +91,9 @@
      </resources>
      <testResources>
        <testResource>
-         <targetPath>com/google/api/ads/dfp/jaxws/testing</targetPath>
+         <targetPath>com/google/api/ads/admanager/jaxws/testing</targetPath>
          <filtering>false</filtering>
-         <directory>src/test/java/com/google/api/ads/dfp/jaxws/testing</directory>
+         <directory>src/test/java/com/google/api/ads/admanager/jaxws/testing</directory>
          <includes>
            <include>*.xml</include>
          </includes>
@@ -105,12 +105,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib-appengine</artifactId>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -132,7 +132,7 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>

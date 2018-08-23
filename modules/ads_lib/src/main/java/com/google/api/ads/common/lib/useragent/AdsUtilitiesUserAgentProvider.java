@@ -23,7 +23,6 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
 import java.util.Set;
-import javax.annotation.Nullable;
 
 /**
  * Provides the ads utilities user agent.
@@ -33,13 +32,7 @@ public class AdsUtilitiesUserAgentProvider implements UserAgentProvider {
   private final AdsLibConfiguration adsLibConfiguration;
 
   private static final Function<AdsUtility, String> ADS_UTILITY_FUNCTION =
-      new Function<AdsUtility, String>() {
-        @Override
-        @Nullable
-        public String apply(@Nullable AdsUtility input) {
-          return input == null ? null : input.getUserAgentIdentifier();
-        }
-      };
+      input -> input == null ? null : input.getUserAgentIdentifier();
 
   @Inject
   public AdsUtilitiesUserAgentProvider(

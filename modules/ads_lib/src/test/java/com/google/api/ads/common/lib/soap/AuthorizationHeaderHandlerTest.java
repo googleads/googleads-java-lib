@@ -59,12 +59,7 @@ public class AuthorizationHeaderHandlerTest {
     String authorizationHeaderValue = "IAmAuthorized";
     final String endpoint = "endpoint";
     Object soapClient = new Object();
-    AdsSession adsSession = new AdsSession() {
-      @Override
-      public String getEndpoint() {
-        return endpoint;
-      }
-    };
+    AdsSession adsSession = () -> endpoint;
     @SuppressWarnings("rawtypes")
     ArgumentCaptor<Map> headers = ArgumentCaptor.forClass(Map.class);
 

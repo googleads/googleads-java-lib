@@ -57,12 +57,7 @@ public class AuthorizationHeaderProviderTest {
   @Test
   public void testGetAuthorizationHeader_oAuth2Refresh() throws Exception {
     final Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    AdsSession adsSession = new OAuth2Session() {
-      @Override
-      public Credential getOAuth2Credential() {
-        return credential;
-      }
-    };
+    OAuth2Session adsSession = () -> credential;
 
     when(oAuth2AuthorizationHeaderProvider.getOAuth2AuthorizationHeader(
         (OAuth2Compatible) adsSession)).thenReturn("OAuth2 Header");
@@ -77,12 +72,7 @@ public class AuthorizationHeaderProviderTest {
   @Test
   public void testGetAuthorizationHeader_oAuth2NoRefresh() throws Exception {
     final Credential credential = new Credential(BearerToken.authorizationHeaderAccessMethod());
-    AdsSession adsSession = new OAuth2Session() {
-      @Override
-      public Credential getOAuth2Credential() {
-        return credential;
-      }
-    };
+    OAuth2Session adsSession = () -> credential;
 
     when(oAuth2AuthorizationHeaderProvider.getOAuth2AuthorizationHeader(
         (OAuth2Compatible) adsSession)).thenReturn("OAuth2 Header");
@@ -94,14 +84,11 @@ public class AuthorizationHeaderProviderTest {
     verify(oAuth2Helper, times(0)).refreshCredential(credential);
   }
 
-  private abstract class BaseAdsSession implements AdsSession {
-
+  private interface OAuth2Session extends AdsSession, OAuth2Compatible {
     @Override
-    public String getEndpoint() {
+    default String getEndpoint() {
       return null;
     }
   }
-
-  private abstract class OAuth2Session extends BaseAdsSession implements OAuth2Compatible {}
 
 }

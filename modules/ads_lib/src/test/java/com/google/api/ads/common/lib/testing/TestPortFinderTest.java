@@ -19,16 +19,15 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.base.Joiner;
-
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+import java.util.Properties;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.util.NoSuchElementException;
-import java.util.Properties;
 
 /**
  * Tests for {@link TestPortFinder}.
@@ -88,19 +87,16 @@ public class TestPortFinderTest {
     Integer[] expectedPorts = new Integer[] {9990, 9991, 9992, 9993, 9994};
     properties.setProperty(TestPortFinder.UNUSED_PORTS_PROPERTY_KEY,
         Joiner.on(',').join(expectedPorts));
-    
+
     TestPortFinder portFinder = new TestPortFinder(properties);
-    for (Integer expectedPort : expectedPorts) {
-      Integer actualPort = portFinder.checkOutUnusedPort();
-      assertEquals(expectedPort, actualPort);
-    }
-    
+    Arrays.stream(expectedPorts)
+        .forEach(
+            expectedPort -> assertEquals(expectedPort, (Integer) portFinder.checkOutUnusedPort()));
+
     // Release the checked out ports.
-    for (Integer expectedPort : expectedPorts) {
-      portFinder.releaseUnusedPort(expectedPort);
-    }
+    Arrays.stream(expectedPorts).forEach(portFinder::releaseUnusedPort);
   }
-  
+
   /**
    * Tests that the port picker constructor will fail if override value is an empty string
    * instead of a comma-separated list of valid integers.

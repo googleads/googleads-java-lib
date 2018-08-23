@@ -16,7 +16,6 @@ package com.google.api.ads.common.lib.conf;
 
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
@@ -236,12 +235,7 @@ public class ConfigurationHelper {
       return null;
     }
 
-    return Lists.transform(locations, new Function<T, ConfigurationInfo<T>>() {
-      @Override
-      public ConfigurationInfo<T> apply(T input) {
-        return new ConfigurationInfo<T>(input, isOptional);
-      }
-    });
+    return Lists.transform(locations, input -> new ConfigurationInfo<T>(input, isOptional));
   }
 
   /**

@@ -42,7 +42,6 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.selectorfields.v201806.cm.AdGroupCriterionField;
 import com.google.api.ads.adwords.lib.selectorfields.v201806.cm.AdGroupField;
-import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractSequentialIterator;
 import com.google.common.collect.ImmutableList;
@@ -356,13 +355,7 @@ class ProductPartitionTreeImpl
 
   @Override
   public List<AdGroupCriterionOperation> getMutateOperations() {
-    return Lists.transform(createMutateOperationPairs(),
-        new Function<OperationPair, AdGroupCriterionOperation>() {
-          @Override
-          public AdGroupCriterionOperation apply(OperationPair input) {
-            return input.operation;
-          }
-        });
+    return Lists.transform(createMutateOperationPairs(), input -> input.operation);
   }
 
   /**

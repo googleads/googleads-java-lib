@@ -118,13 +118,7 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
         new GenericAdWordsServices()
             .getBootstrapper()
             .getInstanceOf(session, AdHocReportDownloadHelper.class);
-    exceptionBuilder =
-        new DetailedReportDownloadResponseException.Builder() {
-          @Override
-          public DetailedReportDownloadResponseException build(int httpStatus, String errorText) {
-            return new DetailedReportDownloadResponseException(httpStatus, errorText);
-          }
-        };
+    exceptionBuilder = DetailedReportDownloadResponseException::new;
   }
 
   /**

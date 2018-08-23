@@ -380,13 +380,7 @@ public abstract class QueryBuilder<
 
     /** Adds a predicate for the specified String property values and operator. */
     private String createMultipleValuesPredicate(String[] values, String operator) {
-      Function<String, String> normalize =
-          new Function<String, String>() {
-            @Override
-            public String apply(String s) {
-              return String.format("\"%s\"", s);
-            }
-          };
+      Function<String, String> normalize = s -> String.format("\"%s\"", s);
 
       return String.format(
           "%s %s [%s]",

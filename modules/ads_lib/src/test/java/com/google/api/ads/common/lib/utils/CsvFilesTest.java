@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -120,10 +121,9 @@ public class CsvFilesTest {
 
   @Test
   public void testGetCsvDataMap() throws IOException {
-    Map<String, String> expectedDataMap = Maps.newHashMap();
-    for (String[] data : dataList) {
-      expectedDataMap.put(data[0], data[1]);
-    }
+    Map<String, String> expectedDataMap =
+        dataList.stream().collect(Collectors.toMap(data -> data[0], data -> data[1]));
+
     Map<String, String> actualDataMap =
         CsvFiles.getCsvDataMap(csvStringFile.getPath(), headerPresent);
     assertEquals(expectedDataMap, actualDataMap);
@@ -138,11 +138,15 @@ public class CsvFilesTest {
       actualDataMapList.put(
           actualDataMapEntry.getKey(), Arrays.asList(actualDataMapEntry.getValue()));
     }
-    Map<String, List<String>> expectedDataMap = Maps.newHashMap();
-    for (String[] rowData : dataList) {
-      expectedDataMap.put(
-          rowData[0], Arrays.asList(Arrays.copyOfRange(rowData, 1, rowData.length)));
-    }
+
+    Map<String, List<String>> expectedDataMap =
+        dataList
+            .stream()
+            .collect(
+                Collectors.toMap(
+                    rowData -> rowData[0],
+                    rowData -> Arrays.asList(Arrays.copyOfRange(rowData, 1, rowData.length))));
+
     assertEquals(expectedDataMap, actualDataMapList);
   }
 

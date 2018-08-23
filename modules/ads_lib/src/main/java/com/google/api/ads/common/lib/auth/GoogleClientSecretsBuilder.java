@@ -21,11 +21,9 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets.Details;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
-
-import org.apache.commons.configuration.Configuration;
-
 import java.io.File;
 import java.net.URL;
+import org.apache.commons.configuration.Configuration;
 
 /**
  * Builder for {@link GoogleClientSecrets}.
@@ -36,7 +34,8 @@ public class GoogleClientSecretsBuilder {
    * Enum representing the API that GoogleClientSecretsBuilder can be used for.
    */
   public static enum Api {
-    ADWORDS("api.adwords."), DFP("api.dfp.");
+    ADWORDS("api.adwords."),
+    AD_MANAGER("api.admanager.");
 
     private final String propKeyPrefix;
 

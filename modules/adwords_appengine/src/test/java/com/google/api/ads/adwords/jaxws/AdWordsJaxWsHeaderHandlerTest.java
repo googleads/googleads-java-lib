@@ -170,12 +170,15 @@ public class AdWordsJaxWsHeaderHandlerTest {
       assertEquals(topLevelNamespace, soapValue.getNamespaceURI());
       ArrayList<SOAPElement> children = Lists.newArrayList(soapValue.getChildElements());
       assertEquals(expectedHeaders.size(), children.size());
-      for (SOAPElement child : children) {
-        assertEquals(namespace, child.getNamespaceURI());
-        assertTrue(child.getLocalName(), expectedHeaders.containsKey(child.getLocalName()));
-        assertEquals(child.getLocalName(), expectedHeaders.get(child.getLocalName()),
-            child.getFirstChild().getTextContent().toString());
-      }
+      children.forEach(
+          child -> {
+            assertEquals(namespace, child.getNamespaceURI());
+            assertTrue(child.getLocalName(), expectedHeaders.containsKey(child.getLocalName()));
+            assertEquals(
+                child.getLocalName(),
+                expectedHeaders.get(child.getLocalName()),
+                child.getFirstChild().getTextContent());
+          });
     } else {
       fail("Generated headerValue is not a SOAPElement: " + headerArg.getValue());
     }
@@ -188,9 +191,6 @@ public class AdWordsJaxWsHeaderHandlerTest {
     Map<String, Object> headerElements = new HashMap<String, Object>();
     AdWordsSession adWordsSession = new AdWordsSession.Builder().withOAuth2Credential(credential)
         .withDeveloperToken("developerToken").withUserAgent(USER_AGENT).build();
-    String authHeader = "oAuTh2";
-    Map<String, String> headersMap = new HashMap<String, String>();
-    headersMap.put("Authorization", authHeader);
 
     headerHandler.setAuthenticationHeaders(soapClient, headerElements, adWordsSession);
 

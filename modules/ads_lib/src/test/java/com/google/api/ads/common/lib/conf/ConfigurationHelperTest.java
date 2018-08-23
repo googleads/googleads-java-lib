@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.common.lib.conf.ConfigurationHelper.ConfigurationInfo;
 import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.io.File;
@@ -30,7 +31,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -67,18 +68,16 @@ public class ConfigurationHelperTest {
     AbstractConfiguration.setDefaultListDelimiter(',');
     clearTestSystemProperties();
     this.configurationHelper = new ConfigurationHelper();
-    this.test1Properties = new HashMap<String, String>() {{
-        this.put("a.b.c", "efgh");
-        this.put("a.b.d", "1234");
-      }};
+    this.test1Properties =
+            ImmutableMap.of(
+                "a.b.c", "efgh",
+                "a.b.d", "1234");
 
-    this.test3Properties = new HashMap<String, String>() {{
-        this.put("a.b.c", "jklm");
-        this.put("e.f.h", "90123");
-        // The value in the file is "foo,bar" but AbstractConfiguration.getString(key) only returns
-        // the first item in a collection.
-        this.put("i.j.k", "foo");
-      }};
+    this.test3Properties =
+        ImmutableMap.of(
+            "a.b.c", "jklm",
+            "e.f.h", "90123",
+            "i.j.k", "foo");
   }
 
   @Test
@@ -180,7 +179,7 @@ public class ConfigurationHelperTest {
     String[] stringArray = configuration.getStringArray("i.j.k");
     assertArrayEquals(new String[]{"foo", "bar"}, stringArray);
   }
-  
+
   /**
    * Asserts that reading list values from a properties file works properly when the default
    * list delimiter is modified.
@@ -194,25 +193,21 @@ public class ConfigurationHelperTest {
     String[] stringArray = configuration.getStringArray("i.j.k");
     assertArrayEquals(new String[] {"foo", "bar"}, stringArray);
   }
-  
+
   @Test
   public void testFromSystem() throws Exception {
-    for (Map.Entry<String, String> entry : test3Properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
+    test3Properties.forEach((key, value) -> System.setProperty(key, value));
     assertContains(test3Properties, configurationHelper.fromSystem());
   }
-  
+
   @Test
   public void testFromSystem_containsListValues() throws Exception {
     AbstractConfiguration.setDefaultListDelimiter('|');
     Map<String, String> properties = Maps.newHashMap();
     properties.put("testProperty", "b,bee");
-    
-    for (Entry<String, String> entry : properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
-    
+
+    properties.forEach((key, value) -> System.setProperty(key, value));
+
     Splitter splitter = Splitter.on(',');
     Configuration systemConfiguration = configurationHelper.fromSystem();
     for (Entry<String, String> entry : properties.entrySet()) {
@@ -239,9 +234,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlOverride() throws Exception {
-    for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
+    test1Properties.forEach((key, value) -> System.setProperty(key, value));
 
     System.setProperty("testProperty", "testValue");
 
@@ -270,9 +263,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlOverride() throws Exception {
-    for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
+    test1Properties.forEach((key, value) -> System.setProperty(key, value));
 
     System.setProperty("testProperty", "testValue");
 
@@ -288,9 +279,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlNotFound() throws Exception {
-    for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
+    test1Properties.forEach((key, value) -> System.setProperty(key, value));
 
     System.setProperty("testProperty", "testValue");
 
@@ -306,9 +295,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlNotFound() throws Exception {
-    for (Map.Entry<String, String> entry : test1Properties.entrySet()) {
-      System.setProperty(entry.getKey(), entry.getValue());
-    }
+    test1Properties.forEach((key, value) -> System.setProperty(key, value));
 
     System.setProperty("testProperty", "testValue");
 
@@ -449,7 +436,7 @@ public class ConfigurationHelperTest {
     assertEquals("Configuration does not have the same number of properties",
         properties.size(), count);
   }
-  
+
   /**
    * Asserts that the actual configuration contains the expected ones.
    */
@@ -466,10 +453,9 @@ public class ConfigurationHelperTest {
    * Asserts that the configuration contains the properties.
    */
   private static void assertContains(Map<String, String> properties, Configuration configuration) {
-    for (Map.Entry<String, String> entry : properties.entrySet()) {
-      String key = entry.getKey();
-      assertPropertyEquals(key, properties.get(key), configuration.getString(key));
-    }
+    properties.forEach(
+        (key, value) ->
+            assertPropertyEquals(key, properties.get(key), configuration.getString(key)));
   }
 
   private static void assertPropertyEquals(String key, Object expectedValue,
@@ -482,8 +468,6 @@ public class ConfigurationHelperTest {
    * Clears the tested properties from the System.
    */
   private void clearTestSystemProperties() {
-    for (String key : allPropertyKeys) {
-      System.clearProperty(key);
-    }
+    Arrays.stream(allPropertyKeys).forEach(System::clearProperty);
   }
 }

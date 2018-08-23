@@ -22,7 +22,6 @@ import com.google.api.ads.adwords.lib.selectorfields.EntityField;
 import com.google.api.ads.adwords.lib.utils.QueryBuilder;
 import com.google.api.ads.adwords.lib.utils.ServiceQueryInterface;
 import com.google.api.ads.adwords.lib.utils.ServiceQueryInterface.BuilderInterface;
-import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Iterables;
@@ -30,7 +29,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.NavigableSet;
 
 /**
@@ -99,12 +97,8 @@ public class ServiceQueryBuilderImpl
         ImmutableSortedSet.copyOf(
             Lists.transform(
                 Lists.newArrayList(fields),
-                new Function<EntityField, String>() {
-                  @Override
-                  public String apply(EntityField input) {
-                    return input.name();
-                  }
-                }));
+                input -> input.name()
+                ));
     return builder;
   }
 
@@ -181,12 +175,8 @@ public class ServiceQueryBuilderImpl
           Lists.newArrayList(
               Iterables.transform(
                   orderByMultiMap.entrySet(),
-                  new Function<Entry<String, String>, String>() {
-                    @Override
-                    public String apply(Entry<String, String> orderByPair) {
-                      return String.format("%s %s", orderByPair.getKey(), orderByPair.getValue());
-                    }
-                  }));
+                  orderByPair ->
+                      String.format("%s %s", orderByPair.getKey(), orderByPair.getValue())));
       stringBuilder.append(
           String.format(" ORDER BY %s", Joiner.on(", ").skipNulls().join(orderByList)));
     }

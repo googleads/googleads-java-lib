@@ -56,7 +56,6 @@ import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -65,6 +64,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.xml.namespace.QName;
 import org.apache.axis.encoding.SerializationContext;
 import org.hamcrest.Matchers;
@@ -208,9 +209,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
         brandMotorolaOriginalPartitionId,
         1L));
 
-    for (CriterionDescriptor descriptor : descriptors) {
-      adGroupCriteria.add(descriptor.createCriterion());
-    }
+    descriptors.forEach(descriptor -> adGroupCriteria.add(descriptor.createCriterion()));
     Map<Long, Map<Long, CriterionDescriptor>> descriptorMap = buildDescriptorMap(descriptors);
 
     ProductPartitionTree tree =
@@ -340,11 +339,10 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
 
     assertEquals("Number of operations is incorrect", expectedOpCount, mutateOperations.size());
 
-    List<CriterionDescriptor> nodeDescriptors = Lists.newArrayList();
-    for (ProductPartitionNode node :
-        Arrays.asList(rootNode, brand1, brand1Offer1, brand1Offer2, brand2)) {
-      nodeDescriptors.add(new CriterionDescriptor(node));
-    }
+    List<CriterionDescriptor> nodeDescriptors =
+        Stream.of(rootNode, brand1, brand1Offer1, brand1Offer2, brand2)
+            .map(node -> new CriterionDescriptor(node))
+            .collect(Collectors.toList());
 
     int opNum = 0;
     List<CriterionDescriptor> opDescriptors = Lists.newArrayList();
@@ -663,10 +661,10 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
         Long bidAmount = null;
         this.trackingUrlTemplate = biddableCriterion.getTrackingUrlTemplate();
         if (biddableCriterion.getUrlCustomParameters() != null) {
-          for (CustomParameter customParam :
-              biddableCriterion.getUrlCustomParameters().getParameters()) {
-            this.customParams.put(customParam.getKey(), customParam.getValue());
-          }
+          Stream.of(biddableCriterion.getUrlCustomParameters().getParameters())
+              .forEach(
+                  customParam ->
+                      this.customParams.put(customParam.getKey(), customParam.getValue()));
         }
         if (biddingConfig != null) {
           Bids[] bids = biddingConfig.getBids();

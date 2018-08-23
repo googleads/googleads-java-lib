@@ -79,7 +79,7 @@ public class OfflineCredentials {
    */
   public static enum Api implements OAuthConfig {
     ADWORDS("api.adwords.", "https://www.googleapis.com/auth/adwords"),
-    DFP("api.dfp.", "https://www.googleapis.com/auth/dfp");
+    AD_MANAGER("api.admanager.", "https://www.googleapis.com/auth/dfp");
 
     private final String propKeyPrefix;
     private final String scope;
@@ -105,8 +105,8 @@ public class OfflineCredentials {
       switch (this) {
         case ADWORDS:
           return com.google.api.ads.adwords.lib.utils.AdWordsInternals.getInstance();
-        case DFP:
-          return com.google.api.ads.dfp.lib.utils.DfpInternals.getInstance();
+        case AD_MANAGER:
+          return com.google.api.ads.admanager.lib.utils.AdManagerInternals.getInstance();
         default:
           return null;
       }

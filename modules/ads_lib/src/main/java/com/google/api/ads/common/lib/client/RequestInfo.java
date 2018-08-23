@@ -62,7 +62,7 @@ public class RequestInfo {
   
   /**
    * Gets the name corresponding to {@link #getContextValue()}. For example,
-   * {@code clientCustomerId} for AdWords, or {@code networkCode} for DFP.
+   * {@code clientCustomerId} for AdWords, or {@code networkCode} for Ad Manager.
    */
   public String getContextName() {
     return contextName;
@@ -70,7 +70,7 @@ public class RequestInfo {
   
   /**
    * Returns the context value, such as the clientCustomerId for AdWords, or the networkCode for
-   * DFP.
+   * Ad Manager.
    */
   public String getContextValue() {
     return contextValue;

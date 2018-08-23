@@ -218,9 +218,7 @@ public class ProductPartitionNodeDifferTest {
     assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(newNode, origNode, dimensionComparator));
     // Result should be the same if one of the nodes has a null custom parameters.
-    for (String paramKey : newNode.getCustomParameters().keySet()) {
-      newNode.removeCustomParameter(paramKey);
-    }
+    newNode.getCustomParameters().keySet().forEach(newNode::removeCustomParameter);
     assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,
         ProductPartitionNodeDiffer.diff(origNode, newNode, dimensionComparator));
     assertEquals(NodeDifference.BIDDABLE_UNIT_CHANGE,

@@ -54,8 +54,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 import org.slf4j.Logger;
 
 /** Tests for {@link RequestInfoXPathSet}. */
@@ -168,13 +166,10 @@ public class RequestInfoXPathSetTest {
     final String payload = "<foo><bar>MyBar</bar></foo>";
     when(transformerSupplier.get()).thenReturn(transformer);
     doAnswer(
-            new Answer<Void>() {
-              @Override
-              public Void answer(InvocationOnMock invocation) throws Throwable {
-                StreamResult streamResult = (StreamResult) invocation.getArguments()[1];
-                streamResult.getOutputStream().write(payload.getBytes(StandardCharsets.UTF_8));
-                return null;
-              }
+            invocation -> {
+              StreamResult streamResult = (StreamResult) invocation.getArguments()[1];
+              streamResult.getOutputStream().write(payload.getBytes(StandardCharsets.UTF_8));
+              return null;
             })
         .when(transformer)
         .transform(any(Source.class), any(StreamResult.class));

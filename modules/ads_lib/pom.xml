@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.16.1-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,7 +29,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>3.16.1-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads APIs Client Library common components</name>
@@ -73,7 +73,7 @@
             <configuration>
               <excludes>
                 <exclude>**/AdWordsLibConfigurationIntegrationTest.java</exclude>
-                <exclude>**/DfpLibConfigurationIntegrationTest.java</exclude>
+                <exclude>**/AdManagerLibConfigurationIntegrationTest.java</exclude>
                 <exclude>**/LoggingModuleTest.java</exclude>
               </excludes>
             </configuration>
@@ -91,7 +91,7 @@
               <forkCount>1</forkCount>
               <includes>
                 <include>**/AdWordsLibConfigurationIntegrationTest.java</include>
-                <include>**/DfpLibConfigurationIntegrationTest.java</include>
+                <include>**/AdManagerLibConfigurationIntegrationTest.java</include>
                 <include>**/LoggingModuleTest.java</include>
               </includes>
             </configuration>
@@ -109,9 +109,9 @@
         </includes>
       </resource>
       <resource>
-        <targetPath>com/google/api/ads/dfp/lib/conf/props</targetPath>
+        <targetPath>com/google/api/ads/admanager/lib/conf/props</targetPath>
         <filtering>false</filtering>
-        <directory>src/main/java/com/google/api/ads/dfp/lib/conf/props</directory>
+        <directory>src/main/java/com/google/api/ads/admanager/lib/conf/props</directory>
         <includes>
           <include>*.properties</include>
         </includes>
@@ -170,9 +170,9 @@
         </includes>
       </testResource>
       <testResource>
-        <targetPath>com/google/api/ads/dfp/lib/soap/testing</targetPath>
+        <targetPath>com/google/api/ads/admanager/lib/soap/testing</targetPath>
         <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/dfp/lib/soap/testing</directory>
+        <directory>src/test/java/com/google/api/ads/admanager/lib/soap/testing</directory>
         <includes>
           <include>*.xml</include>
         </includes>

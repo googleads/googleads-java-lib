@@ -42,9 +42,10 @@ import com.google.common.collect.Sets;
 import com.google.common.reflect.ClassPath;
 import com.google.common.reflect.ClassPath.ClassInfo;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
@@ -60,7 +61,7 @@ public class ProductDimensionsTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
-  
+
   private static final String STRING_VALUE = "dummy";
 
   /**
@@ -68,14 +69,12 @@ public class ProductDimensionsTest {
    * shopping campaigns or are not ADD-able.
    */
   private static final ImmutableSet<Class<? extends ProductDimension>> DIMENSION_TYPES_TO_IGNORE =
-      ImmutableSet
-          .<Class<? extends ProductDimension>>builder()
-          .add(ProductAdwordsGrouping.class)
-          .add(ProductAdwordsLabels.class)
-          .add(ProductLegacyCondition.class)
-          .add(ProductTypeFull.class)
-          .add(UnknownProductDimension.class)
-          .build();
+      ImmutableSet.of(
+          ProductAdwordsGrouping.class,
+          ProductAdwordsLabels.class,
+          ProductLegacyCondition.class,
+          ProductTypeFull.class,
+          UnknownProductDimension.class);
 
   /**
    * Test method for createType.
@@ -195,24 +194,31 @@ public class ProductDimensionsTest {
         .substring(0, ProductDimension.class.getPackage().getName().length() - ".cm".length());
 
     ClassPath classPath = ClassPath.from(ProductDimension.class.getClassLoader());
-    Set<Class<? extends ProductDimension>> dimensionSubclasses = Sets.newHashSet();
-    for (ClassInfo classInfo : classPath.getTopLevelClassesRecursive(basePackageNameForVersion)) {
-      Class<?> classInfoClass = classInfo.load();
-      if (ProductDimension.class.isAssignableFrom(classInfoClass)
-          && ProductDimension.class != classInfoClass) {
-        dimensionSubclasses.add((Class<? extends ProductDimension>) classInfoClass);
-      }
-    }
+    Set<?> dimensionSubclasses =
+        classPath
+            .getTopLevelClassesRecursive(basePackageNameForVersion)
+            .stream()
+            .map(ClassInfo::load)
+            .filter(
+                classInfoClass ->
+                    ProductDimension.class.isAssignableFrom(classInfoClass)
+                        && ProductDimension.class != classInfoClass)
+            .collect(Collectors.toSet());
 
     Map<Class<? extends ProductDimension>, Method> factoryMethodsMap =
         getAllProductDimensionFactoryMethods();
-    for (Class<? extends ProductDimension> dimensionSubclass : dimensionSubclasses) {
-      if (!DIMENSION_TYPES_TO_IGNORE.contains(dimensionSubclass)) {
-        assertThat(
-            "No factory method exists for subclass " + dimensionSubclass + " of ProductDimension",
-            dimensionSubclass, Matchers.isIn(factoryMethodsMap.keySet()));
-      }
-    }
+
+    dimensionSubclasses
+        .stream()
+        .filter(dimensionSubclass -> !DIMENSION_TYPES_TO_IGNORE.contains(dimensionSubclass))
+        .forEach(
+            dimensionSubclass ->
+                assertThat(
+                    "No factory method exists for subclass "
+                        + dimensionSubclass
+                        + " of ProductDimension",
+                    (Class<? extends ProductDimension>) dimensionSubclass,
+                    Matchers.isIn(factoryMethodsMap.keySet())));
   }
 
   /**
@@ -223,25 +229,24 @@ public class ProductDimensionsTest {
   public void testCoverageOfAllCreateMethods() throws Exception {
     // Collect all of the testCreateX methods from this test class.
     Set<String> actualTestMethodNames = Sets.newHashSet();
-    for (Method method : getClass().getMethods()) {
-      String methodName = method.getName();
-      if (methodName.startsWith("testCreate") && !methodName.contains("_")) {
-        actualTestMethodNames.add(methodName);
-      }
-    }
+    Arrays.stream(getClass().getMethods())
+        .map(Method::getName)
+        .filter(methodName -> methodName.startsWith("testCreate") && !methodName.contains("_"))
+        .forEach(actualTestMethodNames::add);
 
     // Assert that each createX method of ProductDimensions has a corresponding
     // testCreateX method in this test class.
-    for (Entry<Class<? extends ProductDimension>, Method> methodEntry :
-        getAllProductDimensionFactoryMethods().entrySet()) {
-      Method method = methodEntry.getValue();
-      String methodName = method.getName();
-      if (methodName.startsWith("create")) {
-        String expectedTestMethodName = "testCreate" + methodName.substring("create".length());
-        assertThat("No test exists for factory method", expectedTestMethodName,
-            Matchers.isIn(actualTestMethodNames));
-      }
-    }
+    getAllProductDimensionFactoryMethods()
+        .entrySet()
+        .stream()
+        .map(methodEntry -> methodEntry.getValue().getName())
+        .filter(methodName -> methodName.startsWith("create"))
+        .forEach(
+            methodName ->
+                assertThat(
+                    "No test exists for factory method",
+                    "testCreate" + methodName.substring("create".length()),
+                    Matchers.isIn(actualTestMethodNames)));
   }
 
   /**
@@ -250,15 +255,19 @@ public class ProductDimensionsTest {
   @SuppressWarnings("unchecked")
   static Map<Class<? extends ProductDimension>, Method> getAllProductDimensionFactoryMethods() {
     Map<Class<? extends ProductDimension>, Method> methodsMap = Maps.newHashMap();
-    for (Method method : ProductDimensions.class.getMethods()) {
-      String methodName = method.getName();
-      if (methodName.startsWith("create")) {
-        Class<?> returnType = method.getReturnType();
-        assertTrue(String.format("Return type %s of %s is not a subclass of ProductDimension",
-            returnType, methodName), ProductDimension.class.isAssignableFrom(returnType));
-        methodsMap.put((Class<? extends ProductDimension>) returnType, method);
-      }
-    }
+
+    Arrays.stream(ProductDimensions.class.getMethods())
+        .filter(method -> method.getName().startsWith("create"))
+        .forEach(
+            method -> {
+              assertTrue(
+                  String.format(
+                      "Return type %s of %s is not a subclass of ProductDimension",
+                      method.getReturnType(), method.getName()),
+                  ProductDimension.class.isAssignableFrom(method.getReturnType()));
+              methodsMap.put((Class<? extends ProductDimension>) method.getReturnType(), method);
+            });
+
     return methodsMap;
   }
 }

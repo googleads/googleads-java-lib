@@ -53,11 +53,10 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.slf4j.Logger;
 
-/**
+/** 
  * Tests for the {@link JaxWsSoapContextHandler} class.
  */
 @RunWith(JUnit4.class)
@@ -80,7 +79,7 @@ public class JaxWsSoapContextHandlerTest {
   @Mock private Logger mockLogger;
   private RequestInfoXPathSet requestInfoXPathSet;
   private ResponseInfoXPathSet responseInfoXPathSet;
-  
+
   private static final String OPERATION_LOCAL_NAME = "saveAdvertiser";
 
   public JaxWsSoapContextHandlerTest() {}
@@ -103,14 +102,12 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleMessage_inbound() throws Exception {
     final String mockSoapXml = "<Test>Xml Message</Test>";
-    Answer<Object> writeXml = new Answer<Object>() {
-      @Override
-      public Object answer(InvocationOnMock invocation) throws Throwable {
-        OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
-        return null;
-      }
-    };
+    Answer<Object> writeXml =
+        (invocation) -> {
+          OutputStream stream = (OutputStream) invocation.getArguments()[0];
+          Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+          return null;
+        };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
         .thenReturn(Boolean.FALSE);
@@ -125,14 +122,12 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleMessage_outboundNoHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
-    Answer<Object> transform = new Answer<Object>() {
-      @Override
-      public Object answer(InvocationOnMock invocation) throws Throwable {
-        StreamResult stream = (StreamResult) invocation.getArguments()[1];
-        Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
-        return null;
-      }
-    };
+    Answer<Object> transform =
+        (invocation) -> {
+          StreamResult stream = (StreamResult) invocation.getArguments()[1];
+          Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
+          return null;
+        };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
         .thenReturn(Boolean.TRUE);
@@ -166,14 +161,13 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleMessage_outboundWithHeaders() throws Exception {
     final String mockSoapXml = "<Hi>Hello world!</Hi>";
-    Answer<Object> transform = new Answer<Object>() {
-      @Override
-      public Object answer(InvocationOnMock invocation) throws Throwable {
-        StreamResult stream = (StreamResult) invocation.getArguments()[1];
-        Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
-        return null;
-      }
-    };
+    Answer<Object> transform =
+        (invocation) -> {
+          StreamResult stream = (StreamResult) invocation.getArguments()[1];
+          Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
+          return null;
+        };
+
     SOAPElement mockHeader1 = Mockito.mock(SOAPElement.class);
     SOAPElement mockHeader2 = Mockito.mock(SOAPElement.class);
     SOAPElement mockHeader3 = Mockito.mock(SOAPElement.class);
@@ -215,14 +209,12 @@ public class JaxWsSoapContextHandlerTest {
   @Test
   public void testHandleFault() throws Exception {
     final String mockSoapXml = "<Fault>Xml Message</Fault>\n<Fault.Type>fatal</Fault.Type>";
-    Answer<Object> writeXml = new Answer<Object>() {
-      @Override
-      public Object answer(InvocationOnMock invocation) throws Throwable {
-        OutputStream stream = (OutputStream) invocation.getArguments()[0];
-        Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
-        return null;
-      }
-    };
+    Answer<Object> writeXml =
+        (invocation) -> {
+          OutputStream stream = (OutputStream) invocation.getArguments()[0];
+          Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+          return null;
+        };
 
     when(mockSoapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY))
         .thenReturn(Boolean.FALSE);

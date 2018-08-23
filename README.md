@@ -2,7 +2,7 @@ Google Ads APIs Client Library for Java
 =======================================
 
 This project hosts the client library for Java for the various SOAP-based ads
-APIs (AdWords and DFP) at Google.
+APIs (AdWords and Ad Manager) at Google.
 
 ## Features
 
@@ -22,8 +22,7 @@ APIs (AdWords and DFP) at Google.
 ## Announcements and updates
 
 For API and client library updates and news, please follow our
-[Google+ Ads Developers page](https://plus.google.com/+GoogleAdsDevelopers/posts)
-and our [Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/).
+[Google Ads Developers blog](http://googleadsdeveloper.blogspot.com/).
 
 ## Support forum
 
@@ -31,7 +30,7 @@ If you have questions about the client library or the APIs, you can ask them on
 our forums:
 
   * [AdWords API Forum](https://groups.google.com/group/adwords-api)
-  * [DoubleClick for Publishers API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
+  * [Ad Manager API Forum](https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api)
 
 ## Maven artifacts
 
@@ -49,7 +48,7 @@ our forums:
     </dependency>
 ```
 
-### DFP
+### Ad Manager
 ```
     <dependency>
       <groupId>com.google.api-ads</groupId>
@@ -107,22 +106,22 @@ are in the package `com.google.api.ads.adwords.{version}`.
     step.
 
     *   [AdWords ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/resources/ads.properties)
-    *   [DFP ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/dfp_axis/src/main/resources/ads.properties)
+    *   [Ad Manager ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/admanager_axis/src/main/resources/ads.properties)
 
 3.  Setup your OAuth2 credentials.
 
-    The AdWords and DoubleClick for Publishers APIs use
+    The AdWords and Ad Manager APIs use
     [OAuth2](http://oauth.net/2/) as the authentication mechanism. Follow the
     appropriate guide below based on your use case.
 
     **If you're accessing an API using your own credentials...**
 
     *   [Using AdWords](https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
-    *   [Using DFP](https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
+    *   [Using Ad Manager](https://github.com/googleads/googleads-java-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
     **If you're accessing an API on behalf of clients...**
 
-    *   [Developing a web application (AdWords or DFP)](https://github.com/googleads/googleads-java-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+    *   [Developing a web application (AdWords or Ad Manager)](https://github.com/googleads/googleads-java-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 4.  Run an example.
 
@@ -237,8 +236,8 @@ First, add an entry to your `ads.properties` file for each API you plan to use.
 
     # AdWords
     api.adwords.useCompression=true
-    # DFP
-    api.dfp.useCompression=true
+    # Ad Manager 
+    api.admanager.useCompression=true
 
 If using JaxWs, then no further steps are required.
 
@@ -284,7 +283,7 @@ If necessary, set this up in code by doing the following:
     *   [Shopping ProductPartitionTree utility](/googleads/googleads-java-lib/wiki/Shopping-product-partition-utility-for-AdWords)
         for managing
         [partitions in Shopping campaigns](https://developers.google.com/adwords/api/docs/guides/shopping#partitioning).
-*   DFP
+*   Ad Manager 
     *   [Report downloader](/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
         [reports](https://developers.google.com/doubleclick-publishers/docs/reporting).
 

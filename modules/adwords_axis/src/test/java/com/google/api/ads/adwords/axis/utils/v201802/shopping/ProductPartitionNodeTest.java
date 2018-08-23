@@ -41,7 +41,6 @@ import com.google.api.ads.adwords.axis.v201802.cm.ShoppingProductChannelExclusiv
 import com.google.common.collect.Maps;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -179,9 +178,7 @@ public class ProductPartitionNodeTest {
     customParams.put("param2", "value2");
 
     rootNode = rootNode.asBiddableUnit().setTrackingUrlTemplate(trackingUrlTemplate);
-    for (Entry<String, String> paramEntry : customParams.entrySet()) {
-      rootNode.putCustomParameter(paramEntry.getKey(), paramEntry.getValue());
-    }
+    customParams.forEach((key, value) -> rootNode.putCustomParameter(key, value));
     assertEquals(trackingUrlTemplate, rootNode.getTrackingUrlTemplate());
     assertEquals(customParams, rootNode.getCustomParameters());
   }

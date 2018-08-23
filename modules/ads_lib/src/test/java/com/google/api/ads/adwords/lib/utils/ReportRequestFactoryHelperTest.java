@@ -112,11 +112,12 @@ public class ReportRequestFactoryHelperTest {
         }
       }
     }
-    for (String version : versions) {
-      for (ReportingConfiguration reportingConfig : reportingConfigs) {
-        parameters.add(new Object[] {version, reportingConfig});
-      }
-    }
+
+    versions.forEach(
+        version ->
+            reportingConfigs.forEach(
+                reportingConfig -> parameters.add(new Object[] {version, reportingConfig})));
+
     // Also test the case where the reporting config is null.
     reportingConfigs.add(null);
 

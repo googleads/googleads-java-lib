@@ -65,7 +65,7 @@ public class OfflineCredentialsTest {
     HttpTransport httpTransport = new NetHttpTransport();
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withClientSecrets("clientId", "clientSecret")
         .withRefreshToken("refreshToken")
         .withHttpTransport(httpTransport)
@@ -83,7 +83,7 @@ public class OfflineCredentialsTest {
   @Test
   public void testBuilder_serviceAccount() throws Exception {
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withJsonKeyFilePath("jsonKeyFilePath")
         .build();
 
@@ -96,12 +96,12 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_dfp() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
-    
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
+
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
 
@@ -117,10 +117,10 @@ public class OfflineCredentialsTest {
   public void testReadPropertiesFromConfiguration_dfpServiceAccount() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     String jsonKeyFilePath = "someJsonKeyFilePath";
-    config.setProperty("api.dfp.jsonKeyFilePath", jsonKeyFilePath);
-    
+    config.setProperty("api.admanager.jsonKeyFilePath", jsonKeyFilePath);
+
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
 
@@ -130,7 +130,7 @@ public class OfflineCredentialsTest {
     // Create another credential with the service account user set.
     String serviceAccountUser = "someUser@example.com";
     offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .withServiceAccountUser(serviceAccountUser)
         .build();
@@ -193,15 +193,15 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_properPrefix() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientIdDfp");
-    config.setProperty("api.dfp.clientSecret", "clientSecretDfp");
-    config.setProperty("api.dfp.refreshToken", "refreshTokenDfp");
+    config.setProperty("api.admanager.clientId", "clientIdDfp");
+    config.setProperty("api.admanager.clientSecret", "clientSecretDfp");
+    config.setProperty("api.admanager.refreshToken", "refreshTokenDfp");
     config.setProperty("api.adwords.clientId", "clientIdAdWords");
     config.setProperty("api.adwords.clientSecret", "clientSecretAdWords");
     config.setProperty("api.adwords.refreshToken", "refreshTokenAdWords");
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
 
@@ -217,11 +217,11 @@ public class OfflineCredentialsTest {
   public void testReadPropertiesFromConfiguration_properPrefixServiceAccount()
       throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePathDfp");
+    config.setProperty("api.admanager.jsonKeyFilePath", "jsonKeyFilePathDfp");
     config.setProperty("api.adwords.jsonKeyFilePath", "jsonKeyFilePathAdWords");
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
 
@@ -234,12 +234,12 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_missingClientId() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -250,12 +250,12 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_missingClientSecret() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -266,12 +266,12 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_missingRefreshToken() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -282,10 +282,10 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_onlyKeyFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+    config.setProperty("api.admanager.jsonKeyFilePath", "jsonKeyFilePath");
 
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -297,10 +297,10 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_onlyKeyFilePathAndUser() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
-    config.setProperty("api.dfp.serviceAccountUser", "someUser@example.com");
+    config.setProperty("api.admanager.jsonKeyFilePath", "jsonKeyFilePath");
+    config.setProperty("api.admanager.serviceAccountUser", "someUser@example.com");
 
-    OfflineCredentials credentials = new Builder().forApi(Api.DFP).from(config).build();
+    OfflineCredentials credentials = new Builder().forApi(Api.AD_MANAGER).from(config).build();
     assertEquals(
         "service account user should have been set from the config",
         "someUser@example.com",
@@ -313,12 +313,12 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_multipleOAuthTypes() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.jsonKeyFilePath", "jsonKeyFilePath");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.jsonKeyFilePath", "jsonKeyFilePath");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -330,14 +330,14 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromConfiguration_serviceAccountUserNoKeyFile() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
-    config.setProperty("api.dfp.serviceAccountUser", "someUser@example.com");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.serviceAccountUser", "someUser@example.com");
 
     thrown.expect(ValidationException.class);
     new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .from(config)
         .build();
   }
@@ -348,14 +348,14 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     when(configurationHelper.fromFile("path")).thenReturn(config);
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     OfflineCredentials offlineCredentials = builder.fromFile("path").build();
 
@@ -370,14 +370,14 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_withOverride() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     when(configurationHelper.fromFile("path")).thenReturn(config);
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     OfflineCredentials offlineCredentials =
         builder.fromFile("path").withRefreshToken("overrideRefreshToken").build();
@@ -393,18 +393,19 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_refreshTokenBadWithFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
 
     when(configurationHelper.fromFile("/home/user/path")).thenReturn(config);
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
-    thrown.expectMessage("A refresh token must be set as api.dfp.refreshToken in /home/user/path."
-        + "\nIt is required for offline credentials. If you need to create one, "
-        + "see the GetRefreshToken example.");
+    thrown.expectMessage(
+        "A refresh token must be set as api.admanager.refreshToken in /home/user/path."
+            + "\nIt is required for offline credentials. If you need to create one, "
+            + "see the GetRefreshToken example.");
     builder.fromFile("/home/user/path").build();
   }
 
@@ -414,11 +415,11 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_refreshTokenNoFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
     thrown.expectMessage("A refresh token must be set."
@@ -433,18 +434,19 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_clientIdTokenBadWithFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     when(configurationHelper.fromFile("/home/user/path")).thenReturn(config);
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
-    thrown.expectMessage("Client ID must be set as api.dfp.clientId in /home/user/path."
-        + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://console.developers.google.com/project");
+    thrown.expectMessage(
+        "Client ID must be set as api.admanager.clientId in /home/user/path."
+            + "\nIf you do not have a client ID or secret, please create one in the API "
+            + "console: https://console.developers.google.com/project");
     builder.fromFile("/home/user/path").build();
   }
 
@@ -454,11 +456,11 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_clientIdNoFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientSecret", "clientSecret");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientSecret", "clientSecret");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client ID must be set."
@@ -473,18 +475,19 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_clientSecretTokenBadWithFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     when(configurationHelper.fromFile("/home/user/path")).thenReturn(config);
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
-    thrown.expectMessage("Client secret must be set as api.dfp.clientSecret in /home/user/path."
-        + "\nIf you do not have a client ID or secret, please create one in the API "
-        + "console: https://console.developers.google.com/project");
+    thrown.expectMessage(
+        "Client secret must be set as api.admanager.clientSecret in /home/user/path."
+            + "\nIf you do not have a client ID or secret, please create one in the API "
+            + "console: https://console.developers.google.com/project");
     builder.fromFile("/home/user/path").build();
   }
 
@@ -494,11 +497,11 @@ public class OfflineCredentialsTest {
   @Test
   public void testReadPropertiesFromFile_clientSecretNoFilePath() throws Exception {
     PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.dfp.clientId", "clientId");
-    config.setProperty("api.dfp.refreshToken", "refreshToken");
+    config.setProperty("api.admanager.clientId", "clientId");
+    config.setProperty("api.admanager.refreshToken", "refreshToken");
 
     ForApiBuilder builder = new OfflineCredentials.ForApiBuilder(
-        configurationHelper, OfflineCredentials.Api.DFP, oAuth2Helper);
+        configurationHelper, OfflineCredentials.Api.AD_MANAGER, oAuth2Helper);
 
     thrown.expect(ValidationException.class);
     thrown.expectMessage("Client secret must be set."
@@ -515,7 +518,7 @@ public class OfflineCredentialsTest {
     HttpTransport httpTransport = new NetHttpTransport();
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder(oAuth2Helper)
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withClientSecrets("clientId", "clientSecret")
         .withRefreshToken("refreshToken")
         .withHttpTransport(httpTransport)
@@ -541,7 +544,7 @@ public class OfflineCredentialsTest {
   @Test
   public void testGenerateCredential_defaultTransport() throws Exception {
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder(oAuth2Helper)
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withClientSecrets("clientId", "clientSecret")
         .withRefreshToken("refreshToken")
         .build();
@@ -566,7 +569,7 @@ public class OfflineCredentialsTest {
   @Test
   public void testGenerateCredential_IOException() throws Exception {
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder(oAuth2Helper)
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withClientSecrets("clientId", "clientSecret")
         .withRefreshToken("refreshToken")
         .build();
@@ -584,7 +587,7 @@ public class OfflineCredentialsTest {
   @Test
   public void testGenerateCredential_cantRefresh() throws Exception {
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder(oAuth2Helper)
-        .forApi(OfflineCredentials.Api.DFP)
+        .forApi(OfflineCredentials.Api.AD_MANAGER)
         .withClientSecrets("clientId", "clientSecret")
         .withRefreshToken("refreshToken")
         .build();

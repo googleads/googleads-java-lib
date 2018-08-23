@@ -33,9 +33,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.GenericData;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -80,12 +80,11 @@ public class ReportServiceLoggerTest {
     reportServiceLogger = new ReportServiceLogger(loggerDelegate);
 
     requestFactory = new NetHttpTransport().createRequestFactory();
-    // Constructs the request headers.
-    rawRequestHeaders = new HashMap<>();
-    // Adds headers that should be scrubbed.
-    for (String scrubbedHeader : ReportServiceLogger.SCRUBBED_HEADERS) {
-      rawRequestHeaders.put(scrubbedHeader, "foo" + scrubbedHeader);
-    }
+    // Constructs the request headers and adds headers that should be scrubbed
+    rawRequestHeaders =
+        ReportServiceLogger.SCRUBBED_HEADERS
+            .stream()
+            .collect(Collectors.toMap(h -> h, h -> "foo" + h));
     // Adds headers that should not be scrubbed.
     rawRequestHeaders.put("clientCustomerId", "123-456-7890");
     rawRequestHeaders.put("someOtherHeader", "SomeOtherValue");
@@ -170,16 +169,19 @@ public class ReportServiceLoggerTest {
   private void checkResponseInfoAttributes(
       ResponseInfo responseInfo, int statusCode, @Nullable String statusMessage) {
     String responsePayloadLower = responseInfo.getPayload().toLowerCase();
-    for (Entry<String, Object> headerEntry : httpRequest.getResponseHeaders().entrySet()) {
-      assertThat(
-          "Payload does not contain response header key",
-          responsePayloadLower,
-          containsString(headerEntry.getKey()));
-      assertThat(
-          "Payload does not contain response header value",
-          responseInfo.getPayload(),
-          containsString(String.valueOf(headerEntry.getValue())));
-    }
+    httpRequest
+        .getResponseHeaders()
+        .forEach(
+            (key, value) -> {
+              assertThat(
+                  "Payload does not contain response header key",
+                  responsePayloadLower,
+                  containsString(key));
+              assertThat(
+                  "Payload does not contain response header value",
+                  responseInfo.getPayload(),
+                  containsString(String.valueOf(value)));
+            });
     assertThat(
         "Payload does not contain redacted string",
         responseInfo.getPayload(),

@@ -16,7 +16,6 @@ package com.google.api.ads.common.lib.useragent;
 
 import com.google.api.ads.adwords.lib.AdWordsPluginModule;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2;
@@ -25,7 +24,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import java.util.List;
-import javax.annotation.Nullable;
 
 /**
  * Combines all user agents along with a user supplied string.
@@ -91,12 +89,12 @@ public class UserAgentCombiner {
     StringBuilder agentStringBuilder = new StringBuilder();
     agentStringBuilder.append(nonLibraryUserAgent);
     agentStringBuilder.append(" (");
-    agentStringBuilder.append(Joiner.on(", ").skipNulls().join(
-        Iterables.transform(userAgentProviders, new Function<UserAgentProvider, String>() {
-          @Override
-          public String apply(@Nullable UserAgentProvider input) {
-            return input == null ? null : input.getUserAgent();
-          }})));
+    Joiner.on(", ")
+        .skipNulls()
+        .appendTo(
+            agentStringBuilder,
+            Iterables.transform(
+                userAgentProviders, input -> input == null ? null : input.getUserAgent()));
     agentStringBuilder.append(')');
     return agentStringBuilder.toString();
   }

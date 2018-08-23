@@ -1,3 +1,18 @@
+4.0.0 - 08/23/2018
+-------------------
+AdWords:
+  - No changes.
+
+Ad Manager:
+  - DFP is now Ad Manager. See the migration guide at
+    https://github.com/googleads/googleads-java-lib/wiki/DFP-to-Ad-Manager-rebrand-guide
+  - Added support for v201808.
+  - Removed support for v201708.
+  - Removed examples for v201711.
+
+Common:
+  - No changes.
+
 3.16.0 - 07/25/2018
 -------------------
 AdWords:

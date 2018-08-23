@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>3.16.1-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,11 +30,11 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>dfp-axis</artifactId>
-  <version>3.16.1-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>DFP Axis classes</name>
-  <description>DFP-specific Axis components.</description>
+  <name>Ad Manager Axis classes</name>
+  <description>Ad Manager specific Axis components.</description>
 
   <build>
     <plugins>
@@ -50,8 +50,8 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>**/DfpAxisSoapIntegrationTest.java</exclude>
-                <exclude>**/DfpAxisSoapCompressionIntegrationTest.java</exclude>
+                <exclude>**/AdManagerAxisSoapIntegrationTest.java</exclude>
+                <exclude>**/AdManagerAxisSoapCompressionIntegrationTest.java</exclude>
                 <exclude>**/UserAgentCombinerTest.java</exclude>
               </excludes>
             </configuration>
@@ -68,8 +68,8 @@
               <reuseForks>false</reuseForks>
               <forkCount>1</forkCount>
               <includes>
-                <include>**/DfpAxisWsSoapIntegrationTest.java</include>
-                <include>**/DfpAxisWsSoapCompressionIntegrationTest.java</include>
+                <include>**/AdManagerAxisWsSoapIntegrationTest.java</include>
+                <include>**/AdManagerAxisWsSoapCompressionIntegrationTest.java</include>
                 <include>**/UserAgentCombinerTest.java</include>
               </includes>
             </configuration>
@@ -79,9 +79,9 @@
     </plugins>
     <resources>
       <resource>
-        <targetPath>com/google/api/ads/dfp/axis/conf/props</targetPath>
+        <targetPath>com/google/api/ads/admanager/axis/conf/props</targetPath>
         <filtering>false</filtering>
-        <directory>src/main/java/com/google/api/ads/dfp/axis/conf/props</directory>
+        <directory>src/main/java/com/google/api/ads/admanager/axis/conf/props</directory>
         <includes>
           <include>*.properties</include>
         </includes>
@@ -89,17 +89,17 @@
      </resources>
      <testResources>
        <testResource>
-         <targetPath>com/google/api/ads/dfp/axis/testing</targetPath>
+         <targetPath>com/google/api/ads/admanager/axis/testing</targetPath>
          <filtering>false</filtering>
-         <directory>src/test/java/com/google/api/ads/dfp/axis/testing</directory>
+         <directory>src/test/java/com/google/api/ads/admanager/axis/testing</directory>
          <includes>
            <include>*.xml</include>
          </includes>
        </testResource>
       <testResource>
-        <targetPath>com/google/api/ads/dfp/axis/props</targetPath>
+        <targetPath>com/google/api/ads/admanager/axis/props</targetPath>
         <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/dfp/axis/props</directory>
+        <directory>src/test/java/com/google/api/ads/admanager/axis/props</directory>
         <includes>
           <include>*.properties</include>
         </includes>
@@ -112,12 +112,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib-axis</artifactId>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Third party dependencies -->
@@ -128,7 +128,7 @@
       <artifactId>ads-lib</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
-      <version>3.16.1-SNAPSHOT</version>
+      <version>4.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
