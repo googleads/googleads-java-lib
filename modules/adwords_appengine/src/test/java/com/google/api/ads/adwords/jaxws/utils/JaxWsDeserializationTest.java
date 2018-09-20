@@ -18,9 +18,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.api.ads.adwords.jaxws.utils.v201806.batchjob.BatchJobMutateResponse;
-import com.google.api.ads.adwords.jaxws.v201806.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.jaxws.v201806.cm.CriterionError;
+import com.google.api.ads.adwords.jaxws.utils.v201809.batchjob.BatchJobMutateResponse;
+import com.google.api.ads.adwords.jaxws.v201809.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.jaxws.v201809.cm.CriterionError;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBDeserializer;
 
 import org.hamcrest.Matchers;

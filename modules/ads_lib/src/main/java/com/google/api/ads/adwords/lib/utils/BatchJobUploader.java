@@ -25,7 +25,6 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
@@ -92,7 +91,7 @@ public class BatchJobUploader {
     } else {
       effectiveStatus = batchJobUploadStatus;
     }
-    
+
     // The process below follows the Google Cloud Storage guidelines for resumable
     // uploads of unknown size:
     // https://cloud.google.com/storage/docs/concepts-techniques#unknownresumables
@@ -104,7 +103,7 @@ public class BatchJobUploader {
     } catch (IOException e) {
       throw new BatchJobException("Failed to post-process the request content", e);
     }
-    
+
     String requestXml = null;
     Throwable exception = null;
     BatchJobUploadResponse batchJobUploadResponse = null;
@@ -113,17 +112,14 @@ public class BatchJobUploader {
     try {
       HttpRequestFactory requestFactory =
           httpTransport.createRequestFactory(
-              new HttpRequestInitializer() {
-                @Override
-                public void initialize(HttpRequest request) throws IOException {
-                  HttpHeaders headers = createHttpHeaders();
-                  headers.setContentLength(contentLength);
-                  headers.setContentRange(
-                      constructContentRangeHeaderValue(
-                          contentLength, isLastRequest, effectiveStatus));
-                  request.setHeaders(headers);
-                  request.setLoggingEnabled(true);
-                }
+              req -> {
+                HttpHeaders headers = createHttpHeaders();
+                headers.setContentLength(contentLength);
+                headers.setContentRange(
+                    constructContentRangeHeaderValue(
+                        contentLength, isLastRequest, effectiveStatus));
+                req.setHeaders(headers);
+                req.setLoggingEnabled(true);
               });
 
       // Incremental uploads require a PUT request.
@@ -170,16 +166,14 @@ public class BatchJobUploader {
     // This follows the Google Cloud Storage guidelines for initiating resumable uploads:
     // https://cloud.google.com/storage/docs/resumable-uploads-xml
     HttpRequestFactory requestFactory =
-        httpTransport.createRequestFactory(new HttpRequestInitializer() {
-          @Override
-          public void initialize(HttpRequest request) throws IOException {
-            HttpHeaders headers = createHttpHeaders();
-            headers.setContentLength(0L);
-            headers.set("x-goog-resumable", "start");
-            request.setHeaders(headers);
-            request.setLoggingEnabled(true);
-          }
-        });
+        httpTransport.createRequestFactory(
+            req -> {
+              HttpHeaders headers = createHttpHeaders();
+              headers.setContentLength(0L);
+              headers.set("x-goog-resumable", "start");
+              req.setHeaders(headers);
+              req.setLoggingEnabled(true);
+            });
 
     try {
       HttpRequest httpRequest =
@@ -197,7 +191,7 @@ public class BatchJobUploader {
 
   /**
    * Post-processes the request content to conform to the requirements of Google Cloud Storage.
-   * 
+   *
    * @param content the content produced by the {@link BatchJobUploadBodyProvider}.
    * @param isFirstRequest if this is the first request for the batch job.
    * @param isLastRequest if this is the last request for the batch job.
@@ -227,7 +221,7 @@ public class BatchJobUploader {
   /**
    * Returns {@code serializedRequest} with the start or end {@code mutate} element removed,
    * depending on whether the request is the first and/or last request.
-   * 
+   *
    * <p>Callers should ensure that {@code serializedRequest} does <em>not</em> contain an XML
    * declaration.
    */
@@ -255,7 +249,7 @@ public class BatchJobUploader {
     }
     return serializedRequest.substring(beginIndex, endIndex);
   }
-  
+
   /**
    * Constructs the content range header value for the specified arguments.
    * @param requestLength the length of the request that's about to be uploaded

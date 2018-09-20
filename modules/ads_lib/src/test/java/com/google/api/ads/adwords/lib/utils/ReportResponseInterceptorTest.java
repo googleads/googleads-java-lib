@@ -27,7 +27,6 @@ import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
@@ -134,16 +133,11 @@ public class ReportResponseInterceptorTest {
       return ReportResponseInterceptorTest.this.lowLevelRequest;
     }
 
-    /**
-     * Returns a request factory suitable for testing. Use this instead of createRequestFactory.
-     */
+    /** Returns a request factory suitable for testing. Use this instead of createRequestFactory. */
     public HttpRequestFactory createFakeRequestFactory() {
-      return this.createRequestFactory(new HttpRequestInitializer() {
-        @Override
-        public void initialize(HttpRequest request) throws IOException {
-          request.setResponseInterceptor(ReportResponseInterceptorTest.this.interceptor);
-        }
-      });
+      return this.createRequestFactory(
+          request ->
+              request.setResponseInterceptor(ReportResponseInterceptorTest.this.interceptor));
     }
   }
 }

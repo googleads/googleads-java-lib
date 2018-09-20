@@ -68,9 +68,11 @@ import com.google.common.collect.Sets;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * This code example migrates your feed based sitelinks at campaign level to use extension settings.
@@ -512,16 +514,13 @@ public class MigrateToExtensionSettings {
       // Extract feed items if applicable.
       feedItemIds.addAll(getFeedItemIdsFromArgument(campaignFeed.getMatchingFunction()));
     } else if (FunctionOperator.AND.equals(functionOperator)) {
-      for (FunctionArgumentOperand argument : campaignFeed.getMatchingFunction().getLhsOperand()) {
-        // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
-        // Extract feed items if applicable.
-        if (argument instanceof FunctionOperand) {
-          FunctionOperand operand = (FunctionOperand) argument;
-          if (FunctionOperator.IN.equals(operand.getValue().getOperator())) {
-            feedItemIds.addAll(getFeedItemIdsFromArgument(operand.getValue()));
-          }
-        }
-      }
+      // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+      // Extract feed items if applicable.
+      Arrays.stream(campaignFeed.getMatchingFunction().getLhsOperand())
+          .filter(FunctionOperand.class::isInstance)
+          .map(argument -> (FunctionOperand) argument)
+          .filter(operand -> FunctionOperator.IN.equals(operand.getValue().getOperator()))
+          .forEach(operand -> feedItemIds.addAll(getFeedItemIdsFromArgument(operand.getValue())));
     } else {
       // There are no other matching functions involving feed item IDs.
     }
@@ -534,8 +533,6 @@ public class MigrateToExtensionSettings {
    * <code>IN(FEED_ITEM_ID,{xxx,xxx})</code>. Otherwise, returns an empty set.
    */
   private static Set<Long> getFeedItemIdsFromArgument(Function function) {
-    Set<Long> feedItemIds = Sets.newHashSet();
-
     if (function.getLhsOperand().length == 1
         && function.getLhsOperand(0) instanceof RequestContextOperand) {
       RequestContextOperand requestContextOperand =
@@ -543,15 +540,14 @@ public class MigrateToExtensionSettings {
       if (RequestContextOperandContextType.FEED_ITEM_ID.equals(
           requestContextOperand.getContextType())
           && FunctionOperator.IN.equals(function.getOperator())) {
-        for (FunctionArgumentOperand argument : function.getRhsOperand()) {
-          if (argument instanceof ConstantOperand) {
-            feedItemIds.add(((ConstantOperand) argument).getLongValue());
-          }
-        }
+        return Arrays.stream(function.getRhsOperand())
+            .filter(ConstantOperand.class::isInstance)
+            .map(argument -> ((ConstantOperand) argument).getLongValue())
+            .collect(Collectors.toSet());
       }
     }
 
-    return feedItemIds;
+    return new HashSet<>();
   }
 
   /**

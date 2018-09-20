@@ -19,12 +19,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import com.google.api.ads.adwords.axis.AdWordsAxisModule;
-import com.google.api.ads.adwords.axis.v201806.cm.AdGroupCriterionServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201806.cm.AdGroupServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201806.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.axis.v201806.cm.CampaignServiceSoapBindingStub;
-import com.google.api.ads.adwords.axis.v201806.cm.CriterionError;
-import com.google.api.ads.adwords.axis.v201806.cm.MutateResult;
+import com.google.api.ads.adwords.axis.v201809.cm.AdGroupCriterionServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201809.cm.AdGroupServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201809.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.axis.v201809.cm.CampaignServiceSoapBindingStub;
+import com.google.api.ads.adwords.axis.v201809.cm.CriterionError;
+import com.google.api.ads.adwords.axis.v201809.cm.MutateResult;
 import com.google.common.collect.Lists;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
@@ -205,7 +205,7 @@ public class AxisDeserializerTest {
   private List<MutateResult> testDeserializeBatchJobResponse(
       URL responseXmlUrl, int startIndex, int numberResults) throws Exception {
     QName mutateResultQName =
-        new QName("https://adwords.google.com/api/adwords/cm/v201806", "MutateResult");
+        new QName("https://adwords.google.com/api/adwords/cm/v201809", "MutateResult");
 
     TypeMapping agcMapping =
         new AdGroupCriterionServiceSoapBindingStub() {

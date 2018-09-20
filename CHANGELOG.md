@@ -1,5 +1,16 @@
+4.1.0 - 09/20/2018
+------------------
+AdWords:
+  - Added support and examples for v201809.
+
+Ad Manager:
+  - No changes.
+
+Common:
+  - No changes.
+
 4.0.0 - 08/23/2018
--------------------
+------------------
 AdWords:
   - No changes.
 

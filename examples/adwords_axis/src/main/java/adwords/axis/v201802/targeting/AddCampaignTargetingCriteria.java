@@ -172,7 +172,7 @@ public class AddCampaignTargetingCriteria {
     spanish.setId(1003L);
 
     List<Criterion> criteria = new ArrayList<>(Arrays.asList(california, mexico, english, spanish));
-    
+
     // Distance targeting. Area of 10 miles around the locations in the location feed.
     if (locationFeedId != null) {
       LocationGroups radiusLocationGroup = new LocationGroups();
@@ -188,12 +188,12 @@ public class AddCampaignTargetingCriteria {
       radiusMatchingFunction.setOperator(FunctionOperator.IDENTITY);
       radiusMatchingFunction.setLhsOperand(new FunctionArgumentOperand[] {distance});
       radiusLocationGroup.setMatchingFunction(radiusMatchingFunction);
-      
+
       criteria.add(radiusLocationGroup);
     }
 
     // Create operations to add each of the criteria above.
-    List<CampaignCriterionOperation> operations = new ArrayList<CampaignCriterionOperation>();
+    List<CampaignCriterionOperation> operations = new ArrayList<>();
     for (Criterion criterion : criteria) {
       CampaignCriterionOperation operation = new CampaignCriterionOperation();
       CampaignCriterion campaignCriterion = new CampaignCriterion();
@@ -203,7 +203,7 @@ public class AddCampaignTargetingCriteria {
       operation.setOperator(Operator.ADD);
       operations.add(operation);
     }
-    
+
     // Add a negative campaign criterion.
     Keyword negativeKeyword = new Keyword();
     negativeKeyword.setText("jupiter cruise");

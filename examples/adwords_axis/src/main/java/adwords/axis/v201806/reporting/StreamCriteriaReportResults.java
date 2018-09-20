@@ -22,11 +22,14 @@ import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
 import com.google.api.ads.adwords.lib.jaxb.v201806.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201806.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201806.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
 import com.google.api.ads.adwords.lib.utils.v201806.ReportDownloaderInterface;
+import com.google.api.ads.adwords.lib.utils.v201806.ReportQuery;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
@@ -131,11 +134,14 @@ public class StreamCriteriaReportResults {
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session)
       throws ReportDownloadResponseException, ReportException, IOException  {
     // Create the query.
-    String query =
-        "SELECT Id, AdNetworkType1, Impressions "
-            + "FROM CRITERIA_PERFORMANCE_REPORT "
-            + "WHERE Status IN [ENABLED, PAUSED] "
-            + "DURING LAST_7_DAYS";
+    ReportQuery query =
+        new ReportQuery.Builder()
+            .fields("Id", "AdNetworkType1", "Impressions")
+            .from(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT)
+            .where("Status")
+            .in("ENABLED", "PAUSED")
+            .during(ReportDefinitionDateRangeType.LAST_7_DAYS)
+            .build();
 
     // Optional: Set the reporting configuration of the session to suppress header, column name, or
     // summary rows in the report output. You can also configure this via your ads.properties
@@ -163,7 +169,7 @@ public class StreamCriteriaReportResults {
       // ReportDownloader.setReportDownloadTimeout to set a timeout (in milliseconds)
       // for CONNECT and READ in report downloads.
       final ReportDownloadResponse response =
-          reportDownloader.downloadReport(query, DownloadFormat.CSV);
+          reportDownloader.downloadReport(query.toString(), DownloadFormat.CSV);
       
       // Read the response as a BufferedReader.
       reader = new BufferedReader(new InputStreamReader(response.getInputStream(), UTF_8));

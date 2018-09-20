@@ -128,12 +128,6 @@ public class CreateAccount {
     ManagedCustomerOperation operation = new ManagedCustomerOperation();
     operation.setOperand(customer);
     operation.setOperator(Operator.ADD);
-    // For whitelisted users only, uncomment the inviteeEmail and inviteeRole
-    // to invite a user to have access to an account on an ADD. An email
-    // will be sent inviting the user to have access to the newly created
-    // account.
-    // operation.setInviteeEmail("invited_user1@example.com");
-    // operation.setInviteeRole(AccessRole.ADMINISTRATIVE);
 
     ManagedCustomerOperation[] operations = new ManagedCustomerOperation[] {operation};
 

@@ -172,13 +172,11 @@ public class GetAccountHierarchy {
     }
 
     // Find the root account node in the tree.
-    ManagedCustomerTreeNode rootNode = null;
-    for (ManagedCustomerTreeNode node : customerIdToCustomerNode.values()) {
-      if (node.parentNode == null) {
-        rootNode = node;
-        break;
-      }
-    }
+    ManagedCustomerTreeNode rootNode =
+        customerIdToCustomerNode.values().stream()
+            .filter(node -> node.parentNode == null)
+            .findFirst()
+            .orElse(null);
 
     // Display serviced account graph.
     if (rootNode != null) {
@@ -219,9 +217,7 @@ public class GetAccountHierarchy {
      */
     public StringBuffer toTreeString(int depth, StringBuffer sb) {
       sb.append(StringUtils.repeat("-", depth * 2)).append(this).append(SystemUtils.LINE_SEPARATOR);
-      for (ManagedCustomerTreeNode childAccount : childAccounts) {
-        childAccount.toTreeString(depth + 1, sb);
-      }
+      childAccounts.forEach(childAccount -> childAccount.toTreeString(depth + 1, sb));
       return sb;
     }
   }

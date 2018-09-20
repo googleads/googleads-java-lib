@@ -94,11 +94,7 @@ public class ServiceQueryBuilderImpl
   public ServiceQuery.Builder fields(EntityField... fields) {
     checkNotNull(fields, "Fields to be selected cannot be null.");
     this.fields =
-        ImmutableSortedSet.copyOf(
-            Lists.transform(
-                Lists.newArrayList(fields),
-                input -> input.name()
-                ));
+        ImmutableSortedSet.copyOf(Lists.transform(Lists.newArrayList(fields), EntityField::name));
     return builder;
   }
 

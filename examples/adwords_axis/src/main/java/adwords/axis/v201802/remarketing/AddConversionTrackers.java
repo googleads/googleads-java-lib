@@ -39,6 +39,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * This example adds an AdWords conversion and an upload conversion tracker.
@@ -164,13 +165,16 @@ public class AddConversionTrackers {
     conversionTrackers.add(uploadConversion);
 
     // Create operations.
-    List<ConversionTrackerOperation> operations = new ArrayList<>();
-    for (ConversionTracker conversionTracker : conversionTrackers) {
-      ConversionTrackerOperation operation = new ConversionTrackerOperation();
-      operation.setOperator(Operator.ADD);
-      operation.setOperand(conversionTracker);
-      operations.add(operation);
-    }
+    List<ConversionTrackerOperation> operations =
+        conversionTrackers.stream()
+            .map(
+                conversionTracker -> {
+                  ConversionTrackerOperation operation = new ConversionTrackerOperation();
+                  operation.setOperator(Operator.ADD);
+                  operation.setOperand(conversionTracker);
+                  return operation;
+                })
+            .collect(Collectors.toList());
 
     // Add the conversions.
     ConversionTrackerReturnValue result =

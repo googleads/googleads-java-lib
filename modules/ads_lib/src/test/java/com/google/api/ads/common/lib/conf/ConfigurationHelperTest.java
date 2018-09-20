@@ -196,7 +196,7 @@ public class ConfigurationHelperTest {
 
   @Test
   public void testFromSystem() throws Exception {
-    test3Properties.forEach((key, value) -> System.setProperty(key, value));
+    test3Properties.forEach(System::setProperty);
     assertContains(test3Properties, configurationHelper.fromSystem());
   }
 
@@ -206,7 +206,7 @@ public class ConfigurationHelperTest {
     Map<String, String> properties = Maps.newHashMap();
     properties.put("testProperty", "b,bee");
 
-    properties.forEach((key, value) -> System.setProperty(key, value));
+    properties.forEach(System::setProperty);
 
     Splitter splitter = Splitter.on(',');
     Configuration systemConfiguration = configurationHelper.fromSystem();
@@ -234,7 +234,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlOverride() throws Exception {
-    test1Properties.forEach((key, value) -> System.setProperty(key, value));
+    test1Properties.forEach(System::setProperty);
 
     System.setProperty("testProperty", "testValue");
 
@@ -263,7 +263,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlOverride() throws Exception {
-    test1Properties.forEach((key, value) -> System.setProperty(key, value));
+    test1Properties.forEach(System::setProperty);
 
     System.setProperty("testProperty", "testValue");
 
@@ -279,7 +279,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlNotFound() throws Exception {
-    test1Properties.forEach((key, value) -> System.setProperty(key, value));
+    test1Properties.forEach(System::setProperty);
 
     System.setProperty("testProperty", "testValue");
 
@@ -295,7 +295,7 @@ public class ConfigurationHelperTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlNotFound() throws Exception {
-    test1Properties.forEach((key, value) -> System.setProperty(key, value));
+    test1Properties.forEach(System::setProperty);
 
     System.setProperty("testProperty", "testValue");
 

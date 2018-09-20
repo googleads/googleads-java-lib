@@ -41,6 +41,7 @@ import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -139,7 +140,7 @@ public class HandlePartialFailures {
     AdGroupCriterionServiceInterface adGroupCriterionService =
         adWordsServices.get(session, AdGroupCriterionServiceInterface.class);
 
-    List<AdGroupCriterionOperation> operations = new ArrayList<AdGroupCriterionOperation>();
+    List<AdGroupCriterionOperation> operations = new ArrayList<>();
 
     // Create keywords.
     String[] keywords =
@@ -156,8 +157,7 @@ public class HandlePartialFailures {
       keywordBiddableAdGroupCriterion.setCriterion(keyword);
 
       // Create operation.
-      AdGroupCriterionOperation keywordAdGroupCriterionOperation =
-          new AdGroupCriterionOperation();
+      AdGroupCriterionOperation keywordAdGroupCriterionOperation = new AdGroupCriterionOperation();
       keywordAdGroupCriterionOperation.setOperand(keywordBiddableAdGroupCriterion);
       keywordAdGroupCriterionOperation.setOperator(Operator.ADD);
       operations.add(keywordAdGroupCriterionOperation);
@@ -168,14 +168,16 @@ public class HandlePartialFailures {
         adGroupCriterionService.mutate(operations.toArray(new AdGroupCriterionOperation[] {}));
 
     // Display results.
-    for (AdGroupCriterion adGroupCriterionResult : result.getValue()) {
-      if (adGroupCriterionResult.getCriterion() != null) {
-        System.out.printf("Ad group criterion with ad group ID %d, and criterion ID %d, "
-            + "and keyword '%s' was added.%n", adGroupCriterionResult.getAdGroupId(),
-            adGroupCriterionResult.getCriterion().getId(),
-            ((Keyword) adGroupCriterionResult.getCriterion()).getText());
-      }
-    }
+    Arrays.stream(result.getValue())
+        .filter(adGroupCriterionResult -> adGroupCriterionResult.getCriterion() != null)
+        .forEach(
+            adGroupCriterionResult ->
+                System.out.printf(
+                    "Ad group criterion with ad group ID %d, and criterion ID %d, "
+                        + "and keyword '%s' was added.%n",
+                    adGroupCriterionResult.getAdGroupId(),
+                    adGroupCriterionResult.getCriterion().getId(),
+                    ((Keyword) adGroupCriterionResult.getCriterion()).getText()));
 
     for (ApiError apiError : result.getPartialFailureErrors()) {
       // Get the index of the failed operation from the error's field path elements.

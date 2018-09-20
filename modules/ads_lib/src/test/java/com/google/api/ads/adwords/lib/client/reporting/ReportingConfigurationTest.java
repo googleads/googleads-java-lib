@@ -26,14 +26,11 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link ReportingConfiguration}.
- */
+/** Tests for {@link ReportingConfiguration}. */
 @RunWith(JUnit4.class)
 public class ReportingConfigurationTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testBuilder_allOptionsTrue() {
@@ -116,8 +113,8 @@ public class ReportingConfigurationTest {
     assertFalse(config1.isIncludeZeroImpressions());
     assertTrue(config1.isUseRawEnumValues());
 
-    assertNotSame("Build did not return a new instance on multiple invocations", config1,
-        builder.build());
+    assertNotSame(
+        "Build did not return a new instance on multiple invocations", config1, builder.build());
 
     builder.skipReportHeader(false);
 
@@ -125,10 +122,12 @@ public class ReportingConfigurationTest {
 
     assertNotSame("Build did not return a new instance on multiple invocations", config1, config2);
 
-    assertTrue("Changes to builder should not pass through to built instances",
+    assertTrue(
+        "Changes to builder should not pass through to built instances",
         config1.isSkipReportHeader());
 
-    assertFalse("Latest changes to builder should be reflected in each call to build",
+    assertFalse(
+        "Latest changes to builder should be reflected in each call to build",
         config2.isSkipReportHeader());
   }
 
@@ -163,6 +162,8 @@ public class ReportingConfigurationTest {
     assertTrue("Validation should succeed for v201802", true);
     config.validate("v201806");
     assertTrue("Validation should succeed for v201806", true);
+    config.validate("v201809");
+    assertTrue("Validation should succeed for v201809", true);
   }
 
   @Test

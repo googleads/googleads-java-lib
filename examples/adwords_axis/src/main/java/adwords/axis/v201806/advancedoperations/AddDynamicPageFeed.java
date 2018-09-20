@@ -51,7 +51,6 @@ import com.google.api.ads.adwords.axis.v201806.cm.Money;
 import com.google.api.ads.adwords.axis.v201806.cm.Operator;
 import com.google.api.ads.adwords.axis.v201806.cm.PageFeed;
 import com.google.api.ads.adwords.axis.v201806.cm.Selector;
-import com.google.api.ads.adwords.axis.v201806.cm.Setting;
 import com.google.api.ads.adwords.axis.v201806.cm.Webpage;
 import com.google.api.ads.adwords.axis.v201806.cm.WebpageCondition;
 import com.google.api.ads.adwords.axis.v201806.cm.WebpageConditionOperand;
@@ -68,6 +67,7 @@ import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
+import java.util.Arrays;
 
 /**
  * This code example adds a page feed to specify precisely which URLs to use with your Dynamic
@@ -367,13 +367,12 @@ public class AddDynamicPageFeed {
           "Campaign with ID " + campaignId + " is not a DSA campaign.");
     }
 
-    DynamicSearchAdsSetting dsaSetting = null;
-    for (Setting setting : campaign.getSettings()) {
-      if (setting instanceof DynamicSearchAdsSetting) {
-        dsaSetting = (DynamicSearchAdsSetting) setting;
-        break;
-      }
-    }
+    DynamicSearchAdsSetting dsaSetting =
+        (DynamicSearchAdsSetting)
+            Arrays.stream(campaign.getSettings())
+                .filter(DynamicSearchAdsSetting.class::isInstance)
+                .findFirst()
+                .orElse(null);
 
     if (dsaSetting == null) {
       throw new IllegalArgumentException(

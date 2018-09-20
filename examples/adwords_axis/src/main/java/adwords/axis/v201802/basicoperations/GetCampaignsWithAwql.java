@@ -17,6 +17,7 @@ package adwords.axis.v201802.basicoperations;
 import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
+import com.google.api.ads.adwords.axis.utils.v201802.ServiceQuery;
 import com.google.api.ads.adwords.axis.v201802.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201802.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201802.cm.Campaign;
@@ -24,6 +25,7 @@ import com.google.api.ads.adwords.axis.v201802.cm.CampaignPage;
 import com.google.api.ads.adwords.axis.v201802.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
+import com.google.api.ads.adwords.lib.selectorfields.v201802.cm.CampaignField;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
@@ -114,15 +116,18 @@ public class GetCampaignsWithAwql {
     CampaignServiceInterface campaignService =
         adWordsServices.get(session, CampaignServiceInterface.class);
 
-    int offset = 0;
-
-    String query = "SELECT Id, Name, Status ORDER BY Name";
+    ServiceQuery serviceQuery =
+        new ServiceQuery.Builder()
+            .fields(CampaignField.Id, CampaignField.Name, CampaignField.Status)
+            .orderBy(CampaignField.Name)
+            .limit(0, PAGE_SIZE)
+            .build();
 
     CampaignPage page = null;
     do {
-      String pageQuery = query + String.format(" LIMIT %d, %d", offset, PAGE_SIZE);
+      serviceQuery.nextPage(page);
       // Get all campaigns.
-      page = campaignService.query(pageQuery);
+      page = campaignService.query(serviceQuery.toString());
 
       // Display campaigns.
       if (page.getEntries() != null) {
@@ -133,8 +138,6 @@ public class GetCampaignsWithAwql {
       } else {
         System.out.println("No campaigns were found.");
       }
-
-      offset += PAGE_SIZE;
-    } while (offset < page.getTotalNumEntries());
+    } while (serviceQuery.hasNext(page));
   }
 }

@@ -55,7 +55,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -289,17 +288,14 @@ public class ParallelReportDownload {
     }
 
     System.out.println("Successful reports:");
-    for (Entry<String, File> successfulReportEntry : successfulReports.entrySet()) {
-      String clientCustomerId = successfulReportEntry.getKey();
-      File reportFile = successfulReportEntry.getValue();
-      System.out.printf("\tClient ID %s => '%s'%n", clientCustomerId, reportFile);
-    }
+    successfulReports.forEach(
+        (clientCustomerId, reportFile) ->
+            System.out.printf("\tClient ID %s => '%s'%n", clientCustomerId, reportFile));
 
     System.out.println("Failed reports:");
-    for (Entry<String, Exception> failedReportEntry : failedReports.entrySet()) {
-      Exception exception = failedReportEntry.getValue();
-      System.out.printf("\tClient ID %s => Exception: %s%n", failedReportEntry.getKey(), exception);
-    }
+    failedReports.forEach(
+        (clientCustomerId, exception) ->
+            System.out.printf("\tClient ID %s => Exception: %s%n", clientCustomerId, exception));
 
     System.out.println("End of results.");
   }

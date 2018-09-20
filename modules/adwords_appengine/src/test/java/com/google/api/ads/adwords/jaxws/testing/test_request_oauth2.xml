@@ -4,7 +4,7 @@
     <RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">
         <clientCustomerId xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_CLIENT_CUSTOMER_ID</clientCustomerId>
         <developerToken xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_DEVELOPER_TOKEN</developerToken>
-        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/4.0.0, Common-Java/4.0.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
+        <userAgent xmlns="https://adwords.google.com/api/adwords/cm/#API_VERSION#">TEST_APP (AwApi-Java, AdWords-AppEngine/4.1.0, Common-Java/4.1.0, JAX-WS/Unknown, Java/#JAVA_VERSION#, maven)</userAgent>
     </RequestHeader>
   </S:Header>
   <S:Body>

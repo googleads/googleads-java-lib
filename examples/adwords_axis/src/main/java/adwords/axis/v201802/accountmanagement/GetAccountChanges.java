@@ -26,7 +26,6 @@ import com.google.api.ads.adwords.axis.v201802.ch.CustomerSyncSelector;
 import com.google.api.ads.adwords.axis.v201802.ch.CustomerSyncServiceInterface;
 import com.google.api.ads.adwords.axis.v201802.cm.ApiError;
 import com.google.api.ads.adwords.axis.v201802.cm.ApiException;
-import com.google.api.ads.adwords.axis.v201802.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201802.cm.CampaignPage;
 import com.google.api.ads.adwords.axis.v201802.cm.CampaignServiceInterface;
 import com.google.api.ads.adwords.axis.v201802.cm.DateTimeRange;
@@ -43,6 +42,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import org.apache.commons.lang.ArrayUtils;
@@ -129,15 +129,13 @@ public class GetAccountChanges {
         adWordsServices.get(session, CustomerSyncServiceInterface.class);
 
     // Get a list of all campaign IDs.
-    List<Long> campaignIds = new ArrayList<Long>();
+    List<Long> campaignIds = new ArrayList<>();
     Selector selector = new SelectorBuilder()
         .fields(CampaignField.Id)
         .build();
     CampaignPage campaigns = campaignService.get(selector);
     if (campaigns.getEntries() != null) {
-      for (Campaign campaign : campaigns.getEntries()) {
-        campaignIds.add(campaign.getId());
-      }
+      Arrays.stream(campaigns.getEntries()).forEach(campaign -> campaignIds.add(campaign.getId()));
     }
 
     // Create date time range for the past 24 hours.

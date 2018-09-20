@@ -39,6 +39,7 @@ import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -168,10 +169,12 @@ public class AddExpandedTextAds {
         adGroupAdService.mutate(operations.toArray(new AdGroupAdOperation[operations.size()]));
 
     // Display ads.
-    for (AdGroupAd adGroupAdResult : result.getValue()) {
-      ExpandedTextAd newAd = (ExpandedTextAd) adGroupAdResult.getAd();
-      System.out.printf("Expanded text ad with ID %d and headline '%s - %s' was added.%n",
-          newAd.getId(), newAd.getHeadlinePart1(), newAd.getHeadlinePart2());
-    }
+    Arrays.stream(result.getValue())
+        .map(adGroupAdResult -> (ExpandedTextAd) adGroupAdResult.getAd())
+        .forEach(
+            newAd ->
+                System.out.printf(
+                    "Expanded text ad with ID %d and headline '%s - %s' was added.%n",
+                    newAd.getId(), newAd.getHeadlinePart1(), newAd.getHeadlinePart2()));
   }
 }

@@ -24,7 +24,6 @@ import com.google.api.ads.adwords.axis.v201806.cm.ApiException;
 import com.google.api.ads.adwords.axis.v201806.cm.Campaign;
 import com.google.api.ads.adwords.axis.v201806.cm.CampaignPage;
 import com.google.api.ads.adwords.axis.v201806.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201806.cm.Label;
 import com.google.api.ads.adwords.axis.v201806.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
@@ -37,7 +36,6 @@ import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import java.rmi.RemoteException;
@@ -162,13 +160,12 @@ public class GetCampaignsByLabel {
       // Display campaigns.
       if (page.getEntries() != null) {
         for (Campaign campaign : page.getEntries()) {
-          String labels = Joiner.on(", ").join(Lists.transform(
-              Lists.newArrayList(campaign.getLabels()), new Function<Label, String>() {
-                @Override
-                public String apply(Label label) {
-                  return String.format("%d/%s", label.getId(), label.getName());
-                }
-              }));
+          String labels =
+              Joiner.on(", ")
+                  .join(
+                      Lists.transform(
+                          Lists.newArrayList(campaign.getLabels()),
+                          label -> String.format("%d/%s", label.getId(), label.getName())));
           System.out.printf("Campaign found with name '%s' and ID %d and labels: %s.%n",
               campaign.getName(), campaign.getId(), labels);
         }

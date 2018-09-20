@@ -66,12 +66,11 @@ import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.collect.AbstractSequentialIterator;
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableSet;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 
@@ -87,8 +86,8 @@ public class AddCompleteCampaignsUsingBatchJob {
   private static final long NUMBER_OF_ADGROUPS_TO_ADD = 2;
   private static final long NUMBER_OF_KEYWORDS_TO_ADD = 5;
   private static final int MAX_POLL_ATTEMPTS = 5;
-  private static final Set<BatchJobStatus> PENDING_STATUSES =
-      Sets.newHashSet(
+  private static final ImmutableSet<BatchJobStatus> PENDING_STATUSES =
+      ImmutableSet.of(
           BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING);
 
   public static void main(String[] args) {
@@ -375,7 +374,6 @@ public class AddCompleteCampaignsUsingBatchJob {
 
   private static List<CampaignCriterionOperation> buildCampaignCriterionOperations(
       List<CampaignOperation> campaignOperations) {
-
     List<CampaignCriterionOperation> operations = new ArrayList<>();
     for (CampaignOperation campaignOperation : campaignOperations) {
       Keyword keyword = new Keyword();

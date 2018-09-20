@@ -32,12 +32,5 @@ public interface PrettyPrinterInterface {
   public String prettyPrint(String message);
 
   /** Default implementation that simply returns the message. */
-  public static PrettyPrinterInterface NO_OP_PRETTY_PRINTER =
-      new PrettyPrinterInterface() {
-
-        @Override
-        public String prettyPrint(String message) {
-          return message;
-        }
-      };
+  public static PrettyPrinterInterface NO_OP_PRETTY_PRINTER = message -> message;
 }

@@ -20,10 +20,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 import com.google.api.ads.adwords.jaxws.AdWordsJaxWsModule;
-import com.google.api.ads.adwords.jaxws.utils.v201806.batchjob.BatchJobMutateResponse;
-import com.google.api.ads.adwords.jaxws.utils.v201806.batchjob.MutateResult;
-import com.google.api.ads.adwords.jaxws.v201806.cm.BiddableAdGroupCriterion;
-import com.google.api.ads.adwords.jaxws.v201806.cm.CriterionError;
+import com.google.api.ads.adwords.jaxws.utils.v201809.batchjob.BatchJobMutateResponse;
+import com.google.api.ads.adwords.jaxws.utils.v201809.batchjob.MutateResult;
+import com.google.api.ads.adwords.jaxws.v201809.cm.BiddableAdGroupCriterion;
+import com.google.api.ads.adwords.jaxws.v201809.cm.CriterionError;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import java.net.URL;
@@ -132,18 +132,18 @@ public class JaxWsBatchJobResponseDeserializerTest {
     assertThat(
         mutateResults[0].getOperand().getAdGroupCriterion(),
         Matchers.instanceOf(
-            com.google.api.ads.adwords.jaxws.v201806.cm.BiddableAdGroupCriterion.class));
+            com.google.api.ads.adwords.jaxws.v201809.cm.BiddableAdGroupCriterion.class));
     assertNotNull(mutateResults[1].getOperand().getAdGroupCriterion());
     assertThat(
         mutateResults[1].getOperand().getAdGroupCriterion(),
         Matchers.instanceOf(
-            com.google.api.ads.adwords.jaxws.v201806.cm.BiddableAdGroupCriterion.class));
+            com.google.api.ads.adwords.jaxws.v201809.cm.BiddableAdGroupCriterion.class));
     assertThat(
         mutateResults[2].getErrorList().getErrors()[0],
-        Matchers.instanceOf(com.google.api.ads.adwords.jaxws.v201806.cm.CriterionError.class));
+        Matchers.instanceOf(com.google.api.ads.adwords.jaxws.v201809.cm.CriterionError.class));
     assertThat(
         mutateResults[3].getErrorList().getErrors()[0],
-        Matchers.instanceOf(com.google.api.ads.adwords.jaxws.v201806.cm.CriterionError.class));
+        Matchers.instanceOf(com.google.api.ads.adwords.jaxws.v201809.cm.CriterionError.class));
   }
 
   /** Tests that a response without errors will be properly deserialized in paging. */

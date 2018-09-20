@@ -355,7 +355,7 @@ public class AddShoppingDynamicRemarketingCampaign {
     // served in.
     /*
     ad.setFormatSetting(
-        com.google.api.ads.adwords.axis.v201802.cm.DisplayAdFormatSetting.NON_NATIVE);
+        com.google.api.ads.adwords.axis.v201806.cm.DisplayAdFormatSetting.NON_NATIVE);
     */
 
     AdGroupAd adGroupAd = new AdGroupAd();

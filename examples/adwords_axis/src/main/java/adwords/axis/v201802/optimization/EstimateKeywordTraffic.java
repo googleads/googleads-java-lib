@@ -46,6 +46,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * This example gets keyword traffic estimates.
@@ -147,12 +148,15 @@ public class EstimateKeywordTraffic {
     keywords.add(cruiseKeyword);
 
     // Create a keyword estimate request for each keyword.
-    List<KeywordEstimateRequest> keywordEstimateRequests = new ArrayList<KeywordEstimateRequest>();
-    for (Keyword keyword : keywords) {
-      KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest();
-      keywordEstimateRequest.setKeyword(keyword);
-      keywordEstimateRequests.add(keywordEstimateRequest);
-    }
+    List<KeywordEstimateRequest> keywordEstimateRequests =
+        keywords.stream()
+            .map(
+                keyword -> {
+                  KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest();
+                  keywordEstimateRequest.setKeyword(keyword);
+                  return keywordEstimateRequest;
+                })
+            .collect(Collectors.toList());
 
     // Add a negative keyword to the traffic estimate.
     KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest();

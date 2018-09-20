@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * This example demonstrates how to handle policy violation errors.
@@ -212,10 +213,10 @@ public class HandlePolicyViolationError {
     }
 
     // Create a new list of operations consisting of only the operations that should be retried.
-    List<AdGroupAdOperation> operationsToRetry = new ArrayList<>();
-    for (Integer operationIndexToRetry : operationIndicesToRetry) {
-      operationsToRetry.add(operations[operationIndexToRetry]);
-    }
+    List<AdGroupAdOperation> operationsToRetry =
+        operationIndicesToRetry.stream()
+            .map(operationIndexToRetry -> operations[operationIndexToRetry])
+            .collect(Collectors.toList());
 
     if (!operationsToRetry.isEmpty()) {
       // Disable validateOnly so we can submit the AdGroupAds with exemptions.
@@ -228,14 +229,15 @@ public class HandlePolicyViolationError {
 
       // Display ads.
       if (result != null && result.getValue() != null) {
-        for (AdGroupAd adGroupAdResult : result.getValue()) {
-          ExpandedTextAd expandedTextAd = (ExpandedTextAd) adGroupAdResult.getAd();
-          System.out.printf(
-              "Ad with ID %d and headline '%s - %s' was added.%n",
-              expandedTextAd.getId(),
-              expandedTextAd.getHeadlinePart1(),
-              expandedTextAd.getHeadlinePart2());
-        }
+        Arrays.stream(result.getValue())
+            .map(adGroupAdResult -> (ExpandedTextAd) adGroupAdResult.getAd())
+            .forEach(
+                expandedTextAd ->
+                    System.out.printf(
+                        "Ad with ID %d and headline '%s - %s' was added.%n",
+                        expandedTextAd.getId(),
+                        expandedTextAd.getHeadlinePart1(),
+                        expandedTextAd.getHeadlinePart2()));
       }
     } else {
       System.out.println("No ads were added.");
@@ -280,7 +282,7 @@ public class HandlePolicyViolationError {
 
       List<ExemptionRequest> exemptionRequests =
           (operation.getExemptionRequests() == null)
-              ? new ArrayList<ExemptionRequest>()
+              ? new ArrayList<>()
               : new ArrayList<>(Arrays.asList(operation.getExemptionRequests()));
       exemptionRequests.add(exemptionRequest);
       operation.setExemptionRequests(

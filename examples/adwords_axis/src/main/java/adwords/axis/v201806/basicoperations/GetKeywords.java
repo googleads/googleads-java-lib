@@ -19,7 +19,6 @@ import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
 import com.google.api.ads.adwords.axis.utils.v201806.SelectorBuilder;
-import com.google.api.ads.adwords.axis.v201806.cm.AdGroupCriterion;
 import com.google.api.ads.adwords.axis.v201806.cm.AdGroupCriterionPage;
 import com.google.api.ads.adwords.axis.v201806.cm.AdGroupCriterionServiceInterface;
 import com.google.api.ads.adwords.axis.v201806.cm.ApiError;
@@ -38,6 +37,7 @@ import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
+import java.util.Arrays;
 
 /**
  * This example gets all ad group criteria in an account. To add keywords
@@ -160,12 +160,17 @@ public class GetKeywords {
       // Display ad group criteria.
       if (page.getEntries() != null && page.getEntries().length > 0) {
         // Display results.
-        for (AdGroupCriterion adGroupCriterionResult : page.getEntries()) {
-          Keyword keyword = (Keyword) adGroupCriterionResult.getCriterion();
-          System.out.printf(
-              "Keyword with text '%s', match type '%s', criteria type '%s', and ID %d was found.%n",
-              keyword.getText(), keyword.getMatchType(), keyword.getType(), keyword.getId());
-        }
+        Arrays.stream(page.getEntries())
+            .map(adGroupCriterionResult -> (Keyword) adGroupCriterionResult.getCriterion())
+            .forEach(
+                keyword ->
+                    System.out.printf(
+                        "Keyword with text '%s', match type '%s', criteria type '%s',"
+                            + " and ID %d was found.%n",
+                        keyword.getText(),
+                        keyword.getMatchType(),
+                        keyword.getType(),
+                        keyword.getId()));
       } else {
         System.out.println("No ad group criteria were found.");
       }

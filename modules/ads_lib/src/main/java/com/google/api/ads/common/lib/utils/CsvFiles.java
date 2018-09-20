@@ -58,13 +58,8 @@ public final class CsvFiles {
   public static Map<String, String> getCsvDataMap(String fileName,
       final int key, final int value, boolean headerPresent) throws IOException {    
     final Map<String, String> result = Maps.newHashMap();
-    new CsvReader(fileName, headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] header, String[] line, int lineNumber) {
-            result.put(line[key], line[value]);
-          }
-        });
+    new CsvReader(fileName, headerPresent)
+        .processReader((header, line, lineNumber) -> result.put(line[key], line[value]));
     return result;
   }
 
@@ -101,15 +96,14 @@ public final class CsvFiles {
   public static Map<String, String[]> getCsvDataMapArray(String fileName, boolean headerPresent)
       throws IOException {
     final Map<String, String[]> result = Maps.newHashMap();
-    new CsvReader(fileName, headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] header, String[] line, int lineNumber) {
-            result.put(line[0],
-                Arrays.asList(line)
-                    .subList(1, line.length).toArray(new String[line.length - 1]));
-          }
-        });
+    new CsvReader(fileName, headerPresent)
+        .processReader(
+            (header, line, lineNumber) ->
+                result.put(
+                    line[0],
+                    Arrays.asList(line)
+                        .subList(1, line.length)
+                        .toArray(new String[line.length - 1])));
     return result;
   }
 
@@ -127,21 +121,19 @@ public final class CsvFiles {
   public static List<Map<String, String>> getCsvDataListMap(String fileName,
       boolean headerPresent) throws IOException {
     final List<Map<String, String>> result = Lists.newArrayList();
-    new CsvReader(fileName, headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] headers, String[] line, int lineNumber) {
-            Map<String, String> data = Maps.newHashMap();
-            for (int i = 0; i < line.length; i++) {
-              if (headers != null) {
-                data.put(headers[i], line[i]);
-              } else {
-                data.put(i + "", line[i]);
+    new CsvReader(fileName, headerPresent)
+        .processReader(
+            (headers, line, lineNumber) -> {
+              Map<String, String> data = Maps.newHashMap();
+              for (int i = 0; i < line.length; i++) {
+                if (headers != null) {
+                  data.put(headers[i], line[i]);
+                } else {
+                  data.put(i + "", line[i]);
+                }
               }
-            }
-            result.add(data);
-          }
-        });
+              result.add(data);
+            });
     return result;
   }
 
@@ -159,13 +151,8 @@ public final class CsvFiles {
   public static List<String> getCsvDataByColumn(String fileName, final int column,
       boolean headerPresent) throws IOException {
     final List<String> result = Lists.newArrayList();
-    new CsvReader(fileName, headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] headers, String[] line, int lineNumber) {
-            result.add(line[column]);
-          }
-        });
+    new CsvReader(fileName, headerPresent)
+        .processReader((headers, line, lineNumber) -> result.add(line[column]));
     return result;
   }
 
@@ -182,13 +169,8 @@ public final class CsvFiles {
   public static List<String[]> getCsvDataArray(String fileName, boolean headerPresent)
       throws IOException {
     final List<String[]> result = Lists.newArrayList();
-    new CsvReader(fileName, headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] headers, String[] line, int lineNumber) {
-            result.add(line);
-          }
-        });
+    new CsvReader(fileName, headerPresent)
+        .processReader((headers, line, lineNumber) -> result.add(line));
     return result;
   }
 
@@ -204,13 +186,8 @@ public final class CsvFiles {
   public static List<String[]> getCsvDataArray(Reader csvReader, boolean headerPresent)
       throws IOException {
     final List<String[]> result = Lists.newArrayList();
-    new CsvReader(new CSVReader(csvReader), headerPresent).processReader(
-        new CsvReader.CsvWorker() {
-          @Override
-          public void processLine(String[] headers, String[] line, int lineNumber) {
-            result.add(line);
-          }
-        });
+    new CsvReader(new CSVReader(csvReader), headerPresent)
+        .processReader((headers, line, lineNumber) -> result.add(line));
     return result;
   }
   /**

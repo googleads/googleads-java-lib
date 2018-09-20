@@ -51,8 +51,9 @@ import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.joda.time.DateTime;
 
 /**
@@ -272,14 +273,16 @@ public class AddRuleBasedUserLists {
     combinedRuleUserList.setRuleOperator(CombinedRuleUserListRuleOperator.AND);
 
     // Create operations to add the user lists.
-    List<UserListOperation> operations = new ArrayList<>();
-    for (UserList userList :
-        new UserList[] {expressionUserList, dateUserList, combinedRuleUserList}) {
-      UserListOperation operation = new UserListOperation();
-      operation.setOperand(userList);
-      operation.setOperator(Operator.ADD);
-      operations.add(operation);
-    }
+    List<UserListOperation> operations =
+        Stream.of(expressionUserList, dateUserList, combinedRuleUserList)
+            .map(
+                userList -> {
+                  UserListOperation operation = new UserListOperation();
+                  operation.setOperand(userList);
+                  operation.setOperator(Operator.ADD);
+                  return operation;
+                })
+            .collect(Collectors.toList());
 
     // Submit the operations.
     UserListReturnValue result =

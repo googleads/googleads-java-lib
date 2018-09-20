@@ -145,11 +145,11 @@ public class AddCampaignLabels {
       CampaignLabel campaignLabel = new CampaignLabel();
       campaignLabel.setCampaignId(campaignId);
       campaignLabel.setLabelId(labelId);
-      
+
       CampaignLabelOperation operation = new CampaignLabelOperation();
       operation.setOperand(campaignLabel);
       operation.setOperator(Operator.ADD);
-      
+
       operations.add(operation);
     }
 

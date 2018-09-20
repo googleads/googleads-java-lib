@@ -44,6 +44,7 @@ import com.google.api.ads.common.lib.utils.examples.CodeSampleParams;
 import com.google.api.client.auth.oauth2.Credential;
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.Arrays;
 
 /**
  * This example adds an image representing the ad using the MediaService and then adds a responsive
@@ -210,12 +211,13 @@ public class AddResponsiveDisplayAd {
         adGroupAdService.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
 
     // Display ads.
-    for (AdGroupAd adGroupAdResult : result.getValue()) {
-      ResponsiveDisplayAd newAd = (ResponsiveDisplayAd) adGroupAdResult.getAd();
-      System.out.printf(
-          "Responsive display ad with ID %d and short headline '%s' was added.%n",
-          newAd.getId(), newAd.getShortHeadline());
-    }
+    Arrays.stream(result.getValue())
+        .map(adGroupAdResult -> (ResponsiveDisplayAd) adGroupAdResult.getAd())
+        .forEach(
+            newAd ->
+                System.out.printf(
+                    "Responsive display ad with ID %d and short headline '%s' was added.%n",
+                    newAd.getId(), newAd.getShortHeadline()));
   }
 
   private static DynamicSettings createDynamicDisplayAdSettings(MediaServiceInterface mediaService)

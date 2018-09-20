@@ -44,9 +44,11 @@ import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * This example adds a remarketing user list (a.k.a. audience).
@@ -157,12 +159,12 @@ public class AddAudience {
 
     // Display results.
     // Capture the ID(s) of the conversion.
-    List<String> conversionIds = new ArrayList<String>();
+    List<String> conversionIds = new ArrayList<>();
     for (UserList userListResult : result.getValue()) {
       if (userListResult instanceof BasicUserList) {
         BasicUserList remarketingUserList = (BasicUserList) userListResult;
-        for (UserListConversionType userListConversionType : remarketingUserList
-            .getConversionTypes()) {
+        for (UserListConversionType userListConversionType :
+            remarketingUserList.getConversionTypes()) {
           conversionIds.add(userListConversionType.getId().toString());
         }
       }
@@ -179,10 +181,12 @@ public class AddAudience {
         new HashMap<Long, AdWordsConversionTracker>();
     ConversionTrackerPage page = conversionTrackerService.get(selector);
     if (page != null && page.getEntries() != null) {
-      for (ConversionTracker conversionTracker : page.getEntries()) {
-        conversionTrackers.put(conversionTracker.getId(),
-            (AdWordsConversionTracker) conversionTracker);
-      }
+      conversionTrackers =
+          Arrays.stream(page.getEntries())
+              .collect(
+                  Collectors.toMap(
+                      conversionTracker -> conversionTracker.getId(),
+                      conversionTracker -> (AdWordsConversionTracker) conversionTracker));
     }
 
     // Display user lists.

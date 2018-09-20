@@ -46,6 +46,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -219,12 +220,14 @@ public class AddMultiAssetResponsiveDisplayAd {
     AdGroupAdReturnValue result =
         adGroupAdService.mutate(operations.toArray(new AdGroupAdOperation[operations.size()]));
 
-    for (AdGroupAd adGroupAdResult : result.getValue()) {
-      MultiAssetResponsiveDisplayAd newAd = (MultiAssetResponsiveDisplayAd) adGroupAdResult.getAd();
-      System.out.printf(
-          "New responsive display ad with ID %d and long headline '%s' was added.%n",
-          newAd.getId(), ((TextAsset) newAd.getLongHeadline().getAsset()).getAssetText());
-    }
+    Arrays.stream(result.getValue())
+        .map(adGroupAdResult -> (MultiAssetResponsiveDisplayAd) adGroupAdResult.getAd())
+        .forEach(
+            newAd ->
+                System.out.printf(
+                    "New responsive display ad with ID %d and long headline '%s' was added.%n",
+                    newAd.getId(),
+                    ((TextAsset) newAd.getLongHeadline().getAsset()).getAssetText()));
   }
 
   /**

@@ -341,7 +341,7 @@ public class ProductPartitionTreeTest extends MockHttpIntegrationTest {
 
     List<CriterionDescriptor> nodeDescriptors =
         Stream.of(rootNode, brand1, brand1Offer1, brand1Offer2, brand2)
-            .map(node -> new CriterionDescriptor(node))
+            .map(CriterionDescriptor::new)
             .collect(Collectors.toList());
 
     int opNum = 0;

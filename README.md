@@ -128,7 +128,7 @@ are in the package `com.google.api.ads.adwords.{version}`.
     *   **If using Maven with Eclipse**
 
         Navigate in your project to any example (e.g.,
-        `src/main/java/adwords/axis/v201806/basicoperations/GetCampaigns.java`)
+        `src/main/java/adwords/axis/v201809/basicoperations/GetCampaigns.java`)
         and run the example.
 
     *   **If using Maven from the command line**
@@ -141,13 +141,13 @@ are in the package `com.google.api.ads.adwords.{version}`.
         particular example, use ``-Dexec.args="--help"``.
 
         ```
-        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201806.basicoperations.GetAdGroups" -Dexec.args="--campaignId YOUR_CAMPAIGN_ID"
+        $ mvn -X exec:java -Dexec.mainClass="adwords.axis.v201809.basicoperations.GetAdGroups" -Dexec.args="--campaignId YOUR_CAMPAIGN_ID"
         ```
 
     *   **If using jars**
 
         Navigate in your project to any example (e.g.,
-        `src/adwords/axis/v201806/basicoperations/GetCampaigns.java`)
+        `src/adwords/axis/v201809/basicoperations/GetCampaigns.java`)
         and run the example.
 
 ## Basic usage
@@ -157,7 +157,7 @@ to all products and frameworks.
 
 ```java
 // Contains the data classes and service classes.
-import com.google.api.ads.adwords.axis.v201806.*;
+import com.google.api.ads.adwords.axis.v201809.*;
 
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.axis.factory.AdWordsServices;
@@ -297,11 +297,11 @@ If necessary, set this up in code by doing the following:
 
 *   The [Keyword Optimizer application](https://github.com/googleads/keyword-optimizer)
     is an open-source tool that uses the Google Ads APIs Client Library for Java
-    to find additional sets of keywords for AdWords.
+    to find additional sets of keywords for Google Ads.
 *   The [AwReporting application](https://github.com/googleads/aw-reporting) is
     an open-source application that uses the Google Ads APIs Client Library for
-    Java to download reports from multiple AdWords accounts and store the report
-    contents in a database.
+    Java to download reports from multiple Google Ads accounts and store the
+    report contents in a database.
 
 ## Where do I submit bug reports, feature requests and patches?
 

@@ -21,17 +21,12 @@ import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.client.http.HttpHeaders;
-import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Inject;
-import java.io.IOException;
 
-/**
- * Helper class that generates a configured HttpURLConnection for report downloads.
- */
+/** Helper class that generates a configured HttpURLConnection for report downloads. */
 public class ReportRequestFactoryHelper {
 
   /** The URI of the download server. */
@@ -83,17 +78,15 @@ public class ReportRequestFactoryHelper {
   HttpRequestFactory getHttpRequestFactory(final String reportUrl, String version)
       throws AuthenticationException {
     final HttpHeaders httpHeaders = createHeaders(reportUrl, version);
-    return httpTransport.createRequestFactory(new HttpRequestInitializer() {
-      @Override
-      public void initialize(HttpRequest request) throws IOException {
-        request.setHeaders(httpHeaders);
-        request.setConnectTimeout(reportDownloadTimeout);
-        request.setReadTimeout(reportDownloadTimeout);
-        request.setThrowExceptionOnExecuteError(false);
-        request.setLoggingEnabled(true);
-        request.setResponseInterceptor(responseInterceptor);
-      }
-    });
+    return httpTransport.createRequestFactory(
+        request -> {
+          request.setHeaders(httpHeaders);
+          request.setConnectTimeout(reportDownloadTimeout);
+          request.setReadTimeout(reportDownloadTimeout);
+          request.setThrowExceptionOnExecuteError(false);
+          request.setLoggingEnabled(true);
+          request.setResponseInterceptor(responseInterceptor);
+        });
   }
 
   /**
