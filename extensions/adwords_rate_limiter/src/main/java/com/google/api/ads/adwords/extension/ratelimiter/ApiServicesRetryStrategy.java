@@ -41,12 +41,12 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   // Property for the maximum number of attempts on rate limit error.
   public static final String MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiServicesRetryStrategy.maxAttemptsOnRateExceededError";
-  private static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT = 5;
+  @VisibleForTesting public static final int MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT = 5;
 
   // Property for the maximum wait time (in seconds) before retrying on rate limit error.
   public static final String MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY =
       "com.google.api.ads.adwords.extension.ratelimiter.ApiServicesRetryStrategy.maxWaitTimeOnRateExceededError";
-  private static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT = 86400;
+  @VisibleForTesting public static final int MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT = 86400;
 
   // The min/max range of random multiplier for waiting time before retry.
   @VisibleForTesting static final int MIN_WAIT_TIME_MULTIPLIER = 1;
@@ -67,22 +67,27 @@ public final class ApiServicesRetryStrategy implements ApiRetryStrategy {
   private final RandomProvider waitTimeNoiseFactor;
 
   public ApiServicesRetryStrategy() {
-    this(new DefaultDateProvider(), new DefaultRandomProvider());
+    this(
+        new DefaultDateProvider(),
+        new DefaultRandomProvider(),
+        ConfigUtil.getIntConfigValue(
+            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY,
+            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT),
+        ConfigUtil.getIntConfigValue(
+            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY,
+            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT));
   }
 
   @VisibleForTesting
-  public ApiServicesRetryStrategy(DateProvider dateProvider, RandomProvider waitTimeNoiseFactor) {
+  public ApiServicesRetryStrategy(
+      DateProvider dateProvider,
+      RandomProvider waitTimeNoiseFactor,
+      int maxAttemptsOnRateExceededError,
+      int maxWaitTimeOnRateExceededError) {
     this.dateProvider = dateProvider;
     this.waitTimeNoiseFactor = waitTimeNoiseFactor;
-
-    this.maxAttemptsOnRateExceededError =
-        ConfigUtil.getIntConfigValue(
-            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_PROPERTY,
-            MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT);
-    this.maxWaitTimeOnRateExceededError =
-        ConfigUtil.getIntConfigValue(
-            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_PROPERTY,
-            MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT);
+    this.maxAttemptsOnRateExceededError = maxAttemptsOnRateExceededError;
+    this.maxWaitTimeOnRateExceededError = maxWaitTimeOnRateExceededError;
 
     this.tokenWaitUntil = new AtomicLong();
     this.accountWaitUntil = new ConcurrentHashMap<>();

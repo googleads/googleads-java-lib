@@ -41,7 +41,11 @@ public class ApiServicesRetryStrategyTest {
     noRetryException.setErrors(new ApiError[] {noRetryError});
 
     retries =
-        new ApiServicesRetryStrategy(new FakeDateProvider(), new FakeRandomProvider(mockRandom));
+        new ApiServicesRetryStrategy(
+            new FakeDateProvider(),
+            new FakeRandomProvider(mockRandom),
+            ApiServicesRetryStrategy.MAX_ATTEMPTS_ON_RATE_EXCEEDED_ERROR_DEFAULT,
+            ApiServicesRetryStrategy.MAX_WAIT_TIME_ON_RATE_EXCEEDED_ERROR_DEFAULT);
 
     when(mockRandom.nextDouble()).thenReturn(1.0);
   }
