@@ -169,9 +169,7 @@ public class ReportQuery  implements java.io.Serializable {
      *                 in conjunction (joined with an AND statement) with
      * the date range selected
      *                 through {@link #dateRangeType}, {@link #startDate},
-     * and {@link #endDate}
-     *                 and the dimension filters selected through {@link
-     * #dimensionFilters}.
+     * and {@link #endDate}.
      *                 
      *                 The syntax currently allowed for {@link Statement#query}
      * is<br>
@@ -715,9 +713,7 @@ public class ReportQuery  implements java.io.Serializable {
      *                 in conjunction (joined with an AND statement) with
      * the date range selected
      *                 through {@link #dateRangeType}, {@link #startDate},
-     * and {@link #endDate}
-     *                 and the dimension filters selected through {@link
-     * #dimensionFilters}.
+     * and {@link #endDate}.
      *                 
      *                 The syntax currently allowed for {@link Statement#query}
      * is<br>
@@ -756,9 +752,7 @@ public class ReportQuery  implements java.io.Serializable {
      *                 in conjunction (joined with an AND statement) with
      * the date range selected
      *                 through {@link #dateRangeType}, {@link #startDate},
-     * and {@link #endDate}
-     *                 and the dimension filters selected through {@link
-     * #dimensionFilters}.
+     * and {@link #endDate}.
      *                 
      *                 The syntax currently allowed for {@link Statement#query}
      * is<br>

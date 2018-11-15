@@ -24,6 +24,8 @@ package com.google.api.ads.admanager.axis.v201808;
 
 /**
  * Captures a page of {@link ContentMetadataKeyHierarchy} objects.
+ * This is deprecated and will be
+ *             removed as of V201811.
  */
 public class ContentMetadataKeyHierarchyPage  implements java.io.Serializable , Iterable<com.google.api.ads.admanager.axis.v201808.ContentMetadataKeyHierarchy>{
     /* The size of the total result set to which this page belongs. */

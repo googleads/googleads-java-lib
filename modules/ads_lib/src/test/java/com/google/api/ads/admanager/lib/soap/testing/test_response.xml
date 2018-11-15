@@ -22,7 +22,7 @@
                     <hour>12</hour>
                     <minute>27</minute>
                     <second>9</second>
-                    <timeZoneID>PST8PDT</timeZoneID>
+                    <timeZoneId>PST8PDT</timeZoneId>
                 </lastModifiedDateTime>
             </rval>
         </createCompaniesResponse>

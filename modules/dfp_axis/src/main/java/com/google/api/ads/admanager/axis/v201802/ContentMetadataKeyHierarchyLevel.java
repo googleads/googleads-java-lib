@@ -28,6 +28,8 @@ package com.google.api.ads.admanager.axis.v201802;
  *             ContentMetadataKeyHierarchy}. The level consists of a
  * {@link CustomTargetingKey} and an integer
  *             that represents the level's position in the hierarchy.
+ * This is deprecated and will be removed
+ *             as of V201811.
  */
 public class ContentMetadataKeyHierarchyLevel  implements java.io.Serializable {
     /* The ID of the {@link CustomTargetingKey} associated with this

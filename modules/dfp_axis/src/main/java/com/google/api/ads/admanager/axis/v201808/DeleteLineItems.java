@@ -25,7 +25,12 @@ package com.google.api.ads.admanager.axis.v201808;
 /**
  * The action used for deleting {@link LineItem} objects. A line item
  * can be
- *             deleted if it has never been eligible to serve.
+ *             deleted if it has never been eligible to serve. Note:
+ * deleted line items
+ *             will still count against your network limits. For more
+ * information, see the
+ *             <a href="https://support.google.com/admanager/answer/1628457">Help
+ * Center</a>.
  */
 public class DeleteLineItems  extends com.google.api.ads.admanager.axis.v201808.LineItemAction  implements java.io.Serializable {
     public DeleteLineItems() {

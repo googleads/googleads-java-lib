@@ -43,9 +43,9 @@ public final class ArgumentNames {
 
   public static final String CONTACT_ID = "--contactId";
 
-  public static final String CONTENT_CUSTOM_TARGETING_VALUE_ID = "--contentCustomTargetingValueId";
+  public static final String CONTENT_ID = "--contentId";
 
-  public static final String CONTENT_METADATA_KEY_HIERARCHY_ID = "--contentMetadataKeyHierarchyId";
+  public static final String CONTENT_BUNDLE_ID = "--contentBundleId";
 
   public static final String CREATIVE_ID = "--creativeId";
 

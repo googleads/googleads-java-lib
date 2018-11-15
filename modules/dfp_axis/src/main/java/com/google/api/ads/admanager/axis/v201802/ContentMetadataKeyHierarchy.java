@@ -25,7 +25,8 @@ package com.google.api.ads.admanager.axis.v201802;
 /**
  * A {@code ContentMetadataKeyHierarchy} defines a hierarchical relationship
  * between content
- *             metadata keys.
+ *             metadata keys. This is deprecated and will be removed
+ * as of V201811.
  */
 public class ContentMetadataKeyHierarchy  implements java.io.Serializable {
     /* The unique ID of the {@code ContentMetadataKeyHierarchy}. This

@@ -81,7 +81,14 @@ public class DateTimesHelper<T, D> {
       PropertyUtils.setProperty(dateTimeObj, "hour", dateTime.getHourOfDay());
       PropertyUtils.setProperty(dateTimeObj, "minute", dateTime.getMinuteOfHour());
       PropertyUtils.setProperty(dateTimeObj, "second", dateTime.getSecondOfMinute());
-      PropertyUtils.setProperty(dateTimeObj, "timeZoneID", dateTime.getZone().toTimeZone().getID());
+      // Starting in v201811, timeZoneID was renamed to timeZoneId
+      if (PropertyUtils.isWriteable(dateTimeObj, "timeZoneID")) {
+        PropertyUtils.setProperty(
+            dateTimeObj, "timeZoneID", dateTime.getZone().toTimeZone().getID());
+      } else {
+        PropertyUtils.setProperty(
+            dateTimeObj, "timeZoneId", dateTime.getZone().toTimeZone().getID());
+      }
 
       return dateTimeObj;
     } catch (InstantiationException e) {
@@ -141,6 +148,10 @@ public class DateTimesHelper<T, D> {
     try {
       @SuppressWarnings("unchecked") // Expected class.
       D dateObj = (D) PropertyUtils.getProperty(dateTime, "date");
+      String timeZoneId =
+          PropertyUtils.isReadable(dateTime, "timeZoneId")
+              ? (String) PropertyUtils.getProperty(dateTime, "timeZoneId")
+              : (String) PropertyUtils.getProperty(dateTime, "timeZoneID");
       return new DateTime(
           (Integer) PropertyUtils.getProperty(dateObj, "year"),
           (Integer) PropertyUtils.getProperty(dateObj, "month"),
@@ -149,8 +160,7 @@ public class DateTimesHelper<T, D> {
           (Integer) PropertyUtils.getProperty(dateTime, "minute"),
           (Integer) PropertyUtils.getProperty(dateTime, "second"),
           0,
-          DateTimeZone.forTimeZone(
-              TimeZone.getTimeZone((String) PropertyUtils.getProperty(dateTime, "timeZoneID"))));
+          DateTimeZone.forTimeZone(TimeZone.getTimeZone(timeZoneId)));
     } catch (IllegalAccessException e) {
       throw new IllegalStateException("Could not access class.", e);
     } catch (InvocationTargetException e) {

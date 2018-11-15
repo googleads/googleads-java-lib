@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Company} represents an agency, a single advertiser or an entire
- *             advertising network.
+ *             A {@code Company} represents an agency, a single advertiser or an entire advertising network.
  *           
  * 
  * <p>Java class for Company complex type.

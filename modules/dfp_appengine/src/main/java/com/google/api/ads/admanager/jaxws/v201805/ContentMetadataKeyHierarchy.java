@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code ContentMetadataKeyHierarchy} defines a hierarchical relationship between content
- *             metadata keys.
+ *             metadata keys. This is deprecated and will be removed as of V201811.
  *           
  * 
  * <p>Java class for ContentMetadataKeyHierarchy complex type.

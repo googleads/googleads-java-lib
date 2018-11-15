@@ -39,11 +39,10 @@ import javax.xml.bind.annotation.XmlType;
  *             An example of such a query might be {@code "WHERE id = :idValue"}.
  *             </p>
  *             <p>
- *             Statements also support use of the LIKE keyword. This provides partial and
- *             wildcard string matching.
+ *             Statements also support use of the LIKE keyword. This provides wildcard string matching.
  *             </p>
  *             <p>
- *             An example of such a query might be {@code "WHERE name LIKE 'startswith%'"}.
+ *             An example of such a query might be {@code "WHERE name LIKE '%searchString%'"}.
  *             </p>
  *             The value for the variable idValue must then be set with an object of type
  *             {@link Value}, e.g., {@link NumberValue}, {@link TextValue} or

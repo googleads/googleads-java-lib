@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Captures a page of {@link ContentMetadataKeyHierarchy} objects.
+ *             Captures a page of {@link ContentMetadataKeyHierarchy} objects. This is deprecated and will be
+ *             removed as of V201811.
  *           
  * 
  * <p>Java class for ContentMetadataKeyHierarchyPage complex type.

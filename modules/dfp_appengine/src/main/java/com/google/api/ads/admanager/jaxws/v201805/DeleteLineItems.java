@@ -23,7 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             The action used for deleting {@link LineItem} objects. A line item can be
- *             deleted if it has never been eligible to serve.
+ *             deleted if it has never been eligible to serve. Note: deleted line items
+ *             will still count against your network limits. For more information, see the
+ *             <a href="https://support.google.com/admanager/answer/1628457">Help Center</a>.
  *           
  * 
  * <p>Java class for DeleteLineItems complex type.

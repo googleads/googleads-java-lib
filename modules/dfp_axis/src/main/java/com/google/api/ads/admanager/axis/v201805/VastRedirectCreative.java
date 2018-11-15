@@ -37,7 +37,7 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
     private com.google.api.ads.admanager.axis.v201805.VastRedirectType vastRedirectType;
 
     /* The duration of the VAST ad in milliseconds. This attribute
-     * is optional and defaults to 0. */
+     * is required. */
     private java.lang.Integer duration;
 
     /* The IDs of the companion creatives that are associated with
@@ -180,7 +180,7 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the duration value for this VastRedirectCreative.
      * 
      * @return duration   * The duration of the VAST ad in milliseconds. This attribute
-     * is optional and defaults to 0.
+     * is required.
      */
     public java.lang.Integer getDuration() {
         return duration;
@@ -191,7 +191,7 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the duration value for this VastRedirectCreative.
      * 
      * @param duration   * The duration of the VAST ad in milliseconds. This attribute
-     * is optional and defaults to 0.
+     * is required.
      */
     public void setDuration(java.lang.Integer duration) {
         this.duration = duration;

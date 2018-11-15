@@ -24,8 +24,7 @@ package com.google.api.ads.admanager.axis.v201805;
 
 /**
  * A {@code Company} represents an agency, a single advertiser or
- * an entire
- *             advertising network.
+ * an entire advertising network.
  */
 public class Company  implements java.io.Serializable {
     /* Uniquely identifies the {@code Company}. This value is read-only

@@ -23,7 +23,6 @@ import com.google.api.ads.admanager.axis.v201805.AdUnitTargeting;
 import com.google.api.ads.admanager.axis.v201805.ApiError;
 import com.google.api.ads.admanager.axis.v201805.ApiException;
 import com.google.api.ads.admanager.axis.v201805.CompanionDeliveryOption;
-import com.google.api.ads.admanager.axis.v201805.ContentMetadataKeyHierarchyTargeting;
 import com.google.api.ads.admanager.axis.v201805.ContentTargeting;
 import com.google.api.ads.admanager.axis.v201805.CostType;
 import com.google.api.ads.admanager.axis.v201805.CreativePlaceholder;
@@ -58,32 +57,37 @@ import org.joda.time.Duration;
 import org.joda.time.Instant;
 
 /**
- * This example creates a new line item for a video environment. To determine
- * which line items exist, run GetAllLineItems.java. To determine which orders
- * exist, run GetAllOrders.java. To determine which content metadata key
- * hierarchies exist, run GetAllContentMetadataKeyHierarchies.java. To determine
- * which ad units exist, run GetAllAdUnits.java.
+ * This example creates a new line item for a video environment.
  *
- * Credentials and properties in {@code fromFile()} are pulled from the
- * "ads.properties" file. See README for more info.
+ * <p>Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file.
+ * See README for more info.
  */
 public class CreateVideoLineItems {
 
   private static class CreateVideoLineItemsParams extends CodeSampleParams {
-    @Parameter(names = ArgumentNames.ORDER_ID, required = true,
+    @Parameter(
+        names = ArgumentNames.ORDER_ID,
+        required = true,
         description = "The ID of the order that the line item will belong to.")
     private Long orderId;
 
-    @Parameter(names = ArgumentNames.TARGETED_VIDEO_AD_UNIT_ID, required = true,
+    @Parameter(
+        names = ArgumentNames.TARGETED_VIDEO_AD_UNIT_ID,
+        required = true,
         description = "The ID of the ad unit that the line item will target.")
     private String targetedVideoAdUnitId;
 
-    @Parameter(names = ArgumentNames.CONTENT_CUSTOM_TARGETING_VALUE_ID, required = true,
-        description = "The custom targeting value ID representing the metadata on the content"
-            + " to target. This would typically be from a key representing a \"genre\" and the"
-            + " value representing something like \"comedy\". The value must be from a key in a"
-            + " content metadata key hierarchy.")
-    private Long contentCustomTargetingValueId;
+    @Parameter(
+        names = ArgumentNames.CONTENT_ID,
+        required = true,
+        description = "The ID of the video Content that the line item will target")
+    private Long contentId;
+
+    @Parameter(
+        names = ArgumentNames.CONTENT_BUNDLE_ID,
+        required = true,
+        description = "The ID of the video ContentBundle that the line item will target")
+    private Long contentBundleId;
   }
 
   /**
@@ -92,11 +96,9 @@ public class CreateVideoLineItems {
    * @param adManagerServices the services factory.
    * @param session the session.
    * @param orderId the ID of the order that the line item will belong to.
-   * @param targetedVideoAdUnitId the ID of the d unit that the line item will target.
-   * @param contentCustomTargetingValueId The custom targeting value ID representing the metadata on
-   *     the content to target. This would typically be from a key representing a "genre" and the
-   *     value representing something like "comedy". The value must be from a key in a content
-   *     metadata key hierarchy.
+   * @param targetedVideoAdUnitId the ID of the ad unit that the line item will target.
+   * @param contentId the ID of the video content that the line item will target.
+   * @param contentBundleId the ID of the video content bundle that the line item will target.
    * @throws ApiException if the API request failed with one or more service errors.
    * @throws RemoteException if the API request failed due to other errors.
    */
@@ -105,22 +107,18 @@ public class CreateVideoLineItems {
       AdManagerSession session,
       long orderId,
       String targetedVideoAdUnitId,
-      long contentCustomTargetingValueId)
+      long contentId,
+      long contentBundleId)
       throws RemoteException {
     // Get the LineItemService.
     LineItemServiceInterface lineItemService =
         adManagerServices.get(session, LineItemServiceInterface.class);
 
     // Create content targeting.
-    ContentMetadataKeyHierarchyTargeting contentMetadataTargeting = 
-        new ContentMetadataKeyHierarchyTargeting();
-    contentMetadataTargeting.setCustomTargetingValueIds(
-        new long[] {contentCustomTargetingValueId});
-    
     ContentTargeting contentTargeting = new ContentTargeting();
-    contentTargeting.setTargetedContentMetadata(
-        new ContentMetadataKeyHierarchyTargeting[] {contentMetadataTargeting});
-    
+    contentTargeting.setTargetedContentIds(new long[] {contentId});
+    contentTargeting.setTargetedVideoContentBundleIds(new long[] {contentBundleId});
+
     // Create inventory targeting.
     InventoryTargeting inventoryTargeting = new InventoryTargeting();
     inventoryTargeting.setTargetedAdUnits(
@@ -132,8 +130,7 @@ public class CreateVideoLineItems {
     VideoPositionTarget videoPositionTarget = new VideoPositionTarget();
     videoPositionTarget.setVideoPosition(videoPosition);
     VideoPositionTargeting videoPositionTargeting = new VideoPositionTargeting();
-    videoPositionTargeting.setTargetedPositions(
-        new VideoPositionTarget[] {videoPositionTarget});
+    videoPositionTargeting.setTargetedPositions(new VideoPositionTarget[] {videoPositionTarget});
 
     // Create targeting.
     Targeting targeting = new Targeting();
@@ -196,7 +193,8 @@ public class CreateVideoLineItems {
     LineItem[] lineItems = lineItemService.createLineItems(new LineItem[] {lineItem});
 
     for (LineItem createdLineItem : lineItems) {
-      System.out.printf("A video line item with ID %d and name '%s' was created.%n",
+      System.out.printf(
+          "A video line item with ID %d and name '%s' was created.%n",
           createdLineItem.getId(), createdLineItem.getName());
     }
   }
@@ -241,8 +239,8 @@ public class CreateVideoLineItems {
       // into the code here. See the parameter class definition above for descriptions.
       params.orderId = Long.parseLong("INSERT_ORDER_ID_HERE");
       params.targetedVideoAdUnitId = "INSERT_TARGETED_VIDEO_AD_UNIT_ID_HERE";
-      params.contentCustomTargetingValueId =
-          Long.parseLong("INSERT_CONTENT_CUSTOM_TARGETING_VALUE_ID_HERE");
+      params.contentId = Long.parseLong("INSERT_CONTENT_ID_HERE");
+      params.contentBundleId = Long.parseLong("INSERT_CONTENT_BUNDLE_ID_HERE");
     }
 
     try {
@@ -251,7 +249,8 @@ public class CreateVideoLineItems {
           session,
           params.orderId,
           params.targetedVideoAdUnitId,
-          params.contentCustomTargetingValueId);
+          params.contentId,
+          params.contentBundleId);
     } catch (ApiException apiException) {
       // ApiException is the base class for most exceptions thrown by an API request. Instances
       // of this exception have a message and a collection of ApiErrors that indicate the

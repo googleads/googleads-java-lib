@@ -26,6 +26,8 @@ package com.google.api.ads.admanager.axis.v201808;
  * Represents a mobile carrier.
  *             Carrier targeting is only available to Ad Manager mobile
  * publishers.
+ *             For a list of current mobile carriers, you can use
+ *             {@link PublisherQueryLanguageService#mobile_carrier}.
  */
 public class MobileCarrier  extends com.google.api.ads.admanager.axis.v201808.Technology  implements java.io.Serializable {
     public MobileCarrier() {
