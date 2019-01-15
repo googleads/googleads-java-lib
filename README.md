@@ -273,18 +273,18 @@ If necessary, set this up in code by doing the following:
 ## Utilities
 
 *   AdWords
-    *   [BatchJobHelper](/googleads/googleads-java-lib/wiki/BatchJobHelper-utility-for-AdWords) for managing
+    *   [BatchJobHelper](https://github.com/googleads/googleads-java-lib/wiki/BatchJobHelper-utility-for-AdWords) for managing
         [BatchJobs](https://developers.google.com/adwords/api/docs/guides/batch-jobs).
-    *   [Report downloader](/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
+    *   [Report downloader](https://github.com//googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
         [reports](https://developers.google.com/adwords/api/docs/guides/reporting).
-    *   [Selector builder](/googleads/googleads-java-lib/wiki/SelectorBuilder-utility-for-AdWords) to simplify the
+    *   [Selector builder](https://github.com/googleads/googleads-java-lib/wiki/SelectorBuilder-utility-for-AdWords) to simplify the
         creation of
         [`Selector` objects for `get` requests](https://developers.google.com/adwords/api/docs/guides/objects-methods#the_get_method).
-    *   [Shopping ProductPartitionTree utility](/googleads/googleads-java-lib/wiki/Shopping-product-partition-utility-for-AdWords)
+    *   [Shopping ProductPartitionTree utility](https://github.com/googleads/googleads-java-lib/wiki/Shopping-product-partition-utility-for-AdWords)
         for managing
         [partitions in Shopping campaigns](https://developers.google.com/adwords/api/docs/guides/shopping#partitioning).
 *   Ad Manager 
-    *   [Report downloader](/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
+    *   [Report downloader](https://github.com/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
         [reports](https://developers.google.com/doubleclick-publishers/docs/reporting).
 
 ## Extensions
