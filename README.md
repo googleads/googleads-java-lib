@@ -275,7 +275,7 @@ If necessary, set this up in code by doing the following:
 *   AdWords
     *   [BatchJobHelper](https://github.com/googleads/googleads-java-lib/wiki/BatchJobHelper-utility-for-AdWords) for managing
         [BatchJobs](https://developers.google.com/adwords/api/docs/guides/batch-jobs).
-    *   [Report downloader](https://github.com//googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
+    *   [Report downloader](https://github.com/googleads/googleads-java-lib/wiki/ReportDownloader-utilities) for downloading
         [reports](https://developers.google.com/adwords/api/docs/guides/reporting).
     *   [Selector builder](https://github.com/googleads/googleads-java-lib/wiki/SelectorBuilder-utility-for-AdWords) to simplify the
         creation of

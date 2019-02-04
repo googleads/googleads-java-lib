@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.soap.Node;
 import javax.xml.soap.SOAPElement;
 import javax.xml.ws.BindingProvider;
 import org.junit.Before;
@@ -168,7 +169,7 @@ public class AdWordsJaxWsHeaderHandlerTest {
       SOAPElement soapValue = (SOAPElement) headerArg.getValue();
       assertEquals("RequestHeader", soapValue.getLocalName());
       assertEquals(topLevelNamespace, soapValue.getNamespaceURI());
-      ArrayList<SOAPElement> children = Lists.newArrayList(soapValue.getChildElements());
+      ArrayList<Node> children = Lists.newArrayList(soapValue.getChildElements());
       assertEquals(expectedHeaders.size(), children.size());
       children.forEach(
           child -> {

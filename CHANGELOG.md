@@ -1,3 +1,16 @@
+4.3.0 - 04/02/2019
+------------------
+AdWords:
+  - Removed v201802 support.
+  - Added AddSmartShoppingAd example for v201809.
+
+Ad Manager:
+  - Removed v201802 support.
+  - Fixed null pointer exception when the `getAllNetworks` function returns null in the `GetAllNetworks` examples for v201811, v201808 and v201805.
+
+Common
+  - No changes.
+
 4.2.0 - 11/15/2018
 ------------------
 AdWords:

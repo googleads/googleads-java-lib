@@ -57,6 +57,11 @@ public class GetAllNetworks {
     // credentials.
     Network[] networks = networkService.getAllNetworks();
 
+    if (networks == null || networks.length == 0) {
+      System.out.printf("No accessible networks found.%n");
+      return;
+    }
+
     int i = 0;
     for (Network network : networks) {
       System.out.printf(
