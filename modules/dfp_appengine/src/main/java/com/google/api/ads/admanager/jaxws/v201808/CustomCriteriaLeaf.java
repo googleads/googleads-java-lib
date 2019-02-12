@@ -47,6 +47,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CustomCriteriaLeaf")
 @XmlSeeAlso({
+    CmsMetadataCriteria.class,
     CustomCriteria.class,
     AudienceSegmentCriteria.class
 })

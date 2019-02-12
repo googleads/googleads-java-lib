@@ -479,6 +479,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CmsMetadataCriteria");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.CmsMetadataCriteria.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CmsMetadataCriteria.ComparisonOperator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.CmsMetadataCriteriaComparisonOperator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CollectionSizeError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.CollectionSizeError.class;
@@ -857,20 +871,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "DeliveryTimeZone");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.DeliveryTimeZone.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "DeviceCapability");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.DeviceCapability.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -886,6 +886,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "DeliveryTimeZone");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.DeliveryTimeZone.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "DeviceCapability");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.DeviceCapability.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "DeviceCapabilityPremiumFeature");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.DeviceCapabilityPremiumFeature.class;
@@ -1572,20 +1586,6 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "OrderActionError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.OrderActionErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "OrderError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.OrderError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1601,6 +1601,20 @@ public class ForecastServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "OrderActionError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.OrderActionErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "OrderError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.OrderError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "OrderError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.OrderErrorReason.class;

@@ -4362,7 +4362,7 @@ public enum Column {
 
     /**
      * 
-     *                 The number of impressions delivered.
+     *                 Number of impressions delivered.
      *                 <p>Corresponds to "Impressions" in the Ad Manager UI.</p>
      *               
      * 

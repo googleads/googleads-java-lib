@@ -421,6 +421,20 @@ public class ProposalLineItemServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CmsMetadataCriteria");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.CmsMetadataCriteria.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CmsMetadataCriteria.ComparisonOperator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.CmsMetadataCriteriaComparisonOperator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CollectionSizeError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.CollectionSizeError.class;
@@ -848,20 +862,6 @@ public class ProposalLineItemServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "EntityLimitReachedError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.EntityLimitReachedErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "EnvironmentType");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.EnvironmentType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -877,6 +877,20 @@ public class ProposalLineItemServiceSoapBindingStub extends org.apache.axis.clie
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "EntityLimitReachedError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.EntityLimitReachedErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "EnvironmentType");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.EnvironmentType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "ExchangeRateError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.ExchangeRateError.class;
@@ -1563,20 +1577,6 @@ public class ProposalLineItemServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "RequiredError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.RequiredError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "RequiredError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.RequiredErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1592,6 +1592,20 @@ public class ProposalLineItemServiceSoapBindingStub extends org.apache.axis.clie
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "RequiredError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.RequiredError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "RequiredError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.RequiredErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "RequiredNumberError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.RequiredNumberError.class;

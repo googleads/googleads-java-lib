@@ -754,6 +754,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CmsMetadataCriteria }
+     * 
+     */
+    public CmsMetadataCriteria createCmsMetadataCriteria() {
+        return new CmsMetadataCriteria();
+    }
+
+    /**
      * Create an instance of {@link ProductPackageItemPage }
      * 
      */

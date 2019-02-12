@@ -29,18 +29,19 @@ public class VideoPositionTarget  implements java.io.Serializable {
     /* The video position to target.  This attribute is required. */
     private com.google.api.ads.admanager.axis.v201805.VideoPosition videoPosition;
 
-    /* The video bumper type to target.  To target a video position
-     * or a pod position,
-     *                 this value must be null.  To target a bumper position
-     * this value must be populated
-     *                 and the line item must have a bumper type. */
+    /* The video bumper type to target. To target a video position
+     * or a pod position, this value must
+     *                 be null. To target a bumper position this value must
+     * be populated and the line item must have a
+     *                 bumper type. To target a custom ad spot, this value
+     * must be null. */
     private com.google.api.ads.admanager.axis.v201805.VideoBumperType videoBumperType;
 
-    /* The video position within a pod to target.  To target a video
-     * position or a bumper
-     *                 position, this value must be null.  To target a position
-     * within a pod this value must
-     *                 be populated. */
+    /* The video position within a pod to target. To target a video
+     * position or a bumper position,
+     *                 this value must be null. To target a position within
+     * a pod this value must be populated. To
+     *                 target a custom ad spot, this value must be null. */
     private com.google.api.ads.admanager.axis.v201805.VideoPositionWithinPod videoPositionWithinPod;
 
     public VideoPositionTarget() {
@@ -88,11 +89,12 @@ public class VideoPositionTarget  implements java.io.Serializable {
     /**
      * Gets the videoBumperType value for this VideoPositionTarget.
      * 
-     * @return videoBumperType   * The video bumper type to target.  To target a video position
-     * or a pod position,
-     *                 this value must be null.  To target a bumper position
-     * this value must be populated
-     *                 and the line item must have a bumper type.
+     * @return videoBumperType   * The video bumper type to target. To target a video position
+     * or a pod position, this value must
+     *                 be null. To target a bumper position this value must
+     * be populated and the line item must have a
+     *                 bumper type. To target a custom ad spot, this value
+     * must be null.
      */
     public com.google.api.ads.admanager.axis.v201805.VideoBumperType getVideoBumperType() {
         return videoBumperType;
@@ -102,11 +104,12 @@ public class VideoPositionTarget  implements java.io.Serializable {
     /**
      * Sets the videoBumperType value for this VideoPositionTarget.
      * 
-     * @param videoBumperType   * The video bumper type to target.  To target a video position
-     * or a pod position,
-     *                 this value must be null.  To target a bumper position
-     * this value must be populated
-     *                 and the line item must have a bumper type.
+     * @param videoBumperType   * The video bumper type to target. To target a video position
+     * or a pod position, this value must
+     *                 be null. To target a bumper position this value must
+     * be populated and the line item must have a
+     *                 bumper type. To target a custom ad spot, this value
+     * must be null.
      */
     public void setVideoBumperType(com.google.api.ads.admanager.axis.v201805.VideoBumperType videoBumperType) {
         this.videoBumperType = videoBumperType;
@@ -116,11 +119,11 @@ public class VideoPositionTarget  implements java.io.Serializable {
     /**
      * Gets the videoPositionWithinPod value for this VideoPositionTarget.
      * 
-     * @return videoPositionWithinPod   * The video position within a pod to target.  To target a video
-     * position or a bumper
-     *                 position, this value must be null.  To target a position
-     * within a pod this value must
-     *                 be populated.
+     * @return videoPositionWithinPod   * The video position within a pod to target. To target a video
+     * position or a bumper position,
+     *                 this value must be null. To target a position within
+     * a pod this value must be populated. To
+     *                 target a custom ad spot, this value must be null.
      */
     public com.google.api.ads.admanager.axis.v201805.VideoPositionWithinPod getVideoPositionWithinPod() {
         return videoPositionWithinPod;
@@ -130,11 +133,11 @@ public class VideoPositionTarget  implements java.io.Serializable {
     /**
      * Sets the videoPositionWithinPod value for this VideoPositionTarget.
      * 
-     * @param videoPositionWithinPod   * The video position within a pod to target.  To target a video
-     * position or a bumper
-     *                 position, this value must be null.  To target a position
-     * within a pod this value must
-     *                 be populated.
+     * @param videoPositionWithinPod   * The video position within a pod to target. To target a video
+     * position or a bumper position,
+     *                 this value must be null. To target a position within
+     * a pod this value must be populated. To
+     *                 target a custom ad spot, this value must be null.
      */
     public void setVideoPositionWithinPod(com.google.api.ads.admanager.axis.v201805.VideoPositionWithinPod videoPositionWithinPod) {
         this.videoPositionWithinPod = videoPositionWithinPod;

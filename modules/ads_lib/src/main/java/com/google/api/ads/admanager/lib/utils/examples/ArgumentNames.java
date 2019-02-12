@@ -145,4 +145,10 @@ public final class ArgumentNames {
   public static final String TRAFFICKER_ID = "--traffickerId";
 
   public static final String USER_ID = "--userId";
+
+  public static final String ADJUSTMENT_ID = "--adjustmentId";
+
+  public static final String CMS_METADATA_VALUE_ID = "--cmsMetadataValueId";
+
+  public static final String CMS_METADATA_KEY_NAME = "--cmsMetadataKeyName";
 }

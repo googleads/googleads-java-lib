@@ -418,6 +418,20 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CmsMetadataCriteria");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.CmsMetadataCriteria.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CmsMetadataCriteria.ComparisonOperator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.CmsMetadataCriteriaComparisonOperator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "CollectionSizeError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.CollectionSizeError.class;
@@ -866,20 +880,6 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "MobileApplicationTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.MobileApplicationTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "MobileCarrier");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.MobileCarrier.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -895,6 +895,20 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "MobileApplicationTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.MobileApplicationTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "MobileCarrier");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.MobileCarrier.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "MobileCarrierTargeting");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.MobileCarrierTargeting.class;
@@ -1581,20 +1595,6 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "Technology");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.Technology.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "TechnologyTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201811.TechnologyTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1610,6 +1610,20 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "Technology");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.Technology.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "TechnologyTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201811.TechnologyTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201811", "TerminateNegotiations");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201811.TerminateNegotiations.class;

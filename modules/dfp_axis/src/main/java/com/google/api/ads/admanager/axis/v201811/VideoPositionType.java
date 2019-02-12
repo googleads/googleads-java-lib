@@ -31,9 +31,11 @@ public class VideoPositionType implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final java.lang.String _PREROLL = "PREROLL";
     public static final java.lang.String _MIDROLL = "MIDROLL";
     public static final java.lang.String _POSTROLL = "POSTROLL";
+    public static final VideoPositionType UNKNOWN = new VideoPositionType(_UNKNOWN);
     public static final VideoPositionType PREROLL = new VideoPositionType(_PREROLL);
     public static final VideoPositionType MIDROLL = new VideoPositionType(_MIDROLL);
     public static final VideoPositionType POSTROLL = new VideoPositionType(_POSTROLL);

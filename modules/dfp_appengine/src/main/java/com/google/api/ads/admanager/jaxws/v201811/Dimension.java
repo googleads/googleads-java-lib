@@ -1142,7 +1142,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by inventory type. Can be used for filtering.
-     *                 <p>Corresponds to "Inventory types" in the Ad Manager UI.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Inventory types (retired), Inventory types.</p>
      *               
      * 
      */

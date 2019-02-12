@@ -34,7 +34,7 @@ public class DateTimeRange  implements java.io.Serializable {
      *                 specified. */
     private com.google.api.ads.admanager.axis.v201811.DateTime startDateTime;
 
-    /* The start date time of this range. This field is optional and
+    /* The end date time of this range. This field is optional and
      * if it is not set then there is no
      *                 upper bound on the date time range. If this field
      * is not set then {@code startDateTime} must be
@@ -91,7 +91,7 @@ public class DateTimeRange  implements java.io.Serializable {
     /**
      * Gets the endDateTime value for this DateTimeRange.
      * 
-     * @return endDateTime   * The start date time of this range. This field is optional and
+     * @return endDateTime   * The end date time of this range. This field is optional and
      * if it is not set then there is no
      *                 upper bound on the date time range. If this field
      * is not set then {@code startDateTime} must be
@@ -105,7 +105,7 @@ public class DateTimeRange  implements java.io.Serializable {
     /**
      * Sets the endDateTime value for this DateTimeRange.
      * 
-     * @param endDateTime   * The start date time of this range. This field is optional and
+     * @param endDateTime   * The end date time of this range. This field is optional and
      * if it is not set then there is no
      *                 upper bound on the date time range. If this field
      * is not set then {@code startDateTime} must be

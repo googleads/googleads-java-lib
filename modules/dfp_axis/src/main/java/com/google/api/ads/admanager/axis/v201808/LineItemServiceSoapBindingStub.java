@@ -358,6 +358,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CmsMetadataCriteria");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.CmsMetadataCriteria.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CmsMetadataCriteria.ComparisonOperator");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.CmsMetadataCriteriaComparisonOperator.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "CollectionSizeError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.CollectionSizeError.class;
@@ -848,20 +862,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "GeoTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.GeoTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "GeoTargetingError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.GeoTargetingError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -877,6 +877,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "GeoTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.GeoTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "GeoTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.GeoTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "GeoTargetingError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.GeoTargetingErrorReason.class;
@@ -1563,20 +1577,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "ServerError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.ServerErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "SetTopBoxInfo");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v201808.SetTopBoxInfo.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1592,6 +1592,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "ServerError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.ServerErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "SetTopBoxInfo");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v201808.SetTopBoxInfo.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v201808", "SetTopBoxLineItemError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v201808.SetTopBoxLineItemError.class;

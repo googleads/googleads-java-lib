@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="VideoPosition.Type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="UNKNOWN"/>
  *     &lt;enumeration value="PREROLL"/>
  *     &lt;enumeration value="MIDROLL"/>
  *     &lt;enumeration value="POSTROLL"/>
@@ -39,6 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum VideoPositionType {
 
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN,
 
     /**
      * 
