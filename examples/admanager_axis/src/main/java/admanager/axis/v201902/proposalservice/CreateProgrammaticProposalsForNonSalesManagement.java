@@ -88,7 +88,6 @@ public class CreateProgrammaticProposalsForNonSalesManagement {
       throws RemoteException {
     ProposalServiceInterface proposalService =
         adManagerServices.get(session, ProposalServiceInterface.class);
-
     Proposal proposal = new Proposal();
 
     // Setting required Marketplace information.
@@ -100,6 +99,7 @@ public class CreateProgrammaticProposalsForNonSalesManagement {
     proposal.setIsProgrammatic(true);
     proposal.setPrimaryTraffickerId(primaryTraffickerId);
     proposal.setMarketplaceInfo(proposalMarketplaceInfo);
+
     SalespersonSplit primarySalesperson = new SalespersonSplit();
     primarySalesperson.setUserId(primarySalespersonId);
     primarySalesperson.setSplit(100000);

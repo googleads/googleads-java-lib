@@ -1,3 +1,15 @@
+4.5.0 - 04/01/2019
+------------------
+AdWords:
+  - Removed v201806 support.
+
+Ad Manager:
+  - No changes.
+
+Common:
+  - Added dependencies required for Java 9.
+  - Updated plugin versions to support Java 9.
+
 4.4.0 - 02/12/2019
 ------------------
 AdWords:

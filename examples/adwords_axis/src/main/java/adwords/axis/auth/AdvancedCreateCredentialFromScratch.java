@@ -17,23 +17,23 @@ package adwords.axis.auth;
 import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_FILENAME;
 
 import com.google.api.ads.adwords.axis.factory.AdWordsServices;
-import com.google.api.ads.adwords.axis.v201806.cm.Campaign;
-import com.google.api.ads.adwords.axis.v201806.cm.CampaignPage;
-import com.google.api.ads.adwords.axis.v201806.cm.CampaignServiceInterface;
-import com.google.api.ads.adwords.axis.v201806.cm.Paging;
-import com.google.api.ads.adwords.axis.v201806.cm.Selector;
+import com.google.api.ads.adwords.axis.v201809.cm.Campaign;
+import com.google.api.ads.adwords.axis.v201809.cm.CampaignPage;
+import com.google.api.ads.adwords.axis.v201809.cm.CampaignServiceInterface;
+import com.google.api.ads.adwords.axis.v201809.cm.Paging;
+import com.google.api.ads.adwords.axis.v201809.cm.Selector;
 import com.google.api.ads.adwords.lib.client.AdWordsSession;
 import com.google.api.ads.adwords.lib.client.reporting.ReportingConfiguration;
 import com.google.api.ads.adwords.lib.factory.AdWordsServicesInterface;
-import com.google.api.ads.adwords.lib.jaxb.v201806.DownloadFormat;
-import com.google.api.ads.adwords.lib.jaxb.v201806.ReportDefinition;
-import com.google.api.ads.adwords.lib.jaxb.v201806.ReportDefinitionDateRangeType;
-import com.google.api.ads.adwords.lib.jaxb.v201806.ReportDefinitionReportType;
+import com.google.api.ads.adwords.lib.jaxb.v201809.DownloadFormat;
+import com.google.api.ads.adwords.lib.jaxb.v201809.ReportDefinition;
+import com.google.api.ads.adwords.lib.jaxb.v201809.ReportDefinitionDateRangeType;
+import com.google.api.ads.adwords.lib.jaxb.v201809.ReportDefinitionReportType;
 import com.google.api.ads.adwords.lib.utils.DetailedReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponse;
 import com.google.api.ads.adwords.lib.utils.ReportDownloadResponseException;
 import com.google.api.ads.adwords.lib.utils.ReportException;
-import com.google.api.ads.adwords.lib.utils.v201806.ReportDownloader;
+import com.google.api.ads.adwords.lib.utils.v201809.ReportDownloader;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.common.lib.utils.Streams;
@@ -183,8 +183,8 @@ public class AdvancedCreateCredentialFromScratch {
     }
 
     // Create selector.
-    com.google.api.ads.adwords.lib.jaxb.v201806.Selector reportSelector =
-        new com.google.api.ads.adwords.lib.jaxb.v201806.Selector();
+    com.google.api.ads.adwords.lib.jaxb.v201809.Selector reportSelector =
+        new com.google.api.ads.adwords.lib.jaxb.v201809.Selector();
     reportSelector.getFields().addAll(Arrays.asList(
         "CampaignId",
         "AdGroupId",

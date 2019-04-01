@@ -29,6 +29,7 @@ import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterface;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.CampaignServiceInterfaceImpl;
 import com.google.api.ads.common.lib.soap.jaxws.testing.mocks.MockJaxWsCompatibleDescriptor;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.inject.Provider;
 import java.lang.reflect.Method;
@@ -149,8 +150,7 @@ public class JaxWsHandlerTest {
     when(mockBinding.getHandlerChain()).thenReturn(handlerChain);
 
     jaxWsHandler.setHeader(mockSoapClient, namespace, headerName, headerValue);
-    assertEquals(new HashSet<SOAPElement>() {{ add(headerValue); }},
-        contextHandler.getAddedHeaders());
+    assertEquals(ImmutableSet.of(headerValue), contextHandler.getAddedHeaders());
   }
 
   @Test
@@ -196,7 +196,7 @@ public class JaxWsHandlerTest {
     assertEquals("Child name incorrect", childName, childHeaderFromHandler.getNodeName());
     assertEquals("Child namespace incorrect", childNamespace,
         childHeaderFromHandler.getNamespaceURI());
-    assertEquals("Child value incorrect", childValue, childHeaderFromHandler.getValue());
+    assertEquals("Child value incorrect", childValue, childHeaderFromHandler.getTextContent());
   }
 
   /**

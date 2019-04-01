@@ -40,9 +40,8 @@ import java.rmi.RemoteException;
 import java.util.Map;
 
 /**
- * This example gets all images and videos. To upload an image, run
- * UploadImage.java. To upload video, see:
- * http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+ * This code example gets all videos and images. Use the Google Ads website to upload new
+ * videos. To upload an image, run UploadImage.java.
  *
  * <p>Credentials and properties in {@code fromFile()} are pulled from the
  * "ads.properties" file. See README for more info.
