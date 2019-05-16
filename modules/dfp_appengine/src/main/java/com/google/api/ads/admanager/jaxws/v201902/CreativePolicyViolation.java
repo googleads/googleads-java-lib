@@ -124,7 +124,7 @@ public enum CreativePolicyViolation {
 
     /**
      * 
-     *                 The creative has been determined as attempting the circumvent the systems.
+     *                 The creative has been determined as attempting to circumvent Google advertising systems.
      *               
      * 
      */

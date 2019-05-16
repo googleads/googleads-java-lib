@@ -82,7 +82,7 @@ public enum AdSenseAccountErrorReason {
     /**
      * 
      *                 An error occured while trying to resend the account association verification email. Error
-     *                 resending verification email.  Please try again.
+     *                 resending verification email. Please try again.
      *               
      * 
      */

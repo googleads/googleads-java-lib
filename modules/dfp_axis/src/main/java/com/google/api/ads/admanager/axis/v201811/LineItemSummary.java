@@ -305,12 +305,20 @@ public class LineItemSummary  implements java.io.Serializable {
      * and {@link LineItemType#STANDARD}. When true, operations on this line
      * item will never trigger a {@link ForecastError}, which corresponds
      * to an
-     *                 overbook warning in the UI. The default value is false. */
+     *                 overbook warning in the UI. The default value is false.
+     * 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request. */
     private java.lang.Boolean allowOverbook;
 
     /* The flag indicates whether the inventory check should be skipped
-     * when performing an action on
-     *                 this line item. The default value is false. */
+     * when creating or updating a
+     *                 line item. The default value is false.
+     *                 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request. */
     private java.lang.Boolean skipInventoryCheck;
 
     /* True to skip checks for warnings from rules applied to line
@@ -1665,6 +1673,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * item will never trigger a {@link ForecastError}, which corresponds
      * to an
      *                 overbook warning in the UI. The default value is false.
+     * 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request.
      */
     public java.lang.Boolean getAllowOverbook() {
         return allowOverbook;
@@ -1681,6 +1693,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * item will never trigger a {@link ForecastError}, which corresponds
      * to an
      *                 overbook warning in the UI. The default value is false.
+     * 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request.
      */
     public void setAllowOverbook(java.lang.Boolean allowOverbook) {
         this.allowOverbook = allowOverbook;
@@ -1691,8 +1707,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the skipInventoryCheck value for this LineItemSummary.
      * 
      * @return skipInventoryCheck   * The flag indicates whether the inventory check should be skipped
-     * when performing an action on
-     *                 this line item. The default value is false.
+     * when creating or updating a
+     *                 line item. The default value is false.
+     *                 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request.
      */
     public java.lang.Boolean getSkipInventoryCheck() {
         return skipInventoryCheck;
@@ -1703,8 +1723,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the skipInventoryCheck value for this LineItemSummary.
      * 
      * @param skipInventoryCheck   * The flag indicates whether the inventory check should be skipped
-     * when performing an action on
-     *                 this line item. The default value is false.
+     * when creating or updating a
+     *                 line item. The default value is false.
+     *                 
+     *                 <p>Note: this field will not persist on the line item
+     * itself, and the value will only affect
+     *                 the current request.
      */
     public void setSkipInventoryCheck(java.lang.Boolean skipInventoryCheck) {
         this.skipInventoryCheck = skipInventoryCheck;

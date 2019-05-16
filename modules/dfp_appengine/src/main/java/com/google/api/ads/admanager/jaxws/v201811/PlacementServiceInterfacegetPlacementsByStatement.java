@@ -40,10 +40,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Placement#id}</td>
  *             </tr>
  *             <tr>
- *             <td>{@code isAdSenseTargetingEnabled}</td>
- *             <td>{@link Placement#isAdSenseTargetingEnabled}</td>
- *             </tr>
- *             <tr>
  *             <td>{@code name}</td>
  *             <td>{@link Placement#name}</td>
  *             </tr>

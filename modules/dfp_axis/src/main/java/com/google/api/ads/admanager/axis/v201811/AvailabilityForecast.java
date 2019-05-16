@@ -29,7 +29,7 @@ package com.google.api.ads.admanager.axis.v201811;
  * possible inventory. From least to most,
  *             these are:
  *             
- *             <dl>
+ *             <ul>
  *             <li>Available units -- How many units can be booked without
  * affecting any other line items.
  *             Booking more than this number can cause lower and same
@@ -40,7 +40,7 @@ package com.google.api.ads.admanager.axis.v201811;
  * item to underdeliver.
  *             <li>Matched (forecast) units -- How many units satisfy
  * all specified criteria.
- *             </dl>
+ *             </ul>
  *             
  *             <p>Underdelivery is caused by overbooking. However, if
  * more impressions are served than are
