@@ -245,7 +245,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Month and year" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Partner finance.</p>
      *               
      * 
      */
@@ -262,7 +262,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Week" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -279,7 +279,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Date" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -290,7 +290,7 @@ public enum Dimension {
      *                 Breaks down reporting data by day of the week in the network time zone. Can
      *                 be used to filter by day of the week using the index of the day (from 1 for
      *                 Monday is 1 to 7 for Sunday).
-     *                 <p>Corresponds to "Day of week" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Day of week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -300,7 +300,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by hour of the day in the network time zone. Can
      *                 be used to filter by hour of the day (from 0 to 23).
-     *                 <p>Corresponds to "Hour" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Hour" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -310,6 +310,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#id}. Can be used to
      *                 filter by {@link LineItem#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -320,7 +321,7 @@ public enum Dimension {
      *                 Breaks down reporting data by line item. {@link LineItem#name} and
      *                 {@link LineItem#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link LineItem#name}.
-     *                 <p>Corresponds to "Line item" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -330,7 +331,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#lineItemType}. Can be used
      *                 to filter by line item type using {@link LineItemType} enumeration names.
-     *                 <p>Corresponds to "Line item type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection.</p>
      *               
      * 
      */
@@ -340,6 +341,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Order#id}. Can be used to filter by
      *                 {@link Order#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -350,7 +352,7 @@ public enum Dimension {
      *                 Breaks down reporting data by order. {@link Order#name} and
      *                 {@link Order#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Order#name}.
-     *                 <p>Corresponds to "Order" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Order" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -361,6 +363,7 @@ public enum Dimension {
      *                 Delivery status of the order. Not available as a dimension to report on,
      *                 but exists as a dimension in order to filter on it using PQL.
      *                 Valid values are 'STARTED', 'NOT_STARTED' and 'COMPLETED'.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -370,6 +373,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by advertising company {@link Company#id}. Can
      *                 be used to filter by {@link Company#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -380,7 +384,7 @@ public enum Dimension {
      *                 Breaks down reporting data by advertising company. {@link Company#name} and
      *                 {@link Company#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Company#name}.
-     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -398,6 +402,7 @@ public enum Dimension {
      *                 network one-by-one until it finds an ad network with an ad to serve. The ad network that ends
      *                 up serving the ad will appear here. Note that this id does not correlate to anything in the
      *                 companies table and is not the same id as is served by {@link #ADVERTISER_ID}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -406,7 +411,7 @@ public enum Dimension {
     /**
      * 
      *                 The name of the network defined in {@link #AD_NETWORK_ID}.
-     *                 <p>Corresponds to "Ad network name" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad network name" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -416,6 +421,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}. Can be used to
      *                 filter by {@link User#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -426,7 +432,7 @@ public enum Dimension {
      *                 Breaks down reporting data by salesperson. {@link User#name} and
      *                 {@link User#id} of the salesperson are automatically included as columns in
      *                 the report. Can be used to filter by {@link User#name}.
-     *                 <p>Corresponds to "Salesperson" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
      *               
      * 
      */
@@ -437,6 +443,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link Creative#id} or creative set id
      *                 (master's {@link Creative#id}) if the creative is part of a creative set.
      *                 Can be used to filter by {@link Creative#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Data protection.</p>
      *               
      * 
      */
@@ -447,7 +454,7 @@ public enum Dimension {
      *                 Breaks down reporting data by creative. {@link Creative#name} and
      *                 {@link Creative#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Creative#name}.
-     *                 <p>Corresponds to "Creative" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Data protection.</p>
      *               
      * 
      */
@@ -456,7 +463,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by creative type.
-     *                 <p>Corresponds to "Creative type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -465,7 +472,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by creative billing type.
-     *                 <p>Corresponds to "Creative billing type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative billing type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -474,6 +481,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -482,7 +490,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event name.
-     *                 <p>Corresponds to "Custom event" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Custom event" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -491,7 +499,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by custom event type (timer/exit/counter).
-     *                 <p>Corresponds to "Custom event type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Custom event type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -501,7 +509,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Creative#size}. Cannot be used for
      *                 filtering.
-     *                 <p>Corresponds to "Creative size" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative size" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -512,6 +520,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link AdUnit#id}. Can be used to filter by
      *                 {@link AdUnit#id}. {@link #AD_UNIT_NAME}, i.e. {@link AdUnit#name}, is
      *                 automatically included as a dimension in the report.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -522,7 +531,7 @@ public enum Dimension {
      *                 Breaks down reporting data by ad unit. {@link AdUnit#name} and
      *                 {@link AdUnit#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link AdUnit#name}.
-     *                 <p>Corresponds to "Ad unit" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad unit" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -532,6 +541,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#id}. Not available as a
      *                 dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -541,6 +551,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#name}. Not available as a
      *                 dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -550,6 +561,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Placement#id}. Can be used to filter
      *                 by {@link Placement#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -560,7 +572,7 @@ public enum Dimension {
      *                 Breaks down reporting data by placement. {@link Placement#name} and
      *                 {@link Placement#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Placement#name}.
-     *                 <p>Corresponds to "Placement" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Placement" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -572,6 +584,7 @@ public enum Dimension {
      *                 exists as a dimension in order to filter on it using PQL. Can be used to
      *                 filter on {@link Placement#status} by using {@link InventoryStatus}
      *                 enumeration names.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -581,7 +594,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by criteria predefined by Ad Manager like the
      *                 operating system, browser etc. Cannot be used for filtering.
-     *                 <p>Corresponds to "Targeting" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Targeting" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -592,6 +605,7 @@ public enum Dimension {
      *                 The ID of the device category to which an ad is being targeted.
      *                 
      *                 Can be used to filter by device category ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -603,7 +617,7 @@ public enum Dimension {
      *                 targeted.
      *                 
      *                 Can be used to filter by device category name.
-     *                 <p>Corresponds to "Device category" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -613,6 +627,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by country criteria ID. Can be used to filter by
      *                 country criteria ID.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -623,7 +638,7 @@ public enum Dimension {
      *                 Breaks down reporting data by country name. The country name and the
      *                 country criteria ID are automatically included as columns in the report.
      *                 Can be used to filter by country name using the US English name.
-     *                 <p>Corresponds to "Country" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Country" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -633,6 +648,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by region criteria ID. Can be used to filter by
      *                 region criteria ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -643,7 +659,7 @@ public enum Dimension {
      *                 Breaks down reporting data by region name. The region name and the region
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by region name using the US English name.
-     *                 <p>Corresponds to "Region" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Region" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -653,6 +669,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by city criteria ID. Can be used to filter by
      *                 city criteria ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -663,7 +680,7 @@ public enum Dimension {
      *                 Breaks down reporting data by city name. The city name and the city
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by city name using the US English name.
-     *                 <p>Corresponds to "City" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "City" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -673,6 +690,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by metro criteria ID. Can be used to filter by
      *                 metro criteria ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -683,7 +701,7 @@ public enum Dimension {
      *                 Breaks down reporting data by metro name. The metro name and the metro
      *                 criteria ID are automatically included as columns in the report. Can be
      *                 used to filter by metro name using the US English name.
-     *                 <p>Corresponds to "Metro" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Metro" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -693,6 +711,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by postal code criteria ID. Can be used to
      *                 filter by postal code criteria ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -703,7 +722,7 @@ public enum Dimension {
      *                 Breaks down reporting data by postal code. The postal code and the postal
      *                 code criteria ID are automatically included as columns in the report. Can
      *                 be used to filter by postal code.
-     *                 <p>Corresponds to "Postal code" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Postal code" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -713,6 +732,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link CustomTargetingValue#id}. Can be used
      *                 to filter by {@link CustomTargetingValue#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -746,7 +766,7 @@ public enum Dimension {
      *                 <p>
      *                 When using this {@code Dimension}, metrics for freeform key values are only
      *                 reported on when they are registered with {@code CustomTargetingService}.
-     *                 <p>Corresponds to "Key-values" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Key-values" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -756,6 +776,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by activity ID. Can be used to filter by
      *                 activity ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -766,7 +787,7 @@ public enum Dimension {
      *                 Breaks down reporting data by activity. The activity name and the activity
      *                 ID are automatically included as columns in the report. Can be used to
      *                 filter by activity name.
-     *                 <p>Corresponds to "Activity" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Activity" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -776,6 +797,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by activity group ID. Can be used to filter by
      *                 activity group ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -786,7 +808,7 @@ public enum Dimension {
      *                 Breaks down reporting data by activity group. The activity group name and
      *                 the activity group ID are automatically included as columns in the report.
      *                 Can be used to filter by activity group name.
-     *                 <p>Corresponds to "Activity group" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Activity group" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -796,6 +818,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Content#id}. Can be used to filter by
      *                 {@link Content#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -806,7 +829,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content. {@link Content#name} and
      *                 {@link Content#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Content#name}.
-     *                 <p>Corresponds to "Content" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Content" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -816,6 +839,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ContentBundle#id}. Can be used to filter
      *                 by {@link ContentBundle#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -826,7 +850,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content bundle. {@link ContentBundle#name} and
      *                 {@link ContentBundle#id} are automatically included as columns in the
      *                 report. Can be used to filter by {@link ContentBundle#name}.
-     *                 <p>Corresponds to "Content bundle" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Content bundle" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -835,6 +859,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link CustomTargetingKey#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -845,7 +870,7 @@ public enum Dimension {
      *                 Breaks down reporting data by custom targeting key. {@link CustomTargetingKey#name} and
      *                 {@link CustomTargetingKey#id} are automatically included as columns in the
      *                 report.
-     *                 <p>Corresponds to "Metadata key" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Metadata key" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -872,7 +897,7 @@ public enum Dimension {
      *                 Breaks down reporting data by the fallback position of the video ad, i.e.,
      *                 {@code NON_FALLBACK}, {@code FALLBACK_POSITION_1}, {@code FALLBACK_POSITION_2}, etc. Can be
      *                 used for filtering.
-     *                 <p>Corresponds to "Fallback position" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Fallback position" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -884,7 +909,7 @@ public enum Dimension {
      *                 {@code UNKNOWN_POSITION}, {@code PREROLL}, {@code POSTROLL}, {@code UNKNOWN_MIDROLL},
      *                 {@code MIDROLL_1}, {@code MIDROLL_2}, etc. {@code UNKNOWN_MIDROLL} represents a midroll, but
      *                 which specific midroll is unknown. Can be used for filtering.
-     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -895,7 +920,7 @@ public enum Dimension {
      *                 Breaks down reporting data by the position of the video ad within the pod, i.e.,
      *                 {@code UNKNOWN_POSITION}, {@code POSITION_1}, {@code POSITION_2}, etc.
      *                 Can be used for filtering.
-     *                 <p>Corresponds to "Position in pod" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Position in pod" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -904,7 +929,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by video redirect vendor.
-     *                 <p>Corresponds to "Video redirect third party" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video redirect third party" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -913,7 +938,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by vast version type name.
-     *                 <p>Corresponds to "VAST version" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST version" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -922,6 +947,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by partner {@link Company#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -931,7 +957,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by partner {@link Company#name} and {@link Company#id} are
      *                 automatically included as columns in the report.
-     *                 <p>Corresponds to "Partner" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -940,6 +966,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by partner label {@link Label#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -949,7 +976,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by partner label. {@link Label#name} and {@link Label#id} are
      *                 automatically included as columns in the report.
-     *                 <p>Corresponds to "Partner label" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner label" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -958,6 +985,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by partner assignment id.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -967,7 +995,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by partner assignment name. ParnterAssignment name
      *                 and id are automatically included as columns in the report.
-     *                 <p>Corresponds to "Assignment" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 
      */
@@ -982,7 +1010,7 @@ public enum Dimension {
      *                 #COUNTRY_NAME} must be selected.
      *                 
      *                 <p>This dimension is supported only for GRP columns.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Demographics, comScore vCE demographics.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Demographics, comScore vCE demographics. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -995,7 +1023,7 @@ public enum Dimension {
      *                 <p>Formatted as comma separated values, e.g. "300x250,300x250v,300x60".
      *                 
      *                 <p>This dimension is supported only for sell-through columns.
-     *                 <p>Corresponds to "Ad request sizes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad request sizes" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -1010,7 +1038,7 @@ public enum Dimension {
      *                 formatted as {@code key1=value_1|...|value_n,key2=value_1|...|value_n,...}.
      *                 
      *                 <p>This dimension is supported only for sell-through columns.
-     *                 <p>Corresponds to "Key-values" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Key-values" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -1023,6 +1051,7 @@ public enum Dimension {
      *                 First Look Deals traffic in addition to any other traffic.
      *                 This filter can only be used with the string values "true" and "false".
      *                 Not available as a dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1031,6 +1060,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by yield group ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1039,7 +1069,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by yield group name.
-     *                 <p>Corresponds to "Yield group" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Yield group" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1048,7 +1078,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by yield partner.
-     *                 <p>Corresponds to "Yield partner" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Yield partner" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1057,7 +1087,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the tag of a yield partner in a yield group.
-     *                 <p>Corresponds to "Yield partner tag" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Yield partner tag" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1067,7 +1097,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by mediation type.   A mediation type can be web, mobile app or
      *                 video.
-     *                 <p>Corresponds to "Mediation type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Mediation type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1076,6 +1106,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native template (also known as creative template) ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1084,7 +1115,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native template (also known as creative template) name.
-     *                 <p>Corresponds to "Native ad format name" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Native ad format name" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1093,6 +1124,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native style ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1101,7 +1133,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by native style name.
-     *                 <p>Corresponds to "Native style name" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Native style name" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1110,7 +1142,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by mobile app name. Can be used for filtering.
-     *                 <p>Corresponds to "App names" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "App names" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1119,7 +1151,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by device name. Can be used for filtering.
-     *                 <p>Corresponds to "Devices" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1128,7 +1160,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by inventory type. Can be used for filtering.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Inventory types (retired), Inventory types.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Inventory types (retired), Inventory types. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1137,7 +1169,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by request type. Can be used for filtering.
-     *                 <p>Corresponds to "Request type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Request type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1148,6 +1180,7 @@ public enum Dimension {
      *                 Status of the ad unit. Not available as a dimension to report on,
      *                 but exists as a dimension in order to filter on it using PQL.
      *                 Valid values correspond to {@link InventoryStatus}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -1157,6 +1190,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Creative#id}. This includes regular creatives,
      *                 and master and companions in case of creative sets.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1166,7 +1200,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by creative. This includes regular creatives,
      *                 and master and companions in case of creative sets.
-     *                 <p>Corresponds to "Master and Companion creative" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Master and Companion creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1176,6 +1210,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#id}. Can be used to filter by
      *                 {@link ProposalLineItem#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1185,7 +1220,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#name}. Can be used to filter by
      *                 {@link ProposalLineItem#name}.
-     *                 <p>Corresponds to "Proposal line item" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Proposal line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1195,6 +1230,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#id}. Can be used to filter by
      *                 {@link Proposal#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1204,7 +1240,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#name}. Can be used to filter by
      *                 {@link Proposal#name}.
-     *                 <p>Corresponds to "Proposal" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Proposal" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1214,6 +1250,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1223,7 +1260,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#name}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#name}.
-     *                 <p>Corresponds to "All salespeople" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "All salespeople" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1233,6 +1270,7 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#id} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1242,6 +1280,7 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#name} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1251,6 +1290,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#id}. Can be used to filter by
      *                 proposal agency {@link Company#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1260,7 +1300,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#name}. Can be used to filter by
      *                 proposal agency {@link Company#name}.
-     *                 <p>Corresponds to "Proposal agency" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Proposal agency" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1269,6 +1309,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#id}. Can be used to filter by {@link Product#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1277,7 +1318,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#name}.
-     *                 <p>Corresponds to "Product" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Product" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1287,6 +1328,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#id}. Can be used to filter by
      *                 {@link ProductTemplate#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1296,7 +1338,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#name}. Can be used to filter by
      *                 {@link ProductTemplate#name}.
-     *                 <p>Corresponds to "Product template" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Product template" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1306,6 +1348,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#id}. Can be used to filter by {@link
      *                 RateCard#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1315,7 +1358,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#name}. Can be used to filter by {@link
      *                 RateCard#name}.
-     *                 <p>Corresponds to "Rate card" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Rate card" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1324,6 +1367,7 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#id}. Not available as a dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1332,6 +1376,7 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#name}. Not available as a dimension to report on.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1340,6 +1385,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1348,7 +1394,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#name}.
-     *                 <p>Corresponds to "Package" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Package" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1358,6 +1404,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#id}. Can be used to filter by
      *                 {@link ProductPackage#id}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1367,7 +1414,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#name}. Can be used to filter by
      *                 {@link ProductPackage#name}.
-     *                 <p>Corresponds to "Product package" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Product package" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1376,6 +1423,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by billable audience segment ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1384,7 +1432,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by billable audience segment name.
-     *                 <p>Corresponds to "Audience segment (billable)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Audience segment (billable)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1393,7 +1441,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by audience segment data provider name.
-     *                 <p>Corresponds to "Data partner" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Data partner" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1402,7 +1450,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
-     *                 <p>Corresponds to "Inventory sizes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Inventory sizes" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1411,6 +1459,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1419,7 +1468,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
-     *                 <p>Corresponds to "Device categories" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Device categories" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1428,6 +1477,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1436,7 +1486,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
-     *                 <p>Corresponds to "Pricing rules" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pricing rules" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1445,7 +1495,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
-     *                 <p>Corresponds to "Tags" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Tags" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1454,7 +1504,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
-     *                 <p>Corresponds to "URLs" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "URLs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1463,6 +1513,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down data by Ad Exchange mapped web property code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1471,7 +1522,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
-     *                 <p>Corresponds to "Creative sizes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative sizes" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1480,7 +1531,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
-     *                 <p>Corresponds to "Ad Types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1489,7 +1540,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
-     *                 <p>Corresponds to "Channels" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Channels" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1498,7 +1549,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange product.
-     *                 <p>Corresponds to "Products" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Products" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1507,6 +1558,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange product code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1515,7 +1567,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange site.
-     *                 <p>Corresponds to "Sites" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Sites" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1524,7 +1576,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
-     *                 <p>Corresponds to "Request sources" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Request sources" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1534,7 +1586,7 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser name that bids
      *                 on ads.
-     *                 <p>Corresponds to "Advertisers" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertisers" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1544,7 +1596,7 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by the Ad Exchange brand name that bids on
      *                 ads.
-     *                 <p>Corresponds to "Brands" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Brands" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1553,7 +1605,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
-     *                 <p>Corresponds to "Agencies" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Agencies" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1562,6 +1614,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange bid type code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1570,6 +1623,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange branding type code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1579,7 +1633,7 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange branding type. Examples:
      *                 Branded, Anonymous.
-     *                 <p>Corresponds to "Branding types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Branding types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1589,7 +1643,7 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name. Example:
      *                 Google Adwords.
-     *                 <p>Corresponds to "Buyer networks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Buyer networks" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1598,6 +1652,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad network ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1606,6 +1661,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1614,6 +1670,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1628,7 +1685,7 @@ public enum Dimension {
      *                 <ul>
      *                 <li> {@link TimeZoneType.AD_EXCHANGE}
      *                 </ul>
-     *                 <p>Corresponds to "Days" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Days" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1637,7 +1694,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
-     *                 <p>Corresponds to "Deal IDs" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1646,7 +1703,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
-     *                 <p>Corresponds to "Deal names" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deal names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1656,7 +1713,7 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction type. Example:
      *                 Open auction.
-     *                 <p>Corresponds to "Transaction types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Transaction types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1665,7 +1722,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer network name.
-     *                 <p>Corresponds to "DSPs" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "DSPs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1674,7 +1731,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
-     *                 <p>Corresponds to "Expandable types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expandable types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1683,6 +1740,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1691,7 +1749,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
-     *                 <p>Corresponds to "Countries" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Countries" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1700,6 +1758,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1708,7 +1767,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit.
-     *                 <p>Corresponds to "DFP Ad Units" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "DFP Ad Units" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1717,7 +1776,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory ownership.
-     *                 <p>Corresponds to "Inventory ownership" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Inventory ownership" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1726,7 +1785,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser domain.
-     *                 <p>Corresponds to "Advertiser domains" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser domains" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1735,7 +1794,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile app name.
-     *                 <p>Corresponds to "App names" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "App names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1744,7 +1803,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier name.
-     *                 <p>Corresponds to "Carrier names" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Carrier names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1753,7 +1812,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device name.
-     *                 <p>Corresponds to "Devices" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1762,7 +1821,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory type.
-     *                 <p>Corresponds to "Inventory types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Inventory types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1777,7 +1836,7 @@ public enum Dimension {
      *                 <ul>
      *                 <li> {@link TimeZoneType.AD_EXCHANGE}
      *                 </ul>
-     *                 <p>Corresponds to "Months" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Months" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1786,7 +1845,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange network partner name.
-     *                 <p>Corresponds to "Network partner names" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Network partner names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1795,7 +1854,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange operating system version.
-     *                 <p>Corresponds to "Operating systems" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Operating systems" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1804,6 +1863,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1812,6 +1872,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type code.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1820,7 +1881,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type.
-     *                 <p>Corresponds to "Targeting types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Targeting types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1829,6 +1890,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange transaction type code
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1837,6 +1899,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1845,7 +1908,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
-     *                 <p>Corresponds to "Bandwidth" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Bandwidth" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1854,6 +1917,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange video ad duration.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1862,7 +1926,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad duration.
-     *                 <p>Corresponds to "Video ad durations" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video ad durations" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1871,7 +1935,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
-     *                 <p>Corresponds to "Video ad types" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video ad types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1886,7 +1950,7 @@ public enum Dimension {
      *                 <ul>
      *                 <li> {@link TimeZoneType.AD_EXCHANGE}
      *                 </ul>
-     *                 <p>Corresponds to "Weeks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Weeks" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1895,7 +1959,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad location.
-     *                 <p>Corresponds to "Ad locations" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad locations" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1904,7 +1968,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser vertical.
-     *                 <p>Corresponds to "Advertiser verticals" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser verticals" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1913,7 +1977,7 @@ public enum Dimension {
     /**
      * 
      *                 Campaign date segment of Nielsen Digital Ad Ratings reporting.
-     *                 <p>Corresponds to "Nielsen Digital Ad Ratings segment" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Nielsen Digital Ad Ratings segment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1934,7 +1998,7 @@ public enum Dimension {
     /**
      * 
      *                 Data restatement date of Nielsen Digital Ad Ratings data.
-     *                 <p>Corresponds to "Nielsen Digital Ad Ratings restatement date" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Nielsen Digital Ad Ratings restatement date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1943,6 +2007,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link ProposalMarketplaceInfo#buyerAccountId}.
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1951,7 +2016,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by programmatic buyer name.
-     *                 <p>Corresponds to "Programmatic buyer" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Programmatic buyer" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1961,7 +2026,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by requested ad size(s).
      *                 This can be a chain of sizes or a single size.
-     *                 <p>Corresponds to "Requested ad sizes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Requested ad sizes" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1970,7 +2035,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the creative size the ad was delivered to.
-     *                 <p>Corresponds to "Creative size (delivered)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative size (delivered)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1979,6 +2044,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the type of transaction that occurred in Ad Exchange.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1987,7 +2053,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the type of transaction that occurred in Ad Exchange.
-     *                 <p>Corresponds to "Programmatic channel" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Programmatic channel" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1997,7 +2063,7 @@ public enum Dimension {
      * 
      *                 Breaks down Demand reporting data by date in the network time zone. Can be used to
      *                 filter by date using ISO 8601's format 'YYYY-MM-DD'".
-     *                 <p>Corresponds to "Date" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2007,7 +2073,7 @@ public enum Dimension {
      * 
      *                 Breaks down Demand reporting data by week of the year in the network time zone. Cannot be used
      *                 for filtering.
-     *                 <p>Corresponds to "Week" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2017,7 +2083,7 @@ public enum Dimension {
      * 
      *                 Breaks down Demand reporting data by month and year in the network time zone. Cannot be used to
      *                 filter.
-     *                 <p>Corresponds to "Month and year" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2027,6 +2093,7 @@ public enum Dimension {
      * 
      *                 Breaks down Demand reporting data by country criteria ID. Can be used to filter by
      *                 country criteria ID.
+     *                 <p>Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2037,7 +2104,7 @@ public enum Dimension {
      *                 Breaks down Demand reporting data by country name. The country name and the
      *                 country criteria ID are automatically included as columns in the report.
      *                 Can be used to filter by country name using the US English name.
-     *                 <p>Corresponds to "Country" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Country" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2046,7 +2113,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down Demand reporting data by inventory type.
-     *                 <p>Corresponds to "Inventory type" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Inventory type" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2055,7 +2122,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down Demand reporting data by the creative size the ad was delivered to.
-     *                 <p>Corresponds to "Creative size" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Creative size" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2064,7 +2131,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down Demand reporting data by the brand name that bids on ads.
-     *                 <p>Corresponds to "Brand" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Brand" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2073,7 +2140,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down Demand reporting data by the advertiser name that bid on ads.
-     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2083,7 +2150,7 @@ public enum Dimension {
      * 
      *                 Breaks down Demand reporting data by Ad Exchange ad network name. Example:
      *                 Google Adwords.
-     *                 <p>Corresponds to "Buyer network" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Buyer network" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2092,7 +2159,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by device name.
-     *                 <p>Corresponds to "Device" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Device" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2102,7 +2169,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by the category of device (smartphone, feature phone, tablet,
      *                 or desktop).
-     *                 <p>Corresponds to "Device category" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2111,7 +2178,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the tag id provided by the publisher in the ad request.
-     *                 <p>Corresponds to "Tag ID" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Tag ID" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2120,7 +2187,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by the deal id provided by the publisher in the ad request.
-     *                 <p>Corresponds to "Deal IDs" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2129,7 +2196,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by mobile app ID..
-     *                 <p>Corresponds to "App ID" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "App ID" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -2148,6 +2215,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by demand channels.
+     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -2156,7 +2224,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by demand channel name.
-     *                 <p>Corresponds to "Demand channel" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Demand channel" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */

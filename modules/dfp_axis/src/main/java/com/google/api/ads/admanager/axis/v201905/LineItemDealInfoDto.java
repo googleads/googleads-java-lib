@@ -28,7 +28,8 @@ package com.google.api.ads.admanager.axis.v201905;
 public class LineItemDealInfoDto  implements java.io.Serializable {
     /* The external deal ID shared between seller and buyer. This
      * field is only present if the deal
-     *                 has been finalized. */
+     *                 has been finalized. This attribute is read-only and
+     * is assigned by Google. */
     private java.lang.Long externalDealId;
 
     public LineItemDealInfoDto() {
@@ -52,7 +53,8 @@ public class LineItemDealInfoDto  implements java.io.Serializable {
      * 
      * @return externalDealId   * The external deal ID shared between seller and buyer. This
      * field is only present if the deal
-     *                 has been finalized.
+     *                 has been finalized. This attribute is read-only and
+     * is assigned by Google.
      */
     public java.lang.Long getExternalDealId() {
         return externalDealId;
@@ -64,7 +66,8 @@ public class LineItemDealInfoDto  implements java.io.Serializable {
      * 
      * @param externalDealId   * The external deal ID shared between seller and buyer. This
      * field is only present if the deal
-     *                 has been finalized.
+     *                 has been finalized. This attribute is read-only and
+     * is assigned by Google.
      */
     public void setExternalDealId(java.lang.Long externalDealId) {
         this.externalDealId = externalDealId;

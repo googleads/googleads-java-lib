@@ -452,7 +452,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by the ad server.
-     *                 <p>Corresponds to "Ad server impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -461,7 +461,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by the ad server by explicit custom criteria targeting.
-     *                 <p>Corresponds to "Ad server targeted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server targeted impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -470,7 +470,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks delivered by the ad server.
-     *                 <p>Corresponds to "Ad server clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -479,7 +479,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks delivered by the ad server by explicit custom criteria targeting.
-     *                 <p>Corresponds to "Ad server targeted clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -488,7 +488,7 @@ public enum Column {
     /**
      * 
      *                 The CTR for an ad delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -498,7 +498,7 @@ public enum Column {
      * 
      *                 The CPM and CPC revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CPM and CPC revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server CPM and CPC revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -508,7 +508,7 @@ public enum Column {
      * 
      *                 The CPD revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Corresponds to "Ad server CPD revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server CPD revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -518,7 +518,7 @@ public enum Column {
      * 
      *                 The CPA revenue earned, calculated in publisher currency, for the ads delivered by the
      *                 ad server.
-     *                 <p>Corresponds to "CPA revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "CPA revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -528,7 +528,7 @@ public enum Column {
      * 
      *                 The CPM, CPC and CPD revenue earned, calculated in publisher currency,
      *                 for the ads delivered by the ad server.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and CPD revenue.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and CPD revenue. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -538,7 +538,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the CPM and CPC ads
      *                 delivered by the ad server.
-     *                 <p>Corresponds to "Ad server average eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -562,6 +562,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.AD_SERVER_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -572,7 +573,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered to the total impressions
      *                 delivered by the ad server for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server impressions (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server impressions (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -587,6 +588,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.AD_SERVER_LINE_ITEM_LEVEL_PERCENT_CLICKS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -597,7 +599,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered to the total clicks delivered
      *                 by the ad server for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -612,6 +614,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.AD_SERVER_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -634,7 +637,7 @@ public enum Column {
      *                 The ratio of revenue generated by ad server to the total CPM and CPC revenue earned by
      *                 the ads delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad server revenue (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server revenue (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -654,7 +657,7 @@ public enum Column {
      * 
      *                 The number of downloaded impressions delivered by the ad server including impressions
      *                 recognized as spam.
-     *                 <p>Corresponds to "Ad server unfiltered downloaded impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server unfiltered downloaded impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -663,7 +666,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks delivered by the ad server including clicks recognized as spam.
-     *                 <p>Corresponds to "Ad server unfiltered clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server unfiltered clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -676,6 +679,7 @@ public enum Column {
      *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_IMPRESSIONS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -684,7 +688,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions an AdSense ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -694,7 +698,7 @@ public enum Column {
      * 
      *                 The number of impressions an AdSense ad delivered for line item-level dynamic allocation by
      *                 explicit custom criteria targeting.
-     *                 <p>Corresponds to "AdSense targeted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense targeted impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -707,6 +711,7 @@ public enum Column {
      *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_CLICKS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -715,7 +720,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks an AdSense ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -725,7 +730,7 @@ public enum Column {
      * 
      *                 The number of clicks an AdSense ad delivered for line item-level dynamic allocation by
      *                 explicit custom criteria targeting.
-     *                 <p>Corresponds to "AdSense targeted clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -739,6 +744,7 @@ public enum Column {
      *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_CTR}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -748,7 +754,7 @@ public enum Column {
      * 
      *                 The ratio of clicks an AdSense reservation ad delivered to the number of
      *                 impressions it delivered, including line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -761,6 +767,7 @@ public enum Column {
      *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_REVENUE}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -769,7 +776,7 @@ public enum Column {
     /**
      * 
      *                 Revenue generated from AdSense ads delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -783,6 +790,7 @@ public enum Column {
      *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_AVERAGE_ECPM}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -792,7 +800,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the ads
      *                 delivered by AdSense for line item-level dynamic allocation.
-     *                 <p>Corresponds to "AdSense average eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -807,6 +815,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -817,7 +826,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered by AdSense reservation
      *                 ads to the total impressions delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense impressions (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense impressions (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -832,6 +841,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_PERCENT_CLICKS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -842,7 +852,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered by AdSense reservation ads to
      *                 the total clicks delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -857,6 +867,7 @@ public enum Column {
      *                 Represented as a percentage.
      *                 
      *                 DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -879,7 +890,7 @@ public enum Column {
      *                 The ratio of revenue to the total revenue earned from the CPM and CPC ads
      *                 delivered by AdSense for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "AdSense revenue (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense revenue (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -898,7 +909,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions an Ad Exchange ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -909,7 +920,7 @@ public enum Column {
      *                 Ad Impressions on mapped Ad Exchange properties. When multiple text ads fill a single display
      *                 slot it is only counted once, when the top text ad is recognized. In these cases, the Ad
      *                 Impression is attributed to the top text ad.
-     *                 <p>Corresponds to "Ad impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -919,7 +930,7 @@ public enum Column {
      * 
      *                 Number of requests where a buyer was matched with the Ad request, for mapped Ad Exchange
      *                 properties.
-     *                 <p>Corresponds to "Matched requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Matched requests" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -928,7 +939,7 @@ public enum Column {
     /**
      * 
      *                 Ad revenue per 1000 ad impressions, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Ad eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad eCPM" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -937,7 +948,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks delivered by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Clicks" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -946,7 +957,7 @@ public enum Column {
     /**
      * 
      *                 The estimated net revenue generated by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Estimated revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Estimated revenue" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -955,7 +966,7 @@ public enum Column {
     /**
      * 
      *                 The coverage reported by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Coverage" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Coverage" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -964,7 +975,7 @@ public enum Column {
     /**
      * 
      *                 The matched queries click-through rate delivered by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "CTR" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -973,7 +984,7 @@ public enum Column {
     /**
      * 
      *                 The total lift generated by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Lift" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Lift" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -982,7 +993,7 @@ public enum Column {
     /**
      * 
      *                 The cost-per-click generated by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "CPC" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "CPC" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -991,7 +1002,7 @@ public enum Column {
     /**
      * 
      *                 The number of ad requests issued by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Ad requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad requests" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1000,7 +1011,7 @@ public enum Column {
     /**
      * 
      *                 The average estimated cost-per-thousand-ad requests earned by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Ad request eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad request eCPM" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1009,7 +1020,7 @@ public enum Column {
     /**
      * 
      *                 The click-through rate of ad requests issued by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Ad request CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad request CTR" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1018,7 +1029,7 @@ public enum Column {
     /**
      * 
      *                 The click-through rate of impressions issued by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Ad CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad CTR" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1027,7 +1038,7 @@ public enum Column {
     /**
      * 
      *                 The video drop off rate for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Video drop-off rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video drop-off rate" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1036,7 +1047,7 @@ public enum Column {
     /**
      * 
      *                 The video abandonment rate for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Video abandonment rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video abandonment rate" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1045,7 +1056,7 @@ public enum Column {
     /**
      * 
      *                 The average estimated cost-per-thousand-impressions generated by mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Matched eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Matched eCPM" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1055,7 +1066,7 @@ public enum Column {
      * 
      *                 The estimated percentage of impressions generated by mapped Ad Exchange properties that are
      *                 eligible for Active View measurement.
-     *                 <p>Corresponds to "Active view measurable" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Active view measurable" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1065,7 +1076,7 @@ public enum Column {
      * 
      *                 The percentage of viewable impressions out of all measurable impressions generated by mapped
      *                 Ad Exchange properties.
-     *                 <p>Corresponds to "Active view viewable" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Active view viewable" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1075,7 +1086,7 @@ public enum Column {
      * 
      *                 The average time (in seconds) that an individual ad impression generated by mapped Ad Exchange
      *                 properties was viewable.
-     *                 <p>Corresponds to "Average viewable time (secs)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average viewable time (secs)" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1085,7 +1096,7 @@ public enum Column {
      * 
      *                 Total number of impressions generated by mapped Ad Exchange properties that were eligible to
      *                 measure viewability.
-     *                 <p>Corresponds to "Active view enabled impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Active view enabled impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1095,7 +1106,7 @@ public enum Column {
      * 
      *                 Total number of eligible impressions generated by mapped Ad Exchange properties that were
      *                 measurable by Active View.
-     *                 <p>Corresponds to "Active view measured impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Active view measured impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1105,7 +1116,7 @@ public enum Column {
      * 
      *                 Total number of Active View measurable impressions generated by mapped Ad Exchange properties
      *                 that were viewable.
-     *                 <p>Corresponds to "Active view viewed impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Active view viewed impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1114,7 +1125,7 @@ public enum Column {
     /**
      * 
      *                 Number of responses that shows that a buyer is bidding, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Deals bid responses" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deals bid responses" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1125,7 +1136,7 @@ public enum Column {
      *                 Deal ad requests for mapped Ad Exchange properties which were ?matched? with demand from the
      *                 buyer associated with the Deal. Each ?Deals matched request? represents one opportunity for the
      *                 Deal Buyer to serve their ad in the context of the Deal.
-     *                 <p>Corresponds to "Deals matched requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deals matched requests" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1134,7 +1145,7 @@ public enum Column {
     /**
      * 
      *                 Total ad requests associated with a given Deal, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Deals ad requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deals ad requests" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1143,7 +1154,7 @@ public enum Column {
     /**
      * 
      *                 Deals matched requests divided by Deals ad requests, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "Deals match rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Deals match rate" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1168,7 +1179,7 @@ public enum Column {
     /**
      * 
      *                 Percentage of times a user clicked Skip, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "TrueView skip rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "TrueView skip rate" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1178,7 +1189,7 @@ public enum Column {
      * 
      *                 Number of times a video ad has been viewed to completion or watched to 30 seconds, whichever
      *                 happens first, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "TrueView views" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "TrueView views" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1187,7 +1198,7 @@ public enum Column {
     /**
      * 
      *                 TrueView views divided by TrueView impressions, for mapped Ad Exchange properties.
-     *                 <p>Corresponds to "TrueView VTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "TrueView VTR" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -1196,6 +1207,7 @@ public enum Column {
     /**
      * 
      *                 Mediation third-party average cost-per-thousand-impressions.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1205,7 +1217,7 @@ public enum Column {
      * 
      *                 The number of impressions an Ad Exchange ad delivered for line item-level dynamic allocation
      *                 by explicit custom criteria targeting.
-     *                 <p>Corresponds to "Ad Exchange targeted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange targeted impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1214,7 +1226,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks an Ad Exchange ad delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1224,7 +1236,7 @@ public enum Column {
      * 
      *                 The number of clicks an Ad Exchange ad delivered for line item-level dynamic allocation by
      *                 explicit custom criteria targeting.
-     *                 <p>Corresponds to "Ad Exchange targeted clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1234,7 +1246,7 @@ public enum Column {
      * 
      *                 The ratio of clicks an Ad Exchange ad delivered to the number of
      *                 impressions it delivered for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1245,7 +1257,7 @@ public enum Column {
      *                 The ratio of the number of impressions delivered to the total impressions delivered
      *                 by Ad Exchange for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange impressions (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange impressions (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1256,7 +1268,7 @@ public enum Column {
      *                 The ratio of the number of clicks delivered to the total clicks delivered
      *                 by Ad Exchange for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1266,7 +1278,7 @@ public enum Column {
      * 
      *                 Revenue generated from Ad Exchange ads delivered for line item-level dynamic allocation.
      *                 Represented in publisher currency and time zone.
-     *                 <p>Corresponds to "Ad Exchange revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1277,7 +1289,7 @@ public enum Column {
      *                 The ratio of revenue generated by Ad Exchange to the total revenue earned
      *                 by CPM and CPC ads delivered for line item-level dynamic allocation.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Ad Exchange revenue (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange revenue (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1297,7 +1309,7 @@ public enum Column {
      * 
      *                 The average estimated cost-per-thousand-impressions earned from the
      *                 delivery of Ad Exchange ads for line item-level dynamic allocation.
-     *                 <p>Corresponds to "Ad Exchange average eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1309,6 +1321,7 @@ public enum Column {
      *                 including inventory-level dynamic allocation.
      *                 
      *                 DEPRECATED - use {@link Column.TOTAL_LINE_ITEM_LEVEL_IMPRESSIONS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1317,7 +1330,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions delivered including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1327,7 +1340,7 @@ public enum Column {
      * 
      *                 The total number of impressions delivered including line item-level dynamic allocation by
      *                 explicit custom criteria targeting.
-     *                 <p>Corresponds to "Total targeted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total targeted impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1339,6 +1352,7 @@ public enum Column {
      *                 including inventory-level dynamic allocation.
      *                 
      *                 DEPRECATED - use {@link Column.TOTAL_LINE_ITEM_LEVEL_CLICKS}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1347,7 +1361,7 @@ public enum Column {
     /**
      * 
      *                 The total number of clicks delivered including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1357,7 +1371,7 @@ public enum Column {
      * 
      *                 The total number of clicks delivered including line item-level dynamic allocation by
      *                 explicit custom criteria targeting
-     *                 <p>Corresponds to "Total targeted clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1369,6 +1383,7 @@ public enum Column {
      *                 of impressions delivered for an ad including inventory-level dynamic allocation.
      *                 
      *                 DEPRECATED - use {@link Column.TOTAL_LINE_ITEM_LEVEL_CTR}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1378,7 +1393,7 @@ public enum Column {
      * 
      *                 The ratio of total clicks on ads delivered by the ad servers to the total number
      *                 of impressions delivered for an ad including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1390,6 +1405,7 @@ public enum Column {
      *                 including inventory-level dynamic allocation.
      *                 
      *                 DEPRECATED - use {@link Column.TOTAL_LINE_ITEM_LEVEL_CPM_AND_CPC_REVENUE}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1408,7 +1424,7 @@ public enum Column {
      * 
      *                 The total CPM and CPC revenue generated by the ad servers
      *                 including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total CPM and CPC revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total CPM and CPC revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1418,7 +1434,7 @@ public enum Column {
      * 
      *                 The total CPM, CPC and CPD revenue generated by the ad servers
      *                 including line item-level dynamic allocation.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD revenue.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD revenue. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1430,6 +1446,7 @@ public enum Column {
      *                 ad servers including inventory-level dynamic allocation.
      *                 
      *                 DEPRECATED - use {@link Column.TOTAL_LINE_ITEM_LEVEL_WITHOUT_CPD_AVERAGE_ECPM}.
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1448,7 +1465,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of CPM and CPC ads delivered by the
      *                 ad servers including line item-level dynamic allocation.
-     *                 <p>Corresponds to "Total average eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1467,7 +1484,7 @@ public enum Column {
      * 
      *                 The total number of times that the code for an ad is served by the ad server including
      *                 inventory-level dynamic allocation.
-     *                 <p>Corresponds to "Total code served count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total code served count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1477,7 +1494,7 @@ public enum Column {
      * 
      *                 The total number of missed impressions due to the ad servers' inability to
      *                 find ads to serve, including inventory-level dynamic allocation.
-     *                 <p>Corresponds to "Unfilled impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unfilled impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1487,7 +1504,7 @@ public enum Column {
      * 
      *                 The number of control (unoptimized) impressions delivered for an ad for
      *                 which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1497,7 +1514,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1507,7 +1524,7 @@ public enum Column {
      * 
      *                 The CTR for control (unoptimized) impressions for an order for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Control CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1517,7 +1534,7 @@ public enum Column {
      * 
      *                 Number of optimized impressions delivered for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1527,7 +1544,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1537,7 +1554,7 @@ public enum Column {
      * 
      *                 Number of non-optimized impressions delivered for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Non-optimized impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Non-optimized impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1547,7 +1564,7 @@ public enum Column {
      * 
      *                 Number of clicks resulting from the delivery of non-optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Non-optimized clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Non-optimized clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1557,7 +1574,7 @@ public enum Column {
      * 
      *                 Number of extra clicks resulting from the delivery of optimized impressions
      *                 for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Extra clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Extra clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1567,7 +1584,7 @@ public enum Column {
      * 
      *                 The CTR for optimized impressions for an ad for which the optimization
      *                 feature has been enabled.
-     *                 <p>Corresponds to "Optimized CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1579,7 +1596,7 @@ public enum Column {
      *                 CTRs. This is calculated as (({@link Column#OPTIMIZATION_OPTIMIZED_CTR}/
      *                 {@link Column#OPTIMIZATION_CONTROL_CTR}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Lift" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1589,7 +1606,7 @@ public enum Column {
      * 
      *                 The line item coverage measures how often the traffic was sent for
      *                 optimization.
-     *                 <p>Corresponds to "Percent optimized" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Percent optimized" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1598,7 +1615,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were behind schedule at the time of their delivery.
-     *                 <p>Corresponds to "Impressions that are behind schedule" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions that are behind schedule" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1607,7 +1624,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that did not have any clicks recorded in the recent past.
-     *                 <p>Corresponds to "Impressions with no clicks recorded" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions with no clicks recorded" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1616,7 +1633,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were delivered as sponsorship items.
-     *                 <p>Corresponds to "Sponsorship impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Sponsorship impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1625,7 +1642,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that were set to deliver as fast as possible.
-     *                 <p>Corresponds to "Impressions serving as fast as possible" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions serving as fast as possible" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1634,7 +1651,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions that have no absolute lifetime delivery goals.
-     *                 <p>Corresponds to "Impressions with no lifetime goal" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions with no lifetime goal" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1644,7 +1661,7 @@ public enum Column {
      * 
      *                 Total revenue resulting from the delivery of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1654,7 +1671,7 @@ public enum Column {
      * 
      *                 Total revenue resulting from the delivery of optimized impressions for
      *                 an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1664,7 +1681,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of control (unoptimized)
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Control eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1674,7 +1691,7 @@ public enum Column {
      * 
      *                 Estimated cost-per-thousand-impressions (eCPM) of optimized
      *                 impressions for an ad for which the optimization feature has been enabled.
-     *                 <p>Corresponds to "Optimized eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1683,7 +1700,7 @@ public enum Column {
     /**
      * 
      *                 Freed-up impressions as a result of optimization.
-     *                 <p>Corresponds to "Freed-up impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Freed-up impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1692,7 +1709,7 @@ public enum Column {
     /**
      * 
      *                 Relative change in eCPM as a result of optimization.
-     *                 <p>Corresponds to "eCPM lift" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "eCPM lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1701,7 +1718,7 @@ public enum Column {
     /**
      * 
      *                 The average number of ads displayed to each unique visitor.
-     *                 <p>Corresponds to "Average impressions / visitor" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average impressions / visitor" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1710,7 +1727,7 @@ public enum Column {
     /**
      * 
      *                 The average revenue earned per unique visitor.
-     *                 <p>Corresponds to "Average revenue / visitor" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average revenue / visitor" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1722,7 +1739,7 @@ public enum Column {
      *                 
      *                 <p>To maintain user privacy, "Unique visitors" totaling 0-99 won't be displayed in the report
      *                 and will appear empty.
-     *                 <p>Corresponds to "Unique visitors" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unique visitors" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1731,7 +1748,7 @@ public enum Column {
     /**
      * 
      *                 The number of people in the given demographic bucket.
-     *                 <p>Corresponds to "Population" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Population" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1740,7 +1757,7 @@ public enum Column {
     /**
      * 
      *                 The number of unique users reached in the given demographic bucket.
-     *                 <p>Corresponds to "Unique viewers" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1750,7 +1767,7 @@ public enum Column {
      * 
      *                 Percentage of the number of unique users reached in the given demographic bucket (out of the
      *                 number of unique users reached in all demographics).
-     *                 <p>Corresponds to "% Composition unique viewers" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% Composition unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1759,7 +1776,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions in the given demographic bucket.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1769,7 +1786,7 @@ public enum Column {
      * 
      *                 Percentage of the number of impressions in the given demographic bucket (out of the number of
      *                 impressions in all demographics).
-     *                 <p>Corresponds to "% Composition impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% Composition impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1778,7 +1795,7 @@ public enum Column {
     /**
      * 
      *                 The audience reach calculated as {@link #GRP_UNIQUE_AUDIENCE} / {@link #GRP_POPULATION}.
-     *                 <p>Corresponds to "% Population reach" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% Population reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1788,7 +1805,7 @@ public enum Column {
      * 
      *                 The audience average frequency calculated as {@link #GRP_AUDIENCE_IMPRESSIONS} / {@link
      *                 #GRP_UNIQUE_AUDIENCE}.
-     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1798,7 +1815,7 @@ public enum Column {
      * 
      *                 The gross rating points (GRP) calculated as {@link #GRP_AUDIENCE_REACH} * {@link
      *                 #GRP_AUDIENCE_AVERAGE_FREQUENCY} * 100.
-     *                 <p>Corresponds to "Target rating points" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Target rating points" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1807,7 +1824,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions for a particular SDK mediation creative.
-     *                 <p>Corresponds to "SDK mediation creative impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "SDK mediation creative impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1816,7 +1833,7 @@ public enum Column {
     /**
      * 
      *                 The number of clicks for a particular SDK mediation creative.
-     *                 <p>Corresponds to "SDK mediation creative clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "SDK mediation creative clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1828,7 +1845,7 @@ public enum Column {
      *                 
      *                 <p>This metric is available for the next 90 days with a daily break down and for the next 12
      *                 months with a monthly break down.
-     *                 <p>Corresponds to "Forecasted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted impressions" in the Ad Manager UI. Compatible with the "Future sell-through" report type.</p>
      *               
      * 
      */
@@ -1840,7 +1857,7 @@ public enum Column {
      *                 
      *                 <p>This metric is available for the next 90 days with a daily break down
      *                 and for the next 12 months with a monthly break down.
-     *                 <p>Corresponds to "Available impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Available impressions" in the Ad Manager UI. Compatible with the "Future sell-through" report type.</p>
      *               
      * 
      */
@@ -1852,7 +1869,7 @@ public enum Column {
      *                 
      *                 <p>This metric is available for the next 90 days with a daily break down
      *                 and for the next 12 months with a monthly break down.
-     *                 <p>Corresponds to "Reserved impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Reserved impressions" in the Ad Manager UI. Compatible with the "Future sell-through" report type.</p>
      *               
      * 
      */
@@ -1864,7 +1881,7 @@ public enum Column {
      *                 
      *                 <p>This metric is available for the next 90 days with a daily break down
      *                 and for the next 12 months with a monthly break down.
-     *                 <p>Corresponds to "Sell-through rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Sell-through rate" in the Ad Manager UI. Compatible with the "Future sell-through" report type.</p>
      *               
      * 
      */
@@ -1873,7 +1890,7 @@ public enum Column {
     /**
      * 
      *                 The total number of times a backup image is served in place of a rich media ad.
-     *                 <p>Corresponds to "Backup image impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Backup image impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1882,7 +1899,7 @@ public enum Column {
     /**
      * 
      *                 The amount of time(seconds) that each rich media ad is displayed to users.
-     *                 <p>Corresponds to "Total display time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total display time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1891,7 +1908,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that each rich media ad is displayed to users.
-     *                 <p>Corresponds to "Average display time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average display time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1900,7 +1917,7 @@ public enum Column {
     /**
      * 
      *                 The number of times an expanding ad was expanded.
-     *                 <p>Corresponds to "Total expansions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total expansions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1909,7 +1926,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that an expanding ad is viewed in an expanded state.
-     *                 <p>Corresponds to "Average expanding time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average expanding time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1918,7 +1935,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Interaction time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Interaction time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1927,7 +1944,7 @@ public enum Column {
     /**
      * 
      *                 The number of times that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Total interactions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total interactions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1937,7 +1954,7 @@ public enum Column {
      * 
      *                 The ratio of rich media ad interactions to the number of times the ad was displayed.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Interaction rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Interaction rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1946,7 +1963,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Average interaction time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average interaction time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1955,7 +1972,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions where a user interacted with a rich media ad.
-     *                 <p>Corresponds to "Interactive impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Interactive impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1965,7 +1982,7 @@ public enum Column {
      * 
      *                 The number of times that a user manually closes a floating, expanding,
      *                 in-page with overlay, or in-page with floating ad.
-     *                 <p>Corresponds to "Manual closes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Manual closes" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1974,7 +1991,7 @@ public enum Column {
     /**
      * 
      *                 A metric that measures an impression only once when a user opens an ad in full screen mode.
-     *                 <p>Corresponds to "Full-screen impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Full-screen impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1983,7 +2000,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a user clicked on the graphical controls of a video player.
-     *                 <p>Corresponds to "Total video interactions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total video interactions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1993,7 +2010,7 @@ public enum Column {
      * 
      *                 The ratio of video interactions to video plays.
      *                 Represented as a percentage.
-     *                 <p>Corresponds to "Video interaction rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video interaction rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2002,7 +2019,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was muted.
-     *                 <p>Corresponds to "Mute" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Mute" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2011,7 +2028,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was paused.
-     *                 <p>Corresponds to "Pause" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pause" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2020,7 +2037,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was played.
-     *                 <p>Corresponds to "Plays" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Plays" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2029,7 +2046,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was played upto midpoint.
-     *                 <p>Corresponds to "Midpoint" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2038,7 +2055,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was fully played.
-     *                 <p>Corresponds to "Complete" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Complete" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2047,7 +2064,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was restarted.
-     *                 <p>Corresponds to "Replays" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Replays" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2056,7 +2073,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was stopped.
-     *                 <p>Corresponds to "Stops" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Stops" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2065,7 +2082,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a rich media video was unmuted.
-     *                 <p>Corresponds to "Unmute" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unmute" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2074,7 +2091,7 @@ public enum Column {
     /**
      * 
      *                 The average amount of time(seconds) that a rich media video was viewed per view.
-     *                 <p>Corresponds to "Average view time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average view time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2083,7 +2100,7 @@ public enum Column {
     /**
      * 
      *                 The percentage of a video watched by a user.
-     *                 <p>Corresponds to "View rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "View rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2092,7 +2109,7 @@ public enum Column {
     /**
      * 
      *                 The amount of time (seconds) that a user interacts with a rich media ad.
-     *                 <p>Corresponds to "Custom event - time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Custom event - time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2101,7 +2118,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a user views and interacts with a specified part of a rich media ad.
-     *                 <p>Corresponds to "Custom event - count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Custom event - count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2110,7 +2127,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions where the video was played.
-     *                 <p>Corresponds to "Start" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Start" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2119,7 +2136,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to 25% of its length.
-     *                 <p>Corresponds to "First quartile" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "First quartile" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2128,7 +2145,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video reached its midpoint during play.
-     *                 <p>Corresponds to "Midpoint" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2137,7 +2154,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to 75% of its length.
-     *                 <p>Corresponds to "Third quartile" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Third quartile" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2146,7 +2163,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the video played to completion.
-     *                 <p>Corresponds to "Complete" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Complete" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2155,7 +2172,7 @@ public enum Column {
     /**
      * 
      *                 Average percentage of the video watched by users.
-     *                 <p>Corresponds to "Average view rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average view rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2164,7 +2181,7 @@ public enum Column {
     /**
      * 
      *                 Average time(seconds) users watched the video.
-     *                 <p>Corresponds to "Average view time" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average view time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2173,7 +2190,7 @@ public enum Column {
     /**
      * 
      *                 Percentage of times the video played to the end.
-     *                 <p>Corresponds to "Completion rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Completion rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2183,7 +2200,7 @@ public enum Column {
      * 
      *                 The number of times an error occurred, such as a VAST redirect error, a video playback error,
      *                 or an invalid response error.
-     *                 <p>Corresponds to "Total error count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total error count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2192,7 +2209,7 @@ public enum Column {
     /**
      * 
      *                 Duration of the video creative.
-     *                 <p>Corresponds to "Video length" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video length" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2201,7 +2218,7 @@ public enum Column {
     /**
      * 
      *                 The number of times a skip button is shown in video.
-     *                 <p>Corresponds to "Skip button shown" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Skip button shown" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2211,7 +2228,7 @@ public enum Column {
      * 
      *                 The number of engaged views i.e. ad is viewed to completion
      *                 or for 30s, whichever comes first.
-     *                 <p>Corresponds to "Engaged view" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Engaged view" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2220,7 +2237,7 @@ public enum Column {
     /**
      * 
      *                 View-through rate represented as a percentage.
-     *                 <p>Corresponds to "View-through rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "View-through rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2229,7 +2246,7 @@ public enum Column {
     /**
      * 
      *                 Number of times that the publisher specified a video ad played automatically.
-     *                 <p>Corresponds to "Auto-plays" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Auto-plays" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2238,7 +2255,7 @@ public enum Column {
     /**
      * 
      *                 Number of times that the publisher specified a video ad was clicked to play.
-     *                 <p>Corresponds to "Click-to-plays" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Click-to-plays" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2247,7 +2264,7 @@ public enum Column {
     /**
      * 
      *                 Error rate is the percentage of video error count from (error count + total impressions).
-     *                 <p>Corresponds to "Total error rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total error rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2256,7 +2273,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 100.
-     *                 <p>Corresponds to "VAST error 100 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 100 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2265,7 +2282,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 101.
-     *                 <p>Corresponds to "VAST error 101 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 101 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2274,7 +2291,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 102.
-     *                 <p>Corresponds to "VAST error 102 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 102 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2283,7 +2300,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 200.
-     *                 <p>Corresponds to "VAST error 200 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 200 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2292,7 +2309,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 201.
-     *                 <p>Corresponds to "VAST error 201 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 201 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2301,7 +2318,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 202.
-     *                 <p>Corresponds to "VAST error 202 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 202 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2310,7 +2327,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 203.
-     *                 <p>Corresponds to "VAST error 203 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 203 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2319,7 +2336,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 300.
-     *                 <p>Corresponds to "VAST error 300 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 300 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2328,7 +2345,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 301.
-     *                 <p>Corresponds to "VAST error 301 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 301 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2337,7 +2354,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 302.
-     *                 <p>Corresponds to "VAST error 302 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 302 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2346,7 +2363,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 303.
-     *                 <p>Corresponds to "VAST error 303 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 303 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2355,7 +2372,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 400.
-     *                 <p>Corresponds to "VAST error 400 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 400 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2364,7 +2381,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 401.
-     *                 <p>Corresponds to "VAST error 401 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 401 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2373,7 +2390,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 402.
-     *                 <p>Corresponds to "VAST error 402 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 402 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2382,7 +2399,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 403.
-     *                 <p>Corresponds to "VAST error 403 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 403 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2391,7 +2408,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 405.
-     *                 <p>Corresponds to "VAST error 405 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 405 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2400,7 +2417,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 500.
-     *                 <p>Corresponds to "VAST error 500 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 500 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2409,7 +2426,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 501.
-     *                 <p>Corresponds to "VAST error 501 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 501 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2418,7 +2435,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 502.
-     *                 <p>Corresponds to "VAST error 502 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 502 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2427,7 +2444,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 503.
-     *                 <p>Corresponds to "VAST error 503 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 503 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2436,7 +2453,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 600.
-     *                 <p>Corresponds to "VAST error 600 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 600 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2445,7 +2462,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 601.
-     *                 <p>Corresponds to "VAST error 601 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 601 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2454,7 +2471,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 602.
-     *                 <p>Corresponds to "VAST error 602 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 602 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2463,7 +2480,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 603.
-     *                 <p>Corresponds to "VAST error 603 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 603 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2472,7 +2489,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 604.
-     *                 <p>Corresponds to "VAST error 604 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 604 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2481,7 +2498,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 900.
-     *                 <p>Corresponds to "VAST error 900 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 900 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2490,7 +2507,7 @@ public enum Column {
     /**
      * 
      *                 Number of VAST video errors of type 901.
-     *                 <p>Corresponds to "VAST error 901 count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "VAST error 901 count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2499,7 +2516,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times user paused ad clip.
-     *                 <p>Corresponds to "Pause" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pause" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2508,7 +2525,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times the user unpaused the video.
-     *                 <p>Corresponds to "Resume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Resume" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2517,7 +2534,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user rewinds the video.
-     *                 <p>Corresponds to "Rewind" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Rewind" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2527,7 +2544,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of times video player was in mute state during play
      *                 of ad clip.
-     *                 <p>Corresponds to "Mute" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Mute" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2536,7 +2553,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user unmutes the video.
-     *                 <p>Corresponds to "Unmute" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unmute" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2546,7 +2563,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of times a user collapses a video,
      *                 either to its original size or to a different size.
-     *                 <p>Corresponds to "Collapse" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Collapse" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2555,7 +2572,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a user expands a video.
-     *                 <p>Corresponds to "Expand" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expand" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2564,7 +2581,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times ad clip played in full screen mode.
-     *                 <p>Corresponds to "Full screen" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Full screen" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2574,7 +2591,7 @@ public enum Column {
      * 
      *                 Video interaction event: The number of user interactions with a video, on average,
      *                 such as pause, full screen, mute, etc.
-     *                 <p>Corresponds to "Average interaction rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average interaction rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2583,7 +2600,7 @@ public enum Column {
     /**
      * 
      *                 Video interaction event: The number of times a skippable video is skipped.
-     *                 <p>Corresponds to "Video skipped" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Video skipped" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2592,7 +2609,7 @@ public enum Column {
     /**
      * 
      *                 The number of control starts.
-     *                 <p>Corresponds to "Control starts" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control starts" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2601,7 +2618,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized starts.
-     *                 <p>Corresponds to "Optimized starts" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized starts" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2610,7 +2627,7 @@ public enum Column {
     /**
      * 
      *                 The number of control completes.
-     *                 <p>Corresponds to "Control completes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control completes" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2619,7 +2636,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized completes.
-     *                 <p>Corresponds to "Optimized completes" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized completes" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2628,7 +2645,7 @@ public enum Column {
     /**
      * 
      *                 The rate of control completions.
-     *                 <p>Corresponds to "Control completion rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control completion rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2637,7 +2654,7 @@ public enum Column {
     /**
      * 
      *                 The rate of optimized completions.
-     *                 <p>Corresponds to "Optimized completion rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized completion rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2649,7 +2666,7 @@ public enum Column {
      *                 rate. This is calculated as (( {@link Column#VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETION_RATE}/
      *                 {@link Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "Completion rate lift" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Completion rate lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2658,7 +2675,7 @@ public enum Column {
     /**
      * 
      *                 The number of control skip buttons shown.
-     *                 <p>Corresponds to "Control skip button shown" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control skip button shown" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2667,7 +2684,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized skip buttons shown.
-     *                 <p>Corresponds to "Optimized skip button shown" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized skip button shown" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2676,7 +2693,7 @@ public enum Column {
     /**
      * 
      *                 The number of control engaged views.
-     *                 <p>Corresponds to "Control engaged view" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control engaged view" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2685,7 +2702,7 @@ public enum Column {
     /**
      * 
      *                 The number of optimized engaged views.
-     *                 <p>Corresponds to "Optimized engaged view" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized engaged view" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2694,7 +2711,7 @@ public enum Column {
     /**
      * 
      *                 The control view-through rate.
-     *                 <p>Corresponds to "Control view-through rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Control view-through rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2703,7 +2720,7 @@ public enum Column {
     /**
      * 
      *                 The optimized view-through rate.
-     *                 <p>Corresponds to "Optimized view-through rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Optimized view-through rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2716,7 +2733,7 @@ public enum Column {
      *                 Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE}/ {@link
      *                 Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE}) - 1) * 100 for an ad for which the
      *                 optimization feature has been enabled.
-     *                 <p>Corresponds to "View-through rate lift" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "View-through rate lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2725,7 +2742,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions viewed on the user's screen.
-     *                 <p>Corresponds to "Total Active View viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2734,7 +2751,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions that were sampled and measured by active view.
-     *                 <p>Corresponds to "Total Active View measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2752,7 +2769,7 @@ public enum Column {
     /**
      * 
      *                 Total number of impressions that were eligible to measure viewability.
-     *                 <p>Corresponds to "Total Active View eligible impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View eligible impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2762,7 +2779,7 @@ public enum Column {
      * 
      *                 The percentage of total impressions that were measurable by active view (out of all the total
      *                 impressions sampled for active view).
-     *                 <p>Corresponds to "Total Active View % measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View % measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2772,7 +2789,7 @@ public enum Column {
      * 
      *                 Active View total average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Total Active View Average Viewable Time (seconds)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2781,7 +2798,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by the ad server viewed on the user's screen.
-     *                 <p>Corresponds to "Ad server Active View viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server Active View viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2791,7 +2808,7 @@ public enum Column {
      * 
      *                 The number of impressions delivered by the ad server that were sampled, and measurable by
      *                 active view.
-     *                 <p>Corresponds to "Ad server Active View measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server Active View measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2801,7 +2818,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by the ad server viewed on the user's screen (out of
      *                 the ad server impressions measurable by active view).
-     *                 <p>Corresponds to "Ad server Active View % viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server Active View % viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2811,7 +2828,7 @@ public enum Column {
      * 
      *                 Total number of impressions delivered by the ad server that were eligible to measure
      *                 viewability.
-     *                 <p>Corresponds to "Ad server Active View eligible impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server Active View eligible impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2821,7 +2838,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by the ad server that were measurable by active view (
      *                 out of all the ad server impressions sampled for active view).
-     *                 <p>Corresponds to "Ad server Active View % measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad server Active View % measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2830,7 +2847,7 @@ public enum Column {
     /**
      * 
      *                 Active View ad server revenue.
-     *                 <p>Corresponds to "Ad Server Active View Revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Server Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2840,7 +2857,7 @@ public enum Column {
      * 
      *                 Active View ad server average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Ad Server Active View Average Viewable Time (seconds)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Server Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2849,7 +2866,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by AdSense viewed on the user's screen,
-     *                 <p>Corresponds to "AdSense Active View viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2859,7 +2876,7 @@ public enum Column {
      * 
      *                 The number of impressions delivered by AdSense that were sampled, and measurable by active
      *                 view.
-     *                 <p>Corresponds to "AdSense Active View measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2869,7 +2886,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by AdSense viewed on the user's screen (out of AdSense
      *                 impressions measurable by active view).
-     *                 <p>Corresponds to "AdSense Active View % viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View % viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2878,7 +2895,7 @@ public enum Column {
     /**
      * 
      *                 Total number of impressions delivered by AdSense that were eligible to measure viewability.
-     *                 <p>Corresponds to "AdSense Active View eligible impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View eligible impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2888,7 +2905,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by AdSense that were measurable by active view ( out of
      *                 all AdSense impressions sampled for active view).
-     *                 <p>Corresponds to "AdSense Active View % measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View % measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2897,7 +2914,7 @@ public enum Column {
     /**
      * 
      *                 Active View AdSense revenue.
-     *                 <p>Corresponds to "AdSense Active View Revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2907,7 +2924,7 @@ public enum Column {
      * 
      *                 Active View AdSense average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "AdSense Active View Average Viewable Time (seconds)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "AdSense Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2916,7 +2933,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions delivered by Ad Exchange viewed on the user's screen,
-     *                 <p>Corresponds to "Ad Exchange Active View viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2926,7 +2943,7 @@ public enum Column {
      * 
      *                 The number of impressions delivered by Ad Exchange that were sampled, and measurable by active
      *                 view.
-     *                 <p>Corresponds to "Ad Exchange Active View measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2936,7 +2953,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by Ad Exchange viewed on the user's screen (out of Ad
      *                 Exchange impressions measurable by active view).
-     *                 <p>Corresponds to "Ad Exchange Active View % viewable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View % viewable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2945,7 +2962,7 @@ public enum Column {
     /**
      * 
      *                 Total number of impressions delivered by Ad Exchange that were eligible to measure viewability.
-     *                 <p>Corresponds to "Ad Exchange Active View eligible impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View eligible impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2955,7 +2972,7 @@ public enum Column {
      * 
      *                 The percentage of impressions delivered by Ad Exchange that were measurable by active view (
      *                 out of all Ad Exchange impressions sampled for active view).
-     *                 <p>Corresponds to "Ad Exchange Active View % measurable impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View % measurable impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2964,7 +2981,7 @@ public enum Column {
     /**
      * 
      *                 Active View AdExchange revenue.
-     *                 <p>Corresponds to "Ad Exchange Active View Revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2974,7 +2991,7 @@ public enum Column {
      * 
      *                 Active View AdExchange average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Ad Exchange Active View Average Viewable Time (seconds)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2983,7 +3000,7 @@ public enum Column {
     /**
      * 
      *                 Active View total revenue.
-     *                 <p>Corresponds to "Total Active View Revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3000,7 +3017,7 @@ public enum Column {
     /**
      * 
      *                 Number of view-through conversions per thousand impressions.
-     *                 <p>Corresponds to "Conversions per thousand impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Conversions per thousand impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3009,7 +3026,7 @@ public enum Column {
     /**
      * 
      *                 Number of click-through conversions.
-     *                 <p>Corresponds to "Click-through conversions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Click-through conversions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3018,7 +3035,7 @@ public enum Column {
     /**
      * 
      *                 Number of click-through conversions per click.
-     *                 <p>Corresponds to "Conversions per click" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Conversions per click" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3027,7 +3044,7 @@ public enum Column {
     /**
      * 
      *                 Revenue for view-through conversions.
-     *                 <p>Corresponds to "Advertiser view-through sales" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser view-through sales" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3036,7 +3053,7 @@ public enum Column {
     /**
      * 
      *                 Revenue for click-through conversions.
-     *                 <p>Corresponds to "Advertiser click-through sales" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Advertiser click-through sales" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3045,7 +3062,7 @@ public enum Column {
     /**
      * 
      *                 Total number of conversions.
-     *                 <p>Corresponds to "Total conversions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total conversions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3054,7 +3071,7 @@ public enum Column {
     /**
      * 
      *                 Total revenue for conversions.
-     *                 <p>Corresponds to "Total advertiser sales" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total advertiser sales" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3064,7 +3081,7 @@ public enum Column {
      * 
      *                 The number of impressions sent to Ad Exchange / AdSense, regardless of whether they
      *                 won or lost (total number of dynamic allocation impressions).
-     *                 <p>Corresponds to "Impressions competing" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions competing" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3073,7 +3090,7 @@ public enum Column {
     /**
      * 
      *                 The number of unfilled queries that attempted dynamic allocation by Ad Exchange / AdSense.
-     *                 <p>Corresponds to "Unfilled competing impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unfilled competing impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3082,7 +3099,7 @@ public enum Column {
     /**
      * 
      *                 The number of Ad Exchange / AdSense and Ad Manager impressions.
-     *                 <p>Corresponds to "Eligible impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Eligible impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3099,7 +3116,7 @@ public enum Column {
     /**
      * 
      *                 The percentage of eligible impressions that are not competing in dynamic allocation.
-     *                 <p>Corresponds to "Impressions not competing (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions not competing (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3116,7 +3133,7 @@ public enum Column {
     /**
      * 
      *                 The percent of total dynamic allocation queries that won.
-     *                 <p>Corresponds to "Dynamic allocation match rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Dynamic allocation match rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3125,7 +3142,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3136,7 +3153,7 @@ public enum Column {
      *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Contracted revenue (local), Contracted revenue (net) (local).</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Contracted revenue (local), Contracted revenue (net) (local). Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3145,7 +3162,7 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission.
-     *                 <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3157,7 +3174,7 @@ public enum Column {
      *                 agency commission.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3167,7 +3184,7 @@ public enum Column {
      * 
      *                 The value added tax on contracted net revenue of the {@link ProposalLineItem} or
      *                 {@link Proposal}.
-     *                 <p>Corresponds to "Contracted VAT" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted VAT" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3179,7 +3196,7 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_VAT}
-     *                 <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3188,7 +3205,7 @@ public enum Column {
     /**
      * 
      *                 The contracted agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Contracted agency commission" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3200,7 +3217,7 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3209,7 +3226,7 @@ public enum Column {
     /**
      * 
      *                 The contracted impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3218,7 +3235,7 @@ public enum Column {
     /**
      * 
      *                 The contracted clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3228,7 +3245,7 @@ public enum Column {
      * 
      *                 The contracted volume of the {@link ProposalLineItem}. Volume represents impressions for
      *                 rate type CPM, clicks for CPC, and days for CPD.
-     *                 <p>Corresponds to "Contracted volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3237,7 +3254,7 @@ public enum Column {
     /**
      * 
      *                 The budget of the {@link Proposal}.
-     *                 <p>Corresponds to "Budget" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3247,7 +3264,7 @@ public enum Column {
      * 
      *                 The remaining budget of the {@link Proposal}. It is calculated by subtracting the contracted
      *                 net revenue from the budget.
-     *                 <p>Corresponds to "Remaining budget" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Remaining budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3256,7 +3273,7 @@ public enum Column {
     /**
      * 
      *                 The buffered impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Buffered impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3265,7 +3282,7 @@ public enum Column {
     /**
      * 
      *                 The buffered clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Buffered clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3276,7 +3293,7 @@ public enum Column {
      *                 The scheduled impressions of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_IMPRESSIONS} and
      *                 {@link #SALES_CONTRACT_BUFFERED_IMPRESSIONS}.
-     *                 <p>Corresponds to "Scheduled impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3286,7 +3303,7 @@ public enum Column {
      * 
      *                 The scheduled clicks of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_CLICKS} and {@link #SALES_CONTRACT_BUFFERED_CLICKS}.
-     *                 <p>Corresponds to "Scheduled clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3296,7 +3313,7 @@ public enum Column {
      * 
      *                 The scheduled volume of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_VOLUME} and buffered volume.
-     *                 <p>Corresponds to "Scheduled volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3305,7 +3322,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3314,7 +3331,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3323,7 +3340,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3332,7 +3349,7 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Scheduled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3342,7 +3359,7 @@ public enum Column {
      * 
      *                 The total budget of the {@link Proposal}. It differs from {@link #SALES_CONTRACT_BUDGET} since
      *                 it always contains the total budget, not the prorated budget.
-     *                 <p>Corresponds to "Total budget" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3353,7 +3370,7 @@ public enum Column {
      *                 The total remaining budget of the {@link Proposal}. It differs from {@link
      *                 #SALES_CONTRACT_REMAINING_BUDGET} since it always contains the total remaining budget, not the
      *                 prorated remaining budget.
-     *                 <p>Corresponds to "Total remaining budget" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total remaining budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3364,7 +3381,7 @@ public enum Column {
      *                 The total contracted volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SALES_CONTRACT_CONTRACTED_VOLUME} that the volume is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total contracted volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3375,7 +3392,7 @@ public enum Column {
      *                 The total contracted net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE} that the revenue is not prorated with regard to the
      *                 date range.
-     *                 <p>Corresponds to "Total contracted revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3388,7 +3405,7 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3399,7 +3416,7 @@ public enum Column {
      *                 The total contracted gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE} that the revenue is not prorated with regard to
      *                 the date range.
-     *                 <p>Corresponds to "Total contracted revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3412,7 +3429,7 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3423,7 +3440,7 @@ public enum Column {
      *                 The total contracted agency commission of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION} that the revenue is not prorated with regard
      *                 to the date range.
-     *                 <p>Corresponds to "Total contracted agency commission" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3436,7 +3453,7 @@ public enum Column {
      *                 is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Total contracted agency commission (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3446,7 +3463,7 @@ public enum Column {
      * 
      *                 The total net revenue plus its value added tax of the {@link ProposalLineItem}. The revenue is
      *                 not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue with VAT (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3458,7 +3475,7 @@ public enum Column {
      *                 ProposalLineItem}. The revenue is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT}
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3468,7 +3485,7 @@ public enum Column {
      * 
      *                 The total scheduled volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_VOLUME} that the volume is not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total scheduled volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total scheduled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3479,7 +3496,7 @@ public enum Column {
      *                 The total scheduled net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_NET_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3492,7 +3509,7 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3503,7 +3520,7 @@ public enum Column {
      *                 The total scheduled gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_GROSS_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3516,7 +3533,7 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total scheduled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3526,7 +3543,7 @@ public enum Column {
      * 
      *                 The unreconciled net revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from unreconciled Ad Manager volume.
-     *                 <p>Corresponds to "Unreconciled revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3539,7 +3556,7 @@ public enum Column {
      *                 Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3549,7 +3566,7 @@ public enum Column {
      * 
      *                 The unreconciled gross revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} coming from unreconciled Ad Manager volume.
-     *                 <p>Corresponds to "Unreconciled revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3562,7 +3579,7 @@ public enum Column {
      *                 manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3572,7 +3589,7 @@ public enum Column {
      * 
      *                 The forecasted net revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from forecasted Ad Manager volume.
-     *                 <p>Corresponds to "Forecasted revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted revenue (net)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3584,7 +3601,7 @@ public enum Column {
      *                 of {@link #UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE} coming from forecasted Ad Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_FORECASTED_NET_REVENUE}
-     *                 <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3594,7 +3611,7 @@ public enum Column {
      * 
      *                 The forecasted gross revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} coming from forecasted Ad Manager volume.
-     *                 <p>Corresponds to "Forecasted revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted revenue (gross)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3607,7 +3624,7 @@ public enum Column {
      *                 Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3619,7 +3636,7 @@ public enum Column {
      *                 #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}, {@link #BILLING_BILLABLE_NET_REVENUE}, and {@link
      *                 #UNIFIED_REVENUE_FORECASTED_NET_REVENUE} when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3634,7 +3651,7 @@ public enum Column {
      *                 historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3646,7 +3663,7 @@ public enum Column {
      *                 {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}, {@link #BILLING_BILLABLE_GROSS_REVENUE},
      *                 and {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE} when query date range spans historical
      *                 delivery and forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3661,7 +3678,7 @@ public enum Column {
      *                 delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3673,7 +3690,7 @@ public enum Column {
      *                 unreconciled agency commission, the {@link #BILLING_BILLABLE_AGENCY_COMMISSION},
      *                 and the forecasted agency commission when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified agency commission" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3687,7 +3704,7 @@ public enum Column {
      *                 date range spans historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3698,7 +3715,7 @@ public enum Column {
      *                 The unreconciled volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unreconciled volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unreconciled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3709,7 +3726,7 @@ public enum Column {
      *                 The forecasted volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Forecasted volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Forecasted volume" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3720,7 +3737,7 @@ public enum Column {
      *                 The unified volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unified volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unified volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3731,7 +3748,7 @@ public enum Column {
      *                 The expected revenue of the {@link ProposalLineItem}. It is equivalent to
      *                 {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} when the {@link ProposalLineItem} is sold and
      *                 {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3744,7 +3761,7 @@ public enum Column {
      *                 and {@link #SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_NET_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3755,7 +3772,7 @@ public enum Column {
      *                 The expected gross revenue of the {@link ProposalLineItem}. It is equivalent to {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} when the {@link ProposalLineItem} is sold and {@link
      *                 #SALES_PIPELINE_PIPELINE_GROSS_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expected revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3768,7 +3785,7 @@ public enum Column {
      *                 sold and {@link #SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3781,7 +3798,7 @@ public enum Column {
      *                 it is calculated by multiplying {@link Proposal#probabilityOfClose} by the contracted revenue
      *                 when inventory is not reserved; otherwise it is calcualted by multiplying {@link
      *                 Proposal#probabilityOfClose} by the forecasted revenue.
-     *                 <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3797,7 +3814,7 @@ public enum Column {
      *                 revenue.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE}
-     *                 <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3811,7 +3828,7 @@ public enum Column {
      *                 {@link Proposal#probabilityOfClose} by the contracted revenue including agency commission when
      *                 inventory is not reserved; otherwise it is calcualted by multiplying
      *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
-     *                 <p>Corresponds to "Pipeline revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline revenue (gross)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3827,7 +3844,7 @@ public enum Column {
      *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_GROSS_REVENUE}
-     *                 <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3838,7 +3855,7 @@ public enum Column {
      *                 The pipeline agency commission of the {@link ProposalLineItem}. There is no revenue for sold
      *                 {@link ProposalLineItem proposal line items}. For unsold
      *                 {@link ProposalLineItem proposal line items}, it is calculated against gross pipeline revenue.
-     *                 <p>Corresponds to "Pipeline agency commission" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline agency commission" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3852,7 +3869,7 @@ public enum Column {
      *                 in local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3862,7 +3879,7 @@ public enum Column {
      * 
      *                 The Ad Manager volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "DFP volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "DFP volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3872,7 +3889,7 @@ public enum Column {
      * 
      *                 The third party volume of the {@link ProposalLineItem}, which is used for reconciliation.
      *                 Volume represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Third-party volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Third-party volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3882,7 +3899,7 @@ public enum Column {
      * 
      *                 The reconciled volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Reconciled volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Reconciled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3891,7 +3908,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy percentage between Ad Manager volume and third party volume.
-     *                 <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3900,7 +3917,7 @@ public enum Column {
     /**
      * 
      *                 The reconciled revenue of the {@link LineItem}.
-     *                 <p>Corresponds to "Reconciled revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Reconciled revenue" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3909,7 +3926,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager impressions and third party impressions.
-     *                 <p>Corresponds to "Impression discrepancy" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impression discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3918,7 +3935,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager clicks and third party clicks.
-     *                 <p>Corresponds to "Click discrepancy" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Click discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3927,7 +3944,7 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager revenue and third party revenue.
-     *                 <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3937,7 +3954,7 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied.
-     *                 <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3949,7 +3966,7 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied.
      *                 
      *                 See {@link #BILLING_BILLABLE_NET_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3959,7 +3976,7 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied, and including agency commission.
-     *                 <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3971,7 +3988,7 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied, and including agency commission.
      *                 
      *                 See {@link #BILLING_BILLABLE_GROSS_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3981,7 +3998,7 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3994,7 +4011,7 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4004,7 +4021,7 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4017,7 +4034,7 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4027,7 +4044,7 @@ public enum Column {
      * 
      *                 The value added tax on billable net revenue of the {@link ProposalLineItem} or {@link
      *                 Proposal}.
-     *                 <p>Corresponds to "Billable VAT" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable VAT" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4039,7 +4056,7 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_VAT}
-     *                 <p>Corresponds to "Billable VAT (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable VAT (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4048,7 +4065,7 @@ public enum Column {
     /**
      * 
      *                 The billable agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Billable agency commission" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4060,7 +4077,7 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4070,7 +4087,7 @@ public enum Column {
      * 
      *                 The cap quantity of the {@link ProposalLineItem} for each cycle. Quantity represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Cap quantity" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Cap quantity" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4081,7 +4098,7 @@ public enum Column {
      *                 The billable volume of the {@link ProposalLineItem} for each cycle. Billable volumes are
      *                 calculated by applying cap quantity to reconciled volumes. Volume represents impressions for
      *                 rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Billable volume" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4091,7 +4108,7 @@ public enum Column {
      * 
      *                 The delivery rollover volume of the {@link ProposalLineItem} from previous cycle. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Delivery rollover" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Delivery rollover" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4100,7 +4117,7 @@ public enum Column {
     /**
      * 
      *                 The CPM calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and {@link #AD_SERVER_IMPRESSIONS}.
-     *                 <p>Corresponds to "Realized CPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Realized CPM" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4109,7 +4126,7 @@ public enum Column {
     /**
      * 
      *                 The rate calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and Ad Manager volume.
-     *                 <p>Corresponds to "Realized rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Realized rate" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4118,7 +4135,7 @@ public enum Column {
     /**
      * 
      *                 The contracted net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted overall discount (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted overall discount (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4127,7 +4144,7 @@ public enum Column {
     /**
      * 
      *                 The billable net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Billable overall discount (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Billable overall discount (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4137,7 +4154,7 @@ public enum Column {
      * 
      *                 The contracted non-billable (net) of the {@link ProposalLineItem}.
      *                 The non-billable means revenue that marked as make good, added value or barter.
-     *                 <p>Corresponds to "Contracted non-billable (net)" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Contracted non-billable (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -4146,7 +4163,7 @@ public enum Column {
     /**
      * 
      *                 The number of invoiced impressions.
-     *                 <p>Corresponds to "Invoiced impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Invoiced impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4155,7 +4172,7 @@ public enum Column {
     /**
      * 
      *                 The number of invoiced unfilled impressions.
-     *                 <p>Corresponds to "Invoiced unfilled impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Invoiced unfilled impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4164,7 +4181,7 @@ public enum Column {
     /**
      * 
      *                 The total number of impressions tracked for Nielsen Digital Ad Ratings measurement.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4174,7 +4191,7 @@ public enum Column {
      * 
      *                 The total number of impressions for in-target demographic tracked for Nielsen Digital Ad
      *                 Ratings measurement.
-     *                 <p>Corresponds to "In-target impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "In-target impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4183,7 +4200,7 @@ public enum Column {
     /**
      * 
      *                 The population in the demographic.
-     *                 <p>Corresponds to "Population base" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Population base" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4192,6 +4209,7 @@ public enum Column {
     /**
      * 
      *                 The total population for all in-target demographics.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4200,7 +4218,7 @@ public enum Column {
     /**
      * 
      *                 The total number of different people within the selected demographic who were reached.
-     *                 <p>Corresponds to "Unique audience" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unique audience" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4209,6 +4227,7 @@ public enum Column {
     /**
      * 
      *                 The total number of different people within all in-target demographics who were reached.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4217,7 +4236,7 @@ public enum Column {
     /**
      * 
      *                 The unique audience reached as a percentage of the population base.
-     *                 <p>Corresponds to "% audience reach" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% audience reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4227,6 +4246,7 @@ public enum Column {
      * 
      *                 The unique audience reached as a percentage of the population base for all in-target
      *                 demographics.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4235,7 +4255,7 @@ public enum Column {
     /**
      * 
      *                 The average number of times that a person within the target audience sees an advertisement.
-     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4245,6 +4265,7 @@ public enum Column {
      * 
      *                 The average number of times that a person within the target audience sees an advertisement
      *                 for all in-target demographics.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4254,7 +4275,7 @@ public enum Column {
      * 
      *                 The unit of audience volume, which is based on the percentage of the reached target audience
      *                 population multiplied by the average frequency.
-     *                 <p>Corresponds to "Gross rating points" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Gross rating points" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4264,6 +4285,7 @@ public enum Column {
      * 
      *                 The unit of audience volume, which is based on the percentage of the reached target audience
      *                 population multiplied by the average frequency, for all in-target demographics.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4272,7 +4294,7 @@ public enum Column {
     /**
      * 
      *                 The share of impressions that reached the target demographic.
-     *                 <p>Corresponds to "% impression share" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% impression share" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4281,7 +4303,7 @@ public enum Column {
     /**
      * 
      *                 The share of impressions that reached all in-target demographics.
-     *                 <p>Corresponds to "In-target % impression share" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "In-target % impression share" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4290,7 +4312,7 @@ public enum Column {
     /**
      * 
      *                 The share of the total population represented by the population base.
-     *                 <p>Corresponds to "% population share" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% population share" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4300,6 +4322,7 @@ public enum Column {
      * 
      *                 The share of the total population for all in-target demographics represented by the
      *                 population base.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4308,7 +4331,7 @@ public enum Column {
     /**
      * 
      *                 The share of the unique audience in the demographic.
-     *                 <p>Corresponds to "% audience share" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "% audience share" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4317,6 +4340,7 @@ public enum Column {
     /**
      * 
      *                 The share of the unique audience for all in-target demographics.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4326,7 +4350,7 @@ public enum Column {
      * 
      *                 The relative unique audience in the demographic compared with its share of the overall
      *                 population.
-     *                 <p>Corresponds to "Audience index" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Audience index" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4336,6 +4360,7 @@ public enum Column {
      * 
      *                 The relative unique audience for all in-target demographics compared with its share of the
      *                 overall population.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4345,7 +4370,7 @@ public enum Column {
      * 
      *                 The relative impressions per person in the demographic compared with the impressions per person
      *                 for the overall population.
-     *                 <p>Corresponds to "Impressions index" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions index" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4355,6 +4380,7 @@ public enum Column {
      * 
      *                 The relative impressions per person for all in-target demographics compared with the
      *                 impressions per person for the overall population.
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -4363,7 +4389,7 @@ public enum Column {
     /**
      * 
      *                 Number of impressions delivered.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -4372,7 +4398,7 @@ public enum Column {
     /**
      * 
      *                 Number of requests.
-     *                 <p>Corresponds to "Queries" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Queries" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -4381,7 +4407,7 @@ public enum Column {
     /**
      * 
      *                 Number of requests where a buyer was matched with the Ad request.
-     *                 <p>Corresponds to "Matched queries" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Matched queries" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -4390,7 +4416,7 @@ public enum Column {
     /**
      * 
      *                 The revenue earned, calculated in publisher currency, for the ads delivered.
-     *                 <p>Corresponds to "Cost" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Cost" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 
      */
@@ -4399,7 +4425,7 @@ public enum Column {
     /**
      * 
      *                 The host impressions in the partner management.
-     *                 <p>Corresponds to "Host impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4408,7 +4434,7 @@ public enum Column {
     /**
      * 
      *                 The host clicks in the partner management.
-     *                 <p>Corresponds to "Host clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4417,7 +4443,7 @@ public enum Column {
     /**
      * 
      *                 The host CTR in the partner management.
-     *                 <p>Corresponds to "Host CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4426,7 +4452,7 @@ public enum Column {
     /**
      * 
      *                 The unfilled impressions in the partner management.
-     *                 <p>Corresponds to "Unfilled impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Unfilled impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
      *               
      * 
      */
@@ -4435,7 +4461,7 @@ public enum Column {
     /**
      * 
      *                 The partner impressions in the partner management.
-     *                 <p>Corresponds to "Partner impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4444,7 +4470,7 @@ public enum Column {
     /**
      * 
      *                 The partner clicks in the partner management.
-     *                 <p>Corresponds to "Partner clicks" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4453,7 +4479,7 @@ public enum Column {
     /**
      * 
      *                 The partner CTR in the partner management.
-     *                 <p>Corresponds to "Partner CTR" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4462,7 +4488,7 @@ public enum Column {
     /**
      * 
      *                 The gross revenue in the partner management.
-     *                 <p>Corresponds to "Gross revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Gross revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -4471,7 +4497,7 @@ public enum Column {
     /**
      * 
      *                 Monthly host impressions for partner finance reports.
-     *                 <p>Corresponds to "Host impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host impressions" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */
@@ -4480,7 +4506,7 @@ public enum Column {
     /**
      * 
      *                 Monthly host revenue for partner finance reports.
-     *                 <p>Corresponds to "Host revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host revenue" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */
@@ -4489,7 +4515,7 @@ public enum Column {
     /**
      * 
      *                 Monthly host eCPM for partner finance reports.
-     *                 <p>Corresponds to "Host eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Host eCPM" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */
@@ -4498,7 +4524,7 @@ public enum Column {
     /**
      * 
      *                 Monthly partner revenue for partner finance reports.
-     *                 <p>Corresponds to "Partner revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner revenue" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */
@@ -4507,7 +4533,7 @@ public enum Column {
     /**
      * 
      *                 Monthly partner eCPM for partner finance reports.
-     *                 <p>Corresponds to "Partner eCPM" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner eCPM" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */
@@ -4516,7 +4542,7 @@ public enum Column {
     /**
      * 
      *                 Monthly gross revenue for partner finance reports.
-     *                 <p>Corresponds to "Gross revenue" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Gross revenue" in the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
      *               
      * 
      */

@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,13 +20,8 @@ import com.beust.jcommander.Parameter;
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.v201902.ApiError;
 import com.google.api.ads.admanager.axis.v201902.ApiException;
-import com.google.api.ads.admanager.axis.v201902.BillingCap;
-import com.google.api.ads.admanager.axis.v201902.BillingSource;
-import com.google.api.ads.admanager.axis.v201902.Money;
-import com.google.api.ads.admanager.axis.v201902.NetworkServiceInterface;
 import com.google.api.ads.admanager.axis.v201902.Proposal;
-import com.google.api.ads.admanager.axis.v201902.ProposalCompanyAssociation;
-import com.google.api.ads.admanager.axis.v201902.ProposalCompanyAssociationType;
+import com.google.api.ads.admanager.axis.v201902.ProposalMarketplaceInfo;
 import com.google.api.ads.admanager.axis.v201902.ProposalServiceInterface;
 import com.google.api.ads.admanager.axis.v201902.SalespersonSplit;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
@@ -51,28 +46,24 @@ public class CreateProposals {
 
   private static class CreateProposalsParams extends CodeSampleParams {
     @Parameter(
-        names = ArgumentNames.ADVERTISER_ID,
-        required = true,
-        description = "The ID of the advertiser that the proposal will belong to.")
-    private Long advertiserId;
-
-    @Parameter(
         names = ArgumentNames.PRIMARY_SALESPERSON_ID,
         required = true,
         description = "The ID of the primary salesperson.")
     private Long primarySalespersonId;
 
     @Parameter(
-        names = ArgumentNames.SECONDARY_SALESPERSON_ID,
-        required = true,
-        description = "The ID of the secondary salesperson.")
-    private Long secondarySalespersonId;
-
-    @Parameter(
         names = ArgumentNames.PRIMARY_TRAFFICKER_ID,
         required = true,
         description = "The ID of the primary trafficker.")
     private Long primaryTraffickerId;
+
+    @Parameter(
+        names = ArgumentNames.PROGRAMMATIC_BUYER_ID,
+        required = true,
+        description =
+            "The ID of the programmatic buyer. This can be obtained through the"
+                + " Programmatic_Buyer PQL table.")
+    private Long programmaticBuyerId;
   }
 
   /**
@@ -80,71 +71,44 @@ public class CreateProposals {
    *
    * @param adManagerServices the services factory.
    * @param session the session.
-   * @param advertiserId the ID of the advertiser that the proposal will belong to.
    * @param primarySalespersonId the ID of the primary salesperson.
-   * @param secondarySalespersonId the ID of the secondary salesperson.
    * @param primaryTraffickerId the ID of the primary trafficker.
+   * @param programmaticBuyerId the ID of the programmatic buyer. This can be obtained through the
+   *     Programmatic_Buyer PQL table.
    * @throws ApiException if the API request failed with one or more service errors.
    * @throws RemoteException if the API request failed due to other errors.
    */
   public static void runExample(
       AdManagerServices adManagerServices,
       AdManagerSession session,
-      long advertiserId,
       long primarySalespersonId,
-      long secondarySalespersonId,
-      long primaryTraffickerId)
+      long primaryTraffickerId,
+      long programmaticBuyerId)
       throws RemoteException {
-    // Get the ProposalService.
     ProposalServiceInterface proposalService =
         adManagerServices.get(session, ProposalServiceInterface.class);
-
-    // Get the NetworkService.
-    NetworkServiceInterface networkService =
-        adManagerServices.get(session, NetworkServiceInterface.class);
-
-    // Create a proposal.
     Proposal proposal = new Proposal();
+
+    // Setting required Marketplace information.
+    ProposalMarketplaceInfo proposalMarketplaceInfo = new ProposalMarketplaceInfo();
+    proposalMarketplaceInfo.setBuyerAccountId(programmaticBuyerId);
+
+    // Set common required fields for a proposal.
     proposal.setName("Proposal #" + new Random().nextInt(Integer.MAX_VALUE));
+    proposal.setPrimaryTraffickerId(primaryTraffickerId);
+    proposal.setMarketplaceInfo(proposalMarketplaceInfo);
 
-    // Create a proposal company association.
-    ProposalCompanyAssociation proposalCompanyAssociation = new ProposalCompanyAssociation();
-    proposalCompanyAssociation.setCompanyId(advertiserId);
-    proposalCompanyAssociation.setType(ProposalCompanyAssociationType.ADVERTISER);
-    proposal.setAdvertiser(proposalCompanyAssociation);
-
-    // Create salesperson splits for the primary salesperson and secondary salespeople.
     SalespersonSplit primarySalesperson = new SalespersonSplit();
     primarySalesperson.setUserId(primarySalespersonId);
-    primarySalesperson.setSplit(75000);
+    primarySalesperson.setSplit(100000);
     proposal.setPrimarySalesperson(primarySalesperson);
-
-    SalespersonSplit secondarySalesperson = new SalespersonSplit();
-    secondarySalesperson.setUserId(secondarySalespersonId);
-    secondarySalesperson.setSplit(25000);
-    proposal.setSecondarySalespeople(new SalespersonSplit[] {secondarySalesperson});
-
-    // Set the probability to close to 100%.
-    proposal.setProbabilityOfClose(100000L);
-
-    // Set the primary trafficker on the proposal for when it becomes an order.
-    proposal.setPrimaryTraffickerId(primaryTraffickerId);
-
-    // Create a budget for the proposal worth 100 in the network local currency.
-    Money budget = new Money();
-    budget.setMicroAmount(100000000L);
-    budget.setCurrencyCode(networkService.getCurrentNetwork().getCurrencyCode());
-    proposal.setBudget(budget);
-
-    proposal.setBillingCap(BillingCap.CAPPED_CUMULATIVE);
-    proposal.setBillingSource(BillingSource.DFP_VOLUME);
 
     // Create the proposal on the server.
     Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
 
     for (Proposal createdProposal : proposals) {
       System.out.printf(
-          "A proposal with ID %d and name '%s' was created.%n",
+          "A proposal with ID %d and name '%s' " + "was created.%n",
           createdProposal.getId(), createdProposal.getName());
     }
   }
@@ -187,20 +151,18 @@ public class CreateProposals {
     if (!params.parseArguments(args)) {
       // Either pass the required parameters for this example on the command line, or insert them
       // into the code here. See the parameter class definition above for descriptions.
-      params.advertiserId = Long.parseLong("INSERT_ADVERTISER_ID_HERE");
       params.primarySalespersonId = Long.parseLong("INSERT_PRIMARY_SALESPERSON_ID_HERE");
-      params.secondarySalespersonId = Long.parseLong("INSERT_SECONDARY_SALESPERSON_ID_HERE");
       params.primaryTraffickerId = Long.parseLong("INSERT_PRIMARY_TRAFFICKER_ID_HERE");
+      params.programmaticBuyerId = Long.parseLong("INSERT_PROGRAMMATIC_BUYER_ID_HERE");
     }
 
     try {
       runExample(
           adManagerServices,
           session,
-          params.advertiserId,
           params.primarySalespersonId,
-          params.secondarySalespersonId,
-          params.primaryTraffickerId);
+          params.primaryTraffickerId,
+          params.programmaticBuyerId);
     } catch (ApiException apiException) {
       // ApiException is the base class for most exceptions thrown by an API request. Instances
       // of this exception have a message and a collection of ApiErrors that indicate the

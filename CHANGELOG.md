@@ -1,3 +1,17 @@
+4.7.0 - 08/13/2019
+------------------
+AdWords
+  - No changes.
+  
+Ad Manager:
+ - Added support for v201908.
+ - Removed examples for v201811
+ - Removed support for v201808.
+ - Updated proposal and proposal line item examples for Sales Management deprecation.
+
+Common:
+ - Upgraded opencsv dependency to 4.6.
+
 4.6.0 - 05/16/2019
 ------------------
 AdWords

@@ -14,12 +14,12 @@
 
 package com.google.api.ads.common.lib.utils;
 
-import au.com.bytecode.opencsv.CSVReader;
-import au.com.bytecode.opencsv.CSVWriter;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;

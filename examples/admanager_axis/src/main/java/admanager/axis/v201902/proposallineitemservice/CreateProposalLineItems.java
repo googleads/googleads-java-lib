@@ -1,4 +1,4 @@
-// Copyright 2015 Google Inc. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,21 +19,26 @@ import static com.google.api.ads.common.lib.utils.Builder.DEFAULT_CONFIGURATION_
 import com.beust.jcommander.Parameter;
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.utils.v201902.DateTimes;
+import com.google.api.ads.admanager.axis.v201902.AdExchangeEnvironment;
 import com.google.api.ads.admanager.axis.v201902.AdUnitTargeting;
 import com.google.api.ads.admanager.axis.v201902.ApiError;
 import com.google.api.ads.admanager.axis.v201902.ApiException;
-import com.google.api.ads.admanager.axis.v201902.BillingCap;
-import com.google.api.ads.admanager.axis.v201902.BillingSource;
-import com.google.api.ads.admanager.axis.v201902.CreativeRotationType;
+import com.google.api.ads.admanager.axis.v201902.CreativePlaceholder;
 import com.google.api.ads.admanager.axis.v201902.DeliveryRateType;
+import com.google.api.ads.admanager.axis.v201902.DeviceCapability;
+import com.google.api.ads.admanager.axis.v201902.DeviceCapabilityTargeting;
 import com.google.api.ads.admanager.axis.v201902.Goal;
 import com.google.api.ads.admanager.axis.v201902.InventoryTargeting;
+import com.google.api.ads.admanager.axis.v201902.LineItemType;
 import com.google.api.ads.admanager.axis.v201902.Money;
 import com.google.api.ads.admanager.axis.v201902.NetworkServiceInterface;
 import com.google.api.ads.admanager.axis.v201902.ProposalLineItem;
+import com.google.api.ads.admanager.axis.v201902.ProposalLineItemMarketplaceInfo;
 import com.google.api.ads.admanager.axis.v201902.ProposalLineItemServiceInterface;
 import com.google.api.ads.admanager.axis.v201902.RateType;
+import com.google.api.ads.admanager.axis.v201902.Size;
 import com.google.api.ads.admanager.axis.v201902.Targeting;
+import com.google.api.ads.admanager.axis.v201902.TechnologyTargeting;
 import com.google.api.ads.admanager.axis.v201902.UnitType;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.utils.examples.ArgumentNames;
@@ -50,9 +55,7 @@ import org.joda.time.Duration;
 import org.joda.time.Instant;
 
 /**
- * This example creates a new proposal line item that targets the whole network. To determine which
- * proposal line items exist, run GetAllProposalLineItems.java. To determine which proposals exist,
- * run GetAllProposals.java.
+ * This example creates a new proposal line item.
  *
  * <p>Credentials and properties in {@code fromFile()} are pulled from the "ads.properties" file.
  * See README for more info.
@@ -65,21 +68,6 @@ public class CreateProposalLineItems {
         required = true,
         description = "The ID of the proposal that the proposal line items will belong to.")
     private Long proposalId;
-
-    @Parameter(
-        names = ArgumentNames.RATE_CARD_ID,
-        required = true,
-        description =
-            "The ID of the rate card that the proposal line items should be priced"
-                + " with. This example requires a rate card with net cost pricing.")
-    private Long rateCardId;
-
-    @Parameter(
-        names = ArgumentNames.PRODUCT_ID,
-        required = true,
-        description =
-            "The ID of the product that the proposal line items should be created" + " from.")
-    private Long productId;
   }
 
   /**
@@ -88,26 +76,30 @@ public class CreateProposalLineItems {
    * @param adManagerServices the services factory.
    * @param session the session.
    * @param proposalId the ID of the proposal that the proposal line items will belong to.
-   * @param rateCardId the ID of the rate card that the proposal line items should be priced with.
-   *     This example requires a rate card with net cost pricing.
-   * @param productId the ID of the product that the proposal line items should be created from.
    * @throws ApiException if the API request failed with one or more service errors.
    * @throws RemoteException if the API request failed due to other errors.
    */
   public static void runExample(
-      AdManagerServices adManagerServices,
-      AdManagerSession session,
-      long proposalId,
-      long rateCardId,
-      long productId)
+      AdManagerServices adManagerServices, AdManagerSession session, long proposalId)
       throws RemoteException {
-    // Get the ProposalLineItemService.
     ProposalLineItemServiceInterface proposalLineItemService =
         adManagerServices.get(session, ProposalLineItemServiceInterface.class);
 
-    // Get the NetworkService.
     NetworkServiceInterface networkService =
         adManagerServices.get(session, NetworkServiceInterface.class);
+
+    ProposalLineItem proposalLineItem = new ProposalLineItem();
+
+    // Setting required Marketplace information.
+    ProposalLineItemMarketplaceInfo proposalLineItemMarketplaceInfo =
+        new ProposalLineItemMarketplaceInfo();
+    proposalLineItemMarketplaceInfo.setAdExchangeEnvironment(AdExchangeEnvironment.DISPLAY);
+    proposalLineItem.setMarketplaceInfo(proposalLineItemMarketplaceInfo);
+
+    // Set common required fields for a proposal line item.
+    proposalLineItem.setName("Proposal line item #" + new Random().nextInt(Integer.MAX_VALUE));
+    proposalLineItem.setProposalId(proposalId);
+    proposalLineItem.setLineItemType(LineItemType.STANDARD);
 
     // Get the root ad unit ID used to target the whole site.
     String rootAdUnitId = networkService.getCurrentNetwork().getEffectiveRootAdUnitId();
@@ -122,17 +114,35 @@ public class CreateProposalLineItems {
 
     inventoryTargeting.setTargetedAdUnits(new AdUnitTargeting[] {adUnitTargeting});
 
+    // Target Display environment by excluding Mobile Apps.
+    // DeviceCapabilities can be obtained though the Device_Capability PQL table:
+    // https://developers.google.com/ad-manager/api/reference/latest/PublisherQueryLanguageService
+    DeviceCapability mobileApps = new DeviceCapability();
+    mobileApps.setId(5005L);
+    DeviceCapabilityTargeting deviceCapabilityTargeting = new DeviceCapabilityTargeting();
+    deviceCapabilityTargeting.setExcludedDeviceCapabilities(new DeviceCapability[] {mobileApps});
+    TechnologyTargeting technologyTargeting = new TechnologyTargeting();
+    technologyTargeting.setDeviceCapabilityTargeting(deviceCapabilityTargeting);
+
     // Create targeting.
     Targeting targeting = new Targeting();
     targeting.setInventoryTargeting(inventoryTargeting);
+    targeting.setTechnologyTargeting(technologyTargeting);
 
-    // Create a proposal line item.
-    ProposalLineItem proposalLineItem = new ProposalLineItem();
-    proposalLineItem.setName("Proposal line item #" + new Random().nextInt(Integer.MAX_VALUE));
-    proposalLineItem.setProposalId(proposalId);
-    proposalLineItem.setRateCardId(rateCardId);
-    proposalLineItem.setProductId(productId);
     proposalLineItem.setTargeting(targeting);
+
+    // Create creative placeholder size.
+    Size size = new Size();
+    size.setWidth(300);
+    size.setHeight(250);
+    size.setIsAspectRatio(false);
+
+    // Create the creative placeholder.
+    CreativePlaceholder creativePlaceholder = new CreativePlaceholder();
+    creativePlaceholder.setSize(size);
+
+    // Set the size of creatives that can be associated with this proposal line item.
+    proposalLineItem.setCreativePlaceholders(new CreativePlaceholder[] {creativePlaceholder});
 
     // Set the length of the proposal line item to run.
     proposalLineItem.setStartDateTime(DateTimes.toDateTime(Instant.now(), "America/New_York"));
@@ -141,11 +151,6 @@ public class CreateProposalLineItems {
 
     // Set delivery specifications for the proposal line item.
     proposalLineItem.setDeliveryRateType(DeliveryRateType.EVENLY);
-    proposalLineItem.setCreativeRotationType(CreativeRotationType.OPTIMIZED);
-
-    // Set billing specifications for the proposal line item.
-    proposalLineItem.setBillingCap(BillingCap.CAPPED_CUMULATIVE);
-    proposalLineItem.setBillingSource(BillingSource.THIRD_PARTY_VOLUME);
 
     // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
     // for a total value of $2.
@@ -154,11 +159,9 @@ public class CreateProposalLineItems {
     goal.setUnitType(UnitType.IMPRESSIONS);
     proposalLineItem.setGoal(goal);
 
-    proposalLineItem.setNetCost(new Money("USD", 2000000L));
     proposalLineItem.setNetRate(new Money("USD", 2000000L));
     proposalLineItem.setRateType(RateType.CPM);
 
-    // Create the proposal line item on the server.
     ProposalLineItem[] proposalLineItems =
         proposalLineItemService.createProposalLineItems(new ProposalLineItem[] {proposalLineItem});
 
@@ -208,13 +211,10 @@ public class CreateProposalLineItems {
       // Either pass the required parameters for this example on the command line, or insert them
       // into the code here. See the parameter class definition above for descriptions.
       params.proposalId = Long.parseLong("INSERT_PROPOSAL_ID_HERE");
-      params.rateCardId = Long.parseLong("INSERT_RATE_CARD_ID_HERE");
-      params.productId = Long.parseLong("INSERT_PRODUCT_ID_HERE");
     }
 
     try {
-      runExample(
-          adManagerServices, session, params.proposalId, params.rateCardId, params.productId);
+      runExample(adManagerServices, session, params.proposalId);
     } catch (ApiException apiException) {
       // ApiException is the base class for most exceptions thrown by an API request. Instances
       // of this exception have a message and a collection of ApiErrors that indicate the
