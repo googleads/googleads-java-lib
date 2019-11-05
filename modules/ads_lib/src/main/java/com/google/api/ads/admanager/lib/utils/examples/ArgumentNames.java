@@ -14,9 +14,7 @@
 
 package com.google.api.ads.admanager.lib.utils.examples;
 
-/**
- * Contains command line argument formats for example code.
- */
+/** Contains command line argument formats for example code. */
 public final class ArgumentNames {
 
   public static final String ACTIVITY_ID = "--activityId";
@@ -54,6 +52,8 @@ public final class ArgumentNames {
   public static final String CREATIVE_WRAPPER_ID = "--creativeWrapperId";
 
   public static final String CURRENCY_CODE = "--currencyCode";
+
+  public static final String CUSTOM_DIMENSION_KEY_ID = "--customDimensionKeyId";
 
   public static final String CUSTOM_FIELD_ID = "--customFieldId";
 

@@ -114,7 +114,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
 
     /* This code is used in constructing a live stream event master
      * playlist URL. This attribute is
-     *                 read-only and is assigned by Google. */
+     *                 read-only and is assigned by Google. As of V201911
+     * this field is called assetKey. */
     private java.lang.String liveStreamEventCode;
 
     /* ID corresponding to the slate for this live event. If not set,
@@ -624,7 +625,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return liveStreamEventCode   * This code is used in constructing a live stream event master
      * playlist URL. This attribute is
-     *                 read-only and is assigned by Google.
+     *                 read-only and is assigned by Google. As of V201911
+     * this field is called assetKey.
      */
     public java.lang.String getLiveStreamEventCode() {
         return liveStreamEventCode;
@@ -636,7 +638,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param liveStreamEventCode   * This code is used in constructing a live stream event master
      * playlist URL. This attribute is
-     *                 read-only and is assigned by Google.
+     *                 read-only and is assigned by Google. As of V201911
+     * this field is called assetKey.
      */
     public void setLiveStreamEventCode(java.lang.String liveStreamEventCode) {
         this.liveStreamEventCode = liveStreamEventCode;

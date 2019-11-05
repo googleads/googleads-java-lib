@@ -1718,7 +1718,7 @@ public enum Column {
     /**
      * 
      *                 The average number of ads displayed to each unique visitor.
-     *                 <p>Corresponds to "Average impressions / visitor" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1727,7 +1727,7 @@ public enum Column {
     /**
      * 
      *                 The average revenue earned per unique visitor.
-     *                 <p>Corresponds to "Average revenue / visitor" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1739,7 +1739,7 @@ public enum Column {
      *                 
      *                 <p>To maintain user privacy, "Unique visitors" totaling 0-99 won't be displayed in the report
      *                 and will appear empty.
-     *                 <p>Corresponds to "Unique visitors" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */

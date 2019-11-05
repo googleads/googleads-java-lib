@@ -1772,7 +1772,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
-     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */

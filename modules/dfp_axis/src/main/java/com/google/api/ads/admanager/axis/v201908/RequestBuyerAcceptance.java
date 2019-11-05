@@ -24,9 +24,11 @@ package com.google.api.ads.admanager.axis.v201908;
 
 /**
  * The action used to request acceptance from the buyer for the {@link
- * Proposal}
- *             through Marketplace.
- *             This action is only applicable for programmatic proposals.
+ * Proposal} through
+ *             Marketplace. This action does check forecasting unless
+ * {@link #allowOverbook} is set to {@code
+ *             true}. This action is only applicable for programmatic
+ * proposals.
  */
 public class RequestBuyerAcceptance  extends com.google.api.ads.admanager.axis.v201908.ProposalAction  implements java.io.Serializable {
     public RequestBuyerAcceptance() {

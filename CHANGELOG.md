@@ -1,3 +1,17 @@
+4.8.0 - 11/05/2019
+------------------
+AdWords
+  - No changes.
+
+Ad Manager:
+ - Added support for v201911.
+ - Removed examples for v201902.
+ - Removed support for v201811.
+ - Updated reporting examples to demonstrate new Reach metrics and custom dimensions.
+
+Common
+  - No changes.
+
 4.7.0 - 08/13/2019
 ------------------
 AdWords

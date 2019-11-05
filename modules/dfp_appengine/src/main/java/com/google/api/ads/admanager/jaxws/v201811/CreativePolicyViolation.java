@@ -55,7 +55,7 @@ public enum CreativePolicyViolation {
      *                 Malware was found in the creative.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/1308246">here</a>.
      *               
      * 
      */
@@ -66,7 +66,7 @@ public enum CreativePolicyViolation {
      *                 Malware was found in the landing page.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/1308246">here</a>.
      *               
      * 
      */
@@ -85,7 +85,7 @@ public enum CreativePolicyViolation {
      *                 The creative misrepresents the product or service being advertised.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/6020955?hl=en#355">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/6020955">here</a>.
      *               
      * 
      */
@@ -104,7 +104,7 @@ public enum CreativePolicyViolation {
      *                 The creative has been determined as attempting to game the Google network.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/6020954?hl=en#319">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/6020954#319">here</a>.
      *               
      * 
      */
@@ -115,7 +115,7 @@ public enum CreativePolicyViolation {
      *                 The landing page for the creative uses a dynamic DNS.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/6020954?rd=1">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/6020954">here</a>.
      *               
      * 
      */
@@ -126,7 +126,7 @@ public enum CreativePolicyViolation {
      *                 Phishing found in creative or landing page.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/adwordspolicy/answer/6020955">here</a>.
+     *                 <a href="https://support.google.com/adspolicy/answer/6020955">here</a>.
      *               
      * 
      */
@@ -137,7 +137,7 @@ public enum CreativePolicyViolation {
      *                 The creative prompts the user to download a file.
      *                 
      *                 <p>For more information see
-     *                 <a href="https://support.google.com/dfp_premium/answer/7513391">here</a>
+     *                 <a href="https://support.google.com/admanager/answer/7513391">here</a>
      *               
      * 
      */
@@ -148,7 +148,7 @@ public enum CreativePolicyViolation {
      *                 The creative sets an unauthorized cookie on a Google domain.
      *                 
      *                 <p>For more information see <a
-     *                 href="https://support.google.com/dfp_premium/answer/7513391">here</a>
+     *                 href="https://support.google.com/admanager/answer/7513391">here</a>
      *               
      * 
      */

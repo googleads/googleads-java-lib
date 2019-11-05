@@ -25,9 +25,9 @@ package com.google.api.ads.admanager.axis.v201908;
 /**
  * Represents the dimensions of an {@link AdUnit}, {@link LineItem}
  * or {@link Creative}.
- *             <p>
- *             For interstitial size (out-of-page), native, ignored and
- * fluid size, {@code Size} must be 1x1.
+ *             
+ *             <p>For interstitial size (out-of-page), native, ignored
+ * and fluid size, {@link Size} must be 1x1.
  */
 public class Size  implements java.io.Serializable {
     /* The width of the {@link AdUnit}, {@link LineItem} or {@link
@@ -38,7 +38,7 @@ public class Size  implements java.io.Serializable {
      * Creative}. */
     private java.lang.Integer height;
 
-    /* True if this size represents an aspect ratio, false otherwise. */
+    /* Whether this size represents an aspect ratio. */
     private java.lang.Boolean isAspectRatio;
 
     public Size() {
@@ -110,7 +110,7 @@ public class Size  implements java.io.Serializable {
     /**
      * Gets the isAspectRatio value for this Size.
      * 
-     * @return isAspectRatio   * True if this size represents an aspect ratio, false otherwise.
+     * @return isAspectRatio   * Whether this size represents an aspect ratio.
      */
     public java.lang.Boolean getIsAspectRatio() {
         return isAspectRatio;
@@ -120,7 +120,7 @@ public class Size  implements java.io.Serializable {
     /**
      * Sets the isAspectRatio value for this Size.
      * 
-     * @param isAspectRatio   * True if this size represents an aspect ratio, false otherwise.
+     * @param isAspectRatio   * Whether this size represents an aspect ratio.
      */
     public void setIsAspectRatio(java.lang.Boolean isAspectRatio) {
         this.isAspectRatio = isAspectRatio;

@@ -50,20 +50,20 @@ public class SecurityPolicySettings  implements java.io.Serializable {
     private java.lang.Boolean disableServerSideUrlSigning;
 
     /* The type of origin forwarding used to support Akamai authentication
-     * policies. This field is
-     *                 not applicable to ingest locations, and is only applicable
-     * to delivery media locations with
-     *                 the {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
-     * If set elsewhere it
-     *                 will be reset to null. */
+     * policies for the master
+     *                 playlist. This field is not applicable to ingest locations,
+     * and is only applicable to delivery
+     *                 media locations with the {@link #securityPolicyType}
+     * set to {@link SecurityPolicyType#AKAMAI}.
+     *                 If set elsewhere it will be reset to null. */
     private com.google.api.ads.admanager.axis.v201811.OriginForwardingType originForwardingType;
 
-    /* The origin path prefix provided by the publisher. This field
-     * is only applicable for delivery
-     *                 media locations with the value of {@link #originForwardingType}
-     * set to {@link
-     *                 OriginForwardingType#CONVENTIONAL}, and will be set
-     * to null otherwise. */
+    /* The origin path prefix provided by the publisher for the master
+     * playlist. This field is only
+     *                 applicable for delivery media locations with the value
+     * of {@link #originForwardingType} set to
+     *                 {@link OriginForwardingType#CONVENTIONAL}, and will
+     * be set to null otherwise. */
     private java.lang.String originPathPrefix;
 
     public SecurityPolicySettings() {
@@ -180,12 +180,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * Gets the originForwardingType value for this SecurityPolicySettings.
      * 
      * @return originForwardingType   * The type of origin forwarding used to support Akamai authentication
-     * policies. This field is
-     *                 not applicable to ingest locations, and is only applicable
-     * to delivery media locations with
-     *                 the {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
-     * If set elsewhere it
-     *                 will be reset to null.
+     * policies for the master
+     *                 playlist. This field is not applicable to ingest locations,
+     * and is only applicable to delivery
+     *                 media locations with the {@link #securityPolicyType}
+     * set to {@link SecurityPolicyType#AKAMAI}.
+     *                 If set elsewhere it will be reset to null.
      */
     public com.google.api.ads.admanager.axis.v201811.OriginForwardingType getOriginForwardingType() {
         return originForwardingType;
@@ -196,12 +196,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * Sets the originForwardingType value for this SecurityPolicySettings.
      * 
      * @param originForwardingType   * The type of origin forwarding used to support Akamai authentication
-     * policies. This field is
-     *                 not applicable to ingest locations, and is only applicable
-     * to delivery media locations with
-     *                 the {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
-     * If set elsewhere it
-     *                 will be reset to null.
+     * policies for the master
+     *                 playlist. This field is not applicable to ingest locations,
+     * and is only applicable to delivery
+     *                 media locations with the {@link #securityPolicyType}
+     * set to {@link SecurityPolicyType#AKAMAI}.
+     *                 If set elsewhere it will be reset to null.
      */
     public void setOriginForwardingType(com.google.api.ads.admanager.axis.v201811.OriginForwardingType originForwardingType) {
         this.originForwardingType = originForwardingType;
@@ -211,12 +211,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
     /**
      * Gets the originPathPrefix value for this SecurityPolicySettings.
      * 
-     * @return originPathPrefix   * The origin path prefix provided by the publisher. This field
-     * is only applicable for delivery
-     *                 media locations with the value of {@link #originForwardingType}
-     * set to {@link
-     *                 OriginForwardingType#CONVENTIONAL}, and will be set
-     * to null otherwise.
+     * @return originPathPrefix   * The origin path prefix provided by the publisher for the master
+     * playlist. This field is only
+     *                 applicable for delivery media locations with the value
+     * of {@link #originForwardingType} set to
+     *                 {@link OriginForwardingType#CONVENTIONAL}, and will
+     * be set to null otherwise.
      */
     public java.lang.String getOriginPathPrefix() {
         return originPathPrefix;
@@ -226,12 +226,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
     /**
      * Sets the originPathPrefix value for this SecurityPolicySettings.
      * 
-     * @param originPathPrefix   * The origin path prefix provided by the publisher. This field
-     * is only applicable for delivery
-     *                 media locations with the value of {@link #originForwardingType}
-     * set to {@link
-     *                 OriginForwardingType#CONVENTIONAL}, and will be set
-     * to null otherwise.
+     * @param originPathPrefix   * The origin path prefix provided by the publisher for the master
+     * playlist. This field is only
+     *                 applicable for delivery media locations with the value
+     * of {@link #originForwardingType} set to
+     *                 {@link OriginForwardingType#CONVENTIONAL}, and will
+     * be set to null otherwise.
      */
     public void setOriginPathPrefix(java.lang.String originPathPrefix) {
         this.originPathPrefix = originPathPrefix;

@@ -30,16 +30,21 @@ package com.google.api.ads.admanager.axis.v201908;
  * 
  *             <ul>
  *             <li>{@link RequestPlatformTargeting} must be specified
- * for video line items. Empty
- *             values for {@link RequestPlatformTargeting#targetedRequestPlatforms}
- * mean that all request
- *             platforms will be targeted.
+ * for video line items. Empty values for
+ *             {@link RequestPlatformTargeting#targetedRequestPlatforms}
+ * mean that all request platforms
+ *             will be targeted.
  *             <li>{@link RequestPlatformTargeting} is read-only and
  * assigned by Google for non-video line
  *             items.
  *             <li>{@link RequestPlatformTargeting} is read-only and
  * assigned by Google for line items
  *             generated from proposal line items.
+ *             <li>{@link RequestPlatformTargeting} is assigned by Google
+ * for video line items created and
+ *             updated through external API requests when the RESPECT_EXTERNAL_API_RPT_TARGETING
+ * publisher
+ *             feature is off.
  *             </ul>
  */
 public class RequestPlatformTargeting  implements java.io.Serializable {

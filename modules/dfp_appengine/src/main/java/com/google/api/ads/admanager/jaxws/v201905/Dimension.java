@@ -1758,7 +1758,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
-     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
      */
@@ -2195,7 +2195,7 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by mobile app ID..
+     *                 Breaks down reporting data by mobile app ID.
      *                 <p>Corresponds to "App ID" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
      *               
      * 

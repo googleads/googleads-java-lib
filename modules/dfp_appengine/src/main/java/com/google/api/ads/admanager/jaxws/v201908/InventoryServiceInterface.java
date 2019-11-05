@@ -73,27 +73,12 @@ public interface InventoryServiceInterface {
 
     /**
      * 
-     *         Gets a set of {@link AdUnitSize} objects that satisfy the given
-     *         {@link Statement#query}. The following fields are supported for filtering:
+     *         Returns a set of all relevant {@link AdUnitSize} objects.
      *         
-     *         <table>
-     *         <tr>
-     *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
-     *         </tr>
-     *         <tr>
-     *         <td>{@code targetPlatform}</td>
-     *         <td>{@link TargetPlatform}</td>
-     *         </tr>
-     *         </table>
-     *         An exception will be thrown for queries with unsupported fields.
+     *         <p>The given {@link Statement} is currently ignored but may be honored in future versions.
      *         
-     *         Paging is not supported, as aren't the LIMIT and OFFSET PQL keywords.
-     *         
-     *         Only "=" operator is supported.
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of ad unit sizes
-     *         @return the ad unit sizes that match the given filter
+     *         @param filterStatement currently ignored but may be honored in future versions
+     *         @return the ad unit sizes
      *       
      * 
      * @param filterStatement

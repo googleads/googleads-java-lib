@@ -40,7 +40,11 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             <tr>
  *             <td>{@code cmsKey}</td>
- *             <td>{@link CmsMetadataValue#key}</td>
+ *             <td>{@link CmsMetadataValue#key#name}</td>
+ *             </tr>
+ *             <tr>
+ *             <td>{@code cmsKeyId}</td>
+ *             <td>{@link CmsMetadataValue#key#id}</td>
  *             </tr>
  *             <tr>
  *             <td>{@code keyValueMemberContent}</td>
