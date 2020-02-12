@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>You cannot explicitly define inclusions or exclusions that are already implicit. For example,
  *             if you explicitly include California, you implicitly exclude all other states. You therefore
  *             cannot explicitly exclude Florida, because it is already implicitly excluded. Conversely if you
- *             explicitly exclude Florida, you cannot excplicitly include California.</li>
+ *             explicitly exclude Florida, you cannot explicitly include California.</li>
  *             </ul>
  *           
  * 

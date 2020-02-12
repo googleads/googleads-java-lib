@@ -50,7 +50,7 @@ package com.google.api.ads.admanager.axis.v201905;
  * all other states. You therefore
  *             cannot explicitly exclude Florida, because it is already
  * implicitly excluded. Conversely if you
- *             explicitly exclude Florida, you cannot excplicitly include
+ *             explicitly exclude Florida, you cannot explicitly include
  * California.</li>
  *             </ul>
  */

@@ -48,27 +48,18 @@ public class DateTimesHelper<T, D> {
     this.dateClass = dateClass;
   }
 
-  /**
-   * Converts a {@code Calendar} object to an API date time preserving the
-   * time zone.
-   */
+  /** Converts a {@code Calendar} object to an API date time preserving the time zone. */
   public T toDateTime(Calendar calendar) {
     return toDateTime(new DateTime(calendar));
   }
 
-  /**
-   * Converts an {@code Instant} object to an API date time in the time zone
-   * supplied.
-   */
+  /** Converts an {@code Instant} object to an API date time in the time zone supplied. */
   public T toDateTime(Instant instant, String timeZoneId) {
     return toDateTime(
         instant.toDateTime(DateTimeZone.forTimeZone(TimeZone.getTimeZone(timeZoneId))));
   }
 
-  /**
-   * Converts a {@code DateTime} object to an API date time preserving the
-   * time zone.
-   */
+  /** Converts a {@code DateTime} object to an API date time preserving the time zone. */
   public T toDateTime(DateTime dateTime) {
     try {
       D dateObj = dateClass.newInstance();
@@ -81,14 +72,7 @@ public class DateTimesHelper<T, D> {
       PropertyUtils.setProperty(dateTimeObj, "hour", dateTime.getHourOfDay());
       PropertyUtils.setProperty(dateTimeObj, "minute", dateTime.getMinuteOfHour());
       PropertyUtils.setProperty(dateTimeObj, "second", dateTime.getSecondOfMinute());
-      // Starting in v201811, timeZoneID was renamed to timeZoneId
-      if (PropertyUtils.isWriteable(dateTimeObj, "timeZoneID")) {
-        PropertyUtils.setProperty(
-            dateTimeObj, "timeZoneID", dateTime.getZone().toTimeZone().getID());
-      } else {
-        PropertyUtils.setProperty(
-            dateTimeObj, "timeZoneId", dateTime.getZone().toTimeZone().getID());
-      }
+      PropertyUtils.setProperty(dateTimeObj, "timeZoneId", dateTime.getZone().toTimeZone().getID());
 
       return dateTimeObj;
     } catch (InstantiationException e) {
@@ -103,17 +87,19 @@ public class DateTimesHelper<T, D> {
   }
 
   /**
-   * Converts a string in the form of {@code yyyy-MM-dd'T'HH:mm:ss} to an API
-   * date time in the time zone supplied.
+   * Converts a string in the form of {@code yyyy-MM-dd'T'HH:mm:ss} to an API date time in the time
+   * zone supplied.
    */
   public T toDateTime(String dateTime, String timeZoneId) {
-    return toDateTime(ISODateTimeFormat.dateHourMinuteSecond().parseDateTime(dateTime)
-        .withZoneRetainFields(DateTimeZone.forTimeZone(TimeZone.getTimeZone(timeZoneId))));
+    return toDateTime(
+        ISODateTimeFormat.dateHourMinuteSecond()
+            .parseDateTime(dateTime)
+            .withZoneRetainFields(DateTimeZone.forTimeZone(TimeZone.getTimeZone(timeZoneId))));
   }
 
   /**
-   * Converts a string in the form of {@code yyyy-MM-dd'T'HH:mm:ss±HH:mm} to an
-   * API date time in the time zone supplied.
+   * Converts a string in the form of {@code yyyy-MM-dd'T'HH:mm:ss±HH:mm} to an API date time in the
+   * time zone supplied.
    */
   public T toDateTimeWithTimeZone(String dateTime) {
     return toDateTime(
@@ -128,7 +114,8 @@ public class DateTimesHelper<T, D> {
    */
   public String dateToString(D date) {
     try {
-      return String.format(DATE_PATTERN,
+      return String.format(
+          DATE_PATTERN,
           (Integer) PropertyUtils.getProperty(date, "year"),
           (Integer) PropertyUtils.getProperty(date, "month"),
           (Integer) PropertyUtils.getProperty(date, "day"));
@@ -141,17 +128,12 @@ public class DateTimesHelper<T, D> {
     }
   }
 
-  /**
-   * Converts an API date time to a {@code DateTime} preserving the time zone.
-   */
+  /** Converts an API date time to a {@code DateTime} preserving the time zone. */
   public DateTime toDateTime(T dateTime) {
     try {
       @SuppressWarnings("unchecked") // Expected class.
       D dateObj = (D) PropertyUtils.getProperty(dateTime, "date");
-      String timeZoneId =
-          PropertyUtils.isReadable(dateTime, "timeZoneId")
-              ? (String) PropertyUtils.getProperty(dateTime, "timeZoneId")
-              : (String) PropertyUtils.getProperty(dateTime, "timeZoneID");
+      String timeZoneId = (String) PropertyUtils.getProperty(dateTime, "timeZoneId");
       return new DateTime(
           (Integer) PropertyUtils.getProperty(dateObj, "year"),
           (Integer) PropertyUtils.getProperty(dateObj, "month"),
@@ -170,58 +152,53 @@ public class DateTimesHelper<T, D> {
     }
   }
 
-  /**
-   * Gets a calendar for a {@code DateTime} using the default locale,
-   * i.e. Locale.getDefault().
-   */
+  /** Gets a calendar for a {@code DateTime} using the default locale, i.e. Locale.getDefault(). */
   public Calendar toCalendar(T dateTime) {
     return toDateTime(dateTime).toCalendar(Locale.getDefault());
   }
 
-  /**
-   * Gets a calendar for a {@code DateTime} in the supplied locale.
-   */
+  /** Gets a calendar for a {@code DateTime} in the supplied locale. */
   public Calendar toCalendar(T dateTime, Locale locale) {
     return toDateTime(dateTime).toCalendar(locale);
   }
 
   /**
-   * Returns string representation of this date time. The string representation
-   * does not include the time zone since using date times for filtering
-   * does not use the time zone. If you need to convert the date time
-   * into another time zone before filtering on it, please use
-   * {@link #toStringForTimeZone(Object, String)} instead.
+   * Returns string representation of this date time. The string representation does not include the
+   * time zone since using date times for filtering does not use the time zone. If you need to
+   * convert the date time into another time zone before filtering on it, please use {@link
+   * #toStringForTimeZone(Object, String)} instead.
    *
    * @param dateTime the date time to stringify
-   * @return a string representation of the {@code DateTime} in
-   *          {@code yyyy-MM-dd'T'HH:mm:ss}
+   * @return a string representation of the {@code DateTime} in {@code yyyy-MM-dd'T'HH:mm:ss}
    */
   public String toString(T dateTime) {
     return toDateTime(dateTime).toString(ISODateTimeFormat.dateHourMinuteSecond());
   }
 
   /**
-   * Returns string representation of this date time with time zone. If you need
-   * to convert the date time into another time zone before filtering on it,
-   * please use {@link #toStringForTimeZone(Object, String)} instead.
+   * Returns string representation of this date time with time zone. If you need to convert the date
+   * time into another time zone before filtering on it, please use {@link
+   * #toStringForTimeZone(Object, String)} instead.
    *
    * @param dateTime the date time to stringify
-   * @return a string representation of the {@code DateTime} in
-   *          {@code yyyy-MM-dd'T'HH:mm:ss±HH:mm}, i.e.
-   *          {@code 2013-09-013T12:02:03+08:00}
+   * @return a string representation of the {@code DateTime} in {@code yyyy-MM-dd'T'HH:mm:ss±HH:mm},
+   *     i.e. {@code 2013-09-013T12:02:03+08:00}
    */
   public String toStringWithTimeZone(T dateTime) {
     return toDateTime(dateTime).toString(ISODateTimeFormat.dateTimeNoMillis());
   }
 
   /**
-   * Returns string representation of this date time with a different time
-   * zone, preserving the millisecond instant.
-   * <p>This method is useful for finding the local time in another time zone,
-   * especially for filtering.
-   * <p>For example, if this date time holds 12:30 in Europe/London, the result
-   * from this method with Europe/Paris would be 13:30. You may also want to use
-   * this with your network's time zone, i.e.
+   * Returns string representation of this date time with a different time zone, preserving the
+   * millisecond instant.
+   *
+   * <p>This method is useful for finding the local time in another time zone, especially for
+   * filtering.
+   *
+   * <p>For example, if this date time holds 12:30 in Europe/London, the result from this method
+   * with Europe/Paris would be 13:30. You may also want to use this with your network's time zone,
+   * i.e.
+   *
    * <pre><code> String timeZoneId = networkService.getCurrentNetwork().getTimeZone();
    * String statementPart =
    *     "startDateTime > "
@@ -229,13 +206,12 @@ public class DateTimesHelper<T, D> {
    * //...
    * statementBuilder.where(statementPart);
    * </code></pre>
-   * This method is in the same style of
-   * {@link DateTime#withZone(org.joda.time.DateTimeZone)}.
+   *
+   * This method is in the same style of {@link DateTime#withZone(org.joda.time.DateTimeZone)}.
    *
    * @param dateTime the date time to stringify into a new time zone
    * @param newZoneID the time zone ID of the new zone
-   * @return a string representation of the {@code DateTime} in
-   *          {@code yyyy-MM-dd'T'HH:mm:ss}
+   * @return a string representation of the {@code DateTime} in {@code yyyy-MM-dd'T'HH:mm:ss}
    */
   public String toStringForTimeZone(T dateTime, String newZoneID) {
     return toDateTime(dateTime)

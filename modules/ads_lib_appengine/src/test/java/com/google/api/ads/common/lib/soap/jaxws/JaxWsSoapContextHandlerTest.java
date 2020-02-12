@@ -17,7 +17,7 @@ package com.google.api.ads.common.lib.soap.jaxws;
 import static org.apache.commons.lang.CharEncoding.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -41,7 +41,6 @@ import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPPart;
-import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.ws.handler.MessageContext;
@@ -148,8 +147,7 @@ public class JaxWsSoapContextHandlerTest {
     // captureSoapXml
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockTransformerSupplier.get()).thenReturn(mockTransformer);
-    Mockito.doAnswer(transform).when(mockTransformer)
-        .transform(any(Source.class), any(StreamResult.class));
+    Mockito.doAnswer(transform).when(mockTransformer).transform(any(), any());
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
     RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();
@@ -192,8 +190,7 @@ public class JaxWsSoapContextHandlerTest {
     // captureSoapXml
     when(mockSoapMessageContext.getMessage()).thenReturn(mockMessage);
     when(mockTransformerSupplier.get()).thenReturn(mockTransformer);
-    Mockito.doAnswer(transform).when(mockTransformer)
-        .transform(any(Source.class), any(StreamResult.class));
+    Mockito.doAnswer(transform).when(mockTransformer).transform(any(), any());
 
     assertTrue(jaxWsSoapContextHandler.handleMessage(mockSoapMessageContext));
     RequestInfo requestInfo = jaxWsSoapContextHandler.getLastRequestInfoBuilder().build();

@@ -901,7 +901,7 @@ public enum Dimension {
      *                 {@code UNKNOWN_POSITION}, {@code PREROLL}, {@code POSTROLL}, {@code UNKNOWN_MIDROLL},
      *                 {@code MIDROLL_1}, {@code MIDROLL_2}, etc. {@code UNKNOWN_MIDROLL} represents a midroll, but
      *                 which specific midroll is unknown. Can be used for filtering.
-     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
+     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */

@@ -15,8 +15,8 @@
 package admanager.axis.auth;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v201811.Network;
-import com.google.api.ads.admanager.axis.v201811.NetworkServiceInterface;
+import com.google.api.ads.admanager.axis.v201911.Network;
+import com.google.api.ads.admanager.axis.v201911.NetworkServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
@@ -34,15 +34,16 @@ public class CreateAdManagerSessionWithoutPropertiesFile {
   private static final String APPLICATION_NAME = "INSERT_APPLICATION_NAME_HERE";
   private static final String NETWORK_CODE = "INSERT_NETWORK_CODE_HERE";
 
-
-  private static AdManagerSession createAdManagerSession(String jsonKeyFilePath,
-      String applicationName, String networkCode) throws OAuthException, ValidationException {
+  private static AdManagerSession createAdManagerSession(
+      String jsonKeyFilePath, String applicationName, String networkCode)
+      throws OAuthException, ValidationException {
     // Create a valid OAuth2 credential without using a properties file.
-    Credential credential = new OfflineCredentials.Builder()
-        .forApi(Api.AD_MANAGER)
-        .withJsonKeyFilePath(jsonKeyFilePath)
-        .build()
-        .generateCredential();
+    Credential credential =
+        new OfflineCredentials.Builder()
+            .forApi(Api.AD_MANAGER)
+            .withJsonKeyFilePath(jsonKeyFilePath)
+            .build()
+            .generateCredential();
 
     // Create a new AdManagerSession without using a properties file.
     return new AdManagerSession.Builder()
@@ -52,8 +53,8 @@ public class CreateAdManagerSessionWithoutPropertiesFile {
         .build();
   }
 
-  public static void runExample(AdManagerServices adManagerServices,
-      AdManagerSession adManagerSession) throws Exception {
+  public static void runExample(
+      AdManagerServices adManagerServices, AdManagerSession adManagerSession) throws Exception {
     // Get the NetworkService.
     NetworkServiceInterface networkService =
         adManagerServices.get(adManagerSession, NetworkServiceInterface.class);
@@ -61,7 +62,8 @@ public class CreateAdManagerSessionWithoutPropertiesFile {
     // Gets the current network.
     Network network = networkService.getCurrentNetwork();
 
-    System.out.printf("Current network has network code '%s' and display name '%s'.%n",
+    System.out.printf(
+        "Current network has network code '%s' and display name '%s'.%n",
         network.getNetworkCode(), network.getDisplayName());
   }
 

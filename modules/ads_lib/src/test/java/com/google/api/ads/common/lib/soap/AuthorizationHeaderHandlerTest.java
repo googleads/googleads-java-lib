@@ -15,14 +15,14 @@
 package com.google.api.ads.common.lib.soap;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Matchers.same;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.same;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.client.AdsSession;
-
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,8 +30,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.util.Map;
 
 /**
  * Tests for {@link AuthorizationHeaderHandler}.

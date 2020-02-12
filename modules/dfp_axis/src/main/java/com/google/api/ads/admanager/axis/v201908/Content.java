@@ -100,18 +100,21 @@ public class Content  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v201908.DateTime importDateTime;
 
     /* The date and time at which this content was last modified.
-     *                 This attribute is read-only. */
+     * The last modified date time will
+     *                 always be updated when a {@link ContentBundle} association
+     * is changed, but will not always be
+     *                 updated when a {@link CmsMetadataValue} value is changed.
+     * This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v201908.DateTime lastModifiedDateTime;
 
     /* A collection of custom targeting value IDs manually assigned
-     * to this content
-     *                 by the user. This attribute is optional. */
+     * to this content by the user. This
+     *                 attribute is optional. */
     private long[] userDefinedCustomTargetingValueIds;
 
     /* A collection of custom targeting value IDs automatically targeted
-     * to this
-     *                 content via metadata mapping rules. This attribute
-     * is read-only. */
+     * to this content via metadata
+     *                 mapping rules. This attribute is read-only. */
     private long[] mappingRuleDefinedCustomTargetingValueIds;
 
     /* Information about the content from the CMS it was ingested
@@ -485,7 +488,11 @@ public class Content  implements java.io.Serializable {
      * Gets the lastModifiedDateTime value for this Content.
      * 
      * @return lastModifiedDateTime   * The date and time at which this content was last modified.
-     *                 This attribute is read-only.
+     * The last modified date time will
+     *                 always be updated when a {@link ContentBundle} association
+     * is changed, but will not always be
+     *                 updated when a {@link CmsMetadataValue} value is changed.
+     * This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v201908.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -496,7 +503,11 @@ public class Content  implements java.io.Serializable {
      * Sets the lastModifiedDateTime value for this Content.
      * 
      * @param lastModifiedDateTime   * The date and time at which this content was last modified.
-     *                 This attribute is read-only.
+     * The last modified date time will
+     *                 always be updated when a {@link ContentBundle} association
+     * is changed, but will not always be
+     *                 updated when a {@link CmsMetadataValue} value is changed.
+     * This attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.admanager.axis.v201908.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -507,8 +518,8 @@ public class Content  implements java.io.Serializable {
      * Gets the userDefinedCustomTargetingValueIds value for this Content.
      * 
      * @return userDefinedCustomTargetingValueIds   * A collection of custom targeting value IDs manually assigned
-     * to this content
-     *                 by the user. This attribute is optional.
+     * to this content by the user. This
+     *                 attribute is optional.
      */
     public long[] getUserDefinedCustomTargetingValueIds() {
         return userDefinedCustomTargetingValueIds;
@@ -519,8 +530,8 @@ public class Content  implements java.io.Serializable {
      * Sets the userDefinedCustomTargetingValueIds value for this Content.
      * 
      * @param userDefinedCustomTargetingValueIds   * A collection of custom targeting value IDs manually assigned
-     * to this content
-     *                 by the user. This attribute is optional.
+     * to this content by the user. This
+     *                 attribute is optional.
      */
     public void setUserDefinedCustomTargetingValueIds(long[] userDefinedCustomTargetingValueIds) {
         this.userDefinedCustomTargetingValueIds = userDefinedCustomTargetingValueIds;
@@ -539,9 +550,8 @@ public class Content  implements java.io.Serializable {
      * Gets the mappingRuleDefinedCustomTargetingValueIds value for this Content.
      * 
      * @return mappingRuleDefinedCustomTargetingValueIds   * A collection of custom targeting value IDs automatically targeted
-     * to this
-     *                 content via metadata mapping rules. This attribute
-     * is read-only.
+     * to this content via metadata
+     *                 mapping rules. This attribute is read-only.
      */
     public long[] getMappingRuleDefinedCustomTargetingValueIds() {
         return mappingRuleDefinedCustomTargetingValueIds;
@@ -552,9 +562,8 @@ public class Content  implements java.io.Serializable {
      * Sets the mappingRuleDefinedCustomTargetingValueIds value for this Content.
      * 
      * @param mappingRuleDefinedCustomTargetingValueIds   * A collection of custom targeting value IDs automatically targeted
-     * to this
-     *                 content via metadata mapping rules. This attribute
-     * is read-only.
+     * to this content via metadata
+     *                 mapping rules. This attribute is read-only.
      */
     public void setMappingRuleDefinedCustomTargetingValueIds(long[] mappingRuleDefinedCustomTargetingValueIds) {
         this.mappingRuleDefinedCustomTargetingValueIds = mappingRuleDefinedCustomTargetingValueIds;

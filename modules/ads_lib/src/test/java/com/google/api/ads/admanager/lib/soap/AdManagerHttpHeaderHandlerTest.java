@@ -14,12 +14,12 @@
 
 package com.google.api.ads.admanager.lib.soap;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 
-import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
+import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import java.util.Map;

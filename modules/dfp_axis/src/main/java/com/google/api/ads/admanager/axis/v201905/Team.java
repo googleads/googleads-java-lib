@@ -52,13 +52,15 @@ public class Team  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v201905.TeamStatus status;
 
     /* Whether or not users on this team have access to all companies.
-     * If this
-     *                 value is true, then {@link #companyIds} must be empty. */
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with a Company. */
     private java.lang.Boolean hasAllCompanies;
 
     /* Whether or not users on this team have access to all inventory.
-     * If this
-     *                 value is true, then {@link #adUnitIds} must be empty. */
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with an AdUnit. */
     private java.lang.Boolean hasAllInventory;
 
     /* The default access to orders, for users on this team. */
@@ -202,8 +204,9 @@ public class Team  implements java.io.Serializable {
      * Gets the hasAllCompanies value for this Team.
      * 
      * @return hasAllCompanies   * Whether or not users on this team have access to all companies.
-     * If this
-     *                 value is true, then {@link #companyIds} must be empty.
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with a Company.
      */
     public java.lang.Boolean getHasAllCompanies() {
         return hasAllCompanies;
@@ -214,8 +217,9 @@ public class Team  implements java.io.Serializable {
      * Sets the hasAllCompanies value for this Team.
      * 
      * @param hasAllCompanies   * Whether or not users on this team have access to all companies.
-     * If this
-     *                 value is true, then {@link #companyIds} must be empty.
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with a Company.
      */
     public void setHasAllCompanies(java.lang.Boolean hasAllCompanies) {
         this.hasAllCompanies = hasAllCompanies;
@@ -226,8 +230,9 @@ public class Team  implements java.io.Serializable {
      * Gets the hasAllInventory value for this Team.
      * 
      * @return hasAllInventory   * Whether or not users on this team have access to all inventory.
-     * If this
-     *                 value is true, then {@link #adUnitIds} must be empty.
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with an AdUnit.
      */
     public java.lang.Boolean getHasAllInventory() {
         return hasAllInventory;
@@ -238,8 +243,9 @@ public class Team  implements java.io.Serializable {
      * Sets the hasAllInventory value for this Team.
      * 
      * @param hasAllInventory   * Whether or not users on this team have access to all inventory.
-     * If this
-     *                 value is true, then {@link #adUnitIds} must be empty.
+     * If this value is true, then an
+     *                 error will be thrown if an attempt is made to associate
+     * this team with an AdUnit.
      */
     public void setHasAllInventory(java.lang.Boolean hasAllInventory) {
         this.hasAllInventory = hasAllInventory;

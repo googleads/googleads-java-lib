@@ -37,9 +37,6 @@ import javax.xml.bind.annotation.XmlType;
  *             items.
  *             <li>{@link RequestPlatformTargeting} is read-only and assigned by Google for line items
  *             generated from proposal line items.
- *             <li>{@link RequestPlatformTargeting} is assigned by Google for video line items created and
- *             updated through external API requests when the RESPECT_EXTERNAL_API_RPT_TARGETING publisher
- *             feature is off.
  *             </ul>
  *           
  * 

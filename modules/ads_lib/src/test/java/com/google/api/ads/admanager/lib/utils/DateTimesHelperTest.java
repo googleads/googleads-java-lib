@@ -26,9 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Test for {@link DateTimesHelper}.
- */
+/** Test for {@link DateTimesHelper}. */
 @RunWith(JUnit4.class)
 public class DateTimesHelperTest {
 
@@ -87,15 +85,20 @@ public class DateTimesHelperTest {
     apiDateTime1.hour = 12;
     apiDateTime1.minute = 45;
     apiDateTime1.second = 0;
-    apiDateTime1.timeZoneID = TIME_ZONE_ID1;
+    apiDateTime1.timeZoneId = TIME_ZONE_ID1;
 
     stringDate1 = "2012-12-02";
     stringDateTime1 = "2012-12-02T12:45:00";
     stringDateTimeWithTimeZone1 = "2012-12-02T12:45:00+08:00";
 
     jodaDateTime1 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID1)).withYear(2012).withMonthOfYear(12)
-            .withDayOfMonth(2).withHourOfDay(12).withMinuteOfHour(45).withSecondOfMinute(0)
+        new DateTime(DateTimeZone.forID(TIME_ZONE_ID1))
+            .withYear(2012)
+            .withMonthOfYear(12)
+            .withDayOfMonth(2)
+            .withHourOfDay(12)
+            .withMinuteOfHour(45)
+            .withSecondOfMinute(0)
             .withMillisOfSecond(0);
 
     calendar1 = Calendar.getInstance();
@@ -117,15 +120,20 @@ public class DateTimesHelperTest {
     apiDateTime2.hour = 0;
     apiDateTime2.minute = 0;
     apiDateTime2.second = 0;
-    apiDateTime2.timeZoneID = TIME_ZONE_ID2;
+    apiDateTime2.timeZoneId = TIME_ZONE_ID2;
 
     stringDate2 = "2004-02-29";
     stringDateTime2 = "2004-02-29T00:00:00";
     stringDateTimeWithTimeZone2 = "2004-02-29T00:00:00-08:00";
 
     jodaDateTime2 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID2)).withYear(2004).withMonthOfYear(2)
-            .withDayOfMonth(29).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0)
+        new DateTime(DateTimeZone.forID(TIME_ZONE_ID2))
+            .withYear(2004)
+            .withMonthOfYear(2)
+            .withDayOfMonth(29)
+            .withHourOfDay(0)
+            .withMinuteOfHour(0)
+            .withSecondOfMinute(0)
             .withMillisOfSecond(0);
 
     calendar2 = Calendar.getInstance();
@@ -147,15 +155,20 @@ public class DateTimesHelperTest {
     apiDateTime3.hour = 18;
     apiDateTime3.minute = 0;
     apiDateTime3.second = 30;
-    apiDateTime3.setTimeZoneID(TIME_ZONE_ID3);
+    apiDateTime3.setTimeZoneId(TIME_ZONE_ID3);
 
     stringDate3 = "2007-01-01";
     stringDateTime3 = "2007-01-01T18:00:30";
     stringDateTimeWithTimeZone3 = "2007-01-01T18:00:30Z";
 
     jodaDateTime3 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID3)).withYear(2007).withMonthOfYear(1)
-            .withDayOfMonth(1).withHourOfDay(18).withMinuteOfHour(0).withSecondOfMinute(30)
+        new DateTime(DateTimeZone.forID(TIME_ZONE_ID3))
+            .withYear(2007)
+            .withMonthOfYear(1)
+            .withDayOfMonth(1)
+            .withHourOfDay(18)
+            .withMinuteOfHour(0)
+            .withSecondOfMinute(30)
             .withMillisOfSecond(0);
 
     calendar3 = Calendar.getInstance();
@@ -171,12 +184,12 @@ public class DateTimesHelperTest {
 
   @Test
   public void testToDateTime_fromInstantToApiDateTime() {
-    assertEquals(apiDateTime1,
-        dateTimesHelper.toDateTime(jodaDateTime1.toInstant(), TIME_ZONE_ID1));
-    assertEquals(apiDateTime2,
-        dateTimesHelper.toDateTime(jodaDateTime2.toInstant(), TIME_ZONE_ID2));
-    assertEquals(apiDateTime3,
-        dateTimesHelper.toDateTime(jodaDateTime3.toInstant(), TIME_ZONE_ID3));
+    assertEquals(
+        apiDateTime1, dateTimesHelper.toDateTime(jodaDateTime1.toInstant(), TIME_ZONE_ID1));
+    assertEquals(
+        apiDateTime2, dateTimesHelper.toDateTime(jodaDateTime2.toInstant(), TIME_ZONE_ID2));
+    assertEquals(
+        apiDateTime3, dateTimesHelper.toDateTime(jodaDateTime3.toInstant(), TIME_ZONE_ID3));
   }
 
   @Test
@@ -195,12 +208,9 @@ public class DateTimesHelperTest {
 
   @Test
   public void testToDateTime_fromStringToApiDateTimeWithTimeZone() {
-    assertEquals(apiDateTime1,
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone1));
-    assertEquals(apiDateTime2,
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone2));
-    assertEquals(apiDateTime3,
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone3));
+    assertEquals(apiDateTime1, dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone1));
+    assertEquals(apiDateTime2, dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone2));
+    assertEquals(apiDateTime3, dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone3));
   }
 
   @Test
@@ -240,72 +250,81 @@ public class DateTimesHelperTest {
 
   @Test
   public void testToStringWithTimeZone_fromApiDateTime() {
-    Assert.assertEquals(stringDateTimeWithTimeZone1,
-        dateTimesHelper.toStringWithTimeZone(apiDateTime1));
-    Assert.assertEquals(stringDateTimeWithTimeZone2,
-        dateTimesHelper.toStringWithTimeZone(apiDateTime2));
-    Assert.assertEquals(stringDateTimeWithTimeZone3,
-        dateTimesHelper.toStringWithTimeZone(apiDateTime3));
+    Assert.assertEquals(
+        stringDateTimeWithTimeZone1, dateTimesHelper.toStringWithTimeZone(apiDateTime1));
+    Assert.assertEquals(
+        stringDateTimeWithTimeZone2, dateTimesHelper.toStringWithTimeZone(apiDateTime2));
+    Assert.assertEquals(
+        stringDateTimeWithTimeZone3, dateTimesHelper.toStringWithTimeZone(apiDateTime3));
   }
 
   @Test
   public void testToStringForTimeZone_fromApiDate() {
-    Assert.assertEquals(stringDateTime1,
-        dateTimesHelper.toStringForTimeZone(apiDateTime1, TIME_ZONE_ID1));
-    Assert.assertEquals(stringDateTime2,
-        dateTimesHelper.toStringForTimeZone(apiDateTime2, TIME_ZONE_ID2));
-    Assert.assertEquals(stringDateTime3,
-        dateTimesHelper.toStringForTimeZone(apiDateTime3, TIME_ZONE_ID3));
+    Assert.assertEquals(
+        stringDateTime1, dateTimesHelper.toStringForTimeZone(apiDateTime1, TIME_ZONE_ID1));
+    Assert.assertEquals(
+        stringDateTime2, dateTimesHelper.toStringForTimeZone(apiDateTime2, TIME_ZONE_ID2));
+    Assert.assertEquals(
+        stringDateTime3, dateTimesHelper.toStringForTimeZone(apiDateTime3, TIME_ZONE_ID3));
 
-    Assert.assertEquals(stringDateTime1, dateTimesHelper.toStringForTimeZone(
-        dateTimesHelper.toDateTime(jodaDateTime1.withZone(DateTimeZone.forID(TIME_ZONE_ID2))),
-        TIME_ZONE_ID1));
-    Assert.assertEquals(stringDateTime2, dateTimesHelper.toStringForTimeZone(
-        dateTimesHelper.toDateTime(jodaDateTime2.withZone(DateTimeZone.forID(TIME_ZONE_ID1))),
-        TIME_ZONE_ID2));
-    Assert.assertEquals(stringDateTime3, dateTimesHelper.toStringForTimeZone(
-        dateTimesHelper.toDateTime(jodaDateTime3.withZone(DateTimeZone.forID(TIME_ZONE_ID1))),
-        TIME_ZONE_ID3));
+    Assert.assertEquals(
+        stringDateTime1,
+        dateTimesHelper.toStringForTimeZone(
+            dateTimesHelper.toDateTime(jodaDateTime1.withZone(DateTimeZone.forID(TIME_ZONE_ID2))),
+            TIME_ZONE_ID1));
+    Assert.assertEquals(
+        stringDateTime2,
+        dateTimesHelper.toStringForTimeZone(
+            dateTimesHelper.toDateTime(jodaDateTime2.withZone(DateTimeZone.forID(TIME_ZONE_ID1))),
+            TIME_ZONE_ID2));
+    Assert.assertEquals(
+        stringDateTime3,
+        dateTimesHelper.toStringForTimeZone(
+            dateTimesHelper.toDateTime(jodaDateTime3.withZone(DateTimeZone.forID(TIME_ZONE_ID1))),
+            TIME_ZONE_ID3));
   }
 
   @Test
   public void testTransitive_apiJodaApi() {
-    assertEquals(apiDateTime1,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime1)));
-    assertEquals(apiDateTime2,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime2)));
-    assertEquals(apiDateTime3,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime3)));
+    assertEquals(
+        apiDateTime1, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime1)));
+    assertEquals(
+        apiDateTime2, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime2)));
+    assertEquals(
+        apiDateTime3, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(apiDateTime3)));
   }
 
   @Test
   public void testTransitive_apiStringApi() {
-    assertEquals(apiDateTime1,
+    assertEquals(
+        apiDateTime1,
         dateTimesHelper.toDateTime(dateTimesHelper.toString(apiDateTime1), TIME_ZONE_ID1));
-    assertEquals(apiDateTime2,
+    assertEquals(
+        apiDateTime2,
         dateTimesHelper.toDateTime(dateTimesHelper.toString(apiDateTime2), TIME_ZONE_ID2));
-    assertEquals(apiDateTime3,
+    assertEquals(
+        apiDateTime3,
         dateTimesHelper.toDateTime(dateTimesHelper.toString(apiDateTime3), TIME_ZONE_ID3));
   }
 
   @Test
   public void testTransitive_apiCalendarApi() {
-    assertEquals(apiDateTime1,
-        dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime1)));
-    assertEquals(apiDateTime2,
-        dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime2)));
-    assertEquals(apiDateTime3,
-        dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime3)));
+    assertEquals(
+        apiDateTime1, dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime1)));
+    assertEquals(
+        apiDateTime2, dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime2)));
+    assertEquals(
+        apiDateTime3, dateTimesHelper.toDateTime(dateTimesHelper.toCalendar(apiDateTime3)));
   }
 
   @Test
   public void testTransitive_jodaApiJoda() {
-    assertEquals(jodaDateTime1,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime1)));
-    assertEquals(jodaDateTime2,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime2)));
-    assertEquals(jodaDateTime3,
-        dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime3)));
+    assertEquals(
+        jodaDateTime1, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime1)));
+    assertEquals(
+        jodaDateTime2, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime2)));
+    assertEquals(
+        jodaDateTime3, dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(jodaDateTime3)));
   }
 
   @Test
@@ -317,92 +336,117 @@ public class DateTimesHelperTest {
 
   @Test
   public void testTransitive_stringApiJoda() {
-    assertEquals(jodaDateTime1,
+    assertEquals(
+        jodaDateTime1,
         dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(stringDateTime1, TIME_ZONE_ID1)));
-    assertEquals(jodaDateTime2,
+    assertEquals(
+        jodaDateTime2,
         dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(stringDateTime2, TIME_ZONE_ID2)));
-    assertEquals(jodaDateTime3,
+    assertEquals(
+        jodaDateTime3,
         dateTimesHelper.toDateTime(dateTimesHelper.toDateTime(stringDateTime3, TIME_ZONE_ID3)));
   }
 
   @Test
   public void testTransitive_stringApiJodaWithTimeZone() {
-    assertEquals(jodaDateTime1, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone1)));
-    assertEquals(jodaDateTime2, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone2)));
-    assertEquals(jodaDateTime3, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone3)));
+    assertEquals(
+        jodaDateTime1,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone1)));
+    assertEquals(
+        jodaDateTime2,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone2)));
+    assertEquals(
+        jodaDateTime3,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTimeWithTimeZone(stringDateTimeWithTimeZone3)));
   }
 
   @Test
   public void testTransitive_instantApiJoda() {
-    assertEquals(jodaDateTime1, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTime(jodaDateTime1.toInstant(), TIME_ZONE_ID1)));
-    assertEquals(jodaDateTime2, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTime(jodaDateTime2.toInstant(), TIME_ZONE_ID2)));
-    assertEquals(jodaDateTime3, dateTimesHelper.toDateTime(
-        dateTimesHelper.toDateTime(jodaDateTime3.toInstant(), TIME_ZONE_ID3)));
+    assertEquals(
+        jodaDateTime1,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTime(jodaDateTime1.toInstant(), TIME_ZONE_ID1)));
+    assertEquals(
+        jodaDateTime2,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTime(jodaDateTime2.toInstant(), TIME_ZONE_ID2)));
+    assertEquals(
+        jodaDateTime3,
+        dateTimesHelper.toDateTime(
+            dateTimesHelper.toDateTime(jodaDateTime3.toInstant(), TIME_ZONE_ID3)));
   }
 
-  /**
-   * Asserts Joda DateTimes have the same millis.
-   */
+  /** Asserts Joda DateTimes have the same millis. */
   private static void assertEquals(DateTime expected, DateTime actual) {
     DateTime expectedCopy = expected.withMillisOfSecond(0);
     DateTime actualCopy = actual.withMillisOfSecond(0);
     Assert.assertEquals(expectedCopy.getMillis(), actualCopy.getMillis());
   }
 
-  /**
-   * Asserts Calendars have the same millis and locale (first day of week).
-   */
+  /** Asserts Calendars have the same millis and locale (first day of week). */
   private static void assertEquals(Calendar expected, Calendar actual) {
     Assert.assertEquals(expected.getTimeInMillis(), actual.getTimeInMillis());
     Assert.assertEquals(expected.getFirstDayOfWeek(), actual.getFirstDayOfWeek());
   }
 
-  /**
-   * Asserts that two API date times are equal.
-   */
-  private static void assertEquals(ApiDateTime expected,
-      ApiDateTime actual) {
-    boolean equals = expected == actual || new EqualsBuilder()
-        .append(expected.getDate().getYear(), actual.getDate().getYear())
-        .append(expected.getDate().getMonth(), actual.getDate().getMonth())
-        .append(expected.getDate().getDay(), actual.getDate().getDay())
-        .append(expected.getHour(), actual.getHour())
-        .append(expected.getMinute(), actual.getMinute())
-        .append(expected.getSecond(), actual.getSecond())
-        .append(
-            DateTimeZone.forTimeZone(
-                TimeZone.getTimeZone(expected.getTimeZoneID())).toTimeZone().getRawOffset(),
-            DateTimeZone.forTimeZone(
-                TimeZone.getTimeZone(actual.getTimeZoneID())).toTimeZone().getRawOffset())
-        .isEquals();
+  /** Asserts that two API date times are equal. */
+  private static void assertEquals(ApiDateTime expected, ApiDateTime actual) {
+    boolean equals =
+        expected == actual
+            || new EqualsBuilder()
+                .append(expected.getDate().getYear(), actual.getDate().getYear())
+                .append(expected.getDate().getMonth(), actual.getDate().getMonth())
+                .append(expected.getDate().getDay(), actual.getDate().getDay())
+                .append(expected.getHour(), actual.getHour())
+                .append(expected.getMinute(), actual.getMinute())
+                .append(expected.getSecond(), actual.getSecond())
+                .append(
+                    DateTimeZone.forTimeZone(TimeZone.getTimeZone(expected.getTimeZoneId()))
+                        .toTimeZone()
+                        .getRawOffset(),
+                    DateTimeZone.forTimeZone(TimeZone.getTimeZone(actual.getTimeZoneId()))
+                        .toTimeZone()
+                        .getRawOffset())
+                .isEquals();
     Assert.assertTrue(
-        String.format("Expected: <%s> Actual: <%s>", toString(expected), toString(actual)),
-        equals);
+        String.format("Expected: <%s> Actual: <%s>", toString(expected), toString(actual)), equals);
   }
 
   private static String toString(ApiDateTime apiDateTime) {
-    return apiDateTime == null ? "null"
-        : new StringBuilder().append("Year (").append(apiDateTime.getDate().getYear()).append(") ")
-            .append("Month (").append(apiDateTime.getDate().getMonth()).append(") ")
-            .append("Day (").append(apiDateTime.getDate().getDay()).append(") ")
-            .append("Hour (").append(apiDateTime.getHour()).append(") ")
-            .append("Minute (").append(apiDateTime.getMinute()).append(") ")
-            .append("Second (").append(apiDateTime.getSecond()).append(") ")
-            .append("TimeZoneID (").append(apiDateTime.getTimeZoneID()).append(") ")
+    return apiDateTime == null
+        ? "null"
+        : new StringBuilder()
+            .append("Year (")
+            .append(apiDateTime.getDate().getYear())
+            .append(") ")
+            .append("Month (")
+            .append(apiDateTime.getDate().getMonth())
+            .append(") ")
+            .append("Day (")
+            .append(apiDateTime.getDate().getDay())
+            .append(") ")
+            .append("Hour (")
+            .append(apiDateTime.getHour())
+            .append(") ")
+            .append("Minute (")
+            .append(apiDateTime.getMinute())
+            .append(") ")
+            .append("Second (")
+            .append(apiDateTime.getSecond())
+            .append(") ")
+            .append("TimeZoneID (")
+            .append(apiDateTime.getTimeZoneId())
+            .append(") ")
             .toString();
   }
 
-  /**
-   * API DateTime class for testing.
-   */
+  /** API DateTime class for testing. */
   public static class ApiDateTime {
 
-    private String timeZoneID;
+    private String timeZoneId;
     private Integer hour;
     private Integer minute;
     private Integer second;
@@ -410,12 +454,12 @@ public class DateTimesHelperTest {
 
     public ApiDateTime() {}
 
-    public String getTimeZoneID() {
-      return timeZoneID;
+    public String getTimeZoneId() {
+      return timeZoneId;
     }
 
-    public void setTimeZoneID(String timeZoneID) {
-      this.timeZoneID = timeZoneID;
+    public void setTimeZoneId(String timeZoneId) {
+      this.timeZoneId = timeZoneId;
     }
 
     public Integer getHour() {
@@ -451,9 +495,7 @@ public class DateTimesHelperTest {
     }
   }
 
-  /**
-   * API Date class for testing.
-   */
+  /** API Date class for testing. */
   public static class ApiDate {
 
     private Integer day;

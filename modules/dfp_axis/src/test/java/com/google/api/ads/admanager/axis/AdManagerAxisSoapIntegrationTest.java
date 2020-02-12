@@ -18,15 +18,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.ads.admanager.axis.factory.AdManagerServices;
+import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
+import com.google.api.ads.admanager.axis.v201911.Company;
+import com.google.api.ads.admanager.axis.v201911.CompanyServiceInterface;
+import com.google.api.ads.admanager.lib.client.AdManagerSession;
+import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.testing.AuthResponseProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
-import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.axis.v201811.Company;
-import com.google.api.ads.admanager.axis.v201811.CompanyServiceInterface;
-import com.google.api.ads.admanager.lib.client.AdManagerSession;
-import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -42,22 +42,23 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201811";
+  private static final String API_VERSION = "v201911";
 
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.admanager.useCompression", "false");
   }
 
-  /**
-   * Tests making a Axis Ad Manager API call with OAuth2.
-   */
+  /** Tests making a Axis Ad Manager API call with OAuth2. */
   @Test
   public void testGoldenSoap_oauth2() throws Exception {
     testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
 
-    GoogleCredential credential = new GoogleCredential.Builder().setTransport(
-        new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
+    GoogleCredential credential =
+        new GoogleCredential.Builder()
+            .setTransport(new NetHttpTransport())
+            .setJsonFactory(new JacksonFactory())
+            .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 
     AdManagerSession session =
@@ -73,22 +74,25 @@ public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(
+        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
-    assertFalse("Did not request compression but request was compressed",
+    assertFalse(
+        "Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
 
-  /**
-   * Tests making a Axis Ad Manager API call with OfflineCredentials.
-   */
+  /** Tests making a Axis Ad Manager API call with OfflineCredentials. */
   @Test
   public void testGoldenSoap_oauth2_offlineCredentials() throws Exception {
-    testHttpServer.setMockResponseBodies(Lists.newArrayList(
-        AuthResponseProvider.getTestOAuthResponse("TEST_ACCESS_TOKEN_1", 1L, "newRefreshToken1"),
-        AuthResponseProvider.getTestOAuthResponse("TEST_ACCESS_TOKEN_2", 3600L, "newRefreshToken2"),
-        SoapResponseXmlProvider.getTestSoapResponse(API_VERSION)));
+    testHttpServer.setMockResponseBodies(
+        Lists.newArrayList(
+            AuthResponseProvider.getTestOAuthResponse(
+                "TEST_ACCESS_TOKEN_1", 1L, "newRefreshToken1"),
+            AuthResponseProvider.getTestOAuthResponse(
+                "TEST_ACCESS_TOKEN_2", 3600L, "newRefreshToken2"),
+            SoapResponseXmlProvider.getTestSoapResponse(API_VERSION)));
 
     OfflineCredentials offlineCredentials =
         new OfflineCredentials.Builder()
@@ -124,9 +128,11 @@ public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
+    XMLAssert.assertXMLEqual(
+        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
         testHttpServer.getLastRequestBody());
-    assertFalse("Did not request compression but request was compressed",
+    assertFalse(
+        "Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("newRefreshToken2", credential.getRefreshToken());
     assertEquals("Bearer TEST_ACCESS_TOKEN_2", testHttpServer.getLastAuthorizationHttpHeader());

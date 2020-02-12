@@ -1,3 +1,18 @@
+4.9.0 - 02/11/2020
+------------------
+AdWords
+  - No changes.
+
+Ad Manager:
+ - Added support for v202002.
+ - Removed examples for v201905.
+ - Removed support for v201902.
+
+Common
+ - Updated Mockito test dependency to 3.2.0.
+ - Updated all dependencies in group ID 'com.google.api-client' to 1.26.1.
+ - Updated all dependencies in group ID 'com.google.http-client' to 1.26.0.
+
 4.8.0 - 11/05/2019
 ------------------
 AdWords

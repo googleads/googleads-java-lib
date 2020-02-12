@@ -20,7 +20,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verifyZeroInteractions;
@@ -172,7 +172,7 @@ public class RequestInfoXPathSetTest {
               return null;
             })
         .when(transformer)
-        .transform(any(Source.class), any(StreamResult.class));
+        .transform(any(), any());
     assertSame(
         "parseMessage should return the same builder passed in",
         builder,

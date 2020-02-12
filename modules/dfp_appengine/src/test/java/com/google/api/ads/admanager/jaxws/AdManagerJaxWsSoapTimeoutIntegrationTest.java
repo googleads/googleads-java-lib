@@ -14,12 +14,12 @@
 
 package com.google.api.ads.admanager.jaxws;
 
-import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
-import com.google.api.ads.admanager.jaxws.v201811.Company;
-import com.google.api.ads.admanager.jaxws.v201811.CompanyServiceInterface;
+import com.google.api.ads.admanager.jaxws.v201911.Company;
+import com.google.api.ads.admanager.jaxws.v201911.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
+import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -36,26 +36,26 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdManagerJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v201811";  
+  private static final String API_VERSION = "v201911";
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none(); 
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void setupClass() {
     System.setProperty("api.admanager.soapRequestTimeout", "100");
   }
 
-  /**
-   * Tests that the request timeout in ads.properties is enforced.
-   */
+  /** Tests that the request timeout in ads.properties is enforced. */
   @Test
   public void testRequestTimeoutEnforced() throws Exception {
     testHttpServer.setMockResponseBody(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION));
     testHttpServer.setDelay(200);
-    
-    GoogleCredential credential = new GoogleCredential.Builder().setTransport(
-        new NetHttpTransport()).setJsonFactory(new JacksonFactory()).build();
+
+    GoogleCredential credential =
+        new GoogleCredential.Builder()
+            .setTransport(new NetHttpTransport())
+            .setJsonFactory(new JacksonFactory())
+            .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 
     AdManagerSession session =
@@ -73,5 +73,4 @@ public class AdManagerJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegratio
     thrown.expectMessage("Read timed out");
     companyService.createCompanies(Lists.newArrayList(new Company()));
   }
-  
 }

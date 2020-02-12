@@ -16,13 +16,13 @@ package com.google.api.ads.admanager.lib.factory.helper;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.ads.admanager.lib.client.AdManagerServiceClient;
+import com.google.api.ads.admanager.lib.client.AdManagerServiceDescriptor;
+import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceClientFactoryInterface;
 import com.google.api.ads.common.lib.factory.FactoryModule.AdsServiceDescriptorFactoryInterface;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
-import com.google.api.ads.admanager.lib.client.AdManagerServiceClient;
-import com.google.api.ads.admanager.lib.client.AdManagerServiceDescriptor;
-import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
 import org.junit.Before;
@@ -47,8 +47,8 @@ public class AdManagerServiceClientFactoryHelperTest {
 
   @Mock /* The type argument for SoapClientHandlerInterface does not matter for this test. */
   private SoapClientHandlerInterface<Object> soapClientHandler;
-  @Mock
-  private AdsLibConfiguration adsLibConfiguration;
+
+  @Mock private AdsLibConfiguration adsLibConfiguration;
 
   @Before
   public void setup() {
@@ -63,8 +63,10 @@ public class AdManagerServiceClientFactoryHelperTest {
             adsServiceDescriptorFactory,
             soapClientHandler,
             adsLibConfiguration);
-    assertEquals("v201811", helper.determineVersion(
-        com.google.api.ads.admanager.lib.factory.helper.testing.v201811.TestService.class));
+    assertEquals(
+        "v201911",
+        helper.determineVersion(
+            com.google.api.ads.admanager.lib.factory.helper.testing.v201911.TestService.class));
   }
 
   @Test
@@ -86,7 +88,8 @@ public class AdManagerServiceClientFactoryHelperTest {
             .withOAuth2Credential(credential)
             .build();
 
-    helper.checkServiceClientPreconditions(adManagerSession,
-        com.google.api.ads.admanager.lib.factory.helper.testing.v201811.TestService.class);
+    helper.checkServiceClientPreconditions(
+        adManagerSession,
+        com.google.api.ads.admanager.lib.factory.helper.testing.v201911.TestService.class);
   }
 }

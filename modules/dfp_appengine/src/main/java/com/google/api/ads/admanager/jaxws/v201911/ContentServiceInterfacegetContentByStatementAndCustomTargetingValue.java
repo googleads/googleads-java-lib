@@ -23,11 +23,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@link ContentPage} of {@link Content} objects that satisfy the
- *             given {@link Statement#query}. Additionally, filters on the given value ID
- *             and key ID that the value belongs to.
+ *             Gets a {@link ContentPage} of {@link Content} objects that satisfy the given {@link
+ *             Statement#query}. Additionally, filters on the given value ID and key ID that the value belongs
+ *             to.
  *             
- *             The following fields are supported for filtering:
+ *             <p>The following fields are supported for filtering:
+ *             
  *             <table>
  *             <tr>
  *             <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -50,8 +51,7 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             </table>
  *             
- *             @params filterStatement a Publisher Query Language statement used to
- *             filter a set of content
+ *             @param filterStatement a Publisher Query Language statement used to filter a set of content
  *             @param customTargetingValueId the id of the value to match
  *             @return the content that matches the given filter
  *           

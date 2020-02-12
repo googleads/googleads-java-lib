@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>admanager-axis-examples</artifactId>
-  <version>4.8.0</version>
+  <version>4.9.0</version>
 
   <packaging>jar</packaging>
   <name>Ad Manager Examples using Axis</name>
@@ -35,7 +35,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smokeMainClass>admanager.axis.v201911.companyservice.GetAllCompanies</smokeMainClass>
+    <smokeMainClass>admanager.axis.v202002.companyservice.GetAllCompanies</smokeMainClass>
   </properties>
 
   <build>
@@ -86,24 +86,24 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>4.8.0</version>
+      <version>4.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfp-axis</artifactId>
-      <version>4.8.0</version>
+      <version>4.9.0</version>
     </dependency>
 
     <!-- Third party dependencies -->
     <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client-gson</artifactId>
-      <version>1.23.0</version>
+      <version>1.26.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
-      <version>1.23.0</version>
+      <version>1.26.0</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>

@@ -15,8 +15,8 @@
 package admanager.axis.auth;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v201811.Network;
-import com.google.api.ads.admanager.axis.v201811.NetworkServiceInterface;
+import com.google.api.ads.admanager.axis.v201911.Network;
+import com.google.api.ads.admanager.axis.v201911.NetworkServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -35,13 +35,11 @@ import java.util.Arrays;
 
 /**
  * This example demonstrates how to create a Credential object from scratch.<br>
- * This example is *not* meant to be used with our other examples, but shows
- * how you might use the general OAuth2 libraries to add OAuth2 to your
- * existing application.<br>
+ * This example is *not* meant to be used with our other examples, but shows how you might use the
+ * general OAuth2 libraries to add OAuth2 to your existing application.<br>
  * <br>
- * For an alternative to service accounts, installed applications, or a web
- * application that will not need to have multiple users log in, using
- * OfflineCredentials to generate a refreshable OAuth2
+ * For an alternative to service accounts, installed applications, or a web application that will
+ * not need to have multiple users log in, using OfflineCredentials to generate a refreshable OAuth2
  * credential instead will be much easier.
  */
 public class AdvancedCreateCredentialFromScratch {
@@ -67,18 +65,20 @@ public class AdvancedCreateCredentialFromScratch {
     // performing the authorization flow (such as on a servlet), see
     // https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#authorization_code_flow
     // for more information.
-    GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
-        new NetHttpTransport(),
-        new JacksonFactory(),
-        CLIENT_ID,
-        CLIENT_SECRET,
-        Arrays.asList(SCOPE))
-        .setDataStoreFactory(storeFactory)
-        // Set the access type to offline so that the token can be refreshed.
-        // By default, the library will automatically refresh tokens when it
-        // can, but this can be turned off by setting
-        // api.admanager.refreshOAuth2Token=false in your ads.properties file.
-        .setAccessType("offline").build();
+    GoogleAuthorizationCodeFlow authorizationFlow =
+        new GoogleAuthorizationCodeFlow.Builder(
+                new NetHttpTransport(),
+                new JacksonFactory(),
+                CLIENT_ID,
+                CLIENT_SECRET,
+                Arrays.asList(SCOPE))
+            .setDataStoreFactory(storeFactory)
+            // Set the access type to offline so that the token can be refreshed.
+            // By default, the library will automatically refresh tokens when it
+            // can, but this can be turned off by setting
+            // api.admanager.refreshOAuth2Token=false in your ads.properties file.
+            .setAccessType("offline")
+            .build();
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
@@ -103,22 +103,21 @@ public class AdvancedCreateCredentialFromScratch {
       throws IOException, ValidationException, ConfigurationLoadException {
 
     // Create a GoogleCredential with minimal information.
-    GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
-        new NetHttpTransport(),
-        new JacksonFactory(),
-        CLIENT_ID,
-        CLIENT_SECRET,
-        Arrays.asList(SCOPE))
-        .setDataStoreFactory(storeFactory).build();
+    GoogleAuthorizationCodeFlow authorizationFlow =
+        new GoogleAuthorizationCodeFlow.Builder(
+                new NetHttpTransport(),
+                new JacksonFactory(),
+                CLIENT_ID,
+                CLIENT_SECRET,
+                Arrays.asList(SCOPE))
+            .setDataStoreFactory(storeFactory)
+            .build();
 
     // Load the credential.
     Credential credential = authorizationFlow.loadCredential(userId);
 
     // Construct a AdManagerSession.
-    return new AdManagerSession.Builder()
-        .fromFile()
-        .withOAuth2Credential(credential)
-        .build();
+    return new AdManagerSession.Builder().fromFile().withOAuth2Credential(credential).build();
   }
 
   public static void runExample(AdManagerServices adManagerServices, AdManagerSession session)
@@ -130,20 +129,23 @@ public class AdvancedCreateCredentialFromScratch {
     // Gets the current network.
     Network network = networkService.getCurrentNetwork();
 
-    System.out.printf("Current network has network code '%s' and display name '%s'.%n",
+    System.out.printf(
+        "Current network has network code '%s' and display name '%s'.%n",
         network.getNetworkCode(), network.getDisplayName());
   }
 
   public static void main(String[] args) throws Exception {
     if (CLIENT_ID.equals("INSERT_CLIENT_ID_HERE")
         || CLIENT_SECRET.equals("INSERT_CLIENT_SECRET_HERE")) {
-      throw new IllegalArgumentException("Please input your client IDs or secret. "
-          + "See https://console.developers.google.com/project");
+      throw new IllegalArgumentException(
+          "Please input your client IDs or secret. "
+              + "See https://console.developers.google.com/project");
     }
 
     // It is highly recommended that you use a credential store in your
     // application to store a per-user Credential.
-    // See: https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#data_store
+    // See:
+    // https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#data_store
     DataStoreFactory storeFactory = new MemoryDataStoreFactory();
 
     // Authorize and store your credential.
