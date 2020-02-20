@@ -4002,6 +4002,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AdRuleError }
+     * 
+     */
+    public AdRuleError createAdRuleError() {
+        return new AdRuleError();
+    }
+
+    /**
      * Create an instance of {@link AudienceSegment }
      * 
      */

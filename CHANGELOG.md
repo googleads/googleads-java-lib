@@ -1,3 +1,15 @@
+4.9.1 - 02/20/2020
+------------------
+AdWords
+  - No changes.
+
+Ad Manager:
+ - Regenerated service bindings to correct missing v202002 ReportService
+   metrics.
+
+Common
+ - No changes.
+
 4.9.0 - 02/11/2020
 ------------------
 AdWords

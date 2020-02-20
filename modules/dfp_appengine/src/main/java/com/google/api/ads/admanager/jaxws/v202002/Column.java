@@ -167,6 +167,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="AD_SERVER_RESPONSES_SERVED"/>
  *     &lt;enumeration value="ADSENSE_RESPONSES_SERVED"/>
  *     &lt;enumeration value="AD_EXCHANGE_RESPONSES_SERVED"/>
+ *     &lt;enumeration value="TOTAL_VIDEO_OPPORTUNITIES"/>
+ *     &lt;enumeration value="TOTAL_VIDEO_CAPPED_OPPORTUNITIES"/>
  *     &lt;enumeration value="TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS"/>
  *     &lt;enumeration value="OPTIMIZATION_CONTROL_IMPRESSIONS"/>
  *     &lt;enumeration value="OPTIMIZATION_CONTROL_CLICKS"/>
@@ -372,6 +374,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="DP_QUERIES"/>
  *     &lt;enumeration value="DP_MATCHED_QUERIES"/>
  *     &lt;enumeration value="DP_COST"/>
+ *     &lt;enumeration value="DP_ECPM"/>
  *     &lt;enumeration value="DP_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS"/>
  *     &lt;enumeration value="DP_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS"/>
  *     &lt;enumeration value="DP_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS"/>
@@ -1732,6 +1735,24 @@ public enum Column {
      * 
      */
     AD_EXCHANGE_RESPONSES_SERVED("AD_EXCHANGE_RESPONSES_SERVED"),
+
+    /**
+     * 
+     *                 The total number of video opportunities.
+     *                 <p>Corresponds to "Total Video Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *               
+     * 
+     */
+    TOTAL_VIDEO_OPPORTUNITIES("TOTAL_VIDEO_OPPORTUNITIES"),
+
+    /**
+     * 
+     *                 The total number of video capped opportunities.
+     *                 <p>Corresponds to "Total Video Capped Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *               
+     * 
+     */
+    TOTAL_VIDEO_CAPPED_OPPORTUNITIES("TOTAL_VIDEO_CAPPED_OPPORTUNITIES"),
 
     /**
      * 
@@ -3646,6 +3667,15 @@ public enum Column {
      * 
      */
     DP_COST("DP_COST"),
+
+    /**
+     * 
+     *                 The average estimated cost-per-thousand-impressions earned from ads delivered.
+     *                 <p>Corresponds to "Total Average eCPM" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
+     *               
+     * 
+     */
+    DP_ECPM("DP_ECPM"),
 
     /**
      * 

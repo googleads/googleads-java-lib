@@ -189,6 +189,7 @@ import javax.xml.bind.annotation.XmlType;
     PermissionError.class,
     AdExclusionRuleError.class,
     VideoPositionTargetingError.class,
+    AdRuleError.class,
     CreativeTemplateOperationError.class,
     NetworkError.class,
     InventoryUnitRefreshRateError.class,

@@ -170,6 +170,8 @@ public class Column implements java.io.Serializable {
     public static final java.lang.String _AD_SERVER_RESPONSES_SERVED = "AD_SERVER_RESPONSES_SERVED";
     public static final java.lang.String _ADSENSE_RESPONSES_SERVED = "ADSENSE_RESPONSES_SERVED";
     public static final java.lang.String _AD_EXCHANGE_RESPONSES_SERVED = "AD_EXCHANGE_RESPONSES_SERVED";
+    public static final java.lang.String _TOTAL_VIDEO_OPPORTUNITIES = "TOTAL_VIDEO_OPPORTUNITIES";
+    public static final java.lang.String _TOTAL_VIDEO_CAPPED_OPPORTUNITIES = "TOTAL_VIDEO_CAPPED_OPPORTUNITIES";
     public static final java.lang.String _TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS = "TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS";
     public static final java.lang.String _OPTIMIZATION_CONTROL_IMPRESSIONS = "OPTIMIZATION_CONTROL_IMPRESSIONS";
     public static final java.lang.String _OPTIMIZATION_CONTROL_CLICKS = "OPTIMIZATION_CONTROL_CLICKS";
@@ -375,6 +377,7 @@ public class Column implements java.io.Serializable {
     public static final java.lang.String _DP_QUERIES = "DP_QUERIES";
     public static final java.lang.String _DP_MATCHED_QUERIES = "DP_MATCHED_QUERIES";
     public static final java.lang.String _DP_COST = "DP_COST";
+    public static final java.lang.String _DP_ECPM = "DP_ECPM";
     public static final java.lang.String _DP_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = "DP_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS";
     public static final java.lang.String _DP_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = "DP_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS";
     public static final java.lang.String _DP_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = "DP_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS";
@@ -533,6 +536,8 @@ public class Column implements java.io.Serializable {
     public static final Column AD_SERVER_RESPONSES_SERVED = new Column(_AD_SERVER_RESPONSES_SERVED);
     public static final Column ADSENSE_RESPONSES_SERVED = new Column(_ADSENSE_RESPONSES_SERVED);
     public static final Column AD_EXCHANGE_RESPONSES_SERVED = new Column(_AD_EXCHANGE_RESPONSES_SERVED);
+    public static final Column TOTAL_VIDEO_OPPORTUNITIES = new Column(_TOTAL_VIDEO_OPPORTUNITIES);
+    public static final Column TOTAL_VIDEO_CAPPED_OPPORTUNITIES = new Column(_TOTAL_VIDEO_CAPPED_OPPORTUNITIES);
     public static final Column TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS = new Column(_TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS);
     public static final Column OPTIMIZATION_CONTROL_IMPRESSIONS = new Column(_OPTIMIZATION_CONTROL_IMPRESSIONS);
     public static final Column OPTIMIZATION_CONTROL_CLICKS = new Column(_OPTIMIZATION_CONTROL_CLICKS);
@@ -738,6 +743,7 @@ public class Column implements java.io.Serializable {
     public static final Column DP_QUERIES = new Column(_DP_QUERIES);
     public static final Column DP_MATCHED_QUERIES = new Column(_DP_MATCHED_QUERIES);
     public static final Column DP_COST = new Column(_DP_COST);
+    public static final Column DP_ECPM = new Column(_DP_ECPM);
     public static final Column DP_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = new Column(_DP_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS);
     public static final Column DP_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = new Column(_DP_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS);
     public static final Column DP_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = new Column(_DP_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS);
