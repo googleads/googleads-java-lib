@@ -41,6 +41,10 @@ public interface CmsMetadataServiceInterface extends java.rmi.Remote {
      *         <td>{@code cmsKey}</td>
      *         <td>{@link CmsMetadataKey#keyName}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link CmsMetadataKey#status}</td>
+     *         </tr>
      *         </table>
      */
     public com.google.api.ads.admanager.axis.v201908.CmsMetadataKeyPage getCmsMetadataKeysByStatement(com.google.api.ads.admanager.axis.v201908.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v201908.ApiException;
@@ -74,6 +78,10 @@ public interface CmsMetadataServiceInterface extends java.rmi.Remote {
      *         <tr>
      *         <td>{@code keyValueMemberContent}</td>
      *         <td>Content IDs tagged with a CMS metadata key-value</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link CmsMetadataValue#status}</td>
      *         </tr>
      *         </table>
      */

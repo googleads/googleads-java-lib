@@ -26,8 +26,14 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
     /**
      * Returns a {@link TrafficForecastAdjustmentPage} of all {@link
      * TrafficForecastAdjustment}s that
-     *         satisfy the given {@link Statement#query}. The following fields
-     * are supported for filtering:
+     *         satisfy the given {@link Statement#query}.
+     *         
+     *         <p>This method is incompatible with the use of traffic forecast
+     * segments and forecast
+     *         adjustments. It will throw an exception if that use is enabled
+     * for this network.
+     *         
+     *         <p>The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>
@@ -57,6 +63,11 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      *         <p>This method is only available when MAKE_TRAFFIC_FORECAST_ADJUSTMENTS_IN_BULK
      * is enabled in
      *         the global settings on your network.
+     *         
+     *         <p>This method is incompatible with the use of traffic forecast
+     * segments and forecast
+     *         adjustments. It will throw an exception if that use is enabled
+     * for this network.
      */
     public com.google.api.ads.admanager.axis.v202002.TrafficForecastAdjustment[] updateTrafficAdjustments(com.google.api.ads.admanager.axis.v202002.TrafficForecastAdjustment[] adjustments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202002.ApiException;
 }

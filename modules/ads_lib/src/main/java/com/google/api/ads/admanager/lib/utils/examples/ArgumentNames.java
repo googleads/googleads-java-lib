@@ -151,4 +151,8 @@ public final class ArgumentNames {
   public static final String CMS_METADATA_VALUE_ID = "--cmsMetadataValueId";
 
   public static final String CMS_METADATA_KEY_NAME = "--cmsMetadataKeyName";
+
+  public static final String CMS_METADATA_KEY_ID = "--cmsMetadataKeyId";
+
+  public static final String TRAFFIC_FORECAST_SEGMENT_ID = "--trafficForecastSegmentId";
 }

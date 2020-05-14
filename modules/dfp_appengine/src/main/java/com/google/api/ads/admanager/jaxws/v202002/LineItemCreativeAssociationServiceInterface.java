@@ -34,7 +34,7 @@ import javax.xml.ws.ResponseWrapper;
  *       {@link LineItem}. When a line item is selected to serve, the LICAs specify which
  *       creatives can appear for the ad units that are targeted by the line item. In
  *       order to be associated with a line item, the creative must have a size that
- *       exists within the attribute {@link LineItem#creativeSizes}.
+ *       exists within the attribute {@link LineItem#creativePlaceholders}.
  *       </p>
  *       <p>
  *       Each LICA has a start and end date and time that defines when the creative

@@ -46,8 +46,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private java.lang.String name;
 
     /* Additional notes to annotate the event with. This attribute
-     * is optional and
-     *                 has a maximum length of 65,535 characters. */
+     * is optional and has a maximum
+     *                 length of 65,535 characters. */
     private java.lang.String description;
 
     /* The status of this {@code LiveStreamEvent}. This attribute
@@ -321,8 +321,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the description value for this LiveStreamEvent.
      * 
      * @return description   * Additional notes to annotate the event with. This attribute
-     * is optional and
-     *                 has a maximum length of 65,535 characters.
+     * is optional and has a maximum
+     *                 length of 65,535 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -333,8 +333,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the description value for this LiveStreamEvent.
      * 
      * @param description   * Additional notes to annotate the event with. This attribute
-     * is optional and
-     *                 has a maximum length of 65,535 characters.
+     * is optional and has a maximum
+     *                 length of 65,535 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

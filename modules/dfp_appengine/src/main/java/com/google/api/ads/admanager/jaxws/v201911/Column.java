@@ -1495,7 +1495,7 @@ public enum Column {
     /**
      * 
      *                 The number of people in the given demographic bucket.
-     *                 <p>Corresponds to "Population" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1504,7 +1504,7 @@ public enum Column {
     /**
      * 
      *                 The number of unique users reached in the given demographic bucket.
-     *                 <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1514,7 +1514,7 @@ public enum Column {
      * 
      *                 Percentage of the number of unique users reached in the given demographic bucket (out of the
      *                 number of unique users reached in all demographics).
-     *                 <p>Corresponds to "% Composition unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1523,7 +1523,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions in the given demographic bucket.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1533,7 +1533,7 @@ public enum Column {
      * 
      *                 Percentage of the number of impressions in the given demographic bucket (out of the number of
      *                 impressions in all demographics).
-     *                 <p>Corresponds to "% Composition impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1542,7 +1542,7 @@ public enum Column {
     /**
      * 
      *                 The audience reach calculated as {@link #GRP_UNIQUE_AUDIENCE} / {@link #GRP_POPULATION}.
-     *                 <p>Corresponds to "% Population reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1552,7 +1552,7 @@ public enum Column {
      * 
      *                 The audience average frequency calculated as {@link #GRP_AUDIENCE_IMPRESSIONS} / {@link
      *                 #GRP_UNIQUE_AUDIENCE}.
-     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1562,7 +1562,7 @@ public enum Column {
      * 
      *                 The gross rating points (GRP) calculated as {@link #GRP_AUDIENCE_REACH} * {@link
      *                 #GRP_AUDIENCE_AVERAGE_FREQUENCY} * 100.
-     *                 <p>Corresponds to "Target rating points" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */

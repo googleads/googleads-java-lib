@@ -1218,6 +1218,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DateError }
+     * 
+     */
+    public DateError createDateError() {
+        return new DateError();
+    }
+
+    /**
      * Create an instance of {@link SetValue }
      * 
      */

@@ -464,7 +464,7 @@ public enum Column {
      *                 The CPM and CPC revenue earned, calculated in publisher currency, for the ads delivered by the
      *                 ad server. This includes pre-rev-share revenue for Programmatic traffic. This is a temporary
      *                 metric to help with the transition from gross to net revenue reporting.
-     *                 <p>Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Ad server CPM and CPC revenue (gross)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -505,7 +505,7 @@ public enum Column {
      *                 The CPM, CPC and CPD gross revenue earned, calculated in publisher currency, for the ads
      *                 delivered by the ad server. This includes pre-rev-share revenue for Programmatic traffic.
      *                 This is a temporary metric to help with the transition from gross to net revenue reporting.
-     *                 <p>Compatible with the "Historical" report type.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue (gross), Ad server CPM, CPC and CPD revenue (gross). Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1739,7 +1739,7 @@ public enum Column {
     /**
      * 
      *                 The total number of video opportunities.
-     *                 <p>Corresponds to "Total Video Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "True Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1748,7 +1748,7 @@ public enum Column {
     /**
      * 
      *                 The total number of video capped opportunities.
-     *                 <p>Corresponds to "Total Video Capped Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Capped Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2006,7 +2006,7 @@ public enum Column {
     /**
      * 
      *                 The number of people in the given demographic bucket.
-     *                 <p>Corresponds to "Population" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2015,7 +2015,7 @@ public enum Column {
     /**
      * 
      *                 The number of unique users reached in the given demographic bucket.
-     *                 <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2025,7 +2025,7 @@ public enum Column {
      * 
      *                 Percentage of the number of unique users reached in the given demographic bucket (out of the
      *                 number of unique users reached in all demographics).
-     *                 <p>Corresponds to "% Composition unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2034,7 +2034,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions in the given demographic bucket.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2044,7 +2044,7 @@ public enum Column {
      * 
      *                 Percentage of the number of impressions in the given demographic bucket (out of the number of
      *                 impressions in all demographics).
-     *                 <p>Corresponds to "% Composition impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2053,7 +2053,7 @@ public enum Column {
     /**
      * 
      *                 The audience reach calculated as {@link #GRP_UNIQUE_AUDIENCE} / {@link #GRP_POPULATION}.
-     *                 <p>Corresponds to "% Population reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2063,7 +2063,7 @@ public enum Column {
      * 
      *                 The audience average frequency calculated as {@link #GRP_AUDIENCE_IMPRESSIONS} / {@link
      *                 #GRP_UNIQUE_AUDIENCE}.
-     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2073,7 +2073,7 @@ public enum Column {
      * 
      *                 The gross rating points (GRP) calculated as {@link #GRP_AUDIENCE_REACH} * {@link
      *                 #GRP_AUDIENCE_AVERAGE_FREQUENCY} * 100.
-     *                 <p>Corresponds to "Target rating points" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */

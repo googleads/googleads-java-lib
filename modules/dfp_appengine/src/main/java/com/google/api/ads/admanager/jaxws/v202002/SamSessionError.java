@@ -22,10 +22,6 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *             Lists all errors associated with the Session Activity Monitor (SAM).
- *           
- * 
  * <p>Java class for SamSessionError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

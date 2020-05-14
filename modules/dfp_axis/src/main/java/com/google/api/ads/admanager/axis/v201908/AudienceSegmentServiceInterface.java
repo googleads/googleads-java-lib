@@ -89,7 +89,7 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
      *         
      * @param filterStatement a Publisher Query Language statement used to
      * filter a set of audience
-     *         segments
+     *         segments (the only supported operator is AND)
      *         
      * @return the audience segments that match the given filter
      */
@@ -105,7 +105,7 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
      *         
      * @param filterStatement a Publisher Query Language statement used to
      * filter a set of audience
-     *         segments
+     *         segments (the only supported operator is AND)
      *         
      * @return {@link UpdateResult} indicating the result
      */

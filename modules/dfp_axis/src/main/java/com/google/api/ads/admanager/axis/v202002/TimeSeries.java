@@ -23,12 +23,7 @@ package com.google.api.ads.admanager.axis.v202002;
 
 
 /**
- * Represents a time series data. The {@code timeSeriesValues} should
- * contain of a list value
- *             accordingly to the specified {@link PeriodType} for the
- * {@code timeSeriesDateRange}. The order of
- *             the values in this list should be sorted by its chronological
- * order.
+ * Represents a chronological sequence of daily values.
  */
 public class TimeSeries  implements java.io.Serializable {
     /* The date range of the time series. */
@@ -40,7 +35,9 @@ public class TimeSeries  implements java.io.Serializable {
      * valuePeriodType} is {@link
      *                 PeriodType.CUSTOM}, and will contain a value for each
      * day in {@code timeSeriesDateRange} if
-     *                 {@code valuePeriodType} is {@link PeriodType.DAILY}. */
+     *                 {@code valuePeriodType} is {@link PeriodType.DAILY}.
+     * The order of the values in this list
+     *                 should be sorted by its chronological order. */
     private long[] timeSeriesValues;
 
     /* The period of each time series value (e.g. daily or custom). */
@@ -98,6 +95,8 @@ public class TimeSeries  implements java.io.Serializable {
      *                 PeriodType.CUSTOM}, and will contain a value for each
      * day in {@code timeSeriesDateRange} if
      *                 {@code valuePeriodType} is {@link PeriodType.DAILY}.
+     * The order of the values in this list
+     *                 should be sorted by its chronological order.
      */
     public long[] getTimeSeriesValues() {
         return timeSeriesValues;
@@ -114,6 +113,8 @@ public class TimeSeries  implements java.io.Serializable {
      *                 PeriodType.CUSTOM}, and will contain a value for each
      * day in {@code timeSeriesDateRange} if
      *                 {@code valuePeriodType} is {@link PeriodType.DAILY}.
+     * The order of the values in this list
+     *                 should be sorted by its chronological order.
      */
     public void setTimeSeriesValues(long[] timeSeriesValues) {
         this.timeSeriesValues = timeSeriesValues;

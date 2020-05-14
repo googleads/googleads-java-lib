@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ACTIVE"/>
  *     &lt;enumeration value="INACTIVE"/>
  *     &lt;enumeration value="ARCHIVED"/>
+ *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -62,7 +63,15 @@ public enum ContentBundleStatus {
      *               
      * 
      */
-    ARCHIVED;
+    ARCHIVED,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN;
 
     public String value() {
         return name();

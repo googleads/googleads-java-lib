@@ -34,9 +34,11 @@ public class ContentBundleStatus implements java.io.Serializable {
     public static final java.lang.String _ACTIVE = "ACTIVE";
     public static final java.lang.String _INACTIVE = "INACTIVE";
     public static final java.lang.String _ARCHIVED = "ARCHIVED";
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ContentBundleStatus ACTIVE = new ContentBundleStatus(_ACTIVE);
     public static final ContentBundleStatus INACTIVE = new ContentBundleStatus(_INACTIVE);
     public static final ContentBundleStatus ARCHIVED = new ContentBundleStatus(_ARCHIVED);
+    public static final ContentBundleStatus UNKNOWN = new ContentBundleStatus(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static ContentBundleStatus fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

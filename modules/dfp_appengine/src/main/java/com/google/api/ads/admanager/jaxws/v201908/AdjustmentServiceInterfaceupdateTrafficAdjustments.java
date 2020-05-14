@@ -33,6 +33,9 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>This method is only available when MAKE_TRAFFIC_FORECAST_ADJUSTMENTS_IN_BULK is enabled in
  *             the global settings on your network.
+ *             
+ *             <p>This method is incompatible with the use of traffic forecast segments and forecast
+ *             adjustments. It will throw an exception if that use is enabled for this network.
  *           
  * 
  * <p>Java class for updateTrafficAdjustments element declaration.

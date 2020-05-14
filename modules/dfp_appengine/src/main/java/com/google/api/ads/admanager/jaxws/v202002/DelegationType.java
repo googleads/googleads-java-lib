@@ -42,7 +42,7 @@ public enum DelegationType {
 
     /**
      * 
-     *                 Default
+     *                 The value returned if the actual value is not exposed by the requested API version.
      *               
      * 
      */

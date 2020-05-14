@@ -61,6 +61,10 @@ public interface CmsMetadataServiceInterface {
      *         <td>{@code cmsKey}</td>
      *         <td>{@link CmsMetadataKey#keyName}</td>
      *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link CmsMetadataKey#status}</td>
+     *         </tr>
      *         </table>
      *       
      * 
@@ -107,6 +111,10 @@ public interface CmsMetadataServiceInterface {
      *         <tr>
      *         <td>{@code keyValueMemberContent}</td>
      *         <td>Content IDs tagged with a CMS metadata key-value</td>
+     *         </tr>
+     *         <tr>
+     *         <td>{@code status}</td>
+     *         <td>{@link CmsMetadataValue#status}</td>
      *         </tr>
      *         </table>
      *       

@@ -93,6 +93,7 @@ import javax.xml.bind.annotation.XmlType;
     ParseError.class,
     MobileApplicationActionError.class,
     SetTopBoxCreativeError.class,
+    DateError.class,
     AdRuleDateError.class,
     TeamError.class,
     LiveStreamEventActionError.class,

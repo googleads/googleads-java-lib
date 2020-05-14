@@ -1278,7 +1278,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#id}. Can be used to filter by
      *                 {@link ProposalLineItem#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1288,7 +1287,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProposalLineItem#name}. Can be used to filter by
      *                 {@link ProposalLineItem#name}.
-     *                 <p>Corresponds to "Proposal line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1298,7 +1296,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#id}. Can be used to filter by
      *                 {@link Proposal#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1308,7 +1305,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Proposal#name}. Can be used to filter by
      *                 {@link Proposal#name}.
-     *                 <p>Corresponds to "Proposal" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Sales.</p>
      *               
      * 
      */
@@ -1318,7 +1314,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1328,7 +1323,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#name}, including both salesperson and
      *                 secondary salespeople. Can be used to filter by all salespeople {@link User#name}.
-     *                 <p>Corresponds to "All salespeople" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1338,7 +1332,6 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#id} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1348,7 +1341,6 @@ public enum Dimension {
      * 
      *                 Used to filter by {@link User#name} in sales team. Sales team includes salesperson, secondary
      *                 salesperson, sales planners. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1358,7 +1350,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#id}. Can be used to filter by
      *                 proposal agency {@link Company#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1368,7 +1359,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by proposal agency {@link Company#name}. Can be used to filter by
      *                 proposal agency {@link Company#name}.
-     *                 <p>Corresponds to "Proposal agency" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1377,7 +1367,6 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#id}. Can be used to filter by {@link Product#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1386,7 +1375,6 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Product#name}.
-     *                 <p>Corresponds to "Product" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1396,7 +1384,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#id}. Can be used to filter by
      *                 {@link ProductTemplate#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1406,7 +1393,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductTemplate#name}. Can be used to filter by
      *                 {@link ProductTemplate#name}.
-     *                 <p>Corresponds to "Product template" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1416,7 +1402,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#id}. Can be used to filter by {@link
      *                 RateCard#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1426,7 +1411,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link RateCard#name}. Can be used to filter by {@link
      *                 RateCard#name}.
-     *                 <p>Corresponds to "Rate card" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1435,7 +1419,6 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#id}. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1444,7 +1427,6 @@ public enum Dimension {
     /**
      * 
      *                 Used to filter by {@link Workflow#name}. Not available as a dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1453,7 +1435,6 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1462,7 +1443,6 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link Package#name}.
-     *                 <p>Corresponds to "Package" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1472,7 +1452,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#id}. Can be used to filter by
      *                 {@link ProductPackage#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */
@@ -1482,7 +1461,6 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ProductPackage#name}. Can be used to filter by
      *                 {@link ProductPackage#name}.
-     *                 <p>Corresponds to "Product package" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Sales.</p>
      *               
      * 
      */

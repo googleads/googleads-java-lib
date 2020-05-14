@@ -51,7 +51,12 @@ public interface AdjustmentServiceInterface {
     /**
      * 
      *         Returns a {@link TrafficForecastAdjustmentPage} of all {@link TrafficForecastAdjustment}s that
-     *         satisfy the given {@link Statement#query}. The following fields are supported for filtering:
+     *         satisfy the given {@link Statement#query}.
+     *         
+     *         <p>This method is incompatible with the use of traffic forecast segments and forecast
+     *         adjustments. It will throw an exception if that use is enabled for this network.
+     *         
+     *         <p>The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>
@@ -93,6 +98,9 @@ public interface AdjustmentServiceInterface {
      *         
      *         <p>This method is only available when MAKE_TRAFFIC_FORECAST_ADJUSTMENTS_IN_BULK is enabled in
      *         the global settings on your network.
+     *         
+     *         <p>This method is incompatible with the use of traffic forecast segments and forecast
+     *         adjustments. It will throw an exception if that use is enabled for this network.
      *       
      * 
      * @param adjustments

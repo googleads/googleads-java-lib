@@ -66,8 +66,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      *                 This attribute is read-only. */
     private java.lang.Boolean isNewVersionFromBuyer;
 
-    /* The ID of the buyer that this {@code Proposal} is being negotiated
-     * with.
+    /* The Authorized Buyers ID of the buyer that this {@code Proposal}
+     * is being negotiated with.
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private java.lang.Long buyerAccountId;
@@ -273,8 +273,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /**
      * Gets the buyerAccountId value for this ProposalMarketplaceInfo.
      * 
-     * @return buyerAccountId   * The ID of the buyer that this {@code Proposal} is being negotiated
-     * with.
+     * @return buyerAccountId   * The Authorized Buyers ID of the buyer that this {@code Proposal}
+     * is being negotiated with.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -286,8 +286,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /**
      * Sets the buyerAccountId value for this ProposalMarketplaceInfo.
      * 
-     * @param buyerAccountId   * The ID of the buyer that this {@code Proposal} is being negotiated
-     * with.
+     * @param buyerAccountId   * The Authorized Buyers ID of the buyer that this {@code Proposal}
+     * is being negotiated with.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */

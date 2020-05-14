@@ -1589,7 +1589,7 @@ public enum Column {
     /**
      * 
      *                 The number of people in the given demographic bucket.
-     *                 <p>Corresponds to "Population" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1598,7 +1598,7 @@ public enum Column {
     /**
      * 
      *                 The number of unique users reached in the given demographic bucket.
-     *                 <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1608,7 +1608,7 @@ public enum Column {
      * 
      *                 Percentage of the number of unique users reached in the given demographic bucket (out of the
      *                 number of unique users reached in all demographics).
-     *                 <p>Corresponds to "% Composition unique viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1617,7 +1617,7 @@ public enum Column {
     /**
      * 
      *                 The number of impressions in the given demographic bucket.
-     *                 <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1627,7 +1627,7 @@ public enum Column {
      * 
      *                 Percentage of the number of impressions in the given demographic bucket (out of the number of
      *                 impressions in all demographics).
-     *                 <p>Corresponds to "% Composition impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1636,7 +1636,7 @@ public enum Column {
     /**
      * 
      *                 The audience reach calculated as {@link #GRP_UNIQUE_AUDIENCE} / {@link #GRP_POPULATION}.
-     *                 <p>Corresponds to "% Population reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1646,7 +1646,7 @@ public enum Column {
      * 
      *                 The audience average frequency calculated as {@link #GRP_AUDIENCE_IMPRESSIONS} / {@link
      *                 #GRP_UNIQUE_AUDIENCE}.
-     *                 <p>Corresponds to "Average frequency" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -1656,7 +1656,7 @@ public enum Column {
      * 
      *                 The gross rating points (GRP) calculated as {@link #GRP_AUDIENCE_REACH} * {@link
      *                 #GRP_AUDIENCE_AVERAGE_FREQUENCY} * 100.
-     *                 <p>Corresponds to "Target rating points" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
+     *                 <p>Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -2983,7 +2983,6 @@ public enum Column {
     /**
      * 
      *                 The contracted net revenue of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -2994,7 +2993,6 @@ public enum Column {
      *                 The contracted net revenue in the local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE}
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Contracted revenue (local), Contracted revenue (net) (local). Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3003,7 +3001,6 @@ public enum Column {
     /**
      * 
      *                 The contracted gross revenue of the {@link ProposalLineItem}, including agency commission.
-     *                 <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3015,7 +3012,6 @@ public enum Column {
      *                 agency commission.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3025,7 +3021,6 @@ public enum Column {
      * 
      *                 The value added tax on contracted net revenue of the {@link ProposalLineItem} or
      *                 {@link Proposal}.
-     *                 <p>Corresponds to "Contracted VAT" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3037,7 +3032,6 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_VAT}
-     *                 <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3046,7 +3040,6 @@ public enum Column {
     /**
      * 
      *                 The contracted agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Contracted agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3058,7 +3051,6 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3067,7 +3059,6 @@ public enum Column {
     /**
      * 
      *                 The contracted impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3076,7 +3067,6 @@ public enum Column {
     /**
      * 
      *                 The contracted clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3086,7 +3076,6 @@ public enum Column {
      * 
      *                 The contracted volume of the {@link ProposalLineItem}. Volume represents impressions for
      *                 rate type CPM, clicks for CPC, and days for CPD.
-     *                 <p>Corresponds to "Contracted volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3095,7 +3084,6 @@ public enum Column {
     /**
      * 
      *                 The budget of the {@link Proposal}.
-     *                 <p>Corresponds to "Budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3105,7 +3093,6 @@ public enum Column {
      * 
      *                 The remaining budget of the {@link Proposal}. It is calculated by subtracting the contracted
      *                 net revenue from the budget.
-     *                 <p>Corresponds to "Remaining budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3114,7 +3101,6 @@ public enum Column {
     /**
      * 
      *                 The buffered impressions of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3123,7 +3109,6 @@ public enum Column {
     /**
      * 
      *                 The buffered clicks of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Buffered clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3134,7 +3119,6 @@ public enum Column {
      *                 The scheduled impressions of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_IMPRESSIONS} and
      *                 {@link #SALES_CONTRACT_BUFFERED_IMPRESSIONS}.
-     *                 <p>Corresponds to "Scheduled impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3144,7 +3128,6 @@ public enum Column {
      * 
      *                 The scheduled clicks of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_CLICKS} and {@link #SALES_CONTRACT_BUFFERED_CLICKS}.
-     *                 <p>Corresponds to "Scheduled clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3154,7 +3137,6 @@ public enum Column {
      * 
      *                 The scheduled volume of a {@link ProposalLineItem}. It is the sum of
      *                 {@link #SALES_CONTRACT_CONTRACTED_VOLUME} and buffered volume.
-     *                 <p>Corresponds to "Scheduled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3163,7 +3145,6 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3172,7 +3153,6 @@ public enum Column {
     /**
      * 
      *                 The scheduled net revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3181,7 +3161,6 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3190,7 +3169,6 @@ public enum Column {
     /**
      * 
      *                 The scheduled gross revenue in the local currency of a {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Scheduled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3200,7 +3178,6 @@ public enum Column {
      * 
      *                 The total budget of the {@link Proposal}. It differs from {@link #SALES_CONTRACT_BUDGET} since
      *                 it always contains the total budget, not the prorated budget.
-     *                 <p>Corresponds to "Total budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3211,7 +3188,6 @@ public enum Column {
      *                 The total remaining budget of the {@link Proposal}. It differs from {@link
      *                 #SALES_CONTRACT_REMAINING_BUDGET} since it always contains the total remaining budget, not the
      *                 prorated remaining budget.
-     *                 <p>Corresponds to "Total remaining budget" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3222,7 +3198,6 @@ public enum Column {
      *                 The total contracted volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SALES_CONTRACT_CONTRACTED_VOLUME} that the volume is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total contracted volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3233,7 +3208,6 @@ public enum Column {
      *                 The total contracted net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE} that the revenue is not prorated with regard to the
      *                 date range.
-     *                 <p>Corresponds to "Total contracted revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3246,7 +3220,6 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3257,7 +3230,6 @@ public enum Column {
      *                 The total contracted gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE} that the revenue is not prorated with regard to
      *                 the date range.
-     *                 <p>Corresponds to "Total contracted revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3270,7 +3242,6 @@ public enum Column {
      *                 prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total contracted revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3281,7 +3252,6 @@ public enum Column {
      *                 The total contracted agency commission of the {@link ProposalLineItem}. It differs from {@link
      *                 #CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION} that the revenue is not prorated with regard
      *                 to the date range.
-     *                 <p>Corresponds to "Total contracted agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3294,7 +3264,6 @@ public enum Column {
      *                 is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Total contracted agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3304,7 +3273,6 @@ public enum Column {
      * 
      *                 The total net revenue plus its value added tax of the {@link ProposalLineItem}. The revenue is
      *                 not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3316,7 +3284,6 @@ public enum Column {
      *                 ProposalLineItem}. The revenue is not prorated with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT}
-     *                 <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3326,7 +3293,6 @@ public enum Column {
      * 
      *                 The total scheduled volume of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_VOLUME} that the volume is not prorated with regard to the date range.
-     *                 <p>Corresponds to "Total scheduled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3337,7 +3303,6 @@ public enum Column {
      *                 The total scheduled net revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_NET_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3350,7 +3315,6 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3361,7 +3325,6 @@ public enum Column {
      *                 The total scheduled gross revenue of the {@link ProposalLineItem}. It differs from {@link
      *                 #SCHEDULED_SCHEDULED_GROSS_REVENUE} that the revenue is not prorated with regard to the date
      *                 range.
-     *                 <p>Corresponds to "Total scheduled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3374,7 +3337,6 @@ public enum Column {
      *                 with regard to the date range.
      *                 
      *                 <p>See {@link #SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Total scheduled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3384,7 +3346,6 @@ public enum Column {
      * 
      *                 The unreconciled net revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from unreconciled Ad Manager volume.
-     *                 <p>Corresponds to "Unreconciled revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3397,7 +3358,6 @@ public enum Column {
      *                 Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3407,7 +3367,6 @@ public enum Column {
      * 
      *                 The unreconciled gross revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} coming from unreconciled Ad Manager volume.
-     *                 <p>Corresponds to "Unreconciled revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3420,7 +3379,6 @@ public enum Column {
      *                 manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3430,7 +3388,6 @@ public enum Column {
      * 
      *                 The forecasted net revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} coming from forecasted Ad Manager volume.
-     *                 <p>Corresponds to "Forecasted revenue (net)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3442,7 +3399,6 @@ public enum Column {
      *                 of {@link #UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE} coming from forecasted Ad Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_FORECASTED_NET_REVENUE}
-     *                 <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3452,7 +3408,6 @@ public enum Column {
      * 
      *                 The forecasted gross revenue of the {@link ProposalLineItem}. It is the portion of {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} coming from forecasted Ad Manager volume.
-     *                 <p>Corresponds to "Forecasted revenue (gross)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3465,7 +3420,6 @@ public enum Column {
      *                 Manager volume.
      *                 
      *                 <p>See {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3477,7 +3431,6 @@ public enum Column {
      *                 #UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE}, {@link #BILLING_BILLABLE_NET_REVENUE}, and {@link
      *                 #UNIFIED_REVENUE_FORECASTED_NET_REVENUE} when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3492,7 +3445,6 @@ public enum Column {
      *                 historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3504,7 +3456,6 @@ public enum Column {
      *                 {@link #UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE}, {@link #BILLING_BILLABLE_GROSS_REVENUE},
      *                 and {@link #UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE} when query date range spans historical
      *                 delivery and forecasted delivery.
-     *                 <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3519,7 +3470,6 @@ public enum Column {
      *                 delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3531,7 +3481,6 @@ public enum Column {
      *                 unreconciled agency commission, the {@link #BILLING_BILLABLE_AGENCY_COMMISSION},
      *                 and the forecasted agency commission when query date range spans historical delivery and
      *                 forecasted delivery.
-     *                 <p>Corresponds to "Unified agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3545,7 +3494,6 @@ public enum Column {
      *                 date range spans historical delivery and forecasted delivery.
      *                 
      *                 See {@link #UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3556,7 +3504,6 @@ public enum Column {
      *                 The unreconciled volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unreconciled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3567,7 +3514,6 @@ public enum Column {
      *                 The forecasted volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Forecasted volume" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3578,7 +3524,6 @@ public enum Column {
      *                 The unified volume of the {@link ProposalLineItem} for each cycle. Volume represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD. This fact can only be run
      *                 in proposal or proposal line item time zone.
-     *                 <p>Corresponds to "Unified volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3589,7 +3534,6 @@ public enum Column {
      *                 The expected revenue of the {@link ProposalLineItem}. It is equivalent to
      *                 {@link #UNIFIED_REVENUE_UNIFIED_NET_REVENUE} when the {@link ProposalLineItem} is sold and
      *                 {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3602,7 +3546,6 @@ public enum Column {
      *                 and {@link #SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_NET_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3613,7 +3556,6 @@ public enum Column {
      *                 The expected gross revenue of the {@link ProposalLineItem}. It is equivalent to {@link
      *                 #UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE} when the {@link ProposalLineItem} is sold and {@link
      *                 #SALES_PIPELINE_PIPELINE_GROSS_REVENUE} otherwise.
-     *                 <p>Corresponds to "Expected revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3626,7 +3568,6 @@ public enum Column {
      *                 sold and {@link #SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE} otherwise.
      *                 
      *                 <p>See {@link #EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE}
-     *                 <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3639,7 +3580,6 @@ public enum Column {
      *                 it is calculated by multiplying {@link Proposal#probabilityOfClose} by the contracted revenue
      *                 when inventory is not reserved; otherwise it is calcualted by multiplying {@link
      *                 Proposal#probabilityOfClose} by the forecasted revenue.
-     *                 <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3655,7 +3595,6 @@ public enum Column {
      *                 revenue.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_NET_REVENUE}
-     *                 <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3669,7 +3608,6 @@ public enum Column {
      *                 {@link Proposal#probabilityOfClose} by the contracted revenue including agency commission when
      *                 inventory is not reserved; otherwise it is calcualted by multiplying
      *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
-     *                 <p>Corresponds to "Pipeline revenue (gross)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3685,7 +3623,6 @@ public enum Column {
      *                 {@link Proposal#probabilityOfClose} by the forecasted revenue including agency commission.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_GROSS_REVENUE}
-     *                 <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3696,7 +3633,6 @@ public enum Column {
      *                 The pipeline agency commission of the {@link ProposalLineItem}. There is no revenue for sold
      *                 {@link ProposalLineItem proposal line items}. For unsold
      *                 {@link ProposalLineItem proposal line items}, it is calculated against gross pipeline revenue.
-     *                 <p>Corresponds to "Pipeline agency commission" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3710,7 +3646,6 @@ public enum Column {
      *                 in local currency of the {@link ProposalLineItem}.
      *                 
      *                 See {@link #SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI. Compatible with the "Sales" report type.</p>
      *               
      * 
      */
@@ -3720,7 +3655,6 @@ public enum Column {
      * 
      *                 The Ad Manager volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "DFP volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3730,7 +3664,6 @@ public enum Column {
      * 
      *                 The third party volume of the {@link ProposalLineItem}, which is used for reconciliation.
      *                 Volume represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Third-party volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3740,7 +3673,6 @@ public enum Column {
      * 
      *                 The reconciled volume of the {@link ProposalLineItem}, which is used for reconciliation. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Reconciled volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3749,7 +3681,6 @@ public enum Column {
     /**
      * 
      *                 The discrepancy percentage between Ad Manager volume and third party volume.
-     *                 <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3758,7 +3689,6 @@ public enum Column {
     /**
      * 
      *                 The reconciled revenue of the {@link LineItem}.
-     *                 <p>Corresponds to "Reconciled revenue" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3767,7 +3697,6 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager impressions and third party impressions.
-     *                 <p>Corresponds to "Impression discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3776,7 +3705,6 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager clicks and third party clicks.
-     *                 <p>Corresponds to "Click discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3785,7 +3713,6 @@ public enum Column {
     /**
      * 
      *                 The discrepancy between Ad Manager revenue and third party revenue.
-     *                 <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3795,7 +3722,6 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied.
-     *                 <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3807,7 +3733,6 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied.
      *                 
      *                 See {@link #BILLING_BILLABLE_NET_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3817,7 +3742,6 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem}. It is calculated from reconciled
      *                 volume and rate, with cap applied, and including agency commission.
-     *                 <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3829,7 +3753,6 @@ public enum Column {
      *                 calculated from reconciled volume and rate, with cap applied, and including agency commission.
      *                 
      *                 See {@link #BILLING_BILLABLE_GROSS_REVENUE}
-     *                 <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3839,7 +3762,6 @@ public enum Column {
      * 
      *                 The billable net revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3852,7 +3774,6 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3862,7 +3783,6 @@ public enum Column {
      * 
      *                 The billable gross revenue of the {@link ProposalLineItem} before manual adjustment. It is
      *                 calculated from reconciled volume and rate, with cap applied, before manual adjustment.
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3875,7 +3795,6 @@ public enum Column {
      *                 adjustment.
      *                 
      *                 <p>See {@link #BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT}
-     *                 <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3885,7 +3804,6 @@ public enum Column {
      * 
      *                 The value added tax on billable net revenue of the {@link ProposalLineItem} or {@link
      *                 Proposal}.
-     *                 <p>Corresponds to "Billable VAT" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3897,7 +3815,6 @@ public enum Column {
      *                 {@link ProposalLineItem} or {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_VAT}
-     *                 <p>Corresponds to "Billable VAT (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3906,7 +3823,6 @@ public enum Column {
     /**
      * 
      *                 The billable agency commission of the {@link ProposalLineItem} or {@link Proposal}.
-     *                 <p>Corresponds to "Billable agency commission" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3918,7 +3834,6 @@ public enum Column {
      *                 {@link Proposal}.
      *                 
      *                 See {@link #BILLING_BILLABLE_AGENCY_COMMISSION}
-     *                 <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3928,7 +3843,6 @@ public enum Column {
      * 
      *                 The cap quantity of the {@link ProposalLineItem} for each cycle. Quantity represents
      *                 impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Cap quantity" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3939,7 +3853,6 @@ public enum Column {
      *                 The billable volume of the {@link ProposalLineItem} for each cycle. Billable volumes are
      *                 calculated by applying cap quantity to reconciled volumes. Volume represents impressions for
      *                 rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Billable volume" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3949,7 +3862,6 @@ public enum Column {
      * 
      *                 The delivery rollover volume of the {@link ProposalLineItem} from previous cycle. Volume
      *                 represents impressions for rate type CPM, clicks for CPC and days for CPD.
-     *                 <p>Corresponds to "Delivery rollover" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3958,7 +3870,6 @@ public enum Column {
     /**
      * 
      *                 The CPM calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and {@link #AD_SERVER_IMPRESSIONS}.
-     *                 <p>Corresponds to "Realized CPM" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3967,7 +3878,6 @@ public enum Column {
     /**
      * 
      *                 The rate calcuated by {@link #BILLING_BILLABLE_NET_REVENUE} and Ad Manager volume.
-     *                 <p>Corresponds to "Realized rate" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3976,7 +3886,6 @@ public enum Column {
     /**
      * 
      *                 The contracted net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Contracted overall discount (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3985,7 +3894,6 @@ public enum Column {
     /**
      * 
      *                 The billable net overall discount of the {@link ProposalLineItem}.
-     *                 <p>Corresponds to "Billable overall discount (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */
@@ -3995,7 +3903,6 @@ public enum Column {
      * 
      *                 The contracted non-billable (net) of the {@link ProposalLineItem}.
      *                 The non-billable means revenue that marked as make good, added value or barter.
-     *                 <p>Corresponds to "Contracted non-billable (net)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Sales.</p>
      *               
      * 
      */

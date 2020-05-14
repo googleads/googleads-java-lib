@@ -26,9 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a time series data. The {@code timeSeriesValues} should contain of a list value
- *             accordingly to the specified {@link PeriodType} for the {@code timeSeriesDateRange}. The order of
- *             the values in this list should be sorted by its chronological order.
+ *             Represents a chronological sequence of daily values.
  *           
  * 
  * <p>Java class for TimeSeries complex type.

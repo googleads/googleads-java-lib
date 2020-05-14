@@ -42,7 +42,7 @@ public enum RequiredSizeErrorReason {
 
     /**
      * 
-     *                 {@link Creative#size} or {@link LineItem#creativeSizes} is
+     *                 {@link Creative#size} or {@link LineItem#creativePlaceholders} size is
      *                 missing.
      *               
      * 
@@ -52,7 +52,7 @@ public enum RequiredSizeErrorReason {
     /**
      * 
      *                 {@link LineItemCreativeAssociation#sizes} must be a subset of
-     *                 {@link LineItem#creativeSizes}.
+     *                 {@link LineItem#creativePlaceholders} sizes.
      *               
      * 
      */

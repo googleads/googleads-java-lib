@@ -80,22 +80,6 @@ public class ReportQuery  implements java.io.Serializable {
      *                 <td>{@link CustomFieldEntityType#CREATIVE}</td><td>{@link
      * Dimension#CREATIVE_NAME}</td>
      *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT_TEMPLATE}</td>
-     * <td>{@link Dimension#PRODUCT_TEMPLATE_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT}</td><td>{@link
-     * Dimension#PRODUCT_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL}</td><td>{@link
-     * Dimension#PROPOSAL_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL_LINE_ITEM}</td>
-     * <td>{@link Dimension#PROPOSAL_LINE_ITEM_NAME}</td>
-     *                 </tr>
      *                 </table> */
     private long[] customFieldIds;
 
@@ -424,22 +408,6 @@ public class ReportQuery  implements java.io.Serializable {
      *                 <td>{@link CustomFieldEntityType#CREATIVE}</td><td>{@link
      * Dimension#CREATIVE_NAME}</td>
      *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT_TEMPLATE}</td>
-     * <td>{@link Dimension#PRODUCT_TEMPLATE_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT}</td><td>{@link
-     * Dimension#PRODUCT_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL}</td><td>{@link
-     * Dimension#PROPOSAL_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL_LINE_ITEM}</td>
-     * <td>{@link Dimension#PROPOSAL_LINE_ITEM_NAME}</td>
-     *                 </tr>
      *                 </table>
      */
     public long[] getCustomFieldIds() {
@@ -473,22 +441,6 @@ public class ReportQuery  implements java.io.Serializable {
      *                 <tr>
      *                 <td>{@link CustomFieldEntityType#CREATIVE}</td><td>{@link
      * Dimension#CREATIVE_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT_TEMPLATE}</td>
-     * <td>{@link Dimension#PRODUCT_TEMPLATE_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PRODUCT}</td><td>{@link
-     * Dimension#PRODUCT_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL}</td><td>{@link
-     * Dimension#PROPOSAL_NAME}</td>
-     *                 </tr>
-     *                 <tr>
-     *                 <td>{@link CustomFieldEntityType#PROPOSAL_LINE_ITEM}</td>
-     * <td>{@link Dimension#PROPOSAL_LINE_ITEM_NAME}</td>
      *                 </tr>
      *                 </table>
      */

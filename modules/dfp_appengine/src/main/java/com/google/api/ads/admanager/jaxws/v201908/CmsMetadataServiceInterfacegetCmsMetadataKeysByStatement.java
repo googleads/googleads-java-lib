@@ -38,6 +38,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code cmsKey}</td>
  *             <td>{@link CmsMetadataKey#keyName}</td>
  *             </tr>
+ *             <tr>
+ *             <td>{@code status}</td>
+ *             <td>{@link CmsMetadataKey#status}</td>
+ *             </tr>
  *             </table>
  *           
  * 

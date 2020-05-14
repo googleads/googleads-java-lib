@@ -42,63 +42,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum SamSessionErrorReason {
 
-
-    /**
-     * 
-     *                 SAM session could not be registered for monitoring.
-     *               
-     * 
-     */
     COULD_NOT_REGISTER_SESSION,
-
-    /**
-     * 
-     *                 User specified an invalid format for a session ID.
-     *                 
-     *                 <p>Session IDs are UUIDs and look like
-     *                 "123e4567-e89b-12d3-a456-426655440000".
-     *               
-     * 
-     */
     MALFORMED_SESSION_ID,
-
-    /**
-     * 
-     *                 Error thrown when the user specifies an invalid session ID.
-     *                 
-     *                 <p>An invalid session ID error is thrown in the following cases: 1. There is no data for this
-     *                 session. 2. There is not enough data to validate that the user has access to the session. 3.
-     *                 The user does not belong to the network that is associated with the live stream event code
-     *                 specified by the session. We lump all of these cases into a single error because we don't
-     *                 want users to know when they have given a real session ID belonging to a different network.
-     *               
-     * 
-     */
     INVALID_SESSION_ID,
-
-    /**
-     * 
-     *                 Error thrown when the provided debug key does not match any session ids.
-     *               
-     * 
-     */
     INVALID_DEBUG_KEY,
-
-    /**
-     * 
-     *                 Error thrown when the number of sessions requested exceeds the limit.
-     *               
-     * 
-     */
     REQUEST_EXCEEDS_SESSION_LIMIT,
-
-    /**
-     * 
-     *                 The value returned if the actual value is not exposed by the requested
-     *                 API version.
-     *               
-     * 
-     */
     UNKNOWN;
 
     public String value() {

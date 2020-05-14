@@ -74,7 +74,7 @@ import javax.xml.bind.annotation.XmlType;
  *             </table>
  *             
  *             @param filterStatement a Publisher Query Language statement used to filter a set of audience
- *             segments
+ *             segments (the only supported operator is AND)
  *             @return the audience segments that match the given filter
  *           
  * 
