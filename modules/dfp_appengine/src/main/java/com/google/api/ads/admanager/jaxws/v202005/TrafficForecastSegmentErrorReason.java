@@ -43,6 +43,8 @@ public enum TrafficForecastSegmentErrorReason {
      * 
      *                 The targeting expression that defines the segment is not unique within the given network's
      *                 segments.
+     *                 
+     *                 <p>The ID of the colliding segment will be provided in the {@link ApiError#trigger}.
      *               
      * 
      */

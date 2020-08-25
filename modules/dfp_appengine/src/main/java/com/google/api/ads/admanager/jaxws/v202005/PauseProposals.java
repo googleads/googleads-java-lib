@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for pausing programmatic {@link Proposal} objects.
- *             This action is only applicable for programmatic proposals.
+ *             The action used for pausing programmatic {@link Proposal} objects. This action is only applicable
+ *             for programmatic proposals.
  *           
  * 
  * <p>Java class for PauseProposals complex type.

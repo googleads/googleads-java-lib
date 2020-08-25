@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a {@link Label} that can be applied to an entity. To negate an
- *             inherited label, create an {@code AppliedLabel} with {@code labelId} as the
- *             inherited label's ID and {@code isNegated} set to true.
+ *             Represents a {@link Label} that can be applied to an entity. To negate an inherited label, create
+ *             an {@code AppliedLabel} with {@code labelId} as the inherited label's ID and {@code isNegated}
+ *             set to true.
  *           
  * 
  * <p>Java class for AppliedLabel complex type.

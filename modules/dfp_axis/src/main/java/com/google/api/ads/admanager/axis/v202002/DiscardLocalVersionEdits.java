@@ -24,9 +24,9 @@ package com.google.api.ads.admanager.axis.v202002;
 
 /**
  * The action for reverting the local {@link Proposal} modifications
- * to reflect the latest terms
- *             and private data in Marketplace.
- *             This action is only applicable for programmatic proposals.
+ * to reflect the latest terms and
+ *             private data in Marketplace. This action is only applicable
+ * for programmatic proposals.
  */
 public class DiscardLocalVersionEdits  extends com.google.api.ads.admanager.axis.v202002.ProposalAction  implements java.io.Serializable {
     public DiscardLocalVersionEdits() {

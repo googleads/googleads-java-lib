@@ -23,22 +23,26 @@ package com.google.api.ads.admanager.axis.v202005;
 
 
 /**
- * Settings to specify historical volume data that will be used as
- * the expected future traffic
- *             volume for a {@link ForecastAdjustment}.
+ * Settings to specify the volume of ad opportunities per day over
+ * the {@link ForecastAdjustment}
+ *             date range based on the traffic volume of a historical
+ * reference period.
  *             
- *             <p>The historical daily ad opportunity volumes are fetched
- * for the requested historical targeting
- *             and range, multiplied by the multiplier, and then translated
- * into the date range of this
- *             adjustment. The duration of the historical date range
- * does *not* need to be the same as the
- *             duration of this adjustment's date range.
+ *             <p>The daily historical traffic for the provided targeting
+ * and date range is fetched, multiplied
+ *             by the provided multiplier, and used as the daily expected
+ * traffic for the adjustment.
+ *             
+ *             <p>The number of days included in the historical date
+ * range does *not* need to be the same as the
+ *             number of days included in the adjustment date range.
  */
 public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
     /* Whether the parent traffic forecast segment targeting's or
      * the {@code targeting}'s historical
-     *                 volume data should be used. This field is required. */
+     *                 volume data should be used.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Boolean useParentTrafficForecastSegmentTargeting;
 
     /* The targeting criteria to use as the source of the historical
@@ -48,14 +52,16 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202005.Targeting targeting;
 
     /* The date range to use for the historical ad opportunity volume.
-     * 
-     *                 <p>The start date of the historical date range must
-     * be less than 12 months before the end date
-     *                 of the adjustment date range. */
+     * <span class="constraint Required">This attribute is required.</span> */
     private com.google.api.ads.admanager.axis.v202005.DateRange historicalDateRange;
 
-    /* The milli-percent multiplier applied to the historical volume
-     * data. */
+    /* The multiplier to apply to the historical traffic volume, expressed
+     * in thousandths of a
+     *                 percent. For example, to set the forecasted traffic
+     * as 130% of the historical traffic, this
+     *                 value would be 130,000.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long multiplierMilliPercent;
 
     public HistoricalBasisVolumeSettings() {
@@ -88,7 +94,9 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
      * 
      * @return useParentTrafficForecastSegmentTargeting   * Whether the parent traffic forecast segment targeting's or
      * the {@code targeting}'s historical
-     *                 volume data should be used. This field is required.
+     *                 volume data should be used.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Boolean getUseParentTrafficForecastSegmentTargeting() {
         return useParentTrafficForecastSegmentTargeting;
@@ -100,7 +108,9 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
      * 
      * @param useParentTrafficForecastSegmentTargeting   * Whether the parent traffic forecast segment targeting's or
      * the {@code targeting}'s historical
-     *                 volume data should be used. This field is required.
+     *                 volume data should be used.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setUseParentTrafficForecastSegmentTargeting(java.lang.Boolean useParentTrafficForecastSegmentTargeting) {
         this.useParentTrafficForecastSegmentTargeting = useParentTrafficForecastSegmentTargeting;
@@ -137,10 +147,7 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
      * Gets the historicalDateRange value for this HistoricalBasisVolumeSettings.
      * 
      * @return historicalDateRange   * The date range to use for the historical ad opportunity volume.
-     * 
-     *                 <p>The start date of the historical date range must
-     * be less than 12 months before the end date
-     *                 of the adjustment date range.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public com.google.api.ads.admanager.axis.v202005.DateRange getHistoricalDateRange() {
         return historicalDateRange;
@@ -151,10 +158,7 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
      * Sets the historicalDateRange value for this HistoricalBasisVolumeSettings.
      * 
      * @param historicalDateRange   * The date range to use for the historical ad opportunity volume.
-     * 
-     *                 <p>The start date of the historical date range must
-     * be less than 12 months before the end date
-     *                 of the adjustment date range.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setHistoricalDateRange(com.google.api.ads.admanager.axis.v202005.DateRange historicalDateRange) {
         this.historicalDateRange = historicalDateRange;
@@ -164,8 +168,13 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
     /**
      * Gets the multiplierMilliPercent value for this HistoricalBasisVolumeSettings.
      * 
-     * @return multiplierMilliPercent   * The milli-percent multiplier applied to the historical volume
-     * data.
+     * @return multiplierMilliPercent   * The multiplier to apply to the historical traffic volume, expressed
+     * in thousandths of a
+     *                 percent. For example, to set the forecasted traffic
+     * as 130% of the historical traffic, this
+     *                 value would be 130,000.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getMultiplierMilliPercent() {
         return multiplierMilliPercent;
@@ -175,8 +184,13 @@ public class HistoricalBasisVolumeSettings  implements java.io.Serializable {
     /**
      * Sets the multiplierMilliPercent value for this HistoricalBasisVolumeSettings.
      * 
-     * @param multiplierMilliPercent   * The milli-percent multiplier applied to the historical volume
-     * data.
+     * @param multiplierMilliPercent   * The multiplier to apply to the historical traffic volume, expressed
+     * in thousandths of a
+     *                 percent. For example, to set the forecasted traffic
+     * as 130% of the historical traffic, this
+     *                 value would be 130,000.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setMultiplierMilliPercent(java.lang.Long multiplierMilliPercent) {
         this.multiplierMilliPercent = multiplierMilliPercent;

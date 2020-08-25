@@ -26,16 +26,11 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
     /**
      * Creates new {@link ForecastAdjustment} objects.
      *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
-     *         
      *         
      * @param forecastAdjustments the forecast adjustments to create
      *         
-     * @return the created forecast adjustments with their IDs filled in
-     *         
+     * @return the persisted forecast adjustments with their IDs populated
+     * 
      * @throws ApiException if there is an error creating the forecast adjustments
      */
     public com.google.api.ads.admanager.axis.v202005.ForecastAdjustment[] createForecastAdjustments(com.google.api.ads.admanager.axis.v202005.ForecastAdjustment[] forecastAdjustments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202005.ApiException;
@@ -43,17 +38,11 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
     /**
      * Creates new {@link TrafficForecastSegment} objects.
      *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
-     *         
      *         
      * @param trafficForecastSegments the traffic forecast segments to create
      * 
-     * @return the created traffic forecast segments with their IDs filled
-     * in
-     *         
+     * @return the persisted traffic forecast segments with their IDs populated
+     * 
      * @throws ApiException if there is an error creating the traffic forecast
      * segments
      */
@@ -63,11 +52,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * Gets a {@link ForecastAdjustmentPage} of {@link ForecastAdjustment}
      * objects that satisfy the
      *         given {@link Statement#query}.
-     *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
      *         
      *         <p>The following fields are supported for filtering:
      *         
@@ -106,7 +90,7 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * a list of traffic
      *         forecast segments
      *         
-     * @return the forecast adjustments that match the filter
+     * @return a page of forecast adjustments that match the filter
      */
     public com.google.api.ads.admanager.axis.v202005.ForecastAdjustmentPage getForecastAdjustmentsByStatement(com.google.api.ads.admanager.axis.v202005.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202005.ApiException;
 
@@ -114,11 +98,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * Gets a {@link TrafficForecastSegmentPage} of {@link TrafficForecastSegment}
      * objects that
      *         satisfy the given {@link Statement#query}.
-     *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
      *         
      *         <p>The following fields are supported for filtering:
      *         
@@ -145,7 +124,7 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * a list of traffic
      *         forecast segments
      *         
-     * @return the traffic forecast segments that match the filter
+     * @return a page of traffic forecast segments that match the filter
      */
     public com.google.api.ads.admanager.axis.v202005.TrafficForecastSegmentPage getTrafficForecastSegmentsByStatement(com.google.api.ads.admanager.axis.v202005.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202005.ApiException;
 
@@ -153,11 +132,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link ForecastAdjustment} objects that
      * match the given {@link
      *         Statement#query}.
-     *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
      *         
      *         
      * @param forecastAdjustmentAction the action to perform
@@ -173,11 +147,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
     /**
      * Updates the specified {@link ForecastAdjustment} objects.
      *         
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
-     *         
      *         
      * @param forecastAdjustments the forecast adjustments to update
      *         
@@ -190,11 +159,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
     /**
      * Updates the specified {@link TrafficForecastSegment} objects.
      * 
-     *         <p>This method requires that use of traffic forecast segments
-     * and forecast adjustments is
-     *         enabled for this network, and will throw an exception if it
-     * is not enabled.
-     *         
      *         
      * @param trafficForecastSegments the traffic forecast segments to update
      * 

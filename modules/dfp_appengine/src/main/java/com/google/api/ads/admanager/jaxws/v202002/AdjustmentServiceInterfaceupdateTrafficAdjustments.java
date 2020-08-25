@@ -31,11 +31,8 @@ import javax.xml.bind.annotation.XmlType;
  *             TrafficTimeSeriesFilterCriteria}, the pre-existing {@link TrafficForecastAdjustment} will be
  *             completely replaced with the submitted {@link TrafficForecastAdjustment}.
  *             
- *             <p>This method is only available when MAKE_TRAFFIC_FORECAST_ADJUSTMENTS_IN_BULK is enabled in
- *             the global settings on your network.
- *             
- *             <p>This method is incompatible with the use of traffic forecast segments and forecast
- *             adjustments. It will throw an exception if that use is enabled for this network.
+ *             <p>This method is no longer supported. To programmatically create adjustments, you must
+ *             update to the V202005 API.
  *           
  * 
  * <p>Java class for updateTrafficAdjustments element declaration.

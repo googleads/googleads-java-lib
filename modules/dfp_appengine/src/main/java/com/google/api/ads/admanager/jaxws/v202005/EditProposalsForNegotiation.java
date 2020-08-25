@@ -24,11 +24,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Opens the non-free-editable fields of a {@link Proposal} for edit.
  *             
- *             <p>This proposal will not receive updates from Marketplace while
- *             it's open for edit. If the buyer updates the proposal while it is open for local editing,
- *             Google will set {@link ProposalMarketplaceInfo#isNewVersionFromBuyer} to {@code true}. You will
- *             then need to call {@link DiscardProposalDrafts} to revert your edits to get the buyer's latest
- *             changes, and then perform this action to start making your edits again.
+ *             <p>This proposal will not receive updates from Marketplace while it's open for edit. If the buyer
+ *             updates the proposal while it is open for local editing, Google will set {@link
+ *             ProposalMarketplaceInfo#isNewVersionFromBuyer} to {@code true}. You will then need to call {@link
+ *             DiscardProposalDrafts} to revert your edits to get the buyer's latest changes, and then perform
+ *             this action to start making your edits again.
  *             
  *             <p>This action is only applicable for programmatic proposals.
  *           

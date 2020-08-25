@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Gets a {@link ForecastAdjustmentPage} of {@link ForecastAdjustment} objects that satisfy the
  *             given {@link Statement#query}.
  *             
- *             <p>This method requires that use of traffic forecast segments and forecast adjustments is
- *             enabled for this network, and will throw an exception if it is not enabled.
- *             
  *             <p>The following fields are supported for filtering:
  *             
  *             <table>
@@ -63,7 +60,7 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             @param filterStatement a Publisher Query Language statement to filter a list of traffic
  *             forecast segments
- *             @return the forecast adjustments that match the filter
+ *             @return a page of forecast adjustments that match the filter
  *           
  * 
  * <p>Java class for getForecastAdjustmentsByStatement element declaration.

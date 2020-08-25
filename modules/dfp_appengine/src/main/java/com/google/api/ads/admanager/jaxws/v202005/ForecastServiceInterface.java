@@ -75,7 +75,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>50</td>
  *       <td>1,200,000</td>
  *       <td>6,000,000</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
@@ -83,7 +83,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>!= 20 and <br/> != 50</td>
  *       <td>1,200,000</td>
  *       <td>1,200,000</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
@@ -91,7 +91,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>&lt;= 500,000</td>
  *       <td>3 * unitsBought / 2</td>
  *       <td>unitsBought * 6</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
@@ -99,7 +99,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>&gt; 500,000 and &lt;= 1,000,000</td>
  *       <td>unitsBought / 2</td>
  *       <td>unitsBought * 6</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
@@ -107,7 +107,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>&gt; 1,000,000 and &lt;= 1,500,000</td>
  *       <td>unitsBought / 2</td>
  *       <td>3 * unitsBought / 2</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       <tr>
@@ -115,7 +115,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <td>&gt; 1,500,000</td>
  *       <td>unitsBought / 4</td>
  *       <td>3 * unitsBought / 2</td>
- *       <td>600,000<br/>For prospective: 0</td>
+ *       <td>600,000</td>
  *       <td>&ndash;&ndash;</td>
  *       </tr>
  *       </table>

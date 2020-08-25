@@ -24,10 +24,10 @@ package com.google.api.ads.admanager.axis.v202002;
 
 /**
  * Represents a {@link Label} that can be applied to an entity. To
- * negate an
- *             inherited label, create an {@code AppliedLabel} with {@code
- * labelId} as the
- *             inherited label's ID and {@code isNegated} set to true.
+ * negate an inherited label, create
+ *             an {@code AppliedLabel} with {@code labelId} as the inherited
+ * label's ID and {@code isNegated}
+ *             set to true.
  */
 public class AppliedLabel  implements java.io.Serializable {
     /* The ID of a created {@link Label}. */

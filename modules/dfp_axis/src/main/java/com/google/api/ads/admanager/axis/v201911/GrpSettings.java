@@ -57,9 +57,9 @@ public class GrpSettings  implements java.io.Serializable {
      *                 to represent the estimated total quantity. */
     private java.lang.Long targetImpressionGoal;
 
-    /* Specifiies whether to enable Nielsen co-viewing for line items
-     * using Nielsen as a
-     *                 GRP provider. */
+    /* Specifiies whether to enable Nielsen measurement for connected
+     * devices for line items using
+     *                 Nielsen as a GRP provider. */
     private java.lang.Boolean enableNielsenCoViewingSupport;
 
     public GrpSettings() {
@@ -220,9 +220,9 @@ public class GrpSettings  implements java.io.Serializable {
     /**
      * Gets the enableNielsenCoViewingSupport value for this GrpSettings.
      * 
-     * @return enableNielsenCoViewingSupport   * Specifiies whether to enable Nielsen co-viewing for line items
-     * using Nielsen as a
-     *                 GRP provider.
+     * @return enableNielsenCoViewingSupport   * Specifiies whether to enable Nielsen measurement for connected
+     * devices for line items using
+     *                 Nielsen as a GRP provider.
      */
     public java.lang.Boolean getEnableNielsenCoViewingSupport() {
         return enableNielsenCoViewingSupport;
@@ -232,9 +232,9 @@ public class GrpSettings  implements java.io.Serializable {
     /**
      * Sets the enableNielsenCoViewingSupport value for this GrpSettings.
      * 
-     * @param enableNielsenCoViewingSupport   * Specifiies whether to enable Nielsen co-viewing for line items
-     * using Nielsen as a
-     *                 GRP provider.
+     * @param enableNielsenCoViewingSupport   * Specifiies whether to enable Nielsen measurement for connected
+     * devices for line items using
+     *                 Nielsen as a GRP provider.
      */
     public void setEnableNielsenCoViewingSupport(java.lang.Boolean enableNielsenCoViewingSupport) {
         this.enableNielsenCoViewingSupport = enableNielsenCoViewingSupport;

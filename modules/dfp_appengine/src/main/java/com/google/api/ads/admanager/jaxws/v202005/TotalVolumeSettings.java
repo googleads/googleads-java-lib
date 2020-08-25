@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *             Settings to specify a single total traffic volume that will be used as the expected total future
  *             volume for a forecast adjustment.
  *             
- *             <p>E.g. An {@code adOpportunityCount} of 3,000 indicates a forecast goal for the targeting
- *             specified on the parent traffic forecast segment of 3,000 ad opportunities over the entire
- *             duration of the adjustment.
+ *             <p>For example, an {@code adOpportunityCount} of 3,000 indicates a forecast goal for the
+ *             targeting specified on the parent traffic forecast segment of 3,000 ad opportunities over the
+ *             entire duration of the adjustment.
  *           
  * 
  * <p>Java class for TotalVolumeSettings complex type.

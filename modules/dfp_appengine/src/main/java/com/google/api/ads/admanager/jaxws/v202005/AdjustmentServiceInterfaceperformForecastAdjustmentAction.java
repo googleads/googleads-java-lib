@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Performs actions on {@link ForecastAdjustment} objects that match the given {@link
  *             Statement#query}.
  *             
- *             <p>This method requires that use of traffic forecast segments and forecast adjustments is
- *             enabled for this network, and will throw an exception if it is not enabled.
- *             
  *             @param forecastAdjustmentAction the action to perform
  *             @param filterStatement a Publisher Query Language statement used to filter a set of forecast
  *             adjustments

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Returns a {@link TrafficForecastAdjustmentPage} of all {@link TrafficForecastAdjustment}s that
  *             satisfy the given {@link Statement#query}.
  *             
- *             <p>This method is incompatible with the use of traffic forecast segments and forecast
- *             adjustments. It will throw an exception if that use is enabled for this network.
- *             
  *             <p>The following fields are supported for filtering:
  *             
  *             <table>

@@ -155,4 +155,10 @@ public final class ArgumentNames {
   public static final String CMS_METADATA_KEY_ID = "--cmsMetadataKeyId";
 
   public static final String TRAFFIC_FORECAST_SEGMENT_ID = "--trafficForecastSegmentId";
+
+  public static final String SITE_ID = "--siteId";
+
+  public static final String CHILD_NETWORK_CODE = "--childNetworkCode";
+
+  public static final String URL = "--url";
 }

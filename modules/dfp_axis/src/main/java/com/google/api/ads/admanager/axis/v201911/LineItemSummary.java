@@ -549,9 +549,9 @@ public class LineItemSummary  implements java.io.Serializable {
 
     /* Optional ID of the {@link Company} that provides ad verification
      * for this line item. An error
-     *                 will be thrown if the company that the ID refernces
-     * is not of type
-     *                 {@link Company.Type#VIEWABILITY_PROVIDER}. */
+     *                 will be thrown if the company that the ID references
+     * is not of type {@link
+     *                 Company.Type#VIEWABILITY_PROVIDER}. */
     private java.lang.Long viewabilityProviderCompanyId;
 
     /* User consent eligibility designation for this line item. This
@@ -2727,9 +2727,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @return viewabilityProviderCompanyId   * Optional ID of the {@link Company} that provides ad verification
      * for this line item. An error
-     *                 will be thrown if the company that the ID refernces
-     * is not of type
-     *                 {@link Company.Type#VIEWABILITY_PROVIDER}.
+     *                 will be thrown if the company that the ID references
+     * is not of type {@link
+     *                 Company.Type#VIEWABILITY_PROVIDER}.
      */
     public java.lang.Long getViewabilityProviderCompanyId() {
         return viewabilityProviderCompanyId;
@@ -2741,9 +2741,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * 
      * @param viewabilityProviderCompanyId   * Optional ID of the {@link Company} that provides ad verification
      * for this line item. An error
-     *                 will be thrown if the company that the ID refernces
-     * is not of type
-     *                 {@link Company.Type#VIEWABILITY_PROVIDER}.
+     *                 will be thrown if the company that the ID references
+     * is not of type {@link
+     *                 Company.Type#VIEWABILITY_PROVIDER}.
      */
     public void setViewabilityProviderCompanyId(java.lang.Long viewabilityProviderCompanyId) {
         this.viewabilityProviderCompanyId = viewabilityProviderCompanyId;

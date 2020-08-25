@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used to request buyer review for the {@link Proposal}.
- *             This action is only applicable for programmatic {@link Proposal}.
+ *             The action used to request buyer review for the {@link Proposal}. This action is only applicable
+ *             for programmatic {@link Proposal}.
  *           
  * 
  * <p>Java class for RequestBuyerReview complex type.

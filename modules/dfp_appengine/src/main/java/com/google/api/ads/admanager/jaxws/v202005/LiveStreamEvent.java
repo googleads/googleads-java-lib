@@ -26,12 +26,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code LiveStreamEvent} encapsulates all the information necessary
- *             to enable DAI (Dynamic Ad Insertion) into a live video stream.
+ *             A {@code LiveStreamEvent} encapsulates all the information necessary to enable DAI (Dynamic Ad
+ *             Insertion) into a live video stream.
  *             
- *             <p>This includes information such as the start and expected end time of
- *             the event, the URL of the actual content for Ad Manager to pull and insert ads into,
- *             as well as the metadata necessary to generate ad requests during the event.
+ *             <p>This includes information such as the start and expected end time of the live stream, the URL
+ *             of the actual content for Ad Manager to pull and insert ads into, as well as the metadata
+ *             necessary to generate ad requests during the live stream.
  *           
  * 
  * <p>Java class for LiveStreamEvent complex type.

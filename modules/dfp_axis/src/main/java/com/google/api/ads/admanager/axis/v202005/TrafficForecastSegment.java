@@ -28,11 +28,15 @@ package com.google.api.ads.admanager.axis.v202005;
  */
 public class TrafficForecastSegment  implements java.io.Serializable {
     /* The unique ID of the TrafficForecastSegment. This field is
-     * read-only and set by Google. */
+     * read-only and set by Google.
+     *                 This attribute is read-only. */
     private java.lang.Long id;
 
-    /* Name of the TrafficForecastSegment. This field is required
-     * and must be unique. */
+    /* Name of the TrafficForecastSegment. This field must be unique
+     * among all segments for this
+     *                 network.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String name;
 
     /* The targeting that defines a segment of traffic.
@@ -82,6 +86,7 @@ public class TrafficForecastSegment  implements java.io.Serializable {
      * 
      * @return id   * The unique ID of the TrafficForecastSegment. This field is
      * read-only and set by Google.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getId() {
         return id;
@@ -93,6 +98,7 @@ public class TrafficForecastSegment  implements java.io.Serializable {
      * 
      * @param id   * The unique ID of the TrafficForecastSegment. This field is
      * read-only and set by Google.
+     *                 This attribute is read-only.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -102,8 +108,11 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Gets the name value for this TrafficForecastSegment.
      * 
-     * @return name   * Name of the TrafficForecastSegment. This field is required
-     * and must be unique.
+     * @return name   * Name of the TrafficForecastSegment. This field must be unique
+     * among all segments for this
+     *                 network.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -113,8 +122,11 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Sets the name value for this TrafficForecastSegment.
      * 
-     * @param name   * Name of the TrafficForecastSegment. This field is required
-     * and must be unique.
+     * @param name   * Name of the TrafficForecastSegment. This field must be unique
+     * among all segments for this
+     *                 network.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;

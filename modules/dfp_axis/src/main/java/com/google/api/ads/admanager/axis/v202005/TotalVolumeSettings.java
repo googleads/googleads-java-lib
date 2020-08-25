@@ -27,15 +27,17 @@ package com.google.api.ads.admanager.axis.v202005;
  * used as the expected total future
  *             volume for a forecast adjustment.
  *             
- *             <p>E.g. An {@code adOpportunityCount} of 3,000 indicates
- * a forecast goal for the targeting
- *             specified on the parent traffic forecast segment of 3,000
- * ad opportunities over the entire
- *             duration of the adjustment.
+ *             <p>For example, an {@code adOpportunityCount} of 3,000
+ * indicates a forecast goal for the
+ *             targeting specified on the parent traffic forecast segment
+ * of 3,000 ad opportunities over the
+ *             entire duration of the adjustment.
  */
 public class TotalVolumeSettings  implements java.io.Serializable {
     /* The total ad opportunity count over the entire forecast adjustment
-     * date range. */
+     * date range.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.Long adOpportunityCount;
 
     public TotalVolumeSettings() {
@@ -59,6 +61,8 @@ public class TotalVolumeSettings  implements java.io.Serializable {
      * 
      * @return adOpportunityCount   * The total ad opportunity count over the entire forecast adjustment
      * date range.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.Long getAdOpportunityCount() {
         return adOpportunityCount;
@@ -70,6 +74,8 @@ public class TotalVolumeSettings  implements java.io.Serializable {
      * 
      * @param adOpportunityCount   * The total ad opportunity count over the entire forecast adjustment
      * date range.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setAdOpportunityCount(java.lang.Long adOpportunityCount) {
         this.adOpportunityCount = adOpportunityCount;

@@ -24,7 +24,8 @@ package com.google.api.ads.admanager.axis.v201911;
 
 /**
  * The action used to request buyer review for the {@link Proposal}.
- * This action is only applicable for programmatic {@link Proposal}.
+ * This action is only applicable
+ *             for programmatic {@link Proposal}.
  */
 public class RequestBuyerReview  extends com.google.api.ads.admanager.axis.v201911.ProposalAction  implements java.io.Serializable {
     public RequestBuyerReview() {

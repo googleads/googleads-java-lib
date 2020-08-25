@@ -28,7 +28,9 @@ package com.google.api.ads.admanager.axis.v202002;
 public class MasterPlaylistSettings  implements java.io.Serializable {
     /* Indicates how the master playlist gets refreshed. This field
      * is optional and defaults to {@link
-     *                 RefreshType#AUTOMATIC}. */
+     *                 RefreshType#AUTOMATIC}. This field can only be modified
+     * when the live stream is in a {@link
+     *                 LiveStreamEventStatus#PAUSED} state. */
     private com.google.api.ads.admanager.axis.v202002.RefreshType refreshType;
 
     public MasterPlaylistSettings() {
@@ -52,7 +54,9 @@ public class MasterPlaylistSettings  implements java.io.Serializable {
      * 
      * @return refreshType   * Indicates how the master playlist gets refreshed. This field
      * is optional and defaults to {@link
-     *                 RefreshType#AUTOMATIC}.
+     *                 RefreshType#AUTOMATIC}. This field can only be modified
+     * when the live stream is in a {@link
+     *                 LiveStreamEventStatus#PAUSED} state.
      */
     public com.google.api.ads.admanager.axis.v202002.RefreshType getRefreshType() {
         return refreshType;
@@ -64,7 +68,9 @@ public class MasterPlaylistSettings  implements java.io.Serializable {
      * 
      * @param refreshType   * Indicates how the master playlist gets refreshed. This field
      * is optional and defaults to {@link
-     *                 RefreshType#AUTOMATIC}.
+     *                 RefreshType#AUTOMATIC}. This field can only be modified
+     * when the live stream is in a {@link
+     *                 LiveStreamEventStatus#PAUSED} state.
      */
     public void setRefreshType(com.google.api.ads.admanager.axis.v202002.RefreshType refreshType) {
         this.refreshType = refreshType;

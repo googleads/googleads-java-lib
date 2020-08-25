@@ -622,11 +622,12 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of revenue to the total revenue earned from the dynamic allocation
-     *                 CPM, CPC and CPD ads delivered when no {@link LineItem} reservation could be found
-     *                 by the ad server for inventory-level dynamic allocation.
-     *                 For Ad Manager 360 networks, this includes line item-level dynamic allocation as well.
-     *                 Represented as a percentage.
+     *                 The ratio of revenue to the total revenue earned from the dynamic allocation CPM, CPC and CPD
+     *                 ads delivered when no {@link LineItem} reservation could be found by the ad server for
+     *                 inventory-level dynamic allocation. For Ad Manager 360 networks, this includes line item-level
+     *                 dynamic allocation as well. Represented as a percentage.
+     *                 
+     *                 <p>DEPRECATED - use {@link Column.ADSENSE_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE}.
      *               
      * 
      */

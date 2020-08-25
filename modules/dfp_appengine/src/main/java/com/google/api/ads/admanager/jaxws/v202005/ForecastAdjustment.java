@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Provides information about the expected traffic volume and ad requests over a date range for a
+ *             Provides information about the expected volume and composition of traffic over a date range for a
  *             traffic forecast segment.
  *           
  * 

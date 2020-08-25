@@ -25,12 +25,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Settings to specify daily ad opportunity values that will be used as the expected future traffic
+ *             Settings to specify daily ad opportunity counts that will be used as the expected future traffic
  *             volume for a forecast adjustment.
  *             
- *             <p>E.g. [10000, 20000, 5000] indicates a forecast goal for the targeting specified on the parent
- *             traffic forecast segment of 10,000 ad opportunities for the first day, 20,000 ad opportunities
- *             for the second, etc.
+ *             <p>For example: [10000, 20000, 5000] indicates expected traffic for the targeting specified on
+ *             the parent traffic forecast segment of 10,000 ad opportunities for the first day, 20,000 ad
+ *             opportunities for the second, and 5,000 for the third.
  *           
  * 
  * <p>Java class for DailyVolumeSettings complex type.

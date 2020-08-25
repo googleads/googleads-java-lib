@@ -22,13 +22,14 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Settings to specify historical volume data that will be used as the expected future traffic
- *             volume for a {@link ForecastAdjustment}.
+ *             Settings to specify the volume of ad opportunities per day over the {@link ForecastAdjustment}
+ *             date range based on the traffic volume of a historical reference period.
  *             
- *             <p>The historical daily ad opportunity volumes are fetched for the requested historical targeting
- *             and range, multiplied by the multiplier, and then translated into the date range of this
- *             adjustment. The duration of the historical date range does *not* need to be the same as the
- *             duration of this adjustment's date range.
+ *             <p>The daily historical traffic for the provided targeting and date range is fetched, multiplied
+ *             by the provided multiplier, and used as the daily expected traffic for the adjustment.
+ *             
+ *             <p>The number of days included in the historical date range does *not* need to be the same as the
+ *             number of days included in the adjustment date range.
  *           
  * 
  * <p>Java class for HistoricalBasisVolumeSettings complex type.

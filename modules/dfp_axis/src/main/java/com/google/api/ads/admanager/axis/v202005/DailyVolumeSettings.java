@@ -23,21 +23,30 @@ package com.google.api.ads.admanager.axis.v202005;
 
 
 /**
- * Settings to specify daily ad opportunity values that will be used
+ * Settings to specify daily ad opportunity counts that will be used
  * as the expected future traffic
  *             volume for a forecast adjustment.
  *             
- *             <p>E.g. [10000, 20000, 5000] indicates a forecast goal
- * for the targeting specified on the parent
- *             traffic forecast segment of 10,000 ad opportunities for
- * the first day, 20,000 ad opportunities
- *             for the second, etc.
+ *             <p>For example: [10000, 20000, 5000] indicates expected
+ * traffic for the targeting specified on
+ *             the parent traffic forecast segment of 10,000 ad opportunities
+ * for the first day, 20,000 ad
+ *             opportunities for the second, and 5,000 for the third.
  */
 public class DailyVolumeSettings  implements java.io.Serializable {
     /* The list of ad opportunity counts. Each value in this list
-     * represents to the expected number of
-     *                 ad opportunities on the corresponding day of the adjustment
-     * date range. */
+     * represents the expected number of ad
+     *                 opportunities on the corresponding day of the adjustment
+     * date range.
+     *                 
+     *                 <p>The number of values provided must match the number
+     * of days in the adjustment date range,
+     *                 inclusive. For example, an adjustment date range of
+     * June 5-June 7 would need 3 values in this
+     *                 list, one for June 5, one for June 6, and one for
+     * June 7.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private long[] adOpportunityCounts;
 
     public DailyVolumeSettings() {
@@ -60,9 +69,18 @@ public class DailyVolumeSettings  implements java.io.Serializable {
      * Gets the adOpportunityCounts value for this DailyVolumeSettings.
      * 
      * @return adOpportunityCounts   * The list of ad opportunity counts. Each value in this list
-     * represents to the expected number of
-     *                 ad opportunities on the corresponding day of the adjustment
+     * represents the expected number of ad
+     *                 opportunities on the corresponding day of the adjustment
      * date range.
+     *                 
+     *                 <p>The number of values provided must match the number
+     * of days in the adjustment date range,
+     *                 inclusive. For example, an adjustment date range of
+     * June 5-June 7 would need 3 values in this
+     *                 list, one for June 5, one for June 6, and one for
+     * June 7.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public long[] getAdOpportunityCounts() {
         return adOpportunityCounts;
@@ -73,9 +91,18 @@ public class DailyVolumeSettings  implements java.io.Serializable {
      * Sets the adOpportunityCounts value for this DailyVolumeSettings.
      * 
      * @param adOpportunityCounts   * The list of ad opportunity counts. Each value in this list
-     * represents to the expected number of
-     *                 ad opportunities on the corresponding day of the adjustment
+     * represents the expected number of ad
+     *                 opportunities on the corresponding day of the adjustment
      * date range.
+     *                 
+     *                 <p>The number of values provided must match the number
+     * of days in the adjustment date range,
+     *                 inclusive. For example, an adjustment date range of
+     * June 5-June 7 would need 3 values in this
+     *                 list, one for June 5, one for June 6, and one for
+     * June 7.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setAdOpportunityCounts(long[] adOpportunityCounts) {
         this.adOpportunityCounts = adOpportunityCounts;

@@ -29,9 +29,10 @@ package com.google.api.ads.admanager.axis.v202002;
 public class HlsSettings  implements java.io.Serializable {
     /* Indicates the type of the playlist associated with this live
      * stream. The playlist type is
-     *                 analagous to the EXT-X-PLAYLIST-TYPE HLS tag. This
+     *                 analogous to the EXT-X-PLAYLIST-TYPE HLS tag. This
      * field is optional and will default to {@link
-     *                 PlaylistType#LIVE}. */
+     *                 PlaylistType#LIVE}. This field cannot be modified
+     * after live stream creation. */
     private com.google.api.ads.admanager.axis.v202002.PlaylistType playlistType;
 
     /* The settings for the master playlist. This field is optional
@@ -64,9 +65,10 @@ public class HlsSettings  implements java.io.Serializable {
      * 
      * @return playlistType   * Indicates the type of the playlist associated with this live
      * stream. The playlist type is
-     *                 analagous to the EXT-X-PLAYLIST-TYPE HLS tag. This
+     *                 analogous to the EXT-X-PLAYLIST-TYPE HLS tag. This
      * field is optional and will default to {@link
-     *                 PlaylistType#LIVE}.
+     *                 PlaylistType#LIVE}. This field cannot be modified
+     * after live stream creation.
      */
     public com.google.api.ads.admanager.axis.v202002.PlaylistType getPlaylistType() {
         return playlistType;
@@ -78,9 +80,10 @@ public class HlsSettings  implements java.io.Serializable {
      * 
      * @param playlistType   * Indicates the type of the playlist associated with this live
      * stream. The playlist type is
-     *                 analagous to the EXT-X-PLAYLIST-TYPE HLS tag. This
+     *                 analogous to the EXT-X-PLAYLIST-TYPE HLS tag. This
      * field is optional and will default to {@link
-     *                 PlaylistType#LIVE}.
+     *                 PlaylistType#LIVE}. This field cannot be modified
+     * after live stream creation.
      */
     public void setPlaylistType(com.google.api.ads.admanager.axis.v202002.PlaylistType playlistType) {
         this.playlistType = playlistType;

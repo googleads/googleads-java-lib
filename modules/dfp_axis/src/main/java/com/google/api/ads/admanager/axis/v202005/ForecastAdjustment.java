@@ -23,8 +23,8 @@ package com.google.api.ads.admanager.axis.v202005;
 
 
 /**
- * Provides information about the expected traffic volume and ad requests
- * over a date range for a
+ * Provides information about the expected volume and composition
+ * of traffic over a date range for a
  *             traffic forecast segment.
  */
 public class ForecastAdjustment  implements java.io.Serializable {
@@ -39,7 +39,9 @@ public class ForecastAdjustment  implements java.io.Serializable {
      * required.</span> */
     private java.lang.Long trafficForecastSegmentId;
 
-    /* Name of the ForecastAdjustment. This field is optional. */
+    /* Name of the ForecastAdjustment.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private java.lang.String name;
 
     /* The start and end date range of the adjustment.
@@ -47,7 +49,10 @@ public class ForecastAdjustment  implements java.io.Serializable {
      * required.</span> */
     private com.google.api.ads.admanager.axis.v202005.DateRange dateRange;
 
-    /* The status of the adjustment. This field is required. */
+    /* The status of the adjustment. Changes to this field should
+     * be made via {@code
+     *                 performForecastAdjustmentAction}
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202005.ForecastAdjustmentStatus status;
 
     /* The volume type of the adjustment.
@@ -55,12 +60,12 @@ public class ForecastAdjustment  implements java.io.Serializable {
      * required.</span> */
     private com.google.api.ads.admanager.axis.v202005.ForecastAdjustmentVolumeType volumeType;
 
-    /* Whether to allow provided volume settings to increase current
-     * forecasted traffic values by more
-     *                 than 300%. Due to system constraints, adjusting the
-     * forecast by more than 300% may have
-     *                 unintended consequences for other parts of the forecast.
-     * 
+    /* Whether to allow provided volume settings to increase the current
+     * forecast by more than 300%.
+     *                 Due to system constraints, adjusting the forecast
+     * by more than 300% may have unintended
+     *                 consequences for other parts of the forecast.
+     *                 
      *                 <p>Note that this field will not persist on the adjustment
      * itself, and will only affect the
      *                 current request. */
@@ -80,22 +85,29 @@ public class ForecastAdjustment  implements java.io.Serializable {
      *                 othewise. */
     private com.google.api.ads.admanager.axis.v202005.TotalVolumeSettings totalVolumeSettings;
 
-    /* The total number of ad opportunities for the entire adjustment
+    /* The daily number of ad opportunities for each day in the adjustment
      * date range, determined by
-     *                 reference to historical volume data. This field is
-     * required if {@code volumeType} is {@code
-     *                 ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
-     * and ignored othewise. */
+     *                 reference to the ad opportunity volume of a historical
+     * reference period. This field is required
+     *                 if {@code volumeType} is {@code ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
+     * and
+     *                 ignored othewise. */
     private com.google.api.ads.admanager.axis.v202005.HistoricalBasisVolumeSettings historicalBasisVolumeSettings;
 
     /* The daily number of ad opportunities calculated to satisfy
      * the provided volume settings. Each
      *                 value in this list represents the calculated ad opportunities
      * on the corresponding day of the
-     *                 adjustment date range.
+     *                 adjustment date range. For example: for a {@code dateRange}
+     * of 2001-8-15 to 2001-8-17, this
+     *                 field will contain one value for 2001-8-15, one value
+     * for 2001-8-16, and one value for
+     *                 2001-8-17.
      *                 
      *                 <p>This field is read-only and is populated by Google
-     * after forecast adjustment creation. */
+     * after forecast adjustment creation or
+     *                 update.
+     *                 This attribute is read-only. */
     private long[] calculatedDailyAdOpportunityCounts;
 
     public ForecastAdjustment() {
@@ -197,7 +209,9 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Gets the name value for this ForecastAdjustment.
      * 
-     * @return name   * Name of the ForecastAdjustment. This field is optional.
+     * @return name   * Name of the ForecastAdjustment.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public java.lang.String getName() {
         return name;
@@ -207,7 +221,9 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Sets the name value for this ForecastAdjustment.
      * 
-     * @param name   * Name of the ForecastAdjustment. This field is optional.
+     * @param name   * Name of the ForecastAdjustment.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -241,7 +257,10 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Gets the status value for this ForecastAdjustment.
      * 
-     * @return status   * The status of the adjustment. This field is required.
+     * @return status   * The status of the adjustment. Changes to this field should
+     * be made via {@code
+     *                 performForecastAdjustmentAction}
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202005.ForecastAdjustmentStatus getStatus() {
         return status;
@@ -251,7 +270,10 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Sets the status value for this ForecastAdjustment.
      * 
-     * @param status   * The status of the adjustment. This field is required.
+     * @param status   * The status of the adjustment. Changes to this field should
+     * be made via {@code
+     *                 performForecastAdjustmentAction}
+     *                 This attribute is read-only.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202005.ForecastAdjustmentStatus status) {
         this.status = status;
@@ -285,12 +307,12 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Gets the allowAdjustingForecastAboveRecommendedLimit value for this ForecastAdjustment.
      * 
-     * @return allowAdjustingForecastAboveRecommendedLimit   * Whether to allow provided volume settings to increase current
-     * forecasted traffic values by more
-     *                 than 300%. Due to system constraints, adjusting the
-     * forecast by more than 300% may have
-     *                 unintended consequences for other parts of the forecast.
-     * 
+     * @return allowAdjustingForecastAboveRecommendedLimit   * Whether to allow provided volume settings to increase the current
+     * forecast by more than 300%.
+     *                 Due to system constraints, adjusting the forecast
+     * by more than 300% may have unintended
+     *                 consequences for other parts of the forecast.
+     *                 
      *                 <p>Note that this field will not persist on the adjustment
      * itself, and will only affect the
      *                 current request.
@@ -303,12 +325,12 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Sets the allowAdjustingForecastAboveRecommendedLimit value for this ForecastAdjustment.
      * 
-     * @param allowAdjustingForecastAboveRecommendedLimit   * Whether to allow provided volume settings to increase current
-     * forecasted traffic values by more
-     *                 than 300%. Due to system constraints, adjusting the
-     * forecast by more than 300% may have
-     *                 unintended consequences for other parts of the forecast.
-     * 
+     * @param allowAdjustingForecastAboveRecommendedLimit   * Whether to allow provided volume settings to increase the current
+     * forecast by more than 300%.
+     *                 Due to system constraints, adjusting the forecast
+     * by more than 300% may have unintended
+     *                 consequences for other parts of the forecast.
+     *                 
      *                 <p>Note that this field will not persist on the adjustment
      * itself, and will only affect the
      *                 current request.
@@ -377,12 +399,13 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Gets the historicalBasisVolumeSettings value for this ForecastAdjustment.
      * 
-     * @return historicalBasisVolumeSettings   * The total number of ad opportunities for the entire adjustment
+     * @return historicalBasisVolumeSettings   * The daily number of ad opportunities for each day in the adjustment
      * date range, determined by
-     *                 reference to historical volume data. This field is
-     * required if {@code volumeType} is {@code
-     *                 ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
-     * and ignored othewise.
+     *                 reference to the ad opportunity volume of a historical
+     * reference period. This field is required
+     *                 if {@code volumeType} is {@code ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
+     * and
+     *                 ignored othewise.
      */
     public com.google.api.ads.admanager.axis.v202005.HistoricalBasisVolumeSettings getHistoricalBasisVolumeSettings() {
         return historicalBasisVolumeSettings;
@@ -392,12 +415,13 @@ public class ForecastAdjustment  implements java.io.Serializable {
     /**
      * Sets the historicalBasisVolumeSettings value for this ForecastAdjustment.
      * 
-     * @param historicalBasisVolumeSettings   * The total number of ad opportunities for the entire adjustment
+     * @param historicalBasisVolumeSettings   * The daily number of ad opportunities for each day in the adjustment
      * date range, determined by
-     *                 reference to historical volume data. This field is
-     * required if {@code volumeType} is {@code
-     *                 ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
-     * and ignored othewise.
+     *                 reference to the ad opportunity volume of a historical
+     * reference period. This field is required
+     *                 if {@code volumeType} is {@code ForecastAdjustmentVolumeType#HISTORICAL_BASIS_VOLUME}
+     * and
+     *                 ignored othewise.
      */
     public void setHistoricalBasisVolumeSettings(com.google.api.ads.admanager.axis.v202005.HistoricalBasisVolumeSettings historicalBasisVolumeSettings) {
         this.historicalBasisVolumeSettings = historicalBasisVolumeSettings;
@@ -411,10 +435,16 @@ public class ForecastAdjustment  implements java.io.Serializable {
      * the provided volume settings. Each
      *                 value in this list represents the calculated ad opportunities
      * on the corresponding day of the
-     *                 adjustment date range.
+     *                 adjustment date range. For example: for a {@code dateRange}
+     * of 2001-8-15 to 2001-8-17, this
+     *                 field will contain one value for 2001-8-15, one value
+     * for 2001-8-16, and one value for
+     *                 2001-8-17.
      *                 
      *                 <p>This field is read-only and is populated by Google
-     * after forecast adjustment creation.
+     * after forecast adjustment creation or
+     *                 update.
+     *                 This attribute is read-only.
      */
     public long[] getCalculatedDailyAdOpportunityCounts() {
         return calculatedDailyAdOpportunityCounts;
@@ -428,10 +458,16 @@ public class ForecastAdjustment  implements java.io.Serializable {
      * the provided volume settings. Each
      *                 value in this list represents the calculated ad opportunities
      * on the corresponding day of the
-     *                 adjustment date range.
+     *                 adjustment date range. For example: for a {@code dateRange}
+     * of 2001-8-15 to 2001-8-17, this
+     *                 field will contain one value for 2001-8-15, one value
+     * for 2001-8-16, and one value for
+     *                 2001-8-17.
      *                 
      *                 <p>This field is read-only and is populated by Google
-     * after forecast adjustment creation.
+     * after forecast adjustment creation or
+     *                 update.
+     *                 This attribute is read-only.
      */
     public void setCalculatedDailyAdOpportunityCounts(long[] calculatedDailyAdOpportunityCounts) {
         this.calculatedDailyAdOpportunityCounts = calculatedDailyAdOpportunityCounts;

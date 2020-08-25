@@ -27,11 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link ForecastAdjustment} objects.
  *             
- *             <p>This method requires that use of traffic forecast segments and forecast adjustments is
- *             enabled for this network, and will throw an exception if it is not enabled.
- *             
  *             @param forecastAdjustments the forecast adjustments to create
- *             @return the created forecast adjustments with their IDs filled in
+ *             @return the persisted forecast adjustments with their IDs populated
  *             @throws ApiException if there is an error creating the forecast adjustments
  *           
  * 

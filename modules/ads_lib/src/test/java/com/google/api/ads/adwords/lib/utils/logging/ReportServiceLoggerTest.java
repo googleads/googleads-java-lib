@@ -27,7 +27,6 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpStatusCodes;
-import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.GenericData;
@@ -44,18 +43,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
 
 /** Tests for {@link ReportServiceLogger}. */
 @RunWith(JUnit4.class)
 public class ReportServiceLoggerTest {
 
-  @Mock private Logger reportLogger;
   @Mock private RemoteCallLoggerDelegate loggerDelegate;
-
-  // Default values for various request/response attributes. These will all be set to some
-  // non-null, meaningful value.
-  @Mock private HttpTransport httpTransport;
 
   private HttpRequestFactory requestFactory;
 

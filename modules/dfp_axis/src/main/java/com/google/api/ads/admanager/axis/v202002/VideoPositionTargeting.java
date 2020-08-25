@@ -25,12 +25,16 @@ package com.google.api.ads.admanager.axis.v202002;
 /**
  * Represents positions within and around a video where ads can be
  * targeted to.
- *             <p>
- *             Example positions could be {@code pre-roll} (before the
- * video plays),
- *             {@code post-roll} (after a video has completed playback)
- * and
- *             {@code mid-roll} (during video playback).
+ *             
+ *             <p>Example positions could be {@code pre-roll} (before
+ * the video plays), {@code post-roll} (after
+ *             a video has completed playback) and {@code mid-roll} (during
+ * video playback).
+ *             
+ *             <p>Empty video position targeting means that all video
+ * positions are allowed. If a bumper line
+ *             item has empty video position targeting it will be updated
+ * to target all bumper positions.
  */
 public class VideoPositionTargeting  implements java.io.Serializable {
     /* The {@link VideoTargetingPosition} objects being targeted by
