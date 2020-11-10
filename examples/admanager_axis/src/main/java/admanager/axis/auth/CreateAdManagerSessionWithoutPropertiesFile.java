@@ -15,8 +15,8 @@
 package admanager.axis.auth;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v201911.Network;
-import com.google.api.ads.admanager.axis.v201911.NetworkServiceInterface;
+import com.google.api.ads.admanager.axis.v202008.Network;
+import com.google.api.ads.admanager.axis.v202008.NetworkServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
 import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;

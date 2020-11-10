@@ -15,8 +15,6 @@
 
 package com.google.api.ads.admanager.jaxws.v202008;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
@@ -43,7 +41,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="displayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="appStoreId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="appStore" type="{https://www.google.com/apis/ads/publisher/v202008}MobileApplicationStore" minOccurs="0"/>
- *         &lt;element name="appStores" type="{https://www.google.com/apis/ads/publisher/v202008}MobileApplicationStore" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="isArchived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="appStoreName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="developerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -64,7 +61,6 @@ import javax.xml.bind.annotation.XmlType;
     "displayName",
     "appStoreId",
     "appStore",
-    "appStores",
     "isArchived",
     "appStoreName",
     "developerName",
@@ -79,8 +75,6 @@ public class MobileApplication {
     protected String appStoreId;
     @XmlSchemaType(name = "string")
     protected MobileApplicationStore appStore;
-    @XmlSchemaType(name = "string")
-    protected List<MobileApplicationStore> appStores;
     protected Boolean isArchived;
     protected String appStoreName;
     protected String developerName;
@@ -183,35 +177,6 @@ public class MobileApplication {
      */
     public void setAppStore(MobileApplicationStore value) {
         this.appStore = value;
-    }
-
-    /**
-     * Gets the value of the appStores property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the appStores property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAppStores().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link MobileApplicationStore }
-     * 
-     * 
-     */
-    public List<MobileApplicationStore> getAppStores() {
-        if (appStores == null) {
-            appStores = new ArrayList<MobileApplicationStore>();
-        }
-        return this.appStores;
     }
 
     /**

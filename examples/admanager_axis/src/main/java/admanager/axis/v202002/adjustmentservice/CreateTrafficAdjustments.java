@@ -115,15 +115,15 @@ public class CreateTrafficAdjustments {
     // the traffic of this year's January.
     HistoricalAdjustment januaryAdjustment = new HistoricalAdjustment();
 
-    Date referenceRangeStart = new Date(new org.joda.time.DateTime().getYear(), 1, 1);
-    Date referenceRangeEnd = new Date(new org.joda.time.DateTime().getYear(), 1, 30);
+    Date referenceRangeStart = new Date(org.joda.time.DateTime.now().getYear(), 1, 1);
+    Date referenceRangeEnd = new Date(org.joda.time.DateTime.now().getYear(), 1, 30);
     DateRange referenceDateRange = new DateRange();
     referenceDateRange.setStartDate(referenceRangeStart);
     referenceDateRange.setEndDate(referenceRangeEnd);
     januaryAdjustment.setReferenceDateRange(referenceDateRange);
 
-    Date targetStartDate = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 1, 1);
-    Date targetEndDate = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 1, 30);
+    Date targetStartDate = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 1, 1);
+    Date targetEndDate = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 1, 30);
     DateRange targetDateRange = new DateRange();
     targetDateRange.setStartDate(targetStartDate);
     targetDateRange.setEndDate(targetEndDate);
@@ -138,8 +138,8 @@ public class CreateTrafficAdjustments {
     // Create a new absolute adjustment of 500,000 ad opportunities for Christmas
     // and 1M ad opportunities for Boxing Day.
     TimeSeries holidayTimeSeries = new TimeSeries();
-    Date christmas = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 12, 25);
-    Date boxingDay = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 12, 26);
+    Date christmas = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 12, 25);
+    Date boxingDay = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 12, 26);
     DateRange holidayRange = new DateRange();
     holidayRange.setStartDate(christmas);
     holidayRange.setEndDate(boxingDay);
@@ -152,8 +152,8 @@ public class CreateTrafficAdjustments {
 
     // Create a new absolute adjustment of 900,000 ad opportunities for the first week in September.
     TimeSeries septemberTimeSeries = new TimeSeries();
-    Date septemberStart = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 9, 1);
-    Date septemberEnd = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 9, 7);
+    Date septemberStart = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 9, 1);
+    Date septemberEnd = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 9, 7);
     DateRange septemberRange = new DateRange();
     septemberRange.setStartDate(septemberStart);
     septemberRange.setEndDate(septemberEnd);

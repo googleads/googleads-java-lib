@@ -120,7 +120,7 @@ public class CreateAccount {
 
     // Create account.
     ManagedCustomer customer = new ManagedCustomer();
-    customer.setName("Customer created with ManagedCustomerService on " + new DateTime());
+    customer.setName("Customer created with ManagedCustomerService on " + DateTime.now());
     customer.setCurrencyCode("EUR");
     customer.setDateTimeZone("Europe/London");
 

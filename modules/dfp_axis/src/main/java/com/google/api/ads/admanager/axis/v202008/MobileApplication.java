@@ -49,11 +49,6 @@ public class MobileApplication  implements java.io.Serializable {
      *                 creation and then is read-only. */
     private com.google.api.ads.admanager.axis.v202008.MobileApplicationStore appStore;
 
-    /* The app stores the mobile application belongs to. This attribute
-     * is required for creation and
-     *                 is mutable to allow for third party app store linking. */
-    private com.google.api.ads.admanager.axis.v202008.MobileApplicationStore[] appStores;
-
     /* The archival status of the mobile application. This attribute
      * is read-only. */
     private java.lang.Boolean isArchived;
@@ -91,7 +86,6 @@ public class MobileApplication  implements java.io.Serializable {
            java.lang.String displayName,
            java.lang.String appStoreId,
            com.google.api.ads.admanager.axis.v202008.MobileApplicationStore appStore,
-           com.google.api.ads.admanager.axis.v202008.MobileApplicationStore[] appStores,
            java.lang.Boolean isArchived,
            java.lang.String appStoreName,
            java.lang.String developerName,
@@ -102,7 +96,6 @@ public class MobileApplication  implements java.io.Serializable {
            this.displayName = displayName;
            this.appStoreId = appStoreId;
            this.appStore = appStore;
-           this.appStores = appStores;
            this.isArchived = isArchived;
            this.appStoreName = appStoreName;
            this.developerName = developerName;
@@ -118,7 +111,6 @@ public class MobileApplication  implements java.io.Serializable {
             .add("appStore", getAppStore())
             .add("appStoreId", getAppStoreId())
             .add("appStoreName", getAppStoreName())
-            .add("appStores", getAppStores())
             .add("developerName", getDeveloperName())
             .add("displayName", getDisplayName())
             .add("downloadUrl", getDownloadUrl())
@@ -222,38 +214,6 @@ public class MobileApplication  implements java.io.Serializable {
      */
     public void setAppStore(com.google.api.ads.admanager.axis.v202008.MobileApplicationStore appStore) {
         this.appStore = appStore;
-    }
-
-
-    /**
-     * Gets the appStores value for this MobileApplication.
-     * 
-     * @return appStores   * The app stores the mobile application belongs to. This attribute
-     * is required for creation and
-     *                 is mutable to allow for third party app store linking.
-     */
-    public com.google.api.ads.admanager.axis.v202008.MobileApplicationStore[] getAppStores() {
-        return appStores;
-    }
-
-
-    /**
-     * Sets the appStores value for this MobileApplication.
-     * 
-     * @param appStores   * The app stores the mobile application belongs to. This attribute
-     * is required for creation and
-     *                 is mutable to allow for third party app store linking.
-     */
-    public void setAppStores(com.google.api.ads.admanager.axis.v202008.MobileApplicationStore[] appStores) {
-        this.appStores = appStores;
-    }
-
-    public com.google.api.ads.admanager.axis.v202008.MobileApplicationStore getAppStores(int i) {
-        return this.appStores[i];
-    }
-
-    public void setAppStores(int i, com.google.api.ads.admanager.axis.v202008.MobileApplicationStore _value) {
-        this.appStores[i] = _value;
     }
 
 
@@ -422,9 +382,6 @@ public class MobileApplication  implements java.io.Serializable {
             ((this.appStore==null && other.getAppStore()==null) || 
              (this.appStore!=null &&
               this.appStore.equals(other.getAppStore()))) &&
-            ((this.appStores==null && other.getAppStores()==null) || 
-             (this.appStores!=null &&
-              java.util.Arrays.equals(this.appStores, other.getAppStores()))) &&
             ((this.isArchived==null && other.getIsArchived()==null) || 
              (this.isArchived!=null &&
               this.isArchived.equals(other.getIsArchived()))) &&
@@ -465,17 +422,6 @@ public class MobileApplication  implements java.io.Serializable {
         }
         if (getAppStore() != null) {
             _hashCode += getAppStore().hashCode();
-        }
-        if (getAppStores() != null) {
-            for (int i=0;
-                 i<java.lang.reflect.Array.getLength(getAppStores());
-                 i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getAppStores(), i);
-                if (obj != null &&
-                    !obj.getClass().isArray()) {
-                    _hashCode += obj.hashCode();
-                }
-            }
         }
         if (getIsArchived() != null) {
             _hashCode += getIsArchived().hashCode();
@@ -532,14 +478,6 @@ public class MobileApplication  implements java.io.Serializable {
         elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202008", "MobileApplicationStore"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("appStores");
-        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202008", "appStores"));
-        elemField.setXmlType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202008", "MobileApplicationStore"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("isArchived");

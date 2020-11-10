@@ -39,7 +39,6 @@ public class MobileApplicationStore implements java.io.Serializable {
     public static final java.lang.String _PLAYSTATION = "PLAYSTATION";
     public static final java.lang.String _XBOX = "XBOX";
     public static final java.lang.String _SAMSUNG_TV = "SAMSUNG_TV";
-    public static final java.lang.String _AMAZON = "AMAZON";
     public static final MobileApplicationStore UNKNOWN = new MobileApplicationStore(_UNKNOWN);
     public static final MobileApplicationStore APPLE_ITUNES = new MobileApplicationStore(_APPLE_ITUNES);
     public static final MobileApplicationStore GOOGLE_PLAY = new MobileApplicationStore(_GOOGLE_PLAY);
@@ -48,7 +47,6 @@ public class MobileApplicationStore implements java.io.Serializable {
     public static final MobileApplicationStore PLAYSTATION = new MobileApplicationStore(_PLAYSTATION);
     public static final MobileApplicationStore XBOX = new MobileApplicationStore(_XBOX);
     public static final MobileApplicationStore SAMSUNG_TV = new MobileApplicationStore(_SAMSUNG_TV);
-    public static final MobileApplicationStore AMAZON = new MobileApplicationStore(_AMAZON);
     public java.lang.String getValue() { return _value_;}
     public static MobileApplicationStore fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

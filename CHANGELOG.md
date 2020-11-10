@@ -1,3 +1,16 @@
+4.12.0 - 11/10/2020
+------------------
+AdWords
+ - No changes.
+
+Ad Manager:
+ - Added support for v202011.
+ - Removed support for v201911.
+ - Removed examples for v202002.
+
+Common
+ - No changes.
+
 4.11.0 - 08/24/2020
 ------------------
 AdWords

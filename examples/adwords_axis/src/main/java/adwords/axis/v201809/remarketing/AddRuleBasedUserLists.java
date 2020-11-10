@@ -173,7 +173,7 @@ public class AddRuleBasedUserLists {
     DateRuleItem startDateDateRuleItem = new DateRuleItem();
     startDateDateRuleItem.setKey(checkoutDateKey);
     startDateDateRuleItem.setOp(DateRuleItemDateOperator.AFTER);
-    startDateDateRuleItem.setValue(new DateTime().toString(DATE_FORMAT_STRING));
+    startDateDateRuleItem.setValue(DateTime.now().toString(DATE_FORMAT_STRING));
 
     RuleItem startDateRuleItem = new RuleItem();
     startDateRuleItem.setDateRuleItem(startDateDateRuleItem);
@@ -181,7 +181,7 @@ public class AddRuleBasedUserLists {
     DateRuleItem endDateDateRuleItem = new DateRuleItem();
     endDateDateRuleItem.setKey(checkoutDateKey);
     endDateDateRuleItem.setOp(DateRuleItemDateOperator.BEFORE);
-    endDateDateRuleItem.setValue(new DateTime().plusMonths(3).toString(DATE_FORMAT_STRING));
+    endDateDateRuleItem.setValue(DateTime.now().plusMonths(3).toString(DATE_FORMAT_STRING));
 
     RuleItem endDateRuleItem = new RuleItem();
     endDateRuleItem.setDateRuleItem(endDateDateRuleItem);
@@ -234,7 +234,7 @@ public class AddRuleBasedUserLists {
 
     // Create the user list with no restrictions on site visit date.
     ExpressionRuleUserList expressionUserList = new ExpressionRuleUserList();
-    String creationTimeString = new DateTime().toString("yyyyMMdd_HHmmss");
+    String creationTimeString = DateTime.now().toString("yyyyMMdd_HHmmss");
     expressionUserList.setName(
         "Expression based user list created at " + creationTimeString);
     expressionUserList.setDescription(
@@ -246,7 +246,7 @@ public class AddRuleBasedUserLists {
     expressionUserList.setPrepopulationStatus(RuleBasedUserListPrepopulationStatus.REQUESTED);
 
     // Create the user list restricted to users who visit your site within the next six months.
-    DateTime startDate = new DateTime();
+    DateTime startDate = DateTime.now();
     DateTime endDate = startDate.plusMonths(6);
 
     DateSpecificRuleUserList dateUserList = new DateSpecificRuleUserList();

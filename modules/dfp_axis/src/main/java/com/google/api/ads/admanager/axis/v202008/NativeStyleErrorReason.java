@@ -31,25 +31,25 @@ public class NativeStyleErrorReason implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
-    public static final java.lang.String _UNRECOGNIZED_PLACEHOLDER = "UNRECOGNIZED_PLACEHOLDER";
-    public static final java.lang.String _NATIVE_CREATIVE_TEMPLATE_REQUIRED = "NATIVE_CREATIVE_TEMPLATE_REQUIRED";
     public static final java.lang.String _ACTIVE_CREATIVE_TEMPLATE_REQUIRED = "ACTIVE_CREATIVE_TEMPLATE_REQUIRED";
-    public static final java.lang.String _UNIQUE_SNIPPET_REQUIRED = "UNIQUE_SNIPPET_REQUIRED";
     public static final java.lang.String _INVALID_CUSTOM_TARGETING_MATCH_TYPE = "INVALID_CUSTOM_TARGETING_MATCH_TYPE";
-    public static final java.lang.String _TOO_MANY_CUSTOM_TARGETING_KEY_VALUES = "TOO_MANY_CUSTOM_TARGETING_KEY_VALUES";
-    public static final java.lang.String _INVALID_TARGETING_TYPE = "INVALID_TARGETING_TYPE";
     public static final java.lang.String _INVALID_INVENTORY_TARTGETING_TYPE = "INVALID_INVENTORY_TARTGETING_TYPE";
+    public static final java.lang.String _INVALID_TARGETING_TYPE = "INVALID_TARGETING_TYPE";
+    public static final java.lang.String _NATIVE_CREATIVE_TEMPLATE_REQUIRED = "NATIVE_CREATIVE_TEMPLATE_REQUIRED";
+    public static final java.lang.String _TOO_MANY_CUSTOM_TARGETING_KEY_VALUES = "TOO_MANY_CUSTOM_TARGETING_KEY_VALUES";
+    public static final java.lang.String _UNIQUE_SNIPPET_REQUIRED = "UNIQUE_SNIPPET_REQUIRED";
     public static final java.lang.String _UNRECOGNIZED_MACRO = "UNRECOGNIZED_MACRO";
+    public static final java.lang.String _UNRECOGNIZED_PLACEHOLDER = "UNRECOGNIZED_PLACEHOLDER";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
-    public static final NativeStyleErrorReason UNRECOGNIZED_PLACEHOLDER = new NativeStyleErrorReason(_UNRECOGNIZED_PLACEHOLDER);
-    public static final NativeStyleErrorReason NATIVE_CREATIVE_TEMPLATE_REQUIRED = new NativeStyleErrorReason(_NATIVE_CREATIVE_TEMPLATE_REQUIRED);
     public static final NativeStyleErrorReason ACTIVE_CREATIVE_TEMPLATE_REQUIRED = new NativeStyleErrorReason(_ACTIVE_CREATIVE_TEMPLATE_REQUIRED);
-    public static final NativeStyleErrorReason UNIQUE_SNIPPET_REQUIRED = new NativeStyleErrorReason(_UNIQUE_SNIPPET_REQUIRED);
     public static final NativeStyleErrorReason INVALID_CUSTOM_TARGETING_MATCH_TYPE = new NativeStyleErrorReason(_INVALID_CUSTOM_TARGETING_MATCH_TYPE);
-    public static final NativeStyleErrorReason TOO_MANY_CUSTOM_TARGETING_KEY_VALUES = new NativeStyleErrorReason(_TOO_MANY_CUSTOM_TARGETING_KEY_VALUES);
-    public static final NativeStyleErrorReason INVALID_TARGETING_TYPE = new NativeStyleErrorReason(_INVALID_TARGETING_TYPE);
     public static final NativeStyleErrorReason INVALID_INVENTORY_TARTGETING_TYPE = new NativeStyleErrorReason(_INVALID_INVENTORY_TARTGETING_TYPE);
+    public static final NativeStyleErrorReason INVALID_TARGETING_TYPE = new NativeStyleErrorReason(_INVALID_TARGETING_TYPE);
+    public static final NativeStyleErrorReason NATIVE_CREATIVE_TEMPLATE_REQUIRED = new NativeStyleErrorReason(_NATIVE_CREATIVE_TEMPLATE_REQUIRED);
+    public static final NativeStyleErrorReason TOO_MANY_CUSTOM_TARGETING_KEY_VALUES = new NativeStyleErrorReason(_TOO_MANY_CUSTOM_TARGETING_KEY_VALUES);
+    public static final NativeStyleErrorReason UNIQUE_SNIPPET_REQUIRED = new NativeStyleErrorReason(_UNIQUE_SNIPPET_REQUIRED);
     public static final NativeStyleErrorReason UNRECOGNIZED_MACRO = new NativeStyleErrorReason(_UNRECOGNIZED_MACRO);
+    public static final NativeStyleErrorReason UNRECOGNIZED_PLACEHOLDER = new NativeStyleErrorReason(_UNRECOGNIZED_PLACEHOLDER);
     public static final NativeStyleErrorReason UNKNOWN = new NativeStyleErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static NativeStyleErrorReason fromValue(java.lang.String value)

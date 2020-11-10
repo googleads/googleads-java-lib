@@ -27,15 +27,15 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="NativeStyleError.Reason">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/>
- *     &lt;enumeration value="NATIVE_CREATIVE_TEMPLATE_REQUIRED"/>
  *     &lt;enumeration value="ACTIVE_CREATIVE_TEMPLATE_REQUIRED"/>
- *     &lt;enumeration value="UNIQUE_SNIPPET_REQUIRED"/>
  *     &lt;enumeration value="INVALID_CUSTOM_TARGETING_MATCH_TYPE"/>
- *     &lt;enumeration value="TOO_MANY_CUSTOM_TARGETING_KEY_VALUES"/>
- *     &lt;enumeration value="INVALID_TARGETING_TYPE"/>
  *     &lt;enumeration value="INVALID_INVENTORY_TARTGETING_TYPE"/>
+ *     &lt;enumeration value="INVALID_TARGETING_TYPE"/>
+ *     &lt;enumeration value="NATIVE_CREATIVE_TEMPLATE_REQUIRED"/>
+ *     &lt;enumeration value="TOO_MANY_CUSTOM_TARGETING_KEY_VALUES"/>
+ *     &lt;enumeration value="UNIQUE_SNIPPET_REQUIRED"/>
  *     &lt;enumeration value="UNRECOGNIZED_MACRO"/>
+ *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -49,36 +49,11 @@ public enum NativeStyleErrorReason {
 
     /**
      * 
-     *                 The snippet of the native style contains a placeholder which is not defined as a variable
-     *                 on the creative template of this native style.
-     *               
-     * 
-     */
-    UNRECOGNIZED_PLACEHOLDER,
-
-    /**
-     * 
-     *                 Native styles can only be created under native creative templates.
-     *               
-     * 
-     */
-    NATIVE_CREATIVE_TEMPLATE_REQUIRED,
-
-    /**
-     * 
      *                 Native styles can only be created under active creative templates.
      *               
      * 
      */
     ACTIVE_CREATIVE_TEMPLATE_REQUIRED,
-
-    /**
-     * 
-     *                 Native styles must have an HTML snippet.
-     *               
-     * 
-     */
-    UNIQUE_SNIPPET_REQUIRED,
 
     /**
      * 
@@ -91,11 +66,11 @@ public enum NativeStyleErrorReason {
 
     /**
      * 
-     *                 Targeting expressions on native styles can have a maximum of 20 key-value pairs.
+     *                 Native styles only allows inclusion of inventory units.
      *               
      * 
      */
-    TOO_MANY_CUSTOM_TARGETING_KEY_VALUES,
+    INVALID_INVENTORY_TARTGETING_TYPE,
 
     /**
      * 
@@ -108,11 +83,27 @@ public enum NativeStyleErrorReason {
 
     /**
      * 
-     *                 Native styles only allows inclusion of inventory units.
+     *                 Native styles can only be created under native creative templates.
      *               
      * 
      */
-    INVALID_INVENTORY_TARTGETING_TYPE,
+    NATIVE_CREATIVE_TEMPLATE_REQUIRED,
+
+    /**
+     * 
+     *                 Targeting expressions on native styles can have a maximum of 20 key-value pairs.
+     *               
+     * 
+     */
+    TOO_MANY_CUSTOM_TARGETING_KEY_VALUES,
+
+    /**
+     * 
+     *                 Native styles must have an HTML snippet.
+     *               
+     * 
+     */
+    UNIQUE_SNIPPET_REQUIRED,
 
     /**
      * 
@@ -121,6 +112,15 @@ public enum NativeStyleErrorReason {
      * 
      */
     UNRECOGNIZED_MACRO,
+
+    /**
+     * 
+     *                 The snippet of the native style contains a placeholder which is not defined as a variable
+     *                 on the creative template of this native style.
+     *               
+     * 
+     */
+    UNRECOGNIZED_PLACEHOLDER,
 
     /**
      * 

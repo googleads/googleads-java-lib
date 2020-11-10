@@ -77,8 +77,8 @@ public class CreateForecastAdjustments {
     forecastAdjustment.setTrafficForecastSegmentId(trafficForecastSegmentId);
 
     // Set the date range that this adjustment will be applied to.
-    Date startDate = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 1, 1);
-    Date endDate = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 1, 1);
+    Date startDate = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 1, 1);
+    Date endDate = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 1, 1);
     DateRange dateRange = new DateRange();
     dateRange.setStartDate(startDate);
     dateRange.setEndDate(endDate);
@@ -89,8 +89,8 @@ public class CreateForecastAdjustments {
     HistoricalBasisVolumeSettings settings = new HistoricalBasisVolumeSettings();
     settings.setUseParentTrafficForecastSegmentTargeting(true);
 
-    Date historicalStartDate = new Date(new org.joda.time.DateTime().getYear(), 1, 1);
-    Date historicalEndDate = new Date(new org.joda.time.DateTime().getYear(), 1, 1);
+    Date historicalStartDate = new Date(org.joda.time.DateTime.now().getYear(), 1, 1);
+    Date historicalEndDate = new Date(org.joda.time.DateTime.now().getYear(), 1, 1);
     DateRange historicalDateRange = new DateRange();
     historicalDateRange.setStartDate(historicalStartDate);
     historicalDateRange.setEndDate(historicalEndDate);

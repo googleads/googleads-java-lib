@@ -23,13 +23,14 @@ package com.google.api.ads.admanager.axis.v202008;
 
 
 /**
- * A {@code Creative} hosted by Campaign Manager.
+ * A {@code Creative} hosted by Campaign Manager 360.
  *             
  *             <p>Similar to third-party creatives, a Campaign Manager
- * tag is used to retrieve a creative asset.
- *             However, Campaign Manager tags are not sent to the user's
- * browser. Instead, they are processed
- *             internally within the Google Marketing Platform system..
+ * 360 tag is used to retrieve a creative
+ *             asset. However, Campaign Manager 360 tags are not sent
+ * to the user's browser. Instead, they are
+ *             processed internally within the Google Marketing Platform
+ * system..
  */
 public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis.v202008.Creative  implements java.io.Serializable {
     /* A locked orientation for this creative to be displayed in. */

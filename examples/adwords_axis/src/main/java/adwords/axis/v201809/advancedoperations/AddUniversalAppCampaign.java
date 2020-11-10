@@ -175,10 +175,10 @@ public class AddUniversalAppCampaign {
     campaign.getBudget().setBudgetId(createBudget(adWordsServices, session));
 
     // Optional: Set the start date.
-    campaign.setStartDate(new DateTime().plusDays(1).toString("yyyyMMdd"));
+    campaign.setStartDate(DateTime.now().plusDays(1).toString("yyyyMMdd"));
 
     // Optional: Set the end date.
-    campaign.setEndDate(new DateTime().plusYears(1).toString("yyyyMMdd"));
+    campaign.setEndDate(DateTime.now().plusYears(1).toString("yyyyMMdd"));
 
     // Set the campaign's assets and ad text ideas. These values will be used to
     // generate ads.

@@ -87,7 +87,7 @@ public class DateTimesTest {
     stringDateTimeWithTimeZone1 = "2012-12-02T12:45:00+08:00";
 
     jodaDateTime1 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID1))
+        DateTime.now(DateTimeZone.forID(TIME_ZONE_ID1))
             .withYear(2012)
             .withMonthOfYear(12)
             .withDayOfMonth(2)
@@ -123,7 +123,7 @@ public class DateTimesTest {
     stringDateTimeWithTimeZone2 = "2004-02-29T00:00:00-08:00";
 
     jodaDateTime2 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID2))
+        DateTime.now(DateTimeZone.forID(TIME_ZONE_ID2))
             .withYear(2004)
             .withMonthOfYear(2)
             .withDayOfMonth(29)
@@ -159,7 +159,7 @@ public class DateTimesTest {
     stringDateTimeWithTimeZone3 = "2007-01-01T18:00:30Z";
 
     jodaDateTime3 =
-        new DateTime(DateTimeZone.forID(TIME_ZONE_ID3))
+        DateTime.now(DateTimeZone.forID(TIME_ZONE_ID3))
             .withYear(2007)
             .withMonthOfYear(1)
             .withDayOfMonth(1)

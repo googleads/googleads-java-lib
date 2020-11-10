@@ -186,9 +186,9 @@ public class AddDynamicSearchAdsCampaign {
     campaign.setSettings(new Setting[] {dynamicSearchAdsSetting});
 
     // Optional: Set the start date.
-    campaign.setStartDate(new DateTime().plusDays(1).toString("yyyyMMdd"));
+    campaign.setStartDate(DateTime.now().plusDays(1).toString("yyyyMMdd"));
     // Optional: Set the end date.
-    campaign.setEndDate(new DateTime().plusYears(1).toString("yyyyMMdd"));
+    campaign.setEndDate(DateTime.now().plusYears(1).toString("yyyyMMdd"));
 
     // Create the operation.
     CampaignOperation operation = new CampaignOperation();

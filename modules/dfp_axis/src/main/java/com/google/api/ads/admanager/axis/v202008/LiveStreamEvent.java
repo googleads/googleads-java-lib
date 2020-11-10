@@ -202,11 +202,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
      *                 and if it is not set will use the default HLS settings. */
     private com.google.api.ads.admanager.axis.v202008.HlsSettings hlsSettings;
 
-    /* Whether specific whitelisted IP addresses should be used to
+    /* Whether specific allowlisted IP addresses should be used to
      * access this live stream. This field
      *                 is optional and will default to false. To set this
      * field a network needs to have the "Video
-     *                 live whitelisted IPS enabled" feature enabled. Modifying
+     *                 live allowlisted IPS enabled" feature enabled. Modifying
      * this field for an active live stream
      *                 can impact traffic. */
     private java.lang.Boolean enableWhitelistedIps;
@@ -1156,11 +1156,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Gets the enableWhitelistedIps value for this LiveStreamEvent.
      * 
-     * @return enableWhitelistedIps   * Whether specific whitelisted IP addresses should be used to
+     * @return enableWhitelistedIps   * Whether specific allowlisted IP addresses should be used to
      * access this live stream. This field
      *                 is optional and will default to false. To set this
      * field a network needs to have the "Video
-     *                 live whitelisted IPS enabled" feature enabled. Modifying
+     *                 live allowlisted IPS enabled" feature enabled. Modifying
      * this field for an active live stream
      *                 can impact traffic.
      */
@@ -1172,11 +1172,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /**
      * Sets the enableWhitelistedIps value for this LiveStreamEvent.
      * 
-     * @param enableWhitelistedIps   * Whether specific whitelisted IP addresses should be used to
+     * @param enableWhitelistedIps   * Whether specific allowlisted IP addresses should be used to
      * access this live stream. This field
      *                 is optional and will default to false. To set this
      * field a network needs to have the "Video
-     *                 live whitelisted IPS enabled" feature enabled. Modifying
+     *                 live allowlisted IPS enabled" feature enabled. Modifying
      * this field for an active live stream
      *                 can impact traffic.
      */

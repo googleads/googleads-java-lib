@@ -93,13 +93,13 @@ public class UpdateTrafficAdjustments {
     // Create a new historical adjustment segment for New Years Day.
     HistoricalAdjustment newYearsAdjustment = new HistoricalAdjustment();
 
-    Date lastNewYearsDay = new Date(new org.joda.time.DateTime().getYear(), 1, 1);
+    Date lastNewYearsDay = new Date(org.joda.time.DateTime.now().getYear(), 1, 1);
     DateRange referenceDateRange = new DateRange();
     referenceDateRange.setStartDate(lastNewYearsDay);
     referenceDateRange.setEndDate(lastNewYearsDay);
     newYearsAdjustment.setReferenceDateRange(referenceDateRange);
 
-    Date nextNewYearsDay = new Date(new org.joda.time.DateTime().plusYears(1).getYear(), 1, 1);
+    Date nextNewYearsDay = new Date(org.joda.time.DateTime.now().plusYears(1).getYear(), 1, 1);
     DateRange targetDateRange = new DateRange();
     targetDateRange.setStartDate(nextNewYearsDay);
     targetDateRange.setEndDate(nextNewYearsDay);

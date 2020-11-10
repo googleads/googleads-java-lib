@@ -222,7 +222,7 @@ public class AddAdCustomizer {
 
     List<FeedItemOperation> feedItemOperations = new ArrayList<>();
 
-    DateTime now = new DateTime();
+    DateTime now = DateTime.now();
 
     DateTime marsDate = new DateTime(now.getYear(), now.getMonthOfYear(), 1, 0, 0);
     feedItemOperations.add(

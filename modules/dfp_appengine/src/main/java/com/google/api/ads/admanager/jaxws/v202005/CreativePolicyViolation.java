@@ -199,7 +199,7 @@ public enum CreativePolicyViolation {
 
     /**
      * 
-     *                 Non-whitelisted OMID verification script.
+     *                 Non-allowlisted OMID verification script.
      *                 
      *                 <p>For more information see <a
      *                 href="https://support.google.com/authorizedbuyers/answer/9115752">here</a>.

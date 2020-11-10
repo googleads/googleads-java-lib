@@ -93,7 +93,7 @@ public class AdSpot  implements java.io.Serializable {
      *                 to an empty set, which means that all types are allowed.
      * 
      *                 <p>Note, backfill reservation types are controlled
-     * via the {@code bacfillBlocked} field. */
+     * via the {@code backfillBlocked} field. */
     private com.google.api.ads.admanager.axis.v202008.LineItemType[] allowedLineItemTypes;
 
     /* Whether inventory sharing is blocked in this ad spot. This
@@ -395,7 +395,7 @@ public class AdSpot  implements java.io.Serializable {
      *                 to an empty set, which means that all types are allowed.
      * 
      *                 <p>Note, backfill reservation types are controlled
-     * via the {@code bacfillBlocked} field.
+     * via the {@code backfillBlocked} field.
      */
     public com.google.api.ads.admanager.axis.v202008.LineItemType[] getAllowedLineItemTypes() {
         return allowedLineItemTypes;
@@ -410,7 +410,7 @@ public class AdSpot  implements java.io.Serializable {
      *                 to an empty set, which means that all types are allowed.
      * 
      *                 <p>Note, backfill reservation types are controlled
-     * via the {@code bacfillBlocked} field.
+     * via the {@code backfillBlocked} field.
      */
     public void setAllowedLineItemTypes(com.google.api.ads.admanager.axis.v202008.LineItemType[] allowedLineItemTypes) {
         this.allowedLineItemTypes = allowedLineItemTypes;

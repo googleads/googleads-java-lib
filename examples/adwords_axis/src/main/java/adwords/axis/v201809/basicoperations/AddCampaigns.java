@@ -170,8 +170,8 @@ public class AddCampaigns {
     campaign.setBiddingStrategyConfiguration(biddingStrategyConfiguration);
 
     // You can optionally provide these field(s).
-    campaign.setStartDate(new DateTime().plusDays(1).toString("yyyyMMdd"));
-    campaign.setEndDate(new DateTime().plusDays(30).toString("yyyyMMdd"));
+    campaign.setStartDate(DateTime.now().plusDays(1).toString("yyyyMMdd"));
+    campaign.setEndDate(DateTime.now().plusDays(30).toString("yyyyMMdd"));
     campaign.setFrequencyCap(new FrequencyCap(5L, TimeUnit.DAY, Level.ADGROUP));
 
     // Only the budgetId should be sent, all other fields will be ignored by CampaignService.

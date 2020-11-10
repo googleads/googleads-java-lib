@@ -35,7 +35,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="PLAYSTATION"/>
  *     &lt;enumeration value="XBOX"/>
  *     &lt;enumeration value="SAMSUNG_TV"/>
- *     &lt;enumeration value="AMAZON"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -59,8 +58,7 @@ public enum MobileApplicationStore {
     AMAZON_FIRETV,
     PLAYSTATION,
     XBOX,
-    SAMSUNG_TV,
-    AMAZON;
+    SAMSUNG_TV;
 
     public String value() {
         return name();

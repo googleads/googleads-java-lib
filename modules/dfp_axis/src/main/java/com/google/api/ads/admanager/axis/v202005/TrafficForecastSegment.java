@@ -39,14 +39,16 @@ public class TrafficForecastSegment  implements java.io.Serializable {
      * required.</span> */
     private java.lang.String name;
 
-    /* The targeting that defines a segment of traffic.
-     *                 
-     *                 <p>This field is required for segment creation and
-     * then read-only thereafter. */
+    /* The targeting that defines a segment of traffic. Targeting
+     * cannot be changed after segment
+     *                 creation.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.admanager.axis.v202005.Targeting targeting;
 
-    /* The number of forecast adjustments associated with the TrafficForecastSegment.
-     * This attribute is read-only. */
+    /* The number of active forecast adjustments associated with the
+     * TrafficForecastSegment.
+     *                 This attribute is read-only. */
     private java.lang.Integer forecastAdjustmentCount;
 
     /* The date and time that the TrafficForecastSegment was created.
@@ -136,10 +138,11 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Gets the targeting value for this TrafficForecastSegment.
      * 
-     * @return targeting   * The targeting that defines a segment of traffic.
-     *                 
-     *                 <p>This field is required for segment creation and
-     * then read-only thereafter.
+     * @return targeting   * The targeting that defines a segment of traffic. Targeting
+     * cannot be changed after segment
+     *                 creation.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.admanager.axis.v202005.Targeting getTargeting() {
         return targeting;
@@ -149,10 +152,11 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Sets the targeting value for this TrafficForecastSegment.
      * 
-     * @param targeting   * The targeting that defines a segment of traffic.
-     *                 
-     *                 <p>This field is required for segment creation and
-     * then read-only thereafter.
+     * @param targeting   * The targeting that defines a segment of traffic. Targeting
+     * cannot be changed after segment
+     *                 creation.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202005.Targeting targeting) {
         this.targeting = targeting;
@@ -162,8 +166,9 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Gets the forecastAdjustmentCount value for this TrafficForecastSegment.
      * 
-     * @return forecastAdjustmentCount   * The number of forecast adjustments associated with the TrafficForecastSegment.
-     * This attribute is read-only.
+     * @return forecastAdjustmentCount   * The number of active forecast adjustments associated with the
+     * TrafficForecastSegment.
+     *                 This attribute is read-only.
      */
     public java.lang.Integer getForecastAdjustmentCount() {
         return forecastAdjustmentCount;
@@ -173,8 +178,9 @@ public class TrafficForecastSegment  implements java.io.Serializable {
     /**
      * Sets the forecastAdjustmentCount value for this TrafficForecastSegment.
      * 
-     * @param forecastAdjustmentCount   * The number of forecast adjustments associated with the TrafficForecastSegment.
-     * This attribute is read-only.
+     * @param forecastAdjustmentCount   * The number of active forecast adjustments associated with the
+     * TrafficForecastSegment.
+     *                 This attribute is read-only.
      */
     public void setForecastAdjustmentCount(java.lang.Integer forecastAdjustmentCount) {
         this.forecastAdjustmentCount = forecastAdjustmentCount;
