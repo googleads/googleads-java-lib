@@ -4530,14 +4530,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdjustmentError }
-     * 
-     */
-    public AdjustmentError createAdjustmentError() {
-        return new AdjustmentError();
-    }
-
-    /**
      * Create an instance of {@link ArchiveProposals }
      * 
      */

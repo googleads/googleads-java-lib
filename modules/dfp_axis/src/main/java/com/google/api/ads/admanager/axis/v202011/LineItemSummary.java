@@ -519,10 +519,14 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202011.ThirdPartyMeasurementSettings thirdPartyMeasurementSettings;
 
     /* The max duration of a video creative associated with this {@code
-     * LineItem} in
-     *                 milliseconds. This attribute is optional, defaults
-     * to 0, and only meaningful if this is
-     *                 a video line item. */
+     * LineItem} in milliseconds.
+     *                 
+     *                 <p>This attribute is only meaningful for video line
+     * items. For version v202011 and earlier,
+     *                 this attribute is optional and defaults to 0. For
+     * version v202102 and later, this attribute is
+     *                 required for video line items and must be greater
+     * than 0. */
     private java.lang.Long videoMaxDuration;
 
     /* The primary goal that this {@code LineItem} is associated with,
@@ -2592,10 +2596,14 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the videoMaxDuration value for this LineItemSummary.
      * 
      * @return videoMaxDuration   * The max duration of a video creative associated with this {@code
-     * LineItem} in
-     *                 milliseconds. This attribute is optional, defaults
-     * to 0, and only meaningful if this is
-     *                 a video line item.
+     * LineItem} in milliseconds.
+     *                 
+     *                 <p>This attribute is only meaningful for video line
+     * items. For version v202011 and earlier,
+     *                 this attribute is optional and defaults to 0. For
+     * version v202102 and later, this attribute is
+     *                 required for video line items and must be greater
+     * than 0.
      */
     public java.lang.Long getVideoMaxDuration() {
         return videoMaxDuration;
@@ -2606,10 +2614,14 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the videoMaxDuration value for this LineItemSummary.
      * 
      * @param videoMaxDuration   * The max duration of a video creative associated with this {@code
-     * LineItem} in
-     *                 milliseconds. This attribute is optional, defaults
-     * to 0, and only meaningful if this is
-     *                 a video line item.
+     * LineItem} in milliseconds.
+     *                 
+     *                 <p>This attribute is only meaningful for video line
+     * items. For version v202011 and earlier,
+     *                 this attribute is optional and defaults to 0. For
+     * version v202102 and later, this attribute is
+     *                 required for video line items and must be greater
+     * than 0.
      */
     public void setVideoMaxDuration(java.lang.Long videoMaxDuration) {
         this.videoMaxDuration = videoMaxDuration;

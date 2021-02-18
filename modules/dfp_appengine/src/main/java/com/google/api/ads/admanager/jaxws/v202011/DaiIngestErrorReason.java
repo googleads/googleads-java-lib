@@ -86,8 +86,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 The ingest URL provided in the publisher's content source feed is invalid. The trigger for
-     *                 this error is the ingest URL specified in the publisher's feed.
+     *                 The ingest URL provided in the publisher's content source feed is invalid. The trigger for this
+     *                 error is the ingest URL specified in the publisher's feed.
      *               
      * 
      */
@@ -95,8 +95,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 The closed caption URL provided in the publisher's content source feed is invalid. The
-     *                 trigger for this error is the closed caption URL specified in the publisher's feed.
+     *                 The closed caption URL provided in the publisher's content source feed is invalid. The trigger
+     *                 for this error is the closed caption URL specified in the publisher's feed.
      *               
      * 
      */
@@ -104,8 +104,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 There is no closed caption URL for a content in the publisher's content source feed. There
-     *                 is no trigger for this error.
+     *                 There is no closed caption URL for a content in the publisher's content source feed. There is
+     *                 no trigger for this error.
      *               
      * 
      */
@@ -113,8 +113,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 There was an error while trying to fetch the HLS from the specified ingest URL. The trigger
-     *                 for this error is the ingest URL specified in the publisher's feed.
+     *                 There was an error while trying to fetch the HLS from the specified ingest URL. The trigger for
+     *                 this error is the ingest URL specified in the publisher's feed.
      *               
      * 
      */
@@ -141,8 +141,8 @@ public enum DaiIngestErrorReason {
     /**
      * 
      *                 Error fetching the media files from the URLs specified in the master HLS playlist. The trigger
-     *                 for this error is a media playlist URL within the publisher's HLS playlist that could not
-     *                 be fetched.
+     *                 for this error is a media playlist URL within the publisher's HLS playlist that could not be
+     *                 fetched.
      *               
      * 
      */
@@ -150,8 +150,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 The media from the publisher's CDN is malformed and cannot be conditioned. The trigger
-     *                 for this error is a media playlist URL within the publisher's HLS playlist that is malformed.
+     *                 The media from the publisher's CDN is malformed and cannot be conditioned. The trigger for this
+     *                 error is a media playlist URL within the publisher's HLS playlist that is malformed.
      *               
      * 
      */
@@ -160,8 +160,8 @@ public enum DaiIngestErrorReason {
     /**
      * 
      *                 A chapter time for the content is outside of the range of the content's duration. The trigger
-     *                 for this error is the chapter time (a parsable long representing the time in ms) that is out
-     *                 of bounds.
+     *                 for this error is the chapter time (a parsable long representing the time in ms) that is out of
+     *                 bounds.
      *               
      * 
      */
@@ -169,8 +169,7 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 An internal error occurred while conditioning the content. There is no trigger for this
-     *                 error.
+     *                 An internal error occurred while conditioning the content. There is no trigger for this error.
      *               
      * 
      */
@@ -178,8 +177,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 The content has chapter times but the content's source has no CDN settings for midrolls.
-     *                 There is no trigger for this error.
+     *                 The content has chapter times but the content's source has no CDN settings for midrolls. There
+     *                 is no trigger for this error.
      *               
      * 
      */
@@ -187,8 +186,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 There is bad/missing/malformed data in a media playlist. The trigger for this error is the
-     *                 URL that points to the malformed media playlist.
+     *                 There is bad/missing/malformed data in a media playlist. The trigger for this error is the URL
+     *                 that points to the malformed media playlist.
      *               
      * 
      */
@@ -196,8 +195,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 There is bad/missing/malformed data in a subtitles file. The trigger for this error is the
-     *                 URL that points to the malformed subtitles.
+     *                 There is bad/missing/malformed data in a subtitles file. The trigger for this error is the URL
+     *                 that points to the malformed subtitles.
      *               
      * 
      */
@@ -319,8 +318,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error parsing ADTS while splitting the content. The trigger for this error is the
-     *                 variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
+     *                 Error parsing ADTS while splitting the content. The trigger for this error is the variant URL
+     *                 and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
      *               
      * 
      */
@@ -328,8 +327,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error splitting an AAC segment. The trigger for this error is the variant URL and the
-     *                 cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
+     *                 Error splitting an AAC segment. The trigger for this error is the variant URL and the cue-point
+     *                 separated by a semi-colon, e.g. "www.variant2.com;5000".
      *               
      * 
      */
@@ -337,8 +336,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error parsing an AAC file while splitting the content. The trigger for this error is
-     *                 the variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
+     *                 Error parsing an AAC file while splitting the content. The trigger for this error is the
+     *                 variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
      *               
      * 
      */
@@ -346,8 +345,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error parsing a TS file while splitting the content. The trigger for this error is the
-     *                 variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
+     *                 Error parsing a TS file while splitting the content. The trigger for this error is the variant
+     *                 URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
      *               
      * 
      */
@@ -355,8 +354,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error splitting a TS file while splitting the content. The trigger for this error is
-     *                 the variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
+     *                 Error splitting a TS file while splitting the content. The trigger for this error is the
+     *                 variant URL and the cue-point separated by a semi-colon, e.g. "www.variant2.com;5000".
      *               
      * 
      */
@@ -434,8 +433,8 @@ public enum DaiIngestErrorReason {
 
     /**
      * 
-     *                 Error caused by an invalid encryption key. The trigger for this error is a media playlist
-     *                 URL within the publisher's HLS playlist that has the invalid encryption key.
+     *                 Error caused by an invalid encryption key. The trigger for this error is a media playlist URL
+     *                 within the publisher's HLS playlist that has the invalid encryption key.
      *               
      * 
      */

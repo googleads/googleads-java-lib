@@ -1,3 +1,19 @@
+4.13.0 - 02/18/2021
+------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202102.
+ - Removed support for v202002.
+ - Removed examples for v202005.
+
+Common:
+ - Bumped junit from 4.11 to 4.13.1
+ - Bumped commons-beanutils from 1.9.2 to 1.9.4
+ - Bumped guava from 20.0 to 25.1
+
+
 4.12.0 - 11/10/2020
 ------------------
 AdWords

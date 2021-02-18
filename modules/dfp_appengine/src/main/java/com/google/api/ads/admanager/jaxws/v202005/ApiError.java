@@ -142,7 +142,6 @@ import javax.xml.bind.annotation.XmlType;
     SwiffyConversionError.class,
     LabelError.class,
     NullError.class,
-    VolumeTimeSeriesRequestError.class,
     ApiVersionError.class,
     StringLengthError.class,
     CollectionSizeError.class,
@@ -198,7 +197,6 @@ import javax.xml.bind.annotation.XmlType;
     CreativeTemplateOperationError.class,
     NetworkError.class,
     InventoryUnitRefreshRateError.class,
-    AdjustmentError.class,
     LabelEntityAssociationError.class,
     VideoAdTagError.class
 })

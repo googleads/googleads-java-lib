@@ -2650,14 +2650,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link VolumeTimeSeriesRequestError }
-     * 
-     */
-    public VolumeTimeSeriesRequestError createVolumeTimeSeriesRequestError() {
-        return new VolumeTimeSeriesRequestError();
-    }
-
-    /**
      * Create an instance of {@link SourceContentConfiguration }
      * 
      */
@@ -4503,14 +4495,6 @@ public class ObjectFactory {
      */
     public ReleaseProposalLineItems createReleaseProposalLineItems() {
         return new ReleaseProposalLineItems();
-    }
-
-    /**
-     * Create an instance of {@link AdjustmentError }
-     * 
-     */
-    public AdjustmentError createAdjustmentError() {
-        return new AdjustmentError();
     }
 
     /**

@@ -206,7 +206,6 @@ import javax.xml.bind.annotation.XmlType;
     CreativeTemplateOperationError.class,
     NetworkError.class,
     InventoryUnitRefreshRateError.class,
-    AdjustmentError.class,
     LabelEntityAssociationError.class,
     VideoAdTagError.class
 })

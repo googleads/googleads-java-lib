@@ -23,8 +23,7 @@ package com.google.api.ads.admanager.axis.v202005;
 
 
 /**
- * A {@code SalespersonSplit} represents a salesperson and his/her
- * split.
+ * A {@code SalespersonSplit} represents a salesperson and their split.
  */
 public class SalespersonSplit  implements java.io.Serializable {
     /* The unique ID of the {@link User} responsible for the sales

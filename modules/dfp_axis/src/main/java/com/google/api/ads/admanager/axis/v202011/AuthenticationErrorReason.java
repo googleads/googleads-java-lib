@@ -40,6 +40,7 @@ public class AuthenticationErrorReason implements java.io.Serializable {
     public static final java.lang.String _MISSING_AUTHENTICATION_HTTP_HEADER = "MISSING_AUTHENTICATION_HTTP_HEADER";
     public static final java.lang.String _MISSING_AUTHENTICATION = "MISSING_AUTHENTICATION";
     public static final java.lang.String _NOT_WHITELISTED_FOR_API_ACCESS = "NOT_WHITELISTED_FOR_API_ACCESS";
+    public static final java.lang.String _NETWORK_API_ACCESS_DISABLED = "NETWORK_API_ACCESS_DISABLED";
     public static final java.lang.String _NO_NETWORKS_TO_ACCESS = "NO_NETWORKS_TO_ACCESS";
     public static final java.lang.String _NETWORK_NOT_FOUND = "NETWORK_NOT_FOUND";
     public static final java.lang.String _NETWORK_CODE_REQUIRED = "NETWORK_CODE_REQUIRED";
@@ -56,6 +57,7 @@ public class AuthenticationErrorReason implements java.io.Serializable {
     public static final AuthenticationErrorReason MISSING_AUTHENTICATION_HTTP_HEADER = new AuthenticationErrorReason(_MISSING_AUTHENTICATION_HTTP_HEADER);
     public static final AuthenticationErrorReason MISSING_AUTHENTICATION = new AuthenticationErrorReason(_MISSING_AUTHENTICATION);
     public static final AuthenticationErrorReason NOT_WHITELISTED_FOR_API_ACCESS = new AuthenticationErrorReason(_NOT_WHITELISTED_FOR_API_ACCESS);
+    public static final AuthenticationErrorReason NETWORK_API_ACCESS_DISABLED = new AuthenticationErrorReason(_NETWORK_API_ACCESS_DISABLED);
     public static final AuthenticationErrorReason NO_NETWORKS_TO_ACCESS = new AuthenticationErrorReason(_NO_NETWORKS_TO_ACCESS);
     public static final AuthenticationErrorReason NETWORK_NOT_FOUND = new AuthenticationErrorReason(_NETWORK_NOT_FOUND);
     public static final AuthenticationErrorReason NETWORK_CODE_REQUIRED = new AuthenticationErrorReason(_NETWORK_CODE_REQUIRED);

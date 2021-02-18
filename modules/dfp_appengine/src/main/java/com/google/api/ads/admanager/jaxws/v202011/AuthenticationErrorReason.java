@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="MISSING_AUTHENTICATION_HTTP_HEADER"/>
  *     &lt;enumeration value="MISSING_AUTHENTICATION"/>
  *     &lt;enumeration value="NOT_WHITELISTED_FOR_API_ACCESS"/>
+ *     &lt;enumeration value="NETWORK_API_ACCESS_DISABLED"/>
  *     &lt;enumeration value="NO_NETWORKS_TO_ACCESS"/>
  *     &lt;enumeration value="NETWORK_NOT_FOUND"/>
  *     &lt;enumeration value="NETWORK_CODE_REQUIRED"/>
@@ -55,10 +56,9 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 The SOAP message contains a request header with an ambiguous definition
-     *                 of the authentication header fields. This means either the {@code
-     *                 authToken} and {@code oAuthToken} fields were both null or both were
-     *                 specified. Exactly one value should be specified with each request.
+     *                 The SOAP message contains a request header with an ambiguous definition of the authentication
+     *                 header fields. This means either the {@code authToken} and {@code oAuthToken} fields were
+     *                 both null or both were specified. Exactly one value should be specified with each request.
      *               
      * 
      */
@@ -98,8 +98,8 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 The SOAP message is missing a request header with an {@code authToken}
-     *                 and optional {@code networkCode}.
+     *                 The SOAP message is missing a request header with an {@code authToken} and optional {@code
+     *                 networkCode}.
      *               
      * 
      */
@@ -131,6 +131,14 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
+     *                 The network does not have API access enabled.
+     *               
+     * 
+     */
+    NETWORK_API_ACCESS_DISABLED,
+
+    /**
+     * 
      *                 The user is not associated with any network.
      *               
      * 
@@ -147,8 +155,7 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 The user has access to more than one network, but did not provide a
-     *                 {@code networkCode}.
+     *                 The user has access to more than one network, but did not provide a {@code networkCode}.
      *               
      * 
      */
@@ -156,8 +163,7 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 An error happened on the server side during connection to authentication
-     *                 service.
+     *                 An error happened on the server side during connection to authentication service.
      *               
      * 
      */
@@ -165,8 +171,8 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 The user tried to create a test network using an account that already is
-     *                 associated with a network.
+     *                 The user tried to create a test network using an account that already is associated with a
+     *                 network.
      *               
      * 
      */
@@ -174,8 +180,8 @@ public enum AuthenticationErrorReason {
 
     /**
      * 
-     *                 The account is blocked and under investigation by the collections team. Please contact
-     *                 Google for more information.
+     *                 The account is blocked and under investigation by the collections team. Please contact Google
+     *                 for more information.
      *               
      * 
      */
