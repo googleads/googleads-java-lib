@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.jaxws.utils;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.ads.adwords.jaxws.utils.v201809.batchjob.BatchJobMutateRequest;
@@ -25,18 +26,18 @@ import com.google.api.ads.adwords.jaxws.v201809.cm.Campaign;
 import com.google.api.ads.adwords.jaxws.v201809.cm.CampaignOperation;
 import com.google.api.ads.adwords.jaxws.v201809.cm.Operator;
 import com.google.api.ads.common.lib.soap.jaxb.JaxBSerializer;
-import com.google.api.ads.common.lib.soap.testing.CustomDifferenceListener;
+import com.google.api.ads.common.lib.soap.testing.CustomDifferenceEvaluator;
 import com.google.common.io.CharStreams;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.xml.namespace.QName;
-import org.custommonkey.xmlunit.Diff;
-import org.custommonkey.xmlunit.DifferenceListener;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
+import org.xmlunit.diff.DifferenceEvaluators;
 
 /** Tests for JAX-WS serialization. */
 @RunWith(JUnit4.class)
@@ -65,9 +66,10 @@ public class JaxWsSerializationTest {
     adGroupOp.setOperand(adGroup);
     request.addOperation(adGroupOp);
 
-    JaxBSerializer<BatchJobMutateRequest> serializer = new JaxBSerializer<BatchJobMutateRequest>(
-        BatchJobMutateRequest.class,
-        new QName("https://adwords.google.com/api/adwords/cm/v201809", "mutate"));
+    JaxBSerializer<BatchJobMutateRequest> serializer =
+        new JaxBSerializer<>(
+            BatchJobMutateRequest.class,
+            new QName("https://adwords.google.com/api/adwords/cm/v201809", "mutate"));
 
     String serializedRequest = serializer.serialize(request);
 
@@ -82,10 +84,15 @@ public class JaxWsSerializationTest {
 
     // Perform XML diffs using the custom difference listener that properly handles namespaces
     // and attributes.
-    Diff diff = new Diff(expectedSerializedRequest, serializedRequest);
-    DifferenceListener diffListener = new CustomDifferenceListener();
-    diff.overrideDifferenceListener(diffListener);
-    XMLAssert.assertXMLEqual("Serialized request does not match expected value", diff, true);
+    Diff diff =
+        DiffBuilder.compare(expectedSerializedRequest)
+            .withDifferenceEvaluator(
+                DifferenceEvaluators.chain(
+                    DifferenceEvaluators.Default, new CustomDifferenceEvaluator()))
+            .withTest(serializedRequest)
+            .checkForSimilar()
+            .build();
+    assertFalse("Serialized request does not match expected value", diff.hasDifferences());
 
     // Serialize again, this time without the XML declaration, and confirm the serialized XML
     // matches the expected string.
@@ -94,13 +101,15 @@ public class JaxWsSerializationTest {
     expectedSerializedRequest =
         expectedSerializedRequest.replaceFirst(
             "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", "");
-
-    diff = new Diff(expectedSerializedRequest, serializedRequest);
-    diff.overrideDifferenceListener(diffListener);
-    XMLAssert.assertXMLEqual(
+    diff =
+        DiffBuilder.compare(expectedSerializedRequest)
+            .normalizeWhitespace()
+            .withDifferenceEvaluator(new CustomDifferenceEvaluator())
+            .withTest(serializedRequest)
+            .checkForSimilar()
+            .build();
+    assertFalse(
         "Serialized request with XML declaration excluded does not match expected value",
-        diff,
-        true);
+        diff.hasDifferences());
   }
 }
-

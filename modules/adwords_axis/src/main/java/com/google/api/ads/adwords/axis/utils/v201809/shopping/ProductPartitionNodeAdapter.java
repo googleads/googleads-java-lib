@@ -43,7 +43,7 @@ class ProductPartitionNodeAdapter {
 
   /**
    * Returns a new AdGroupCriterion configured for a REMOVE operation.
-   *
+   * 
    * @param node the node whose criterion should be removed
    * @param adGroupId the ad group ID of the criterion
    */
@@ -61,7 +61,7 @@ class ProductPartitionNodeAdapter {
 
   /**
    * Returns a new AdGroupCriterion configured for an ADD operation.
-   *
+   * 
    * @param node the node whose criterion should be added
    * @param adGroupId the ad group ID of the criterion
    * @param biddingConfig the bidding strategy configuration of the criterion
@@ -122,7 +122,7 @@ class ProductPartitionNodeAdapter {
     Preconditions.checkNotNull(node, "Null node");
     Preconditions.checkNotNull(biddingConfig, "Null bidding configuration");
     Preconditions.checkArgument(node.isBiddableUnit(), "Node is not a biddable unit");
-
+    
     BiddableAdGroupCriterion biddableCriterion = new BiddableAdGroupCriterion();
     biddableCriterion.setAdGroupId(adGroupId);
 

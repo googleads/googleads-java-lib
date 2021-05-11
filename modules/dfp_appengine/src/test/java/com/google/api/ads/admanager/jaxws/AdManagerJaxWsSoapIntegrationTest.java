@@ -29,13 +29,14 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 import java.util.List;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /** Tests that a Ad Manager JAX-WS SOAP call can be made end-to-end with compression disabled. */
 @RunWith(JUnit4.class)
@@ -75,9 +76,12 @@ public class AdManagerJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     List<Company> companies = companyService.createCompanies(Lists.newArrayList(new Company()));
 
     assertEquals(1234L, companies.get(0).getId().longValue());
-    XMLAssert.assertXMLEqual(
-        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
     assertFalse(
         "Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());

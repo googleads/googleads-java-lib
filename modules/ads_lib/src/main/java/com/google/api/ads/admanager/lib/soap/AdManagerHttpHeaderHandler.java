@@ -23,7 +23,6 @@ import javax.inject.Inject;
 /** Handler used to set the HTTP headers on a SOAP client. */
 public class AdManagerHttpHeaderHandler {
 
-
   @SuppressWarnings("rawtypes") /* See constructor comments. */
   private final SoapClientHandlerInterface soapClientHandler;
 
@@ -48,5 +47,4 @@ public class AdManagerHttpHeaderHandler {
     Map<String, String> headersMap = Maps.newHashMap();
     soapClientHandler.putAllHttpHeaders(soapClient, headersMap);
   }
-
 }

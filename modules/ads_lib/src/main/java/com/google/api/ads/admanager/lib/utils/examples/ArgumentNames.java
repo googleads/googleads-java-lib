@@ -29,11 +29,21 @@ public final class ArgumentNames {
 
   public static final String AGENCY_ID = "--agencyId";
 
+  public static final String ADJUSTMENT_ID = "--adjustmentId";
+
   public static final String AUDIENCE_SEGMENT_ID = "--audienceSegmentId";
 
   public static final String BASE_RATE_ID = "--baseRateId";
 
   public static final String BUYER_ID = "--buyerId";
+
+  public static final String CHILD_NETWORK_CODE = "--childNetworkCode";
+
+  public static final String CMS_METADATA_VALUE_ID = "--cmsMetadataValueId";
+
+  public static final String CMS_METADATA_KEY_NAME = "--cmsMetadataKeyName";
+
+  public static final String CMS_METADATA_KEY_ID = "--cmsMetadataKeyId";
 
   public static final String COMPANION_CREATIVE_ID = "--companionCreativeId";
 
@@ -57,27 +67,11 @@ public final class ArgumentNames {
 
   public static final String CUSTOM_FIELD_ID = "--customFieldId";
 
-  public static final String FIELD_OPTION_ID = "--fieldOptionId";
-
-  public static final String TARGETING_KEY_ID = "--targetingKeyId";
-
-  public static final String TARGETING_KEY_ID_1 = "--targetingKeyId1";
-
-  public static final String TARGETING_KEY_ID_2 = "--targetingKeyId2";
-
-  public static final String TARGETING_KEY_ID_3 = "--targetingKeyId3";
-
-  public static final String TARGETING_VALUE_ID = "--targetingValueId";
-
-  public static final String TARGETING_VALUE_ID_1 = "--targetingValueId1";
-
-  public static final String TARGETING_VALUE_IDS_2 = "--targetingValueId2";
-
-  public static final String TARGETING_VALUE_ID_3 = "--targetingValueId3";
-
   public static final String EMAIL_ADDRESS = "--emailAddress";
 
   public static final String EXCHANGE_RATE_ID = "--exchangeRateId";
+
+  public static final String FIELD_OPTION_ID = "--fieldOptionId";
 
   public static final String HIERARCHY_LEVEL_ONE_KEY_ID = "--hierarchyLevelOneKeyId";
 
@@ -86,6 +80,8 @@ public final class ArgumentNames {
   public static final String LABEL_ID = "--labelId";
 
   public static final String LINE_ITEM_ID = "--lineItemId";
+
+  public static final String LINKED_DEVICE_ID = "--linkedDeviceId";
 
   public static final String MASTER_CREATIVE_ID = "--masterCreativeId";
 
@@ -136,29 +132,35 @@ public final class ArgumentNames {
 
   public static final String SAVED_QUERY_ID = "--savedQueryId";
 
+  public static final String SITE_ID = "--siteId";
+
   public static final String SECONDARY_SALESPERSON_ID = "--secondarySalespersonId";
+
+  public static final String TARGETING_KEY_ID = "--targetingKeyId";
+
+  public static final String TARGETING_KEY_ID_1 = "--targetingKeyId1";
+
+  public static final String TARGETING_KEY_ID_2 = "--targetingKeyId2";
+
+  public static final String TARGETING_KEY_ID_3 = "--targetingKeyId3";
+
+  public static final String TARGETING_VALUE_ID = "--targetingValueId";
+
+  public static final String TARGETING_VALUE_ID_1 = "--targetingValueId1";
+
+  public static final String TARGETING_VALUE_IDS_2 = "--targetingValueId2";
+
+  public static final String TARGETING_VALUE_ID_3 = "--targetingValueId3";
 
   public static final String TARGETED_VIDEO_AD_UNIT_ID = "--targetedVideoAdUnitId";
 
   public static final String TEAM_ID = "--teamId";
 
+  public static final String TRAFFIC_FORECAST_SEGMENT_ID = "--trafficForecastSegmentId";
+
   public static final String TRAFFICKER_ID = "--traffickerId";
 
   public static final String USER_ID = "--userId";
-
-  public static final String ADJUSTMENT_ID = "--adjustmentId";
-
-  public static final String CMS_METADATA_VALUE_ID = "--cmsMetadataValueId";
-
-  public static final String CMS_METADATA_KEY_NAME = "--cmsMetadataKeyName";
-
-  public static final String CMS_METADATA_KEY_ID = "--cmsMetadataKeyId";
-
-  public static final String TRAFFIC_FORECAST_SEGMENT_ID = "--trafficForecastSegmentId";
-
-  public static final String SITE_ID = "--siteId";
-
-  public static final String CHILD_NETWORK_CODE = "--childNetworkCode";
 
   public static final String URL = "--url";
 }

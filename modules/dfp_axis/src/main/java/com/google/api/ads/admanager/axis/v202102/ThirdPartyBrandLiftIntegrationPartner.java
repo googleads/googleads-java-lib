@@ -33,12 +33,10 @@ public class ThirdPartyBrandLiftIntegrationPartner implements java.io.Serializab
 
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final java.lang.String _NONE = "NONE";
-    public static final java.lang.String _GOOGLE_INTERNAL = "GOOGLE_INTERNAL";
     public static final java.lang.String _KANTAR_MILLWARD_BROWN = "KANTAR_MILLWARD_BROWN";
     public static final java.lang.String _DYNATA = "DYNATA";
     public static final ThirdPartyBrandLiftIntegrationPartner UNKNOWN = new ThirdPartyBrandLiftIntegrationPartner(_UNKNOWN);
     public static final ThirdPartyBrandLiftIntegrationPartner NONE = new ThirdPartyBrandLiftIntegrationPartner(_NONE);
-    public static final ThirdPartyBrandLiftIntegrationPartner GOOGLE_INTERNAL = new ThirdPartyBrandLiftIntegrationPartner(_GOOGLE_INTERNAL);
     public static final ThirdPartyBrandLiftIntegrationPartner KANTAR_MILLWARD_BROWN = new ThirdPartyBrandLiftIntegrationPartner(_KANTAR_MILLWARD_BROWN);
     public static final ThirdPartyBrandLiftIntegrationPartner DYNATA = new ThirdPartyBrandLiftIntegrationPartner(_DYNATA);
     public java.lang.String getValue() { return _value_;}

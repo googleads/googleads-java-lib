@@ -4,6 +4,9 @@ Google Ads APIs Client Library for Java
 This project hosts the client library for Java for the various SOAP-based ads
 APIs (AdWords and Ad Manager) at Google.
 
+> **The AdWords API will [sunset on April 27, 2022](https://ads-developers.googleblog.com/2021/04/upgrade-to-google-ads-api-from-adwords.html).  
+> Upgrade to the [Google Ads API](https://developers.google.com/google-ads/api/docs/client-libs).**
+
 ## Features
 
   * Distributed via [Maven](https://maven.apache.org/).

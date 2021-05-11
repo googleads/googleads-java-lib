@@ -165,7 +165,7 @@ public class AddExpandedTextAdWithUpgradedUrls {
     // set. This may be specified at ad, criterion, and feed item levels.
     expandedTextAd.setFinalUrls(new String[] {"http://www.example.com/cruise/space/",
         "http://www.example.com/locations/mars/"});
-
+    
     // Specify a list of final mobile urls. This field cannot be set if url field is
     // set or finalUrls is not set. This may be specified at ad, criterion, and feed
     // item levels.

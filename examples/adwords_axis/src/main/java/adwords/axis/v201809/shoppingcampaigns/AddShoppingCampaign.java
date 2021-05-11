@@ -196,10 +196,10 @@ public class AddShoppingCampaign {
     shoppingSetting.setSalesCountry("US");
     shoppingSetting.setCampaignPriority(0);
     shoppingSetting.setMerchantId(merchantId);
-
+    
     // Set to 'true' to enable Local Inventory Ads in your campaign.
     shoppingSetting.setEnableLocal(true);
-
+    
     campaign.setSettings(new Setting[] {shoppingSetting});
 
     // Create operation.
@@ -261,7 +261,7 @@ public class AddShoppingCampaign {
 
     // Display result.
     adGroupAd = adGroupAdAddResult.getValue(0);
-
+    
     System.out.printf("Product ad with ID %d was added.%n", adGroupAd.getAd().getId());
 
     if (createDefaultPartition) {

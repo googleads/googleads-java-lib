@@ -418,10 +418,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 <span class="constraint Applicable">This attribute
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span> */
+     * management.</li></ul></span> */
     private com.google.api.ads.admanager.axis.v202011.ProposalLineItemMarketplaceInfo marketplaceInfo;
 
     /* Additional terms shown to the buyer in Marketplace.
@@ -1965,9 +1962,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.admanager.axis.v202011.ProposalLineItemMarketplaceInfo getMarketplaceInfo() {
         return marketplaceInfo;
@@ -1983,9 +1977,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is applicable when:<ul><li>using programmatic guaranteed, using sales
      * management.</li><li>using programmatic guaranteed, not using sales
      * management.</li></ul></span>
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, using sales management.</li><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span>
      */
     public void setMarketplaceInfo(com.google.api.ads.admanager.axis.v202011.ProposalLineItemMarketplaceInfo marketplaceInfo) {
         this.marketplaceInfo = marketplaceInfo;

@@ -65,5 +65,4 @@ public class AdManagerHttpHeaderHandlerTest {
 
     verify(soapClientHandler).putAllHttpHeaders(eq(soapClient), any(Map.class));
   }
-
 }

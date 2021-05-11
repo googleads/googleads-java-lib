@@ -30,11 +30,14 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
     /* The {@link AdExchangeEnvironment} of the marketplace web property
      * that is associated with this
      *                 line item.
-     *                 This is only for {@link ProposalLineItem proposal
-     * line items} with a corresponding deal in
-     *                 Marketplace.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span> */
+     *                 
+     *                 <p>The last API version in which this field will be
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
+     * control which platforms your proposal line
+     *                 item will serve on from v202105 onward, please use
+     * request platform targeting in the targeting
+     *                 expression. */
     private com.google.api.ads.admanager.axis.v202102.AdExchangeEnvironment adExchangeEnvironment;
 
     public ProposalLineItemMarketplaceInfo() {
@@ -59,11 +62,14 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      * @return adExchangeEnvironment   * The {@link AdExchangeEnvironment} of the marketplace web property
      * that is associated with this
      *                 line item.
-     *                 This is only for {@link ProposalLineItem proposal
-     * line items} with a corresponding deal in
-     *                 Marketplace.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span>
+     *                 
+     *                 <p>The last API version in which this field will be
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
+     * control which platforms your proposal line
+     *                 item will serve on from v202105 onward, please use
+     * request platform targeting in the targeting
+     *                 expression.
      */
     public com.google.api.ads.admanager.axis.v202102.AdExchangeEnvironment getAdExchangeEnvironment() {
         return adExchangeEnvironment;
@@ -76,11 +82,14 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      * @param adExchangeEnvironment   * The {@link AdExchangeEnvironment} of the marketplace web property
      * that is associated with this
      *                 line item.
-     *                 This is only for {@link ProposalLineItem proposal
-     * line items} with a corresponding deal in
-     *                 Marketplace.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span>
+     *                 
+     *                 <p>The last API version in which this field will be
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
+     * control which platforms your proposal line
+     *                 item will serve on from v202105 onward, please use
+     * request platform targeting in the targeting
+     *                 expression.
      */
     public void setAdExchangeEnvironment(com.google.api.ads.admanager.axis.v202102.AdExchangeEnvironment adExchangeEnvironment) {
         this.adExchangeEnvironment = adExchangeEnvironment;

@@ -59,7 +59,7 @@ import java.util.List;
 /**
  * This example adds a price extension and associates it with an account. Campaign targeting is
  * also set using the specified campaign ID.
- *
+ * 
  * <p>To get campaigns, run {@link AddCampaigns}.
  *
  * <p>Credentials and properties in {@code fromFile()} are pulled from the
@@ -209,7 +209,7 @@ public class AddPrices {
     ExtensionSetting extensionSetting = new ExtensionSetting();
     extensionSetting.setExtensions(new ExtensionFeedItem[] {priceFeedItem});
     customerExtensionSetting.setExtensionSetting(extensionSetting);
-
+    
     CustomerExtensionSettingOperation operation = new CustomerExtensionSettingOperation();
     operation.setOperand(customerExtensionSetting);
     operation.setOperator(Operator.ADD);

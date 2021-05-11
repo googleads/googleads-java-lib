@@ -1049,8 +1049,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by partner assignment name. ParnterAssignment name
-     *                 and id are automatically included as columns in the report.
+     *                 Breaks down reporting data by partner assignment name. PartnerAssignment name and id are
+     *                 automatically included as columns in the report.
      *                 <p>Corresponds to "Assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Partner finance.</p>
      *               
      * 

@@ -30,7 +30,7 @@ import org.junit.runners.JUnit4;
 public class UserAgentCombinerTest {
 
   private static final String USER_AGENT =
-      "userAgent (DfpApi-Java, Dfp-AppEngine/4.13.0, Common-Java/4.13.0,"
+      "userAgent (DfpApi-Java, Dfp-AppEngine/4.14.0, Common-Java/4.14.0,"
           + " JAX-WS/Unknown, Java/" + System.getProperty("java.version") + ", maven)";
 
   /**
@@ -41,7 +41,6 @@ public class UserAgentCombinerTest {
     Injector injector = Guice.createInjector(new AdManagerJaxWsModule());
 
     String userAgent = USER_AGENT;
-
 
     UserAgentCombiner userAgentCombiner = injector.getInstance(UserAgentCombiner.class);
     assertEquals(userAgent, userAgentCombiner.getUserAgent("userAgent"));

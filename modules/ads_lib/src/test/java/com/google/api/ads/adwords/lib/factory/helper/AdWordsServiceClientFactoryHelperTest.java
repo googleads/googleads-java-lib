@@ -75,7 +75,6 @@ public class AdWordsServiceClientFactoryHelperTest {
     assertEquals("BadPackage", helper.determineVersion(BadPackageService.class));
   }
 
-
   @Test
   public void testCheckServiceClientPreconditions_passOAuth2() throws Exception {
     AdWordsServiceClientFactoryHelper helper = new AdWordsServiceClientFactoryHelper(

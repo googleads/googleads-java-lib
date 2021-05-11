@@ -29,8 +29,8 @@ public class VideoSettings  implements java.io.Serializable {
     /* The RFC6381 codec string of the audio. */
     private java.lang.String codec;
 
-    /* The bitrate of the audio, in bits per second. This value must
-     * be between 56kbps and 250 Mbps. */
+    /* The bitrate of the video, in bits per second. This value must
+     * be between 32kbps and 250 Mbps. */
     private java.lang.Long bitrate;
 
     /* The frames per second of the video. This value will be truncated
@@ -88,8 +88,8 @@ public class VideoSettings  implements java.io.Serializable {
     /**
      * Gets the bitrate value for this VideoSettings.
      * 
-     * @return bitrate   * The bitrate of the audio, in bits per second. This value must
-     * be between 56kbps and 250 Mbps.
+     * @return bitrate   * The bitrate of the video, in bits per second. This value must
+     * be between 32kbps and 250 Mbps.
      */
     public java.lang.Long getBitrate() {
         return bitrate;
@@ -99,8 +99,8 @@ public class VideoSettings  implements java.io.Serializable {
     /**
      * Sets the bitrate value for this VideoSettings.
      * 
-     * @param bitrate   * The bitrate of the audio, in bits per second. This value must
-     * be between 56kbps and 250 Mbps.
+     * @param bitrate   * The bitrate of the video, in bits per second. This value must
+     * be between 32kbps and 250 Mbps.
      */
     public void setBitrate(java.lang.Long bitrate) {
         this.bitrate = bitrate;

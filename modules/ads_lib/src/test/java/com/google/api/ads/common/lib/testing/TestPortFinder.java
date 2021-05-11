@@ -33,15 +33,15 @@ public class TestPortFinder {
   /** System property key for overriding the comma-separated list of available unused ports. */
   public static final String UNUSED_PORTS_PROPERTY_KEY =
       "com.google.api.ads.common.lib.testing.TestPortFinder.unusedPorts";
-
+  
   private static final TestPortFinder INSTANCE = new TestPortFinder(System.getProperties());
-
+  
   /**
    * The registry of available ports from the {@link #UNUSED_PORTS_PROPERTY_KEY} system property,
-   * if specified. If the system property is not set, this will be {@code null}.
+   * if specified. If the system property is not set, this will be {@code null}. 
    */
   private final Deque<Integer> availablePorts;
-
+  
   @VisibleForTesting
   TestPortFinder(Properties properties) {
     String availablePortsString = properties.getProperty(UNUSED_PORTS_PROPERTY_KEY);
@@ -54,7 +54,7 @@ public class TestPortFinder {
       }
     }
   }
-
+  
   /**
    * Returns the singleton of this class.
    */
@@ -65,7 +65,7 @@ public class TestPortFinder {
   /**
    * Checks out the next available unused port. Callers should send the returned port
    * back to {@link #releaseUnusedPort(int)} when it's no longer being used.
-   *
+   * 
    * @throws NoSuchElementException if no unused port is available.
    */
   public synchronized int checkOutUnusedPort() {
@@ -89,3 +89,4 @@ public class TestPortFinder {
     availablePorts.addLast(unusedPort);
   }
 }
+

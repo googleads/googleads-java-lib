@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.axis.utils;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.ads.adwords.axis.utils.v201809.batchjob.BatchJobMutateRequest;
@@ -32,11 +33,12 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.List;
 import org.apache.axis.encoding.SerializationContext;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /** Tests for {@link AxisSerializer}. */
 @RunWith(JUnit4.class)
@@ -75,7 +77,11 @@ public class AxisSerializerTest {
                 AxisSerializerTest.class.getResourceAsStream(
                     "resources/BatchJobMutate.request.xml"),
                 UTF_8));
-    XMLAssert.assertXMLEqual("Serialized request does not match expected XML",
-        expectedSerializedRequest, serializedRequest);
+    Diff diff =
+        DiffBuilder.compare(expectedSerializedRequest)
+            .withTest(serializedRequest)
+            .checkForSimilar()
+            .build();
+    assertFalse("Serialized request does not match expected XML", diff.hasDifferences());
   }
 }

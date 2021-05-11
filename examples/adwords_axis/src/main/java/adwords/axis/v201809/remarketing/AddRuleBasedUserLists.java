@@ -67,7 +67,7 @@ import org.joda.time.DateTime;
 public class AddRuleBasedUserLists {
 
   private static final String DATE_FORMAT_STRING = "yyyyMMdd";
-
+  
   public static void main(String[] args) {
     AdWordsSession session;
     try {
@@ -135,25 +135,25 @@ public class AddRuleBasedUserLists {
    */
   public static void runExample(AdWordsServicesInterface adWordsServices, AdWordsSession session)
       throws RemoteException {
-
+    
     // Get the AdwordsUserListService.
     AdwordsUserListServiceInterface userListService =
         adWordsServices.get(session, AdwordsUserListServiceInterface.class);
-
+   
     // First rule item group - users who visited the checkout page and had more than one item
     // in their shopping cart.
     StringKey pageTypeKey = new StringKey("ecomm_pagetype");
-
+    
     StringRuleItem checkoutStringRuleItem = new StringRuleItem();
     checkoutStringRuleItem.setKey(pageTypeKey);
     checkoutStringRuleItem.setOp(StringRuleItemStringOperator.EQUALS);
     checkoutStringRuleItem.setValue("checkout");
-
+    
     RuleItem checkoutRuleItem = new RuleItem();
     checkoutRuleItem.setStringRuleItem(checkoutStringRuleItem);
 
     NumberKey cartSizeKey = new NumberKey("cartsize");
-
+    
     NumberRuleItem cartSizeNumberRuleItem = new NumberRuleItem();
     cartSizeNumberRuleItem.setKey(cartSizeKey);
     cartSizeNumberRuleItem.setOp(NumberRuleItemNumberOperator.GREATER_THAN);
@@ -169,7 +169,7 @@ public class AddRuleBasedUserLists {
 
     // Second rule item group - users who checked out within the next 3 months.
     DateKey checkoutDateKey = new DateKey("checkoutdate");
-
+    
     DateRuleItem startDateDateRuleItem = new DateRuleItem();
     startDateDateRuleItem.setKey(checkoutDateKey);
     startDateDateRuleItem.setOp(DateRuleItemDateOperator.AFTER);

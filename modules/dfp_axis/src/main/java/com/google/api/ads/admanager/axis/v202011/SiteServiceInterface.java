@@ -89,6 +89,11 @@ public interface SiteServiceInterface extends java.rmi.Remote {
     /**
      * Updates the specified {@link Site} objects.
      *         
+     *         <p>The {@link Site#childNetworkCode} can be updated in order
+     * to 1) change the child network, 2)
+     *         move a site from O&O to represented, or 3) move a site from
+     * represented to O&O.
+     *         
      *         
      * @param sites the sites to update
      *         

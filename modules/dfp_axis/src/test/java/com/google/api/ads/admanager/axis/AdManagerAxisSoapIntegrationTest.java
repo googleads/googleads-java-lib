@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.axis.v202005.Company;
-import com.google.api.ads.admanager.axis.v202005.CompanyServiceInterface;
+import com.google.api.ads.admanager.axis.v202102.Company;
+import com.google.api.ads.admanager.axis.v202102.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -32,17 +32,18 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /** Tests that a Ad Manager Axis SOAP call can be made end-to-end with compression disabled. */
 @RunWith(JUnit4.class)
 public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202005";
+  private static final String API_VERSION = "v202102";
 
   @BeforeClass
   public static void setupClass() {
@@ -74,9 +75,12 @@ public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    XMLAssert.assertXMLEqual(
-        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
     assertFalse(
         "Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
@@ -128,9 +132,12 @@ public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
     Company[] companies = companyService.createCompanies(new Company[] {new Company()});
 
     assertEquals(1234L, companies[0].getId().longValue());
-    XMLAssert.assertXMLEqual(
-        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
     assertFalse(
         "Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());

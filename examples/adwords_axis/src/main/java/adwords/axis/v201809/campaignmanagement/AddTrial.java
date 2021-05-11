@@ -47,7 +47,7 @@ import java.rmi.RemoteException;
 
 /**
  * This example illustrates how to create a trial and wait for it to complete.
- *
+ * 
  * <p>See the Campaign Drafts and Experiments guide for more information:
  * https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
  *
@@ -56,12 +56,12 @@ import java.rmi.RemoteException;
  */
 public class AddTrial {
 
-  /**
+  /** 
    * Maximum number of {@code TrialService.get} calls to make to query the progress of trial
    * creation.
    */
   private static final int MAX_POLL_ATTEMPTS = 6;
-
+  
   private static class AddTrialParams extends CodeSampleParams {
     @Parameter(names = ArgumentNames.DRAFT_ID, required = true)
     private Long draftId;

@@ -38,7 +38,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
   private String networkCode;
   private Credential oAuth2Credential;
 
-
   private final String applicationName;
   private final String endpoint;
 
@@ -100,7 +99,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
     oAuth2Credential = null;
   }
 
-
   /**
    * Returns a new {@link Builder} with all settings copied from this session. This is <em>not</em>
    * thread-safe unless this session is an {@link ImmutableAdManagerSession}.
@@ -130,7 +128,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
     public void setNetworkCode(String networkCode) {
       throwUnsupportedOperationException("networkCode");
     }
-
   }
 
   /**
@@ -145,7 +142,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
     private String endpoint;
     private String networkCode;
     private Credential oAuth2Credential;
-
 
     private final ConfigurationHelper configHelper;
 
@@ -233,7 +229,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
       return this;
     }
 
-
     /** Clears all the authentication credentials from this session. */
     private void clearAuthentication() {
       oAuth2Credential = null;
@@ -287,7 +282,6 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
                 DEFAULT_APPLICATION_NAME),
             "applicationName");
       }
-
 
       // Make sure they specify a valid endpoint.
       try {

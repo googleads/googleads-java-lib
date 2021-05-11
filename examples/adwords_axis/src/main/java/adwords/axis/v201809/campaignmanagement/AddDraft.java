@@ -132,7 +132,7 @@ public class AddDraft {
   public static void runExample(
       AdWordsServicesInterface adWordsServices, AdWordsSession session, long baseCampaignId)
       throws RemoteException {
-
+    
     // Get the DraftService.
     DraftServiceInterface draftService = adWordsServices.get(session, DraftServiceInterface.class);
     Draft draft = new Draft();

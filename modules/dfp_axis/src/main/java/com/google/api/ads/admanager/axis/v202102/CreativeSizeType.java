@@ -34,11 +34,13 @@ public class CreativeSizeType implements java.io.Serializable {
     public static final java.lang.String _PIXEL = "PIXEL";
     public static final java.lang.String _ASPECT_RATIO = "ASPECT_RATIO";
     public static final java.lang.String _INTERSTITIAL = "INTERSTITIAL";
+    public static final java.lang.String _IGNORED = "IGNORED";
     public static final java.lang.String _NATIVE = "NATIVE";
     public static final java.lang.String _AUDIO = "AUDIO";
     public static final CreativeSizeType PIXEL = new CreativeSizeType(_PIXEL);
     public static final CreativeSizeType ASPECT_RATIO = new CreativeSizeType(_ASPECT_RATIO);
     public static final CreativeSizeType INTERSTITIAL = new CreativeSizeType(_INTERSTITIAL);
+    public static final CreativeSizeType IGNORED = new CreativeSizeType(_IGNORED);
     public static final CreativeSizeType NATIVE = new CreativeSizeType(_NATIVE);
     public static final CreativeSizeType AUDIO = new CreativeSizeType(_AUDIO);
     public java.lang.String getValue() { return _value_;}

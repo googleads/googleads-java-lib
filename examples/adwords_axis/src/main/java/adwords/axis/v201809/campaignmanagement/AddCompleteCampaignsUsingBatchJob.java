@@ -393,7 +393,7 @@ public class AddCompleteCampaignsUsingBatchJob {
 
     return operations;
   }
-
+  
   private static List<CampaignOperation> buildCampaignOperations(
       Iterator<Long> tempIdGenerator, String namePrefix, BudgetOperation budgetOperation) {
     long budgetId = budgetOperation.getOperand().getBudgetId();

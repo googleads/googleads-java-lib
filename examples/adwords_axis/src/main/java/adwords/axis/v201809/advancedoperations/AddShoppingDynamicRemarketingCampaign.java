@@ -64,7 +64,6 @@ import com.google.api.client.auth.oauth2.Credential;
 import java.io.IOException;
 import java.rmi.RemoteException;
 
-
 /**
  * This example adds a Shopping dynamic remarketing campaign for the Display Network via the
  * following steps:

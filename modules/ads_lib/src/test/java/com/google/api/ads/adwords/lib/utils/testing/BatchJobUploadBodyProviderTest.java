@@ -15,49 +15,40 @@
 package com.google.api.ads.adwords.lib.utils.testing;
 
 import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.adwords.lib.utils.BatchJobException;
 import com.google.api.ads.adwords.lib.utils.BatchJobMutateRequestInterface;
 import com.google.api.ads.adwords.lib.utils.BatchJobUploadBodyProvider;
-import com.google.api.ads.common.lib.soap.testing.CustomDifferenceListener;
+import com.google.api.ads.common.lib.soap.testing.CustomDifferenceEvaluator;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.http.ByteArrayContent;
-
-import org.custommonkey.xmlunit.Diff;
-import org.custommonkey.xmlunit.DifferenceListener;
-import org.custommonkey.xmlunit.XMLAssert;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
-
-import java.io.IOException;
-import java.nio.charset.Charset;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /**
  * Base class for tests of {@link BatchJobUploadBodyProvider} implementations.
- * 
- * <p>
- * Abstract methods allow subclasses to provide version and SOAP toolkit-specific objects
- * for testing.
+ *
+ * <p>Abstract methods allow subclasses to provide version and SOAP toolkit-specific objects for
+ * testing.
  */
 @RunWith(JUnit4.class)
 public abstract class BatchJobUploadBodyProviderTest<
     RequestT extends BatchJobMutateRequestInterface> {
 
-  /**
-   * Creates a new {@link BatchJobMutateRequestInterface}.
-   */
+  /** Creates a new {@link BatchJobMutateRequestInterface}. */
   protected abstract RequestT createMutateRequest();
 
-  /**
-   * Returns the AdWords API version for this test.
-   */
+  /** Returns the AdWords API version for this test. */
   protected abstract String getApiVersion();
 
-  /**
-   * Adds a {@code BudgetOperation} with the specified attributes.
-   */
+  /** Adds a {@code BudgetOperation} with the specified attributes. */
   protected abstract void addBudgetOperation(
       RequestT request,
       long budgetId,
@@ -65,9 +56,7 @@ public abstract class BatchJobUploadBodyProviderTest<
       long budgetAmountInMicros,
       String deliveryMethod);
 
-  /**
-   * Adds a {@code CampaignOperation} with the specified attributes.
-   */
+  /** Adds a {@code CampaignOperation} with the specified attributes. */
   protected abstract void addCampaignOperation(
       RequestT request,
       long campaignId,
@@ -78,9 +67,7 @@ public abstract class BatchJobUploadBodyProviderTest<
       String biddingStrategyType,
       boolean enhancedCpcEnabled);
 
-  /**
-   * Adds a {@code NegativeCampaignCriterion} with the specified attributes.
-   */
+  /** Adds a {@code NegativeCampaignCriterion} with the specified attributes. */
   protected abstract void addCampaignNegativeKeywordOperation(
       RequestT request, long campaignId, String keywordText, String keywordMatchType);
 
@@ -103,9 +90,13 @@ public abstract class BatchJobUploadBodyProviderTest<
 
     // Perform an XML diff using the custom difference listener that properly handles namespaces
     // and attributes.
-    Diff diff = new Diff(expectedRequestXml, actualRequestXml);
-    DifferenceListener diffListener = new CustomDifferenceListener();
-    diff.overrideDifferenceListener(diffListener);
-    XMLAssert.assertXMLEqual("Serialized upload request does not match expected XML", diff, true);
+    Diff diff =
+        DiffBuilder.compare(expectedRequestXml)
+            .normalizeWhitespace()
+            .withDifferenceEvaluator(new CustomDifferenceEvaluator())
+            .withTest(actualRequestXml)
+            .checkForSimilar()
+            .build();
+    assertFalse("XML similar " + diff, diff.hasDifferences());
   }
 }

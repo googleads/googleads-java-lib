@@ -52,7 +52,7 @@ import java.util.List;
 public class AddExpandedTextAds {
 
   private static final int NUMBER_OF_ADS = 5;
-
+  
   private static class AddExpandedTextAdsParams extends CodeSampleParams {
     @Parameter(names = ArgumentNames.AD_GROUP_ID, required = true)
     private Long adGroupId;

@@ -15,23 +15,25 @@
 package com.google.api.ads.admanager.axis;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.axis.v202005.Company;
-import com.google.api.ads.admanager.axis.v202005.CompanyServiceInterface;
+import com.google.api.ads.admanager.axis.v202102.Company;
+import com.google.api.ads.admanager.axis.v202102.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /**
  * Tests that a Ad Manager Axis SOAP call can be made end-to-end when SOAP compression is enabled.
@@ -41,7 +43,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdManagerAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202005";
+  private static final String API_VERSION = "v202102";
 
   @BeforeClass
   public static void setupClass() {
@@ -76,9 +78,12 @@ public class AdManagerAxisSoapCompressionIntegrationTest extends MockHttpIntegra
     assertTrue(
         "Compression was enabled but the last request body was not compressed",
         testHttpServer.wasLastRequestBodyCompressed());
-    XMLAssert.assertXMLEqual(
-        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
 }

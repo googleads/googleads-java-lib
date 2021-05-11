@@ -15,6 +15,7 @@
 package com.google.api.ads.common.lib.utils.logging;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
@@ -25,26 +26,9 @@ import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.Lists;
-
-import org.custommonkey.xmlunit.XMLAssert;
-import org.custommonkey.xmlunit.XMLUnit;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.EmptyStackException;
 import java.util.List;
-
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -59,10 +43,21 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.slf4j.Logger;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.builder.Input;
+import org.xmlunit.diff.Diff;
 
-/**
- * Test for the {@link PrettyPrinter} class.
- */
+/** Test for the {@link PrettyPrinter} class. */
 @RunWith(JUnit4.class)
 public class PrettyPrinterTest {
 
@@ -98,9 +93,7 @@ public class PrettyPrinterTest {
     when(adsApiConfiguration.getRequestIdXPath()).thenReturn(TEST_REQUEST_ID_XPATH);
   }
 
-  /**
-   * Creates a new {@link PrettyPrinter} using this object's attributes.
-   */
+  /** Creates a new {@link PrettyPrinter} using this object's attributes. */
   private PrettyPrinter createPrettyPrinter() {
     PrettyPrinter prettyPrinter =
         new PrettyPrinter(
@@ -112,17 +105,16 @@ public class PrettyPrinterTest {
     return prettyPrinter;
   }
 
-  /**
-   * Tests that unexpected exceptions in the transformer/format phase get logged correctly.
-   */
+  /** Tests that unexpected exceptions in the transformer/format phase get logged correctly. */
   @Test
   public void testTransformerExceptions() throws TransformerException {
     String html =
         "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html><a></a></html>";
-    List<Exception> exceptions = Lists.newArrayList(
-        new NullPointerException(),
-        new TransformerException("transformer exception"),
-        new EmptyStackException());
+    List<Exception> exceptions =
+        Lists.newArrayList(
+            new NullPointerException(),
+            new TransformerException("transformer exception"),
+            new EmptyStackException());
     for (Exception exception : exceptions) {
       Transformer transformer = Mockito.mock(Transformer.class);
       Mockito.doThrow(exception)
@@ -141,9 +133,7 @@ public class PrettyPrinterTest {
     }
   }
 
-  /**
-   * Tests that unexpected exceptions in the sanitize phase get logged correctly.
-   */
+  /** Tests that unexpected exceptions in the sanitize phase get logged correctly. */
   @Test
   public void testSanitizeExceptions()
       throws IOException, SAXException, XPathExpressionException, ParserConfigurationException {
@@ -190,41 +180,35 @@ public class PrettyPrinterTest {
           "pretty XML should not be String.equals to the original (should be formatted)",
           TEST_XML,
           prettyXml);
-      Document expectedDocument =
-          XMLUnit.getControlDocumentBuilderFactory()
-              .newDocumentBuilder()
-              .parse(new InputSource(new StringReader(TEST_XML)));
-      Document actualDocument =
-          XMLUnit.getTestDocumentBuilderFactory()
-              .newDocumentBuilder()
-              .parse(new InputSource(new StringReader(prettyXml)));
-      XMLAssert.assertXMLEqual(
-          XMLUnit.getWhitespaceStrippedDocument(expectedDocument),
-          XMLUnit.getWhitespaceStrippedDocument(actualDocument));
+      Source expected = Input.fromString(TEST_XML).build();
+      Source actual = Input.fromString(prettyXml).build();
+      Diff diff =
+          DiffBuilder.compare(expected)
+              .withTest(actual)
+              .normalizeWhitespace()
+              .checkForSimilar()
+              .build();
+      assertFalse(diff.hasDifferences());
     }
   }
-  
-  /**
-   * Tests that pretty printing works properly under normal circumstances.
-   */
+
+  /** Tests that pretty printing works properly under normal circumstances. */
   @Test
   public void testPrettyPrint() throws SAXException, IOException, ParserConfigurationException {
     when(adsApiConfiguration.getSensitiveXPaths()).thenReturn(new String[] {TEST_SENSITIVE_XPATH});
 
     String prettyPrintedXml = createPrettyPrinter().prettyPrint(TEST_XML);
     String expectedXml = TEST_XML.replace("moe", "REDACTED");
-    
-    Document expectedDocument =
-        XMLUnit.getControlDocumentBuilderFactory()
-            .newDocumentBuilder()
-            .parse(new InputSource(new StringReader(expectedXml)));
-    Document actualDocument =
-        XMLUnit.getTestDocumentBuilderFactory()
-            .newDocumentBuilder()
-            .parse(new InputSource(new StringReader(prettyPrintedXml)));
-    XMLAssert.assertXMLEqual(
-        XMLUnit.getWhitespaceStrippedDocument(expectedDocument),
-        XMLUnit.getWhitespaceStrippedDocument(actualDocument));
+
+    Source expected = Input.fromString(expectedXml).build();
+    Source actual = Input.fromString(prettyPrintedXml).build();
+    Diff diff =
+        DiffBuilder.compare(expected)
+            .withTest(actual)
+            .normalizeWhitespace()
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
   }
 
   /**

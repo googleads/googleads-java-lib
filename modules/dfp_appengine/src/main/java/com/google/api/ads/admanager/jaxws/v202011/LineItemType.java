@@ -62,8 +62,7 @@ public enum LineItemType {
 
     /**
      * 
-     *                 The type of {@link LineItem} for which a fixed quantity of impressions or
-     *                 clicks are reserved.
+     *                 The type of {@link LineItem} for which a fixed quantity of impressions or clicks are reserved.
      *               
      * 
      */

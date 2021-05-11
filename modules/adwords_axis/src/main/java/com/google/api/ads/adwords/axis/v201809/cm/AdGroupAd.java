@@ -89,7 +89,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /* ID of the base ad group from which this draft/trial ad was
      * created. For
-     *                 base ad groups this is equal to the ad group ID.
+     *                 base ad groups this is equal to the ad group ID. 
      * If the ad group was created
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
@@ -101,6 +101,13 @@ public class AdGroupAd  implements java.io.Serializable {
      * only and will be ignored when sent to the API.</span> */
     private java.lang.Long baseAdGroupId;
 
+    /* This Map provides a place to put new features and settings
+     * in older versions
+     *                 of the AdWords API in the rare instance we need to
+     * introduce a new feature in
+     *                 an older version.
+     *                 
+     *                 It is presently unused.  Do not set a value. */
     private com.google.api.ads.adwords.axis.v201809.cm.String_StringMapEntry[] forwardCompatibilityMap;
 
     /* The strength information of the Ad. This contains the overall
@@ -154,7 +161,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the adGroupId value for this AdGroupAd.
-     *
+     * 
      * @return adGroupId   * The id of the adgroup containing this ad.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupId".</span><span class="constraint
@@ -169,7 +176,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the adGroupId value for this AdGroupAd.
-     *
+     * 
      * @param adGroupId   * The id of the adgroup containing this ad.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "AdGroupId".</span><span class="constraint
@@ -184,7 +191,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the ad value for this AdGroupAd.
-     *
+     * 
      * @return ad   * The contents of the ad itself.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -196,7 +203,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the ad value for this AdGroupAd.
-     *
+     * 
      * @param ad   * The contents of the ad itself.
      *                 <span class="constraint Required">This field is required
      * and should not be {@code null}.</span>
@@ -208,7 +215,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the status value for this AdGroupAd.
-     *
+     * 
      * @return status   * The status of the ad.
      *                 This field is required and should not be {@code null}
      * when it is contained within
@@ -224,7 +231,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the status value for this AdGroupAd.
-     *
+     * 
      * @param status   * The status of the ad.
      *                 This field is required and should not be {@code null}
      * when it is contained within
@@ -240,7 +247,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the policySummary value for this AdGroupAd.
-     *
+     * 
      * @return policySummary   * Summary of policy findings for this ad.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PolicySummary".</span>
@@ -254,7 +261,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the policySummary value for this AdGroupAd.
-     *
+     * 
      * @param policySummary   * Summary of policy findings for this ad.
      *                 <span class="constraint Selectable">This field can
      * be selected using the value "PolicySummary".</span>
@@ -268,7 +275,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the labels value for this AdGroupAd.
-     *
+     * 
      * @return labels   * Labels that are attached to the AdGroupAd. To associate an
      * existing {@link Label} to an
      *                 existing {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel}
@@ -297,7 +304,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the labels value for this AdGroupAd.
-     *
+     * 
      * @param labels   * Labels that are attached to the AdGroupAd. To associate an
      * existing {@link Label} to an
      *                 existing {@link AdGroupAd}, use {@link AdGroupAdService#mutateLabel}
@@ -334,7 +341,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the baseCampaignId value for this AdGroupAd.
-     *
+     * 
      * @return baseCampaignId   * ID of the base campaign from which this draft/trial ad was
      * created.
      *                 This field is only returned on get requests.
@@ -351,7 +358,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the baseCampaignId value for this AdGroupAd.
-     *
+     * 
      * @param baseCampaignId   * ID of the base campaign from which this draft/trial ad was
      * created.
      *                 This field is only returned on get requests.
@@ -368,10 +375,10 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the baseAdGroupId value for this AdGroupAd.
-     *
+     * 
      * @return baseAdGroupId   * ID of the base ad group from which this draft/trial ad was
      * created. For
-     *                 base ad groups this is equal to the ad group ID.
+     *                 base ad groups this is equal to the ad group ID. 
      * If the ad group was created
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
@@ -389,10 +396,10 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the baseAdGroupId value for this AdGroupAd.
-     *
+     * 
      * @param baseAdGroupId   * ID of the base ad group from which this draft/trial ad was
      * created. For
-     *                 base ad groups this is equal to the ad group ID.
+     *                 base ad groups this is equal to the ad group ID. 
      * If the ad group was created
      *                 in the draft or trial and has no corresponding base
      * ad group, this field is null.
@@ -408,11 +415,33 @@ public class AdGroupAd  implements java.io.Serializable {
     }
 
 
+    /**
+     * Gets the forwardCompatibilityMap value for this AdGroupAd.
+     * 
+     * @return forwardCompatibilityMap   * This Map provides a place to put new features and settings
+     * in older versions
+     *                 of the AdWords API in the rare instance we need to
+     * introduce a new feature in
+     *                 an older version.
+     *                 
+     *                 It is presently unused.  Do not set a value.
+     */
     public com.google.api.ads.adwords.axis.v201809.cm.String_StringMapEntry[] getForwardCompatibilityMap() {
         return forwardCompatibilityMap;
     }
 
 
+    /**
+     * Sets the forwardCompatibilityMap value for this AdGroupAd.
+     * 
+     * @param forwardCompatibilityMap   * This Map provides a place to put new features and settings
+     * in older versions
+     *                 of the AdWords API in the rare instance we need to
+     * introduce a new feature in
+     *                 an older version.
+     *                 
+     *                 It is presently unused.  Do not set a value.
+     */
     public void setForwardCompatibilityMap(com.google.api.ads.adwords.axis.v201809.cm.String_StringMapEntry[] forwardCompatibilityMap) {
         this.forwardCompatibilityMap = forwardCompatibilityMap;
     }
@@ -428,7 +457,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Gets the adStrengthInfo value for this AdGroupAd.
-     *
+     * 
      * @return adStrengthInfo   * The strength information of the Ad. This contains the overall
      * strength and action items to
      *                 improve the strength.
@@ -444,7 +473,7 @@ public class AdGroupAd  implements java.io.Serializable {
 
     /**
      * Sets the adStrengthInfo value for this AdGroupAd.
-     *
+     * 
      * @param adStrengthInfo   * The strength information of the Ad. This contains the overall
      * strength and action items to
      *                 improve the strength.
@@ -468,32 +497,32 @@ public class AdGroupAd  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.adGroupId==null && other.getAdGroupId()==null) ||
+        _equals = true && 
+            ((this.adGroupId==null && other.getAdGroupId()==null) || 
              (this.adGroupId!=null &&
               this.adGroupId.equals(other.getAdGroupId()))) &&
-            ((this.ad==null && other.getAd()==null) ||
+            ((this.ad==null && other.getAd()==null) || 
              (this.ad!=null &&
               this.ad.equals(other.getAd()))) &&
-            ((this.status==null && other.getStatus()==null) ||
+            ((this.status==null && other.getStatus()==null) || 
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
-            ((this.policySummary==null && other.getPolicySummary()==null) ||
+            ((this.policySummary==null && other.getPolicySummary()==null) || 
              (this.policySummary!=null &&
               this.policySummary.equals(other.getPolicySummary()))) &&
-            ((this.labels==null && other.getLabels()==null) ||
+            ((this.labels==null && other.getLabels()==null) || 
              (this.labels!=null &&
               java.util.Arrays.equals(this.labels, other.getLabels()))) &&
-            ((this.baseCampaignId==null && other.getBaseCampaignId()==null) ||
+            ((this.baseCampaignId==null && other.getBaseCampaignId()==null) || 
              (this.baseCampaignId!=null &&
               this.baseCampaignId.equals(other.getBaseCampaignId()))) &&
-            ((this.baseAdGroupId==null && other.getBaseAdGroupId()==null) ||
+            ((this.baseAdGroupId==null && other.getBaseAdGroupId()==null) || 
              (this.baseAdGroupId!=null &&
               this.baseAdGroupId.equals(other.getBaseAdGroupId()))) &&
-            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) ||
+            ((this.forwardCompatibilityMap==null && other.getForwardCompatibilityMap()==null) || 
              (this.forwardCompatibilityMap!=null &&
               java.util.Arrays.equals(this.forwardCompatibilityMap, other.getForwardCompatibilityMap()))) &&
-            ((this.adStrengthInfo==null && other.getAdStrengthInfo()==null) ||
+            ((this.adStrengthInfo==null && other.getAdStrengthInfo()==null) || 
              (this.adStrengthInfo!=null &&
               this.adStrengthInfo.equals(other.getAdStrengthInfo())));
         __equalsCalc = null;
@@ -638,10 +667,10 @@ public class AdGroupAd  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -650,10 +679,10 @@ public class AdGroupAd  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

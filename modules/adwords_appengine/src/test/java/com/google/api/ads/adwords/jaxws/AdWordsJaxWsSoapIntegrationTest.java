@@ -32,13 +32,14 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /**
  * Tests that a AdWords JAX-WS SOAP call can be made end-to-end with compression disabled.
@@ -97,9 +98,10 @@ public class AdWordsJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
         responseBudget.getAmount().getMicroAmount());
     assertEquals("Budget delivery method does not match", budget.getDeliveryMethod(),
         responseBudget.getDeliveryMethod());
-    
-    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+
+    Diff diff = DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION)).withTest(
+        testHttpServer.getLastRequestBody()).checkForSimilar().build();
+    assertFalse(diff.hasDifferences());
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());

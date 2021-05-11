@@ -131,17 +131,17 @@ public class EstimateKeywordTraffic {
     // number of keywords that can be passed in a single request.
     //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
     List<Keyword> keywords = new ArrayList<Keyword>();
-
+    
     Keyword marsCruiseKeyword = new Keyword();
     marsCruiseKeyword.setText("mars cruise");
     marsCruiseKeyword.setMatchType(KeywordMatchType.BROAD);
     keywords.add(marsCruiseKeyword);
-
+    
     Keyword cheapCruiseKeyword = new Keyword();
     cheapCruiseKeyword.setText("cheap cruise");
     cheapCruiseKeyword.setMatchType(KeywordMatchType.PHRASE);
     keywords.add(cheapCruiseKeyword);
-
+    
     Keyword cruiseKeyword = new Keyword();
     cruiseKeyword.setText("cruise");
     cruiseKeyword.setMatchType(KeywordMatchType.EXACT);
@@ -172,26 +172,26 @@ public class EstimateKeywordTraffic {
         .toArray(new KeywordEstimateRequest[] {}));
     adGroupEstimateRequest.setMaxCpc(new Money(null, 1000000L));
     adGroupEstimateRequests.add(adGroupEstimateRequest);
-
+    
     // Create campaign estimate requests.
     List<CampaignEstimateRequest> campaignEstimateRequests =
         new ArrayList<CampaignEstimateRequest>();
     CampaignEstimateRequest campaignEstimateRequest = new CampaignEstimateRequest();
     campaignEstimateRequest.setAdGroupEstimateRequests(adGroupEstimateRequests
         .toArray(new AdGroupEstimateRequest[] {}));
-
+    
     Location unitedStates = new Location();
     unitedStates.setId(2840L);
     Language english = new Language();
     english.setId(1000L);
     campaignEstimateRequest.setCriteria(new Criterion[] {unitedStates, english});
     campaignEstimateRequests.add(campaignEstimateRequest);
-
+    
     // Create selector.
     TrafficEstimatorSelector selector = new TrafficEstimatorSelector();
     selector.setCampaignEstimateRequests(campaignEstimateRequests
         .toArray(new CampaignEstimateRequest[] {}));
-
+    
     // Optional: Request a list of campaign level estimates segmented by platform.
     selector.setPlatformEstimateRequested(true);
 
@@ -229,7 +229,7 @@ public class EstimateKeywordTraffic {
 
         Keyword keyword = keywordEstimateRequests.get(i).getKeyword();
         KeywordEstimate keywordEstimate = keywordEstimates[i];
-
+        
         String keywordMessage =
             String.format(
                 "Results for the keyword with text '%s' and match type '%s':%n",

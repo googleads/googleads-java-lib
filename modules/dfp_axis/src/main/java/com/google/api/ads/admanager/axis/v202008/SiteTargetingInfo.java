@@ -23,8 +23,8 @@ package com.google.api.ads.admanager.axis.v202008;
 
 
 /**
- * Contains information required for AdWords advertisers to place
- * their ads.
+ * Deprecated container for information required for AdWords advertisers
+ * to place their ads.
  */
 public class SiteTargetingInfo  implements java.io.Serializable {
     public SiteTargetingInfo() {

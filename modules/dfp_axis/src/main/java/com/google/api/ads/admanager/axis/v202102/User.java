@@ -41,11 +41,10 @@ public class User  extends com.google.api.ads.admanager.axis.v202102.UserRecord 
     private java.lang.Boolean isActive;
 
     /* Specifies whether or not the {@code User} wants to permit the
-     * Publisher
-     *                     Display Ads system to send email notifications
-     * to his or her email address.
-     *                     This attribute is optional and defaults to {@code
-     * true}. */
+     * Publisher Display Ads system to
+     *                     send email notifications to their email address.
+     * This attribute is optional and defaults to
+     *                     {@code true}. */
     private java.lang.Boolean isEmailNotificationAllowed;
 
     /* An identifier for the {@code User} that is meaningful to the
@@ -147,11 +146,10 @@ public class User  extends com.google.api.ads.admanager.axis.v202102.UserRecord 
      * Gets the isEmailNotificationAllowed value for this User.
      * 
      * @return isEmailNotificationAllowed   * Specifies whether or not the {@code User} wants to permit the
-     * Publisher
-     *                     Display Ads system to send email notifications
-     * to his or her email address.
-     *                     This attribute is optional and defaults to {@code
-     * true}.
+     * Publisher Display Ads system to
+     *                     send email notifications to their email address.
+     * This attribute is optional and defaults to
+     *                     {@code true}.
      */
     public java.lang.Boolean getIsEmailNotificationAllowed() {
         return isEmailNotificationAllowed;
@@ -162,11 +160,10 @@ public class User  extends com.google.api.ads.admanager.axis.v202102.UserRecord 
      * Sets the isEmailNotificationAllowed value for this User.
      * 
      * @param isEmailNotificationAllowed   * Specifies whether or not the {@code User} wants to permit the
-     * Publisher
-     *                     Display Ads system to send email notifications
-     * to his or her email address.
-     *                     This attribute is optional and defaults to {@code
-     * true}.
+     * Publisher Display Ads system to
+     *                     send email notifications to their email address.
+     * This attribute is optional and defaults to
+     *                     {@code true}.
      */
     public void setIsEmailNotificationAllowed(java.lang.Boolean isEmailNotificationAllowed) {
         this.isEmailNotificationAllowed = isEmailNotificationAllowed;

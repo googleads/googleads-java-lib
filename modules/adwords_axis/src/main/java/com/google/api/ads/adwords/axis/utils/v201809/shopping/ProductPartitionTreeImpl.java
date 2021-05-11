@@ -85,9 +85,9 @@ class ProductPartitionTreeImpl
    * {@link #createMutateOperationPairs()}.
    */
   private final ProductPartitionNode originalRoot;
-
+  
   private final Comparator<ProductDimension> dimensionComparator;
-
+  
   /**
    * The page size to use when retrieving ad group criteria.
    */
@@ -150,7 +150,7 @@ class ProductPartitionTreeImpl
       }
     };
   }
-
+  
   /**
    * Deeply clones each child in {@code children} and attaches it to {@code newParent}.
    *
@@ -228,7 +228,7 @@ class ProductPartitionTreeImpl
 
     return createNonEmptyAdGroupTree(adGroupId, parentIdMap);
   }
-
+  
   /**
    * Returns a new instance of this class based on the collection of ad group criteria provided.
    * <p>NOTE: If retrieving existing criteria for use with this method, you must include all of the
@@ -274,11 +274,11 @@ class ProductPartitionTreeImpl
 
     return createNonEmptyAdGroupTree(adGroupId, parentIdMap);
   }
-
+  
   /**
    * Returns a new tree based on a non-empty collection of ad group criteria. All parameters
    * required.
-   *
+   * 
    * @param adGroupId the ID of the ad group
    * @param parentIdMap the multimap from parent product partition ID to child criteria
    * @return a new ProductPartitionTree
@@ -290,9 +290,9 @@ class ProductPartitionTreeImpl
         "parentIdMap passed for ad group ID %s is empty", adGroupId);
     Preconditions.checkArgument(parentIdMap.containsKey(null),
         "No root criterion found in the list of ad group criteria for ad group ID %s", adGroupId);
-
+    
     AdGroupCriterion rootCriterion = Iterables.getOnlyElement(parentIdMap.get(null));
-
+    
     Preconditions.checkState(rootCriterion instanceof BiddableAdGroupCriterion,
         "Root criterion for ad group ID %s is not a BiddableAdGroupCriterion", adGroupId);
     BiddableAdGroupCriterion biddableRootCriterion = (BiddableAdGroupCriterion) rootCriterion;
@@ -313,7 +313,7 @@ class ProductPartitionTreeImpl
     rootNode = copyCustomParametersToNode(biddableRootCriterion, rootNode);
 
     addChildNodes(rootNode, parentIdMap);
-
+    
     return new ProductPartitionTreeImpl(adGroupId, biddingStrategyConfig, rootNode);
   }
 
@@ -331,17 +331,17 @@ class ProductPartitionTreeImpl
         new ProductPartitionNode(null, null, -1L, new ProductDimensionComparator());
     return new ProductPartitionTreeImpl(adGroupId, biddingStrategyConfig, rootNode);
   }
-
+  
   @Override
   public Long getAdGroupId() {
     return adGroupId;
   }
-
+  
   @Override
   public ProductPartitionNode getRoot() {
     return root;
   }
-
+  
   @Override
   public String toString() {
     return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
@@ -369,7 +369,7 @@ class ProductPartitionTreeImpl
       return createAddOperations(root);
     }
 
-    // Add the mutate operations required to apply changes to the root node.
+    // Add the mutate operations required to apply changes to the root node. 
     Set<ProductDimension> dimensionsToProcess = addMutateOperations(originalRoot, root, ops);
 
     // Add additional mutate operations for the remaining child dimensions to process.
@@ -390,10 +390,10 @@ class ProductPartitionTreeImpl
       ProductPartitionNode newParentNode, Set<ProductDimension> childDimensionsToProcess,
       List<OperationPair> ops) {
     for (ProductDimension dimensionToProcess : childDimensionsToProcess) {
-      ProductPartitionNode originalChild = originalParentNode.hasChild(dimensionToProcess)
+      ProductPartitionNode originalChild = originalParentNode.hasChild(dimensionToProcess) 
               ? originalParentNode.getChild(dimensionToProcess)
               : null;
-      ProductPartitionNode newChild = newParentNode.hasChild(dimensionToProcess)
+      ProductPartitionNode newChild = newParentNode.hasChild(dimensionToProcess) 
               ? newParentNode.getChild(dimensionToProcess)
               : null;
       Set<ProductDimension> grandchildDimensionsToProcess =
@@ -476,14 +476,14 @@ class ProductPartitionTreeImpl
       default:
         throw new IllegalStateException("Unrecognized difference: " + nodeDifference);
     }
-
+    
     if (isProcessChildren) {
       for (ProductPartitionNode childNode :
           Iterables.concat(originalNode.getChildren(), newNode.getChildren())) {
         childDimensionsToProcess.add(childNode.getDimension());
       }
     }
-
+    
     return childDimensionsToProcess;
   }
 
@@ -540,7 +540,7 @@ class ProductPartitionTreeImpl
     AdGroupCriterionOperation removeOp = new AdGroupCriterionOperation();
     removeOp.setOperator(Operator.REMOVE);
     removeOp.setOperand(ProductPartitionNodeAdapter.createCriterionForRemove(node, adGroupId));
-
+    
     return new OperationPair(node, removeOp);
   }
 
@@ -550,7 +550,7 @@ class ProductPartitionTreeImpl
   private BiddingStrategyConfiguration getBiddingStrategyConfiguration() {
     // Create a copy of the config.
     BiddingStrategyConfiguration copy = new BiddingStrategyConfiguration();
-
+  
     return copy;
   }
 
@@ -566,14 +566,14 @@ class ProductPartitionTreeImpl
       this.node = node;
       this.operation = operation;
     }
-
+    
     @Override
     public String toString() {
       return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).append("node", node)
           .append("operation", operation).toString();
     }
   }
-
+  
   /**
    * Retrieves the {@link BiddingStrategyConfiguration} of an ad group.
    *

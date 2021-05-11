@@ -15,6 +15,7 @@
 package com.google.api.ads.admanager.jaxws;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
@@ -29,11 +30,12 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 import java.util.List;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /**
  * Tests that a Ad Manager JAX-WS SOAP call can be made end-to-end when SOAP compression is enabled.
@@ -79,9 +81,12 @@ public class AdManagerJaxWsSoapCompressionIntegrationTest extends MockHttpIntegr
         "Compression was enabled but the last request body was not compressed",
         testHttpServer.wasLastRequestBodyCompressed());
 
-    XMLAssert.assertXMLEqual(
-        SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
     assertEquals("Bearer TEST_ACCESS_TOKEN", testHttpServer.getLastAuthorizationHttpHeader());
   }
 }

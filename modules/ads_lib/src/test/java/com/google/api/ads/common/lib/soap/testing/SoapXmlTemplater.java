@@ -36,13 +36,13 @@ public class SoapXmlTemplater {
 
     return templateGeneralValues(soapXml, apiVersion);
   }
-
+  
   /**
    * Templates general values of a request or response.
    */
   private static String templateGeneralValues(String soapXml, String apiVersion) {
     return soapXml.replaceAll("#API_VERSION#", apiVersion)
-        .replaceAll("#JAVA_VERSION#", System.getProperty("java.version"))
+        .replaceAll("#JAVA_VERSION#", System.getProperty("java.version"))        
         .replaceAll("\n", "")
         .replaceAll(">\\s*<", "><");
   }

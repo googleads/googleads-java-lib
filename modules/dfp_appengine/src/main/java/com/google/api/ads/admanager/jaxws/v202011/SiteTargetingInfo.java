@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains information required for AdWords advertisers to place their ads.
+ *             Deprecated container for information required for AdWords advertisers to place their ads.
  *           
  * 
  * <p>Java class for SiteTargetingInfo complex type.

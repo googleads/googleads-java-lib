@@ -15,7 +15,6 @@
 package com.google.api.ads.adwords.lib.selectorfields.v201809.cm;
 
 import com.google.api.ads.adwords.lib.selectorfields.EntityField;
-import com.google.api.ads.adwords.lib.selectorfields.Filterable;
 
 /**
  * A {@code Enum} to facilitate the selection of fields for {@code LocationCriterion}.

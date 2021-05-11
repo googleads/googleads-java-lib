@@ -249,7 +249,7 @@ public class JaxWsHandler extends SoapClientHandler<BindingProvider> {
     // Dev App Engine
     bindingProvider.getRequestContext().put(DEVEL_REQUEST_TIMEOUT_KEY, timeout);
   }
-
+  
   private void setConnectTimeout(BindingProvider bindingProvider) {
     // Production App Engine
     bindingProvider.getRequestContext().put(PRODUCTION_CONNECT_TIMEOUT_KEY, CONNECT_TIMEOUT);

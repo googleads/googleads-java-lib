@@ -48,8 +48,29 @@ public enum ThirdPartyBrandLiftIntegrationPartner {
      * 
      */
     UNKNOWN,
+
+    /**
+     * 
+     *                 Indicates there's no third-party brand lift integration partner.
+     *               
+     * 
+     */
     NONE,
+
+    /**
+     * 
+     *                 Indicates third-party brand lift integration partner Kantar.
+     *               
+     * 
+     */
     KANTAR_MILLWARD_BROWN,
+
+    /**
+     * 
+     *                 Indicates third-party brand lift integration partner Dynata.
+     *               
+     * 
+     */
     DYNATA;
 
     public String value() {

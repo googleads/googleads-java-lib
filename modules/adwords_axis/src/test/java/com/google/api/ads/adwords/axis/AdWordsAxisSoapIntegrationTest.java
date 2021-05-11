@@ -39,12 +39,13 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.rmi.RemoteException;
-import org.custommonkey.xmlunit.XMLAssert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
 
 /**
  * Tests that a AdWords Axis SOAP call can be made end-to-end when SOAP compression is disabled.
@@ -156,7 +157,11 @@ public class AdWordsAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
     assertFalse("Did not request compression but request was compressed",
         testHttpServer.wasLastRequestBodyCompressed());
-    XMLAssert.assertXMLEqual(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION),
-        testHttpServer.getLastRequestBody());
+    Diff diff =
+        DiffBuilder.compare(SoapRequestXmlProvider.getOAuth2SoapRequest(API_VERSION))
+            .withTest(testHttpServer.getLastRequestBody())
+            .checkForSimilar()
+            .build();
+    assertFalse(diff.hasDifferences());
   }
 }
