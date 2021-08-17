@@ -64,9 +64,9 @@ public class AdManagerServiceClientFactoryHelperTest {
             soapClientHandler,
             adsLibConfiguration);
     assertEquals(
-        "v202008",
+        "v202108",
         helper.determineVersion(
-            com.google.api.ads.admanager.lib.factory.helper.testing.v202008.TestService.class));
+            com.google.api.ads.admanager.lib.factory.helper.testing.v202108.TestService.class));
   }
 
   @Test
@@ -90,6 +90,6 @@ public class AdManagerServiceClientFactoryHelperTest {
 
     helper.checkServiceClientPreconditions(
         adManagerSession,
-        com.google.api.ads.admanager.lib.factory.helper.testing.v202008.TestService.class);
+        com.google.api.ads.admanager.lib.factory.helper.testing.v202108.TestService.class);
   }
 }

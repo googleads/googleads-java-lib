@@ -24,9 +24,9 @@ package com.google.api.ads.admanager.axis.v202011;
 
 /**
  * A mobile application that has been added to or "claimed" by the
- * network to be used for
- *             targeting purposes.
- *             These mobile apps can come from various app stores.
+ * network to be used for targeting
+ *             purposes. These mobile apps can come from various app
+ * stores.
  */
 public class MobileApplication  implements java.io.Serializable {
     /* Uniquely identifies the mobile application. This attribute
@@ -45,8 +45,8 @@ public class MobileApplication  implements java.io.Serializable {
     private java.lang.String appStoreId;
 
     /* The app store the mobile application belongs to. This attribute
-     * is required for
-     *                 creation and then is read-only. */
+     * is required for creation and
+     *                 then is read-only. */
     private com.google.api.ads.admanager.axis.v202011.MobileApplicationStore appStore;
 
     /* The archival status of the mobile application. This attribute
@@ -197,8 +197,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the appStore value for this MobileApplication.
      * 
      * @return appStore   * The app store the mobile application belongs to. This attribute
-     * is required for
-     *                 creation and then is read-only.
+     * is required for creation and
+     *                 then is read-only.
      */
     public com.google.api.ads.admanager.axis.v202011.MobileApplicationStore getAppStore() {
         return appStore;
@@ -209,8 +209,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the appStore value for this MobileApplication.
      * 
      * @param appStore   * The app store the mobile application belongs to. This attribute
-     * is required for
-     *                 creation and then is read-only.
+     * is required for creation and
+     *                 then is read-only.
      */
     public void setAppStore(com.google.api.ads.admanager.axis.v202011.MobileApplicationStore appStore) {
         this.appStore = appStore;

@@ -15,8 +15,8 @@
 package admanager.axis.auth;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v202008.Network;
-import com.google.api.ads.admanager.axis.v202008.NetworkServiceInterface;
+import com.google.api.ads.admanager.axis.v202108.Network;
+import com.google.api.ads.admanager.axis.v202108.NetworkServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;

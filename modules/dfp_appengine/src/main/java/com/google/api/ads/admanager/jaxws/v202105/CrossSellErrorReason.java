@@ -83,7 +83,7 @@ public enum CrossSellErrorReason {
 
     /**
      * 
-     *                 The cross-sell content provider publisher feature must be enabled on the partner's network.
+     *                 The cross-sell publisher features must be enabled on the partner's network.
      *               
      * 
      */

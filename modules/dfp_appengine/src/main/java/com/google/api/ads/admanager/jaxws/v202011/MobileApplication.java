@@ -23,9 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A mobile application that has been added to or "claimed" by the network to be used for
- *             targeting purposes.
- *             These mobile apps can come from various app stores.
+ *             A mobile application that has been added to or "claimed" by the network to be used for targeting
+ *             purposes. These mobile apps can come from various app stores.
  *           
  * 
  * <p>Java class for MobileApplication complex type.

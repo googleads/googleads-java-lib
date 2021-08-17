@@ -149,8 +149,8 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
      *         
      *         
      * @param filterStatement a Publisher Query Language statement on the
-     * ID and Name fields of the
-     *         LinkedDevice table.
+     * ID, Name, UserId and
+     *         LinkedDeviceVisibility fields of the LinkedDevice table.
      *         
      * @param options criteria to use to push a given creative.
      */

@@ -60,7 +60,7 @@ public enum NetworkErrorReason {
 
     /**
      * 
-     *                 Multi-currency support is not enabled for this network.  This is an Ad Manager 360 feature.
+     *                 Multi-currency support is not enabled for this network. This is an Ad Manager 360 feature.
      *               
      * 
      */
