@@ -19,7 +19,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.client.ResponseInfo;
@@ -84,7 +84,7 @@ public class ResponseInfoXPathSetTest {
         builder,
         xPathSet.parseMessage(builder, (SOAPMessage) null));
     // Message was null, so no methods should have been called on the builder.
-    verifyZeroInteractions(builder);
+    verifyNoMoreInteractions(builder);
   }
 
   @Test
@@ -101,7 +101,7 @@ public class ResponseInfoXPathSetTest {
               return null;
             })
         .when(message)
-        .writeTo(org.mockito.Matchers.any(OutputStream.class));
+        .writeTo(org.mockito.ArgumentMatchers.any(OutputStream.class));
     assertSame(
         "parseMessage should return the same builder passed in",
         builder,

@@ -39,7 +39,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -61,7 +61,7 @@ public class ReportDownloaderTest {
   public void testWaitForReportReady_completed()
       throws ApiException, RemoteException, InterruptedException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
-    when(reportService.getReportJobStatus(Matchers.anyLong()))
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
         .thenReturn(ReportJobStatus.COMPLETED);
     assertTrue(downloader.waitForReportReady());
   }
@@ -70,7 +70,8 @@ public class ReportDownloaderTest {
   public void testWaitForReportReady_failed()
       throws ApiException, RemoteException, InterruptedException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
-    when(reportService.getReportJobStatus(Matchers.anyLong())).thenReturn(ReportJobStatus.FAILED);
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
+        .thenReturn(ReportJobStatus.FAILED);
     assertFalse(downloader.waitForReportReady());
   }
 
@@ -79,7 +80,7 @@ public class ReportDownloaderTest {
       throws ApiException, RemoteException, InterruptedException {
     Sleeper sleeper = mock(Sleeper.class);
     ReportDownloader downloader = new ReportDownloader(reportService, 1, sleeper);
-    when(reportService.getReportJobStatus(Matchers.anyLong()))
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
         .thenReturn(ReportJobStatus.IN_PROGRESS, ReportJobStatus.COMPLETED);
     assertTrue(downloader.waitForReportReady());
   }
@@ -88,10 +89,10 @@ public class ReportDownloaderTest {
   public void testGetReportDownloadUrlWithOptions()
       throws ApiException, RemoteException, MalformedURLException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
-    when(reportService.getReportJobStatus(Matchers.anyLong()))
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
         .thenReturn(ReportJobStatus.COMPLETED);
     when(reportService.getReportDownloadUrlWithOptions(
-            Matchers.anyLong(), Matchers.any(ReportDownloadOptions.class)))
+            ArgumentMatchers.anyLong(), ArgumentMatchers.any(ReportDownloadOptions.class)))
         .thenReturn("https://www.google.com/");
     URL downloadUrl = downloader.getDownloadUrl(new ReportDownloadOptions());
     assertEquals("https://www.google.com/", downloadUrl.toString());
@@ -102,10 +103,10 @@ public class ReportDownloaderTest {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
     URL resourceUrl = ReportProvider.TEST_REPORT_RESOURCE;
     String report = Resources.toString(resourceUrl, Charset.forName("UTF-8"));
-    when(reportService.getReportJobStatus(Matchers.anyLong()))
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
         .thenReturn(ReportJobStatus.COMPLETED);
     when(reportService.getReportDownloadUrlWithOptions(
-            Matchers.anyLong(), Matchers.any(ReportDownloadOptions.class)))
+            ArgumentMatchers.anyLong(), ArgumentMatchers.any(ReportDownloadOptions.class)))
         .thenReturn(resourceUrl.toString());
 
     ReportDownloadOptions options = new ReportDownloadOptions();
@@ -118,7 +119,7 @@ public class ReportDownloaderTest {
   @Test
   public void testWhenReportReady_complete() throws IOException, InterruptedException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
-    when(reportService.getReportJobStatus(Matchers.anyLong()))
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
         .thenReturn(ReportJobStatus.COMPLETED);
 
     ReportCallback callback = mock(ReportCallback.class);
@@ -129,7 +130,8 @@ public class ReportDownloaderTest {
   @Test
   public void testWhenReportReady_failed() throws IOException, InterruptedException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
-    when(reportService.getReportJobStatus(Matchers.anyLong())).thenReturn(ReportJobStatus.FAILED);
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong()))
+        .thenReturn(ReportJobStatus.FAILED);
 
     ReportCallback callback = mock(ReportCallback.class);
     downloader.whenReportReady(callback).join();
@@ -140,7 +142,7 @@ public class ReportDownloaderTest {
   public void testWhenReportReady_remote() throws IOException, InterruptedException {
     ReportDownloader downloader = new ReportDownloader(reportService, 1);
     RemoteException e = new RemoteException();
-    when(reportService.getReportJobStatus(Matchers.anyLong())).thenThrow(e);
+    when(reportService.getReportJobStatus(ArgumentMatchers.anyLong())).thenThrow(e);
 
     ReportCallback callback = mock(ReportCallback.class);
     downloader.whenReportReady(callback).join();

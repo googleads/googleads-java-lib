@@ -119,7 +119,7 @@ public class PrettyPrinterTest {
       Transformer transformer = Mockito.mock(Transformer.class);
       Mockito.doThrow(exception)
           .when(transformer)
-          .transform(Mockito.<Source>anyObject(), Mockito.<Result>anyObject());
+          .transform(Mockito.<Source>any(), Mockito.<Result>any());
 
       PrettyPrinter prettyPrinter =
           new PrettyPrinter(
@@ -157,7 +157,7 @@ public class PrettyPrinterTest {
         XPathExpression xpathExpression = Mockito.mock(XPathExpression.class);
         Mockito.doThrow(exception)
             .when(xpathExpression)
-            .evaluate(Mockito.anyObject(), Mockito.<QName>anyObject());
+            .evaluate(Mockito.any(), Mockito.<QName>any());
         when(xpath.compile(Mockito.anyString())).thenReturn(xpathExpression);
         xpathSupplierOverride = Suppliers.ofInstance(xpath);
       } else {

@@ -43,7 +43,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -125,9 +125,9 @@ public abstract class BatchJobHelperTest<
     batchJobHelper.uploadBatchJobOperations(operations, UPLOAD_URL);
     verify(uploader)
         .uploadIncrementalBatchJobOperations(
-            Matchers.<BatchJobMutateRequestInterface>any(),
-            Matchers.eq(true),
-            Matchers.eq(status));
+            ArgumentMatchers.<BatchJobMutateRequestInterface>any(),
+            ArgumentMatchers.eq(true),
+            ArgumentMatchers.eq(status));
   }
 
   @Test
@@ -136,9 +136,9 @@ public abstract class BatchJobHelperTest<
     batchJobHelper.uploadIncrementalBatchJobOperations(operations, false, status);
     verify(uploader)
         .uploadIncrementalBatchJobOperations(
-            Matchers.<BatchJobMutateRequestInterface>any(),
-            Matchers.eq(false),
-            Matchers.eq(status));
+            ArgumentMatchers.<BatchJobMutateRequestInterface>any(),
+            ArgumentMatchers.eq(false),
+            ArgumentMatchers.eq(status));
   }
 
   @Test
@@ -147,7 +147,9 @@ public abstract class BatchJobHelperTest<
     batchJobHelper.uploadIncrementalBatchJobOperations(operations, true, status);
     verify(uploader)
         .uploadIncrementalBatchJobOperations(
-            Matchers.<BatchJobMutateRequestInterface>any(), Matchers.eq(true), Matchers.eq(status));
+            ArgumentMatchers.<BatchJobMutateRequestInterface>any(),
+            ArgumentMatchers.eq(true),
+            ArgumentMatchers.eq(status));
   }
 
   /**

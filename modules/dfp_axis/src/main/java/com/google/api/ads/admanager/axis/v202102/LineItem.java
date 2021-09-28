@@ -23,14 +23,13 @@ package com.google.api.ads.admanager.axis.v202102;
 
 
 /**
- * {@code LineItem} is an advertiser's commitment to purchase a specific
- * number
- *             of ad impressions, clicks, or time.
+ * {@link LineItem} is an advertiser's commitment to purchase a specific
+ * number of ad impressions,
+ *             clicks, or time.
  */
 public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineItemSummary  implements java.io.Serializable {
     /* Contains the targeting criteria for the ad campaign. This attribute
-     * is
-     *                     required. */
+     * is required. */
     private com.google.api.ads.admanager.axis.v202102.Targeting targeting;
 
     /* A list of {@link CreativeTargeting} objects that can be used
@@ -38,12 +37,12 @@ public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineIte
      *                     targeting for this line item. Creative level targeting
      * is specified in a creative placeholder's
      *                     {@link CreativePlaceholder#targetingName} field
-     * by referencing the creative targeting's
-     *                     {@link CreativeTargeting#name name}. It also needs
-     * to be re-specified in the
-     *                     {@link LineItemCreativeAssociation#targetingName}
-     * field when associating a line item with a
-     *                     creative that fits into that placeholder. */
+     * by referencing the creative targeting's {@link
+     *                     CreativeTargeting#name name}. It also needs to
+     * be re-specified in the {@link
+     *                     LineItemCreativeAssociation#targetingName} field
+     * when associating a line item with a creative
+     *                     that fits into that placeholder. */
     private com.google.api.ads.admanager.axis.v202102.CreativeTargeting[] creativeTargetings;
 
     public LineItem() {
@@ -257,8 +256,7 @@ public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineIte
      * Gets the targeting value for this LineItem.
      * 
      * @return targeting   * Contains the targeting criteria for the ad campaign. This attribute
-     * is
-     *                     required.
+     * is required.
      */
     public com.google.api.ads.admanager.axis.v202102.Targeting getTargeting() {
         return targeting;
@@ -269,8 +267,7 @@ public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineIte
      * Sets the targeting value for this LineItem.
      * 
      * @param targeting   * Contains the targeting criteria for the ad campaign. This attribute
-     * is
-     *                     required.
+     * is required.
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202102.Targeting targeting) {
         this.targeting = targeting;
@@ -285,12 +282,12 @@ public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineIte
      *                     targeting for this line item. Creative level targeting
      * is specified in a creative placeholder's
      *                     {@link CreativePlaceholder#targetingName} field
-     * by referencing the creative targeting's
-     *                     {@link CreativeTargeting#name name}. It also needs
-     * to be re-specified in the
-     *                     {@link LineItemCreativeAssociation#targetingName}
-     * field when associating a line item with a
-     *                     creative that fits into that placeholder.
+     * by referencing the creative targeting's {@link
+     *                     CreativeTargeting#name name}. It also needs to
+     * be re-specified in the {@link
+     *                     LineItemCreativeAssociation#targetingName} field
+     * when associating a line item with a creative
+     *                     that fits into that placeholder.
      */
     public com.google.api.ads.admanager.axis.v202102.CreativeTargeting[] getCreativeTargetings() {
         return creativeTargetings;
@@ -305,12 +302,12 @@ public class LineItem  extends com.google.api.ads.admanager.axis.v202102.LineIte
      *                     targeting for this line item. Creative level targeting
      * is specified in a creative placeholder's
      *                     {@link CreativePlaceholder#targetingName} field
-     * by referencing the creative targeting's
-     *                     {@link CreativeTargeting#name name}. It also needs
-     * to be re-specified in the
-     *                     {@link LineItemCreativeAssociation#targetingName}
-     * field when associating a line item with a
-     *                     creative that fits into that placeholder.
+     * by referencing the creative targeting's {@link
+     *                     CreativeTargeting#name name}. It also needs to
+     * be re-specified in the {@link
+     *                     LineItemCreativeAssociation#targetingName} field
+     * when associating a line item with a creative
+     *                     that fits into that placeholder.
      */
     public void setCreativeTargetings(com.google.api.ads.admanager.axis.v202102.CreativeTargeting[] creativeTargetings) {
         this.creativeTargetings = creativeTargetings;

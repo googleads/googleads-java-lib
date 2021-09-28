@@ -47,7 +47,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -100,15 +100,13 @@ public class ReportDownloaderTest {
       ReportDownloadResponseException {
     if (rawResponse.getHttpStatus() == 200) {
       // Response indicates success, so return a ReportDownloadResponse.
-      when(
-              adHocDownloadHelper.downloadReport(
-                  Matchers.any(ReportRequest.class), Matchers.any(Builder.class)))
+      when(adHocDownloadHelper.downloadReport(
+              ArgumentMatchers.any(ReportRequest.class), ArgumentMatchers.any(Builder.class)))
           .thenReturn(new ReportDownloadResponse(rawResponse));
     } else {
       // Response indicates failure, so throw an exception.
-      when(
-              adHocDownloadHelper.downloadReport(
-                  Matchers.any(ReportRequest.class), Matchers.any(Builder.class)))
+      when(adHocDownloadHelper.downloadReport(
+              ArgumentMatchers.any(ReportRequest.class), ArgumentMatchers.any(Builder.class)))
           .thenThrow(new Builder().build(rawResponse.getHttpStatus(), expectedErrorText));
     }
 

@@ -23,7 +23,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.common.lib.client.RequestInfo;
@@ -112,7 +112,7 @@ public class RequestInfoXPathSetTest {
         builder,
         xPathSet.parseMessage(builder, null));
     // Message was null, so no methods should have been called on the builder.
-    verifyZeroInteractions(builder);
+    verifyNoMoreInteractions(builder);
   }
 
   @Test
@@ -125,7 +125,7 @@ public class RequestInfoXPathSetTest {
         builder,
         xPathSet.parseMessage(builder, message));
     // SOAPPart was null, so no methods should have been called on the builder.
-    verifyZeroInteractions(builder);
+    verifyNoMoreInteractions(builder);
   }
 
   @Test
@@ -152,7 +152,7 @@ public class RequestInfoXPathSetTest {
         builder,
         xPathSet.parseMessage(builder, message));
     // Transformer was null, so no methods should have been called on the builder.
-    verifyZeroInteractions(builder);
+    verifyNoMoreInteractions(builder);
   }
 
   @Test

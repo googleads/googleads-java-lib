@@ -1,3 +1,14 @@
+4.15.1 - 09/28/2021
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - No changes.
+
+Common:
+ - Added support for JDK17 (bumped Guice to 5.0.1).
+
 4.15.0 - 08/17/2021
 ------------------
 AdWords:

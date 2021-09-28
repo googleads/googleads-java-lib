@@ -20,7 +20,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.api.ads.adwords.lib.utils.logging.ReportServiceLogger;
@@ -115,7 +115,7 @@ public class ReportResponseInterceptorTest {
 
     // Verifies that the interceptor does not try to consume or mutate the response's
     // input stream, as this would be a violation of the HttpResponseInterceptor contract.
-    verifyZeroInteractions(responseContentStream);
+    verifyNoMoreInteractions(responseContentStream);
   }
 
   /**

@@ -196,17 +196,12 @@
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
-      <version>4.2.2</version>
+      <version>5.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.inject.extensions</groupId>
       <artifactId>guice-assistedinject</artifactId>
-      <version>4.2.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject.extensions</groupId>
-      <artifactId>guice-multibindings</artifactId>
-      <version>4.2.2</version>
+      <version>5.0.1</version>
     </dependency>
     <dependency>
       <groupId>commons-beanutils</groupId>

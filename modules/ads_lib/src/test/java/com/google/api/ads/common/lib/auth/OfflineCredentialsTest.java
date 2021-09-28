@@ -524,7 +524,7 @@ public class OfflineCredentialsTest {
         .withHttpTransport(httpTransport)
         .build();
 
-    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>anyObject())).thenReturn(true);
+    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>any())).thenReturn(true);
 
     Credential credential = offlineCredentials.generateCredential();
 
@@ -549,7 +549,7 @@ public class OfflineCredentialsTest {
         .withRefreshToken("refreshToken")
         .build();
 
-    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>anyObject())).thenReturn(true);
+    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>any())).thenReturn(true);
 
     Credential credential = offlineCredentials.generateCredential();
 
@@ -574,8 +574,7 @@ public class OfflineCredentialsTest {
         .withRefreshToken("refreshToken")
         .build();
 
-    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>anyObject()))
-        .thenThrow(new IOException());
+    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>any())).thenThrow(new IOException());
 
     thrown.expect(OAuthException.class);
     offlineCredentials.generateCredential();
@@ -592,8 +591,8 @@ public class OfflineCredentialsTest {
         .withRefreshToken("refreshToken")
         .build();
 
-    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>anyObject())).thenReturn(false);
-    
+    when(oAuth2Helper.callRefreshToken(Mockito.<Credential>any())).thenReturn(false);
+
     thrown.expect(OAuthException.class);
     offlineCredentials.generateCredential();
   }
