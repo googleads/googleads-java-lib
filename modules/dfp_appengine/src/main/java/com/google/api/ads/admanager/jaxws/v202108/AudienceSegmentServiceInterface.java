@@ -44,7 +44,7 @@ public interface AudienceSegmentServiceInterface {
 
     /**
      * 
-     *         Creates new {@link RuleBasedFirstPartyAudienceSegment} objects.
+     *         Creates new {@link FirstPartyAudienceSegment} objects.
      *         
      *         @param segments first-party audience segments to create
      *         @return created first-party audience segments
@@ -172,7 +172,7 @@ public interface AudienceSegmentServiceInterface {
 
     /**
      * 
-     *         Updates the given {@link RuleBasedFirstPartyAudienceSegment} objects.
+     *         Updates the given {@link FirstPartyAudienceSegment} objects.
      *         
      *         @param segments first-party audience segments to update
      *         @return updated first-party audience segments

@@ -24,8 +24,8 @@ package com.google.api.ads.admanager.axis.v202105;
 public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
 
     /**
-     * Creates new {@link RuleBasedFirstPartyAudienceSegment} objects.
-     * 
+     * Creates new {@link FirstPartyAudienceSegment} objects.
+     *         
      *         
      * @param segments first-party audience segments to create
      *         
@@ -116,9 +116,8 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
     public com.google.api.ads.admanager.axis.v202105.UpdateResult performAudienceSegmentAction(com.google.api.ads.admanager.axis.v202105.AudienceSegmentAction action, com.google.api.ads.admanager.axis.v202105.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202105.ApiException;
 
     /**
-     * Updates the given {@link RuleBasedFirstPartyAudienceSegment}
-     * objects.
-     *         
+     * Updates the given {@link FirstPartyAudienceSegment} objects.
+     * 
      *         
      * @param segments first-party audience segments to update
      *         

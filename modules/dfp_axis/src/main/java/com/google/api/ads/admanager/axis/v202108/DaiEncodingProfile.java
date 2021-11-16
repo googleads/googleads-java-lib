@@ -79,7 +79,11 @@ public class DaiEncodingProfile  implements java.io.Serializable {
     /* Whether to allow the creation or modification of this {@link
      * DaiEncodingProfile} if its
      *                 settings do not match one of the encoding profiles
-     * that is supported by Google DAI. */
+     * that is supported by Google DAI.
+     *                 
+     *                 <p>Note that this field will not persist on the encoding
+     * profile itself, and will only affect
+     *                 the current request. */
     private java.lang.Boolean persistUnmatchedProfiles;
 
     public DaiEncodingProfile() {
@@ -316,6 +320,10 @@ public class DaiEncodingProfile  implements java.io.Serializable {
      * DaiEncodingProfile} if its
      *                 settings do not match one of the encoding profiles
      * that is supported by Google DAI.
+     *                 
+     *                 <p>Note that this field will not persist on the encoding
+     * profile itself, and will only affect
+     *                 the current request.
      */
     public java.lang.Boolean getPersistUnmatchedProfiles() {
         return persistUnmatchedProfiles;
@@ -329,6 +337,10 @@ public class DaiEncodingProfile  implements java.io.Serializable {
      * DaiEncodingProfile} if its
      *                 settings do not match one of the encoding profiles
      * that is supported by Google DAI.
+     *                 
+     *                 <p>Note that this field will not persist on the encoding
+     * profile itself, and will only affect
+     *                 the current request.
      */
     public void setPersistUnmatchedProfiles(java.lang.Boolean persistUnmatchedProfiles) {
         this.persistUnmatchedProfiles = persistUnmatchedProfiles;

@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@link LineItem} is an advertiser's commitment to purchase a specific number of ad impressions,
- *             clicks, or time.
+ *             {@code LineItem} is an advertiser's commitment to purchase a specific number
+ *             of ad impressions, clicks, or time.
  *           
  * 
  * <p>Java class for LineItem complex type.

@@ -47,6 +47,10 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CmsMetadataValue#key#id}</td>
  *             </tr>
  *             <tr>
+ *             <td>{@code keyValueMemberContent}</td>
+ *             <td>Content IDs tagged with a CMS metadata key-value</td>
+ *             </tr>
+ *             <tr>
  *             <td>{@code status}</td>
  *             <td>{@link CmsMetadataValue#status}</td>
  *             </tr>

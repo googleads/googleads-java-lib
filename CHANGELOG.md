@@ -1,3 +1,16 @@
+4.16.0 - 11/16/2021
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202111.
+ - Removed support for v202011.
+ - Removed examples for v202102.
+
+Common:
+ - No changes.
+
 4.15.1 - 09/28/2021
 -------------------
 AdWords:

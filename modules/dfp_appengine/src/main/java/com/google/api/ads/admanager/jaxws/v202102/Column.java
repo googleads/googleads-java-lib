@@ -1747,7 +1747,7 @@ public enum Column {
     /**
      * 
      *                 The total number of video opportunities.
-     *                 <p>Corresponds to "True opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "True Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1756,7 +1756,7 @@ public enum Column {
     /**
      * 
      *                 The total number of video capped opportunities.
-     *                 <p>Corresponds to "Capped opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Capped Opportunities" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

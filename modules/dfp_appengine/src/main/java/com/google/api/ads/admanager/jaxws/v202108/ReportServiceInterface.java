@@ -33,10 +33,10 @@ import javax.xml.ws.ResponseWrapper;
  *       <ul>
  *       <li>Create the {@code ReportJob} object by invoking
  *       {@link ReportService#runReportJob}.</li>
- *       <li>Poll the {@code ReportJob} object using
- *       {@link ReportService#getReportJob}.</li>
- *       <li>Continue to poll the {@code ReportJob} object until the
- *       {@link ReportJob#reportJobStatus} field is equal to
+ *       <li>Poll the report job status using
+ *       {@link ReportService#getReportJobStatus}.</li>
+ *       <li>Continue to poll until the
+ *       status is equal to
  *       {@link ReportJobStatus#COMPLETED} or {@link ReportJobStatus#FAILED}.</li>
  *       <li>If successful, fetch the URL for downloading the report by invoking
  *       {@link ReportService#getReportDownloadURL}.</li>

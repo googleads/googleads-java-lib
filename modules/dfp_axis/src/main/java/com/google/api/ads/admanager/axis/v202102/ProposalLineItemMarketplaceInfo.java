@@ -32,10 +32,10 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 line item.
      *                 
      *                 <p>The last API version in which this field will be
-     * available is v202108. Starting with
-     *                 v202111, this field will no longer be available. To
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
      * control which platforms your proposal line
-     *                 item will serve on from v202111 onward, please use
+     *                 item will serve on from v202105 onward, please use
      * request platform targeting in the targeting
      *                 expression. */
     private com.google.api.ads.admanager.axis.v202102.AdExchangeEnvironment adExchangeEnvironment;
@@ -64,10 +64,10 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 line item.
      *                 
      *                 <p>The last API version in which this field will be
-     * available is v202108. Starting with
-     *                 v202111, this field will no longer be available. To
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
      * control which platforms your proposal line
-     *                 item will serve on from v202111 onward, please use
+     *                 item will serve on from v202105 onward, please use
      * request platform targeting in the targeting
      *                 expression.
      */
@@ -84,10 +84,10 @@ public class ProposalLineItemMarketplaceInfo  implements java.io.Serializable {
      *                 line item.
      *                 
      *                 <p>The last API version in which this field will be
-     * available is v202108. Starting with
-     *                 v202111, this field will no longer be available. To
+     * available is v202102. Starting with
+     *                 v202105, this field will no longer be available. To
      * control which platforms your proposal line
-     *                 item will serve on from v202111 onward, please use
+     *                 item will serve on from v202105 onward, please use
      * request platform targeting in the targeting
      *                 expression.
      */
