@@ -22,7 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for submitting {@link Proposal} objects for approval.
+ *             Deprecated action for submitting {@link Proposal} objects for approval.
+ *             
+ *             <p>This action is no longer supported. It is being temporarily kept to avoid breaking existing
+ *             API clients, and will be removed in a future API version.
  *           
  * 
  * <p>Java class for SubmitProposalsForApproval complex type.

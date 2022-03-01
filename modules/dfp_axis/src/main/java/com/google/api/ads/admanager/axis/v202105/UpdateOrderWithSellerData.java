@@ -24,8 +24,7 @@ package com.google.api.ads.admanager.axis.v202105;
 
 /**
  * The action to update a finalized Marketplace {@link Order} with
- * the seller's data. This action is
- *             only applicable for programmatic proposals.
+ * the seller's data.
  */
 public class UpdateOrderWithSellerData  extends com.google.api.ads.admanager.axis.v202105.ProposalAction  implements java.io.Serializable {
     public UpdateOrderWithSellerData() {

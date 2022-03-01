@@ -122,30 +122,6 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         <td>{@link Proposal#lastModifiedDateTime}</td>
      *         </tr>
      *         <tr>
-     *         <td>
-     *         {@code thirdPartyAdServerId}
-     *         <div class="constraint">
-     *         Only applicable for non-programmatic proposals using sales
-     * management
-     *         </div>
-     *         </td>
-     *         <td>{@link Proposal#thirdPartyAdServerId}</td>
-     *         </tr>
-     *         <tr>
-     *         <td>
-     *         {@code customThirdPartyAdServerName}
-     *         <div class="constraint">
-     *         Only applicable for non-programmatic proposals using sales
-     * management
-     *         </div>
-     *         </td>
-     *         <td>{@link Proposal#customThirdPartyAdServerName}</td>
-     *         </tr>
-     *         <tr>
-     *         <td>{@code hasOfflineErrors}</td>
-     *         <td>{@link Proposal#hasOfflineErrors}</td>
-     *         </tr>
-     *         <tr>
      *         <td>{@code isProgrammatic}</td>
      *         <td>{@link Proposal#isProgrammatic}</td>
      *         </tr>

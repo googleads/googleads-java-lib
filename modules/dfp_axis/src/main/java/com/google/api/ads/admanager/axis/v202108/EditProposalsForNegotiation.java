@@ -23,8 +23,8 @@ package com.google.api.ads.admanager.axis.v202108;
 
 
 /**
- * Opens the non-free-editable fields of a {@link Proposal} for edit.
- * 
+ * Opens the fields of a {@link Proposal} for edit.
+ *             
  *             <p>This proposal will not receive updates from Marketplace
  * while it's open for edit. If the buyer
  *             updates the proposal while it is open for local editing,
@@ -34,8 +34,6 @@ package com.google.api.ads.admanager.axis.v202108;
  *             DiscardProposalDrafts} to revert your edits to get the
  * buyer's latest changes, and then perform
  *             this action to start making your edits again.
- *             
- *             <p>This action is only applicable for programmatic proposals.
  */
 public class EditProposalsForNegotiation  extends com.google.api.ads.admanager.axis.v202108.ProposalAction  implements java.io.Serializable {
     public EditProposalsForNegotiation() {

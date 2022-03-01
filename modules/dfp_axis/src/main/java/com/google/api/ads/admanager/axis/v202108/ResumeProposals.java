@@ -24,8 +24,6 @@ package com.google.api.ads.admanager.axis.v202108;
 
 /**
  * The action used for resuming programmatic {@link Proposal} objects.
- * This action is only
- *             applicable for programmatic proposals.
  */
 public class ResumeProposals  extends com.google.api.ads.admanager.axis.v202108.ProposalAction  implements java.io.Serializable {
     public ResumeProposals() {

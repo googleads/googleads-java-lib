@@ -265,7 +265,7 @@ public enum Dimension {
      *                 <li> {@link TimeZoneType.PUBLISHER}
      *                 <li> {@link TimeZoneType.PROPOSAL_LOCAL}
      *                 </ul>
-     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection.</p>
+     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -313,7 +313,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#id}. Can be used to
      *                 filter by {@link LineItem#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -324,7 +324,7 @@ public enum Dimension {
      *                 Breaks down reporting data by line item. {@link LineItem#name} and
      *                 {@link LineItem#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link LineItem#name}.
-     *                 <p>Corresponds to "Line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Corresponds to "Line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -334,7 +334,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#lineItemType}. Can be used
      *                 to filter by line item type using {@link LineItemType} enumeration names.
-     *                 <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -344,7 +344,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Order#id}. Can be used to filter by
      *                 {@link Order#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -355,7 +355,7 @@ public enum Dimension {
      *                 Breaks down reporting data by order. {@link Order#name} and
      *                 {@link Order#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Order#name}.
-     *                 <p>Corresponds to "Order" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Corresponds to "Order" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -376,7 +376,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by advertising company {@link Company#id}. Can
      *                 be used to filter by {@link Company#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -387,7 +387,7 @@ public enum Dimension {
      *                 Breaks down reporting data by advertising company. {@link Company#name} and
      *                 {@link Company#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Company#name}.
-     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection, Ad speed.</p>
+     *                 <p>Corresponds to "Advertiser" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -424,7 +424,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by salesperson {@link User#id}. Can be used to
      *                 filter by {@link User#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -435,7 +435,7 @@ public enum Dimension {
      *                 Breaks down reporting data by salesperson. {@link User#name} and
      *                 {@link User#id} of the salesperson are automatically included as columns in
      *                 the report. Can be used to filter by {@link User#name}.
-     *                 <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Data protection.</p>
+     *                 <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
      */
@@ -446,7 +446,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link Creative#id} or creative set id
      *                 (master's {@link Creative#id}) if the creative is part of a creative set.
      *                 Can be used to filter by {@link Creative#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Reach, Data protection, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -457,7 +457,7 @@ public enum Dimension {
      *                 Breaks down reporting data by creative. {@link Creative#name} and
      *                 {@link Creative#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Creative#name}.
-     *                 <p>Corresponds to "Creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Data protection, Ad speed.</p>
+     *                 <p>Corresponds to "Creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach, Ad speed.</p>
      *               
      * 
      */
@@ -1095,7 +1095,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by inventory sharing assignment name.
-     *                 <p>Corresponds to "Inventory Share Assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Inventory share assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */
@@ -1104,7 +1104,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by inventory sharing outcome.
-     *                 <p>Corresponds to "Inventory Share Outcome" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Inventory share outcome" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
      */

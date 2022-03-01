@@ -668,7 +668,7 @@ public enum LineItemErrorReason {
 
     /**
      * 
-     *                 The {@Code SkippableAdType} is not allowed.
+     *                 The {@code SkippableAdType} is not allowed.
      *               
      * 
      */

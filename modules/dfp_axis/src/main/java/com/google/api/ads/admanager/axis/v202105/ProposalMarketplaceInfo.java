@@ -45,16 +45,17 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /* The comment on the {@link Proposal} to be sent to the buyer. */
     private java.lang.String marketplaceComment;
 
-    /* The {@link NegotiationRole} that paused the {@code Proposal},
-     * i.e. {@link NegotiationRole#seller} or {@link NegotiationRole#buyer},
-     * or {@code null} when the proposal is not paused.
+    /* The {@link NegotiationRole} that paused the {@code Proposal}.
+     * This field is deprecated and will
+     *                 always be {@code null}. Use {@link ProposalLineItem#pauseReason}
+     * instead.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202105.NegotiationRole pausedBy;
 
     /* The reason for pausing the {@code Proposal}, provided by the
-     * {@code pauseRole}.
-     *                 It is {@code null} when the {@code Proposal} is not
-     * paused.
+     * {@code pauseRole}. This field is
+     *                 deprecated and will always be {@code null}. Use {@link
+     * ProposalLineItem#pauseReason} instead.
      *                 This attribute is read-only. */
     private java.lang.String pauseReason;
 
@@ -199,9 +200,10 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /**
      * Gets the pausedBy value for this ProposalMarketplaceInfo.
      * 
-     * @return pausedBy   * The {@link NegotiationRole} that paused the {@code Proposal},
-     * i.e. {@link NegotiationRole#seller} or {@link NegotiationRole#buyer},
-     * or {@code null} when the proposal is not paused.
+     * @return pausedBy   * The {@link NegotiationRole} that paused the {@code Proposal}.
+     * This field is deprecated and will
+     *                 always be {@code null}. Use {@link ProposalLineItem#pauseReason}
+     * instead.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202105.NegotiationRole getPausedBy() {
@@ -212,9 +214,10 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /**
      * Sets the pausedBy value for this ProposalMarketplaceInfo.
      * 
-     * @param pausedBy   * The {@link NegotiationRole} that paused the {@code Proposal},
-     * i.e. {@link NegotiationRole#seller} or {@link NegotiationRole#buyer},
-     * or {@code null} when the proposal is not paused.
+     * @param pausedBy   * The {@link NegotiationRole} that paused the {@code Proposal}.
+     * This field is deprecated and will
+     *                 always be {@code null}. Use {@link ProposalLineItem#pauseReason}
+     * instead.
      *                 This attribute is read-only.
      */
     public void setPausedBy(com.google.api.ads.admanager.axis.v202105.NegotiationRole pausedBy) {
@@ -226,9 +229,9 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * Gets the pauseReason value for this ProposalMarketplaceInfo.
      * 
      * @return pauseReason   * The reason for pausing the {@code Proposal}, provided by the
-     * {@code pauseRole}.
-     *                 It is {@code null} when the {@code Proposal} is not
-     * paused.
+     * {@code pauseRole}. This field is
+     *                 deprecated and will always be {@code null}. Use {@link
+     * ProposalLineItem#pauseReason} instead.
      *                 This attribute is read-only.
      */
     public java.lang.String getPauseReason() {
@@ -240,9 +243,9 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * Sets the pauseReason value for this ProposalMarketplaceInfo.
      * 
      * @param pauseReason   * The reason for pausing the {@code Proposal}, provided by the
-     * {@code pauseRole}.
-     *                 It is {@code null} when the {@code Proposal} is not
-     * paused.
+     * {@code pauseRole}. This field is
+     *                 deprecated and will always be {@code null}. Use {@link
+     * ProposalLineItem#pauseReason} instead.
      *                 This attribute is read-only.
      */
     public void setPauseReason(java.lang.String pauseReason) {

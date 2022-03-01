@@ -27,8 +27,7 @@ package com.google.api.ads.admanager.axis.v202111;
  * Proposal} through
  *             Marketplace. This action does check forecasting unless
  * {@link #allowOverbook} is set to {@code
- *             true}. This action is only applicable for programmatic
- * proposals.
+ *             true}.
  */
 public class RequestBuyerAcceptance  extends com.google.api.ads.admanager.axis.v202111.ProposalAction  implements java.io.Serializable {
     private java.lang.Boolean allowOverbook;

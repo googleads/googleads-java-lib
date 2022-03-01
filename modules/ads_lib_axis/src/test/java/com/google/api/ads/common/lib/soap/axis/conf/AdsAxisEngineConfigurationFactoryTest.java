@@ -34,6 +34,8 @@ import org.apache.axis.client.AxisClient;
 import org.apache.axis.configuration.EngineConfigurationFactoryDefault;
 import org.apache.axis.configuration.EngineConfigurationFactoryFinder;
 import org.apache.axis.server.AxisServer;
+import org.apache.axis.transport.java.JavaSender;
+import org.apache.axis.transport.local.LocalSender;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -75,80 +77,58 @@ public class AdsAxisEngineConfigurationFactoryTest {
   }
 
   /**
-   * Tests that the client engine config returned by the factory when compression is disabled
-   * matches the default client config.
-   */
-  @Test
-  public void testGetClientEngineConfig_compressionDisabled() throws Exception {
-    when(adsLibConfiguration.isCompressionEnabled()).thenReturn(false);
-
-    assertNull(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE
-        + " property is unexpectedly set",
-        System.getProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE));
-
-    EngineConfiguration clientEngineConfig = adsAxisConfigFactory.getClientEngineConfig();
-    assertNotNull("No client engine config returned", clientEngineConfig);
-
-    AxisClient axisClient = new AxisClient(clientEngineConfig);
-
-    assertTransportConfiguration(axisClient, defaultAxisClient);
-
-    assertTransportConfiguration(new AxisServer(adsAxisConfigFactory.getServerEngineConfig()),
-        defaultAxisServer);
-  }
-
-  /**
-   * Tests that the client engine config returned by the factory when compression is enabled matches
-   * the settings in ads-axis-client.wsdd.
+   * Tests that the client engine config returned by the factory enabled matches
+   * the settings in ads-axis-client.wsdd regardless of compression settings.
    */
   @Test
   public void testGetClientEngineConfig_compressionEnabled() throws Exception {
-    when(adsLibConfiguration.isCompressionEnabled()).thenReturn(true);
+    List<Boolean> compressionEnabledSettings = Lists.newArrayList(Boolean.TRUE, Boolean.FALSE);
 
-    assertNull(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE
-        + " property is unexpectedly set",
-        System.getProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE));
+    for (Boolean compressionEnabledSetting : compressionEnabledSettings) {
+      when(adsLibConfiguration.isCompressionEnabled()).thenReturn(compressionEnabledSetting);
 
-    EngineConfiguration clientEngineConfig = adsAxisConfigFactory.getClientEngineConfig();
-    assertNotNull("No client engine config returned", clientEngineConfig);
+      assertNull(
+          EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE
+              + " property is unexpectedly set",
+          System.getProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE));
 
-    AxisClient axisClient = new AxisClient(clientEngineConfig);
+      EngineConfiguration clientEngineConfig = adsAxisConfigFactory.getClientEngineConfig();
+      assertNotNull("No client engine config returned", clientEngineConfig);
 
-    assertEquals(HttpHandler.class, getTransport(axisClient, "http").getPivotHandler().getClass());
+      AxisClient axisClient = new AxisClient(clientEngineConfig);
 
-    assertEquals(org.apache.axis.transport.local.LocalSender.class,
-        getTransport(axisClient, "local").getPivotHandler().getClass());
+      assertEquals(
+          HttpHandler.class, getTransport(axisClient, "http").getPivotHandler().getClass());
 
-    assertEquals(org.apache.axis.transport.java.JavaSender.class,
-        getTransport(axisClient, "java").getPivotHandler().getClass());
+      assertEquals(
+          LocalSender.class, getTransport(axisClient, "local").getPivotHandler().getClass());
 
-    assertTransportConfiguration(new AxisServer(adsAxisConfigFactory.getServerEngineConfig()),
-        defaultAxisServer);
+      assertEquals(JavaSender.class, getTransport(axisClient, "java").getPivotHandler().getClass());
+
+      assertTransportConfiguration(
+          new AxisServer(adsAxisConfigFactory.getServerEngineConfig()), defaultAxisServer);
+    }
   }
 
   @Test
   public void testGetClientEngineConfig_factoryOverrideSet() throws Exception {
-    List<Boolean> compressionEnabledSettings = Lists.newArrayList(Boolean.TRUE, Boolean.FALSE);
 
     try {
       // Set the client config file system property to the default client config WSDD in the
-      // Axis library and then verify that regardless of the ads lib configuration's compression
-      // setting, the axis client's transport is configured according to the default configuration
-      // factory, NOT the AdsAxisEngineConfigurationFactory.
-      System.setProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE,
+      // Axis library and then verify that the axis client's transport is configured according
+      // to the default configuration factory, NOT the AdsAxisEngineConfigurationFactory.
+      System.setProperty(
+          EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE,
           "/org/apache/axis/client/client-config.wsdd");
-      for (Boolean compressionEnabledSetting : compressionEnabledSettings) {
-        when(adsLibConfiguration.isCompressionEnabled()).thenReturn(compressionEnabledSetting);
-        EngineConfiguration clientEngineConfig = adsAxisConfigFactory.getClientEngineConfig();
-        assertNotNull("No client engine config returned", clientEngineConfig);
+      EngineConfiguration clientEngineConfig = adsAxisConfigFactory.getClientEngineConfig();
+      assertNotNull("No client engine config returned", clientEngineConfig);
 
-        AxisClient axisClient = new AxisClient(clientEngineConfig);
+      AxisClient axisClient = new AxisClient(clientEngineConfig);
 
-        assertTransportConfiguration(axisClient, defaultAxisClient);
+      assertTransportConfiguration(axisClient, defaultAxisClient);
 
-        assertTransportConfiguration(new AxisServer(adsAxisConfigFactory.getServerEngineConfig()),
-            defaultAxisServer);
-      }
+      assertTransportConfiguration(
+          new AxisServer(adsAxisConfigFactory.getServerEngineConfig()), defaultAxisServer);
     } finally {
       System.clearProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE);
     }

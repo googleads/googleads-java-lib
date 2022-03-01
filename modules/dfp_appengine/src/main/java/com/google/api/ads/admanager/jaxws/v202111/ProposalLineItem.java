@@ -25,10 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code ProposalLineItem} is an instance of sales {@link Product}. It belongs to
- *             a {@link Proposal} and is created according to a {@link Product} and
- *             {@link RateCard}. When the proposal is turned into an {@link Order}, this object is
- *             turned into a {@link LineItem}.
+ *             A {@code ProposalLineItem} is added to a programmatic {@link Proposal} and is similar to a
+ *             delivery {@link LineItem}. It contains delivery details including information like impression
+ *             goal or quantity, start and end times, and targeting.
  *           
  * 
  * <p>Java class for ProposalLineItem complex type.

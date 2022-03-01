@@ -23,8 +23,9 @@ package com.google.api.ads.admanager.axis.v202108;
 
 
 /**
- * The action used by the parent network to invite a rejected or withdrawn
- * child publisher.
+ * The action used by the parent network to send a new invitation
+ * with a potentially updated
+ *             proposal to a rejected or withdrawn child publisher.
  */
 public class ReInviteAction  extends com.google.api.ads.admanager.axis.v202108.CompanyAction  implements java.io.Serializable {
     /* The type of delegation the parent has proposed to have over

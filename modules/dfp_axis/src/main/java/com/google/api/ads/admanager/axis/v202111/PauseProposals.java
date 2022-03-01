@@ -24,8 +24,6 @@ package com.google.api.ads.admanager.axis.v202111;
 
 /**
  * The action used for pausing programmatic {@link Proposal} objects.
- * This action is only applicable
- *             for programmatic proposals.
  */
 public class PauseProposals  extends com.google.api.ads.admanager.axis.v202111.ProposalAction  implements java.io.Serializable {
     /* Reason to describe why the {@link Proposal} is being paused. */

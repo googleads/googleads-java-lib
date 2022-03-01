@@ -15,27 +15,23 @@
 package com.google.api.ads.common.lib.soap.axis.conf;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-
+import javax.inject.Inject;
 import org.apache.axis.EngineConfiguration;
 import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.configuration.EngineConfigurationFactoryDefault;
 import org.apache.axis.configuration.FileProvider;
 
-import javax.inject.Inject;
-
 /**
  * EngineConfigurationFactory implementation that configures Axis clients using a custom
- * configuration file if compression is enabled and no client customization has been specified
- * in the environment.
+ * configuration file if compression is enabled and no client customization has been specified in
+ * the environment.
  */
 public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFactory {
 
-  private final AdsLibConfiguration adsLibConfiguration;
   private final EngineConfigurationFactory wrappedFactory;
-  
+
   @Inject
   public AdsAxisEngineConfigurationFactory(AdsLibConfiguration adsLibConfiguration) {
-    this.adsLibConfiguration = adsLibConfiguration;
     // Wraps the default factory instead of extending it per the class comments on
     // EngineConfigurationFactoryDefault.
     this.wrappedFactory = EngineConfigurationFactoryDefault.newFactory(null);
@@ -43,10 +39,8 @@ public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFac
 
   @Override
   public EngineConfiguration getClientEngineConfig() {
-    // Only return the custom configuration for compression if the client config has not
-    // been overridden.
-    if (System.getProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE) == null
-        && adsLibConfiguration.isCompressionEnabled()) {
+    // Only return the custom configuration if the client config has not been overridden
+    if (System.getProperty(EngineConfigurationFactoryDefault.OPTION_CLIENT_CONFIG_FILE) == null) {
       return new FileProvider(
           this.getClass().getResourceAsStream("wsdd/ads-axis-client-config.wsdd"));
     }
@@ -57,5 +51,4 @@ public class AdsAxisEngineConfigurationFactory implements EngineConfigurationFac
   public EngineConfiguration getServerEngineConfig() {
     return wrappedFactory.getServerEngineConfig();
   }
-
 }

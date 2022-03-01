@@ -23,13 +23,11 @@ package com.google.api.ads.admanager.axis.v202111;
 
 
 /**
- * A {@code ProposalLineItem} is an instance of sales {@link Product}.
- * It belongs to
- *             a {@link Proposal} and is created according to a {@link
- * Product} and
- *             {@link RateCard}. When the proposal is turned into an
- * {@link Order}, this object is
- *             turned into a {@link LineItem}.
+ * A {@code ProposalLineItem} is added to a programmatic {@link Proposal}
+ * and is similar to a
+ *             delivery {@link LineItem}. It contains delivery details
+ * including information like impression
+ *             goal or quantity, start and end times, and targeting.
  */
 public class ProposalLineItem  implements java.io.Serializable {
     /* The unique ID of the {@code ProposalLineItem}.
@@ -84,20 +82,16 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 #startDateTime} and {@link #endDateTime} will be returned
      * in this time zone. This attribute is
      *                 optional and defaults to the network's time zone.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private java.lang.String timeZoneId;
 
     /* Provides any additional notes that may annotate the {@code
-     * ProposalLineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * ProposalLineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration. */
     private java.lang.String internalNotes;
 
     /* The archival status of the {@code ProposalLineItem}.
@@ -220,22 +214,17 @@ public class ProposalLineItem  implements java.io.Serializable {
     private java.lang.Integer lineItemPriority;
 
     /* The method used for billing the {@code ProposalLineItem}.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
-     * <span class="constraint Required">This attribute is required when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span> */
     private com.google.api.ads.admanager.axis.v202111.RateType rateType;
 
     /* Details about the creatives that are expected to serve through
-     * the
-     *                 {@code ProposalLineItem}. This attribute is optional
-     * during creation and defaults to the
-     *                 {@link Product#creativePlaceholders product's creative
-     * placeholders}.
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * the {@code ProposalLineItem}.
+     *                 This attribute is optional during creation and defaults
+     * to the {@link
+     *                 Product#creativePlaceholders product's creative placeholders}.
+     * <span class="constraint Required">This attribute is required.</span> */
     private com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] creativePlaceholders;
 
     /* Contains the targeting criteria for the {@code ProposalLineItem}.
@@ -402,9 +391,8 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202111.EnvironmentType environmentType;
 
     /* The set of {@link AllowedFormats} that this proposal line item
-     * can have.
-     *                 If the set is empty, this proposal line item allows
-     * all formats. */
+     * can have. If the set is empty,
+     *                 this proposal line item allows all formats. */
     private com.google.api.ads.admanager.axis.v202111.AllowedFormats[] allowedFormats;
 
     /* Whether or not the {@link Proposal} for this {@code ProposalLineItem}
@@ -414,26 +402,14 @@ public class ProposalLineItem  implements java.io.Serializable {
     private java.lang.Boolean isProgrammatic;
 
     /* The marketplace info if this proposal line item is programmatic,
-     * null otherwise.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * null otherwise. */
     private com.google.api.ads.admanager.axis.v202111.ProposalLineItemMarketplaceInfo marketplaceInfo;
 
-    /* Additional terms shown to the buyer in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+    /* Additional terms shown to the buyer in Marketplace. */
     private java.lang.String additionalTerms;
 
     /* Indicates the {@link ProgrammaticCreativeSource} of the programmatic
-     * line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * line item. */
     private com.google.api.ads.admanager.axis.v202111.ProgrammaticCreativeSource programmaticCreativeSource;
 
     /* Contains the information for a proposal line item which has
@@ -441,10 +417,7 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202111.GrpSettings grpSettings;
 
     /* The estimated minimum impressions that should be delivered
-     * for a proposal line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using preferred deals, not using sales
-     * management.</li></ul></span> */
+     * for a proposal line item. */
     private java.lang.Long estimatedMinimumImpressions;
 
     /* Contains third party measurement settings for cross-sell Partners */
@@ -807,10 +780,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 #startDateTime} and {@link #endDateTime} will be returned
      * in this time zone. This attribute is
      *                 optional and defaults to the network's time zone.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public java.lang.String getTimeZoneId() {
         return timeZoneId;
@@ -829,10 +799,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 #startDateTime} and {@link #endDateTime} will be returned
      * in this time zone. This attribute is
      *                 optional and defaults to the network's time zone.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setTimeZoneId(java.lang.String timeZoneId) {
         this.timeZoneId = timeZoneId;
@@ -843,13 +810,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the internalNotes value for this ProposalLineItem.
      * 
      * @return internalNotes   * Provides any additional notes that may annotate the {@code
-     * ProposalLineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * ProposalLineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public java.lang.String getInternalNotes() {
         return internalNotes;
@@ -860,13 +826,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the internalNotes value for this ProposalLineItem.
      * 
      * @param internalNotes   * Provides any additional notes that may annotate the {@code
-     * ProposalLineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * ProposalLineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public void setInternalNotes(java.lang.String internalNotes) {
         this.internalNotes = internalNotes;
@@ -1291,11 +1256,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the rateType value for this ProposalLineItem.
      * 
      * @return rateType   * The method used for billing the {@code ProposalLineItem}.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
-     * <span class="constraint Required">This attribute is required when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public com.google.api.ads.admanager.axis.v202111.RateType getRateType() {
         return rateType;
@@ -1306,11 +1269,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the rateType value for this ProposalLineItem.
      * 
      * @param rateType   * The method used for billing the {@code ProposalLineItem}.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>not using programmatic, using sales management.</li></ul></span>
-     * <span class="constraint Required">This attribute is required when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
+     *                 <span class="constraint Required">This attribute is
+     * required.</span>
      */
     public void setRateType(com.google.api.ads.admanager.axis.v202111.RateType rateType) {
         this.rateType = rateType;
@@ -1321,14 +1282,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the creativePlaceholders value for this ProposalLineItem.
      * 
      * @return creativePlaceholders   * Details about the creatives that are expected to serve through
-     * the
-     *                 {@code ProposalLineItem}. This attribute is optional
-     * during creation and defaults to the
-     *                 {@link Product#creativePlaceholders product's creative
-     * placeholders}.
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * the {@code ProposalLineItem}.
+     *                 This attribute is optional during creation and defaults
+     * to the {@link
+     *                 Product#creativePlaceholders product's creative placeholders}.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] getCreativePlaceholders() {
         return creativePlaceholders;
@@ -1339,14 +1297,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the creativePlaceholders value for this ProposalLineItem.
      * 
      * @param creativePlaceholders   * Details about the creatives that are expected to serve through
-     * the
-     *                 {@code ProposalLineItem}. This attribute is optional
-     * during creation and defaults to the
-     *                 {@link Product#creativePlaceholders product's creative
-     * placeholders}.
-     *                 <span class="constraint Required">This attribute is
-     * required when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
+     * the {@code ProposalLineItem}.
+     *                 This attribute is optional during creation and defaults
+     * to the {@link
+     *                 Product#creativePlaceholders product's creative placeholders}.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setCreativePlaceholders(com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] creativePlaceholders) {
         this.creativePlaceholders = creativePlaceholders;
@@ -1925,9 +1880,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the allowedFormats value for this ProposalLineItem.
      * 
      * @return allowedFormats   * The set of {@link AllowedFormats} that this proposal line item
-     * can have.
-     *                 If the set is empty, this proposal line item allows
-     * all formats.
+     * can have. If the set is empty,
+     *                 this proposal line item allows all formats.
      */
     public com.google.api.ads.admanager.axis.v202111.AllowedFormats[] getAllowedFormats() {
         return allowedFormats;
@@ -1938,9 +1892,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the allowedFormats value for this ProposalLineItem.
      * 
      * @param allowedFormats   * The set of {@link AllowedFormats} that this proposal line item
-     * can have.
-     *                 If the set is empty, this proposal line item allows
-     * all formats.
+     * can have. If the set is empty,
+     *                 this proposal line item allows all formats.
      */
     public void setAllowedFormats(com.google.api.ads.admanager.axis.v202111.AllowedFormats[] allowedFormats) {
         this.allowedFormats = allowedFormats;
@@ -1986,10 +1939,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return marketplaceInfo   * The marketplace info if this proposal line item is programmatic,
      * null otherwise.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public com.google.api.ads.admanager.axis.v202111.ProposalLineItemMarketplaceInfo getMarketplaceInfo() {
         return marketplaceInfo;
@@ -2001,10 +1950,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param marketplaceInfo   * The marketplace info if this proposal line item is programmatic,
      * null otherwise.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public void setMarketplaceInfo(com.google.api.ads.admanager.axis.v202111.ProposalLineItemMarketplaceInfo marketplaceInfo) {
         this.marketplaceInfo = marketplaceInfo;
@@ -2015,10 +1960,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the additionalTerms value for this ProposalLineItem.
      * 
      * @return additionalTerms   * Additional terms shown to the buyer in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public java.lang.String getAdditionalTerms() {
         return additionalTerms;
@@ -2029,10 +1970,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the additionalTerms value for this ProposalLineItem.
      * 
      * @param additionalTerms   * Additional terms shown to the buyer in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public void setAdditionalTerms(java.lang.String additionalTerms) {
         this.additionalTerms = additionalTerms;
@@ -2044,10 +1981,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return programmaticCreativeSource   * Indicates the {@link ProgrammaticCreativeSource} of the programmatic
      * line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public com.google.api.ads.admanager.axis.v202111.ProgrammaticCreativeSource getProgrammaticCreativeSource() {
         return programmaticCreativeSource;
@@ -2059,10 +1992,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param programmaticCreativeSource   * Indicates the {@link ProgrammaticCreativeSource} of the programmatic
      * line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public void setProgrammaticCreativeSource(com.google.api.ads.admanager.axis.v202111.ProgrammaticCreativeSource programmaticCreativeSource) {
         this.programmaticCreativeSource = programmaticCreativeSource;
@@ -2096,9 +2025,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return estimatedMinimumImpressions   * The estimated minimum impressions that should be delivered
      * for a proposal line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using preferred deals, not using sales
-     * management.</li></ul></span>
      */
     public java.lang.Long getEstimatedMinimumImpressions() {
         return estimatedMinimumImpressions;
@@ -2110,9 +2036,6 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param estimatedMinimumImpressions   * The estimated minimum impressions that should be delivered
      * for a proposal line item.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using preferred deals, not using sales
-     * management.</li></ul></span>
      */
     public void setEstimatedMinimumImpressions(java.lang.Long estimatedMinimumImpressions) {
         this.estimatedMinimumImpressions = estimatedMinimumImpressions;

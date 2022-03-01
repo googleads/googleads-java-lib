@@ -43,7 +43,8 @@ public enum DynamicAdInsertionType {
 
     /**
      * 
-     *                 Content and ads are stitched together into a unique video manifest per user.
+     *                 Content manifest is served by Google DAI. Content and ads are stitched together into a unique
+     *                 video manifest per user.
      *               
      * 
      */
@@ -51,8 +52,8 @@ public enum DynamicAdInsertionType {
 
     /**
      * 
-     *                 The same manifest is used for all users but the ad break segment URLs are redirected to unique
-     *                 ad segments per user.
+     *                 Content manifest is served by the partner, embedding Google DAI ad segment URLs which redirect
+     *                 to unique Google DAI ad segments per user.
      *               
      * 
      */
@@ -60,8 +61,9 @@ public enum DynamicAdInsertionType {
 
     /**
      * 
-     *                 Provide unique ad pod segment manifests per user for the partner to stitch into the content
-     *                 stream.
+     *                 Ads manifest is served by Google DAI, containing unique ad pod segments for the video player
+     *                 to switch to from the content stream, or for the partner to stitch directly into the user
+     *                 content manifest.
      *               
      * 
      */

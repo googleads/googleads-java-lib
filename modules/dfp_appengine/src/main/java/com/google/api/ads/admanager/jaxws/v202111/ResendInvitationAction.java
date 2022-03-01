@@ -22,7 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used to resend an invite from the parent network to a child publisher.
+ *             The action used by the parent network to resend an invitation email with the same proposal to an
+ *             expired child publisher.
  *           
  * 
  * <p>Java class for ResendInvitationAction complex type.

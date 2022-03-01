@@ -3642,14 +3642,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ActualizeProposalLineItems }
-     * 
-     */
-    public ActualizeProposalLineItems createActualizeProposalLineItems() {
-        return new ActualizeProposalLineItems();
-    }
-
-    /**
      * Create an instance of {@link CustomCreativeAsset }
      * 
      */

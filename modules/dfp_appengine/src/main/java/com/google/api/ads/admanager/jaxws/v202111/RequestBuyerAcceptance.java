@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             The action used to request acceptance from the buyer for the {@link Proposal} through
  *             Marketplace. This action does check forecasting unless {@link #allowOverbook} is set to {@code
- *             true}. This action is only applicable for programmatic proposals.
+ *             true}.
  *           
  * 
  * <p>Java class for RequestBuyerAcceptance complex type.

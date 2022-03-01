@@ -32,7 +32,6 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.zip.GZIPOutputStream;
 import javax.xml.soap.SOAPException;
 import org.apache.axis.AxisFault;
@@ -78,11 +77,10 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
 
     // Catch any exception thrown and wrap it in an AxisFault, per the contract of Handler.invoke.
     try {
-      HttpResponse response = null;
       // Create the request.
       HttpRequest postRequest = createHttpRequest(msgContext);
       // Execute the request.
-      response = postRequest.execute();
+      HttpResponse response = postRequest.execute();
       // Translate the HTTP response to an Axis message on the message context.
       msgContext.setResponseMessage(createResponseMessage(response));
     } catch (RuntimeException | SOAPException | IOException e) {
@@ -96,13 +94,6 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
     // Do not throw if execute fails, since Axis will handle unmarshalling the
     // fault.
     httpRequest.setThrowExceptionOnExecuteError(false);
-
-    // For consistency with the default Axis HTTPSender and CommonsHTTPSender, do not
-    // follow redirects.
-    httpRequest.setFollowRedirects(false);
-
-    // Retry should be handled by the client.
-    httpRequest.setNumberOfRetries(0);
   }
 
   /**
@@ -156,7 +147,7 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
     Map<Object, Object> requestHeaders =
         (Map<Object, Object>) msgContext.getProperty(HTTPConstants.REQUEST_HEADERS);
     if (requestHeaders != null) {
-      for (Entry<Object, Object> headerEntry : requestHeaders.entrySet()) {
+      for (Map.Entry<Object, Object> headerEntry : requestHeaders.entrySet()) {
         Object headerKey = headerEntry.getKey();
         if (headerKey == null) {
           continue;
@@ -187,7 +178,7 @@ public class HttpHandler extends BasicHandler implements HttpRequestInitializer 
    * @throws AxisFault if the HTTP response's status or contents indicate an unexpected error, such
    *     as a 405.
    */
-  private Message createResponseMessage(HttpResponse httpResponse) throws IOException, AxisFault {
+  private Message createResponseMessage(HttpResponse httpResponse) throws IOException {
     int statusCode = httpResponse.getStatusCode();
     String contentType = httpResponse.getContentType();
     // The conditions below duplicate the logic in CommonsHTTPSender and HTTPSender.

@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action to update a finalized Marketplace {@link Order} with the seller's data. This action is
- *             only applicable for programmatic proposals.
+ *             The action to update a finalized Marketplace {@link Order} with the seller's data.
  *           
  * 
  * <p>Java class for UpdateOrderWithSellerData complex type.

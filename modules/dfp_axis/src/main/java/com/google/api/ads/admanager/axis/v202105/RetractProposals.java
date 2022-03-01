@@ -23,7 +23,11 @@ package com.google.api.ads.admanager.axis.v202105;
 
 
 /**
- * The action used for retracting {@link Proposal} objects.
+ * Deprecated action for retracting {@link Proposal} objects.
+ *             
+ *             <p>This action is no longer supported. It is being temporarily
+ * kept to avoid breaking existing
+ *             API clients, and will be removed in a future API version.
  */
 public class RetractProposals  extends com.google.api.ads.admanager.axis.v202105.ProposalAction  implements java.io.Serializable {
     /* {@link RetractionDetails Details} describing why the {@link

@@ -1,6 +1,7 @@
 # IntelliJ IDE files
 # See: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 .idea/
+.run/
 modules/*/*.iml
 examples/*/*.iml
 

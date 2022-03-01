@@ -1,3 +1,20 @@
+4.17.0 - 02/28/2022
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202202.
+ - Removed support for v202102.
+ - Removed examples fo v202105.
+
+Common:
+ - Switched Axis library to use
+   com.google.api.ads.common.lib.soap.axis.HttpHandler
+   by default. Clients can override this by setting the
+   axis.ClientConfigFile property.
+
+
 4.16.0 - 11/16/2021
 -------------------
 AdWords:

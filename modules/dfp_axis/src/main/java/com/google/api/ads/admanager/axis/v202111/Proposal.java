@@ -33,8 +33,8 @@ public class Proposal  implements java.io.Serializable {
     private java.lang.Long id;
 
     /* Flag that specifies whether this {@code Proposal} is for programmatic
-     * deals.
-     *                 This value is default to {@code false}. */
+     * deals. This value is
+     *                 default to {@code false}. */
     private java.lang.Boolean isProgrammatic;
 
     /* The unique ID of corresponding {@link Order}.
@@ -121,13 +121,12 @@ public class Proposal  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202111.ProposalCompanyAssociation[] agencies;
 
     /* Provides any additional notes that may annotate the {@code
-     * Proposal}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * Proposal}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration. */
     private java.lang.String internalNotes;
 
     /* The primary salesperson who brokered the transaction with the
@@ -163,11 +162,7 @@ public class Proposal  implements java.io.Serializable {
      * fields configuration. */
     private java.lang.Long primaryTraffickerId;
 
-    /* {@link User users} who are the seller's contacts.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+    /* {@link User users} who are the seller's contacts. */
     private long[] sellerContactIds;
 
     /* The IDs of all teams that the {@code Proposal} is on directly.
@@ -204,14 +199,15 @@ public class Proposal  implements java.io.Serializable {
      *                 network's currency code. */
     private java.lang.String currencyCode;
 
-    /* The exchange rate from the {@link #currencyCode} to the
-     *                 {@link Network#currencyCode network's currency}. The
-     * value is stored as the exchange rate times
-     *                 10,000,000,000 truncated to a long. This attribute
-     * is assigned by Google when
-     *                 first created or updated with {@link #refreshExchangeRate}
-     * set to {@code true}. This attribute
-     *                 is ignored if the feature is not enabled.
+    /* The exchange rate from the {@link #currencyCode} to the {@link
+     * Network#currencyCode network's
+     *                 currency}. The value is stored as the exchange rate
+     * times 10,000,000,000 truncated to a long.
+     *                 This attribute is assigned by Google when first created
+     * or updated with {@link
+     *                 #refreshExchangeRate} set to {@code true}. This attribute
+     * is ignored if the feature is not
+     *                 enabled.
      *                 This attribute is read-only. */
     private java.lang.Long exchangeRate;
 
@@ -234,28 +230,18 @@ public class Proposal  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202111.DateTime lastModifiedDateTime;
 
     /* The marketplace info of this proposal if it has a corresponding
-     * order in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span> */
+     * order in Marketplace. */
     private com.google.api.ads.admanager.axis.v202111.ProposalMarketplaceInfo marketplaceInfo;
 
     /* The buyer RFP associated with this {@code Proposal}, which
      * is optional. This field will be null
-     *                 if the proposal is not initiated from RFP.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 if the proposal is not initiated from RFP. */
     private com.google.api.ads.admanager.axis.v202111.BuyerRfp buyerRfp;
 
     /* Whether a {@link Proposal} contains a {@link BuyerRfp} field.
      * If this field is true, it
      *                 indicates that the {@link Proposal} in question orignated
-     * from a buyer.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     * from a buyer. */
     private java.lang.Boolean hasBuyerRfp;
 
     /* Whether pausing is consented for the {@code Proposal}. This
@@ -388,8 +374,8 @@ public class Proposal  implements java.io.Serializable {
      * Gets the isProgrammatic value for this Proposal.
      * 
      * @return isProgrammatic   * Flag that specifies whether this {@code Proposal} is for programmatic
-     * deals.
-     *                 This value is default to {@code false}.
+     * deals. This value is
+     *                 default to {@code false}.
      */
     public java.lang.Boolean getIsProgrammatic() {
         return isProgrammatic;
@@ -400,8 +386,8 @@ public class Proposal  implements java.io.Serializable {
      * Sets the isProgrammatic value for this Proposal.
      * 
      * @param isProgrammatic   * Flag that specifies whether this {@code Proposal} is for programmatic
-     * deals.
-     *                 This value is default to {@code false}.
+     * deals. This value is
+     *                 default to {@code false}.
      */
     public void setIsProgrammatic(java.lang.Boolean isProgrammatic) {
         this.isProgrammatic = isProgrammatic;
@@ -698,13 +684,12 @@ public class Proposal  implements java.io.Serializable {
      * Gets the internalNotes value for this Proposal.
      * 
      * @return internalNotes   * Provides any additional notes that may annotate the {@code
-     * Proposal}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * Proposal}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public java.lang.String getInternalNotes() {
         return internalNotes;
@@ -715,13 +700,12 @@ public class Proposal  implements java.io.Serializable {
      * Sets the internalNotes value for this Proposal.
      * 
      * @param internalNotes   * Provides any additional notes that may annotate the {@code
-     * Proposal}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * Proposal}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
+     * This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public void setInternalNotes(java.lang.String internalNotes) {
         this.internalNotes = internalNotes;
@@ -848,10 +832,6 @@ public class Proposal  implements java.io.Serializable {
      * Gets the sellerContactIds value for this Proposal.
      * 
      * @return sellerContactIds   * {@link User users} who are the seller's contacts.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public long[] getSellerContactIds() {
         return sellerContactIds;
@@ -862,10 +842,6 @@ public class Proposal  implements java.io.Serializable {
      * Sets the sellerContactIds value for this Proposal.
      * 
      * @param sellerContactIds   * {@link User users} who are the seller's contacts.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public void setSellerContactIds(long[] sellerContactIds) {
         this.sellerContactIds = sellerContactIds;
@@ -1053,14 +1029,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the exchangeRate value for this Proposal.
      * 
-     * @return exchangeRate   * The exchange rate from the {@link #currencyCode} to the
-     *                 {@link Network#currencyCode network's currency}. The
-     * value is stored as the exchange rate times
-     *                 10,000,000,000 truncated to a long. This attribute
-     * is assigned by Google when
-     *                 first created or updated with {@link #refreshExchangeRate}
-     * set to {@code true}. This attribute
-     *                 is ignored if the feature is not enabled.
+     * @return exchangeRate   * The exchange rate from the {@link #currencyCode} to the {@link
+     * Network#currencyCode network's
+     *                 currency}. The value is stored as the exchange rate
+     * times 10,000,000,000 truncated to a long.
+     *                 This attribute is assigned by Google when first created
+     * or updated with {@link
+     *                 #refreshExchangeRate} set to {@code true}. This attribute
+     * is ignored if the feature is not
+     *                 enabled.
      *                 This attribute is read-only.
      */
     public java.lang.Long getExchangeRate() {
@@ -1071,14 +1048,15 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the exchangeRate value for this Proposal.
      * 
-     * @param exchangeRate   * The exchange rate from the {@link #currencyCode} to the
-     *                 {@link Network#currencyCode network's currency}. The
-     * value is stored as the exchange rate times
-     *                 10,000,000,000 truncated to a long. This attribute
-     * is assigned by Google when
-     *                 first created or updated with {@link #refreshExchangeRate}
-     * set to {@code true}. This attribute
-     *                 is ignored if the feature is not enabled.
+     * @param exchangeRate   * The exchange rate from the {@link #currencyCode} to the {@link
+     * Network#currencyCode network's
+     *                 currency}. The value is stored as the exchange rate
+     * times 10,000,000,000 truncated to a long.
+     *                 This attribute is assigned by Google when first created
+     * or updated with {@link
+     *                 #refreshExchangeRate} set to {@code true}. This attribute
+     * is ignored if the feature is not
+     *                 enabled.
      *                 This attribute is read-only.
      */
     public void setExchangeRate(java.lang.Long exchangeRate) {
@@ -1169,10 +1147,6 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @return marketplaceInfo   * The marketplace info of this proposal if it has a corresponding
      * order in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public com.google.api.ads.admanager.axis.v202111.ProposalMarketplaceInfo getMarketplaceInfo() {
         return marketplaceInfo;
@@ -1184,10 +1158,6 @@ public class Proposal  implements java.io.Serializable {
      * 
      * @param marketplaceInfo   * The marketplace info of this proposal if it has a corresponding
      * order in Marketplace.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, using sales
-     * management.</li><li>using programmatic guaranteed, not using sales
-     * management.</li></ul></span>
      */
     public void setMarketplaceInfo(com.google.api.ads.admanager.axis.v202111.ProposalMarketplaceInfo marketplaceInfo) {
         this.marketplaceInfo = marketplaceInfo;
@@ -1200,9 +1170,6 @@ public class Proposal  implements java.io.Serializable {
      * @return buyerRfp   * The buyer RFP associated with this {@code Proposal}, which
      * is optional. This field will be null
      *                 if the proposal is not initiated from RFP.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public com.google.api.ads.admanager.axis.v202111.BuyerRfp getBuyerRfp() {
         return buyerRfp;
@@ -1215,9 +1182,6 @@ public class Proposal  implements java.io.Serializable {
      * @param buyerRfp   * The buyer RFP associated with this {@code Proposal}, which
      * is optional. This field will be null
      *                 if the proposal is not initiated from RFP.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public void setBuyerRfp(com.google.api.ads.admanager.axis.v202111.BuyerRfp buyerRfp) {
         this.buyerRfp = buyerRfp;
@@ -1231,9 +1195,6 @@ public class Proposal  implements java.io.Serializable {
      * If this field is true, it
      *                 indicates that the {@link Proposal} in question orignated
      * from a buyer.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public java.lang.Boolean getHasBuyerRfp() {
         return hasBuyerRfp;
@@ -1247,9 +1208,6 @@ public class Proposal  implements java.io.Serializable {
      * If this field is true, it
      *                 indicates that the {@link Proposal} in question orignated
      * from a buyer.
-     *                 <span class="constraint Applicable">This attribute
-     * is applicable when:<ul><li>using programmatic guaranteed, not using
-     * sales management.</li><li>using preferred deals, not using sales management.</li></ul></span>
      */
     public void setHasBuyerRfp(java.lang.Boolean hasBuyerRfp) {
         this.hasBuyerRfp = hasBuyerRfp;

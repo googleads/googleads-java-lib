@@ -26,8 +26,6 @@ package com.google.api.ads.admanager.axis.v202111;
  * The action to reserve inventory for {@link Proposal} objects. It
  * does not allow overbooking
  *             unless {@link #allowOverbook} is set to {@code true}.
- * This action is only applicable for
- *             programmatic proposals not using sales management.
  */
 public class ReserveProposals  extends com.google.api.ads.admanager.axis.v202111.ProposalAction  implements java.io.Serializable {
     private java.lang.Boolean allowOverbook;

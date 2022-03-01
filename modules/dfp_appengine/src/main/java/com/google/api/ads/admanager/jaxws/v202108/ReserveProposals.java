@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             The action to reserve inventory for {@link Proposal} objects. It does not allow overbooking
- *             unless {@link #allowOverbook} is set to {@code true}. This action is only applicable for
- *             programmatic proposals not using sales management.
+ *             unless {@link #allowOverbook} is set to {@code true}.
  *           
  * 
  * <p>Java class for ReserveProposals complex type.

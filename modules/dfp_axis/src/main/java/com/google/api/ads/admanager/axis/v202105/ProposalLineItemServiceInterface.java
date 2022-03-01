@@ -79,36 +79,6 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
      *         <td>{@link ProposalLineItem#lastModifiedDateTime}</td>
      *         </tr>
      *         <tr>
-     *         <td>
-     *         {@code useThirdPartyAdServerFromProposal}
-     *         <div class="constraint">
-     *         Only applicable for non-programmatic proposal line items using
-     * sales management
-     *         </div>
-     *         </td>
-     *         <td>{@link ProposalLineItem#useThirdPartyAdServerFromProposal}</td>
-     * </tr>
-     *         <tr>
-     *         <td>
-     *         {@code thirdPartyAdServerId}
-     *         <div class="constraint">
-     *         Only applicable for non-programmatic proposal line items using
-     * sales management
-     *         </div>
-     *         </td>
-     *         <td>{@link ProposalLineItem#thirdPartyAdServerId}</td>
-     *         </tr>
-     *         <tr>
-     *         <td>
-     *         {@code customThirdPartyAdServerName}
-     *         <div class="constraint">
-     *         Only applicable for non-programmatic proposal line items using
-     * sales management
-     *         </div>
-     *         </td>
-     *         <td>{@link ProposalLineItem#customThirdPartyAdServerName}</td>
-     * </tr>
-     *         <tr>
      *         <td>{@code isProgrammatic}</td>
      *         <td>{@link ProposalLineItem#isProgrammatic}</td>
      *         </tr>

@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code Creative} that contains Ad Manager hosted video ads and is served
- *             via VAST XML.  This creative is read-only.
+ *             via VAST XML.
  *           
  * 
  * <p>Java class for VideoCreative complex type.

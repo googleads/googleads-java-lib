@@ -50,7 +50,6 @@ import javax.xml.bind.annotation.XmlType;
     UnarchiveProposalLineItems.class,
     ReserveProposalLineItems.class,
     ArchiveProposalLineItems.class,
-    ActualizeProposalLineItems.class,
     PauseProposalLineItems.class,
     ReleaseProposalLineItems.class
 })

@@ -22,7 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used for retracting {@link Proposal} objects.
+ *             Deprecated action for retracting {@link Proposal} objects.
+ *             
+ *             <p>This action is no longer supported. It is being temporarily kept to avoid breaking existing
+ *             API clients, and will be removed in a future API version.
  *           
  * 
  * <p>Java class for RetractProposals complex type.

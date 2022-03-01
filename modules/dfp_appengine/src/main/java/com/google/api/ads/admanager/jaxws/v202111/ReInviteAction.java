@@ -23,7 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The action used by the parent network to invite a rejected or withdrawn child publisher.
+ *             The action used by the parent network to send a new invitation with a potentially updated
+ *             proposal to a rejected or withdrawn child publisher.
  *           
  * 
  * <p>Java class for ReInviteAction complex type.

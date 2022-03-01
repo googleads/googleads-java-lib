@@ -136,7 +136,7 @@ public enum AccountStatus {
 
     /**
      * 
-     *                 The invite was sent to the child publisher more than a month ago, due to which it has been
+     *                 The invite was sent to the child publisher more than 90 days ago, due to which it has been
      *                 deactivated.
      *               
      * 

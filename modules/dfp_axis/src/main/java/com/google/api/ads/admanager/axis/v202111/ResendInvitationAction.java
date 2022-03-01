@@ -23,8 +23,9 @@ package com.google.api.ads.admanager.axis.v202111;
 
 
 /**
- * The action used to resend an invite from the parent network to
- * a child publisher.
+ * The action used by the parent network to resend an invitation email
+ * with the same proposal to an
+ *             expired child publisher.
  */
 public class ResendInvitationAction  extends com.google.api.ads.admanager.axis.v202111.CompanyAction  implements java.io.Serializable {
     public ResendInvitationAction() {

@@ -35,106 +35,83 @@ public class BuyerRfp  implements java.io.Serializable {
      *                 as guidance for publishers to create a {@link Proposal}
      * with {@link LineItem}s reflecting this
      *                 CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.Money costPerUnit;
 
     /* The number of impressions per day that a buyer wishes to see
      * in the {@link Proposal} derived
      *                 from the request for proposal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private java.lang.Long units;
 
     /* Total amount of {@link Money} available to spend on this deal.
-     * In the case of Preferred
-     *                 Deal, the budget is equal to the maximum amount of
-     * money a buyer is willing to spend on a given
+     * In the case of Preferred Deal,
+     *                 the budget is equal to the maximum amount of money
+     * a buyer is willing to spend on a given
      *                 {@link Proposal}, even though the budget might not
      * be spent entirely, as impressions are not
      *                 guaranteed.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.Money budget;
 
     /* Currency code for this deal's budget and CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private java.lang.String currencyCode;
 
     /* The {@link DateTime} in which the proposed deal should start
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.DateTime startDateTime;
 
     /* The {@link DateTime} in which the proposed deal should end
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.DateTime endDateTime;
 
     /* A description of the proposed deal. This can be used for the
      * buyer to tell the publisher more
      *                 detailed information about the deal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private java.lang.String description;
 
     /* A list of inventory sizes in which creatives will be eventually
      * served.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] creativePlaceholders;
 
     /* Targeting information for the proposal in question. Currently
-     * this field only contains
-     *                 {@link GeoTargeting} information.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     * this field only contains {@link
+     *                 GeoTargeting} information.
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.Targeting targeting;
 
     /* Additional terms of the deal in question. This field can be
      * used to state more specific
      *                 targeting information for the deal, as well as any
-     * additional information regarding this
-     *                 deal. Given that this field belongs to a request for
-     * proposal (for which initially a
-     *                 {@link Proposal} does not yet exist), this field can
-     * be populated by buyers to specify
-     *                 additional information that they wish publishers to
-     * incorporate into the {@link Proposal}
-     *                 derived from this request for proposal.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     * additional information regarding this deal.
+     *                 Given that this field belongs to a request for proposal
+     * (for which initially a {@link Proposal}
+     *                 does not yet exist), this field can be populated by
+     * buyers to specify additional information
+     *                 that they wish publishers to incorporate into the
+     * {@link Proposal} derived from this request
+     *                 for proposal.
+     *                 This attribute is read-only. */
     private java.lang.String additionalTerms;
 
     /* Identifies the format of the inventory or "channel" through
      * which the ad serves. Environments
      *                 currently supported include {@link AdExchangeEnvironment#DISPLAY},
-     * {@link AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li><li>using
-     * preferred deals, not using sales management.</li></ul></span> */
+     * {@link
+     *                 AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
+     * This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.AdExchangeEnvironment adExchangeEnvironment;
 
     /* Deal type; either Programmatic Guaranteed or Preferred Deal.
-     * This field
-     *                 corresponds to the type of {@link Proposal} that a
-     * buyer wishes to negotiate with a seller.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span> */
+     * This field corresponds to the type
+     *                 of {@link Proposal} that a buyer wishes to negotiate
+     * with a seller.
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202111.RfpType rfpType;
 
     public BuyerRfp() {
@@ -196,9 +173,7 @@ public class BuyerRfp  implements java.io.Serializable {
      *                 as guidance for publishers to create a {@link Proposal}
      * with {@link LineItem}s reflecting this
      *                 CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.Money getCostPerUnit() {
         return costPerUnit;
@@ -215,9 +190,7 @@ public class BuyerRfp  implements java.io.Serializable {
      *                 as guidance for publishers to create a {@link Proposal}
      * with {@link LineItem}s reflecting this
      *                 CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setCostPerUnit(com.google.api.ads.admanager.axis.v202111.Money costPerUnit) {
         this.costPerUnit = costPerUnit;
@@ -230,9 +203,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * @return units   * The number of impressions per day that a buyer wishes to see
      * in the {@link Proposal} derived
      *                 from the request for proposal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public java.lang.Long getUnits() {
         return units;
@@ -245,9 +216,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * @param units   * The number of impressions per day that a buyer wishes to see
      * in the {@link Proposal} derived
      *                 from the request for proposal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setUnits(java.lang.Long units) {
         this.units = units;
@@ -258,15 +227,13 @@ public class BuyerRfp  implements java.io.Serializable {
      * Gets the budget value for this BuyerRfp.
      * 
      * @return budget   * Total amount of {@link Money} available to spend on this deal.
-     * In the case of Preferred
-     *                 Deal, the budget is equal to the maximum amount of
-     * money a buyer is willing to spend on a given
+     * In the case of Preferred Deal,
+     *                 the budget is equal to the maximum amount of money
+     * a buyer is willing to spend on a given
      *                 {@link Proposal}, even though the budget might not
      * be spent entirely, as impressions are not
      *                 guaranteed.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.Money getBudget() {
         return budget;
@@ -277,15 +244,13 @@ public class BuyerRfp  implements java.io.Serializable {
      * Sets the budget value for this BuyerRfp.
      * 
      * @param budget   * Total amount of {@link Money} available to spend on this deal.
-     * In the case of Preferred
-     *                 Deal, the budget is equal to the maximum amount of
-     * money a buyer is willing to spend on a given
+     * In the case of Preferred Deal,
+     *                 the budget is equal to the maximum amount of money
+     * a buyer is willing to spend on a given
      *                 {@link Proposal}, even though the budget might not
      * be spent entirely, as impressions are not
      *                 guaranteed.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setBudget(com.google.api.ads.admanager.axis.v202111.Money budget) {
         this.budget = budget;
@@ -296,9 +261,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * Gets the currencyCode value for this BuyerRfp.
      * 
      * @return currencyCode   * Currency code for this deal's budget and CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -309,9 +272,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * Sets the currencyCode value for this BuyerRfp.
      * 
      * @param currencyCode   * Currency code for this deal's budget and CPM.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;
@@ -323,9 +284,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @return startDateTime   * The {@link DateTime} in which the proposed deal should start
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.DateTime getStartDateTime() {
         return startDateTime;
@@ -337,9 +296,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @param startDateTime   * The {@link DateTime} in which the proposed deal should start
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202111.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -351,9 +308,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @return endDateTime   * The {@link DateTime} in which the proposed deal should end
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.DateTime getEndDateTime() {
         return endDateTime;
@@ -365,9 +320,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @param endDateTime   * The {@link DateTime} in which the proposed deal should end
      * serving.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202111.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -380,9 +333,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * @return description   * A description of the proposed deal. This can be used for the
      * buyer to tell the publisher more
      *                 detailed information about the deal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public java.lang.String getDescription() {
         return description;
@@ -395,9 +346,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * @param description   * A description of the proposed deal. This can be used for the
      * buyer to tell the publisher more
      *                 detailed information about the deal in question.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -409,9 +358,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @return creativePlaceholders   * A list of inventory sizes in which creatives will be eventually
      * served.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] getCreativePlaceholders() {
         return creativePlaceholders;
@@ -423,9 +370,7 @@ public class BuyerRfp  implements java.io.Serializable {
      * 
      * @param creativePlaceholders   * A list of inventory sizes in which creatives will be eventually
      * served.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     *                 This attribute is read-only.
      */
     public void setCreativePlaceholders(com.google.api.ads.admanager.axis.v202111.CreativePlaceholder[] creativePlaceholders) {
         this.creativePlaceholders = creativePlaceholders;
@@ -444,11 +389,9 @@ public class BuyerRfp  implements java.io.Serializable {
      * Gets the targeting value for this BuyerRfp.
      * 
      * @return targeting   * Targeting information for the proposal in question. Currently
-     * this field only contains
-     *                 {@link GeoTargeting} information.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * this field only contains {@link
+     *                 GeoTargeting} information.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.Targeting getTargeting() {
         return targeting;
@@ -459,11 +402,9 @@ public class BuyerRfp  implements java.io.Serializable {
      * Sets the targeting value for this BuyerRfp.
      * 
      * @param targeting   * Targeting information for the proposal in question. Currently
-     * this field only contains
-     *                 {@link GeoTargeting} information.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * this field only contains {@link
+     *                 GeoTargeting} information.
+     *                 This attribute is read-only.
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202111.Targeting targeting) {
         this.targeting = targeting;
@@ -476,17 +417,15 @@ public class BuyerRfp  implements java.io.Serializable {
      * @return additionalTerms   * Additional terms of the deal in question. This field can be
      * used to state more specific
      *                 targeting information for the deal, as well as any
-     * additional information regarding this
-     *                 deal. Given that this field belongs to a request for
-     * proposal (for which initially a
-     *                 {@link Proposal} does not yet exist), this field can
-     * be populated by buyers to specify
-     *                 additional information that they wish publishers to
-     * incorporate into the {@link Proposal}
-     *                 derived from this request for proposal.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * additional information regarding this deal.
+     *                 Given that this field belongs to a request for proposal
+     * (for which initially a {@link Proposal}
+     *                 does not yet exist), this field can be populated by
+     * buyers to specify additional information
+     *                 that they wish publishers to incorporate into the
+     * {@link Proposal} derived from this request
+     *                 for proposal.
+     *                 This attribute is read-only.
      */
     public java.lang.String getAdditionalTerms() {
         return additionalTerms;
@@ -499,17 +438,15 @@ public class BuyerRfp  implements java.io.Serializable {
      * @param additionalTerms   * Additional terms of the deal in question. This field can be
      * used to state more specific
      *                 targeting information for the deal, as well as any
-     * additional information regarding this
-     *                 deal. Given that this field belongs to a request for
-     * proposal (for which initially a
-     *                 {@link Proposal} does not yet exist), this field can
-     * be populated by buyers to specify
-     *                 additional information that they wish publishers to
-     * incorporate into the {@link Proposal}
-     *                 derived from this request for proposal.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * additional information regarding this deal.
+     *                 Given that this field belongs to a request for proposal
+     * (for which initially a {@link Proposal}
+     *                 does not yet exist), this field can be populated by
+     * buyers to specify additional information
+     *                 that they wish publishers to incorporate into the
+     * {@link Proposal} derived from this request
+     *                 for proposal.
+     *                 This attribute is read-only.
      */
     public void setAdditionalTerms(java.lang.String additionalTerms) {
         this.additionalTerms = additionalTerms;
@@ -522,10 +459,9 @@ public class BuyerRfp  implements java.io.Serializable {
      * @return adExchangeEnvironment   * Identifies the format of the inventory or "channel" through
      * which the ad serves. Environments
      *                 currently supported include {@link AdExchangeEnvironment#DISPLAY},
-     * {@link AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li><li>using
-     * preferred deals, not using sales management.</li></ul></span>
+     * {@link
+     *                 AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
+     * This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.AdExchangeEnvironment getAdExchangeEnvironment() {
         return adExchangeEnvironment;
@@ -538,10 +474,9 @@ public class BuyerRfp  implements java.io.Serializable {
      * @param adExchangeEnvironment   * Identifies the format of the inventory or "channel" through
      * which the ad serves. Environments
      *                 currently supported include {@link AdExchangeEnvironment#DISPLAY},
-     * {@link AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
-     * <span class="constraint ReadOnly">This attribute is read-only when:<ul><li>using
-     * programmatic guaranteed, not using sales management.</li><li>using
-     * preferred deals, not using sales management.</li></ul></span>
+     * {@link
+     *                 AdExchangeEnvironment#VIDEO}, and {@link AdExchangeEnvironment#MOBILE}.
+     * This attribute is read-only.
      */
     public void setAdExchangeEnvironment(com.google.api.ads.admanager.axis.v202111.AdExchangeEnvironment adExchangeEnvironment) {
         this.adExchangeEnvironment = adExchangeEnvironment;
@@ -552,12 +487,10 @@ public class BuyerRfp  implements java.io.Serializable {
      * Gets the rfpType value for this BuyerRfp.
      * 
      * @return rfpType   * Deal type; either Programmatic Guaranteed or Preferred Deal.
-     * This field
-     *                 corresponds to the type of {@link Proposal} that a
-     * buyer wishes to negotiate with a seller.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * This field corresponds to the type
+     *                 of {@link Proposal} that a buyer wishes to negotiate
+     * with a seller.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202111.RfpType getRfpType() {
         return rfpType;
@@ -568,12 +501,10 @@ public class BuyerRfp  implements java.io.Serializable {
      * Sets the rfpType value for this BuyerRfp.
      * 
      * @param rfpType   * Deal type; either Programmatic Guaranteed or Preferred Deal.
-     * This field
-     *                 corresponds to the type of {@link Proposal} that a
-     * buyer wishes to negotiate with a seller.
-     *                 <span class="constraint ReadOnly">This attribute is
-     * read-only when:<ul><li>using programmatic guaranteed, not using sales
-     * management.</li><li>using preferred deals, not using sales management.</li></ul></span>
+     * This field corresponds to the type
+     *                 of {@link Proposal} that a buyer wishes to negotiate
+     * with a seller.
+     *                 This attribute is read-only.
      */
     public void setRfpType(com.google.api.ads.admanager.axis.v202111.RfpType rfpType) {
         this.rfpType = rfpType;
