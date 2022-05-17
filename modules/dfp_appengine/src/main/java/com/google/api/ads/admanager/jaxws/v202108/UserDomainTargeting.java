@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Provides line items the ability to target or exclude users visiting their
- *             websites from a list of domains or subdomains.
+ *             Provides line items the ability to target or exclude users visiting their websites from a list of
+ *             domains or subdomains.
  *           
  * 
  * <p>Java class for UserDomainTargeting complex type.

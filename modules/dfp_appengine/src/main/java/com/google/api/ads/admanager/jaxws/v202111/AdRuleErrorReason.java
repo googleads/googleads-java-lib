@@ -50,7 +50,7 @@ public enum AdRuleErrorReason {
 
     /**
      * 
-     *                 The break template must have exactly one flesible ad spot.
+     *                 The break template must have exactly one flexible ad spot.
      *               
      * 
      */

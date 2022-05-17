@@ -484,7 +484,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 <p>Corresponds to "Nielsen Average Number Of Viewers" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Nielsen Average Number Of Viewers" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
      *               
      * 
      */
@@ -536,7 +536,7 @@ public enum DimensionAttribute {
      * 
      *                 Indicates if a creative is a regular creative or creative set.
      *                 Values will be 'Creative' or 'Creative set'
-     *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -545,7 +545,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 The type of creative in a creative set - master or companion.
-     *                 <p>Corresponds to "Master or Companion" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Master or Companion" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -604,7 +604,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 Represents the click-through URL for {@link Dimension#CREATIVE_NAME}.
-     *                 <p>Corresponds to "Click-through URL" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Click-through URL" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -613,7 +613,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 Represents whether a creative is SSL-compliant.
-     *                 <p>Corresponds to "Creative SSL scan result" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Creative SSL scan result" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -622,7 +622,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 Represents whether a creative's SSL status was overridden.
-     *                 <p>Corresponds to "Creative SSL compliance override" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Creative SSL compliance override" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -633,7 +633,7 @@ public enum DimensionAttribute {
      *                 Represents a {@link LineItemCreativeAssociation#startDateTime} for a
      *                 {@link Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}.
      *                 Includes the date without the time.
-     *                 <p>Corresponds to "Creative start date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Creative start date" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -644,7 +644,7 @@ public enum DimensionAttribute {
      *                 Represents a {@link LineItemCreativeAssociation#endDateTime} for a
      *                 {@link Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}.
      *                 Includes the date without the time.
-     *                 <p>Corresponds to "Creative end date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Creative end date" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -654,7 +654,7 @@ public enum DimensionAttribute {
      * 
      *                 Represents the {@link CmsContent#displayName} within the first element of
      *                 {@link Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
-     *                 <p>Corresponds to "Content source name" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "Content source name" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -664,7 +664,7 @@ public enum DimensionAttribute {
      * 
      *                 Represents the {@link CmsContent#cmsContentId} within the first element of
      *                 {@link Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
-     *                 <p>Corresponds to "ID of the video in the content source" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
+     *                 <p>Corresponds to "ID of the video in the content source" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -673,7 +673,7 @@ public enum DimensionAttribute {
     /**
      * 
      *                 Represents {@link AdUnit#adUnitCode} for {@link Dimension#AD_UNIT_NAME}.
-     *                 <p>Corresponds to "Ad unit code" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Corresponds to "Ad unit code" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Ad speed.</p>
      *               
      * 
      */

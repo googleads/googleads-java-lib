@@ -760,6 +760,20 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "InventoryUrl");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.InventoryUrl.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "InventoryUrlTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.InventoryUrlTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "LabelEntityAssociationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202202.LabelEntityAssociationError.class;
@@ -865,20 +879,6 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "Money");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202202.Money.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "NegotiationStatus");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202202.NegotiationStatus.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -894,6 +894,20 @@ public class ProposalServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "Money");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.Money.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "NegotiationStatus");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.NegotiationStatus.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "NotNullError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202202.NotNullError.class;

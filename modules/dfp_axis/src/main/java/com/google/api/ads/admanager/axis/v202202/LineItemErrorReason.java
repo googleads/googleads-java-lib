@@ -34,6 +34,7 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final java.lang.String _ALREADY_STARTED = "ALREADY_STARTED";
     public static final java.lang.String _UPDATE_RESERVATION_NOT_ALLOWED = "UPDATE_RESERVATION_NOT_ALLOWED";
     public static final java.lang.String _ALL_ROADBLOCK_NOT_ALLOWED = "ALL_ROADBLOCK_NOT_ALLOWED";
+    public static final java.lang.String _ALL_COMPANION_DELIVERY_NOT_ALLOWED = "ALL_COMPANION_DELIVERY_NOT_ALLOWED";
     public static final java.lang.String _CREATIVE_SET_ROADBLOCK_NOT_ALLOWED = "CREATIVE_SET_ROADBLOCK_NOT_ALLOWED";
     public static final java.lang.String _FRACTIONAL_PERCENTAGE_NOT_ALLOWED = "FRACTIONAL_PERCENTAGE_NOT_ALLOWED";
     public static final java.lang.String _DISCOUNT_NOT_ALLOWED = "DISCOUNT_NOT_ALLOWED";
@@ -111,6 +112,7 @@ public class LineItemErrorReason implements java.io.Serializable {
     public static final LineItemErrorReason ALREADY_STARTED = new LineItemErrorReason(_ALREADY_STARTED);
     public static final LineItemErrorReason UPDATE_RESERVATION_NOT_ALLOWED = new LineItemErrorReason(_UPDATE_RESERVATION_NOT_ALLOWED);
     public static final LineItemErrorReason ALL_ROADBLOCK_NOT_ALLOWED = new LineItemErrorReason(_ALL_ROADBLOCK_NOT_ALLOWED);
+    public static final LineItemErrorReason ALL_COMPANION_DELIVERY_NOT_ALLOWED = new LineItemErrorReason(_ALL_COMPANION_DELIVERY_NOT_ALLOWED);
     public static final LineItemErrorReason CREATIVE_SET_ROADBLOCK_NOT_ALLOWED = new LineItemErrorReason(_CREATIVE_SET_ROADBLOCK_NOT_ALLOWED);
     public static final LineItemErrorReason FRACTIONAL_PERCENTAGE_NOT_ALLOWED = new LineItemErrorReason(_FRACTIONAL_PERCENTAGE_NOT_ALLOWED);
     public static final LineItemErrorReason DISCOUNT_NOT_ALLOWED = new LineItemErrorReason(_DISCOUNT_NOT_ALLOWED);

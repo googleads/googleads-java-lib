@@ -32,8 +32,7 @@ package com.google.api.ads.admanager.axis.v202108;
  */
 public class BreakTemplate  implements java.io.Serializable {
     /* The unique ID of the {@link BreakTemplate}. This value is readonly
-     * and is assigned by
-     *                 Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* Whether this is custom template. Custom templates get created
@@ -60,12 +59,12 @@ public class BreakTemplate  implements java.io.Serializable {
     private java.lang.String displayName;
 
     /* The list of the {@link BreakTemplateMember} objects in the
-     * order in which they should appear
-     *                 in the ad pod. Each {@link BreakTemplateMember} has
-     * a reference to a {@link AdSpot},
-     *                 which defines what kinds of ads can appear at that
-     * position, as well as other metadata that
-     *                 defines how each ad spot should be filled. */
+     * order in which they should appear in
+     *                 the ad pod. Each {@link BreakTemplateMember} has a
+     * reference to a {@link AdSpot}, which defines
+     *                 what kinds of ads can appear at that position, as
+     * well as other metadata that defines how each
+     *                 ad spot should be filled. */
     private com.google.api.ads.admanager.axis.v202108.BreakTemplateBreakTemplateMember[] breakTemplateMembers;
 
     public BreakTemplate() {
@@ -100,8 +99,7 @@ public class BreakTemplate  implements java.io.Serializable {
      * Gets the id value for this BreakTemplate.
      * 
      * @return id   * The unique ID of the {@link BreakTemplate}. This value is readonly
-     * and is assigned by
-     *                 Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -112,8 +110,7 @@ public class BreakTemplate  implements java.io.Serializable {
      * Sets the id value for this BreakTemplate.
      * 
      * @param id   * The unique ID of the {@link BreakTemplate}. This value is readonly
-     * and is assigned by
-     *                 Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -212,12 +209,12 @@ public class BreakTemplate  implements java.io.Serializable {
      * Gets the breakTemplateMembers value for this BreakTemplate.
      * 
      * @return breakTemplateMembers   * The list of the {@link BreakTemplateMember} objects in the
-     * order in which they should appear
-     *                 in the ad pod. Each {@link BreakTemplateMember} has
-     * a reference to a {@link AdSpot},
-     *                 which defines what kinds of ads can appear at that
-     * position, as well as other metadata that
-     *                 defines how each ad spot should be filled.
+     * order in which they should appear in
+     *                 the ad pod. Each {@link BreakTemplateMember} has a
+     * reference to a {@link AdSpot}, which defines
+     *                 what kinds of ads can appear at that position, as
+     * well as other metadata that defines how each
+     *                 ad spot should be filled.
      */
     public com.google.api.ads.admanager.axis.v202108.BreakTemplateBreakTemplateMember[] getBreakTemplateMembers() {
         return breakTemplateMembers;
@@ -228,12 +225,12 @@ public class BreakTemplate  implements java.io.Serializable {
      * Sets the breakTemplateMembers value for this BreakTemplate.
      * 
      * @param breakTemplateMembers   * The list of the {@link BreakTemplateMember} objects in the
-     * order in which they should appear
-     *                 in the ad pod. Each {@link BreakTemplateMember} has
-     * a reference to a {@link AdSpot},
-     *                 which defines what kinds of ads can appear at that
-     * position, as well as other metadata that
-     *                 defines how each ad spot should be filled.
+     * order in which they should appear in
+     *                 the ad pod. Each {@link BreakTemplateMember} has a
+     * reference to a {@link AdSpot}, which defines
+     *                 what kinds of ads can appear at that position, as
+     * well as other metadata that defines how each
+     *                 ad spot should be filled.
      */
     public void setBreakTemplateMembers(com.google.api.ads.admanager.axis.v202108.BreakTemplateBreakTemplateMember[] breakTemplateMembers) {
         this.breakTemplateMembers = breakTemplateMembers;

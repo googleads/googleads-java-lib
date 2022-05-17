@@ -31,7 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA"/>
  *     &lt;enumeration value="MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED"/>
  *     &lt;enumeration value="DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED"/>
- *     &lt;enumeration value="DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -74,14 +73,6 @@ public enum TechnologyTargetingErrorReason {
      * 
      */
     DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED,
-
-    /**
-     * 
-     *                 The device category targeting feature is not enabled.
-     *               
-     * 
-     */
-    DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED,
 
     /**
      * 

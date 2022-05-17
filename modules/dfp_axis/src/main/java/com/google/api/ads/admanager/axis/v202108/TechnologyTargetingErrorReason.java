@@ -35,13 +35,11 @@ public class TechnologyTargetingErrorReason implements java.io.Serializable {
     public static final java.lang.String _WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA = "WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA";
     public static final java.lang.String _MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED = "MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED";
     public static final java.lang.String _DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED = "DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED";
-    public static final java.lang.String _DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED = "DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final TechnologyTargetingErrorReason MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA = new TechnologyTargetingErrorReason(_MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA);
     public static final TechnologyTargetingErrorReason WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA = new TechnologyTargetingErrorReason(_WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA);
     public static final TechnologyTargetingErrorReason MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED = new TechnologyTargetingErrorReason(_MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED);
     public static final TechnologyTargetingErrorReason DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED = new TechnologyTargetingErrorReason(_DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED);
-    public static final TechnologyTargetingErrorReason DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED = new TechnologyTargetingErrorReason(_DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED);
     public static final TechnologyTargetingErrorReason UNKNOWN = new TechnologyTargetingErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static TechnologyTargetingErrorReason fromValue(java.lang.String value)

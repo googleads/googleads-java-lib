@@ -130,9 +130,7 @@ public class ProposalLineItem  implements java.io.Serializable {
 
     /* The strategy for delivering ads over the course of the {@code
      * ProposalLineItem}'s
-     *                 duration. This attribute is optional and default value
-     * is
-     *                 {@link DeliveryRateType#EVENLY}.
+     *                 duration. This attribute is required.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * value can only be
      *                 {@link DeliveryRateType#FRONTLOADED}. */
@@ -383,10 +381,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is also
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
-     *                 <p>This field can only be changed if the {@link #linkStatus}
-     * is {@link LinkStatus#UNLINKED}.
-     *                 Otherwise its value is read-only and set to {@link
-     * Product#environmentType} of the product
+     *                 <p>This field is read-only and set to {@link Product#environmentType}
+     * of the product
      *                 this proposal line item was created from. */
     private com.google.api.ads.admanager.axis.v202108.EnvironmentType environmentType;
 
@@ -946,9 +942,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @return deliveryRateType   * The strategy for delivering ads over the course of the {@code
      * ProposalLineItem}'s
-     *                 duration. This attribute is optional and default value
-     * is
-     *                 {@link DeliveryRateType#EVENLY}.
+     *                 duration. This attribute is required.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * value can only be
      *                 {@link DeliveryRateType#FRONTLOADED}.
@@ -963,9 +957,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 
      * @param deliveryRateType   * The strategy for delivering ads over the course of the {@code
      * ProposalLineItem}'s
-     *                 duration. This attribute is optional and default value
-     * is
-     *                 {@link DeliveryRateType#EVENLY}.
+     *                 duration. This attribute is required.
      *                 For a Preferred deal {@code ProposalLineItem}, the
      * value can only be
      *                 {@link DeliveryRateType#FRONTLOADED}.
@@ -1834,10 +1826,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is also
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
-     *                 <p>This field can only be changed if the {@link #linkStatus}
-     * is {@link LinkStatus#UNLINKED}.
-     *                 Otherwise its value is read-only and set to {@link
-     * Product#environmentType} of the product
+     *                 <p>This field is read-only and set to {@link Product#environmentType}
+     * of the product
      *                 this proposal line item was created from.
      */
     public com.google.api.ads.admanager.axis.v202108.EnvironmentType getEnvironmentType() {
@@ -1858,10 +1848,8 @@ public class ProposalLineItem  implements java.io.Serializable {
      * is also
      *                 {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
-     *                 <p>This field can only be changed if the {@link #linkStatus}
-     * is {@link LinkStatus#UNLINKED}.
-     *                 Otherwise its value is read-only and set to {@link
-     * Product#environmentType} of the product
+     *                 <p>This field is read-only and set to {@link Product#environmentType}
+     * of the product
      *                 this proposal line item was created from.
      */
     public void setEnvironmentType(com.google.api.ads.admanager.axis.v202108.EnvironmentType environmentType) {

@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="END_DATE_TIME_IS_IN_PAST"/>
  *     &lt;enumeration value="FRONTLOADED_NOT_ALLOWED"/>
  *     &lt;enumeration value="ALL_ROADBLOCK_NOT_ALLOWED"/>
+ *     &lt;enumeration value="ALL_COMPANION_DELIVERY_NOT_ALLOWED"/>
  *     &lt;enumeration value="CREATIVE_SET_ROADBLOCK_NOT_ALLOWED"/>
  *     &lt;enumeration value="ALREADY_STARTED"/>
  *     &lt;enumeration value="CONFLICT_WITH_PRODUCT"/>
@@ -165,6 +166,14 @@ public enum ProposalLineItemErrorReason {
      * 
      */
     ALL_ROADBLOCK_NOT_ALLOWED,
+
+    /**
+     * 
+     *                 Display all companions is not allowed.
+     *               
+     * 
+     */
+    ALL_COMPANION_DELIVERY_NOT_ALLOWED,
 
     /**
      * 

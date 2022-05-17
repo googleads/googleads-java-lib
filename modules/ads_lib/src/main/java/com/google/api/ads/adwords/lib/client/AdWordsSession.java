@@ -467,7 +467,7 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
 
       // Make sure they specify an endpoint.
       try {
-        new URL(this.endpoint);
+        URL unused = new URL(this.endpoint);
       } catch (MalformedURLException e) {
         throw new ValidationException(String.format("Endpoint [%s] not recognized as a valid URL.",
             this.endpoint), "endpoint", e);

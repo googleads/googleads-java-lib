@@ -24,20 +24,19 @@ package com.google.api.ads.admanager.axis.v202108;
 
 /**
  * Provides line items the ability to target or exclude users visiting
- * their
- *             websites from a list of domains or subdomains.
+ * their websites from a list of
+ *             domains or subdomains.
  */
 public class UserDomainTargeting  implements java.io.Serializable {
     /* The domains or subdomains that are being targeted or excluded
-     * by the
-     *                 {@link LineItem}. This attribute is required and the
-     * maximum length of each
-     *                 domain is 67 characters. */
+     * by the {@link LineItem}. This
+     *                 attribute is required and the maximum length of each
+     * domain is 67 characters. */
     private java.lang.String[] domains;
 
     /* Indicates whether domains should be targeted or excluded. This
-     * attribute is
-     *                 optional and defaults to {@code true}. */
+     * attribute is optional and
+     *                 defaults to {@code true}. */
     private java.lang.Boolean targeted;
 
     public UserDomainTargeting() {
@@ -63,10 +62,9 @@ public class UserDomainTargeting  implements java.io.Serializable {
      * Gets the domains value for this UserDomainTargeting.
      * 
      * @return domains   * The domains or subdomains that are being targeted or excluded
-     * by the
-     *                 {@link LineItem}. This attribute is required and the
-     * maximum length of each
-     *                 domain is 67 characters.
+     * by the {@link LineItem}. This
+     *                 attribute is required and the maximum length of each
+     * domain is 67 characters.
      */
     public java.lang.String[] getDomains() {
         return domains;
@@ -77,10 +75,9 @@ public class UserDomainTargeting  implements java.io.Serializable {
      * Sets the domains value for this UserDomainTargeting.
      * 
      * @param domains   * The domains or subdomains that are being targeted or excluded
-     * by the
-     *                 {@link LineItem}. This attribute is required and the
-     * maximum length of each
-     *                 domain is 67 characters.
+     * by the {@link LineItem}. This
+     *                 attribute is required and the maximum length of each
+     * domain is 67 characters.
      */
     public void setDomains(java.lang.String[] domains) {
         this.domains = domains;
@@ -99,8 +96,8 @@ public class UserDomainTargeting  implements java.io.Serializable {
      * Gets the targeted value for this UserDomainTargeting.
      * 
      * @return targeted   * Indicates whether domains should be targeted or excluded. This
-     * attribute is
-     *                 optional and defaults to {@code true}.
+     * attribute is optional and
+     *                 defaults to {@code true}.
      */
     public java.lang.Boolean getTargeted() {
         return targeted;
@@ -111,8 +108,8 @@ public class UserDomainTargeting  implements java.io.Serializable {
      * Sets the targeted value for this UserDomainTargeting.
      * 
      * @param targeted   * Indicates whether domains should be targeted or excluded. This
-     * attribute is
-     *                 optional and defaults to {@code true}.
+     * attribute is optional and
+     *                 defaults to {@code true}.
      */
     public void setTargeted(java.lang.Boolean targeted) {
         this.targeted = targeted;

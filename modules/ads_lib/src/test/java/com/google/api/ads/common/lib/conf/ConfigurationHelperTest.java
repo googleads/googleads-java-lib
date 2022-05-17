@@ -88,8 +88,9 @@ public class ConfigurationHelperTest {
 
   @Test
   public void testSupportedConfigurationInfo() throws Exception {
-    new ConfigurationInfo<String>("1234", false);
-    new ConfigurationInfo<URL>(new URL("http://google.com"), false);
+    ConfigurationInfo<String> unused1 = new ConfigurationInfo<String>("1234", false);
+    ConfigurationInfo<URL> unused2 =
+        new ConfigurationInfo<URL>(new URL("http://google.com"), false);
   }
 
   @Test

@@ -214,14 +214,11 @@ public class ReportQuery  implements java.io.Serializable {
      *                 sensitive. */
     private com.google.api.ads.admanager.axis.v202108.Statement statement;
 
-    /* The currency for Ad Exchange revenue metrics. This field is
-     * only valid for Ad Exchange metrics,
-     *                 and an exception will be thrown if this field is used
-     * with non-Ad Exchange metrics. Defaults to
-     *                 the network currency if left {@code null}. The supported
-     * currency codes can be found in
-     *                 <a href="https://support.google.com/adxseller/answer/6019533">
-     * this Help Center article.</a> */
+    /* The currency for revenue metrics. Defaults to the network currency
+     * if left {@code null}. The
+     *                 supported currency codes can be found in <a
+     *                 href="https://support.google.com/adxseller/answer/6019533">this
+     * Help Center article.</a> */
     private java.lang.String adxReportCurrency;
 
     /* Gets the {@link TimeZoneType} for this report, which determines
@@ -856,14 +853,11 @@ public class ReportQuery  implements java.io.Serializable {
     /**
      * Gets the adxReportCurrency value for this ReportQuery.
      * 
-     * @return adxReportCurrency   * The currency for Ad Exchange revenue metrics. This field is
-     * only valid for Ad Exchange metrics,
-     *                 and an exception will be thrown if this field is used
-     * with non-Ad Exchange metrics. Defaults to
-     *                 the network currency if left {@code null}. The supported
-     * currency codes can be found in
-     *                 <a href="https://support.google.com/adxseller/answer/6019533">
-     * this Help Center article.</a>
+     * @return adxReportCurrency   * The currency for revenue metrics. Defaults to the network currency
+     * if left {@code null}. The
+     *                 supported currency codes can be found in <a
+     *                 href="https://support.google.com/adxseller/answer/6019533">this
+     * Help Center article.</a>
      */
     public java.lang.String getAdxReportCurrency() {
         return adxReportCurrency;
@@ -873,14 +867,11 @@ public class ReportQuery  implements java.io.Serializable {
     /**
      * Sets the adxReportCurrency value for this ReportQuery.
      * 
-     * @param adxReportCurrency   * The currency for Ad Exchange revenue metrics. This field is
-     * only valid for Ad Exchange metrics,
-     *                 and an exception will be thrown if this field is used
-     * with non-Ad Exchange metrics. Defaults to
-     *                 the network currency if left {@code null}. The supported
-     * currency codes can be found in
-     *                 <a href="https://support.google.com/adxseller/answer/6019533">
-     * this Help Center article.</a>
+     * @param adxReportCurrency   * The currency for revenue metrics. Defaults to the network currency
+     * if left {@code null}. The
+     *                 supported currency codes can be found in <a
+     *                 href="https://support.google.com/adxseller/answer/6019533">this
+     * Help Center article.</a>
      */
     public void setAdxReportCurrency(java.lang.String adxReportCurrency) {
         this.adxReportCurrency = adxReportCurrency;

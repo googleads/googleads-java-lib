@@ -229,6 +229,8 @@ public class Dimension implements java.io.Serializable {
     public static final java.lang.String _DEMAND_CHANNEL_ID = "DEMAND_CHANNEL_ID";
     public static final java.lang.String _DEMAND_CHANNEL_NAME = "DEMAND_CHANNEL_NAME";
     public static final java.lang.String _DOMAIN = "DOMAIN";
+    public static final java.lang.String _SERVING_RESTRICTION_ID = "SERVING_RESTRICTION_ID";
+    public static final java.lang.String _SERVING_RESTRICTION_NAME = "SERVING_RESTRICTION_NAME";
     public static final java.lang.String _UNIFIED_PRICING_RULE_ID = "UNIFIED_PRICING_RULE_ID";
     public static final java.lang.String _UNIFIED_PRICING_RULE_NAME = "UNIFIED_PRICING_RULE_NAME";
     public static final Dimension MONTH_AND_YEAR = new Dimension(_MONTH_AND_YEAR);
@@ -429,6 +431,8 @@ public class Dimension implements java.io.Serializable {
     public static final Dimension DEMAND_CHANNEL_ID = new Dimension(_DEMAND_CHANNEL_ID);
     public static final Dimension DEMAND_CHANNEL_NAME = new Dimension(_DEMAND_CHANNEL_NAME);
     public static final Dimension DOMAIN = new Dimension(_DOMAIN);
+    public static final Dimension SERVING_RESTRICTION_ID = new Dimension(_SERVING_RESTRICTION_ID);
+    public static final Dimension SERVING_RESTRICTION_NAME = new Dimension(_SERVING_RESTRICTION_NAME);
     public static final Dimension UNIFIED_PRICING_RULE_ID = new Dimension(_UNIFIED_PRICING_RULE_ID);
     public static final Dimension UNIFIED_PRICING_RULE_NAME = new Dimension(_UNIFIED_PRICING_RULE_NAME);
     public java.lang.String getValue() { return _value_;}

@@ -161,12 +161,10 @@ public class Order  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202111.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels applied directly to the order as
-     * well as those
-     *                 inherited from the company that owns the order. If
-     * a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly and is
-     *                 assigned by Google. */
+     * well as those inherited from the
+     *                 company that owns the order. If a label has been negated,
+     * only the negated label is returned.
+     *                 This field is readonly and is assigned by Google. */
     private com.google.api.ads.admanager.axis.v202111.AppliedLabel[] effectiveAppliedLabels;
 
     /* The application which modified this order. This attribute is
@@ -954,12 +952,10 @@ public class Order  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this Order.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels applied directly to the order as
-     * well as those
-     *                 inherited from the company that owns the order. If
-     * a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly and is
-     *                 assigned by Google.
+     * well as those inherited from the
+     *                 company that owns the order. If a label has been negated,
+     * only the negated label is returned.
+     *                 This field is readonly and is assigned by Google.
      */
     public com.google.api.ads.admanager.axis.v202111.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -970,12 +966,10 @@ public class Order  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this Order.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels applied directly to the order as
-     * well as those
-     *                 inherited from the company that owns the order. If
-     * a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly and is
-     *                 assigned by Google.
+     * well as those inherited from the
+     *                 company that owns the order. If a label has been negated,
+     * only the negated label is returned.
+     *                 This field is readonly and is assigned by Google.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202111.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;

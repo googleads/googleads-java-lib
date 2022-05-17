@@ -473,8 +473,8 @@ public enum Column {
 
     /**
      * 
-     *                 The CPM and CPC revenue earned, calculated in publisher currency,
-     *                 for the ads delivered by the ad server.
+     *                 The CPM and CPC revenue earned, calculated in publisher currency, for the ads delivered by the
+     *                 ad server.
      *                 <p>Corresponds to "Ad server CPM and CPC revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -494,8 +494,8 @@ public enum Column {
 
     /**
      * 
-     *                 The CPD revenue earned, calculated in publisher currency,
-     *                 for the ads delivered by the ad server.
+     *                 The CPD revenue earned, calculated in publisher currency, for the ads delivered by the ad
+     *                 server.
      *                 <p>Corresponds to "Ad server CPD revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -504,8 +504,8 @@ public enum Column {
 
     /**
      * 
-     *                 The CPA revenue earned, calculated in publisher currency, for the ads delivered by the
-     *                 ad server.
+     *                 The CPA revenue earned, calculated in publisher currency, for the ads delivered by the ad
+     *                 server.
      *                 <p>Corresponds to "CPA revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -514,8 +514,8 @@ public enum Column {
 
     /**
      * 
-     *                 The CPM, CPC and CPD revenue earned, calculated in publisher currency,
-     *                 for the ads delivered by the ad server.
+     *                 The CPM, CPC and CPD revenue earned, calculated in publisher currency, for the ads delivered by
+     *                 the ad server.
      *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and CPD revenue. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -525,8 +525,8 @@ public enum Column {
     /**
      * 
      *                 The CPM, CPC and CPD gross revenue earned, calculated in publisher currency, for the ads
-     *                 delivered by the ad server. This includes pre-rev-share revenue for Programmatic traffic.
-     *                 This is a temporary metric to help with the transition from gross to net revenue reporting.
+     *                 delivered by the ad server. This includes pre-rev-share revenue for Programmatic traffic. This
+     *                 is a temporary metric to help with the transition from gross to net revenue reporting.
      *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue (gross), Ad server CPM, CPC and CPD revenue (gross). Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -535,8 +535,8 @@ public enum Column {
 
     /**
      * 
-     *                 The average estimated cost-per-thousand-impressions earned from the CPM and CPC ads
-     *                 delivered by the ad server.
+     *                 The average estimated cost-per-thousand-impressions earned from the CPM and CPC ads delivered
+     *                 by the ad server.
      *                 <p>Corresponds to "Ad server average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -565,9 +565,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of the number of clicks delivered to the total clicks delivered
-     *                 by the ad server for line item-level dynamic allocation.
-     *                 Represented as a percentage.
+     *                 The ratio of the number of clicks delivered to the total clicks delivered by the ad server for
+     *                 line item-level dynamic allocation. Represented as a percentage.
      *                 <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -644,8 +643,8 @@ public enum Column {
 
     /**
      * 
-     *                 The number of clicks an AdSense ad delivered for line item-level dynamic allocation by
-     *                 explicit custom criteria targeting.
+     *                 The number of clicks an AdSense ad delivered for line item-level dynamic allocation by explicit
+     *                 custom criteria targeting.
      *                 <p>Corresponds to "AdSense targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -654,8 +653,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of clicks an AdSense reservation ad delivered to the number of
-     *                 impressions it delivered, including line item-level dynamic allocation.
+     *                 The ratio of clicks an AdSense reservation ad delivered to the number of impressions it
+     *                 delivered, including line item-level dynamic allocation.
      *                 <p>Corresponds to "AdSense CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -673,8 +672,8 @@ public enum Column {
 
     /**
      * 
-     *                 The average estimated cost-per-thousand-impressions earned from the ads
-     *                 delivered by AdSense for line item-level dynamic allocation.
+     *                 The average estimated cost-per-thousand-impressions earned from the ads delivered by AdSense
+     *                 for line item-level dynamic allocation.
      *                 <p>Corresponds to "AdSense average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -683,9 +682,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of the number of impressions delivered by AdSense reservation
-     *                 ads to the total impressions delivered for line item-level dynamic allocation.
-     *                 Represented as a percentage.
+     *                 The ratio of the number of impressions delivered by AdSense reservation ads to the total
+     *                 impressions delivered for line item-level dynamic allocation. Represented as a percentage.
      *                 <p>Corresponds to "AdSense impressions (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -694,9 +692,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of the number of clicks delivered by AdSense reservation ads to
-     *                 the total clicks delivered for line item-level dynamic allocation.
-     *                 Represented as a percentage.
+     *                 The ratio of the number of clicks delivered by AdSense reservation ads to the total clicks
+     *                 delivered for line item-level dynamic allocation. Represented as a percentage.
      *                 <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1482,8 +1479,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of clicks an Ad Exchange ad delivered to the number of
-     *                 impressions it delivered for line item-level dynamic allocation.
+     *                 The ratio of clicks an Ad Exchange ad delivered to the number of impressions it delivered for
+     *                 line item-level dynamic allocation.
      *                 <p>Corresponds to "Ad Exchange CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1492,9 +1489,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of the number of impressions delivered to the total impressions delivered
-     *                 by Ad Exchange for line item-level dynamic allocation.
-     *                 Represented as a percentage.
+     *                 The ratio of the number of impressions delivered to the total impressions delivered by Ad
+     *                 Exchange for line item-level dynamic allocation. Represented as a percentage.
      *                 <p>Corresponds to "Ad Exchange impressions (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1503,9 +1499,8 @@ public enum Column {
 
     /**
      * 
-     *                 The ratio of the number of clicks delivered to the total clicks delivered
-     *                 by Ad Exchange for line item-level dynamic allocation.
-     *                 Represented as a percentage.
+     *                 The ratio of the number of clicks delivered to the total clicks delivered by Ad Exchange for
+     *                 line item-level dynamic allocation. Represented as a percentage.
      *                 <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1545,8 +1540,8 @@ public enum Column {
 
     /**
      * 
-     *                 The average estimated cost-per-thousand-impressions earned from the
-     *                 delivery of Ad Exchange ads for line item-level dynamic allocation.
+     *                 The average estimated cost-per-thousand-impressions earned from the delivery of Ad Exchange ads
+     *                 for line item-level dynamic allocation.
      *                 <p>Corresponds to "Ad Exchange average eCPM" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1583,8 +1578,8 @@ public enum Column {
 
     /**
      * 
-     *                 The total number of clicks delivered including line item-level dynamic allocation by
-     *                 explicit custom criteria targeting
+     *                 The total number of clicks delivered including line item-level dynamic allocation by explicit
+     *                 custom criteria targeting
      *                 <p>Corresponds to "Total targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1652,8 +1647,8 @@ public enum Column {
 
     /**
      * 
-     *                 The total number of times that an ad request is sent to the ad server
-     *                 including dynamic allocation.
+     *                 The total number of times that an ad request is sent to the ad server including dynamic
+     *                 allocation.
      *                 <p>Corresponds to "Total ad requests" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1662,8 +1657,7 @@ public enum Column {
 
     /**
      * 
-     *                 The total number of times that an ad is served by the ad server
-     *                 including dynamic allocation.
+     *                 The total number of times that an ad is served by the ad server including dynamic allocation.
      *                 <p>Corresponds to "Total responses served" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1681,8 +1675,8 @@ public enum Column {
 
     /**
      * 
-     *                 The fill rate indicating how often an ad request is filled by the ad server
-     *                 including dynamic allocation.
+     *                 The fill rate indicating how often an ad request is filled by the ad server including dynamic
+     *                 allocation.
      *                 <p>Corresponds to "Total fill rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -2433,8 +2427,7 @@ public enum Column {
 
     /**
      * 
-     *                 The number of engaged views i.e. ad is viewed to completion
-     *                 or for 30s, whichever comes first.
+     *                 The number of engaged views i.e. ad is viewed to completion or for 30s, whichever comes first.
      *                 <p>Corresponds to "Engaged view" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -2996,7 +2989,7 @@ public enum Column {
      * 
      *                 Active View total average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Total Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Total Active View average viewable time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3054,7 +3047,7 @@ public enum Column {
     /**
      * 
      *                 Active View ad server revenue.
-     *                 <p>Corresponds to "Ad Server Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Ad server Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3064,7 +3057,7 @@ public enum Column {
      * 
      *                 Active View ad server average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Ad Server Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Ad server Active View average viewable time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3121,7 +3114,7 @@ public enum Column {
     /**
      * 
      *                 Active View AdSense revenue.
-     *                 <p>Corresponds to "AdSense Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "AdSense Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3131,7 +3124,7 @@ public enum Column {
      * 
      *                 Active View AdSense average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "AdSense Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "AdSense Active View average viewable time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3188,7 +3181,7 @@ public enum Column {
     /**
      * 
      *                 Active View AdExchange revenue.
-     *                 <p>Corresponds to "Ad Exchange Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3198,7 +3191,7 @@ public enum Column {
      * 
      *                 Active View AdExchange average time in seconds that specific impressions are reported as being
      *                 viewable.
-     *                 <p>Corresponds to "Ad Exchange Active View Average Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Ad Exchange Active View average viewable time (seconds)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3207,7 +3200,7 @@ public enum Column {
     /**
      * 
      *                 Active View total revenue.
-     *                 <p>Corresponds to "Total Active View Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Total Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

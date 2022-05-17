@@ -285,7 +285,7 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
 
       // Make sure they specify a valid endpoint.
       try {
-        new URL(this.endpoint);
+        URL unused = new URL(this.endpoint);
       } catch (MalformedURLException e) {
         throw new ValidationException(
             String.format("Endpoint [%s] not recognized as a valid URL.", this.endpoint),

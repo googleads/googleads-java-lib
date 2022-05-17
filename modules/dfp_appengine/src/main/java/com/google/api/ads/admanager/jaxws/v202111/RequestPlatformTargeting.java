@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *             <p>The following rules apply for {@link RequestPlatformTargeting}
  *             
  *             <ul>
+ *             <li>{@link RequestPlatformTargeting} must be specified for {@link ProposalLineItem}s.</li>
  *             <li>{@link RequestPlatformTargeting} must be specified for video line items. Empty values for
  *             {@link RequestPlatformTargeting#targetedRequestPlatforms} mean that all request platforms
  *             will be targeted.

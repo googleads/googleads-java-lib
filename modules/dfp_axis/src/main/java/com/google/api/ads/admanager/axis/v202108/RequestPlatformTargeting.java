@@ -30,6 +30,8 @@ package com.google.api.ads.admanager.axis.v202108;
  * 
  *             <ul>
  *             <li>{@link RequestPlatformTargeting} must be specified
+ * for {@link ProposalLineItem}s.</li>
+ *             <li>{@link RequestPlatformTargeting} must be specified
  * for video line items. Empty values for
  *             {@link RequestPlatformTargeting#targetedRequestPlatforms}
  * mean that all request platforms

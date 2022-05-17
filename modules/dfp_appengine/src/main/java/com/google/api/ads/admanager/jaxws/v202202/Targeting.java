@@ -46,6 +46,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="videoPositionTargeting" type="{https://www.google.com/apis/ads/publisher/v202202}VideoPositionTargeting" minOccurs="0"/>
  *         &lt;element name="mobileApplicationTargeting" type="{https://www.google.com/apis/ads/publisher/v202202}MobileApplicationTargeting" minOccurs="0"/>
  *         &lt;element name="buyerUserListTargeting" type="{https://www.google.com/apis/ads/publisher/v202202}BuyerUserListTargeting" minOccurs="0"/>
+ *         &lt;element name="inventoryUrlTargeting" type="{https://www.google.com/apis/ads/publisher/v202202}InventoryUrlTargeting" minOccurs="0"/>
  *         &lt;element name="requestPlatformTargeting" type="{https://www.google.com/apis/ads/publisher/v202202}RequestPlatformTargeting" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -68,6 +69,7 @@ import javax.xml.bind.annotation.XmlType;
     "videoPositionTargeting",
     "mobileApplicationTargeting",
     "buyerUserListTargeting",
+    "inventoryUrlTargeting",
     "requestPlatformTargeting"
 })
 public class Targeting {
@@ -83,6 +85,7 @@ public class Targeting {
     protected VideoPositionTargeting videoPositionTargeting;
     protected MobileApplicationTargeting mobileApplicationTargeting;
     protected BuyerUserListTargeting buyerUserListTargeting;
+    protected InventoryUrlTargeting inventoryUrlTargeting;
     protected RequestPlatformTargeting requestPlatformTargeting;
 
     /**
@@ -347,6 +350,30 @@ public class Targeting {
      */
     public void setBuyerUserListTargeting(BuyerUserListTargeting value) {
         this.buyerUserListTargeting = value;
+    }
+
+    /**
+     * Gets the value of the inventoryUrlTargeting property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link InventoryUrlTargeting }
+     *     
+     */
+    public InventoryUrlTargeting getInventoryUrlTargeting() {
+        return inventoryUrlTargeting;
+    }
+
+    /**
+     * Sets the value of the inventoryUrlTargeting property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link InventoryUrlTargeting }
+     *     
+     */
+    public void setInventoryUrlTargeting(InventoryUrlTargeting value) {
+        this.inventoryUrlTargeting = value;
     }
 
     /**

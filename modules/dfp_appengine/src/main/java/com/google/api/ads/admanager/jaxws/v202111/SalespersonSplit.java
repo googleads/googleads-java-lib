@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code SalespersonSplit} represents a salesperson and their split.
+ *             A {@code SalespersonSplit} represents a salesperson.
  *           
  * 
  * <p>Java class for SalespersonSplit complex type.

@@ -120,8 +120,8 @@ public class Targeting  implements java.io.Serializable {
 
     /* Specifies the request platforms that are targeted by the {@link
      * LineItem}. This attribute is
-     *                 required for video line items.
-     *                 
+     *                 required for video line items and for {@link ProposalLineItem}.
+     * 
      *                 <p>This value is modifiable for video line items,
      * but read-only for non-video line items.
      *                 
@@ -519,8 +519,8 @@ public class Targeting  implements java.io.Serializable {
      * 
      * @return requestPlatformTargeting   * Specifies the request platforms that are targeted by the {@link
      * LineItem}. This attribute is
-     *                 required for video line items.
-     *                 
+     *                 required for video line items and for {@link ProposalLineItem}.
+     * 
      *                 <p>This value is modifiable for video line items,
      * but read-only for non-video line items.
      *                 
@@ -537,8 +537,8 @@ public class Targeting  implements java.io.Serializable {
      * 
      * @param requestPlatformTargeting   * Specifies the request platforms that are targeted by the {@link
      * LineItem}. This attribute is
-     *                 required for video line items.
-     *                 
+     *                 required for video line items and for {@link ProposalLineItem}.
+     * 
      *                 <p>This value is modifiable for video line items,
      * but read-only for non-video line items.
      *                 

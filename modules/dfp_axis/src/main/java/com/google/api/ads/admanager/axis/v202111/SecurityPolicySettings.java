@@ -68,13 +68,19 @@ public class SecurityPolicySettings  implements java.io.Serializable {
 
     /* The type of origin forwarding used to support Akamai authentication
      * policies for media
-     *                 playlists. This field is not applicable to ingest
-     * locations, and is only applicable to delivery
-     *                 media locations with the {@link #securityPolicyType}
-     * set to {@link SecurityPolicyType#AKAMAI}.
-     *                 Valid options are {@code OriginForwardingType#NONE}
-     * or
-     *                 {@code OriginForwardingType#ORIGIN_PATH}. */
+     *                 playlists. This setting can only be used with CDN
+     * configurations with a {@code
+     *                 cdnConfigurationType} of {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT},
+     * is not
+     *                 applicable to ingest locations, and is only applicable
+     * to delivery media locations with the
+     *                 {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
+     * Valid options are {@code
+     *                 OriginForwardingType#NONE} or {@code OriginForwardingType#ORIGIN_PATH}.
+     * 
+     *                 <p>This setting can only be used with CDN configurations
+     * with a {@code cdnConfigurationType} of
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}. */
     private com.google.api.ads.admanager.axis.v202111.OriginForwardingType mediaPlaylistOriginForwardingType;
 
     /* The origin path prefix provided by the publisher for the media
@@ -269,13 +275,19 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * 
      * @return mediaPlaylistOriginForwardingType   * The type of origin forwarding used to support Akamai authentication
      * policies for media
-     *                 playlists. This field is not applicable to ingest
-     * locations, and is only applicable to delivery
-     *                 media locations with the {@link #securityPolicyType}
-     * set to {@link SecurityPolicyType#AKAMAI}.
-     *                 Valid options are {@code OriginForwardingType#NONE}
-     * or
-     *                 {@code OriginForwardingType#ORIGIN_PATH}.
+     *                 playlists. This setting can only be used with CDN
+     * configurations with a {@code
+     *                 cdnConfigurationType} of {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT},
+     * is not
+     *                 applicable to ingest locations, and is only applicable
+     * to delivery media locations with the
+     *                 {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
+     * Valid options are {@code
+     *                 OriginForwardingType#NONE} or {@code OriginForwardingType#ORIGIN_PATH}.
+     * 
+     *                 <p>This setting can only be used with CDN configurations
+     * with a {@code cdnConfigurationType} of
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}.
      */
     public com.google.api.ads.admanager.axis.v202111.OriginForwardingType getMediaPlaylistOriginForwardingType() {
         return mediaPlaylistOriginForwardingType;
@@ -287,13 +299,19 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * 
      * @param mediaPlaylistOriginForwardingType   * The type of origin forwarding used to support Akamai authentication
      * policies for media
-     *                 playlists. This field is not applicable to ingest
-     * locations, and is only applicable to delivery
-     *                 media locations with the {@link #securityPolicyType}
-     * set to {@link SecurityPolicyType#AKAMAI}.
-     *                 Valid options are {@code OriginForwardingType#NONE}
-     * or
-     *                 {@code OriginForwardingType#ORIGIN_PATH}.
+     *                 playlists. This setting can only be used with CDN
+     * configurations with a {@code
+     *                 cdnConfigurationType} of {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT},
+     * is not
+     *                 applicable to ingest locations, and is only applicable
+     * to delivery media locations with the
+     *                 {@link #securityPolicyType} set to {@link SecurityPolicyType#AKAMAI}.
+     * Valid options are {@code
+     *                 OriginForwardingType#NONE} or {@code OriginForwardingType#ORIGIN_PATH}.
+     * 
+     *                 <p>This setting can only be used with CDN configurations
+     * with a {@code cdnConfigurationType} of
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}.
      */
     public void setMediaPlaylistOriginForwardingType(com.google.api.ads.admanager.axis.v202111.OriginForwardingType mediaPlaylistOriginForwardingType) {
         this.mediaPlaylistOriginForwardingType = mediaPlaylistOriginForwardingType;

@@ -59,7 +59,7 @@ public enum VideoDeliveryType {
 
     /**
      * 
-     *                 Video will be served via a streaming protocol like RTMP.
+     *                 Video will be served via a streaming protocol like HLS or DASH.
      *               
      * 
      */

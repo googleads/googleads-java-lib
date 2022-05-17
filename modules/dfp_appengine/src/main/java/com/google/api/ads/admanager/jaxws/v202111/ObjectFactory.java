@@ -1114,14 +1114,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WorkflowActionError }
-     * 
-     */
-    public WorkflowActionError createWorkflowActionError() {
-        return new WorkflowActionError();
-    }
-
-    /**
      * Create an instance of {@link CompanyPage }
      * 
      */
@@ -3079,14 +3071,6 @@ public class ObjectFactory {
      */
     public FirstPartyAudienceSegmentRule createFirstPartyAudienceSegmentRule() {
         return new FirstPartyAudienceSegmentRule();
-    }
-
-    /**
-     * Create an instance of {@link WorkflowValidationError }
-     * 
-     */
-    public WorkflowValidationError createWorkflowValidationError() {
-        return new WorkflowValidationError();
     }
 
     /**

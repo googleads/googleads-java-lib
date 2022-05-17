@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ALREADY_STARTED"/>
  *     &lt;enumeration value="UPDATE_RESERVATION_NOT_ALLOWED"/>
  *     &lt;enumeration value="ALL_ROADBLOCK_NOT_ALLOWED"/>
+ *     &lt;enumeration value="ALL_COMPANION_DELIVERY_NOT_ALLOWED"/>
  *     &lt;enumeration value="CREATIVE_SET_ROADBLOCK_NOT_ALLOWED"/>
  *     &lt;enumeration value="FRACTIONAL_PERCENTAGE_NOT_ALLOWED"/>
  *     &lt;enumeration value="DISCOUNT_NOT_ALLOWED"/>
@@ -138,6 +139,14 @@ public enum LineItemErrorReason {
      * 
      */
     ALL_ROADBLOCK_NOT_ALLOWED,
+
+    /**
+     * 
+     *                 Companion delivery to display all creatives is not allowed.
+     *               
+     * 
+     */
+    ALL_COMPANION_DELIVERY_NOT_ALLOWED,
 
     /**
      * 

@@ -23,7 +23,7 @@ package com.google.api.ads.admanager.axis.v202111;
 
 
 /**
- * A {@code SalespersonSplit} represents a salesperson and their split.
+ * A {@code SalespersonSplit} represents a salesperson.
  */
 public class SalespersonSplit  implements java.io.Serializable {
     /* The unique ID of the {@link User} responsible for the sales
@@ -33,11 +33,11 @@ public class SalespersonSplit  implements java.io.Serializable {
      * required.</span> */
     private java.lang.Long userId;
 
-    /* The split can be attributed to the salesperson.
-     *                 The percentage value is stored as millipercents, and
-     * must be multiples of 10
-     *                 with the range from 0 to 100000. The default value
-     * is 0. */
+    /* The split can be attributed to the salesperson. The percentage
+     * value is stored as
+     *                 millipercents, and must be multiples of 10 with the
+     * range from 0 to 100000. The default value
+     *                 is 0. */
     private java.lang.Integer split;
 
     public SalespersonSplit() {
@@ -90,11 +90,11 @@ public class SalespersonSplit  implements java.io.Serializable {
     /**
      * Gets the split value for this SalespersonSplit.
      * 
-     * @return split   * The split can be attributed to the salesperson.
-     *                 The percentage value is stored as millipercents, and
-     * must be multiples of 10
-     *                 with the range from 0 to 100000. The default value
-     * is 0.
+     * @return split   * The split can be attributed to the salesperson. The percentage
+     * value is stored as
+     *                 millipercents, and must be multiples of 10 with the
+     * range from 0 to 100000. The default value
+     *                 is 0.
      */
     public java.lang.Integer getSplit() {
         return split;
@@ -104,11 +104,11 @@ public class SalespersonSplit  implements java.io.Serializable {
     /**
      * Sets the split value for this SalespersonSplit.
      * 
-     * @param split   * The split can be attributed to the salesperson.
-     *                 The percentage value is stored as millipercents, and
-     * must be multiples of 10
-     *                 with the range from 0 to 100000. The default value
-     * is 0.
+     * @param split   * The split can be attributed to the salesperson. The percentage
+     * value is stored as
+     *                 millipercents, and must be multiples of 10 with the
+     * range from 0 to 100000. The default value
+     *                 is 0.
      */
     public void setSplit(java.lang.Integer split) {
         this.split = split;

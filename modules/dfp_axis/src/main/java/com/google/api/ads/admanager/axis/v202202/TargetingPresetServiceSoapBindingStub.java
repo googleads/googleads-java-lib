@@ -580,6 +580,20 @@ public class TargetingPresetServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "InventoryUrl");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.InventoryUrl.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "InventoryUrlTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.InventoryUrlTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "Location");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202202.Location.class;
@@ -790,20 +804,6 @@ public class TargetingPresetServiceSoapBindingStub extends org.apache.axis.clien
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "RequestPlatformTargeting");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202202.RequestPlatformTargeting.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "RequestPlatformTargetingError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202202.RequestPlatformTargetingError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -819,6 +819,20 @@ public class TargetingPresetServiceSoapBindingStub extends org.apache.axis.clien
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "RequestPlatformTargeting");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.RequestPlatformTargeting.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "RequestPlatformTargetingError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202202.RequestPlatformTargetingError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202202", "RequestPlatformTargetingError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202202.RequestPlatformTargetingErrorReason.class;
