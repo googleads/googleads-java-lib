@@ -255,7 +255,6 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     RawReportDownloadResponse response = helper.downloadReport(reportRequest);
 
     assertEquals("Response status code not failure", 500, response.getHttpStatus());
-    assertEquals("", Streams.readAll(response.getInputStream(), response.getCharset()));
   }
 
   /**
