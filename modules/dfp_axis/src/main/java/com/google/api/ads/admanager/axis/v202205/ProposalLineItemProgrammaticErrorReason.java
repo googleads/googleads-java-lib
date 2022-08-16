@@ -49,6 +49,7 @@ public class ProposalLineItemProgrammaticErrorReason implements java.io.Serializ
     public static final java.lang.String _INVALID_PROGRAMMATIC_PRICING_MODEL = "INVALID_PROGRAMMATIC_PRICING_MODEL";
     public static final java.lang.String _BUYER_DISABLED_FOR_PG_VIOLATING_SLA = "BUYER_DISABLED_FOR_PG_VIOLATING_SLA";
     public static final java.lang.String _BUYER_NOT_FOUND = "BUYER_NOT_FOUND";
+    public static final java.lang.String _INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR = "INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final ProposalLineItemProgrammaticErrorReason INVALID_PRODUCT_TYPE = new ProposalLineItemProgrammaticErrorReason(_INVALID_PRODUCT_TYPE);
     public static final ProposalLineItemProgrammaticErrorReason VIDEO_NOT_SUPPORTED = new ProposalLineItemProgrammaticErrorReason(_VIDEO_NOT_SUPPORTED);
@@ -68,6 +69,7 @@ public class ProposalLineItemProgrammaticErrorReason implements java.io.Serializ
     public static final ProposalLineItemProgrammaticErrorReason INVALID_PROGRAMMATIC_PRICING_MODEL = new ProposalLineItemProgrammaticErrorReason(_INVALID_PROGRAMMATIC_PRICING_MODEL);
     public static final ProposalLineItemProgrammaticErrorReason BUYER_DISABLED_FOR_PG_VIOLATING_SLA = new ProposalLineItemProgrammaticErrorReason(_BUYER_DISABLED_FOR_PG_VIOLATING_SLA);
     public static final ProposalLineItemProgrammaticErrorReason BUYER_NOT_FOUND = new ProposalLineItemProgrammaticErrorReason(_BUYER_NOT_FOUND);
+    public static final ProposalLineItemProgrammaticErrorReason INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR = new ProposalLineItemProgrammaticErrorReason(_INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR);
     public static final ProposalLineItemProgrammaticErrorReason UNKNOWN = new ProposalLineItemProgrammaticErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static ProposalLineItemProgrammaticErrorReason fromValue(java.lang.String value)

@@ -21,6 +21,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets.Details;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.File;
 import java.net.URL;
 import org.apache.commons.configuration.Configuration;
@@ -93,12 +94,12 @@ public class GoogleClientSecretsBuilder {
     }
 
     /**
-     * Sets the client ID & secret to create the OAuth2 Credential with. If you
-     * do not have a client ID or secret, please create one in the API console:
-     * https://console.developers.google.com
+     * Sets the client ID & secret to create the OAuth2 Credential with. If you do not have a client
+     * ID or secret, please create one in the API console: https://console.developers.google.com
      */
-    public GoogleClientSecretsForApiBuilder withClientSecrets(String clientId,
-        String clientSecret) {
+    @CanIgnoreReturnValue
+    public GoogleClientSecretsForApiBuilder withClientSecrets(
+        String clientId, String clientSecret) {
       this.clientId = clientId;
       this.clientSecret = clientSecret;
       return this;
@@ -138,20 +139,23 @@ public class GoogleClientSecretsBuilder {
     }
 
     /**
-     * Reads properties from the provided {@link Configuration} object
-     * <br><br>
-     * Understands the following properties suffixes:
-     * <br><br>
+     * Reads properties from the provided {@link Configuration} object <br>
+     * <br>
+     * Understands the following properties suffixes: <br>
+     * <br>
+     *
      * <ul>
-     * <li>clientId</li>
-     * <li>clientSecret</li>
-     * </ul><br>
-     * For example, the AdWords OAuth2 client ID can be read from:
-     * <code>api.adwords.clientId</code>
+     *   <li>clientId
+     *   <li>clientSecret
+     * </ul>
+     *
+     * <br>
+     * For example, the AdWords OAuth2 client ID can be read from: <code>api.adwords.clientId</code>
      *
      * @param config the configuration
      * @return Builder populated from the Configuration
      */
+    @CanIgnoreReturnValue
     @Override
     public GoogleClientSecretsForApiBuilder from(Configuration config) {
       clientId = config.getString(getPropertyKey("clientId"), null);
@@ -160,21 +164,24 @@ public class GoogleClientSecretsBuilder {
     }
 
     /**
-     * Reads properties from the provided {@link Configuration} object
-     * <br><br>
-     * Understands the following properties suffixes:
-     * <br><br>
+     * Reads properties from the provided {@link Configuration} object <br>
+     * <br>
+     * Understands the following properties suffixes: <br>
+     * <br>
+     *
      * <ul>
-     * <li>clientId</li>
-     * <li>clientSecret</li>
-     * </ul><br>
-     * For example, the AdWords OAuth2 client ID can be read from:
-     * <code>api.adwords.clientId</code>
+     *   <li>clientId
+     *   <li>clientSecret
+     * </ul>
+     *
+     * <br>
+     * For example, the AdWords OAuth2 client ID can be read from: <code>api.adwords.clientId</code>
      *
      * @param config the configuration
      * @param filePath the file path of the configuration
      * @return Builder populated from the Configuration
      */
+    @CanIgnoreReturnValue
     private GoogleClientSecretsForApiBuilder from(Configuration config, String filePath) {
       from(config);
       this.filePath = filePath;

@@ -21,6 +21,7 @@ import com.google.api.ads.adwords.lib.utils.ReportQueryInterface;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
 import com.google.common.base.Objects;
 import com.google.common.reflect.Reflection;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.reflect.InvocationHandler;
 import org.joda.time.LocalDate;
 
@@ -102,36 +103,42 @@ public class ReportQuery implements ReportQueryInterface {
       return (ReportWhereBuilderInterface<Builder>) proxy.where(field);
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder fields(String... fields) {
       proxy.fields(fields);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder fields(Iterable<String> fields) {
       proxy.fields(fields);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder from(Enum<?> reportType) {
       proxy.from(reportType);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder from(String reportType) {
       proxy.from(reportType);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder during(Enum<?> dateRange) {
       proxy.during(dateRange);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder during(LocalDate startDate, LocalDate endDate) {
       proxy.during(startDate, endDate);

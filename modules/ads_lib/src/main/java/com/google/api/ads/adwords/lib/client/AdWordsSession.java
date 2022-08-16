@@ -25,6 +25,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -293,22 +294,25 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
     }
 
     /**
-     * Reads properties from the provided {@link Configuration} object.<br><br>
+     * Reads properties from the provided {@link Configuration} object.<br>
+     * <br>
      * Known properties:
+     *
      * <ul>
-     * <li>api.adwords.clientCustomerId</li>
-     * <li>api.adwords.userAgent</li>
-     * <li>api.adwords.developerToken</li>
-     * <li>api.adwords.isPartialFailure</li>
-     * <li>api.adwords.endpoint</li>
-     * <li>api.adwords.reporting.skipHeader</li>
-     * <li>api.adwords.reporting.skipColumnHeader</li>
-     * <li>api.adwords.reporting.skipSummary</li>
+     *   <li>api.adwords.clientCustomerId
+     *   <li>api.adwords.userAgent
+     *   <li>api.adwords.developerToken
+     *   <li>api.adwords.isPartialFailure
+     *   <li>api.adwords.endpoint
+     *   <li>api.adwords.reporting.skipHeader
+     *   <li>api.adwords.reporting.skipColumnHeader
+     *   <li>api.adwords.reporting.skipSummary
      * </ul>
      *
      * @param config
      * @return Builder populated from the Configuration
      */
+    @CanIgnoreReturnValue
     @Override
     public Builder from(Configuration config) {
       this.clientCustomerId = config.getString("api.adwords.clientCustomerId", null);
@@ -338,64 +342,57 @@ public class AdWordsSession implements AdsSession, OAuth2Compatible {
       return this;
     }
 
-    /**
-     * Includes OAuth2 credential to be used for OAuth2 authentication.
-     */
+    /** Includes OAuth2 credential to be used for OAuth2 authentication. */
+    @CanIgnoreReturnValue
     public Builder withOAuth2Credential(Credential oAuth2Credential) {
       clearAuthentication();
       this.oAuth2Credential = oAuth2Credential;
       return this;
     }
 
+    @CanIgnoreReturnValue
     public Builder withReportingConfiguration(ReportingConfiguration reportingConfiguration) {
       this.reportingConfiguration = reportingConfiguration;
       return this;
     }
 
-    /**
-     * Includes a developer token. Required.
-     */
+    /** Includes a developer token. Required. */
+    @CanIgnoreReturnValue
     public Builder withDeveloperToken(String developerToken) {
       this.developerToken = developerToken;
       return this;
     }
 
-    /**
-     * Includes user agent.
-     */
+    /** Includes user agent. */
+    @CanIgnoreReturnValue
     public Builder withUserAgent(String userAgent) {
       this.userAgent = userAgent;
       return this;
     }
 
-    /**
-     * Override the endpoint server. Optional and defaults to
-     * https://adwords.google.com.
-     */
+    /** Override the endpoint server. Optional and defaults to https://adwords.google.com. */
+    @CanIgnoreReturnValue
     public Builder withEndpoint(String endpoint) {
       this.endpoint = endpoint;
       return this;
     }
 
-    /**
-     * Includes a clientCustomerId.
-     */
+    /** Includes a clientCustomerId. */
+    @CanIgnoreReturnValue
     public Builder withClientCustomerId(String clientCustomerId) {
       this.clientCustomerId = clientCustomerId;
       return this;
     }
 
-    /**
-     * Enables partial failure. Default is disabled.
-     */
+    /** Enables partial failure. Default is disabled. */
+    @CanIgnoreReturnValue
     public Builder enablePartialFailure() {
       this.isPartialFailure = true;
       return this;
     }
 
-    /**
-     * Enables validate only. Default is disabled.
-     */
+    /** Enables validate only. Default is disabled. */
+    @CanIgnoreReturnValue
     public Builder enableValidateOnly() {
       this.isValidateOnly = true;
       return this;

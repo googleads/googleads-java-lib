@@ -17,6 +17,7 @@ package com.google.api.ads.admanager.lib.utils;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Collections;
 import java.util.Map;
 
@@ -66,14 +67,13 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement SELECT clause in the form of "a,b" or "*".
-   * Only necessary for statements being sent to the
-   * {@code PublisherQueryLanguageService}. The "SELECT " keyword will be
-   * ignored.
+   * Sets the statement SELECT clause in the form of "a,b" or "*". Only necessary for statements
+   * being sent to the {@code PublisherQueryLanguageService}. The "SELECT " keyword will be ignored.
    *
    * @param columns the statement select clause without "SELECT"
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> select(String columns) {
     Preconditions.checkNotNull(columns, "SELECT clause cannot be null");
@@ -83,14 +83,13 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement FROM clause in the form of "table".
-   * Only necessary for statements being sent to the
-   * {@code PublisherQueryLanguageService}. The "FROM " keyword will be
-   * ignored.
+   * Sets the statement FROM clause in the form of "table". Only necessary for statements being sent
+   * to the {@code PublisherQueryLanguageService}. The "FROM " keyword will be ignored.
    *
    * @param table the statement from clause without "FROM"
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> from(String table) {
     Preconditions.checkNotNull(table, "FROM clause cannot be null");
@@ -100,13 +99,16 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement WHERE clause in the form of<br><br>
-   * <code>"WHERE &lt;condition&gt; {[AND | OR] &lt;condition&gt; ...}"</code>
-   * <br><br>
+   * Sets the statement WHERE clause in the form of<br>
+   * <br>
+   * <code>"WHERE &lt;condition&gt; {[AND | OR] &lt;condition&gt; ...}"</code> <br>
+   * <br>
    * e.g. "a = b OR b = c". The "WHERE " keyword will be ignored.
+   *
    * @param conditions the statement query without "WHERE"
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> where(String conditions) {
     Preconditions.checkNotNull(conditions, "WHERE clause cannot be null");
@@ -116,13 +118,16 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement LIMIT clause in the form of<br><br>
-   * <code>"LIMIT &lt;count&gt;"</code>
-   * <br><br>
+   * Sets the statement LIMIT clause in the form of<br>
+   * <br>
+   * <code>"LIMIT &lt;count&gt;"</code> <br>
+   * <br>
    * e.g. 1000.
+   *
    * @param count the statement limit
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> limit(Integer count) {
     this.limit = count;
@@ -130,13 +135,16 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement OFFSET clause in the form of<br><br>
-   * <code>"OFFSET &lt;count&gt;"</code>
-   * <br><br>
+   * Sets the statement OFFSET clause in the form of<br>
+   * <br>
+   * <code>"OFFSET &lt;count&gt;"</code> <br>
+   * <br>
    * e.g. 200.
+   *
    * @param count the statement offset
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> offset(Integer count) {
     this.offset = count;
@@ -145,9 +153,11 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
 
   /**
    * Increases the offset by the {@code amount}.
+   *
    * @param amount the amount to increase the offset
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> increaseOffsetBy(Integer amount) {
     if (offset == null) {
@@ -168,8 +178,10 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
 
   /**
    * Removes the limit and offset from the query.
+   *
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> removeLimitAndOffset() {
     offset = null;
@@ -178,14 +190,16 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
   }
 
   /**
-   * Sets the statement ORDER BY clause in the form of<br><br>
-   * <code>"ORDER BY &lt;property&gt; [ASC | DESC]"</code>
-   * <br><br>
-   * e.g. "type ASC, lastModifiedDateTime DESC". The "ORDER BY " keyword will be
-   * ignored.
+   * Sets the statement ORDER BY clause in the form of<br>
+   * <br>
+   * <code>"ORDER BY &lt;property&gt; [ASC | DESC]"</code> <br>
+   * <br>
+   * e.g. "type ASC, lastModifiedDateTime DESC". The "ORDER BY " keyword will be ignored.
+   *
    * @param orderBy the statement order by without "ORDER BY"
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> orderBy(String orderBy) {
     Preconditions.checkNotNull(orderBy, "ORDER BY clause cannot be null");
@@ -201,6 +215,7 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
    * @param value the value
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   @Override
   public QueryBuilder<V> withBindVariableValue(String key, V value) {
     valueMap.put(key, value);
@@ -213,6 +228,7 @@ public class QueryBuilder<V> implements QueryBuilderInterface<V> {
    * @param values the mappings of key to value of type <V>
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   public QueryBuilder<V> withBindVariableValues(Map<String, V> values) {
     valueMap.putAll(values);
     return this;

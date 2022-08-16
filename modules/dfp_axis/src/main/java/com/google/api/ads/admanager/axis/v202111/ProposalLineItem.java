@@ -205,10 +205,11 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The priority for the corresponding {@link LineItem} of the
      * {@code ProposalLineItem}.
      *                 This attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#priority product's priority}, or a
-     * default value assigned by Google.
-     *                 See {@link LineItem#priority} for more information. */
+     * to the default priority of the
+     *                 {@link #lineItemType}. For forecasting, this attribute
+     * is optional and has a default value
+     *                 assigned by Google. See {@link LineItem#priority}
+     * for more information. */
     private java.lang.Integer lineItemPriority;
 
     /* The method used for billing the {@code ProposalLineItem}.
@@ -295,26 +296,17 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The cost of the {@code ProposalLineItem} in proposal currency.
      * It supports precision of 2
      *                 decimal places in terms of the fundamental currency
-     * unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 10000. It doesn't include agency
-     *                 commission.
+     * unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 10000.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.45 could be
-     *                 represented as 123450000, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required. */
+     * 'USD', then $123.45 could be represented as
+     *                 123450000, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
+     * and {@link
+     *                 ProposalLineItem#netCost} is required. */
     private com.google.api.ads.admanager.axis.v202111.Money netCost;
 
     /* Indicates how well the line item generated from this proposal
@@ -1218,10 +1210,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return lineItemPriority   * The priority for the corresponding {@link LineItem} of the
      * {@code ProposalLineItem}.
      *                 This attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#priority product's priority}, or a
-     * default value assigned by Google.
-     *                 See {@link LineItem#priority} for more information.
+     * to the default priority of the
+     *                 {@link #lineItemType}. For forecasting, this attribute
+     * is optional and has a default value
+     *                 assigned by Google. See {@link LineItem#priority}
+     * for more information.
      */
     public java.lang.Integer getLineItemPriority() {
         return lineItemPriority;
@@ -1234,10 +1227,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param lineItemPriority   * The priority for the corresponding {@link LineItem} of the
      * {@code ProposalLineItem}.
      *                 This attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#priority product's priority}, or a
-     * default value assigned by Google.
-     *                 See {@link LineItem#priority} for more information.
+     * to the default priority of the
+     *                 {@link #lineItemType}. For forecasting, this attribute
+     * is optional and has a default value
+     *                 assigned by Google. See {@link LineItem#priority}
+     * for more information.
      */
     public void setLineItemPriority(java.lang.Integer lineItemPriority) {
         this.lineItemPriority = lineItemPriority;
@@ -1570,26 +1564,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return netCost   * The cost of the {@code ProposalLineItem} in proposal currency.
      * It supports precision of 2
      *                 decimal places in terms of the fundamental currency
-     * unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 10000. It doesn't include agency
-     *                 commission.
+     * unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 10000.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.45 could be
-     *                 represented as 123450000, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required.
+     * 'USD', then $123.45 could be represented as
+     *                 123450000, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
+     * and {@link
+     *                 ProposalLineItem#netCost} is required.
      */
     public com.google.api.ads.admanager.axis.v202111.Money getNetCost() {
         return netCost;
@@ -1602,26 +1587,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param netCost   * The cost of the {@code ProposalLineItem} in proposal currency.
      * It supports precision of 2
      *                 decimal places in terms of the fundamental currency
-     * unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 10000. It doesn't include agency
-     *                 commission.
+     * unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 10000.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.45 could be
-     *                 represented as 123450000, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required.
+     * 'USD', then $123.45 could be represented as
+     *                 123450000, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
+     * and {@link
+     *                 ProposalLineItem#netCost} is required.
      */
     public void setNetCost(com.google.api.ads.admanager.axis.v202111.Money netCost) {
         this.netCost = netCost;

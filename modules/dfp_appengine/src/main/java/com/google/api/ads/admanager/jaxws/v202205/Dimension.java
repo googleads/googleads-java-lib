@@ -1261,7 +1261,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by child network code in MCM "Manage Inventory".
      *                 
-     *                 <p><b>This experimental dimension only works for MCM "Manage Inventory" parent publishers.</b>
+     *                 <p><b>This dimension only works for MCM "Manage Inventory" parent publishers.</b>
      *                 <p>Corresponds to "Child network code" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 

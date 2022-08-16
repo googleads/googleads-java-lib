@@ -16,6 +16,7 @@ package com.google.api.ads.common.lib.client;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
 /**
  * Contains information about the request that was made.
@@ -107,6 +108,7 @@ public class RequestInfo {
      * @param methodName the method name to add to the RequestInfo
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withMethodName(String methodName) {
       requestInfo.methodName = methodName;
       return this;
@@ -118,6 +120,7 @@ public class RequestInfo {
      * @param serviceName the service name to add to the RequestInfo
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withServiceName(String serviceName) {
       requestInfo.serviceName = serviceName;
       return this;
@@ -129,6 +132,7 @@ public class RequestInfo {
      * @param payload the raw request string to add to the RequestInfo
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withPayload(String payload) {
       requestInfo.payload = payload;
       return this;
@@ -140,17 +144,20 @@ public class RequestInfo {
      * @param url the URL that the request was made to
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withUrl(String url) {
       requestInfo.url = url;
       return this;
     }
-    
+
     /**
      * Adds the name/value pair for the context of this request.
+     *
      * @param contextName name for the value
      * @param contextValue the value
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withContext(String contextName, String contextValue) {
       requestInfo.contextName = contextName;
       requestInfo.contextValue = contextValue;

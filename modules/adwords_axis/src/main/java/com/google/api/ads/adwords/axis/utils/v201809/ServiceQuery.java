@@ -28,6 +28,7 @@ import com.google.api.ads.adwords.lib.utils.ServiceQueryInterface;
 import com.google.api.ads.common.lib.utils.AdsUtilityInvocationHandler;
 import com.google.common.base.Objects;
 import com.google.common.reflect.Reflection;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.reflect.InvocationHandler;
 import javax.annotation.Nullable;
 
@@ -105,6 +106,7 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
    *
    * @return this service query object
    */
+  @CanIgnoreReturnValue
   private ServiceQuery nextPage(int pageSize) {
     startIndex = startIndex + pageSize;
     return this;
@@ -253,18 +255,21 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
       return (ServiceWhereBuilderInterface<Page, SortOrder, Builder>) proxy.where(field);
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder fields(EntityField... fields) {
       proxy.fields(fields);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder fields(String... fields) {
       proxy.fields(fields);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder fields(Iterable<String> fields) {
       proxy.fields(fields);
@@ -276,30 +281,35 @@ public final class ServiceQuery implements ServiceQueryInterface<Page> {
       return (ServiceQuery) proxy.build();
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder orderBy(EntityField field) {
       proxy.orderBy(field);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder orderBy(EntityField field, SortOrder order) {
       proxy.orderBy(field, order);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder orderBy(String field) {
       proxy.orderBy(field);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder orderBy(String field, SortOrder order) {
       proxy.orderBy(field, order);
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder limit(int startIndex, int pageSize) {
       proxy.limit(startIndex, pageSize);

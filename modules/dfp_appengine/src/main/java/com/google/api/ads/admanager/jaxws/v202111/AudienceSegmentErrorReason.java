@@ -195,7 +195,7 @@ public enum AudienceSegmentErrorReason {
 
     /**
      * 
-     *                 An error occured when purchasing global licenses.
+     *                 An error occurred when purchasing global licenses.
      *               
      * 
      */

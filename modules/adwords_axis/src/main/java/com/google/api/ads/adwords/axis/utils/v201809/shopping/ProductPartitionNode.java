@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -136,6 +137,7 @@ public class ProductPartitionNode {
    * @param partitionId required - the ID to set
    * @return this node
    */
+  @CanIgnoreReturnValue
   ProductPartitionNode setProductPartitionId(Long partitionId) {
     this.partitionId = partitionId;
     return this;
@@ -161,6 +163,7 @@ public class ProductPartitionNode {
    *
    * @return this node, updated to a subdivision node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode asSubdivision() {
     nodeState = nodeState.transitionTo(NodeType.SUBDIVISION);
     return this;
@@ -324,6 +327,7 @@ public class ProductPartitionNode {
    * @return this node
    * @throws IllegalArgumentException if no such child exists
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode removeChild(ProductDimension childDimension) {
     if (!children.containsKey(childDimension)) {
       throw new IllegalArgumentException(String.format(
@@ -338,6 +342,7 @@ public class ProductPartitionNode {
    *
    * @return this node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode removeAllChildren() {
     children.clear();
     return this;
@@ -350,6 +355,7 @@ public class ProductPartitionNode {
    * @return this node, updated to an excluded node
    * @throws IllegalStateException if this node is the root node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode asExcludedUnit() {
     if (getParent() == null) {
       throw new IllegalStateException("The root node cannot be an excluded unit");
@@ -364,6 +370,7 @@ public class ProductPartitionNode {
    *
    * @return this node, updated to a biddable node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode asBiddableUnit() {
     nodeState = nodeState.transitionTo(NodeType.BIDDABLE_UNIT);
     removeAllChildren();
@@ -377,6 +384,7 @@ public class ProductPartitionNode {
    * @throws IllegalArgumentException if {@code bidInMicros < 0L}
    * @throws IllegalStateException if this node is not a biddable UNIT node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode setBid(@Nullable Long bidInMicros) {
     this.nodeState.setBidInMicros(bidInMicros);
     return this;
@@ -394,6 +402,7 @@ public class ProductPartitionNode {
    * @param trackingUrlTemplate the tracking URL template
    * @throws IllegalStateException if this node is not a biddable UNIT node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode setTrackingUrlTemplate(String trackingUrlTemplate) {
     this.nodeState.setTrackingUrlTemplate(trackingUrlTemplate);
     return this;
@@ -401,8 +410,10 @@ public class ProductPartitionNode {
 
   /**
    * Puts the specified key/value pair in the map of custom parameters.
+   *
    * @throws IllegalStateException if this node is not a biddable UNIT node
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode putCustomParameter(String key, String value) {
     if (!nodeState.supportsCustomParameters()) {
       throw new IllegalStateException(
@@ -440,6 +451,7 @@ public class ProductPartitionNode {
    * @throws IllegalStateException if this node is not a biddable UNIT node
    * @throws IllegalArgumentException if there is no entry for {@code key} in the map
    */
+  @CanIgnoreReturnValue
   public ProductPartitionNode removeCustomParameter(String key) {
     if (!nodeState.supportsCustomParameters()) {
       throw new IllegalStateException(

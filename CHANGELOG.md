@@ -1,3 +1,16 @@
+4.19.0 - 08/16/2022
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202208.
+ - Removed support for v202108.
+ - Removed examples fo v202111.
+
+Common:
+ - Switched jackson2 usage to Gson.
+
 4.18.0 - 05/17/2022
 -------------------
 AdWords:

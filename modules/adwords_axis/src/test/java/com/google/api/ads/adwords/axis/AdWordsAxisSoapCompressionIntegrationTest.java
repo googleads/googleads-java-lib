@@ -31,7 +31,7 @@ import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -62,7 +62,7 @@ public class AdWordsAxisSoapCompressionIntegrationTest extends MockHttpIntegrati
     GoogleCredential credential =
         new GoogleCredential.Builder()
             .setTransport(new NetHttpTransport())
-            .setJsonFactory(new JacksonFactory())
+            .setJsonFactory(GsonFactory.getDefaultInstance())
             .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 

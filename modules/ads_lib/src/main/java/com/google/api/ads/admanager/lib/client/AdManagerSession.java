@@ -22,6 +22,7 @@ import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -195,6 +196,7 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
      * @param config the configuration
      * @return Builder populated from the configuration
      */
+    @CanIgnoreReturnValue
     @Override
     public Builder from(Configuration config) {
       this.applicationName = config.getString("api.admanager.applicationName", null);
@@ -205,6 +207,7 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
     }
 
     /** Includes OAuth2 credential to be used for OAuth2 authentication. */
+    @CanIgnoreReturnValue
     public Builder withOAuth2Credential(Credential oAuth2Credential) {
       clearAuthentication();
       this.oAuth2Credential = oAuth2Credential;
@@ -212,18 +215,21 @@ public class AdManagerSession implements AdsSession, OAuth2Compatible {
     }
 
     /** Includes network code. Required for most service calls. */
+    @CanIgnoreReturnValue
     public Builder withNetworkCode(String networkCode) {
       this.networkCode = networkCode;
       return this;
     }
 
     /** Includes application name (any string of your choice). Required. */
+    @CanIgnoreReturnValue
     public Builder withApplicationName(String applicationName) {
       this.applicationName = applicationName;
       return this;
     }
 
     /** Override the endpoint server. Optional and defaults to https://ads.google.com/. */
+    @CanIgnoreReturnValue
     public Builder withEndpoint(String endpoint) {
       this.endpoint = endpoint;
       return this;

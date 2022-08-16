@@ -40,8 +40,8 @@ public class AudienceSegment  implements java.io.Serializable {
     private long[] categoryIds;
 
     /* Description of the {@link AudienceSegment}. This attribute
-     * is optional and has a maximum
-     *                 length of 8192 characters. */
+     * is optional and has a maximum length
+     *                 of 8192 characters. */
     private java.lang.String description;
 
     /* Status of the {@link AudienceSegment}. This controls whether
@@ -211,8 +211,8 @@ public class AudienceSegment  implements java.io.Serializable {
      * Gets the description value for this AudienceSegment.
      * 
      * @return description   * Description of the {@link AudienceSegment}. This attribute
-     * is optional and has a maximum
-     *                 length of 8192 characters.
+     * is optional and has a maximum length
+     *                 of 8192 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -223,8 +223,8 @@ public class AudienceSegment  implements java.io.Serializable {
      * Sets the description value for this AudienceSegment.
      * 
      * @param description   * Description of the {@link AudienceSegment}. This attribute
-     * is optional and has a maximum
-     *                 length of 8192 characters.
+     * is optional and has a maximum length
+     *                 of 8192 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

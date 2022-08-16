@@ -45,6 +45,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_PROGRAMMATIC_PRICING_MODEL"/>
  *     &lt;enumeration value="BUYER_DISABLED_FOR_PG_VIOLATING_SLA"/>
  *     &lt;enumeration value="BUYER_NOT_FOUND"/>
+ *     &lt;enumeration value="INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR"/>
  *     &lt;enumeration value="UNKNOWN"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -212,6 +213,15 @@ public enum ProposalLineItemProgrammaticErrorReason {
      * 
      */
     BUYER_NOT_FOUND,
+
+    /**
+     * 
+     *                 Cannot create/update {@link ProposalLineItem proposal line items} with an invalid
+     *                 environment and request platform pair.
+     *               
+     * 
+     */
+    INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR,
 
     /**
      * 

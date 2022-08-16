@@ -15,8 +15,8 @@
 package admanager.axis.auth;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v202205.Network;
-import com.google.api.ads.admanager.axis.v202205.NetworkServiceInterface;
+import com.google.api.ads.admanager.axis.v202208.Network;
+import com.google.api.ads.admanager.axis.v202208.NetworkServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.conf.ConfigurationLoadException;
 import com.google.api.ads.common.lib.exception.ValidationException;
@@ -25,7 +25,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
 import java.io.BufferedReader;
@@ -68,7 +68,7 @@ public class AdvancedCreateCredentialFromScratch {
     GoogleAuthorizationCodeFlow authorizationFlow =
         new GoogleAuthorizationCodeFlow.Builder(
                 new NetHttpTransport(),
-                new JacksonFactory(),
+                GsonFactory.getDefaultInstance(),
                 CLIENT_ID,
                 CLIENT_SECRET,
                 Arrays.asList(SCOPE))
@@ -106,7 +106,7 @@ public class AdvancedCreateCredentialFromScratch {
     GoogleAuthorizationCodeFlow authorizationFlow =
         new GoogleAuthorizationCodeFlow.Builder(
                 new NetHttpTransport(),
-                new JacksonFactory(),
+                GsonFactory.getDefaultInstance(),
                 CLIENT_ID,
                 CLIENT_SECRET,
                 Arrays.asList(SCOPE))

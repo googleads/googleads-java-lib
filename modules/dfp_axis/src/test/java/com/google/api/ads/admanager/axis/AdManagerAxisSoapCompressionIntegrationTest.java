@@ -20,14 +20,14 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.axis.v202205.Company;
-import com.google.api.ads.admanager.axis.v202205.CompanyServiceInterface;
+import com.google.api.ads.admanager.axis.v202208.Company;
+import com.google.api.ads.admanager.axis.v202208.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,7 +43,7 @@ import org.xmlunit.diff.Diff;
 @RunWith(JUnit4.class)
 public class AdManagerAxisSoapCompressionIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202205";
+  private static final String API_VERSION = "v202208";
 
   @BeforeClass
   public static void setupClass() {
@@ -58,7 +58,7 @@ public class AdManagerAxisSoapCompressionIntegrationTest extends MockHttpIntegra
     GoogleCredential credential =
         new GoogleCredential.Builder()
             .setTransport(new NetHttpTransport())
-            .setJsonFactory(new JacksonFactory())
+            .setJsonFactory(GsonFactory.getDefaultInstance())
             .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 

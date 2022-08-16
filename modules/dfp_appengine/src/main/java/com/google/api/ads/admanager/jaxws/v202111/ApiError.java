@@ -63,7 +63,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     AdBreakMarkupError.class,
     AdRuleTargetingError.class,
-    PackageActionError.class,
     TemplateInstantiatedCreativeError.class,
     PublisherQueryLanguageContextError.class,
     CustomFieldError.class,
@@ -112,7 +111,6 @@ import javax.xml.bind.annotation.XmlType;
     FrequencyCapError.class,
     DaiEncodingProfileUpdateError.class,
     DaiEncodingProfileVariantSettingsError.class,
-    ProductError.class,
     CreativeAssetMacroError.class,
     RequestError.class,
     AdUnitHierarchyError.class,
@@ -181,7 +179,6 @@ import javax.xml.bind.annotation.XmlType;
     InventoryUnitSizesError.class,
     StringFormatError.class,
     ProposalLineItemError.class,
-    PackageError.class,
     CommonError.class,
     AudienceSegmentError.class,
     GeoTargetingError.class,

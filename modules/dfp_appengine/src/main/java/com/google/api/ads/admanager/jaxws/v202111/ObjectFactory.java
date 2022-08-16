@@ -306,14 +306,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PackageActionError }
-     * 
-     */
-    public PackageActionError createPackageActionError() {
-        return new PackageActionError();
-    }
-
-    /**
      * Create an instance of {@link ReportQuery }
      * 
      */
@@ -1647,14 +1639,6 @@ public class ObjectFactory {
      */
     public DaiEncodingProfileVariantSettingsError createDaiEncodingProfileVariantSettingsError() {
         return new DaiEncodingProfileVariantSettingsError();
-    }
-
-    /**
-     * Create an instance of {@link ProductError }
-     * 
-     */
-    public ProductError createProductError() {
-        return new ProductError();
     }
 
     /**
@@ -3519,14 +3503,6 @@ public class ObjectFactory {
      */
     public ActivateCdnConfigurations createActivateCdnConfigurations() {
         return new ActivateCdnConfigurations();
-    }
-
-    /**
-     * Create an instance of {@link PackageError }
-     * 
-     */
-    public PackageError createPackageError() {
-        return new PackageError();
     }
 
     /**

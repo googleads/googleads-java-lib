@@ -30,7 +30,7 @@ import com.google.api.ads.common.lib.testing.TestPortFinder;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSource;
 import com.google.common.io.ByteStreams;
@@ -102,8 +102,11 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     Enum<?> downloadFormat = TestDownloadFormat.CSV;
     Mockito.<Enum<?>>when(reportRequest.getDownloadFormat()).thenReturn(downloadFormat);
 
-    credential = new GoogleCredential.Builder().setTransport(new NetHttpTransport())
-        .setJsonFactory(new JacksonFactory()).build();
+    credential =
+        new GoogleCredential.Builder()
+            .setTransport(new NetHttpTransport())
+            .setJsonFactory(GsonFactory.getDefaultInstance())
+            .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 
     AdWordsSession session = new AdWordsSession.Builder()
@@ -255,7 +258,6 @@ public class AdHocReportDownloadHelperTest extends MockHttpIntegrationTest {
     RawReportDownloadResponse response = helper.downloadReport(reportRequest);
 
     assertEquals("Response status code not failure", 500, response.getHttpStatus());
-    assertEquals("", Streams.readAll(response.getInputStream(), response.getCharset()));
   }
 
   /**

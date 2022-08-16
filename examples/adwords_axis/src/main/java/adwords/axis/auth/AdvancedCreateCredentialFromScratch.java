@@ -42,7 +42,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
 import java.io.BufferedReader;
@@ -86,18 +86,20 @@ public class AdvancedCreateCredentialFromScratch {
     // performing the authorization flow (such as on a servlet), see
     // https://developers.google.com/api-client-library/java/google-api-java-client/oauth2#authorization_code_flow
     // for more information.
-    GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
-        new NetHttpTransport(),
-        new JacksonFactory(),
-        CLIENT_ID,
-        CLIENT_SECRET,
-        Arrays.asList(SCOPE))
-        .setDataStoreFactory(storeFactory)
-        // Set the access type to offline so that the token can be refreshed.
-        // By default, the library will automatically refresh tokens when it
-        // can, but this can be turned off by setting
-        // api.adwords.refreshOAuth2Token=false in your ads.properties file.
-        .setAccessType("offline").build();
+    GoogleAuthorizationCodeFlow authorizationFlow =
+        new GoogleAuthorizationCodeFlow.Builder(
+                new NetHttpTransport(),
+                GsonFactory.getDefaultInstance(),
+                CLIENT_ID,
+                CLIENT_SECRET,
+                Arrays.asList(SCOPE))
+            .setDataStoreFactory(storeFactory)
+            // Set the access type to offline so that the token can be refreshed.
+            // By default, the library will automatically refresh tokens when it
+            // can, but this can be turned off by setting
+            // api.adwords.refreshOAuth2Token=false in your ads.properties file.
+            .setAccessType("offline")
+            .build();
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
@@ -121,14 +123,15 @@ public class AdvancedCreateCredentialFromScratch {
   private static AdWordsSession createAdWordsSession(String userId, DataStoreFactory storeFactory)
       throws IOException, ValidationException, ConfigurationLoadException {
     // Create a GoogleCredential with minimal information.
-    GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
-        new NetHttpTransport(),
-        new JacksonFactory(),
-        CLIENT_ID,
-        CLIENT_SECRET,
-        Arrays.asList(SCOPE))
-        .setDataStoreFactory(storeFactory)
-        .build();
+    GoogleAuthorizationCodeFlow authorizationFlow =
+        new GoogleAuthorizationCodeFlow.Builder(
+                new NetHttpTransport(),
+                GsonFactory.getDefaultInstance(),
+                CLIENT_ID,
+                CLIENT_SECRET,
+                Arrays.asList(SCOPE))
+            .setDataStoreFactory(storeFactory)
+            .build();
 
     // Load the credential.
     Credential credential = authorizationFlow.loadCredential(userId);

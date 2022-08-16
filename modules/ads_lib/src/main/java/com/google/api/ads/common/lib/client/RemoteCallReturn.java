@@ -14,9 +14,11 @@
 
 package com.google.api.ads.common.lib.client;
 
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
+
 /**
- * Used to package a remote call's return. Contains the return value, the request
- * and response info, and the exception (if applicable).
+ * Used to package a remote call's return. Contains the return value, the request and response info,
+ * and the exception (if applicable).
  */
 public class RemoteCallReturn {
 
@@ -82,6 +84,7 @@ public class RemoteCallReturn {
      * @param returnValue the return value to add to the RemoteCallReturn
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withReturnValue(Object returnValue) {
      remoteCallReturn.returnValue = returnValue;
      return this;
@@ -93,6 +96,7 @@ public class RemoteCallReturn {
      * @param responseInfo the response info to add to the RemoteCallReturn
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withResponseInfo(ResponseInfo responseInfo) {
       remoteCallReturn.responseInfo = responseInfo;
       return this;
@@ -104,6 +108,7 @@ public class RemoteCallReturn {
      * @param requestInfo the request info to add to the RemoteCallReturn
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withRequestInfo(RequestInfo requestInfo) {
       remoteCallReturn.requestInfo = requestInfo;
       return this;
@@ -115,6 +120,7 @@ public class RemoteCallReturn {
      * @param exception the exception to add to the RemoteCallReturn
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withException(Throwable exception) {
       remoteCallReturn.exception = exception;
       return this;

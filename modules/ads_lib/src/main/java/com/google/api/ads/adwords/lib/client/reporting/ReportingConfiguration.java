@@ -15,6 +15,7 @@
 package com.google.api.ads.adwords.lib.client.reporting;
 
 import com.google.common.base.Preconditions;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -133,52 +134,50 @@ public class ReportingConfiguration {
     private Boolean isIncludeZeroImpressions;
     private Boolean isUseRawEnumValues;
     private Integer reportDownloadTimeout;
-    
+
     /**
      * Sets if report responses should skip the header row containing the report name and date
      * range.
      */
+    @CanIgnoreReturnValue
     public Builder skipReportHeader(Boolean isSkipReportHeader) {
       this.isSkipReportHeader = isSkipReportHeader;
       return this;
     }
 
-    /**
-     * Sets if report responses should skip the header row containing the report column names.
-     */
+    /** Sets if report responses should skip the header row containing the report column names. */
+    @CanIgnoreReturnValue
     public Builder skipColumnHeader(Boolean isSkipColumnHeader) {
       this.isSkipColumnHeader = isSkipColumnHeader;
       return this;
     }
-    
-    /**
-     * Sets if report responses should skip the summary row containing totals.
-     */
+
+    /** Sets if report responses should skip the summary row containing totals. */
+    @CanIgnoreReturnValue
     public Builder skipReportSummary(Boolean isSkipReportSummary) {
       this.isSkipReportSummary = isSkipReportSummary;
       return this;
     }
-    
-    /**
-     * Sets if report responses should include zero impression rows.
-     */
+
+    /** Sets if report responses should include zero impression rows. */
+    @CanIgnoreReturnValue
     public Builder includeZeroImpressions(Boolean isIncludeZeroImpressions) {
       this.isIncludeZeroImpressions = isIncludeZeroImpressions;
       return this;
     }
-    
-    /**
-     * Sets if report responses should return enum values instead of enum display values.
-     */
+
+    /** Sets if report responses should return enum values instead of enum display values. */
+    @CanIgnoreReturnValue
     public Builder useRawEnumValues(Boolean isUseRawEnumValues) {
       this.isUseRawEnumValues = isUseRawEnumValues;
       return this;
     }
-    
+
     /**
-     * Sets the report download timeout in milliseconds. If {@code null}, the default timeout
-     * will be used.
+     * Sets the report download timeout in milliseconds. If {@code null}, the default timeout will
+     * be used.
      */
+    @CanIgnoreReturnValue
     public Builder reportDownloadTimeout(@Nullable Integer reportDownloadTimeout) {
       this.reportDownloadTimeout = reportDownloadTimeout;
       return this;

@@ -24,12 +24,13 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleOAuthConstants;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -245,11 +246,12 @@ public class OfflineCredentials {
   private GoogleCredential generateCredentialFromKeyFile() throws OAuthException {
     try {
       File jsonKeyFile = new File(jsonKeyFilePath);
-      GoogleCredential credential = GoogleCredential.fromStream(
-          Files.asByteSource(jsonKeyFile).openStream(),
-          httpTransport,
-          new JacksonFactory())
-          .createScoped(this.scopes);
+      GoogleCredential credential =
+          GoogleCredential.fromStream(
+                  Files.asByteSource(jsonKeyFile).openStream(),
+                  httpTransport,
+                  GsonFactory.getDefaultInstance())
+              .createScoped(this.scopes);
       if (Strings.isNullOrEmpty(this.serviceAccountUser)) {
         return credential;
       }
@@ -274,12 +276,13 @@ public class OfflineCredentials {
   }
   
   private GoogleCredential generateCredentialFromClientSecrets() {
-    GoogleCredential credential = new GoogleCredential.Builder()
-        .setTransport(httpTransport)
-        .setJsonFactory(new JacksonFactory())
-        .setClientSecrets(clientId, clientSecret)
-        .setTokenServerEncodedUrl(tokenServerUrl)
-        .build();
+    GoogleCredential credential =
+        new GoogleCredential.Builder()
+            .setTransport(httpTransport)
+            .setJsonFactory(GsonFactory.getDefaultInstance())
+            .setClientSecrets(clientId, clientSecret)
+            .setTokenServerEncodedUrl(tokenServerUrl)
+            .build();
     credential.setRefreshToken(refreshToken);
     return credential;
   }
@@ -383,22 +386,26 @@ public class OfflineCredentials {
     }
 
     /**
-     * Reads properties from the provided {@link Configuration} object
-     * <br><br>
-     * Understands the following properties suffixes:
-     * <br><br>
+     * Reads properties from the provided {@link Configuration} object <br>
+     * <br>
+     * Understands the following properties suffixes: <br>
+     * <br>
+     *
      * <ul>
-     * <li>refreshToken</li>
-     * <li>clientId</li>
-     * <li>clientSecret</li>
-     * <li>jsonKeyFilePath</li>
-     * </ul><br>
-     * For example, the AdWords OAuth2 refresh token can be read from:
-     * <code>api.adwords.refreshToken</code>
+     *   <li>refreshToken
+     *   <li>clientId
+     *   <li>clientSecret
+     *   <li>jsonKeyFilePath
+     * </ul>
+     *
+     * <br>
+     * For example, the AdWords OAuth2 refresh token can be read from: <code>
+     * api.adwords.refreshToken</code>
      *
      * @param config the configuration
      * @return Builder populated from the Configuration
      */
+    @CanIgnoreReturnValue
     @Override
     public ForApiBuilder from(Configuration config) {
       this.refreshToken = config.getString(getPropertyKey("refreshToken"), null);
@@ -410,24 +417,28 @@ public class OfflineCredentials {
     }
 
     /**
-     * Reads properties from the provided {@link Configuration} object
-     * <br><br>
-     * Understands the following properties suffixes:
-     * <br><br>
+     * Reads properties from the provided {@link Configuration} object <br>
+     * <br>
+     * Understands the following properties suffixes: <br>
+     * <br>
+     *
      * <ul>
-     * <li>refreshToken</li>
-     * <li>clientId</li>
-     * <li>clientSecret</li>
-     * <li>jsonKeyFilePath</li>
-     * <li>serviceAccountUser</li>
-     * </ul><br>
-     * For example, the AdWords OAuth2 refresh token can be read from:
-     * <code>api.adwords.refreshToken</code>
+     *   <li>refreshToken
+     *   <li>clientId
+     *   <li>clientSecret
+     *   <li>jsonKeyFilePath
+     *   <li>serviceAccountUser
+     * </ul>
+     *
+     * <br>
+     * For example, the AdWords OAuth2 refresh token can be read from: <code>
+     * api.adwords.refreshToken</code>
      *
      * @param config the configuration
      * @param filePath the file path of the configuration
      * @return Builder populated from the Configuration
      */
+    @CanIgnoreReturnValue
     ForApiBuilder from(Configuration config, String filePath) {
       from(config);
       this.configFilePath = filePath;
@@ -435,10 +446,11 @@ public class OfflineCredentials {
     }
 
     /**
-     * Sets the client ID & secret to create the OAuth2 Credential with. If you
-     * do not have a client ID or secret, please create one in the API console:
+     * Sets the client ID & secret to create the OAuth2 Credential with. If you do not have a client
+     * ID or secret, please create one in the API console:
      * https://console.developers.google.com/project
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withClientSecrets(String clientId, String clientSecret) {
       this.clientId = clientId;
       this.clientSecret = clientSecret;
@@ -446,19 +458,21 @@ public class OfflineCredentials {
     }
 
     /**
-     * Sets the refresh token to create the OAuth2 Credential with. If you need
-     * to create one, see the GetRefreshToken example.
+     * Sets the refresh token to create the OAuth2 Credential with. If you need to create one, see
+     * the GetRefreshToken example.
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withRefreshToken(String refreshToken) {
       this.refreshToken = refreshToken;
       return this;
     }
-    
+
     /**
-     * Sets the path to a JSON key file for authenticating with a service account.
-     * If you do not have one, please create it in the API console:
+     * Sets the path to a JSON key file for authenticating with a service account. If you do not
+     * have one, please create it in the API console:
      * https://console.developers.google.com/apis/credentials
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withJsonKeyFilePath(String jsonKeyFilePath) {
       this.jsonKeyFilePath = jsonKeyFilePath;
       return this;
@@ -474,38 +488,40 @@ public class OfflineCredentials {
      *
      * @param serviceAccountUser the email address of the account to impersonate.
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withServiceAccountUser(String serviceAccountUser) {
       this.serviceAccountUser = serviceAccountUser;
       return this;
     }
-    
+
     /**
-     * Optionally sets scopes for authenticating with a service account. By default,
-     * the scope will only be for the set {@link Api}. If you are using a refresh token,
-     * the scope is set at the time the refresh token is generated, and this function is
-     * a no-op.
+     * Optionally sets scopes for authenticating with a service account. By default, the scope will
+     * only be for the set {@link Api}. If you are using a refresh token, the scope is set at the
+     * time the refresh token is generated, and this function is a no-op.
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withScopes(List<String> scopes) {
       this.scopes = scopes;
       return this;
     }
-    
+
     /**
-     * Sets the {@link HttpTransport} to be used to make the request. By
-     * default, {@link NetHttpTransport} will be used, but due to some
-     * environment restrictions, you may want to use a different transport,
-     * such as {@code UrlFetchTransport} for AppEngine.
+     * Sets the {@link HttpTransport} to be used to make the request. By default, {@link
+     * NetHttpTransport} will be used, but due to some environment restrictions, you may want to use
+     * a different transport, such as {@code UrlFetchTransport} for AppEngine.
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withHttpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
       return this;
     }
 
     /**
-     * Sets the token server URL. This is a no-op when using a service account key file.
-     * Set the token server URL in the key file instead. Not required and defaults to
+     * Sets the token server URL. This is a no-op when using a service account key file. Set the
+     * token server URL in the key file instead. Not required and defaults to
      * https://accounts.google.com/o/oauth2/token
      */
+    @CanIgnoreReturnValue
     public ForApiBuilder withTokenUrlServer(String tokenServerUrl) {
       this.tokenServerUrl = tokenServerUrl;
       return this;

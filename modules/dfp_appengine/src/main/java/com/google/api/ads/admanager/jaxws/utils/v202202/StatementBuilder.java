@@ -21,6 +21,7 @@ import com.google.api.ads.admanager.lib.utils.QueryBuilder;
 import com.google.api.ads.admanager.lib.utils.QueryBuilderInterface;
 import com.google.api.ads.common.lib.utils.Maps;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Map;
 
 /**
@@ -69,6 +70,7 @@ public final class StatementBuilder {
    * @param value the bind variable value
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   public StatementBuilder withBindVariableValue(String key, Object value) {
     return withBindVariableValue(key, Pql.createValue(value));
   }
@@ -80,6 +82,7 @@ public final class StatementBuilder {
    * @param value the bind variable value
    * @return a reference to this object
    */
+  @CanIgnoreReturnValue
   public StatementBuilder withBindVariableValue(String key, Value value) {
     queryBuilder.withBindVariableValue(key, value);
     return this;
@@ -99,31 +102,37 @@ public final class StatementBuilder {
     return statement;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder select(String columns) {
     queryBuilder.select(columns);
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder from(String table) {
     queryBuilder.from(table);
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder where(String conditions) {
     queryBuilder.where(conditions);
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder limit(Integer count) {
     queryBuilder.limit(count);
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder offset(Integer count) {
     queryBuilder.offset(count);
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder increaseOffsetBy(Integer amount) {
     queryBuilder.increaseOffsetBy(amount);
     return this;
@@ -133,11 +142,13 @@ public final class StatementBuilder {
     return queryBuilder.getOffset();
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder removeLimitAndOffset() {
     queryBuilder.removeLimitAndOffset();
     return this;
   }
 
+  @CanIgnoreReturnValue
   public StatementBuilder orderBy(String orderBy) {
     queryBuilder.orderBy(orderBy);
     return this;

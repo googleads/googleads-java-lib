@@ -16,6 +16,7 @@ package com.google.api.ads.common.lib.client;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import javax.annotation.Nullable;
 
 /** Contains information about the response from the request that was made. */
@@ -75,6 +76,7 @@ public class ResponseInfo {
      *
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withPayload(String payload) {
       responseInfo.payload = payload;
       return this;
@@ -85,16 +87,19 @@ public class ResponseInfo {
      *
      * @return this builder
      */
+    @CanIgnoreReturnValue
     public Builder withRequestId(String requestId) {
       responseInfo.requestId = requestId;
       return this;
     }
 
+    @CanIgnoreReturnValue
     public Builder withOperationsCount(@Nullable Long operationsCount) {
       responseInfo.operationsCount = operationsCount;
       return this;
     }
 
+    @CanIgnoreReturnValue
     public Builder withResponseTimeMillis(@Nullable Long responseTimeMillis) {
       responseInfo.responseTimeMillis = responseTimeMillis;
       return this;

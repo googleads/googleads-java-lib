@@ -24,6 +24,7 @@ import com.google.api.ads.adwords.jaxws.v201809.cm.SortOrder;
 import com.google.api.ads.adwords.lib.selectorfields.EntityField;
 import com.google.api.ads.adwords.lib.utils.SelectorBuilderInterface;
 import com.google.common.collect.Sets;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
@@ -117,6 +118,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return orderingCopy;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl fields(String... fields) {
     this.fields = Sets.newLinkedHashSet();
@@ -142,6 +144,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return fieldsNames;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl increaseOffsetBy(int additionalOffset) {
     if (this.paging == null) {
@@ -155,6 +158,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl limit(int limit) {
     if (this.paging == null) {
@@ -164,6 +168,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl offset(int offset) {
     if (this.paging == null) {
@@ -173,12 +178,14 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl removeLimitAndOffset() {
     this.paging = null;
     return this;
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl orderAscBy(String field) {
     OrderByWrapper order = new OrderByWrapper();
@@ -195,6 +202,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this.orderAscBy(field.name());
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl orderDescBy(String field) {
     OrderByWrapper order = new OrderByWrapper();
@@ -211,6 +219,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this.orderDescBy(field.name());
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl removeOrderBy(String field) {
     Iterator<OrderByWrapper> iterator = this.ordering.iterator();
@@ -228,6 +237,7 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this.removeOrderBy(field.name());
   }
 
+  @CanIgnoreReturnValue
   @Override
   public SelectorBuilderImpl forDateRange(DateTime start, DateTime end) {
     if (this.dateRange == null) {
@@ -348,11 +358,10 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this.lessThanEquals(field.name(), propertyValue);
   }
 
-  /**
-   * Adds a predicate for the specified field, property value, and operator.
-   */
-  private SelectorBuilderImpl singleValuePredicate(String field, String propertyValue,
-      PredicateOperator operator) {
+  /** Adds a predicate for the specified field, property value, and operator. */
+  @CanIgnoreReturnValue
+  private SelectorBuilderImpl singleValuePredicate(
+      String field, String propertyValue, PredicateOperator operator) {
     Predicate predicate = new Predicate();
     predicate.setField(field);
     predicate.setOperator(operator);
@@ -419,11 +428,10 @@ class SelectorBuilderImpl implements SelectorBuilderInterface<Selector> {
     return this.containsNone(field.name(), values);
   }
 
-  /**
-   * Adds a predicate for the specified field, property values, and operator.
-   */
-  private SelectorBuilderImpl multipleValuePredicate(String field, String[] propertyValues,
-      PredicateOperator operator) {
+  /** Adds a predicate for the specified field, property values, and operator. */
+  @CanIgnoreReturnValue
+  private SelectorBuilderImpl multipleValuePredicate(
+      String field, String[] propertyValues, PredicateOperator operator) {
     if (propertyValues == null) {
       return this;
     }

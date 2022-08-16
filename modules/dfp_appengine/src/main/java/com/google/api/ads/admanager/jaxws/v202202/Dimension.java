@@ -1267,7 +1267,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by child network code in MCM "Manage Inventory".
      *                 
-     *                 <p><b>This experimental dimension only works for MCM "Manage Inventory" parent publishers.</b>
+     *                 <p><b>This dimension only works for MCM "Manage Inventory" parent publishers.</b>
      *                 <p>Corresponds to "Child network code" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1382,6 +1382,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #REQUESTED_AD_SIZES} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Inventory sizes" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1391,6 +1396,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #REQUESTED_AD_SIZES} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1399,6 +1409,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #DEVICE_CATEGORY_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Device categories" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1408,6 +1423,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #FIRST_LOOK_PRICING_RULE_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1416,6 +1436,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #FIRST_LOOK_PRICING_RULE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Pricing rules" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1425,6 +1450,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Tags" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1434,6 +1463,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #URL_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "URLs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1443,6 +1477,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down data by Ad Exchange mapped web property code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #WEB_PROPERTY_CODE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1451,6 +1490,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #CREATIVE_SIZE_DELIVERED} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Creative sizes" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1460,6 +1504,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #AD_TYPE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Ad Types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1469,6 +1518,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #CHANNEL_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Channels" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1495,6 +1549,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange site.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #SITE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Sites" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1504,6 +1563,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #DYNAMIC_ALLOCATION_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Request sources" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1514,6 +1578,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser name that bids
      *                 on ads.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #CLASSIFIED_ADVERTISER_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Advertisers" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1524,6 +1593,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by the Ad Exchange brand name that bids on
      *                 ads.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #CLASSIFIED_BRAND_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Brands" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1533,6 +1607,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BUYING_AGENCY_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Agencies" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1542,6 +1621,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange bid type code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1550,6 +1633,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange branding type code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BRANDING_TYPE_CODE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1559,6 +1647,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange branding type. Examples:
      *                 Branded, Anonymous.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BRANDING_TYPE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Branding types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1569,6 +1662,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name. Example:
      *                 Google Adwords.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BUYER_NETWORK_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Buyer networks" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1578,6 +1676,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad network ID.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BUYER_NETWORK_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1586,6 +1689,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1594,6 +1701,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel ID.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1602,6 +1713,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange date, in Ad Exchange timezone.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #DATE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Days" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1611,6 +1727,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #PROGRAMMATIC_DEAL_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1620,6 +1741,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #PROGRAMMATIC_DEAL_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Deal names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1630,6 +1756,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction type. Example:
      *                 Open auction.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #PROGRAMMATIC_CHANNEL_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Transaction types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1639,6 +1770,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer network name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BIDDER_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "DSPs" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1648,6 +1784,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Expandable types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1657,6 +1797,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #COUNTRY_CODE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1665,6 +1810,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #COUNTRY_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Countries" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1674,6 +1824,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #AD_UNIT_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1683,6 +1838,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Manager ad unit.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #AD_UNIT_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "DFP Ad Units" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1692,6 +1852,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange inventory ownership.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #INVENTORY_OWNERSHIP_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Inventory ownership" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1701,6 +1866,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser domain.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #ADVERTISER_DOMAIN_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Advertiser domains" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1711,6 +1881,11 @@ public enum Dimension {
      * 
      *                 Breaks down mapped Ad Exchange web property data by mobile app name. Similar to the mobile app
      *                 name dimension available for Historical reports.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #MOBILE_APP_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Mobile App names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1722,6 +1897,11 @@ public enum Dimension {
      *                 Breaks down mapped Ad Exchange web property data by mobile app 'resolved' id - either the app
      *                 store id or '(Not applicable)' if the app is not registered in the app store. Note: app ids
      *                 are not guaranteed to be unique across different app stores. Can be used for filtering.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #MOBILE_APP_RESOLVED_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Mobile App ID" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1731,6 +1911,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #CARRIER_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Carrier names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1740,6 +1925,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #MOBILE_DEVICE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1749,6 +1939,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory type.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #MOBILE_INVENTORY_TYPE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Inventory types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1758,6 +1953,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange month, in Ad Exchange timezone.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #MONTH_AND_YEAR} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Months" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1767,6 +1967,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange network partner name.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #NETWORK_PARTNER_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Network partner names" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1776,6 +1981,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange operating system version.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #OPERATING_SYSTEM_VERSION_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Operating systems" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1794,6 +2004,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1802,6 +2016,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type code.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #TARGETING_TYPE_CODE} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1810,6 +2029,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #TARGETING_TYPE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Targeting types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1819,6 +2043,10 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange transaction type code
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1827,6 +2055,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #URL_ID} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1835,6 +2068,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #BANDWIDTH_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Bandwidth" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1844,6 +2082,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange video ad duration.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #VIDEO_AD_DURATION} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *               
      * 
      */
@@ -1852,6 +2095,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad duration.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #VIDEO_AD_DURATION} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Video ad durations" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1861,6 +2109,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #VIDEO_AD_TYPE_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Video ad types" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1870,6 +2123,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange week, in Ad Exchange timezone.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #WEEK} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Weeks" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1879,6 +2137,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange ad location.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #AD_LOCATION_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Ad locations" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 
@@ -1888,6 +2151,11 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser vertical.
+     *                 <p>
+     *                 Deprecated as part of the "Ad Exchange Historical" to "Historical" report type conversion.
+     *                 Use {@link #ADVERTISER_VERTICAL_NAME} instead.
+     *                 See &lt;a href="https://support.google.com/admanager/answer/12104807"&gt;Help Center&lt;/a&gt;
+     *                 for more details.
      *                 <p>Corresponds to "Advertiser verticals" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
      *               
      * 

@@ -27,7 +27,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -63,16 +63,15 @@ public class GetRefreshToken {
 
   private static Credential getOAuth2Credential(GoogleClientSecrets clientSecrets)
       throws IOException {
-    GoogleAuthorizationCodeFlow authorizationFlow = new GoogleAuthorizationCodeFlow.Builder(
-        new NetHttpTransport(),
-        new JacksonFactory(),
-        clientSecrets,
-        SCOPES)
-        // Set the access type to offline so that the token can be refreshed.
-        // By default, the library will automatically refresh tokens when it
-        // can, but this can be turned off by setting
-        // api.adwords.refreshOAuth2Token=false in your ads.properties file.
-        .setAccessType("offline").build();
+    GoogleAuthorizationCodeFlow authorizationFlow =
+        new GoogleAuthorizationCodeFlow.Builder(
+                new NetHttpTransport(), GsonFactory.getDefaultInstance(), clientSecrets, SCOPES)
+            // Set the access type to offline so that the token can be refreshed.
+            // By default, the library will automatically refresh tokens when it
+            // can, but this can be turned off by setting
+            // api.adwords.refreshOAuth2Token=false in your ads.properties file.
+            .setAccessType("offline")
+            .build();
 
     String authorizeUrl =
         authorizationFlow.newAuthorizationUrl().setRedirectUri(CALLBACK_URL).build();
@@ -90,11 +89,12 @@ public class GetRefreshToken {
     GoogleTokenResponse tokenResponse = tokenRequest.execute();
 
     // Create the OAuth2 credential.
-    GoogleCredential credential = new GoogleCredential.Builder()
-        .setTransport(new NetHttpTransport())
-        .setJsonFactory(new JacksonFactory())
-        .setClientSecrets(clientSecrets)
-        .build();
+    GoogleCredential credential =
+        new GoogleCredential.Builder()
+            .setTransport(new NetHttpTransport())
+            .setJsonFactory(GsonFactory.getDefaultInstance())
+            .setClientSecrets(clientSecrets)
+            .build();
 
     // Set authorized credentials.
     credential.setFromTokenResponse(tokenResponse);

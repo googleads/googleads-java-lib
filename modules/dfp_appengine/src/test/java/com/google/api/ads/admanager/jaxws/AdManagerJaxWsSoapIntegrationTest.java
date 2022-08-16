@@ -19,14 +19,14 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
 import com.google.api.ads.admanager.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.jaxws.v202205.Company;
-import com.google.api.ads.admanager.jaxws.v202205.CompanyServiceInterface;
+import com.google.api.ads.admanager.jaxws.v202208.Company;
+import com.google.api.ads.admanager.jaxws.v202208.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.collect.Lists;
 import java.util.List;
 import org.junit.BeforeClass;
@@ -42,7 +42,7 @@ import org.xmlunit.diff.Diff;
 @RunWith(JUnit4.class)
 public class AdManagerJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202205";
+  private static final String API_VERSION = "v202208";
 
   @Rule public final ExpectedException thrown = ExpectedException.none();
 
@@ -59,7 +59,7 @@ public class AdManagerJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
     GoogleCredential credential =
         new GoogleCredential.Builder()
             .setTransport(new NetHttpTransport())
-            .setJsonFactory(new JacksonFactory())
+            .setJsonFactory(GsonFactory.getDefaultInstance())
             .build();
     credential.setAccessToken("TEST_ACCESS_TOKEN");
 
