@@ -33,10 +33,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link CreativeWrapper#ordering}</li>
  *             <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}</li>
  *             </ul>
- *             
- *             @param creativeWrappers the creative wrappers to create
- *             @return the creative wrappers with their IDs filled in
- *             @throws ApiException
  *           
  * 
  * <p>Java class for createCreativeWrappers element declaration.

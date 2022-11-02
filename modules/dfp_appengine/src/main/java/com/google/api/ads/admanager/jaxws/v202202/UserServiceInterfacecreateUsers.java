@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link User} objects.
- *             
- *             @param users the users to create
- *             @return the created users with their IDs filled in
  *           
  * 
  * <p>Java class for createUsers element declaration.

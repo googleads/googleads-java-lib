@@ -25,11 +25,6 @@ public interface OrderServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Order} objects.
-     *         
-     *         
-     * @param orders the orders to create
-     *         
-     * @return the created orders with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.Order[] createOrders(com.google.api.ads.admanager.axis.v202202.Order[] orders) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -80,38 +75,17 @@ public interface OrderServiceInterface extends java.rmi.Remote {
      *         <td>{@link Order#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of orders
-     *         
-     * @return the orders that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.OrderPage getOrdersByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Performs actions on {@link Order} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param orderAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of orders
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performOrderAction(com.google.api.ads.admanager.axis.v202202.OrderAction orderAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link Order} objects.
-     *         
-     *         
-     * @param orders the orders to update
-     *         
-     * @return the updated orders
      */
     public com.google.api.ads.admanager.axis.v202202.Order[] updateOrders(com.google.api.ads.admanager.axis.v202202.Order[] orders) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Contact} objects.
- *             
- *             @param contacts the contacts to create
- *             @return the created contacts with their IDs filled in
  *           
  * 
  * <p>Java class for createContacts element declaration.

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link ContentBundle} objects.
- *             
- *             @param contentBundles the content bundles to update
- *             @return the updated content bundles
  *           
  * 
  * <p>Java class for updateContentBundles element declaration.

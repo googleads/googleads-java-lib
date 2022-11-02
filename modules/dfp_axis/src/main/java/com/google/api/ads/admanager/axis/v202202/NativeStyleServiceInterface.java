@@ -25,11 +25,6 @@ public interface NativeStyleServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link NativeStyle} objects.
-     *         
-     *         
-     * @param nativeStyles the native styles to create
-     *         
-     * @return the created native styles with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.NativeStyle[] createNativeStyles(com.google.api.ads.admanager.axis.v202202.NativeStyle[] nativeStyles) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -53,37 +48,17 @@ public interface NativeStyleServiceInterface extends java.rmi.Remote {
      *         <td>{@link NativeStyle#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of
-     *         native styles.
-     *         
-     * @return the native styles that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.NativeStylePage getNativeStylesByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Performs actions on {@link NativeStyle native styles} that
      * match the given {@link Statement}.
-     *         
-     *         
-     * @param nativeStyleAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a set of native styles
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performNativeStyleAction(com.google.api.ads.admanager.axis.v202202.NativeStyleAction nativeStyleAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link NativeStyle} objects.
-     *         
-     *         
-     * @param nativeStyles the native styles to be updated
-     *         
-     * @return the updated native styles
      */
     public com.google.api.ads.admanager.axis.v202202.NativeStyle[] updateNativeStyles(com.google.api.ads.admanager.axis.v202202.NativeStyle[] nativeStyles) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

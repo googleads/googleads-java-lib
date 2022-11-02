@@ -25,11 +25,6 @@ public interface CreativeServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Creative} objects.
-     *         
-     *         
-     * @param creatives the creatives to create
-     *         
-     * @return the created creatives with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202205.Creative[] createCreatives(com.google.api.ads.admanager.axis.v202205.Creative[] creatives) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -69,37 +64,17 @@ public interface CreativeServiceInterface extends java.rmi.Remote {
      *         <td>{@link Creative#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of creatives
-     *         
-     * @return the creatives that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.CreativePage getCreativesByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Performs action on {@link Creative} objects that match the
      * given {@link Statement#query}.
-     *         
-     *         
-     * @param creativeAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of creatives
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCreativeAction(com.google.api.ads.admanager.axis.v202205.CreativeAction creativeAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link Creative} objects.
-     *         
-     *         
-     * @param creatives the creatives to update
-     *         
-     * @return the updated creatives
      */
     public com.google.api.ads.admanager.axis.v202205.Creative[] updateCreatives(com.google.api.ads.admanager.axis.v202205.Creative[] creatives) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

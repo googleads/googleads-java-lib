@@ -72,11 +72,6 @@ public interface StreamActivityMonitorServiceInterface {
      *         </tr>
      *         </tbody>
      *         </table>
-     *         
-     *         @param statement PQL specifying the sessionId or debugKey to fetch logging information for.
-     *         Only '=' and 'IN' expressions are supported.
-     *         @throws ApiException if there is an error while fetching the logging information or if there is
-     *         no SAM session is associated with any of the {@code sessionIds}.
      *       
      * 
      * @param statement
@@ -101,10 +96,6 @@ public interface StreamActivityMonitorServiceInterface {
      *         via the Ad Manager UI.
      *         
      *         <p>A session ID is a unique identifier of a single user watching a live stream event.
-     *         
-     *         @param sessionIds a list of session IDs to register for monitoring
-     *         @return the list of session IDs that were registered for monitoring
-     *         @throws ApiException if there is an error registering any of the session IDs
      *       
      * 
      * @param sessionIds

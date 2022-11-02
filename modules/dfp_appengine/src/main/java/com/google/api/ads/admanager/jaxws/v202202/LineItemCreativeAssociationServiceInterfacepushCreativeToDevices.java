@@ -24,10 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Pushes a creative to devices that that satisfy the given {@link Statement#query}. *
- *             
- *             @param filterStatement a Publisher Query Language statement on the ID, Name, UserId and
- *             LinkedDeviceVisibility fields of the LinkedDevice table.
- *             @param options criteria to use to push a given creative.
  *           
  * 
  * <p>Java class for pushCreativeToDevices element declaration.

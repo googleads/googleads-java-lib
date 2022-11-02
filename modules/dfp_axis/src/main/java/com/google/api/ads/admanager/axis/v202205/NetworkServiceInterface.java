@@ -32,17 +32,11 @@ public interface NetworkServiceInterface extends java.rmi.Remote {
      * when the
      *         login may have more than one network associated with it.
      *         </p>
-     *         
-     *         
-     * @return the networks to which the current login has access
      */
     public com.google.api.ads.admanager.axis.v202205.Network[] getAllNetworks() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Returns the current network for which requests are being made.
-     * 
-     *         
-     * @return the network for which the user is currently making the request
      */
     public com.google.api.ads.admanager.axis.v202205.Network getCurrentNetwork() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -93,11 +87,6 @@ public interface NetworkServiceInterface extends java.rmi.Remote {
      * Updates the specified network. Currently, only the network
      * display name can
      *         be updated.
-     *         
-     *         
-     * @param network the network that needs to be updated
-     *         
-     * @return the updated network
      */
     public com.google.api.ads.admanager.axis.v202205.Network updateNetwork(com.google.api.ads.admanager.axis.v202205.Network network) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

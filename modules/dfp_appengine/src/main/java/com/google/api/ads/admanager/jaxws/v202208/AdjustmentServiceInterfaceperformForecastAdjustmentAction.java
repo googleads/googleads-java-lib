@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs actions on {@link ForecastAdjustment} objects that match the given {@link
  *             Statement#query}.
- *             
- *             @param forecastAdjustmentAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of forecast
- *             adjustments
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performForecastAdjustmentAction element declaration.

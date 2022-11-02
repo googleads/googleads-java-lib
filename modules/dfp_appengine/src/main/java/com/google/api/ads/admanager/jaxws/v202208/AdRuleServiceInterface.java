@@ -47,9 +47,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Creates new {@link AdRule} objects.
-     *         
-     *         @param adRules the ad rules to create
-     *         @return the created ad rules with their IDs filled in
      *       
      * 
      * @param adRules
@@ -70,9 +67,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Creates new {@link AdSpot} objects.
-     *         
-     *         @param adSpots the ad spots to create
-     *         @return the created ad spots with their IDs filled in
      *       
      * 
      * @param adSpots
@@ -93,9 +87,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Creates new {@link breakTemplate} objects.
-     *         
-     *         @param breakTemplate the break template to create
-     *         @return the created break template with their IDs filled in
      *       
      * 
      * @param breakTemplate
@@ -138,10 +129,6 @@ public interface AdRuleServiceInterface {
      *         <td>{@code status}</td>
      *         <td>{@link AdRule#status}</td>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of ad rules
-     *         @return the ad rules that match the given filter
-     *         @throws ApiException if the ID of the active network does not exist or there is a backend error
      *       
      * 
      * @param statement
@@ -163,9 +150,6 @@ public interface AdRuleServiceInterface {
      * 
      *         Gets a {@link AdSpotPage} of {@link AdSpot} objects that satisfy the given {@link
      *         Statement#query}.
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of ad spots
-     *         @return the ad spots that match the filter
      *       
      * 
      * @param filterStatement
@@ -187,9 +171,6 @@ public interface AdRuleServiceInterface {
      * 
      *         Gets a {@link BreakTemplatePage} of {@link BreakTemplate} objects that satisfy the given {@link
      *         Statement#query}.
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of breakTemplate
-     *         @return the break template that match the filter
      *       
      * 
      * @param filterStatement
@@ -211,11 +192,6 @@ public interface AdRuleServiceInterface {
      * 
      *         Performs actions on {@link AdRule} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param adRuleAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of ad rules
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -239,10 +215,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Updates the specified {@link AdRule} objects.
-     *         
-     *         @param adRules the ad rules to update
-     *         @return the updated ad rules
-     *         @throws ApiException if there is an error updating the ad rules
      *       
      * 
      * @param adRules
@@ -263,10 +235,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Updates the specified {@link AdSpot} objects.
-     *         
-     *         @param adSpots the ad spots to update
-     *         @return the updated ad spots
-     *         @throws ApiException if there is an error updating the ad spots
      *       
      * 
      * @param adSpots
@@ -287,9 +255,6 @@ public interface AdRuleServiceInterface {
     /**
      * 
      *         Updates the specified {@link breakTemplate} objects.
-     *         
-     *         @param breakTemplate the break template to update
-     *         @return the updated break template
      *       
      * 
      * @param breakTemplate

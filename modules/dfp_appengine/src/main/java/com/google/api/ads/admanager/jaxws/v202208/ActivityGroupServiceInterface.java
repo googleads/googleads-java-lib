@@ -50,9 +50,6 @@ public interface ActivityGroupServiceInterface {
     /**
      * 
      *         Creates a new {@link ActivityGroup} objects.
-     *         
-     *         @param activityGroups the activity groups to be created.
-     *         @return the created activity groups with their IDs filled in.
      *       
      * 
      * @param activityGroups
@@ -100,9 +97,6 @@ public interface ActivityGroupServiceInterface {
      *         <td>{@link ActivityGroup#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a statement used to filter a set of activity groups
-     *         @return the activity groups that match the given filter
      *       
      * 
      * @param filterStatement
@@ -123,9 +117,6 @@ public interface ActivityGroupServiceInterface {
     /**
      * 
      *         Updates the specified {@link ActivityGroup} objects.
-     *         
-     *         @param activityGroups the activity groups to update.
-     *         @return the updated activity groups.
      *       
      * 
      * @param activityGroups

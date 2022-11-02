@@ -43,10 +43,6 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p><strong>Note:</strong> After API version 201311, the {@code id} field will only be
  *             numerical.
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of suggested ad units
- *             @return the suggested ad units that match the given filter
  *           
  * 
  * <p>Java class for getSuggestedAdUnitsByStatement element declaration.

@@ -51,9 +51,6 @@ public interface DaiAuthenticationKeyServiceInterface {
      *         <ul>
      *         <li>{@link DaiAuthenticationKey#name}
      *         </ul>
-     *         
-     *         @param daiAuthenticationKeys the DAI authentication keys to create
-     *         @return the created DAI authentication keys with their IDs filled in
      *       
      * 
      * @param daiAuthenticationKeys
@@ -93,10 +90,6 @@ public interface DaiAuthenticationKeyServiceInterface {
      *         <td>{@link DaiAuthenticationKey#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of DAI
-     *         authentication keys
-     *         @return the DAI authentication keys that match the filter
      *       
      * 
      * @param filterStatement
@@ -121,11 +114,6 @@ public interface DaiAuthenticationKeyServiceInterface {
      *         
      *         <p>DAI authentication keys cannot be deactivated if there are active {@link LiveStreamEvent}s
      *         or Content Sources that are using them.
-     *         
-     *         @param daiAuthenticationKeyAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of live stream
-     *         events
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -149,10 +137,6 @@ public interface DaiAuthenticationKeyServiceInterface {
     /**
      * 
      *         Updates the specified {@link DaiAuthenticationKey} objects.
-     *         
-     *         @param daiAuthenticationKeys the video DAI authentication keys to update
-     *         @return the updated DAI authentication keys
-     *         @throws ApiException if there is an error updating the DAI authentication keys
      *       
      * 
      * @param daiAuthenticationKeys

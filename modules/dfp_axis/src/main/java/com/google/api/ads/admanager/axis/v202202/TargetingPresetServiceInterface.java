@@ -42,12 +42,6 @@ public interface TargetingPresetServiceInterface extends java.rmi.Remote {
      *         <td>{@link TargetingPreset#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of labels.
-     *         
-     * @return the targeting presets that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.TargetingPresetPage getTargetingPresetsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

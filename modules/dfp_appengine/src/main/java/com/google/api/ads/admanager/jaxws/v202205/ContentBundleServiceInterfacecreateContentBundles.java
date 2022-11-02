@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link ContentBundle} objects.
- *             
- *             @param contentBundles the content bundles to create
- *             @return the created content bundles with their IDs filled in
  *           
  * 
  * <p>Java class for createContentBundles element declaration.

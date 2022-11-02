@@ -1,3 +1,14 @@
+4.20.0 - 11/02/2022
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202211.
+ - Removed support for v202111.
+ - Removed examples fo v202202.
+
+
 4.19.0 - 08/16/2022
 -------------------
 AdWords:

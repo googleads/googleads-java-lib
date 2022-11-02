@@ -48,10 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CreativeSet#lastModifiedDateTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param statement a Publisher Query Language statement used to filter
- *             a set of creative sets
- *             @return the creative sets that match the given filter
  *           
  * 
  * <p>Java class for getCreativeSetsByStatement element declaration.

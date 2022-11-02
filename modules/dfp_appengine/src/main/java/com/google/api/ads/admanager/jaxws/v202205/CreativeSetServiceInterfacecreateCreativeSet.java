@@ -24,9 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates a new {@link CreativeSet}.
- *             
- *             @param creativeSet the creative set to create
- *             @return the creative set with its ID filled in
  *           
  * 
  * <p>Java class for createCreativeSet element declaration.

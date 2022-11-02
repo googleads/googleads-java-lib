@@ -25,11 +25,6 @@ public interface CompanyServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Company} objects.
-     *         
-     *         
-     * @param companies the companies to create
-     *         
-     * @return the created companies with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.Company[] createCompanies(com.google.api.ads.admanager.axis.v202208.Company[] companies) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -61,38 +56,17 @@ public interface CompanyServiceInterface extends java.rmi.Remote {
      *         <td>{@link Company#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of companies
-     *         
-     * @return the companies that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.CompanyPage getCompaniesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Performs actions on {@link Company} objects that match the
      * given {@code Statement}.
-     *         
-     *         
-     * @param companyAction the action to perform
-     *         
-     * @param statement a PQL statement used to filter companies
-     *         
-     * @return the result of the action performed
-     *         
-     * @throws ApiException
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performCompanyAction(com.google.api.ads.admanager.axis.v202208.CompanyAction companyAction, com.google.api.ads.admanager.axis.v202208.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link Company} objects.
-     *         
-     *         
-     * @param companies the companies to update
-     *         
-     * @return the updated companies
      */
     public com.google.api.ads.admanager.axis.v202208.Company[] updateCompanies(com.google.api.ads.admanager.axis.v202208.Company[] companies) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link DaiEncodingProfile} objects.
- *             
- *             @param daiEncodingProfiles the content profiles to update
- *             @return the updated profiles
- *             @throws ApiException if there is an error updating the profiles
  *           
  * 
  * <p>Java class for updateDaiEncodingProfiles element declaration.

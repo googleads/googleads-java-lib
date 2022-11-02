@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs the given {@link AudienceSegmentAction} on the set of segments identified by the given
  *             statement.
- *             
- *             @param action {@link AudienceSegmentAction} to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of audience
- *             segments (the only supported operator is AND)
- *             @return {@link UpdateResult} indicating the result
  *           
  * 
  * <p>Java class for performAudienceSegmentAction element declaration.

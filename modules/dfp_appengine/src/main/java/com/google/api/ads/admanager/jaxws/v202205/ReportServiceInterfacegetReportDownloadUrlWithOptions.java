@@ -28,10 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <p>
  *             By default, the report will be generated as a gzip archive, containing the report file itself.
  *             This can be changed by setting {@link ReportDownloadOptions#useGzipCompression} to false.
- *             
- *             @param reportJobId the ID of the {@link ReportJob}
- *             @param reportDownloadOptions the {@link ReportDownloadOptions} for the request
- *             @return the URL for report file download
  *           
  * 
  * <p>Java class for getReportDownloadUrlWithOptions element declaration.

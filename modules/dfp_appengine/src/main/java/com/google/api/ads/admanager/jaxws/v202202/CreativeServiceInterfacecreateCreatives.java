@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Creative} objects.
- *             
- *             @param creatives the creatives to create
- *             @return the created creatives with their IDs filled in
  *           
  * 
  * <p>Java class for createCreatives element declaration.

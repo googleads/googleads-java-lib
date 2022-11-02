@@ -43,9 +43,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link DaiEncodingProfile#name}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement to filter a list of profiles
- *             @return the profiles that match the filter
  *           
  * 
  * <p>Java class for getDaiEncodingProfilesByStatement element declaration.

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Label} objects.
- *             
- *             @param labels the labels to create
- *             @return the created labels with their IDs filled in
  *           
  * 
  * <p>Java class for createLabels element declaration.

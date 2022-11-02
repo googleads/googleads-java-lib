@@ -25,22 +25,12 @@ public interface YieldGroupServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates yield groups in bulk.
-     *         
-     *         
-     * @param yieldGroups the groups to create
-     *         
-     * @return the created groups
      */
     public com.google.api.ads.admanager.axis.v202208.YieldGroup[] createYieldGroups(com.google.api.ads.admanager.axis.v202208.YieldGroup[] yieldGroups) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Gets a page of yield groups, with child tags, filtered by the
      * given statement.
-     *         
-     *         
-     * @param statement the statement used to filter yield groups.
-     *         
-     * @return the page of yield groups
      */
     public com.google.api.ads.admanager.axis.v202208.YieldGroupPage getYieldGroupsByStatement(com.google.api.ads.admanager.axis.v202208.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -52,11 +42,6 @@ public interface YieldGroupServiceInterface extends java.rmi.Remote {
 
     /**
      * Updates a list of yield groups.
-     *         
-     *         
-     * @param yieldGroups the groups to update
-     *         
-     * @return the updated groups
      */
     public com.google.api.ads.admanager.axis.v202208.YieldGroup[] updateYieldGroups(com.google.api.ads.admanager.axis.v202208.YieldGroup[] yieldGroups) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

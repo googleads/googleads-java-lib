@@ -51,9 +51,6 @@ public interface InventoryServiceInterface {
     /**
      * 
      *         Creates new {@link AdUnit} objects.
-     *         
-     *         @param adUnits the ad units to create
-     *         @return the created ad units, with their IDs filled in
      *       
      * 
      * @param adUnits
@@ -76,9 +73,6 @@ public interface InventoryServiceInterface {
      *         Returns a set of all relevant {@link AdUnitSize} objects.
      *         
      *         <p>The given {@link Statement} is currently ignored but may be honored in future versions.
-     *         
-     *         @param filterStatement currently ignored but may be honored in future versions
-     *         @return the ad unit sizes
      *       
      * 
      * @param filterStatement
@@ -130,10 +124,6 @@ public interface InventoryServiceInterface {
      *         <td>{@link AdUnit#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of ad units
-     *         @return the ad units that match the given filter
      *       
      * 
      * @param filterStatement
@@ -155,11 +145,6 @@ public interface InventoryServiceInterface {
      * 
      *         Performs actions on {@link AdUnit} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param adUnitAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of ad units
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -183,9 +168,6 @@ public interface InventoryServiceInterface {
     /**
      * 
      *         Updates the specified {@link AdUnit} objects.
-     *         
-     *         @param adUnits the ad units to update
-     *         @return the updated ad units
      *       
      * 
      * @param adUnits

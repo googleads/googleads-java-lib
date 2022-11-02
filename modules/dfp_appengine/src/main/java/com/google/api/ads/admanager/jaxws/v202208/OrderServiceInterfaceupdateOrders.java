@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Order} objects.
- *             
- *             @param orders the orders to update
- *             @return the updated orders
  *           
  * 
  * <p>Java class for updateOrders element declaration.

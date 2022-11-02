@@ -56,11 +56,6 @@ public interface LineItemTemplateServiceInterface {
      *         <td>{@link LineItemTemplate#id}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of line item templates
-     *         @return the line item templates that match the given filter
-     *         @throws ApiException if a RuntimeException is thrown
      *       
      * 
      * @param filterStatement

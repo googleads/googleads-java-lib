@@ -48,9 +48,6 @@ public interface ContentBundleServiceInterface {
     /**
      * 
      *         Creates new {@link ContentBundle} objects.
-     *         
-     *         @param contentBundles the content bundles to create
-     *         @return the created content bundles with their IDs filled in
      *       
      * 
      * @param contentBundles
@@ -90,10 +87,6 @@ public interface ContentBundleServiceInterface {
      *         <td>{@link ContentBundle#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of content bundles
-     *         @return the content bundles that match the given filter
      *       
      * 
      * @param filterStatement
@@ -115,11 +108,6 @@ public interface ContentBundleServiceInterface {
      * 
      *         Performs actions on {@link ContentBundle} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param contentBundleAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of content bundles
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -143,9 +131,6 @@ public interface ContentBundleServiceInterface {
     /**
      * 
      *         Updates the specified {@link ContentBundle} objects.
-     *         
-     *         @param contentBundles the content bundles to update
-     *         @return the updated content bundles
      *       
      * 
      * @param contentBundles

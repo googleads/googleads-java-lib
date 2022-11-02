@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates a new {@link ActivityGroup} objects.
- *             
- *             @param activityGroups the activity groups to be created.
- *             @return the created activity groups with their IDs filled in.
  *           
  * 
  * <p>Java class for createActivityGroups element declaration.

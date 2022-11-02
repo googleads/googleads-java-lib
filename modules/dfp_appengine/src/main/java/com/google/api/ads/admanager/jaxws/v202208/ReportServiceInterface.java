@@ -70,10 +70,6 @@ public interface ReportServiceInterface {
      *         Returns the URL at which the report file can be downloaded.
      *         <p>
      *         The report will be generated as a gzip archive, containing the report file itself.
-     *         
-     *         @param reportJobId the ID of the {@link ReportJob}
-     *         @param exportFormat the {@link ExportFormat} for the report file
-     *         @return the URL for report file download
      *       
      * 
      * @param reportJobId
@@ -101,10 +97,6 @@ public interface ReportServiceInterface {
      *         <p>
      *         By default, the report will be generated as a gzip archive, containing the report file itself.
      *         This can be changed by setting {@link ReportDownloadOptions#useGzipCompression} to false.
-     *         
-     *         @param reportJobId the ID of the {@link ReportJob}
-     *         @param reportDownloadOptions the {@link ReportDownloadOptions} for the request
-     *         @return the URL for report file download
      *       
      * 
      * @param reportDownloadOptions
@@ -166,11 +158,6 @@ public interface ReportServiceInterface {
      *         <td>{@link SavedQuery#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter which saved queries
-     *         should be returned.
-     *         @return a {@link SavedQueryPage} that contains all {@link SavedQuery} instances which satisfy
-     *         the given statement.
      *       
      * 
      * @param filterStatement
@@ -196,9 +183,6 @@ public interface ReportServiceInterface {
      *         <ul>
      *         <li>{@link ReportJob#reportQuery}</li>
      *         </ul>
-     *         
-     *         @param reportJob the report job to run
-     *         @return the report job with its ID filled in
      *       
      * 
      * @param reportJob

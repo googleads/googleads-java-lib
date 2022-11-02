@@ -25,11 +25,6 @@ public interface ActivityServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates a new {@link Activity} objects.
-     *         
-     *         
-     * @param activities to be created.
-     *         
-     * @return the created activities with its IDs filled in.
      */
     public com.google.api.ads.admanager.axis.v202208.Activity[] createActivities(com.google.api.ads.admanager.axis.v202208.Activity[] activities) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -64,21 +59,11 @@ public interface ActivityServiceInterface extends java.rmi.Remote {
      *         <td>{@link Activity#activityGroupId}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a statement used to filter a set of activities.
-     * 
-     * @return the activities that match the given filter.
      */
     public com.google.api.ads.admanager.axis.v202208.ActivityPage getActivitiesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link Activity} objects.
-     *         
-     *         
-     * @param activities to be updated.
-     *         
-     * @return the updated activities.
      */
     public com.google.api.ads.admanager.axis.v202208.Activity[] updateActivities(com.google.api.ads.admanager.axis.v202208.Activity[] activities) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

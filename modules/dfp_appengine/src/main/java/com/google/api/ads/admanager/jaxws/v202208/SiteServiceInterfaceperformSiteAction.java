@@ -24,10 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Performs actions on {@link Site} objects that match the given {@link Statement#query}.
- *             
- *             @param siteAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of sites
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performSiteAction element declaration.

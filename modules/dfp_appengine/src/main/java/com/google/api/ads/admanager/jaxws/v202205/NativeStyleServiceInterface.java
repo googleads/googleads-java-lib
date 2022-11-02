@@ -45,9 +45,6 @@ public interface NativeStyleServiceInterface {
     /**
      * 
      *         Creates new {@link NativeStyle} objects.
-     *         
-     *         @param nativeStyles the native styles to create
-     *         @return the created native styles with their IDs filled in
      *       
      * 
      * @param nativeStyles
@@ -84,10 +81,6 @@ public interface NativeStyleServiceInterface {
      *         <td>{@link NativeStyle#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of
-     *         native styles.
-     *         @return the native styles that match the given filter
      *       
      * 
      * @param filterStatement
@@ -108,10 +101,6 @@ public interface NativeStyleServiceInterface {
     /**
      * 
      *         Performs actions on {@link NativeStyle native styles} that match the given {@link Statement}.
-     *         
-     *         @param nativeStyleAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement to filter a set of native styles
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -135,9 +124,6 @@ public interface NativeStyleServiceInterface {
     /**
      * 
      *         Updates the specified {@link NativeStyle} objects.
-     *         
-     *         @param nativeStyles the native styles to be updated
-     *         @return the updated native styles
      *       
      * 
      * @param nativeStyles

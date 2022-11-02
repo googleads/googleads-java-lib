@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs actions on {@link CmsMetadataKey} objects that match the given {@link
  *             Statement#query}.
- *             
- *             @param keyAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of cms
- *             metadata keys.
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performCmsMetadataKeyAction element declaration.

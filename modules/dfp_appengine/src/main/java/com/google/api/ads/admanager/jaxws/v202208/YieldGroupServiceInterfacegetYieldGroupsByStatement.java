@@ -24,9 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Gets a page of yield groups, with child tags, filtered by the given statement.
- *             
- *             @param statement the statement used to filter yield groups.
- *             @return the page of yield groups
  *           
  * 
  * <p>Java class for getYieldGroupsByStatement element declaration.

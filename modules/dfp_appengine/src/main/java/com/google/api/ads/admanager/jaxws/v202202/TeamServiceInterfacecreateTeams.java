@@ -31,9 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <ul>
  *             <li>{@link Team#name}</li>
  *             </ul>
- *             
- *             @param teams the teams to create
- *             @return the created teams with their IDs filled in
  *           
  * 
  * <p>Java class for createTeams element declaration.

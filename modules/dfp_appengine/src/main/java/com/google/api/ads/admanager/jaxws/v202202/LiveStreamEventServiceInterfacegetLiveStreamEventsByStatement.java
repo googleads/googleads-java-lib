@@ -68,10 +68,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link LiveStreamEvent#segmentUrlAuthenticationKeyIds}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement to filter a
- *             list of live stream events
- *             @return the live stream events that match the filter
  *           
  * 
  * <p>Java class for getLiveStreamEventsByStatement element declaration.

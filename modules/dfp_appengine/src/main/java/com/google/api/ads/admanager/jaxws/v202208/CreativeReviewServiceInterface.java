@@ -44,10 +44,6 @@ public interface CreativeReviewServiceInterface {
      *         have displayed) on your pages or apps in the last 30 days. To ensure that you are always
      *         reviewing the most important creatives first, the {@link CreativeReview} objects are ranked
      *         according to the number of impressions that they've received.
-     *         
-     *         @param statement a Publisher Query Language statement used to specify the page of {@link
-     *         CreativeReview} to be fetch. Only {@code LIMIT} is supported.
-     *         @return the {@link CreativeReview}s that match the given filter
      *       
      * 
      * @param statement
@@ -72,11 +68,6 @@ public interface CreativeReviewServiceInterface {
      *         seen in the corresponding {@link CreativeReview} objects. You can also archive creatives to
      *         allow you to retrieve new {@link CreativeReview} objects while previously retrieved {@link
      *         CreativeReview} objects are in pending approval.
-     *         
-     *         @param creativeReviewAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of creative
-     *         reviews. Only {@code "WHERE id = <value>"} and {@code "WHERE id IN <list>"} are supported.
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement

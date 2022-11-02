@@ -45,9 +45,6 @@ public interface LabelServiceInterface {
     /**
      * 
      *         Creates new {@link Label} objects.
-     *         
-     *         @param labels the labels to create
-     *         @return the created labels with their IDs filled in
      *       
      * 
      * @param labels
@@ -96,11 +93,6 @@ public interface LabelServiceInterface {
      *         <td>{@link Label#isActive}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of labels.
-     *         @return the labels that match the given filter
      *       
      * 
      * @param filterStatement
@@ -122,11 +114,6 @@ public interface LabelServiceInterface {
      * 
      *         Performs actions on {@link Label} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param labelAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of labels
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -150,9 +137,6 @@ public interface LabelServiceInterface {
     /**
      * 
      *         Updates the specified {@link Label} objects.
-     *         
-     *         @param labels the labels to update
-     *         @return the updated labels
      *       
      * 
      * @param labels

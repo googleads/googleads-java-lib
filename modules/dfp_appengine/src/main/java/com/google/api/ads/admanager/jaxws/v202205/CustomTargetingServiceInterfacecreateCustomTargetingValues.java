@@ -32,9 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link CustomTargetingValue#customTargetingKeyId}</li>
  *             <li>{@link CustomTargetingValue#name}</li>
  *             </ul>
- *             
- *             @param values the custom targeting values to update
- *             @return the updated custom targeting keys
  *           
  * 
  * <p>Java class for createCustomTargetingValues element declaration.

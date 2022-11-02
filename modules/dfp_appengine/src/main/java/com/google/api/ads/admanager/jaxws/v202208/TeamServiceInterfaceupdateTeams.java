@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Team} objects.
- *             
- *             @param teams the teams to update
- *             @return the updated teams
  *           
  * 
  * <p>Java class for updateTeams element declaration.

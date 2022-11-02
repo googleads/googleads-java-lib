@@ -25,11 +25,6 @@ public interface ActivityGroupServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates a new {@link ActivityGroup} objects.
-     *         
-     *         
-     * @param activityGroups the activity groups to be created.
-     *         
-     * @return the created activity groups with their IDs filled in.
      */
     public com.google.api.ads.admanager.axis.v202205.ActivityGroup[] createActivityGroups(com.google.api.ads.admanager.axis.v202205.ActivityGroup[] activityGroups) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -64,22 +59,11 @@ public interface ActivityGroupServiceInterface extends java.rmi.Remote {
      *         <td>{@link ActivityGroup#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a statement used to filter a set of activity
-     * groups
-     *         
-     * @return the activity groups that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.ActivityGroupPage getActivityGroupsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link ActivityGroup} objects.
-     *         
-     *         
-     * @param activityGroups the activity groups to update.
-     *         
-     * @return the updated activity groups.
      */
     public com.google.api.ads.admanager.axis.v202205.ActivityGroup[] updateActivityGroups(com.google.api.ads.admanager.axis.v202205.ActivityGroup[] activityGroups) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

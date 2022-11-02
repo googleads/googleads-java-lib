@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link CustomField} objects.
- *             
- *             @param customFields the custom fields to update
- *             @return the updated custom fields
  *           
  * 
  * <p>Java class for updateCustomFields element declaration.

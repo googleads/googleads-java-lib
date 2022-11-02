@@ -51,9 +51,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ActivityGroup#status}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a statement used to filter a set of activity groups
- *             @return the activity groups that match the given filter
  *           
  * 
  * <p>Java class for getActivityGroupsByStatement element declaration.

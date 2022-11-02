@@ -51,9 +51,6 @@ public interface ActivityServiceInterface {
     /**
      * 
      *         Creates a new {@link Activity} objects.
-     *         
-     *         @param activities to be created.
-     *         @return the created activities with its IDs filled in.
      *       
      * 
      * @param activities
@@ -101,9 +98,6 @@ public interface ActivityServiceInterface {
      *         <td>{@link Activity#activityGroupId}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a statement used to filter a set of activities.
-     *         @return the activities that match the given filter.
      *       
      * 
      * @param filterStatement
@@ -124,9 +118,6 @@ public interface ActivityServiceInterface {
     /**
      * 
      *         Updates the specified {@link Activity} objects.
-     *         
-     *         @param activities to be updated.
-     *         @return the updated activities.
      *       
      * 
      * @param activities

@@ -48,10 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CreativeWrapper#ordering}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of creative wrappers.
- *             @return the creative wrappers that match the given filter
  *           
  * 
  * <p>Java class for getCreativeWrappersByStatement element declaration.

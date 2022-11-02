@@ -59,9 +59,6 @@ public interface TargetingPresetServiceInterface {
      *         <td>{@link TargetingPreset#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of labels.
-     *         @return the targeting presets that match the given filter
      *       
      * 
      * @param filterStatement

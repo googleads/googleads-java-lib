@@ -24,9 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link CreativeSet}.
- *             
- *             @param creativeSet the creative set to update
- *             @return the updated creative set
  *           
  * 
  * <p>Java class for updateCreativeSet element declaration.

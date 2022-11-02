@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the given {@link FirstPartyAudienceSegment} objects.
- *             
- *             @param segments first-party audience segments to update
- *             @return updated first-party audience segments
  *           
  * 
  * <p>Java class for updateAudienceSegments element declaration.

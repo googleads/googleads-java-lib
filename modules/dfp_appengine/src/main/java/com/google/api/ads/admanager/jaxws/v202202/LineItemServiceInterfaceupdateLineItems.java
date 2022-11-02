@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link LineItem} objects.
- *             
- *             @param lineItems the line items to update
- *             @return the updated line items
  *           
  * 
  * <p>Java class for updateLineItems element declaration.

@@ -31,11 +31,6 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      *         <li>{@link CustomTargetingKey#name}</li>
      *         <li>{@link CustomTargetingKey#type}</li>
      *         </ul>
-     *         
-     *         
-     * @param keys the custom targeting keys to update
-     *         
-     * @return the updated custom targeting keys
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingKey[] createCustomTargetingKeys(com.google.api.ads.admanager.axis.v202208.CustomTargetingKey[] keys) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -47,11 +42,6 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      *         <li>{@link CustomTargetingValue#customTargetingKeyId}</li>
      * <li>{@link CustomTargetingValue#name}</li>
      *         </ul>
-     *         
-     *         
-     * @param values the custom targeting values to update
-     *         
-     * @return the updated custom targeting keys
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingValue[] createCustomTargetingValues(com.google.api.ads.admanager.axis.v202208.CustomTargetingValue[] values) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -84,13 +74,6 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      *         <td>{@link CustomTargetingKey#type}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of custom targeting keys
-     *         
-     * @return the custom targeting keys that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingKeyPage getCustomTargetingKeysByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -149,13 +132,6 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      *         <td>{@link CustomTargetingValue#matchType}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of custom targeting values
-     *         
-     * @return the custom targeting values that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingValuePage getCustomTargetingValuesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -163,15 +139,6 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CustomTargetingKey} objects that
      * match the given
      *         {@link Statement#query}.
-     *         
-     *         
-     * @param customTargetingKeyAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of custom targeting keys
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performCustomTargetingKeyAction(com.google.api.ads.admanager.axis.v202208.CustomTargetingKeyAction customTargetingKeyAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -179,35 +146,16 @@ public interface CustomTargetingServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CustomTargetingValue} objects that
      * match the
      *         given {@link Statement#query}.
-     *         
-     *         
-     * @param customTargetingValueAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of ad units
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performCustomTargetingValueAction(com.google.api.ads.admanager.axis.v202208.CustomTargetingValueAction customTargetingValueAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link CustomTargetingKey} objects.
-     *         
-     *         
-     * @param keys the custom targeting keys to update
-     *         
-     * @return the updated custom targeting keys
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingKey[] updateCustomTargetingKeys(com.google.api.ads.admanager.axis.v202208.CustomTargetingKey[] keys) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link CustomTargetingValue} objects.
-     * 
-     *         
-     * @param values the custom targeting values to update
-     *         
-     * @return the updated custom targeting values
      */
     public com.google.api.ads.admanager.axis.v202208.CustomTargetingValue[] updateCustomTargetingValues(com.google.api.ads.admanager.axis.v202208.CustomTargetingValue[] values) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

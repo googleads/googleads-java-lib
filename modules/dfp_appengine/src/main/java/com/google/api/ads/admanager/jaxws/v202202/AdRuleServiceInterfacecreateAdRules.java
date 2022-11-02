@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link AdRule} objects.
- *             
- *             @param adRules the ad rules to create
- *             @return the created ad rules with their IDs filled in
  *           
  * 
  * <p>Java class for createAdRules element declaration.

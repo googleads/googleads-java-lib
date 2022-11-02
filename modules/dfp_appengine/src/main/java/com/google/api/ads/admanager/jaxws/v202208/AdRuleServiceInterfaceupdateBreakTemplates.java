@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link breakTemplate} objects.
- *             
- *             @param breakTemplate the break template to update
- *             @return the updated break template
  *           
  * 
  * <p>Java class for updateBreakTemplates element declaration.

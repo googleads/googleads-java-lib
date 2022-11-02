@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link MobileApplication mobile applications}.
- *             
- *             @param mobileApplications the mobile applications to be updated
- *             @return the updated mobileApplications
  *           
  * 
  * <p>Java class for updateMobileApplications element declaration.

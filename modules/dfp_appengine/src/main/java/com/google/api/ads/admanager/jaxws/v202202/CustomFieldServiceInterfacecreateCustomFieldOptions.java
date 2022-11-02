@@ -32,9 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link CustomFieldOption#displayName}</li>
  *             <li>{@link CustomFieldOption#customFieldId}</li>
  *             </ul>
- *             
- *             @param customFieldOptions the custom fields to create
- *             @return the created custom field options with their IDs filled in
  *           
  * 
  * <p>Java class for createCustomFieldOptions element declaration.

@@ -134,11 +134,6 @@ public interface CmsMetadataServiceInterface {
      * 
      *         Performs actions on {@link CmsMetadataKey} objects that match the given {@link
      *         Statement#query}.
-     *         
-     *         @param keyAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of cms
-     *         metadata keys.
-     *         @return the result of the action performed
      *       
      * 
      * @param keyAction
@@ -163,11 +158,6 @@ public interface CmsMetadataServiceInterface {
      * 
      *         Performs actions on {@link CmsMetadataValue} objects that match the given {@link
      *         Statement#query}.
-     *         
-     *         @param valueAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of cms
-     *         metadata values.
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement

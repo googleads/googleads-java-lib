@@ -52,8 +52,6 @@ public interface NetworkServiceInterface {
      *         Intended to be used without a network code in the SOAP header when the
      *         login may have more than one network associated with it.
      *         </p>
-     *         
-     *         @return the networks to which the current login has access
      *       
      * 
      * @return
@@ -71,8 +69,6 @@ public interface NetworkServiceInterface {
     /**
      * 
      *         Returns the current network for which requests are being made.
-     *         
-     *         @return the network for which the user is currently making the request
      *       
      * 
      * @return
@@ -146,9 +142,6 @@ public interface NetworkServiceInterface {
      * 
      *         Updates the specified network. Currently, only the network display name can
      *         be updated.
-     *         
-     *         @param network the network that needs to be updated
-     *         @return the updated network
      *       
      * 
      * @param network

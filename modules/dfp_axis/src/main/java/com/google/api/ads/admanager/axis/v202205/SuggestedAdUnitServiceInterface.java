@@ -47,13 +47,6 @@ public interface SuggestedAdUnitServiceInterface extends java.rmi.Remote {
      *         <p><strong>Note:</strong> After API version 201311, the {@code
      * id} field will only be
      *         numerical.
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of suggested ad units
-     *         
-     * @return the suggested ad units that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.SuggestedAdUnitPage getSuggestedAdUnitsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -76,15 +69,6 @@ public interface SuggestedAdUnitServiceInterface extends java.rmi.Remote {
      *         <td>{@link SuggestedAdUnit#numRequests}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param suggestedAdUnitAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of suggested ad units
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.SuggestedAdUnitUpdateResult performSuggestedAdUnitAction(com.google.api.ads.admanager.axis.v202205.SuggestedAdUnitAction suggestedAdUnitAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

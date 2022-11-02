@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_REQUEST_DATA"/>
  *     &lt;enumeration value="AD_SOURCE_COMPANY_CHANGE"/>
  *     &lt;enumeration value="UNSUPPORTED_COMPANY_INTEGRATION_TYPE"/>
+ *     &lt;enumeration value="UNSUPPORTED_BUYER_SETTINGS"/>
  *     &lt;enumeration value="DEPRECATED_AD_NETWORK_ADAPTER"/>
  *     &lt;enumeration value="TOO_MANY_UPDATES"/>
  *     &lt;enumeration value="DUPLICATE_YIELD_PARTNER"/>
@@ -55,6 +56,7 @@ public enum YieldErrorReason {
     INVALID_REQUEST_DATA,
     AD_SOURCE_COMPANY_CHANGE,
     UNSUPPORTED_COMPANY_INTEGRATION_TYPE,
+    UNSUPPORTED_BUYER_SETTINGS,
     DEPRECATED_AD_NETWORK_ADAPTER,
     TOO_MANY_UPDATES,
     DUPLICATE_YIELD_PARTNER,

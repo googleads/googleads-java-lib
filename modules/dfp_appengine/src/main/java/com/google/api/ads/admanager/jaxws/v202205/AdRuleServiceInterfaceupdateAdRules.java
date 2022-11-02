@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link AdRule} objects.
- *             
- *             @param adRules the ad rules to update
- *             @return the updated ad rules
- *             @throws ApiException if there is an error updating the ad rules
  *           
  * 
  * <p>Java class for updateAdRules element declaration.

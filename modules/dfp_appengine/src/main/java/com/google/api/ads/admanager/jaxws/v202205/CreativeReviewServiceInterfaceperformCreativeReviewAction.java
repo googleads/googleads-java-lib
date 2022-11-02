@@ -28,11 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *             seen in the corresponding {@link CreativeReview} objects. You can also archive creatives to
  *             allow you to retrieve new {@link CreativeReview} objects while previously retrieved {@link
  *             CreativeReview} objects are in pending approval.
- *             
- *             @param creativeReviewAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of creative
- *             reviews. Only {@code "WHERE id = <value>"} and {@code "WHERE id IN <list>"} are supported.
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performCreativeReviewAction element declaration.

@@ -54,10 +54,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link MobileApplication#isArchived}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of
- *             mobile applications.
- *             @return the mobile applications that match the given filter
  *           
  * 
  * <p>Java class for getMobileApplicationsByStatement element declaration.

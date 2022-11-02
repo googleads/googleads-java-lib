@@ -51,13 +51,6 @@ public interface CreativeTemplateServiceInterface extends java.rmi.Remote {
      *         <td>{@link CreativeTemplate#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of creative templates.
-     *         
-     * @return the creative templates that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeTemplatePage getCreativeTemplatesByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

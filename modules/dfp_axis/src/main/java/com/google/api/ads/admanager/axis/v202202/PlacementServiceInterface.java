@@ -25,11 +25,6 @@ public interface PlacementServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Placement} objects.
-     *         
-     *         
-     * @param placements the placements to create
-     *         
-     * @return the new placements, with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.Placement[] createPlacements(com.google.api.ads.admanager.axis.v202202.Placement[] placements) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -69,13 +64,6 @@ public interface PlacementServiceInterface extends java.rmi.Remote {
      *         <td>{@link Placement#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of placements
-     *         
-     * @return the placements that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.PlacementPage getPlacementsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -83,25 +71,11 @@ public interface PlacementServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link Placement} objects that match the
      * given
      *         {@link Statement#query}.
-     *         
-     *         
-     * @param placementAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of placements
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performPlacementAction(com.google.api.ads.admanager.axis.v202202.PlacementAction placementAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link Placement} objects.
-     *         
-     *         
-     * @param placements the placements to update
-     *         
-     * @return the updated placements
      */
     public com.google.api.ads.admanager.axis.v202202.Placement[] updatePlacements(com.google.api.ads.admanager.axis.v202202.Placement[] placements) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

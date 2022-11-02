@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link ProposalLineItem} objects.
- *             
- *             @param proposalLineItems the proposal line items to create
- *             @return the created proposal line items with their IDs filled in
  *           
  * 
  * <p>Java class for createProposalLineItems element declaration.

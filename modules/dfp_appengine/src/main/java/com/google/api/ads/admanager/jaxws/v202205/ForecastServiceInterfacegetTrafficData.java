@@ -27,11 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *             provided request.
  *             
  *             <p>Calling this endpoint programmatically is only available for Ad Manager 360 networks.
- *             
- *             @param trafficDataRequest the request specifying the segment of traffic for which data should
- *             be returned
- *             @return a dto containing forecasted and historical traffic data for the specified segment of
- *             traffic
  *           
  * 
  * <p>Java class for getTrafficData element declaration.

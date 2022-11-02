@@ -28,11 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>DAI authentication keys cannot be deactivated if there are active {@link LiveStreamEvent}s
  *             or Content Sources that are using them.
- *             
- *             @param daiAuthenticationKeyAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of live stream
- *             events
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performDaiAuthenticationKeyAction element declaration.

@@ -57,12 +57,6 @@ public interface ContentServiceInterface extends java.rmi.Remote {
      *         <td>{@link Content#daiIngestStatus}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param statement a Publisher Query Language statement used to filter
-     * a set of content
-     *         
-     * @return the content that matches the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.ContentPage getContentByStatement(com.google.api.ads.admanager.axis.v202208.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

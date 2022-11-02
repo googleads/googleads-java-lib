@@ -25,11 +25,6 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link FirstPartyAudienceSegment} objects.
-     *         
-     *         
-     * @param segments first-party audience segments to create
-     *         
-     * @return created first-party audience segments
      */
     public com.google.api.ads.admanager.axis.v202205.FirstPartyAudienceSegment[] createAudienceSegments(com.google.api.ads.admanager.axis.v202205.FirstPartyAudienceSegment[] segments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -89,13 +84,6 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
      *         <td>{@link ThirdPartyAudienceSegment#endDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of audience
-     *         segments (the only supported operator is AND)
-     *         
-     * @return the audience segments that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.AudienceSegmentPage getAudienceSegmentsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -103,25 +91,11 @@ public interface AudienceSegmentServiceInterface extends java.rmi.Remote {
      * Performs the given {@link AudienceSegmentAction} on the set
      * of segments identified by the given
      *         statement.
-     *         
-     *         
-     * @param action {@link AudienceSegmentAction} to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of audience
-     *         segments (the only supported operator is AND)
-     *         
-     * @return {@link UpdateResult} indicating the result
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performAudienceSegmentAction(com.google.api.ads.admanager.axis.v202205.AudienceSegmentAction action, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the given {@link FirstPartyAudienceSegment} objects.
-     * 
-     *         
-     * @param segments first-party audience segments to update
-     *         
-     * @return updated first-party audience segments
      */
     public com.google.api.ads.admanager.axis.v202205.FirstPartyAudienceSegment[] updateAudienceSegments(com.google.api.ads.admanager.axis.v202205.FirstPartyAudienceSegment[] segments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

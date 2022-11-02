@@ -44,10 +44,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Team#description}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of teams.
- *             @return the teams that match the given filter
  *           
  * 
  * <p>Java class for getTeamsByStatement element declaration.

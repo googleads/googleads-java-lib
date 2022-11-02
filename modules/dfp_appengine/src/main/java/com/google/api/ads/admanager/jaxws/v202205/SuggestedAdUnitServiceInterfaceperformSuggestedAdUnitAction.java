@@ -39,11 +39,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link SuggestedAdUnit#numRequests}</td>
  *             </tr>
  *             </table>
- *             
- *             @param suggestedAdUnitAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of suggested ad units
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performSuggestedAdUnitAction element declaration.

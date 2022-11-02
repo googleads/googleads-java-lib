@@ -25,9 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Updates the specified network. Currently, only the network display name can
  *             be updated.
- *             
- *             @param network the network that needs to be updated
- *             @return the updated network
  *           
  * 
  * <p>Java class for updateNetwork element declaration.

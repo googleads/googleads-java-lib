@@ -24,8 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Returns the current {@link User}.
- *             
- *             @return the current user
  *           
  * 
  * <p>Java class for getCurrentUser element declaration.

@@ -29,9 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *             delivery simulation with line items potentially contending with each other. A delivery forecast
  *             reports the number of units that will be delivered to each line item given the line item goals
  *             and contentions from other line items.
- *             
- *             @param lineItems line items to be forecasted for delivery
- *             @param forecastOptions options controlling the forecast
  *           
  * 
  * <p>Java class for getDeliveryForecast element declaration.

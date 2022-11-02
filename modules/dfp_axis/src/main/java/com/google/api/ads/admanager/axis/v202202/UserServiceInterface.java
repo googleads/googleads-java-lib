@@ -25,11 +25,6 @@ public interface UserServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link User} objects.
-     *         
-     *         
-     * @param users the users to create
-     *         
-     * @return the created users with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.User[] createUsers(com.google.api.ads.admanager.axis.v202202.User[] users) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -37,17 +32,11 @@ public interface UserServiceInterface extends java.rmi.Remote {
      * Returns the {@link Role} objects that are defined for the users
      * of the
      *         network.
-     *         
-     *         
-     * @return the roles defined for the user's network
      */
     public com.google.api.ads.admanager.axis.v202202.Role[] getAllRoles() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Returns the current {@link User}.
-     *         
-     *         
-     * @return the current user
      */
     public com.google.api.ads.admanager.axis.v202202.User getCurrentUser() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -88,38 +77,17 @@ public interface UserServiceInterface extends java.rmi.Remote {
      *         otherwise</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of users
-     *         
-     * @return the users that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.UserPage getUsersByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Performs actions on {@link User} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param userAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of users
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performUserAction(com.google.api.ads.admanager.axis.v202202.UserAction userAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link User} objects.
-     *         
-     *         
-     * @param users the users to update
-     *         
-     * @return the updated users
      */
     public com.google.api.ads.admanager.axis.v202202.User[] updateUsers(com.google.api.ads.admanager.axis.v202202.User[] users) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

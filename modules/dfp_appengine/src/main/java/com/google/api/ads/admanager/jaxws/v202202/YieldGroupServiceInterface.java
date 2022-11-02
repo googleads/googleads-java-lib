@@ -41,9 +41,6 @@ public interface YieldGroupServiceInterface {
     /**
      * 
      *         Creates yield groups in bulk.
-     *         
-     *         @param yieldGroups the groups to create
-     *         @return the created groups
      *       
      * 
      * @param yieldGroups
@@ -64,9 +61,6 @@ public interface YieldGroupServiceInterface {
     /**
      * 
      *         Gets a page of yield groups, with child tags, filtered by the given statement.
-     *         
-     *         @param statement the statement used to filter yield groups.
-     *         @return the page of yield groups
      *       
      * 
      * @param statement
@@ -104,9 +98,6 @@ public interface YieldGroupServiceInterface {
     /**
      * 
      *         Updates a list of yield groups.
-     *         
-     *         @param yieldGroups the groups to update
-     *         @return the updated groups
      *       
      * 
      * @param yieldGroups

@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@code CreativeWrapper} objects.
- *             
- *             @param creativeWrappers the creative wrappers to update
- *             @return the updated creative wrapper objects
- *             @throws ApiException
  *           
  * 
  * <p>Java class for updateCreativeWrappers element declaration.

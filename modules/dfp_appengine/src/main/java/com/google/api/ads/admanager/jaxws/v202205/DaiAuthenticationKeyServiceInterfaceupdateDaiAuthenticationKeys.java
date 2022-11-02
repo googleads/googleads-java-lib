@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link DaiAuthenticationKey} objects.
- *             
- *             @param daiAuthenticationKeys the video DAI authentication keys to update
- *             @return the updated DAI authentication keys
- *             @throws ApiException if there is an error updating the DAI authentication keys
  *           
  * 
  * <p>Java class for updateDaiAuthenticationKeys element declaration.

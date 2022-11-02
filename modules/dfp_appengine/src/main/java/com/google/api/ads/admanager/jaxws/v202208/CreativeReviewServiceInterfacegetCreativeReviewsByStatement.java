@@ -28,10 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *             have displayed) on your pages or apps in the last 30 days. To ensure that you are always
  *             reviewing the most important creatives first, the {@link CreativeReview} objects are ranked
  *             according to the number of impressions that they've received.
- *             
- *             @param statement a Publisher Query Language statement used to specify the page of {@link
- *             CreativeReview} to be fetch. Only {@code LIMIT} is supported.
- *             @return the {@link CreativeReview}s that match the given filter
  *           
  * 
  * <p>Java class for getCreativeReviewsByStatement element declaration.

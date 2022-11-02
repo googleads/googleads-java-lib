@@ -39,9 +39,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link TargetingPreset#name}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of labels.
- *             @return the targeting presets that match the given filter
  *           
  * 
  * <p>Java class for getTargetingPresetsByStatement element declaration.

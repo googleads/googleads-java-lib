@@ -27,10 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Returns the URL at which the report file can be downloaded.
  *             <p>
  *             The report will be generated as a gzip archive, containing the report file itself.
- *             
- *             @param reportJobId the ID of the {@link ReportJob}
- *             @param exportFormat the {@link ExportFormat} for the report file
- *             @return the URL for report file download
  *           
  * 
  * <p>Java class for getReportDownloadURL element declaration.

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link ProposalLineItem} objects.
- *             
- *             @param proposalLineItems the proposal line items to update
- *             @return the updated proposal line items
  *           
  * 
  * <p>Java class for updateProposalLineItems element declaration.

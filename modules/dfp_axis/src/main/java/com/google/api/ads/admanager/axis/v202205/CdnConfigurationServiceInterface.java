@@ -57,15 +57,6 @@ public interface CdnConfigurationServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CdnConfiguration} objects that match
      * the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param cdnConfigurationAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of live stream
-     *         events
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCdnConfigurationAction(com.google.api.ads.admanager.axis.v202205.CdnConfigurationAction cdnConfigurationAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 

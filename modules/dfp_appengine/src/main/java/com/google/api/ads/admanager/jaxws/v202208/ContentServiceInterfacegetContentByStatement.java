@@ -55,9 +55,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Content#daiIngestStatus}</td>
  *             </tr>
  *             </table>
- *             
- *             @param statement a Publisher Query Language statement used to filter a set of content
- *             @return the content that matches the given filter
  *           
  * 
  * <p>Java class for getContentByStatement element declaration.

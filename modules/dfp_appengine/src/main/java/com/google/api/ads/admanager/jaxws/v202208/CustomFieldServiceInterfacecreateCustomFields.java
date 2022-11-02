@@ -34,9 +34,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link CustomField#dataType}</li>
  *             <li>{@link CustomField#visibility}</li>
  *             </ul>
- *             
- *             @param customFields the custom fields to create
- *             @return the created custom fields with their IDs filled in
  *           
  * 
  * <p>Java class for createCustomFields element declaration.

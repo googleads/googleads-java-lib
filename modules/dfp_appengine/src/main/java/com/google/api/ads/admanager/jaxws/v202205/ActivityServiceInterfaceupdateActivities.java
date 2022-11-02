@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Activity} objects.
- *             
- *             @param activities to be updated.
- *             @return the updated activities.
  *           
  * 
  * <p>Java class for updateActivities element declaration.

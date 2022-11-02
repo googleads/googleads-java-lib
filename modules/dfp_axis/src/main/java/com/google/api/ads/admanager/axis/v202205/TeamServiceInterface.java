@@ -30,11 +30,6 @@ public interface TeamServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>{@link Team#name}</li>
      *         </ul>
-     *         
-     *         
-     * @param teams the teams to create
-     *         
-     * @return the created teams with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202205.Team[] createTeams(com.google.api.ads.admanager.axis.v202205.Team[] teams) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -62,37 +57,17 @@ public interface TeamServiceInterface extends java.rmi.Remote {
      *         <td>{@link Team#description}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of teams.
-     *         
-     * @return the teams that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.TeamPage getTeamsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Performs actions on {@link Team} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param teamAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of teams
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performTeamAction(com.google.api.ads.admanager.axis.v202205.TeamAction teamAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link Team} objects.
-     *         
-     *         
-     * @param teams the teams to update
-     *         
-     * @return the updated teams
      */
     public com.google.api.ads.admanager.axis.v202205.Team[] updateTeams(com.google.api.ads.admanager.axis.v202205.Team[] teams) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

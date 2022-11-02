@@ -72,10 +72,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CustomTargetingValue#matchType}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of custom targeting values
- *             @return the custom targeting values that match the given filter
  *           
  * 
  * <p>Java class for getCustomTargetingValuesByStatement element declaration.

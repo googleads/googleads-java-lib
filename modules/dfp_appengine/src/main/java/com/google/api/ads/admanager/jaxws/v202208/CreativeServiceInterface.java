@@ -51,9 +51,6 @@ public interface CreativeServiceInterface {
     /**
      * 
      *         Creates new {@link Creative} objects.
-     *         
-     *         @param creatives the creatives to create
-     *         @return the created creatives with their IDs filled in
      *       
      * 
      * @param creatives
@@ -106,10 +103,6 @@ public interface CreativeServiceInterface {
      *         <td>{@link Creative#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of creatives
-     *         @return the creatives that match the given filter
      *       
      * 
      * @param filterStatement
@@ -130,10 +123,6 @@ public interface CreativeServiceInterface {
     /**
      * 
      *         Performs action on {@link Creative} objects that match the given {@link Statement#query}.
-     *         
-     *         @param creativeAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of creatives
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -157,9 +146,6 @@ public interface CreativeServiceInterface {
     /**
      * 
      *         Updates the specified {@link Creative} objects.
-     *         
-     *         @param creatives the creatives to update
-     *         @return the updated creatives
      *       
      * 
      * @param creatives

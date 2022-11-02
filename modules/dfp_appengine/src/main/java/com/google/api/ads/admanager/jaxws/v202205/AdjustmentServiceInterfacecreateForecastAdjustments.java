@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link ForecastAdjustment} objects.
- *             
- *             @param forecastAdjustments the forecast adjustments to create
- *             @return the persisted forecast adjustments with their IDs populated
- *             @throws ApiException if there is an error creating the forecast adjustments
  *           
  * 
  * <p>Java class for createForecastAdjustments element declaration.

@@ -32,13 +32,6 @@ public interface CreativeWrapperServiceInterface extends java.rmi.Remote {
      *         <li>{@link CreativeWrapper#ordering}</li>
      *         <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}</li>
      * </ul>
-     *         
-     *         
-     * @param creativeWrappers the creative wrappers to create
-     *         
-     * @return the creative wrappers with their IDs filled in
-     *         
-     * @throws ApiException
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] createCreativeWrappers(com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] creativeWrappers) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -68,13 +61,6 @@ public interface CreativeWrapperServiceInterface extends java.rmi.Remote {
      *         <td>{@link CreativeWrapper#ordering}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of creative wrappers.
-     *         
-     * @return the creative wrappers that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeWrapperPage getCreativeWrappersByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -82,27 +68,11 @@ public interface CreativeWrapperServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CreativeWrapper} objects that match
      * the
      *         given {@link Statement#query}.
-     *         
-     *         
-     * @param creativeWrapperAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of labels
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCreativeWrapperAction(com.google.api.ads.admanager.axis.v202205.CreativeWrapperAction creativeWrapperAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@code CreativeWrapper} objects.
-     *         
-     *         
-     * @param creativeWrappers the creative wrappers to update
-     *         
-     * @return the updated creative wrapper objects
-     *         
-     * @throws ApiException
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] updateCreativeWrappers(com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] creativeWrappers) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

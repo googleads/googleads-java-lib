@@ -45,9 +45,6 @@ public interface ContactServiceInterface {
     /**
      * 
      *         Creates new {@link Contact} objects.
-     *         
-     *         @param contacts the contacts to create
-     *         @return the created contacts with their IDs filled in
      *       
      * 
      * @param contacts
@@ -115,10 +112,6 @@ public interface ContactServiceInterface {
      *         <td>{@link Contact#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of contacts
-     *         @return the contacts that match the given filter
      *       
      * 
      * @param statement
@@ -139,9 +132,6 @@ public interface ContactServiceInterface {
     /**
      * 
      *         Updates the specified {@link Contact} objects.
-     *         
-     *         @param contacts the contacts to update
-     *         @return the updated contacts
      *       
      * 
      * @param contacts

@@ -25,10 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Takes a prospective forecast adjustment and calculates the daily ad opportunity counts
  *             corresponding to its provided volume settings.
- *             
- *             @param forecastAdjustment the prospective forecast adjustment
- *             @return a forecast adjustment matching the one passed in, but with its {@code
- *             calculatedDailyAdOpportunityCounts} field populated
  *           
  * 
  * <p>Java class for calculateDailyAdOpportunityCounts element declaration.

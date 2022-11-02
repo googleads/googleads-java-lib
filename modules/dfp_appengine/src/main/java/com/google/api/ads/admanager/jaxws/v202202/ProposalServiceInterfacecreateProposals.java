@@ -31,9 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <ul>
  *             <li>{@link Proposal#name}</li>
  *             </ul>
- *             
- *             @param proposals the proposals to create
- *             @return the created proposals with their IDs filled in
  *           
  * 
  * <p>Java class for createProposals element declaration.

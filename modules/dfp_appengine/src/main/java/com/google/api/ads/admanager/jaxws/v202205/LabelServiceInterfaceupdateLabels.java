@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Label} objects.
- *             
- *             @param labels the labels to update
- *             @return the updated labels
  *           
  * 
  * <p>Java class for updateLabels element declaration.

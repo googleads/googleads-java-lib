@@ -45,10 +45,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link TrafficForecastSegment#creationTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement to filter a list of traffic
- *             forecast segments
- *             @return a page of traffic forecast segments that match the filter
  *           
  * 
  * <p>Java class for getTrafficForecastSegmentsByStatement element declaration.

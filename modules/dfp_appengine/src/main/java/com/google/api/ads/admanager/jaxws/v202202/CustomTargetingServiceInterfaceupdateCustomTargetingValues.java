@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link CustomTargetingValue} objects.
- *             
- *             @param values the custom targeting values to update
- *             @return the updated custom targeting values
  *           
  * 
  * <p>Java class for updateCustomTargetingValues element declaration.

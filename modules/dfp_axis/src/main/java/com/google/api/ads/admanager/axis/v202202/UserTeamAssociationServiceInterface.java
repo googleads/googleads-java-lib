@@ -25,11 +25,6 @@ public interface UserTeamAssociationServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link UserTeamAssociation} objects.
-     *         
-     *         
-     * @param userTeamAssociations the user team associations to create
-     *         
-     * @return the created user team associations with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.UserTeamAssociation[] createUserTeamAssociations(com.google.api.ads.admanager.axis.v202202.UserTeamAssociation[] userTeamAssociations) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -51,13 +46,6 @@ public interface UserTeamAssociationServiceInterface extends java.rmi.Remote {
      *         <td>{@link UserTeamAssociation#teamId}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of user team associations
-     *         
-     * @return the user team associations that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.UserTeamAssociationPage getUserTeamAssociationsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -65,25 +53,11 @@ public interface UserTeamAssociationServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link UserTeamAssociation} objects that
      * match the
      *         given {@link Statement#query}.
-     *         
-     *         
-     * @param userTeamAssociationAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of user team associations
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performUserTeamAssociationAction(com.google.api.ads.admanager.axis.v202202.UserTeamAssociationAction userTeamAssociationAction, com.google.api.ads.admanager.axis.v202202.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link UserTeamAssociation} objects.
-     *         
-     *         
-     * @param userTeamAssociations the user team associations to update
-     *         
-     * @return the updated user team associations
      */
     public com.google.api.ads.admanager.axis.v202202.UserTeamAssociation[] updateUserTeamAssociations(com.google.api.ads.admanager.axis.v202202.UserTeamAssociation[] userTeamAssociations) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

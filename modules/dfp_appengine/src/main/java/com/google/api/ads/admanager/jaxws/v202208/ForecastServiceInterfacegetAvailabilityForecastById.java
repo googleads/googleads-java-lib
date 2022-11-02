@@ -30,9 +30,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <p>Only line items having type {@link LineItemType#SPONSORSHIP} or {@link
  *             LineItemType#STANDARD} are valid. Other types will result in {@link
  *             ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
- *             
- *             @param lineItemId the ID of a {@link LineItem} to run the forecast on.
- *             @param forecastOptions options controlling the forecast
  *           
  * 
  * <p>Java class for getAvailabilityForecastById element declaration.

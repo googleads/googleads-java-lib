@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Retrieves rows of data that satisfy the given {@link Statement#query} from
  *             the system.
- *             
- *             @param selectStatement a Publisher Query Language statement used to
- *             specify what data needs to returned
- *             
- *             @return a result set of data that matches the given filter
  *           
  * 
  * <p>Java class for select element declaration.

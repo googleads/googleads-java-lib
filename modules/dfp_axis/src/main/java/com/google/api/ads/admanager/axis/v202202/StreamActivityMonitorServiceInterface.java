@@ -60,15 +60,6 @@ public interface StreamActivityMonitorServiceInterface extends java.rmi.Remote {
      *         </tr>
      *         </tbody>
      *         </table>
-     *         
-     *         
-     * @param statement PQL specifying the sessionId or debugKey to fetch
-     * logging information for.
-     *         Only '=' and 'IN' expressions are supported.
-     *         
-     * @throws ApiException if there is an error while fetching the logging
-     * information or if there is
-     *         no SAM session is associated with any of the {@code sessionIds}.
      */
     public com.google.api.ads.admanager.axis.v202202.SamSession[] getSamSessionsByStatement(com.google.api.ads.admanager.axis.v202202.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -81,14 +72,6 @@ public interface StreamActivityMonitorServiceInterface extends java.rmi.Remote {
      *         
      *         <p>A session ID is a unique identifier of a single user watching
      * a live stream event.
-     *         
-     *         
-     * @param sessionIds a list of session IDs to register for monitoring
-     * 
-     * @return the list of session IDs that were registered for monitoring
-     * 
-     * @throws ApiException if there is an error registering any of the session
-     * IDs
      */
     public java.lang.String[] registerSessionsForMonitoring(java.lang.String[] sessionIds) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

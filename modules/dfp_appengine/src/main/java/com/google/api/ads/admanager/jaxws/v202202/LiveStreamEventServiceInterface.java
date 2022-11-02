@@ -58,9 +58,6 @@ public interface LiveStreamEventServiceInterface {
      *         <li>{@link LiveStreamEvent#contentUrls}</li>
      *         <li>{@link LiveStreamEvent#adTags}</li>
      *         </ul>
-     *         
-     *         @param liveStreamEvents the live stream events to create
-     *         @return the created live stream events with their IDs filled in
      *       
      * 
      * @param liveStreamEvents
@@ -84,9 +81,6 @@ public interface LiveStreamEventServiceInterface {
      *         
      *         <p>A slate creative is served as backup content in a live stream event when no other
      *         creatives are eligible to be served.
-     *         
-     *         @param slates list of slate objects to create.
-     *         @throws ApiException if there is an error while fetching the logging information
      *       
      * 
      * @param slates
@@ -151,10 +145,6 @@ public interface LiveStreamEventServiceInterface {
      *         <td>{@link LiveStreamEvent#segmentUrlAuthenticationKeyIds}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a
-     *         list of live stream events
-     *         @return the live stream events that match the filter
      *       
      * 
      * @param filterStatement
@@ -195,9 +185,6 @@ public interface LiveStreamEventServiceInterface {
      *         <td>{@link Slate#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param statement a Publisher Query Language statement used to filter slates
-     *         @return the slates that match the given filter
      *       
      * 
      * @param statement
@@ -219,11 +206,6 @@ public interface LiveStreamEventServiceInterface {
      * 
      *         Performs actions on {@link LiveStreamEvent} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param liveStreamEventAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of live stream events
-     *         @return the result of the action performed
      *       
      * 
      * @param liveStreamEventAction
@@ -247,10 +229,6 @@ public interface LiveStreamEventServiceInterface {
     /**
      * 
      *         Performs actions on slates that match the given {@link Statement}.
-     *         
-     *         @param slateAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of slates
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -274,10 +252,6 @@ public interface LiveStreamEventServiceInterface {
     /**
      * 
      *         Updates the specified {@link LiveStreamEvent} objects.
-     *         
-     *         @param liveStreamEvents the live stream events to update
-     *         @return the updated live stream events
-     *         @throws ApiException if there is an error updating the live stream events
      *       
      * 
      * @param liveStreamEvents
@@ -300,9 +274,6 @@ public interface LiveStreamEventServiceInterface {
      *         Update existing slates.
      *         
      *         <p>Only the slateName is editable.
-     *         
-     *         @param slates list of slate objects to update.
-     *         @throws ApiException if there is an error while fetching the logging information
      *       
      * 
      * @param slates

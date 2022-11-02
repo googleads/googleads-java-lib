@@ -74,10 +74,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ProposalMarketplaceInfo#negotiationStatus}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of proposals
- *             @return the proposals that match the given filter
  *           
  * 
  * <p>Java class for getProposalsByStatement element declaration.

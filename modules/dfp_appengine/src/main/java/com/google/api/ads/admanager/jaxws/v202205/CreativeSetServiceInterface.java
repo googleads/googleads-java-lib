@@ -45,9 +45,6 @@ public interface CreativeSetServiceInterface {
     /**
      * 
      *         Creates a new {@link CreativeSet}.
-     *         
-     *         @param creativeSet the creative set to create
-     *         @return the creative set with its ID filled in
      *       
      * 
      * @param creativeSet
@@ -92,10 +89,6 @@ public interface CreativeSetServiceInterface {
      *         <td>{@link CreativeSet#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param statement a Publisher Query Language statement used to filter
-     *         a set of creative sets
-     *         @return the creative sets that match the given filter
      *       
      * 
      * @param statement
@@ -116,9 +109,6 @@ public interface CreativeSetServiceInterface {
     /**
      * 
      *         Updates the specified {@link CreativeSet}.
-     *         
-     *         @param creativeSet the creative set to update
-     *         @return the updated creative set
      *       
      * 
      * @param creativeSet

@@ -54,9 +54,6 @@ public interface TeamServiceInterface {
      *         <ul>
      *         <li>{@link Team#name}</li>
      *         </ul>
-     *         
-     *         @param teams the teams to create
-     *         @return the created teams with their IDs filled in
      *       
      * 
      * @param teams
@@ -97,10 +94,6 @@ public interface TeamServiceInterface {
      *         <td>{@link Team#description}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of teams.
-     *         @return the teams that match the given filter
      *       
      * 
      * @param filterStatement
@@ -121,10 +114,6 @@ public interface TeamServiceInterface {
     /**
      * 
      *         Performs actions on {@link Team} objects that match the given {@link Statement#query}.
-     *         
-     *         @param teamAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of teams
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -148,9 +137,6 @@ public interface TeamServiceInterface {
     /**
      * 
      *         Updates the specified {@link Team} objects.
-     *         
-     *         @param teams the teams to update
-     *         @return the updated teams
      *       
      * 
      * @param teams

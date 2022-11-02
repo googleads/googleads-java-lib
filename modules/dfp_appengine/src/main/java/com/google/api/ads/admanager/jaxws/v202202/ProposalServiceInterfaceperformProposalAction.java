@@ -31,10 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link Proposal#primarySalesperson}</li>
  *             <li>{@link Proposal#primaryTraffickerId}</li>
  *             </ul>
- *             
- *             @param proposalAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of proposals
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performProposalAction element declaration.

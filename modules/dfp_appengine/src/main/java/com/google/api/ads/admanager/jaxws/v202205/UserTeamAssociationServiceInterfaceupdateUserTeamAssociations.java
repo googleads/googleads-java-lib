@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link UserTeamAssociation} objects.
- *             
- *             @param userTeamAssociations the user team associations to update
- *             @return the updated user team associations
  *           
  * 
  * <p>Java class for updateUserTeamAssociations element declaration.

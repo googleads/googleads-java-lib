@@ -56,10 +56,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link LineItemCreativeAssociation#lastModifiedDateTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of line item creative associations
- *             @return the line item creative associations that match the given filter
  *           
  * 
  * <p>Java class for getLineItemCreativeAssociationsByStatement element declaration.

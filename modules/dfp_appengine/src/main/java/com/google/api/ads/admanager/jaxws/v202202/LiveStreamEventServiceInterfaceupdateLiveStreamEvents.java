@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link LiveStreamEvent} objects.
- *             
- *             @param liveStreamEvents the live stream events to update
- *             @return the updated live stream events
- *             @throws ApiException if there is an error updating the live stream events
  *           
  * 
  * <p>Java class for updateLiveStreamEvents element declaration.

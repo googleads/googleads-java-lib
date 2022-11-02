@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link DaiEncodingProfile} objects.
- *             
- *             @param daiEncodingProfiles the profiles to create
- *             @return the created profiles with their IDs filled in
  *           
  * 
  * <p>Java class for createDaiEncodingProfiles element declaration.

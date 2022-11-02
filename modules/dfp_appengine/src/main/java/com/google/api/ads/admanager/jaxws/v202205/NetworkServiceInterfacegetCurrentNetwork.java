@@ -24,8 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Returns the current network for which requests are being made.
- *             
- *             @return the network for which the user is currently making the request
  *           
  * 
  * <p>Java class for getCurrentNetwork element declaration.

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link breakTemplate} objects.
- *             
- *             @param breakTemplate the break template to create
- *             @return the created break template with their IDs filled in
  *           
  * 
  * <p>Java class for createBreakTemplates element declaration.

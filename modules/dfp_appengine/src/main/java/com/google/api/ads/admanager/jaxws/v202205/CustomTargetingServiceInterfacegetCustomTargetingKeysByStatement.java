@@ -49,10 +49,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CustomTargetingKey#type}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of custom targeting keys
- *             @return the custom targeting keys that match the given filter
  *           
  * 
  * <p>Java class for getCustomTargetingKeysByStatement element declaration.

@@ -45,9 +45,6 @@ public interface CompanyServiceInterface {
     /**
      * 
      *         Creates new {@link Company} objects.
-     *         
-     *         @param companies the companies to create
-     *         @return the created companies with their IDs filled in
      *       
      * 
      * @param companies
@@ -92,10 +89,6 @@ public interface CompanyServiceInterface {
      *         <td>{@link Company#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of companies
-     *         @return the companies that match the given filter
      *       
      * 
      * @param filterStatement
@@ -116,11 +109,6 @@ public interface CompanyServiceInterface {
     /**
      * 
      *         Performs actions on {@link Company} objects that match the given {@code Statement}.
-     *         
-     *         @param companyAction the action to perform
-     *         @param statement a PQL statement used to filter companies
-     *         @return the result of the action performed
-     *         @throws ApiException
      *       
      * 
      * @param statement
@@ -144,9 +132,6 @@ public interface CompanyServiceInterface {
     /**
      * 
      *         Updates the specified {@link Company} objects.
-     *         
-     *         @param companies the companies to update
-     *         @return the updated companies
      *       
      * 
      * @param companies

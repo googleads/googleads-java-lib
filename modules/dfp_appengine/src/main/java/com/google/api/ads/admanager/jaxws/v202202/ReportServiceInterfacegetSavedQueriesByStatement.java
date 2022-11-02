@@ -42,11 +42,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link SavedQuery#name}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter which saved queries
- *             should be returned.
- *             @return a {@link SavedQueryPage} that contains all {@link SavedQuery} instances which satisfy
- *             the given statement.
  *           
  * 
  * <p>Java class for getSavedQueriesByStatement element declaration.

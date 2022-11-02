@@ -138,9 +138,6 @@ public interface ForecastServiceInterface {
      *         Gets the availability forecast for a {@link ProspectiveLineItem}. An availability forecast
      *         reports the maximum number of available units that the line item can book, and the total number
      *         of units matching the line item's targeting.
-     *         
-     *         @param lineItem the prospective line item (new or existing) to be forecasted for availability
-     *         @param forecastOptions options controlling the forecast
      *       
      * 
      * @param lineItem
@@ -170,9 +167,6 @@ public interface ForecastServiceInterface {
      *         <p>Only line items having type {@link LineItemType#SPONSORSHIP} or {@link
      *         LineItemType#STANDARD} are valid. Other types will result in {@link
      *         ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED}.
-     *         
-     *         @param lineItemId the ID of a {@link LineItem} to run the forecast on.
-     *         @param forecastOptions options controlling the forecast
      *       
      * 
      * @param forecastOptions
@@ -199,9 +193,6 @@ public interface ForecastServiceInterface {
      *         delivery simulation with line items potentially contending with each other. A delivery forecast
      *         reports the number of units that will be delivered to each line item given the line item goals
      *         and contentions from other line items.
-     *         
-     *         @param lineItems line items to be forecasted for delivery
-     *         @param forecastOptions options controlling the forecast
      *       
      * 
      * @param lineItems
@@ -227,9 +218,6 @@ public interface ForecastServiceInterface {
      *         Gets the delivery forecast for a list of existing {@link LineItem} objects in a single
      *         delivery simulation. A delivery forecast reports the number of units that will be delivered
      *         to each line item given the line item goals and contentions from other line items.
-     *         
-     *         @param lineItemIds the IDs of line items to be forecasted for delivery
-     *         @param forecastOptions options controlling the forecast
      *       
      * 
      * @param forecastOptions
@@ -256,11 +244,6 @@ public interface ForecastServiceInterface {
      *         provided request.
      *         
      *         <p>Calling this endpoint programmatically is only available for Ad Manager 360 networks.
-     *         
-     *         @param trafficDataRequest the request specifying the segment of traffic for which data should
-     *         be returned
-     *         @return a dto containing forecasted and historical traffic data for the specified segment of
-     *         traffic
      *       
      * 
      * @param trafficDataRequest

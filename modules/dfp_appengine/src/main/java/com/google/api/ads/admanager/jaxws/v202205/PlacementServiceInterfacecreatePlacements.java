@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Placement} objects.
- *             
- *             @param placements the placements to create
- *             @return the new placements, with their IDs filled in
  *           
  * 
  * <p>Java class for createPlacements element declaration.

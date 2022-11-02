@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates a new {@link Activity} objects.
- *             
- *             @param activities to be created.
- *             @return the created activities with its IDs filled in.
  *           
  * 
  * <p>Java class for createActivities element declaration.

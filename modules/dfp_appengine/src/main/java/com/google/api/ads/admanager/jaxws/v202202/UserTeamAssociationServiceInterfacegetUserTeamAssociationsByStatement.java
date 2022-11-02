@@ -40,10 +40,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link UserTeamAssociation#teamId}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of user team associations
- *             @return the user team associations that match the given filter
  *           
  * 
  * <p>Java class for getUserTeamAssociationsByStatement element declaration.

@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link LineItem} objects.
- *             
- *             @param lineItems the line items to create
- *             @return the created line items with their IDs filled in
  *           
  * 
  * <p>Java class for createLineItems element declaration.

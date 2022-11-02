@@ -35,6 +35,7 @@ public class YieldErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_REQUEST_DATA = "INVALID_REQUEST_DATA";
     public static final java.lang.String _AD_SOURCE_COMPANY_CHANGE = "AD_SOURCE_COMPANY_CHANGE";
     public static final java.lang.String _UNSUPPORTED_COMPANY_INTEGRATION_TYPE = "UNSUPPORTED_COMPANY_INTEGRATION_TYPE";
+    public static final java.lang.String _UNSUPPORTED_BUYER_SETTINGS = "UNSUPPORTED_BUYER_SETTINGS";
     public static final java.lang.String _DEPRECATED_AD_NETWORK_ADAPTER = "DEPRECATED_AD_NETWORK_ADAPTER";
     public static final java.lang.String _TOO_MANY_UPDATES = "TOO_MANY_UPDATES";
     public static final java.lang.String _DUPLICATE_YIELD_PARTNER = "DUPLICATE_YIELD_PARTNER";
@@ -50,6 +51,7 @@ public class YieldErrorReason implements java.io.Serializable {
     public static final YieldErrorReason INVALID_REQUEST_DATA = new YieldErrorReason(_INVALID_REQUEST_DATA);
     public static final YieldErrorReason AD_SOURCE_COMPANY_CHANGE = new YieldErrorReason(_AD_SOURCE_COMPANY_CHANGE);
     public static final YieldErrorReason UNSUPPORTED_COMPANY_INTEGRATION_TYPE = new YieldErrorReason(_UNSUPPORTED_COMPANY_INTEGRATION_TYPE);
+    public static final YieldErrorReason UNSUPPORTED_BUYER_SETTINGS = new YieldErrorReason(_UNSUPPORTED_BUYER_SETTINGS);
     public static final YieldErrorReason DEPRECATED_AD_NETWORK_ADAPTER = new YieldErrorReason(_DEPRECATED_AD_NETWORK_ADAPTER);
     public static final YieldErrorReason TOO_MANY_UPDATES = new YieldErrorReason(_TOO_MANY_UPDATES);
     public static final YieldErrorReason DUPLICATE_YIELD_PARTNER = new YieldErrorReason(_DUPLICATE_YIELD_PARTNER);

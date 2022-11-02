@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link TrafficForecastSegment} objects.
- *             
- *             @param trafficForecastSegments the traffic forecast segments to update
- *             @return the updated traffic forecast segments
- *             @throws ApiException if there is an error updating the traffic forecast segments
  *           
  * 
  * <p>Java class for updateTrafficForecastSegments element declaration.

@@ -32,9 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <ul>
  *             <li>{@link DaiAuthenticationKey#name}
  *             </ul>
- *             
- *             @param daiAuthenticationKeys the DAI authentication keys to create
- *             @return the created DAI authentication keys with their IDs filled in
  *           
  * 
  * <p>Java class for createDaiAuthenticationKeys element declaration.

@@ -51,9 +51,6 @@ public interface UserTeamAssociationServiceInterface {
     /**
      * 
      *         Creates new {@link UserTeamAssociation} objects.
-     *         
-     *         @param userTeamAssociations the user team associations to create
-     *         @return the created user team associations with their IDs filled in
      *       
      * 
      * @param userTeamAssociations
@@ -90,10 +87,6 @@ public interface UserTeamAssociationServiceInterface {
      *         <td>{@link UserTeamAssociation#teamId}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of user team associations
-     *         @return the user team associations that match the given filter
      *       
      * 
      * @param filterStatement
@@ -115,11 +108,6 @@ public interface UserTeamAssociationServiceInterface {
      * 
      *         Performs actions on {@link UserTeamAssociation} objects that match the
      *         given {@link Statement#query}.
-     *         
-     *         @param userTeamAssociationAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of user team associations
-     *         @return the result of the action performed
      *       
      * 
      * @param userTeamAssociationAction
@@ -143,9 +131,6 @@ public interface UserTeamAssociationServiceInterface {
     /**
      * 
      *         Updates the specified {@link UserTeamAssociation} objects.
-     *         
-     *         @param userTeamAssociations the user team associations to update
-     *         @return the updated user team associations
      *       
      * 
      * @param userTeamAssociations

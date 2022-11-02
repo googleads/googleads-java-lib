@@ -51,9 +51,6 @@ public interface CustomFieldServiceInterface {
      *         <li>{@link CustomFieldOption#displayName}</li>
      *         <li>{@link CustomFieldOption#customFieldId}</li>
      *         </ul>
-     *         
-     *         @param customFieldOptions the custom fields to create
-     *         @return the created custom field options with their IDs filled in
      *       
      * 
      * @param customFieldOptions
@@ -82,9 +79,6 @@ public interface CustomFieldServiceInterface {
      *         <li>{@link CustomField#dataType}</li>
      *         <li>{@link CustomField#visibility}</li>
      *         </ul>
-     *         
-     *         @param customFields the custom fields to create
-     *         @return the created custom fields with their IDs filled in
      *       
      * 
      * @param customFields
@@ -105,9 +99,6 @@ public interface CustomFieldServiceInterface {
     /**
      * 
      *         Returns the {@link CustomFieldOption} uniquely identified by the given ID.
-     *         
-     *         @param customFieldOptionId the ID of the custom field option, which must already exist
-     *         @return the {@code CustomFieldOption} uniquely identified by the given ID
      *       
      * 
      * @param customFieldOptionId
@@ -156,11 +147,6 @@ public interface CustomFieldServiceInterface {
      *         <td>{@link CustomField#visibility}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of custom fields.
-     *         @return the custom fields that match the given filter
      *       
      * 
      * @param filterStatement
@@ -182,11 +168,6 @@ public interface CustomFieldServiceInterface {
      * 
      *         Performs actions on {@link CustomField} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param customFieldAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of custom fields
-     *         @return the result of the action performed
      *       
      * 
      * @param customFieldAction
@@ -210,9 +191,6 @@ public interface CustomFieldServiceInterface {
     /**
      * 
      *         Updates the specified {@link CustomFieldOption} objects.
-     *         
-     *         @param customFieldOptions the custom field options to update
-     *         @return the updated custom field options
      *       
      * 
      * @param customFieldOptions
@@ -233,9 +211,6 @@ public interface CustomFieldServiceInterface {
     /**
      * 
      *         Updates the specified {@link CustomField} objects.
-     *         
-     *         @param customFields the custom fields to update
-     *         @return the updated custom fields
      *       
      * 
      * @param customFields

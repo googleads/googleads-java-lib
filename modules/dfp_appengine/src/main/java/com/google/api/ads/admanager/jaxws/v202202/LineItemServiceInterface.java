@@ -61,9 +61,6 @@ public interface LineItemServiceInterface {
     /**
      * 
      *         Creates new {@link LineItem} objects.
-     *         
-     *         @param lineItems the line items to create
-     *         @return the created line items with their IDs filled in
      *       
      * 
      * @param lineItems
@@ -215,10 +212,6 @@ public interface LineItemServiceInterface {
      *         </tr>
      *         </tbody>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of line items.
-     *         @return the line items that match the given filter
      *       
      * 
      * @param filterStatement
@@ -240,11 +233,6 @@ public interface LineItemServiceInterface {
      * 
      *         Performs actions on {@link LineItem} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param lineItemAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of line items
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -268,9 +256,6 @@ public interface LineItemServiceInterface {
     /**
      * 
      *         Updates the specified {@link LineItem} objects.
-     *         
-     *         @param lineItems the line items to update
-     *         @return the updated line items
      *       
      * 
      * @param lineItems

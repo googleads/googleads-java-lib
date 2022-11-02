@@ -57,10 +57,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ForecastAdjustment#status}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement to filter a list of traffic
- *             forecast segments
- *             @return a page of forecast adjustments that match the filter
  *           
  * 
  * <p>Java class for getForecastAdjustmentsByStatement element declaration.

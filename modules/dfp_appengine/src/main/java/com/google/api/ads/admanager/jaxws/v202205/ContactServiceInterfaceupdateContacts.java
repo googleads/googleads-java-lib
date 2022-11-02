@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Contact} objects.
- *             
- *             @param contacts the contacts to update
- *             @return the updated contacts
  *           
  * 
  * <p>Java class for updateContacts element declaration.

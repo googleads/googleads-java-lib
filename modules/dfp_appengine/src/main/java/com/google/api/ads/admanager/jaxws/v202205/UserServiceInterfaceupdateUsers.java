@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link User} objects.
- *             
- *             @param users the users to update
- *             @return the updated users
  *           
  * 
  * <p>Java class for updateUsers element declaration.

@@ -25,11 +25,6 @@ public interface DaiEncodingProfileServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link DaiEncodingProfile} objects.
-     *         
-     *         
-     * @param daiEncodingProfiles the profiles to create
-     *         
-     * @return the created profiles with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.DaiEncodingProfile[] createDaiEncodingProfiles(com.google.api.ads.admanager.axis.v202202.DaiEncodingProfile[] daiEncodingProfiles) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -56,12 +51,6 @@ public interface DaiEncodingProfileServiceInterface extends java.rmi.Remote {
      *         <td>{@link DaiEncodingProfile#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of profiles
-     *         
-     * @return the profiles that match the filter
      */
     public com.google.api.ads.admanager.axis.v202202.DaiEncodingProfilePage getDaiEncodingProfilesByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -69,26 +58,11 @@ public interface DaiEncodingProfileServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link DaiEncodingProfile} objects that
      * match the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param daiEncodingProfileAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of profiles
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performDaiEncodingProfileAction(com.google.api.ads.admanager.axis.v202202.DaiEncodingProfileAction daiEncodingProfileAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link DaiEncodingProfile} objects.
-     *         
-     *         
-     * @param daiEncodingProfiles the content profiles to update
-     *         
-     * @return the updated profiles
-     *         
-     * @throws ApiException if there is an error updating the profiles
      */
     public com.google.api.ads.admanager.axis.v202202.DaiEncodingProfile[] updateDaiEncodingProfiles(com.google.api.ads.admanager.axis.v202202.DaiEncodingProfile[] daiEncodingProfiles) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

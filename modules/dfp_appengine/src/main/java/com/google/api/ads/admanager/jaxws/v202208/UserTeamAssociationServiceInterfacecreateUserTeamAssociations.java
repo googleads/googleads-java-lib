@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link UserTeamAssociation} objects.
- *             
- *             @param userTeamAssociations the user team associations to create
- *             @return the created user team associations with their IDs filled in
  *           
  * 
  * <p>Java class for createUserTeamAssociations element declaration.

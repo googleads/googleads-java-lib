@@ -46,9 +46,6 @@ public interface MobileApplicationServiceInterface {
      * 
      *         Creates and claims {@link MobileApplication mobile applications}
      *         to be used for targeting in the network.
-     *         
-     *         @param mobileApplications the mobileApplications to create
-     *         @return the created mobileApplications with their IDs filled in
      *       
      * 
      * @param mobileApplications
@@ -99,10 +96,6 @@ public interface MobileApplicationServiceInterface {
      *         <td>{@link MobileApplication#isArchived}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of
-     *         mobile applications.
-     *         @return the mobile applications that match the given filter
      *       
      * 
      * @param filterStatement
@@ -123,11 +116,6 @@ public interface MobileApplicationServiceInterface {
     /**
      * 
      *         Performs an action on {@link MobileApplication mobile applications}.
-     *         
-     *         @param mobileApplicationAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of mobile applications.
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -151,9 +139,6 @@ public interface MobileApplicationServiceInterface {
     /**
      * 
      *         Updates the specified {@link MobileApplication mobile applications}.
-     *         
-     *         @param mobileApplications the mobile applications to be updated
-     *         @return the updated mobileApplications
      *       
      * 
      * @param mobileApplications

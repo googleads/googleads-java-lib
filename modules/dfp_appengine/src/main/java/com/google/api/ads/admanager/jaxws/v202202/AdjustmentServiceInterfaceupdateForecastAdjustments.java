@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link ForecastAdjustment} objects.
- *             
- *             @param forecastAdjustments the forecast adjustments to update
- *             @return the updated forecast adjustments
- *             @throws ApiException if there is an error updating the forecast adjustments
  *           
  * 
  * <p>Java class for updateForecastAdjustments element declaration.

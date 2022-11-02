@@ -45,9 +45,6 @@ public interface AudienceSegmentServiceInterface {
     /**
      * 
      *         Creates new {@link FirstPartyAudienceSegment} objects.
-     *         
-     *         @param segments first-party audience segments to create
-     *         @return created first-party audience segments
      *       
      * 
      * @param segments
@@ -120,10 +117,6 @@ public interface AudienceSegmentServiceInterface {
      *         <td>{@link ThirdPartyAudienceSegment#endDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of audience
-     *         segments (the only supported operator is AND)
-     *         @return the audience segments that match the given filter
      *       
      * 
      * @param filterStatement
@@ -145,11 +138,6 @@ public interface AudienceSegmentServiceInterface {
      * 
      *         Performs the given {@link AudienceSegmentAction} on the set of segments identified by the given
      *         statement.
-     *         
-     *         @param action {@link AudienceSegmentAction} to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of audience
-     *         segments (the only supported operator is AND)
-     *         @return {@link UpdateResult} indicating the result
      *       
      * 
      * @param filterStatement
@@ -173,9 +161,6 @@ public interface AudienceSegmentServiceInterface {
     /**
      * 
      *         Updates the given {@link FirstPartyAudienceSegment} objects.
-     *         
-     *         @param segments first-party audience segments to update
-     *         @return updated first-party audience segments
      *       
      * 
      * @param segments

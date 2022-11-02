@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link AdSpot} objects.
- *             
- *             @param adSpots the ad spots to create
- *             @return the created ad spots with their IDs filled in
  *           
  * 
  * <p>Java class for createAdSpots element declaration.

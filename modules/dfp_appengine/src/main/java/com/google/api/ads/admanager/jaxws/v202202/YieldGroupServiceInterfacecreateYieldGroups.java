@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates yield groups in bulk.
- *             
- *             @param yieldGroups the groups to create
- *             @return the created groups
  *           
  * 
  * <p>Java class for createYieldGroups element declaration.

@@ -48,9 +48,6 @@ public interface DaiEncodingProfileServiceInterface {
     /**
      * 
      *         Creates new {@link DaiEncodingProfile} objects.
-     *         
-     *         @param daiEncodingProfiles the profiles to create
-     *         @return the created profiles with their IDs filled in
      *       
      * 
      * @param daiEncodingProfiles
@@ -90,9 +87,6 @@ public interface DaiEncodingProfileServiceInterface {
      *         <td>{@link DaiEncodingProfile#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of profiles
-     *         @return the profiles that match the filter
      *       
      * 
      * @param filterStatement
@@ -114,10 +108,6 @@ public interface DaiEncodingProfileServiceInterface {
      * 
      *         Performs actions on {@link DaiEncodingProfile} objects that match the given {@link
      *         Statement#query}.
-     *         
-     *         @param daiEncodingProfileAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of profiles
-     *         @return the result of the action performed
      *       
      * 
      * @param daiEncodingProfileAction
@@ -141,10 +131,6 @@ public interface DaiEncodingProfileServiceInterface {
     /**
      * 
      *         Updates the specified {@link DaiEncodingProfile} objects.
-     *         
-     *         @param daiEncodingProfiles the content profiles to update
-     *         @return the updated profiles
-     *         @throws ApiException if there is an error updating the profiles
      *       
      * 
      * @param daiEncodingProfiles

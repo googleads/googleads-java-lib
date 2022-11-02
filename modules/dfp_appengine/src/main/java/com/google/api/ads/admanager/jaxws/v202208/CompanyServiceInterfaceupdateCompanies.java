@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Company} objects.
- *             
- *             @param companies the companies to update
- *             @return the updated companies
  *           
  * 
  * <p>Java class for updateCompanies element declaration.

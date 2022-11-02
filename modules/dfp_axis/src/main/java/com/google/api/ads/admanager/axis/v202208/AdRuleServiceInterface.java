@@ -25,31 +25,16 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link AdRule} objects.
-     *         
-     *         
-     * @param adRules the ad rules to create
-     *         
-     * @return the created ad rules with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.AdRule[] createAdRules(com.google.api.ads.admanager.axis.v202208.AdRule[] adRules) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Creates new {@link AdSpot} objects.
-     *         
-     *         
-     * @param adSpots the ad spots to create
-     *         
-     * @return the created ad spots with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.AdSpot[] createAdSpots(com.google.api.ads.admanager.axis.v202208.AdSpot[] adSpots) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Creates new {@link breakTemplate} objects.
-     *         
-     *         
-     * @param breakTemplate the break template to create
-     *         
-     * @return the created break template with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.BreakTemplate[] createBreakTemplates(com.google.api.ads.admanager.axis.v202208.BreakTemplate[] breakTemplate) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -79,15 +64,6 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
      *         <td>{@code status}</td>
      *         <td>{@link AdRule#status}</td>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of ad rules
-     *         
-     * @return the ad rules that match the given filter
-     *         
-     * @throws ApiException if the ID of the active network does not exist
-     * or there is a backend error
      */
     public com.google.api.ads.admanager.axis.v202208.AdRulePage getAdRulesByStatement(com.google.api.ads.admanager.axis.v202208.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -95,12 +71,6 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
      * Gets a {@link AdSpotPage} of {@link AdSpot} objects that satisfy
      * the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of ad spots
-     *         
-     * @return the ad spots that match the filter
      */
     public com.google.api.ads.admanager.axis.v202208.AdSpotPage getAdSpotsByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -108,61 +78,27 @@ public interface AdRuleServiceInterface extends java.rmi.Remote {
      * Gets a {@link BreakTemplatePage} of {@link BreakTemplate} objects
      * that satisfy the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of breakTemplate
-     *         
-     * @return the break template that match the filter
      */
     public com.google.api.ads.admanager.axis.v202208.BreakTemplatePage getBreakTemplatesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Performs actions on {@link AdRule} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param adRuleAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of ad rules
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performAdRuleAction(com.google.api.ads.admanager.axis.v202208.AdRuleAction adRuleAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link AdRule} objects.
-     *         
-     *         
-     * @param adRules the ad rules to update
-     *         
-     * @return the updated ad rules
-     *         
-     * @throws ApiException if there is an error updating the ad rules
      */
     public com.google.api.ads.admanager.axis.v202208.AdRule[] updateAdRules(com.google.api.ads.admanager.axis.v202208.AdRule[] adRules) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link AdSpot} objects.
-     *         
-     *         
-     * @param adSpots the ad spots to update
-     *         
-     * @return the updated ad spots
-     *         
-     * @throws ApiException if there is an error updating the ad spots
      */
     public com.google.api.ads.admanager.axis.v202208.AdSpot[] updateAdSpots(com.google.api.ads.admanager.axis.v202208.AdSpot[] adSpots) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link breakTemplate} objects.
-     *         
-     *         
-     * @param breakTemplate the break template to update
-     *         
-     * @return the updated break template
      */
     public com.google.api.ads.admanager.axis.v202208.BreakTemplate[] updateBreakTemplates(com.google.api.ads.admanager.axis.v202208.BreakTemplate[] breakTemplate) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

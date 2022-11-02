@@ -25,11 +25,6 @@ public interface CreativeSetServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates a new {@link CreativeSet}.
-     *         
-     *         
-     * @param creativeSet the creative set to create
-     *         
-     * @return the creative set with its ID filled in
      */
     public com.google.api.ads.admanager.axis.v202202.CreativeSet createCreativeSet(com.google.api.ads.admanager.axis.v202202.CreativeSet creativeSet) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -61,22 +56,11 @@ public interface CreativeSetServiceInterface extends java.rmi.Remote {
      *         <td>{@link CreativeSet#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param statement a Publisher Query Language statement used to filter
-     * a set of creative sets
-     *         
-     * @return the creative sets that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.CreativeSetPage getCreativeSetsByStatement(com.google.api.ads.admanager.axis.v202202.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link CreativeSet}.
-     *         
-     *         
-     * @param creativeSet the creative set to update
-     *         
-     * @return the updated creative set
      */
     public com.google.api.ads.admanager.axis.v202202.CreativeSet updateCreativeSet(com.google.api.ads.admanager.axis.v202202.CreativeSet creativeSet) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

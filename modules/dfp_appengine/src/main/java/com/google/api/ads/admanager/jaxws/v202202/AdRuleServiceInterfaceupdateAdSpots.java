@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link AdSpot} objects.
- *             
- *             @param adSpots the ad spots to update
- *             @return the updated ad spots
- *             @throws ApiException if there is an error updating the ad spots
  *           
  * 
  * <p>Java class for updateAdSpots element declaration.

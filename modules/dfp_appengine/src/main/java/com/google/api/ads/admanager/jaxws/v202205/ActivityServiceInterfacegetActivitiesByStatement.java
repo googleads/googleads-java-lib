@@ -51,9 +51,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Activity#activityGroupId}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a statement used to filter a set of activities.
- *             @return the activities that match the given filter.
  *           
  * 
  * <p>Java class for getActivitiesByStatement element declaration.

@@ -52,9 +52,6 @@ public interface PlacementServiceInterface {
     /**
      * 
      *         Creates new {@link Placement} objects.
-     *         
-     *         @param placements the placements to create
-     *         @return the new placements, with their IDs filled in
      *       
      * 
      * @param placements
@@ -107,10 +104,6 @@ public interface PlacementServiceInterface {
      *         <td>{@link Placement#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of placements
-     *         @return the placements that match the given filter
      *       
      * 
      * @param filterStatement
@@ -132,11 +125,6 @@ public interface PlacementServiceInterface {
      * 
      *         Performs actions on {@link Placement} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param placementAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of placements
-     *         @return the result of the action performed
      *       
      * 
      * @param placementAction
@@ -160,9 +148,6 @@ public interface PlacementServiceInterface {
     /**
      * 
      *         Updates the specified {@link Placement} objects.
-     *         
-     *         @param placements the placements to update
-     *         @return the updated placements
      *       
      * 
      * @param placements

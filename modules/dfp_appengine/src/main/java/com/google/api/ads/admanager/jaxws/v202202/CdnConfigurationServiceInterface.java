@@ -103,11 +103,6 @@ public interface CdnConfigurationServiceInterface {
      * 
      *         Performs actions on {@link CdnConfiguration} objects that match the given {@link
      *         Statement#query}.
-     *         
-     *         @param cdnConfigurationAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of live stream
-     *         events
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement

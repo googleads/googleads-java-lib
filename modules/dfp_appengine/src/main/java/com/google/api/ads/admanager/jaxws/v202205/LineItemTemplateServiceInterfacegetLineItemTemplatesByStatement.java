@@ -36,11 +36,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link LineItemTemplate#id}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of line item templates
- *             @return the line item templates that match the given filter
- *             @throws ApiException if a RuntimeException is thrown
  *           
  * 
  * <p>Java class for getLineItemTemplatesByStatement element declaration.

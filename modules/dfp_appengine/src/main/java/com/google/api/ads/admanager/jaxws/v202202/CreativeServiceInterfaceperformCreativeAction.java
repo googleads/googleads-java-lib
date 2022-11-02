@@ -24,10 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Performs action on {@link Creative} objects that match the given {@link Statement#query}.
- *             
- *             @param creativeAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of creatives
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performCreativeAction element declaration.

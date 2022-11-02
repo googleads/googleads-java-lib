@@ -25,11 +25,6 @@ public interface ContactServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Contact} objects.
-     *         
-     *         
-     * @param contacts the contacts to create
-     *         
-     * @return the created contacts with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.Contact[] createContacts(com.google.api.ads.admanager.axis.v202202.Contact[] contacts) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -84,23 +79,11 @@ public interface ContactServiceInterface extends java.rmi.Remote {
      *         <td>{@link Contact#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of contacts
-     *         
-     * @return the contacts that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.ContactPage getContactsByStatement(com.google.api.ads.admanager.axis.v202202.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link Contact} objects.
-     *         
-     *         
-     * @param contacts the contacts to update
-     *         
-     * @return the updated contacts
      */
     public com.google.api.ads.admanager.axis.v202202.Contact[] updateContacts(com.google.api.ads.admanager.axis.v202202.Contact[] contacts) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

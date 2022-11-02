@@ -35,9 +35,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <li>{@link LiveStreamEvent#contentUrls}</li>
  *             <li>{@link LiveStreamEvent#adTags}</li>
  *             </ul>
- *             
- *             @param liveStreamEvents the live stream events to create
- *             @return the created live stream events with their IDs filled in
  *           
  * 
  * <p>Java class for createLiveStreamEvents element declaration.

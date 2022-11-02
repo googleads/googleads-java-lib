@@ -29,9 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>The {@link Site#childNetworkCode} can be updated in order to 1) change the child network, 2)
  *             move a site from O&O to represented, or 3) move a site from represented to O&O.
- *             
- *             @param sites the sites to update
- *             @return the updated sites
  *           
  * 
  * <p>Java class for updateSites element declaration.

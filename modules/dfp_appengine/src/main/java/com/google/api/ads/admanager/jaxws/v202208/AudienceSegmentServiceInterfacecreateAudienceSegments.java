@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link FirstPartyAudienceSegment} objects.
- *             
- *             @param segments first-party audience segments to create
- *             @return created first-party audience segments
  *           
  * 
  * <p>Java class for createAudienceSegments element declaration.

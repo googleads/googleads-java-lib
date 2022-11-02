@@ -31,11 +31,6 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link ProposalLineItem} objects.
-     *         
-     *         
-     * @param proposalLineItems the proposal line items to create
-     *         
-     * @return the created proposal line items with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202205.ProposalLineItem[] createProposalLineItems(com.google.api.ads.admanager.axis.v202205.ProposalLineItem[] proposalLineItems) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -83,38 +78,17 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
      *         <td>{@link ProposalLineItem#isProgrammatic}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of proposal line items
-     *         
-     * @return the proposal line items that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.ProposalLineItemPage getProposalLineItemsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Performs actions on {@link ProposalLineItem} objects that match
      * the given {@link Statement#query}.
-     *         
-     *         
-     * @param proposalLineItemAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of
-     *         proposal line items
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performProposalLineItemAction(com.google.api.ads.admanager.axis.v202205.ProposalLineItemAction proposalLineItemAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link ProposalLineItem} objects.
-     *         
-     *         
-     * @param proposalLineItems the proposal line items to update
-     *         
-     * @return the updated proposal line items
      */
     public com.google.api.ads.admanager.axis.v202205.ProposalLineItem[] updateProposalLineItems(com.google.api.ads.admanager.axis.v202205.ProposalLineItem[] proposalLineItems) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

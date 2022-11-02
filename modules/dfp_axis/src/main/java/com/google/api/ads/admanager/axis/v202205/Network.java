@@ -27,28 +27,25 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class Network  implements java.io.Serializable {
     /* The unique ID of the {@code Network}. This value is readonly
-     * and is assigned
-     *                 by Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* The display name of the network. */
     private java.lang.String displayName;
 
     /* The network code. If the current login has access to multiple
-     * networks,
-     *                 then the network code must be provided in the SOAP
-     * request headers for all
-     *                 requests. Otherwise, it is optional to provide the
-     * network code in the SOAP
-     *                 headers. This field is read-only. */
+     * networks, then the network code
+     *                 must be provided in the SOAP request headers for all
+     * requests. Otherwise, it is optional to
+     *                 provide the network code in the SOAP headers. This
+     * field is read-only. */
     private java.lang.String networkCode;
 
     /* The property code. This field is read-only. */
     private java.lang.String propertyCode;
 
     /* The time zone associated with the delivery of orders and reporting.
-     * This
-     *                 field is read-only. */
+     * This field is read-only. */
     private java.lang.String timeZone;
 
     /* The primary currency code. This field is read-only. */
@@ -60,18 +57,19 @@ public class Network  implements java.io.Serializable {
     private java.lang.String[] secondaryCurrencyCodes;
 
     /* The {@link AdUnit#id} of the top most ad unit to which descendant
-     * ad units
-     *                 can be added. Should be used for the {@link AdUnit#parentId}
-     * when first
-     *                 building inventory hierarchy. This field is read-only. */
+     * ad units can be added. Should
+     *                 be used for the {@link AdUnit#parentId} when first
+     * building inventory hierarchy. This field is
+     *                 read-only. */
     private java.lang.String effectiveRootAdUnitId;
 
-    /* Whether this is a test network.  This field is read-only. */
+    /* Whether this is a test network. This field is read-only. */
     private java.lang.Boolean isTest;
 
     /* The child networks that have been invited by, have approved,
      * or have rejected this parent
-     *                 network for Multiple Customer Management.
+     *                 network for Multiple Customer Management. Ordered
+     * by an internal identifier.
      *                 
      *                 <p>This field is read-only */
     private com.google.api.ads.admanager.axis.v202205.ChildPublisher[] childPublishers;
@@ -123,8 +121,7 @@ public class Network  implements java.io.Serializable {
      * Gets the id value for this Network.
      * 
      * @return id   * The unique ID of the {@code Network}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -135,8 +132,7 @@ public class Network  implements java.io.Serializable {
      * Sets the id value for this Network.
      * 
      * @param id   * The unique ID of the {@code Network}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -167,12 +163,11 @@ public class Network  implements java.io.Serializable {
      * Gets the networkCode value for this Network.
      * 
      * @return networkCode   * The network code. If the current login has access to multiple
-     * networks,
-     *                 then the network code must be provided in the SOAP
-     * request headers for all
-     *                 requests. Otherwise, it is optional to provide the
-     * network code in the SOAP
-     *                 headers. This field is read-only.
+     * networks, then the network code
+     *                 must be provided in the SOAP request headers for all
+     * requests. Otherwise, it is optional to
+     *                 provide the network code in the SOAP headers. This
+     * field is read-only.
      */
     public java.lang.String getNetworkCode() {
         return networkCode;
@@ -183,12 +178,11 @@ public class Network  implements java.io.Serializable {
      * Sets the networkCode value for this Network.
      * 
      * @param networkCode   * The network code. If the current login has access to multiple
-     * networks,
-     *                 then the network code must be provided in the SOAP
-     * request headers for all
-     *                 requests. Otherwise, it is optional to provide the
-     * network code in the SOAP
-     *                 headers. This field is read-only.
+     * networks, then the network code
+     *                 must be provided in the SOAP request headers for all
+     * requests. Otherwise, it is optional to
+     *                 provide the network code in the SOAP headers. This
+     * field is read-only.
      */
     public void setNetworkCode(java.lang.String networkCode) {
         this.networkCode = networkCode;
@@ -219,8 +213,7 @@ public class Network  implements java.io.Serializable {
      * Gets the timeZone value for this Network.
      * 
      * @return timeZone   * The time zone associated with the delivery of orders and reporting.
-     * This
-     *                 field is read-only.
+     * This field is read-only.
      */
     public java.lang.String getTimeZone() {
         return timeZone;
@@ -231,8 +224,7 @@ public class Network  implements java.io.Serializable {
      * Sets the timeZone value for this Network.
      * 
      * @param timeZone   * The time zone associated with the delivery of orders and reporting.
-     * This
-     *                 field is read-only.
+     * This field is read-only.
      */
     public void setTimeZone(java.lang.String timeZone) {
         this.timeZone = timeZone;
@@ -295,10 +287,10 @@ public class Network  implements java.io.Serializable {
      * Gets the effectiveRootAdUnitId value for this Network.
      * 
      * @return effectiveRootAdUnitId   * The {@link AdUnit#id} of the top most ad unit to which descendant
-     * ad units
-     *                 can be added. Should be used for the {@link AdUnit#parentId}
-     * when first
-     *                 building inventory hierarchy. This field is read-only.
+     * ad units can be added. Should
+     *                 be used for the {@link AdUnit#parentId} when first
+     * building inventory hierarchy. This field is
+     *                 read-only.
      */
     public java.lang.String getEffectiveRootAdUnitId() {
         return effectiveRootAdUnitId;
@@ -309,10 +301,10 @@ public class Network  implements java.io.Serializable {
      * Sets the effectiveRootAdUnitId value for this Network.
      * 
      * @param effectiveRootAdUnitId   * The {@link AdUnit#id} of the top most ad unit to which descendant
-     * ad units
-     *                 can be added. Should be used for the {@link AdUnit#parentId}
-     * when first
-     *                 building inventory hierarchy. This field is read-only.
+     * ad units can be added. Should
+     *                 be used for the {@link AdUnit#parentId} when first
+     * building inventory hierarchy. This field is
+     *                 read-only.
      */
     public void setEffectiveRootAdUnitId(java.lang.String effectiveRootAdUnitId) {
         this.effectiveRootAdUnitId = effectiveRootAdUnitId;
@@ -322,7 +314,7 @@ public class Network  implements java.io.Serializable {
     /**
      * Gets the isTest value for this Network.
      * 
-     * @return isTest   * Whether this is a test network.  This field is read-only.
+     * @return isTest   * Whether this is a test network. This field is read-only.
      */
     public java.lang.Boolean getIsTest() {
         return isTest;
@@ -332,7 +324,7 @@ public class Network  implements java.io.Serializable {
     /**
      * Sets the isTest value for this Network.
      * 
-     * @param isTest   * Whether this is a test network.  This field is read-only.
+     * @param isTest   * Whether this is a test network. This field is read-only.
      */
     public void setIsTest(java.lang.Boolean isTest) {
         this.isTest = isTest;
@@ -344,7 +336,8 @@ public class Network  implements java.io.Serializable {
      * 
      * @return childPublishers   * The child networks that have been invited by, have approved,
      * or have rejected this parent
-     *                 network for Multiple Customer Management.
+     *                 network for Multiple Customer Management. Ordered
+     * by an internal identifier.
      *                 
      *                 <p>This field is read-only
      */
@@ -358,7 +351,8 @@ public class Network  implements java.io.Serializable {
      * 
      * @param childPublishers   * The child networks that have been invited by, have approved,
      * or have rejected this parent
-     *                 network for Multiple Customer Management.
+     *                 network for Multiple Customer Management. Ordered
+     * by an internal identifier.
      *                 
      *                 <p>This field is read-only
      */

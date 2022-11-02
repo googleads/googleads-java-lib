@@ -29,8 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Intended to be used without a network code in the SOAP header when the
  *             login may have more than one network associated with it.
  *             </p>
- *             
- *             @return the networks to which the current login has access
  *           
  * 
  * <p>Java class for getAllNetworks element declaration.

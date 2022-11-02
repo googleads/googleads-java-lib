@@ -155,10 +155,6 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             </tbody>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of line items.
- *             @return the line items that match the given filter
  *           
  * 
  * <p>Java class for getLineItemsByStatement element declaration.

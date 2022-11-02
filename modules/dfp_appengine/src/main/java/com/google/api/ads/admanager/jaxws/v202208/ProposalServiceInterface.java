@@ -50,9 +50,6 @@ public interface ProposalServiceInterface {
      *         <ul>
      *         <li>{@link Proposal#name}</li>
      *         </ul>
-     *         
-     *         @param proposals the proposals to create
-     *         @return the created proposals with their IDs filled in
      *       
      * 
      * @param proposals
@@ -97,10 +94,6 @@ public interface ProposalServiceInterface {
      *         &nbsp;&nbsp;&nbsp;&nbsp; <code>:= <property> = <value></code><br>
      *         <code><condition> := <property> IN <list></code><br>
      *         Only supports {@code ORDER BY} {@link MarketplaceComment#creationTime}.
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of marketplace
-     *         comments
-     *         @return the marketplace comments that match the given filter
      *       
      * 
      * @param filterStatement
@@ -171,10 +164,6 @@ public interface ProposalServiceInterface {
      *         <td>{@link ProposalMarketplaceInfo#negotiationStatus}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of proposals
-     *         @return the proposals that match the given filter
      *       
      * 
      * @param filterStatement
@@ -202,10 +191,6 @@ public interface ProposalServiceInterface {
      *         <li>{@link Proposal#primarySalesperson}</li>
      *         <li>{@link Proposal#primaryTraffickerId}</li>
      *         </ul>
-     *         
-     *         @param proposalAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of proposals
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -229,9 +214,6 @@ public interface ProposalServiceInterface {
     /**
      * 
      *         Updates the specified {@link Proposal} objects.
-     *         
-     *         @param proposals the proposals to update
-     *         @return the updated proposals
      *       
      * 
      * @param proposals

@@ -25,11 +25,6 @@ public interface LineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link LineItem} objects.
-     *         
-     *         
-     * @param lineItems the line items to create
-     *         
-     * @return the created line items with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202205.LineItem[] createLineItems(com.google.api.ads.admanager.axis.v202205.LineItem[] lineItems) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -168,13 +163,6 @@ public interface LineItemServiceInterface extends java.rmi.Remote {
      *         </tr>
      *         </tbody>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of line items.
-     *         
-     * @return the line items that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.LineItemPage getLineItemsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -182,25 +170,11 @@ public interface LineItemServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link LineItem} objects that match the
      * given
      *         {@link Statement#query}.
-     *         
-     *         
-     * @param lineItemAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of line items
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performLineItemAction(com.google.api.ads.admanager.axis.v202205.LineItemAction lineItemAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link LineItem} objects.
-     *         
-     *         
-     * @param lineItems the line items to update
-     *         
-     * @return the updated line items
      */
     public com.google.api.ads.admanager.axis.v202205.LineItem[] updateLineItems(com.google.api.ads.admanager.axis.v202205.LineItem[] lineItems) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

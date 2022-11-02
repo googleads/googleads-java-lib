@@ -51,9 +51,6 @@ public interface UserServiceInterface {
     /**
      * 
      *         Creates new {@link User} objects.
-     *         
-     *         @param users the users to create
-     *         @return the created users with their IDs filled in
      *       
      * 
      * @param users
@@ -75,8 +72,6 @@ public interface UserServiceInterface {
      * 
      *         Returns the {@link Role} objects that are defined for the users of the
      *         network.
-     *         
-     *         @return the roles defined for the user's network
      *       
      * 
      * @return
@@ -94,8 +89,6 @@ public interface UserServiceInterface {
     /**
      * 
      *         Returns the current {@link User}.
-     *         
-     *         @return the current user
      *       
      * 
      * @return
@@ -145,10 +138,6 @@ public interface UserServiceInterface {
      *         otherwise</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of users
-     *         @return the users that match the given filter
      *       
      * 
      * @param filterStatement
@@ -170,11 +159,6 @@ public interface UserServiceInterface {
      * 
      *         Performs actions on {@link User} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param userAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of users
-     *         @return the result of the action performed
      *       
      * 
      * @param userAction
@@ -198,9 +182,6 @@ public interface UserServiceInterface {
     /**
      * 
      *         Updates the specified {@link User} objects.
-     *         
-     *         @param users the users to update
-     *         @return the updated users
      *       
      * 
      * @param users

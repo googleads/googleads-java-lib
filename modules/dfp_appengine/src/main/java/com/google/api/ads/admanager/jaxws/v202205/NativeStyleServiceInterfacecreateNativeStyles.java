@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link NativeStyle} objects.
- *             
- *             @param nativeStyles the native styles to create
- *             @return the created native styles with their IDs filled in
  *           
  * 
  * <p>Java class for createNativeStyles element declaration.

@@ -48,10 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Company#lastModifiedDateTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of companies
- *             @return the companies that match the given filter
  *           
  * 
  * <p>Java class for getCompaniesByStatement element declaration.

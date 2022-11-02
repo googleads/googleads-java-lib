@@ -24,11 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Performs an action on {@link MobileApplication mobile applications}.
- *             
- *             @param mobileApplicationAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of mobile applications.
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performMobileApplicationAction element declaration.

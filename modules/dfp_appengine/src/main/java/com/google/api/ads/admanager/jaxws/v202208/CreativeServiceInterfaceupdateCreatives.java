@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Creative} objects.
- *             
- *             @param creatives the creatives to update
- *             @return the updated creatives
  *           
  * 
  * <p>Java class for updateCreatives element declaration.

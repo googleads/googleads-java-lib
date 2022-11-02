@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link TrafficForecastSegment} objects.
- *             
- *             @param trafficForecastSegments the traffic forecast segments to create
- *             @return the persisted traffic forecast segments with their IDs populated
- *             @throws ApiException if there is an error creating the traffic forecast segments
  *           
  * 
  * <p>Java class for createTrafficForecastSegments element declaration.

@@ -25,15 +25,6 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
 
     /**
      * Creates new {@link LineItemCreativeAssociation} objects
-     *         
-     *         
-     * @param lineItemCreativeAssociations the line item creative associations
-     * to
-     *         create
-     *         
-     * @return the created line item creative associations with their IDs
-     * filled
-     *         in
      */
     public com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociation[] createLineItemCreativeAssociations(com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociation[] lineItemCreativeAssociations) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -73,13 +64,6 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
      *         <td>{@link LineItemCreativeAssociation#lastModifiedDateTime}</td>
      * </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of line item creative associations
-     *         
-     * @return the line item creative associations that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationPage getLineItemCreativeAssociationsByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -89,17 +73,6 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
      *         the specified creative from the association served to it.
      * For Creative Set
      *         previewing you may specify the master creative Id.
-     *         
-     *         
-     * @param lineItemId the ID of the line item, which must already exist
-     * 
-     * @param creativeId the ID of the creative, which must already exist
-     * 
-     * @param siteUrl the URL of the site that the creative should be previewed
-     * in
-     *         
-     * @return a URL that references the specified site URL with the specified
-     * creative served to it
      */
     public java.lang.String getPreviewUrl(java.lang.Long lineItemId, java.lang.Long creativeId, java.lang.String siteUrl) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -110,20 +83,6 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
      * you may specify the master creative
      *         Id. Each URL corresponds to one available native style for
      * previewing the specified creative.
-     *         
-     *         
-     * @param lineItemId the ID of the line item, which must already exist
-     * 
-     * @param creativeId the ID of the creative, which must already exist
-     * and must be a native
-     *         creative
-     *         
-     * @param siteUrl the URL of the site that the creative should be previewed
-     * in
-     *         
-     * @return the URLs that references the specified site URL and can be
-     * used to preview the
-     *         specified creative with the available native styles
      */
     public com.google.api.ads.admanager.axis.v202208.CreativeNativeStylePreview[] getPreviewUrlsForNativeStyles(java.lang.Long lineItemId, java.lang.Long creativeId, java.lang.String siteUrl) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -131,40 +90,17 @@ public interface LineItemCreativeAssociationServiceInterface extends java.rmi.Re
      * Performs actions on {@link LineItemCreativeAssociation} objects
      * that match
      *         the given {@link Statement#query}.
-     *         
-     *         
-     * @param lineItemCreativeAssociationAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of line item creative associations
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performLineItemCreativeAssociationAction(com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationAction lineItemCreativeAssociationAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Pushes a creative to devices that that satisfy the given {@link
      * Statement#query}. *
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement on the
-     * ID, Name, UserId and
-     *         LinkedDeviceVisibility fields of the LinkedDevice table.
-     *         
-     * @param options criteria to use to push a given creative.
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult pushCreativeToDevices(com.google.api.ads.admanager.axis.v202208.Statement filterStatement, com.google.api.ads.admanager.axis.v202208.CreativePushOptions options) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link LineItemCreativeAssociation} objects
-     * 
-     *         
-     * @param lineItemCreativeAssociations the line item creative associations
-     * to
-     *         update
-     *         
-     * @return the updated line item creative associations
      */
     public com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociation[] updateLineItemCreativeAssociations(com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociation[] lineItemCreativeAssociations) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

@@ -30,10 +30,6 @@ import javax.xml.bind.annotation.XmlType;
  *             via the Ad Manager UI.
  *             
  *             <p>A session ID is a unique identifier of a single user watching a live stream event.
- *             
- *             @param sessionIds a list of session IDs to register for monitoring
- *             @return the list of session IDs that were registered for monitoring
- *             @throws ApiException if there is an error registering any of the session IDs
  *           
  * 
  * <p>Java class for registerSessionsForMonitoring element declaration.

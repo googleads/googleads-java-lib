@@ -25,11 +25,6 @@ public interface InventoryServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link AdUnit} objects.
-     *         
-     *         
-     * @param adUnits the ad units to create
-     *         
-     * @return the created ad units, with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnit[] createAdUnits(com.google.api.ads.admanager.axis.v202208.AdUnit[] adUnits) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -38,12 +33,6 @@ public interface InventoryServiceInterface extends java.rmi.Remote {
      *         
      *         <p>The given {@link Statement} is currently ignored but may
      * be honored in future versions.
-     *         
-     *         
-     * @param filterStatement currently ignored but may be honored in future
-     * versions
-     *         
-     * @return the ad unit sizes
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnitSize[] getAdUnitSizesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -82,38 +71,17 @@ public interface InventoryServiceInterface extends java.rmi.Remote {
      *         <td>{@link AdUnit#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of ad units
-     *         
-     * @return the ad units that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnitPage getAdUnitsByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Performs actions on {@link AdUnit} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param adUnitAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of ad units
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performAdUnitAction(com.google.api.ads.admanager.axis.v202208.AdUnitAction adUnitAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link AdUnit} objects.
-     *         
-     *         
-     * @param adUnits the ad units to update
-     *         
-     * @return the updated ad units
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnit[] updateAdUnits(com.google.api.ads.admanager.axis.v202208.AdUnit[] adUnits) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

@@ -51,9 +51,6 @@ public interface OrderServiceInterface {
     /**
      * 
      *         Creates new {@link Order} objects.
-     *         
-     *         @param orders the orders to create
-     *         @return the created orders with their IDs filled in
      *       
      * 
      * @param orders
@@ -117,10 +114,6 @@ public interface OrderServiceInterface {
      *         <td>{@link Order#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of orders
-     *         @return the orders that match the given filter
      *       
      * 
      * @param filterStatement
@@ -142,11 +135,6 @@ public interface OrderServiceInterface {
      * 
      *         Performs actions on {@link Order} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param orderAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of orders
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -170,9 +158,6 @@ public interface OrderServiceInterface {
     /**
      * 
      *         Updates the specified {@link Order} objects.
-     *         
-     *         @param orders the orders to update
-     *         @return the updated orders
      *       
      * 
      * @param orders

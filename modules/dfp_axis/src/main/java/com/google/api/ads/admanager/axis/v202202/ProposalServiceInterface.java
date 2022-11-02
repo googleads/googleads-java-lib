@@ -30,11 +30,6 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>{@link Proposal#name}</li>
      *         </ul>
-     *         
-     *         
-     * @param proposals the proposals to create
-     *         
-     * @return the created proposals with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.Proposal[] createProposals(com.google.api.ads.admanager.axis.v202202.Proposal[] proposals) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -68,13 +63,6 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         &nbsp;&nbsp;&nbsp;&nbsp; <code>:= <property> = <value></code><br>
      * <code><condition> := <property> IN <list></code><br>
      *         Only supports {@code ORDER BY} {@link MarketplaceComment#creationTime}.
-     * 
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of marketplace
-     *         comments
-     *         
-     * @return the marketplace comments that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.MarketplaceCommentPage getMarketplaceCommentsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -133,13 +121,6 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         <td>{@link ProposalMarketplaceInfo#negotiationStatus}</td>
      * </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of proposals
-     *         
-     * @return the proposals that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.ProposalPage getProposalsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -154,24 +135,11 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      *         <li>{@link Proposal#primarySalesperson}</li>
      *         <li>{@link Proposal#primaryTraffickerId}</li>
      *         </ul>
-     *         
-     *         
-     * @param proposalAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of proposals
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performProposalAction(com.google.api.ads.admanager.axis.v202202.ProposalAction proposalAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link Proposal} objects.
-     *         
-     *         
-     * @param proposals the proposals to update
-     *         
-     * @return the updated proposals
      */
     public com.google.api.ads.admanager.axis.v202202.Proposal[] updateProposals(com.google.api.ads.admanager.axis.v202202.Proposal[] proposals) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

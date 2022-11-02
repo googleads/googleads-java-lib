@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link ActivityGroup} objects.
- *             
- *             @param activityGroups the activity groups to update.
- *             @return the updated activity groups.
  *           
  * 
  * <p>Java class for updateActivityGroups element declaration.

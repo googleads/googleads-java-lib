@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Site} objects.
- *             
- *             @param sites the sites to create
- *             @return the created sites with their IDs filled in
  *           
  * 
  * <p>Java class for createSites element declaration.

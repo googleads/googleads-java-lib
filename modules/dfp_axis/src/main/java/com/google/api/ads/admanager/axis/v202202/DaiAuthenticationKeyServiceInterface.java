@@ -31,12 +31,6 @@ public interface DaiAuthenticationKeyServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>{@link DaiAuthenticationKey#name}
      *         </ul>
-     *         
-     *         
-     * @param daiAuthenticationKeys the DAI authentication keys to create
-     * 
-     * @return the created DAI authentication keys with their IDs filled
-     * in
      */
     public com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKey[] createDaiAuthenticationKeys(com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKey[] daiAuthenticationKeys) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -63,13 +57,6 @@ public interface DaiAuthenticationKeyServiceInterface extends java.rmi.Remote {
      *         <td>{@link DaiAuthenticationKey#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of DAI
-     *         authentication keys
-     *         
-     * @return the DAI authentication keys that match the filter
      */
     public com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKeyPage getDaiAuthenticationKeysByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -81,29 +68,11 @@ public interface DaiAuthenticationKeyServiceInterface extends java.rmi.Remote {
      *         <p>DAI authentication keys cannot be deactivated if there
      * are active {@link LiveStreamEvent}s
      *         or Content Sources that are using them.
-     *         
-     *         
-     * @param daiAuthenticationKeyAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of live stream
-     *         events
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performDaiAuthenticationKeyAction(com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKeyAction daiAuthenticationKeyAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link DaiAuthenticationKey} objects.
-     * 
-     *         
-     * @param daiAuthenticationKeys the video DAI authentication keys to
-     * update
-     *         
-     * @return the updated DAI authentication keys
-     *         
-     * @throws ApiException if there is an error updating the DAI authentication
-     * keys
      */
     public com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKey[] updateDaiAuthenticationKeys(com.google.api.ads.admanager.axis.v202202.DaiAuthenticationKey[] daiAuthenticationKeys) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

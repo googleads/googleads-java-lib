@@ -48,10 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link CreativeTemplate#status}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of creative templates.
- *             @return the creative templates that match the given filter
  *           
  * 
  * <p>Java class for getCreativeTemplatesByStatement element declaration.

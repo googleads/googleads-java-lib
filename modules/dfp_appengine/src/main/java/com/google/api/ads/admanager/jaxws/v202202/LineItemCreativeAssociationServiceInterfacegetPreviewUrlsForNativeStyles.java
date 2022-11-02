@@ -26,13 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Returns a list of URLs that reference the specified site URL with the specified creative from
  *             the association served to it. For Creative Set previewing you may specify the master creative
  *             Id. Each URL corresponds to one available native style for previewing the specified creative.
- *             
- *             @param lineItemId the ID of the line item, which must already exist
- *             @param creativeId the ID of the creative, which must already exist and must be a native
- *             creative
- *             @param siteUrl the URL of the site that the creative should be previewed in
- *             @return the URLs that references the specified site URL and can be used to preview the
- *             specified creative with the available native styles
  *           
  * 
  * <p>Java class for getPreviewUrlsForNativeStyles element declaration.

@@ -68,10 +68,6 @@ public interface CreativeTemplateServiceInterface {
      *         <td>{@link CreativeTemplate#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of creative templates.
-     *         @return the creative templates that match the given filter
      *       
      * 
      * @param filterStatement

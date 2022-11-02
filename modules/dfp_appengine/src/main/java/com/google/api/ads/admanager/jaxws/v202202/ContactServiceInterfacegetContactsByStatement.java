@@ -71,10 +71,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Contact#status}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of contacts
- *             @return the contacts that match the given filter
  *           
  * 
  * <p>Java class for getContactsByStatement element declaration.

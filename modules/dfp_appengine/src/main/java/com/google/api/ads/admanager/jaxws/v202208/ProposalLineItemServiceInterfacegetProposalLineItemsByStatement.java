@@ -64,10 +64,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ProposalLineItem#isProgrammatic}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of proposal line items
- *             @return the proposal line items that match the given filter
  *           
  * 
  * <p>Java class for getProposalLineItemsByStatement element declaration.

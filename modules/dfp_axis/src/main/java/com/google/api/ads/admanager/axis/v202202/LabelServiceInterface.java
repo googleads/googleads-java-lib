@@ -25,11 +25,6 @@ public interface LabelServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Label} objects.
-     *         
-     *         
-     * @param labels the labels to create
-     *         
-     * @return the created labels with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.Label[] createLabels(com.google.api.ads.admanager.axis.v202202.Label[] labels) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -65,39 +60,17 @@ public interface LabelServiceInterface extends java.rmi.Remote {
      *         <td>{@link Label#isActive}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of labels.
-     *         
-     * @return the labels that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.LabelPage getLabelsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Performs actions on {@link Label} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param labelAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of labels
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performLabelAction(com.google.api.ads.admanager.axis.v202202.LabelAction labelAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link Label} objects.
-     *         
-     *         
-     * @param labels the labels to update
-     *         
-     * @return the updated labels
      */
     public com.google.api.ads.admanager.axis.v202202.Label[] updateLabels(com.google.api.ads.admanager.axis.v202202.Label[] labels) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

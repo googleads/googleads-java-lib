@@ -60,9 +60,6 @@ import javax.xml.bind.annotation.XmlType;
  *             top-level expression scoping the {@code filterStatement} to {@link Site}s whose {@code
  *             approvalStatus} was modified on or after a specified date and time. (e.x. {@code "WHERE
  *             lastModifiedApprovalStatusDateTime >= '2022-01-01T00:00:00'"}).
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of sites
- *             @return the sites that match the given filter
  *           
  * 
  * <p>Java class for getSitesByStatement element declaration.

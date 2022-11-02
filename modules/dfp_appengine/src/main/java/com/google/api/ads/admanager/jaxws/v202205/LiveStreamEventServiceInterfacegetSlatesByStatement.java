@@ -44,9 +44,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Slate#lastModifiedDateTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param statement a Publisher Query Language statement used to filter slates
- *             @return the slates that match the given filter
  *           
  * 
  * <p>Java class for getSlatesByStatement element declaration.

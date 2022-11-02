@@ -24,11 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Performs actions on {@link Company} objects that match the given {@code Statement}.
- *             
- *             @param companyAction the action to perform
- *             @param statement a PQL statement used to filter companies
- *             @return the result of the action performed
- *             @throws ApiException
  *           
  * 
  * <p>Java class for performCompanyAction element declaration.

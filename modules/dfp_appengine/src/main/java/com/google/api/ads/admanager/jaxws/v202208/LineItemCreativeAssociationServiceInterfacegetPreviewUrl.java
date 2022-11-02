@@ -26,12 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Returns an insite preview URL that references the specified site URL with
  *             the specified creative from the association served to it. For Creative Set
  *             previewing you may specify the master creative Id.
- *             
- *             @param lineItemId the ID of the line item, which must already exist
- *             @param creativeId the ID of the creative, which must already exist
- *             @param siteUrl the URL of the site that the creative should be previewed in
- *             @return a URL that references the specified site URL with the specified
- *             creative served to it
  *           
  * 
  * <p>Java class for getPreviewUrl element declaration.

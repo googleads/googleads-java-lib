@@ -52,9 +52,6 @@ public interface CustomTargetingServiceInterface {
      *         <li>{@link CustomTargetingKey#name}</li>
      *         <li>{@link CustomTargetingKey#type}</li>
      *         </ul>
-     *         
-     *         @param keys the custom targeting keys to update
-     *         @return the updated custom targeting keys
      *       
      * 
      * @param keys
@@ -81,9 +78,6 @@ public interface CustomTargetingServiceInterface {
      *         <li>{@link CustomTargetingValue#customTargetingKeyId}</li>
      *         <li>{@link CustomTargetingValue#name}</li>
      *         </ul>
-     *         
-     *         @param values the custom targeting values to update
-     *         @return the updated custom targeting keys
      *       
      * 
      * @param values
@@ -129,10 +123,6 @@ public interface CustomTargetingServiceInterface {
      *         <td>{@link CustomTargetingKey#type}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of custom targeting keys
-     *         @return the custom targeting keys that match the given filter
      *       
      * 
      * @param filterStatement
@@ -201,10 +191,6 @@ public interface CustomTargetingServiceInterface {
      *         <td>{@link CustomTargetingValue#matchType}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of custom targeting values
-     *         @return the custom targeting values that match the given filter
      *       
      * 
      * @param filterStatement
@@ -226,11 +212,6 @@ public interface CustomTargetingServiceInterface {
      * 
      *         Performs actions on {@link CustomTargetingKey} objects that match the given
      *         {@link Statement#query}.
-     *         
-     *         @param customTargetingKeyAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of custom targeting keys
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -255,11 +236,6 @@ public interface CustomTargetingServiceInterface {
      * 
      *         Performs actions on {@link CustomTargetingValue} objects that match the
      *         given {@link Statement#query}.
-     *         
-     *         @param customTargetingValueAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of ad units
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -283,9 +259,6 @@ public interface CustomTargetingServiceInterface {
     /**
      * 
      *         Updates the specified {@link CustomTargetingKey} objects.
-     *         
-     *         @param keys the custom targeting keys to update
-     *         @return the updated custom targeting keys
      *       
      * 
      * @param keys
@@ -306,9 +279,6 @@ public interface CustomTargetingServiceInterface {
     /**
      * 
      *         Updates the specified {@link CustomTargetingValue} objects.
-     *         
-     *         @param values the custom targeting values to update
-     *         @return the updated custom targeting values
      *       
      * 
      * @param values

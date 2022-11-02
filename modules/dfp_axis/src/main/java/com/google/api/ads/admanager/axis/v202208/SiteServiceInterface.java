@@ -25,11 +25,6 @@ public interface SiteServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates new {@link Site} objects.
-     *         
-     *         
-     * @param sites the sites to create
-     *         
-     * @return the created sites with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.Site[] createSites(com.google.api.ads.admanager.axis.v202208.Site[] sites) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -75,26 +70,12 @@ public interface SiteServiceInterface extends java.rmi.Remote {
      *         approvalStatus} was modified on or after a specified date
      * and time. (e.x. {@code "WHERE
      *         lastModifiedApprovalStatusDateTime >= '2022-01-01T00:00:00'"}).
-     * 
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of sites
-     *         
-     * @return the sites that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.SitePage getSitesByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Performs actions on {@link Site} objects that match the given
      * {@link Statement#query}.
-     *         
-     *         
-     * @param siteAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of sites
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performSiteAction(com.google.api.ads.admanager.axis.v202208.SiteAction siteAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -105,11 +86,6 @@ public interface SiteServiceInterface extends java.rmi.Remote {
      * to 1) change the child network, 2)
      *         move a site from O&O to represented, or 3) move a site from
      * represented to O&O.
-     *         
-     *         
-     * @param sites the sites to update
-     *         
-     * @return the updated sites
      */
     public com.google.api.ads.admanager.axis.v202208.Site[] updateSites(com.google.api.ads.admanager.axis.v202208.Site[] sites) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

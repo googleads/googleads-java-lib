@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Company} objects.
- *             
- *             @param companies the companies to create
- *             @return the created companies with their IDs filled in
  *           
  * 
  * <p>Java class for createCompanies element declaration.

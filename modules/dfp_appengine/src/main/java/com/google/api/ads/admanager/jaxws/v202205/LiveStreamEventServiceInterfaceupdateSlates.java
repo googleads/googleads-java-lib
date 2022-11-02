@@ -28,9 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Update existing slates.
  *             
  *             <p>Only the slateName is editable.
- *             
- *             @param slates list of slate objects to update.
- *             @throws ApiException if there is an error while fetching the logging information
  *           
  * 
  * <p>Java class for updateSlates element declaration.

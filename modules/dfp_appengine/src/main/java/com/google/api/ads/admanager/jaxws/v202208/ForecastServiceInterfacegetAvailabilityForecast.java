@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *             Gets the availability forecast for a {@link ProspectiveLineItem}. An availability forecast
  *             reports the maximum number of available units that the line item can book, and the total number
  *             of units matching the line item's targeting.
- *             
- *             @param lineItem the prospective line item (new or existing) to be forecasted for availability
- *             @param forecastOptions options controlling the forecast
  *           
  * 
  * <p>Java class for getAvailabilityForecast element declaration.

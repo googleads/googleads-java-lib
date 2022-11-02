@@ -34,11 +34,6 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      *         <li>{@link LiveStreamEvent#contentUrls}</li>
      *         <li>{@link LiveStreamEvent#adTags}</li>
      *         </ul>
-     *         
-     *         
-     * @param liveStreamEvents the live stream events to create
-     *         
-     * @return the created live stream events with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] createLiveStreamEvents(com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] liveStreamEvents) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -48,12 +43,6 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      *         <p>A slate creative is served as backup content in a live
      * stream event when no other
      *         creatives are eligible to be served.
-     *         
-     *         
-     * @param slates list of slate objects to create.
-     *         
-     * @throws ApiException if there is an error while fetching the logging
-     * information
      */
     public com.google.api.ads.admanager.axis.v202208.Slate[] createSlates(com.google.api.ads.admanager.axis.v202208.Slate[] slates) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -105,13 +94,6 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      *         <td>{@link LiveStreamEvent#segmentUrlAuthenticationKeyIds}</td>
      * </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a
-     *         list of live stream events
-     *         
-     * @return the live stream events that match the filter
      */
     public com.google.api.ads.admanager.axis.v202208.LiveStreamEventPage getLiveStreamEventsByStatement(com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -139,12 +121,6 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      *         <td>{@link Slate#lastModifiedDateTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param statement a Publisher Query Language statement used to filter
-     * slates
-     *         
-     * @return the slates that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202208.SlatePage getSlatesByStatement(com.google.api.ads.admanager.axis.v202208.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -152,41 +128,16 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link LiveStreamEvent} objects that match
      * the given
      *         {@link Statement#query}.
-     *         
-     *         
-     * @param liveStreamEventAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of live stream events
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performLiveStreamEventAction(com.google.api.ads.admanager.axis.v202208.LiveStreamEventAction liveStreamEventAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Performs actions on slates that match the given {@link Statement}.
-     * 
-     *         
-     * @param slateAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of slates
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performSlateAction(com.google.api.ads.admanager.axis.v202208.SlateAction slateAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Updates the specified {@link LiveStreamEvent} objects.
-     *         
-     *         
-     * @param liveStreamEvents the live stream events to update
-     *         
-     * @return the updated live stream events
-     *         
-     * @throws ApiException if there is an error updating the live stream
-     * events
      */
     public com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] updateLiveStreamEvents(com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] liveStreamEvents) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
@@ -194,12 +145,6 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      * Update existing slates.
      *         
      *         <p>Only the slateName is editable.
-     *         
-     *         
-     * @param slates list of slate objects to update.
-     *         
-     * @throws ApiException if there is an error while fetching the logging
-     * information
      */
     public com.google.api.ads.admanager.axis.v202208.Slate[] updateSlates(com.google.api.ads.admanager.axis.v202208.Slate[] slates) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 }

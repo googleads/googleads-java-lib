@@ -55,11 +55,6 @@ import javax.xml.bind.annotation.XmlType;
  *             </tr>
  *             </tbody>
  *             </table>
- *             
- *             @param statement PQL specifying the sessionId or debugKey to fetch logging information for.
- *             Only '=' and 'IN' expressions are supported.
- *             @throws ApiException if there is an error while fetching the logging information or if there is
- *             no SAM session is associated with any of the {@code sessionIds}.
  *           
  * 
  * <p>Java class for getSamSessionsByStatement element declaration.

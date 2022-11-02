@@ -29,9 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <ul>
  *             <li>{@link ReportJob#reportQuery}</li>
  *             </ul>
- *             
- *             @param reportJob the report job to run
- *             @return the report job with its ID filled in
  *           
  * 
  * <p>Java class for runReportJob element declaration.

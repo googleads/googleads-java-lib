@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Creates new {@link Order} objects.
- *             
- *             @param orders the orders to create
- *             @return the created orders with their IDs filled in
  *           
  * 
  * <p>Java class for createOrders element declaration.

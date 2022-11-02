@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs actions on {@link ContentBundle} objects that match the given
  *             {@link Statement#query}.
- *             
- *             @param contentBundleAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of content bundles
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performContentBundleAction element declaration.

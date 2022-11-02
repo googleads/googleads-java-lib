@@ -48,10 +48,6 @@ import javax.xml.bind.annotation.XmlType;
  *             &nbsp;&nbsp;&nbsp;&nbsp; <code>:= <property> = <value></code><br>
  *             <code><condition> := <property> IN <list></code><br>
  *             Only supports {@code ORDER BY} {@link MarketplaceComment#creationTime}.
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of marketplace
- *             comments
- *             @return the marketplace comments that match the given filter
  *           
  * 
  * <p>Java class for getMarketplaceCommentsByStatement element declaration.

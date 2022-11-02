@@ -25,9 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Gets a {@link AdSpotPage} of {@link AdSpot} objects that satisfy the given {@link
  *             Statement#query}.
- *             
- *             @param filterStatement a Publisher Query Language statement to filter a list of ad spots
- *             @return the ad spots that match the filter
  *           
  * 
  * <p>Java class for getAdSpotsByStatement element declaration.

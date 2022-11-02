@@ -33,13 +33,6 @@ public interface CreativeReviewServiceInterface extends java.rmi.Remote {
      *         reviewing the most important creatives first, the {@link CreativeReview}
      * objects are ranked
      *         according to the number of impressions that they've received.
-     * 
-     *         
-     * @param statement a Publisher Query Language statement used to specify
-     * the page of {@link
-     *         CreativeReview} to be fetch. Only {@code LIMIT} is supported.
-     * 
-     * @return the {@link CreativeReview}s that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeReviewPage getCreativeReviewsByStatement(com.google.api.ads.admanager.axis.v202205.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -53,16 +46,6 @@ public interface CreativeReviewServiceInterface extends java.rmi.Remote {
      *         allow you to retrieve new {@link CreativeReview} objects while
      * previously retrieved {@link
      *         CreativeReview} objects are in pending approval.
-     *         
-     *         
-     * @param creativeReviewAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of creative
-     *         reviews. Only {@code "WHERE id = <value>"} and {@code "WHERE
-     * id IN <list>"} are supported.
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCreativeReviewAction(com.google.api.ads.admanager.axis.v202205.CreativeReviewAction creativeReviewAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

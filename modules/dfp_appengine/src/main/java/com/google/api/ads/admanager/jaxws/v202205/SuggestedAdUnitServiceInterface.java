@@ -77,10 +77,6 @@ public interface SuggestedAdUnitServiceInterface {
      *         
      *         <p><strong>Note:</strong> After API version 201311, the {@code id} field will only be
      *         numerical.
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of suggested ad units
-     *         @return the suggested ad units that match the given filter
      *       
      * 
      * @param filterStatement
@@ -116,11 +112,6 @@ public interface SuggestedAdUnitServiceInterface {
      *         <td>{@link SuggestedAdUnit#numRequests}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param suggestedAdUnitAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter
-     *         a set of suggested ad units
-     *         @return the result of the action performed
      *       
      * 
      * @param suggestedAdUnitAction

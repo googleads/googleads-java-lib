@@ -96,8 +96,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#effectiveAppliedLabels} as a comma separated list of
-     *                 {@link Label#name} for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents {@link LineItem#effectiveAppliedLabels} as a comma separated list of {@link
+     *                 Label#name} for {@link Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Line item labels" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -106,8 +106,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#effectiveAppliedLabels} as a comma separated list of
-     *                 {@link Label#id} for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents {@link LineItem#effectiveAppliedLabels} as a comma separated list of {@link
+     *                 Label#id} for {@link Dimension#LINE_ITEM_NAME}.
      *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -116,9 +116,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Generated as {@code true} for {@link Dimension#LINE_ITEM_NAME} which is eligible
-     *                 for optimization, {@code false} otherwise.
-     *                 Can be used for filtering.
+     *                 Generated as {@code true} for {@link Dimension#LINE_ITEM_NAME} which is eligible for
+     *                 optimization, {@code false} otherwise. Can be used for filtering.
      *                 <p>Corresponds to "Optimizable" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -169,10 +168,10 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#frequencyCaps} as a comma separated list of
-     *                 "{@link FrequencyCap#maxImpressions} impressions per/every {@link FrequencyCap#numTimeUnits}
-     *                 {@link FrequencyCap#timeUnit}" (e.g. "10 impressions every day,500 impressions per lifetime")
-     *                 for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents {@link LineItem#frequencyCaps} as a comma separated list of "{@link
+     *                 FrequencyCap#maxImpressions} impressions per/every {@link FrequencyCap#numTimeUnits} {@link
+     *                 FrequencyCap#timeUnit}" (e.g. "10 impressions every day,500 impressions per lifetime") for
+     *                 {@link Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Frequency cap" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -181,8 +180,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the monthly reconciliation status of the line item for
-     *                 {@link Dimension#LINE_ITEM_NAME} and {@link Dimension#MONTH_YEAR}.
+     *                 Represents the monthly reconciliation status of the line item for {@link
+     *                 Dimension#LINE_ITEM_NAME} and {@link Dimension#MONTH_YEAR}.
      *                 <p>Corresponds to "Line item reconciliation status" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
@@ -191,8 +190,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the monthly last reconciliation date time of the line item for
-     *                 {@link Dimension#LINE_ITEM_NAME} and {@link Dimension#MONTH_YEAR}.
+     *                 Represents the monthly last reconciliation date time of the line item for {@link
+     *                 Dimension#LINE_ITEM_NAME} and {@link Dimension#MONTH_YEAR}.
      *                 <p>Corresponds to "Line item last reconciliation time" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
      *               
      * 
@@ -210,8 +209,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Company#type} for {@link Dimension#ADVERTISER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Company#type} for {@link Dimension#ADVERTISER_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Corresponds to "Advertiser type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -220,8 +219,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Company#creditStatus} for {@link Dimension#ADVERTISER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Company#creditStatus} for {@link Dimension#ADVERTISER_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Corresponds to "Advertiser credit status" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -240,8 +239,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}. Can be used
+     *                 for filtering.
      *                 <p>Corresponds to "Order start date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -250,8 +249,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#ORDER_NAME}. Can be used
+     *                 for filtering.
      *                 <p>Corresponds to "Order end date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -269,8 +268,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#poNumber} for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Order#poNumber} for {@link Dimension#ORDER_NAME}. Can be used for filtering.
      *                 <p>Corresponds to "Order PO number" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -279,8 +277,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#orderIsProgrammatic} for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Order#orderIsProgrammatic} for {@link Dimension#ORDER_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Corresponds to "Programmatic order" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -298,8 +296,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#agencyId} for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Order#agencyId} for {@link Dimension#ORDER_NAME}. Can be used for filtering.
      *                 <p>Corresponds to "Agency ID" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -308,8 +305,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#effectiveAppliedLabels} as a comma separated list of
-     *                 {@link Label#name} for {@link Dimension#ORDER_NAME}.
+     *                 Represents {@link Order#effectiveAppliedLabels} as a comma separated list of {@link Label#name}
+     *                 for {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Order labels" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -318,8 +315,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#effectiveAppliedLabels} as a comma separated list of
-     *                 {@link Label#id} for {@link Dimension#ORDER_NAME}.
+     *                 Represents {@link Order#effectiveAppliedLabels} as a comma separated list of {@link Label#id}
+     *                 for {@link Dimension#ORDER_NAME}.
      *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -328,8 +325,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The name and email address in the form of name(email) of the trafficker for
-     *                 {@link Dimension#ORDER_NAME}
+     *                 The name and email address in the form of name(email) of the trafficker for {@link
+     *                 Dimension#ORDER_NAME}
      *                 <p>Corresponds to "Trafficker" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -338,8 +335,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Order#traffickerId} for {@link Dimension#ORDER_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link Order#traffickerId} for {@link Dimension#ORDER_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -348,8 +345,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The names and email addresses as a comma separated list of name(email) of the
-     *                 {@link Order#secondaryTraffickerIds} for {@link Dimension#ORDER_NAME}.
+     *                 The names and email addresses as a comma separated list of name(email) of the {@link
+     *                 Order#secondaryTraffickerIds} for {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Secondary traffickers" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -358,8 +355,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The name and email address in the form of name(email) of the
-     *                 {@link Order#salespersonId} for {@link Dimension#ORDER_NAME}.
+     *                 The name and email address in the form of name(email) of the {@link Order#salespersonId} for
+     *                 {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -368,8 +365,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The names and email addresses as a comma separated list of name(email) of the
-     *                 {@link Order#secondarySalespersonIds} for {@link Dimension#ORDER_NAME}.
+     *                 The names and email addresses as a comma separated list of name(email) of the {@link
+     *                 Order#secondarySalespersonIds} for {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Secondary salespeople" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -378,8 +375,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The total number of impressions delivered over the lifetime of an
-     *                 {@link Dimension#ORDER_NAME}.
+     *                 The total number of impressions delivered over the lifetime of an {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Order lifetime impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -388,8 +384,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The total number of clicks delivered over the lifetime of an
-     *                 {@link Dimension#ORDER_NAME}.
+     *                 The total number of clicks delivered over the lifetime of an {@link Dimension#ORDER_NAME}.
      *                 <p>Corresponds to "Order lifetime clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -416,8 +411,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents the start date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}. Can be
+     *                 used for filtering.
      *                 <p>Corresponds to "Line item start date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -426,8 +421,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents the end date (in YYYY-MM-DD format) for {@link Dimension#LINE_ITEM_NAME}. Can be
+     *                 used for filtering.
      *                 <p>Corresponds to "Line item end date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -436,8 +431,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#externalId} for {@link Dimension#LINE_ITEM_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link LineItem#externalId} for {@link Dimension#LINE_ITEM_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Corresponds to "External Line Item ID" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -446,8 +441,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#costType} for {@link Dimension#LINE_ITEM_NAME}.
-     *                 Can be used for filtering.
+     *                 Represents {@link LineItem#costType} for {@link Dimension#LINE_ITEM_NAME}. Can be used for
+     *                 filtering.
      *                 <p>Corresponds to "Cost type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -474,8 +469,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The total number of impressions, clicks or days that is reserved
-     *                 for {@link Dimension#LINE_ITEM_NAME}.
+     *                 The total number of impressions, clicks or days that is reserved for {@link
+     *                 Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Goal quantity" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -492,9 +487,9 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The ratio between the goal quantity for {@link Dimension#LINE_ITEM_NAME} of
-     *                 {@link LineItemType#SPONSORSHIP} and the {@link #LINE_ITEM_GOAL_QUANTITY}.
-     *                 Represented as a number between 0..100.
+     *                 The ratio between the goal quantity for {@link Dimension#LINE_ITEM_NAME} of {@link
+     *                 LineItemType#SPONSORSHIP} and the {@link #LINE_ITEM_GOAL_QUANTITY}. Represented as a number
+     *                 between 0..100.
      *                 <p>Corresponds to "Sponsorship goal (%)" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -503,8 +498,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The total number of impressions delivered over the lifetime of a
-     *                 {@link Dimension#LINE_ITEM_NAME}.
+     *                 The total number of impressions delivered over the lifetime of a {@link
+     *                 Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Line item lifetime impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -513,8 +508,7 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 The total number of clicks delivered over the lifetime of a
-     *                 {@link Dimension#LINE_ITEM_NAME}.
+     *                 The total number of clicks delivered over the lifetime of a {@link Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Line item lifetime clicks" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -523,9 +517,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link LineItem#priority} for {@link Dimension#LINE_ITEM_NAME} as
-     *                 a value between 1 and 16.
-     *                 Can be used for filtering.
+     *                 Represents {@link LineItem#priority} for {@link Dimension#LINE_ITEM_NAME} as a value between 1
+     *                 and 16. Can be used for filtering.
      *                 <p>Corresponds to "Line item priority" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
      *               
      * 
@@ -534,8 +527,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Indicates if a creative is a regular creative or creative set.
-     *                 Values will be 'Creative' or 'Creative set'
+     *                 Indicates if a creative is a regular creative or creative set. Values will be 'Creative' or
+     *                 'Creative set'
      *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -553,8 +546,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link LineItem#contractedUnitsBought} quantity
-     *                 for {@link Dimension#LINE_ITEM_NAME}.
+     *                 Represents the {@link LineItem#contractedUnitsBought} quantity for {@link
+     *                 Dimension#LINE_ITEM_NAME}.
      *                 <p>Corresponds to "Contracted quantity" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -563,9 +556,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link LineItem#discount} for {@link Dimension#LINE_ITEM_NAME}.
-     *                 The number is either a percentage or an absolute value depending on
-     *                 {@link LineItem#discountType}.
+     *                 Represents the {@link LineItem#discount} for {@link Dimension#LINE_ITEM_NAME}. The number is
+     *                 either a percentage or an absolute value depending on {@link LineItem#discountType}.
      *                 <p>Corresponds to "Discount" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -583,8 +575,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Company#appliedLabels} as a comma separated list of
-     *                 {@link Label#name} for {@link Dimension#ADVERTISER_NAME}.
+     *                 Represents {@link Company#appliedLabels} as a comma separated list of {@link Label#name} for
+     *                 {@link Dimension#ADVERTISER_NAME}.
      *                 <p>Corresponds to "Advertiser labels" in the Ad Manager UI. Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -593,8 +585,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents {@link Company#appliedLabels} as a comma separated list of
-     *                 {@link Label#id} for {@link Dimension#ADVERTISER_NAME}.
+     *                 Represents {@link Company#appliedLabels} as a comma separated list of {@link Label#id} for
+     *                 {@link Dimension#ADVERTISER_NAME}.
      *                 <p>Compatible with any of the following report types: Historical, Reach.</p>
      *               
      * 
@@ -630,9 +622,9 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents a {@link LineItemCreativeAssociation#startDateTime} for a
-     *                 {@link Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}.
-     *                 Includes the date without the time.
+     *                 Represents a {@link LineItemCreativeAssociation#startDateTime} for a {@link
+     *                 Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}. Includes the date without the
+     *                 time.
      *                 <p>Corresponds to "Creative start date" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -641,9 +633,9 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents a {@link LineItemCreativeAssociation#endDateTime} for a
-     *                 {@link Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}.
-     *                 Includes the date without the time.
+     *                 Represents a {@link LineItemCreativeAssociation#endDateTime} for a {@link
+     *                 Dimension#LINE_ITEM_NAME} and a {@link Dimension#CREATIVE_NAME}. Includes the date without the
+     *                 time.
      *                 <p>Corresponds to "Creative end date" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -652,8 +644,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link CmsContent#displayName} within the first element of
-     *                 {@link Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
+     *                 Represents the {@link CmsContent#displayName} within the first element of {@link
+     *                 Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
      *                 <p>Corresponds to "Content source name" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -662,8 +654,8 @@ public enum DimensionAttribute {
 
     /**
      * 
-     *                 Represents the {@link CmsContent#cmsContentId} within the first element of
-     *                 {@link Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
+     *                 Represents the {@link CmsContent#cmsContentId} within the first element of {@link
+     *                 Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
      *                 <p>Corresponds to "ID of the video in the content source" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 

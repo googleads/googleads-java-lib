@@ -43,10 +43,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link ContentBundle#status}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of content bundles
- *             @return the content bundles that match the given filter
  *           
  * 
  * <p>Java class for getContentBundlesByStatement element declaration.

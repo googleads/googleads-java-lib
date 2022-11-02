@@ -24,9 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Returns the {@link CustomFieldOption} uniquely identified by the given ID.
- *             
- *             @param customFieldOptionId the ID of the custom field option, which must already exist
- *             @return the {@code CustomFieldOption} uniquely identified by the given ID
  *           
  * 
  * <p>Java class for getCustomFieldOption element declaration.

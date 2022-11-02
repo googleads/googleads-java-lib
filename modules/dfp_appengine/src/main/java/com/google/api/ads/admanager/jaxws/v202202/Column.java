@@ -486,7 +486,7 @@ public enum Column {
      *                 The CPM and CPC revenue earned, calculated in publisher currency, for the ads delivered by the
      *                 ad server. This includes pre-rev-share revenue for Programmatic traffic. This is a temporary
      *                 metric to help with the transition from gross to net revenue reporting.
-     *                 <p>Corresponds to "Ad server CPM and CPC revenue (gross)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -527,7 +527,7 @@ public enum Column {
      *                 The CPM, CPC and CPD gross revenue earned, calculated in publisher currency, for the ads
      *                 delivered by the ad server. This includes pre-rev-share revenue for Programmatic traffic. This
      *                 is a temporary metric to help with the transition from gross to net revenue reporting.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue (gross), Ad server CPM, CPC and CPD revenue (gross). Compatible with the "Historical" report type.</p>
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */

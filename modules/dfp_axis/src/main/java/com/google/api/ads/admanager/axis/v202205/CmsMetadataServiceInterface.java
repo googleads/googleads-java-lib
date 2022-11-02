@@ -87,15 +87,6 @@ public interface CmsMetadataServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CmsMetadataKey} objects that match
      * the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param keyAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of cms
-     *         metadata keys.
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCmsMetadataKeyAction(com.google.api.ads.admanager.axis.v202205.CmsMetadataKeyAction keyAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -103,15 +94,6 @@ public interface CmsMetadataServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link CmsMetadataValue} objects that match
      * the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param valueAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of cms
-     *         metadata values.
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCmsMetadataValueAction(com.google.api.ads.admanager.axis.v202205.CmsMetadataValueAction valueAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

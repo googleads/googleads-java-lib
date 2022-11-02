@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link Placement} objects.
- *             
- *             @param placements the placements to update
- *             @return the updated placements
  *           
  * 
  * <p>Java class for updatePlacements element declaration.

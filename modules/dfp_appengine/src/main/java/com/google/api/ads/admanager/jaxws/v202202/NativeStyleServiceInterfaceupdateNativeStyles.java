@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link NativeStyle} objects.
- *             
- *             @param nativeStyles the native styles to be updated
- *             @return the updated native styles
  *           
  * 
  * <p>Java class for updateNativeStyles element declaration.

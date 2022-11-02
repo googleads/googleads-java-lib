@@ -27,38 +27,16 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * Takes a prospective forecast adjustment and calculates the
      * daily ad opportunity counts
      *         corresponding to its provided volume settings.
-     *         
-     *         
-     * @param forecastAdjustment the prospective forecast adjustment
-     *         
-     * @return a forecast adjustment matching the one passed in, but with
-     * its {@code
-     *         calculatedDailyAdOpportunityCounts} field populated
      */
     public com.google.api.ads.admanager.axis.v202205.ForecastAdjustment calculateDailyAdOpportunityCounts(com.google.api.ads.admanager.axis.v202205.ForecastAdjustment forecastAdjustment) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Creates new {@link ForecastAdjustment} objects.
-     *         
-     *         
-     * @param forecastAdjustments the forecast adjustments to create
-     *         
-     * @return the persisted forecast adjustments with their IDs populated
-     * 
-     * @throws ApiException if there is an error creating the forecast adjustments
      */
     public com.google.api.ads.admanager.axis.v202205.ForecastAdjustment[] createForecastAdjustments(com.google.api.ads.admanager.axis.v202205.ForecastAdjustment[] forecastAdjustments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Creates new {@link TrafficForecastSegment} objects.
-     *         
-     *         
-     * @param trafficForecastSegments the traffic forecast segments to create
-     * 
-     * @return the persisted traffic forecast segments with their IDs populated
-     * 
-     * @throws ApiException if there is an error creating the traffic forecast
-     * segments
      */
     public com.google.api.ads.admanager.axis.v202205.TrafficForecastSegment[] createTrafficForecastSegments(com.google.api.ads.admanager.axis.v202205.TrafficForecastSegment[] trafficForecastSegments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -98,13 +76,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      *         <td>{@link ForecastAdjustment#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of traffic
-     *         forecast segments
-     *         
-     * @return a page of forecast adjustments that match the filter
      */
     public com.google.api.ads.admanager.axis.v202205.ForecastAdjustmentPage getForecastAdjustmentsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -132,13 +103,6 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      *         <td>{@link TrafficForecastSegment#creationTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement to filter
-     * a list of traffic
-     *         forecast segments
-     *         
-     * @return a page of traffic forecast segments that match the filter
      */
     public com.google.api.ads.admanager.axis.v202205.TrafficForecastSegmentPage getTrafficForecastSegmentsByStatement(com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
@@ -146,40 +110,16 @@ public interface AdjustmentServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link ForecastAdjustment} objects that
      * match the given {@link
      *         Statement#query}.
-     *         
-     *         
-     * @param forecastAdjustmentAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of forecast
-     *         adjustments
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performForecastAdjustmentAction(com.google.api.ads.admanager.axis.v202205.ForecastAdjustmentAction forecastAdjustmentAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link ForecastAdjustment} objects.
-     *         
-     *         
-     * @param forecastAdjustments the forecast adjustments to update
-     *         
-     * @return the updated forecast adjustments
-     *         
-     * @throws ApiException if there is an error updating the forecast adjustments
      */
     public com.google.api.ads.admanager.axis.v202205.ForecastAdjustment[] updateForecastAdjustments(com.google.api.ads.admanager.axis.v202205.ForecastAdjustment[] forecastAdjustments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Updates the specified {@link TrafficForecastSegment} objects.
-     * 
-     *         
-     * @param trafficForecastSegments the traffic forecast segments to update
-     * 
-     * @return the updated traffic forecast segments
-     *         
-     * @throws ApiException if there is an error updating the traffic forecast
-     * segments
      */
     public com.google.api.ads.admanager.axis.v202205.TrafficForecastSegment[] updateTrafficForecastSegments(com.google.api.ads.admanager.axis.v202205.TrafficForecastSegment[] trafficForecastSegments) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 }

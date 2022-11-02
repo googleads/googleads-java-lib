@@ -26,11 +26,6 @@ public interface MobileApplicationServiceInterface extends java.rmi.Remote {
     /**
      * Creates and claims {@link MobileApplication mobile applications}
      * to be used for targeting in the network.
-     *         
-     *         
-     * @param mobileApplications the mobileApplications to create
-     *         
-     * @return the created mobileApplications with their IDs filled in
      */
     public com.google.api.ads.admanager.axis.v202202.MobileApplication[] createMobileApplications(com.google.api.ads.admanager.axis.v202202.MobileApplication[] mobileApplications) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -68,37 +63,16 @@ public interface MobileApplicationServiceInterface extends java.rmi.Remote {
      *         <td>{@link MobileApplication#isArchived}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter a set of
-     *         mobile applications.
-     *         
-     * @return the mobile applications that match the given filter
      */
     public com.google.api.ads.admanager.axis.v202202.MobileApplicationPage getMobileApplicationsByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Performs an action on {@link MobileApplication mobile applications}.
-     * 
-     *         
-     * @param mobileApplicationAction the action to perform
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of mobile applications.
-     *         
-     * @return the result of the action performed
      */
     public com.google.api.ads.admanager.axis.v202202.UpdateResult performMobileApplicationAction(com.google.api.ads.admanager.axis.v202202.MobileApplicationAction mobileApplicationAction, com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
     /**
      * Updates the specified {@link MobileApplication mobile applications}.
-     * 
-     *         
-     * @param mobileApplications the mobile applications to be updated
-     *         
-     * @return the updated mobileApplications
      */
     public com.google.api.ads.admanager.axis.v202202.MobileApplication[] updateMobileApplications(com.google.api.ads.admanager.axis.v202202.MobileApplication[] mobileApplications) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

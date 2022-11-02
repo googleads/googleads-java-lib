@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates a list of yield groups.
- *             
- *             @param yieldGroups the groups to update
- *             @return the updated groups
  *           
  * 
  * <p>Java class for updateYieldGroups element declaration.

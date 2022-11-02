@@ -280,26 +280,17 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* The amount of money to spend per impression or click in proposal
      * currency. It supports
      *                 precision of 4 decimal places in terms of the fundamental
-     * currency unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 100. It doesn't include agency
-     *                 commission.
+     * currency unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 100.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.4567 could be
-     *                 represented as 123456700, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required. */
+     * 'USD', then $123.4567 could be represented
+     *                 as 123456700, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
+     * {@link
+     *                 ProposalLineItem#netCost} is required. */
     private com.google.api.ads.admanager.axis.v202208.Money netRate;
 
     /* The cost of the {@code ProposalLineItem} in proposal currency.
@@ -1545,26 +1536,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return netRate   * The amount of money to spend per impression or click in proposal
      * currency. It supports
      *                 precision of 4 decimal places in terms of the fundamental
-     * currency unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 100. It doesn't include agency
-     *                 commission.
+     * currency unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 100.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.4567 could be
-     *                 represented as 123456700, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required.
+     * 'USD', then $123.4567 could be represented
+     *                 as 123456700, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
+     * {@link
+     *                 ProposalLineItem#netCost} is required.
      */
     public com.google.api.ads.admanager.axis.v202208.Money getNetRate() {
         return netRate;
@@ -1577,26 +1559,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param netRate   * The amount of money to spend per impression or click in proposal
      * currency. It supports
      *                 precision of 4 decimal places in terms of the fundamental
-     * currency unit, so the
-     *                 {@link Money#getAmountInMicros} must be multiples
-     * of 100. It doesn't include agency
-     *                 commission.
+     * currency unit, so the {@link
+     *                 Money#getAmountInMicros} must be multiples of 100.
+     * It doesn't include agency commission.
      *                 
      *                 <p>For example, if {@link Proposal#currencyCode} is
-     * 'USD', then $123.4567 could be
-     *                 represented as 123456700, but further precision is
-     * not supported.
-     *                 
-     *                 <p>When using sales management, at least one of the
-     * four fields
-     *                 {@link ProposalLineItem#netRate}, {@link ProposalLineItem#grossRate},
-     * {@link ProposalLineItem#netCost} and {@link ProposalLineItem#grossCost}
-     * is required.
-     *                 
-     *                 <p>When not using sales management, at least one of
-     * the two fields
-     *                 {@link ProposalLineItem#netRate} and {@link ProposalLineItem#netCost}
-     * is required.
+     * 'USD', then $123.4567 could be represented
+     *                 as 123456700, but further precision is not supported.
+     * 
+     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
+     * {@link
+     *                 ProposalLineItem#netCost} is required.
      */
     public void setNetRate(com.google.api.ads.admanager.axis.v202208.Money netRate) {
         this.netRate = netRate;

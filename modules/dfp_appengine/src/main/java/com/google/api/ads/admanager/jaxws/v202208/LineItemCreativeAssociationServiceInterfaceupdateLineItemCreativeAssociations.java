@@ -26,10 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link LineItemCreativeAssociation} objects
- *             
- *             @param lineItemCreativeAssociations the line item creative associations to
- *             update
- *             @return the updated line item creative associations
  *           
  * 
  * <p>Java class for updateLineItemCreativeAssociations element declaration.

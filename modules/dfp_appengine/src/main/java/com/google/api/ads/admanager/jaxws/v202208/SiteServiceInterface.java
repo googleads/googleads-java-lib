@@ -41,9 +41,6 @@ public interface SiteServiceInterface {
     /**
      * 
      *         Creates new {@link Site} objects.
-     *         
-     *         @param sites the sites to create
-     *         @return the created sites with their IDs filled in
      *       
      * 
      * @param sites
@@ -100,9 +97,6 @@ public interface SiteServiceInterface {
      *         top-level expression scoping the {@code filterStatement} to {@link Site}s whose {@code
      *         approvalStatus} was modified on or after a specified date and time. (e.x. {@code "WHERE
      *         lastModifiedApprovalStatusDateTime >= '2022-01-01T00:00:00'"}).
-     *         
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of sites
-     *         @return the sites that match the given filter
      *       
      * 
      * @param filterStatement
@@ -123,10 +117,6 @@ public interface SiteServiceInterface {
     /**
      * 
      *         Performs actions on {@link Site} objects that match the given {@link Statement#query}.
-     *         
-     *         @param siteAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of sites
-     *         @return the result of the action performed
      *       
      * 
      * @param filterStatement
@@ -153,9 +143,6 @@ public interface SiteServiceInterface {
      *         
      *         <p>The {@link Site#childNetworkCode} can be updated in order to 1) change the child network, 2)
      *         move a site from O&O to represented, or 3) move a site from represented to O&O.
-     *         
-     *         @param sites the sites to update
-     *         @return the updated sites
      *       
      * 
      * @param sites

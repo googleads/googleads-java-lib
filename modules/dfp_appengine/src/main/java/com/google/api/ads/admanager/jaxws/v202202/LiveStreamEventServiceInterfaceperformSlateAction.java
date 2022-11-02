@@ -24,10 +24,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Performs actions on slates that match the given {@link Statement}.
- *             
- *             @param slateAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter a set of slates
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performSlateAction element declaration.

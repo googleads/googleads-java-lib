@@ -26,9 +26,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Updates the specified {@link CustomTargetingKey} objects.
- *             
- *             @param keys the custom targeting keys to update
- *             @return the updated custom targeting keys
  *           
  * 
  * <p>Java class for updateCustomTargetingKeys element declaration.

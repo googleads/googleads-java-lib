@@ -51,10 +51,6 @@ public interface AdjustmentServiceInterface {
      * 
      *         Takes a prospective forecast adjustment and calculates the daily ad opportunity counts
      *         corresponding to its provided volume settings.
-     *         
-     *         @param forecastAdjustment the prospective forecast adjustment
-     *         @return a forecast adjustment matching the one passed in, but with its {@code
-     *         calculatedDailyAdOpportunityCounts} field populated
      *       
      * 
      * @param forecastAdjustment
@@ -75,10 +71,6 @@ public interface AdjustmentServiceInterface {
     /**
      * 
      *         Creates new {@link ForecastAdjustment} objects.
-     *         
-     *         @param forecastAdjustments the forecast adjustments to create
-     *         @return the persisted forecast adjustments with their IDs populated
-     *         @throws ApiException if there is an error creating the forecast adjustments
      *       
      * 
      * @param forecastAdjustments
@@ -99,10 +91,6 @@ public interface AdjustmentServiceInterface {
     /**
      * 
      *         Creates new {@link TrafficForecastSegment} objects.
-     *         
-     *         @param trafficForecastSegments the traffic forecast segments to create
-     *         @return the persisted traffic forecast segments with their IDs populated
-     *         @throws ApiException if there is an error creating the traffic forecast segments
      *       
      * 
      * @param trafficForecastSegments
@@ -156,10 +144,6 @@ public interface AdjustmentServiceInterface {
      *         <td>{@link ForecastAdjustment#status}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of traffic
-     *         forecast segments
-     *         @return a page of forecast adjustments that match the filter
      *       
      * 
      * @param filterStatement
@@ -201,10 +185,6 @@ public interface AdjustmentServiceInterface {
      *         <td>{@link TrafficForecastSegment#creationTime}</td>
      *         </tr>
      *         </table>
-     *         
-     *         @param filterStatement a Publisher Query Language statement to filter a list of traffic
-     *         forecast segments
-     *         @return a page of traffic forecast segments that match the filter
      *       
      * 
      * @param filterStatement
@@ -226,11 +206,6 @@ public interface AdjustmentServiceInterface {
      * 
      *         Performs actions on {@link ForecastAdjustment} objects that match the given {@link
      *         Statement#query}.
-     *         
-     *         @param forecastAdjustmentAction the action to perform
-     *         @param filterStatement a Publisher Query Language statement used to filter a set of forecast
-     *         adjustments
-     *         @return the result of the action performed
      *       
      * 
      * @param forecastAdjustmentAction
@@ -254,10 +229,6 @@ public interface AdjustmentServiceInterface {
     /**
      * 
      *         Updates the specified {@link ForecastAdjustment} objects.
-     *         
-     *         @param forecastAdjustments the forecast adjustments to update
-     *         @return the updated forecast adjustments
-     *         @throws ApiException if there is an error updating the forecast adjustments
      *       
      * 
      * @param forecastAdjustments
@@ -278,10 +249,6 @@ public interface AdjustmentServiceInterface {
     /**
      * 
      *         Updates the specified {@link TrafficForecastSegment} objects.
-     *         
-     *         @param trafficForecastSegments the traffic forecast segments to update
-     *         @return the updated traffic forecast segments
-     *         @throws ApiException if there is an error updating the traffic forecast segments
      *       
      * 
      * @param trafficForecastSegments

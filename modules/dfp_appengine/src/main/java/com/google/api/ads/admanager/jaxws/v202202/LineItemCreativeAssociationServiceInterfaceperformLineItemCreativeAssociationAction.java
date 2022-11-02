@@ -25,11 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs actions on {@link LineItemCreativeAssociation} objects that match
  *             the given {@link Statement#query}.
- *             
- *             @param lineItemCreativeAssociationAction the action to perform
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of line item creative associations
- *             @return the result of the action performed
  *           
  * 
  * <p>Java class for performLineItemCreativeAssociationAction element declaration.

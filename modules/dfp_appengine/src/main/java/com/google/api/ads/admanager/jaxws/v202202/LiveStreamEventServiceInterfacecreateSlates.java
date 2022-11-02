@@ -29,9 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *             
  *             <p>A slate creative is served as backup content in a live stream event when no other
  *             creatives are eligible to be served.
- *             
- *             @param slates list of slate objects to create.
- *             @throws ApiException if there is an error while fetching the logging information
  *           
  * 
  * <p>Java class for createSlates element declaration.

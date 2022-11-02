@@ -28,13 +28,6 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      * <p>
      *         The report will be generated as a gzip archive, containing
      * the report file itself.
-     *         
-     *         
-     * @param reportJobId the ID of the {@link ReportJob}
-     *         
-     * @param exportFormat the {@link ExportFormat} for the report file
-     *         
-     * @return the URL for report file download
      */
     public java.lang.String getReportDownloadURL(java.lang.Long reportJobId, com.google.api.ads.admanager.axis.v202202.ExportFormat exportFormat) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -47,14 +40,6 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      * containing the report file itself.
      *         This can be changed by setting {@link ReportDownloadOptions#useGzipCompression}
      * to false.
-     *         
-     *         
-     * @param reportJobId the ID of the {@link ReportJob}
-     *         
-     * @param reportDownloadOptions the {@link ReportDownloadOptions} for
-     * the request
-     *         
-     * @return the URL for report file download
      */
     public java.lang.String getReportDownloadUrlWithOptions(java.lang.Long reportJobId, com.google.api.ads.admanager.axis.v202202.ReportDownloadOptions reportDownloadOptions) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -87,15 +72,6 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      *         <td>{@link SavedQuery#name}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter which saved queries
-     *         should be returned.
-     *         
-     * @return a {@link SavedQueryPage} that contains all {@link SavedQuery}
-     * instances which satisfy
-     *         the given statement.
      */
     public com.google.api.ads.admanager.axis.v202202.SavedQueryPage getSavedQueriesByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 
@@ -106,11 +82,6 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      *         <ul>
      *         <li>{@link ReportJob#reportQuery}</li>
      *         </ul>
-     *         
-     *         
-     * @param reportJob the report job to run
-     *         
-     * @return the report job with its ID filled in
      */
     public com.google.api.ads.admanager.axis.v202202.ReportJob runReportJob(com.google.api.ads.admanager.axis.v202202.ReportJob reportJob) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

@@ -46,10 +46,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@code status}</td>
  *             <td>{@link AdRule#status}</td>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter a set of ad rules
- *             @return the ad rules that match the given filter
- *             @throws ApiException if the ID of the active network does not exist or there is a backend error
  *           
  * 
  * <p>Java class for getAdRulesByStatement element declaration.

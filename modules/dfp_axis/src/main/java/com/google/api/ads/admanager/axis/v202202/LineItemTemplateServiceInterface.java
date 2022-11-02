@@ -39,15 +39,6 @@ public interface LineItemTemplateServiceInterface extends java.rmi.Remote {
      *         <td>{@link LineItemTemplate#id}</td>
      *         </tr>
      *         </table>
-     *         
-     *         
-     * @param filterStatement a Publisher Query Language statement used to
-     * filter
-     *         a set of line item templates
-     *         
-     * @return the line item templates that match the given filter
-     *         
-     * @throws ApiException if a RuntimeException is thrown
      */
     public com.google.api.ads.admanager.axis.v202202.LineItemTemplatePage getLineItemTemplatesByStatement(com.google.api.ads.admanager.axis.v202202.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202202.ApiException;
 }

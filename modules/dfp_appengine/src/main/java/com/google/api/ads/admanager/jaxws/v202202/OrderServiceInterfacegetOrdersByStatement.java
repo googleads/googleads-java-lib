@@ -67,10 +67,6 @@ import javax.xml.bind.annotation.XmlType;
  *             <td>{@link Order#lastModifiedDateTime}</td>
  *             </tr>
  *             </table>
- *             
- *             @param filterStatement a Publisher Query Language statement used to filter
- *             a set of orders
- *             @return the orders that match the given filter
  *           
  * 
  * <p>Java class for getOrdersByStatement element declaration.
